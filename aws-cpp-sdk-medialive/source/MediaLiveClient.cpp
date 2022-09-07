@@ -181,14 +181,14 @@ AcceptInputDeviceTransferOutcomeCallable MediaLiveClient::AcceptInputDeviceTrans
   return task->get_future();
 }
 
-void MediaLiveClient::AcceptInputDeviceTransferAsync(const AcceptInputDeviceTransferRequest& request, const AcceptInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientAcceptInputDeviceTransferAsyncHelper(MediaLiveClient const * const clientThis, const AcceptInputDeviceTransferRequest& request, const AcceptInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptInputDeviceTransferAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptInputDeviceTransfer(request), context);
 }
 
-void MediaLiveClient::AcceptInputDeviceTransferAsyncHelper(const AcceptInputDeviceTransferRequest& request, const AcceptInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::AcceptInputDeviceTransferAsync(const AcceptInputDeviceTransferRequest& request, const AcceptInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptInputDeviceTransfer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientAcceptInputDeviceTransferAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDeleteOutcome MediaLiveClient::BatchDelete(const BatchDeleteRequest& request) const
@@ -206,14 +206,14 @@ BatchDeleteOutcomeCallable MediaLiveClient::BatchDeleteCallable(const BatchDelet
   return task->get_future();
 }
 
-void MediaLiveClient::BatchDeleteAsync(const BatchDeleteRequest& request, const BatchDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientBatchDeleteAsyncHelper(MediaLiveClient const * const clientThis, const BatchDeleteRequest& request, const BatchDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDelete(request), context);
 }
 
-void MediaLiveClient::BatchDeleteAsyncHelper(const BatchDeleteRequest& request, const BatchDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::BatchDeleteAsync(const BatchDeleteRequest& request, const BatchDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDelete(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientBatchDeleteAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchStartOutcome MediaLiveClient::BatchStart(const BatchStartRequest& request) const
@@ -231,14 +231,14 @@ BatchStartOutcomeCallable MediaLiveClient::BatchStartCallable(const BatchStartRe
   return task->get_future();
 }
 
-void MediaLiveClient::BatchStartAsync(const BatchStartRequest& request, const BatchStartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientBatchStartAsyncHelper(MediaLiveClient const * const clientThis, const BatchStartRequest& request, const BatchStartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchStartAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchStart(request), context);
 }
 
-void MediaLiveClient::BatchStartAsyncHelper(const BatchStartRequest& request, const BatchStartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::BatchStartAsync(const BatchStartRequest& request, const BatchStartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchStart(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientBatchStartAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchStopOutcome MediaLiveClient::BatchStop(const BatchStopRequest& request) const
@@ -256,14 +256,14 @@ BatchStopOutcomeCallable MediaLiveClient::BatchStopCallable(const BatchStopReque
   return task->get_future();
 }
 
-void MediaLiveClient::BatchStopAsync(const BatchStopRequest& request, const BatchStopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientBatchStopAsyncHelper(MediaLiveClient const * const clientThis, const BatchStopRequest& request, const BatchStopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchStopAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchStop(request), context);
 }
 
-void MediaLiveClient::BatchStopAsyncHelper(const BatchStopRequest& request, const BatchStopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::BatchStopAsync(const BatchStopRequest& request, const BatchStopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchStop(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientBatchStopAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdateScheduleRequest& request) const
@@ -288,14 +288,14 @@ BatchUpdateScheduleOutcomeCallable MediaLiveClient::BatchUpdateScheduleCallable(
   return task->get_future();
 }
 
-void MediaLiveClient::BatchUpdateScheduleAsync(const BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientBatchUpdateScheduleAsyncHelper(MediaLiveClient const * const clientThis, const BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdateScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchUpdateSchedule(request), context);
 }
 
-void MediaLiveClient::BatchUpdateScheduleAsyncHelper(const BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::BatchUpdateScheduleAsync(const BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchUpdateSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientBatchUpdateScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelInputDeviceTransferOutcome MediaLiveClient::CancelInputDeviceTransfer(const CancelInputDeviceTransferRequest& request) const
@@ -320,14 +320,14 @@ CancelInputDeviceTransferOutcomeCallable MediaLiveClient::CancelInputDeviceTrans
   return task->get_future();
 }
 
-void MediaLiveClient::CancelInputDeviceTransferAsync(const CancelInputDeviceTransferRequest& request, const CancelInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientCancelInputDeviceTransferAsyncHelper(MediaLiveClient const * const clientThis, const CancelInputDeviceTransferRequest& request, const CancelInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelInputDeviceTransferAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelInputDeviceTransfer(request), context);
 }
 
-void MediaLiveClient::CancelInputDeviceTransferAsyncHelper(const CancelInputDeviceTransferRequest& request, const CancelInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::CancelInputDeviceTransferAsync(const CancelInputDeviceTransferRequest& request, const CancelInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelInputDeviceTransfer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientCancelInputDeviceTransferAsyncHelper( this, request, handler, context ); } );
 }
 
 ClaimDeviceOutcome MediaLiveClient::ClaimDevice(const ClaimDeviceRequest& request) const
@@ -345,14 +345,14 @@ ClaimDeviceOutcomeCallable MediaLiveClient::ClaimDeviceCallable(const ClaimDevic
   return task->get_future();
 }
 
-void MediaLiveClient::ClaimDeviceAsync(const ClaimDeviceRequest& request, const ClaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientClaimDeviceAsyncHelper(MediaLiveClient const * const clientThis, const ClaimDeviceRequest& request, const ClaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ClaimDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ClaimDevice(request), context);
 }
 
-void MediaLiveClient::ClaimDeviceAsyncHelper(const ClaimDeviceRequest& request, const ClaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ClaimDeviceAsync(const ClaimDeviceRequest& request, const ClaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ClaimDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientClaimDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& request) const
@@ -370,14 +370,14 @@ CreateChannelOutcomeCallable MediaLiveClient::CreateChannelCallable(const Create
   return task->get_future();
 }
 
-void MediaLiveClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientCreateChannelAsyncHelper(MediaLiveClient const * const clientThis, const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateChannel(request), context);
 }
 
-void MediaLiveClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientCreateChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInputOutcome MediaLiveClient::CreateInput(const CreateInputRequest& request) const
@@ -395,14 +395,14 @@ CreateInputOutcomeCallable MediaLiveClient::CreateInputCallable(const CreateInpu
   return task->get_future();
 }
 
-void MediaLiveClient::CreateInputAsync(const CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientCreateInputAsyncHelper(MediaLiveClient const * const clientThis, const CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInputAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInput(request), context);
 }
 
-void MediaLiveClient::CreateInputAsyncHelper(const CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::CreateInputAsync(const CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInput(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientCreateInputAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInputSecurityGroupOutcome MediaLiveClient::CreateInputSecurityGroup(const CreateInputSecurityGroupRequest& request) const
@@ -420,14 +420,14 @@ CreateInputSecurityGroupOutcomeCallable MediaLiveClient::CreateInputSecurityGrou
   return task->get_future();
 }
 
-void MediaLiveClient::CreateInputSecurityGroupAsync(const CreateInputSecurityGroupRequest& request, const CreateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientCreateInputSecurityGroupAsyncHelper(MediaLiveClient const * const clientThis, const CreateInputSecurityGroupRequest& request, const CreateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInputSecurityGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInputSecurityGroup(request), context);
 }
 
-void MediaLiveClient::CreateInputSecurityGroupAsyncHelper(const CreateInputSecurityGroupRequest& request, const CreateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::CreateInputSecurityGroupAsync(const CreateInputSecurityGroupRequest& request, const CreateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInputSecurityGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientCreateInputSecurityGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMultiplexOutcome MediaLiveClient::CreateMultiplex(const CreateMultiplexRequest& request) const
@@ -445,14 +445,14 @@ CreateMultiplexOutcomeCallable MediaLiveClient::CreateMultiplexCallable(const Cr
   return task->get_future();
 }
 
-void MediaLiveClient::CreateMultiplexAsync(const CreateMultiplexRequest& request, const CreateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientCreateMultiplexAsyncHelper(MediaLiveClient const * const clientThis, const CreateMultiplexRequest& request, const CreateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMultiplexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMultiplex(request), context);
 }
 
-void MediaLiveClient::CreateMultiplexAsyncHelper(const CreateMultiplexRequest& request, const CreateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::CreateMultiplexAsync(const CreateMultiplexRequest& request, const CreateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMultiplex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientCreateMultiplexAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMultiplexProgramOutcome MediaLiveClient::CreateMultiplexProgram(const CreateMultiplexProgramRequest& request) const
@@ -477,14 +477,14 @@ CreateMultiplexProgramOutcomeCallable MediaLiveClient::CreateMultiplexProgramCal
   return task->get_future();
 }
 
-void MediaLiveClient::CreateMultiplexProgramAsync(const CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientCreateMultiplexProgramAsyncHelper(MediaLiveClient const * const clientThis, const CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMultiplexProgramAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMultiplexProgram(request), context);
 }
 
-void MediaLiveClient::CreateMultiplexProgramAsyncHelper(const CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::CreateMultiplexProgramAsync(const CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMultiplexProgram(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientCreateMultiplexProgramAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePartnerInputOutcome MediaLiveClient::CreatePartnerInput(const CreatePartnerInputRequest& request) const
@@ -509,14 +509,14 @@ CreatePartnerInputOutcomeCallable MediaLiveClient::CreatePartnerInputCallable(co
   return task->get_future();
 }
 
-void MediaLiveClient::CreatePartnerInputAsync(const CreatePartnerInputRequest& request, const CreatePartnerInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientCreatePartnerInputAsyncHelper(MediaLiveClient const * const clientThis, const CreatePartnerInputRequest& request, const CreatePartnerInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePartnerInputAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePartnerInput(request), context);
 }
 
-void MediaLiveClient::CreatePartnerInputAsyncHelper(const CreatePartnerInputRequest& request, const CreatePartnerInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::CreatePartnerInputAsync(const CreatePartnerInputRequest& request, const CreatePartnerInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePartnerInput(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientCreatePartnerInputAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTagsOutcome MediaLiveClient::CreateTags(const CreateTagsRequest& request) const
@@ -540,14 +540,14 @@ CreateTagsOutcomeCallable MediaLiveClient::CreateTagsCallable(const CreateTagsRe
   return task->get_future();
 }
 
-void MediaLiveClient::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientCreateTagsAsyncHelper(MediaLiveClient const * const clientThis, const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTags(request), context);
 }
 
-void MediaLiveClient::CreateTagsAsyncHelper(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientCreateTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteChannelOutcome MediaLiveClient::DeleteChannel(const DeleteChannelRequest& request) const
@@ -571,14 +571,14 @@ DeleteChannelOutcomeCallable MediaLiveClient::DeleteChannelCallable(const Delete
   return task->get_future();
 }
 
-void MediaLiveClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDeleteChannelAsyncHelper(MediaLiveClient const * const clientThis, const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteChannel(request), context);
 }
 
-void MediaLiveClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDeleteChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInputOutcome MediaLiveClient::DeleteInput(const DeleteInputRequest& request) const
@@ -602,14 +602,14 @@ DeleteInputOutcomeCallable MediaLiveClient::DeleteInputCallable(const DeleteInpu
   return task->get_future();
 }
 
-void MediaLiveClient::DeleteInputAsync(const DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDeleteInputAsyncHelper(MediaLiveClient const * const clientThis, const DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInputAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInput(request), context);
 }
 
-void MediaLiveClient::DeleteInputAsyncHelper(const DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DeleteInputAsync(const DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInput(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDeleteInputAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInputSecurityGroupOutcome MediaLiveClient::DeleteInputSecurityGroup(const DeleteInputSecurityGroupRequest& request) const
@@ -633,14 +633,14 @@ DeleteInputSecurityGroupOutcomeCallable MediaLiveClient::DeleteInputSecurityGrou
   return task->get_future();
 }
 
-void MediaLiveClient::DeleteInputSecurityGroupAsync(const DeleteInputSecurityGroupRequest& request, const DeleteInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDeleteInputSecurityGroupAsyncHelper(MediaLiveClient const * const clientThis, const DeleteInputSecurityGroupRequest& request, const DeleteInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInputSecurityGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInputSecurityGroup(request), context);
 }
 
-void MediaLiveClient::DeleteInputSecurityGroupAsyncHelper(const DeleteInputSecurityGroupRequest& request, const DeleteInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DeleteInputSecurityGroupAsync(const DeleteInputSecurityGroupRequest& request, const DeleteInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInputSecurityGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDeleteInputSecurityGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMultiplexOutcome MediaLiveClient::DeleteMultiplex(const DeleteMultiplexRequest& request) const
@@ -664,14 +664,14 @@ DeleteMultiplexOutcomeCallable MediaLiveClient::DeleteMultiplexCallable(const De
   return task->get_future();
 }
 
-void MediaLiveClient::DeleteMultiplexAsync(const DeleteMultiplexRequest& request, const DeleteMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDeleteMultiplexAsyncHelper(MediaLiveClient const * const clientThis, const DeleteMultiplexRequest& request, const DeleteMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMultiplexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMultiplex(request), context);
 }
 
-void MediaLiveClient::DeleteMultiplexAsyncHelper(const DeleteMultiplexRequest& request, const DeleteMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DeleteMultiplexAsync(const DeleteMultiplexRequest& request, const DeleteMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMultiplex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDeleteMultiplexAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMultiplexProgramOutcome MediaLiveClient::DeleteMultiplexProgram(const DeleteMultiplexProgramRequest& request) const
@@ -702,14 +702,14 @@ DeleteMultiplexProgramOutcomeCallable MediaLiveClient::DeleteMultiplexProgramCal
   return task->get_future();
 }
 
-void MediaLiveClient::DeleteMultiplexProgramAsync(const DeleteMultiplexProgramRequest& request, const DeleteMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDeleteMultiplexProgramAsyncHelper(MediaLiveClient const * const clientThis, const DeleteMultiplexProgramRequest& request, const DeleteMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMultiplexProgramAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMultiplexProgram(request), context);
 }
 
-void MediaLiveClient::DeleteMultiplexProgramAsyncHelper(const DeleteMultiplexProgramRequest& request, const DeleteMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DeleteMultiplexProgramAsync(const DeleteMultiplexProgramRequest& request, const DeleteMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMultiplexProgram(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDeleteMultiplexProgramAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteReservationOutcome MediaLiveClient::DeleteReservation(const DeleteReservationRequest& request) const
@@ -733,14 +733,14 @@ DeleteReservationOutcomeCallable MediaLiveClient::DeleteReservationCallable(cons
   return task->get_future();
 }
 
-void MediaLiveClient::DeleteReservationAsync(const DeleteReservationRequest& request, const DeleteReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDeleteReservationAsyncHelper(MediaLiveClient const * const clientThis, const DeleteReservationRequest& request, const DeleteReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReservation(request), context);
 }
 
-void MediaLiveClient::DeleteReservationAsyncHelper(const DeleteReservationRequest& request, const DeleteReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DeleteReservationAsync(const DeleteReservationRequest& request, const DeleteReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDeleteReservationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteScheduleOutcome MediaLiveClient::DeleteSchedule(const DeleteScheduleRequest& request) const
@@ -765,14 +765,14 @@ DeleteScheduleOutcomeCallable MediaLiveClient::DeleteScheduleCallable(const Dele
   return task->get_future();
 }
 
-void MediaLiveClient::DeleteScheduleAsync(const DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDeleteScheduleAsyncHelper(MediaLiveClient const * const clientThis, const DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSchedule(request), context);
 }
 
-void MediaLiveClient::DeleteScheduleAsyncHelper(const DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DeleteScheduleAsync(const DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDeleteScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTagsOutcome MediaLiveClient::DeleteTags(const DeleteTagsRequest& request) const
@@ -801,14 +801,14 @@ DeleteTagsOutcomeCallable MediaLiveClient::DeleteTagsCallable(const DeleteTagsRe
   return task->get_future();
 }
 
-void MediaLiveClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDeleteTagsAsyncHelper(MediaLiveClient const * const clientThis, const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTags(request), context);
 }
 
-void MediaLiveClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDeleteTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeChannelOutcome MediaLiveClient::DescribeChannel(const DescribeChannelRequest& request) const
@@ -832,14 +832,14 @@ DescribeChannelOutcomeCallable MediaLiveClient::DescribeChannelCallable(const De
   return task->get_future();
 }
 
-void MediaLiveClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDescribeChannelAsyncHelper(MediaLiveClient const * const clientThis, const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeChannel(request), context);
 }
 
-void MediaLiveClient::DescribeChannelAsyncHelper(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDescribeChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInputOutcome MediaLiveClient::DescribeInput(const DescribeInputRequest& request) const
@@ -863,14 +863,14 @@ DescribeInputOutcomeCallable MediaLiveClient::DescribeInputCallable(const Descri
   return task->get_future();
 }
 
-void MediaLiveClient::DescribeInputAsync(const DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDescribeInputAsyncHelper(MediaLiveClient const * const clientThis, const DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInputAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInput(request), context);
 }
 
-void MediaLiveClient::DescribeInputAsyncHelper(const DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DescribeInputAsync(const DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInput(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDescribeInputAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInputDeviceOutcome MediaLiveClient::DescribeInputDevice(const DescribeInputDeviceRequest& request) const
@@ -894,14 +894,14 @@ DescribeInputDeviceOutcomeCallable MediaLiveClient::DescribeInputDeviceCallable(
   return task->get_future();
 }
 
-void MediaLiveClient::DescribeInputDeviceAsync(const DescribeInputDeviceRequest& request, const DescribeInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDescribeInputDeviceAsyncHelper(MediaLiveClient const * const clientThis, const DescribeInputDeviceRequest& request, const DescribeInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInputDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInputDevice(request), context);
 }
 
-void MediaLiveClient::DescribeInputDeviceAsyncHelper(const DescribeInputDeviceRequest& request, const DescribeInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DescribeInputDeviceAsync(const DescribeInputDeviceRequest& request, const DescribeInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInputDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDescribeInputDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInputDeviceThumbnailOutcome MediaLiveClient::DescribeInputDeviceThumbnail(const DescribeInputDeviceThumbnailRequest& request) const
@@ -931,14 +931,14 @@ DescribeInputDeviceThumbnailOutcomeCallable MediaLiveClient::DescribeInputDevice
   return task->get_future();
 }
 
-void MediaLiveClient::DescribeInputDeviceThumbnailAsync(const DescribeInputDeviceThumbnailRequest& request, const DescribeInputDeviceThumbnailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDescribeInputDeviceThumbnailAsyncHelper(MediaLiveClient const * const clientThis, const DescribeInputDeviceThumbnailRequest& request, const DescribeInputDeviceThumbnailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInputDeviceThumbnailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInputDeviceThumbnail(request), context);
 }
 
-void MediaLiveClient::DescribeInputDeviceThumbnailAsyncHelper(const DescribeInputDeviceThumbnailRequest& request, const DescribeInputDeviceThumbnailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DescribeInputDeviceThumbnailAsync(const DescribeInputDeviceThumbnailRequest& request, const DescribeInputDeviceThumbnailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInputDeviceThumbnail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDescribeInputDeviceThumbnailAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInputSecurityGroupOutcome MediaLiveClient::DescribeInputSecurityGroup(const DescribeInputSecurityGroupRequest& request) const
@@ -962,14 +962,14 @@ DescribeInputSecurityGroupOutcomeCallable MediaLiveClient::DescribeInputSecurity
   return task->get_future();
 }
 
-void MediaLiveClient::DescribeInputSecurityGroupAsync(const DescribeInputSecurityGroupRequest& request, const DescribeInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDescribeInputSecurityGroupAsyncHelper(MediaLiveClient const * const clientThis, const DescribeInputSecurityGroupRequest& request, const DescribeInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInputSecurityGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInputSecurityGroup(request), context);
 }
 
-void MediaLiveClient::DescribeInputSecurityGroupAsyncHelper(const DescribeInputSecurityGroupRequest& request, const DescribeInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DescribeInputSecurityGroupAsync(const DescribeInputSecurityGroupRequest& request, const DescribeInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInputSecurityGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDescribeInputSecurityGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMultiplexOutcome MediaLiveClient::DescribeMultiplex(const DescribeMultiplexRequest& request) const
@@ -993,14 +993,14 @@ DescribeMultiplexOutcomeCallable MediaLiveClient::DescribeMultiplexCallable(cons
   return task->get_future();
 }
 
-void MediaLiveClient::DescribeMultiplexAsync(const DescribeMultiplexRequest& request, const DescribeMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDescribeMultiplexAsyncHelper(MediaLiveClient const * const clientThis, const DescribeMultiplexRequest& request, const DescribeMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMultiplexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMultiplex(request), context);
 }
 
-void MediaLiveClient::DescribeMultiplexAsyncHelper(const DescribeMultiplexRequest& request, const DescribeMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DescribeMultiplexAsync(const DescribeMultiplexRequest& request, const DescribeMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMultiplex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDescribeMultiplexAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMultiplexProgramOutcome MediaLiveClient::DescribeMultiplexProgram(const DescribeMultiplexProgramRequest& request) const
@@ -1031,14 +1031,14 @@ DescribeMultiplexProgramOutcomeCallable MediaLiveClient::DescribeMultiplexProgra
   return task->get_future();
 }
 
-void MediaLiveClient::DescribeMultiplexProgramAsync(const DescribeMultiplexProgramRequest& request, const DescribeMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDescribeMultiplexProgramAsyncHelper(MediaLiveClient const * const clientThis, const DescribeMultiplexProgramRequest& request, const DescribeMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMultiplexProgramAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMultiplexProgram(request), context);
 }
 
-void MediaLiveClient::DescribeMultiplexProgramAsyncHelper(const DescribeMultiplexProgramRequest& request, const DescribeMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DescribeMultiplexProgramAsync(const DescribeMultiplexProgramRequest& request, const DescribeMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMultiplexProgram(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDescribeMultiplexProgramAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeOfferingOutcome MediaLiveClient::DescribeOffering(const DescribeOfferingRequest& request) const
@@ -1062,14 +1062,14 @@ DescribeOfferingOutcomeCallable MediaLiveClient::DescribeOfferingCallable(const 
   return task->get_future();
 }
 
-void MediaLiveClient::DescribeOfferingAsync(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDescribeOfferingAsyncHelper(MediaLiveClient const * const clientThis, const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOfferingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeOffering(request), context);
 }
 
-void MediaLiveClient::DescribeOfferingAsyncHelper(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DescribeOfferingAsync(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeOffering(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDescribeOfferingAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReservationOutcome MediaLiveClient::DescribeReservation(const DescribeReservationRequest& request) const
@@ -1093,14 +1093,14 @@ DescribeReservationOutcomeCallable MediaLiveClient::DescribeReservationCallable(
   return task->get_future();
 }
 
-void MediaLiveClient::DescribeReservationAsync(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDescribeReservationAsyncHelper(MediaLiveClient const * const clientThis, const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReservation(request), context);
 }
 
-void MediaLiveClient::DescribeReservationAsyncHelper(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DescribeReservationAsync(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDescribeReservationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeScheduleRequest& request) const
@@ -1125,14 +1125,14 @@ DescribeScheduleOutcomeCallable MediaLiveClient::DescribeScheduleCallable(const 
   return task->get_future();
 }
 
-void MediaLiveClient::DescribeScheduleAsync(const DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientDescribeScheduleAsyncHelper(MediaLiveClient const * const clientThis, const DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSchedule(request), context);
 }
 
-void MediaLiveClient::DescribeScheduleAsyncHelper(const DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::DescribeScheduleAsync(const DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientDescribeScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& request) const
@@ -1150,14 +1150,14 @@ ListChannelsOutcomeCallable MediaLiveClient::ListChannelsCallable(const ListChan
   return task->get_future();
 }
 
-void MediaLiveClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientListChannelsAsyncHelper(MediaLiveClient const * const clientThis, const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListChannels(request), context);
 }
 
-void MediaLiveClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListChannels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientListChannelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInputDeviceTransfersOutcome MediaLiveClient::ListInputDeviceTransfers(const ListInputDeviceTransfersRequest& request) const
@@ -1180,14 +1180,14 @@ ListInputDeviceTransfersOutcomeCallable MediaLiveClient::ListInputDeviceTransfer
   return task->get_future();
 }
 
-void MediaLiveClient::ListInputDeviceTransfersAsync(const ListInputDeviceTransfersRequest& request, const ListInputDeviceTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientListInputDeviceTransfersAsyncHelper(MediaLiveClient const * const clientThis, const ListInputDeviceTransfersRequest& request, const ListInputDeviceTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInputDeviceTransfersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInputDeviceTransfers(request), context);
 }
 
-void MediaLiveClient::ListInputDeviceTransfersAsyncHelper(const ListInputDeviceTransfersRequest& request, const ListInputDeviceTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ListInputDeviceTransfersAsync(const ListInputDeviceTransfersRequest& request, const ListInputDeviceTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInputDeviceTransfers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientListInputDeviceTransfersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInputDevicesOutcome MediaLiveClient::ListInputDevices(const ListInputDevicesRequest& request) const
@@ -1205,14 +1205,14 @@ ListInputDevicesOutcomeCallable MediaLiveClient::ListInputDevicesCallable(const 
   return task->get_future();
 }
 
-void MediaLiveClient::ListInputDevicesAsync(const ListInputDevicesRequest& request, const ListInputDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientListInputDevicesAsyncHelper(MediaLiveClient const * const clientThis, const ListInputDevicesRequest& request, const ListInputDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInputDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInputDevices(request), context);
 }
 
-void MediaLiveClient::ListInputDevicesAsyncHelper(const ListInputDevicesRequest& request, const ListInputDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ListInputDevicesAsync(const ListInputDevicesRequest& request, const ListInputDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInputDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientListInputDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInputSecurityGroupsOutcome MediaLiveClient::ListInputSecurityGroups(const ListInputSecurityGroupsRequest& request) const
@@ -1230,14 +1230,14 @@ ListInputSecurityGroupsOutcomeCallable MediaLiveClient::ListInputSecurityGroupsC
   return task->get_future();
 }
 
-void MediaLiveClient::ListInputSecurityGroupsAsync(const ListInputSecurityGroupsRequest& request, const ListInputSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientListInputSecurityGroupsAsyncHelper(MediaLiveClient const * const clientThis, const ListInputSecurityGroupsRequest& request, const ListInputSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInputSecurityGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInputSecurityGroups(request), context);
 }
 
-void MediaLiveClient::ListInputSecurityGroupsAsyncHelper(const ListInputSecurityGroupsRequest& request, const ListInputSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ListInputSecurityGroupsAsync(const ListInputSecurityGroupsRequest& request, const ListInputSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInputSecurityGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientListInputSecurityGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInputsOutcome MediaLiveClient::ListInputs(const ListInputsRequest& request) const
@@ -1255,14 +1255,14 @@ ListInputsOutcomeCallable MediaLiveClient::ListInputsCallable(const ListInputsRe
   return task->get_future();
 }
 
-void MediaLiveClient::ListInputsAsync(const ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientListInputsAsyncHelper(MediaLiveClient const * const clientThis, const ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInputsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInputs(request), context);
 }
 
-void MediaLiveClient::ListInputsAsyncHelper(const ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ListInputsAsync(const ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInputs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientListInputsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMultiplexProgramsOutcome MediaLiveClient::ListMultiplexPrograms(const ListMultiplexProgramsRequest& request) const
@@ -1287,14 +1287,14 @@ ListMultiplexProgramsOutcomeCallable MediaLiveClient::ListMultiplexProgramsCalla
   return task->get_future();
 }
 
-void MediaLiveClient::ListMultiplexProgramsAsync(const ListMultiplexProgramsRequest& request, const ListMultiplexProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientListMultiplexProgramsAsyncHelper(MediaLiveClient const * const clientThis, const ListMultiplexProgramsRequest& request, const ListMultiplexProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMultiplexProgramsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMultiplexPrograms(request), context);
 }
 
-void MediaLiveClient::ListMultiplexProgramsAsyncHelper(const ListMultiplexProgramsRequest& request, const ListMultiplexProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ListMultiplexProgramsAsync(const ListMultiplexProgramsRequest& request, const ListMultiplexProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMultiplexPrograms(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientListMultiplexProgramsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMultiplexesOutcome MediaLiveClient::ListMultiplexes(const ListMultiplexesRequest& request) const
@@ -1312,14 +1312,14 @@ ListMultiplexesOutcomeCallable MediaLiveClient::ListMultiplexesCallable(const Li
   return task->get_future();
 }
 
-void MediaLiveClient::ListMultiplexesAsync(const ListMultiplexesRequest& request, const ListMultiplexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientListMultiplexesAsyncHelper(MediaLiveClient const * const clientThis, const ListMultiplexesRequest& request, const ListMultiplexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMultiplexesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMultiplexes(request), context);
 }
 
-void MediaLiveClient::ListMultiplexesAsyncHelper(const ListMultiplexesRequest& request, const ListMultiplexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ListMultiplexesAsync(const ListMultiplexesRequest& request, const ListMultiplexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMultiplexes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientListMultiplexesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOfferingsOutcome MediaLiveClient::ListOfferings(const ListOfferingsRequest& request) const
@@ -1337,14 +1337,14 @@ ListOfferingsOutcomeCallable MediaLiveClient::ListOfferingsCallable(const ListOf
   return task->get_future();
 }
 
-void MediaLiveClient::ListOfferingsAsync(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientListOfferingsAsyncHelper(MediaLiveClient const * const clientThis, const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOfferingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOfferings(request), context);
 }
 
-void MediaLiveClient::ListOfferingsAsyncHelper(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ListOfferingsAsync(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientListOfferingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReservationsOutcome MediaLiveClient::ListReservations(const ListReservationsRequest& request) const
@@ -1362,14 +1362,14 @@ ListReservationsOutcomeCallable MediaLiveClient::ListReservationsCallable(const 
   return task->get_future();
 }
 
-void MediaLiveClient::ListReservationsAsync(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientListReservationsAsyncHelper(MediaLiveClient const * const clientThis, const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReservationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReservations(request), context);
 }
 
-void MediaLiveClient::ListReservationsAsyncHelper(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ListReservationsAsync(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReservations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientListReservationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome MediaLiveClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1393,14 +1393,14 @@ ListTagsForResourceOutcomeCallable MediaLiveClient::ListTagsForResourceCallable(
   return task->get_future();
 }
 
-void MediaLiveClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientListTagsForResourceAsyncHelper(MediaLiveClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void MediaLiveClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PurchaseOfferingOutcome MediaLiveClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
@@ -1425,14 +1425,14 @@ PurchaseOfferingOutcomeCallable MediaLiveClient::PurchaseOfferingCallable(const 
   return task->get_future();
 }
 
-void MediaLiveClient::PurchaseOfferingAsync(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientPurchaseOfferingAsyncHelper(MediaLiveClient const * const clientThis, const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PurchaseOfferingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PurchaseOffering(request), context);
 }
 
-void MediaLiveClient::PurchaseOfferingAsyncHelper(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::PurchaseOfferingAsync(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PurchaseOffering(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientPurchaseOfferingAsyncHelper( this, request, handler, context ); } );
 }
 
 RebootInputDeviceOutcome MediaLiveClient::RebootInputDevice(const RebootInputDeviceRequest& request) const
@@ -1457,14 +1457,14 @@ RebootInputDeviceOutcomeCallable MediaLiveClient::RebootInputDeviceCallable(cons
   return task->get_future();
 }
 
-void MediaLiveClient::RebootInputDeviceAsync(const RebootInputDeviceRequest& request, const RebootInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientRebootInputDeviceAsyncHelper(MediaLiveClient const * const clientThis, const RebootInputDeviceRequest& request, const RebootInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RebootInputDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RebootInputDevice(request), context);
 }
 
-void MediaLiveClient::RebootInputDeviceAsyncHelper(const RebootInputDeviceRequest& request, const RebootInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::RebootInputDeviceAsync(const RebootInputDeviceRequest& request, const RebootInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RebootInputDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientRebootInputDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectInputDeviceTransferOutcome MediaLiveClient::RejectInputDeviceTransfer(const RejectInputDeviceTransferRequest& request) const
@@ -1489,14 +1489,14 @@ RejectInputDeviceTransferOutcomeCallable MediaLiveClient::RejectInputDeviceTrans
   return task->get_future();
 }
 
-void MediaLiveClient::RejectInputDeviceTransferAsync(const RejectInputDeviceTransferRequest& request, const RejectInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientRejectInputDeviceTransferAsyncHelper(MediaLiveClient const * const clientThis, const RejectInputDeviceTransferRequest& request, const RejectInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectInputDeviceTransferAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectInputDeviceTransfer(request), context);
 }
 
-void MediaLiveClient::RejectInputDeviceTransferAsyncHelper(const RejectInputDeviceTransferRequest& request, const RejectInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::RejectInputDeviceTransferAsync(const RejectInputDeviceTransferRequest& request, const RejectInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectInputDeviceTransfer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientRejectInputDeviceTransferAsyncHelper( this, request, handler, context ); } );
 }
 
 StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& request) const
@@ -1521,14 +1521,14 @@ StartChannelOutcomeCallable MediaLiveClient::StartChannelCallable(const StartCha
   return task->get_future();
 }
 
-void MediaLiveClient::StartChannelAsync(const StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientStartChannelAsyncHelper(MediaLiveClient const * const clientThis, const StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartChannel(request), context);
 }
 
-void MediaLiveClient::StartChannelAsyncHelper(const StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::StartChannelAsync(const StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientStartChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 StartInputDeviceMaintenanceWindowOutcome MediaLiveClient::StartInputDeviceMaintenanceWindow(const StartInputDeviceMaintenanceWindowRequest& request) const
@@ -1553,14 +1553,14 @@ StartInputDeviceMaintenanceWindowOutcomeCallable MediaLiveClient::StartInputDevi
   return task->get_future();
 }
 
-void MediaLiveClient::StartInputDeviceMaintenanceWindowAsync(const StartInputDeviceMaintenanceWindowRequest& request, const StartInputDeviceMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientStartInputDeviceMaintenanceWindowAsyncHelper(MediaLiveClient const * const clientThis, const StartInputDeviceMaintenanceWindowRequest& request, const StartInputDeviceMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartInputDeviceMaintenanceWindowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartInputDeviceMaintenanceWindow(request), context);
 }
 
-void MediaLiveClient::StartInputDeviceMaintenanceWindowAsyncHelper(const StartInputDeviceMaintenanceWindowRequest& request, const StartInputDeviceMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::StartInputDeviceMaintenanceWindowAsync(const StartInputDeviceMaintenanceWindowRequest& request, const StartInputDeviceMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartInputDeviceMaintenanceWindow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientStartInputDeviceMaintenanceWindowAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMultiplexOutcome MediaLiveClient::StartMultiplex(const StartMultiplexRequest& request) const
@@ -1585,14 +1585,14 @@ StartMultiplexOutcomeCallable MediaLiveClient::StartMultiplexCallable(const Star
   return task->get_future();
 }
 
-void MediaLiveClient::StartMultiplexAsync(const StartMultiplexRequest& request, const StartMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientStartMultiplexAsyncHelper(MediaLiveClient const * const clientThis, const StartMultiplexRequest& request, const StartMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMultiplexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMultiplex(request), context);
 }
 
-void MediaLiveClient::StartMultiplexAsyncHelper(const StartMultiplexRequest& request, const StartMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::StartMultiplexAsync(const StartMultiplexRequest& request, const StartMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMultiplex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientStartMultiplexAsyncHelper( this, request, handler, context ); } );
 }
 
 StopChannelOutcome MediaLiveClient::StopChannel(const StopChannelRequest& request) const
@@ -1617,14 +1617,14 @@ StopChannelOutcomeCallable MediaLiveClient::StopChannelCallable(const StopChanne
   return task->get_future();
 }
 
-void MediaLiveClient::StopChannelAsync(const StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientStopChannelAsyncHelper(MediaLiveClient const * const clientThis, const StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopChannel(request), context);
 }
 
-void MediaLiveClient::StopChannelAsyncHelper(const StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::StopChannelAsync(const StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientStopChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 StopMultiplexOutcome MediaLiveClient::StopMultiplex(const StopMultiplexRequest& request) const
@@ -1649,14 +1649,14 @@ StopMultiplexOutcomeCallable MediaLiveClient::StopMultiplexCallable(const StopMu
   return task->get_future();
 }
 
-void MediaLiveClient::StopMultiplexAsync(const StopMultiplexRequest& request, const StopMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientStopMultiplexAsyncHelper(MediaLiveClient const * const clientThis, const StopMultiplexRequest& request, const StopMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopMultiplexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopMultiplex(request), context);
 }
 
-void MediaLiveClient::StopMultiplexAsyncHelper(const StopMultiplexRequest& request, const StopMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::StopMultiplexAsync(const StopMultiplexRequest& request, const StopMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopMultiplex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientStopMultiplexAsyncHelper( this, request, handler, context ); } );
 }
 
 TransferInputDeviceOutcome MediaLiveClient::TransferInputDevice(const TransferInputDeviceRequest& request) const
@@ -1681,14 +1681,14 @@ TransferInputDeviceOutcomeCallable MediaLiveClient::TransferInputDeviceCallable(
   return task->get_future();
 }
 
-void MediaLiveClient::TransferInputDeviceAsync(const TransferInputDeviceRequest& request, const TransferInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientTransferInputDeviceAsyncHelper(MediaLiveClient const * const clientThis, const TransferInputDeviceRequest& request, const TransferInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TransferInputDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TransferInputDevice(request), context);
 }
 
-void MediaLiveClient::TransferInputDeviceAsyncHelper(const TransferInputDeviceRequest& request, const TransferInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::TransferInputDeviceAsync(const TransferInputDeviceRequest& request, const TransferInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TransferInputDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientTransferInputDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& request) const
@@ -1712,14 +1712,14 @@ UpdateChannelOutcomeCallable MediaLiveClient::UpdateChannelCallable(const Update
   return task->get_future();
 }
 
-void MediaLiveClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientUpdateChannelAsyncHelper(MediaLiveClient const * const clientThis, const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateChannel(request), context);
 }
 
-void MediaLiveClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientUpdateChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateChannelClassOutcome MediaLiveClient::UpdateChannelClass(const UpdateChannelClassRequest& request) const
@@ -1744,14 +1744,14 @@ UpdateChannelClassOutcomeCallable MediaLiveClient::UpdateChannelClassCallable(co
   return task->get_future();
 }
 
-void MediaLiveClient::UpdateChannelClassAsync(const UpdateChannelClassRequest& request, const UpdateChannelClassResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientUpdateChannelClassAsyncHelper(MediaLiveClient const * const clientThis, const UpdateChannelClassRequest& request, const UpdateChannelClassResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelClassAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateChannelClass(request), context);
 }
 
-void MediaLiveClient::UpdateChannelClassAsyncHelper(const UpdateChannelClassRequest& request, const UpdateChannelClassResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::UpdateChannelClassAsync(const UpdateChannelClassRequest& request, const UpdateChannelClassResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateChannelClass(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientUpdateChannelClassAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateInputOutcome MediaLiveClient::UpdateInput(const UpdateInputRequest& request) const
@@ -1775,14 +1775,14 @@ UpdateInputOutcomeCallable MediaLiveClient::UpdateInputCallable(const UpdateInpu
   return task->get_future();
 }
 
-void MediaLiveClient::UpdateInputAsync(const UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientUpdateInputAsyncHelper(MediaLiveClient const * const clientThis, const UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInputAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateInput(request), context);
 }
 
-void MediaLiveClient::UpdateInputAsyncHelper(const UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::UpdateInputAsync(const UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateInput(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientUpdateInputAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateInputDeviceOutcome MediaLiveClient::UpdateInputDevice(const UpdateInputDeviceRequest& request) const
@@ -1806,14 +1806,14 @@ UpdateInputDeviceOutcomeCallable MediaLiveClient::UpdateInputDeviceCallable(cons
   return task->get_future();
 }
 
-void MediaLiveClient::UpdateInputDeviceAsync(const UpdateInputDeviceRequest& request, const UpdateInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientUpdateInputDeviceAsyncHelper(MediaLiveClient const * const clientThis, const UpdateInputDeviceRequest& request, const UpdateInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInputDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateInputDevice(request), context);
 }
 
-void MediaLiveClient::UpdateInputDeviceAsyncHelper(const UpdateInputDeviceRequest& request, const UpdateInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::UpdateInputDeviceAsync(const UpdateInputDeviceRequest& request, const UpdateInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateInputDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientUpdateInputDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateInputSecurityGroupOutcome MediaLiveClient::UpdateInputSecurityGroup(const UpdateInputSecurityGroupRequest& request) const
@@ -1837,14 +1837,14 @@ UpdateInputSecurityGroupOutcomeCallable MediaLiveClient::UpdateInputSecurityGrou
   return task->get_future();
 }
 
-void MediaLiveClient::UpdateInputSecurityGroupAsync(const UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientUpdateInputSecurityGroupAsyncHelper(MediaLiveClient const * const clientThis, const UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInputSecurityGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateInputSecurityGroup(request), context);
 }
 
-void MediaLiveClient::UpdateInputSecurityGroupAsyncHelper(const UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::UpdateInputSecurityGroupAsync(const UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateInputSecurityGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientUpdateInputSecurityGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMultiplexOutcome MediaLiveClient::UpdateMultiplex(const UpdateMultiplexRequest& request) const
@@ -1868,14 +1868,14 @@ UpdateMultiplexOutcomeCallable MediaLiveClient::UpdateMultiplexCallable(const Up
   return task->get_future();
 }
 
-void MediaLiveClient::UpdateMultiplexAsync(const UpdateMultiplexRequest& request, const UpdateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientUpdateMultiplexAsyncHelper(MediaLiveClient const * const clientThis, const UpdateMultiplexRequest& request, const UpdateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMultiplexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMultiplex(request), context);
 }
 
-void MediaLiveClient::UpdateMultiplexAsyncHelper(const UpdateMultiplexRequest& request, const UpdateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::UpdateMultiplexAsync(const UpdateMultiplexRequest& request, const UpdateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMultiplex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientUpdateMultiplexAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMultiplexProgramOutcome MediaLiveClient::UpdateMultiplexProgram(const UpdateMultiplexProgramRequest& request) const
@@ -1906,14 +1906,14 @@ UpdateMultiplexProgramOutcomeCallable MediaLiveClient::UpdateMultiplexProgramCal
   return task->get_future();
 }
 
-void MediaLiveClient::UpdateMultiplexProgramAsync(const UpdateMultiplexProgramRequest& request, const UpdateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientUpdateMultiplexProgramAsyncHelper(MediaLiveClient const * const clientThis, const UpdateMultiplexProgramRequest& request, const UpdateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMultiplexProgramAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMultiplexProgram(request), context);
 }
 
-void MediaLiveClient::UpdateMultiplexProgramAsyncHelper(const UpdateMultiplexProgramRequest& request, const UpdateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::UpdateMultiplexProgramAsync(const UpdateMultiplexProgramRequest& request, const UpdateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMultiplexProgram(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientUpdateMultiplexProgramAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateReservationOutcome MediaLiveClient::UpdateReservation(const UpdateReservationRequest& request) const
@@ -1937,13 +1937,13 @@ UpdateReservationOutcomeCallable MediaLiveClient::UpdateReservationCallable(cons
   return task->get_future();
 }
 
-void MediaLiveClient::UpdateReservationAsync(const UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClientUpdateReservationAsyncHelper(MediaLiveClient const * const clientThis, const UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateReservation(request), context);
 }
 
-void MediaLiveClient::UpdateReservationAsyncHelper(const UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaLiveClient::UpdateReservationAsync(const UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateReservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaLiveClientUpdateReservationAsyncHelper( this, request, handler, context ); } );
 }
 

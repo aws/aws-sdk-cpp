@@ -174,14 +174,14 @@ CreateBatchInferenceJobOutcomeCallable PersonalizeClient::CreateBatchInferenceJo
   return task->get_future();
 }
 
-void PersonalizeClient::CreateBatchInferenceJobAsync(const CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateBatchInferenceJobAsyncHelper(PersonalizeClient const * const clientThis, const CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBatchInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBatchInferenceJob(request), context);
 }
 
-void PersonalizeClient::CreateBatchInferenceJobAsyncHelper(const CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateBatchInferenceJobAsync(const CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBatchInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateBatchInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBatchSegmentJobOutcome PersonalizeClient::CreateBatchSegmentJob(const CreateBatchSegmentJobRequest& request) const
@@ -198,14 +198,14 @@ CreateBatchSegmentJobOutcomeCallable PersonalizeClient::CreateBatchSegmentJobCal
   return task->get_future();
 }
 
-void PersonalizeClient::CreateBatchSegmentJobAsync(const CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateBatchSegmentJobAsyncHelper(PersonalizeClient const * const clientThis, const CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBatchSegmentJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBatchSegmentJob(request), context);
 }
 
-void PersonalizeClient::CreateBatchSegmentJobAsyncHelper(const CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateBatchSegmentJobAsync(const CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBatchSegmentJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateBatchSegmentJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCampaignOutcome PersonalizeClient::CreateCampaign(const CreateCampaignRequest& request) const
@@ -222,14 +222,14 @@ CreateCampaignOutcomeCallable PersonalizeClient::CreateCampaignCallable(const Cr
   return task->get_future();
 }
 
-void PersonalizeClient::CreateCampaignAsync(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateCampaignAsyncHelper(PersonalizeClient const * const clientThis, const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCampaign(request), context);
 }
 
-void PersonalizeClient::CreateCampaignAsyncHelper(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateCampaignAsync(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatasetOutcome PersonalizeClient::CreateDataset(const CreateDatasetRequest& request) const
@@ -246,14 +246,14 @@ CreateDatasetOutcomeCallable PersonalizeClient::CreateDatasetCallable(const Crea
   return task->get_future();
 }
 
-void PersonalizeClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateDatasetAsyncHelper(PersonalizeClient const * const clientThis, const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataset(request), context);
 }
 
-void PersonalizeClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatasetExportJobOutcome PersonalizeClient::CreateDatasetExportJob(const CreateDatasetExportJobRequest& request) const
@@ -270,14 +270,14 @@ CreateDatasetExportJobOutcomeCallable PersonalizeClient::CreateDatasetExportJobC
   return task->get_future();
 }
 
-void PersonalizeClient::CreateDatasetExportJobAsync(const CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateDatasetExportJobAsyncHelper(PersonalizeClient const * const clientThis, const CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDatasetExportJob(request), context);
 }
 
-void PersonalizeClient::CreateDatasetExportJobAsyncHelper(const CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateDatasetExportJobAsync(const CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDatasetExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateDatasetExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatasetGroupOutcome PersonalizeClient::CreateDatasetGroup(const CreateDatasetGroupRequest& request) const
@@ -294,14 +294,14 @@ CreateDatasetGroupOutcomeCallable PersonalizeClient::CreateDatasetGroupCallable(
   return task->get_future();
 }
 
-void PersonalizeClient::CreateDatasetGroupAsync(const CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateDatasetGroupAsyncHelper(PersonalizeClient const * const clientThis, const CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDatasetGroup(request), context);
 }
 
-void PersonalizeClient::CreateDatasetGroupAsyncHelper(const CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateDatasetGroupAsync(const CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDatasetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateDatasetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatasetImportJobOutcome PersonalizeClient::CreateDatasetImportJob(const CreateDatasetImportJobRequest& request) const
@@ -318,14 +318,14 @@ CreateDatasetImportJobOutcomeCallable PersonalizeClient::CreateDatasetImportJobC
   return task->get_future();
 }
 
-void PersonalizeClient::CreateDatasetImportJobAsync(const CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateDatasetImportJobAsyncHelper(PersonalizeClient const * const clientThis, const CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDatasetImportJob(request), context);
 }
 
-void PersonalizeClient::CreateDatasetImportJobAsyncHelper(const CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateDatasetImportJobAsync(const CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDatasetImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateDatasetImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEventTrackerOutcome PersonalizeClient::CreateEventTracker(const CreateEventTrackerRequest& request) const
@@ -342,14 +342,14 @@ CreateEventTrackerOutcomeCallable PersonalizeClient::CreateEventTrackerCallable(
   return task->get_future();
 }
 
-void PersonalizeClient::CreateEventTrackerAsync(const CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateEventTrackerAsyncHelper(PersonalizeClient const * const clientThis, const CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEventTrackerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEventTracker(request), context);
 }
 
-void PersonalizeClient::CreateEventTrackerAsyncHelper(const CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateEventTrackerAsync(const CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEventTracker(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateEventTrackerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFilterOutcome PersonalizeClient::CreateFilter(const CreateFilterRequest& request) const
@@ -366,14 +366,14 @@ CreateFilterOutcomeCallable PersonalizeClient::CreateFilterCallable(const Create
   return task->get_future();
 }
 
-void PersonalizeClient::CreateFilterAsync(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateFilterAsyncHelper(PersonalizeClient const * const clientThis, const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFilter(request), context);
 }
 
-void PersonalizeClient::CreateFilterAsyncHelper(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateFilterAsync(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRecommenderOutcome PersonalizeClient::CreateRecommender(const CreateRecommenderRequest& request) const
@@ -390,14 +390,14 @@ CreateRecommenderOutcomeCallable PersonalizeClient::CreateRecommenderCallable(co
   return task->get_future();
 }
 
-void PersonalizeClient::CreateRecommenderAsync(const CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateRecommenderAsyncHelper(PersonalizeClient const * const clientThis, const CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRecommenderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRecommender(request), context);
 }
 
-void PersonalizeClient::CreateRecommenderAsyncHelper(const CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateRecommenderAsync(const CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRecommender(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateRecommenderAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSchemaOutcome PersonalizeClient::CreateSchema(const CreateSchemaRequest& request) const
@@ -414,14 +414,14 @@ CreateSchemaOutcomeCallable PersonalizeClient::CreateSchemaCallable(const Create
   return task->get_future();
 }
 
-void PersonalizeClient::CreateSchemaAsync(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateSchemaAsyncHelper(PersonalizeClient const * const clientThis, const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSchema(request), context);
 }
 
-void PersonalizeClient::CreateSchemaAsyncHelper(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateSchemaAsync(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSolutionOutcome PersonalizeClient::CreateSolution(const CreateSolutionRequest& request) const
@@ -438,14 +438,14 @@ CreateSolutionOutcomeCallable PersonalizeClient::CreateSolutionCallable(const Cr
   return task->get_future();
 }
 
-void PersonalizeClient::CreateSolutionAsync(const CreateSolutionRequest& request, const CreateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateSolutionAsyncHelper(PersonalizeClient const * const clientThis, const CreateSolutionRequest& request, const CreateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSolutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSolution(request), context);
 }
 
-void PersonalizeClient::CreateSolutionAsyncHelper(const CreateSolutionRequest& request, const CreateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateSolutionAsync(const CreateSolutionRequest& request, const CreateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSolution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateSolutionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSolutionVersionOutcome PersonalizeClient::CreateSolutionVersion(const CreateSolutionVersionRequest& request) const
@@ -462,14 +462,14 @@ CreateSolutionVersionOutcomeCallable PersonalizeClient::CreateSolutionVersionCal
   return task->get_future();
 }
 
-void PersonalizeClient::CreateSolutionVersionAsync(const CreateSolutionVersionRequest& request, const CreateSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientCreateSolutionVersionAsyncHelper(PersonalizeClient const * const clientThis, const CreateSolutionVersionRequest& request, const CreateSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSolutionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSolutionVersion(request), context);
 }
 
-void PersonalizeClient::CreateSolutionVersionAsyncHelper(const CreateSolutionVersionRequest& request, const CreateSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::CreateSolutionVersionAsync(const CreateSolutionVersionRequest& request, const CreateSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSolutionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientCreateSolutionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCampaignOutcome PersonalizeClient::DeleteCampaign(const DeleteCampaignRequest& request) const
@@ -486,14 +486,14 @@ DeleteCampaignOutcomeCallable PersonalizeClient::DeleteCampaignCallable(const De
   return task->get_future();
 }
 
-void PersonalizeClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDeleteCampaignAsyncHelper(PersonalizeClient const * const clientThis, const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCampaign(request), context);
 }
 
-void PersonalizeClient::DeleteCampaignAsyncHelper(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDeleteCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatasetOutcome PersonalizeClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -510,14 +510,14 @@ DeleteDatasetOutcomeCallable PersonalizeClient::DeleteDatasetCallable(const Dele
   return task->get_future();
 }
 
-void PersonalizeClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDeleteDatasetAsyncHelper(PersonalizeClient const * const clientThis, const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataset(request), context);
 }
 
-void PersonalizeClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDeleteDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatasetGroupOutcome PersonalizeClient::DeleteDatasetGroup(const DeleteDatasetGroupRequest& request) const
@@ -534,14 +534,14 @@ DeleteDatasetGroupOutcomeCallable PersonalizeClient::DeleteDatasetGroupCallable(
   return task->get_future();
 }
 
-void PersonalizeClient::DeleteDatasetGroupAsync(const DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDeleteDatasetGroupAsyncHelper(PersonalizeClient const * const clientThis, const DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDatasetGroup(request), context);
 }
 
-void PersonalizeClient::DeleteDatasetGroupAsyncHelper(const DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DeleteDatasetGroupAsync(const DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDatasetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDeleteDatasetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEventTrackerOutcome PersonalizeClient::DeleteEventTracker(const DeleteEventTrackerRequest& request) const
@@ -558,14 +558,14 @@ DeleteEventTrackerOutcomeCallable PersonalizeClient::DeleteEventTrackerCallable(
   return task->get_future();
 }
 
-void PersonalizeClient::DeleteEventTrackerAsync(const DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDeleteEventTrackerAsyncHelper(PersonalizeClient const * const clientThis, const DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventTrackerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEventTracker(request), context);
 }
 
-void PersonalizeClient::DeleteEventTrackerAsyncHelper(const DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DeleteEventTrackerAsync(const DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEventTracker(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDeleteEventTrackerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFilterOutcome PersonalizeClient::DeleteFilter(const DeleteFilterRequest& request) const
@@ -582,14 +582,14 @@ DeleteFilterOutcomeCallable PersonalizeClient::DeleteFilterCallable(const Delete
   return task->get_future();
 }
 
-void PersonalizeClient::DeleteFilterAsync(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDeleteFilterAsyncHelper(PersonalizeClient const * const clientThis, const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFilter(request), context);
 }
 
-void PersonalizeClient::DeleteFilterAsyncHelper(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DeleteFilterAsync(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDeleteFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRecommenderOutcome PersonalizeClient::DeleteRecommender(const DeleteRecommenderRequest& request) const
@@ -606,14 +606,14 @@ DeleteRecommenderOutcomeCallable PersonalizeClient::DeleteRecommenderCallable(co
   return task->get_future();
 }
 
-void PersonalizeClient::DeleteRecommenderAsync(const DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDeleteRecommenderAsyncHelper(PersonalizeClient const * const clientThis, const DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecommenderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRecommender(request), context);
 }
 
-void PersonalizeClient::DeleteRecommenderAsyncHelper(const DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DeleteRecommenderAsync(const DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRecommender(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDeleteRecommenderAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSchemaOutcome PersonalizeClient::DeleteSchema(const DeleteSchemaRequest& request) const
@@ -630,14 +630,14 @@ DeleteSchemaOutcomeCallable PersonalizeClient::DeleteSchemaCallable(const Delete
   return task->get_future();
 }
 
-void PersonalizeClient::DeleteSchemaAsync(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDeleteSchemaAsyncHelper(PersonalizeClient const * const clientThis, const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSchema(request), context);
 }
 
-void PersonalizeClient::DeleteSchemaAsyncHelper(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DeleteSchemaAsync(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDeleteSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSolutionOutcome PersonalizeClient::DeleteSolution(const DeleteSolutionRequest& request) const
@@ -654,14 +654,14 @@ DeleteSolutionOutcomeCallable PersonalizeClient::DeleteSolutionCallable(const De
   return task->get_future();
 }
 
-void PersonalizeClient::DeleteSolutionAsync(const DeleteSolutionRequest& request, const DeleteSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDeleteSolutionAsyncHelper(PersonalizeClient const * const clientThis, const DeleteSolutionRequest& request, const DeleteSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSolutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSolution(request), context);
 }
 
-void PersonalizeClient::DeleteSolutionAsyncHelper(const DeleteSolutionRequest& request, const DeleteSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DeleteSolutionAsync(const DeleteSolutionRequest& request, const DeleteSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSolution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDeleteSolutionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAlgorithmOutcome PersonalizeClient::DescribeAlgorithm(const DescribeAlgorithmRequest& request) const
@@ -678,14 +678,14 @@ DescribeAlgorithmOutcomeCallable PersonalizeClient::DescribeAlgorithmCallable(co
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeAlgorithmAsync(const DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeAlgorithmAsyncHelper(PersonalizeClient const * const clientThis, const DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAlgorithmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAlgorithm(request), context);
 }
 
-void PersonalizeClient::DescribeAlgorithmAsyncHelper(const DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeAlgorithmAsync(const DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAlgorithm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeAlgorithmAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBatchInferenceJobOutcome PersonalizeClient::DescribeBatchInferenceJob(const DescribeBatchInferenceJobRequest& request) const
@@ -702,14 +702,14 @@ DescribeBatchInferenceJobOutcomeCallable PersonalizeClient::DescribeBatchInferen
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeBatchInferenceJobAsync(const DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeBatchInferenceJobAsyncHelper(PersonalizeClient const * const clientThis, const DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBatchInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBatchInferenceJob(request), context);
 }
 
-void PersonalizeClient::DescribeBatchInferenceJobAsyncHelper(const DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeBatchInferenceJobAsync(const DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBatchInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeBatchInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBatchSegmentJobOutcome PersonalizeClient::DescribeBatchSegmentJob(const DescribeBatchSegmentJobRequest& request) const
@@ -726,14 +726,14 @@ DescribeBatchSegmentJobOutcomeCallable PersonalizeClient::DescribeBatchSegmentJo
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeBatchSegmentJobAsync(const DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeBatchSegmentJobAsyncHelper(PersonalizeClient const * const clientThis, const DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBatchSegmentJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBatchSegmentJob(request), context);
 }
 
-void PersonalizeClient::DescribeBatchSegmentJobAsyncHelper(const DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeBatchSegmentJobAsync(const DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBatchSegmentJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeBatchSegmentJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCampaignOutcome PersonalizeClient::DescribeCampaign(const DescribeCampaignRequest& request) const
@@ -750,14 +750,14 @@ DescribeCampaignOutcomeCallable PersonalizeClient::DescribeCampaignCallable(cons
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeCampaignAsync(const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeCampaignAsyncHelper(PersonalizeClient const * const clientThis, const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCampaign(request), context);
 }
 
-void PersonalizeClient::DescribeCampaignAsyncHelper(const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeCampaignAsync(const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatasetOutcome PersonalizeClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -774,14 +774,14 @@ DescribeDatasetOutcomeCallable PersonalizeClient::DescribeDatasetCallable(const 
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeDatasetAsyncHelper(PersonalizeClient const * const clientThis, const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataset(request), context);
 }
 
-void PersonalizeClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatasetExportJobOutcome PersonalizeClient::DescribeDatasetExportJob(const DescribeDatasetExportJobRequest& request) const
@@ -798,14 +798,14 @@ DescribeDatasetExportJobOutcomeCallable PersonalizeClient::DescribeDatasetExport
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeDatasetExportJobAsync(const DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeDatasetExportJobAsyncHelper(PersonalizeClient const * const clientThis, const DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDatasetExportJob(request), context);
 }
 
-void PersonalizeClient::DescribeDatasetExportJobAsyncHelper(const DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeDatasetExportJobAsync(const DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDatasetExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeDatasetExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatasetGroupOutcome PersonalizeClient::DescribeDatasetGroup(const DescribeDatasetGroupRequest& request) const
@@ -822,14 +822,14 @@ DescribeDatasetGroupOutcomeCallable PersonalizeClient::DescribeDatasetGroupCalla
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeDatasetGroupAsync(const DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeDatasetGroupAsyncHelper(PersonalizeClient const * const clientThis, const DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDatasetGroup(request), context);
 }
 
-void PersonalizeClient::DescribeDatasetGroupAsyncHelper(const DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeDatasetGroupAsync(const DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDatasetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeDatasetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatasetImportJobOutcome PersonalizeClient::DescribeDatasetImportJob(const DescribeDatasetImportJobRequest& request) const
@@ -846,14 +846,14 @@ DescribeDatasetImportJobOutcomeCallable PersonalizeClient::DescribeDatasetImport
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeDatasetImportJobAsync(const DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeDatasetImportJobAsyncHelper(PersonalizeClient const * const clientThis, const DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDatasetImportJob(request), context);
 }
 
-void PersonalizeClient::DescribeDatasetImportJobAsyncHelper(const DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeDatasetImportJobAsync(const DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDatasetImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeDatasetImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventTrackerOutcome PersonalizeClient::DescribeEventTracker(const DescribeEventTrackerRequest& request) const
@@ -870,14 +870,14 @@ DescribeEventTrackerOutcomeCallable PersonalizeClient::DescribeEventTrackerCalla
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeEventTrackerAsync(const DescribeEventTrackerRequest& request, const DescribeEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeEventTrackerAsyncHelper(PersonalizeClient const * const clientThis, const DescribeEventTrackerRequest& request, const DescribeEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventTrackerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEventTracker(request), context);
 }
 
-void PersonalizeClient::DescribeEventTrackerAsyncHelper(const DescribeEventTrackerRequest& request, const DescribeEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeEventTrackerAsync(const DescribeEventTrackerRequest& request, const DescribeEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEventTracker(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeEventTrackerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFeatureTransformationOutcome PersonalizeClient::DescribeFeatureTransformation(const DescribeFeatureTransformationRequest& request) const
@@ -894,14 +894,14 @@ DescribeFeatureTransformationOutcomeCallable PersonalizeClient::DescribeFeatureT
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeFeatureTransformationAsync(const DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeFeatureTransformationAsyncHelper(PersonalizeClient const * const clientThis, const DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFeatureTransformationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFeatureTransformation(request), context);
 }
 
-void PersonalizeClient::DescribeFeatureTransformationAsyncHelper(const DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeFeatureTransformationAsync(const DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFeatureTransformation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeFeatureTransformationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFilterOutcome PersonalizeClient::DescribeFilter(const DescribeFilterRequest& request) const
@@ -918,14 +918,14 @@ DescribeFilterOutcomeCallable PersonalizeClient::DescribeFilterCallable(const De
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeFilterAsync(const DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeFilterAsyncHelper(PersonalizeClient const * const clientThis, const DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFilter(request), context);
 }
 
-void PersonalizeClient::DescribeFilterAsyncHelper(const DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeFilterAsync(const DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRecipeOutcome PersonalizeClient::DescribeRecipe(const DescribeRecipeRequest& request) const
@@ -942,14 +942,14 @@ DescribeRecipeOutcomeCallable PersonalizeClient::DescribeRecipeCallable(const De
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeRecipeAsync(const DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeRecipeAsyncHelper(PersonalizeClient const * const clientThis, const DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecipeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRecipe(request), context);
 }
 
-void PersonalizeClient::DescribeRecipeAsyncHelper(const DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeRecipeAsync(const DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeRecipeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRecommenderOutcome PersonalizeClient::DescribeRecommender(const DescribeRecommenderRequest& request) const
@@ -966,14 +966,14 @@ DescribeRecommenderOutcomeCallable PersonalizeClient::DescribeRecommenderCallabl
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeRecommenderAsync(const DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeRecommenderAsyncHelper(PersonalizeClient const * const clientThis, const DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecommenderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRecommender(request), context);
 }
 
-void PersonalizeClient::DescribeRecommenderAsyncHelper(const DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeRecommenderAsync(const DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRecommender(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeRecommenderAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSchemaOutcome PersonalizeClient::DescribeSchema(const DescribeSchemaRequest& request) const
@@ -990,14 +990,14 @@ DescribeSchemaOutcomeCallable PersonalizeClient::DescribeSchemaCallable(const De
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeSchemaAsync(const DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeSchemaAsyncHelper(PersonalizeClient const * const clientThis, const DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSchema(request), context);
 }
 
-void PersonalizeClient::DescribeSchemaAsyncHelper(const DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeSchemaAsync(const DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSolutionOutcome PersonalizeClient::DescribeSolution(const DescribeSolutionRequest& request) const
@@ -1014,14 +1014,14 @@ DescribeSolutionOutcomeCallable PersonalizeClient::DescribeSolutionCallable(cons
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeSolutionAsync(const DescribeSolutionRequest& request, const DescribeSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeSolutionAsyncHelper(PersonalizeClient const * const clientThis, const DescribeSolutionRequest& request, const DescribeSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSolutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSolution(request), context);
 }
 
-void PersonalizeClient::DescribeSolutionAsyncHelper(const DescribeSolutionRequest& request, const DescribeSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeSolutionAsync(const DescribeSolutionRequest& request, const DescribeSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSolution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeSolutionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSolutionVersionOutcome PersonalizeClient::DescribeSolutionVersion(const DescribeSolutionVersionRequest& request) const
@@ -1038,14 +1038,14 @@ DescribeSolutionVersionOutcomeCallable PersonalizeClient::DescribeSolutionVersio
   return task->get_future();
 }
 
-void PersonalizeClient::DescribeSolutionVersionAsync(const DescribeSolutionVersionRequest& request, const DescribeSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientDescribeSolutionVersionAsyncHelper(PersonalizeClient const * const clientThis, const DescribeSolutionVersionRequest& request, const DescribeSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSolutionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSolutionVersion(request), context);
 }
 
-void PersonalizeClient::DescribeSolutionVersionAsyncHelper(const DescribeSolutionVersionRequest& request, const DescribeSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::DescribeSolutionVersionAsync(const DescribeSolutionVersionRequest& request, const DescribeSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSolutionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientDescribeSolutionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSolutionMetricsOutcome PersonalizeClient::GetSolutionMetrics(const GetSolutionMetricsRequest& request) const
@@ -1062,14 +1062,14 @@ GetSolutionMetricsOutcomeCallable PersonalizeClient::GetSolutionMetricsCallable(
   return task->get_future();
 }
 
-void PersonalizeClient::GetSolutionMetricsAsync(const GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientGetSolutionMetricsAsyncHelper(PersonalizeClient const * const clientThis, const GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSolutionMetricsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSolutionMetrics(request), context);
 }
 
-void PersonalizeClient::GetSolutionMetricsAsyncHelper(const GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::GetSolutionMetricsAsync(const GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSolutionMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientGetSolutionMetricsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBatchInferenceJobsOutcome PersonalizeClient::ListBatchInferenceJobs(const ListBatchInferenceJobsRequest& request) const
@@ -1086,14 +1086,14 @@ ListBatchInferenceJobsOutcomeCallable PersonalizeClient::ListBatchInferenceJobsC
   return task->get_future();
 }
 
-void PersonalizeClient::ListBatchInferenceJobsAsync(const ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListBatchInferenceJobsAsyncHelper(PersonalizeClient const * const clientThis, const ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBatchInferenceJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBatchInferenceJobs(request), context);
 }
 
-void PersonalizeClient::ListBatchInferenceJobsAsyncHelper(const ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListBatchInferenceJobsAsync(const ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBatchInferenceJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListBatchInferenceJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBatchSegmentJobsOutcome PersonalizeClient::ListBatchSegmentJobs(const ListBatchSegmentJobsRequest& request) const
@@ -1110,14 +1110,14 @@ ListBatchSegmentJobsOutcomeCallable PersonalizeClient::ListBatchSegmentJobsCalla
   return task->get_future();
 }
 
-void PersonalizeClient::ListBatchSegmentJobsAsync(const ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListBatchSegmentJobsAsyncHelper(PersonalizeClient const * const clientThis, const ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBatchSegmentJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBatchSegmentJobs(request), context);
 }
 
-void PersonalizeClient::ListBatchSegmentJobsAsyncHelper(const ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListBatchSegmentJobsAsync(const ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBatchSegmentJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListBatchSegmentJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCampaignsOutcome PersonalizeClient::ListCampaigns(const ListCampaignsRequest& request) const
@@ -1134,14 +1134,14 @@ ListCampaignsOutcomeCallable PersonalizeClient::ListCampaignsCallable(const List
   return task->get_future();
 }
 
-void PersonalizeClient::ListCampaignsAsync(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListCampaignsAsyncHelper(PersonalizeClient const * const clientThis, const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCampaignsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCampaigns(request), context);
 }
 
-void PersonalizeClient::ListCampaignsAsyncHelper(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListCampaignsAsync(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCampaigns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListCampaignsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetExportJobsOutcome PersonalizeClient::ListDatasetExportJobs(const ListDatasetExportJobsRequest& request) const
@@ -1158,14 +1158,14 @@ ListDatasetExportJobsOutcomeCallable PersonalizeClient::ListDatasetExportJobsCal
   return task->get_future();
 }
 
-void PersonalizeClient::ListDatasetExportJobsAsync(const ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListDatasetExportJobsAsyncHelper(PersonalizeClient const * const clientThis, const ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetExportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasetExportJobs(request), context);
 }
 
-void PersonalizeClient::ListDatasetExportJobsAsyncHelper(const ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListDatasetExportJobsAsync(const ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasetExportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListDatasetExportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetGroupsOutcome PersonalizeClient::ListDatasetGroups(const ListDatasetGroupsRequest& request) const
@@ -1182,14 +1182,14 @@ ListDatasetGroupsOutcomeCallable PersonalizeClient::ListDatasetGroupsCallable(co
   return task->get_future();
 }
 
-void PersonalizeClient::ListDatasetGroupsAsync(const ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListDatasetGroupsAsyncHelper(PersonalizeClient const * const clientThis, const ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasetGroups(request), context);
 }
 
-void PersonalizeClient::ListDatasetGroupsAsyncHelper(const ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListDatasetGroupsAsync(const ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasetGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListDatasetGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetImportJobsOutcome PersonalizeClient::ListDatasetImportJobs(const ListDatasetImportJobsRequest& request) const
@@ -1206,14 +1206,14 @@ ListDatasetImportJobsOutcomeCallable PersonalizeClient::ListDatasetImportJobsCal
   return task->get_future();
 }
 
-void PersonalizeClient::ListDatasetImportJobsAsync(const ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListDatasetImportJobsAsyncHelper(PersonalizeClient const * const clientThis, const ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetImportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasetImportJobs(request), context);
 }
 
-void PersonalizeClient::ListDatasetImportJobsAsyncHelper(const ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListDatasetImportJobsAsync(const ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasetImportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListDatasetImportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetsOutcome PersonalizeClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -1230,14 +1230,14 @@ ListDatasetsOutcomeCallable PersonalizeClient::ListDatasetsCallable(const ListDa
   return task->get_future();
 }
 
-void PersonalizeClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListDatasetsAsyncHelper(PersonalizeClient const * const clientThis, const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasets(request), context);
 }
 
-void PersonalizeClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListDatasetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEventTrackersOutcome PersonalizeClient::ListEventTrackers(const ListEventTrackersRequest& request) const
@@ -1254,14 +1254,14 @@ ListEventTrackersOutcomeCallable PersonalizeClient::ListEventTrackersCallable(co
   return task->get_future();
 }
 
-void PersonalizeClient::ListEventTrackersAsync(const ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListEventTrackersAsyncHelper(PersonalizeClient const * const clientThis, const ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventTrackersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEventTrackers(request), context);
 }
 
-void PersonalizeClient::ListEventTrackersAsyncHelper(const ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListEventTrackersAsync(const ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEventTrackers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListEventTrackersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFiltersOutcome PersonalizeClient::ListFilters(const ListFiltersRequest& request) const
@@ -1278,14 +1278,14 @@ ListFiltersOutcomeCallable PersonalizeClient::ListFiltersCallable(const ListFilt
   return task->get_future();
 }
 
-void PersonalizeClient::ListFiltersAsync(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListFiltersAsyncHelper(PersonalizeClient const * const clientThis, const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFiltersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFilters(request), context);
 }
 
-void PersonalizeClient::ListFiltersAsyncHelper(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListFiltersAsync(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFilters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListFiltersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRecipesOutcome PersonalizeClient::ListRecipes(const ListRecipesRequest& request) const
@@ -1302,14 +1302,14 @@ ListRecipesOutcomeCallable PersonalizeClient::ListRecipesCallable(const ListReci
   return task->get_future();
 }
 
-void PersonalizeClient::ListRecipesAsync(const ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListRecipesAsyncHelper(PersonalizeClient const * const clientThis, const ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecipesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRecipes(request), context);
 }
 
-void PersonalizeClient::ListRecipesAsyncHelper(const ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListRecipesAsync(const ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRecipes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListRecipesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRecommendersOutcome PersonalizeClient::ListRecommenders(const ListRecommendersRequest& request) const
@@ -1326,14 +1326,14 @@ ListRecommendersOutcomeCallable PersonalizeClient::ListRecommendersCallable(cons
   return task->get_future();
 }
 
-void PersonalizeClient::ListRecommendersAsync(const ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListRecommendersAsyncHelper(PersonalizeClient const * const clientThis, const ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecommendersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRecommenders(request), context);
 }
 
-void PersonalizeClient::ListRecommendersAsyncHelper(const ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListRecommendersAsync(const ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRecommenders(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListRecommendersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSchemasOutcome PersonalizeClient::ListSchemas(const ListSchemasRequest& request) const
@@ -1350,14 +1350,14 @@ ListSchemasOutcomeCallable PersonalizeClient::ListSchemasCallable(const ListSche
   return task->get_future();
 }
 
-void PersonalizeClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListSchemasAsyncHelper(PersonalizeClient const * const clientThis, const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSchemasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSchemas(request), context);
 }
 
-void PersonalizeClient::ListSchemasAsyncHelper(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSchemas(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListSchemasAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSolutionVersionsOutcome PersonalizeClient::ListSolutionVersions(const ListSolutionVersionsRequest& request) const
@@ -1374,14 +1374,14 @@ ListSolutionVersionsOutcomeCallable PersonalizeClient::ListSolutionVersionsCalla
   return task->get_future();
 }
 
-void PersonalizeClient::ListSolutionVersionsAsync(const ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListSolutionVersionsAsyncHelper(PersonalizeClient const * const clientThis, const ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSolutionVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSolutionVersions(request), context);
 }
 
-void PersonalizeClient::ListSolutionVersionsAsyncHelper(const ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListSolutionVersionsAsync(const ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSolutionVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListSolutionVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSolutionsOutcome PersonalizeClient::ListSolutions(const ListSolutionsRequest& request) const
@@ -1398,14 +1398,14 @@ ListSolutionsOutcomeCallable PersonalizeClient::ListSolutionsCallable(const List
   return task->get_future();
 }
 
-void PersonalizeClient::ListSolutionsAsync(const ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListSolutionsAsyncHelper(PersonalizeClient const * const clientThis, const ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSolutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSolutions(request), context);
 }
 
-void PersonalizeClient::ListSolutionsAsyncHelper(const ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListSolutionsAsync(const ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSolutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListSolutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome PersonalizeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1422,14 +1422,14 @@ ListTagsForResourceOutcomeCallable PersonalizeClient::ListTagsForResourceCallabl
   return task->get_future();
 }
 
-void PersonalizeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientListTagsForResourceAsyncHelper(PersonalizeClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void PersonalizeClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartRecommenderOutcome PersonalizeClient::StartRecommender(const StartRecommenderRequest& request) const
@@ -1446,14 +1446,14 @@ StartRecommenderOutcomeCallable PersonalizeClient::StartRecommenderCallable(cons
   return task->get_future();
 }
 
-void PersonalizeClient::StartRecommenderAsync(const StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientStartRecommenderAsyncHelper(PersonalizeClient const * const clientThis, const StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartRecommenderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartRecommender(request), context);
 }
 
-void PersonalizeClient::StartRecommenderAsyncHelper(const StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::StartRecommenderAsync(const StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartRecommender(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientStartRecommenderAsyncHelper( this, request, handler, context ); } );
 }
 
 StopRecommenderOutcome PersonalizeClient::StopRecommender(const StopRecommenderRequest& request) const
@@ -1470,14 +1470,14 @@ StopRecommenderOutcomeCallable PersonalizeClient::StopRecommenderCallable(const 
   return task->get_future();
 }
 
-void PersonalizeClient::StopRecommenderAsync(const StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientStopRecommenderAsyncHelper(PersonalizeClient const * const clientThis, const StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopRecommenderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopRecommender(request), context);
 }
 
-void PersonalizeClient::StopRecommenderAsyncHelper(const StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::StopRecommenderAsync(const StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopRecommender(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientStopRecommenderAsyncHelper( this, request, handler, context ); } );
 }
 
 StopSolutionVersionCreationOutcome PersonalizeClient::StopSolutionVersionCreation(const StopSolutionVersionCreationRequest& request) const
@@ -1494,14 +1494,14 @@ StopSolutionVersionCreationOutcomeCallable PersonalizeClient::StopSolutionVersio
   return task->get_future();
 }
 
-void PersonalizeClient::StopSolutionVersionCreationAsync(const StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientStopSolutionVersionCreationAsyncHelper(PersonalizeClient const * const clientThis, const StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopSolutionVersionCreationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopSolutionVersionCreation(request), context);
 }
 
-void PersonalizeClient::StopSolutionVersionCreationAsyncHelper(const StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::StopSolutionVersionCreationAsync(const StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopSolutionVersionCreation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientStopSolutionVersionCreationAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome PersonalizeClient::TagResource(const TagResourceRequest& request) const
@@ -1518,14 +1518,14 @@ TagResourceOutcomeCallable PersonalizeClient::TagResourceCallable(const TagResou
   return task->get_future();
 }
 
-void PersonalizeClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientTagResourceAsyncHelper(PersonalizeClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void PersonalizeClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome PersonalizeClient::UntagResource(const UntagResourceRequest& request) const
@@ -1542,14 +1542,14 @@ UntagResourceOutcomeCallable PersonalizeClient::UntagResourceCallable(const Unta
   return task->get_future();
 }
 
-void PersonalizeClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientUntagResourceAsyncHelper(PersonalizeClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void PersonalizeClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCampaignOutcome PersonalizeClient::UpdateCampaign(const UpdateCampaignRequest& request) const
@@ -1566,14 +1566,14 @@ UpdateCampaignOutcomeCallable PersonalizeClient::UpdateCampaignCallable(const Up
   return task->get_future();
 }
 
-void PersonalizeClient::UpdateCampaignAsync(const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientUpdateCampaignAsyncHelper(PersonalizeClient const * const clientThis, const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCampaign(request), context);
 }
 
-void PersonalizeClient::UpdateCampaignAsyncHelper(const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::UpdateCampaignAsync(const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientUpdateCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRecommenderOutcome PersonalizeClient::UpdateRecommender(const UpdateRecommenderRequest& request) const
@@ -1590,13 +1590,13 @@ UpdateRecommenderOutcomeCallable PersonalizeClient::UpdateRecommenderCallable(co
   return task->get_future();
 }
 
-void PersonalizeClient::UpdateRecommenderAsync(const UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClientUpdateRecommenderAsyncHelper(PersonalizeClient const * const clientThis, const UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRecommenderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRecommender(request), context);
 }
 
-void PersonalizeClient::UpdateRecommenderAsyncHelper(const UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeClient::UpdateRecommenderAsync(const UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRecommender(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeClientUpdateRecommenderAsyncHelper( this, request, handler, context ); } );
 }
 

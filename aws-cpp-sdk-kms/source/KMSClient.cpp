@@ -164,14 +164,14 @@ CancelKeyDeletionOutcomeCallable KMSClient::CancelKeyDeletionCallable(const Canc
   return task->get_future();
 }
 
-void KMSClient::CancelKeyDeletionAsync(const CancelKeyDeletionRequest& request, const CancelKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientCancelKeyDeletionAsyncHelper(KMSClient const * const clientThis, const CancelKeyDeletionRequest& request, const CancelKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelKeyDeletionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelKeyDeletion(request), context);
 }
 
-void KMSClient::CancelKeyDeletionAsyncHelper(const CancelKeyDeletionRequest& request, const CancelKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::CancelKeyDeletionAsync(const CancelKeyDeletionRequest& request, const CancelKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelKeyDeletion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientCancelKeyDeletionAsyncHelper( this, request, handler, context ); } );
 }
 
 ConnectCustomKeyStoreOutcome KMSClient::ConnectCustomKeyStore(const ConnectCustomKeyStoreRequest& request) const
@@ -188,14 +188,14 @@ ConnectCustomKeyStoreOutcomeCallable KMSClient::ConnectCustomKeyStoreCallable(co
   return task->get_future();
 }
 
-void KMSClient::ConnectCustomKeyStoreAsync(const ConnectCustomKeyStoreRequest& request, const ConnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientConnectCustomKeyStoreAsyncHelper(KMSClient const * const clientThis, const ConnectCustomKeyStoreRequest& request, const ConnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConnectCustomKeyStoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConnectCustomKeyStore(request), context);
 }
 
-void KMSClient::ConnectCustomKeyStoreAsyncHelper(const ConnectCustomKeyStoreRequest& request, const ConnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ConnectCustomKeyStoreAsync(const ConnectCustomKeyStoreRequest& request, const ConnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConnectCustomKeyStore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientConnectCustomKeyStoreAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAliasOutcome KMSClient::CreateAlias(const CreateAliasRequest& request) const
@@ -212,14 +212,14 @@ CreateAliasOutcomeCallable KMSClient::CreateAliasCallable(const CreateAliasReque
   return task->get_future();
 }
 
-void KMSClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientCreateAliasAsyncHelper(KMSClient const * const clientThis, const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAlias(request), context);
 }
 
-void KMSClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientCreateAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomKeyStoreOutcome KMSClient::CreateCustomKeyStore(const CreateCustomKeyStoreRequest& request) const
@@ -236,14 +236,14 @@ CreateCustomKeyStoreOutcomeCallable KMSClient::CreateCustomKeyStoreCallable(cons
   return task->get_future();
 }
 
-void KMSClient::CreateCustomKeyStoreAsync(const CreateCustomKeyStoreRequest& request, const CreateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientCreateCustomKeyStoreAsyncHelper(KMSClient const * const clientThis, const CreateCustomKeyStoreRequest& request, const CreateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomKeyStoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomKeyStore(request), context);
 }
 
-void KMSClient::CreateCustomKeyStoreAsyncHelper(const CreateCustomKeyStoreRequest& request, const CreateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::CreateCustomKeyStoreAsync(const CreateCustomKeyStoreRequest& request, const CreateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomKeyStore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientCreateCustomKeyStoreAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGrantOutcome KMSClient::CreateGrant(const CreateGrantRequest& request) const
@@ -260,14 +260,14 @@ CreateGrantOutcomeCallable KMSClient::CreateGrantCallable(const CreateGrantReque
   return task->get_future();
 }
 
-void KMSClient::CreateGrantAsync(const CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientCreateGrantAsyncHelper(KMSClient const * const clientThis, const CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGrantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGrant(request), context);
 }
 
-void KMSClient::CreateGrantAsyncHelper(const CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::CreateGrantAsync(const CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGrant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientCreateGrantAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateKeyOutcome KMSClient::CreateKey(const CreateKeyRequest& request) const
@@ -284,14 +284,14 @@ CreateKeyOutcomeCallable KMSClient::CreateKeyCallable(const CreateKeyRequest& re
   return task->get_future();
 }
 
-void KMSClient::CreateKeyAsync(const CreateKeyRequest& request, const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientCreateKeyAsyncHelper(KMSClient const * const clientThis, const CreateKeyRequest& request, const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateKey(request), context);
 }
 
-void KMSClient::CreateKeyAsyncHelper(const CreateKeyRequest& request, const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::CreateKeyAsync(const CreateKeyRequest& request, const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientCreateKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 DecryptOutcome KMSClient::Decrypt(const DecryptRequest& request) const
@@ -308,14 +308,14 @@ DecryptOutcomeCallable KMSClient::DecryptCallable(const DecryptRequest& request)
   return task->get_future();
 }
 
-void KMSClient::DecryptAsync(const DecryptRequest& request, const DecryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientDecryptAsyncHelper(KMSClient const * const clientThis, const DecryptRequest& request, const DecryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DecryptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Decrypt(request), context);
 }
 
-void KMSClient::DecryptAsyncHelper(const DecryptRequest& request, const DecryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::DecryptAsync(const DecryptRequest& request, const DecryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Decrypt(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientDecryptAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAliasOutcome KMSClient::DeleteAlias(const DeleteAliasRequest& request) const
@@ -332,14 +332,14 @@ DeleteAliasOutcomeCallable KMSClient::DeleteAliasCallable(const DeleteAliasReque
   return task->get_future();
 }
 
-void KMSClient::DeleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientDeleteAliasAsyncHelper(KMSClient const * const clientThis, const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAlias(request), context);
 }
 
-void KMSClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::DeleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientDeleteAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomKeyStoreOutcome KMSClient::DeleteCustomKeyStore(const DeleteCustomKeyStoreRequest& request) const
@@ -356,14 +356,14 @@ DeleteCustomKeyStoreOutcomeCallable KMSClient::DeleteCustomKeyStoreCallable(cons
   return task->get_future();
 }
 
-void KMSClient::DeleteCustomKeyStoreAsync(const DeleteCustomKeyStoreRequest& request, const DeleteCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientDeleteCustomKeyStoreAsyncHelper(KMSClient const * const clientThis, const DeleteCustomKeyStoreRequest& request, const DeleteCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomKeyStoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomKeyStore(request), context);
 }
 
-void KMSClient::DeleteCustomKeyStoreAsyncHelper(const DeleteCustomKeyStoreRequest& request, const DeleteCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::DeleteCustomKeyStoreAsync(const DeleteCustomKeyStoreRequest& request, const DeleteCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomKeyStore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientDeleteCustomKeyStoreAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteImportedKeyMaterialOutcome KMSClient::DeleteImportedKeyMaterial(const DeleteImportedKeyMaterialRequest& request) const
@@ -380,14 +380,14 @@ DeleteImportedKeyMaterialOutcomeCallable KMSClient::DeleteImportedKeyMaterialCal
   return task->get_future();
 }
 
-void KMSClient::DeleteImportedKeyMaterialAsync(const DeleteImportedKeyMaterialRequest& request, const DeleteImportedKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientDeleteImportedKeyMaterialAsyncHelper(KMSClient const * const clientThis, const DeleteImportedKeyMaterialRequest& request, const DeleteImportedKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteImportedKeyMaterialAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteImportedKeyMaterial(request), context);
 }
 
-void KMSClient::DeleteImportedKeyMaterialAsyncHelper(const DeleteImportedKeyMaterialRequest& request, const DeleteImportedKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::DeleteImportedKeyMaterialAsync(const DeleteImportedKeyMaterialRequest& request, const DeleteImportedKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteImportedKeyMaterial(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientDeleteImportedKeyMaterialAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCustomKeyStoresOutcome KMSClient::DescribeCustomKeyStores(const DescribeCustomKeyStoresRequest& request) const
@@ -404,14 +404,14 @@ DescribeCustomKeyStoresOutcomeCallable KMSClient::DescribeCustomKeyStoresCallabl
   return task->get_future();
 }
 
-void KMSClient::DescribeCustomKeyStoresAsync(const DescribeCustomKeyStoresRequest& request, const DescribeCustomKeyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientDescribeCustomKeyStoresAsyncHelper(KMSClient const * const clientThis, const DescribeCustomKeyStoresRequest& request, const DescribeCustomKeyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCustomKeyStoresAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCustomKeyStores(request), context);
 }
 
-void KMSClient::DescribeCustomKeyStoresAsyncHelper(const DescribeCustomKeyStoresRequest& request, const DescribeCustomKeyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::DescribeCustomKeyStoresAsync(const DescribeCustomKeyStoresRequest& request, const DescribeCustomKeyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCustomKeyStores(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientDescribeCustomKeyStoresAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeKeyOutcome KMSClient::DescribeKey(const DescribeKeyRequest& request) const
@@ -428,14 +428,14 @@ DescribeKeyOutcomeCallable KMSClient::DescribeKeyCallable(const DescribeKeyReque
   return task->get_future();
 }
 
-void KMSClient::DescribeKeyAsync(const DescribeKeyRequest& request, const DescribeKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientDescribeKeyAsyncHelper(KMSClient const * const clientThis, const DescribeKeyRequest& request, const DescribeKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeKey(request), context);
 }
 
-void KMSClient::DescribeKeyAsyncHelper(const DescribeKeyRequest& request, const DescribeKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::DescribeKeyAsync(const DescribeKeyRequest& request, const DescribeKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientDescribeKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableKeyOutcome KMSClient::DisableKey(const DisableKeyRequest& request) const
@@ -452,14 +452,14 @@ DisableKeyOutcomeCallable KMSClient::DisableKeyCallable(const DisableKeyRequest&
   return task->get_future();
 }
 
-void KMSClient::DisableKeyAsync(const DisableKeyRequest& request, const DisableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientDisableKeyAsyncHelper(KMSClient const * const clientThis, const DisableKeyRequest& request, const DisableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableKey(request), context);
 }
 
-void KMSClient::DisableKeyAsyncHelper(const DisableKeyRequest& request, const DisableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::DisableKeyAsync(const DisableKeyRequest& request, const DisableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientDisableKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableKeyRotationOutcome KMSClient::DisableKeyRotation(const DisableKeyRotationRequest& request) const
@@ -476,14 +476,14 @@ DisableKeyRotationOutcomeCallable KMSClient::DisableKeyRotationCallable(const Di
   return task->get_future();
 }
 
-void KMSClient::DisableKeyRotationAsync(const DisableKeyRotationRequest& request, const DisableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientDisableKeyRotationAsyncHelper(KMSClient const * const clientThis, const DisableKeyRotationRequest& request, const DisableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableKeyRotationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableKeyRotation(request), context);
 }
 
-void KMSClient::DisableKeyRotationAsyncHelper(const DisableKeyRotationRequest& request, const DisableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::DisableKeyRotationAsync(const DisableKeyRotationRequest& request, const DisableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableKeyRotation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientDisableKeyRotationAsyncHelper( this, request, handler, context ); } );
 }
 
 DisconnectCustomKeyStoreOutcome KMSClient::DisconnectCustomKeyStore(const DisconnectCustomKeyStoreRequest& request) const
@@ -500,14 +500,14 @@ DisconnectCustomKeyStoreOutcomeCallable KMSClient::DisconnectCustomKeyStoreCalla
   return task->get_future();
 }
 
-void KMSClient::DisconnectCustomKeyStoreAsync(const DisconnectCustomKeyStoreRequest& request, const DisconnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientDisconnectCustomKeyStoreAsyncHelper(KMSClient const * const clientThis, const DisconnectCustomKeyStoreRequest& request, const DisconnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisconnectCustomKeyStoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisconnectCustomKeyStore(request), context);
 }
 
-void KMSClient::DisconnectCustomKeyStoreAsyncHelper(const DisconnectCustomKeyStoreRequest& request, const DisconnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::DisconnectCustomKeyStoreAsync(const DisconnectCustomKeyStoreRequest& request, const DisconnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisconnectCustomKeyStore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientDisconnectCustomKeyStoreAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableKeyOutcome KMSClient::EnableKey(const EnableKeyRequest& request) const
@@ -524,14 +524,14 @@ EnableKeyOutcomeCallable KMSClient::EnableKeyCallable(const EnableKeyRequest& re
   return task->get_future();
 }
 
-void KMSClient::EnableKeyAsync(const EnableKeyRequest& request, const EnableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientEnableKeyAsyncHelper(KMSClient const * const clientThis, const EnableKeyRequest& request, const EnableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableKey(request), context);
 }
 
-void KMSClient::EnableKeyAsyncHelper(const EnableKeyRequest& request, const EnableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::EnableKeyAsync(const EnableKeyRequest& request, const EnableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientEnableKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableKeyRotationOutcome KMSClient::EnableKeyRotation(const EnableKeyRotationRequest& request) const
@@ -548,14 +548,14 @@ EnableKeyRotationOutcomeCallable KMSClient::EnableKeyRotationCallable(const Enab
   return task->get_future();
 }
 
-void KMSClient::EnableKeyRotationAsync(const EnableKeyRotationRequest& request, const EnableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientEnableKeyRotationAsyncHelper(KMSClient const * const clientThis, const EnableKeyRotationRequest& request, const EnableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableKeyRotationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableKeyRotation(request), context);
 }
 
-void KMSClient::EnableKeyRotationAsyncHelper(const EnableKeyRotationRequest& request, const EnableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::EnableKeyRotationAsync(const EnableKeyRotationRequest& request, const EnableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableKeyRotation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientEnableKeyRotationAsyncHelper( this, request, handler, context ); } );
 }
 
 EncryptOutcome KMSClient::Encrypt(const EncryptRequest& request) const
@@ -572,14 +572,14 @@ EncryptOutcomeCallable KMSClient::EncryptCallable(const EncryptRequest& request)
   return task->get_future();
 }
 
-void KMSClient::EncryptAsync(const EncryptRequest& request, const EncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientEncryptAsyncHelper(KMSClient const * const clientThis, const EncryptRequest& request, const EncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EncryptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Encrypt(request), context);
 }
 
-void KMSClient::EncryptAsyncHelper(const EncryptRequest& request, const EncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::EncryptAsync(const EncryptRequest& request, const EncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Encrypt(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientEncryptAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateDataKeyOutcome KMSClient::GenerateDataKey(const GenerateDataKeyRequest& request) const
@@ -596,14 +596,14 @@ GenerateDataKeyOutcomeCallable KMSClient::GenerateDataKeyCallable(const Generate
   return task->get_future();
 }
 
-void KMSClient::GenerateDataKeyAsync(const GenerateDataKeyRequest& request, const GenerateDataKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientGenerateDataKeyAsyncHelper(KMSClient const * const clientThis, const GenerateDataKeyRequest& request, const GenerateDataKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateDataKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateDataKey(request), context);
 }
 
-void KMSClient::GenerateDataKeyAsyncHelper(const GenerateDataKeyRequest& request, const GenerateDataKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::GenerateDataKeyAsync(const GenerateDataKeyRequest& request, const GenerateDataKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateDataKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientGenerateDataKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateDataKeyPairOutcome KMSClient::GenerateDataKeyPair(const GenerateDataKeyPairRequest& request) const
@@ -620,14 +620,14 @@ GenerateDataKeyPairOutcomeCallable KMSClient::GenerateDataKeyPairCallable(const 
   return task->get_future();
 }
 
-void KMSClient::GenerateDataKeyPairAsync(const GenerateDataKeyPairRequest& request, const GenerateDataKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientGenerateDataKeyPairAsyncHelper(KMSClient const * const clientThis, const GenerateDataKeyPairRequest& request, const GenerateDataKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateDataKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateDataKeyPair(request), context);
 }
 
-void KMSClient::GenerateDataKeyPairAsyncHelper(const GenerateDataKeyPairRequest& request, const GenerateDataKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::GenerateDataKeyPairAsync(const GenerateDataKeyPairRequest& request, const GenerateDataKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateDataKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientGenerateDataKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateDataKeyPairWithoutPlaintextOutcome KMSClient::GenerateDataKeyPairWithoutPlaintext(const GenerateDataKeyPairWithoutPlaintextRequest& request) const
@@ -644,14 +644,14 @@ GenerateDataKeyPairWithoutPlaintextOutcomeCallable KMSClient::GenerateDataKeyPai
   return task->get_future();
 }
 
-void KMSClient::GenerateDataKeyPairWithoutPlaintextAsync(const GenerateDataKeyPairWithoutPlaintextRequest& request, const GenerateDataKeyPairWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientGenerateDataKeyPairWithoutPlaintextAsyncHelper(KMSClient const * const clientThis, const GenerateDataKeyPairWithoutPlaintextRequest& request, const GenerateDataKeyPairWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateDataKeyPairWithoutPlaintextAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateDataKeyPairWithoutPlaintext(request), context);
 }
 
-void KMSClient::GenerateDataKeyPairWithoutPlaintextAsyncHelper(const GenerateDataKeyPairWithoutPlaintextRequest& request, const GenerateDataKeyPairWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::GenerateDataKeyPairWithoutPlaintextAsync(const GenerateDataKeyPairWithoutPlaintextRequest& request, const GenerateDataKeyPairWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateDataKeyPairWithoutPlaintext(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientGenerateDataKeyPairWithoutPlaintextAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateDataKeyWithoutPlaintextOutcome KMSClient::GenerateDataKeyWithoutPlaintext(const GenerateDataKeyWithoutPlaintextRequest& request) const
@@ -668,14 +668,14 @@ GenerateDataKeyWithoutPlaintextOutcomeCallable KMSClient::GenerateDataKeyWithout
   return task->get_future();
 }
 
-void KMSClient::GenerateDataKeyWithoutPlaintextAsync(const GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientGenerateDataKeyWithoutPlaintextAsyncHelper(KMSClient const * const clientThis, const GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateDataKeyWithoutPlaintextAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateDataKeyWithoutPlaintext(request), context);
 }
 
-void KMSClient::GenerateDataKeyWithoutPlaintextAsyncHelper(const GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::GenerateDataKeyWithoutPlaintextAsync(const GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateDataKeyWithoutPlaintext(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientGenerateDataKeyWithoutPlaintextAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateMacOutcome KMSClient::GenerateMac(const GenerateMacRequest& request) const
@@ -692,14 +692,14 @@ GenerateMacOutcomeCallable KMSClient::GenerateMacCallable(const GenerateMacReque
   return task->get_future();
 }
 
-void KMSClient::GenerateMacAsync(const GenerateMacRequest& request, const GenerateMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientGenerateMacAsyncHelper(KMSClient const * const clientThis, const GenerateMacRequest& request, const GenerateMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateMacAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateMac(request), context);
 }
 
-void KMSClient::GenerateMacAsyncHelper(const GenerateMacRequest& request, const GenerateMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::GenerateMacAsync(const GenerateMacRequest& request, const GenerateMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateMac(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientGenerateMacAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateRandomOutcome KMSClient::GenerateRandom(const GenerateRandomRequest& request) const
@@ -716,14 +716,14 @@ GenerateRandomOutcomeCallable KMSClient::GenerateRandomCallable(const GenerateRa
   return task->get_future();
 }
 
-void KMSClient::GenerateRandomAsync(const GenerateRandomRequest& request, const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientGenerateRandomAsyncHelper(KMSClient const * const clientThis, const GenerateRandomRequest& request, const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateRandomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateRandom(request), context);
 }
 
-void KMSClient::GenerateRandomAsyncHelper(const GenerateRandomRequest& request, const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::GenerateRandomAsync(const GenerateRandomRequest& request, const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateRandom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientGenerateRandomAsyncHelper( this, request, handler, context ); } );
 }
 
 GetKeyPolicyOutcome KMSClient::GetKeyPolicy(const GetKeyPolicyRequest& request) const
@@ -740,14 +740,14 @@ GetKeyPolicyOutcomeCallable KMSClient::GetKeyPolicyCallable(const GetKeyPolicyRe
   return task->get_future();
 }
 
-void KMSClient::GetKeyPolicyAsync(const GetKeyPolicyRequest& request, const GetKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientGetKeyPolicyAsyncHelper(KMSClient const * const clientThis, const GetKeyPolicyRequest& request, const GetKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetKeyPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetKeyPolicy(request), context);
 }
 
-void KMSClient::GetKeyPolicyAsyncHelper(const GetKeyPolicyRequest& request, const GetKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::GetKeyPolicyAsync(const GetKeyPolicyRequest& request, const GetKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetKeyPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientGetKeyPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetKeyRotationStatusOutcome KMSClient::GetKeyRotationStatus(const GetKeyRotationStatusRequest& request) const
@@ -764,14 +764,14 @@ GetKeyRotationStatusOutcomeCallable KMSClient::GetKeyRotationStatusCallable(cons
   return task->get_future();
 }
 
-void KMSClient::GetKeyRotationStatusAsync(const GetKeyRotationStatusRequest& request, const GetKeyRotationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientGetKeyRotationStatusAsyncHelper(KMSClient const * const clientThis, const GetKeyRotationStatusRequest& request, const GetKeyRotationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetKeyRotationStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetKeyRotationStatus(request), context);
 }
 
-void KMSClient::GetKeyRotationStatusAsyncHelper(const GetKeyRotationStatusRequest& request, const GetKeyRotationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::GetKeyRotationStatusAsync(const GetKeyRotationStatusRequest& request, const GetKeyRotationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetKeyRotationStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientGetKeyRotationStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetParametersForImportOutcome KMSClient::GetParametersForImport(const GetParametersForImportRequest& request) const
@@ -788,14 +788,14 @@ GetParametersForImportOutcomeCallable KMSClient::GetParametersForImportCallable(
   return task->get_future();
 }
 
-void KMSClient::GetParametersForImportAsync(const GetParametersForImportRequest& request, const GetParametersForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientGetParametersForImportAsyncHelper(KMSClient const * const clientThis, const GetParametersForImportRequest& request, const GetParametersForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetParametersForImportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetParametersForImport(request), context);
 }
 
-void KMSClient::GetParametersForImportAsyncHelper(const GetParametersForImportRequest& request, const GetParametersForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::GetParametersForImportAsync(const GetParametersForImportRequest& request, const GetParametersForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetParametersForImport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientGetParametersForImportAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPublicKeyOutcome KMSClient::GetPublicKey(const GetPublicKeyRequest& request) const
@@ -812,14 +812,14 @@ GetPublicKeyOutcomeCallable KMSClient::GetPublicKeyCallable(const GetPublicKeyRe
   return task->get_future();
 }
 
-void KMSClient::GetPublicKeyAsync(const GetPublicKeyRequest& request, const GetPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientGetPublicKeyAsyncHelper(KMSClient const * const clientThis, const GetPublicKeyRequest& request, const GetPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPublicKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPublicKey(request), context);
 }
 
-void KMSClient::GetPublicKeyAsyncHelper(const GetPublicKeyRequest& request, const GetPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::GetPublicKeyAsync(const GetPublicKeyRequest& request, const GetPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPublicKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientGetPublicKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportKeyMaterialOutcome KMSClient::ImportKeyMaterial(const ImportKeyMaterialRequest& request) const
@@ -836,14 +836,14 @@ ImportKeyMaterialOutcomeCallable KMSClient::ImportKeyMaterialCallable(const Impo
   return task->get_future();
 }
 
-void KMSClient::ImportKeyMaterialAsync(const ImportKeyMaterialRequest& request, const ImportKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientImportKeyMaterialAsyncHelper(KMSClient const * const clientThis, const ImportKeyMaterialRequest& request, const ImportKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportKeyMaterialAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportKeyMaterial(request), context);
 }
 
-void KMSClient::ImportKeyMaterialAsyncHelper(const ImportKeyMaterialRequest& request, const ImportKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ImportKeyMaterialAsync(const ImportKeyMaterialRequest& request, const ImportKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportKeyMaterial(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientImportKeyMaterialAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAliasesOutcome KMSClient::ListAliases(const ListAliasesRequest& request) const
@@ -860,14 +860,14 @@ ListAliasesOutcomeCallable KMSClient::ListAliasesCallable(const ListAliasesReque
   return task->get_future();
 }
 
-void KMSClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientListAliasesAsyncHelper(KMSClient const * const clientThis, const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAliasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAliases(request), context);
 }
 
-void KMSClient::ListAliasesAsyncHelper(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAliases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientListAliasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGrantsOutcome KMSClient::ListGrants(const ListGrantsRequest& request) const
@@ -884,14 +884,14 @@ ListGrantsOutcomeCallable KMSClient::ListGrantsCallable(const ListGrantsRequest&
   return task->get_future();
 }
 
-void KMSClient::ListGrantsAsync(const ListGrantsRequest& request, const ListGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientListGrantsAsyncHelper(KMSClient const * const clientThis, const ListGrantsRequest& request, const ListGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGrantsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGrants(request), context);
 }
 
-void KMSClient::ListGrantsAsyncHelper(const ListGrantsRequest& request, const ListGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ListGrantsAsync(const ListGrantsRequest& request, const ListGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGrants(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientListGrantsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListKeyPoliciesOutcome KMSClient::ListKeyPolicies(const ListKeyPoliciesRequest& request) const
@@ -908,14 +908,14 @@ ListKeyPoliciesOutcomeCallable KMSClient::ListKeyPoliciesCallable(const ListKeyP
   return task->get_future();
 }
 
-void KMSClient::ListKeyPoliciesAsync(const ListKeyPoliciesRequest& request, const ListKeyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientListKeyPoliciesAsyncHelper(KMSClient const * const clientThis, const ListKeyPoliciesRequest& request, const ListKeyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListKeyPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListKeyPolicies(request), context);
 }
 
-void KMSClient::ListKeyPoliciesAsyncHelper(const ListKeyPoliciesRequest& request, const ListKeyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ListKeyPoliciesAsync(const ListKeyPoliciesRequest& request, const ListKeyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListKeyPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientListKeyPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListKeysOutcome KMSClient::ListKeys(const ListKeysRequest& request) const
@@ -932,14 +932,14 @@ ListKeysOutcomeCallable KMSClient::ListKeysCallable(const ListKeysRequest& reque
   return task->get_future();
 }
 
-void KMSClient::ListKeysAsync(const ListKeysRequest& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientListKeysAsyncHelper(KMSClient const * const clientThis, const ListKeysRequest& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListKeysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListKeys(request), context);
 }
 
-void KMSClient::ListKeysAsyncHelper(const ListKeysRequest& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ListKeysAsync(const ListKeysRequest& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListKeys(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientListKeysAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourceTagsOutcome KMSClient::ListResourceTags(const ListResourceTagsRequest& request) const
@@ -956,14 +956,14 @@ ListResourceTagsOutcomeCallable KMSClient::ListResourceTagsCallable(const ListRe
   return task->get_future();
 }
 
-void KMSClient::ListResourceTagsAsync(const ListResourceTagsRequest& request, const ListResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientListResourceTagsAsyncHelper(KMSClient const * const clientThis, const ListResourceTagsRequest& request, const ListResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourceTags(request), context);
 }
 
-void KMSClient::ListResourceTagsAsyncHelper(const ListResourceTagsRequest& request, const ListResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ListResourceTagsAsync(const ListResourceTagsRequest& request, const ListResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourceTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientListResourceTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRetirableGrantsOutcome KMSClient::ListRetirableGrants(const ListRetirableGrantsRequest& request) const
@@ -980,14 +980,14 @@ ListRetirableGrantsOutcomeCallable KMSClient::ListRetirableGrantsCallable(const 
   return task->get_future();
 }
 
-void KMSClient::ListRetirableGrantsAsync(const ListRetirableGrantsRequest& request, const ListRetirableGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientListRetirableGrantsAsyncHelper(KMSClient const * const clientThis, const ListRetirableGrantsRequest& request, const ListRetirableGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRetirableGrantsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRetirableGrants(request), context);
 }
 
-void KMSClient::ListRetirableGrantsAsyncHelper(const ListRetirableGrantsRequest& request, const ListRetirableGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ListRetirableGrantsAsync(const ListRetirableGrantsRequest& request, const ListRetirableGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRetirableGrants(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientListRetirableGrantsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutKeyPolicyOutcome KMSClient::PutKeyPolicy(const PutKeyPolicyRequest& request) const
@@ -1004,14 +1004,14 @@ PutKeyPolicyOutcomeCallable KMSClient::PutKeyPolicyCallable(const PutKeyPolicyRe
   return task->get_future();
 }
 
-void KMSClient::PutKeyPolicyAsync(const PutKeyPolicyRequest& request, const PutKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientPutKeyPolicyAsyncHelper(KMSClient const * const clientThis, const PutKeyPolicyRequest& request, const PutKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutKeyPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutKeyPolicy(request), context);
 }
 
-void KMSClient::PutKeyPolicyAsyncHelper(const PutKeyPolicyRequest& request, const PutKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::PutKeyPolicyAsync(const PutKeyPolicyRequest& request, const PutKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutKeyPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientPutKeyPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 ReEncryptOutcome KMSClient::ReEncrypt(const ReEncryptRequest& request) const
@@ -1028,14 +1028,14 @@ ReEncryptOutcomeCallable KMSClient::ReEncryptCallable(const ReEncryptRequest& re
   return task->get_future();
 }
 
-void KMSClient::ReEncryptAsync(const ReEncryptRequest& request, const ReEncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientReEncryptAsyncHelper(KMSClient const * const clientThis, const ReEncryptRequest& request, const ReEncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReEncryptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReEncrypt(request), context);
 }
 
-void KMSClient::ReEncryptAsyncHelper(const ReEncryptRequest& request, const ReEncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ReEncryptAsync(const ReEncryptRequest& request, const ReEncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReEncrypt(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientReEncryptAsyncHelper( this, request, handler, context ); } );
 }
 
 ReplicateKeyOutcome KMSClient::ReplicateKey(const ReplicateKeyRequest& request) const
@@ -1052,14 +1052,14 @@ ReplicateKeyOutcomeCallable KMSClient::ReplicateKeyCallable(const ReplicateKeyRe
   return task->get_future();
 }
 
-void KMSClient::ReplicateKeyAsync(const ReplicateKeyRequest& request, const ReplicateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientReplicateKeyAsyncHelper(KMSClient const * const clientThis, const ReplicateKeyRequest& request, const ReplicateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReplicateKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReplicateKey(request), context);
 }
 
-void KMSClient::ReplicateKeyAsyncHelper(const ReplicateKeyRequest& request, const ReplicateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ReplicateKeyAsync(const ReplicateKeyRequest& request, const ReplicateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReplicateKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientReplicateKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 RetireGrantOutcome KMSClient::RetireGrant(const RetireGrantRequest& request) const
@@ -1076,14 +1076,14 @@ RetireGrantOutcomeCallable KMSClient::RetireGrantCallable(const RetireGrantReque
   return task->get_future();
 }
 
-void KMSClient::RetireGrantAsync(const RetireGrantRequest& request, const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientRetireGrantAsyncHelper(KMSClient const * const clientThis, const RetireGrantRequest& request, const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RetireGrantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RetireGrant(request), context);
 }
 
-void KMSClient::RetireGrantAsyncHelper(const RetireGrantRequest& request, const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::RetireGrantAsync(const RetireGrantRequest& request, const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RetireGrant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientRetireGrantAsyncHelper( this, request, handler, context ); } );
 }
 
 RevokeGrantOutcome KMSClient::RevokeGrant(const RevokeGrantRequest& request) const
@@ -1100,14 +1100,14 @@ RevokeGrantOutcomeCallable KMSClient::RevokeGrantCallable(const RevokeGrantReque
   return task->get_future();
 }
 
-void KMSClient::RevokeGrantAsync(const RevokeGrantRequest& request, const RevokeGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientRevokeGrantAsyncHelper(KMSClient const * const clientThis, const RevokeGrantRequest& request, const RevokeGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeGrantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RevokeGrant(request), context);
 }
 
-void KMSClient::RevokeGrantAsyncHelper(const RevokeGrantRequest& request, const RevokeGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::RevokeGrantAsync(const RevokeGrantRequest& request, const RevokeGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RevokeGrant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientRevokeGrantAsyncHelper( this, request, handler, context ); } );
 }
 
 ScheduleKeyDeletionOutcome KMSClient::ScheduleKeyDeletion(const ScheduleKeyDeletionRequest& request) const
@@ -1124,14 +1124,14 @@ ScheduleKeyDeletionOutcomeCallable KMSClient::ScheduleKeyDeletionCallable(const 
   return task->get_future();
 }
 
-void KMSClient::ScheduleKeyDeletionAsync(const ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientScheduleKeyDeletionAsyncHelper(KMSClient const * const clientThis, const ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ScheduleKeyDeletionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ScheduleKeyDeletion(request), context);
 }
 
-void KMSClient::ScheduleKeyDeletionAsyncHelper(const ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::ScheduleKeyDeletionAsync(const ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ScheduleKeyDeletion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientScheduleKeyDeletionAsyncHelper( this, request, handler, context ); } );
 }
 
 SignOutcome KMSClient::Sign(const SignRequest& request) const
@@ -1148,14 +1148,14 @@ SignOutcomeCallable KMSClient::SignCallable(const SignRequest& request) const
   return task->get_future();
 }
 
-void KMSClient::SignAsync(const SignRequest& request, const SignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientSignAsyncHelper(KMSClient const * const clientThis, const SignRequest& request, const SignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Sign(request), context);
 }
 
-void KMSClient::SignAsyncHelper(const SignRequest& request, const SignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::SignAsync(const SignRequest& request, const SignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Sign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientSignAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome KMSClient::TagResource(const TagResourceRequest& request) const
@@ -1172,14 +1172,14 @@ TagResourceOutcomeCallable KMSClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void KMSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientTagResourceAsyncHelper(KMSClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void KMSClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome KMSClient::UntagResource(const UntagResourceRequest& request) const
@@ -1196,14 +1196,14 @@ UntagResourceOutcomeCallable KMSClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void KMSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientUntagResourceAsyncHelper(KMSClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void KMSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAliasOutcome KMSClient::UpdateAlias(const UpdateAliasRequest& request) const
@@ -1220,14 +1220,14 @@ UpdateAliasOutcomeCallable KMSClient::UpdateAliasCallable(const UpdateAliasReque
   return task->get_future();
 }
 
-void KMSClient::UpdateAliasAsync(const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientUpdateAliasAsyncHelper(KMSClient const * const clientThis, const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAlias(request), context);
 }
 
-void KMSClient::UpdateAliasAsyncHelper(const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::UpdateAliasAsync(const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientUpdateAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCustomKeyStoreOutcome KMSClient::UpdateCustomKeyStore(const UpdateCustomKeyStoreRequest& request) const
@@ -1244,14 +1244,14 @@ UpdateCustomKeyStoreOutcomeCallable KMSClient::UpdateCustomKeyStoreCallable(cons
   return task->get_future();
 }
 
-void KMSClient::UpdateCustomKeyStoreAsync(const UpdateCustomKeyStoreRequest& request, const UpdateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientUpdateCustomKeyStoreAsyncHelper(KMSClient const * const clientThis, const UpdateCustomKeyStoreRequest& request, const UpdateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCustomKeyStoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCustomKeyStore(request), context);
 }
 
-void KMSClient::UpdateCustomKeyStoreAsyncHelper(const UpdateCustomKeyStoreRequest& request, const UpdateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::UpdateCustomKeyStoreAsync(const UpdateCustomKeyStoreRequest& request, const UpdateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCustomKeyStore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientUpdateCustomKeyStoreAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateKeyDescriptionOutcome KMSClient::UpdateKeyDescription(const UpdateKeyDescriptionRequest& request) const
@@ -1268,14 +1268,14 @@ UpdateKeyDescriptionOutcomeCallable KMSClient::UpdateKeyDescriptionCallable(cons
   return task->get_future();
 }
 
-void KMSClient::UpdateKeyDescriptionAsync(const UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientUpdateKeyDescriptionAsyncHelper(KMSClient const * const clientThis, const UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateKeyDescriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateKeyDescription(request), context);
 }
 
-void KMSClient::UpdateKeyDescriptionAsyncHelper(const UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::UpdateKeyDescriptionAsync(const UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateKeyDescription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientUpdateKeyDescriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePrimaryRegionOutcome KMSClient::UpdatePrimaryRegion(const UpdatePrimaryRegionRequest& request) const
@@ -1292,14 +1292,14 @@ UpdatePrimaryRegionOutcomeCallable KMSClient::UpdatePrimaryRegionCallable(const 
   return task->get_future();
 }
 
-void KMSClient::UpdatePrimaryRegionAsync(const UpdatePrimaryRegionRequest& request, const UpdatePrimaryRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientUpdatePrimaryRegionAsyncHelper(KMSClient const * const clientThis, const UpdatePrimaryRegionRequest& request, const UpdatePrimaryRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePrimaryRegionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePrimaryRegion(request), context);
 }
 
-void KMSClient::UpdatePrimaryRegionAsyncHelper(const UpdatePrimaryRegionRequest& request, const UpdatePrimaryRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::UpdatePrimaryRegionAsync(const UpdatePrimaryRegionRequest& request, const UpdatePrimaryRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePrimaryRegion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientUpdatePrimaryRegionAsyncHelper( this, request, handler, context ); } );
 }
 
 VerifyOutcome KMSClient::Verify(const VerifyRequest& request) const
@@ -1316,14 +1316,14 @@ VerifyOutcomeCallable KMSClient::VerifyCallable(const VerifyRequest& request) co
   return task->get_future();
 }
 
-void KMSClient::VerifyAsync(const VerifyRequest& request, const VerifyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientVerifyAsyncHelper(KMSClient const * const clientThis, const VerifyRequest& request, const VerifyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VerifyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Verify(request), context);
 }
 
-void KMSClient::VerifyAsyncHelper(const VerifyRequest& request, const VerifyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::VerifyAsync(const VerifyRequest& request, const VerifyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Verify(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientVerifyAsyncHelper( this, request, handler, context ); } );
 }
 
 VerifyMacOutcome KMSClient::VerifyMac(const VerifyMacRequest& request) const
@@ -1340,13 +1340,13 @@ VerifyMacOutcomeCallable KMSClient::VerifyMacCallable(const VerifyMacRequest& re
   return task->get_future();
 }
 
-void KMSClient::VerifyMacAsync(const VerifyMacRequest& request, const VerifyMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClientVerifyMacAsyncHelper(KMSClient const * const clientThis, const VerifyMacRequest& request, const VerifyMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VerifyMacAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->VerifyMac(request), context);
 }
 
-void KMSClient::VerifyMacAsyncHelper(const VerifyMacRequest& request, const VerifyMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KMSClient::VerifyMacAsync(const VerifyMacRequest& request, const VerifyMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, VerifyMac(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KMSClientVerifyMacAsyncHelper( this, request, handler, context ); } );
 }
 

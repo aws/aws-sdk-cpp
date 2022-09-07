@@ -157,14 +157,14 @@ BatchDeleteWorldsOutcomeCallable RoboMakerClient::BatchDeleteWorldsCallable(cons
   return task->get_future();
 }
 
-void RoboMakerClient::BatchDeleteWorldsAsync(const BatchDeleteWorldsRequest& request, const BatchDeleteWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientBatchDeleteWorldsAsyncHelper(RoboMakerClient const * const clientThis, const BatchDeleteWorldsRequest& request, const BatchDeleteWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteWorldsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDeleteWorlds(request), context);
 }
 
-void RoboMakerClient::BatchDeleteWorldsAsyncHelper(const BatchDeleteWorldsRequest& request, const BatchDeleteWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::BatchDeleteWorldsAsync(const BatchDeleteWorldsRequest& request, const BatchDeleteWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDeleteWorlds(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientBatchDeleteWorldsAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDescribeSimulationJobOutcome RoboMakerClient::BatchDescribeSimulationJob(const BatchDescribeSimulationJobRequest& request) const
@@ -182,14 +182,14 @@ BatchDescribeSimulationJobOutcomeCallable RoboMakerClient::BatchDescribeSimulati
   return task->get_future();
 }
 
-void RoboMakerClient::BatchDescribeSimulationJobAsync(const BatchDescribeSimulationJobRequest& request, const BatchDescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientBatchDescribeSimulationJobAsyncHelper(RoboMakerClient const * const clientThis, const BatchDescribeSimulationJobRequest& request, const BatchDescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDescribeSimulationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDescribeSimulationJob(request), context);
 }
 
-void RoboMakerClient::BatchDescribeSimulationJobAsyncHelper(const BatchDescribeSimulationJobRequest& request, const BatchDescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::BatchDescribeSimulationJobAsync(const BatchDescribeSimulationJobRequest& request, const BatchDescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDescribeSimulationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientBatchDescribeSimulationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelSimulationJobOutcome RoboMakerClient::CancelSimulationJob(const CancelSimulationJobRequest& request) const
@@ -207,14 +207,14 @@ CancelSimulationJobOutcomeCallable RoboMakerClient::CancelSimulationJobCallable(
   return task->get_future();
 }
 
-void RoboMakerClient::CancelSimulationJobAsync(const CancelSimulationJobRequest& request, const CancelSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCancelSimulationJobAsyncHelper(RoboMakerClient const * const clientThis, const CancelSimulationJobRequest& request, const CancelSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelSimulationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelSimulationJob(request), context);
 }
 
-void RoboMakerClient::CancelSimulationJobAsyncHelper(const CancelSimulationJobRequest& request, const CancelSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CancelSimulationJobAsync(const CancelSimulationJobRequest& request, const CancelSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelSimulationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCancelSimulationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelSimulationJobBatchOutcome RoboMakerClient::CancelSimulationJobBatch(const CancelSimulationJobBatchRequest& request) const
@@ -232,14 +232,14 @@ CancelSimulationJobBatchOutcomeCallable RoboMakerClient::CancelSimulationJobBatc
   return task->get_future();
 }
 
-void RoboMakerClient::CancelSimulationJobBatchAsync(const CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCancelSimulationJobBatchAsyncHelper(RoboMakerClient const * const clientThis, const CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelSimulationJobBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelSimulationJobBatch(request), context);
 }
 
-void RoboMakerClient::CancelSimulationJobBatchAsyncHelper(const CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CancelSimulationJobBatchAsync(const CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelSimulationJobBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCancelSimulationJobBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelWorldExportJobOutcome RoboMakerClient::CancelWorldExportJob(const CancelWorldExportJobRequest& request) const
@@ -257,14 +257,14 @@ CancelWorldExportJobOutcomeCallable RoboMakerClient::CancelWorldExportJobCallabl
   return task->get_future();
 }
 
-void RoboMakerClient::CancelWorldExportJobAsync(const CancelWorldExportJobRequest& request, const CancelWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCancelWorldExportJobAsyncHelper(RoboMakerClient const * const clientThis, const CancelWorldExportJobRequest& request, const CancelWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelWorldExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelWorldExportJob(request), context);
 }
 
-void RoboMakerClient::CancelWorldExportJobAsyncHelper(const CancelWorldExportJobRequest& request, const CancelWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CancelWorldExportJobAsync(const CancelWorldExportJobRequest& request, const CancelWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelWorldExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCancelWorldExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelWorldGenerationJobOutcome RoboMakerClient::CancelWorldGenerationJob(const CancelWorldGenerationJobRequest& request) const
@@ -282,14 +282,14 @@ CancelWorldGenerationJobOutcomeCallable RoboMakerClient::CancelWorldGenerationJo
   return task->get_future();
 }
 
-void RoboMakerClient::CancelWorldGenerationJobAsync(const CancelWorldGenerationJobRequest& request, const CancelWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCancelWorldGenerationJobAsyncHelper(RoboMakerClient const * const clientThis, const CancelWorldGenerationJobRequest& request, const CancelWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelWorldGenerationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelWorldGenerationJob(request), context);
 }
 
-void RoboMakerClient::CancelWorldGenerationJobAsyncHelper(const CancelWorldGenerationJobRequest& request, const CancelWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CancelWorldGenerationJobAsync(const CancelWorldGenerationJobRequest& request, const CancelWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelWorldGenerationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCancelWorldGenerationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRobotApplicationOutcome RoboMakerClient::CreateRobotApplication(const CreateRobotApplicationRequest& request) const
@@ -307,14 +307,14 @@ CreateRobotApplicationOutcomeCallable RoboMakerClient::CreateRobotApplicationCal
   return task->get_future();
 }
 
-void RoboMakerClient::CreateRobotApplicationAsync(const CreateRobotApplicationRequest& request, const CreateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCreateRobotApplicationAsyncHelper(RoboMakerClient const * const clientThis, const CreateRobotApplicationRequest& request, const CreateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRobotApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRobotApplication(request), context);
 }
 
-void RoboMakerClient::CreateRobotApplicationAsyncHelper(const CreateRobotApplicationRequest& request, const CreateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CreateRobotApplicationAsync(const CreateRobotApplicationRequest& request, const CreateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRobotApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCreateRobotApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRobotApplicationVersionOutcome RoboMakerClient::CreateRobotApplicationVersion(const CreateRobotApplicationVersionRequest& request) const
@@ -332,14 +332,14 @@ CreateRobotApplicationVersionOutcomeCallable RoboMakerClient::CreateRobotApplica
   return task->get_future();
 }
 
-void RoboMakerClient::CreateRobotApplicationVersionAsync(const CreateRobotApplicationVersionRequest& request, const CreateRobotApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCreateRobotApplicationVersionAsyncHelper(RoboMakerClient const * const clientThis, const CreateRobotApplicationVersionRequest& request, const CreateRobotApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRobotApplicationVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRobotApplicationVersion(request), context);
 }
 
-void RoboMakerClient::CreateRobotApplicationVersionAsyncHelper(const CreateRobotApplicationVersionRequest& request, const CreateRobotApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CreateRobotApplicationVersionAsync(const CreateRobotApplicationVersionRequest& request, const CreateRobotApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRobotApplicationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCreateRobotApplicationVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSimulationApplicationOutcome RoboMakerClient::CreateSimulationApplication(const CreateSimulationApplicationRequest& request) const
@@ -357,14 +357,14 @@ CreateSimulationApplicationOutcomeCallable RoboMakerClient::CreateSimulationAppl
   return task->get_future();
 }
 
-void RoboMakerClient::CreateSimulationApplicationAsync(const CreateSimulationApplicationRequest& request, const CreateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCreateSimulationApplicationAsyncHelper(RoboMakerClient const * const clientThis, const CreateSimulationApplicationRequest& request, const CreateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSimulationApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSimulationApplication(request), context);
 }
 
-void RoboMakerClient::CreateSimulationApplicationAsyncHelper(const CreateSimulationApplicationRequest& request, const CreateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CreateSimulationApplicationAsync(const CreateSimulationApplicationRequest& request, const CreateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSimulationApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCreateSimulationApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSimulationApplicationVersionOutcome RoboMakerClient::CreateSimulationApplicationVersion(const CreateSimulationApplicationVersionRequest& request) const
@@ -382,14 +382,14 @@ CreateSimulationApplicationVersionOutcomeCallable RoboMakerClient::CreateSimulat
   return task->get_future();
 }
 
-void RoboMakerClient::CreateSimulationApplicationVersionAsync(const CreateSimulationApplicationVersionRequest& request, const CreateSimulationApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCreateSimulationApplicationVersionAsyncHelper(RoboMakerClient const * const clientThis, const CreateSimulationApplicationVersionRequest& request, const CreateSimulationApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSimulationApplicationVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSimulationApplicationVersion(request), context);
 }
 
-void RoboMakerClient::CreateSimulationApplicationVersionAsyncHelper(const CreateSimulationApplicationVersionRequest& request, const CreateSimulationApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CreateSimulationApplicationVersionAsync(const CreateSimulationApplicationVersionRequest& request, const CreateSimulationApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSimulationApplicationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCreateSimulationApplicationVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSimulationJobOutcome RoboMakerClient::CreateSimulationJob(const CreateSimulationJobRequest& request) const
@@ -407,14 +407,14 @@ CreateSimulationJobOutcomeCallable RoboMakerClient::CreateSimulationJobCallable(
   return task->get_future();
 }
 
-void RoboMakerClient::CreateSimulationJobAsync(const CreateSimulationJobRequest& request, const CreateSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCreateSimulationJobAsyncHelper(RoboMakerClient const * const clientThis, const CreateSimulationJobRequest& request, const CreateSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSimulationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSimulationJob(request), context);
 }
 
-void RoboMakerClient::CreateSimulationJobAsyncHelper(const CreateSimulationJobRequest& request, const CreateSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CreateSimulationJobAsync(const CreateSimulationJobRequest& request, const CreateSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSimulationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCreateSimulationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorldExportJobOutcome RoboMakerClient::CreateWorldExportJob(const CreateWorldExportJobRequest& request) const
@@ -432,14 +432,14 @@ CreateWorldExportJobOutcomeCallable RoboMakerClient::CreateWorldExportJobCallabl
   return task->get_future();
 }
 
-void RoboMakerClient::CreateWorldExportJobAsync(const CreateWorldExportJobRequest& request, const CreateWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCreateWorldExportJobAsyncHelper(RoboMakerClient const * const clientThis, const CreateWorldExportJobRequest& request, const CreateWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorldExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorldExportJob(request), context);
 }
 
-void RoboMakerClient::CreateWorldExportJobAsyncHelper(const CreateWorldExportJobRequest& request, const CreateWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CreateWorldExportJobAsync(const CreateWorldExportJobRequest& request, const CreateWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorldExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCreateWorldExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorldGenerationJobOutcome RoboMakerClient::CreateWorldGenerationJob(const CreateWorldGenerationJobRequest& request) const
@@ -457,14 +457,14 @@ CreateWorldGenerationJobOutcomeCallable RoboMakerClient::CreateWorldGenerationJo
   return task->get_future();
 }
 
-void RoboMakerClient::CreateWorldGenerationJobAsync(const CreateWorldGenerationJobRequest& request, const CreateWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCreateWorldGenerationJobAsyncHelper(RoboMakerClient const * const clientThis, const CreateWorldGenerationJobRequest& request, const CreateWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorldGenerationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorldGenerationJob(request), context);
 }
 
-void RoboMakerClient::CreateWorldGenerationJobAsyncHelper(const CreateWorldGenerationJobRequest& request, const CreateWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CreateWorldGenerationJobAsync(const CreateWorldGenerationJobRequest& request, const CreateWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorldGenerationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCreateWorldGenerationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorldTemplateOutcome RoboMakerClient::CreateWorldTemplate(const CreateWorldTemplateRequest& request) const
@@ -482,14 +482,14 @@ CreateWorldTemplateOutcomeCallable RoboMakerClient::CreateWorldTemplateCallable(
   return task->get_future();
 }
 
-void RoboMakerClient::CreateWorldTemplateAsync(const CreateWorldTemplateRequest& request, const CreateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientCreateWorldTemplateAsyncHelper(RoboMakerClient const * const clientThis, const CreateWorldTemplateRequest& request, const CreateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorldTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorldTemplate(request), context);
 }
 
-void RoboMakerClient::CreateWorldTemplateAsyncHelper(const CreateWorldTemplateRequest& request, const CreateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::CreateWorldTemplateAsync(const CreateWorldTemplateRequest& request, const CreateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorldTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientCreateWorldTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRobotApplicationOutcome RoboMakerClient::DeleteRobotApplication(const DeleteRobotApplicationRequest& request) const
@@ -507,14 +507,14 @@ DeleteRobotApplicationOutcomeCallable RoboMakerClient::DeleteRobotApplicationCal
   return task->get_future();
 }
 
-void RoboMakerClient::DeleteRobotApplicationAsync(const DeleteRobotApplicationRequest& request, const DeleteRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDeleteRobotApplicationAsyncHelper(RoboMakerClient const * const clientThis, const DeleteRobotApplicationRequest& request, const DeleteRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRobotApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRobotApplication(request), context);
 }
 
-void RoboMakerClient::DeleteRobotApplicationAsyncHelper(const DeleteRobotApplicationRequest& request, const DeleteRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DeleteRobotApplicationAsync(const DeleteRobotApplicationRequest& request, const DeleteRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRobotApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDeleteRobotApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSimulationApplicationOutcome RoboMakerClient::DeleteSimulationApplication(const DeleteSimulationApplicationRequest& request) const
@@ -532,14 +532,14 @@ DeleteSimulationApplicationOutcomeCallable RoboMakerClient::DeleteSimulationAppl
   return task->get_future();
 }
 
-void RoboMakerClient::DeleteSimulationApplicationAsync(const DeleteSimulationApplicationRequest& request, const DeleteSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDeleteSimulationApplicationAsyncHelper(RoboMakerClient const * const clientThis, const DeleteSimulationApplicationRequest& request, const DeleteSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSimulationApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSimulationApplication(request), context);
 }
 
-void RoboMakerClient::DeleteSimulationApplicationAsyncHelper(const DeleteSimulationApplicationRequest& request, const DeleteSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DeleteSimulationApplicationAsync(const DeleteSimulationApplicationRequest& request, const DeleteSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSimulationApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDeleteSimulationApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorldTemplateOutcome RoboMakerClient::DeleteWorldTemplate(const DeleteWorldTemplateRequest& request) const
@@ -557,14 +557,14 @@ DeleteWorldTemplateOutcomeCallable RoboMakerClient::DeleteWorldTemplateCallable(
   return task->get_future();
 }
 
-void RoboMakerClient::DeleteWorldTemplateAsync(const DeleteWorldTemplateRequest& request, const DeleteWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDeleteWorldTemplateAsyncHelper(RoboMakerClient const * const clientThis, const DeleteWorldTemplateRequest& request, const DeleteWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorldTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorldTemplate(request), context);
 }
 
-void RoboMakerClient::DeleteWorldTemplateAsyncHelper(const DeleteWorldTemplateRequest& request, const DeleteWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DeleteWorldTemplateAsync(const DeleteWorldTemplateRequest& request, const DeleteWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorldTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDeleteWorldTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRobotApplicationOutcome RoboMakerClient::DescribeRobotApplication(const DescribeRobotApplicationRequest& request) const
@@ -582,14 +582,14 @@ DescribeRobotApplicationOutcomeCallable RoboMakerClient::DescribeRobotApplicatio
   return task->get_future();
 }
 
-void RoboMakerClient::DescribeRobotApplicationAsync(const DescribeRobotApplicationRequest& request, const DescribeRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDescribeRobotApplicationAsyncHelper(RoboMakerClient const * const clientThis, const DescribeRobotApplicationRequest& request, const DescribeRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRobotApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRobotApplication(request), context);
 }
 
-void RoboMakerClient::DescribeRobotApplicationAsyncHelper(const DescribeRobotApplicationRequest& request, const DescribeRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DescribeRobotApplicationAsync(const DescribeRobotApplicationRequest& request, const DescribeRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRobotApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDescribeRobotApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSimulationApplicationOutcome RoboMakerClient::DescribeSimulationApplication(const DescribeSimulationApplicationRequest& request) const
@@ -607,14 +607,14 @@ DescribeSimulationApplicationOutcomeCallable RoboMakerClient::DescribeSimulation
   return task->get_future();
 }
 
-void RoboMakerClient::DescribeSimulationApplicationAsync(const DescribeSimulationApplicationRequest& request, const DescribeSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDescribeSimulationApplicationAsyncHelper(RoboMakerClient const * const clientThis, const DescribeSimulationApplicationRequest& request, const DescribeSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSimulationApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSimulationApplication(request), context);
 }
 
-void RoboMakerClient::DescribeSimulationApplicationAsyncHelper(const DescribeSimulationApplicationRequest& request, const DescribeSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DescribeSimulationApplicationAsync(const DescribeSimulationApplicationRequest& request, const DescribeSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSimulationApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDescribeSimulationApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSimulationJobOutcome RoboMakerClient::DescribeSimulationJob(const DescribeSimulationJobRequest& request) const
@@ -632,14 +632,14 @@ DescribeSimulationJobOutcomeCallable RoboMakerClient::DescribeSimulationJobCalla
   return task->get_future();
 }
 
-void RoboMakerClient::DescribeSimulationJobAsync(const DescribeSimulationJobRequest& request, const DescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDescribeSimulationJobAsyncHelper(RoboMakerClient const * const clientThis, const DescribeSimulationJobRequest& request, const DescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSimulationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSimulationJob(request), context);
 }
 
-void RoboMakerClient::DescribeSimulationJobAsyncHelper(const DescribeSimulationJobRequest& request, const DescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DescribeSimulationJobAsync(const DescribeSimulationJobRequest& request, const DescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSimulationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDescribeSimulationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSimulationJobBatchOutcome RoboMakerClient::DescribeSimulationJobBatch(const DescribeSimulationJobBatchRequest& request) const
@@ -657,14 +657,14 @@ DescribeSimulationJobBatchOutcomeCallable RoboMakerClient::DescribeSimulationJob
   return task->get_future();
 }
 
-void RoboMakerClient::DescribeSimulationJobBatchAsync(const DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDescribeSimulationJobBatchAsyncHelper(RoboMakerClient const * const clientThis, const DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSimulationJobBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSimulationJobBatch(request), context);
 }
 
-void RoboMakerClient::DescribeSimulationJobBatchAsyncHelper(const DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DescribeSimulationJobBatchAsync(const DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSimulationJobBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDescribeSimulationJobBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWorldOutcome RoboMakerClient::DescribeWorld(const DescribeWorldRequest& request) const
@@ -682,14 +682,14 @@ DescribeWorldOutcomeCallable RoboMakerClient::DescribeWorldCallable(const Descri
   return task->get_future();
 }
 
-void RoboMakerClient::DescribeWorldAsync(const DescribeWorldRequest& request, const DescribeWorldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDescribeWorldAsyncHelper(RoboMakerClient const * const clientThis, const DescribeWorldRequest& request, const DescribeWorldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorldAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWorld(request), context);
 }
 
-void RoboMakerClient::DescribeWorldAsyncHelper(const DescribeWorldRequest& request, const DescribeWorldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DescribeWorldAsync(const DescribeWorldRequest& request, const DescribeWorldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWorld(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDescribeWorldAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWorldExportJobOutcome RoboMakerClient::DescribeWorldExportJob(const DescribeWorldExportJobRequest& request) const
@@ -707,14 +707,14 @@ DescribeWorldExportJobOutcomeCallable RoboMakerClient::DescribeWorldExportJobCal
   return task->get_future();
 }
 
-void RoboMakerClient::DescribeWorldExportJobAsync(const DescribeWorldExportJobRequest& request, const DescribeWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDescribeWorldExportJobAsyncHelper(RoboMakerClient const * const clientThis, const DescribeWorldExportJobRequest& request, const DescribeWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorldExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWorldExportJob(request), context);
 }
 
-void RoboMakerClient::DescribeWorldExportJobAsyncHelper(const DescribeWorldExportJobRequest& request, const DescribeWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DescribeWorldExportJobAsync(const DescribeWorldExportJobRequest& request, const DescribeWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWorldExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDescribeWorldExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWorldGenerationJobOutcome RoboMakerClient::DescribeWorldGenerationJob(const DescribeWorldGenerationJobRequest& request) const
@@ -732,14 +732,14 @@ DescribeWorldGenerationJobOutcomeCallable RoboMakerClient::DescribeWorldGenerati
   return task->get_future();
 }
 
-void RoboMakerClient::DescribeWorldGenerationJobAsync(const DescribeWorldGenerationJobRequest& request, const DescribeWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDescribeWorldGenerationJobAsyncHelper(RoboMakerClient const * const clientThis, const DescribeWorldGenerationJobRequest& request, const DescribeWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorldGenerationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWorldGenerationJob(request), context);
 }
 
-void RoboMakerClient::DescribeWorldGenerationJobAsyncHelper(const DescribeWorldGenerationJobRequest& request, const DescribeWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DescribeWorldGenerationJobAsync(const DescribeWorldGenerationJobRequest& request, const DescribeWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWorldGenerationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDescribeWorldGenerationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWorldTemplateOutcome RoboMakerClient::DescribeWorldTemplate(const DescribeWorldTemplateRequest& request) const
@@ -757,14 +757,14 @@ DescribeWorldTemplateOutcomeCallable RoboMakerClient::DescribeWorldTemplateCalla
   return task->get_future();
 }
 
-void RoboMakerClient::DescribeWorldTemplateAsync(const DescribeWorldTemplateRequest& request, const DescribeWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientDescribeWorldTemplateAsyncHelper(RoboMakerClient const * const clientThis, const DescribeWorldTemplateRequest& request, const DescribeWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorldTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWorldTemplate(request), context);
 }
 
-void RoboMakerClient::DescribeWorldTemplateAsyncHelper(const DescribeWorldTemplateRequest& request, const DescribeWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::DescribeWorldTemplateAsync(const DescribeWorldTemplateRequest& request, const DescribeWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWorldTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientDescribeWorldTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWorldTemplateBodyOutcome RoboMakerClient::GetWorldTemplateBody(const GetWorldTemplateBodyRequest& request) const
@@ -782,14 +782,14 @@ GetWorldTemplateBodyOutcomeCallable RoboMakerClient::GetWorldTemplateBodyCallabl
   return task->get_future();
 }
 
-void RoboMakerClient::GetWorldTemplateBodyAsync(const GetWorldTemplateBodyRequest& request, const GetWorldTemplateBodyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientGetWorldTemplateBodyAsyncHelper(RoboMakerClient const * const clientThis, const GetWorldTemplateBodyRequest& request, const GetWorldTemplateBodyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorldTemplateBodyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWorldTemplateBody(request), context);
 }
 
-void RoboMakerClient::GetWorldTemplateBodyAsyncHelper(const GetWorldTemplateBodyRequest& request, const GetWorldTemplateBodyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::GetWorldTemplateBodyAsync(const GetWorldTemplateBodyRequest& request, const GetWorldTemplateBodyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWorldTemplateBody(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientGetWorldTemplateBodyAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRobotApplicationsOutcome RoboMakerClient::ListRobotApplications(const ListRobotApplicationsRequest& request) const
@@ -807,14 +807,14 @@ ListRobotApplicationsOutcomeCallable RoboMakerClient::ListRobotApplicationsCalla
   return task->get_future();
 }
 
-void RoboMakerClient::ListRobotApplicationsAsync(const ListRobotApplicationsRequest& request, const ListRobotApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientListRobotApplicationsAsyncHelper(RoboMakerClient const * const clientThis, const ListRobotApplicationsRequest& request, const ListRobotApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRobotApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRobotApplications(request), context);
 }
 
-void RoboMakerClient::ListRobotApplicationsAsyncHelper(const ListRobotApplicationsRequest& request, const ListRobotApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::ListRobotApplicationsAsync(const ListRobotApplicationsRequest& request, const ListRobotApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRobotApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientListRobotApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSimulationApplicationsOutcome RoboMakerClient::ListSimulationApplications(const ListSimulationApplicationsRequest& request) const
@@ -832,14 +832,14 @@ ListSimulationApplicationsOutcomeCallable RoboMakerClient::ListSimulationApplica
   return task->get_future();
 }
 
-void RoboMakerClient::ListSimulationApplicationsAsync(const ListSimulationApplicationsRequest& request, const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientListSimulationApplicationsAsyncHelper(RoboMakerClient const * const clientThis, const ListSimulationApplicationsRequest& request, const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSimulationApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSimulationApplications(request), context);
 }
 
-void RoboMakerClient::ListSimulationApplicationsAsyncHelper(const ListSimulationApplicationsRequest& request, const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::ListSimulationApplicationsAsync(const ListSimulationApplicationsRequest& request, const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSimulationApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientListSimulationApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSimulationJobBatchesOutcome RoboMakerClient::ListSimulationJobBatches(const ListSimulationJobBatchesRequest& request) const
@@ -857,14 +857,14 @@ ListSimulationJobBatchesOutcomeCallable RoboMakerClient::ListSimulationJobBatche
   return task->get_future();
 }
 
-void RoboMakerClient::ListSimulationJobBatchesAsync(const ListSimulationJobBatchesRequest& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientListSimulationJobBatchesAsyncHelper(RoboMakerClient const * const clientThis, const ListSimulationJobBatchesRequest& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSimulationJobBatchesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSimulationJobBatches(request), context);
 }
 
-void RoboMakerClient::ListSimulationJobBatchesAsyncHelper(const ListSimulationJobBatchesRequest& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::ListSimulationJobBatchesAsync(const ListSimulationJobBatchesRequest& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSimulationJobBatches(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientListSimulationJobBatchesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSimulationJobsOutcome RoboMakerClient::ListSimulationJobs(const ListSimulationJobsRequest& request) const
@@ -882,14 +882,14 @@ ListSimulationJobsOutcomeCallable RoboMakerClient::ListSimulationJobsCallable(co
   return task->get_future();
 }
 
-void RoboMakerClient::ListSimulationJobsAsync(const ListSimulationJobsRequest& request, const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientListSimulationJobsAsyncHelper(RoboMakerClient const * const clientThis, const ListSimulationJobsRequest& request, const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSimulationJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSimulationJobs(request), context);
 }
 
-void RoboMakerClient::ListSimulationJobsAsyncHelper(const ListSimulationJobsRequest& request, const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::ListSimulationJobsAsync(const ListSimulationJobsRequest& request, const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSimulationJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientListSimulationJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome RoboMakerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -913,14 +913,14 @@ ListTagsForResourceOutcomeCallable RoboMakerClient::ListTagsForResourceCallable(
   return task->get_future();
 }
 
-void RoboMakerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientListTagsForResourceAsyncHelper(RoboMakerClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void RoboMakerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorldExportJobsOutcome RoboMakerClient::ListWorldExportJobs(const ListWorldExportJobsRequest& request) const
@@ -938,14 +938,14 @@ ListWorldExportJobsOutcomeCallable RoboMakerClient::ListWorldExportJobsCallable(
   return task->get_future();
 }
 
-void RoboMakerClient::ListWorldExportJobsAsync(const ListWorldExportJobsRequest& request, const ListWorldExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientListWorldExportJobsAsyncHelper(RoboMakerClient const * const clientThis, const ListWorldExportJobsRequest& request, const ListWorldExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorldExportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorldExportJobs(request), context);
 }
 
-void RoboMakerClient::ListWorldExportJobsAsyncHelper(const ListWorldExportJobsRequest& request, const ListWorldExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::ListWorldExportJobsAsync(const ListWorldExportJobsRequest& request, const ListWorldExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorldExportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientListWorldExportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorldGenerationJobsOutcome RoboMakerClient::ListWorldGenerationJobs(const ListWorldGenerationJobsRequest& request) const
@@ -963,14 +963,14 @@ ListWorldGenerationJobsOutcomeCallable RoboMakerClient::ListWorldGenerationJobsC
   return task->get_future();
 }
 
-void RoboMakerClient::ListWorldGenerationJobsAsync(const ListWorldGenerationJobsRequest& request, const ListWorldGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientListWorldGenerationJobsAsyncHelper(RoboMakerClient const * const clientThis, const ListWorldGenerationJobsRequest& request, const ListWorldGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorldGenerationJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorldGenerationJobs(request), context);
 }
 
-void RoboMakerClient::ListWorldGenerationJobsAsyncHelper(const ListWorldGenerationJobsRequest& request, const ListWorldGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::ListWorldGenerationJobsAsync(const ListWorldGenerationJobsRequest& request, const ListWorldGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorldGenerationJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientListWorldGenerationJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorldTemplatesOutcome RoboMakerClient::ListWorldTemplates(const ListWorldTemplatesRequest& request) const
@@ -988,14 +988,14 @@ ListWorldTemplatesOutcomeCallable RoboMakerClient::ListWorldTemplatesCallable(co
   return task->get_future();
 }
 
-void RoboMakerClient::ListWorldTemplatesAsync(const ListWorldTemplatesRequest& request, const ListWorldTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientListWorldTemplatesAsyncHelper(RoboMakerClient const * const clientThis, const ListWorldTemplatesRequest& request, const ListWorldTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorldTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorldTemplates(request), context);
 }
 
-void RoboMakerClient::ListWorldTemplatesAsyncHelper(const ListWorldTemplatesRequest& request, const ListWorldTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::ListWorldTemplatesAsync(const ListWorldTemplatesRequest& request, const ListWorldTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorldTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientListWorldTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorldsOutcome RoboMakerClient::ListWorlds(const ListWorldsRequest& request) const
@@ -1013,14 +1013,14 @@ ListWorldsOutcomeCallable RoboMakerClient::ListWorldsCallable(const ListWorldsRe
   return task->get_future();
 }
 
-void RoboMakerClient::ListWorldsAsync(const ListWorldsRequest& request, const ListWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientListWorldsAsyncHelper(RoboMakerClient const * const clientThis, const ListWorldsRequest& request, const ListWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorldsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorlds(request), context);
 }
 
-void RoboMakerClient::ListWorldsAsyncHelper(const ListWorldsRequest& request, const ListWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::ListWorldsAsync(const ListWorldsRequest& request, const ListWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorlds(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientListWorldsAsyncHelper( this, request, handler, context ); } );
 }
 
 RestartSimulationJobOutcome RoboMakerClient::RestartSimulationJob(const RestartSimulationJobRequest& request) const
@@ -1038,14 +1038,14 @@ RestartSimulationJobOutcomeCallable RoboMakerClient::RestartSimulationJobCallabl
   return task->get_future();
 }
 
-void RoboMakerClient::RestartSimulationJobAsync(const RestartSimulationJobRequest& request, const RestartSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientRestartSimulationJobAsyncHelper(RoboMakerClient const * const clientThis, const RestartSimulationJobRequest& request, const RestartSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestartSimulationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestartSimulationJob(request), context);
 }
 
-void RoboMakerClient::RestartSimulationJobAsyncHelper(const RestartSimulationJobRequest& request, const RestartSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::RestartSimulationJobAsync(const RestartSimulationJobRequest& request, const RestartSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestartSimulationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientRestartSimulationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartSimulationJobBatchOutcome RoboMakerClient::StartSimulationJobBatch(const StartSimulationJobBatchRequest& request) const
@@ -1063,14 +1063,14 @@ StartSimulationJobBatchOutcomeCallable RoboMakerClient::StartSimulationJobBatchC
   return task->get_future();
 }
 
-void RoboMakerClient::StartSimulationJobBatchAsync(const StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientStartSimulationJobBatchAsyncHelper(RoboMakerClient const * const clientThis, const StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSimulationJobBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartSimulationJobBatch(request), context);
 }
 
-void RoboMakerClient::StartSimulationJobBatchAsyncHelper(const StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::StartSimulationJobBatchAsync(const StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartSimulationJobBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientStartSimulationJobBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome RoboMakerClient::TagResource(const TagResourceRequest& request) const
@@ -1094,14 +1094,14 @@ TagResourceOutcomeCallable RoboMakerClient::TagResourceCallable(const TagResourc
   return task->get_future();
 }
 
-void RoboMakerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientTagResourceAsyncHelper(RoboMakerClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void RoboMakerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome RoboMakerClient::UntagResource(const UntagResourceRequest& request) const
@@ -1130,14 +1130,14 @@ UntagResourceOutcomeCallable RoboMakerClient::UntagResourceCallable(const UntagR
   return task->get_future();
 }
 
-void RoboMakerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientUntagResourceAsyncHelper(RoboMakerClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void RoboMakerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRobotApplicationOutcome RoboMakerClient::UpdateRobotApplication(const UpdateRobotApplicationRequest& request) const
@@ -1155,14 +1155,14 @@ UpdateRobotApplicationOutcomeCallable RoboMakerClient::UpdateRobotApplicationCal
   return task->get_future();
 }
 
-void RoboMakerClient::UpdateRobotApplicationAsync(const UpdateRobotApplicationRequest& request, const UpdateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientUpdateRobotApplicationAsyncHelper(RoboMakerClient const * const clientThis, const UpdateRobotApplicationRequest& request, const UpdateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRobotApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRobotApplication(request), context);
 }
 
-void RoboMakerClient::UpdateRobotApplicationAsyncHelper(const UpdateRobotApplicationRequest& request, const UpdateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::UpdateRobotApplicationAsync(const UpdateRobotApplicationRequest& request, const UpdateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRobotApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientUpdateRobotApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSimulationApplicationOutcome RoboMakerClient::UpdateSimulationApplication(const UpdateSimulationApplicationRequest& request) const
@@ -1180,14 +1180,14 @@ UpdateSimulationApplicationOutcomeCallable RoboMakerClient::UpdateSimulationAppl
   return task->get_future();
 }
 
-void RoboMakerClient::UpdateSimulationApplicationAsync(const UpdateSimulationApplicationRequest& request, const UpdateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientUpdateSimulationApplicationAsyncHelper(RoboMakerClient const * const clientThis, const UpdateSimulationApplicationRequest& request, const UpdateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSimulationApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSimulationApplication(request), context);
 }
 
-void RoboMakerClient::UpdateSimulationApplicationAsyncHelper(const UpdateSimulationApplicationRequest& request, const UpdateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::UpdateSimulationApplicationAsync(const UpdateSimulationApplicationRequest& request, const UpdateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSimulationApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientUpdateSimulationApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWorldTemplateOutcome RoboMakerClient::UpdateWorldTemplate(const UpdateWorldTemplateRequest& request) const
@@ -1205,13 +1205,13 @@ UpdateWorldTemplateOutcomeCallable RoboMakerClient::UpdateWorldTemplateCallable(
   return task->get_future();
 }
 
-void RoboMakerClient::UpdateWorldTemplateAsync(const UpdateWorldTemplateRequest& request, const UpdateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClientUpdateWorldTemplateAsyncHelper(RoboMakerClient const * const clientThis, const UpdateWorldTemplateRequest& request, const UpdateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorldTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWorldTemplate(request), context);
 }
 
-void RoboMakerClient::UpdateWorldTemplateAsyncHelper(const UpdateWorldTemplateRequest& request, const UpdateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RoboMakerClient::UpdateWorldTemplateAsync(const UpdateWorldTemplateRequest& request, const UpdateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWorldTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RoboMakerClientUpdateWorldTemplateAsyncHelper( this, request, handler, context ); } );
 }
 

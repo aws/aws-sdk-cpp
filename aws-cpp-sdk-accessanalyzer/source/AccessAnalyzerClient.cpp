@@ -143,14 +143,14 @@ ApplyArchiveRuleOutcomeCallable AccessAnalyzerClient::ApplyArchiveRuleCallable(c
   return task->get_future();
 }
 
-void AccessAnalyzerClient::ApplyArchiveRuleAsync(const ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientApplyArchiveRuleAsyncHelper(AccessAnalyzerClient const * const clientThis, const ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ApplyArchiveRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ApplyArchiveRule(request), context);
 }
 
-void AccessAnalyzerClient::ApplyArchiveRuleAsyncHelper(const ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::ApplyArchiveRuleAsync(const ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ApplyArchiveRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientApplyArchiveRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelPolicyGenerationOutcome AccessAnalyzerClient::CancelPolicyGeneration(const CancelPolicyGenerationRequest& request) const
@@ -174,14 +174,14 @@ CancelPolicyGenerationOutcomeCallable AccessAnalyzerClient::CancelPolicyGenerati
   return task->get_future();
 }
 
-void AccessAnalyzerClient::CancelPolicyGenerationAsync(const CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientCancelPolicyGenerationAsyncHelper(AccessAnalyzerClient const * const clientThis, const CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelPolicyGenerationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelPolicyGeneration(request), context);
 }
 
-void AccessAnalyzerClient::CancelPolicyGenerationAsyncHelper(const CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::CancelPolicyGenerationAsync(const CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelPolicyGeneration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientCancelPolicyGenerationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAccessPreviewOutcome AccessAnalyzerClient::CreateAccessPreview(const CreateAccessPreviewRequest& request) const
@@ -199,14 +199,14 @@ CreateAccessPreviewOutcomeCallable AccessAnalyzerClient::CreateAccessPreviewCall
   return task->get_future();
 }
 
-void AccessAnalyzerClient::CreateAccessPreviewAsync(const CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientCreateAccessPreviewAsyncHelper(AccessAnalyzerClient const * const clientThis, const CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessPreviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAccessPreview(request), context);
 }
 
-void AccessAnalyzerClient::CreateAccessPreviewAsyncHelper(const CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::CreateAccessPreviewAsync(const CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAccessPreview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientCreateAccessPreviewAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAnalyzerOutcome AccessAnalyzerClient::CreateAnalyzer(const CreateAnalyzerRequest& request) const
@@ -224,14 +224,14 @@ CreateAnalyzerOutcomeCallable AccessAnalyzerClient::CreateAnalyzerCallable(const
   return task->get_future();
 }
 
-void AccessAnalyzerClient::CreateAnalyzerAsync(const CreateAnalyzerRequest& request, const CreateAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientCreateAnalyzerAsyncHelper(AccessAnalyzerClient const * const clientThis, const CreateAnalyzerRequest& request, const CreateAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAnalyzerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAnalyzer(request), context);
 }
 
-void AccessAnalyzerClient::CreateAnalyzerAsyncHelper(const CreateAnalyzerRequest& request, const CreateAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::CreateAnalyzerAsync(const CreateAnalyzerRequest& request, const CreateAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAnalyzer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientCreateAnalyzerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateArchiveRuleOutcome AccessAnalyzerClient::CreateArchiveRule(const CreateArchiveRuleRequest& request) const
@@ -256,14 +256,14 @@ CreateArchiveRuleOutcomeCallable AccessAnalyzerClient::CreateArchiveRuleCallable
   return task->get_future();
 }
 
-void AccessAnalyzerClient::CreateArchiveRuleAsync(const CreateArchiveRuleRequest& request, const CreateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientCreateArchiveRuleAsyncHelper(AccessAnalyzerClient const * const clientThis, const CreateArchiveRuleRequest& request, const CreateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateArchiveRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateArchiveRule(request), context);
 }
 
-void AccessAnalyzerClient::CreateArchiveRuleAsyncHelper(const CreateArchiveRuleRequest& request, const CreateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::CreateArchiveRuleAsync(const CreateArchiveRuleRequest& request, const CreateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateArchiveRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientCreateArchiveRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAnalyzerOutcome AccessAnalyzerClient::DeleteAnalyzer(const DeleteAnalyzerRequest& request) const
@@ -287,14 +287,14 @@ DeleteAnalyzerOutcomeCallable AccessAnalyzerClient::DeleteAnalyzerCallable(const
   return task->get_future();
 }
 
-void AccessAnalyzerClient::DeleteAnalyzerAsync(const DeleteAnalyzerRequest& request, const DeleteAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientDeleteAnalyzerAsyncHelper(AccessAnalyzerClient const * const clientThis, const DeleteAnalyzerRequest& request, const DeleteAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnalyzerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAnalyzer(request), context);
 }
 
-void AccessAnalyzerClient::DeleteAnalyzerAsyncHelper(const DeleteAnalyzerRequest& request, const DeleteAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::DeleteAnalyzerAsync(const DeleteAnalyzerRequest& request, const DeleteAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAnalyzer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientDeleteAnalyzerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteArchiveRuleOutcome AccessAnalyzerClient::DeleteArchiveRule(const DeleteArchiveRuleRequest& request) const
@@ -325,14 +325,14 @@ DeleteArchiveRuleOutcomeCallable AccessAnalyzerClient::DeleteArchiveRuleCallable
   return task->get_future();
 }
 
-void AccessAnalyzerClient::DeleteArchiveRuleAsync(const DeleteArchiveRuleRequest& request, const DeleteArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientDeleteArchiveRuleAsyncHelper(AccessAnalyzerClient const * const clientThis, const DeleteArchiveRuleRequest& request, const DeleteArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteArchiveRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteArchiveRule(request), context);
 }
 
-void AccessAnalyzerClient::DeleteArchiveRuleAsyncHelper(const DeleteArchiveRuleRequest& request, const DeleteArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::DeleteArchiveRuleAsync(const DeleteArchiveRuleRequest& request, const DeleteArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteArchiveRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientDeleteArchiveRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccessPreviewOutcome AccessAnalyzerClient::GetAccessPreview(const GetAccessPreviewRequest& request) const
@@ -361,14 +361,14 @@ GetAccessPreviewOutcomeCallable AccessAnalyzerClient::GetAccessPreviewCallable(c
   return task->get_future();
 }
 
-void AccessAnalyzerClient::GetAccessPreviewAsync(const GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientGetAccessPreviewAsyncHelper(AccessAnalyzerClient const * const clientThis, const GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPreviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccessPreview(request), context);
 }
 
-void AccessAnalyzerClient::GetAccessPreviewAsyncHelper(const GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::GetAccessPreviewAsync(const GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccessPreview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientGetAccessPreviewAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAnalyzedResourceOutcome AccessAnalyzerClient::GetAnalyzedResource(const GetAnalyzedResourceRequest& request) const
@@ -396,14 +396,14 @@ GetAnalyzedResourceOutcomeCallable AccessAnalyzerClient::GetAnalyzedResourceCall
   return task->get_future();
 }
 
-void AccessAnalyzerClient::GetAnalyzedResourceAsync(const GetAnalyzedResourceRequest& request, const GetAnalyzedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientGetAnalyzedResourceAsyncHelper(AccessAnalyzerClient const * const clientThis, const GetAnalyzedResourceRequest& request, const GetAnalyzedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAnalyzedResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAnalyzedResource(request), context);
 }
 
-void AccessAnalyzerClient::GetAnalyzedResourceAsyncHelper(const GetAnalyzedResourceRequest& request, const GetAnalyzedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::GetAnalyzedResourceAsync(const GetAnalyzedResourceRequest& request, const GetAnalyzedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAnalyzedResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientGetAnalyzedResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAnalyzerOutcome AccessAnalyzerClient::GetAnalyzer(const GetAnalyzerRequest& request) const
@@ -427,14 +427,14 @@ GetAnalyzerOutcomeCallable AccessAnalyzerClient::GetAnalyzerCallable(const GetAn
   return task->get_future();
 }
 
-void AccessAnalyzerClient::GetAnalyzerAsync(const GetAnalyzerRequest& request, const GetAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientGetAnalyzerAsyncHelper(AccessAnalyzerClient const * const clientThis, const GetAnalyzerRequest& request, const GetAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAnalyzerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAnalyzer(request), context);
 }
 
-void AccessAnalyzerClient::GetAnalyzerAsyncHelper(const GetAnalyzerRequest& request, const GetAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::GetAnalyzerAsync(const GetAnalyzerRequest& request, const GetAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAnalyzer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientGetAnalyzerAsyncHelper( this, request, handler, context ); } );
 }
 
 GetArchiveRuleOutcome AccessAnalyzerClient::GetArchiveRule(const GetArchiveRuleRequest& request) const
@@ -465,14 +465,14 @@ GetArchiveRuleOutcomeCallable AccessAnalyzerClient::GetArchiveRuleCallable(const
   return task->get_future();
 }
 
-void AccessAnalyzerClient::GetArchiveRuleAsync(const GetArchiveRuleRequest& request, const GetArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientGetArchiveRuleAsyncHelper(AccessAnalyzerClient const * const clientThis, const GetArchiveRuleRequest& request, const GetArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetArchiveRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetArchiveRule(request), context);
 }
 
-void AccessAnalyzerClient::GetArchiveRuleAsyncHelper(const GetArchiveRuleRequest& request, const GetArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::GetArchiveRuleAsync(const GetArchiveRuleRequest& request, const GetArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetArchiveRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientGetArchiveRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFindingOutcome AccessAnalyzerClient::GetFinding(const GetFindingRequest& request) const
@@ -501,14 +501,14 @@ GetFindingOutcomeCallable AccessAnalyzerClient::GetFindingCallable(const GetFind
   return task->get_future();
 }
 
-void AccessAnalyzerClient::GetFindingAsync(const GetFindingRequest& request, const GetFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientGetFindingAsyncHelper(AccessAnalyzerClient const * const clientThis, const GetFindingRequest& request, const GetFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFindingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFinding(request), context);
 }
 
-void AccessAnalyzerClient::GetFindingAsyncHelper(const GetFindingRequest& request, const GetFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::GetFindingAsync(const GetFindingRequest& request, const GetFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFinding(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientGetFindingAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGeneratedPolicyOutcome AccessAnalyzerClient::GetGeneratedPolicy(const GetGeneratedPolicyRequest& request) const
@@ -532,14 +532,14 @@ GetGeneratedPolicyOutcomeCallable AccessAnalyzerClient::GetGeneratedPolicyCallab
   return task->get_future();
 }
 
-void AccessAnalyzerClient::GetGeneratedPolicyAsync(const GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientGetGeneratedPolicyAsyncHelper(AccessAnalyzerClient const * const clientThis, const GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGeneratedPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGeneratedPolicy(request), context);
 }
 
-void AccessAnalyzerClient::GetGeneratedPolicyAsyncHelper(const GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::GetGeneratedPolicyAsync(const GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGeneratedPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientGetGeneratedPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings(const ListAccessPreviewFindingsRequest& request) const
@@ -563,14 +563,14 @@ ListAccessPreviewFindingsOutcomeCallable AccessAnalyzerClient::ListAccessPreview
   return task->get_future();
 }
 
-void AccessAnalyzerClient::ListAccessPreviewFindingsAsync(const ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientListAccessPreviewFindingsAsyncHelper(AccessAnalyzerClient const * const clientThis, const ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccessPreviewFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccessPreviewFindings(request), context);
 }
 
-void AccessAnalyzerClient::ListAccessPreviewFindingsAsyncHelper(const ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::ListAccessPreviewFindingsAsync(const ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccessPreviewFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientListAccessPreviewFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccessPreviewsOutcome AccessAnalyzerClient::ListAccessPreviews(const ListAccessPreviewsRequest& request) const
@@ -593,14 +593,14 @@ ListAccessPreviewsOutcomeCallable AccessAnalyzerClient::ListAccessPreviewsCallab
   return task->get_future();
 }
 
-void AccessAnalyzerClient::ListAccessPreviewsAsync(const ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientListAccessPreviewsAsyncHelper(AccessAnalyzerClient const * const clientThis, const ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccessPreviewsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccessPreviews(request), context);
 }
 
-void AccessAnalyzerClient::ListAccessPreviewsAsyncHelper(const ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::ListAccessPreviewsAsync(const ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccessPreviews(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientListAccessPreviewsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAnalyzedResourcesOutcome AccessAnalyzerClient::ListAnalyzedResources(const ListAnalyzedResourcesRequest& request) const
@@ -618,14 +618,14 @@ ListAnalyzedResourcesOutcomeCallable AccessAnalyzerClient::ListAnalyzedResources
   return task->get_future();
 }
 
-void AccessAnalyzerClient::ListAnalyzedResourcesAsync(const ListAnalyzedResourcesRequest& request, const ListAnalyzedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientListAnalyzedResourcesAsyncHelper(AccessAnalyzerClient const * const clientThis, const ListAnalyzedResourcesRequest& request, const ListAnalyzedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAnalyzedResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAnalyzedResources(request), context);
 }
 
-void AccessAnalyzerClient::ListAnalyzedResourcesAsyncHelper(const ListAnalyzedResourcesRequest& request, const ListAnalyzedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::ListAnalyzedResourcesAsync(const ListAnalyzedResourcesRequest& request, const ListAnalyzedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAnalyzedResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientListAnalyzedResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAnalyzersOutcome AccessAnalyzerClient::ListAnalyzers(const ListAnalyzersRequest& request) const
@@ -643,14 +643,14 @@ ListAnalyzersOutcomeCallable AccessAnalyzerClient::ListAnalyzersCallable(const L
   return task->get_future();
 }
 
-void AccessAnalyzerClient::ListAnalyzersAsync(const ListAnalyzersRequest& request, const ListAnalyzersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientListAnalyzersAsyncHelper(AccessAnalyzerClient const * const clientThis, const ListAnalyzersRequest& request, const ListAnalyzersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAnalyzersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAnalyzers(request), context);
 }
 
-void AccessAnalyzerClient::ListAnalyzersAsyncHelper(const ListAnalyzersRequest& request, const ListAnalyzersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::ListAnalyzersAsync(const ListAnalyzersRequest& request, const ListAnalyzersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAnalyzers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientListAnalyzersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListArchiveRulesOutcome AccessAnalyzerClient::ListArchiveRules(const ListArchiveRulesRequest& request) const
@@ -675,14 +675,14 @@ ListArchiveRulesOutcomeCallable AccessAnalyzerClient::ListArchiveRulesCallable(c
   return task->get_future();
 }
 
-void AccessAnalyzerClient::ListArchiveRulesAsync(const ListArchiveRulesRequest& request, const ListArchiveRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientListArchiveRulesAsyncHelper(AccessAnalyzerClient const * const clientThis, const ListArchiveRulesRequest& request, const ListArchiveRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListArchiveRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListArchiveRules(request), context);
 }
 
-void AccessAnalyzerClient::ListArchiveRulesAsyncHelper(const ListArchiveRulesRequest& request, const ListArchiveRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::ListArchiveRulesAsync(const ListArchiveRulesRequest& request, const ListArchiveRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListArchiveRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientListArchiveRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFindingsOutcome AccessAnalyzerClient::ListFindings(const ListFindingsRequest& request) const
@@ -700,14 +700,14 @@ ListFindingsOutcomeCallable AccessAnalyzerClient::ListFindingsCallable(const Lis
   return task->get_future();
 }
 
-void AccessAnalyzerClient::ListFindingsAsync(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientListFindingsAsyncHelper(AccessAnalyzerClient const * const clientThis, const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFindings(request), context);
 }
 
-void AccessAnalyzerClient::ListFindingsAsyncHelper(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::ListFindingsAsync(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientListFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPolicyGenerationsOutcome AccessAnalyzerClient::ListPolicyGenerations(const ListPolicyGenerationsRequest& request) const
@@ -725,14 +725,14 @@ ListPolicyGenerationsOutcomeCallable AccessAnalyzerClient::ListPolicyGenerations
   return task->get_future();
 }
 
-void AccessAnalyzerClient::ListPolicyGenerationsAsync(const ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientListPolicyGenerationsAsyncHelper(AccessAnalyzerClient const * const clientThis, const ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPolicyGenerationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPolicyGenerations(request), context);
 }
 
-void AccessAnalyzerClient::ListPolicyGenerationsAsyncHelper(const ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::ListPolicyGenerationsAsync(const ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPolicyGenerations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientListPolicyGenerationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -756,14 +756,14 @@ ListTagsForResourceOutcomeCallable AccessAnalyzerClient::ListTagsForResourceCall
   return task->get_future();
 }
 
-void AccessAnalyzerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientListTagsForResourceAsyncHelper(AccessAnalyzerClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void AccessAnalyzerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartPolicyGenerationOutcome AccessAnalyzerClient::StartPolicyGeneration(const StartPolicyGenerationRequest& request) const
@@ -781,14 +781,14 @@ StartPolicyGenerationOutcomeCallable AccessAnalyzerClient::StartPolicyGeneration
   return task->get_future();
 }
 
-void AccessAnalyzerClient::StartPolicyGenerationAsync(const StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientStartPolicyGenerationAsyncHelper(AccessAnalyzerClient const * const clientThis, const StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartPolicyGenerationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartPolicyGeneration(request), context);
 }
 
-void AccessAnalyzerClient::StartPolicyGenerationAsyncHelper(const StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::StartPolicyGenerationAsync(const StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartPolicyGeneration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientStartPolicyGenerationAsyncHelper( this, request, handler, context ); } );
 }
 
 StartResourceScanOutcome AccessAnalyzerClient::StartResourceScan(const StartResourceScanRequest& request) const
@@ -806,14 +806,14 @@ StartResourceScanOutcomeCallable AccessAnalyzerClient::StartResourceScanCallable
   return task->get_future();
 }
 
-void AccessAnalyzerClient::StartResourceScanAsync(const StartResourceScanRequest& request, const StartResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientStartResourceScanAsyncHelper(AccessAnalyzerClient const * const clientThis, const StartResourceScanRequest& request, const StartResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartResourceScanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartResourceScan(request), context);
 }
 
-void AccessAnalyzerClient::StartResourceScanAsyncHelper(const StartResourceScanRequest& request, const StartResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::StartResourceScanAsync(const StartResourceScanRequest& request, const StartResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartResourceScan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientStartResourceScanAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome AccessAnalyzerClient::TagResource(const TagResourceRequest& request) const
@@ -837,14 +837,14 @@ TagResourceOutcomeCallable AccessAnalyzerClient::TagResourceCallable(const TagRe
   return task->get_future();
 }
 
-void AccessAnalyzerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientTagResourceAsyncHelper(AccessAnalyzerClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void AccessAnalyzerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome AccessAnalyzerClient::UntagResource(const UntagResourceRequest& request) const
@@ -873,14 +873,14 @@ UntagResourceOutcomeCallable AccessAnalyzerClient::UntagResourceCallable(const U
   return task->get_future();
 }
 
-void AccessAnalyzerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientUntagResourceAsyncHelper(AccessAnalyzerClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void AccessAnalyzerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateArchiveRuleOutcome AccessAnalyzerClient::UpdateArchiveRule(const UpdateArchiveRuleRequest& request) const
@@ -911,14 +911,14 @@ UpdateArchiveRuleOutcomeCallable AccessAnalyzerClient::UpdateArchiveRuleCallable
   return task->get_future();
 }
 
-void AccessAnalyzerClient::UpdateArchiveRuleAsync(const UpdateArchiveRuleRequest& request, const UpdateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientUpdateArchiveRuleAsyncHelper(AccessAnalyzerClient const * const clientThis, const UpdateArchiveRuleRequest& request, const UpdateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateArchiveRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateArchiveRule(request), context);
 }
 
-void AccessAnalyzerClient::UpdateArchiveRuleAsyncHelper(const UpdateArchiveRuleRequest& request, const UpdateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::UpdateArchiveRuleAsync(const UpdateArchiveRuleRequest& request, const UpdateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateArchiveRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientUpdateArchiveRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFindingsOutcome AccessAnalyzerClient::UpdateFindings(const UpdateFindingsRequest& request) const
@@ -936,14 +936,14 @@ UpdateFindingsOutcomeCallable AccessAnalyzerClient::UpdateFindingsCallable(const
   return task->get_future();
 }
 
-void AccessAnalyzerClient::UpdateFindingsAsync(const UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientUpdateFindingsAsyncHelper(AccessAnalyzerClient const * const clientThis, const UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFindings(request), context);
 }
 
-void AccessAnalyzerClient::UpdateFindingsAsyncHelper(const UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::UpdateFindingsAsync(const UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientUpdateFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ValidatePolicyOutcome AccessAnalyzerClient::ValidatePolicy(const ValidatePolicyRequest& request) const
@@ -961,13 +961,13 @@ ValidatePolicyOutcomeCallable AccessAnalyzerClient::ValidatePolicyCallable(const
   return task->get_future();
 }
 
-void AccessAnalyzerClient::ValidatePolicyAsync(const ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClientValidatePolicyAsyncHelper(AccessAnalyzerClient const * const clientThis, const ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ValidatePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ValidatePolicy(request), context);
 }
 
-void AccessAnalyzerClient::ValidatePolicyAsyncHelper(const ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccessAnalyzerClient::ValidatePolicyAsync(const ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ValidatePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccessAnalyzerClientValidatePolicyAsyncHelper( this, request, handler, context ); } );
 }
 

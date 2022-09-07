@@ -119,14 +119,14 @@ BatchGetRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::BatchGetRecord
   return task->get_future();
 }
 
-void SageMakerFeatureStoreRuntimeClient::BatchGetRecordAsync(const BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerFeatureStoreRuntimeClientBatchGetRecordAsyncHelper(SageMakerFeatureStoreRuntimeClient const * const clientThis, const BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetRecordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetRecord(request), context);
 }
 
-void SageMakerFeatureStoreRuntimeClient::BatchGetRecordAsyncHelper(const BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerFeatureStoreRuntimeClient::BatchGetRecordAsync(const BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetRecord(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerFeatureStoreRuntimeClientBatchGetRecordAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const DeleteRecordRequest& request) const
@@ -160,14 +160,14 @@ DeleteRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::DeleteRecordCall
   return task->get_future();
 }
 
-void SageMakerFeatureStoreRuntimeClient::DeleteRecordAsync(const DeleteRecordRequest& request, const DeleteRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerFeatureStoreRuntimeClientDeleteRecordAsyncHelper(SageMakerFeatureStoreRuntimeClient const * const clientThis, const DeleteRecordRequest& request, const DeleteRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRecord(request), context);
 }
 
-void SageMakerFeatureStoreRuntimeClient::DeleteRecordAsyncHelper(const DeleteRecordRequest& request, const DeleteRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerFeatureStoreRuntimeClient::DeleteRecordAsync(const DeleteRecordRequest& request, const DeleteRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRecord(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerFeatureStoreRuntimeClientDeleteRecordAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecordOutcome SageMakerFeatureStoreRuntimeClient::GetRecord(const GetRecordRequest& request) const
@@ -196,14 +196,14 @@ GetRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::GetRecordCallable(c
   return task->get_future();
 }
 
-void SageMakerFeatureStoreRuntimeClient::GetRecordAsync(const GetRecordRequest& request, const GetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerFeatureStoreRuntimeClientGetRecordAsyncHelper(SageMakerFeatureStoreRuntimeClient const * const clientThis, const GetRecordRequest& request, const GetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecord(request), context);
 }
 
-void SageMakerFeatureStoreRuntimeClient::GetRecordAsyncHelper(const GetRecordRequest& request, const GetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerFeatureStoreRuntimeClient::GetRecordAsync(const GetRecordRequest& request, const GetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecord(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerFeatureStoreRuntimeClientGetRecordAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRecordOutcome SageMakerFeatureStoreRuntimeClient::PutRecord(const PutRecordRequest& request) const
@@ -227,13 +227,13 @@ PutRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::PutRecordCallable(c
   return task->get_future();
 }
 
-void SageMakerFeatureStoreRuntimeClient::PutRecordAsync(const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerFeatureStoreRuntimeClientPutRecordAsyncHelper(SageMakerFeatureStoreRuntimeClient const * const clientThis, const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRecordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRecord(request), context);
 }
 
-void SageMakerFeatureStoreRuntimeClient::PutRecordAsyncHelper(const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerFeatureStoreRuntimeClient::PutRecordAsync(const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRecord(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerFeatureStoreRuntimeClientPutRecordAsyncHelper( this, request, handler, context ); } );
 }
 

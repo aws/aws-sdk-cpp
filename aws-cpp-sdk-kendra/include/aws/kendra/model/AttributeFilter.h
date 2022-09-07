@@ -435,7 +435,7 @@ namespace Model
     bool m_orAllFiltersHasBeenSet = false;
 
     std::shared_ptr<AttributeFilter> m_notFilter;
-    bool m_notFilterHasBeenSet;
+    bool m_notFilterHasBeenSet = false;
 
     DocumentAttribute m_equalsTo;
     bool m_equalsToHasBeenSet = false;

@@ -147,14 +147,14 @@ CreateExtendedSourceServerOutcomeCallable DrsClient::CreateExtendedSourceServerC
   return task->get_future();
 }
 
-void DrsClient::CreateExtendedSourceServerAsync(const CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientCreateExtendedSourceServerAsyncHelper(DrsClient const * const clientThis, const CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExtendedSourceServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExtendedSourceServer(request), context);
 }
 
-void DrsClient::CreateExtendedSourceServerAsyncHelper(const CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::CreateExtendedSourceServerAsync(const CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExtendedSourceServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientCreateExtendedSourceServerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfigurationTemplate(const CreateReplicationConfigurationTemplateRequest& request) const
@@ -172,14 +172,14 @@ CreateReplicationConfigurationTemplateOutcomeCallable DrsClient::CreateReplicati
   return task->get_future();
 }
 
-void DrsClient::CreateReplicationConfigurationTemplateAsync(const CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientCreateReplicationConfigurationTemplateAsyncHelper(DrsClient const * const clientThis, const CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReplicationConfigurationTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateReplicationConfigurationTemplate(request), context);
 }
 
-void DrsClient::CreateReplicationConfigurationTemplateAsyncHelper(const CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::CreateReplicationConfigurationTemplateAsync(const CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateReplicationConfigurationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientCreateReplicationConfigurationTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteJobOutcome DrsClient::DeleteJob(const DeleteJobRequest& request) const
@@ -197,14 +197,14 @@ DeleteJobOutcomeCallable DrsClient::DeleteJobCallable(const DeleteJobRequest& re
   return task->get_future();
 }
 
-void DrsClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDeleteJobAsyncHelper(DrsClient const * const clientThis, const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteJob(request), context);
 }
 
-void DrsClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDeleteJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRecoveryInstanceOutcome DrsClient::DeleteRecoveryInstance(const DeleteRecoveryInstanceRequest& request) const
@@ -222,14 +222,14 @@ DeleteRecoveryInstanceOutcomeCallable DrsClient::DeleteRecoveryInstanceCallable(
   return task->get_future();
 }
 
-void DrsClient::DeleteRecoveryInstanceAsync(const DeleteRecoveryInstanceRequest& request, const DeleteRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDeleteRecoveryInstanceAsyncHelper(DrsClient const * const clientThis, const DeleteRecoveryInstanceRequest& request, const DeleteRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecoveryInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRecoveryInstance(request), context);
 }
 
-void DrsClient::DeleteRecoveryInstanceAsyncHelper(const DeleteRecoveryInstanceRequest& request, const DeleteRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DeleteRecoveryInstanceAsync(const DeleteRecoveryInstanceRequest& request, const DeleteRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRecoveryInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDeleteRecoveryInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteReplicationConfigurationTemplateOutcome DrsClient::DeleteReplicationConfigurationTemplate(const DeleteReplicationConfigurationTemplateRequest& request) const
@@ -247,14 +247,14 @@ DeleteReplicationConfigurationTemplateOutcomeCallable DrsClient::DeleteReplicati
   return task->get_future();
 }
 
-void DrsClient::DeleteReplicationConfigurationTemplateAsync(const DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDeleteReplicationConfigurationTemplateAsyncHelper(DrsClient const * const clientThis, const DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReplicationConfigurationTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReplicationConfigurationTemplate(request), context);
 }
 
-void DrsClient::DeleteReplicationConfigurationTemplateAsyncHelper(const DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DeleteReplicationConfigurationTemplateAsync(const DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReplicationConfigurationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDeleteReplicationConfigurationTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSourceServerOutcome DrsClient::DeleteSourceServer(const DeleteSourceServerRequest& request) const
@@ -272,14 +272,14 @@ DeleteSourceServerOutcomeCallable DrsClient::DeleteSourceServerCallable(const De
   return task->get_future();
 }
 
-void DrsClient::DeleteSourceServerAsync(const DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDeleteSourceServerAsyncHelper(DrsClient const * const clientThis, const DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSourceServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSourceServer(request), context);
 }
 
-void DrsClient::DeleteSourceServerAsyncHelper(const DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DeleteSourceServerAsync(const DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSourceServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDeleteSourceServerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJobLogItemsOutcome DrsClient::DescribeJobLogItems(const DescribeJobLogItemsRequest& request) const
@@ -297,14 +297,14 @@ DescribeJobLogItemsOutcomeCallable DrsClient::DescribeJobLogItemsCallable(const 
   return task->get_future();
 }
 
-void DrsClient::DescribeJobLogItemsAsync(const DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDescribeJobLogItemsAsyncHelper(DrsClient const * const clientThis, const DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobLogItemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJobLogItems(request), context);
 }
 
-void DrsClient::DescribeJobLogItemsAsyncHelper(const DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DescribeJobLogItemsAsync(const DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJobLogItems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDescribeJobLogItemsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJobsOutcome DrsClient::DescribeJobs(const DescribeJobsRequest& request) const
@@ -322,14 +322,14 @@ DescribeJobsOutcomeCallable DrsClient::DescribeJobsCallable(const DescribeJobsRe
   return task->get_future();
 }
 
-void DrsClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDescribeJobsAsyncHelper(DrsClient const * const clientThis, const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJobs(request), context);
 }
 
-void DrsClient::DescribeJobsAsyncHelper(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDescribeJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRecoveryInstancesOutcome DrsClient::DescribeRecoveryInstances(const DescribeRecoveryInstancesRequest& request) const
@@ -347,14 +347,14 @@ DescribeRecoveryInstancesOutcomeCallable DrsClient::DescribeRecoveryInstancesCal
   return task->get_future();
 }
 
-void DrsClient::DescribeRecoveryInstancesAsync(const DescribeRecoveryInstancesRequest& request, const DescribeRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDescribeRecoveryInstancesAsyncHelper(DrsClient const * const clientThis, const DescribeRecoveryInstancesRequest& request, const DescribeRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecoveryInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRecoveryInstances(request), context);
 }
 
-void DrsClient::DescribeRecoveryInstancesAsyncHelper(const DescribeRecoveryInstancesRequest& request, const DescribeRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DescribeRecoveryInstancesAsync(const DescribeRecoveryInstancesRequest& request, const DescribeRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRecoveryInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDescribeRecoveryInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRecoverySnapshotsOutcome DrsClient::DescribeRecoverySnapshots(const DescribeRecoverySnapshotsRequest& request) const
@@ -372,14 +372,14 @@ DescribeRecoverySnapshotsOutcomeCallable DrsClient::DescribeRecoverySnapshotsCal
   return task->get_future();
 }
 
-void DrsClient::DescribeRecoverySnapshotsAsync(const DescribeRecoverySnapshotsRequest& request, const DescribeRecoverySnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDescribeRecoverySnapshotsAsyncHelper(DrsClient const * const clientThis, const DescribeRecoverySnapshotsRequest& request, const DescribeRecoverySnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecoverySnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRecoverySnapshots(request), context);
 }
 
-void DrsClient::DescribeRecoverySnapshotsAsyncHelper(const DescribeRecoverySnapshotsRequest& request, const DescribeRecoverySnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DescribeRecoverySnapshotsAsync(const DescribeRecoverySnapshotsRequest& request, const DescribeRecoverySnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRecoverySnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDescribeRecoverySnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReplicationConfigurationTemplatesOutcome DrsClient::DescribeReplicationConfigurationTemplates(const DescribeReplicationConfigurationTemplatesRequest& request) const
@@ -397,14 +397,14 @@ DescribeReplicationConfigurationTemplatesOutcomeCallable DrsClient::DescribeRepl
   return task->get_future();
 }
 
-void DrsClient::DescribeReplicationConfigurationTemplatesAsync(const DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDescribeReplicationConfigurationTemplatesAsyncHelper(DrsClient const * const clientThis, const DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplicationConfigurationTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReplicationConfigurationTemplates(request), context);
 }
 
-void DrsClient::DescribeReplicationConfigurationTemplatesAsyncHelper(const DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DescribeReplicationConfigurationTemplatesAsync(const DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReplicationConfigurationTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDescribeReplicationConfigurationTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSourceServersOutcome DrsClient::DescribeSourceServers(const DescribeSourceServersRequest& request) const
@@ -422,14 +422,14 @@ DescribeSourceServersOutcomeCallable DrsClient::DescribeSourceServersCallable(co
   return task->get_future();
 }
 
-void DrsClient::DescribeSourceServersAsync(const DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDescribeSourceServersAsyncHelper(DrsClient const * const clientThis, const DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSourceServersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSourceServers(request), context);
 }
 
-void DrsClient::DescribeSourceServersAsyncHelper(const DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DescribeSourceServersAsync(const DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSourceServers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDescribeSourceServersAsyncHelper( this, request, handler, context ); } );
 }
 
 DisconnectRecoveryInstanceOutcome DrsClient::DisconnectRecoveryInstance(const DisconnectRecoveryInstanceRequest& request) const
@@ -447,14 +447,14 @@ DisconnectRecoveryInstanceOutcomeCallable DrsClient::DisconnectRecoveryInstanceC
   return task->get_future();
 }
 
-void DrsClient::DisconnectRecoveryInstanceAsync(const DisconnectRecoveryInstanceRequest& request, const DisconnectRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDisconnectRecoveryInstanceAsyncHelper(DrsClient const * const clientThis, const DisconnectRecoveryInstanceRequest& request, const DisconnectRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisconnectRecoveryInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisconnectRecoveryInstance(request), context);
 }
 
-void DrsClient::DisconnectRecoveryInstanceAsyncHelper(const DisconnectRecoveryInstanceRequest& request, const DisconnectRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DisconnectRecoveryInstanceAsync(const DisconnectRecoveryInstanceRequest& request, const DisconnectRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisconnectRecoveryInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDisconnectRecoveryInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 DisconnectSourceServerOutcome DrsClient::DisconnectSourceServer(const DisconnectSourceServerRequest& request) const
@@ -472,14 +472,14 @@ DisconnectSourceServerOutcomeCallable DrsClient::DisconnectSourceServerCallable(
   return task->get_future();
 }
 
-void DrsClient::DisconnectSourceServerAsync(const DisconnectSourceServerRequest& request, const DisconnectSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientDisconnectSourceServerAsyncHelper(DrsClient const * const clientThis, const DisconnectSourceServerRequest& request, const DisconnectSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisconnectSourceServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisconnectSourceServer(request), context);
 }
 
-void DrsClient::DisconnectSourceServerAsyncHelper(const DisconnectSourceServerRequest& request, const DisconnectSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::DisconnectSourceServerAsync(const DisconnectSourceServerRequest& request, const DisconnectSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisconnectSourceServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientDisconnectSourceServerAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFailbackReplicationConfigurationOutcome DrsClient::GetFailbackReplicationConfiguration(const GetFailbackReplicationConfigurationRequest& request) const
@@ -497,14 +497,14 @@ GetFailbackReplicationConfigurationOutcomeCallable DrsClient::GetFailbackReplica
   return task->get_future();
 }
 
-void DrsClient::GetFailbackReplicationConfigurationAsync(const GetFailbackReplicationConfigurationRequest& request, const GetFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientGetFailbackReplicationConfigurationAsyncHelper(DrsClient const * const clientThis, const GetFailbackReplicationConfigurationRequest& request, const GetFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFailbackReplicationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFailbackReplicationConfiguration(request), context);
 }
 
-void DrsClient::GetFailbackReplicationConfigurationAsyncHelper(const GetFailbackReplicationConfigurationRequest& request, const GetFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::GetFailbackReplicationConfigurationAsync(const GetFailbackReplicationConfigurationRequest& request, const GetFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFailbackReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientGetFailbackReplicationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLaunchConfigurationOutcome DrsClient::GetLaunchConfiguration(const GetLaunchConfigurationRequest& request) const
@@ -522,14 +522,14 @@ GetLaunchConfigurationOutcomeCallable DrsClient::GetLaunchConfigurationCallable(
   return task->get_future();
 }
 
-void DrsClient::GetLaunchConfigurationAsync(const GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientGetLaunchConfigurationAsyncHelper(DrsClient const * const clientThis, const GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLaunchConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLaunchConfiguration(request), context);
 }
 
-void DrsClient::GetLaunchConfigurationAsyncHelper(const GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::GetLaunchConfigurationAsync(const GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLaunchConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientGetLaunchConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetReplicationConfigurationOutcome DrsClient::GetReplicationConfiguration(const GetReplicationConfigurationRequest& request) const
@@ -547,14 +547,14 @@ GetReplicationConfigurationOutcomeCallable DrsClient::GetReplicationConfiguratio
   return task->get_future();
 }
 
-void DrsClient::GetReplicationConfigurationAsync(const GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientGetReplicationConfigurationAsyncHelper(DrsClient const * const clientThis, const GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReplicationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetReplicationConfiguration(request), context);
 }
 
-void DrsClient::GetReplicationConfigurationAsyncHelper(const GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::GetReplicationConfigurationAsync(const GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientGetReplicationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 InitializeServiceOutcome DrsClient::InitializeService(const InitializeServiceRequest& request) const
@@ -572,14 +572,14 @@ InitializeServiceOutcomeCallable DrsClient::InitializeServiceCallable(const Init
   return task->get_future();
 }
 
-void DrsClient::InitializeServiceAsync(const InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientInitializeServiceAsyncHelper(DrsClient const * const clientThis, const InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InitializeServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InitializeService(request), context);
 }
 
-void DrsClient::InitializeServiceAsyncHelper(const InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::InitializeServiceAsync(const InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InitializeService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientInitializeServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExtensibleSourceServersOutcome DrsClient::ListExtensibleSourceServers(const ListExtensibleSourceServersRequest& request) const
@@ -597,14 +597,14 @@ ListExtensibleSourceServersOutcomeCallable DrsClient::ListExtensibleSourceServer
   return task->get_future();
 }
 
-void DrsClient::ListExtensibleSourceServersAsync(const ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientListExtensibleSourceServersAsyncHelper(DrsClient const * const clientThis, const ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExtensibleSourceServersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExtensibleSourceServers(request), context);
 }
 
-void DrsClient::ListExtensibleSourceServersAsyncHelper(const ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::ListExtensibleSourceServersAsync(const ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExtensibleSourceServers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientListExtensibleSourceServersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStagingAccountsOutcome DrsClient::ListStagingAccounts(const ListStagingAccountsRequest& request) const
@@ -622,14 +622,14 @@ ListStagingAccountsOutcomeCallable DrsClient::ListStagingAccountsCallable(const 
   return task->get_future();
 }
 
-void DrsClient::ListStagingAccountsAsync(const ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientListStagingAccountsAsyncHelper(DrsClient const * const clientThis, const ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStagingAccountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStagingAccounts(request), context);
 }
 
-void DrsClient::ListStagingAccountsAsyncHelper(const ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::ListStagingAccountsAsync(const ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStagingAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientListStagingAccountsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome DrsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -653,14 +653,14 @@ ListTagsForResourceOutcomeCallable DrsClient::ListTagsForResourceCallable(const 
   return task->get_future();
 }
 
-void DrsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientListTagsForResourceAsyncHelper(DrsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void DrsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 RetryDataReplicationOutcome DrsClient::RetryDataReplication(const RetryDataReplicationRequest& request) const
@@ -678,14 +678,14 @@ RetryDataReplicationOutcomeCallable DrsClient::RetryDataReplicationCallable(cons
   return task->get_future();
 }
 
-void DrsClient::RetryDataReplicationAsync(const RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientRetryDataReplicationAsyncHelper(DrsClient const * const clientThis, const RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RetryDataReplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RetryDataReplication(request), context);
 }
 
-void DrsClient::RetryDataReplicationAsyncHelper(const RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::RetryDataReplicationAsync(const RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RetryDataReplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientRetryDataReplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 StartFailbackLaunchOutcome DrsClient::StartFailbackLaunch(const StartFailbackLaunchRequest& request) const
@@ -703,14 +703,14 @@ StartFailbackLaunchOutcomeCallable DrsClient::StartFailbackLaunchCallable(const 
   return task->get_future();
 }
 
-void DrsClient::StartFailbackLaunchAsync(const StartFailbackLaunchRequest& request, const StartFailbackLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientStartFailbackLaunchAsyncHelper(DrsClient const * const clientThis, const StartFailbackLaunchRequest& request, const StartFailbackLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFailbackLaunchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartFailbackLaunch(request), context);
 }
 
-void DrsClient::StartFailbackLaunchAsyncHelper(const StartFailbackLaunchRequest& request, const StartFailbackLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::StartFailbackLaunchAsync(const StartFailbackLaunchRequest& request, const StartFailbackLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartFailbackLaunch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientStartFailbackLaunchAsyncHelper( this, request, handler, context ); } );
 }
 
 StartRecoveryOutcome DrsClient::StartRecovery(const StartRecoveryRequest& request) const
@@ -728,14 +728,14 @@ StartRecoveryOutcomeCallable DrsClient::StartRecoveryCallable(const StartRecover
   return task->get_future();
 }
 
-void DrsClient::StartRecoveryAsync(const StartRecoveryRequest& request, const StartRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientStartRecoveryAsyncHelper(DrsClient const * const clientThis, const StartRecoveryRequest& request, const StartRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartRecoveryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartRecovery(request), context);
 }
 
-void DrsClient::StartRecoveryAsyncHelper(const StartRecoveryRequest& request, const StartRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::StartRecoveryAsync(const StartRecoveryRequest& request, const StartRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartRecovery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientStartRecoveryAsyncHelper( this, request, handler, context ); } );
 }
 
 StopFailbackOutcome DrsClient::StopFailback(const StopFailbackRequest& request) const
@@ -753,14 +753,14 @@ StopFailbackOutcomeCallable DrsClient::StopFailbackCallable(const StopFailbackRe
   return task->get_future();
 }
 
-void DrsClient::StopFailbackAsync(const StopFailbackRequest& request, const StopFailbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientStopFailbackAsyncHelper(DrsClient const * const clientThis, const StopFailbackRequest& request, const StopFailbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopFailbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopFailback(request), context);
 }
 
-void DrsClient::StopFailbackAsyncHelper(const StopFailbackRequest& request, const StopFailbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::StopFailbackAsync(const StopFailbackRequest& request, const StopFailbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopFailback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientStopFailbackAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome DrsClient::TagResource(const TagResourceRequest& request) const
@@ -784,14 +784,14 @@ TagResourceOutcomeCallable DrsClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void DrsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientTagResourceAsyncHelper(DrsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void DrsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TerminateRecoveryInstancesOutcome DrsClient::TerminateRecoveryInstances(const TerminateRecoveryInstancesRequest& request) const
@@ -809,14 +809,14 @@ TerminateRecoveryInstancesOutcomeCallable DrsClient::TerminateRecoveryInstancesC
   return task->get_future();
 }
 
-void DrsClient::TerminateRecoveryInstancesAsync(const TerminateRecoveryInstancesRequest& request, const TerminateRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientTerminateRecoveryInstancesAsyncHelper(DrsClient const * const clientThis, const TerminateRecoveryInstancesRequest& request, const TerminateRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TerminateRecoveryInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TerminateRecoveryInstances(request), context);
 }
 
-void DrsClient::TerminateRecoveryInstancesAsyncHelper(const TerminateRecoveryInstancesRequest& request, const TerminateRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::TerminateRecoveryInstancesAsync(const TerminateRecoveryInstancesRequest& request, const TerminateRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TerminateRecoveryInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientTerminateRecoveryInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome DrsClient::UntagResource(const UntagResourceRequest& request) const
@@ -845,14 +845,14 @@ UntagResourceOutcomeCallable DrsClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void DrsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientUntagResourceAsyncHelper(DrsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void DrsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFailbackReplicationConfigurationOutcome DrsClient::UpdateFailbackReplicationConfiguration(const UpdateFailbackReplicationConfigurationRequest& request) const
@@ -870,14 +870,14 @@ UpdateFailbackReplicationConfigurationOutcomeCallable DrsClient::UpdateFailbackR
   return task->get_future();
 }
 
-void DrsClient::UpdateFailbackReplicationConfigurationAsync(const UpdateFailbackReplicationConfigurationRequest& request, const UpdateFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientUpdateFailbackReplicationConfigurationAsyncHelper(DrsClient const * const clientThis, const UpdateFailbackReplicationConfigurationRequest& request, const UpdateFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFailbackReplicationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFailbackReplicationConfiguration(request), context);
 }
 
-void DrsClient::UpdateFailbackReplicationConfigurationAsyncHelper(const UpdateFailbackReplicationConfigurationRequest& request, const UpdateFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::UpdateFailbackReplicationConfigurationAsync(const UpdateFailbackReplicationConfigurationRequest& request, const UpdateFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFailbackReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientUpdateFailbackReplicationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLaunchConfigurationOutcome DrsClient::UpdateLaunchConfiguration(const UpdateLaunchConfigurationRequest& request) const
@@ -895,14 +895,14 @@ UpdateLaunchConfigurationOutcomeCallable DrsClient::UpdateLaunchConfigurationCal
   return task->get_future();
 }
 
-void DrsClient::UpdateLaunchConfigurationAsync(const UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientUpdateLaunchConfigurationAsyncHelper(DrsClient const * const clientThis, const UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLaunchConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLaunchConfiguration(request), context);
 }
 
-void DrsClient::UpdateLaunchConfigurationAsyncHelper(const UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::UpdateLaunchConfigurationAsync(const UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLaunchConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientUpdateLaunchConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateReplicationConfigurationOutcome DrsClient::UpdateReplicationConfiguration(const UpdateReplicationConfigurationRequest& request) const
@@ -920,14 +920,14 @@ UpdateReplicationConfigurationOutcomeCallable DrsClient::UpdateReplicationConfig
   return task->get_future();
 }
 
-void DrsClient::UpdateReplicationConfigurationAsync(const UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientUpdateReplicationConfigurationAsyncHelper(DrsClient const * const clientThis, const UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReplicationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateReplicationConfiguration(request), context);
 }
 
-void DrsClient::UpdateReplicationConfigurationAsyncHelper(const UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::UpdateReplicationConfigurationAsync(const UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientUpdateReplicationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateReplicationConfigurationTemplateOutcome DrsClient::UpdateReplicationConfigurationTemplate(const UpdateReplicationConfigurationTemplateRequest& request) const
@@ -945,13 +945,13 @@ UpdateReplicationConfigurationTemplateOutcomeCallable DrsClient::UpdateReplicati
   return task->get_future();
 }
 
-void DrsClient::UpdateReplicationConfigurationTemplateAsync(const UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClientUpdateReplicationConfigurationTemplateAsyncHelper(DrsClient const * const clientThis, const UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReplicationConfigurationTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateReplicationConfigurationTemplate(request), context);
 }
 
-void DrsClient::UpdateReplicationConfigurationTemplateAsyncHelper(const UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DrsClient::UpdateReplicationConfigurationTemplateAsync(const UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateReplicationConfigurationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DrsClientUpdateReplicationConfigurationTemplateAsyncHelper( this, request, handler, context ); } );
 }
 

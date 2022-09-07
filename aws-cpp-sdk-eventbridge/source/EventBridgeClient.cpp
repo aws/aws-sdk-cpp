@@ -172,14 +172,14 @@ ActivateEventSourceOutcomeCallable EventBridgeClient::ActivateEventSourceCallabl
   return task->get_future();
 }
 
-void EventBridgeClient::ActivateEventSourceAsync(const ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientActivateEventSourceAsyncHelper(EventBridgeClient const * const clientThis, const ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ActivateEventSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ActivateEventSource(request), context);
 }
 
-void EventBridgeClient::ActivateEventSourceAsyncHelper(const ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ActivateEventSourceAsync(const ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ActivateEventSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientActivateEventSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelReplayOutcome EventBridgeClient::CancelReplay(const CancelReplayRequest& request) const
@@ -196,14 +196,14 @@ CancelReplayOutcomeCallable EventBridgeClient::CancelReplayCallable(const Cancel
   return task->get_future();
 }
 
-void EventBridgeClient::CancelReplayAsync(const CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientCancelReplayAsyncHelper(EventBridgeClient const * const clientThis, const CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelReplayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelReplay(request), context);
 }
 
-void EventBridgeClient::CancelReplayAsyncHelper(const CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::CancelReplayAsync(const CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelReplay(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientCancelReplayAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateApiDestinationOutcome EventBridgeClient::CreateApiDestination(const CreateApiDestinationRequest& request) const
@@ -220,14 +220,14 @@ CreateApiDestinationOutcomeCallable EventBridgeClient::CreateApiDestinationCalla
   return task->get_future();
 }
 
-void EventBridgeClient::CreateApiDestinationAsync(const CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientCreateApiDestinationAsyncHelper(EventBridgeClient const * const clientThis, const CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApiDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApiDestination(request), context);
 }
 
-void EventBridgeClient::CreateApiDestinationAsyncHelper(const CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::CreateApiDestinationAsync(const CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApiDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientCreateApiDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateArchiveOutcome EventBridgeClient::CreateArchive(const CreateArchiveRequest& request) const
@@ -244,14 +244,14 @@ CreateArchiveOutcomeCallable EventBridgeClient::CreateArchiveCallable(const Crea
   return task->get_future();
 }
 
-void EventBridgeClient::CreateArchiveAsync(const CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientCreateArchiveAsyncHelper(EventBridgeClient const * const clientThis, const CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateArchiveAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateArchive(request), context);
 }
 
-void EventBridgeClient::CreateArchiveAsyncHelper(const CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::CreateArchiveAsync(const CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateArchive(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientCreateArchiveAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConnectionOutcome EventBridgeClient::CreateConnection(const CreateConnectionRequest& request) const
@@ -268,14 +268,14 @@ CreateConnectionOutcomeCallable EventBridgeClient::CreateConnectionCallable(cons
   return task->get_future();
 }
 
-void EventBridgeClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientCreateConnectionAsyncHelper(EventBridgeClient const * const clientThis, const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConnection(request), context);
 }
 
-void EventBridgeClient::CreateConnectionAsyncHelper(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientCreateConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEndpointOutcome EventBridgeClient::CreateEndpoint(const CreateEndpointRequest& request) const
@@ -292,14 +292,14 @@ CreateEndpointOutcomeCallable EventBridgeClient::CreateEndpointCallable(const Cr
   return task->get_future();
 }
 
-void EventBridgeClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientCreateEndpointAsyncHelper(EventBridgeClient const * const clientThis, const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEndpoint(request), context);
 }
 
-void EventBridgeClient::CreateEndpointAsyncHelper(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientCreateEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEventBusOutcome EventBridgeClient::CreateEventBus(const CreateEventBusRequest& request) const
@@ -316,14 +316,14 @@ CreateEventBusOutcomeCallable EventBridgeClient::CreateEventBusCallable(const Cr
   return task->get_future();
 }
 
-void EventBridgeClient::CreateEventBusAsync(const CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientCreateEventBusAsyncHelper(EventBridgeClient const * const clientThis, const CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEventBusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEventBus(request), context);
 }
 
-void EventBridgeClient::CreateEventBusAsyncHelper(const CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::CreateEventBusAsync(const CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEventBus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientCreateEventBusAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePartnerEventSourceOutcome EventBridgeClient::CreatePartnerEventSource(const CreatePartnerEventSourceRequest& request) const
@@ -340,14 +340,14 @@ CreatePartnerEventSourceOutcomeCallable EventBridgeClient::CreatePartnerEventSou
   return task->get_future();
 }
 
-void EventBridgeClient::CreatePartnerEventSourceAsync(const CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientCreatePartnerEventSourceAsyncHelper(EventBridgeClient const * const clientThis, const CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePartnerEventSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePartnerEventSource(request), context);
 }
 
-void EventBridgeClient::CreatePartnerEventSourceAsyncHelper(const CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::CreatePartnerEventSourceAsync(const CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePartnerEventSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientCreatePartnerEventSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeactivateEventSourceOutcome EventBridgeClient::DeactivateEventSource(const DeactivateEventSourceRequest& request) const
@@ -364,14 +364,14 @@ DeactivateEventSourceOutcomeCallable EventBridgeClient::DeactivateEventSourceCal
   return task->get_future();
 }
 
-void EventBridgeClient::DeactivateEventSourceAsync(const DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDeactivateEventSourceAsyncHelper(EventBridgeClient const * const clientThis, const DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeactivateEventSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeactivateEventSource(request), context);
 }
 
-void EventBridgeClient::DeactivateEventSourceAsyncHelper(const DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DeactivateEventSourceAsync(const DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeactivateEventSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDeactivateEventSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeauthorizeConnectionOutcome EventBridgeClient::DeauthorizeConnection(const DeauthorizeConnectionRequest& request) const
@@ -388,14 +388,14 @@ DeauthorizeConnectionOutcomeCallable EventBridgeClient::DeauthorizeConnectionCal
   return task->get_future();
 }
 
-void EventBridgeClient::DeauthorizeConnectionAsync(const DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDeauthorizeConnectionAsyncHelper(EventBridgeClient const * const clientThis, const DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeauthorizeConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeauthorizeConnection(request), context);
 }
 
-void EventBridgeClient::DeauthorizeConnectionAsyncHelper(const DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DeauthorizeConnectionAsync(const DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeauthorizeConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDeauthorizeConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApiDestinationOutcome EventBridgeClient::DeleteApiDestination(const DeleteApiDestinationRequest& request) const
@@ -412,14 +412,14 @@ DeleteApiDestinationOutcomeCallable EventBridgeClient::DeleteApiDestinationCalla
   return task->get_future();
 }
 
-void EventBridgeClient::DeleteApiDestinationAsync(const DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDeleteApiDestinationAsyncHelper(EventBridgeClient const * const clientThis, const DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApiDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApiDestination(request), context);
 }
 
-void EventBridgeClient::DeleteApiDestinationAsyncHelper(const DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DeleteApiDestinationAsync(const DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApiDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDeleteApiDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteArchiveOutcome EventBridgeClient::DeleteArchive(const DeleteArchiveRequest& request) const
@@ -436,14 +436,14 @@ DeleteArchiveOutcomeCallable EventBridgeClient::DeleteArchiveCallable(const Dele
   return task->get_future();
 }
 
-void EventBridgeClient::DeleteArchiveAsync(const DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDeleteArchiveAsyncHelper(EventBridgeClient const * const clientThis, const DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteArchiveAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteArchive(request), context);
 }
 
-void EventBridgeClient::DeleteArchiveAsyncHelper(const DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DeleteArchiveAsync(const DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteArchive(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDeleteArchiveAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConnectionOutcome EventBridgeClient::DeleteConnection(const DeleteConnectionRequest& request) const
@@ -460,14 +460,14 @@ DeleteConnectionOutcomeCallable EventBridgeClient::DeleteConnectionCallable(cons
   return task->get_future();
 }
 
-void EventBridgeClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDeleteConnectionAsyncHelper(EventBridgeClient const * const clientThis, const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConnection(request), context);
 }
 
-void EventBridgeClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDeleteConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEndpointOutcome EventBridgeClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
@@ -484,14 +484,14 @@ DeleteEndpointOutcomeCallable EventBridgeClient::DeleteEndpointCallable(const De
   return task->get_future();
 }
 
-void EventBridgeClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDeleteEndpointAsyncHelper(EventBridgeClient const * const clientThis, const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEndpoint(request), context);
 }
 
-void EventBridgeClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDeleteEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEventBusOutcome EventBridgeClient::DeleteEventBus(const DeleteEventBusRequest& request) const
@@ -508,14 +508,14 @@ DeleteEventBusOutcomeCallable EventBridgeClient::DeleteEventBusCallable(const De
   return task->get_future();
 }
 
-void EventBridgeClient::DeleteEventBusAsync(const DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDeleteEventBusAsyncHelper(EventBridgeClient const * const clientThis, const DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventBusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEventBus(request), context);
 }
 
-void EventBridgeClient::DeleteEventBusAsyncHelper(const DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DeleteEventBusAsync(const DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEventBus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDeleteEventBusAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePartnerEventSourceOutcome EventBridgeClient::DeletePartnerEventSource(const DeletePartnerEventSourceRequest& request) const
@@ -532,14 +532,14 @@ DeletePartnerEventSourceOutcomeCallable EventBridgeClient::DeletePartnerEventSou
   return task->get_future();
 }
 
-void EventBridgeClient::DeletePartnerEventSourceAsync(const DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDeletePartnerEventSourceAsyncHelper(EventBridgeClient const * const clientThis, const DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePartnerEventSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePartnerEventSource(request), context);
 }
 
-void EventBridgeClient::DeletePartnerEventSourceAsyncHelper(const DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DeletePartnerEventSourceAsync(const DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePartnerEventSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDeletePartnerEventSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRuleOutcome EventBridgeClient::DeleteRule(const DeleteRuleRequest& request) const
@@ -556,14 +556,14 @@ DeleteRuleOutcomeCallable EventBridgeClient::DeleteRuleCallable(const DeleteRule
   return task->get_future();
 }
 
-void EventBridgeClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDeleteRuleAsyncHelper(EventBridgeClient const * const clientThis, const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRule(request), context);
 }
 
-void EventBridgeClient::DeleteRuleAsyncHelper(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDeleteRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeApiDestinationOutcome EventBridgeClient::DescribeApiDestination(const DescribeApiDestinationRequest& request) const
@@ -580,14 +580,14 @@ DescribeApiDestinationOutcomeCallable EventBridgeClient::DescribeApiDestinationC
   return task->get_future();
 }
 
-void EventBridgeClient::DescribeApiDestinationAsync(const DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDescribeApiDestinationAsyncHelper(EventBridgeClient const * const clientThis, const DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApiDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApiDestination(request), context);
 }
 
-void EventBridgeClient::DescribeApiDestinationAsyncHelper(const DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DescribeApiDestinationAsync(const DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApiDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDescribeApiDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeArchiveOutcome EventBridgeClient::DescribeArchive(const DescribeArchiveRequest& request) const
@@ -604,14 +604,14 @@ DescribeArchiveOutcomeCallable EventBridgeClient::DescribeArchiveCallable(const 
   return task->get_future();
 }
 
-void EventBridgeClient::DescribeArchiveAsync(const DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDescribeArchiveAsyncHelper(EventBridgeClient const * const clientThis, const DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeArchiveAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeArchive(request), context);
 }
 
-void EventBridgeClient::DescribeArchiveAsyncHelper(const DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DescribeArchiveAsync(const DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeArchive(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDescribeArchiveAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeConnectionOutcome EventBridgeClient::DescribeConnection(const DescribeConnectionRequest& request) const
@@ -628,14 +628,14 @@ DescribeConnectionOutcomeCallable EventBridgeClient::DescribeConnectionCallable(
   return task->get_future();
 }
 
-void EventBridgeClient::DescribeConnectionAsync(const DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDescribeConnectionAsyncHelper(EventBridgeClient const * const clientThis, const DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeConnection(request), context);
 }
 
-void EventBridgeClient::DescribeConnectionAsyncHelper(const DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DescribeConnectionAsync(const DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDescribeConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEndpointOutcome EventBridgeClient::DescribeEndpoint(const DescribeEndpointRequest& request) const
@@ -652,14 +652,14 @@ DescribeEndpointOutcomeCallable EventBridgeClient::DescribeEndpointCallable(cons
   return task->get_future();
 }
 
-void EventBridgeClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDescribeEndpointAsyncHelper(EventBridgeClient const * const clientThis, const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEndpoint(request), context);
 }
 
-void EventBridgeClient::DescribeEndpointAsyncHelper(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDescribeEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventBusOutcome EventBridgeClient::DescribeEventBus(const DescribeEventBusRequest& request) const
@@ -676,14 +676,14 @@ DescribeEventBusOutcomeCallable EventBridgeClient::DescribeEventBusCallable(cons
   return task->get_future();
 }
 
-void EventBridgeClient::DescribeEventBusAsync(const DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDescribeEventBusAsyncHelper(EventBridgeClient const * const clientThis, const DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventBusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEventBus(request), context);
 }
 
-void EventBridgeClient::DescribeEventBusAsyncHelper(const DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DescribeEventBusAsync(const DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEventBus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDescribeEventBusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventSourceOutcome EventBridgeClient::DescribeEventSource(const DescribeEventSourceRequest& request) const
@@ -700,14 +700,14 @@ DescribeEventSourceOutcomeCallable EventBridgeClient::DescribeEventSourceCallabl
   return task->get_future();
 }
 
-void EventBridgeClient::DescribeEventSourceAsync(const DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDescribeEventSourceAsyncHelper(EventBridgeClient const * const clientThis, const DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEventSource(request), context);
 }
 
-void EventBridgeClient::DescribeEventSourceAsyncHelper(const DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DescribeEventSourceAsync(const DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEventSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDescribeEventSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePartnerEventSourceOutcome EventBridgeClient::DescribePartnerEventSource(const DescribePartnerEventSourceRequest& request) const
@@ -724,14 +724,14 @@ DescribePartnerEventSourceOutcomeCallable EventBridgeClient::DescribePartnerEven
   return task->get_future();
 }
 
-void EventBridgeClient::DescribePartnerEventSourceAsync(const DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDescribePartnerEventSourceAsyncHelper(EventBridgeClient const * const clientThis, const DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePartnerEventSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePartnerEventSource(request), context);
 }
 
-void EventBridgeClient::DescribePartnerEventSourceAsyncHelper(const DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DescribePartnerEventSourceAsync(const DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePartnerEventSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDescribePartnerEventSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReplayOutcome EventBridgeClient::DescribeReplay(const DescribeReplayRequest& request) const
@@ -748,14 +748,14 @@ DescribeReplayOutcomeCallable EventBridgeClient::DescribeReplayCallable(const De
   return task->get_future();
 }
 
-void EventBridgeClient::DescribeReplayAsync(const DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDescribeReplayAsyncHelper(EventBridgeClient const * const clientThis, const DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReplay(request), context);
 }
 
-void EventBridgeClient::DescribeReplayAsyncHelper(const DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DescribeReplayAsync(const DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReplay(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDescribeReplayAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRuleOutcome EventBridgeClient::DescribeRule(const DescribeRuleRequest& request) const
@@ -772,14 +772,14 @@ DescribeRuleOutcomeCallable EventBridgeClient::DescribeRuleCallable(const Descri
   return task->get_future();
 }
 
-void EventBridgeClient::DescribeRuleAsync(const DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDescribeRuleAsyncHelper(EventBridgeClient const * const clientThis, const DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRule(request), context);
 }
 
-void EventBridgeClient::DescribeRuleAsyncHelper(const DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DescribeRuleAsync(const DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDescribeRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableRuleOutcome EventBridgeClient::DisableRule(const DisableRuleRequest& request) const
@@ -796,14 +796,14 @@ DisableRuleOutcomeCallable EventBridgeClient::DisableRuleCallable(const DisableR
   return task->get_future();
 }
 
-void EventBridgeClient::DisableRuleAsync(const DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientDisableRuleAsyncHelper(EventBridgeClient const * const clientThis, const DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableRule(request), context);
 }
 
-void EventBridgeClient::DisableRuleAsyncHelper(const DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::DisableRuleAsync(const DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientDisableRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableRuleOutcome EventBridgeClient::EnableRule(const EnableRuleRequest& request) const
@@ -820,14 +820,14 @@ EnableRuleOutcomeCallable EventBridgeClient::EnableRuleCallable(const EnableRule
   return task->get_future();
 }
 
-void EventBridgeClient::EnableRuleAsync(const EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientEnableRuleAsyncHelper(EventBridgeClient const * const clientThis, const EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableRule(request), context);
 }
 
-void EventBridgeClient::EnableRuleAsyncHelper(const EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::EnableRuleAsync(const EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientEnableRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApiDestinationsOutcome EventBridgeClient::ListApiDestinations(const ListApiDestinationsRequest& request) const
@@ -844,14 +844,14 @@ ListApiDestinationsOutcomeCallable EventBridgeClient::ListApiDestinationsCallabl
   return task->get_future();
 }
 
-void EventBridgeClient::ListApiDestinationsAsync(const ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListApiDestinationsAsyncHelper(EventBridgeClient const * const clientThis, const ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApiDestinationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApiDestinations(request), context);
 }
 
-void EventBridgeClient::ListApiDestinationsAsyncHelper(const ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListApiDestinationsAsync(const ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApiDestinations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListApiDestinationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListArchivesOutcome EventBridgeClient::ListArchives(const ListArchivesRequest& request) const
@@ -868,14 +868,14 @@ ListArchivesOutcomeCallable EventBridgeClient::ListArchivesCallable(const ListAr
   return task->get_future();
 }
 
-void EventBridgeClient::ListArchivesAsync(const ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListArchivesAsyncHelper(EventBridgeClient const * const clientThis, const ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListArchivesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListArchives(request), context);
 }
 
-void EventBridgeClient::ListArchivesAsyncHelper(const ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListArchivesAsync(const ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListArchives(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListArchivesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConnectionsOutcome EventBridgeClient::ListConnections(const ListConnectionsRequest& request) const
@@ -892,14 +892,14 @@ ListConnectionsOutcomeCallable EventBridgeClient::ListConnectionsCallable(const 
   return task->get_future();
 }
 
-void EventBridgeClient::ListConnectionsAsync(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListConnectionsAsyncHelper(EventBridgeClient const * const clientThis, const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConnections(request), context);
 }
 
-void EventBridgeClient::ListConnectionsAsyncHelper(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListConnectionsAsync(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEndpointsOutcome EventBridgeClient::ListEndpoints(const ListEndpointsRequest& request) const
@@ -916,14 +916,14 @@ ListEndpointsOutcomeCallable EventBridgeClient::ListEndpointsCallable(const List
   return task->get_future();
 }
 
-void EventBridgeClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListEndpointsAsyncHelper(EventBridgeClient const * const clientThis, const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEndpoints(request), context);
 }
 
-void EventBridgeClient::ListEndpointsAsyncHelper(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEventBusesOutcome EventBridgeClient::ListEventBuses(const ListEventBusesRequest& request) const
@@ -940,14 +940,14 @@ ListEventBusesOutcomeCallable EventBridgeClient::ListEventBusesCallable(const Li
   return task->get_future();
 }
 
-void EventBridgeClient::ListEventBusesAsync(const ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListEventBusesAsyncHelper(EventBridgeClient const * const clientThis, const ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventBusesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEventBuses(request), context);
 }
 
-void EventBridgeClient::ListEventBusesAsyncHelper(const ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListEventBusesAsync(const ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEventBuses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListEventBusesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEventSourcesOutcome EventBridgeClient::ListEventSources(const ListEventSourcesRequest& request) const
@@ -964,14 +964,14 @@ ListEventSourcesOutcomeCallable EventBridgeClient::ListEventSourcesCallable(cons
   return task->get_future();
 }
 
-void EventBridgeClient::ListEventSourcesAsync(const ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListEventSourcesAsyncHelper(EventBridgeClient const * const clientThis, const ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventSourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEventSources(request), context);
 }
 
-void EventBridgeClient::ListEventSourcesAsyncHelper(const ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListEventSourcesAsync(const ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEventSources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListEventSourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPartnerEventSourceAccountsOutcome EventBridgeClient::ListPartnerEventSourceAccounts(const ListPartnerEventSourceAccountsRequest& request) const
@@ -988,14 +988,14 @@ ListPartnerEventSourceAccountsOutcomeCallable EventBridgeClient::ListPartnerEven
   return task->get_future();
 }
 
-void EventBridgeClient::ListPartnerEventSourceAccountsAsync(const ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListPartnerEventSourceAccountsAsyncHelper(EventBridgeClient const * const clientThis, const ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPartnerEventSourceAccountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPartnerEventSourceAccounts(request), context);
 }
 
-void EventBridgeClient::ListPartnerEventSourceAccountsAsyncHelper(const ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListPartnerEventSourceAccountsAsync(const ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPartnerEventSourceAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListPartnerEventSourceAccountsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPartnerEventSourcesOutcome EventBridgeClient::ListPartnerEventSources(const ListPartnerEventSourcesRequest& request) const
@@ -1012,14 +1012,14 @@ ListPartnerEventSourcesOutcomeCallable EventBridgeClient::ListPartnerEventSource
   return task->get_future();
 }
 
-void EventBridgeClient::ListPartnerEventSourcesAsync(const ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListPartnerEventSourcesAsyncHelper(EventBridgeClient const * const clientThis, const ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPartnerEventSourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPartnerEventSources(request), context);
 }
 
-void EventBridgeClient::ListPartnerEventSourcesAsyncHelper(const ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListPartnerEventSourcesAsync(const ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPartnerEventSources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListPartnerEventSourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReplaysOutcome EventBridgeClient::ListReplays(const ListReplaysRequest& request) const
@@ -1036,14 +1036,14 @@ ListReplaysOutcomeCallable EventBridgeClient::ListReplaysCallable(const ListRepl
   return task->get_future();
 }
 
-void EventBridgeClient::ListReplaysAsync(const ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListReplaysAsyncHelper(EventBridgeClient const * const clientThis, const ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReplaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReplays(request), context);
 }
 
-void EventBridgeClient::ListReplaysAsyncHelper(const ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListReplaysAsync(const ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReplays(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListReplaysAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRuleNamesByTargetOutcome EventBridgeClient::ListRuleNamesByTarget(const ListRuleNamesByTargetRequest& request) const
@@ -1060,14 +1060,14 @@ ListRuleNamesByTargetOutcomeCallable EventBridgeClient::ListRuleNamesByTargetCal
   return task->get_future();
 }
 
-void EventBridgeClient::ListRuleNamesByTargetAsync(const ListRuleNamesByTargetRequest& request, const ListRuleNamesByTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListRuleNamesByTargetAsyncHelper(EventBridgeClient const * const clientThis, const ListRuleNamesByTargetRequest& request, const ListRuleNamesByTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRuleNamesByTargetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRuleNamesByTarget(request), context);
 }
 
-void EventBridgeClient::ListRuleNamesByTargetAsyncHelper(const ListRuleNamesByTargetRequest& request, const ListRuleNamesByTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListRuleNamesByTargetAsync(const ListRuleNamesByTargetRequest& request, const ListRuleNamesByTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRuleNamesByTarget(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListRuleNamesByTargetAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRulesOutcome EventBridgeClient::ListRules(const ListRulesRequest& request) const
@@ -1084,14 +1084,14 @@ ListRulesOutcomeCallable EventBridgeClient::ListRulesCallable(const ListRulesReq
   return task->get_future();
 }
 
-void EventBridgeClient::ListRulesAsync(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListRulesAsyncHelper(EventBridgeClient const * const clientThis, const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRules(request), context);
 }
 
-void EventBridgeClient::ListRulesAsyncHelper(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListRulesAsync(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome EventBridgeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1108,14 +1108,14 @@ ListTagsForResourceOutcomeCallable EventBridgeClient::ListTagsForResourceCallabl
   return task->get_future();
 }
 
-void EventBridgeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListTagsForResourceAsyncHelper(EventBridgeClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void EventBridgeClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTargetsByRuleOutcome EventBridgeClient::ListTargetsByRule(const ListTargetsByRuleRequest& request) const
@@ -1132,14 +1132,14 @@ ListTargetsByRuleOutcomeCallable EventBridgeClient::ListTargetsByRuleCallable(co
   return task->get_future();
 }
 
-void EventBridgeClient::ListTargetsByRuleAsync(const ListTargetsByRuleRequest& request, const ListTargetsByRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientListTargetsByRuleAsyncHelper(EventBridgeClient const * const clientThis, const ListTargetsByRuleRequest& request, const ListTargetsByRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTargetsByRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTargetsByRule(request), context);
 }
 
-void EventBridgeClient::ListTargetsByRuleAsyncHelper(const ListTargetsByRuleRequest& request, const ListTargetsByRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::ListTargetsByRuleAsync(const ListTargetsByRuleRequest& request, const ListTargetsByRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTargetsByRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientListTargetsByRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 /**
@@ -1186,14 +1186,14 @@ PutEventsOutcomeCallable EventBridgeClient::PutEventsCallable(const PutEventsReq
   return task->get_future();
 }
 
-void EventBridgeClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientPutEventsAsyncHelper(EventBridgeClient const * const clientThis, const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEvents(request), context);
 }
 
-void EventBridgeClient::PutEventsAsyncHelper(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientPutEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPartnerEventsOutcome EventBridgeClient::PutPartnerEvents(const PutPartnerEventsRequest& request) const
@@ -1210,14 +1210,14 @@ PutPartnerEventsOutcomeCallable EventBridgeClient::PutPartnerEventsCallable(cons
   return task->get_future();
 }
 
-void EventBridgeClient::PutPartnerEventsAsync(const PutPartnerEventsRequest& request, const PutPartnerEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientPutPartnerEventsAsyncHelper(EventBridgeClient const * const clientThis, const PutPartnerEventsRequest& request, const PutPartnerEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPartnerEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPartnerEvents(request), context);
 }
 
-void EventBridgeClient::PutPartnerEventsAsyncHelper(const PutPartnerEventsRequest& request, const PutPartnerEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::PutPartnerEventsAsync(const PutPartnerEventsRequest& request, const PutPartnerEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPartnerEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientPutPartnerEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPermissionOutcome EventBridgeClient::PutPermission(const PutPermissionRequest& request) const
@@ -1234,14 +1234,14 @@ PutPermissionOutcomeCallable EventBridgeClient::PutPermissionCallable(const PutP
   return task->get_future();
 }
 
-void EventBridgeClient::PutPermissionAsync(const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientPutPermissionAsyncHelper(EventBridgeClient const * const clientThis, const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPermission(request), context);
 }
 
-void EventBridgeClient::PutPermissionAsyncHelper(const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::PutPermissionAsync(const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientPutPermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRuleOutcome EventBridgeClient::PutRule(const PutRuleRequest& request) const
@@ -1258,14 +1258,14 @@ PutRuleOutcomeCallable EventBridgeClient::PutRuleCallable(const PutRuleRequest& 
   return task->get_future();
 }
 
-void EventBridgeClient::PutRuleAsync(const PutRuleRequest& request, const PutRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientPutRuleAsyncHelper(EventBridgeClient const * const clientThis, const PutRuleRequest& request, const PutRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRule(request), context);
 }
 
-void EventBridgeClient::PutRuleAsyncHelper(const PutRuleRequest& request, const PutRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::PutRuleAsync(const PutRuleRequest& request, const PutRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientPutRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 PutTargetsOutcome EventBridgeClient::PutTargets(const PutTargetsRequest& request) const
@@ -1282,14 +1282,14 @@ PutTargetsOutcomeCallable EventBridgeClient::PutTargetsCallable(const PutTargets
   return task->get_future();
 }
 
-void EventBridgeClient::PutTargetsAsync(const PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientPutTargetsAsyncHelper(EventBridgeClient const * const clientThis, const PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutTargetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutTargets(request), context);
 }
 
-void EventBridgeClient::PutTargetsAsyncHelper(const PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::PutTargetsAsync(const PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutTargets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientPutTargetsAsyncHelper( this, request, handler, context ); } );
 }
 
 RemovePermissionOutcome EventBridgeClient::RemovePermission(const RemovePermissionRequest& request) const
@@ -1306,14 +1306,14 @@ RemovePermissionOutcomeCallable EventBridgeClient::RemovePermissionCallable(cons
   return task->get_future();
 }
 
-void EventBridgeClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientRemovePermissionAsyncHelper(EventBridgeClient const * const clientThis, const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemovePermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemovePermission(request), context);
 }
 
-void EventBridgeClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemovePermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientRemovePermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveTargetsOutcome EventBridgeClient::RemoveTargets(const RemoveTargetsRequest& request) const
@@ -1330,14 +1330,14 @@ RemoveTargetsOutcomeCallable EventBridgeClient::RemoveTargetsCallable(const Remo
   return task->get_future();
 }
 
-void EventBridgeClient::RemoveTargetsAsync(const RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientRemoveTargetsAsyncHelper(EventBridgeClient const * const clientThis, const RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTargetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveTargets(request), context);
 }
 
-void EventBridgeClient::RemoveTargetsAsyncHelper(const RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::RemoveTargetsAsync(const RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveTargets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientRemoveTargetsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartReplayOutcome EventBridgeClient::StartReplay(const StartReplayRequest& request) const
@@ -1354,14 +1354,14 @@ StartReplayOutcomeCallable EventBridgeClient::StartReplayCallable(const StartRep
   return task->get_future();
 }
 
-void EventBridgeClient::StartReplayAsync(const StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientStartReplayAsyncHelper(EventBridgeClient const * const clientThis, const StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartReplayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartReplay(request), context);
 }
 
-void EventBridgeClient::StartReplayAsyncHelper(const StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::StartReplayAsync(const StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartReplay(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientStartReplayAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome EventBridgeClient::TagResource(const TagResourceRequest& request) const
@@ -1378,14 +1378,14 @@ TagResourceOutcomeCallable EventBridgeClient::TagResourceCallable(const TagResou
   return task->get_future();
 }
 
-void EventBridgeClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientTagResourceAsyncHelper(EventBridgeClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void EventBridgeClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TestEventPatternOutcome EventBridgeClient::TestEventPattern(const TestEventPatternRequest& request) const
@@ -1402,14 +1402,14 @@ TestEventPatternOutcomeCallable EventBridgeClient::TestEventPatternCallable(cons
   return task->get_future();
 }
 
-void EventBridgeClient::TestEventPatternAsync(const TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientTestEventPatternAsyncHelper(EventBridgeClient const * const clientThis, const TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestEventPatternAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestEventPattern(request), context);
 }
 
-void EventBridgeClient::TestEventPatternAsyncHelper(const TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::TestEventPatternAsync(const TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestEventPattern(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientTestEventPatternAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome EventBridgeClient::UntagResource(const UntagResourceRequest& request) const
@@ -1426,14 +1426,14 @@ UntagResourceOutcomeCallable EventBridgeClient::UntagResourceCallable(const Unta
   return task->get_future();
 }
 
-void EventBridgeClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientUntagResourceAsyncHelper(EventBridgeClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void EventBridgeClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApiDestinationOutcome EventBridgeClient::UpdateApiDestination(const UpdateApiDestinationRequest& request) const
@@ -1450,14 +1450,14 @@ UpdateApiDestinationOutcomeCallable EventBridgeClient::UpdateApiDestinationCalla
   return task->get_future();
 }
 
-void EventBridgeClient::UpdateApiDestinationAsync(const UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientUpdateApiDestinationAsyncHelper(EventBridgeClient const * const clientThis, const UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApiDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApiDestination(request), context);
 }
 
-void EventBridgeClient::UpdateApiDestinationAsyncHelper(const UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::UpdateApiDestinationAsync(const UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApiDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientUpdateApiDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateArchiveOutcome EventBridgeClient::UpdateArchive(const UpdateArchiveRequest& request) const
@@ -1474,14 +1474,14 @@ UpdateArchiveOutcomeCallable EventBridgeClient::UpdateArchiveCallable(const Upda
   return task->get_future();
 }
 
-void EventBridgeClient::UpdateArchiveAsync(const UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientUpdateArchiveAsyncHelper(EventBridgeClient const * const clientThis, const UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateArchiveAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateArchive(request), context);
 }
 
-void EventBridgeClient::UpdateArchiveAsyncHelper(const UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::UpdateArchiveAsync(const UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateArchive(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientUpdateArchiveAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConnectionOutcome EventBridgeClient::UpdateConnection(const UpdateConnectionRequest& request) const
@@ -1498,14 +1498,14 @@ UpdateConnectionOutcomeCallable EventBridgeClient::UpdateConnectionCallable(cons
   return task->get_future();
 }
 
-void EventBridgeClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientUpdateConnectionAsyncHelper(EventBridgeClient const * const clientThis, const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConnection(request), context);
 }
 
-void EventBridgeClient::UpdateConnectionAsyncHelper(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientUpdateConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEndpointOutcome EventBridgeClient::UpdateEndpoint(const UpdateEndpointRequest& request) const
@@ -1522,13 +1522,13 @@ UpdateEndpointOutcomeCallable EventBridgeClient::UpdateEndpointCallable(const Up
   return task->get_future();
 }
 
-void EventBridgeClient::UpdateEndpointAsync(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClientUpdateEndpointAsyncHelper(EventBridgeClient const * const clientThis, const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEndpoint(request), context);
 }
 
-void EventBridgeClient::UpdateEndpointAsyncHelper(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EventBridgeClient::UpdateEndpointAsync(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EventBridgeClientUpdateEndpointAsyncHelper( this, request, handler, context ); } );
 }
 

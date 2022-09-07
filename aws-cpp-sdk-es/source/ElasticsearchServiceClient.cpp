@@ -162,14 +162,14 @@ AcceptInboundCrossClusterSearchConnectionOutcomeCallable ElasticsearchServiceCli
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::AcceptInboundCrossClusterSearchConnectionAsync(const AcceptInboundCrossClusterSearchConnectionRequest& request, const AcceptInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientAcceptInboundCrossClusterSearchConnectionAsyncHelper(ElasticsearchServiceClient const * const clientThis, const AcceptInboundCrossClusterSearchConnectionRequest& request, const AcceptInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptInboundCrossClusterSearchConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptInboundCrossClusterSearchConnection(request), context);
 }
 
-void ElasticsearchServiceClient::AcceptInboundCrossClusterSearchConnectionAsyncHelper(const AcceptInboundCrossClusterSearchConnectionRequest& request, const AcceptInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::AcceptInboundCrossClusterSearchConnectionAsync(const AcceptInboundCrossClusterSearchConnectionRequest& request, const AcceptInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptInboundCrossClusterSearchConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientAcceptInboundCrossClusterSearchConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 AddTagsOutcome ElasticsearchServiceClient::AddTags(const AddTagsRequest& request) const
@@ -187,14 +187,14 @@ AddTagsOutcomeCallable ElasticsearchServiceClient::AddTagsCallable(const AddTags
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientAddTagsAsyncHelper(ElasticsearchServiceClient const * const clientThis, const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddTags(request), context);
 }
 
-void ElasticsearchServiceClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientAddTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociatePackageOutcome ElasticsearchServiceClient::AssociatePackage(const AssociatePackageRequest& request) const
@@ -224,14 +224,14 @@ AssociatePackageOutcomeCallable ElasticsearchServiceClient::AssociatePackageCall
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::AssociatePackageAsync(const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientAssociatePackageAsyncHelper(ElasticsearchServiceClient const * const clientThis, const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociatePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociatePackage(request), context);
 }
 
-void ElasticsearchServiceClient::AssociatePackageAsyncHelper(const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::AssociatePackageAsync(const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociatePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientAssociatePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdate(const CancelElasticsearchServiceSoftwareUpdateRequest& request) const
@@ -249,14 +249,14 @@ CancelElasticsearchServiceSoftwareUpdateOutcomeCallable ElasticsearchServiceClie
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdateAsync(const CancelElasticsearchServiceSoftwareUpdateRequest& request, const CancelElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientCancelElasticsearchServiceSoftwareUpdateAsyncHelper(ElasticsearchServiceClient const * const clientThis, const CancelElasticsearchServiceSoftwareUpdateRequest& request, const CancelElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelElasticsearchServiceSoftwareUpdateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelElasticsearchServiceSoftwareUpdate(request), context);
 }
 
-void ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdateAsyncHelper(const CancelElasticsearchServiceSoftwareUpdateRequest& request, const CancelElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdateAsync(const CancelElasticsearchServiceSoftwareUpdateRequest& request, const CancelElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelElasticsearchServiceSoftwareUpdate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientCancelElasticsearchServiceSoftwareUpdateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateElasticsearchDomainOutcome ElasticsearchServiceClient::CreateElasticsearchDomain(const CreateElasticsearchDomainRequest& request) const
@@ -274,14 +274,14 @@ CreateElasticsearchDomainOutcomeCallable ElasticsearchServiceClient::CreateElast
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::CreateElasticsearchDomainAsync(const CreateElasticsearchDomainRequest& request, const CreateElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientCreateElasticsearchDomainAsyncHelper(ElasticsearchServiceClient const * const clientThis, const CreateElasticsearchDomainRequest& request, const CreateElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateElasticsearchDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateElasticsearchDomain(request), context);
 }
 
-void ElasticsearchServiceClient::CreateElasticsearchDomainAsyncHelper(const CreateElasticsearchDomainRequest& request, const CreateElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::CreateElasticsearchDomainAsync(const CreateElasticsearchDomainRequest& request, const CreateElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateElasticsearchDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientCreateElasticsearchDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnection(const CreateOutboundCrossClusterSearchConnectionRequest& request) const
@@ -299,14 +299,14 @@ CreateOutboundCrossClusterSearchConnectionOutcomeCallable ElasticsearchServiceCl
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnectionAsync(const CreateOutboundCrossClusterSearchConnectionRequest& request, const CreateOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientCreateOutboundCrossClusterSearchConnectionAsyncHelper(ElasticsearchServiceClient const * const clientThis, const CreateOutboundCrossClusterSearchConnectionRequest& request, const CreateOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOutboundCrossClusterSearchConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateOutboundCrossClusterSearchConnection(request), context);
 }
 
-void ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnectionAsyncHelper(const CreateOutboundCrossClusterSearchConnectionRequest& request, const CreateOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnectionAsync(const CreateOutboundCrossClusterSearchConnectionRequest& request, const CreateOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateOutboundCrossClusterSearchConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientCreateOutboundCrossClusterSearchConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePackageOutcome ElasticsearchServiceClient::CreatePackage(const CreatePackageRequest& request) const
@@ -324,14 +324,14 @@ CreatePackageOutcomeCallable ElasticsearchServiceClient::CreatePackageCallable(c
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::CreatePackageAsync(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientCreatePackageAsyncHelper(ElasticsearchServiceClient const * const clientThis, const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePackage(request), context);
 }
 
-void ElasticsearchServiceClient::CreatePackageAsyncHelper(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::CreatePackageAsync(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientCreatePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteElasticsearchDomainOutcome ElasticsearchServiceClient::DeleteElasticsearchDomain(const DeleteElasticsearchDomainRequest& request) const
@@ -355,14 +355,14 @@ DeleteElasticsearchDomainOutcomeCallable ElasticsearchServiceClient::DeleteElast
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DeleteElasticsearchDomainAsync(const DeleteElasticsearchDomainRequest& request, const DeleteElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDeleteElasticsearchDomainAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DeleteElasticsearchDomainRequest& request, const DeleteElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteElasticsearchDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteElasticsearchDomain(request), context);
 }
 
-void ElasticsearchServiceClient::DeleteElasticsearchDomainAsyncHelper(const DeleteElasticsearchDomainRequest& request, const DeleteElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DeleteElasticsearchDomainAsync(const DeleteElasticsearchDomainRequest& request, const DeleteElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteElasticsearchDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDeleteElasticsearchDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteElasticsearchServiceRoleOutcome ElasticsearchServiceClient::DeleteElasticsearchServiceRole() const
@@ -380,14 +380,14 @@ DeleteElasticsearchServiceRoleOutcomeCallable ElasticsearchServiceClient::Delete
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DeleteElasticsearchServiceRoleAsync(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDeleteElasticsearchServiceRoleAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->DeleteElasticsearchServiceRoleAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->DeleteElasticsearchServiceRole(), context);
 }
 
-void ElasticsearchServiceClient::DeleteElasticsearchServiceRoleAsyncHelper(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DeleteElasticsearchServiceRoleAsync(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, DeleteElasticsearchServiceRole(), context);
+  m_executor->Submit( [this, handler, context](){ ElasticsearchServiceClientDeleteElasticsearchServiceRoleAsyncHelper( this, handler, context ); } );
 }
 
 DeleteInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::DeleteInboundCrossClusterSearchConnection(const DeleteInboundCrossClusterSearchConnectionRequest& request) const
@@ -411,14 +411,14 @@ DeleteInboundCrossClusterSearchConnectionOutcomeCallable ElasticsearchServiceCli
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DeleteInboundCrossClusterSearchConnectionAsync(const DeleteInboundCrossClusterSearchConnectionRequest& request, const DeleteInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDeleteInboundCrossClusterSearchConnectionAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DeleteInboundCrossClusterSearchConnectionRequest& request, const DeleteInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInboundCrossClusterSearchConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInboundCrossClusterSearchConnection(request), context);
 }
 
-void ElasticsearchServiceClient::DeleteInboundCrossClusterSearchConnectionAsyncHelper(const DeleteInboundCrossClusterSearchConnectionRequest& request, const DeleteInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DeleteInboundCrossClusterSearchConnectionAsync(const DeleteInboundCrossClusterSearchConnectionRequest& request, const DeleteInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInboundCrossClusterSearchConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDeleteInboundCrossClusterSearchConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::DeleteOutboundCrossClusterSearchConnection(const DeleteOutboundCrossClusterSearchConnectionRequest& request) const
@@ -442,14 +442,14 @@ DeleteOutboundCrossClusterSearchConnectionOutcomeCallable ElasticsearchServiceCl
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DeleteOutboundCrossClusterSearchConnectionAsync(const DeleteOutboundCrossClusterSearchConnectionRequest& request, const DeleteOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDeleteOutboundCrossClusterSearchConnectionAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DeleteOutboundCrossClusterSearchConnectionRequest& request, const DeleteOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOutboundCrossClusterSearchConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteOutboundCrossClusterSearchConnection(request), context);
 }
 
-void ElasticsearchServiceClient::DeleteOutboundCrossClusterSearchConnectionAsyncHelper(const DeleteOutboundCrossClusterSearchConnectionRequest& request, const DeleteOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DeleteOutboundCrossClusterSearchConnectionAsync(const DeleteOutboundCrossClusterSearchConnectionRequest& request, const DeleteOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteOutboundCrossClusterSearchConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDeleteOutboundCrossClusterSearchConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePackageOutcome ElasticsearchServiceClient::DeletePackage(const DeletePackageRequest& request) const
@@ -473,14 +473,14 @@ DeletePackageOutcomeCallable ElasticsearchServiceClient::DeletePackageCallable(c
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DeletePackageAsync(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDeletePackageAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePackage(request), context);
 }
 
-void ElasticsearchServiceClient::DeletePackageAsyncHelper(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DeletePackageAsync(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDeletePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainAutoTunesOutcome ElasticsearchServiceClient::DescribeDomainAutoTunes(const DescribeDomainAutoTunesRequest& request) const
@@ -505,14 +505,14 @@ DescribeDomainAutoTunesOutcomeCallable ElasticsearchServiceClient::DescribeDomai
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribeDomainAutoTunesAsync(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribeDomainAutoTunesAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainAutoTunesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomainAutoTunes(request), context);
 }
 
-void ElasticsearchServiceClient::DescribeDomainAutoTunesAsyncHelper(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribeDomainAutoTunesAsync(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomainAutoTunes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribeDomainAutoTunesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainChangeProgressOutcome ElasticsearchServiceClient::DescribeDomainChangeProgress(const DescribeDomainChangeProgressRequest& request) const
@@ -537,14 +537,14 @@ DescribeDomainChangeProgressOutcomeCallable ElasticsearchServiceClient::Describe
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribeDomainChangeProgressAsync(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribeDomainChangeProgressAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainChangeProgressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomainChangeProgress(request), context);
 }
 
-void ElasticsearchServiceClient::DescribeDomainChangeProgressAsyncHelper(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribeDomainChangeProgressAsync(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomainChangeProgress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribeDomainChangeProgressAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticsearchDomain(const DescribeElasticsearchDomainRequest& request) const
@@ -568,14 +568,14 @@ DescribeElasticsearchDomainOutcomeCallable ElasticsearchServiceClient::DescribeE
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribeElasticsearchDomainAsync(const DescribeElasticsearchDomainRequest& request, const DescribeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribeElasticsearchDomainAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribeElasticsearchDomainRequest& request, const DescribeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeElasticsearchDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeElasticsearchDomain(request), context);
 }
 
-void ElasticsearchServiceClient::DescribeElasticsearchDomainAsyncHelper(const DescribeElasticsearchDomainRequest& request, const DescribeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribeElasticsearchDomainAsync(const DescribeElasticsearchDomainRequest& request, const DescribeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeElasticsearchDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribeElasticsearchDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeElasticsearchDomainConfigOutcome ElasticsearchServiceClient::DescribeElasticsearchDomainConfig(const DescribeElasticsearchDomainConfigRequest& request) const
@@ -600,14 +600,14 @@ DescribeElasticsearchDomainConfigOutcomeCallable ElasticsearchServiceClient::Des
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribeElasticsearchDomainConfigAsync(const DescribeElasticsearchDomainConfigRequest& request, const DescribeElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribeElasticsearchDomainConfigAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribeElasticsearchDomainConfigRequest& request, const DescribeElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeElasticsearchDomainConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeElasticsearchDomainConfig(request), context);
 }
 
-void ElasticsearchServiceClient::DescribeElasticsearchDomainConfigAsyncHelper(const DescribeElasticsearchDomainConfigRequest& request, const DescribeElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribeElasticsearchDomainConfigAsync(const DescribeElasticsearchDomainConfigRequest& request, const DescribeElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeElasticsearchDomainConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribeElasticsearchDomainConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeElasticsearchDomainsOutcome ElasticsearchServiceClient::DescribeElasticsearchDomains(const DescribeElasticsearchDomainsRequest& request) const
@@ -625,14 +625,14 @@ DescribeElasticsearchDomainsOutcomeCallable ElasticsearchServiceClient::Describe
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribeElasticsearchDomainsAsync(const DescribeElasticsearchDomainsRequest& request, const DescribeElasticsearchDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribeElasticsearchDomainsAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribeElasticsearchDomainsRequest& request, const DescribeElasticsearchDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeElasticsearchDomainsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeElasticsearchDomains(request), context);
 }
 
-void ElasticsearchServiceClient::DescribeElasticsearchDomainsAsyncHelper(const DescribeElasticsearchDomainsRequest& request, const DescribeElasticsearchDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribeElasticsearchDomainsAsync(const DescribeElasticsearchDomainsRequest& request, const DescribeElasticsearchDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeElasticsearchDomains(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribeElasticsearchDomainsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeElasticsearchInstanceTypeLimitsOutcome ElasticsearchServiceClient::DescribeElasticsearchInstanceTypeLimits(const DescribeElasticsearchInstanceTypeLimitsRequest& request) const
@@ -662,14 +662,14 @@ DescribeElasticsearchInstanceTypeLimitsOutcomeCallable ElasticsearchServiceClien
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribeElasticsearchInstanceTypeLimitsAsync(const DescribeElasticsearchInstanceTypeLimitsRequest& request, const DescribeElasticsearchInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribeElasticsearchInstanceTypeLimitsAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribeElasticsearchInstanceTypeLimitsRequest& request, const DescribeElasticsearchInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeElasticsearchInstanceTypeLimitsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeElasticsearchInstanceTypeLimits(request), context);
 }
 
-void ElasticsearchServiceClient::DescribeElasticsearchInstanceTypeLimitsAsyncHelper(const DescribeElasticsearchInstanceTypeLimitsRequest& request, const DescribeElasticsearchInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribeElasticsearchInstanceTypeLimitsAsync(const DescribeElasticsearchInstanceTypeLimitsRequest& request, const DescribeElasticsearchInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeElasticsearchInstanceTypeLimits(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribeElasticsearchInstanceTypeLimitsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnections(const DescribeInboundCrossClusterSearchConnectionsRequest& request) const
@@ -687,14 +687,14 @@ DescribeInboundCrossClusterSearchConnectionsOutcomeCallable ElasticsearchService
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnectionsAsync(const DescribeInboundCrossClusterSearchConnectionsRequest& request, const DescribeInboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribeInboundCrossClusterSearchConnectionsAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribeInboundCrossClusterSearchConnectionsRequest& request, const DescribeInboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInboundCrossClusterSearchConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInboundCrossClusterSearchConnections(request), context);
 }
 
-void ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnectionsAsyncHelper(const DescribeInboundCrossClusterSearchConnectionsRequest& request, const DescribeInboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnectionsAsync(const DescribeInboundCrossClusterSearchConnectionsRequest& request, const DescribeInboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInboundCrossClusterSearchConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribeInboundCrossClusterSearchConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeOutboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnections(const DescribeOutboundCrossClusterSearchConnectionsRequest& request) const
@@ -712,14 +712,14 @@ DescribeOutboundCrossClusterSearchConnectionsOutcomeCallable ElasticsearchServic
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnectionsAsync(const DescribeOutboundCrossClusterSearchConnectionsRequest& request, const DescribeOutboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribeOutboundCrossClusterSearchConnectionsAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribeOutboundCrossClusterSearchConnectionsRequest& request, const DescribeOutboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOutboundCrossClusterSearchConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeOutboundCrossClusterSearchConnections(request), context);
 }
 
-void ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnectionsAsyncHelper(const DescribeOutboundCrossClusterSearchConnectionsRequest& request, const DescribeOutboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnectionsAsync(const DescribeOutboundCrossClusterSearchConnectionsRequest& request, const DescribeOutboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeOutboundCrossClusterSearchConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribeOutboundCrossClusterSearchConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePackagesOutcome ElasticsearchServiceClient::DescribePackages(const DescribePackagesRequest& request) const
@@ -737,14 +737,14 @@ DescribePackagesOutcomeCallable ElasticsearchServiceClient::DescribePackagesCall
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribePackagesAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePackagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePackages(request), context);
 }
 
-void ElasticsearchServiceClient::DescribePackagesAsyncHelper(const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePackages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribePackagesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReservedElasticsearchInstanceOfferingsOutcome ElasticsearchServiceClient::DescribeReservedElasticsearchInstanceOfferings(const DescribeReservedElasticsearchInstanceOfferingsRequest& request) const
@@ -762,14 +762,14 @@ DescribeReservedElasticsearchInstanceOfferingsOutcomeCallable ElasticsearchServi
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribeReservedElasticsearchInstanceOfferingsAsync(const DescribeReservedElasticsearchInstanceOfferingsRequest& request, const DescribeReservedElasticsearchInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribeReservedElasticsearchInstanceOfferingsAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribeReservedElasticsearchInstanceOfferingsRequest& request, const DescribeReservedElasticsearchInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedElasticsearchInstanceOfferingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReservedElasticsearchInstanceOfferings(request), context);
 }
 
-void ElasticsearchServiceClient::DescribeReservedElasticsearchInstanceOfferingsAsyncHelper(const DescribeReservedElasticsearchInstanceOfferingsRequest& request, const DescribeReservedElasticsearchInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribeReservedElasticsearchInstanceOfferingsAsync(const DescribeReservedElasticsearchInstanceOfferingsRequest& request, const DescribeReservedElasticsearchInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReservedElasticsearchInstanceOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribeReservedElasticsearchInstanceOfferingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReservedElasticsearchInstancesOutcome ElasticsearchServiceClient::DescribeReservedElasticsearchInstances(const DescribeReservedElasticsearchInstancesRequest& request) const
@@ -787,14 +787,14 @@ DescribeReservedElasticsearchInstancesOutcomeCallable ElasticsearchServiceClient
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DescribeReservedElasticsearchInstancesAsync(const DescribeReservedElasticsearchInstancesRequest& request, const DescribeReservedElasticsearchInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDescribeReservedElasticsearchInstancesAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DescribeReservedElasticsearchInstancesRequest& request, const DescribeReservedElasticsearchInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedElasticsearchInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReservedElasticsearchInstances(request), context);
 }
 
-void ElasticsearchServiceClient::DescribeReservedElasticsearchInstancesAsyncHelper(const DescribeReservedElasticsearchInstancesRequest& request, const DescribeReservedElasticsearchInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DescribeReservedElasticsearchInstancesAsync(const DescribeReservedElasticsearchInstancesRequest& request, const DescribeReservedElasticsearchInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReservedElasticsearchInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDescribeReservedElasticsearchInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DissociatePackageOutcome ElasticsearchServiceClient::DissociatePackage(const DissociatePackageRequest& request) const
@@ -824,14 +824,14 @@ DissociatePackageOutcomeCallable ElasticsearchServiceClient::DissociatePackageCa
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::DissociatePackageAsync(const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientDissociatePackageAsyncHelper(ElasticsearchServiceClient const * const clientThis, const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DissociatePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DissociatePackage(request), context);
 }
 
-void ElasticsearchServiceClient::DissociatePackageAsyncHelper(const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::DissociatePackageAsync(const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DissociatePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientDissociatePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCompatibleElasticsearchVersionsOutcome ElasticsearchServiceClient::GetCompatibleElasticsearchVersions(const GetCompatibleElasticsearchVersionsRequest& request) const
@@ -849,14 +849,14 @@ GetCompatibleElasticsearchVersionsOutcomeCallable ElasticsearchServiceClient::Ge
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::GetCompatibleElasticsearchVersionsAsync(const GetCompatibleElasticsearchVersionsRequest& request, const GetCompatibleElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientGetCompatibleElasticsearchVersionsAsyncHelper(ElasticsearchServiceClient const * const clientThis, const GetCompatibleElasticsearchVersionsRequest& request, const GetCompatibleElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCompatibleElasticsearchVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCompatibleElasticsearchVersions(request), context);
 }
 
-void ElasticsearchServiceClient::GetCompatibleElasticsearchVersionsAsyncHelper(const GetCompatibleElasticsearchVersionsRequest& request, const GetCompatibleElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::GetCompatibleElasticsearchVersionsAsync(const GetCompatibleElasticsearchVersionsRequest& request, const GetCompatibleElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCompatibleElasticsearchVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientGetCompatibleElasticsearchVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPackageVersionHistoryOutcome ElasticsearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const
@@ -881,14 +881,14 @@ GetPackageVersionHistoryOutcomeCallable ElasticsearchServiceClient::GetPackageVe
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::GetPackageVersionHistoryAsync(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientGetPackageVersionHistoryAsyncHelper(ElasticsearchServiceClient const * const clientThis, const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPackageVersionHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPackageVersionHistory(request), context);
 }
 
-void ElasticsearchServiceClient::GetPackageVersionHistoryAsyncHelper(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::GetPackageVersionHistoryAsync(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPackageVersionHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientGetPackageVersionHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUpgradeHistoryOutcome ElasticsearchServiceClient::GetUpgradeHistory(const GetUpgradeHistoryRequest& request) const
@@ -913,14 +913,14 @@ GetUpgradeHistoryOutcomeCallable ElasticsearchServiceClient::GetUpgradeHistoryCa
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::GetUpgradeHistoryAsync(const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientGetUpgradeHistoryAsyncHelper(ElasticsearchServiceClient const * const clientThis, const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUpgradeHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUpgradeHistory(request), context);
 }
 
-void ElasticsearchServiceClient::GetUpgradeHistoryAsyncHelper(const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::GetUpgradeHistoryAsync(const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUpgradeHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientGetUpgradeHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUpgradeStatusOutcome ElasticsearchServiceClient::GetUpgradeStatus(const GetUpgradeStatusRequest& request) const
@@ -945,14 +945,14 @@ GetUpgradeStatusOutcomeCallable ElasticsearchServiceClient::GetUpgradeStatusCall
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::GetUpgradeStatusAsync(const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientGetUpgradeStatusAsyncHelper(ElasticsearchServiceClient const * const clientThis, const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUpgradeStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUpgradeStatus(request), context);
 }
 
-void ElasticsearchServiceClient::GetUpgradeStatusAsyncHelper(const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::GetUpgradeStatusAsync(const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUpgradeStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientGetUpgradeStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames(const ListDomainNamesRequest& request) const
@@ -970,14 +970,14 @@ ListDomainNamesOutcomeCallable ElasticsearchServiceClient::ListDomainNamesCallab
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientListDomainNamesAsyncHelper(ElasticsearchServiceClient const * const clientThis, const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainNamesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomainNames(request), context);
 }
 
-void ElasticsearchServiceClient::ListDomainNamesAsyncHelper(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomainNames(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientListDomainNamesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainsForPackageOutcome ElasticsearchServiceClient::ListDomainsForPackage(const ListDomainsForPackageRequest& request) const
@@ -1002,14 +1002,14 @@ ListDomainsForPackageOutcomeCallable ElasticsearchServiceClient::ListDomainsForP
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::ListDomainsForPackageAsync(const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientListDomainsForPackageAsyncHelper(ElasticsearchServiceClient const * const clientThis, const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainsForPackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomainsForPackage(request), context);
 }
 
-void ElasticsearchServiceClient::ListDomainsForPackageAsyncHelper(const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::ListDomainsForPackageAsync(const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomainsForPackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientListDomainsForPackageAsyncHelper( this, request, handler, context ); } );
 }
 
 ListElasticsearchInstanceTypesOutcome ElasticsearchServiceClient::ListElasticsearchInstanceTypes(const ListElasticsearchInstanceTypesRequest& request) const
@@ -1033,14 +1033,14 @@ ListElasticsearchInstanceTypesOutcomeCallable ElasticsearchServiceClient::ListEl
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::ListElasticsearchInstanceTypesAsync(const ListElasticsearchInstanceTypesRequest& request, const ListElasticsearchInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientListElasticsearchInstanceTypesAsyncHelper(ElasticsearchServiceClient const * const clientThis, const ListElasticsearchInstanceTypesRequest& request, const ListElasticsearchInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListElasticsearchInstanceTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListElasticsearchInstanceTypes(request), context);
 }
 
-void ElasticsearchServiceClient::ListElasticsearchInstanceTypesAsyncHelper(const ListElasticsearchInstanceTypesRequest& request, const ListElasticsearchInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::ListElasticsearchInstanceTypesAsync(const ListElasticsearchInstanceTypesRequest& request, const ListElasticsearchInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListElasticsearchInstanceTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientListElasticsearchInstanceTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListElasticsearchVersionsOutcome ElasticsearchServiceClient::ListElasticsearchVersions(const ListElasticsearchVersionsRequest& request) const
@@ -1058,14 +1058,14 @@ ListElasticsearchVersionsOutcomeCallable ElasticsearchServiceClient::ListElastic
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::ListElasticsearchVersionsAsync(const ListElasticsearchVersionsRequest& request, const ListElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientListElasticsearchVersionsAsyncHelper(ElasticsearchServiceClient const * const clientThis, const ListElasticsearchVersionsRequest& request, const ListElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListElasticsearchVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListElasticsearchVersions(request), context);
 }
 
-void ElasticsearchServiceClient::ListElasticsearchVersionsAsyncHelper(const ListElasticsearchVersionsRequest& request, const ListElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::ListElasticsearchVersionsAsync(const ListElasticsearchVersionsRequest& request, const ListElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListElasticsearchVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientListElasticsearchVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPackagesForDomainOutcome ElasticsearchServiceClient::ListPackagesForDomain(const ListPackagesForDomainRequest& request) const
@@ -1090,14 +1090,14 @@ ListPackagesForDomainOutcomeCallable ElasticsearchServiceClient::ListPackagesFor
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::ListPackagesForDomainAsync(const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientListPackagesForDomainAsyncHelper(ElasticsearchServiceClient const * const clientThis, const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPackagesForDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPackagesForDomain(request), context);
 }
 
-void ElasticsearchServiceClient::ListPackagesForDomainAsyncHelper(const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::ListPackagesForDomainAsync(const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPackagesForDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientListPackagesForDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsOutcome ElasticsearchServiceClient::ListTags(const ListTagsRequest& request) const
@@ -1120,14 +1120,14 @@ ListTagsOutcomeCallable ElasticsearchServiceClient::ListTagsCallable(const ListT
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientListTagsAsyncHelper(ElasticsearchServiceClient const * const clientThis, const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTags(request), context);
 }
 
-void ElasticsearchServiceClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientListTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 PurchaseReservedElasticsearchInstanceOfferingOutcome ElasticsearchServiceClient::PurchaseReservedElasticsearchInstanceOffering(const PurchaseReservedElasticsearchInstanceOfferingRequest& request) const
@@ -1145,14 +1145,14 @@ PurchaseReservedElasticsearchInstanceOfferingOutcomeCallable ElasticsearchServic
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::PurchaseReservedElasticsearchInstanceOfferingAsync(const PurchaseReservedElasticsearchInstanceOfferingRequest& request, const PurchaseReservedElasticsearchInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientPurchaseReservedElasticsearchInstanceOfferingAsyncHelper(ElasticsearchServiceClient const * const clientThis, const PurchaseReservedElasticsearchInstanceOfferingRequest& request, const PurchaseReservedElasticsearchInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PurchaseReservedElasticsearchInstanceOfferingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PurchaseReservedElasticsearchInstanceOffering(request), context);
 }
 
-void ElasticsearchServiceClient::PurchaseReservedElasticsearchInstanceOfferingAsyncHelper(const PurchaseReservedElasticsearchInstanceOfferingRequest& request, const PurchaseReservedElasticsearchInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::PurchaseReservedElasticsearchInstanceOfferingAsync(const PurchaseReservedElasticsearchInstanceOfferingRequest& request, const PurchaseReservedElasticsearchInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PurchaseReservedElasticsearchInstanceOffering(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientPurchaseReservedElasticsearchInstanceOfferingAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnection(const RejectInboundCrossClusterSearchConnectionRequest& request) const
@@ -1177,14 +1177,14 @@ RejectInboundCrossClusterSearchConnectionOutcomeCallable ElasticsearchServiceCli
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnectionAsync(const RejectInboundCrossClusterSearchConnectionRequest& request, const RejectInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientRejectInboundCrossClusterSearchConnectionAsyncHelper(ElasticsearchServiceClient const * const clientThis, const RejectInboundCrossClusterSearchConnectionRequest& request, const RejectInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectInboundCrossClusterSearchConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectInboundCrossClusterSearchConnection(request), context);
 }
 
-void ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnectionAsyncHelper(const RejectInboundCrossClusterSearchConnectionRequest& request, const RejectInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnectionAsync(const RejectInboundCrossClusterSearchConnectionRequest& request, const RejectInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectInboundCrossClusterSearchConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientRejectInboundCrossClusterSearchConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveTagsOutcome ElasticsearchServiceClient::RemoveTags(const RemoveTagsRequest& request) const
@@ -1202,14 +1202,14 @@ RemoveTagsOutcomeCallable ElasticsearchServiceClient::RemoveTagsCallable(const R
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientRemoveTagsAsyncHelper(ElasticsearchServiceClient const * const clientThis, const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveTags(request), context);
 }
 
-void ElasticsearchServiceClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientRemoveTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdate(const StartElasticsearchServiceSoftwareUpdateRequest& request) const
@@ -1227,14 +1227,14 @@ StartElasticsearchServiceSoftwareUpdateOutcomeCallable ElasticsearchServiceClien
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdateAsync(const StartElasticsearchServiceSoftwareUpdateRequest& request, const StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientStartElasticsearchServiceSoftwareUpdateAsyncHelper(ElasticsearchServiceClient const * const clientThis, const StartElasticsearchServiceSoftwareUpdateRequest& request, const StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartElasticsearchServiceSoftwareUpdateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartElasticsearchServiceSoftwareUpdate(request), context);
 }
 
-void ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdateAsyncHelper(const StartElasticsearchServiceSoftwareUpdateRequest& request, const StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdateAsync(const StartElasticsearchServiceSoftwareUpdateRequest& request, const StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartElasticsearchServiceSoftwareUpdate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientStartElasticsearchServiceSoftwareUpdateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateElasticsearchDomainConfigOutcome ElasticsearchServiceClient::UpdateElasticsearchDomainConfig(const UpdateElasticsearchDomainConfigRequest& request) const
@@ -1259,14 +1259,14 @@ UpdateElasticsearchDomainConfigOutcomeCallable ElasticsearchServiceClient::Updat
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::UpdateElasticsearchDomainConfigAsync(const UpdateElasticsearchDomainConfigRequest& request, const UpdateElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientUpdateElasticsearchDomainConfigAsyncHelper(ElasticsearchServiceClient const * const clientThis, const UpdateElasticsearchDomainConfigRequest& request, const UpdateElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateElasticsearchDomainConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateElasticsearchDomainConfig(request), context);
 }
 
-void ElasticsearchServiceClient::UpdateElasticsearchDomainConfigAsyncHelper(const UpdateElasticsearchDomainConfigRequest& request, const UpdateElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::UpdateElasticsearchDomainConfigAsync(const UpdateElasticsearchDomainConfigRequest& request, const UpdateElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateElasticsearchDomainConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientUpdateElasticsearchDomainConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePackageOutcome ElasticsearchServiceClient::UpdatePackage(const UpdatePackageRequest& request) const
@@ -1284,14 +1284,14 @@ UpdatePackageOutcomeCallable ElasticsearchServiceClient::UpdatePackageCallable(c
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::UpdatePackageAsync(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientUpdatePackageAsyncHelper(ElasticsearchServiceClient const * const clientThis, const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePackage(request), context);
 }
 
-void ElasticsearchServiceClient::UpdatePackageAsyncHelper(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::UpdatePackageAsync(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientUpdatePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 UpgradeElasticsearchDomainOutcome ElasticsearchServiceClient::UpgradeElasticsearchDomain(const UpgradeElasticsearchDomainRequest& request) const
@@ -1309,13 +1309,13 @@ UpgradeElasticsearchDomainOutcomeCallable ElasticsearchServiceClient::UpgradeEla
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::UpgradeElasticsearchDomainAsync(const UpgradeElasticsearchDomainRequest& request, const UpgradeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClientUpgradeElasticsearchDomainAsyncHelper(ElasticsearchServiceClient const * const clientThis, const UpgradeElasticsearchDomainRequest& request, const UpgradeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpgradeElasticsearchDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpgradeElasticsearchDomain(request), context);
 }
 
-void ElasticsearchServiceClient::UpgradeElasticsearchDomainAsyncHelper(const UpgradeElasticsearchDomainRequest& request, const UpgradeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::UpgradeElasticsearchDomainAsync(const UpgradeElasticsearchDomainRequest& request, const UpgradeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpgradeElasticsearchDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticsearchServiceClientUpgradeElasticsearchDomainAsyncHelper( this, request, handler, context ); } );
 }
 

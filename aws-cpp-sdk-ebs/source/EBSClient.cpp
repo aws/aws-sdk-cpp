@@ -132,14 +132,14 @@ CompleteSnapshotOutcomeCallable EBSClient::CompleteSnapshotCallable(const Comple
   return task->get_future();
 }
 
-void EBSClient::CompleteSnapshotAsync(const CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClientCompleteSnapshotAsyncHelper(EBSClient const * const clientThis, const CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CompleteSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CompleteSnapshot(request), context);
 }
 
-void EBSClient::CompleteSnapshotAsyncHelper(const CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClient::CompleteSnapshotAsync(const CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CompleteSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EBSClientCompleteSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockRequest& request) const
@@ -175,14 +175,14 @@ GetSnapshotBlockOutcomeCallable EBSClient::GetSnapshotBlockCallable(const GetSna
   return task->get_future();
 }
 
-void EBSClient::GetSnapshotBlockAsync(const GetSnapshotBlockRequest& request, const GetSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClientGetSnapshotBlockAsyncHelper(EBSClient const * const clientThis, const GetSnapshotBlockRequest& request, const GetSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSnapshotBlockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSnapshotBlock(request), context);
 }
 
-void EBSClient::GetSnapshotBlockAsyncHelper(const GetSnapshotBlockRequest& request, const GetSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClient::GetSnapshotBlockAsync(const GetSnapshotBlockRequest& request, const GetSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSnapshotBlock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EBSClientGetSnapshotBlockAsyncHelper( this, request, handler, context ); } );
 }
 
 ListChangedBlocksOutcome EBSClient::ListChangedBlocks(const ListChangedBlocksRequest& request) const
@@ -207,14 +207,14 @@ ListChangedBlocksOutcomeCallable EBSClient::ListChangedBlocksCallable(const List
   return task->get_future();
 }
 
-void EBSClient::ListChangedBlocksAsync(const ListChangedBlocksRequest& request, const ListChangedBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClientListChangedBlocksAsyncHelper(EBSClient const * const clientThis, const ListChangedBlocksRequest& request, const ListChangedBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChangedBlocksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListChangedBlocks(request), context);
 }
 
-void EBSClient::ListChangedBlocksAsyncHelper(const ListChangedBlocksRequest& request, const ListChangedBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClient::ListChangedBlocksAsync(const ListChangedBlocksRequest& request, const ListChangedBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListChangedBlocks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EBSClientListChangedBlocksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSnapshotBlocksOutcome EBSClient::ListSnapshotBlocks(const ListSnapshotBlocksRequest& request) const
@@ -239,14 +239,14 @@ ListSnapshotBlocksOutcomeCallable EBSClient::ListSnapshotBlocksCallable(const Li
   return task->get_future();
 }
 
-void EBSClient::ListSnapshotBlocksAsync(const ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClientListSnapshotBlocksAsyncHelper(EBSClient const * const clientThis, const ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSnapshotBlocksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSnapshotBlocks(request), context);
 }
 
-void EBSClient::ListSnapshotBlocksAsyncHelper(const ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClient::ListSnapshotBlocksAsync(const ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSnapshotBlocks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EBSClientListSnapshotBlocksAsyncHelper( this, request, handler, context ); } );
 }
 
 PutSnapshotBlockOutcome EBSClient::PutSnapshotBlock(const PutSnapshotBlockRequest& request) const
@@ -292,14 +292,14 @@ PutSnapshotBlockOutcomeCallable EBSClient::PutSnapshotBlockCallable(const PutSna
   return task->get_future();
 }
 
-void EBSClient::PutSnapshotBlockAsync(const PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClientPutSnapshotBlockAsyncHelper(EBSClient const * const clientThis, const PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSnapshotBlockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutSnapshotBlock(request), context);
 }
 
-void EBSClient::PutSnapshotBlockAsyncHelper(const PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClient::PutSnapshotBlockAsync(const PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutSnapshotBlock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EBSClientPutSnapshotBlockAsyncHelper( this, request, handler, context ); } );
 }
 
 StartSnapshotOutcome EBSClient::StartSnapshot(const StartSnapshotRequest& request) const
@@ -317,13 +317,13 @@ StartSnapshotOutcomeCallable EBSClient::StartSnapshotCallable(const StartSnapsho
   return task->get_future();
 }
 
-void EBSClient::StartSnapshotAsync(const StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClientStartSnapshotAsyncHelper(EBSClient const * const clientThis, const StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartSnapshot(request), context);
 }
 
-void EBSClient::StartSnapshotAsyncHelper(const StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EBSClient::StartSnapshotAsync(const StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EBSClientStartSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 

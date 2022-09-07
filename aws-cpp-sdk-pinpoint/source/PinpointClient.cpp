@@ -234,14 +234,14 @@ CreateAppOutcomeCallable PinpointClient::CreateAppCallable(const CreateAppReques
   return task->get_future();
 }
 
-void PinpointClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateAppAsyncHelper(PinpointClient const * const clientThis, const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApp(request), context);
 }
 
-void PinpointClient::CreateAppAsyncHelper(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateAppAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCampaignOutcome PinpointClient::CreateCampaign(const CreateCampaignRequest& request) const
@@ -266,14 +266,14 @@ CreateCampaignOutcomeCallable PinpointClient::CreateCampaignCallable(const Creat
   return task->get_future();
 }
 
-void PinpointClient::CreateCampaignAsync(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateCampaignAsyncHelper(PinpointClient const * const clientThis, const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCampaign(request), context);
 }
 
-void PinpointClient::CreateCampaignAsyncHelper(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateCampaignAsync(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEmailTemplateOutcome PinpointClient::CreateEmailTemplate(const CreateEmailTemplateRequest& request) const
@@ -298,14 +298,14 @@ CreateEmailTemplateOutcomeCallable PinpointClient::CreateEmailTemplateCallable(c
   return task->get_future();
 }
 
-void PinpointClient::CreateEmailTemplateAsync(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateEmailTemplateAsyncHelper(PinpointClient const * const clientThis, const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEmailTemplate(request), context);
 }
 
-void PinpointClient::CreateEmailTemplateAsyncHelper(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateEmailTemplateAsync(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExportJobOutcome PinpointClient::CreateExportJob(const CreateExportJobRequest& request) const
@@ -330,14 +330,14 @@ CreateExportJobOutcomeCallable PinpointClient::CreateExportJobCallable(const Cre
   return task->get_future();
 }
 
-void PinpointClient::CreateExportJobAsync(const CreateExportJobRequest& request, const CreateExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateExportJobAsyncHelper(PinpointClient const * const clientThis, const CreateExportJobRequest& request, const CreateExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExportJob(request), context);
 }
 
-void PinpointClient::CreateExportJobAsyncHelper(const CreateExportJobRequest& request, const CreateExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateExportJobAsync(const CreateExportJobRequest& request, const CreateExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateImportJobOutcome PinpointClient::CreateImportJob(const CreateImportJobRequest& request) const
@@ -362,14 +362,14 @@ CreateImportJobOutcomeCallable PinpointClient::CreateImportJobCallable(const Cre
   return task->get_future();
 }
 
-void PinpointClient::CreateImportJobAsync(const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateImportJobAsyncHelper(PinpointClient const * const clientThis, const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateImportJob(request), context);
 }
 
-void PinpointClient::CreateImportJobAsyncHelper(const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateImportJobAsync(const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInAppTemplateOutcome PinpointClient::CreateInAppTemplate(const CreateInAppTemplateRequest& request) const
@@ -394,14 +394,14 @@ CreateInAppTemplateOutcomeCallable PinpointClient::CreateInAppTemplateCallable(c
   return task->get_future();
 }
 
-void PinpointClient::CreateInAppTemplateAsync(const CreateInAppTemplateRequest& request, const CreateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateInAppTemplateAsyncHelper(PinpointClient const * const clientThis, const CreateInAppTemplateRequest& request, const CreateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInAppTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInAppTemplate(request), context);
 }
 
-void PinpointClient::CreateInAppTemplateAsyncHelper(const CreateInAppTemplateRequest& request, const CreateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateInAppTemplateAsync(const CreateInAppTemplateRequest& request, const CreateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInAppTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateInAppTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateJourneyOutcome PinpointClient::CreateJourney(const CreateJourneyRequest& request) const
@@ -426,14 +426,14 @@ CreateJourneyOutcomeCallable PinpointClient::CreateJourneyCallable(const CreateJ
   return task->get_future();
 }
 
-void PinpointClient::CreateJourneyAsync(const CreateJourneyRequest& request, const CreateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateJourneyAsyncHelper(PinpointClient const * const clientThis, const CreateJourneyRequest& request, const CreateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJourneyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateJourney(request), context);
 }
 
-void PinpointClient::CreateJourneyAsyncHelper(const CreateJourneyRequest& request, const CreateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateJourneyAsync(const CreateJourneyRequest& request, const CreateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateJourney(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateJourneyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePushTemplateOutcome PinpointClient::CreatePushTemplate(const CreatePushTemplateRequest& request) const
@@ -458,14 +458,14 @@ CreatePushTemplateOutcomeCallable PinpointClient::CreatePushTemplateCallable(con
   return task->get_future();
 }
 
-void PinpointClient::CreatePushTemplateAsync(const CreatePushTemplateRequest& request, const CreatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreatePushTemplateAsyncHelper(PinpointClient const * const clientThis, const CreatePushTemplateRequest& request, const CreatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePushTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePushTemplate(request), context);
 }
 
-void PinpointClient::CreatePushTemplateAsyncHelper(const CreatePushTemplateRequest& request, const CreatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreatePushTemplateAsync(const CreatePushTemplateRequest& request, const CreatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePushTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreatePushTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRecommenderConfigurationOutcome PinpointClient::CreateRecommenderConfiguration(const CreateRecommenderConfigurationRequest& request) const
@@ -483,14 +483,14 @@ CreateRecommenderConfigurationOutcomeCallable PinpointClient::CreateRecommenderC
   return task->get_future();
 }
 
-void PinpointClient::CreateRecommenderConfigurationAsync(const CreateRecommenderConfigurationRequest& request, const CreateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateRecommenderConfigurationAsyncHelper(PinpointClient const * const clientThis, const CreateRecommenderConfigurationRequest& request, const CreateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRecommenderConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRecommenderConfiguration(request), context);
 }
 
-void PinpointClient::CreateRecommenderConfigurationAsyncHelper(const CreateRecommenderConfigurationRequest& request, const CreateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateRecommenderConfigurationAsync(const CreateRecommenderConfigurationRequest& request, const CreateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRecommenderConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateRecommenderConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSegmentOutcome PinpointClient::CreateSegment(const CreateSegmentRequest& request) const
@@ -515,14 +515,14 @@ CreateSegmentOutcomeCallable PinpointClient::CreateSegmentCallable(const CreateS
   return task->get_future();
 }
 
-void PinpointClient::CreateSegmentAsync(const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateSegmentAsyncHelper(PinpointClient const * const clientThis, const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSegmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSegment(request), context);
 }
 
-void PinpointClient::CreateSegmentAsyncHelper(const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateSegmentAsync(const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSegment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateSegmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSmsTemplateOutcome PinpointClient::CreateSmsTemplate(const CreateSmsTemplateRequest& request) const
@@ -547,14 +547,14 @@ CreateSmsTemplateOutcomeCallable PinpointClient::CreateSmsTemplateCallable(const
   return task->get_future();
 }
 
-void PinpointClient::CreateSmsTemplateAsync(const CreateSmsTemplateRequest& request, const CreateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateSmsTemplateAsyncHelper(PinpointClient const * const clientThis, const CreateSmsTemplateRequest& request, const CreateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSmsTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSmsTemplate(request), context);
 }
 
-void PinpointClient::CreateSmsTemplateAsyncHelper(const CreateSmsTemplateRequest& request, const CreateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateSmsTemplateAsync(const CreateSmsTemplateRequest& request, const CreateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSmsTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateSmsTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVoiceTemplateOutcome PinpointClient::CreateVoiceTemplate(const CreateVoiceTemplateRequest& request) const
@@ -579,14 +579,14 @@ CreateVoiceTemplateOutcomeCallable PinpointClient::CreateVoiceTemplateCallable(c
   return task->get_future();
 }
 
-void PinpointClient::CreateVoiceTemplateAsync(const CreateVoiceTemplateRequest& request, const CreateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientCreateVoiceTemplateAsyncHelper(PinpointClient const * const clientThis, const CreateVoiceTemplateRequest& request, const CreateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVoiceTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVoiceTemplate(request), context);
 }
 
-void PinpointClient::CreateVoiceTemplateAsyncHelper(const CreateVoiceTemplateRequest& request, const CreateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::CreateVoiceTemplateAsync(const CreateVoiceTemplateRequest& request, const CreateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVoiceTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientCreateVoiceTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelRequest& request) const
@@ -611,14 +611,14 @@ DeleteAdmChannelOutcomeCallable PinpointClient::DeleteAdmChannelCallable(const D
   return task->get_future();
 }
 
-void PinpointClient::DeleteAdmChannelAsync(const DeleteAdmChannelRequest& request, const DeleteAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteAdmChannelAsyncHelper(PinpointClient const * const clientThis, const DeleteAdmChannelRequest& request, const DeleteAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAdmChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAdmChannel(request), context);
 }
 
-void PinpointClient::DeleteAdmChannelAsyncHelper(const DeleteAdmChannelRequest& request, const DeleteAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteAdmChannelAsync(const DeleteAdmChannelRequest& request, const DeleteAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAdmChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteAdmChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApnsChannelOutcome PinpointClient::DeleteApnsChannel(const DeleteApnsChannelRequest& request) const
@@ -643,14 +643,14 @@ DeleteApnsChannelOutcomeCallable PinpointClient::DeleteApnsChannelCallable(const
   return task->get_future();
 }
 
-void PinpointClient::DeleteApnsChannelAsync(const DeleteApnsChannelRequest& request, const DeleteApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteApnsChannelAsyncHelper(PinpointClient const * const clientThis, const DeleteApnsChannelRequest& request, const DeleteApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApnsChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApnsChannel(request), context);
 }
 
-void PinpointClient::DeleteApnsChannelAsyncHelper(const DeleteApnsChannelRequest& request, const DeleteApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteApnsChannelAsync(const DeleteApnsChannelRequest& request, const DeleteApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApnsChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteApnsChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApnsSandboxChannelOutcome PinpointClient::DeleteApnsSandboxChannel(const DeleteApnsSandboxChannelRequest& request) const
@@ -675,14 +675,14 @@ DeleteApnsSandboxChannelOutcomeCallable PinpointClient::DeleteApnsSandboxChannel
   return task->get_future();
 }
 
-void PinpointClient::DeleteApnsSandboxChannelAsync(const DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteApnsSandboxChannelAsyncHelper(PinpointClient const * const clientThis, const DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApnsSandboxChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApnsSandboxChannel(request), context);
 }
 
-void PinpointClient::DeleteApnsSandboxChannelAsyncHelper(const DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteApnsSandboxChannelAsync(const DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApnsSandboxChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteApnsSandboxChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApnsVoipChannelOutcome PinpointClient::DeleteApnsVoipChannel(const DeleteApnsVoipChannelRequest& request) const
@@ -707,14 +707,14 @@ DeleteApnsVoipChannelOutcomeCallable PinpointClient::DeleteApnsVoipChannelCallab
   return task->get_future();
 }
 
-void PinpointClient::DeleteApnsVoipChannelAsync(const DeleteApnsVoipChannelRequest& request, const DeleteApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteApnsVoipChannelAsyncHelper(PinpointClient const * const clientThis, const DeleteApnsVoipChannelRequest& request, const DeleteApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApnsVoipChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApnsVoipChannel(request), context);
 }
 
-void PinpointClient::DeleteApnsVoipChannelAsyncHelper(const DeleteApnsVoipChannelRequest& request, const DeleteApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteApnsVoipChannelAsync(const DeleteApnsVoipChannelRequest& request, const DeleteApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApnsVoipChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteApnsVoipChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApnsVoipSandboxChannelOutcome PinpointClient::DeleteApnsVoipSandboxChannel(const DeleteApnsVoipSandboxChannelRequest& request) const
@@ -739,14 +739,14 @@ DeleteApnsVoipSandboxChannelOutcomeCallable PinpointClient::DeleteApnsVoipSandbo
   return task->get_future();
 }
 
-void PinpointClient::DeleteApnsVoipSandboxChannelAsync(const DeleteApnsVoipSandboxChannelRequest& request, const DeleteApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteApnsVoipSandboxChannelAsyncHelper(PinpointClient const * const clientThis, const DeleteApnsVoipSandboxChannelRequest& request, const DeleteApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApnsVoipSandboxChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApnsVoipSandboxChannel(request), context);
 }
 
-void PinpointClient::DeleteApnsVoipSandboxChannelAsyncHelper(const DeleteApnsVoipSandboxChannelRequest& request, const DeleteApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteApnsVoipSandboxChannelAsync(const DeleteApnsVoipSandboxChannelRequest& request, const DeleteApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApnsVoipSandboxChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteApnsVoipSandboxChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAppOutcome PinpointClient::DeleteApp(const DeleteAppRequest& request) const
@@ -770,14 +770,14 @@ DeleteAppOutcomeCallable PinpointClient::DeleteAppCallable(const DeleteAppReques
   return task->get_future();
 }
 
-void PinpointClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteAppAsyncHelper(PinpointClient const * const clientThis, const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApp(request), context);
 }
 
-void PinpointClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteAppAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBaiduChannelOutcome PinpointClient::DeleteBaiduChannel(const DeleteBaiduChannelRequest& request) const
@@ -802,14 +802,14 @@ DeleteBaiduChannelOutcomeCallable PinpointClient::DeleteBaiduChannelCallable(con
   return task->get_future();
 }
 
-void PinpointClient::DeleteBaiduChannelAsync(const DeleteBaiduChannelRequest& request, const DeleteBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteBaiduChannelAsyncHelper(PinpointClient const * const clientThis, const DeleteBaiduChannelRequest& request, const DeleteBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBaiduChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBaiduChannel(request), context);
 }
 
-void PinpointClient::DeleteBaiduChannelAsyncHelper(const DeleteBaiduChannelRequest& request, const DeleteBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteBaiduChannelAsync(const DeleteBaiduChannelRequest& request, const DeleteBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBaiduChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteBaiduChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest& request) const
@@ -840,14 +840,14 @@ DeleteCampaignOutcomeCallable PinpointClient::DeleteCampaignCallable(const Delet
   return task->get_future();
 }
 
-void PinpointClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteCampaignAsyncHelper(PinpointClient const * const clientThis, const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCampaign(request), context);
 }
 
-void PinpointClient::DeleteCampaignAsyncHelper(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEmailChannelOutcome PinpointClient::DeleteEmailChannel(const DeleteEmailChannelRequest& request) const
@@ -872,14 +872,14 @@ DeleteEmailChannelOutcomeCallable PinpointClient::DeleteEmailChannelCallable(con
   return task->get_future();
 }
 
-void PinpointClient::DeleteEmailChannelAsync(const DeleteEmailChannelRequest& request, const DeleteEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteEmailChannelAsyncHelper(PinpointClient const * const clientThis, const DeleteEmailChannelRequest& request, const DeleteEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEmailChannel(request), context);
 }
 
-void PinpointClient::DeleteEmailChannelAsyncHelper(const DeleteEmailChannelRequest& request, const DeleteEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteEmailChannelAsync(const DeleteEmailChannelRequest& request, const DeleteEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEmailChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteEmailChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEmailTemplateOutcome PinpointClient::DeleteEmailTemplate(const DeleteEmailTemplateRequest& request) const
@@ -904,14 +904,14 @@ DeleteEmailTemplateOutcomeCallable PinpointClient::DeleteEmailTemplateCallable(c
   return task->get_future();
 }
 
-void PinpointClient::DeleteEmailTemplateAsync(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteEmailTemplateAsyncHelper(PinpointClient const * const clientThis, const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEmailTemplate(request), context);
 }
 
-void PinpointClient::DeleteEmailTemplateAsyncHelper(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteEmailTemplateAsync(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEndpointOutcome PinpointClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
@@ -942,14 +942,14 @@ DeleteEndpointOutcomeCallable PinpointClient::DeleteEndpointCallable(const Delet
   return task->get_future();
 }
 
-void PinpointClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteEndpointAsyncHelper(PinpointClient const * const clientThis, const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEndpoint(request), context);
 }
 
-void PinpointClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEventStreamOutcome PinpointClient::DeleteEventStream(const DeleteEventStreamRequest& request) const
@@ -974,14 +974,14 @@ DeleteEventStreamOutcomeCallable PinpointClient::DeleteEventStreamCallable(const
   return task->get_future();
 }
 
-void PinpointClient::DeleteEventStreamAsync(const DeleteEventStreamRequest& request, const DeleteEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteEventStreamAsyncHelper(PinpointClient const * const clientThis, const DeleteEventStreamRequest& request, const DeleteEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEventStream(request), context);
 }
 
-void PinpointClient::DeleteEventStreamAsyncHelper(const DeleteEventStreamRequest& request, const DeleteEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteEventStreamAsync(const DeleteEventStreamRequest& request, const DeleteEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEventStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteEventStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGcmChannelOutcome PinpointClient::DeleteGcmChannel(const DeleteGcmChannelRequest& request) const
@@ -1006,14 +1006,14 @@ DeleteGcmChannelOutcomeCallable PinpointClient::DeleteGcmChannelCallable(const D
   return task->get_future();
 }
 
-void PinpointClient::DeleteGcmChannelAsync(const DeleteGcmChannelRequest& request, const DeleteGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteGcmChannelAsyncHelper(PinpointClient const * const clientThis, const DeleteGcmChannelRequest& request, const DeleteGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGcmChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGcmChannel(request), context);
 }
 
-void PinpointClient::DeleteGcmChannelAsyncHelper(const DeleteGcmChannelRequest& request, const DeleteGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteGcmChannelAsync(const DeleteGcmChannelRequest& request, const DeleteGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGcmChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteGcmChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInAppTemplateOutcome PinpointClient::DeleteInAppTemplate(const DeleteInAppTemplateRequest& request) const
@@ -1038,14 +1038,14 @@ DeleteInAppTemplateOutcomeCallable PinpointClient::DeleteInAppTemplateCallable(c
   return task->get_future();
 }
 
-void PinpointClient::DeleteInAppTemplateAsync(const DeleteInAppTemplateRequest& request, const DeleteInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteInAppTemplateAsyncHelper(PinpointClient const * const clientThis, const DeleteInAppTemplateRequest& request, const DeleteInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInAppTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInAppTemplate(request), context);
 }
 
-void PinpointClient::DeleteInAppTemplateAsyncHelper(const DeleteInAppTemplateRequest& request, const DeleteInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteInAppTemplateAsync(const DeleteInAppTemplateRequest& request, const DeleteInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInAppTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteInAppTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteJourneyOutcome PinpointClient::DeleteJourney(const DeleteJourneyRequest& request) const
@@ -1076,14 +1076,14 @@ DeleteJourneyOutcomeCallable PinpointClient::DeleteJourneyCallable(const DeleteJ
   return task->get_future();
 }
 
-void PinpointClient::DeleteJourneyAsync(const DeleteJourneyRequest& request, const DeleteJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteJourneyAsyncHelper(PinpointClient const * const clientThis, const DeleteJourneyRequest& request, const DeleteJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJourneyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteJourney(request), context);
 }
 
-void PinpointClient::DeleteJourneyAsyncHelper(const DeleteJourneyRequest& request, const DeleteJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteJourneyAsync(const DeleteJourneyRequest& request, const DeleteJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteJourney(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteJourneyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePushTemplateOutcome PinpointClient::DeletePushTemplate(const DeletePushTemplateRequest& request) const
@@ -1108,14 +1108,14 @@ DeletePushTemplateOutcomeCallable PinpointClient::DeletePushTemplateCallable(con
   return task->get_future();
 }
 
-void PinpointClient::DeletePushTemplateAsync(const DeletePushTemplateRequest& request, const DeletePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeletePushTemplateAsyncHelper(PinpointClient const * const clientThis, const DeletePushTemplateRequest& request, const DeletePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePushTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePushTemplate(request), context);
 }
 
-void PinpointClient::DeletePushTemplateAsyncHelper(const DeletePushTemplateRequest& request, const DeletePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeletePushTemplateAsync(const DeletePushTemplateRequest& request, const DeletePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePushTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeletePushTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRecommenderConfigurationOutcome PinpointClient::DeleteRecommenderConfiguration(const DeleteRecommenderConfigurationRequest& request) const
@@ -1139,14 +1139,14 @@ DeleteRecommenderConfigurationOutcomeCallable PinpointClient::DeleteRecommenderC
   return task->get_future();
 }
 
-void PinpointClient::DeleteRecommenderConfigurationAsync(const DeleteRecommenderConfigurationRequest& request, const DeleteRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteRecommenderConfigurationAsyncHelper(PinpointClient const * const clientThis, const DeleteRecommenderConfigurationRequest& request, const DeleteRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecommenderConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRecommenderConfiguration(request), context);
 }
 
-void PinpointClient::DeleteRecommenderConfigurationAsyncHelper(const DeleteRecommenderConfigurationRequest& request, const DeleteRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteRecommenderConfigurationAsync(const DeleteRecommenderConfigurationRequest& request, const DeleteRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRecommenderConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteRecommenderConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSegmentOutcome PinpointClient::DeleteSegment(const DeleteSegmentRequest& request) const
@@ -1177,14 +1177,14 @@ DeleteSegmentOutcomeCallable PinpointClient::DeleteSegmentCallable(const DeleteS
   return task->get_future();
 }
 
-void PinpointClient::DeleteSegmentAsync(const DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteSegmentAsyncHelper(PinpointClient const * const clientThis, const DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSegmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSegment(request), context);
 }
 
-void PinpointClient::DeleteSegmentAsyncHelper(const DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteSegmentAsync(const DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSegment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteSegmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSmsChannelOutcome PinpointClient::DeleteSmsChannel(const DeleteSmsChannelRequest& request) const
@@ -1209,14 +1209,14 @@ DeleteSmsChannelOutcomeCallable PinpointClient::DeleteSmsChannelCallable(const D
   return task->get_future();
 }
 
-void PinpointClient::DeleteSmsChannelAsync(const DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteSmsChannelAsyncHelper(PinpointClient const * const clientThis, const DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSmsChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSmsChannel(request), context);
 }
 
-void PinpointClient::DeleteSmsChannelAsyncHelper(const DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteSmsChannelAsync(const DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSmsChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteSmsChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSmsTemplateOutcome PinpointClient::DeleteSmsTemplate(const DeleteSmsTemplateRequest& request) const
@@ -1241,14 +1241,14 @@ DeleteSmsTemplateOutcomeCallable PinpointClient::DeleteSmsTemplateCallable(const
   return task->get_future();
 }
 
-void PinpointClient::DeleteSmsTemplateAsync(const DeleteSmsTemplateRequest& request, const DeleteSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteSmsTemplateAsyncHelper(PinpointClient const * const clientThis, const DeleteSmsTemplateRequest& request, const DeleteSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSmsTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSmsTemplate(request), context);
 }
 
-void PinpointClient::DeleteSmsTemplateAsyncHelper(const DeleteSmsTemplateRequest& request, const DeleteSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteSmsTemplateAsync(const DeleteSmsTemplateRequest& request, const DeleteSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSmsTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteSmsTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserEndpointsOutcome PinpointClient::DeleteUserEndpoints(const DeleteUserEndpointsRequest& request) const
@@ -1279,14 +1279,14 @@ DeleteUserEndpointsOutcomeCallable PinpointClient::DeleteUserEndpointsCallable(c
   return task->get_future();
 }
 
-void PinpointClient::DeleteUserEndpointsAsync(const DeleteUserEndpointsRequest& request, const DeleteUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteUserEndpointsAsyncHelper(PinpointClient const * const clientThis, const DeleteUserEndpointsRequest& request, const DeleteUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUserEndpoints(request), context);
 }
 
-void PinpointClient::DeleteUserEndpointsAsyncHelper(const DeleteUserEndpointsRequest& request, const DeleteUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteUserEndpointsAsync(const DeleteUserEndpointsRequest& request, const DeleteUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUserEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteUserEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVoiceChannelOutcome PinpointClient::DeleteVoiceChannel(const DeleteVoiceChannelRequest& request) const
@@ -1311,14 +1311,14 @@ DeleteVoiceChannelOutcomeCallable PinpointClient::DeleteVoiceChannelCallable(con
   return task->get_future();
 }
 
-void PinpointClient::DeleteVoiceChannelAsync(const DeleteVoiceChannelRequest& request, const DeleteVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteVoiceChannelAsyncHelper(PinpointClient const * const clientThis, const DeleteVoiceChannelRequest& request, const DeleteVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVoiceChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVoiceChannel(request), context);
 }
 
-void PinpointClient::DeleteVoiceChannelAsyncHelper(const DeleteVoiceChannelRequest& request, const DeleteVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteVoiceChannelAsync(const DeleteVoiceChannelRequest& request, const DeleteVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVoiceChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteVoiceChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVoiceTemplateOutcome PinpointClient::DeleteVoiceTemplate(const DeleteVoiceTemplateRequest& request) const
@@ -1343,14 +1343,14 @@ DeleteVoiceTemplateOutcomeCallable PinpointClient::DeleteVoiceTemplateCallable(c
   return task->get_future();
 }
 
-void PinpointClient::DeleteVoiceTemplateAsync(const DeleteVoiceTemplateRequest& request, const DeleteVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientDeleteVoiceTemplateAsyncHelper(PinpointClient const * const clientThis, const DeleteVoiceTemplateRequest& request, const DeleteVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVoiceTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVoiceTemplate(request), context);
 }
 
-void PinpointClient::DeleteVoiceTemplateAsyncHelper(const DeleteVoiceTemplateRequest& request, const DeleteVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::DeleteVoiceTemplateAsync(const DeleteVoiceTemplateRequest& request, const DeleteVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVoiceTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientDeleteVoiceTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& request) const
@@ -1375,14 +1375,14 @@ GetAdmChannelOutcomeCallable PinpointClient::GetAdmChannelCallable(const GetAdmC
   return task->get_future();
 }
 
-void PinpointClient::GetAdmChannelAsync(const GetAdmChannelRequest& request, const GetAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetAdmChannelAsyncHelper(PinpointClient const * const clientThis, const GetAdmChannelRequest& request, const GetAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAdmChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAdmChannel(request), context);
 }
 
-void PinpointClient::GetAdmChannelAsyncHelper(const GetAdmChannelRequest& request, const GetAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetAdmChannelAsync(const GetAdmChannelRequest& request, const GetAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAdmChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetAdmChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApnsChannelOutcome PinpointClient::GetApnsChannel(const GetApnsChannelRequest& request) const
@@ -1407,14 +1407,14 @@ GetApnsChannelOutcomeCallable PinpointClient::GetApnsChannelCallable(const GetAp
   return task->get_future();
 }
 
-void PinpointClient::GetApnsChannelAsync(const GetApnsChannelRequest& request, const GetApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetApnsChannelAsyncHelper(PinpointClient const * const clientThis, const GetApnsChannelRequest& request, const GetApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApnsChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApnsChannel(request), context);
 }
 
-void PinpointClient::GetApnsChannelAsyncHelper(const GetApnsChannelRequest& request, const GetApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetApnsChannelAsync(const GetApnsChannelRequest& request, const GetApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApnsChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetApnsChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApnsSandboxChannelOutcome PinpointClient::GetApnsSandboxChannel(const GetApnsSandboxChannelRequest& request) const
@@ -1439,14 +1439,14 @@ GetApnsSandboxChannelOutcomeCallable PinpointClient::GetApnsSandboxChannelCallab
   return task->get_future();
 }
 
-void PinpointClient::GetApnsSandboxChannelAsync(const GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetApnsSandboxChannelAsyncHelper(PinpointClient const * const clientThis, const GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApnsSandboxChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApnsSandboxChannel(request), context);
 }
 
-void PinpointClient::GetApnsSandboxChannelAsyncHelper(const GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetApnsSandboxChannelAsync(const GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApnsSandboxChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetApnsSandboxChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApnsVoipChannelOutcome PinpointClient::GetApnsVoipChannel(const GetApnsVoipChannelRequest& request) const
@@ -1471,14 +1471,14 @@ GetApnsVoipChannelOutcomeCallable PinpointClient::GetApnsVoipChannelCallable(con
   return task->get_future();
 }
 
-void PinpointClient::GetApnsVoipChannelAsync(const GetApnsVoipChannelRequest& request, const GetApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetApnsVoipChannelAsyncHelper(PinpointClient const * const clientThis, const GetApnsVoipChannelRequest& request, const GetApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApnsVoipChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApnsVoipChannel(request), context);
 }
 
-void PinpointClient::GetApnsVoipChannelAsyncHelper(const GetApnsVoipChannelRequest& request, const GetApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetApnsVoipChannelAsync(const GetApnsVoipChannelRequest& request, const GetApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApnsVoipChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetApnsVoipChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApnsVoipSandboxChannelOutcome PinpointClient::GetApnsVoipSandboxChannel(const GetApnsVoipSandboxChannelRequest& request) const
@@ -1503,14 +1503,14 @@ GetApnsVoipSandboxChannelOutcomeCallable PinpointClient::GetApnsVoipSandboxChann
   return task->get_future();
 }
 
-void PinpointClient::GetApnsVoipSandboxChannelAsync(const GetApnsVoipSandboxChannelRequest& request, const GetApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetApnsVoipSandboxChannelAsyncHelper(PinpointClient const * const clientThis, const GetApnsVoipSandboxChannelRequest& request, const GetApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApnsVoipSandboxChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApnsVoipSandboxChannel(request), context);
 }
 
-void PinpointClient::GetApnsVoipSandboxChannelAsyncHelper(const GetApnsVoipSandboxChannelRequest& request, const GetApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetApnsVoipSandboxChannelAsync(const GetApnsVoipSandboxChannelRequest& request, const GetApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApnsVoipSandboxChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetApnsVoipSandboxChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAppOutcome PinpointClient::GetApp(const GetAppRequest& request) const
@@ -1534,14 +1534,14 @@ GetAppOutcomeCallable PinpointClient::GetAppCallable(const GetAppRequest& reques
   return task->get_future();
 }
 
-void PinpointClient::GetAppAsync(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetAppAsyncHelper(PinpointClient const * const clientThis, const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApp(request), context);
 }
 
-void PinpointClient::GetAppAsyncHelper(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetAppAsync(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetAppAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApplicationDateRangeKpiOutcome PinpointClient::GetApplicationDateRangeKpi(const GetApplicationDateRangeKpiRequest& request) const
@@ -1572,14 +1572,14 @@ GetApplicationDateRangeKpiOutcomeCallable PinpointClient::GetApplicationDateRang
   return task->get_future();
 }
 
-void PinpointClient::GetApplicationDateRangeKpiAsync(const GetApplicationDateRangeKpiRequest& request, const GetApplicationDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetApplicationDateRangeKpiAsyncHelper(PinpointClient const * const clientThis, const GetApplicationDateRangeKpiRequest& request, const GetApplicationDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationDateRangeKpiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApplicationDateRangeKpi(request), context);
 }
 
-void PinpointClient::GetApplicationDateRangeKpiAsyncHelper(const GetApplicationDateRangeKpiRequest& request, const GetApplicationDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetApplicationDateRangeKpiAsync(const GetApplicationDateRangeKpiRequest& request, const GetApplicationDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApplicationDateRangeKpi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetApplicationDateRangeKpiAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetApplicationSettingsRequest& request) const
@@ -1604,14 +1604,14 @@ GetApplicationSettingsOutcomeCallable PinpointClient::GetApplicationSettingsCall
   return task->get_future();
 }
 
-void PinpointClient::GetApplicationSettingsAsync(const GetApplicationSettingsRequest& request, const GetApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetApplicationSettingsAsyncHelper(PinpointClient const * const clientThis, const GetApplicationSettingsRequest& request, const GetApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApplicationSettings(request), context);
 }
 
-void PinpointClient::GetApplicationSettingsAsyncHelper(const GetApplicationSettingsRequest& request, const GetApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetApplicationSettingsAsync(const GetApplicationSettingsRequest& request, const GetApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApplicationSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetApplicationSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAppsOutcome PinpointClient::GetApps(const GetAppsRequest& request) const
@@ -1629,14 +1629,14 @@ GetAppsOutcomeCallable PinpointClient::GetAppsCallable(const GetAppsRequest& req
   return task->get_future();
 }
 
-void PinpointClient::GetAppsAsync(const GetAppsRequest& request, const GetAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetAppsAsyncHelper(PinpointClient const * const clientThis, const GetAppsRequest& request, const GetAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApps(request), context);
 }
 
-void PinpointClient::GetAppsAsyncHelper(const GetAppsRequest& request, const GetAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetAppsAsync(const GetAppsRequest& request, const GetAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApps(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetAppsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBaiduChannelOutcome PinpointClient::GetBaiduChannel(const GetBaiduChannelRequest& request) const
@@ -1661,14 +1661,14 @@ GetBaiduChannelOutcomeCallable PinpointClient::GetBaiduChannelCallable(const Get
   return task->get_future();
 }
 
-void PinpointClient::GetBaiduChannelAsync(const GetBaiduChannelRequest& request, const GetBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetBaiduChannelAsyncHelper(PinpointClient const * const clientThis, const GetBaiduChannelRequest& request, const GetBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBaiduChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBaiduChannel(request), context);
 }
 
-void PinpointClient::GetBaiduChannelAsyncHelper(const GetBaiduChannelRequest& request, const GetBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetBaiduChannelAsync(const GetBaiduChannelRequest& request, const GetBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBaiduChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetBaiduChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCampaignOutcome PinpointClient::GetCampaign(const GetCampaignRequest& request) const
@@ -1699,14 +1699,14 @@ GetCampaignOutcomeCallable PinpointClient::GetCampaignCallable(const GetCampaign
   return task->get_future();
 }
 
-void PinpointClient::GetCampaignAsync(const GetCampaignRequest& request, const GetCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetCampaignAsyncHelper(PinpointClient const * const clientThis, const GetCampaignRequest& request, const GetCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCampaign(request), context);
 }
 
-void PinpointClient::GetCampaignAsyncHelper(const GetCampaignRequest& request, const GetCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetCampaignAsync(const GetCampaignRequest& request, const GetCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCampaignActivitiesOutcome PinpointClient::GetCampaignActivities(const GetCampaignActivitiesRequest& request) const
@@ -1738,14 +1738,14 @@ GetCampaignActivitiesOutcomeCallable PinpointClient::GetCampaignActivitiesCallab
   return task->get_future();
 }
 
-void PinpointClient::GetCampaignActivitiesAsync(const GetCampaignActivitiesRequest& request, const GetCampaignActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetCampaignActivitiesAsyncHelper(PinpointClient const * const clientThis, const GetCampaignActivitiesRequest& request, const GetCampaignActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCampaignActivitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCampaignActivities(request), context);
 }
 
-void PinpointClient::GetCampaignActivitiesAsyncHelper(const GetCampaignActivitiesRequest& request, const GetCampaignActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetCampaignActivitiesAsync(const GetCampaignActivitiesRequest& request, const GetCampaignActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCampaignActivities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetCampaignActivitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCampaignDateRangeKpiOutcome PinpointClient::GetCampaignDateRangeKpi(const GetCampaignDateRangeKpiRequest& request) const
@@ -1783,14 +1783,14 @@ GetCampaignDateRangeKpiOutcomeCallable PinpointClient::GetCampaignDateRangeKpiCa
   return task->get_future();
 }
 
-void PinpointClient::GetCampaignDateRangeKpiAsync(const GetCampaignDateRangeKpiRequest& request, const GetCampaignDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetCampaignDateRangeKpiAsyncHelper(PinpointClient const * const clientThis, const GetCampaignDateRangeKpiRequest& request, const GetCampaignDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCampaignDateRangeKpiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCampaignDateRangeKpi(request), context);
 }
 
-void PinpointClient::GetCampaignDateRangeKpiAsyncHelper(const GetCampaignDateRangeKpiRequest& request, const GetCampaignDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetCampaignDateRangeKpiAsync(const GetCampaignDateRangeKpiRequest& request, const GetCampaignDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCampaignDateRangeKpi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetCampaignDateRangeKpiAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCampaignVersionOutcome PinpointClient::GetCampaignVersion(const GetCampaignVersionRequest& request) const
@@ -1828,14 +1828,14 @@ GetCampaignVersionOutcomeCallable PinpointClient::GetCampaignVersionCallable(con
   return task->get_future();
 }
 
-void PinpointClient::GetCampaignVersionAsync(const GetCampaignVersionRequest& request, const GetCampaignVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetCampaignVersionAsyncHelper(PinpointClient const * const clientThis, const GetCampaignVersionRequest& request, const GetCampaignVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCampaignVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCampaignVersion(request), context);
 }
 
-void PinpointClient::GetCampaignVersionAsyncHelper(const GetCampaignVersionRequest& request, const GetCampaignVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetCampaignVersionAsync(const GetCampaignVersionRequest& request, const GetCampaignVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCampaignVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetCampaignVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCampaignVersionsOutcome PinpointClient::GetCampaignVersions(const GetCampaignVersionsRequest& request) const
@@ -1867,14 +1867,14 @@ GetCampaignVersionsOutcomeCallable PinpointClient::GetCampaignVersionsCallable(c
   return task->get_future();
 }
 
-void PinpointClient::GetCampaignVersionsAsync(const GetCampaignVersionsRequest& request, const GetCampaignVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetCampaignVersionsAsyncHelper(PinpointClient const * const clientThis, const GetCampaignVersionsRequest& request, const GetCampaignVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCampaignVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCampaignVersions(request), context);
 }
 
-void PinpointClient::GetCampaignVersionsAsyncHelper(const GetCampaignVersionsRequest& request, const GetCampaignVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetCampaignVersionsAsync(const GetCampaignVersionsRequest& request, const GetCampaignVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCampaignVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetCampaignVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCampaignsOutcome PinpointClient::GetCampaigns(const GetCampaignsRequest& request) const
@@ -1899,14 +1899,14 @@ GetCampaignsOutcomeCallable PinpointClient::GetCampaignsCallable(const GetCampai
   return task->get_future();
 }
 
-void PinpointClient::GetCampaignsAsync(const GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetCampaignsAsyncHelper(PinpointClient const * const clientThis, const GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCampaignsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCampaigns(request), context);
 }
 
-void PinpointClient::GetCampaignsAsyncHelper(const GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetCampaignsAsync(const GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCampaigns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetCampaignsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetChannelsOutcome PinpointClient::GetChannels(const GetChannelsRequest& request) const
@@ -1931,14 +1931,14 @@ GetChannelsOutcomeCallable PinpointClient::GetChannelsCallable(const GetChannels
   return task->get_future();
 }
 
-void PinpointClient::GetChannelsAsync(const GetChannelsRequest& request, const GetChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetChannelsAsyncHelper(PinpointClient const * const clientThis, const GetChannelsRequest& request, const GetChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChannelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetChannels(request), context);
 }
 
-void PinpointClient::GetChannelsAsyncHelper(const GetChannelsRequest& request, const GetChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetChannelsAsync(const GetChannelsRequest& request, const GetChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetChannels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetChannelsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEmailChannelOutcome PinpointClient::GetEmailChannel(const GetEmailChannelRequest& request) const
@@ -1963,14 +1963,14 @@ GetEmailChannelOutcomeCallable PinpointClient::GetEmailChannelCallable(const Get
   return task->get_future();
 }
 
-void PinpointClient::GetEmailChannelAsync(const GetEmailChannelRequest& request, const GetEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetEmailChannelAsyncHelper(PinpointClient const * const clientThis, const GetEmailChannelRequest& request, const GetEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEmailChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEmailChannel(request), context);
 }
 
-void PinpointClient::GetEmailChannelAsyncHelper(const GetEmailChannelRequest& request, const GetEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetEmailChannelAsync(const GetEmailChannelRequest& request, const GetEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEmailChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetEmailChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEmailTemplateOutcome PinpointClient::GetEmailTemplate(const GetEmailTemplateRequest& request) const
@@ -1995,14 +1995,14 @@ GetEmailTemplateOutcomeCallable PinpointClient::GetEmailTemplateCallable(const G
   return task->get_future();
 }
 
-void PinpointClient::GetEmailTemplateAsync(const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetEmailTemplateAsyncHelper(PinpointClient const * const clientThis, const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEmailTemplate(request), context);
 }
 
-void PinpointClient::GetEmailTemplateAsyncHelper(const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetEmailTemplateAsync(const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEndpointOutcome PinpointClient::GetEndpoint(const GetEndpointRequest& request) const
@@ -2033,14 +2033,14 @@ GetEndpointOutcomeCallable PinpointClient::GetEndpointCallable(const GetEndpoint
   return task->get_future();
 }
 
-void PinpointClient::GetEndpointAsync(const GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetEndpointAsyncHelper(PinpointClient const * const clientThis, const GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEndpoint(request), context);
 }
 
-void PinpointClient::GetEndpointAsyncHelper(const GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetEndpointAsync(const GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEventStreamOutcome PinpointClient::GetEventStream(const GetEventStreamRequest& request) const
@@ -2065,14 +2065,14 @@ GetEventStreamOutcomeCallable PinpointClient::GetEventStreamCallable(const GetEv
   return task->get_future();
 }
 
-void PinpointClient::GetEventStreamAsync(const GetEventStreamRequest& request, const GetEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetEventStreamAsyncHelper(PinpointClient const * const clientThis, const GetEventStreamRequest& request, const GetEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEventStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEventStream(request), context);
 }
 
-void PinpointClient::GetEventStreamAsyncHelper(const GetEventStreamRequest& request, const GetEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetEventStreamAsync(const GetEventStreamRequest& request, const GetEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEventStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetEventStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExportJobOutcome PinpointClient::GetExportJob(const GetExportJobRequest& request) const
@@ -2103,14 +2103,14 @@ GetExportJobOutcomeCallable PinpointClient::GetExportJobCallable(const GetExport
   return task->get_future();
 }
 
-void PinpointClient::GetExportJobAsync(const GetExportJobRequest& request, const GetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetExportJobAsyncHelper(PinpointClient const * const clientThis, const GetExportJobRequest& request, const GetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExportJob(request), context);
 }
 
-void PinpointClient::GetExportJobAsyncHelper(const GetExportJobRequest& request, const GetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetExportJobAsync(const GetExportJobRequest& request, const GetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExportJobsOutcome PinpointClient::GetExportJobs(const GetExportJobsRequest& request) const
@@ -2135,14 +2135,14 @@ GetExportJobsOutcomeCallable PinpointClient::GetExportJobsCallable(const GetExpo
   return task->get_future();
 }
 
-void PinpointClient::GetExportJobsAsync(const GetExportJobsRequest& request, const GetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetExportJobsAsyncHelper(PinpointClient const * const clientThis, const GetExportJobsRequest& request, const GetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExportJobs(request), context);
 }
 
-void PinpointClient::GetExportJobsAsyncHelper(const GetExportJobsRequest& request, const GetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetExportJobsAsync(const GetExportJobsRequest& request, const GetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetExportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGcmChannelOutcome PinpointClient::GetGcmChannel(const GetGcmChannelRequest& request) const
@@ -2167,14 +2167,14 @@ GetGcmChannelOutcomeCallable PinpointClient::GetGcmChannelCallable(const GetGcmC
   return task->get_future();
 }
 
-void PinpointClient::GetGcmChannelAsync(const GetGcmChannelRequest& request, const GetGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetGcmChannelAsyncHelper(PinpointClient const * const clientThis, const GetGcmChannelRequest& request, const GetGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGcmChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGcmChannel(request), context);
 }
 
-void PinpointClient::GetGcmChannelAsyncHelper(const GetGcmChannelRequest& request, const GetGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetGcmChannelAsync(const GetGcmChannelRequest& request, const GetGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGcmChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetGcmChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetImportJobOutcome PinpointClient::GetImportJob(const GetImportJobRequest& request) const
@@ -2205,14 +2205,14 @@ GetImportJobOutcomeCallable PinpointClient::GetImportJobCallable(const GetImport
   return task->get_future();
 }
 
-void PinpointClient::GetImportJobAsync(const GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetImportJobAsyncHelper(PinpointClient const * const clientThis, const GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetImportJob(request), context);
 }
 
-void PinpointClient::GetImportJobAsyncHelper(const GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetImportJobAsync(const GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetImportJobsOutcome PinpointClient::GetImportJobs(const GetImportJobsRequest& request) const
@@ -2237,14 +2237,14 @@ GetImportJobsOutcomeCallable PinpointClient::GetImportJobsCallable(const GetImpo
   return task->get_future();
 }
 
-void PinpointClient::GetImportJobsAsync(const GetImportJobsRequest& request, const GetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetImportJobsAsyncHelper(PinpointClient const * const clientThis, const GetImportJobsRequest& request, const GetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetImportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetImportJobs(request), context);
 }
 
-void PinpointClient::GetImportJobsAsyncHelper(const GetImportJobsRequest& request, const GetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetImportJobsAsync(const GetImportJobsRequest& request, const GetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetImportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetImportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInAppMessagesOutcome PinpointClient::GetInAppMessages(const GetInAppMessagesRequest& request) const
@@ -2276,14 +2276,14 @@ GetInAppMessagesOutcomeCallable PinpointClient::GetInAppMessagesCallable(const G
   return task->get_future();
 }
 
-void PinpointClient::GetInAppMessagesAsync(const GetInAppMessagesRequest& request, const GetInAppMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetInAppMessagesAsyncHelper(PinpointClient const * const clientThis, const GetInAppMessagesRequest& request, const GetInAppMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInAppMessagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInAppMessages(request), context);
 }
 
-void PinpointClient::GetInAppMessagesAsyncHelper(const GetInAppMessagesRequest& request, const GetInAppMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetInAppMessagesAsync(const GetInAppMessagesRequest& request, const GetInAppMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInAppMessages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetInAppMessagesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInAppTemplateOutcome PinpointClient::GetInAppTemplate(const GetInAppTemplateRequest& request) const
@@ -2308,14 +2308,14 @@ GetInAppTemplateOutcomeCallable PinpointClient::GetInAppTemplateCallable(const G
   return task->get_future();
 }
 
-void PinpointClient::GetInAppTemplateAsync(const GetInAppTemplateRequest& request, const GetInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetInAppTemplateAsyncHelper(PinpointClient const * const clientThis, const GetInAppTemplateRequest& request, const GetInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInAppTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInAppTemplate(request), context);
 }
 
-void PinpointClient::GetInAppTemplateAsyncHelper(const GetInAppTemplateRequest& request, const GetInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetInAppTemplateAsync(const GetInAppTemplateRequest& request, const GetInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInAppTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetInAppTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJourneyOutcome PinpointClient::GetJourney(const GetJourneyRequest& request) const
@@ -2346,14 +2346,14 @@ GetJourneyOutcomeCallable PinpointClient::GetJourneyCallable(const GetJourneyReq
   return task->get_future();
 }
 
-void PinpointClient::GetJourneyAsync(const GetJourneyRequest& request, const GetJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetJourneyAsyncHelper(PinpointClient const * const clientThis, const GetJourneyRequest& request, const GetJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJourneyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJourney(request), context);
 }
 
-void PinpointClient::GetJourneyAsyncHelper(const GetJourneyRequest& request, const GetJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetJourneyAsync(const GetJourneyRequest& request, const GetJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJourney(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetJourneyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJourneyDateRangeKpiOutcome PinpointClient::GetJourneyDateRangeKpi(const GetJourneyDateRangeKpiRequest& request) const
@@ -2391,14 +2391,14 @@ GetJourneyDateRangeKpiOutcomeCallable PinpointClient::GetJourneyDateRangeKpiCall
   return task->get_future();
 }
 
-void PinpointClient::GetJourneyDateRangeKpiAsync(const GetJourneyDateRangeKpiRequest& request, const GetJourneyDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetJourneyDateRangeKpiAsyncHelper(PinpointClient const * const clientThis, const GetJourneyDateRangeKpiRequest& request, const GetJourneyDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJourneyDateRangeKpiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJourneyDateRangeKpi(request), context);
 }
 
-void PinpointClient::GetJourneyDateRangeKpiAsyncHelper(const GetJourneyDateRangeKpiRequest& request, const GetJourneyDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetJourneyDateRangeKpiAsync(const GetJourneyDateRangeKpiRequest& request, const GetJourneyDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJourneyDateRangeKpi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetJourneyDateRangeKpiAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJourneyExecutionActivityMetricsOutcome PinpointClient::GetJourneyExecutionActivityMetrics(const GetJourneyExecutionActivityMetricsRequest& request) const
@@ -2437,14 +2437,14 @@ GetJourneyExecutionActivityMetricsOutcomeCallable PinpointClient::GetJourneyExec
   return task->get_future();
 }
 
-void PinpointClient::GetJourneyExecutionActivityMetricsAsync(const GetJourneyExecutionActivityMetricsRequest& request, const GetJourneyExecutionActivityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetJourneyExecutionActivityMetricsAsyncHelper(PinpointClient const * const clientThis, const GetJourneyExecutionActivityMetricsRequest& request, const GetJourneyExecutionActivityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJourneyExecutionActivityMetricsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJourneyExecutionActivityMetrics(request), context);
 }
 
-void PinpointClient::GetJourneyExecutionActivityMetricsAsyncHelper(const GetJourneyExecutionActivityMetricsRequest& request, const GetJourneyExecutionActivityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetJourneyExecutionActivityMetricsAsync(const GetJourneyExecutionActivityMetricsRequest& request, const GetJourneyExecutionActivityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJourneyExecutionActivityMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetJourneyExecutionActivityMetricsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJourneyExecutionMetricsOutcome PinpointClient::GetJourneyExecutionMetrics(const GetJourneyExecutionMetricsRequest& request) const
@@ -2476,14 +2476,14 @@ GetJourneyExecutionMetricsOutcomeCallable PinpointClient::GetJourneyExecutionMet
   return task->get_future();
 }
 
-void PinpointClient::GetJourneyExecutionMetricsAsync(const GetJourneyExecutionMetricsRequest& request, const GetJourneyExecutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetJourneyExecutionMetricsAsyncHelper(PinpointClient const * const clientThis, const GetJourneyExecutionMetricsRequest& request, const GetJourneyExecutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJourneyExecutionMetricsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJourneyExecutionMetrics(request), context);
 }
 
-void PinpointClient::GetJourneyExecutionMetricsAsyncHelper(const GetJourneyExecutionMetricsRequest& request, const GetJourneyExecutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetJourneyExecutionMetricsAsync(const GetJourneyExecutionMetricsRequest& request, const GetJourneyExecutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJourneyExecutionMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetJourneyExecutionMetricsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPushTemplateOutcome PinpointClient::GetPushTemplate(const GetPushTemplateRequest& request) const
@@ -2508,14 +2508,14 @@ GetPushTemplateOutcomeCallable PinpointClient::GetPushTemplateCallable(const Get
   return task->get_future();
 }
 
-void PinpointClient::GetPushTemplateAsync(const GetPushTemplateRequest& request, const GetPushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetPushTemplateAsyncHelper(PinpointClient const * const clientThis, const GetPushTemplateRequest& request, const GetPushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPushTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPushTemplate(request), context);
 }
 
-void PinpointClient::GetPushTemplateAsyncHelper(const GetPushTemplateRequest& request, const GetPushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetPushTemplateAsync(const GetPushTemplateRequest& request, const GetPushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPushTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetPushTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecommenderConfigurationOutcome PinpointClient::GetRecommenderConfiguration(const GetRecommenderConfigurationRequest& request) const
@@ -2539,14 +2539,14 @@ GetRecommenderConfigurationOutcomeCallable PinpointClient::GetRecommenderConfigu
   return task->get_future();
 }
 
-void PinpointClient::GetRecommenderConfigurationAsync(const GetRecommenderConfigurationRequest& request, const GetRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetRecommenderConfigurationAsyncHelper(PinpointClient const * const clientThis, const GetRecommenderConfigurationRequest& request, const GetRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecommenderConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecommenderConfiguration(request), context);
 }
 
-void PinpointClient::GetRecommenderConfigurationAsyncHelper(const GetRecommenderConfigurationRequest& request, const GetRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetRecommenderConfigurationAsync(const GetRecommenderConfigurationRequest& request, const GetRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecommenderConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetRecommenderConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecommenderConfigurationsOutcome PinpointClient::GetRecommenderConfigurations(const GetRecommenderConfigurationsRequest& request) const
@@ -2564,14 +2564,14 @@ GetRecommenderConfigurationsOutcomeCallable PinpointClient::GetRecommenderConfig
   return task->get_future();
 }
 
-void PinpointClient::GetRecommenderConfigurationsAsync(const GetRecommenderConfigurationsRequest& request, const GetRecommenderConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetRecommenderConfigurationsAsyncHelper(PinpointClient const * const clientThis, const GetRecommenderConfigurationsRequest& request, const GetRecommenderConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecommenderConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecommenderConfigurations(request), context);
 }
 
-void PinpointClient::GetRecommenderConfigurationsAsyncHelper(const GetRecommenderConfigurationsRequest& request, const GetRecommenderConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetRecommenderConfigurationsAsync(const GetRecommenderConfigurationsRequest& request, const GetRecommenderConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecommenderConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetRecommenderConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSegmentOutcome PinpointClient::GetSegment(const GetSegmentRequest& request) const
@@ -2602,14 +2602,14 @@ GetSegmentOutcomeCallable PinpointClient::GetSegmentCallable(const GetSegmentReq
   return task->get_future();
 }
 
-void PinpointClient::GetSegmentAsync(const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetSegmentAsyncHelper(PinpointClient const * const clientThis, const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSegment(request), context);
 }
 
-void PinpointClient::GetSegmentAsyncHelper(const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetSegmentAsync(const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSegment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetSegmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSegmentExportJobsOutcome PinpointClient::GetSegmentExportJobs(const GetSegmentExportJobsRequest& request) const
@@ -2641,14 +2641,14 @@ GetSegmentExportJobsOutcomeCallable PinpointClient::GetSegmentExportJobsCallable
   return task->get_future();
 }
 
-void PinpointClient::GetSegmentExportJobsAsync(const GetSegmentExportJobsRequest& request, const GetSegmentExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetSegmentExportJobsAsyncHelper(PinpointClient const * const clientThis, const GetSegmentExportJobsRequest& request, const GetSegmentExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentExportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSegmentExportJobs(request), context);
 }
 
-void PinpointClient::GetSegmentExportJobsAsyncHelper(const GetSegmentExportJobsRequest& request, const GetSegmentExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetSegmentExportJobsAsync(const GetSegmentExportJobsRequest& request, const GetSegmentExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSegmentExportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetSegmentExportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSegmentImportJobsOutcome PinpointClient::GetSegmentImportJobs(const GetSegmentImportJobsRequest& request) const
@@ -2680,14 +2680,14 @@ GetSegmentImportJobsOutcomeCallable PinpointClient::GetSegmentImportJobsCallable
   return task->get_future();
 }
 
-void PinpointClient::GetSegmentImportJobsAsync(const GetSegmentImportJobsRequest& request, const GetSegmentImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetSegmentImportJobsAsyncHelper(PinpointClient const * const clientThis, const GetSegmentImportJobsRequest& request, const GetSegmentImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentImportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSegmentImportJobs(request), context);
 }
 
-void PinpointClient::GetSegmentImportJobsAsyncHelper(const GetSegmentImportJobsRequest& request, const GetSegmentImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetSegmentImportJobsAsync(const GetSegmentImportJobsRequest& request, const GetSegmentImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSegmentImportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetSegmentImportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSegmentVersionOutcome PinpointClient::GetSegmentVersion(const GetSegmentVersionRequest& request) const
@@ -2725,14 +2725,14 @@ GetSegmentVersionOutcomeCallable PinpointClient::GetSegmentVersionCallable(const
   return task->get_future();
 }
 
-void PinpointClient::GetSegmentVersionAsync(const GetSegmentVersionRequest& request, const GetSegmentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetSegmentVersionAsyncHelper(PinpointClient const * const clientThis, const GetSegmentVersionRequest& request, const GetSegmentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSegmentVersion(request), context);
 }
 
-void PinpointClient::GetSegmentVersionAsyncHelper(const GetSegmentVersionRequest& request, const GetSegmentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetSegmentVersionAsync(const GetSegmentVersionRequest& request, const GetSegmentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSegmentVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetSegmentVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSegmentVersionsOutcome PinpointClient::GetSegmentVersions(const GetSegmentVersionsRequest& request) const
@@ -2764,14 +2764,14 @@ GetSegmentVersionsOutcomeCallable PinpointClient::GetSegmentVersionsCallable(con
   return task->get_future();
 }
 
-void PinpointClient::GetSegmentVersionsAsync(const GetSegmentVersionsRequest& request, const GetSegmentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetSegmentVersionsAsyncHelper(PinpointClient const * const clientThis, const GetSegmentVersionsRequest& request, const GetSegmentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSegmentVersions(request), context);
 }
 
-void PinpointClient::GetSegmentVersionsAsyncHelper(const GetSegmentVersionsRequest& request, const GetSegmentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetSegmentVersionsAsync(const GetSegmentVersionsRequest& request, const GetSegmentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSegmentVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetSegmentVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSegmentsOutcome PinpointClient::GetSegments(const GetSegmentsRequest& request) const
@@ -2796,14 +2796,14 @@ GetSegmentsOutcomeCallable PinpointClient::GetSegmentsCallable(const GetSegments
   return task->get_future();
 }
 
-void PinpointClient::GetSegmentsAsync(const GetSegmentsRequest& request, const GetSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetSegmentsAsyncHelper(PinpointClient const * const clientThis, const GetSegmentsRequest& request, const GetSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSegments(request), context);
 }
 
-void PinpointClient::GetSegmentsAsyncHelper(const GetSegmentsRequest& request, const GetSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetSegmentsAsync(const GetSegmentsRequest& request, const GetSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSegments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetSegmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSmsChannelOutcome PinpointClient::GetSmsChannel(const GetSmsChannelRequest& request) const
@@ -2828,14 +2828,14 @@ GetSmsChannelOutcomeCallable PinpointClient::GetSmsChannelCallable(const GetSmsC
   return task->get_future();
 }
 
-void PinpointClient::GetSmsChannelAsync(const GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetSmsChannelAsyncHelper(PinpointClient const * const clientThis, const GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSmsChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSmsChannel(request), context);
 }
 
-void PinpointClient::GetSmsChannelAsyncHelper(const GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetSmsChannelAsync(const GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSmsChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetSmsChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSmsTemplateOutcome PinpointClient::GetSmsTemplate(const GetSmsTemplateRequest& request) const
@@ -2860,14 +2860,14 @@ GetSmsTemplateOutcomeCallable PinpointClient::GetSmsTemplateCallable(const GetSm
   return task->get_future();
 }
 
-void PinpointClient::GetSmsTemplateAsync(const GetSmsTemplateRequest& request, const GetSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetSmsTemplateAsyncHelper(PinpointClient const * const clientThis, const GetSmsTemplateRequest& request, const GetSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSmsTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSmsTemplate(request), context);
 }
 
-void PinpointClient::GetSmsTemplateAsyncHelper(const GetSmsTemplateRequest& request, const GetSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetSmsTemplateAsync(const GetSmsTemplateRequest& request, const GetSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSmsTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetSmsTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUserEndpointsOutcome PinpointClient::GetUserEndpoints(const GetUserEndpointsRequest& request) const
@@ -2898,14 +2898,14 @@ GetUserEndpointsOutcomeCallable PinpointClient::GetUserEndpointsCallable(const G
   return task->get_future();
 }
 
-void PinpointClient::GetUserEndpointsAsync(const GetUserEndpointsRequest& request, const GetUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetUserEndpointsAsyncHelper(PinpointClient const * const clientThis, const GetUserEndpointsRequest& request, const GetUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUserEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUserEndpoints(request), context);
 }
 
-void PinpointClient::GetUserEndpointsAsyncHelper(const GetUserEndpointsRequest& request, const GetUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetUserEndpointsAsync(const GetUserEndpointsRequest& request, const GetUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUserEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetUserEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetVoiceChannelOutcome PinpointClient::GetVoiceChannel(const GetVoiceChannelRequest& request) const
@@ -2930,14 +2930,14 @@ GetVoiceChannelOutcomeCallable PinpointClient::GetVoiceChannelCallable(const Get
   return task->get_future();
 }
 
-void PinpointClient::GetVoiceChannelAsync(const GetVoiceChannelRequest& request, const GetVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetVoiceChannelAsyncHelper(PinpointClient const * const clientThis, const GetVoiceChannelRequest& request, const GetVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVoiceChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetVoiceChannel(request), context);
 }
 
-void PinpointClient::GetVoiceChannelAsyncHelper(const GetVoiceChannelRequest& request, const GetVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetVoiceChannelAsync(const GetVoiceChannelRequest& request, const GetVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetVoiceChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetVoiceChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetVoiceTemplateOutcome PinpointClient::GetVoiceTemplate(const GetVoiceTemplateRequest& request) const
@@ -2962,14 +2962,14 @@ GetVoiceTemplateOutcomeCallable PinpointClient::GetVoiceTemplateCallable(const G
   return task->get_future();
 }
 
-void PinpointClient::GetVoiceTemplateAsync(const GetVoiceTemplateRequest& request, const GetVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientGetVoiceTemplateAsyncHelper(PinpointClient const * const clientThis, const GetVoiceTemplateRequest& request, const GetVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVoiceTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetVoiceTemplate(request), context);
 }
 
-void PinpointClient::GetVoiceTemplateAsyncHelper(const GetVoiceTemplateRequest& request, const GetVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::GetVoiceTemplateAsync(const GetVoiceTemplateRequest& request, const GetVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetVoiceTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientGetVoiceTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJourneysOutcome PinpointClient::ListJourneys(const ListJourneysRequest& request) const
@@ -2994,14 +2994,14 @@ ListJourneysOutcomeCallable PinpointClient::ListJourneysCallable(const ListJourn
   return task->get_future();
 }
 
-void PinpointClient::ListJourneysAsync(const ListJourneysRequest& request, const ListJourneysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientListJourneysAsyncHelper(PinpointClient const * const clientThis, const ListJourneysRequest& request, const ListJourneysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJourneysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJourneys(request), context);
 }
 
-void PinpointClient::ListJourneysAsyncHelper(const ListJourneysRequest& request, const ListJourneysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::ListJourneysAsync(const ListJourneysRequest& request, const ListJourneysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJourneys(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientListJourneysAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome PinpointClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -3025,14 +3025,14 @@ ListTagsForResourceOutcomeCallable PinpointClient::ListTagsForResourceCallable(c
   return task->get_future();
 }
 
-void PinpointClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientListTagsForResourceAsyncHelper(PinpointClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void PinpointClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTemplateVersionsOutcome PinpointClient::ListTemplateVersions(const ListTemplateVersionsRequest& request) const
@@ -3063,14 +3063,14 @@ ListTemplateVersionsOutcomeCallable PinpointClient::ListTemplateVersionsCallable
   return task->get_future();
 }
 
-void PinpointClient::ListTemplateVersionsAsync(const ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientListTemplateVersionsAsyncHelper(PinpointClient const * const clientThis, const ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTemplateVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTemplateVersions(request), context);
 }
 
-void PinpointClient::ListTemplateVersionsAsyncHelper(const ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::ListTemplateVersionsAsync(const ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTemplateVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientListTemplateVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTemplatesOutcome PinpointClient::ListTemplates(const ListTemplatesRequest& request) const
@@ -3088,14 +3088,14 @@ ListTemplatesOutcomeCallable PinpointClient::ListTemplatesCallable(const ListTem
   return task->get_future();
 }
 
-void PinpointClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientListTemplatesAsyncHelper(PinpointClient const * const clientThis, const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTemplates(request), context);
 }
 
-void PinpointClient::ListTemplatesAsyncHelper(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientListTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 PhoneNumberValidateOutcome PinpointClient::PhoneNumberValidate(const PhoneNumberValidateRequest& request) const
@@ -3113,14 +3113,14 @@ PhoneNumberValidateOutcomeCallable PinpointClient::PhoneNumberValidateCallable(c
   return task->get_future();
 }
 
-void PinpointClient::PhoneNumberValidateAsync(const PhoneNumberValidateRequest& request, const PhoneNumberValidateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientPhoneNumberValidateAsyncHelper(PinpointClient const * const clientThis, const PhoneNumberValidateRequest& request, const PhoneNumberValidateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PhoneNumberValidateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PhoneNumberValidate(request), context);
 }
 
-void PinpointClient::PhoneNumberValidateAsyncHelper(const PhoneNumberValidateRequest& request, const PhoneNumberValidateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::PhoneNumberValidateAsync(const PhoneNumberValidateRequest& request, const PhoneNumberValidateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PhoneNumberValidate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientPhoneNumberValidateAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEventStreamOutcome PinpointClient::PutEventStream(const PutEventStreamRequest& request) const
@@ -3145,14 +3145,14 @@ PutEventStreamOutcomeCallable PinpointClient::PutEventStreamCallable(const PutEv
   return task->get_future();
 }
 
-void PinpointClient::PutEventStreamAsync(const PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientPutEventStreamAsyncHelper(PinpointClient const * const clientThis, const PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEventStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEventStream(request), context);
 }
 
-void PinpointClient::PutEventStreamAsyncHelper(const PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::PutEventStreamAsync(const PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEventStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientPutEventStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEventsOutcome PinpointClient::PutEvents(const PutEventsRequest& request) const
@@ -3177,14 +3177,14 @@ PutEventsOutcomeCallable PinpointClient::PutEventsCallable(const PutEventsReques
   return task->get_future();
 }
 
-void PinpointClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientPutEventsAsyncHelper(PinpointClient const * const clientThis, const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEvents(request), context);
 }
 
-void PinpointClient::PutEventsAsyncHelper(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientPutEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveAttributesOutcome PinpointClient::RemoveAttributes(const RemoveAttributesRequest& request) const
@@ -3215,14 +3215,14 @@ RemoveAttributesOutcomeCallable PinpointClient::RemoveAttributesCallable(const R
   return task->get_future();
 }
 
-void PinpointClient::RemoveAttributesAsync(const RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientRemoveAttributesAsyncHelper(PinpointClient const * const clientThis, const RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveAttributes(request), context);
 }
 
-void PinpointClient::RemoveAttributesAsyncHelper(const RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::RemoveAttributesAsync(const RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientRemoveAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 SendMessagesOutcome PinpointClient::SendMessages(const SendMessagesRequest& request) const
@@ -3247,14 +3247,14 @@ SendMessagesOutcomeCallable PinpointClient::SendMessagesCallable(const SendMessa
   return task->get_future();
 }
 
-void PinpointClient::SendMessagesAsync(const SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientSendMessagesAsyncHelper(PinpointClient const * const clientThis, const SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendMessagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendMessages(request), context);
 }
 
-void PinpointClient::SendMessagesAsyncHelper(const SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::SendMessagesAsync(const SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendMessages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientSendMessagesAsyncHelper( this, request, handler, context ); } );
 }
 
 SendOTPMessageOutcome PinpointClient::SendOTPMessage(const SendOTPMessageRequest& request) const
@@ -3279,14 +3279,14 @@ SendOTPMessageOutcomeCallable PinpointClient::SendOTPMessageCallable(const SendO
   return task->get_future();
 }
 
-void PinpointClient::SendOTPMessageAsync(const SendOTPMessageRequest& request, const SendOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientSendOTPMessageAsyncHelper(PinpointClient const * const clientThis, const SendOTPMessageRequest& request, const SendOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendOTPMessageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendOTPMessage(request), context);
 }
 
-void PinpointClient::SendOTPMessageAsyncHelper(const SendOTPMessageRequest& request, const SendOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::SendOTPMessageAsync(const SendOTPMessageRequest& request, const SendOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendOTPMessage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientSendOTPMessageAsyncHelper( this, request, handler, context ); } );
 }
 
 SendUsersMessagesOutcome PinpointClient::SendUsersMessages(const SendUsersMessagesRequest& request) const
@@ -3311,14 +3311,14 @@ SendUsersMessagesOutcomeCallable PinpointClient::SendUsersMessagesCallable(const
   return task->get_future();
 }
 
-void PinpointClient::SendUsersMessagesAsync(const SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientSendUsersMessagesAsyncHelper(PinpointClient const * const clientThis, const SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendUsersMessagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendUsersMessages(request), context);
 }
 
-void PinpointClient::SendUsersMessagesAsyncHelper(const SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::SendUsersMessagesAsync(const SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendUsersMessages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientSendUsersMessagesAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome PinpointClient::TagResource(const TagResourceRequest& request) const
@@ -3342,14 +3342,14 @@ TagResourceOutcomeCallable PinpointClient::TagResourceCallable(const TagResource
   return task->get_future();
 }
 
-void PinpointClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientTagResourceAsyncHelper(PinpointClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void PinpointClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome PinpointClient::UntagResource(const UntagResourceRequest& request) const
@@ -3378,14 +3378,14 @@ UntagResourceOutcomeCallable PinpointClient::UntagResourceCallable(const UntagRe
   return task->get_future();
 }
 
-void PinpointClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUntagResourceAsyncHelper(PinpointClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void PinpointClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAdmChannelOutcome PinpointClient::UpdateAdmChannel(const UpdateAdmChannelRequest& request) const
@@ -3410,14 +3410,14 @@ UpdateAdmChannelOutcomeCallable PinpointClient::UpdateAdmChannelCallable(const U
   return task->get_future();
 }
 
-void PinpointClient::UpdateAdmChannelAsync(const UpdateAdmChannelRequest& request, const UpdateAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateAdmChannelAsyncHelper(PinpointClient const * const clientThis, const UpdateAdmChannelRequest& request, const UpdateAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAdmChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAdmChannel(request), context);
 }
 
-void PinpointClient::UpdateAdmChannelAsyncHelper(const UpdateAdmChannelRequest& request, const UpdateAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateAdmChannelAsync(const UpdateAdmChannelRequest& request, const UpdateAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAdmChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateAdmChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApnsChannelOutcome PinpointClient::UpdateApnsChannel(const UpdateApnsChannelRequest& request) const
@@ -3442,14 +3442,14 @@ UpdateApnsChannelOutcomeCallable PinpointClient::UpdateApnsChannelCallable(const
   return task->get_future();
 }
 
-void PinpointClient::UpdateApnsChannelAsync(const UpdateApnsChannelRequest& request, const UpdateApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateApnsChannelAsyncHelper(PinpointClient const * const clientThis, const UpdateApnsChannelRequest& request, const UpdateApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApnsChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApnsChannel(request), context);
 }
 
-void PinpointClient::UpdateApnsChannelAsyncHelper(const UpdateApnsChannelRequest& request, const UpdateApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateApnsChannelAsync(const UpdateApnsChannelRequest& request, const UpdateApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApnsChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateApnsChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApnsSandboxChannelOutcome PinpointClient::UpdateApnsSandboxChannel(const UpdateApnsSandboxChannelRequest& request) const
@@ -3474,14 +3474,14 @@ UpdateApnsSandboxChannelOutcomeCallable PinpointClient::UpdateApnsSandboxChannel
   return task->get_future();
 }
 
-void PinpointClient::UpdateApnsSandboxChannelAsync(const UpdateApnsSandboxChannelRequest& request, const UpdateApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateApnsSandboxChannelAsyncHelper(PinpointClient const * const clientThis, const UpdateApnsSandboxChannelRequest& request, const UpdateApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApnsSandboxChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApnsSandboxChannel(request), context);
 }
 
-void PinpointClient::UpdateApnsSandboxChannelAsyncHelper(const UpdateApnsSandboxChannelRequest& request, const UpdateApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateApnsSandboxChannelAsync(const UpdateApnsSandboxChannelRequest& request, const UpdateApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApnsSandboxChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateApnsSandboxChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApnsVoipChannelOutcome PinpointClient::UpdateApnsVoipChannel(const UpdateApnsVoipChannelRequest& request) const
@@ -3506,14 +3506,14 @@ UpdateApnsVoipChannelOutcomeCallable PinpointClient::UpdateApnsVoipChannelCallab
   return task->get_future();
 }
 
-void PinpointClient::UpdateApnsVoipChannelAsync(const UpdateApnsVoipChannelRequest& request, const UpdateApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateApnsVoipChannelAsyncHelper(PinpointClient const * const clientThis, const UpdateApnsVoipChannelRequest& request, const UpdateApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApnsVoipChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApnsVoipChannel(request), context);
 }
 
-void PinpointClient::UpdateApnsVoipChannelAsyncHelper(const UpdateApnsVoipChannelRequest& request, const UpdateApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateApnsVoipChannelAsync(const UpdateApnsVoipChannelRequest& request, const UpdateApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApnsVoipChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateApnsVoipChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApnsVoipSandboxChannelOutcome PinpointClient::UpdateApnsVoipSandboxChannel(const UpdateApnsVoipSandboxChannelRequest& request) const
@@ -3538,14 +3538,14 @@ UpdateApnsVoipSandboxChannelOutcomeCallable PinpointClient::UpdateApnsVoipSandbo
   return task->get_future();
 }
 
-void PinpointClient::UpdateApnsVoipSandboxChannelAsync(const UpdateApnsVoipSandboxChannelRequest& request, const UpdateApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateApnsVoipSandboxChannelAsyncHelper(PinpointClient const * const clientThis, const UpdateApnsVoipSandboxChannelRequest& request, const UpdateApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApnsVoipSandboxChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApnsVoipSandboxChannel(request), context);
 }
 
-void PinpointClient::UpdateApnsVoipSandboxChannelAsyncHelper(const UpdateApnsVoipSandboxChannelRequest& request, const UpdateApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateApnsVoipSandboxChannelAsync(const UpdateApnsVoipSandboxChannelRequest& request, const UpdateApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApnsVoipSandboxChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateApnsVoipSandboxChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationSettingsOutcome PinpointClient::UpdateApplicationSettings(const UpdateApplicationSettingsRequest& request) const
@@ -3570,14 +3570,14 @@ UpdateApplicationSettingsOutcomeCallable PinpointClient::UpdateApplicationSettin
   return task->get_future();
 }
 
-void PinpointClient::UpdateApplicationSettingsAsync(const UpdateApplicationSettingsRequest& request, const UpdateApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateApplicationSettingsAsyncHelper(PinpointClient const * const clientThis, const UpdateApplicationSettingsRequest& request, const UpdateApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplicationSettings(request), context);
 }
 
-void PinpointClient::UpdateApplicationSettingsAsyncHelper(const UpdateApplicationSettingsRequest& request, const UpdateApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateApplicationSettingsAsync(const UpdateApplicationSettingsRequest& request, const UpdateApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplicationSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateApplicationSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBaiduChannelOutcome PinpointClient::UpdateBaiduChannel(const UpdateBaiduChannelRequest& request) const
@@ -3602,14 +3602,14 @@ UpdateBaiduChannelOutcomeCallable PinpointClient::UpdateBaiduChannelCallable(con
   return task->get_future();
 }
 
-void PinpointClient::UpdateBaiduChannelAsync(const UpdateBaiduChannelRequest& request, const UpdateBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateBaiduChannelAsyncHelper(PinpointClient const * const clientThis, const UpdateBaiduChannelRequest& request, const UpdateBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBaiduChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBaiduChannel(request), context);
 }
 
-void PinpointClient::UpdateBaiduChannelAsyncHelper(const UpdateBaiduChannelRequest& request, const UpdateBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateBaiduChannelAsync(const UpdateBaiduChannelRequest& request, const UpdateBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBaiduChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateBaiduChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCampaignOutcome PinpointClient::UpdateCampaign(const UpdateCampaignRequest& request) const
@@ -3640,14 +3640,14 @@ UpdateCampaignOutcomeCallable PinpointClient::UpdateCampaignCallable(const Updat
   return task->get_future();
 }
 
-void PinpointClient::UpdateCampaignAsync(const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateCampaignAsyncHelper(PinpointClient const * const clientThis, const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCampaign(request), context);
 }
 
-void PinpointClient::UpdateCampaignAsyncHelper(const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateCampaignAsync(const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEmailChannelOutcome PinpointClient::UpdateEmailChannel(const UpdateEmailChannelRequest& request) const
@@ -3672,14 +3672,14 @@ UpdateEmailChannelOutcomeCallable PinpointClient::UpdateEmailChannelCallable(con
   return task->get_future();
 }
 
-void PinpointClient::UpdateEmailChannelAsync(const UpdateEmailChannelRequest& request, const UpdateEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateEmailChannelAsyncHelper(PinpointClient const * const clientThis, const UpdateEmailChannelRequest& request, const UpdateEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEmailChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEmailChannel(request), context);
 }
 
-void PinpointClient::UpdateEmailChannelAsyncHelper(const UpdateEmailChannelRequest& request, const UpdateEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateEmailChannelAsync(const UpdateEmailChannelRequest& request, const UpdateEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEmailChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateEmailChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEmailTemplateOutcome PinpointClient::UpdateEmailTemplate(const UpdateEmailTemplateRequest& request) const
@@ -3704,14 +3704,14 @@ UpdateEmailTemplateOutcomeCallable PinpointClient::UpdateEmailTemplateCallable(c
   return task->get_future();
 }
 
-void PinpointClient::UpdateEmailTemplateAsync(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateEmailTemplateAsyncHelper(PinpointClient const * const clientThis, const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEmailTemplate(request), context);
 }
 
-void PinpointClient::UpdateEmailTemplateAsyncHelper(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateEmailTemplateAsync(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEndpointOutcome PinpointClient::UpdateEndpoint(const UpdateEndpointRequest& request) const
@@ -3742,14 +3742,14 @@ UpdateEndpointOutcomeCallable PinpointClient::UpdateEndpointCallable(const Updat
   return task->get_future();
 }
 
-void PinpointClient::UpdateEndpointAsync(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateEndpointAsyncHelper(PinpointClient const * const clientThis, const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEndpoint(request), context);
 }
 
-void PinpointClient::UpdateEndpointAsyncHelper(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateEndpointAsync(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEndpointsBatchOutcome PinpointClient::UpdateEndpointsBatch(const UpdateEndpointsBatchRequest& request) const
@@ -3774,14 +3774,14 @@ UpdateEndpointsBatchOutcomeCallable PinpointClient::UpdateEndpointsBatchCallable
   return task->get_future();
 }
 
-void PinpointClient::UpdateEndpointsBatchAsync(const UpdateEndpointsBatchRequest& request, const UpdateEndpointsBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateEndpointsBatchAsyncHelper(PinpointClient const * const clientThis, const UpdateEndpointsBatchRequest& request, const UpdateEndpointsBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEndpointsBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEndpointsBatch(request), context);
 }
 
-void PinpointClient::UpdateEndpointsBatchAsyncHelper(const UpdateEndpointsBatchRequest& request, const UpdateEndpointsBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateEndpointsBatchAsync(const UpdateEndpointsBatchRequest& request, const UpdateEndpointsBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEndpointsBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateEndpointsBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGcmChannelOutcome PinpointClient::UpdateGcmChannel(const UpdateGcmChannelRequest& request) const
@@ -3806,14 +3806,14 @@ UpdateGcmChannelOutcomeCallable PinpointClient::UpdateGcmChannelCallable(const U
   return task->get_future();
 }
 
-void PinpointClient::UpdateGcmChannelAsync(const UpdateGcmChannelRequest& request, const UpdateGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateGcmChannelAsyncHelper(PinpointClient const * const clientThis, const UpdateGcmChannelRequest& request, const UpdateGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGcmChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGcmChannel(request), context);
 }
 
-void PinpointClient::UpdateGcmChannelAsyncHelper(const UpdateGcmChannelRequest& request, const UpdateGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateGcmChannelAsync(const UpdateGcmChannelRequest& request, const UpdateGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGcmChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateGcmChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateInAppTemplateOutcome PinpointClient::UpdateInAppTemplate(const UpdateInAppTemplateRequest& request) const
@@ -3838,14 +3838,14 @@ UpdateInAppTemplateOutcomeCallable PinpointClient::UpdateInAppTemplateCallable(c
   return task->get_future();
 }
 
-void PinpointClient::UpdateInAppTemplateAsync(const UpdateInAppTemplateRequest& request, const UpdateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateInAppTemplateAsyncHelper(PinpointClient const * const clientThis, const UpdateInAppTemplateRequest& request, const UpdateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInAppTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateInAppTemplate(request), context);
 }
 
-void PinpointClient::UpdateInAppTemplateAsyncHelper(const UpdateInAppTemplateRequest& request, const UpdateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateInAppTemplateAsync(const UpdateInAppTemplateRequest& request, const UpdateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateInAppTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateInAppTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateJourneyOutcome PinpointClient::UpdateJourney(const UpdateJourneyRequest& request) const
@@ -3876,14 +3876,14 @@ UpdateJourneyOutcomeCallable PinpointClient::UpdateJourneyCallable(const UpdateJ
   return task->get_future();
 }
 
-void PinpointClient::UpdateJourneyAsync(const UpdateJourneyRequest& request, const UpdateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateJourneyAsyncHelper(PinpointClient const * const clientThis, const UpdateJourneyRequest& request, const UpdateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJourneyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateJourney(request), context);
 }
 
-void PinpointClient::UpdateJourneyAsyncHelper(const UpdateJourneyRequest& request, const UpdateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateJourneyAsync(const UpdateJourneyRequest& request, const UpdateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateJourney(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateJourneyAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateJourneyStateOutcome PinpointClient::UpdateJourneyState(const UpdateJourneyStateRequest& request) const
@@ -3915,14 +3915,14 @@ UpdateJourneyStateOutcomeCallable PinpointClient::UpdateJourneyStateCallable(con
   return task->get_future();
 }
 
-void PinpointClient::UpdateJourneyStateAsync(const UpdateJourneyStateRequest& request, const UpdateJourneyStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateJourneyStateAsyncHelper(PinpointClient const * const clientThis, const UpdateJourneyStateRequest& request, const UpdateJourneyStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJourneyStateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateJourneyState(request), context);
 }
 
-void PinpointClient::UpdateJourneyStateAsyncHelper(const UpdateJourneyStateRequest& request, const UpdateJourneyStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateJourneyStateAsync(const UpdateJourneyStateRequest& request, const UpdateJourneyStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateJourneyState(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateJourneyStateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePushTemplateOutcome PinpointClient::UpdatePushTemplate(const UpdatePushTemplateRequest& request) const
@@ -3947,14 +3947,14 @@ UpdatePushTemplateOutcomeCallable PinpointClient::UpdatePushTemplateCallable(con
   return task->get_future();
 }
 
-void PinpointClient::UpdatePushTemplateAsync(const UpdatePushTemplateRequest& request, const UpdatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdatePushTemplateAsyncHelper(PinpointClient const * const clientThis, const UpdatePushTemplateRequest& request, const UpdatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePushTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePushTemplate(request), context);
 }
 
-void PinpointClient::UpdatePushTemplateAsyncHelper(const UpdatePushTemplateRequest& request, const UpdatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdatePushTemplateAsync(const UpdatePushTemplateRequest& request, const UpdatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePushTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdatePushTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRecommenderConfigurationOutcome PinpointClient::UpdateRecommenderConfiguration(const UpdateRecommenderConfigurationRequest& request) const
@@ -3978,14 +3978,14 @@ UpdateRecommenderConfigurationOutcomeCallable PinpointClient::UpdateRecommenderC
   return task->get_future();
 }
 
-void PinpointClient::UpdateRecommenderConfigurationAsync(const UpdateRecommenderConfigurationRequest& request, const UpdateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateRecommenderConfigurationAsyncHelper(PinpointClient const * const clientThis, const UpdateRecommenderConfigurationRequest& request, const UpdateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRecommenderConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRecommenderConfiguration(request), context);
 }
 
-void PinpointClient::UpdateRecommenderConfigurationAsyncHelper(const UpdateRecommenderConfigurationRequest& request, const UpdateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateRecommenderConfigurationAsync(const UpdateRecommenderConfigurationRequest& request, const UpdateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRecommenderConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateRecommenderConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSegmentOutcome PinpointClient::UpdateSegment(const UpdateSegmentRequest& request) const
@@ -4016,14 +4016,14 @@ UpdateSegmentOutcomeCallable PinpointClient::UpdateSegmentCallable(const UpdateS
   return task->get_future();
 }
 
-void PinpointClient::UpdateSegmentAsync(const UpdateSegmentRequest& request, const UpdateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateSegmentAsyncHelper(PinpointClient const * const clientThis, const UpdateSegmentRequest& request, const UpdateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSegmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSegment(request), context);
 }
 
-void PinpointClient::UpdateSegmentAsyncHelper(const UpdateSegmentRequest& request, const UpdateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateSegmentAsync(const UpdateSegmentRequest& request, const UpdateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSegment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateSegmentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSmsChannelOutcome PinpointClient::UpdateSmsChannel(const UpdateSmsChannelRequest& request) const
@@ -4048,14 +4048,14 @@ UpdateSmsChannelOutcomeCallable PinpointClient::UpdateSmsChannelCallable(const U
   return task->get_future();
 }
 
-void PinpointClient::UpdateSmsChannelAsync(const UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateSmsChannelAsyncHelper(PinpointClient const * const clientThis, const UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSmsChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSmsChannel(request), context);
 }
 
-void PinpointClient::UpdateSmsChannelAsyncHelper(const UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateSmsChannelAsync(const UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSmsChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateSmsChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSmsTemplateOutcome PinpointClient::UpdateSmsTemplate(const UpdateSmsTemplateRequest& request) const
@@ -4080,14 +4080,14 @@ UpdateSmsTemplateOutcomeCallable PinpointClient::UpdateSmsTemplateCallable(const
   return task->get_future();
 }
 
-void PinpointClient::UpdateSmsTemplateAsync(const UpdateSmsTemplateRequest& request, const UpdateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateSmsTemplateAsyncHelper(PinpointClient const * const clientThis, const UpdateSmsTemplateRequest& request, const UpdateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSmsTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSmsTemplate(request), context);
 }
 
-void PinpointClient::UpdateSmsTemplateAsyncHelper(const UpdateSmsTemplateRequest& request, const UpdateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateSmsTemplateAsync(const UpdateSmsTemplateRequest& request, const UpdateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSmsTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateSmsTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTemplateActiveVersionOutcome PinpointClient::UpdateTemplateActiveVersion(const UpdateTemplateActiveVersionRequest& request) const
@@ -4118,14 +4118,14 @@ UpdateTemplateActiveVersionOutcomeCallable PinpointClient::UpdateTemplateActiveV
   return task->get_future();
 }
 
-void PinpointClient::UpdateTemplateActiveVersionAsync(const UpdateTemplateActiveVersionRequest& request, const UpdateTemplateActiveVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateTemplateActiveVersionAsyncHelper(PinpointClient const * const clientThis, const UpdateTemplateActiveVersionRequest& request, const UpdateTemplateActiveVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTemplateActiveVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTemplateActiveVersion(request), context);
 }
 
-void PinpointClient::UpdateTemplateActiveVersionAsyncHelper(const UpdateTemplateActiveVersionRequest& request, const UpdateTemplateActiveVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateTemplateActiveVersionAsync(const UpdateTemplateActiveVersionRequest& request, const UpdateTemplateActiveVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTemplateActiveVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateTemplateActiveVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateVoiceChannelOutcome PinpointClient::UpdateVoiceChannel(const UpdateVoiceChannelRequest& request) const
@@ -4150,14 +4150,14 @@ UpdateVoiceChannelOutcomeCallable PinpointClient::UpdateVoiceChannelCallable(con
   return task->get_future();
 }
 
-void PinpointClient::UpdateVoiceChannelAsync(const UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateVoiceChannelAsyncHelper(PinpointClient const * const clientThis, const UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVoiceChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateVoiceChannel(request), context);
 }
 
-void PinpointClient::UpdateVoiceChannelAsyncHelper(const UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateVoiceChannelAsync(const UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateVoiceChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateVoiceChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateVoiceTemplateOutcome PinpointClient::UpdateVoiceTemplate(const UpdateVoiceTemplateRequest& request) const
@@ -4182,14 +4182,14 @@ UpdateVoiceTemplateOutcomeCallable PinpointClient::UpdateVoiceTemplateCallable(c
   return task->get_future();
 }
 
-void PinpointClient::UpdateVoiceTemplateAsync(const UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientUpdateVoiceTemplateAsyncHelper(PinpointClient const * const clientThis, const UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVoiceTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateVoiceTemplate(request), context);
 }
 
-void PinpointClient::UpdateVoiceTemplateAsyncHelper(const UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::UpdateVoiceTemplateAsync(const UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateVoiceTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientUpdateVoiceTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 VerifyOTPMessageOutcome PinpointClient::VerifyOTPMessage(const VerifyOTPMessageRequest& request) const
@@ -4214,13 +4214,13 @@ VerifyOTPMessageOutcomeCallable PinpointClient::VerifyOTPMessageCallable(const V
   return task->get_future();
 }
 
-void PinpointClient::VerifyOTPMessageAsync(const VerifyOTPMessageRequest& request, const VerifyOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClientVerifyOTPMessageAsyncHelper(PinpointClient const * const clientThis, const VerifyOTPMessageRequest& request, const VerifyOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VerifyOTPMessageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->VerifyOTPMessage(request), context);
 }
 
-void PinpointClient::VerifyOTPMessageAsyncHelper(const VerifyOTPMessageRequest& request, const VerifyOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PinpointClient::VerifyOTPMessageAsync(const VerifyOTPMessageRequest& request, const VerifyOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, VerifyOTPMessage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PinpointClientVerifyOTPMessageAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -205,14 +205,14 @@ CreateDatabaseOutcomeCallable TimestreamWriteClient::CreateDatabaseCallable(cons
   return task->get_future();
 }
 
-void TimestreamWriteClient::CreateDatabaseAsync(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientCreateDatabaseAsyncHelper(TimestreamWriteClient const * const clientThis, const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDatabase(request), context);
 }
 
-void TimestreamWriteClient::CreateDatabaseAsyncHelper(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::CreateDatabaseAsync(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientCreateDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& request) const
@@ -265,14 +265,14 @@ CreateTableOutcomeCallable TimestreamWriteClient::CreateTableCallable(const Crea
   return task->get_future();
 }
 
-void TimestreamWriteClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientCreateTableAsyncHelper(TimestreamWriteClient const * const clientThis, const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTable(request), context);
 }
 
-void TimestreamWriteClient::CreateTableAsyncHelper(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientCreateTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabaseRequest& request) const
@@ -325,14 +325,14 @@ DeleteDatabaseOutcomeCallable TimestreamWriteClient::DeleteDatabaseCallable(cons
   return task->get_future();
 }
 
-void TimestreamWriteClient::DeleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientDeleteDatabaseAsyncHelper(TimestreamWriteClient const * const clientThis, const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDatabase(request), context);
 }
 
-void TimestreamWriteClient::DeleteDatabaseAsyncHelper(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::DeleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientDeleteDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& request) const
@@ -385,14 +385,14 @@ DeleteTableOutcomeCallable TimestreamWriteClient::DeleteTableCallable(const Dele
   return task->get_future();
 }
 
-void TimestreamWriteClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientDeleteTableAsyncHelper(TimestreamWriteClient const * const clientThis, const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTable(request), context);
 }
 
-void TimestreamWriteClient::DeleteTableAsyncHelper(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientDeleteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDatabaseRequest& request) const
@@ -445,14 +445,14 @@ DescribeDatabaseOutcomeCallable TimestreamWriteClient::DescribeDatabaseCallable(
   return task->get_future();
 }
 
-void TimestreamWriteClient::DescribeDatabaseAsync(const DescribeDatabaseRequest& request, const DescribeDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientDescribeDatabaseAsyncHelper(TimestreamWriteClient const * const clientThis, const DescribeDatabaseRequest& request, const DescribeDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDatabase(request), context);
 }
 
-void TimestreamWriteClient::DescribeDatabaseAsyncHelper(const DescribeDatabaseRequest& request, const DescribeDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::DescribeDatabaseAsync(const DescribeDatabaseRequest& request, const DescribeDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientDescribeDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEndpointsOutcome TimestreamWriteClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
@@ -469,14 +469,14 @@ DescribeEndpointsOutcomeCallable TimestreamWriteClient::DescribeEndpointsCallabl
   return task->get_future();
 }
 
-void TimestreamWriteClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientDescribeEndpointsAsyncHelper(TimestreamWriteClient const * const clientThis, const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEndpoints(request), context);
 }
 
-void TimestreamWriteClient::DescribeEndpointsAsyncHelper(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientDescribeEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableRequest& request) const
@@ -529,14 +529,14 @@ DescribeTableOutcomeCallable TimestreamWriteClient::DescribeTableCallable(const 
   return task->get_future();
 }
 
-void TimestreamWriteClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientDescribeTableAsyncHelper(TimestreamWriteClient const * const clientThis, const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTable(request), context);
 }
 
-void TimestreamWriteClient::DescribeTableAsyncHelper(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientDescribeTableAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesRequest& request) const
@@ -589,14 +589,14 @@ ListDatabasesOutcomeCallable TimestreamWriteClient::ListDatabasesCallable(const 
   return task->get_future();
 }
 
-void TimestreamWriteClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientListDatabasesAsyncHelper(TimestreamWriteClient const * const clientThis, const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatabasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatabases(request), context);
 }
 
-void TimestreamWriteClient::ListDatabasesAsyncHelper(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatabases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientListDatabasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& request) const
@@ -649,14 +649,14 @@ ListTablesOutcomeCallable TimestreamWriteClient::ListTablesCallable(const ListTa
   return task->get_future();
 }
 
-void TimestreamWriteClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientListTablesAsyncHelper(TimestreamWriteClient const * const clientThis, const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTables(request), context);
 }
 
-void TimestreamWriteClient::ListTablesAsyncHelper(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientListTablesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -709,14 +709,14 @@ ListTagsForResourceOutcomeCallable TimestreamWriteClient::ListTagsForResourceCal
   return task->get_future();
 }
 
-void TimestreamWriteClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientListTagsForResourceAsyncHelper(TimestreamWriteClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void TimestreamWriteClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& request) const
@@ -769,14 +769,14 @@ TagResourceOutcomeCallable TimestreamWriteClient::TagResourceCallable(const TagR
   return task->get_future();
 }
 
-void TimestreamWriteClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientTagResourceAsyncHelper(TimestreamWriteClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void TimestreamWriteClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceRequest& request) const
@@ -829,14 +829,14 @@ UntagResourceOutcomeCallable TimestreamWriteClient::UntagResourceCallable(const 
   return task->get_future();
 }
 
-void TimestreamWriteClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientUntagResourceAsyncHelper(TimestreamWriteClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void TimestreamWriteClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabaseRequest& request) const
@@ -889,14 +889,14 @@ UpdateDatabaseOutcomeCallable TimestreamWriteClient::UpdateDatabaseCallable(cons
   return task->get_future();
 }
 
-void TimestreamWriteClient::UpdateDatabaseAsync(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientUpdateDatabaseAsyncHelper(TimestreamWriteClient const * const clientThis, const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDatabase(request), context);
 }
 
-void TimestreamWriteClient::UpdateDatabaseAsyncHelper(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::UpdateDatabaseAsync(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientUpdateDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& request) const
@@ -949,14 +949,14 @@ UpdateTableOutcomeCallable TimestreamWriteClient::UpdateTableCallable(const Upda
   return task->get_future();
 }
 
-void TimestreamWriteClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientUpdateTableAsyncHelper(TimestreamWriteClient const * const clientThis, const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTable(request), context);
 }
 
-void TimestreamWriteClient::UpdateTableAsyncHelper(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientUpdateTableAsyncHelper( this, request, handler, context ); } );
 }
 
 WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsRequest& request) const
@@ -1009,13 +1009,13 @@ WriteRecordsOutcomeCallable TimestreamWriteClient::WriteRecordsCallable(const Wr
   return task->get_future();
 }
 
-void TimestreamWriteClient::WriteRecordsAsync(const WriteRecordsRequest& request, const WriteRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClientWriteRecordsAsyncHelper(TimestreamWriteClient const * const clientThis, const WriteRecordsRequest& request, const WriteRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->WriteRecordsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->WriteRecords(request), context);
 }
 
-void TimestreamWriteClient::WriteRecordsAsyncHelper(const WriteRecordsRequest& request, const WriteRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamWriteClient::WriteRecordsAsync(const WriteRecordsRequest& request, const WriteRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, WriteRecords(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamWriteClientWriteRecordsAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -133,14 +133,14 @@ AssociateServiceQuotaTemplateOutcomeCallable ServiceQuotasClient::AssociateServi
   return task->get_future();
 }
 
-void ServiceQuotasClient::AssociateServiceQuotaTemplateAsync(const AssociateServiceQuotaTemplateRequest& request, const AssociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientAssociateServiceQuotaTemplateAsyncHelper(ServiceQuotasClient const * const clientThis, const AssociateServiceQuotaTemplateRequest& request, const AssociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateServiceQuotaTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateServiceQuotaTemplate(request), context);
 }
 
-void ServiceQuotasClient::AssociateServiceQuotaTemplateAsyncHelper(const AssociateServiceQuotaTemplateRequest& request, const AssociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::AssociateServiceQuotaTemplateAsync(const AssociateServiceQuotaTemplateRequest& request, const AssociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateServiceQuotaTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientAssociateServiceQuotaTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteServiceQuotaIncreaseRequestFromTemplateOutcome ServiceQuotasClient::DeleteServiceQuotaIncreaseRequestFromTemplate(const DeleteServiceQuotaIncreaseRequestFromTemplateRequest& request) const
@@ -157,14 +157,14 @@ DeleteServiceQuotaIncreaseRequestFromTemplateOutcomeCallable ServiceQuotasClient
   return task->get_future();
 }
 
-void ServiceQuotasClient::DeleteServiceQuotaIncreaseRequestFromTemplateAsync(const DeleteServiceQuotaIncreaseRequestFromTemplateRequest& request, const DeleteServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientDeleteServiceQuotaIncreaseRequestFromTemplateAsyncHelper(ServiceQuotasClient const * const clientThis, const DeleteServiceQuotaIncreaseRequestFromTemplateRequest& request, const DeleteServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceQuotaIncreaseRequestFromTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteServiceQuotaIncreaseRequestFromTemplate(request), context);
 }
 
-void ServiceQuotasClient::DeleteServiceQuotaIncreaseRequestFromTemplateAsyncHelper(const DeleteServiceQuotaIncreaseRequestFromTemplateRequest& request, const DeleteServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::DeleteServiceQuotaIncreaseRequestFromTemplateAsync(const DeleteServiceQuotaIncreaseRequestFromTemplateRequest& request, const DeleteServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteServiceQuotaIncreaseRequestFromTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientDeleteServiceQuotaIncreaseRequestFromTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateServiceQuotaTemplateOutcome ServiceQuotasClient::DisassociateServiceQuotaTemplate(const DisassociateServiceQuotaTemplateRequest& request) const
@@ -181,14 +181,14 @@ DisassociateServiceQuotaTemplateOutcomeCallable ServiceQuotasClient::Disassociat
   return task->get_future();
 }
 
-void ServiceQuotasClient::DisassociateServiceQuotaTemplateAsync(const DisassociateServiceQuotaTemplateRequest& request, const DisassociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientDisassociateServiceQuotaTemplateAsyncHelper(ServiceQuotasClient const * const clientThis, const DisassociateServiceQuotaTemplateRequest& request, const DisassociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateServiceQuotaTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateServiceQuotaTemplate(request), context);
 }
 
-void ServiceQuotasClient::DisassociateServiceQuotaTemplateAsyncHelper(const DisassociateServiceQuotaTemplateRequest& request, const DisassociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::DisassociateServiceQuotaTemplateAsync(const DisassociateServiceQuotaTemplateRequest& request, const DisassociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateServiceQuotaTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientDisassociateServiceQuotaTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAWSDefaultServiceQuotaOutcome ServiceQuotasClient::GetAWSDefaultServiceQuota(const GetAWSDefaultServiceQuotaRequest& request) const
@@ -205,14 +205,14 @@ GetAWSDefaultServiceQuotaOutcomeCallable ServiceQuotasClient::GetAWSDefaultServi
   return task->get_future();
 }
 
-void ServiceQuotasClient::GetAWSDefaultServiceQuotaAsync(const GetAWSDefaultServiceQuotaRequest& request, const GetAWSDefaultServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientGetAWSDefaultServiceQuotaAsyncHelper(ServiceQuotasClient const * const clientThis, const GetAWSDefaultServiceQuotaRequest& request, const GetAWSDefaultServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAWSDefaultServiceQuotaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAWSDefaultServiceQuota(request), context);
 }
 
-void ServiceQuotasClient::GetAWSDefaultServiceQuotaAsyncHelper(const GetAWSDefaultServiceQuotaRequest& request, const GetAWSDefaultServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::GetAWSDefaultServiceQuotaAsync(const GetAWSDefaultServiceQuotaRequest& request, const GetAWSDefaultServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAWSDefaultServiceQuota(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientGetAWSDefaultServiceQuotaAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssociationForServiceQuotaTemplateOutcome ServiceQuotasClient::GetAssociationForServiceQuotaTemplate(const GetAssociationForServiceQuotaTemplateRequest& request) const
@@ -229,14 +229,14 @@ GetAssociationForServiceQuotaTemplateOutcomeCallable ServiceQuotasClient::GetAss
   return task->get_future();
 }
 
-void ServiceQuotasClient::GetAssociationForServiceQuotaTemplateAsync(const GetAssociationForServiceQuotaTemplateRequest& request, const GetAssociationForServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientGetAssociationForServiceQuotaTemplateAsyncHelper(ServiceQuotasClient const * const clientThis, const GetAssociationForServiceQuotaTemplateRequest& request, const GetAssociationForServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssociationForServiceQuotaTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssociationForServiceQuotaTemplate(request), context);
 }
 
-void ServiceQuotasClient::GetAssociationForServiceQuotaTemplateAsyncHelper(const GetAssociationForServiceQuotaTemplateRequest& request, const GetAssociationForServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::GetAssociationForServiceQuotaTemplateAsync(const GetAssociationForServiceQuotaTemplateRequest& request, const GetAssociationForServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssociationForServiceQuotaTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientGetAssociationForServiceQuotaTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRequestedServiceQuotaChangeOutcome ServiceQuotasClient::GetRequestedServiceQuotaChange(const GetRequestedServiceQuotaChangeRequest& request) const
@@ -253,14 +253,14 @@ GetRequestedServiceQuotaChangeOutcomeCallable ServiceQuotasClient::GetRequestedS
   return task->get_future();
 }
 
-void ServiceQuotasClient::GetRequestedServiceQuotaChangeAsync(const GetRequestedServiceQuotaChangeRequest& request, const GetRequestedServiceQuotaChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientGetRequestedServiceQuotaChangeAsyncHelper(ServiceQuotasClient const * const clientThis, const GetRequestedServiceQuotaChangeRequest& request, const GetRequestedServiceQuotaChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRequestedServiceQuotaChangeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRequestedServiceQuotaChange(request), context);
 }
 
-void ServiceQuotasClient::GetRequestedServiceQuotaChangeAsyncHelper(const GetRequestedServiceQuotaChangeRequest& request, const GetRequestedServiceQuotaChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::GetRequestedServiceQuotaChangeAsync(const GetRequestedServiceQuotaChangeRequest& request, const GetRequestedServiceQuotaChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRequestedServiceQuotaChange(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientGetRequestedServiceQuotaChangeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceQuotaOutcome ServiceQuotasClient::GetServiceQuota(const GetServiceQuotaRequest& request) const
@@ -277,14 +277,14 @@ GetServiceQuotaOutcomeCallable ServiceQuotasClient::GetServiceQuotaCallable(cons
   return task->get_future();
 }
 
-void ServiceQuotasClient::GetServiceQuotaAsync(const GetServiceQuotaRequest& request, const GetServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientGetServiceQuotaAsyncHelper(ServiceQuotasClient const * const clientThis, const GetServiceQuotaRequest& request, const GetServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceQuotaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServiceQuota(request), context);
 }
 
-void ServiceQuotasClient::GetServiceQuotaAsyncHelper(const GetServiceQuotaRequest& request, const GetServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::GetServiceQuotaAsync(const GetServiceQuotaRequest& request, const GetServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServiceQuota(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientGetServiceQuotaAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceQuotaIncreaseRequestFromTemplateOutcome ServiceQuotasClient::GetServiceQuotaIncreaseRequestFromTemplate(const GetServiceQuotaIncreaseRequestFromTemplateRequest& request) const
@@ -301,14 +301,14 @@ GetServiceQuotaIncreaseRequestFromTemplateOutcomeCallable ServiceQuotasClient::G
   return task->get_future();
 }
 
-void ServiceQuotasClient::GetServiceQuotaIncreaseRequestFromTemplateAsync(const GetServiceQuotaIncreaseRequestFromTemplateRequest& request, const GetServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientGetServiceQuotaIncreaseRequestFromTemplateAsyncHelper(ServiceQuotasClient const * const clientThis, const GetServiceQuotaIncreaseRequestFromTemplateRequest& request, const GetServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceQuotaIncreaseRequestFromTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServiceQuotaIncreaseRequestFromTemplate(request), context);
 }
 
-void ServiceQuotasClient::GetServiceQuotaIncreaseRequestFromTemplateAsyncHelper(const GetServiceQuotaIncreaseRequestFromTemplateRequest& request, const GetServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::GetServiceQuotaIncreaseRequestFromTemplateAsync(const GetServiceQuotaIncreaseRequestFromTemplateRequest& request, const GetServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServiceQuotaIncreaseRequestFromTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientGetServiceQuotaIncreaseRequestFromTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAWSDefaultServiceQuotasOutcome ServiceQuotasClient::ListAWSDefaultServiceQuotas(const ListAWSDefaultServiceQuotasRequest& request) const
@@ -325,14 +325,14 @@ ListAWSDefaultServiceQuotasOutcomeCallable ServiceQuotasClient::ListAWSDefaultSe
   return task->get_future();
 }
 
-void ServiceQuotasClient::ListAWSDefaultServiceQuotasAsync(const ListAWSDefaultServiceQuotasRequest& request, const ListAWSDefaultServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientListAWSDefaultServiceQuotasAsyncHelper(ServiceQuotasClient const * const clientThis, const ListAWSDefaultServiceQuotasRequest& request, const ListAWSDefaultServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAWSDefaultServiceQuotasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAWSDefaultServiceQuotas(request), context);
 }
 
-void ServiceQuotasClient::ListAWSDefaultServiceQuotasAsyncHelper(const ListAWSDefaultServiceQuotasRequest& request, const ListAWSDefaultServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::ListAWSDefaultServiceQuotasAsync(const ListAWSDefaultServiceQuotasRequest& request, const ListAWSDefaultServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAWSDefaultServiceQuotas(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientListAWSDefaultServiceQuotasAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRequestedServiceQuotaChangeHistoryOutcome ServiceQuotasClient::ListRequestedServiceQuotaChangeHistory(const ListRequestedServiceQuotaChangeHistoryRequest& request) const
@@ -349,14 +349,14 @@ ListRequestedServiceQuotaChangeHistoryOutcomeCallable ServiceQuotasClient::ListR
   return task->get_future();
 }
 
-void ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryAsync(const ListRequestedServiceQuotaChangeHistoryRequest& request, const ListRequestedServiceQuotaChangeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientListRequestedServiceQuotaChangeHistoryAsyncHelper(ServiceQuotasClient const * const clientThis, const ListRequestedServiceQuotaChangeHistoryRequest& request, const ListRequestedServiceQuotaChangeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRequestedServiceQuotaChangeHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRequestedServiceQuotaChangeHistory(request), context);
 }
 
-void ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryAsyncHelper(const ListRequestedServiceQuotaChangeHistoryRequest& request, const ListRequestedServiceQuotaChangeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryAsync(const ListRequestedServiceQuotaChangeHistoryRequest& request, const ListRequestedServiceQuotaChangeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRequestedServiceQuotaChangeHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientListRequestedServiceQuotaChangeHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRequestedServiceQuotaChangeHistoryByQuotaOutcome ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryByQuota(const ListRequestedServiceQuotaChangeHistoryByQuotaRequest& request) const
@@ -373,14 +373,14 @@ ListRequestedServiceQuotaChangeHistoryByQuotaOutcomeCallable ServiceQuotasClient
   return task->get_future();
 }
 
-void ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryByQuotaAsync(const ListRequestedServiceQuotaChangeHistoryByQuotaRequest& request, const ListRequestedServiceQuotaChangeHistoryByQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientListRequestedServiceQuotaChangeHistoryByQuotaAsyncHelper(ServiceQuotasClient const * const clientThis, const ListRequestedServiceQuotaChangeHistoryByQuotaRequest& request, const ListRequestedServiceQuotaChangeHistoryByQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRequestedServiceQuotaChangeHistoryByQuotaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRequestedServiceQuotaChangeHistoryByQuota(request), context);
 }
 
-void ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryByQuotaAsyncHelper(const ListRequestedServiceQuotaChangeHistoryByQuotaRequest& request, const ListRequestedServiceQuotaChangeHistoryByQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryByQuotaAsync(const ListRequestedServiceQuotaChangeHistoryByQuotaRequest& request, const ListRequestedServiceQuotaChangeHistoryByQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRequestedServiceQuotaChangeHistoryByQuota(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientListRequestedServiceQuotaChangeHistoryByQuotaAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServiceQuotaIncreaseRequestsInTemplateOutcome ServiceQuotasClient::ListServiceQuotaIncreaseRequestsInTemplate(const ListServiceQuotaIncreaseRequestsInTemplateRequest& request) const
@@ -397,14 +397,14 @@ ListServiceQuotaIncreaseRequestsInTemplateOutcomeCallable ServiceQuotasClient::L
   return task->get_future();
 }
 
-void ServiceQuotasClient::ListServiceQuotaIncreaseRequestsInTemplateAsync(const ListServiceQuotaIncreaseRequestsInTemplateRequest& request, const ListServiceQuotaIncreaseRequestsInTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientListServiceQuotaIncreaseRequestsInTemplateAsyncHelper(ServiceQuotasClient const * const clientThis, const ListServiceQuotaIncreaseRequestsInTemplateRequest& request, const ListServiceQuotaIncreaseRequestsInTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServiceQuotaIncreaseRequestsInTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServiceQuotaIncreaseRequestsInTemplate(request), context);
 }
 
-void ServiceQuotasClient::ListServiceQuotaIncreaseRequestsInTemplateAsyncHelper(const ListServiceQuotaIncreaseRequestsInTemplateRequest& request, const ListServiceQuotaIncreaseRequestsInTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::ListServiceQuotaIncreaseRequestsInTemplateAsync(const ListServiceQuotaIncreaseRequestsInTemplateRequest& request, const ListServiceQuotaIncreaseRequestsInTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServiceQuotaIncreaseRequestsInTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientListServiceQuotaIncreaseRequestsInTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServiceQuotasOutcome ServiceQuotasClient::ListServiceQuotas(const ListServiceQuotasRequest& request) const
@@ -421,14 +421,14 @@ ListServiceQuotasOutcomeCallable ServiceQuotasClient::ListServiceQuotasCallable(
   return task->get_future();
 }
 
-void ServiceQuotasClient::ListServiceQuotasAsync(const ListServiceQuotasRequest& request, const ListServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientListServiceQuotasAsyncHelper(ServiceQuotasClient const * const clientThis, const ListServiceQuotasRequest& request, const ListServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServiceQuotasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServiceQuotas(request), context);
 }
 
-void ServiceQuotasClient::ListServiceQuotasAsyncHelper(const ListServiceQuotasRequest& request, const ListServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::ListServiceQuotasAsync(const ListServiceQuotasRequest& request, const ListServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServiceQuotas(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientListServiceQuotasAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServicesOutcome ServiceQuotasClient::ListServices(const ListServicesRequest& request) const
@@ -445,14 +445,14 @@ ListServicesOutcomeCallable ServiceQuotasClient::ListServicesCallable(const List
   return task->get_future();
 }
 
-void ServiceQuotasClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientListServicesAsyncHelper(ServiceQuotasClient const * const clientThis, const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServices(request), context);
 }
 
-void ServiceQuotasClient::ListServicesAsyncHelper(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientListServicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ServiceQuotasClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -469,14 +469,14 @@ ListTagsForResourceOutcomeCallable ServiceQuotasClient::ListTagsForResourceCalla
   return task->get_future();
 }
 
-void ServiceQuotasClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientListTagsForResourceAsyncHelper(ServiceQuotasClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ServiceQuotasClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutServiceQuotaIncreaseRequestIntoTemplateOutcome ServiceQuotasClient::PutServiceQuotaIncreaseRequestIntoTemplate(const PutServiceQuotaIncreaseRequestIntoTemplateRequest& request) const
@@ -493,14 +493,14 @@ PutServiceQuotaIncreaseRequestIntoTemplateOutcomeCallable ServiceQuotasClient::P
   return task->get_future();
 }
 
-void ServiceQuotasClient::PutServiceQuotaIncreaseRequestIntoTemplateAsync(const PutServiceQuotaIncreaseRequestIntoTemplateRequest& request, const PutServiceQuotaIncreaseRequestIntoTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientPutServiceQuotaIncreaseRequestIntoTemplateAsyncHelper(ServiceQuotasClient const * const clientThis, const PutServiceQuotaIncreaseRequestIntoTemplateRequest& request, const PutServiceQuotaIncreaseRequestIntoTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutServiceQuotaIncreaseRequestIntoTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutServiceQuotaIncreaseRequestIntoTemplate(request), context);
 }
 
-void ServiceQuotasClient::PutServiceQuotaIncreaseRequestIntoTemplateAsyncHelper(const PutServiceQuotaIncreaseRequestIntoTemplateRequest& request, const PutServiceQuotaIncreaseRequestIntoTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::PutServiceQuotaIncreaseRequestIntoTemplateAsync(const PutServiceQuotaIncreaseRequestIntoTemplateRequest& request, const PutServiceQuotaIncreaseRequestIntoTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutServiceQuotaIncreaseRequestIntoTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientPutServiceQuotaIncreaseRequestIntoTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 RequestServiceQuotaIncreaseOutcome ServiceQuotasClient::RequestServiceQuotaIncrease(const RequestServiceQuotaIncreaseRequest& request) const
@@ -517,14 +517,14 @@ RequestServiceQuotaIncreaseOutcomeCallable ServiceQuotasClient::RequestServiceQu
   return task->get_future();
 }
 
-void ServiceQuotasClient::RequestServiceQuotaIncreaseAsync(const RequestServiceQuotaIncreaseRequest& request, const RequestServiceQuotaIncreaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientRequestServiceQuotaIncreaseAsyncHelper(ServiceQuotasClient const * const clientThis, const RequestServiceQuotaIncreaseRequest& request, const RequestServiceQuotaIncreaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RequestServiceQuotaIncreaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RequestServiceQuotaIncrease(request), context);
 }
 
-void ServiceQuotasClient::RequestServiceQuotaIncreaseAsyncHelper(const RequestServiceQuotaIncreaseRequest& request, const RequestServiceQuotaIncreaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::RequestServiceQuotaIncreaseAsync(const RequestServiceQuotaIncreaseRequest& request, const RequestServiceQuotaIncreaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RequestServiceQuotaIncrease(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientRequestServiceQuotaIncreaseAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ServiceQuotasClient::TagResource(const TagResourceRequest& request) const
@@ -541,14 +541,14 @@ TagResourceOutcomeCallable ServiceQuotasClient::TagResourceCallable(const TagRes
   return task->get_future();
 }
 
-void ServiceQuotasClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientTagResourceAsyncHelper(ServiceQuotasClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ServiceQuotasClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ServiceQuotasClient::UntagResource(const UntagResourceRequest& request) const
@@ -565,13 +565,13 @@ UntagResourceOutcomeCallable ServiceQuotasClient::UntagResourceCallable(const Un
   return task->get_future();
 }
 
-void ServiceQuotasClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClientUntagResourceAsyncHelper(ServiceQuotasClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ServiceQuotasClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceQuotasClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceQuotasClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -156,14 +156,14 @@ AssociateKmsKeyOutcomeCallable CloudWatchLogsClient::AssociateKmsKeyCallable(con
   return task->get_future();
 }
 
-void CloudWatchLogsClient::AssociateKmsKeyAsync(const AssociateKmsKeyRequest& request, const AssociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientAssociateKmsKeyAsyncHelper(CloudWatchLogsClient const * const clientThis, const AssociateKmsKeyRequest& request, const AssociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateKmsKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateKmsKey(request), context);
 }
 
-void CloudWatchLogsClient::AssociateKmsKeyAsyncHelper(const AssociateKmsKeyRequest& request, const AssociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::AssociateKmsKeyAsync(const AssociateKmsKeyRequest& request, const AssociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateKmsKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientAssociateKmsKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelExportTaskOutcome CloudWatchLogsClient::CancelExportTask(const CancelExportTaskRequest& request) const
@@ -180,14 +180,14 @@ CancelExportTaskOutcomeCallable CloudWatchLogsClient::CancelExportTaskCallable(c
   return task->get_future();
 }
 
-void CloudWatchLogsClient::CancelExportTaskAsync(const CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientCancelExportTaskAsyncHelper(CloudWatchLogsClient const * const clientThis, const CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelExportTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelExportTask(request), context);
 }
 
-void CloudWatchLogsClient::CancelExportTaskAsyncHelper(const CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::CancelExportTaskAsync(const CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelExportTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientCancelExportTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExportTaskOutcome CloudWatchLogsClient::CreateExportTask(const CreateExportTaskRequest& request) const
@@ -204,14 +204,14 @@ CreateExportTaskOutcomeCallable CloudWatchLogsClient::CreateExportTaskCallable(c
   return task->get_future();
 }
 
-void CloudWatchLogsClient::CreateExportTaskAsync(const CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientCreateExportTaskAsyncHelper(CloudWatchLogsClient const * const clientThis, const CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExportTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExportTask(request), context);
 }
 
-void CloudWatchLogsClient::CreateExportTaskAsyncHelper(const CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::CreateExportTaskAsync(const CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExportTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientCreateExportTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLogGroupOutcome CloudWatchLogsClient::CreateLogGroup(const CreateLogGroupRequest& request) const
@@ -228,14 +228,14 @@ CreateLogGroupOutcomeCallable CloudWatchLogsClient::CreateLogGroupCallable(const
   return task->get_future();
 }
 
-void CloudWatchLogsClient::CreateLogGroupAsync(const CreateLogGroupRequest& request, const CreateLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientCreateLogGroupAsyncHelper(CloudWatchLogsClient const * const clientThis, const CreateLogGroupRequest& request, const CreateLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLogGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLogGroup(request), context);
 }
 
-void CloudWatchLogsClient::CreateLogGroupAsyncHelper(const CreateLogGroupRequest& request, const CreateLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::CreateLogGroupAsync(const CreateLogGroupRequest& request, const CreateLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLogGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientCreateLogGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLogStreamOutcome CloudWatchLogsClient::CreateLogStream(const CreateLogStreamRequest& request) const
@@ -252,14 +252,14 @@ CreateLogStreamOutcomeCallable CloudWatchLogsClient::CreateLogStreamCallable(con
   return task->get_future();
 }
 
-void CloudWatchLogsClient::CreateLogStreamAsync(const CreateLogStreamRequest& request, const CreateLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientCreateLogStreamAsyncHelper(CloudWatchLogsClient const * const clientThis, const CreateLogStreamRequest& request, const CreateLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLogStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLogStream(request), context);
 }
 
-void CloudWatchLogsClient::CreateLogStreamAsyncHelper(const CreateLogStreamRequest& request, const CreateLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::CreateLogStreamAsync(const CreateLogStreamRequest& request, const CreateLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLogStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientCreateLogStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDestinationOutcome CloudWatchLogsClient::DeleteDestination(const DeleteDestinationRequest& request) const
@@ -276,14 +276,14 @@ DeleteDestinationOutcomeCallable CloudWatchLogsClient::DeleteDestinationCallable
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DeleteDestinationAsync(const DeleteDestinationRequest& request, const DeleteDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDeleteDestinationAsyncHelper(CloudWatchLogsClient const * const clientThis, const DeleteDestinationRequest& request, const DeleteDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDestination(request), context);
 }
 
-void CloudWatchLogsClient::DeleteDestinationAsyncHelper(const DeleteDestinationRequest& request, const DeleteDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DeleteDestinationAsync(const DeleteDestinationRequest& request, const DeleteDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDeleteDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLogGroupOutcome CloudWatchLogsClient::DeleteLogGroup(const DeleteLogGroupRequest& request) const
@@ -300,14 +300,14 @@ DeleteLogGroupOutcomeCallable CloudWatchLogsClient::DeleteLogGroupCallable(const
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DeleteLogGroupAsync(const DeleteLogGroupRequest& request, const DeleteLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDeleteLogGroupAsyncHelper(CloudWatchLogsClient const * const clientThis, const DeleteLogGroupRequest& request, const DeleteLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLogGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLogGroup(request), context);
 }
 
-void CloudWatchLogsClient::DeleteLogGroupAsyncHelper(const DeleteLogGroupRequest& request, const DeleteLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DeleteLogGroupAsync(const DeleteLogGroupRequest& request, const DeleteLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLogGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDeleteLogGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLogStreamOutcome CloudWatchLogsClient::DeleteLogStream(const DeleteLogStreamRequest& request) const
@@ -324,14 +324,14 @@ DeleteLogStreamOutcomeCallable CloudWatchLogsClient::DeleteLogStreamCallable(con
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DeleteLogStreamAsync(const DeleteLogStreamRequest& request, const DeleteLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDeleteLogStreamAsyncHelper(CloudWatchLogsClient const * const clientThis, const DeleteLogStreamRequest& request, const DeleteLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLogStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLogStream(request), context);
 }
 
-void CloudWatchLogsClient::DeleteLogStreamAsyncHelper(const DeleteLogStreamRequest& request, const DeleteLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DeleteLogStreamAsync(const DeleteLogStreamRequest& request, const DeleteLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLogStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDeleteLogStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMetricFilterOutcome CloudWatchLogsClient::DeleteMetricFilter(const DeleteMetricFilterRequest& request) const
@@ -348,14 +348,14 @@ DeleteMetricFilterOutcomeCallable CloudWatchLogsClient::DeleteMetricFilterCallab
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DeleteMetricFilterAsync(const DeleteMetricFilterRequest& request, const DeleteMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDeleteMetricFilterAsyncHelper(CloudWatchLogsClient const * const clientThis, const DeleteMetricFilterRequest& request, const DeleteMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMetricFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMetricFilter(request), context);
 }
 
-void CloudWatchLogsClient::DeleteMetricFilterAsyncHelper(const DeleteMetricFilterRequest& request, const DeleteMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DeleteMetricFilterAsync(const DeleteMetricFilterRequest& request, const DeleteMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMetricFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDeleteMetricFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteQueryDefinitionOutcome CloudWatchLogsClient::DeleteQueryDefinition(const DeleteQueryDefinitionRequest& request) const
@@ -372,14 +372,14 @@ DeleteQueryDefinitionOutcomeCallable CloudWatchLogsClient::DeleteQueryDefinition
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DeleteQueryDefinitionAsync(const DeleteQueryDefinitionRequest& request, const DeleteQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDeleteQueryDefinitionAsyncHelper(CloudWatchLogsClient const * const clientThis, const DeleteQueryDefinitionRequest& request, const DeleteQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueryDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteQueryDefinition(request), context);
 }
 
-void CloudWatchLogsClient::DeleteQueryDefinitionAsyncHelper(const DeleteQueryDefinitionRequest& request, const DeleteQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DeleteQueryDefinitionAsync(const DeleteQueryDefinitionRequest& request, const DeleteQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteQueryDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDeleteQueryDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome CloudWatchLogsClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -396,14 +396,14 @@ DeleteResourcePolicyOutcomeCallable CloudWatchLogsClient::DeleteResourcePolicyCa
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDeleteResourcePolicyAsyncHelper(CloudWatchLogsClient const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void CloudWatchLogsClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRetentionPolicyOutcome CloudWatchLogsClient::DeleteRetentionPolicy(const DeleteRetentionPolicyRequest& request) const
@@ -420,14 +420,14 @@ DeleteRetentionPolicyOutcomeCallable CloudWatchLogsClient::DeleteRetentionPolicy
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DeleteRetentionPolicyAsync(const DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDeleteRetentionPolicyAsyncHelper(CloudWatchLogsClient const * const clientThis, const DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRetentionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRetentionPolicy(request), context);
 }
 
-void CloudWatchLogsClient::DeleteRetentionPolicyAsyncHelper(const DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DeleteRetentionPolicyAsync(const DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRetentionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDeleteRetentionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSubscriptionFilterOutcome CloudWatchLogsClient::DeleteSubscriptionFilter(const DeleteSubscriptionFilterRequest& request) const
@@ -444,14 +444,14 @@ DeleteSubscriptionFilterOutcomeCallable CloudWatchLogsClient::DeleteSubscription
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DeleteSubscriptionFilterAsync(const DeleteSubscriptionFilterRequest& request, const DeleteSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDeleteSubscriptionFilterAsyncHelper(CloudWatchLogsClient const * const clientThis, const DeleteSubscriptionFilterRequest& request, const DeleteSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSubscriptionFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSubscriptionFilter(request), context);
 }
 
-void CloudWatchLogsClient::DeleteSubscriptionFilterAsyncHelper(const DeleteSubscriptionFilterRequest& request, const DeleteSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DeleteSubscriptionFilterAsync(const DeleteSubscriptionFilterRequest& request, const DeleteSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSubscriptionFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDeleteSubscriptionFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDestinationsOutcome CloudWatchLogsClient::DescribeDestinations(const DescribeDestinationsRequest& request) const
@@ -468,14 +468,14 @@ DescribeDestinationsOutcomeCallable CloudWatchLogsClient::DescribeDestinationsCa
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DescribeDestinationsAsync(const DescribeDestinationsRequest& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDescribeDestinationsAsyncHelper(CloudWatchLogsClient const * const clientThis, const DescribeDestinationsRequest& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDestinationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDestinations(request), context);
 }
 
-void CloudWatchLogsClient::DescribeDestinationsAsyncHelper(const DescribeDestinationsRequest& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DescribeDestinationsAsync(const DescribeDestinationsRequest& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDestinations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDescribeDestinationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExportTasksOutcome CloudWatchLogsClient::DescribeExportTasks(const DescribeExportTasksRequest& request) const
@@ -492,14 +492,14 @@ DescribeExportTasksOutcomeCallable CloudWatchLogsClient::DescribeExportTasksCall
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DescribeExportTasksAsync(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDescribeExportTasksAsyncHelper(CloudWatchLogsClient const * const clientThis, const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExportTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExportTasks(request), context);
 }
 
-void CloudWatchLogsClient::DescribeExportTasksAsyncHelper(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DescribeExportTasksAsync(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExportTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDescribeExportTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLogGroupsOutcome CloudWatchLogsClient::DescribeLogGroups(const DescribeLogGroupsRequest& request) const
@@ -516,14 +516,14 @@ DescribeLogGroupsOutcomeCallable CloudWatchLogsClient::DescribeLogGroupsCallable
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DescribeLogGroupsAsync(const DescribeLogGroupsRequest& request, const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDescribeLogGroupsAsyncHelper(CloudWatchLogsClient const * const clientThis, const DescribeLogGroupsRequest& request, const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLogGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLogGroups(request), context);
 }
 
-void CloudWatchLogsClient::DescribeLogGroupsAsyncHelper(const DescribeLogGroupsRequest& request, const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DescribeLogGroupsAsync(const DescribeLogGroupsRequest& request, const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLogGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDescribeLogGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLogStreamsOutcome CloudWatchLogsClient::DescribeLogStreams(const DescribeLogStreamsRequest& request) const
@@ -540,14 +540,14 @@ DescribeLogStreamsOutcomeCallable CloudWatchLogsClient::DescribeLogStreamsCallab
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DescribeLogStreamsAsync(const DescribeLogStreamsRequest& request, const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDescribeLogStreamsAsyncHelper(CloudWatchLogsClient const * const clientThis, const DescribeLogStreamsRequest& request, const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLogStreamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLogStreams(request), context);
 }
 
-void CloudWatchLogsClient::DescribeLogStreamsAsyncHelper(const DescribeLogStreamsRequest& request, const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DescribeLogStreamsAsync(const DescribeLogStreamsRequest& request, const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLogStreams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDescribeLogStreamsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMetricFiltersOutcome CloudWatchLogsClient::DescribeMetricFilters(const DescribeMetricFiltersRequest& request) const
@@ -564,14 +564,14 @@ DescribeMetricFiltersOutcomeCallable CloudWatchLogsClient::DescribeMetricFilters
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DescribeMetricFiltersAsync(const DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDescribeMetricFiltersAsyncHelper(CloudWatchLogsClient const * const clientThis, const DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMetricFiltersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMetricFilters(request), context);
 }
 
-void CloudWatchLogsClient::DescribeMetricFiltersAsyncHelper(const DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DescribeMetricFiltersAsync(const DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMetricFilters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDescribeMetricFiltersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeQueriesOutcome CloudWatchLogsClient::DescribeQueries(const DescribeQueriesRequest& request) const
@@ -588,14 +588,14 @@ DescribeQueriesOutcomeCallable CloudWatchLogsClient::DescribeQueriesCallable(con
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DescribeQueriesAsync(const DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDescribeQueriesAsyncHelper(CloudWatchLogsClient const * const clientThis, const DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeQueriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeQueries(request), context);
 }
 
-void CloudWatchLogsClient::DescribeQueriesAsyncHelper(const DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DescribeQueriesAsync(const DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeQueries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDescribeQueriesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeQueryDefinitionsOutcome CloudWatchLogsClient::DescribeQueryDefinitions(const DescribeQueryDefinitionsRequest& request) const
@@ -612,14 +612,14 @@ DescribeQueryDefinitionsOutcomeCallable CloudWatchLogsClient::DescribeQueryDefin
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DescribeQueryDefinitionsAsync(const DescribeQueryDefinitionsRequest& request, const DescribeQueryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDescribeQueryDefinitionsAsyncHelper(CloudWatchLogsClient const * const clientThis, const DescribeQueryDefinitionsRequest& request, const DescribeQueryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeQueryDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeQueryDefinitions(request), context);
 }
 
-void CloudWatchLogsClient::DescribeQueryDefinitionsAsyncHelper(const DescribeQueryDefinitionsRequest& request, const DescribeQueryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DescribeQueryDefinitionsAsync(const DescribeQueryDefinitionsRequest& request, const DescribeQueryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeQueryDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDescribeQueryDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeResourcePoliciesOutcome CloudWatchLogsClient::DescribeResourcePolicies(const DescribeResourcePoliciesRequest& request) const
@@ -636,14 +636,14 @@ DescribeResourcePoliciesOutcomeCallable CloudWatchLogsClient::DescribeResourcePo
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DescribeResourcePoliciesAsync(const DescribeResourcePoliciesRequest& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDescribeResourcePoliciesAsyncHelper(CloudWatchLogsClient const * const clientThis, const DescribeResourcePoliciesRequest& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourcePoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeResourcePolicies(request), context);
 }
 
-void CloudWatchLogsClient::DescribeResourcePoliciesAsyncHelper(const DescribeResourcePoliciesRequest& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DescribeResourcePoliciesAsync(const DescribeResourcePoliciesRequest& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeResourcePolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDescribeResourcePoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSubscriptionFiltersOutcome CloudWatchLogsClient::DescribeSubscriptionFilters(const DescribeSubscriptionFiltersRequest& request) const
@@ -660,14 +660,14 @@ DescribeSubscriptionFiltersOutcomeCallable CloudWatchLogsClient::DescribeSubscri
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DescribeSubscriptionFiltersAsync(const DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDescribeSubscriptionFiltersAsyncHelper(CloudWatchLogsClient const * const clientThis, const DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSubscriptionFiltersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSubscriptionFilters(request), context);
 }
 
-void CloudWatchLogsClient::DescribeSubscriptionFiltersAsyncHelper(const DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DescribeSubscriptionFiltersAsync(const DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSubscriptionFilters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDescribeSubscriptionFiltersAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateKmsKeyOutcome CloudWatchLogsClient::DisassociateKmsKey(const DisassociateKmsKeyRequest& request) const
@@ -684,14 +684,14 @@ DisassociateKmsKeyOutcomeCallable CloudWatchLogsClient::DisassociateKmsKeyCallab
   return task->get_future();
 }
 
-void CloudWatchLogsClient::DisassociateKmsKeyAsync(const DisassociateKmsKeyRequest& request, const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientDisassociateKmsKeyAsyncHelper(CloudWatchLogsClient const * const clientThis, const DisassociateKmsKeyRequest& request, const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateKmsKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateKmsKey(request), context);
 }
 
-void CloudWatchLogsClient::DisassociateKmsKeyAsyncHelper(const DisassociateKmsKeyRequest& request, const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::DisassociateKmsKeyAsync(const DisassociateKmsKeyRequest& request, const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateKmsKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientDisassociateKmsKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 FilterLogEventsOutcome CloudWatchLogsClient::FilterLogEvents(const FilterLogEventsRequest& request) const
@@ -708,14 +708,14 @@ FilterLogEventsOutcomeCallable CloudWatchLogsClient::FilterLogEventsCallable(con
   return task->get_future();
 }
 
-void CloudWatchLogsClient::FilterLogEventsAsync(const FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientFilterLogEventsAsyncHelper(CloudWatchLogsClient const * const clientThis, const FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->FilterLogEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->FilterLogEvents(request), context);
 }
 
-void CloudWatchLogsClient::FilterLogEventsAsyncHelper(const FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::FilterLogEventsAsync(const FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, FilterLogEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientFilterLogEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLogEventsOutcome CloudWatchLogsClient::GetLogEvents(const GetLogEventsRequest& request) const
@@ -732,14 +732,14 @@ GetLogEventsOutcomeCallable CloudWatchLogsClient::GetLogEventsCallable(const Get
   return task->get_future();
 }
 
-void CloudWatchLogsClient::GetLogEventsAsync(const GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientGetLogEventsAsyncHelper(CloudWatchLogsClient const * const clientThis, const GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLogEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLogEvents(request), context);
 }
 
-void CloudWatchLogsClient::GetLogEventsAsyncHelper(const GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::GetLogEventsAsync(const GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLogEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientGetLogEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLogGroupFieldsOutcome CloudWatchLogsClient::GetLogGroupFields(const GetLogGroupFieldsRequest& request) const
@@ -756,14 +756,14 @@ GetLogGroupFieldsOutcomeCallable CloudWatchLogsClient::GetLogGroupFieldsCallable
   return task->get_future();
 }
 
-void CloudWatchLogsClient::GetLogGroupFieldsAsync(const GetLogGroupFieldsRequest& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientGetLogGroupFieldsAsyncHelper(CloudWatchLogsClient const * const clientThis, const GetLogGroupFieldsRequest& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLogGroupFieldsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLogGroupFields(request), context);
 }
 
-void CloudWatchLogsClient::GetLogGroupFieldsAsyncHelper(const GetLogGroupFieldsRequest& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::GetLogGroupFieldsAsync(const GetLogGroupFieldsRequest& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLogGroupFields(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientGetLogGroupFieldsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLogRecordOutcome CloudWatchLogsClient::GetLogRecord(const GetLogRecordRequest& request) const
@@ -780,14 +780,14 @@ GetLogRecordOutcomeCallable CloudWatchLogsClient::GetLogRecordCallable(const Get
   return task->get_future();
 }
 
-void CloudWatchLogsClient::GetLogRecordAsync(const GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientGetLogRecordAsyncHelper(CloudWatchLogsClient const * const clientThis, const GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLogRecordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLogRecord(request), context);
 }
 
-void CloudWatchLogsClient::GetLogRecordAsyncHelper(const GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::GetLogRecordAsync(const GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLogRecord(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientGetLogRecordAsyncHelper( this, request, handler, context ); } );
 }
 
 GetQueryResultsOutcome CloudWatchLogsClient::GetQueryResults(const GetQueryResultsRequest& request) const
@@ -804,14 +804,14 @@ GetQueryResultsOutcomeCallable CloudWatchLogsClient::GetQueryResultsCallable(con
   return task->get_future();
 }
 
-void CloudWatchLogsClient::GetQueryResultsAsync(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientGetQueryResultsAsyncHelper(CloudWatchLogsClient const * const clientThis, const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQueryResultsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetQueryResults(request), context);
 }
 
-void CloudWatchLogsClient::GetQueryResultsAsyncHelper(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::GetQueryResultsAsync(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetQueryResults(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientGetQueryResultsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsLogGroupOutcome CloudWatchLogsClient::ListTagsLogGroup(const ListTagsLogGroupRequest& request) const
@@ -828,14 +828,14 @@ ListTagsLogGroupOutcomeCallable CloudWatchLogsClient::ListTagsLogGroupCallable(c
   return task->get_future();
 }
 
-void CloudWatchLogsClient::ListTagsLogGroupAsync(const ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientListTagsLogGroupAsyncHelper(CloudWatchLogsClient const * const clientThis, const ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsLogGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsLogGroup(request), context);
 }
 
-void CloudWatchLogsClient::ListTagsLogGroupAsyncHelper(const ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::ListTagsLogGroupAsync(const ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsLogGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientListTagsLogGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 PutDestinationOutcome CloudWatchLogsClient::PutDestination(const PutDestinationRequest& request) const
@@ -852,14 +852,14 @@ PutDestinationOutcomeCallable CloudWatchLogsClient::PutDestinationCallable(const
   return task->get_future();
 }
 
-void CloudWatchLogsClient::PutDestinationAsync(const PutDestinationRequest& request, const PutDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientPutDestinationAsyncHelper(CloudWatchLogsClient const * const clientThis, const PutDestinationRequest& request, const PutDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutDestination(request), context);
 }
 
-void CloudWatchLogsClient::PutDestinationAsyncHelper(const PutDestinationRequest& request, const PutDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::PutDestinationAsync(const PutDestinationRequest& request, const PutDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientPutDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 PutDestinationPolicyOutcome CloudWatchLogsClient::PutDestinationPolicy(const PutDestinationPolicyRequest& request) const
@@ -876,14 +876,14 @@ PutDestinationPolicyOutcomeCallable CloudWatchLogsClient::PutDestinationPolicyCa
   return task->get_future();
 }
 
-void CloudWatchLogsClient::PutDestinationPolicyAsync(const PutDestinationPolicyRequest& request, const PutDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientPutDestinationPolicyAsyncHelper(CloudWatchLogsClient const * const clientThis, const PutDestinationPolicyRequest& request, const PutDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDestinationPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutDestinationPolicy(request), context);
 }
 
-void CloudWatchLogsClient::PutDestinationPolicyAsyncHelper(const PutDestinationPolicyRequest& request, const PutDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::PutDestinationPolicyAsync(const PutDestinationPolicyRequest& request, const PutDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutDestinationPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientPutDestinationPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutLogEventsOutcome CloudWatchLogsClient::PutLogEvents(const PutLogEventsRequest& request) const
@@ -900,14 +900,14 @@ PutLogEventsOutcomeCallable CloudWatchLogsClient::PutLogEventsCallable(const Put
   return task->get_future();
 }
 
-void CloudWatchLogsClient::PutLogEventsAsync(const PutLogEventsRequest& request, const PutLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientPutLogEventsAsyncHelper(CloudWatchLogsClient const * const clientThis, const PutLogEventsRequest& request, const PutLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLogEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutLogEvents(request), context);
 }
 
-void CloudWatchLogsClient::PutLogEventsAsyncHelper(const PutLogEventsRequest& request, const PutLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::PutLogEventsAsync(const PutLogEventsRequest& request, const PutLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutLogEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientPutLogEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutMetricFilterOutcome CloudWatchLogsClient::PutMetricFilter(const PutMetricFilterRequest& request) const
@@ -924,14 +924,14 @@ PutMetricFilterOutcomeCallable CloudWatchLogsClient::PutMetricFilterCallable(con
   return task->get_future();
 }
 
-void CloudWatchLogsClient::PutMetricFilterAsync(const PutMetricFilterRequest& request, const PutMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientPutMetricFilterAsyncHelper(CloudWatchLogsClient const * const clientThis, const PutMetricFilterRequest& request, const PutMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutMetricFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutMetricFilter(request), context);
 }
 
-void CloudWatchLogsClient::PutMetricFilterAsyncHelper(const PutMetricFilterRequest& request, const PutMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::PutMetricFilterAsync(const PutMetricFilterRequest& request, const PutMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutMetricFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientPutMetricFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 PutQueryDefinitionOutcome CloudWatchLogsClient::PutQueryDefinition(const PutQueryDefinitionRequest& request) const
@@ -948,14 +948,14 @@ PutQueryDefinitionOutcomeCallable CloudWatchLogsClient::PutQueryDefinitionCallab
   return task->get_future();
 }
 
-void CloudWatchLogsClient::PutQueryDefinitionAsync(const PutQueryDefinitionRequest& request, const PutQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientPutQueryDefinitionAsyncHelper(CloudWatchLogsClient const * const clientThis, const PutQueryDefinitionRequest& request, const PutQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutQueryDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutQueryDefinition(request), context);
 }
 
-void CloudWatchLogsClient::PutQueryDefinitionAsyncHelper(const PutQueryDefinitionRequest& request, const PutQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::PutQueryDefinitionAsync(const PutQueryDefinitionRequest& request, const PutQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutQueryDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientPutQueryDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourcePolicyOutcome CloudWatchLogsClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -972,14 +972,14 @@ PutResourcePolicyOutcomeCallable CloudWatchLogsClient::PutResourcePolicyCallable
   return task->get_future();
 }
 
-void CloudWatchLogsClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientPutResourcePolicyAsyncHelper(CloudWatchLogsClient const * const clientThis, const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourcePolicy(request), context);
 }
 
-void CloudWatchLogsClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientPutResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRetentionPolicyOutcome CloudWatchLogsClient::PutRetentionPolicy(const PutRetentionPolicyRequest& request) const
@@ -996,14 +996,14 @@ PutRetentionPolicyOutcomeCallable CloudWatchLogsClient::PutRetentionPolicyCallab
   return task->get_future();
 }
 
-void CloudWatchLogsClient::PutRetentionPolicyAsync(const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientPutRetentionPolicyAsyncHelper(CloudWatchLogsClient const * const clientThis, const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRetentionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRetentionPolicy(request), context);
 }
 
-void CloudWatchLogsClient::PutRetentionPolicyAsyncHelper(const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::PutRetentionPolicyAsync(const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRetentionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientPutRetentionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutSubscriptionFilterOutcome CloudWatchLogsClient::PutSubscriptionFilter(const PutSubscriptionFilterRequest& request) const
@@ -1020,14 +1020,14 @@ PutSubscriptionFilterOutcomeCallable CloudWatchLogsClient::PutSubscriptionFilter
   return task->get_future();
 }
 
-void CloudWatchLogsClient::PutSubscriptionFilterAsync(const PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientPutSubscriptionFilterAsyncHelper(CloudWatchLogsClient const * const clientThis, const PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSubscriptionFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutSubscriptionFilter(request), context);
 }
 
-void CloudWatchLogsClient::PutSubscriptionFilterAsyncHelper(const PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::PutSubscriptionFilterAsync(const PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutSubscriptionFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientPutSubscriptionFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 StartQueryOutcome CloudWatchLogsClient::StartQuery(const StartQueryRequest& request) const
@@ -1044,14 +1044,14 @@ StartQueryOutcomeCallable CloudWatchLogsClient::StartQueryCallable(const StartQu
   return task->get_future();
 }
 
-void CloudWatchLogsClient::StartQueryAsync(const StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientStartQueryAsyncHelper(CloudWatchLogsClient const * const clientThis, const StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartQuery(request), context);
 }
 
-void CloudWatchLogsClient::StartQueryAsyncHelper(const StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::StartQueryAsync(const StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientStartQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 StopQueryOutcome CloudWatchLogsClient::StopQuery(const StopQueryRequest& request) const
@@ -1068,14 +1068,14 @@ StopQueryOutcomeCallable CloudWatchLogsClient::StopQueryCallable(const StopQuery
   return task->get_future();
 }
 
-void CloudWatchLogsClient::StopQueryAsync(const StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientStopQueryAsyncHelper(CloudWatchLogsClient const * const clientThis, const StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopQuery(request), context);
 }
 
-void CloudWatchLogsClient::StopQueryAsyncHelper(const StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::StopQueryAsync(const StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientStopQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 TagLogGroupOutcome CloudWatchLogsClient::TagLogGroup(const TagLogGroupRequest& request) const
@@ -1092,14 +1092,14 @@ TagLogGroupOutcomeCallable CloudWatchLogsClient::TagLogGroupCallable(const TagLo
   return task->get_future();
 }
 
-void CloudWatchLogsClient::TagLogGroupAsync(const TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientTagLogGroupAsyncHelper(CloudWatchLogsClient const * const clientThis, const TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagLogGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagLogGroup(request), context);
 }
 
-void CloudWatchLogsClient::TagLogGroupAsyncHelper(const TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::TagLogGroupAsync(const TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagLogGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientTagLogGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 TestMetricFilterOutcome CloudWatchLogsClient::TestMetricFilter(const TestMetricFilterRequest& request) const
@@ -1116,14 +1116,14 @@ TestMetricFilterOutcomeCallable CloudWatchLogsClient::TestMetricFilterCallable(c
   return task->get_future();
 }
 
-void CloudWatchLogsClient::TestMetricFilterAsync(const TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientTestMetricFilterAsyncHelper(CloudWatchLogsClient const * const clientThis, const TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestMetricFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestMetricFilter(request), context);
 }
 
-void CloudWatchLogsClient::TestMetricFilterAsyncHelper(const TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::TestMetricFilterAsync(const TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestMetricFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientTestMetricFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagLogGroupOutcome CloudWatchLogsClient::UntagLogGroup(const UntagLogGroupRequest& request) const
@@ -1140,13 +1140,13 @@ UntagLogGroupOutcomeCallable CloudWatchLogsClient::UntagLogGroupCallable(const U
   return task->get_future();
 }
 
-void CloudWatchLogsClient::UntagLogGroupAsync(const UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClientUntagLogGroupAsyncHelper(CloudWatchLogsClient const * const clientThis, const UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagLogGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagLogGroup(request), context);
 }
 
-void CloudWatchLogsClient::UntagLogGroupAsyncHelper(const UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchLogsClient::UntagLogGroupAsync(const UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagLogGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchLogsClientUntagLogGroupAsyncHelper( this, request, handler, context ); } );
 }
 

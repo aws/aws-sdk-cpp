@@ -127,14 +127,14 @@ BatchAcknowledgeAlarmOutcomeCallable IoTEventsDataClient::BatchAcknowledgeAlarmC
   return task->get_future();
 }
 
-void IoTEventsDataClient::BatchAcknowledgeAlarmAsync(const BatchAcknowledgeAlarmRequest& request, const BatchAcknowledgeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientBatchAcknowledgeAlarmAsyncHelper(IoTEventsDataClient const * const clientThis, const BatchAcknowledgeAlarmRequest& request, const BatchAcknowledgeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchAcknowledgeAlarmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchAcknowledgeAlarm(request), context);
 }
 
-void IoTEventsDataClient::BatchAcknowledgeAlarmAsyncHelper(const BatchAcknowledgeAlarmRequest& request, const BatchAcknowledgeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::BatchAcknowledgeAlarmAsync(const BatchAcknowledgeAlarmRequest& request, const BatchAcknowledgeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchAcknowledgeAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientBatchAcknowledgeAlarmAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDeleteDetectorOutcome IoTEventsDataClient::BatchDeleteDetector(const BatchDeleteDetectorRequest& request) const
@@ -152,14 +152,14 @@ BatchDeleteDetectorOutcomeCallable IoTEventsDataClient::BatchDeleteDetectorCalla
   return task->get_future();
 }
 
-void IoTEventsDataClient::BatchDeleteDetectorAsync(const BatchDeleteDetectorRequest& request, const BatchDeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientBatchDeleteDetectorAsyncHelper(IoTEventsDataClient const * const clientThis, const BatchDeleteDetectorRequest& request, const BatchDeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDeleteDetector(request), context);
 }
 
-void IoTEventsDataClient::BatchDeleteDetectorAsyncHelper(const BatchDeleteDetectorRequest& request, const BatchDeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::BatchDeleteDetectorAsync(const BatchDeleteDetectorRequest& request, const BatchDeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDeleteDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientBatchDeleteDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDisableAlarmOutcome IoTEventsDataClient::BatchDisableAlarm(const BatchDisableAlarmRequest& request) const
@@ -177,14 +177,14 @@ BatchDisableAlarmOutcomeCallable IoTEventsDataClient::BatchDisableAlarmCallable(
   return task->get_future();
 }
 
-void IoTEventsDataClient::BatchDisableAlarmAsync(const BatchDisableAlarmRequest& request, const BatchDisableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientBatchDisableAlarmAsyncHelper(IoTEventsDataClient const * const clientThis, const BatchDisableAlarmRequest& request, const BatchDisableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDisableAlarmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDisableAlarm(request), context);
 }
 
-void IoTEventsDataClient::BatchDisableAlarmAsyncHelper(const BatchDisableAlarmRequest& request, const BatchDisableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::BatchDisableAlarmAsync(const BatchDisableAlarmRequest& request, const BatchDisableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDisableAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientBatchDisableAlarmAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchEnableAlarmOutcome IoTEventsDataClient::BatchEnableAlarm(const BatchEnableAlarmRequest& request) const
@@ -202,14 +202,14 @@ BatchEnableAlarmOutcomeCallable IoTEventsDataClient::BatchEnableAlarmCallable(co
   return task->get_future();
 }
 
-void IoTEventsDataClient::BatchEnableAlarmAsync(const BatchEnableAlarmRequest& request, const BatchEnableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientBatchEnableAlarmAsyncHelper(IoTEventsDataClient const * const clientThis, const BatchEnableAlarmRequest& request, const BatchEnableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchEnableAlarmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchEnableAlarm(request), context);
 }
 
-void IoTEventsDataClient::BatchEnableAlarmAsyncHelper(const BatchEnableAlarmRequest& request, const BatchEnableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::BatchEnableAlarmAsync(const BatchEnableAlarmRequest& request, const BatchEnableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchEnableAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientBatchEnableAlarmAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchPutMessageOutcome IoTEventsDataClient::BatchPutMessage(const BatchPutMessageRequest& request) const
@@ -227,14 +227,14 @@ BatchPutMessageOutcomeCallable IoTEventsDataClient::BatchPutMessageCallable(cons
   return task->get_future();
 }
 
-void IoTEventsDataClient::BatchPutMessageAsync(const BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientBatchPutMessageAsyncHelper(IoTEventsDataClient const * const clientThis, const BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchPutMessageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchPutMessage(request), context);
 }
 
-void IoTEventsDataClient::BatchPutMessageAsyncHelper(const BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::BatchPutMessageAsync(const BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchPutMessage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientBatchPutMessageAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchResetAlarmOutcome IoTEventsDataClient::BatchResetAlarm(const BatchResetAlarmRequest& request) const
@@ -252,14 +252,14 @@ BatchResetAlarmOutcomeCallable IoTEventsDataClient::BatchResetAlarmCallable(cons
   return task->get_future();
 }
 
-void IoTEventsDataClient::BatchResetAlarmAsync(const BatchResetAlarmRequest& request, const BatchResetAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientBatchResetAlarmAsyncHelper(IoTEventsDataClient const * const clientThis, const BatchResetAlarmRequest& request, const BatchResetAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchResetAlarmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchResetAlarm(request), context);
 }
 
-void IoTEventsDataClient::BatchResetAlarmAsyncHelper(const BatchResetAlarmRequest& request, const BatchResetAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::BatchResetAlarmAsync(const BatchResetAlarmRequest& request, const BatchResetAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchResetAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientBatchResetAlarmAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchSnoozeAlarmOutcome IoTEventsDataClient::BatchSnoozeAlarm(const BatchSnoozeAlarmRequest& request) const
@@ -277,14 +277,14 @@ BatchSnoozeAlarmOutcomeCallable IoTEventsDataClient::BatchSnoozeAlarmCallable(co
   return task->get_future();
 }
 
-void IoTEventsDataClient::BatchSnoozeAlarmAsync(const BatchSnoozeAlarmRequest& request, const BatchSnoozeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientBatchSnoozeAlarmAsyncHelper(IoTEventsDataClient const * const clientThis, const BatchSnoozeAlarmRequest& request, const BatchSnoozeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchSnoozeAlarmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchSnoozeAlarm(request), context);
 }
 
-void IoTEventsDataClient::BatchSnoozeAlarmAsyncHelper(const BatchSnoozeAlarmRequest& request, const BatchSnoozeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::BatchSnoozeAlarmAsync(const BatchSnoozeAlarmRequest& request, const BatchSnoozeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchSnoozeAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientBatchSnoozeAlarmAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchUpdateDetectorOutcome IoTEventsDataClient::BatchUpdateDetector(const BatchUpdateDetectorRequest& request) const
@@ -302,14 +302,14 @@ BatchUpdateDetectorOutcomeCallable IoTEventsDataClient::BatchUpdateDetectorCalla
   return task->get_future();
 }
 
-void IoTEventsDataClient::BatchUpdateDetectorAsync(const BatchUpdateDetectorRequest& request, const BatchUpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientBatchUpdateDetectorAsyncHelper(IoTEventsDataClient const * const clientThis, const BatchUpdateDetectorRequest& request, const BatchUpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdateDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchUpdateDetector(request), context);
 }
 
-void IoTEventsDataClient::BatchUpdateDetectorAsyncHelper(const BatchUpdateDetectorRequest& request, const BatchUpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::BatchUpdateDetectorAsync(const BatchUpdateDetectorRequest& request, const BatchUpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchUpdateDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientBatchUpdateDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAlarmOutcome IoTEventsDataClient::DescribeAlarm(const DescribeAlarmRequest& request) const
@@ -334,14 +334,14 @@ DescribeAlarmOutcomeCallable IoTEventsDataClient::DescribeAlarmCallable(const De
   return task->get_future();
 }
 
-void IoTEventsDataClient::DescribeAlarmAsync(const DescribeAlarmRequest& request, const DescribeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientDescribeAlarmAsyncHelper(IoTEventsDataClient const * const clientThis, const DescribeAlarmRequest& request, const DescribeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAlarmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAlarm(request), context);
 }
 
-void IoTEventsDataClient::DescribeAlarmAsyncHelper(const DescribeAlarmRequest& request, const DescribeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::DescribeAlarmAsync(const DescribeAlarmRequest& request, const DescribeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientDescribeAlarmAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDetectorOutcome IoTEventsDataClient::DescribeDetector(const DescribeDetectorRequest& request) const
@@ -366,14 +366,14 @@ DescribeDetectorOutcomeCallable IoTEventsDataClient::DescribeDetectorCallable(co
   return task->get_future();
 }
 
-void IoTEventsDataClient::DescribeDetectorAsync(const DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientDescribeDetectorAsyncHelper(IoTEventsDataClient const * const clientThis, const DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDetector(request), context);
 }
 
-void IoTEventsDataClient::DescribeDetectorAsyncHelper(const DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::DescribeDetectorAsync(const DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientDescribeDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAlarmsOutcome IoTEventsDataClient::ListAlarms(const ListAlarmsRequest& request) const
@@ -397,14 +397,14 @@ ListAlarmsOutcomeCallable IoTEventsDataClient::ListAlarmsCallable(const ListAlar
   return task->get_future();
 }
 
-void IoTEventsDataClient::ListAlarmsAsync(const ListAlarmsRequest& request, const ListAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientListAlarmsAsyncHelper(IoTEventsDataClient const * const clientThis, const ListAlarmsRequest& request, const ListAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAlarmsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAlarms(request), context);
 }
 
-void IoTEventsDataClient::ListAlarmsAsyncHelper(const ListAlarmsRequest& request, const ListAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::ListAlarmsAsync(const ListAlarmsRequest& request, const ListAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAlarms(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientListAlarmsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDetectorsOutcome IoTEventsDataClient::ListDetectors(const ListDetectorsRequest& request) const
@@ -428,13 +428,13 @@ ListDetectorsOutcomeCallable IoTEventsDataClient::ListDetectorsCallable(const Li
   return task->get_future();
 }
 
-void IoTEventsDataClient::ListDetectorsAsync(const ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClientListDetectorsAsyncHelper(IoTEventsDataClient const * const clientThis, const ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDetectorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDetectors(request), context);
 }
 
-void IoTEventsDataClient::ListDetectorsAsyncHelper(const ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTEventsDataClient::ListDetectorsAsync(const ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDetectors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTEventsDataClientListDetectorsAsyncHelper( this, request, handler, context ); } );
 }
 

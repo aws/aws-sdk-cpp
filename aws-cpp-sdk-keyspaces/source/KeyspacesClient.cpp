@@ -127,14 +127,14 @@ CreateKeyspaceOutcomeCallable KeyspacesClient::CreateKeyspaceCallable(const Crea
   return task->get_future();
 }
 
-void KeyspacesClient::CreateKeyspaceAsync(const CreateKeyspaceRequest& request, const CreateKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientCreateKeyspaceAsyncHelper(KeyspacesClient const * const clientThis, const CreateKeyspaceRequest& request, const CreateKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateKeyspaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateKeyspace(request), context);
 }
 
-void KeyspacesClient::CreateKeyspaceAsyncHelper(const CreateKeyspaceRequest& request, const CreateKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::CreateKeyspaceAsync(const CreateKeyspaceRequest& request, const CreateKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateKeyspace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientCreateKeyspaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTableOutcome KeyspacesClient::CreateTable(const CreateTableRequest& request) const
@@ -151,14 +151,14 @@ CreateTableOutcomeCallable KeyspacesClient::CreateTableCallable(const CreateTabl
   return task->get_future();
 }
 
-void KeyspacesClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientCreateTableAsyncHelper(KeyspacesClient const * const clientThis, const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTable(request), context);
 }
 
-void KeyspacesClient::CreateTableAsyncHelper(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientCreateTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteKeyspaceOutcome KeyspacesClient::DeleteKeyspace(const DeleteKeyspaceRequest& request) const
@@ -175,14 +175,14 @@ DeleteKeyspaceOutcomeCallable KeyspacesClient::DeleteKeyspaceCallable(const Dele
   return task->get_future();
 }
 
-void KeyspacesClient::DeleteKeyspaceAsync(const DeleteKeyspaceRequest& request, const DeleteKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientDeleteKeyspaceAsyncHelper(KeyspacesClient const * const clientThis, const DeleteKeyspaceRequest& request, const DeleteKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteKeyspaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteKeyspace(request), context);
 }
 
-void KeyspacesClient::DeleteKeyspaceAsyncHelper(const DeleteKeyspaceRequest& request, const DeleteKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::DeleteKeyspaceAsync(const DeleteKeyspaceRequest& request, const DeleteKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteKeyspace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientDeleteKeyspaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTableOutcome KeyspacesClient::DeleteTable(const DeleteTableRequest& request) const
@@ -199,14 +199,14 @@ DeleteTableOutcomeCallable KeyspacesClient::DeleteTableCallable(const DeleteTabl
   return task->get_future();
 }
 
-void KeyspacesClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientDeleteTableAsyncHelper(KeyspacesClient const * const clientThis, const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTable(request), context);
 }
 
-void KeyspacesClient::DeleteTableAsyncHelper(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientDeleteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 GetKeyspaceOutcome KeyspacesClient::GetKeyspace(const GetKeyspaceRequest& request) const
@@ -223,14 +223,14 @@ GetKeyspaceOutcomeCallable KeyspacesClient::GetKeyspaceCallable(const GetKeyspac
   return task->get_future();
 }
 
-void KeyspacesClient::GetKeyspaceAsync(const GetKeyspaceRequest& request, const GetKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientGetKeyspaceAsyncHelper(KeyspacesClient const * const clientThis, const GetKeyspaceRequest& request, const GetKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetKeyspaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetKeyspace(request), context);
 }
 
-void KeyspacesClient::GetKeyspaceAsyncHelper(const GetKeyspaceRequest& request, const GetKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::GetKeyspaceAsync(const GetKeyspaceRequest& request, const GetKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetKeyspace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientGetKeyspaceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTableOutcome KeyspacesClient::GetTable(const GetTableRequest& request) const
@@ -247,14 +247,14 @@ GetTableOutcomeCallable KeyspacesClient::GetTableCallable(const GetTableRequest&
   return task->get_future();
 }
 
-void KeyspacesClient::GetTableAsync(const GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientGetTableAsyncHelper(KeyspacesClient const * const clientThis, const GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTable(request), context);
 }
 
-void KeyspacesClient::GetTableAsyncHelper(const GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::GetTableAsync(const GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientGetTableAsyncHelper( this, request, handler, context ); } );
 }
 
 ListKeyspacesOutcome KeyspacesClient::ListKeyspaces(const ListKeyspacesRequest& request) const
@@ -271,14 +271,14 @@ ListKeyspacesOutcomeCallable KeyspacesClient::ListKeyspacesCallable(const ListKe
   return task->get_future();
 }
 
-void KeyspacesClient::ListKeyspacesAsync(const ListKeyspacesRequest& request, const ListKeyspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientListKeyspacesAsyncHelper(KeyspacesClient const * const clientThis, const ListKeyspacesRequest& request, const ListKeyspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListKeyspacesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListKeyspaces(request), context);
 }
 
-void KeyspacesClient::ListKeyspacesAsyncHelper(const ListKeyspacesRequest& request, const ListKeyspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::ListKeyspacesAsync(const ListKeyspacesRequest& request, const ListKeyspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListKeyspaces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientListKeyspacesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTablesOutcome KeyspacesClient::ListTables(const ListTablesRequest& request) const
@@ -295,14 +295,14 @@ ListTablesOutcomeCallable KeyspacesClient::ListTablesCallable(const ListTablesRe
   return task->get_future();
 }
 
-void KeyspacesClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientListTablesAsyncHelper(KeyspacesClient const * const clientThis, const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTables(request), context);
 }
 
-void KeyspacesClient::ListTablesAsyncHelper(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientListTablesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome KeyspacesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -319,14 +319,14 @@ ListTagsForResourceOutcomeCallable KeyspacesClient::ListTagsForResourceCallable(
   return task->get_future();
 }
 
-void KeyspacesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientListTagsForResourceAsyncHelper(KeyspacesClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void KeyspacesClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreTableOutcome KeyspacesClient::RestoreTable(const RestoreTableRequest& request) const
@@ -343,14 +343,14 @@ RestoreTableOutcomeCallable KeyspacesClient::RestoreTableCallable(const RestoreT
   return task->get_future();
 }
 
-void KeyspacesClient::RestoreTableAsync(const RestoreTableRequest& request, const RestoreTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientRestoreTableAsyncHelper(KeyspacesClient const * const clientThis, const RestoreTableRequest& request, const RestoreTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreTable(request), context);
 }
 
-void KeyspacesClient::RestoreTableAsyncHelper(const RestoreTableRequest& request, const RestoreTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::RestoreTableAsync(const RestoreTableRequest& request, const RestoreTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientRestoreTableAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome KeyspacesClient::TagResource(const TagResourceRequest& request) const
@@ -367,14 +367,14 @@ TagResourceOutcomeCallable KeyspacesClient::TagResourceCallable(const TagResourc
   return task->get_future();
 }
 
-void KeyspacesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientTagResourceAsyncHelper(KeyspacesClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void KeyspacesClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome KeyspacesClient::UntagResource(const UntagResourceRequest& request) const
@@ -391,14 +391,14 @@ UntagResourceOutcomeCallable KeyspacesClient::UntagResourceCallable(const UntagR
   return task->get_future();
 }
 
-void KeyspacesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientUntagResourceAsyncHelper(KeyspacesClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void KeyspacesClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTableOutcome KeyspacesClient::UpdateTable(const UpdateTableRequest& request) const
@@ -415,13 +415,13 @@ UpdateTableOutcomeCallable KeyspacesClient::UpdateTableCallable(const UpdateTabl
   return task->get_future();
 }
 
-void KeyspacesClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClientUpdateTableAsyncHelper(KeyspacesClient const * const clientThis, const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTable(request), context);
 }
 
-void KeyspacesClient::UpdateTableAsyncHelper(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KeyspacesClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KeyspacesClientUpdateTableAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -179,14 +179,14 @@ AssociateApplicationFleetOutcomeCallable AppStreamClient::AssociateApplicationFl
   return task->get_future();
 }
 
-void AppStreamClient::AssociateApplicationFleetAsync(const AssociateApplicationFleetRequest& request, const AssociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientAssociateApplicationFleetAsyncHelper(AppStreamClient const * const clientThis, const AssociateApplicationFleetRequest& request, const AssociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateApplicationFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateApplicationFleet(request), context);
 }
 
-void AppStreamClient::AssociateApplicationFleetAsyncHelper(const AssociateApplicationFleetRequest& request, const AssociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::AssociateApplicationFleetAsync(const AssociateApplicationFleetRequest& request, const AssociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateApplicationFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientAssociateApplicationFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateApplicationToEntitlementOutcome AppStreamClient::AssociateApplicationToEntitlement(const AssociateApplicationToEntitlementRequest& request) const
@@ -203,14 +203,14 @@ AssociateApplicationToEntitlementOutcomeCallable AppStreamClient::AssociateAppli
   return task->get_future();
 }
 
-void AppStreamClient::AssociateApplicationToEntitlementAsync(const AssociateApplicationToEntitlementRequest& request, const AssociateApplicationToEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientAssociateApplicationToEntitlementAsyncHelper(AppStreamClient const * const clientThis, const AssociateApplicationToEntitlementRequest& request, const AssociateApplicationToEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateApplicationToEntitlementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateApplicationToEntitlement(request), context);
 }
 
-void AppStreamClient::AssociateApplicationToEntitlementAsyncHelper(const AssociateApplicationToEntitlementRequest& request, const AssociateApplicationToEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::AssociateApplicationToEntitlementAsync(const AssociateApplicationToEntitlementRequest& request, const AssociateApplicationToEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateApplicationToEntitlement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientAssociateApplicationToEntitlementAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateFleetOutcome AppStreamClient::AssociateFleet(const AssociateFleetRequest& request) const
@@ -227,14 +227,14 @@ AssociateFleetOutcomeCallable AppStreamClient::AssociateFleetCallable(const Asso
   return task->get_future();
 }
 
-void AppStreamClient::AssociateFleetAsync(const AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientAssociateFleetAsyncHelper(AppStreamClient const * const clientThis, const AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateFleet(request), context);
 }
 
-void AppStreamClient::AssociateFleetAsyncHelper(const AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::AssociateFleetAsync(const AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientAssociateFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchAssociateUserStackOutcome AppStreamClient::BatchAssociateUserStack(const BatchAssociateUserStackRequest& request) const
@@ -251,14 +251,14 @@ BatchAssociateUserStackOutcomeCallable AppStreamClient::BatchAssociateUserStackC
   return task->get_future();
 }
 
-void AppStreamClient::BatchAssociateUserStackAsync(const BatchAssociateUserStackRequest& request, const BatchAssociateUserStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientBatchAssociateUserStackAsyncHelper(AppStreamClient const * const clientThis, const BatchAssociateUserStackRequest& request, const BatchAssociateUserStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateUserStackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchAssociateUserStack(request), context);
 }
 
-void AppStreamClient::BatchAssociateUserStackAsyncHelper(const BatchAssociateUserStackRequest& request, const BatchAssociateUserStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::BatchAssociateUserStackAsync(const BatchAssociateUserStackRequest& request, const BatchAssociateUserStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchAssociateUserStack(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientBatchAssociateUserStackAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDisassociateUserStackOutcome AppStreamClient::BatchDisassociateUserStack(const BatchDisassociateUserStackRequest& request) const
@@ -275,14 +275,14 @@ BatchDisassociateUserStackOutcomeCallable AppStreamClient::BatchDisassociateUser
   return task->get_future();
 }
 
-void AppStreamClient::BatchDisassociateUserStackAsync(const BatchDisassociateUserStackRequest& request, const BatchDisassociateUserStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientBatchDisassociateUserStackAsyncHelper(AppStreamClient const * const clientThis, const BatchDisassociateUserStackRequest& request, const BatchDisassociateUserStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateUserStackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDisassociateUserStack(request), context);
 }
 
-void AppStreamClient::BatchDisassociateUserStackAsyncHelper(const BatchDisassociateUserStackRequest& request, const BatchDisassociateUserStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::BatchDisassociateUserStackAsync(const BatchDisassociateUserStackRequest& request, const BatchDisassociateUserStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDisassociateUserStack(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientBatchDisassociateUserStackAsyncHelper( this, request, handler, context ); } );
 }
 
 CopyImageOutcome AppStreamClient::CopyImage(const CopyImageRequest& request) const
@@ -299,14 +299,14 @@ CopyImageOutcomeCallable AppStreamClient::CopyImageCallable(const CopyImageReque
   return task->get_future();
 }
 
-void AppStreamClient::CopyImageAsync(const CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCopyImageAsyncHelper(AppStreamClient const * const clientThis, const CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopyImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CopyImage(request), context);
 }
 
-void AppStreamClient::CopyImageAsyncHelper(const CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CopyImageAsync(const CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CopyImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCopyImageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAppBlockOutcome AppStreamClient::CreateAppBlock(const CreateAppBlockRequest& request) const
@@ -323,14 +323,14 @@ CreateAppBlockOutcomeCallable AppStreamClient::CreateAppBlockCallable(const Crea
   return task->get_future();
 }
 
-void AppStreamClient::CreateAppBlockAsync(const CreateAppBlockRequest& request, const CreateAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateAppBlockAsyncHelper(AppStreamClient const * const clientThis, const CreateAppBlockRequest& request, const CreateAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppBlockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAppBlock(request), context);
 }
 
-void AppStreamClient::CreateAppBlockAsyncHelper(const CreateAppBlockRequest& request, const CreateAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateAppBlockAsync(const CreateAppBlockRequest& request, const CreateAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAppBlock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateAppBlockAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateApplicationOutcome AppStreamClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -347,14 +347,14 @@ CreateApplicationOutcomeCallable AppStreamClient::CreateApplicationCallable(cons
   return task->get_future();
 }
 
-void AppStreamClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateApplicationAsyncHelper(AppStreamClient const * const clientThis, const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplication(request), context);
 }
 
-void AppStreamClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDirectoryConfigOutcome AppStreamClient::CreateDirectoryConfig(const CreateDirectoryConfigRequest& request) const
@@ -371,14 +371,14 @@ CreateDirectoryConfigOutcomeCallable AppStreamClient::CreateDirectoryConfigCalla
   return task->get_future();
 }
 
-void AppStreamClient::CreateDirectoryConfigAsync(const CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateDirectoryConfigAsyncHelper(AppStreamClient const * const clientThis, const CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDirectoryConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDirectoryConfig(request), context);
 }
 
-void AppStreamClient::CreateDirectoryConfigAsyncHelper(const CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateDirectoryConfigAsync(const CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDirectoryConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateDirectoryConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEntitlementOutcome AppStreamClient::CreateEntitlement(const CreateEntitlementRequest& request) const
@@ -395,14 +395,14 @@ CreateEntitlementOutcomeCallable AppStreamClient::CreateEntitlementCallable(cons
   return task->get_future();
 }
 
-void AppStreamClient::CreateEntitlementAsync(const CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateEntitlementAsyncHelper(AppStreamClient const * const clientThis, const CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEntitlementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEntitlement(request), context);
 }
 
-void AppStreamClient::CreateEntitlementAsyncHelper(const CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateEntitlementAsync(const CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEntitlement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateEntitlementAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFleetOutcome AppStreamClient::CreateFleet(const CreateFleetRequest& request) const
@@ -419,14 +419,14 @@ CreateFleetOutcomeCallable AppStreamClient::CreateFleetCallable(const CreateFlee
   return task->get_future();
 }
 
-void AppStreamClient::CreateFleetAsync(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateFleetAsyncHelper(AppStreamClient const * const clientThis, const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFleet(request), context);
 }
 
-void AppStreamClient::CreateFleetAsyncHelper(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateFleetAsync(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateImageBuilderOutcome AppStreamClient::CreateImageBuilder(const CreateImageBuilderRequest& request) const
@@ -443,14 +443,14 @@ CreateImageBuilderOutcomeCallable AppStreamClient::CreateImageBuilderCallable(co
   return task->get_future();
 }
 
-void AppStreamClient::CreateImageBuilderAsync(const CreateImageBuilderRequest& request, const CreateImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateImageBuilderAsyncHelper(AppStreamClient const * const clientThis, const CreateImageBuilderRequest& request, const CreateImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateImageBuilderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateImageBuilder(request), context);
 }
 
-void AppStreamClient::CreateImageBuilderAsyncHelper(const CreateImageBuilderRequest& request, const CreateImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateImageBuilderAsync(const CreateImageBuilderRequest& request, const CreateImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateImageBuilder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateImageBuilderAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateImageBuilderStreamingURLOutcome AppStreamClient::CreateImageBuilderStreamingURL(const CreateImageBuilderStreamingURLRequest& request) const
@@ -467,14 +467,14 @@ CreateImageBuilderStreamingURLOutcomeCallable AppStreamClient::CreateImageBuilde
   return task->get_future();
 }
 
-void AppStreamClient::CreateImageBuilderStreamingURLAsync(const CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateImageBuilderStreamingURLAsyncHelper(AppStreamClient const * const clientThis, const CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateImageBuilderStreamingURLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateImageBuilderStreamingURL(request), context);
 }
 
-void AppStreamClient::CreateImageBuilderStreamingURLAsyncHelper(const CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateImageBuilderStreamingURLAsync(const CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateImageBuilderStreamingURL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateImageBuilderStreamingURLAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStackOutcome AppStreamClient::CreateStack(const CreateStackRequest& request) const
@@ -491,14 +491,14 @@ CreateStackOutcomeCallable AppStreamClient::CreateStackCallable(const CreateStac
   return task->get_future();
 }
 
-void AppStreamClient::CreateStackAsync(const CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateStackAsyncHelper(AppStreamClient const * const clientThis, const CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStack(request), context);
 }
 
-void AppStreamClient::CreateStackAsyncHelper(const CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateStackAsync(const CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStack(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateStackAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStreamingURLOutcome AppStreamClient::CreateStreamingURL(const CreateStreamingURLRequest& request) const
@@ -515,14 +515,14 @@ CreateStreamingURLOutcomeCallable AppStreamClient::CreateStreamingURLCallable(co
   return task->get_future();
 }
 
-void AppStreamClient::CreateStreamingURLAsync(const CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateStreamingURLAsyncHelper(AppStreamClient const * const clientThis, const CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamingURLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStreamingURL(request), context);
 }
 
-void AppStreamClient::CreateStreamingURLAsyncHelper(const CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateStreamingURLAsync(const CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStreamingURL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateStreamingURLAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUpdatedImageOutcome AppStreamClient::CreateUpdatedImage(const CreateUpdatedImageRequest& request) const
@@ -539,14 +539,14 @@ CreateUpdatedImageOutcomeCallable AppStreamClient::CreateUpdatedImageCallable(co
   return task->get_future();
 }
 
-void AppStreamClient::CreateUpdatedImageAsync(const CreateUpdatedImageRequest& request, const CreateUpdatedImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateUpdatedImageAsyncHelper(AppStreamClient const * const clientThis, const CreateUpdatedImageRequest& request, const CreateUpdatedImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUpdatedImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUpdatedImage(request), context);
 }
 
-void AppStreamClient::CreateUpdatedImageAsyncHelper(const CreateUpdatedImageRequest& request, const CreateUpdatedImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateUpdatedImageAsync(const CreateUpdatedImageRequest& request, const CreateUpdatedImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUpdatedImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateUpdatedImageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUsageReportSubscriptionOutcome AppStreamClient::CreateUsageReportSubscription(const CreateUsageReportSubscriptionRequest& request) const
@@ -563,14 +563,14 @@ CreateUsageReportSubscriptionOutcomeCallable AppStreamClient::CreateUsageReportS
   return task->get_future();
 }
 
-void AppStreamClient::CreateUsageReportSubscriptionAsync(const CreateUsageReportSubscriptionRequest& request, const CreateUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateUsageReportSubscriptionAsyncHelper(AppStreamClient const * const clientThis, const CreateUsageReportSubscriptionRequest& request, const CreateUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUsageReportSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUsageReportSubscription(request), context);
 }
 
-void AppStreamClient::CreateUsageReportSubscriptionAsyncHelper(const CreateUsageReportSubscriptionRequest& request, const CreateUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateUsageReportSubscriptionAsync(const CreateUsageReportSubscriptionRequest& request, const CreateUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUsageReportSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateUsageReportSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserOutcome AppStreamClient::CreateUser(const CreateUserRequest& request) const
@@ -587,14 +587,14 @@ CreateUserOutcomeCallable AppStreamClient::CreateUserCallable(const CreateUserRe
   return task->get_future();
 }
 
-void AppStreamClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientCreateUserAsyncHelper(AppStreamClient const * const clientThis, const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUser(request), context);
 }
 
-void AppStreamClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientCreateUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAppBlockOutcome AppStreamClient::DeleteAppBlock(const DeleteAppBlockRequest& request) const
@@ -611,14 +611,14 @@ DeleteAppBlockOutcomeCallable AppStreamClient::DeleteAppBlockCallable(const Dele
   return task->get_future();
 }
 
-void AppStreamClient::DeleteAppBlockAsync(const DeleteAppBlockRequest& request, const DeleteAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteAppBlockAsyncHelper(AppStreamClient const * const clientThis, const DeleteAppBlockRequest& request, const DeleteAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppBlockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAppBlock(request), context);
 }
 
-void AppStreamClient::DeleteAppBlockAsyncHelper(const DeleteAppBlockRequest& request, const DeleteAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteAppBlockAsync(const DeleteAppBlockRequest& request, const DeleteAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAppBlock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteAppBlockAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationOutcome AppStreamClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -635,14 +635,14 @@ DeleteApplicationOutcomeCallable AppStreamClient::DeleteApplicationCallable(cons
   return task->get_future();
 }
 
-void AppStreamClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteApplicationAsyncHelper(AppStreamClient const * const clientThis, const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplication(request), context);
 }
 
-void AppStreamClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDirectoryConfigOutcome AppStreamClient::DeleteDirectoryConfig(const DeleteDirectoryConfigRequest& request) const
@@ -659,14 +659,14 @@ DeleteDirectoryConfigOutcomeCallable AppStreamClient::DeleteDirectoryConfigCalla
   return task->get_future();
 }
 
-void AppStreamClient::DeleteDirectoryConfigAsync(const DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteDirectoryConfigAsyncHelper(AppStreamClient const * const clientThis, const DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDirectoryConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDirectoryConfig(request), context);
 }
 
-void AppStreamClient::DeleteDirectoryConfigAsyncHelper(const DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteDirectoryConfigAsync(const DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDirectoryConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteDirectoryConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEntitlementOutcome AppStreamClient::DeleteEntitlement(const DeleteEntitlementRequest& request) const
@@ -683,14 +683,14 @@ DeleteEntitlementOutcomeCallable AppStreamClient::DeleteEntitlementCallable(cons
   return task->get_future();
 }
 
-void AppStreamClient::DeleteEntitlementAsync(const DeleteEntitlementRequest& request, const DeleteEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteEntitlementAsyncHelper(AppStreamClient const * const clientThis, const DeleteEntitlementRequest& request, const DeleteEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEntitlementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEntitlement(request), context);
 }
 
-void AppStreamClient::DeleteEntitlementAsyncHelper(const DeleteEntitlementRequest& request, const DeleteEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteEntitlementAsync(const DeleteEntitlementRequest& request, const DeleteEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEntitlement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteEntitlementAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFleetOutcome AppStreamClient::DeleteFleet(const DeleteFleetRequest& request) const
@@ -707,14 +707,14 @@ DeleteFleetOutcomeCallable AppStreamClient::DeleteFleetCallable(const DeleteFlee
   return task->get_future();
 }
 
-void AppStreamClient::DeleteFleetAsync(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteFleetAsyncHelper(AppStreamClient const * const clientThis, const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFleet(request), context);
 }
 
-void AppStreamClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteFleetAsync(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteImageOutcome AppStreamClient::DeleteImage(const DeleteImageRequest& request) const
@@ -731,14 +731,14 @@ DeleteImageOutcomeCallable AppStreamClient::DeleteImageCallable(const DeleteImag
   return task->get_future();
 }
 
-void AppStreamClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteImageAsyncHelper(AppStreamClient const * const clientThis, const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteImage(request), context);
 }
 
-void AppStreamClient::DeleteImageAsyncHelper(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteImageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteImageBuilderOutcome AppStreamClient::DeleteImageBuilder(const DeleteImageBuilderRequest& request) const
@@ -755,14 +755,14 @@ DeleteImageBuilderOutcomeCallable AppStreamClient::DeleteImageBuilderCallable(co
   return task->get_future();
 }
 
-void AppStreamClient::DeleteImageBuilderAsync(const DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteImageBuilderAsyncHelper(AppStreamClient const * const clientThis, const DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteImageBuilderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteImageBuilder(request), context);
 }
 
-void AppStreamClient::DeleteImageBuilderAsyncHelper(const DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteImageBuilderAsync(const DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteImageBuilder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteImageBuilderAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteImagePermissionsOutcome AppStreamClient::DeleteImagePermissions(const DeleteImagePermissionsRequest& request) const
@@ -779,14 +779,14 @@ DeleteImagePermissionsOutcomeCallable AppStreamClient::DeleteImagePermissionsCal
   return task->get_future();
 }
 
-void AppStreamClient::DeleteImagePermissionsAsync(const DeleteImagePermissionsRequest& request, const DeleteImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteImagePermissionsAsyncHelper(AppStreamClient const * const clientThis, const DeleteImagePermissionsRequest& request, const DeleteImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteImagePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteImagePermissions(request), context);
 }
 
-void AppStreamClient::DeleteImagePermissionsAsyncHelper(const DeleteImagePermissionsRequest& request, const DeleteImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteImagePermissionsAsync(const DeleteImagePermissionsRequest& request, const DeleteImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteImagePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteImagePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteStackOutcome AppStreamClient::DeleteStack(const DeleteStackRequest& request) const
@@ -803,14 +803,14 @@ DeleteStackOutcomeCallable AppStreamClient::DeleteStackCallable(const DeleteStac
   return task->get_future();
 }
 
-void AppStreamClient::DeleteStackAsync(const DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteStackAsyncHelper(AppStreamClient const * const clientThis, const DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteStack(request), context);
 }
 
-void AppStreamClient::DeleteStackAsyncHelper(const DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteStackAsync(const DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteStack(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteStackAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUsageReportSubscriptionOutcome AppStreamClient::DeleteUsageReportSubscription(const DeleteUsageReportSubscriptionRequest& request) const
@@ -827,14 +827,14 @@ DeleteUsageReportSubscriptionOutcomeCallable AppStreamClient::DeleteUsageReportS
   return task->get_future();
 }
 
-void AppStreamClient::DeleteUsageReportSubscriptionAsync(const DeleteUsageReportSubscriptionRequest& request, const DeleteUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteUsageReportSubscriptionAsyncHelper(AppStreamClient const * const clientThis, const DeleteUsageReportSubscriptionRequest& request, const DeleteUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUsageReportSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUsageReportSubscription(request), context);
 }
 
-void AppStreamClient::DeleteUsageReportSubscriptionAsyncHelper(const DeleteUsageReportSubscriptionRequest& request, const DeleteUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteUsageReportSubscriptionAsync(const DeleteUsageReportSubscriptionRequest& request, const DeleteUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUsageReportSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteUsageReportSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserOutcome AppStreamClient::DeleteUser(const DeleteUserRequest& request) const
@@ -851,14 +851,14 @@ DeleteUserOutcomeCallable AppStreamClient::DeleteUserCallable(const DeleteUserRe
   return task->get_future();
 }
 
-void AppStreamClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDeleteUserAsyncHelper(AppStreamClient const * const clientThis, const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUser(request), context);
 }
 
-void AppStreamClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDeleteUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAppBlocksOutcome AppStreamClient::DescribeAppBlocks(const DescribeAppBlocksRequest& request) const
@@ -875,14 +875,14 @@ DescribeAppBlocksOutcomeCallable AppStreamClient::DescribeAppBlocksCallable(cons
   return task->get_future();
 }
 
-void AppStreamClient::DescribeAppBlocksAsync(const DescribeAppBlocksRequest& request, const DescribeAppBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeAppBlocksAsyncHelper(AppStreamClient const * const clientThis, const DescribeAppBlocksRequest& request, const DescribeAppBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppBlocksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAppBlocks(request), context);
 }
 
-void AppStreamClient::DescribeAppBlocksAsyncHelper(const DescribeAppBlocksRequest& request, const DescribeAppBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeAppBlocksAsync(const DescribeAppBlocksRequest& request, const DescribeAppBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAppBlocks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeAppBlocksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeApplicationFleetAssociationsOutcome AppStreamClient::DescribeApplicationFleetAssociations(const DescribeApplicationFleetAssociationsRequest& request) const
@@ -899,14 +899,14 @@ DescribeApplicationFleetAssociationsOutcomeCallable AppStreamClient::DescribeApp
   return task->get_future();
 }
 
-void AppStreamClient::DescribeApplicationFleetAssociationsAsync(const DescribeApplicationFleetAssociationsRequest& request, const DescribeApplicationFleetAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeApplicationFleetAssociationsAsyncHelper(AppStreamClient const * const clientThis, const DescribeApplicationFleetAssociationsRequest& request, const DescribeApplicationFleetAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationFleetAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApplicationFleetAssociations(request), context);
 }
 
-void AppStreamClient::DescribeApplicationFleetAssociationsAsyncHelper(const DescribeApplicationFleetAssociationsRequest& request, const DescribeApplicationFleetAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeApplicationFleetAssociationsAsync(const DescribeApplicationFleetAssociationsRequest& request, const DescribeApplicationFleetAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApplicationFleetAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeApplicationFleetAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeApplicationsOutcome AppStreamClient::DescribeApplications(const DescribeApplicationsRequest& request) const
@@ -923,14 +923,14 @@ DescribeApplicationsOutcomeCallable AppStreamClient::DescribeApplicationsCallabl
   return task->get_future();
 }
 
-void AppStreamClient::DescribeApplicationsAsync(const DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeApplicationsAsyncHelper(AppStreamClient const * const clientThis, const DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApplications(request), context);
 }
 
-void AppStreamClient::DescribeApplicationsAsyncHelper(const DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeApplicationsAsync(const DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDirectoryConfigsOutcome AppStreamClient::DescribeDirectoryConfigs(const DescribeDirectoryConfigsRequest& request) const
@@ -947,14 +947,14 @@ DescribeDirectoryConfigsOutcomeCallable AppStreamClient::DescribeDirectoryConfig
   return task->get_future();
 }
 
-void AppStreamClient::DescribeDirectoryConfigsAsync(const DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeDirectoryConfigsAsyncHelper(AppStreamClient const * const clientThis, const DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDirectoryConfigsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDirectoryConfigs(request), context);
 }
 
-void AppStreamClient::DescribeDirectoryConfigsAsyncHelper(const DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeDirectoryConfigsAsync(const DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDirectoryConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeDirectoryConfigsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEntitlementsOutcome AppStreamClient::DescribeEntitlements(const DescribeEntitlementsRequest& request) const
@@ -971,14 +971,14 @@ DescribeEntitlementsOutcomeCallable AppStreamClient::DescribeEntitlementsCallabl
   return task->get_future();
 }
 
-void AppStreamClient::DescribeEntitlementsAsync(const DescribeEntitlementsRequest& request, const DescribeEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeEntitlementsAsyncHelper(AppStreamClient const * const clientThis, const DescribeEntitlementsRequest& request, const DescribeEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEntitlementsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEntitlements(request), context);
 }
 
-void AppStreamClient::DescribeEntitlementsAsyncHelper(const DescribeEntitlementsRequest& request, const DescribeEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeEntitlementsAsync(const DescribeEntitlementsRequest& request, const DescribeEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEntitlements(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeEntitlementsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetsOutcome AppStreamClient::DescribeFleets(const DescribeFleetsRequest& request) const
@@ -995,14 +995,14 @@ DescribeFleetsOutcomeCallable AppStreamClient::DescribeFleetsCallable(const Desc
   return task->get_future();
 }
 
-void AppStreamClient::DescribeFleetsAsync(const DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeFleetsAsyncHelper(AppStreamClient const * const clientThis, const DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleets(request), context);
 }
 
-void AppStreamClient::DescribeFleetsAsyncHelper(const DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeFleetsAsync(const DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeFleetsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImageBuildersOutcome AppStreamClient::DescribeImageBuilders(const DescribeImageBuildersRequest& request) const
@@ -1019,14 +1019,14 @@ DescribeImageBuildersOutcomeCallable AppStreamClient::DescribeImageBuildersCalla
   return task->get_future();
 }
 
-void AppStreamClient::DescribeImageBuildersAsync(const DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeImageBuildersAsyncHelper(AppStreamClient const * const clientThis, const DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImageBuildersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImageBuilders(request), context);
 }
 
-void AppStreamClient::DescribeImageBuildersAsyncHelper(const DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeImageBuildersAsync(const DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImageBuilders(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeImageBuildersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImagePermissionsOutcome AppStreamClient::DescribeImagePermissions(const DescribeImagePermissionsRequest& request) const
@@ -1043,14 +1043,14 @@ DescribeImagePermissionsOutcomeCallable AppStreamClient::DescribeImagePermission
   return task->get_future();
 }
 
-void AppStreamClient::DescribeImagePermissionsAsync(const DescribeImagePermissionsRequest& request, const DescribeImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeImagePermissionsAsyncHelper(AppStreamClient const * const clientThis, const DescribeImagePermissionsRequest& request, const DescribeImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImagePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImagePermissions(request), context);
 }
 
-void AppStreamClient::DescribeImagePermissionsAsyncHelper(const DescribeImagePermissionsRequest& request, const DescribeImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeImagePermissionsAsync(const DescribeImagePermissionsRequest& request, const DescribeImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImagePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeImagePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImagesOutcome AppStreamClient::DescribeImages(const DescribeImagesRequest& request) const
@@ -1067,14 +1067,14 @@ DescribeImagesOutcomeCallable AppStreamClient::DescribeImagesCallable(const Desc
   return task->get_future();
 }
 
-void AppStreamClient::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeImagesAsyncHelper(AppStreamClient const * const clientThis, const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImages(request), context);
 }
 
-void AppStreamClient::DescribeImagesAsyncHelper(const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeImagesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSessionsOutcome AppStreamClient::DescribeSessions(const DescribeSessionsRequest& request) const
@@ -1091,14 +1091,14 @@ DescribeSessionsOutcomeCallable AppStreamClient::DescribeSessionsCallable(const 
   return task->get_future();
 }
 
-void AppStreamClient::DescribeSessionsAsync(const DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeSessionsAsyncHelper(AppStreamClient const * const clientThis, const DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSessions(request), context);
 }
 
-void AppStreamClient::DescribeSessionsAsyncHelper(const DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeSessionsAsync(const DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStacksOutcome AppStreamClient::DescribeStacks(const DescribeStacksRequest& request) const
@@ -1115,14 +1115,14 @@ DescribeStacksOutcomeCallable AppStreamClient::DescribeStacksCallable(const Desc
   return task->get_future();
 }
 
-void AppStreamClient::DescribeStacksAsync(const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeStacksAsyncHelper(AppStreamClient const * const clientThis, const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStacksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStacks(request), context);
 }
 
-void AppStreamClient::DescribeStacksAsyncHelper(const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeStacksAsync(const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStacks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeStacksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUsageReportSubscriptionsOutcome AppStreamClient::DescribeUsageReportSubscriptions(const DescribeUsageReportSubscriptionsRequest& request) const
@@ -1139,14 +1139,14 @@ DescribeUsageReportSubscriptionsOutcomeCallable AppStreamClient::DescribeUsageRe
   return task->get_future();
 }
 
-void AppStreamClient::DescribeUsageReportSubscriptionsAsync(const DescribeUsageReportSubscriptionsRequest& request, const DescribeUsageReportSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeUsageReportSubscriptionsAsyncHelper(AppStreamClient const * const clientThis, const DescribeUsageReportSubscriptionsRequest& request, const DescribeUsageReportSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUsageReportSubscriptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUsageReportSubscriptions(request), context);
 }
 
-void AppStreamClient::DescribeUsageReportSubscriptionsAsyncHelper(const DescribeUsageReportSubscriptionsRequest& request, const DescribeUsageReportSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeUsageReportSubscriptionsAsync(const DescribeUsageReportSubscriptionsRequest& request, const DescribeUsageReportSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUsageReportSubscriptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeUsageReportSubscriptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUserStackAssociationsOutcome AppStreamClient::DescribeUserStackAssociations(const DescribeUserStackAssociationsRequest& request) const
@@ -1163,14 +1163,14 @@ DescribeUserStackAssociationsOutcomeCallable AppStreamClient::DescribeUserStackA
   return task->get_future();
 }
 
-void AppStreamClient::DescribeUserStackAssociationsAsync(const DescribeUserStackAssociationsRequest& request, const DescribeUserStackAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeUserStackAssociationsAsyncHelper(AppStreamClient const * const clientThis, const DescribeUserStackAssociationsRequest& request, const DescribeUserStackAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserStackAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUserStackAssociations(request), context);
 }
 
-void AppStreamClient::DescribeUserStackAssociationsAsyncHelper(const DescribeUserStackAssociationsRequest& request, const DescribeUserStackAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeUserStackAssociationsAsync(const DescribeUserStackAssociationsRequest& request, const DescribeUserStackAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUserStackAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeUserStackAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUsersOutcome AppStreamClient::DescribeUsers(const DescribeUsersRequest& request) const
@@ -1187,14 +1187,14 @@ DescribeUsersOutcomeCallable AppStreamClient::DescribeUsersCallable(const Descri
   return task->get_future();
 }
 
-void AppStreamClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDescribeUsersAsyncHelper(AppStreamClient const * const clientThis, const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUsers(request), context);
 }
 
-void AppStreamClient::DescribeUsersAsyncHelper(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDescribeUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableUserOutcome AppStreamClient::DisableUser(const DisableUserRequest& request) const
@@ -1211,14 +1211,14 @@ DisableUserOutcomeCallable AppStreamClient::DisableUserCallable(const DisableUse
   return task->get_future();
 }
 
-void AppStreamClient::DisableUserAsync(const DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDisableUserAsyncHelper(AppStreamClient const * const clientThis, const DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableUser(request), context);
 }
 
-void AppStreamClient::DisableUserAsyncHelper(const DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DisableUserAsync(const DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDisableUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateApplicationFleetOutcome AppStreamClient::DisassociateApplicationFleet(const DisassociateApplicationFleetRequest& request) const
@@ -1235,14 +1235,14 @@ DisassociateApplicationFleetOutcomeCallable AppStreamClient::DisassociateApplica
   return task->get_future();
 }
 
-void AppStreamClient::DisassociateApplicationFleetAsync(const DisassociateApplicationFleetRequest& request, const DisassociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDisassociateApplicationFleetAsyncHelper(AppStreamClient const * const clientThis, const DisassociateApplicationFleetRequest& request, const DisassociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApplicationFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateApplicationFleet(request), context);
 }
 
-void AppStreamClient::DisassociateApplicationFleetAsyncHelper(const DisassociateApplicationFleetRequest& request, const DisassociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DisassociateApplicationFleetAsync(const DisassociateApplicationFleetRequest& request, const DisassociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateApplicationFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDisassociateApplicationFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateApplicationFromEntitlementOutcome AppStreamClient::DisassociateApplicationFromEntitlement(const DisassociateApplicationFromEntitlementRequest& request) const
@@ -1259,14 +1259,14 @@ DisassociateApplicationFromEntitlementOutcomeCallable AppStreamClient::Disassoci
   return task->get_future();
 }
 
-void AppStreamClient::DisassociateApplicationFromEntitlementAsync(const DisassociateApplicationFromEntitlementRequest& request, const DisassociateApplicationFromEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDisassociateApplicationFromEntitlementAsyncHelper(AppStreamClient const * const clientThis, const DisassociateApplicationFromEntitlementRequest& request, const DisassociateApplicationFromEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApplicationFromEntitlementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateApplicationFromEntitlement(request), context);
 }
 
-void AppStreamClient::DisassociateApplicationFromEntitlementAsyncHelper(const DisassociateApplicationFromEntitlementRequest& request, const DisassociateApplicationFromEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DisassociateApplicationFromEntitlementAsync(const DisassociateApplicationFromEntitlementRequest& request, const DisassociateApplicationFromEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateApplicationFromEntitlement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDisassociateApplicationFromEntitlementAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateFleetOutcome AppStreamClient::DisassociateFleet(const DisassociateFleetRequest& request) const
@@ -1283,14 +1283,14 @@ DisassociateFleetOutcomeCallable AppStreamClient::DisassociateFleetCallable(cons
   return task->get_future();
 }
 
-void AppStreamClient::DisassociateFleetAsync(const DisassociateFleetRequest& request, const DisassociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientDisassociateFleetAsyncHelper(AppStreamClient const * const clientThis, const DisassociateFleetRequest& request, const DisassociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateFleet(request), context);
 }
 
-void AppStreamClient::DisassociateFleetAsyncHelper(const DisassociateFleetRequest& request, const DisassociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::DisassociateFleetAsync(const DisassociateFleetRequest& request, const DisassociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientDisassociateFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableUserOutcome AppStreamClient::EnableUser(const EnableUserRequest& request) const
@@ -1307,14 +1307,14 @@ EnableUserOutcomeCallable AppStreamClient::EnableUserCallable(const EnableUserRe
   return task->get_future();
 }
 
-void AppStreamClient::EnableUserAsync(const EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientEnableUserAsyncHelper(AppStreamClient const * const clientThis, const EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableUser(request), context);
 }
 
-void AppStreamClient::EnableUserAsyncHelper(const EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::EnableUserAsync(const EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientEnableUserAsyncHelper( this, request, handler, context ); } );
 }
 
 ExpireSessionOutcome AppStreamClient::ExpireSession(const ExpireSessionRequest& request) const
@@ -1331,14 +1331,14 @@ ExpireSessionOutcomeCallable AppStreamClient::ExpireSessionCallable(const Expire
   return task->get_future();
 }
 
-void AppStreamClient::ExpireSessionAsync(const ExpireSessionRequest& request, const ExpireSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientExpireSessionAsyncHelper(AppStreamClient const * const clientThis, const ExpireSessionRequest& request, const ExpireSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExpireSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExpireSession(request), context);
 }
 
-void AppStreamClient::ExpireSessionAsyncHelper(const ExpireSessionRequest& request, const ExpireSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::ExpireSessionAsync(const ExpireSessionRequest& request, const ExpireSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExpireSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientExpireSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssociatedFleetsOutcome AppStreamClient::ListAssociatedFleets(const ListAssociatedFleetsRequest& request) const
@@ -1355,14 +1355,14 @@ ListAssociatedFleetsOutcomeCallable AppStreamClient::ListAssociatedFleetsCallabl
   return task->get_future();
 }
 
-void AppStreamClient::ListAssociatedFleetsAsync(const ListAssociatedFleetsRequest& request, const ListAssociatedFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientListAssociatedFleetsAsyncHelper(AppStreamClient const * const clientThis, const ListAssociatedFleetsRequest& request, const ListAssociatedFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssociatedFleetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssociatedFleets(request), context);
 }
 
-void AppStreamClient::ListAssociatedFleetsAsyncHelper(const ListAssociatedFleetsRequest& request, const ListAssociatedFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::ListAssociatedFleetsAsync(const ListAssociatedFleetsRequest& request, const ListAssociatedFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssociatedFleets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientListAssociatedFleetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssociatedStacksOutcome AppStreamClient::ListAssociatedStacks(const ListAssociatedStacksRequest& request) const
@@ -1379,14 +1379,14 @@ ListAssociatedStacksOutcomeCallable AppStreamClient::ListAssociatedStacksCallabl
   return task->get_future();
 }
 
-void AppStreamClient::ListAssociatedStacksAsync(const ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientListAssociatedStacksAsyncHelper(AppStreamClient const * const clientThis, const ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssociatedStacksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssociatedStacks(request), context);
 }
 
-void AppStreamClient::ListAssociatedStacksAsyncHelper(const ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::ListAssociatedStacksAsync(const ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssociatedStacks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientListAssociatedStacksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEntitledApplicationsOutcome AppStreamClient::ListEntitledApplications(const ListEntitledApplicationsRequest& request) const
@@ -1403,14 +1403,14 @@ ListEntitledApplicationsOutcomeCallable AppStreamClient::ListEntitledApplication
   return task->get_future();
 }
 
-void AppStreamClient::ListEntitledApplicationsAsync(const ListEntitledApplicationsRequest& request, const ListEntitledApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientListEntitledApplicationsAsyncHelper(AppStreamClient const * const clientThis, const ListEntitledApplicationsRequest& request, const ListEntitledApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEntitledApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEntitledApplications(request), context);
 }
 
-void AppStreamClient::ListEntitledApplicationsAsyncHelper(const ListEntitledApplicationsRequest& request, const ListEntitledApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::ListEntitledApplicationsAsync(const ListEntitledApplicationsRequest& request, const ListEntitledApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEntitledApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientListEntitledApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome AppStreamClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1427,14 +1427,14 @@ ListTagsForResourceOutcomeCallable AppStreamClient::ListTagsForResourceCallable(
   return task->get_future();
 }
 
-void AppStreamClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientListTagsForResourceAsyncHelper(AppStreamClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void AppStreamClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartFleetOutcome AppStreamClient::StartFleet(const StartFleetRequest& request) const
@@ -1451,14 +1451,14 @@ StartFleetOutcomeCallable AppStreamClient::StartFleetCallable(const StartFleetRe
   return task->get_future();
 }
 
-void AppStreamClient::StartFleetAsync(const StartFleetRequest& request, const StartFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientStartFleetAsyncHelper(AppStreamClient const * const clientThis, const StartFleetRequest& request, const StartFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartFleet(request), context);
 }
 
-void AppStreamClient::StartFleetAsyncHelper(const StartFleetRequest& request, const StartFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::StartFleetAsync(const StartFleetRequest& request, const StartFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientStartFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 StartImageBuilderOutcome AppStreamClient::StartImageBuilder(const StartImageBuilderRequest& request) const
@@ -1475,14 +1475,14 @@ StartImageBuilderOutcomeCallable AppStreamClient::StartImageBuilderCallable(cons
   return task->get_future();
 }
 
-void AppStreamClient::StartImageBuilderAsync(const StartImageBuilderRequest& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientStartImageBuilderAsyncHelper(AppStreamClient const * const clientThis, const StartImageBuilderRequest& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartImageBuilderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartImageBuilder(request), context);
 }
 
-void AppStreamClient::StartImageBuilderAsyncHelper(const StartImageBuilderRequest& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::StartImageBuilderAsync(const StartImageBuilderRequest& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartImageBuilder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientStartImageBuilderAsyncHelper( this, request, handler, context ); } );
 }
 
 StopFleetOutcome AppStreamClient::StopFleet(const StopFleetRequest& request) const
@@ -1499,14 +1499,14 @@ StopFleetOutcomeCallable AppStreamClient::StopFleetCallable(const StopFleetReque
   return task->get_future();
 }
 
-void AppStreamClient::StopFleetAsync(const StopFleetRequest& request, const StopFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientStopFleetAsyncHelper(AppStreamClient const * const clientThis, const StopFleetRequest& request, const StopFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopFleet(request), context);
 }
 
-void AppStreamClient::StopFleetAsyncHelper(const StopFleetRequest& request, const StopFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::StopFleetAsync(const StopFleetRequest& request, const StopFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientStopFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 StopImageBuilderOutcome AppStreamClient::StopImageBuilder(const StopImageBuilderRequest& request) const
@@ -1523,14 +1523,14 @@ StopImageBuilderOutcomeCallable AppStreamClient::StopImageBuilderCallable(const 
   return task->get_future();
 }
 
-void AppStreamClient::StopImageBuilderAsync(const StopImageBuilderRequest& request, const StopImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientStopImageBuilderAsyncHelper(AppStreamClient const * const clientThis, const StopImageBuilderRequest& request, const StopImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopImageBuilderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopImageBuilder(request), context);
 }
 
-void AppStreamClient::StopImageBuilderAsyncHelper(const StopImageBuilderRequest& request, const StopImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::StopImageBuilderAsync(const StopImageBuilderRequest& request, const StopImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopImageBuilder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientStopImageBuilderAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome AppStreamClient::TagResource(const TagResourceRequest& request) const
@@ -1547,14 +1547,14 @@ TagResourceOutcomeCallable AppStreamClient::TagResourceCallable(const TagResourc
   return task->get_future();
 }
 
-void AppStreamClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientTagResourceAsyncHelper(AppStreamClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void AppStreamClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome AppStreamClient::UntagResource(const UntagResourceRequest& request) const
@@ -1571,14 +1571,14 @@ UntagResourceOutcomeCallable AppStreamClient::UntagResourceCallable(const UntagR
   return task->get_future();
 }
 
-void AppStreamClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientUntagResourceAsyncHelper(AppStreamClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void AppStreamClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationOutcome AppStreamClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -1595,14 +1595,14 @@ UpdateApplicationOutcomeCallable AppStreamClient::UpdateApplicationCallable(cons
   return task->get_future();
 }
 
-void AppStreamClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientUpdateApplicationAsyncHelper(AppStreamClient const * const clientThis, const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplication(request), context);
 }
 
-void AppStreamClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientUpdateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDirectoryConfigOutcome AppStreamClient::UpdateDirectoryConfig(const UpdateDirectoryConfigRequest& request) const
@@ -1619,14 +1619,14 @@ UpdateDirectoryConfigOutcomeCallable AppStreamClient::UpdateDirectoryConfigCalla
   return task->get_future();
 }
 
-void AppStreamClient::UpdateDirectoryConfigAsync(const UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientUpdateDirectoryConfigAsyncHelper(AppStreamClient const * const clientThis, const UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDirectoryConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDirectoryConfig(request), context);
 }
 
-void AppStreamClient::UpdateDirectoryConfigAsyncHelper(const UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::UpdateDirectoryConfigAsync(const UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDirectoryConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientUpdateDirectoryConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEntitlementOutcome AppStreamClient::UpdateEntitlement(const UpdateEntitlementRequest& request) const
@@ -1643,14 +1643,14 @@ UpdateEntitlementOutcomeCallable AppStreamClient::UpdateEntitlementCallable(cons
   return task->get_future();
 }
 
-void AppStreamClient::UpdateEntitlementAsync(const UpdateEntitlementRequest& request, const UpdateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientUpdateEntitlementAsyncHelper(AppStreamClient const * const clientThis, const UpdateEntitlementRequest& request, const UpdateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEntitlementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEntitlement(request), context);
 }
 
-void AppStreamClient::UpdateEntitlementAsyncHelper(const UpdateEntitlementRequest& request, const UpdateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::UpdateEntitlementAsync(const UpdateEntitlementRequest& request, const UpdateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEntitlement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientUpdateEntitlementAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFleetOutcome AppStreamClient::UpdateFleet(const UpdateFleetRequest& request) const
@@ -1667,14 +1667,14 @@ UpdateFleetOutcomeCallable AppStreamClient::UpdateFleetCallable(const UpdateFlee
   return task->get_future();
 }
 
-void AppStreamClient::UpdateFleetAsync(const UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientUpdateFleetAsyncHelper(AppStreamClient const * const clientThis, const UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFleet(request), context);
 }
 
-void AppStreamClient::UpdateFleetAsyncHelper(const UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::UpdateFleetAsync(const UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientUpdateFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateImagePermissionsOutcome AppStreamClient::UpdateImagePermissions(const UpdateImagePermissionsRequest& request) const
@@ -1691,14 +1691,14 @@ UpdateImagePermissionsOutcomeCallable AppStreamClient::UpdateImagePermissionsCal
   return task->get_future();
 }
 
-void AppStreamClient::UpdateImagePermissionsAsync(const UpdateImagePermissionsRequest& request, const UpdateImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientUpdateImagePermissionsAsyncHelper(AppStreamClient const * const clientThis, const UpdateImagePermissionsRequest& request, const UpdateImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateImagePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateImagePermissions(request), context);
 }
 
-void AppStreamClient::UpdateImagePermissionsAsyncHelper(const UpdateImagePermissionsRequest& request, const UpdateImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::UpdateImagePermissionsAsync(const UpdateImagePermissionsRequest& request, const UpdateImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateImagePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientUpdateImagePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateStackOutcome AppStreamClient::UpdateStack(const UpdateStackRequest& request) const
@@ -1715,13 +1715,13 @@ UpdateStackOutcomeCallable AppStreamClient::UpdateStackCallable(const UpdateStac
   return task->get_future();
 }
 
-void AppStreamClient::UpdateStackAsync(const UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClientUpdateStackAsyncHelper(AppStreamClient const * const clientThis, const UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateStack(request), context);
 }
 
-void AppStreamClient::UpdateStackAsyncHelper(const UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppStreamClient::UpdateStackAsync(const UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateStack(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppStreamClientUpdateStackAsyncHelper( this, request, handler, context ); } );
 }
 

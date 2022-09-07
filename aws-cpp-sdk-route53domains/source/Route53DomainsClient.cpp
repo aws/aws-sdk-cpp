@@ -144,14 +144,14 @@ AcceptDomainTransferFromAnotherAwsAccountOutcomeCallable Route53DomainsClient::A
   return task->get_future();
 }
 
-void Route53DomainsClient::AcceptDomainTransferFromAnotherAwsAccountAsync(const AcceptDomainTransferFromAnotherAwsAccountRequest& request, const AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientAcceptDomainTransferFromAnotherAwsAccountAsyncHelper(Route53DomainsClient const * const clientThis, const AcceptDomainTransferFromAnotherAwsAccountRequest& request, const AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptDomainTransferFromAnotherAwsAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptDomainTransferFromAnotherAwsAccount(request), context);
 }
 
-void Route53DomainsClient::AcceptDomainTransferFromAnotherAwsAccountAsyncHelper(const AcceptDomainTransferFromAnotherAwsAccountRequest& request, const AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::AcceptDomainTransferFromAnotherAwsAccountAsync(const AcceptDomainTransferFromAnotherAwsAccountRequest& request, const AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptDomainTransferFromAnotherAwsAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientAcceptDomainTransferFromAnotherAwsAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelDomainTransferToAnotherAwsAccountOutcome Route53DomainsClient::CancelDomainTransferToAnotherAwsAccount(const CancelDomainTransferToAnotherAwsAccountRequest& request) const
@@ -168,14 +168,14 @@ CancelDomainTransferToAnotherAwsAccountOutcomeCallable Route53DomainsClient::Can
   return task->get_future();
 }
 
-void Route53DomainsClient::CancelDomainTransferToAnotherAwsAccountAsync(const CancelDomainTransferToAnotherAwsAccountRequest& request, const CancelDomainTransferToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientCancelDomainTransferToAnotherAwsAccountAsyncHelper(Route53DomainsClient const * const clientThis, const CancelDomainTransferToAnotherAwsAccountRequest& request, const CancelDomainTransferToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelDomainTransferToAnotherAwsAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelDomainTransferToAnotherAwsAccount(request), context);
 }
 
-void Route53DomainsClient::CancelDomainTransferToAnotherAwsAccountAsyncHelper(const CancelDomainTransferToAnotherAwsAccountRequest& request, const CancelDomainTransferToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::CancelDomainTransferToAnotherAwsAccountAsync(const CancelDomainTransferToAnotherAwsAccountRequest& request, const CancelDomainTransferToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelDomainTransferToAnotherAwsAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientCancelDomainTransferToAnotherAwsAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 CheckDomainAvailabilityOutcome Route53DomainsClient::CheckDomainAvailability(const CheckDomainAvailabilityRequest& request) const
@@ -192,14 +192,14 @@ CheckDomainAvailabilityOutcomeCallable Route53DomainsClient::CheckDomainAvailabi
   return task->get_future();
 }
 
-void Route53DomainsClient::CheckDomainAvailabilityAsync(const CheckDomainAvailabilityRequest& request, const CheckDomainAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientCheckDomainAvailabilityAsyncHelper(Route53DomainsClient const * const clientThis, const CheckDomainAvailabilityRequest& request, const CheckDomainAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CheckDomainAvailabilityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CheckDomainAvailability(request), context);
 }
 
-void Route53DomainsClient::CheckDomainAvailabilityAsyncHelper(const CheckDomainAvailabilityRequest& request, const CheckDomainAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::CheckDomainAvailabilityAsync(const CheckDomainAvailabilityRequest& request, const CheckDomainAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CheckDomainAvailability(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientCheckDomainAvailabilityAsyncHelper( this, request, handler, context ); } );
 }
 
 CheckDomainTransferabilityOutcome Route53DomainsClient::CheckDomainTransferability(const CheckDomainTransferabilityRequest& request) const
@@ -216,14 +216,14 @@ CheckDomainTransferabilityOutcomeCallable Route53DomainsClient::CheckDomainTrans
   return task->get_future();
 }
 
-void Route53DomainsClient::CheckDomainTransferabilityAsync(const CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientCheckDomainTransferabilityAsyncHelper(Route53DomainsClient const * const clientThis, const CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CheckDomainTransferabilityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CheckDomainTransferability(request), context);
 }
 
-void Route53DomainsClient::CheckDomainTransferabilityAsyncHelper(const CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::CheckDomainTransferabilityAsync(const CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CheckDomainTransferability(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientCheckDomainTransferabilityAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainOutcome Route53DomainsClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -240,14 +240,14 @@ DeleteDomainOutcomeCallable Route53DomainsClient::DeleteDomainCallable(const Del
   return task->get_future();
 }
 
-void Route53DomainsClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientDeleteDomainAsyncHelper(Route53DomainsClient const * const clientThis, const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomain(request), context);
 }
 
-void Route53DomainsClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientDeleteDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTagsForDomainOutcome Route53DomainsClient::DeleteTagsForDomain(const DeleteTagsForDomainRequest& request) const
@@ -264,14 +264,14 @@ DeleteTagsForDomainOutcomeCallable Route53DomainsClient::DeleteTagsForDomainCall
   return task->get_future();
 }
 
-void Route53DomainsClient::DeleteTagsForDomainAsync(const DeleteTagsForDomainRequest& request, const DeleteTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientDeleteTagsForDomainAsyncHelper(Route53DomainsClient const * const clientThis, const DeleteTagsForDomainRequest& request, const DeleteTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagsForDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTagsForDomain(request), context);
 }
 
-void Route53DomainsClient::DeleteTagsForDomainAsyncHelper(const DeleteTagsForDomainRequest& request, const DeleteTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::DeleteTagsForDomainAsync(const DeleteTagsForDomainRequest& request, const DeleteTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTagsForDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientDeleteTagsForDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableDomainAutoRenewOutcome Route53DomainsClient::DisableDomainAutoRenew(const DisableDomainAutoRenewRequest& request) const
@@ -288,14 +288,14 @@ DisableDomainAutoRenewOutcomeCallable Route53DomainsClient::DisableDomainAutoRen
   return task->get_future();
 }
 
-void Route53DomainsClient::DisableDomainAutoRenewAsync(const DisableDomainAutoRenewRequest& request, const DisableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientDisableDomainAutoRenewAsyncHelper(Route53DomainsClient const * const clientThis, const DisableDomainAutoRenewRequest& request, const DisableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableDomainAutoRenewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableDomainAutoRenew(request), context);
 }
 
-void Route53DomainsClient::DisableDomainAutoRenewAsyncHelper(const DisableDomainAutoRenewRequest& request, const DisableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::DisableDomainAutoRenewAsync(const DisableDomainAutoRenewRequest& request, const DisableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableDomainAutoRenew(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientDisableDomainAutoRenewAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableDomainTransferLockOutcome Route53DomainsClient::DisableDomainTransferLock(const DisableDomainTransferLockRequest& request) const
@@ -312,14 +312,14 @@ DisableDomainTransferLockOutcomeCallable Route53DomainsClient::DisableDomainTran
   return task->get_future();
 }
 
-void Route53DomainsClient::DisableDomainTransferLockAsync(const DisableDomainTransferLockRequest& request, const DisableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientDisableDomainTransferLockAsyncHelper(Route53DomainsClient const * const clientThis, const DisableDomainTransferLockRequest& request, const DisableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableDomainTransferLockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableDomainTransferLock(request), context);
 }
 
-void Route53DomainsClient::DisableDomainTransferLockAsyncHelper(const DisableDomainTransferLockRequest& request, const DisableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::DisableDomainTransferLockAsync(const DisableDomainTransferLockRequest& request, const DisableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableDomainTransferLock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientDisableDomainTransferLockAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableDomainAutoRenewOutcome Route53DomainsClient::EnableDomainAutoRenew(const EnableDomainAutoRenewRequest& request) const
@@ -336,14 +336,14 @@ EnableDomainAutoRenewOutcomeCallable Route53DomainsClient::EnableDomainAutoRenew
   return task->get_future();
 }
 
-void Route53DomainsClient::EnableDomainAutoRenewAsync(const EnableDomainAutoRenewRequest& request, const EnableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientEnableDomainAutoRenewAsyncHelper(Route53DomainsClient const * const clientThis, const EnableDomainAutoRenewRequest& request, const EnableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableDomainAutoRenewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableDomainAutoRenew(request), context);
 }
 
-void Route53DomainsClient::EnableDomainAutoRenewAsyncHelper(const EnableDomainAutoRenewRequest& request, const EnableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::EnableDomainAutoRenewAsync(const EnableDomainAutoRenewRequest& request, const EnableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableDomainAutoRenew(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientEnableDomainAutoRenewAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableDomainTransferLockOutcome Route53DomainsClient::EnableDomainTransferLock(const EnableDomainTransferLockRequest& request) const
@@ -360,14 +360,14 @@ EnableDomainTransferLockOutcomeCallable Route53DomainsClient::EnableDomainTransf
   return task->get_future();
 }
 
-void Route53DomainsClient::EnableDomainTransferLockAsync(const EnableDomainTransferLockRequest& request, const EnableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientEnableDomainTransferLockAsyncHelper(Route53DomainsClient const * const clientThis, const EnableDomainTransferLockRequest& request, const EnableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableDomainTransferLockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableDomainTransferLock(request), context);
 }
 
-void Route53DomainsClient::EnableDomainTransferLockAsyncHelper(const EnableDomainTransferLockRequest& request, const EnableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::EnableDomainTransferLockAsync(const EnableDomainTransferLockRequest& request, const EnableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableDomainTransferLock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientEnableDomainTransferLockAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContactReachabilityStatusOutcome Route53DomainsClient::GetContactReachabilityStatus(const GetContactReachabilityStatusRequest& request) const
@@ -384,14 +384,14 @@ GetContactReachabilityStatusOutcomeCallable Route53DomainsClient::GetContactReac
   return task->get_future();
 }
 
-void Route53DomainsClient::GetContactReachabilityStatusAsync(const GetContactReachabilityStatusRequest& request, const GetContactReachabilityStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientGetContactReachabilityStatusAsyncHelper(Route53DomainsClient const * const clientThis, const GetContactReachabilityStatusRequest& request, const GetContactReachabilityStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactReachabilityStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContactReachabilityStatus(request), context);
 }
 
-void Route53DomainsClient::GetContactReachabilityStatusAsyncHelper(const GetContactReachabilityStatusRequest& request, const GetContactReachabilityStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::GetContactReachabilityStatusAsync(const GetContactReachabilityStatusRequest& request, const GetContactReachabilityStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContactReachabilityStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientGetContactReachabilityStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDomainDetailOutcome Route53DomainsClient::GetDomainDetail(const GetDomainDetailRequest& request) const
@@ -408,14 +408,14 @@ GetDomainDetailOutcomeCallable Route53DomainsClient::GetDomainDetailCallable(con
   return task->get_future();
 }
 
-void Route53DomainsClient::GetDomainDetailAsync(const GetDomainDetailRequest& request, const GetDomainDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientGetDomainDetailAsyncHelper(Route53DomainsClient const * const clientThis, const GetDomainDetailRequest& request, const GetDomainDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainDetailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDomainDetail(request), context);
 }
 
-void Route53DomainsClient::GetDomainDetailAsyncHelper(const GetDomainDetailRequest& request, const GetDomainDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::GetDomainDetailAsync(const GetDomainDetailRequest& request, const GetDomainDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDomainDetail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientGetDomainDetailAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDomainSuggestionsOutcome Route53DomainsClient::GetDomainSuggestions(const GetDomainSuggestionsRequest& request) const
@@ -432,14 +432,14 @@ GetDomainSuggestionsOutcomeCallable Route53DomainsClient::GetDomainSuggestionsCa
   return task->get_future();
 }
 
-void Route53DomainsClient::GetDomainSuggestionsAsync(const GetDomainSuggestionsRequest& request, const GetDomainSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientGetDomainSuggestionsAsyncHelper(Route53DomainsClient const * const clientThis, const GetDomainSuggestionsRequest& request, const GetDomainSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainSuggestionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDomainSuggestions(request), context);
 }
 
-void Route53DomainsClient::GetDomainSuggestionsAsyncHelper(const GetDomainSuggestionsRequest& request, const GetDomainSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::GetDomainSuggestionsAsync(const GetDomainSuggestionsRequest& request, const GetDomainSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDomainSuggestions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientGetDomainSuggestionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetOperationDetailOutcome Route53DomainsClient::GetOperationDetail(const GetOperationDetailRequest& request) const
@@ -456,14 +456,14 @@ GetOperationDetailOutcomeCallable Route53DomainsClient::GetOperationDetailCallab
   return task->get_future();
 }
 
-void Route53DomainsClient::GetOperationDetailAsync(const GetOperationDetailRequest& request, const GetOperationDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientGetOperationDetailAsyncHelper(Route53DomainsClient const * const clientThis, const GetOperationDetailRequest& request, const GetOperationDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOperationDetailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOperationDetail(request), context);
 }
 
-void Route53DomainsClient::GetOperationDetailAsyncHelper(const GetOperationDetailRequest& request, const GetOperationDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::GetOperationDetailAsync(const GetOperationDetailRequest& request, const GetOperationDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOperationDetail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientGetOperationDetailAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainsOutcome Route53DomainsClient::ListDomains(const ListDomainsRequest& request) const
@@ -480,14 +480,14 @@ ListDomainsOutcomeCallable Route53DomainsClient::ListDomainsCallable(const ListD
   return task->get_future();
 }
 
-void Route53DomainsClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientListDomainsAsyncHelper(Route53DomainsClient const * const clientThis, const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomains(request), context);
 }
 
-void Route53DomainsClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomains(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientListDomainsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOperationsOutcome Route53DomainsClient::ListOperations(const ListOperationsRequest& request) const
@@ -504,14 +504,14 @@ ListOperationsOutcomeCallable Route53DomainsClient::ListOperationsCallable(const
   return task->get_future();
 }
 
-void Route53DomainsClient::ListOperationsAsync(const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientListOperationsAsyncHelper(Route53DomainsClient const * const clientThis, const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOperationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOperations(request), context);
 }
 
-void Route53DomainsClient::ListOperationsAsyncHelper(const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::ListOperationsAsync(const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOperations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientListOperationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPricesOutcome Route53DomainsClient::ListPrices(const ListPricesRequest& request) const
@@ -528,14 +528,14 @@ ListPricesOutcomeCallable Route53DomainsClient::ListPricesCallable(const ListPri
   return task->get_future();
 }
 
-void Route53DomainsClient::ListPricesAsync(const ListPricesRequest& request, const ListPricesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientListPricesAsyncHelper(Route53DomainsClient const * const clientThis, const ListPricesRequest& request, const ListPricesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPricesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPrices(request), context);
 }
 
-void Route53DomainsClient::ListPricesAsyncHelper(const ListPricesRequest& request, const ListPricesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::ListPricesAsync(const ListPricesRequest& request, const ListPricesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPrices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientListPricesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForDomainOutcome Route53DomainsClient::ListTagsForDomain(const ListTagsForDomainRequest& request) const
@@ -552,14 +552,14 @@ ListTagsForDomainOutcomeCallable Route53DomainsClient::ListTagsForDomainCallable
   return task->get_future();
 }
 
-void Route53DomainsClient::ListTagsForDomainAsync(const ListTagsForDomainRequest& request, const ListTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientListTagsForDomainAsyncHelper(Route53DomainsClient const * const clientThis, const ListTagsForDomainRequest& request, const ListTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForDomain(request), context);
 }
 
-void Route53DomainsClient::ListTagsForDomainAsyncHelper(const ListTagsForDomainRequest& request, const ListTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::ListTagsForDomainAsync(const ListTagsForDomainRequest& request, const ListTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientListTagsForDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterDomainOutcome Route53DomainsClient::RegisterDomain(const RegisterDomainRequest& request) const
@@ -576,14 +576,14 @@ RegisterDomainOutcomeCallable Route53DomainsClient::RegisterDomainCallable(const
   return task->get_future();
 }
 
-void Route53DomainsClient::RegisterDomainAsync(const RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientRegisterDomainAsyncHelper(Route53DomainsClient const * const clientThis, const RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterDomain(request), context);
 }
 
-void Route53DomainsClient::RegisterDomainAsyncHelper(const RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::RegisterDomainAsync(const RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientRegisterDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectDomainTransferFromAnotherAwsAccountOutcome Route53DomainsClient::RejectDomainTransferFromAnotherAwsAccount(const RejectDomainTransferFromAnotherAwsAccountRequest& request) const
@@ -600,14 +600,14 @@ RejectDomainTransferFromAnotherAwsAccountOutcomeCallable Route53DomainsClient::R
   return task->get_future();
 }
 
-void Route53DomainsClient::RejectDomainTransferFromAnotherAwsAccountAsync(const RejectDomainTransferFromAnotherAwsAccountRequest& request, const RejectDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientRejectDomainTransferFromAnotherAwsAccountAsyncHelper(Route53DomainsClient const * const clientThis, const RejectDomainTransferFromAnotherAwsAccountRequest& request, const RejectDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectDomainTransferFromAnotherAwsAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectDomainTransferFromAnotherAwsAccount(request), context);
 }
 
-void Route53DomainsClient::RejectDomainTransferFromAnotherAwsAccountAsyncHelper(const RejectDomainTransferFromAnotherAwsAccountRequest& request, const RejectDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::RejectDomainTransferFromAnotherAwsAccountAsync(const RejectDomainTransferFromAnotherAwsAccountRequest& request, const RejectDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectDomainTransferFromAnotherAwsAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientRejectDomainTransferFromAnotherAwsAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 RenewDomainOutcome Route53DomainsClient::RenewDomain(const RenewDomainRequest& request) const
@@ -624,14 +624,14 @@ RenewDomainOutcomeCallable Route53DomainsClient::RenewDomainCallable(const Renew
   return task->get_future();
 }
 
-void Route53DomainsClient::RenewDomainAsync(const RenewDomainRequest& request, const RenewDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientRenewDomainAsyncHelper(Route53DomainsClient const * const clientThis, const RenewDomainRequest& request, const RenewDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RenewDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RenewDomain(request), context);
 }
 
-void Route53DomainsClient::RenewDomainAsyncHelper(const RenewDomainRequest& request, const RenewDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::RenewDomainAsync(const RenewDomainRequest& request, const RenewDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RenewDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientRenewDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 ResendContactReachabilityEmailOutcome Route53DomainsClient::ResendContactReachabilityEmail(const ResendContactReachabilityEmailRequest& request) const
@@ -648,14 +648,14 @@ ResendContactReachabilityEmailOutcomeCallable Route53DomainsClient::ResendContac
   return task->get_future();
 }
 
-void Route53DomainsClient::ResendContactReachabilityEmailAsync(const ResendContactReachabilityEmailRequest& request, const ResendContactReachabilityEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientResendContactReachabilityEmailAsyncHelper(Route53DomainsClient const * const clientThis, const ResendContactReachabilityEmailRequest& request, const ResendContactReachabilityEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResendContactReachabilityEmailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResendContactReachabilityEmail(request), context);
 }
 
-void Route53DomainsClient::ResendContactReachabilityEmailAsyncHelper(const ResendContactReachabilityEmailRequest& request, const ResendContactReachabilityEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::ResendContactReachabilityEmailAsync(const ResendContactReachabilityEmailRequest& request, const ResendContactReachabilityEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResendContactReachabilityEmail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientResendContactReachabilityEmailAsyncHelper( this, request, handler, context ); } );
 }
 
 RetrieveDomainAuthCodeOutcome Route53DomainsClient::RetrieveDomainAuthCode(const RetrieveDomainAuthCodeRequest& request) const
@@ -672,14 +672,14 @@ RetrieveDomainAuthCodeOutcomeCallable Route53DomainsClient::RetrieveDomainAuthCo
   return task->get_future();
 }
 
-void Route53DomainsClient::RetrieveDomainAuthCodeAsync(const RetrieveDomainAuthCodeRequest& request, const RetrieveDomainAuthCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientRetrieveDomainAuthCodeAsyncHelper(Route53DomainsClient const * const clientThis, const RetrieveDomainAuthCodeRequest& request, const RetrieveDomainAuthCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RetrieveDomainAuthCodeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RetrieveDomainAuthCode(request), context);
 }
 
-void Route53DomainsClient::RetrieveDomainAuthCodeAsyncHelper(const RetrieveDomainAuthCodeRequest& request, const RetrieveDomainAuthCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::RetrieveDomainAuthCodeAsync(const RetrieveDomainAuthCodeRequest& request, const RetrieveDomainAuthCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RetrieveDomainAuthCode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientRetrieveDomainAuthCodeAsyncHelper( this, request, handler, context ); } );
 }
 
 TransferDomainOutcome Route53DomainsClient::TransferDomain(const TransferDomainRequest& request) const
@@ -696,14 +696,14 @@ TransferDomainOutcomeCallable Route53DomainsClient::TransferDomainCallable(const
   return task->get_future();
 }
 
-void Route53DomainsClient::TransferDomainAsync(const TransferDomainRequest& request, const TransferDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientTransferDomainAsyncHelper(Route53DomainsClient const * const clientThis, const TransferDomainRequest& request, const TransferDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TransferDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TransferDomain(request), context);
 }
 
-void Route53DomainsClient::TransferDomainAsyncHelper(const TransferDomainRequest& request, const TransferDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::TransferDomainAsync(const TransferDomainRequest& request, const TransferDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TransferDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientTransferDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 TransferDomainToAnotherAwsAccountOutcome Route53DomainsClient::TransferDomainToAnotherAwsAccount(const TransferDomainToAnotherAwsAccountRequest& request) const
@@ -720,14 +720,14 @@ TransferDomainToAnotherAwsAccountOutcomeCallable Route53DomainsClient::TransferD
   return task->get_future();
 }
 
-void Route53DomainsClient::TransferDomainToAnotherAwsAccountAsync(const TransferDomainToAnotherAwsAccountRequest& request, const TransferDomainToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientTransferDomainToAnotherAwsAccountAsyncHelper(Route53DomainsClient const * const clientThis, const TransferDomainToAnotherAwsAccountRequest& request, const TransferDomainToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TransferDomainToAnotherAwsAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TransferDomainToAnotherAwsAccount(request), context);
 }
 
-void Route53DomainsClient::TransferDomainToAnotherAwsAccountAsyncHelper(const TransferDomainToAnotherAwsAccountRequest& request, const TransferDomainToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::TransferDomainToAnotherAwsAccountAsync(const TransferDomainToAnotherAwsAccountRequest& request, const TransferDomainToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TransferDomainToAnotherAwsAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientTransferDomainToAnotherAwsAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainContactOutcome Route53DomainsClient::UpdateDomainContact(const UpdateDomainContactRequest& request) const
@@ -744,14 +744,14 @@ UpdateDomainContactOutcomeCallable Route53DomainsClient::UpdateDomainContactCall
   return task->get_future();
 }
 
-void Route53DomainsClient::UpdateDomainContactAsync(const UpdateDomainContactRequest& request, const UpdateDomainContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientUpdateDomainContactAsyncHelper(Route53DomainsClient const * const clientThis, const UpdateDomainContactRequest& request, const UpdateDomainContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomainContact(request), context);
 }
 
-void Route53DomainsClient::UpdateDomainContactAsyncHelper(const UpdateDomainContactRequest& request, const UpdateDomainContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::UpdateDomainContactAsync(const UpdateDomainContactRequest& request, const UpdateDomainContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomainContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientUpdateDomainContactAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainContactPrivacyOutcome Route53DomainsClient::UpdateDomainContactPrivacy(const UpdateDomainContactPrivacyRequest& request) const
@@ -768,14 +768,14 @@ UpdateDomainContactPrivacyOutcomeCallable Route53DomainsClient::UpdateDomainCont
   return task->get_future();
 }
 
-void Route53DomainsClient::UpdateDomainContactPrivacyAsync(const UpdateDomainContactPrivacyRequest& request, const UpdateDomainContactPrivacyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientUpdateDomainContactPrivacyAsyncHelper(Route53DomainsClient const * const clientThis, const UpdateDomainContactPrivacyRequest& request, const UpdateDomainContactPrivacyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainContactPrivacyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomainContactPrivacy(request), context);
 }
 
-void Route53DomainsClient::UpdateDomainContactPrivacyAsyncHelper(const UpdateDomainContactPrivacyRequest& request, const UpdateDomainContactPrivacyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::UpdateDomainContactPrivacyAsync(const UpdateDomainContactPrivacyRequest& request, const UpdateDomainContactPrivacyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomainContactPrivacy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientUpdateDomainContactPrivacyAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainNameserversOutcome Route53DomainsClient::UpdateDomainNameservers(const UpdateDomainNameserversRequest& request) const
@@ -792,14 +792,14 @@ UpdateDomainNameserversOutcomeCallable Route53DomainsClient::UpdateDomainNameser
   return task->get_future();
 }
 
-void Route53DomainsClient::UpdateDomainNameserversAsync(const UpdateDomainNameserversRequest& request, const UpdateDomainNameserversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientUpdateDomainNameserversAsyncHelper(Route53DomainsClient const * const clientThis, const UpdateDomainNameserversRequest& request, const UpdateDomainNameserversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainNameserversAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomainNameservers(request), context);
 }
 
-void Route53DomainsClient::UpdateDomainNameserversAsyncHelper(const UpdateDomainNameserversRequest& request, const UpdateDomainNameserversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::UpdateDomainNameserversAsync(const UpdateDomainNameserversRequest& request, const UpdateDomainNameserversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomainNameservers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientUpdateDomainNameserversAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTagsForDomainOutcome Route53DomainsClient::UpdateTagsForDomain(const UpdateTagsForDomainRequest& request) const
@@ -816,14 +816,14 @@ UpdateTagsForDomainOutcomeCallable Route53DomainsClient::UpdateTagsForDomainCall
   return task->get_future();
 }
 
-void Route53DomainsClient::UpdateTagsForDomainAsync(const UpdateTagsForDomainRequest& request, const UpdateTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientUpdateTagsForDomainAsyncHelper(Route53DomainsClient const * const clientThis, const UpdateTagsForDomainRequest& request, const UpdateTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTagsForDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTagsForDomain(request), context);
 }
 
-void Route53DomainsClient::UpdateTagsForDomainAsyncHelper(const UpdateTagsForDomainRequest& request, const UpdateTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::UpdateTagsForDomainAsync(const UpdateTagsForDomainRequest& request, const UpdateTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTagsForDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientUpdateTagsForDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 ViewBillingOutcome Route53DomainsClient::ViewBilling(const ViewBillingRequest& request) const
@@ -840,13 +840,13 @@ ViewBillingOutcomeCallable Route53DomainsClient::ViewBillingCallable(const ViewB
   return task->get_future();
 }
 
-void Route53DomainsClient::ViewBillingAsync(const ViewBillingRequest& request, const ViewBillingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClientViewBillingAsyncHelper(Route53DomainsClient const * const clientThis, const ViewBillingRequest& request, const ViewBillingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ViewBillingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ViewBilling(request), context);
 }
 
-void Route53DomainsClient::ViewBillingAsyncHelper(const ViewBillingRequest& request, const ViewBillingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53DomainsClient::ViewBillingAsync(const ViewBillingRequest& request, const ViewBillingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ViewBilling(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53DomainsClientViewBillingAsyncHelper( this, request, handler, context ); } );
 }
 

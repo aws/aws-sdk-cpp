@@ -226,14 +226,14 @@ AssociateAlias2020_05_31OutcomeCallable CloudFrontClient::AssociateAlias2020_05_
   return task->get_future();
 }
 
-void CloudFrontClient::AssociateAlias2020_05_31Async(const AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientAssociateAlias2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateAlias2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateAlias2020_05_31(request), context);
 }
 
-void CloudFrontClient::AssociateAlias2020_05_31AsyncHelper(const AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::AssociateAlias2020_05_31Async(const AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateAlias2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientAssociateAlias2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31(const CreateCachePolicy2020_05_31Request& request) const
@@ -251,14 +251,14 @@ CreateCachePolicy2020_05_31OutcomeCallable CloudFrontClient::CreateCachePolicy20
   return task->get_future();
 }
 
-void CloudFrontClient::CreateCachePolicy2020_05_31Async(const CreateCachePolicy2020_05_31Request& request, const CreateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateCachePolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateCachePolicy2020_05_31Request& request, const CreateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCachePolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCachePolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateCachePolicy2020_05_31AsyncHelper(const CreateCachePolicy2020_05_31Request& request, const CreateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateCachePolicy2020_05_31Async(const CreateCachePolicy2020_05_31Request& request, const CreateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCachePolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateCachePolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31(const CreateCloudFrontOriginAccessIdentity2020_05_31Request& request) const
@@ -276,14 +276,14 @@ CreateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable CloudFrontClient::
   return task->get_future();
 }
 
-void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31Async(const CreateCloudFrontOriginAccessIdentity2020_05_31Request& request, const CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateCloudFrontOriginAccessIdentity2020_05_31Request& request, const CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCloudFrontOriginAccessIdentity2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(const CreateCloudFrontOriginAccessIdentity2020_05_31Request& request, const CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31Async(const CreateCloudFrontOriginAccessIdentity2020_05_31Request& request, const CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCloudFrontOriginAccessIdentity2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDistribution2020_05_31Outcome CloudFrontClient::CreateDistribution2020_05_31(const CreateDistribution2020_05_31Request& request) const
@@ -301,14 +301,14 @@ CreateDistribution2020_05_31OutcomeCallable CloudFrontClient::CreateDistribution
   return task->get_future();
 }
 
-void CloudFrontClient::CreateDistribution2020_05_31Async(const CreateDistribution2020_05_31Request& request, const CreateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateDistribution2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateDistribution2020_05_31Request& request, const CreateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDistribution2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDistribution2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateDistribution2020_05_31AsyncHelper(const CreateDistribution2020_05_31Request& request, const CreateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateDistribution2020_05_31Async(const CreateDistribution2020_05_31Request& request, const CreateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDistribution2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateDistribution2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateDistributionWithTags2020_05_31(const CreateDistributionWithTags2020_05_31Request& request) const
@@ -329,14 +329,14 @@ CreateDistributionWithTags2020_05_31OutcomeCallable CloudFrontClient::CreateDist
   return task->get_future();
 }
 
-void CloudFrontClient::CreateDistributionWithTags2020_05_31Async(const CreateDistributionWithTags2020_05_31Request& request, const CreateDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateDistributionWithTags2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateDistributionWithTags2020_05_31Request& request, const CreateDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDistributionWithTags2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDistributionWithTags2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateDistributionWithTags2020_05_31AsyncHelper(const CreateDistributionWithTags2020_05_31Request& request, const CreateDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateDistributionWithTags2020_05_31Async(const CreateDistributionWithTags2020_05_31Request& request, const CreateDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDistributionWithTags2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateDistributionWithTags2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31(const CreateFieldLevelEncryptionConfig2020_05_31Request& request) const
@@ -354,14 +354,14 @@ CreateFieldLevelEncryptionConfig2020_05_31OutcomeCallable CloudFrontClient::Crea
   return task->get_future();
 }
 
-void CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31Async(const CreateFieldLevelEncryptionConfig2020_05_31Request& request, const CreateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateFieldLevelEncryptionConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateFieldLevelEncryptionConfig2020_05_31Request& request, const CreateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFieldLevelEncryptionConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFieldLevelEncryptionConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31AsyncHelper(const CreateFieldLevelEncryptionConfig2020_05_31Request& request, const CreateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31Async(const CreateFieldLevelEncryptionConfig2020_05_31Request& request, const CreateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFieldLevelEncryptionConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateFieldLevelEncryptionConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31(const CreateFieldLevelEncryptionProfile2020_05_31Request& request) const
@@ -379,14 +379,14 @@ CreateFieldLevelEncryptionProfile2020_05_31OutcomeCallable CloudFrontClient::Cre
   return task->get_future();
 }
 
-void CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31Async(const CreateFieldLevelEncryptionProfile2020_05_31Request& request, const CreateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateFieldLevelEncryptionProfile2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateFieldLevelEncryptionProfile2020_05_31Request& request, const CreateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFieldLevelEncryptionProfile2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFieldLevelEncryptionProfile2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31AsyncHelper(const CreateFieldLevelEncryptionProfile2020_05_31Request& request, const CreateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31Async(const CreateFieldLevelEncryptionProfile2020_05_31Request& request, const CreateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFieldLevelEncryptionProfile2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateFieldLevelEncryptionProfile2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFunction2020_05_31Outcome CloudFrontClient::CreateFunction2020_05_31(const CreateFunction2020_05_31Request& request) const
@@ -404,14 +404,14 @@ CreateFunction2020_05_31OutcomeCallable CloudFrontClient::CreateFunction2020_05_
   return task->get_future();
 }
 
-void CloudFrontClient::CreateFunction2020_05_31Async(const CreateFunction2020_05_31Request& request, const CreateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateFunction2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateFunction2020_05_31Request& request, const CreateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFunction2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFunction2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateFunction2020_05_31AsyncHelper(const CreateFunction2020_05_31Request& request, const CreateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateFunction2020_05_31Async(const CreateFunction2020_05_31Request& request, const CreateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFunction2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateFunction2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_31(const CreateInvalidation2020_05_31Request& request) const
@@ -436,14 +436,14 @@ CreateInvalidation2020_05_31OutcomeCallable CloudFrontClient::CreateInvalidation
   return task->get_future();
 }
 
-void CloudFrontClient::CreateInvalidation2020_05_31Async(const CreateInvalidation2020_05_31Request& request, const CreateInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateInvalidation2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateInvalidation2020_05_31Request& request, const CreateInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInvalidation2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInvalidation2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateInvalidation2020_05_31AsyncHelper(const CreateInvalidation2020_05_31Request& request, const CreateInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateInvalidation2020_05_31Async(const CreateInvalidation2020_05_31Request& request, const CreateInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInvalidation2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateInvalidation2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const CreateKeyGroup2020_05_31Request& request) const
@@ -461,14 +461,14 @@ CreateKeyGroup2020_05_31OutcomeCallable CloudFrontClient::CreateKeyGroup2020_05_
   return task->get_future();
 }
 
-void CloudFrontClient::CreateKeyGroup2020_05_31Async(const CreateKeyGroup2020_05_31Request& request, const CreateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateKeyGroup2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateKeyGroup2020_05_31Request& request, const CreateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateKeyGroup2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateKeyGroup2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateKeyGroup2020_05_31AsyncHelper(const CreateKeyGroup2020_05_31Request& request, const CreateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateKeyGroup2020_05_31Async(const CreateKeyGroup2020_05_31Request& request, const CreateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateKeyGroup2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateKeyGroup2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoringSubscription2020_05_31(const CreateMonitoringSubscription2020_05_31Request& request) const
@@ -493,14 +493,14 @@ CreateMonitoringSubscription2020_05_31OutcomeCallable CloudFrontClient::CreateMo
   return task->get_future();
 }
 
-void CloudFrontClient::CreateMonitoringSubscription2020_05_31Async(const CreateMonitoringSubscription2020_05_31Request& request, const CreateMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateMonitoringSubscription2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateMonitoringSubscription2020_05_31Request& request, const CreateMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMonitoringSubscription2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMonitoringSubscription2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateMonitoringSubscription2020_05_31AsyncHelper(const CreateMonitoringSubscription2020_05_31Request& request, const CreateMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateMonitoringSubscription2020_05_31Async(const CreateMonitoringSubscription2020_05_31Request& request, const CreateMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMonitoringSubscription2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateMonitoringSubscription2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateOriginAccessControl2020_05_31Outcome CloudFrontClient::CreateOriginAccessControl2020_05_31(const CreateOriginAccessControl2020_05_31Request& request) const
@@ -518,14 +518,14 @@ CreateOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::CreateOrigi
   return task->get_future();
 }
 
-void CloudFrontClient::CreateOriginAccessControl2020_05_31Async(const CreateOriginAccessControl2020_05_31Request& request, const CreateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateOriginAccessControl2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateOriginAccessControl2020_05_31Request& request, const CreateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOriginAccessControl2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateOriginAccessControl2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateOriginAccessControl2020_05_31AsyncHelper(const CreateOriginAccessControl2020_05_31Request& request, const CreateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateOriginAccessControl2020_05_31Async(const CreateOriginAccessControl2020_05_31Request& request, const CreateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateOriginAccessControl2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateOriginAccessControl2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::CreateOriginRequestPolicy2020_05_31(const CreateOriginRequestPolicy2020_05_31Request& request) const
@@ -543,14 +543,14 @@ CreateOriginRequestPolicy2020_05_31OutcomeCallable CloudFrontClient::CreateOrigi
   return task->get_future();
 }
 
-void CloudFrontClient::CreateOriginRequestPolicy2020_05_31Async(const CreateOriginRequestPolicy2020_05_31Request& request, const CreateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateOriginRequestPolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateOriginRequestPolicy2020_05_31Request& request, const CreateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOriginRequestPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateOriginRequestPolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateOriginRequestPolicy2020_05_31AsyncHelper(const CreateOriginRequestPolicy2020_05_31Request& request, const CreateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateOriginRequestPolicy2020_05_31Async(const CreateOriginRequestPolicy2020_05_31Request& request, const CreateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateOriginRequestPolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateOriginRequestPolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePublicKey2020_05_31Outcome CloudFrontClient::CreatePublicKey2020_05_31(const CreatePublicKey2020_05_31Request& request) const
@@ -568,14 +568,14 @@ CreatePublicKey2020_05_31OutcomeCallable CloudFrontClient::CreatePublicKey2020_0
   return task->get_future();
 }
 
-void CloudFrontClient::CreatePublicKey2020_05_31Async(const CreatePublicKey2020_05_31Request& request, const CreatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreatePublicKey2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreatePublicKey2020_05_31Request& request, const CreatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePublicKey2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePublicKey2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreatePublicKey2020_05_31AsyncHelper(const CreatePublicKey2020_05_31Request& request, const CreatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreatePublicKey2020_05_31Async(const CreatePublicKey2020_05_31Request& request, const CreatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePublicKey2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreatePublicKey2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::CreateRealtimeLogConfig2020_05_31(const CreateRealtimeLogConfig2020_05_31Request& request) const
@@ -593,14 +593,14 @@ CreateRealtimeLogConfig2020_05_31OutcomeCallable CloudFrontClient::CreateRealtim
   return task->get_future();
 }
 
-void CloudFrontClient::CreateRealtimeLogConfig2020_05_31Async(const CreateRealtimeLogConfig2020_05_31Request& request, const CreateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateRealtimeLogConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateRealtimeLogConfig2020_05_31Request& request, const CreateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRealtimeLogConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRealtimeLogConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateRealtimeLogConfig2020_05_31AsyncHelper(const CreateRealtimeLogConfig2020_05_31Request& request, const CreateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateRealtimeLogConfig2020_05_31Async(const CreateRealtimeLogConfig2020_05_31Request& request, const CreateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRealtimeLogConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateRealtimeLogConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::CreateResponseHeadersPolicy2020_05_31(const CreateResponseHeadersPolicy2020_05_31Request& request) const
@@ -618,14 +618,14 @@ CreateResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::CreateRes
   return task->get_future();
 }
 
-void CloudFrontClient::CreateResponseHeadersPolicy2020_05_31Async(const CreateResponseHeadersPolicy2020_05_31Request& request, const CreateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateResponseHeadersPolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateResponseHeadersPolicy2020_05_31Request& request, const CreateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResponseHeadersPolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateResponseHeadersPolicy2020_05_31AsyncHelper(const CreateResponseHeadersPolicy2020_05_31Request& request, const CreateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateResponseHeadersPolicy2020_05_31Async(const CreateResponseHeadersPolicy2020_05_31Request& request, const CreateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResponseHeadersPolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateResponseHeadersPolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStreamingDistribution2020_05_31Outcome CloudFrontClient::CreateStreamingDistribution2020_05_31(const CreateStreamingDistribution2020_05_31Request& request) const
@@ -643,14 +643,14 @@ CreateStreamingDistribution2020_05_31OutcomeCallable CloudFrontClient::CreateStr
   return task->get_future();
 }
 
-void CloudFrontClient::CreateStreamingDistribution2020_05_31Async(const CreateStreamingDistribution2020_05_31Request& request, const CreateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateStreamingDistribution2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateStreamingDistribution2020_05_31Request& request, const CreateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamingDistribution2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStreamingDistribution2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateStreamingDistribution2020_05_31AsyncHelper(const CreateStreamingDistribution2020_05_31Request& request, const CreateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateStreamingDistribution2020_05_31Async(const CreateStreamingDistribution2020_05_31Request& request, const CreateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStreamingDistribution2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateStreamingDistribution2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStreamingDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateStreamingDistributionWithTags2020_05_31(const CreateStreamingDistributionWithTags2020_05_31Request& request) const
@@ -671,14 +671,14 @@ CreateStreamingDistributionWithTags2020_05_31OutcomeCallable CloudFrontClient::C
   return task->get_future();
 }
 
-void CloudFrontClient::CreateStreamingDistributionWithTags2020_05_31Async(const CreateStreamingDistributionWithTags2020_05_31Request& request, const CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientCreateStreamingDistributionWithTags2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const CreateStreamingDistributionWithTags2020_05_31Request& request, const CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamingDistributionWithTags2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStreamingDistributionWithTags2020_05_31(request), context);
 }
 
-void CloudFrontClient::CreateStreamingDistributionWithTags2020_05_31AsyncHelper(const CreateStreamingDistributionWithTags2020_05_31Request& request, const CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::CreateStreamingDistributionWithTags2020_05_31Async(const CreateStreamingDistributionWithTags2020_05_31Request& request, const CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStreamingDistributionWithTags2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientCreateStreamingDistributionWithTags2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCachePolicy2020_05_31Outcome CloudFrontClient::DeleteCachePolicy2020_05_31(const DeleteCachePolicy2020_05_31Request& request) const
@@ -702,14 +702,14 @@ DeleteCachePolicy2020_05_31OutcomeCallable CloudFrontClient::DeleteCachePolicy20
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteCachePolicy2020_05_31Async(const DeleteCachePolicy2020_05_31Request& request, const DeleteCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteCachePolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteCachePolicy2020_05_31Request& request, const DeleteCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCachePolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCachePolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteCachePolicy2020_05_31AsyncHelper(const DeleteCachePolicy2020_05_31Request& request, const DeleteCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteCachePolicy2020_05_31Async(const DeleteCachePolicy2020_05_31Request& request, const DeleteCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCachePolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteCachePolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31(const DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request) const
@@ -733,14 +733,14 @@ DeleteCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable CloudFrontClient::
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31Async(const DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request, const DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request, const DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCloudFrontOriginAccessIdentity2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCloudFrontOriginAccessIdentity2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(const DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request, const DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31Async(const DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request, const DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCloudFrontOriginAccessIdentity2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteCloudFrontOriginAccessIdentity2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDistribution2020_05_31Outcome CloudFrontClient::DeleteDistribution2020_05_31(const DeleteDistribution2020_05_31Request& request) const
@@ -764,14 +764,14 @@ DeleteDistribution2020_05_31OutcomeCallable CloudFrontClient::DeleteDistribution
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteDistribution2020_05_31Async(const DeleteDistribution2020_05_31Request& request, const DeleteDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteDistribution2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteDistribution2020_05_31Request& request, const DeleteDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDistribution2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDistribution2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteDistribution2020_05_31AsyncHelper(const DeleteDistribution2020_05_31Request& request, const DeleteDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteDistribution2020_05_31Async(const DeleteDistribution2020_05_31Request& request, const DeleteDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDistribution2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteDistribution2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::DeleteFieldLevelEncryptionConfig2020_05_31(const DeleteFieldLevelEncryptionConfig2020_05_31Request& request) const
@@ -795,14 +795,14 @@ DeleteFieldLevelEncryptionConfig2020_05_31OutcomeCallable CloudFrontClient::Dele
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteFieldLevelEncryptionConfig2020_05_31Async(const DeleteFieldLevelEncryptionConfig2020_05_31Request& request, const DeleteFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteFieldLevelEncryptionConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteFieldLevelEncryptionConfig2020_05_31Request& request, const DeleteFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFieldLevelEncryptionConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFieldLevelEncryptionConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteFieldLevelEncryptionConfig2020_05_31AsyncHelper(const DeleteFieldLevelEncryptionConfig2020_05_31Request& request, const DeleteFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteFieldLevelEncryptionConfig2020_05_31Async(const DeleteFieldLevelEncryptionConfig2020_05_31Request& request, const DeleteFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFieldLevelEncryptionConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteFieldLevelEncryptionConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31(const DeleteFieldLevelEncryptionProfile2020_05_31Request& request) const
@@ -826,14 +826,14 @@ DeleteFieldLevelEncryptionProfile2020_05_31OutcomeCallable CloudFrontClient::Del
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31Async(const DeleteFieldLevelEncryptionProfile2020_05_31Request& request, const DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteFieldLevelEncryptionProfile2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteFieldLevelEncryptionProfile2020_05_31Request& request, const DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFieldLevelEncryptionProfile2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFieldLevelEncryptionProfile2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31AsyncHelper(const DeleteFieldLevelEncryptionProfile2020_05_31Request& request, const DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31Async(const DeleteFieldLevelEncryptionProfile2020_05_31Request& request, const DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFieldLevelEncryptionProfile2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteFieldLevelEncryptionProfile2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFunction2020_05_31Outcome CloudFrontClient::DeleteFunction2020_05_31(const DeleteFunction2020_05_31Request& request) const
@@ -862,14 +862,14 @@ DeleteFunction2020_05_31OutcomeCallable CloudFrontClient::DeleteFunction2020_05_
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteFunction2020_05_31Async(const DeleteFunction2020_05_31Request& request, const DeleteFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteFunction2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteFunction2020_05_31Request& request, const DeleteFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFunction2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFunction2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteFunction2020_05_31AsyncHelper(const DeleteFunction2020_05_31Request& request, const DeleteFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteFunction2020_05_31Async(const DeleteFunction2020_05_31Request& request, const DeleteFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFunction2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteFunction2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const DeleteKeyGroup2020_05_31Request& request) const
@@ -893,14 +893,14 @@ DeleteKeyGroup2020_05_31OutcomeCallable CloudFrontClient::DeleteKeyGroup2020_05_
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteKeyGroup2020_05_31Async(const DeleteKeyGroup2020_05_31Request& request, const DeleteKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteKeyGroup2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteKeyGroup2020_05_31Request& request, const DeleteKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteKeyGroup2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteKeyGroup2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteKeyGroup2020_05_31AsyncHelper(const DeleteKeyGroup2020_05_31Request& request, const DeleteKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteKeyGroup2020_05_31Async(const DeleteKeyGroup2020_05_31Request& request, const DeleteKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteKeyGroup2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteKeyGroup2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoringSubscription2020_05_31(const DeleteMonitoringSubscription2020_05_31Request& request) const
@@ -925,14 +925,14 @@ DeleteMonitoringSubscription2020_05_31OutcomeCallable CloudFrontClient::DeleteMo
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteMonitoringSubscription2020_05_31Async(const DeleteMonitoringSubscription2020_05_31Request& request, const DeleteMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteMonitoringSubscription2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteMonitoringSubscription2020_05_31Request& request, const DeleteMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMonitoringSubscription2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMonitoringSubscription2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteMonitoringSubscription2020_05_31AsyncHelper(const DeleteMonitoringSubscription2020_05_31Request& request, const DeleteMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteMonitoringSubscription2020_05_31Async(const DeleteMonitoringSubscription2020_05_31Request& request, const DeleteMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMonitoringSubscription2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteMonitoringSubscription2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteOriginAccessControl2020_05_31Outcome CloudFrontClient::DeleteOriginAccessControl2020_05_31(const DeleteOriginAccessControl2020_05_31Request& request) const
@@ -956,14 +956,14 @@ DeleteOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::DeleteOrigi
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteOriginAccessControl2020_05_31Async(const DeleteOriginAccessControl2020_05_31Request& request, const DeleteOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteOriginAccessControl2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteOriginAccessControl2020_05_31Request& request, const DeleteOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOriginAccessControl2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteOriginAccessControl2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteOriginAccessControl2020_05_31AsyncHelper(const DeleteOriginAccessControl2020_05_31Request& request, const DeleteOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteOriginAccessControl2020_05_31Async(const DeleteOriginAccessControl2020_05_31Request& request, const DeleteOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteOriginAccessControl2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteOriginAccessControl2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteOriginRequestPolicy2020_05_31Outcome CloudFrontClient::DeleteOriginRequestPolicy2020_05_31(const DeleteOriginRequestPolicy2020_05_31Request& request) const
@@ -987,14 +987,14 @@ DeleteOriginRequestPolicy2020_05_31OutcomeCallable CloudFrontClient::DeleteOrigi
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteOriginRequestPolicy2020_05_31Async(const DeleteOriginRequestPolicy2020_05_31Request& request, const DeleteOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteOriginRequestPolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteOriginRequestPolicy2020_05_31Request& request, const DeleteOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOriginRequestPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteOriginRequestPolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteOriginRequestPolicy2020_05_31AsyncHelper(const DeleteOriginRequestPolicy2020_05_31Request& request, const DeleteOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteOriginRequestPolicy2020_05_31Async(const DeleteOriginRequestPolicy2020_05_31Request& request, const DeleteOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteOriginRequestPolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteOriginRequestPolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePublicKey2020_05_31Outcome CloudFrontClient::DeletePublicKey2020_05_31(const DeletePublicKey2020_05_31Request& request) const
@@ -1018,14 +1018,14 @@ DeletePublicKey2020_05_31OutcomeCallable CloudFrontClient::DeletePublicKey2020_0
   return task->get_future();
 }
 
-void CloudFrontClient::DeletePublicKey2020_05_31Async(const DeletePublicKey2020_05_31Request& request, const DeletePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeletePublicKey2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeletePublicKey2020_05_31Request& request, const DeletePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePublicKey2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePublicKey2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeletePublicKey2020_05_31AsyncHelper(const DeletePublicKey2020_05_31Request& request, const DeletePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeletePublicKey2020_05_31Async(const DeletePublicKey2020_05_31Request& request, const DeletePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePublicKey2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeletePublicKey2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRealtimeLogConfig2020_05_31Outcome CloudFrontClient::DeleteRealtimeLogConfig2020_05_31(const DeleteRealtimeLogConfig2020_05_31Request& request) const
@@ -1043,14 +1043,14 @@ DeleteRealtimeLogConfig2020_05_31OutcomeCallable CloudFrontClient::DeleteRealtim
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteRealtimeLogConfig2020_05_31Async(const DeleteRealtimeLogConfig2020_05_31Request& request, const DeleteRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteRealtimeLogConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteRealtimeLogConfig2020_05_31Request& request, const DeleteRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRealtimeLogConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRealtimeLogConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteRealtimeLogConfig2020_05_31AsyncHelper(const DeleteRealtimeLogConfig2020_05_31Request& request, const DeleteRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteRealtimeLogConfig2020_05_31Async(const DeleteRealtimeLogConfig2020_05_31Request& request, const DeleteRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRealtimeLogConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteRealtimeLogConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31(const DeleteResponseHeadersPolicy2020_05_31Request& request) const
@@ -1074,14 +1074,14 @@ DeleteResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::DeleteRes
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31Async(const DeleteResponseHeadersPolicy2020_05_31Request& request, const DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteResponseHeadersPolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteResponseHeadersPolicy2020_05_31Request& request, const DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResponseHeadersPolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31AsyncHelper(const DeleteResponseHeadersPolicy2020_05_31Request& request, const DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31Async(const DeleteResponseHeadersPolicy2020_05_31Request& request, const DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResponseHeadersPolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteResponseHeadersPolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDistribution2020_05_31(const DeleteStreamingDistribution2020_05_31Request& request) const
@@ -1105,14 +1105,14 @@ DeleteStreamingDistribution2020_05_31OutcomeCallable CloudFrontClient::DeleteStr
   return task->get_future();
 }
 
-void CloudFrontClient::DeleteStreamingDistribution2020_05_31Async(const DeleteStreamingDistribution2020_05_31Request& request, const DeleteStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDeleteStreamingDistribution2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DeleteStreamingDistribution2020_05_31Request& request, const DeleteStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStreamingDistribution2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteStreamingDistribution2020_05_31(request), context);
 }
 
-void CloudFrontClient::DeleteStreamingDistribution2020_05_31AsyncHelper(const DeleteStreamingDistribution2020_05_31Request& request, const DeleteStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DeleteStreamingDistribution2020_05_31Async(const DeleteStreamingDistribution2020_05_31Request& request, const DeleteStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteStreamingDistribution2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDeleteStreamingDistribution2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(const DescribeFunction2020_05_31Request& request) const
@@ -1137,14 +1137,14 @@ DescribeFunction2020_05_31OutcomeCallable CloudFrontClient::DescribeFunction2020
   return task->get_future();
 }
 
-void CloudFrontClient::DescribeFunction2020_05_31Async(const DescribeFunction2020_05_31Request& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientDescribeFunction2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const DescribeFunction2020_05_31Request& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFunction2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFunction2020_05_31(request), context);
 }
 
-void CloudFrontClient::DescribeFunction2020_05_31AsyncHelper(const DescribeFunction2020_05_31Request& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::DescribeFunction2020_05_31Async(const DescribeFunction2020_05_31Request& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFunction2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientDescribeFunction2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const GetCachePolicy2020_05_31Request& request) const
@@ -1168,14 +1168,14 @@ GetCachePolicy2020_05_31OutcomeCallable CloudFrontClient::GetCachePolicy2020_05_
   return task->get_future();
 }
 
-void CloudFrontClient::GetCachePolicy2020_05_31Async(const GetCachePolicy2020_05_31Request& request, const GetCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetCachePolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetCachePolicy2020_05_31Request& request, const GetCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCachePolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCachePolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetCachePolicy2020_05_31AsyncHelper(const GetCachePolicy2020_05_31Request& request, const GetCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetCachePolicy2020_05_31Async(const GetCachePolicy2020_05_31Request& request, const GetCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCachePolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetCachePolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetCachePolicyConfig2020_05_31Outcome CloudFrontClient::GetCachePolicyConfig2020_05_31(const GetCachePolicyConfig2020_05_31Request& request) const
@@ -1200,14 +1200,14 @@ GetCachePolicyConfig2020_05_31OutcomeCallable CloudFrontClient::GetCachePolicyCo
   return task->get_future();
 }
 
-void CloudFrontClient::GetCachePolicyConfig2020_05_31Async(const GetCachePolicyConfig2020_05_31Request& request, const GetCachePolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetCachePolicyConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetCachePolicyConfig2020_05_31Request& request, const GetCachePolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCachePolicyConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCachePolicyConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetCachePolicyConfig2020_05_31AsyncHelper(const GetCachePolicyConfig2020_05_31Request& request, const GetCachePolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetCachePolicyConfig2020_05_31Async(const GetCachePolicyConfig2020_05_31Request& request, const GetCachePolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCachePolicyConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetCachePolicyConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentity2020_05_31(const GetCloudFrontOriginAccessIdentity2020_05_31Request& request) const
@@ -1231,14 +1231,14 @@ GetCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable CloudFrontClient::Get
   return task->get_future();
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentity2020_05_31Async(const GetCloudFrontOriginAccessIdentity2020_05_31Request& request, const GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetCloudFrontOriginAccessIdentity2020_05_31Request& request, const GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCloudFrontOriginAccessIdentity2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCloudFrontOriginAccessIdentity2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(const GetCloudFrontOriginAccessIdentity2020_05_31Request& request, const GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetCloudFrontOriginAccessIdentity2020_05_31Async(const GetCloudFrontOriginAccessIdentity2020_05_31Request& request, const GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCloudFrontOriginAccessIdentity2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetCloudFrontOriginAccessIdentity2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31(const GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request) const
@@ -1263,14 +1263,14 @@ GetCloudFrontOriginAccessIdentityConfig2020_05_31OutcomeCallable CloudFrontClien
   return task->get_future();
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31Async(const GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request, const GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetCloudFrontOriginAccessIdentityConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request, const GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCloudFrontOriginAccessIdentityConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCloudFrontOriginAccessIdentityConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31AsyncHelper(const GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request, const GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31Async(const GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request, const GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCloudFrontOriginAccessIdentityConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetCloudFrontOriginAccessIdentityConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetDistribution2020_05_31Outcome CloudFrontClient::GetDistribution2020_05_31(const GetDistribution2020_05_31Request& request) const
@@ -1294,14 +1294,14 @@ GetDistribution2020_05_31OutcomeCallable CloudFrontClient::GetDistribution2020_0
   return task->get_future();
 }
 
-void CloudFrontClient::GetDistribution2020_05_31Async(const GetDistribution2020_05_31Request& request, const GetDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetDistribution2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetDistribution2020_05_31Request& request, const GetDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDistribution2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDistribution2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetDistribution2020_05_31AsyncHelper(const GetDistribution2020_05_31Request& request, const GetDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetDistribution2020_05_31Async(const GetDistribution2020_05_31Request& request, const GetDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDistribution2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetDistribution2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetDistributionConfig2020_05_31Outcome CloudFrontClient::GetDistributionConfig2020_05_31(const GetDistributionConfig2020_05_31Request& request) const
@@ -1326,14 +1326,14 @@ GetDistributionConfig2020_05_31OutcomeCallable CloudFrontClient::GetDistribution
   return task->get_future();
 }
 
-void CloudFrontClient::GetDistributionConfig2020_05_31Async(const GetDistributionConfig2020_05_31Request& request, const GetDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetDistributionConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetDistributionConfig2020_05_31Request& request, const GetDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDistributionConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDistributionConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetDistributionConfig2020_05_31AsyncHelper(const GetDistributionConfig2020_05_31Request& request, const GetDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetDistributionConfig2020_05_31Async(const GetDistributionConfig2020_05_31Request& request, const GetDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDistributionConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetDistributionConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetFieldLevelEncryption2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryption2020_05_31(const GetFieldLevelEncryption2020_05_31Request& request) const
@@ -1357,14 +1357,14 @@ GetFieldLevelEncryption2020_05_31OutcomeCallable CloudFrontClient::GetFieldLevel
   return task->get_future();
 }
 
-void CloudFrontClient::GetFieldLevelEncryption2020_05_31Async(const GetFieldLevelEncryption2020_05_31Request& request, const GetFieldLevelEncryption2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetFieldLevelEncryption2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetFieldLevelEncryption2020_05_31Request& request, const GetFieldLevelEncryption2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFieldLevelEncryption2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFieldLevelEncryption2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetFieldLevelEncryption2020_05_31AsyncHelper(const GetFieldLevelEncryption2020_05_31Request& request, const GetFieldLevelEncryption2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetFieldLevelEncryption2020_05_31Async(const GetFieldLevelEncryption2020_05_31Request& request, const GetFieldLevelEncryption2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFieldLevelEncryption2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetFieldLevelEncryption2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionConfig2020_05_31(const GetFieldLevelEncryptionConfig2020_05_31Request& request) const
@@ -1389,14 +1389,14 @@ GetFieldLevelEncryptionConfig2020_05_31OutcomeCallable CloudFrontClient::GetFiel
   return task->get_future();
 }
 
-void CloudFrontClient::GetFieldLevelEncryptionConfig2020_05_31Async(const GetFieldLevelEncryptionConfig2020_05_31Request& request, const GetFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetFieldLevelEncryptionConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetFieldLevelEncryptionConfig2020_05_31Request& request, const GetFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFieldLevelEncryptionConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFieldLevelEncryptionConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetFieldLevelEncryptionConfig2020_05_31AsyncHelper(const GetFieldLevelEncryptionConfig2020_05_31Request& request, const GetFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetFieldLevelEncryptionConfig2020_05_31Async(const GetFieldLevelEncryptionConfig2020_05_31Request& request, const GetFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFieldLevelEncryptionConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetFieldLevelEncryptionConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionProfile2020_05_31(const GetFieldLevelEncryptionProfile2020_05_31Request& request) const
@@ -1420,14 +1420,14 @@ GetFieldLevelEncryptionProfile2020_05_31OutcomeCallable CloudFrontClient::GetFie
   return task->get_future();
 }
 
-void CloudFrontClient::GetFieldLevelEncryptionProfile2020_05_31Async(const GetFieldLevelEncryptionProfile2020_05_31Request& request, const GetFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetFieldLevelEncryptionProfile2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetFieldLevelEncryptionProfile2020_05_31Request& request, const GetFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFieldLevelEncryptionProfile2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFieldLevelEncryptionProfile2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetFieldLevelEncryptionProfile2020_05_31AsyncHelper(const GetFieldLevelEncryptionProfile2020_05_31Request& request, const GetFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetFieldLevelEncryptionProfile2020_05_31Async(const GetFieldLevelEncryptionProfile2020_05_31Request& request, const GetFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFieldLevelEncryptionProfile2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetFieldLevelEncryptionProfile2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetFieldLevelEncryptionProfileConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31(const GetFieldLevelEncryptionProfileConfig2020_05_31Request& request) const
@@ -1452,14 +1452,14 @@ GetFieldLevelEncryptionProfileConfig2020_05_31OutcomeCallable CloudFrontClient::
   return task->get_future();
 }
 
-void CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31Async(const GetFieldLevelEncryptionProfileConfig2020_05_31Request& request, const GetFieldLevelEncryptionProfileConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetFieldLevelEncryptionProfileConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetFieldLevelEncryptionProfileConfig2020_05_31Request& request, const GetFieldLevelEncryptionProfileConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFieldLevelEncryptionProfileConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFieldLevelEncryptionProfileConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31AsyncHelper(const GetFieldLevelEncryptionProfileConfig2020_05_31Request& request, const GetFieldLevelEncryptionProfileConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31Async(const GetFieldLevelEncryptionProfileConfig2020_05_31Request& request, const GetFieldLevelEncryptionProfileConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFieldLevelEncryptionProfileConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetFieldLevelEncryptionProfileConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetFunction2020_05_31Outcome CloudFrontClient::GetFunction2020_05_31(const GetFunction2020_05_31Request& request) const
@@ -1483,14 +1483,14 @@ GetFunction2020_05_31OutcomeCallable CloudFrontClient::GetFunction2020_05_31Call
   return task->get_future();
 }
 
-void CloudFrontClient::GetFunction2020_05_31Async(const GetFunction2020_05_31Request& request, const GetFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetFunction2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetFunction2020_05_31Request& request, const GetFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFunction2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFunction2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetFunction2020_05_31AsyncHelper(const GetFunction2020_05_31Request& request, const GetFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetFunction2020_05_31Async(const GetFunction2020_05_31Request& request, const GetFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFunction2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetFunction2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetInvalidation2020_05_31Outcome CloudFrontClient::GetInvalidation2020_05_31(const GetInvalidation2020_05_31Request& request) const
@@ -1521,14 +1521,14 @@ GetInvalidation2020_05_31OutcomeCallable CloudFrontClient::GetInvalidation2020_0
   return task->get_future();
 }
 
-void CloudFrontClient::GetInvalidation2020_05_31Async(const GetInvalidation2020_05_31Request& request, const GetInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetInvalidation2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetInvalidation2020_05_31Request& request, const GetInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInvalidation2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInvalidation2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetInvalidation2020_05_31AsyncHelper(const GetInvalidation2020_05_31Request& request, const GetInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetInvalidation2020_05_31Async(const GetInvalidation2020_05_31Request& request, const GetInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInvalidation2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetInvalidation2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetKeyGroup2020_05_31Outcome CloudFrontClient::GetKeyGroup2020_05_31(const GetKeyGroup2020_05_31Request& request) const
@@ -1552,14 +1552,14 @@ GetKeyGroup2020_05_31OutcomeCallable CloudFrontClient::GetKeyGroup2020_05_31Call
   return task->get_future();
 }
 
-void CloudFrontClient::GetKeyGroup2020_05_31Async(const GetKeyGroup2020_05_31Request& request, const GetKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetKeyGroup2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetKeyGroup2020_05_31Request& request, const GetKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetKeyGroup2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetKeyGroup2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetKeyGroup2020_05_31AsyncHelper(const GetKeyGroup2020_05_31Request& request, const GetKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetKeyGroup2020_05_31Async(const GetKeyGroup2020_05_31Request& request, const GetKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetKeyGroup2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetKeyGroup2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetKeyGroupConfig2020_05_31Outcome CloudFrontClient::GetKeyGroupConfig2020_05_31(const GetKeyGroupConfig2020_05_31Request& request) const
@@ -1584,14 +1584,14 @@ GetKeyGroupConfig2020_05_31OutcomeCallable CloudFrontClient::GetKeyGroupConfig20
   return task->get_future();
 }
 
-void CloudFrontClient::GetKeyGroupConfig2020_05_31Async(const GetKeyGroupConfig2020_05_31Request& request, const GetKeyGroupConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetKeyGroupConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetKeyGroupConfig2020_05_31Request& request, const GetKeyGroupConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetKeyGroupConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetKeyGroupConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetKeyGroupConfig2020_05_31AsyncHelper(const GetKeyGroupConfig2020_05_31Request& request, const GetKeyGroupConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetKeyGroupConfig2020_05_31Async(const GetKeyGroupConfig2020_05_31Request& request, const GetKeyGroupConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetKeyGroupConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetKeyGroupConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscription2020_05_31(const GetMonitoringSubscription2020_05_31Request& request) const
@@ -1616,14 +1616,14 @@ GetMonitoringSubscription2020_05_31OutcomeCallable CloudFrontClient::GetMonitori
   return task->get_future();
 }
 
-void CloudFrontClient::GetMonitoringSubscription2020_05_31Async(const GetMonitoringSubscription2020_05_31Request& request, const GetMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetMonitoringSubscription2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetMonitoringSubscription2020_05_31Request& request, const GetMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMonitoringSubscription2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMonitoringSubscription2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetMonitoringSubscription2020_05_31AsyncHelper(const GetMonitoringSubscription2020_05_31Request& request, const GetMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetMonitoringSubscription2020_05_31Async(const GetMonitoringSubscription2020_05_31Request& request, const GetMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMonitoringSubscription2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetMonitoringSubscription2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetOriginAccessControl2020_05_31Outcome CloudFrontClient::GetOriginAccessControl2020_05_31(const GetOriginAccessControl2020_05_31Request& request) const
@@ -1647,14 +1647,14 @@ GetOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::GetOriginAcces
   return task->get_future();
 }
 
-void CloudFrontClient::GetOriginAccessControl2020_05_31Async(const GetOriginAccessControl2020_05_31Request& request, const GetOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetOriginAccessControl2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetOriginAccessControl2020_05_31Request& request, const GetOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOriginAccessControl2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOriginAccessControl2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetOriginAccessControl2020_05_31AsyncHelper(const GetOriginAccessControl2020_05_31Request& request, const GetOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetOriginAccessControl2020_05_31Async(const GetOriginAccessControl2020_05_31Request& request, const GetOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOriginAccessControl2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetOriginAccessControl2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetOriginAccessControlConfig2020_05_31Outcome CloudFrontClient::GetOriginAccessControlConfig2020_05_31(const GetOriginAccessControlConfig2020_05_31Request& request) const
@@ -1679,14 +1679,14 @@ GetOriginAccessControlConfig2020_05_31OutcomeCallable CloudFrontClient::GetOrigi
   return task->get_future();
 }
 
-void CloudFrontClient::GetOriginAccessControlConfig2020_05_31Async(const GetOriginAccessControlConfig2020_05_31Request& request, const GetOriginAccessControlConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetOriginAccessControlConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetOriginAccessControlConfig2020_05_31Request& request, const GetOriginAccessControlConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOriginAccessControlConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOriginAccessControlConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetOriginAccessControlConfig2020_05_31AsyncHelper(const GetOriginAccessControlConfig2020_05_31Request& request, const GetOriginAccessControlConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetOriginAccessControlConfig2020_05_31Async(const GetOriginAccessControlConfig2020_05_31Request& request, const GetOriginAccessControlConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOriginAccessControlConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetOriginAccessControlConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetOriginRequestPolicy2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicy2020_05_31(const GetOriginRequestPolicy2020_05_31Request& request) const
@@ -1710,14 +1710,14 @@ GetOriginRequestPolicy2020_05_31OutcomeCallable CloudFrontClient::GetOriginReque
   return task->get_future();
 }
 
-void CloudFrontClient::GetOriginRequestPolicy2020_05_31Async(const GetOriginRequestPolicy2020_05_31Request& request, const GetOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetOriginRequestPolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetOriginRequestPolicy2020_05_31Request& request, const GetOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOriginRequestPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOriginRequestPolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetOriginRequestPolicy2020_05_31AsyncHelper(const GetOriginRequestPolicy2020_05_31Request& request, const GetOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetOriginRequestPolicy2020_05_31Async(const GetOriginRequestPolicy2020_05_31Request& request, const GetOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOriginRequestPolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetOriginRequestPolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetOriginRequestPolicyConfig2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicyConfig2020_05_31(const GetOriginRequestPolicyConfig2020_05_31Request& request) const
@@ -1742,14 +1742,14 @@ GetOriginRequestPolicyConfig2020_05_31OutcomeCallable CloudFrontClient::GetOrigi
   return task->get_future();
 }
 
-void CloudFrontClient::GetOriginRequestPolicyConfig2020_05_31Async(const GetOriginRequestPolicyConfig2020_05_31Request& request, const GetOriginRequestPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetOriginRequestPolicyConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetOriginRequestPolicyConfig2020_05_31Request& request, const GetOriginRequestPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOriginRequestPolicyConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOriginRequestPolicyConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetOriginRequestPolicyConfig2020_05_31AsyncHelper(const GetOriginRequestPolicyConfig2020_05_31Request& request, const GetOriginRequestPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetOriginRequestPolicyConfig2020_05_31Async(const GetOriginRequestPolicyConfig2020_05_31Request& request, const GetOriginRequestPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOriginRequestPolicyConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetOriginRequestPolicyConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetPublicKey2020_05_31Outcome CloudFrontClient::GetPublicKey2020_05_31(const GetPublicKey2020_05_31Request& request) const
@@ -1773,14 +1773,14 @@ GetPublicKey2020_05_31OutcomeCallable CloudFrontClient::GetPublicKey2020_05_31Ca
   return task->get_future();
 }
 
-void CloudFrontClient::GetPublicKey2020_05_31Async(const GetPublicKey2020_05_31Request& request, const GetPublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetPublicKey2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetPublicKey2020_05_31Request& request, const GetPublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPublicKey2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPublicKey2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetPublicKey2020_05_31AsyncHelper(const GetPublicKey2020_05_31Request& request, const GetPublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetPublicKey2020_05_31Async(const GetPublicKey2020_05_31Request& request, const GetPublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPublicKey2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetPublicKey2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetPublicKeyConfig2020_05_31Outcome CloudFrontClient::GetPublicKeyConfig2020_05_31(const GetPublicKeyConfig2020_05_31Request& request) const
@@ -1805,14 +1805,14 @@ GetPublicKeyConfig2020_05_31OutcomeCallable CloudFrontClient::GetPublicKeyConfig
   return task->get_future();
 }
 
-void CloudFrontClient::GetPublicKeyConfig2020_05_31Async(const GetPublicKeyConfig2020_05_31Request& request, const GetPublicKeyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetPublicKeyConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetPublicKeyConfig2020_05_31Request& request, const GetPublicKeyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPublicKeyConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPublicKeyConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetPublicKeyConfig2020_05_31AsyncHelper(const GetPublicKeyConfig2020_05_31Request& request, const GetPublicKeyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetPublicKeyConfig2020_05_31Async(const GetPublicKeyConfig2020_05_31Request& request, const GetPublicKeyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPublicKeyConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetPublicKeyConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetRealtimeLogConfig2020_05_31Outcome CloudFrontClient::GetRealtimeLogConfig2020_05_31(const GetRealtimeLogConfig2020_05_31Request& request) const
@@ -1830,14 +1830,14 @@ GetRealtimeLogConfig2020_05_31OutcomeCallable CloudFrontClient::GetRealtimeLogCo
   return task->get_future();
 }
 
-void CloudFrontClient::GetRealtimeLogConfig2020_05_31Async(const GetRealtimeLogConfig2020_05_31Request& request, const GetRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetRealtimeLogConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetRealtimeLogConfig2020_05_31Request& request, const GetRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRealtimeLogConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRealtimeLogConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetRealtimeLogConfig2020_05_31AsyncHelper(const GetRealtimeLogConfig2020_05_31Request& request, const GetRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetRealtimeLogConfig2020_05_31Async(const GetRealtimeLogConfig2020_05_31Request& request, const GetRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRealtimeLogConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetRealtimeLogConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicy2020_05_31(const GetResponseHeadersPolicy2020_05_31Request& request) const
@@ -1861,14 +1861,14 @@ GetResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::GetResponseH
   return task->get_future();
 }
 
-void CloudFrontClient::GetResponseHeadersPolicy2020_05_31Async(const GetResponseHeadersPolicy2020_05_31Request& request, const GetResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetResponseHeadersPolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetResponseHeadersPolicy2020_05_31Request& request, const GetResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResponseHeadersPolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetResponseHeadersPolicy2020_05_31AsyncHelper(const GetResponseHeadersPolicy2020_05_31Request& request, const GetResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetResponseHeadersPolicy2020_05_31Async(const GetResponseHeadersPolicy2020_05_31Request& request, const GetResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResponseHeadersPolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetResponseHeadersPolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetResponseHeadersPolicyConfig2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31(const GetResponseHeadersPolicyConfig2020_05_31Request& request) const
@@ -1893,14 +1893,14 @@ GetResponseHeadersPolicyConfig2020_05_31OutcomeCallable CloudFrontClient::GetRes
   return task->get_future();
 }
 
-void CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31Async(const GetResponseHeadersPolicyConfig2020_05_31Request& request, const GetResponseHeadersPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetResponseHeadersPolicyConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetResponseHeadersPolicyConfig2020_05_31Request& request, const GetResponseHeadersPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResponseHeadersPolicyConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResponseHeadersPolicyConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31AsyncHelper(const GetResponseHeadersPolicyConfig2020_05_31Request& request, const GetResponseHeadersPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31Async(const GetResponseHeadersPolicyConfig2020_05_31Request& request, const GetResponseHeadersPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResponseHeadersPolicyConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetResponseHeadersPolicyConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribution2020_05_31(const GetStreamingDistribution2020_05_31Request& request) const
@@ -1924,14 +1924,14 @@ GetStreamingDistribution2020_05_31OutcomeCallable CloudFrontClient::GetStreaming
   return task->get_future();
 }
 
-void CloudFrontClient::GetStreamingDistribution2020_05_31Async(const GetStreamingDistribution2020_05_31Request& request, const GetStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetStreamingDistribution2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetStreamingDistribution2020_05_31Request& request, const GetStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStreamingDistribution2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStreamingDistribution2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetStreamingDistribution2020_05_31AsyncHelper(const GetStreamingDistribution2020_05_31Request& request, const GetStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetStreamingDistribution2020_05_31Async(const GetStreamingDistribution2020_05_31Request& request, const GetStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStreamingDistribution2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetStreamingDistribution2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 GetStreamingDistributionConfig2020_05_31Outcome CloudFrontClient::GetStreamingDistributionConfig2020_05_31(const GetStreamingDistributionConfig2020_05_31Request& request) const
@@ -1956,14 +1956,14 @@ GetStreamingDistributionConfig2020_05_31OutcomeCallable CloudFrontClient::GetStr
   return task->get_future();
 }
 
-void CloudFrontClient::GetStreamingDistributionConfig2020_05_31Async(const GetStreamingDistributionConfig2020_05_31Request& request, const GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientGetStreamingDistributionConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const GetStreamingDistributionConfig2020_05_31Request& request, const GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStreamingDistributionConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStreamingDistributionConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::GetStreamingDistributionConfig2020_05_31AsyncHelper(const GetStreamingDistributionConfig2020_05_31Request& request, const GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::GetStreamingDistributionConfig2020_05_31Async(const GetStreamingDistributionConfig2020_05_31Request& request, const GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStreamingDistributionConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientGetStreamingDistributionConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListCachePolicies2020_05_31Outcome CloudFrontClient::ListCachePolicies2020_05_31(const ListCachePolicies2020_05_31Request& request) const
@@ -1981,14 +1981,14 @@ ListCachePolicies2020_05_31OutcomeCallable CloudFrontClient::ListCachePolicies20
   return task->get_future();
 }
 
-void CloudFrontClient::ListCachePolicies2020_05_31Async(const ListCachePolicies2020_05_31Request& request, const ListCachePolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListCachePolicies2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListCachePolicies2020_05_31Request& request, const ListCachePolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCachePolicies2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCachePolicies2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListCachePolicies2020_05_31AsyncHelper(const ListCachePolicies2020_05_31Request& request, const ListCachePolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListCachePolicies2020_05_31Async(const ListCachePolicies2020_05_31Request& request, const ListCachePolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCachePolicies2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListCachePolicies2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListCloudFrontOriginAccessIdentities2020_05_31Outcome CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31(const ListCloudFrontOriginAccessIdentities2020_05_31Request& request) const
@@ -2006,14 +2006,14 @@ ListCloudFrontOriginAccessIdentities2020_05_31OutcomeCallable CloudFrontClient::
   return task->get_future();
 }
 
-void CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31Async(const ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListCloudFrontOriginAccessIdentities2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCloudFrontOriginAccessIdentities2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCloudFrontOriginAccessIdentities2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31AsyncHelper(const ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31Async(const ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCloudFrontOriginAccessIdentities2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListCloudFrontOriginAccessIdentities2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListConflictingAliases2020_05_31Outcome CloudFrontClient::ListConflictingAliases2020_05_31(const ListConflictingAliases2020_05_31Request& request) const
@@ -2041,14 +2041,14 @@ ListConflictingAliases2020_05_31OutcomeCallable CloudFrontClient::ListConflictin
   return task->get_future();
 }
 
-void CloudFrontClient::ListConflictingAliases2020_05_31Async(const ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListConflictingAliases2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConflictingAliases2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConflictingAliases2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListConflictingAliases2020_05_31AsyncHelper(const ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListConflictingAliases2020_05_31Async(const ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConflictingAliases2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListConflictingAliases2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31(const ListDistributions2020_05_31Request& request) const
@@ -2066,14 +2066,14 @@ ListDistributions2020_05_31OutcomeCallable CloudFrontClient::ListDistributions20
   return task->get_future();
 }
 
-void CloudFrontClient::ListDistributions2020_05_31Async(const ListDistributions2020_05_31Request& request, const ListDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListDistributions2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListDistributions2020_05_31Request& request, const ListDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDistributions2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDistributions2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListDistributions2020_05_31AsyncHelper(const ListDistributions2020_05_31Request& request, const ListDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListDistributions2020_05_31Async(const ListDistributions2020_05_31Request& request, const ListDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDistributions2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListDistributions2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListDistributionsByCachePolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31(const ListDistributionsByCachePolicyId2020_05_31Request& request) const
@@ -2097,14 +2097,14 @@ ListDistributionsByCachePolicyId2020_05_31OutcomeCallable CloudFrontClient::List
   return task->get_future();
 }
 
-void CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31Async(const ListDistributionsByCachePolicyId2020_05_31Request& request, const ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListDistributionsByCachePolicyId2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListDistributionsByCachePolicyId2020_05_31Request& request, const ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDistributionsByCachePolicyId2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDistributionsByCachePolicyId2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31AsyncHelper(const ListDistributionsByCachePolicyId2020_05_31Request& request, const ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31Async(const ListDistributionsByCachePolicyId2020_05_31Request& request, const ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDistributionsByCachePolicyId2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListDistributionsByCachePolicyId2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListDistributionsByKeyGroup2020_05_31Outcome CloudFrontClient::ListDistributionsByKeyGroup2020_05_31(const ListDistributionsByKeyGroup2020_05_31Request& request) const
@@ -2128,14 +2128,14 @@ ListDistributionsByKeyGroup2020_05_31OutcomeCallable CloudFrontClient::ListDistr
   return task->get_future();
 }
 
-void CloudFrontClient::ListDistributionsByKeyGroup2020_05_31Async(const ListDistributionsByKeyGroup2020_05_31Request& request, const ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListDistributionsByKeyGroup2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListDistributionsByKeyGroup2020_05_31Request& request, const ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDistributionsByKeyGroup2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDistributionsByKeyGroup2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListDistributionsByKeyGroup2020_05_31AsyncHelper(const ListDistributionsByKeyGroup2020_05_31Request& request, const ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListDistributionsByKeyGroup2020_05_31Async(const ListDistributionsByKeyGroup2020_05_31Request& request, const ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDistributionsByKeyGroup2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListDistributionsByKeyGroup2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31(const ListDistributionsByOriginRequestPolicyId2020_05_31Request& request) const
@@ -2159,14 +2159,14 @@ ListDistributionsByOriginRequestPolicyId2020_05_31OutcomeCallable CloudFrontClie
   return task->get_future();
 }
 
-void CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31Async(const ListDistributionsByOriginRequestPolicyId2020_05_31Request& request, const ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListDistributionsByOriginRequestPolicyId2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListDistributionsByOriginRequestPolicyId2020_05_31Request& request, const ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDistributionsByOriginRequestPolicyId2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDistributionsByOriginRequestPolicyId2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31AsyncHelper(const ListDistributionsByOriginRequestPolicyId2020_05_31Request& request, const ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31Async(const ListDistributionsByOriginRequestPolicyId2020_05_31Request& request, const ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDistributionsByOriginRequestPolicyId2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListDistributionsByOriginRequestPolicyId2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListDistributionsByRealtimeLogConfig2020_05_31Outcome CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31(const ListDistributionsByRealtimeLogConfig2020_05_31Request& request) const
@@ -2184,14 +2184,14 @@ ListDistributionsByRealtimeLogConfig2020_05_31OutcomeCallable CloudFrontClient::
   return task->get_future();
 }
 
-void CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31Async(const ListDistributionsByRealtimeLogConfig2020_05_31Request& request, const ListDistributionsByRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListDistributionsByRealtimeLogConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListDistributionsByRealtimeLogConfig2020_05_31Request& request, const ListDistributionsByRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDistributionsByRealtimeLogConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDistributionsByRealtimeLogConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31AsyncHelper(const ListDistributionsByRealtimeLogConfig2020_05_31Request& request, const ListDistributionsByRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31Async(const ListDistributionsByRealtimeLogConfig2020_05_31Request& request, const ListDistributionsByRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDistributionsByRealtimeLogConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListDistributionsByRealtimeLogConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request) const
@@ -2215,14 +2215,14 @@ ListDistributionsByResponseHeadersPolicyId2020_05_31OutcomeCallable CloudFrontCl
   return task->get_future();
 }
 
-void CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31Async(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request, const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListDistributionsByResponseHeadersPolicyId2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request, const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDistributionsByResponseHeadersPolicyId2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDistributionsByResponseHeadersPolicyId2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31AsyncHelper(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request, const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31Async(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request, const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDistributionsByResponseHeadersPolicyId2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListDistributionsByResponseHeadersPolicyId2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributionsByWebACLId2020_05_31(const ListDistributionsByWebACLId2020_05_31Request& request) const
@@ -2246,14 +2246,14 @@ ListDistributionsByWebACLId2020_05_31OutcomeCallable CloudFrontClient::ListDistr
   return task->get_future();
 }
 
-void CloudFrontClient::ListDistributionsByWebACLId2020_05_31Async(const ListDistributionsByWebACLId2020_05_31Request& request, const ListDistributionsByWebACLId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListDistributionsByWebACLId2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListDistributionsByWebACLId2020_05_31Request& request, const ListDistributionsByWebACLId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDistributionsByWebACLId2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDistributionsByWebACLId2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListDistributionsByWebACLId2020_05_31AsyncHelper(const ListDistributionsByWebACLId2020_05_31Request& request, const ListDistributionsByWebACLId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListDistributionsByWebACLId2020_05_31Async(const ListDistributionsByWebACLId2020_05_31Request& request, const ListDistributionsByWebACLId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDistributionsByWebACLId2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListDistributionsByWebACLId2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListFieldLevelEncryptionConfigs2020_05_31Outcome CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31(const ListFieldLevelEncryptionConfigs2020_05_31Request& request) const
@@ -2271,14 +2271,14 @@ ListFieldLevelEncryptionConfigs2020_05_31OutcomeCallable CloudFrontClient::ListF
   return task->get_future();
 }
 
-void CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31Async(const ListFieldLevelEncryptionConfigs2020_05_31Request& request, const ListFieldLevelEncryptionConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListFieldLevelEncryptionConfigs2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListFieldLevelEncryptionConfigs2020_05_31Request& request, const ListFieldLevelEncryptionConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFieldLevelEncryptionConfigs2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFieldLevelEncryptionConfigs2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31AsyncHelper(const ListFieldLevelEncryptionConfigs2020_05_31Request& request, const ListFieldLevelEncryptionConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31Async(const ListFieldLevelEncryptionConfigs2020_05_31Request& request, const ListFieldLevelEncryptionConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFieldLevelEncryptionConfigs2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListFieldLevelEncryptionConfigs2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListFieldLevelEncryptionProfiles2020_05_31Outcome CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31(const ListFieldLevelEncryptionProfiles2020_05_31Request& request) const
@@ -2296,14 +2296,14 @@ ListFieldLevelEncryptionProfiles2020_05_31OutcomeCallable CloudFrontClient::List
   return task->get_future();
 }
 
-void CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31Async(const ListFieldLevelEncryptionProfiles2020_05_31Request& request, const ListFieldLevelEncryptionProfiles2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListFieldLevelEncryptionProfiles2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListFieldLevelEncryptionProfiles2020_05_31Request& request, const ListFieldLevelEncryptionProfiles2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFieldLevelEncryptionProfiles2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFieldLevelEncryptionProfiles2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31AsyncHelper(const ListFieldLevelEncryptionProfiles2020_05_31Request& request, const ListFieldLevelEncryptionProfiles2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31Async(const ListFieldLevelEncryptionProfiles2020_05_31Request& request, const ListFieldLevelEncryptionProfiles2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFieldLevelEncryptionProfiles2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListFieldLevelEncryptionProfiles2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListFunctions2020_05_31Outcome CloudFrontClient::ListFunctions2020_05_31(const ListFunctions2020_05_31Request& request) const
@@ -2321,14 +2321,14 @@ ListFunctions2020_05_31OutcomeCallable CloudFrontClient::ListFunctions2020_05_31
   return task->get_future();
 }
 
-void CloudFrontClient::ListFunctions2020_05_31Async(const ListFunctions2020_05_31Request& request, const ListFunctions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListFunctions2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListFunctions2020_05_31Request& request, const ListFunctions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFunctions2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFunctions2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListFunctions2020_05_31AsyncHelper(const ListFunctions2020_05_31Request& request, const ListFunctions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListFunctions2020_05_31Async(const ListFunctions2020_05_31Request& request, const ListFunctions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFunctions2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListFunctions2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31(const ListInvalidations2020_05_31Request& request) const
@@ -2353,14 +2353,14 @@ ListInvalidations2020_05_31OutcomeCallable CloudFrontClient::ListInvalidations20
   return task->get_future();
 }
 
-void CloudFrontClient::ListInvalidations2020_05_31Async(const ListInvalidations2020_05_31Request& request, const ListInvalidations2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListInvalidations2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListInvalidations2020_05_31Request& request, const ListInvalidations2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInvalidations2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInvalidations2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListInvalidations2020_05_31AsyncHelper(const ListInvalidations2020_05_31Request& request, const ListInvalidations2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListInvalidations2020_05_31Async(const ListInvalidations2020_05_31Request& request, const ListInvalidations2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInvalidations2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListInvalidations2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const ListKeyGroups2020_05_31Request& request) const
@@ -2378,14 +2378,14 @@ ListKeyGroups2020_05_31OutcomeCallable CloudFrontClient::ListKeyGroups2020_05_31
   return task->get_future();
 }
 
-void CloudFrontClient::ListKeyGroups2020_05_31Async(const ListKeyGroups2020_05_31Request& request, const ListKeyGroups2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListKeyGroups2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListKeyGroups2020_05_31Request& request, const ListKeyGroups2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListKeyGroups2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListKeyGroups2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListKeyGroups2020_05_31AsyncHelper(const ListKeyGroups2020_05_31Request& request, const ListKeyGroups2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListKeyGroups2020_05_31Async(const ListKeyGroups2020_05_31Request& request, const ListKeyGroups2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListKeyGroups2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListKeyGroups2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListOriginAccessControls2020_05_31Outcome CloudFrontClient::ListOriginAccessControls2020_05_31(const ListOriginAccessControls2020_05_31Request& request) const
@@ -2403,14 +2403,14 @@ ListOriginAccessControls2020_05_31OutcomeCallable CloudFrontClient::ListOriginAc
   return task->get_future();
 }
 
-void CloudFrontClient::ListOriginAccessControls2020_05_31Async(const ListOriginAccessControls2020_05_31Request& request, const ListOriginAccessControls2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListOriginAccessControls2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListOriginAccessControls2020_05_31Request& request, const ListOriginAccessControls2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOriginAccessControls2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOriginAccessControls2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListOriginAccessControls2020_05_31AsyncHelper(const ListOriginAccessControls2020_05_31Request& request, const ListOriginAccessControls2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListOriginAccessControls2020_05_31Async(const ListOriginAccessControls2020_05_31Request& request, const ListOriginAccessControls2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOriginAccessControls2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListOriginAccessControls2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPolicies2020_05_31(const ListOriginRequestPolicies2020_05_31Request& request) const
@@ -2428,14 +2428,14 @@ ListOriginRequestPolicies2020_05_31OutcomeCallable CloudFrontClient::ListOriginR
   return task->get_future();
 }
 
-void CloudFrontClient::ListOriginRequestPolicies2020_05_31Async(const ListOriginRequestPolicies2020_05_31Request& request, const ListOriginRequestPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListOriginRequestPolicies2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListOriginRequestPolicies2020_05_31Request& request, const ListOriginRequestPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOriginRequestPolicies2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOriginRequestPolicies2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListOriginRequestPolicies2020_05_31AsyncHelper(const ListOriginRequestPolicies2020_05_31Request& request, const ListOriginRequestPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListOriginRequestPolicies2020_05_31Async(const ListOriginRequestPolicies2020_05_31Request& request, const ListOriginRequestPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOriginRequestPolicies2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListOriginRequestPolicies2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListPublicKeys2020_05_31Outcome CloudFrontClient::ListPublicKeys2020_05_31(const ListPublicKeys2020_05_31Request& request) const
@@ -2453,14 +2453,14 @@ ListPublicKeys2020_05_31OutcomeCallable CloudFrontClient::ListPublicKeys2020_05_
   return task->get_future();
 }
 
-void CloudFrontClient::ListPublicKeys2020_05_31Async(const ListPublicKeys2020_05_31Request& request, const ListPublicKeys2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListPublicKeys2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListPublicKeys2020_05_31Request& request, const ListPublicKeys2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPublicKeys2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPublicKeys2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListPublicKeys2020_05_31AsyncHelper(const ListPublicKeys2020_05_31Request& request, const ListPublicKeys2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListPublicKeys2020_05_31Async(const ListPublicKeys2020_05_31Request& request, const ListPublicKeys2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPublicKeys2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListPublicKeys2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListRealtimeLogConfigs2020_05_31Outcome CloudFrontClient::ListRealtimeLogConfigs2020_05_31(const ListRealtimeLogConfigs2020_05_31Request& request) const
@@ -2478,14 +2478,14 @@ ListRealtimeLogConfigs2020_05_31OutcomeCallable CloudFrontClient::ListRealtimeLo
   return task->get_future();
 }
 
-void CloudFrontClient::ListRealtimeLogConfigs2020_05_31Async(const ListRealtimeLogConfigs2020_05_31Request& request, const ListRealtimeLogConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListRealtimeLogConfigs2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListRealtimeLogConfigs2020_05_31Request& request, const ListRealtimeLogConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRealtimeLogConfigs2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRealtimeLogConfigs2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListRealtimeLogConfigs2020_05_31AsyncHelper(const ListRealtimeLogConfigs2020_05_31Request& request, const ListRealtimeLogConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListRealtimeLogConfigs2020_05_31Async(const ListRealtimeLogConfigs2020_05_31Request& request, const ListRealtimeLogConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRealtimeLogConfigs2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListRealtimeLogConfigs2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListResponseHeadersPolicies2020_05_31Outcome CloudFrontClient::ListResponseHeadersPolicies2020_05_31(const ListResponseHeadersPolicies2020_05_31Request& request) const
@@ -2503,14 +2503,14 @@ ListResponseHeadersPolicies2020_05_31OutcomeCallable CloudFrontClient::ListRespo
   return task->get_future();
 }
 
-void CloudFrontClient::ListResponseHeadersPolicies2020_05_31Async(const ListResponseHeadersPolicies2020_05_31Request& request, const ListResponseHeadersPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListResponseHeadersPolicies2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListResponseHeadersPolicies2020_05_31Request& request, const ListResponseHeadersPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResponseHeadersPolicies2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResponseHeadersPolicies2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListResponseHeadersPolicies2020_05_31AsyncHelper(const ListResponseHeadersPolicies2020_05_31Request& request, const ListResponseHeadersPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListResponseHeadersPolicies2020_05_31Async(const ListResponseHeadersPolicies2020_05_31Request& request, const ListResponseHeadersPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResponseHeadersPolicies2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListResponseHeadersPolicies2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListStreamingDistributions2020_05_31Outcome CloudFrontClient::ListStreamingDistributions2020_05_31(const ListStreamingDistributions2020_05_31Request& request) const
@@ -2528,14 +2528,14 @@ ListStreamingDistributions2020_05_31OutcomeCallable CloudFrontClient::ListStream
   return task->get_future();
 }
 
-void CloudFrontClient::ListStreamingDistributions2020_05_31Async(const ListStreamingDistributions2020_05_31Request& request, const ListStreamingDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListStreamingDistributions2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListStreamingDistributions2020_05_31Request& request, const ListStreamingDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamingDistributions2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStreamingDistributions2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListStreamingDistributions2020_05_31AsyncHelper(const ListStreamingDistributions2020_05_31Request& request, const ListStreamingDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListStreamingDistributions2020_05_31Async(const ListStreamingDistributions2020_05_31Request& request, const ListStreamingDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStreamingDistributions2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListStreamingDistributions2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResource2020_05_31Outcome CloudFrontClient::ListTagsForResource2020_05_31(const ListTagsForResource2020_05_31Request& request) const
@@ -2558,14 +2558,14 @@ ListTagsForResource2020_05_31OutcomeCallable CloudFrontClient::ListTagsForResour
   return task->get_future();
 }
 
-void CloudFrontClient::ListTagsForResource2020_05_31Async(const ListTagsForResource2020_05_31Request& request, const ListTagsForResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientListTagsForResource2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const ListTagsForResource2020_05_31Request& request, const ListTagsForResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResource2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource2020_05_31(request), context);
 }
 
-void CloudFrontClient::ListTagsForResource2020_05_31AsyncHelper(const ListTagsForResource2020_05_31Request& request, const ListTagsForResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::ListTagsForResource2020_05_31Async(const ListTagsForResource2020_05_31Request& request, const ListTagsForResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientListTagsForResource2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(const PublishFunction2020_05_31Request& request) const
@@ -2595,14 +2595,14 @@ PublishFunction2020_05_31OutcomeCallable CloudFrontClient::PublishFunction2020_0
   return task->get_future();
 }
 
-void CloudFrontClient::PublishFunction2020_05_31Async(const PublishFunction2020_05_31Request& request, const PublishFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientPublishFunction2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const PublishFunction2020_05_31Request& request, const PublishFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PublishFunction2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PublishFunction2020_05_31(request), context);
 }
 
-void CloudFrontClient::PublishFunction2020_05_31AsyncHelper(const PublishFunction2020_05_31Request& request, const PublishFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::PublishFunction2020_05_31Async(const PublishFunction2020_05_31Request& request, const PublishFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PublishFunction2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientPublishFunction2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagResource2020_05_31Request& request) const
@@ -2628,14 +2628,14 @@ TagResource2020_05_31OutcomeCallable CloudFrontClient::TagResource2020_05_31Call
   return task->get_future();
 }
 
-void CloudFrontClient::TagResource2020_05_31Async(const TagResource2020_05_31Request& request, const TagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientTagResource2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const TagResource2020_05_31Request& request, const TagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResource2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource2020_05_31(request), context);
 }
 
-void CloudFrontClient::TagResource2020_05_31AsyncHelper(const TagResource2020_05_31Request& request, const TagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::TagResource2020_05_31Async(const TagResource2020_05_31Request& request, const TagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientTagResource2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 TestFunction2020_05_31Outcome CloudFrontClient::TestFunction2020_05_31(const TestFunction2020_05_31Request& request) const
@@ -2665,14 +2665,14 @@ TestFunction2020_05_31OutcomeCallable CloudFrontClient::TestFunction2020_05_31Ca
   return task->get_future();
 }
 
-void CloudFrontClient::TestFunction2020_05_31Async(const TestFunction2020_05_31Request& request, const TestFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientTestFunction2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const TestFunction2020_05_31Request& request, const TestFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestFunction2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestFunction2020_05_31(request), context);
 }
 
-void CloudFrontClient::TestFunction2020_05_31AsyncHelper(const TestFunction2020_05_31Request& request, const TestFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::TestFunction2020_05_31Async(const TestFunction2020_05_31Request& request, const TestFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestFunction2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientTestFunction2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const UntagResource2020_05_31Request& request) const
@@ -2698,14 +2698,14 @@ UntagResource2020_05_31OutcomeCallable CloudFrontClient::UntagResource2020_05_31
   return task->get_future();
 }
 
-void CloudFrontClient::UntagResource2020_05_31Async(const UntagResource2020_05_31Request& request, const UntagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUntagResource2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UntagResource2020_05_31Request& request, const UntagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResource2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource2020_05_31(request), context);
 }
 
-void CloudFrontClient::UntagResource2020_05_31AsyncHelper(const UntagResource2020_05_31Request& request, const UntagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UntagResource2020_05_31Async(const UntagResource2020_05_31Request& request, const UntagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUntagResource2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCachePolicy2020_05_31Outcome CloudFrontClient::UpdateCachePolicy2020_05_31(const UpdateCachePolicy2020_05_31Request& request) const
@@ -2729,14 +2729,14 @@ UpdateCachePolicy2020_05_31OutcomeCallable CloudFrontClient::UpdateCachePolicy20
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateCachePolicy2020_05_31Async(const UpdateCachePolicy2020_05_31Request& request, const UpdateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateCachePolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateCachePolicy2020_05_31Request& request, const UpdateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCachePolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCachePolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateCachePolicy2020_05_31AsyncHelper(const UpdateCachePolicy2020_05_31Request& request, const UpdateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateCachePolicy2020_05_31Async(const UpdateCachePolicy2020_05_31Request& request, const UpdateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCachePolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateCachePolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31(const UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request) const
@@ -2761,14 +2761,14 @@ UpdateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable CloudFrontClient::
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31Async(const UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request, const UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request, const UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCloudFrontOriginAccessIdentity2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(const UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request, const UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31Async(const UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request, const UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCloudFrontOriginAccessIdentity2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDistribution2020_05_31Outcome CloudFrontClient::UpdateDistribution2020_05_31(const UpdateDistribution2020_05_31Request& request) const
@@ -2793,14 +2793,14 @@ UpdateDistribution2020_05_31OutcomeCallable CloudFrontClient::UpdateDistribution
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateDistribution2020_05_31Async(const UpdateDistribution2020_05_31Request& request, const UpdateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateDistribution2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateDistribution2020_05_31Request& request, const UpdateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDistribution2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDistribution2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateDistribution2020_05_31AsyncHelper(const UpdateDistribution2020_05_31Request& request, const UpdateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateDistribution2020_05_31Async(const UpdateDistribution2020_05_31Request& request, const UpdateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDistribution2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateDistribution2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::UpdateFieldLevelEncryptionConfig2020_05_31(const UpdateFieldLevelEncryptionConfig2020_05_31Request& request) const
@@ -2825,14 +2825,14 @@ UpdateFieldLevelEncryptionConfig2020_05_31OutcomeCallable CloudFrontClient::Upda
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateFieldLevelEncryptionConfig2020_05_31Async(const UpdateFieldLevelEncryptionConfig2020_05_31Request& request, const UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateFieldLevelEncryptionConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateFieldLevelEncryptionConfig2020_05_31Request& request, const UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFieldLevelEncryptionConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFieldLevelEncryptionConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateFieldLevelEncryptionConfig2020_05_31AsyncHelper(const UpdateFieldLevelEncryptionConfig2020_05_31Request& request, const UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateFieldLevelEncryptionConfig2020_05_31Async(const UpdateFieldLevelEncryptionConfig2020_05_31Request& request, const UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFieldLevelEncryptionConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateFieldLevelEncryptionConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31(const UpdateFieldLevelEncryptionProfile2020_05_31Request& request) const
@@ -2857,14 +2857,14 @@ UpdateFieldLevelEncryptionProfile2020_05_31OutcomeCallable CloudFrontClient::Upd
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31Async(const UpdateFieldLevelEncryptionProfile2020_05_31Request& request, const UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateFieldLevelEncryptionProfile2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateFieldLevelEncryptionProfile2020_05_31Request& request, const UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFieldLevelEncryptionProfile2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFieldLevelEncryptionProfile2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31AsyncHelper(const UpdateFieldLevelEncryptionProfile2020_05_31Request& request, const UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31Async(const UpdateFieldLevelEncryptionProfile2020_05_31Request& request, const UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFieldLevelEncryptionProfile2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateFieldLevelEncryptionProfile2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFunction2020_05_31Outcome CloudFrontClient::UpdateFunction2020_05_31(const UpdateFunction2020_05_31Request& request) const
@@ -2893,14 +2893,14 @@ UpdateFunction2020_05_31OutcomeCallable CloudFrontClient::UpdateFunction2020_05_
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateFunction2020_05_31Async(const UpdateFunction2020_05_31Request& request, const UpdateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateFunction2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateFunction2020_05_31Request& request, const UpdateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFunction2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFunction2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateFunction2020_05_31AsyncHelper(const UpdateFunction2020_05_31Request& request, const UpdateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateFunction2020_05_31Async(const UpdateFunction2020_05_31Request& request, const UpdateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFunction2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateFunction2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const UpdateKeyGroup2020_05_31Request& request) const
@@ -2924,14 +2924,14 @@ UpdateKeyGroup2020_05_31OutcomeCallable CloudFrontClient::UpdateKeyGroup2020_05_
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateKeyGroup2020_05_31Async(const UpdateKeyGroup2020_05_31Request& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateKeyGroup2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateKeyGroup2020_05_31Request& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateKeyGroup2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateKeyGroup2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateKeyGroup2020_05_31AsyncHelper(const UpdateKeyGroup2020_05_31Request& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateKeyGroup2020_05_31Async(const UpdateKeyGroup2020_05_31Request& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateKeyGroup2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateKeyGroup2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateOriginAccessControl2020_05_31Outcome CloudFrontClient::UpdateOriginAccessControl2020_05_31(const UpdateOriginAccessControl2020_05_31Request& request) const
@@ -2956,14 +2956,14 @@ UpdateOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::UpdateOrigi
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateOriginAccessControl2020_05_31Async(const UpdateOriginAccessControl2020_05_31Request& request, const UpdateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateOriginAccessControl2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateOriginAccessControl2020_05_31Request& request, const UpdateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateOriginAccessControl2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateOriginAccessControl2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateOriginAccessControl2020_05_31AsyncHelper(const UpdateOriginAccessControl2020_05_31Request& request, const UpdateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateOriginAccessControl2020_05_31Async(const UpdateOriginAccessControl2020_05_31Request& request, const UpdateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateOriginAccessControl2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateOriginAccessControl2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequestPolicy2020_05_31(const UpdateOriginRequestPolicy2020_05_31Request& request) const
@@ -2987,14 +2987,14 @@ UpdateOriginRequestPolicy2020_05_31OutcomeCallable CloudFrontClient::UpdateOrigi
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateOriginRequestPolicy2020_05_31Async(const UpdateOriginRequestPolicy2020_05_31Request& request, const UpdateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateOriginRequestPolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateOriginRequestPolicy2020_05_31Request& request, const UpdateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateOriginRequestPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateOriginRequestPolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateOriginRequestPolicy2020_05_31AsyncHelper(const UpdateOriginRequestPolicy2020_05_31Request& request, const UpdateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateOriginRequestPolicy2020_05_31Async(const UpdateOriginRequestPolicy2020_05_31Request& request, const UpdateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateOriginRequestPolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateOriginRequestPolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePublicKey2020_05_31Outcome CloudFrontClient::UpdatePublicKey2020_05_31(const UpdatePublicKey2020_05_31Request& request) const
@@ -3019,14 +3019,14 @@ UpdatePublicKey2020_05_31OutcomeCallable CloudFrontClient::UpdatePublicKey2020_0
   return task->get_future();
 }
 
-void CloudFrontClient::UpdatePublicKey2020_05_31Async(const UpdatePublicKey2020_05_31Request& request, const UpdatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdatePublicKey2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdatePublicKey2020_05_31Request& request, const UpdatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePublicKey2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePublicKey2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdatePublicKey2020_05_31AsyncHelper(const UpdatePublicKey2020_05_31Request& request, const UpdatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdatePublicKey2020_05_31Async(const UpdatePublicKey2020_05_31Request& request, const UpdatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePublicKey2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdatePublicKey2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::UpdateRealtimeLogConfig2020_05_31(const UpdateRealtimeLogConfig2020_05_31Request& request) const
@@ -3044,14 +3044,14 @@ UpdateRealtimeLogConfig2020_05_31OutcomeCallable CloudFrontClient::UpdateRealtim
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateRealtimeLogConfig2020_05_31Async(const UpdateRealtimeLogConfig2020_05_31Request& request, const UpdateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateRealtimeLogConfig2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateRealtimeLogConfig2020_05_31Request& request, const UpdateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRealtimeLogConfig2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRealtimeLogConfig2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateRealtimeLogConfig2020_05_31AsyncHelper(const UpdateRealtimeLogConfig2020_05_31Request& request, const UpdateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateRealtimeLogConfig2020_05_31Async(const UpdateRealtimeLogConfig2020_05_31Request& request, const UpdateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRealtimeLogConfig2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateRealtimeLogConfig2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31(const UpdateResponseHeadersPolicy2020_05_31Request& request) const
@@ -3075,14 +3075,14 @@ UpdateResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::UpdateRes
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31Async(const UpdateResponseHeadersPolicy2020_05_31Request& request, const UpdateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateResponseHeadersPolicy2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateResponseHeadersPolicy2020_05_31Request& request, const UpdateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateResponseHeadersPolicy2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31AsyncHelper(const UpdateResponseHeadersPolicy2020_05_31Request& request, const UpdateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31Async(const UpdateResponseHeadersPolicy2020_05_31Request& request, const UpdateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateResponseHeadersPolicy2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateResponseHeadersPolicy2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateStreamingDistribution2020_05_31Outcome CloudFrontClient::UpdateStreamingDistribution2020_05_31(const UpdateStreamingDistribution2020_05_31Request& request) const
@@ -3107,13 +3107,13 @@ UpdateStreamingDistribution2020_05_31OutcomeCallable CloudFrontClient::UpdateStr
   return task->get_future();
 }
 
-void CloudFrontClient::UpdateStreamingDistribution2020_05_31Async(const UpdateStreamingDistribution2020_05_31Request& request, const UpdateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClientUpdateStreamingDistribution2020_05_31AsyncHelper(CloudFrontClient const * const clientThis, const UpdateStreamingDistribution2020_05_31Request& request, const UpdateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStreamingDistribution2020_05_31AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateStreamingDistribution2020_05_31(request), context);
 }
 
-void CloudFrontClient::UpdateStreamingDistribution2020_05_31AsyncHelper(const UpdateStreamingDistribution2020_05_31Request& request, const UpdateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudFrontClient::UpdateStreamingDistribution2020_05_31Async(const UpdateStreamingDistribution2020_05_31Request& request, const UpdateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateStreamingDistribution2020_05_31(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudFrontClientUpdateStreamingDistribution2020_05_31AsyncHelper( this, request, handler, context ); } );
 }
 

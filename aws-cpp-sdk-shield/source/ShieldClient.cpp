@@ -149,14 +149,14 @@ AssociateDRTLogBucketOutcomeCallable ShieldClient::AssociateDRTLogBucketCallable
   return task->get_future();
 }
 
-void ShieldClient::AssociateDRTLogBucketAsync(const AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientAssociateDRTLogBucketAsyncHelper(ShieldClient const * const clientThis, const AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateDRTLogBucketAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateDRTLogBucket(request), context);
 }
 
-void ShieldClient::AssociateDRTLogBucketAsyncHelper(const AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::AssociateDRTLogBucketAsync(const AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateDRTLogBucket(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientAssociateDRTLogBucketAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateDRTRoleOutcome ShieldClient::AssociateDRTRole(const AssociateDRTRoleRequest& request) const
@@ -173,14 +173,14 @@ AssociateDRTRoleOutcomeCallable ShieldClient::AssociateDRTRoleCallable(const Ass
   return task->get_future();
 }
 
-void ShieldClient::AssociateDRTRoleAsync(const AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientAssociateDRTRoleAsyncHelper(ShieldClient const * const clientThis, const AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateDRTRoleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateDRTRole(request), context);
 }
 
-void ShieldClient::AssociateDRTRoleAsyncHelper(const AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::AssociateDRTRoleAsync(const AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateDRTRole(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientAssociateDRTRoleAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateHealthCheckOutcome ShieldClient::AssociateHealthCheck(const AssociateHealthCheckRequest& request) const
@@ -197,14 +197,14 @@ AssociateHealthCheckOutcomeCallable ShieldClient::AssociateHealthCheckCallable(c
   return task->get_future();
 }
 
-void ShieldClient::AssociateHealthCheckAsync(const AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientAssociateHealthCheckAsyncHelper(ShieldClient const * const clientThis, const AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateHealthCheckAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateHealthCheck(request), context);
 }
 
-void ShieldClient::AssociateHealthCheckAsyncHelper(const AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::AssociateHealthCheckAsync(const AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateHealthCheck(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientAssociateHealthCheckAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateProactiveEngagementDetailsOutcome ShieldClient::AssociateProactiveEngagementDetails(const AssociateProactiveEngagementDetailsRequest& request) const
@@ -221,14 +221,14 @@ AssociateProactiveEngagementDetailsOutcomeCallable ShieldClient::AssociateProact
   return task->get_future();
 }
 
-void ShieldClient::AssociateProactiveEngagementDetailsAsync(const AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientAssociateProactiveEngagementDetailsAsyncHelper(ShieldClient const * const clientThis, const AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateProactiveEngagementDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateProactiveEngagementDetails(request), context);
 }
 
-void ShieldClient::AssociateProactiveEngagementDetailsAsyncHelper(const AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::AssociateProactiveEngagementDetailsAsync(const AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateProactiveEngagementDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientAssociateProactiveEngagementDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProtectionOutcome ShieldClient::CreateProtection(const CreateProtectionRequest& request) const
@@ -245,14 +245,14 @@ CreateProtectionOutcomeCallable ShieldClient::CreateProtectionCallable(const Cre
   return task->get_future();
 }
 
-void ShieldClient::CreateProtectionAsync(const CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientCreateProtectionAsyncHelper(ShieldClient const * const clientThis, const CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProtectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProtection(request), context);
 }
 
-void ShieldClient::CreateProtectionAsyncHelper(const CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::CreateProtectionAsync(const CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProtection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientCreateProtectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProtectionGroupOutcome ShieldClient::CreateProtectionGroup(const CreateProtectionGroupRequest& request) const
@@ -269,14 +269,14 @@ CreateProtectionGroupOutcomeCallable ShieldClient::CreateProtectionGroupCallable
   return task->get_future();
 }
 
-void ShieldClient::CreateProtectionGroupAsync(const CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientCreateProtectionGroupAsyncHelper(ShieldClient const * const clientThis, const CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProtectionGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProtectionGroup(request), context);
 }
 
-void ShieldClient::CreateProtectionGroupAsyncHelper(const CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::CreateProtectionGroupAsync(const CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProtectionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientCreateProtectionGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSubscriptionOutcome ShieldClient::CreateSubscription(const CreateSubscriptionRequest& request) const
@@ -293,14 +293,14 @@ CreateSubscriptionOutcomeCallable ShieldClient::CreateSubscriptionCallable(const
   return task->get_future();
 }
 
-void ShieldClient::CreateSubscriptionAsync(const CreateSubscriptionRequest& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientCreateSubscriptionAsyncHelper(ShieldClient const * const clientThis, const CreateSubscriptionRequest& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSubscription(request), context);
 }
 
-void ShieldClient::CreateSubscriptionAsyncHelper(const CreateSubscriptionRequest& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::CreateSubscriptionAsync(const CreateSubscriptionRequest& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientCreateSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProtectionOutcome ShieldClient::DeleteProtection(const DeleteProtectionRequest& request) const
@@ -317,14 +317,14 @@ DeleteProtectionOutcomeCallable ShieldClient::DeleteProtectionCallable(const Del
   return task->get_future();
 }
 
-void ShieldClient::DeleteProtectionAsync(const DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDeleteProtectionAsyncHelper(ShieldClient const * const clientThis, const DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProtectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProtection(request), context);
 }
 
-void ShieldClient::DeleteProtectionAsyncHelper(const DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DeleteProtectionAsync(const DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProtection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDeleteProtectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProtectionGroupOutcome ShieldClient::DeleteProtectionGroup(const DeleteProtectionGroupRequest& request) const
@@ -341,14 +341,14 @@ DeleteProtectionGroupOutcomeCallable ShieldClient::DeleteProtectionGroupCallable
   return task->get_future();
 }
 
-void ShieldClient::DeleteProtectionGroupAsync(const DeleteProtectionGroupRequest& request, const DeleteProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDeleteProtectionGroupAsyncHelper(ShieldClient const * const clientThis, const DeleteProtectionGroupRequest& request, const DeleteProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProtectionGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProtectionGroup(request), context);
 }
 
-void ShieldClient::DeleteProtectionGroupAsyncHelper(const DeleteProtectionGroupRequest& request, const DeleteProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DeleteProtectionGroupAsync(const DeleteProtectionGroupRequest& request, const DeleteProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProtectionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDeleteProtectionGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAttackOutcome ShieldClient::DescribeAttack(const DescribeAttackRequest& request) const
@@ -365,14 +365,14 @@ DescribeAttackOutcomeCallable ShieldClient::DescribeAttackCallable(const Describ
   return task->get_future();
 }
 
-void ShieldClient::DescribeAttackAsync(const DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDescribeAttackAsyncHelper(ShieldClient const * const clientThis, const DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAttackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAttack(request), context);
 }
 
-void ShieldClient::DescribeAttackAsyncHelper(const DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DescribeAttackAsync(const DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAttack(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDescribeAttackAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAttackStatisticsOutcome ShieldClient::DescribeAttackStatistics(const DescribeAttackStatisticsRequest& request) const
@@ -389,14 +389,14 @@ DescribeAttackStatisticsOutcomeCallable ShieldClient::DescribeAttackStatisticsCa
   return task->get_future();
 }
 
-void ShieldClient::DescribeAttackStatisticsAsync(const DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDescribeAttackStatisticsAsyncHelper(ShieldClient const * const clientThis, const DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAttackStatisticsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAttackStatistics(request), context);
 }
 
-void ShieldClient::DescribeAttackStatisticsAsyncHelper(const DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DescribeAttackStatisticsAsync(const DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAttackStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDescribeAttackStatisticsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDRTAccessOutcome ShieldClient::DescribeDRTAccess(const DescribeDRTAccessRequest& request) const
@@ -413,14 +413,14 @@ DescribeDRTAccessOutcomeCallable ShieldClient::DescribeDRTAccessCallable(const D
   return task->get_future();
 }
 
-void ShieldClient::DescribeDRTAccessAsync(const DescribeDRTAccessRequest& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDescribeDRTAccessAsyncHelper(ShieldClient const * const clientThis, const DescribeDRTAccessRequest& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDRTAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDRTAccess(request), context);
 }
 
-void ShieldClient::DescribeDRTAccessAsyncHelper(const DescribeDRTAccessRequest& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DescribeDRTAccessAsync(const DescribeDRTAccessRequest& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDRTAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDescribeDRTAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEmergencyContactSettingsOutcome ShieldClient::DescribeEmergencyContactSettings(const DescribeEmergencyContactSettingsRequest& request) const
@@ -437,14 +437,14 @@ DescribeEmergencyContactSettingsOutcomeCallable ShieldClient::DescribeEmergencyC
   return task->get_future();
 }
 
-void ShieldClient::DescribeEmergencyContactSettingsAsync(const DescribeEmergencyContactSettingsRequest& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDescribeEmergencyContactSettingsAsyncHelper(ShieldClient const * const clientThis, const DescribeEmergencyContactSettingsRequest& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEmergencyContactSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEmergencyContactSettings(request), context);
 }
 
-void ShieldClient::DescribeEmergencyContactSettingsAsyncHelper(const DescribeEmergencyContactSettingsRequest& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DescribeEmergencyContactSettingsAsync(const DescribeEmergencyContactSettingsRequest& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEmergencyContactSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDescribeEmergencyContactSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProtectionOutcome ShieldClient::DescribeProtection(const DescribeProtectionRequest& request) const
@@ -461,14 +461,14 @@ DescribeProtectionOutcomeCallable ShieldClient::DescribeProtectionCallable(const
   return task->get_future();
 }
 
-void ShieldClient::DescribeProtectionAsync(const DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDescribeProtectionAsyncHelper(ShieldClient const * const clientThis, const DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProtectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProtection(request), context);
 }
 
-void ShieldClient::DescribeProtectionAsyncHelper(const DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DescribeProtectionAsync(const DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProtection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDescribeProtectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProtectionGroupOutcome ShieldClient::DescribeProtectionGroup(const DescribeProtectionGroupRequest& request) const
@@ -485,14 +485,14 @@ DescribeProtectionGroupOutcomeCallable ShieldClient::DescribeProtectionGroupCall
   return task->get_future();
 }
 
-void ShieldClient::DescribeProtectionGroupAsync(const DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDescribeProtectionGroupAsyncHelper(ShieldClient const * const clientThis, const DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProtectionGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProtectionGroup(request), context);
 }
 
-void ShieldClient::DescribeProtectionGroupAsyncHelper(const DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DescribeProtectionGroupAsync(const DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProtectionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDescribeProtectionGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSubscriptionOutcome ShieldClient::DescribeSubscription(const DescribeSubscriptionRequest& request) const
@@ -509,14 +509,14 @@ DescribeSubscriptionOutcomeCallable ShieldClient::DescribeSubscriptionCallable(c
   return task->get_future();
 }
 
-void ShieldClient::DescribeSubscriptionAsync(const DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDescribeSubscriptionAsyncHelper(ShieldClient const * const clientThis, const DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSubscription(request), context);
 }
 
-void ShieldClient::DescribeSubscriptionAsyncHelper(const DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DescribeSubscriptionAsync(const DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDescribeSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableApplicationLayerAutomaticResponseOutcome ShieldClient::DisableApplicationLayerAutomaticResponse(const DisableApplicationLayerAutomaticResponseRequest& request) const
@@ -533,14 +533,14 @@ DisableApplicationLayerAutomaticResponseOutcomeCallable ShieldClient::DisableApp
   return task->get_future();
 }
 
-void ShieldClient::DisableApplicationLayerAutomaticResponseAsync(const DisableApplicationLayerAutomaticResponseRequest& request, const DisableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDisableApplicationLayerAutomaticResponseAsyncHelper(ShieldClient const * const clientThis, const DisableApplicationLayerAutomaticResponseRequest& request, const DisableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableApplicationLayerAutomaticResponseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableApplicationLayerAutomaticResponse(request), context);
 }
 
-void ShieldClient::DisableApplicationLayerAutomaticResponseAsyncHelper(const DisableApplicationLayerAutomaticResponseRequest& request, const DisableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DisableApplicationLayerAutomaticResponseAsync(const DisableApplicationLayerAutomaticResponseRequest& request, const DisableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableApplicationLayerAutomaticResponse(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDisableApplicationLayerAutomaticResponseAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableProactiveEngagementOutcome ShieldClient::DisableProactiveEngagement(const DisableProactiveEngagementRequest& request) const
@@ -557,14 +557,14 @@ DisableProactiveEngagementOutcomeCallable ShieldClient::DisableProactiveEngageme
   return task->get_future();
 }
 
-void ShieldClient::DisableProactiveEngagementAsync(const DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDisableProactiveEngagementAsyncHelper(ShieldClient const * const clientThis, const DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableProactiveEngagementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableProactiveEngagement(request), context);
 }
 
-void ShieldClient::DisableProactiveEngagementAsyncHelper(const DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DisableProactiveEngagementAsync(const DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableProactiveEngagement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDisableProactiveEngagementAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateDRTLogBucketOutcome ShieldClient::DisassociateDRTLogBucket(const DisassociateDRTLogBucketRequest& request) const
@@ -581,14 +581,14 @@ DisassociateDRTLogBucketOutcomeCallable ShieldClient::DisassociateDRTLogBucketCa
   return task->get_future();
 }
 
-void ShieldClient::DisassociateDRTLogBucketAsync(const DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDisassociateDRTLogBucketAsyncHelper(ShieldClient const * const clientThis, const DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateDRTLogBucketAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateDRTLogBucket(request), context);
 }
 
-void ShieldClient::DisassociateDRTLogBucketAsyncHelper(const DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DisassociateDRTLogBucketAsync(const DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateDRTLogBucket(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDisassociateDRTLogBucketAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateDRTRoleOutcome ShieldClient::DisassociateDRTRole(const DisassociateDRTRoleRequest& request) const
@@ -605,14 +605,14 @@ DisassociateDRTRoleOutcomeCallable ShieldClient::DisassociateDRTRoleCallable(con
   return task->get_future();
 }
 
-void ShieldClient::DisassociateDRTRoleAsync(const DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDisassociateDRTRoleAsyncHelper(ShieldClient const * const clientThis, const DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateDRTRoleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateDRTRole(request), context);
 }
 
-void ShieldClient::DisassociateDRTRoleAsyncHelper(const DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DisassociateDRTRoleAsync(const DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateDRTRole(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDisassociateDRTRoleAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateHealthCheckOutcome ShieldClient::DisassociateHealthCheck(const DisassociateHealthCheckRequest& request) const
@@ -629,14 +629,14 @@ DisassociateHealthCheckOutcomeCallable ShieldClient::DisassociateHealthCheckCall
   return task->get_future();
 }
 
-void ShieldClient::DisassociateHealthCheckAsync(const DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientDisassociateHealthCheckAsyncHelper(ShieldClient const * const clientThis, const DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateHealthCheckAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateHealthCheck(request), context);
 }
 
-void ShieldClient::DisassociateHealthCheckAsyncHelper(const DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::DisassociateHealthCheckAsync(const DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateHealthCheck(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientDisassociateHealthCheckAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableApplicationLayerAutomaticResponseOutcome ShieldClient::EnableApplicationLayerAutomaticResponse(const EnableApplicationLayerAutomaticResponseRequest& request) const
@@ -653,14 +653,14 @@ EnableApplicationLayerAutomaticResponseOutcomeCallable ShieldClient::EnableAppli
   return task->get_future();
 }
 
-void ShieldClient::EnableApplicationLayerAutomaticResponseAsync(const EnableApplicationLayerAutomaticResponseRequest& request, const EnableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientEnableApplicationLayerAutomaticResponseAsyncHelper(ShieldClient const * const clientThis, const EnableApplicationLayerAutomaticResponseRequest& request, const EnableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableApplicationLayerAutomaticResponseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableApplicationLayerAutomaticResponse(request), context);
 }
 
-void ShieldClient::EnableApplicationLayerAutomaticResponseAsyncHelper(const EnableApplicationLayerAutomaticResponseRequest& request, const EnableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::EnableApplicationLayerAutomaticResponseAsync(const EnableApplicationLayerAutomaticResponseRequest& request, const EnableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableApplicationLayerAutomaticResponse(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientEnableApplicationLayerAutomaticResponseAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableProactiveEngagementOutcome ShieldClient::EnableProactiveEngagement(const EnableProactiveEngagementRequest& request) const
@@ -677,14 +677,14 @@ EnableProactiveEngagementOutcomeCallable ShieldClient::EnableProactiveEngagement
   return task->get_future();
 }
 
-void ShieldClient::EnableProactiveEngagementAsync(const EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientEnableProactiveEngagementAsyncHelper(ShieldClient const * const clientThis, const EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableProactiveEngagementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableProactiveEngagement(request), context);
 }
 
-void ShieldClient::EnableProactiveEngagementAsyncHelper(const EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::EnableProactiveEngagementAsync(const EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableProactiveEngagement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientEnableProactiveEngagementAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSubscriptionStateOutcome ShieldClient::GetSubscriptionState(const GetSubscriptionStateRequest& request) const
@@ -701,14 +701,14 @@ GetSubscriptionStateOutcomeCallable ShieldClient::GetSubscriptionStateCallable(c
   return task->get_future();
 }
 
-void ShieldClient::GetSubscriptionStateAsync(const GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientGetSubscriptionStateAsyncHelper(ShieldClient const * const clientThis, const GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSubscriptionStateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSubscriptionState(request), context);
 }
 
-void ShieldClient::GetSubscriptionStateAsyncHelper(const GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::GetSubscriptionStateAsync(const GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSubscriptionState(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientGetSubscriptionStateAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAttacksOutcome ShieldClient::ListAttacks(const ListAttacksRequest& request) const
@@ -725,14 +725,14 @@ ListAttacksOutcomeCallable ShieldClient::ListAttacksCallable(const ListAttacksRe
   return task->get_future();
 }
 
-void ShieldClient::ListAttacksAsync(const ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientListAttacksAsyncHelper(ShieldClient const * const clientThis, const ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAttacksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAttacks(request), context);
 }
 
-void ShieldClient::ListAttacksAsyncHelper(const ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::ListAttacksAsync(const ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAttacks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientListAttacksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProtectionGroupsOutcome ShieldClient::ListProtectionGroups(const ListProtectionGroupsRequest& request) const
@@ -749,14 +749,14 @@ ListProtectionGroupsOutcomeCallable ShieldClient::ListProtectionGroupsCallable(c
   return task->get_future();
 }
 
-void ShieldClient::ListProtectionGroupsAsync(const ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientListProtectionGroupsAsyncHelper(ShieldClient const * const clientThis, const ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProtectionGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProtectionGroups(request), context);
 }
 
-void ShieldClient::ListProtectionGroupsAsyncHelper(const ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::ListProtectionGroupsAsync(const ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProtectionGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientListProtectionGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProtectionsOutcome ShieldClient::ListProtections(const ListProtectionsRequest& request) const
@@ -773,14 +773,14 @@ ListProtectionsOutcomeCallable ShieldClient::ListProtectionsCallable(const ListP
   return task->get_future();
 }
 
-void ShieldClient::ListProtectionsAsync(const ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientListProtectionsAsyncHelper(ShieldClient const * const clientThis, const ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProtectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProtections(request), context);
 }
 
-void ShieldClient::ListProtectionsAsyncHelper(const ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::ListProtectionsAsync(const ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProtections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientListProtectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourcesInProtectionGroupOutcome ShieldClient::ListResourcesInProtectionGroup(const ListResourcesInProtectionGroupRequest& request) const
@@ -797,14 +797,14 @@ ListResourcesInProtectionGroupOutcomeCallable ShieldClient::ListResourcesInProte
   return task->get_future();
 }
 
-void ShieldClient::ListResourcesInProtectionGroupAsync(const ListResourcesInProtectionGroupRequest& request, const ListResourcesInProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientListResourcesInProtectionGroupAsyncHelper(ShieldClient const * const clientThis, const ListResourcesInProtectionGroupRequest& request, const ListResourcesInProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesInProtectionGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourcesInProtectionGroup(request), context);
 }
 
-void ShieldClient::ListResourcesInProtectionGroupAsyncHelper(const ListResourcesInProtectionGroupRequest& request, const ListResourcesInProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::ListResourcesInProtectionGroupAsync(const ListResourcesInProtectionGroupRequest& request, const ListResourcesInProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourcesInProtectionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientListResourcesInProtectionGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ShieldClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -821,14 +821,14 @@ ListTagsForResourceOutcomeCallable ShieldClient::ListTagsForResourceCallable(con
   return task->get_future();
 }
 
-void ShieldClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientListTagsForResourceAsyncHelper(ShieldClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ShieldClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ShieldClient::TagResource(const TagResourceRequest& request) const
@@ -845,14 +845,14 @@ TagResourceOutcomeCallable ShieldClient::TagResourceCallable(const TagResourceRe
   return task->get_future();
 }
 
-void ShieldClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientTagResourceAsyncHelper(ShieldClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ShieldClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ShieldClient::UntagResource(const UntagResourceRequest& request) const
@@ -869,14 +869,14 @@ UntagResourceOutcomeCallable ShieldClient::UntagResourceCallable(const UntagReso
   return task->get_future();
 }
 
-void ShieldClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientUntagResourceAsyncHelper(ShieldClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ShieldClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationLayerAutomaticResponseOutcome ShieldClient::UpdateApplicationLayerAutomaticResponse(const UpdateApplicationLayerAutomaticResponseRequest& request) const
@@ -893,14 +893,14 @@ UpdateApplicationLayerAutomaticResponseOutcomeCallable ShieldClient::UpdateAppli
   return task->get_future();
 }
 
-void ShieldClient::UpdateApplicationLayerAutomaticResponseAsync(const UpdateApplicationLayerAutomaticResponseRequest& request, const UpdateApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientUpdateApplicationLayerAutomaticResponseAsyncHelper(ShieldClient const * const clientThis, const UpdateApplicationLayerAutomaticResponseRequest& request, const UpdateApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationLayerAutomaticResponseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplicationLayerAutomaticResponse(request), context);
 }
 
-void ShieldClient::UpdateApplicationLayerAutomaticResponseAsyncHelper(const UpdateApplicationLayerAutomaticResponseRequest& request, const UpdateApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::UpdateApplicationLayerAutomaticResponseAsync(const UpdateApplicationLayerAutomaticResponseRequest& request, const UpdateApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplicationLayerAutomaticResponse(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientUpdateApplicationLayerAutomaticResponseAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEmergencyContactSettingsOutcome ShieldClient::UpdateEmergencyContactSettings(const UpdateEmergencyContactSettingsRequest& request) const
@@ -917,14 +917,14 @@ UpdateEmergencyContactSettingsOutcomeCallable ShieldClient::UpdateEmergencyConta
   return task->get_future();
 }
 
-void ShieldClient::UpdateEmergencyContactSettingsAsync(const UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientUpdateEmergencyContactSettingsAsyncHelper(ShieldClient const * const clientThis, const UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEmergencyContactSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEmergencyContactSettings(request), context);
 }
 
-void ShieldClient::UpdateEmergencyContactSettingsAsyncHelper(const UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::UpdateEmergencyContactSettingsAsync(const UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEmergencyContactSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientUpdateEmergencyContactSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProtectionGroupOutcome ShieldClient::UpdateProtectionGroup(const UpdateProtectionGroupRequest& request) const
@@ -941,14 +941,14 @@ UpdateProtectionGroupOutcomeCallable ShieldClient::UpdateProtectionGroupCallable
   return task->get_future();
 }
 
-void ShieldClient::UpdateProtectionGroupAsync(const UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientUpdateProtectionGroupAsyncHelper(ShieldClient const * const clientThis, const UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProtectionGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProtectionGroup(request), context);
 }
 
-void ShieldClient::UpdateProtectionGroupAsyncHelper(const UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::UpdateProtectionGroupAsync(const UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProtectionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientUpdateProtectionGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSubscriptionOutcome ShieldClient::UpdateSubscription(const UpdateSubscriptionRequest& request) const
@@ -965,13 +965,13 @@ UpdateSubscriptionOutcomeCallable ShieldClient::UpdateSubscriptionCallable(const
   return task->get_future();
 }
 
-void ShieldClient::UpdateSubscriptionAsync(const UpdateSubscriptionRequest& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClientUpdateSubscriptionAsyncHelper(ShieldClient const * const clientThis, const UpdateSubscriptionRequest& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSubscription(request), context);
 }
 
-void ShieldClient::UpdateSubscriptionAsyncHelper(const UpdateSubscriptionRequest& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ShieldClient::UpdateSubscriptionAsync(const UpdateSubscriptionRequest& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ShieldClientUpdateSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 

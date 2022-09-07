@@ -137,14 +137,14 @@ DeleteObjectOutcomeCallable BackupStorageClient::DeleteObjectCallable(const Dele
   return task->get_future();
 }
 
-void BackupStorageClient::DeleteObjectAsync(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClientDeleteObjectAsyncHelper(BackupStorageClient const * const clientThis, const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteObject(request), context);
 }
 
-void BackupStorageClient::DeleteObjectAsyncHelper(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClient::DeleteObjectAsync(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupStorageClientDeleteObjectAsyncHelper( this, request, handler, context ); } );
 }
 
 GetChunkOutcome BackupStorageClient::GetChunk(const GetChunkRequest& request) const
@@ -175,14 +175,14 @@ GetChunkOutcomeCallable BackupStorageClient::GetChunkCallable(const GetChunkRequ
   return task->get_future();
 }
 
-void BackupStorageClient::GetChunkAsync(const GetChunkRequest& request, const GetChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClientGetChunkAsyncHelper(BackupStorageClient const * const clientThis, const GetChunkRequest& request, const GetChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChunkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetChunk(request), context);
 }
 
-void BackupStorageClient::GetChunkAsyncHelper(const GetChunkRequest& request, const GetChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClient::GetChunkAsync(const GetChunkRequest& request, const GetChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetChunk(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupStorageClientGetChunkAsyncHelper( this, request, handler, context ); } );
 }
 
 GetObjectMetadataOutcome BackupStorageClient::GetObjectMetadata(const GetObjectMetadataRequest& request) const
@@ -214,14 +214,14 @@ GetObjectMetadataOutcomeCallable BackupStorageClient::GetObjectMetadataCallable(
   return task->get_future();
 }
 
-void BackupStorageClient::GetObjectMetadataAsync(const GetObjectMetadataRequest& request, const GetObjectMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClientGetObjectMetadataAsyncHelper(BackupStorageClient const * const clientThis, const GetObjectMetadataRequest& request, const GetObjectMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetObjectMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetObjectMetadata(request), context);
 }
 
-void BackupStorageClient::GetObjectMetadataAsyncHelper(const GetObjectMetadataRequest& request, const GetObjectMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClient::GetObjectMetadataAsync(const GetObjectMetadataRequest& request, const GetObjectMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetObjectMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupStorageClientGetObjectMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 ListChunksOutcome BackupStorageClient::ListChunks(const ListChunksRequest& request) const
@@ -253,14 +253,14 @@ ListChunksOutcomeCallable BackupStorageClient::ListChunksCallable(const ListChun
   return task->get_future();
 }
 
-void BackupStorageClient::ListChunksAsync(const ListChunksRequest& request, const ListChunksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClientListChunksAsyncHelper(BackupStorageClient const * const clientThis, const ListChunksRequest& request, const ListChunksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChunksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListChunks(request), context);
 }
 
-void BackupStorageClient::ListChunksAsyncHelper(const ListChunksRequest& request, const ListChunksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClient::ListChunksAsync(const ListChunksRequest& request, const ListChunksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListChunks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupStorageClientListChunksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListObjectsOutcome BackupStorageClient::ListObjects(const ListObjectsRequest& request) const
@@ -285,14 +285,14 @@ ListObjectsOutcomeCallable BackupStorageClient::ListObjectsCallable(const ListOb
   return task->get_future();
 }
 
-void BackupStorageClient::ListObjectsAsync(const ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClientListObjectsAsyncHelper(BackupStorageClient const * const clientThis, const ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListObjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListObjects(request), context);
 }
 
-void BackupStorageClient::ListObjectsAsyncHelper(const ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClient::ListObjectsAsync(const ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListObjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupStorageClientListObjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 NotifyObjectCompleteOutcome BackupStorageClient::NotifyObjectComplete(const NotifyObjectCompleteRequest& request) const
@@ -334,14 +334,14 @@ NotifyObjectCompleteOutcomeCallable BackupStorageClient::NotifyObjectCompleteCal
   return task->get_future();
 }
 
-void BackupStorageClient::NotifyObjectCompleteAsync(const NotifyObjectCompleteRequest& request, const NotifyObjectCompleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClientNotifyObjectCompleteAsyncHelper(BackupStorageClient const * const clientThis, const NotifyObjectCompleteRequest& request, const NotifyObjectCompleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->NotifyObjectCompleteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->NotifyObjectComplete(request), context);
 }
 
-void BackupStorageClient::NotifyObjectCompleteAsyncHelper(const NotifyObjectCompleteRequest& request, const NotifyObjectCompleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClient::NotifyObjectCompleteAsync(const NotifyObjectCompleteRequest& request, const NotifyObjectCompleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, NotifyObjectComplete(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupStorageClientNotifyObjectCompleteAsyncHelper( this, request, handler, context ); } );
 }
 
 PutChunkOutcome BackupStorageClient::PutChunk(const PutChunkRequest& request) const
@@ -393,14 +393,14 @@ PutChunkOutcomeCallable BackupStorageClient::PutChunkCallable(const PutChunkRequ
   return task->get_future();
 }
 
-void BackupStorageClient::PutChunkAsync(const PutChunkRequest& request, const PutChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClientPutChunkAsyncHelper(BackupStorageClient const * const clientThis, const PutChunkRequest& request, const PutChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutChunkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutChunk(request), context);
 }
 
-void BackupStorageClient::PutChunkAsyncHelper(const PutChunkRequest& request, const PutChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClient::PutChunkAsync(const PutChunkRequest& request, const PutChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutChunk(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupStorageClientPutChunkAsyncHelper( this, request, handler, context ); } );
 }
 
 PutObjectOutcome BackupStorageClient::PutObject(const PutObjectRequest& request) const
@@ -432,14 +432,14 @@ PutObjectOutcomeCallable BackupStorageClient::PutObjectCallable(const PutObjectR
   return task->get_future();
 }
 
-void BackupStorageClient::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClientPutObjectAsyncHelper(BackupStorageClient const * const clientThis, const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutObject(request), context);
 }
 
-void BackupStorageClient::PutObjectAsyncHelper(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClient::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupStorageClientPutObjectAsyncHelper( this, request, handler, context ); } );
 }
 
 StartObjectOutcome BackupStorageClient::StartObject(const StartObjectRequest& request) const
@@ -470,13 +470,13 @@ StartObjectOutcomeCallable BackupStorageClient::StartObjectCallable(const StartO
   return task->get_future();
 }
 
-void BackupStorageClient::StartObjectAsync(const StartObjectRequest& request, const StartObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClientStartObjectAsyncHelper(BackupStorageClient const * const clientThis, const StartObjectRequest& request, const StartObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartObject(request), context);
 }
 
-void BackupStorageClient::StartObjectAsyncHelper(const StartObjectRequest& request, const StartObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupStorageClient::StartObjectAsync(const StartObjectRequest& request, const StartObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupStorageClientStartObjectAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -169,14 +169,14 @@ AbortDocumentVersionUploadOutcomeCallable WorkDocsClient::AbortDocumentVersionUp
   return task->get_future();
 }
 
-void WorkDocsClient::AbortDocumentVersionUploadAsync(const AbortDocumentVersionUploadRequest& request, const AbortDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientAbortDocumentVersionUploadAsyncHelper(WorkDocsClient const * const clientThis, const AbortDocumentVersionUploadRequest& request, const AbortDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AbortDocumentVersionUploadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AbortDocumentVersionUpload(request), context);
 }
 
-void WorkDocsClient::AbortDocumentVersionUploadAsyncHelper(const AbortDocumentVersionUploadRequest& request, const AbortDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::AbortDocumentVersionUploadAsync(const AbortDocumentVersionUploadRequest& request, const AbortDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AbortDocumentVersionUpload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientAbortDocumentVersionUploadAsyncHelper( this, request, handler, context ); } );
 }
 
 ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& request) const
@@ -201,14 +201,14 @@ ActivateUserOutcomeCallable WorkDocsClient::ActivateUserCallable(const ActivateU
   return task->get_future();
 }
 
-void WorkDocsClient::ActivateUserAsync(const ActivateUserRequest& request, const ActivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientActivateUserAsyncHelper(WorkDocsClient const * const clientThis, const ActivateUserRequest& request, const ActivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ActivateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ActivateUser(request), context);
 }
 
-void WorkDocsClient::ActivateUserAsyncHelper(const ActivateUserRequest& request, const ActivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::ActivateUserAsync(const ActivateUserRequest& request, const ActivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ActivateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientActivateUserAsyncHelper( this, request, handler, context ); } );
 }
 
 AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddResourcePermissionsRequest& request) const
@@ -233,14 +233,14 @@ AddResourcePermissionsOutcomeCallable WorkDocsClient::AddResourcePermissionsCall
   return task->get_future();
 }
 
-void WorkDocsClient::AddResourcePermissionsAsync(const AddResourcePermissionsRequest& request, const AddResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientAddResourcePermissionsAsyncHelper(WorkDocsClient const * const clientThis, const AddResourcePermissionsRequest& request, const AddResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddResourcePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddResourcePermissions(request), context);
 }
 
-void WorkDocsClient::AddResourcePermissionsAsyncHelper(const AddResourcePermissionsRequest& request, const AddResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::AddResourcePermissionsAsync(const AddResourcePermissionsRequest& request, const AddResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddResourcePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientAddResourcePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& request) const
@@ -272,14 +272,14 @@ CreateCommentOutcomeCallable WorkDocsClient::CreateCommentCallable(const CreateC
   return task->get_future();
 }
 
-void WorkDocsClient::CreateCommentAsync(const CreateCommentRequest& request, const CreateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientCreateCommentAsyncHelper(WorkDocsClient const * const clientThis, const CreateCommentRequest& request, const CreateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCommentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateComment(request), context);
 }
 
-void WorkDocsClient::CreateCommentAsyncHelper(const CreateCommentRequest& request, const CreateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::CreateCommentAsync(const CreateCommentRequest& request, const CreateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateComment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientCreateCommentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCustomMetadataRequest& request) const
@@ -304,14 +304,14 @@ CreateCustomMetadataOutcomeCallable WorkDocsClient::CreateCustomMetadataCallable
   return task->get_future();
 }
 
-void WorkDocsClient::CreateCustomMetadataAsync(const CreateCustomMetadataRequest& request, const CreateCustomMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientCreateCustomMetadataAsyncHelper(WorkDocsClient const * const clientThis, const CreateCustomMetadataRequest& request, const CreateCustomMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomMetadata(request), context);
 }
 
-void WorkDocsClient::CreateCustomMetadataAsyncHelper(const CreateCustomMetadataRequest& request, const CreateCustomMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::CreateCustomMetadataAsync(const CreateCustomMetadataRequest& request, const CreateCustomMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientCreateCustomMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& request) const
@@ -329,14 +329,14 @@ CreateFolderOutcomeCallable WorkDocsClient::CreateFolderCallable(const CreateFol
   return task->get_future();
 }
 
-void WorkDocsClient::CreateFolderAsync(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientCreateFolderAsyncHelper(WorkDocsClient const * const clientThis, const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFolder(request), context);
 }
 
-void WorkDocsClient::CreateFolderAsyncHelper(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::CreateFolderAsync(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientCreateFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& request) const
@@ -361,14 +361,14 @@ CreateLabelsOutcomeCallable WorkDocsClient::CreateLabelsCallable(const CreateLab
   return task->get_future();
 }
 
-void WorkDocsClient::CreateLabelsAsync(const CreateLabelsRequest& request, const CreateLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientCreateLabelsAsyncHelper(WorkDocsClient const * const clientThis, const CreateLabelsRequest& request, const CreateLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLabelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLabels(request), context);
 }
 
-void WorkDocsClient::CreateLabelsAsyncHelper(const CreateLabelsRequest& request, const CreateLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::CreateLabelsAsync(const CreateLabelsRequest& request, const CreateLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLabels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientCreateLabelsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscription(const CreateNotificationSubscriptionRequest& request) const
@@ -393,14 +393,14 @@ CreateNotificationSubscriptionOutcomeCallable WorkDocsClient::CreateNotification
   return task->get_future();
 }
 
-void WorkDocsClient::CreateNotificationSubscriptionAsync(const CreateNotificationSubscriptionRequest& request, const CreateNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientCreateNotificationSubscriptionAsyncHelper(WorkDocsClient const * const clientThis, const CreateNotificationSubscriptionRequest& request, const CreateNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNotificationSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNotificationSubscription(request), context);
 }
 
-void WorkDocsClient::CreateNotificationSubscriptionAsyncHelper(const CreateNotificationSubscriptionRequest& request, const CreateNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::CreateNotificationSubscriptionAsync(const CreateNotificationSubscriptionRequest& request, const CreateNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNotificationSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientCreateNotificationSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) const
@@ -418,14 +418,14 @@ CreateUserOutcomeCallable WorkDocsClient::CreateUserCallable(const CreateUserReq
   return task->get_future();
 }
 
-void WorkDocsClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientCreateUserAsyncHelper(WorkDocsClient const * const clientThis, const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUser(request), context);
 }
 
-void WorkDocsClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientCreateUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest& request) const
@@ -450,14 +450,14 @@ DeactivateUserOutcomeCallable WorkDocsClient::DeactivateUserCallable(const Deact
   return task->get_future();
 }
 
-void WorkDocsClient::DeactivateUserAsync(const DeactivateUserRequest& request, const DeactivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDeactivateUserAsyncHelper(WorkDocsClient const * const clientThis, const DeactivateUserRequest& request, const DeactivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeactivateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeactivateUser(request), context);
 }
 
-void WorkDocsClient::DeactivateUserAsyncHelper(const DeactivateUserRequest& request, const DeactivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DeactivateUserAsync(const DeactivateUserRequest& request, const DeactivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeactivateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDeactivateUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& request) const
@@ -495,14 +495,14 @@ DeleteCommentOutcomeCallable WorkDocsClient::DeleteCommentCallable(const DeleteC
   return task->get_future();
 }
 
-void WorkDocsClient::DeleteCommentAsync(const DeleteCommentRequest& request, const DeleteCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDeleteCommentAsyncHelper(WorkDocsClient const * const clientThis, const DeleteCommentRequest& request, const DeleteCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCommentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteComment(request), context);
 }
 
-void WorkDocsClient::DeleteCommentAsyncHelper(const DeleteCommentRequest& request, const DeleteCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DeleteCommentAsync(const DeleteCommentRequest& request, const DeleteCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteComment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDeleteCommentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCustomMetadataRequest& request) const
@@ -527,14 +527,14 @@ DeleteCustomMetadataOutcomeCallable WorkDocsClient::DeleteCustomMetadataCallable
   return task->get_future();
 }
 
-void WorkDocsClient::DeleteCustomMetadataAsync(const DeleteCustomMetadataRequest& request, const DeleteCustomMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDeleteCustomMetadataAsyncHelper(WorkDocsClient const * const clientThis, const DeleteCustomMetadataRequest& request, const DeleteCustomMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomMetadata(request), context);
 }
 
-void WorkDocsClient::DeleteCustomMetadataAsyncHelper(const DeleteCustomMetadataRequest& request, const DeleteCustomMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DeleteCustomMetadataAsync(const DeleteCustomMetadataRequest& request, const DeleteCustomMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDeleteCustomMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest& request) const
@@ -558,14 +558,14 @@ DeleteDocumentOutcomeCallable WorkDocsClient::DeleteDocumentCallable(const Delet
   return task->get_future();
 }
 
-void WorkDocsClient::DeleteDocumentAsync(const DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDeleteDocumentAsyncHelper(WorkDocsClient const * const clientThis, const DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDocumentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDocument(request), context);
 }
 
-void WorkDocsClient::DeleteDocumentAsyncHelper(const DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DeleteDocumentAsync(const DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDocument(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDeleteDocumentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& request) const
@@ -589,14 +589,14 @@ DeleteFolderOutcomeCallable WorkDocsClient::DeleteFolderCallable(const DeleteFol
   return task->get_future();
 }
 
-void WorkDocsClient::DeleteFolderAsync(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDeleteFolderAsyncHelper(WorkDocsClient const * const clientThis, const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFolder(request), context);
 }
 
-void WorkDocsClient::DeleteFolderAsyncHelper(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DeleteFolderAsync(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDeleteFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFolderContentsRequest& request) const
@@ -621,14 +621,14 @@ DeleteFolderContentsOutcomeCallable WorkDocsClient::DeleteFolderContentsCallable
   return task->get_future();
 }
 
-void WorkDocsClient::DeleteFolderContentsAsync(const DeleteFolderContentsRequest& request, const DeleteFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDeleteFolderContentsAsyncHelper(WorkDocsClient const * const clientThis, const DeleteFolderContentsRequest& request, const DeleteFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFolderContentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFolderContents(request), context);
 }
 
-void WorkDocsClient::DeleteFolderContentsAsyncHelper(const DeleteFolderContentsRequest& request, const DeleteFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DeleteFolderContentsAsync(const DeleteFolderContentsRequest& request, const DeleteFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFolderContents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDeleteFolderContentsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& request) const
@@ -653,14 +653,14 @@ DeleteLabelsOutcomeCallable WorkDocsClient::DeleteLabelsCallable(const DeleteLab
   return task->get_future();
 }
 
-void WorkDocsClient::DeleteLabelsAsync(const DeleteLabelsRequest& request, const DeleteLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDeleteLabelsAsyncHelper(WorkDocsClient const * const clientThis, const DeleteLabelsRequest& request, const DeleteLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLabelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLabels(request), context);
 }
 
-void WorkDocsClient::DeleteLabelsAsyncHelper(const DeleteLabelsRequest& request, const DeleteLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DeleteLabelsAsync(const DeleteLabelsRequest& request, const DeleteLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLabels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDeleteLabelsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscription(const DeleteNotificationSubscriptionRequest& request) const
@@ -691,14 +691,14 @@ DeleteNotificationSubscriptionOutcomeCallable WorkDocsClient::DeleteNotification
   return task->get_future();
 }
 
-void WorkDocsClient::DeleteNotificationSubscriptionAsync(const DeleteNotificationSubscriptionRequest& request, const DeleteNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDeleteNotificationSubscriptionAsyncHelper(WorkDocsClient const * const clientThis, const DeleteNotificationSubscriptionRequest& request, const DeleteNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNotificationSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNotificationSubscription(request), context);
 }
 
-void WorkDocsClient::DeleteNotificationSubscriptionAsyncHelper(const DeleteNotificationSubscriptionRequest& request, const DeleteNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DeleteNotificationSubscriptionAsync(const DeleteNotificationSubscriptionRequest& request, const DeleteNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNotificationSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDeleteNotificationSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) const
@@ -722,14 +722,14 @@ DeleteUserOutcomeCallable WorkDocsClient::DeleteUserCallable(const DeleteUserReq
   return task->get_future();
 }
 
-void WorkDocsClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDeleteUserAsyncHelper(WorkDocsClient const * const clientThis, const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUser(request), context);
 }
 
-void WorkDocsClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDeleteUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActivitiesRequest& request) const
@@ -747,14 +747,14 @@ DescribeActivitiesOutcomeCallable WorkDocsClient::DescribeActivitiesCallable(con
   return task->get_future();
 }
 
-void WorkDocsClient::DescribeActivitiesAsync(const DescribeActivitiesRequest& request, const DescribeActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDescribeActivitiesAsyncHelper(WorkDocsClient const * const clientThis, const DescribeActivitiesRequest& request, const DescribeActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeActivitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeActivities(request), context);
 }
 
-void WorkDocsClient::DescribeActivitiesAsyncHelper(const DescribeActivitiesRequest& request, const DescribeActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DescribeActivitiesAsync(const DescribeActivitiesRequest& request, const DescribeActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeActivities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDescribeActivitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsRequest& request) const
@@ -786,14 +786,14 @@ DescribeCommentsOutcomeCallable WorkDocsClient::DescribeCommentsCallable(const D
   return task->get_future();
 }
 
-void WorkDocsClient::DescribeCommentsAsync(const DescribeCommentsRequest& request, const DescribeCommentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDescribeCommentsAsyncHelper(WorkDocsClient const * const clientThis, const DescribeCommentsRequest& request, const DescribeCommentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCommentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeComments(request), context);
 }
 
-void WorkDocsClient::DescribeCommentsAsyncHelper(const DescribeCommentsRequest& request, const DescribeCommentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DescribeCommentsAsync(const DescribeCommentsRequest& request, const DescribeCommentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeComments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDescribeCommentsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const DescribeDocumentVersionsRequest& request) const
@@ -818,14 +818,14 @@ DescribeDocumentVersionsOutcomeCallable WorkDocsClient::DescribeDocumentVersions
   return task->get_future();
 }
 
-void WorkDocsClient::DescribeDocumentVersionsAsync(const DescribeDocumentVersionsRequest& request, const DescribeDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDescribeDocumentVersionsAsyncHelper(WorkDocsClient const * const clientThis, const DescribeDocumentVersionsRequest& request, const DescribeDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDocumentVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDocumentVersions(request), context);
 }
 
-void WorkDocsClient::DescribeDocumentVersionsAsyncHelper(const DescribeDocumentVersionsRequest& request, const DescribeDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DescribeDocumentVersionsAsync(const DescribeDocumentVersionsRequest& request, const DescribeDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDocumentVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDescribeDocumentVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const DescribeFolderContentsRequest& request) const
@@ -850,14 +850,14 @@ DescribeFolderContentsOutcomeCallable WorkDocsClient::DescribeFolderContentsCall
   return task->get_future();
 }
 
-void WorkDocsClient::DescribeFolderContentsAsync(const DescribeFolderContentsRequest& request, const DescribeFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDescribeFolderContentsAsyncHelper(WorkDocsClient const * const clientThis, const DescribeFolderContentsRequest& request, const DescribeFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFolderContentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFolderContents(request), context);
 }
 
-void WorkDocsClient::DescribeFolderContentsAsyncHelper(const DescribeFolderContentsRequest& request, const DescribeFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DescribeFolderContentsAsync(const DescribeFolderContentsRequest& request, const DescribeFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFolderContents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDescribeFolderContentsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest& request) const
@@ -880,14 +880,14 @@ DescribeGroupsOutcomeCallable WorkDocsClient::DescribeGroupsCallable(const Descr
   return task->get_future();
 }
 
-void WorkDocsClient::DescribeGroupsAsync(const DescribeGroupsRequest& request, const DescribeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDescribeGroupsAsyncHelper(WorkDocsClient const * const clientThis, const DescribeGroupsRequest& request, const DescribeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGroups(request), context);
 }
 
-void WorkDocsClient::DescribeGroupsAsyncHelper(const DescribeGroupsRequest& request, const DescribeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DescribeGroupsAsync(const DescribeGroupsRequest& request, const DescribeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDescribeGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSubscriptions(const DescribeNotificationSubscriptionsRequest& request) const
@@ -912,14 +912,14 @@ DescribeNotificationSubscriptionsOutcomeCallable WorkDocsClient::DescribeNotific
   return task->get_future();
 }
 
-void WorkDocsClient::DescribeNotificationSubscriptionsAsync(const DescribeNotificationSubscriptionsRequest& request, const DescribeNotificationSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDescribeNotificationSubscriptionsAsyncHelper(WorkDocsClient const * const clientThis, const DescribeNotificationSubscriptionsRequest& request, const DescribeNotificationSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNotificationSubscriptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNotificationSubscriptions(request), context);
 }
 
-void WorkDocsClient::DescribeNotificationSubscriptionsAsyncHelper(const DescribeNotificationSubscriptionsRequest& request, const DescribeNotificationSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DescribeNotificationSubscriptionsAsync(const DescribeNotificationSubscriptionsRequest& request, const DescribeNotificationSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNotificationSubscriptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDescribeNotificationSubscriptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(const DescribeResourcePermissionsRequest& request) const
@@ -944,14 +944,14 @@ DescribeResourcePermissionsOutcomeCallable WorkDocsClient::DescribeResourcePermi
   return task->get_future();
 }
 
-void WorkDocsClient::DescribeResourcePermissionsAsync(const DescribeResourcePermissionsRequest& request, const DescribeResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDescribeResourcePermissionsAsyncHelper(WorkDocsClient const * const clientThis, const DescribeResourcePermissionsRequest& request, const DescribeResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourcePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeResourcePermissions(request), context);
 }
 
-void WorkDocsClient::DescribeResourcePermissionsAsyncHelper(const DescribeResourcePermissionsRequest& request, const DescribeResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DescribeResourcePermissionsAsync(const DescribeResourcePermissionsRequest& request, const DescribeResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeResourcePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDescribeResourcePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRootFoldersRequest& request) const
@@ -974,14 +974,14 @@ DescribeRootFoldersOutcomeCallable WorkDocsClient::DescribeRootFoldersCallable(c
   return task->get_future();
 }
 
-void WorkDocsClient::DescribeRootFoldersAsync(const DescribeRootFoldersRequest& request, const DescribeRootFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDescribeRootFoldersAsyncHelper(WorkDocsClient const * const clientThis, const DescribeRootFoldersRequest& request, const DescribeRootFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRootFoldersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRootFolders(request), context);
 }
 
-void WorkDocsClient::DescribeRootFoldersAsyncHelper(const DescribeRootFoldersRequest& request, const DescribeRootFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DescribeRootFoldersAsync(const DescribeRootFoldersRequest& request, const DescribeRootFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRootFolders(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDescribeRootFoldersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& request) const
@@ -999,14 +999,14 @@ DescribeUsersOutcomeCallable WorkDocsClient::DescribeUsersCallable(const Describ
   return task->get_future();
 }
 
-void WorkDocsClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientDescribeUsersAsyncHelper(WorkDocsClient const * const clientThis, const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUsers(request), context);
 }
 
-void WorkDocsClient::DescribeUsersAsyncHelper(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientDescribeUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest& request) const
@@ -1029,14 +1029,14 @@ GetCurrentUserOutcomeCallable WorkDocsClient::GetCurrentUserCallable(const GetCu
   return task->get_future();
 }
 
-void WorkDocsClient::GetCurrentUserAsync(const GetCurrentUserRequest& request, const GetCurrentUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientGetCurrentUserAsyncHelper(WorkDocsClient const * const clientThis, const GetCurrentUserRequest& request, const GetCurrentUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCurrentUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCurrentUser(request), context);
 }
 
-void WorkDocsClient::GetCurrentUserAsyncHelper(const GetCurrentUserRequest& request, const GetCurrentUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::GetCurrentUserAsync(const GetCurrentUserRequest& request, const GetCurrentUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCurrentUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientGetCurrentUserAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request) const
@@ -1060,14 +1060,14 @@ GetDocumentOutcomeCallable WorkDocsClient::GetDocumentCallable(const GetDocument
   return task->get_future();
 }
 
-void WorkDocsClient::GetDocumentAsync(const GetDocumentRequest& request, const GetDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientGetDocumentAsyncHelper(WorkDocsClient const * const clientThis, const GetDocumentRequest& request, const GetDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDocumentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDocument(request), context);
 }
 
-void WorkDocsClient::GetDocumentAsyncHelper(const GetDocumentRequest& request, const GetDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::GetDocumentAsync(const GetDocumentRequest& request, const GetDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDocument(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientGetDocumentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequest& request) const
@@ -1092,14 +1092,14 @@ GetDocumentPathOutcomeCallable WorkDocsClient::GetDocumentPathCallable(const Get
   return task->get_future();
 }
 
-void WorkDocsClient::GetDocumentPathAsync(const GetDocumentPathRequest& request, const GetDocumentPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientGetDocumentPathAsyncHelper(WorkDocsClient const * const clientThis, const GetDocumentPathRequest& request, const GetDocumentPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDocumentPathAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDocumentPath(request), context);
 }
 
-void WorkDocsClient::GetDocumentPathAsyncHelper(const GetDocumentPathRequest& request, const GetDocumentPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::GetDocumentPathAsync(const GetDocumentPathRequest& request, const GetDocumentPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDocumentPath(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientGetDocumentPathAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVersionRequest& request) const
@@ -1130,14 +1130,14 @@ GetDocumentVersionOutcomeCallable WorkDocsClient::GetDocumentVersionCallable(con
   return task->get_future();
 }
 
-void WorkDocsClient::GetDocumentVersionAsync(const GetDocumentVersionRequest& request, const GetDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientGetDocumentVersionAsyncHelper(WorkDocsClient const * const clientThis, const GetDocumentVersionRequest& request, const GetDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDocumentVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDocumentVersion(request), context);
 }
 
-void WorkDocsClient::GetDocumentVersionAsyncHelper(const GetDocumentVersionRequest& request, const GetDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::GetDocumentVersionAsync(const GetDocumentVersionRequest& request, const GetDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDocumentVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientGetDocumentVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) const
@@ -1161,14 +1161,14 @@ GetFolderOutcomeCallable WorkDocsClient::GetFolderCallable(const GetFolderReques
   return task->get_future();
 }
 
-void WorkDocsClient::GetFolderAsync(const GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientGetFolderAsyncHelper(WorkDocsClient const * const clientThis, const GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFolder(request), context);
 }
 
-void WorkDocsClient::GetFolderAsyncHelper(const GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::GetFolderAsync(const GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientGetFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& request) const
@@ -1193,14 +1193,14 @@ GetFolderPathOutcomeCallable WorkDocsClient::GetFolderPathCallable(const GetFold
   return task->get_future();
 }
 
-void WorkDocsClient::GetFolderPathAsync(const GetFolderPathRequest& request, const GetFolderPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientGetFolderPathAsyncHelper(WorkDocsClient const * const clientThis, const GetFolderPathRequest& request, const GetFolderPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFolderPathAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFolderPath(request), context);
 }
 
-void WorkDocsClient::GetFolderPathAsyncHelper(const GetFolderPathRequest& request, const GetFolderPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::GetFolderPathAsync(const GetFolderPathRequest& request, const GetFolderPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFolderPath(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientGetFolderPathAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& request) const
@@ -1218,14 +1218,14 @@ GetResourcesOutcomeCallable WorkDocsClient::GetResourcesCallable(const GetResour
   return task->get_future();
 }
 
-void WorkDocsClient::GetResourcesAsync(const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientGetResourcesAsyncHelper(WorkDocsClient const * const clientThis, const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResources(request), context);
 }
 
-void WorkDocsClient::GetResourcesAsyncHelper(const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::GetResourcesAsync(const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientGetResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUpload(const InitiateDocumentVersionUploadRequest& request) const
@@ -1243,14 +1243,14 @@ InitiateDocumentVersionUploadOutcomeCallable WorkDocsClient::InitiateDocumentVer
   return task->get_future();
 }
 
-void WorkDocsClient::InitiateDocumentVersionUploadAsync(const InitiateDocumentVersionUploadRequest& request, const InitiateDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientInitiateDocumentVersionUploadAsyncHelper(WorkDocsClient const * const clientThis, const InitiateDocumentVersionUploadRequest& request, const InitiateDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InitiateDocumentVersionUploadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InitiateDocumentVersionUpload(request), context);
 }
 
-void WorkDocsClient::InitiateDocumentVersionUploadAsyncHelper(const InitiateDocumentVersionUploadRequest& request, const InitiateDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::InitiateDocumentVersionUploadAsync(const InitiateDocumentVersionUploadRequest& request, const InitiateDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InitiateDocumentVersionUpload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientInitiateDocumentVersionUploadAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions(const RemoveAllResourcePermissionsRequest& request) const
@@ -1275,14 +1275,14 @@ RemoveAllResourcePermissionsOutcomeCallable WorkDocsClient::RemoveAllResourcePer
   return task->get_future();
 }
 
-void WorkDocsClient::RemoveAllResourcePermissionsAsync(const RemoveAllResourcePermissionsRequest& request, const RemoveAllResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientRemoveAllResourcePermissionsAsyncHelper(WorkDocsClient const * const clientThis, const RemoveAllResourcePermissionsRequest& request, const RemoveAllResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveAllResourcePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveAllResourcePermissions(request), context);
 }
 
-void WorkDocsClient::RemoveAllResourcePermissionsAsyncHelper(const RemoveAllResourcePermissionsRequest& request, const RemoveAllResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::RemoveAllResourcePermissionsAsync(const RemoveAllResourcePermissionsRequest& request, const RemoveAllResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveAllResourcePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientRemoveAllResourcePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const RemoveResourcePermissionRequest& request) const
@@ -1313,14 +1313,14 @@ RemoveResourcePermissionOutcomeCallable WorkDocsClient::RemoveResourcePermission
   return task->get_future();
 }
 
-void WorkDocsClient::RemoveResourcePermissionAsync(const RemoveResourcePermissionRequest& request, const RemoveResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientRemoveResourcePermissionAsyncHelper(WorkDocsClient const * const clientThis, const RemoveResourcePermissionRequest& request, const RemoveResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveResourcePermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveResourcePermission(request), context);
 }
 
-void WorkDocsClient::RemoveResourcePermissionAsyncHelper(const RemoveResourcePermissionRequest& request, const RemoveResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::RemoveResourcePermissionAsync(const RemoveResourcePermissionRequest& request, const RemoveResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveResourcePermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientRemoveResourcePermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest& request) const
@@ -1344,14 +1344,14 @@ UpdateDocumentOutcomeCallable WorkDocsClient::UpdateDocumentCallable(const Updat
   return task->get_future();
 }
 
-void WorkDocsClient::UpdateDocumentAsync(const UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientUpdateDocumentAsyncHelper(WorkDocsClient const * const clientThis, const UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDocumentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDocument(request), context);
 }
 
-void WorkDocsClient::UpdateDocumentAsyncHelper(const UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::UpdateDocumentAsync(const UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDocument(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientUpdateDocumentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateDocumentVersionRequest& request) const
@@ -1382,14 +1382,14 @@ UpdateDocumentVersionOutcomeCallable WorkDocsClient::UpdateDocumentVersionCallab
   return task->get_future();
 }
 
-void WorkDocsClient::UpdateDocumentVersionAsync(const UpdateDocumentVersionRequest& request, const UpdateDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientUpdateDocumentVersionAsyncHelper(WorkDocsClient const * const clientThis, const UpdateDocumentVersionRequest& request, const UpdateDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDocumentVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDocumentVersion(request), context);
 }
 
-void WorkDocsClient::UpdateDocumentVersionAsyncHelper(const UpdateDocumentVersionRequest& request, const UpdateDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::UpdateDocumentVersionAsync(const UpdateDocumentVersionRequest& request, const UpdateDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDocumentVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientUpdateDocumentVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& request) const
@@ -1413,14 +1413,14 @@ UpdateFolderOutcomeCallable WorkDocsClient::UpdateFolderCallable(const UpdateFol
   return task->get_future();
 }
 
-void WorkDocsClient::UpdateFolderAsync(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientUpdateFolderAsyncHelper(WorkDocsClient const * const clientThis, const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFolder(request), context);
 }
 
-void WorkDocsClient::UpdateFolderAsyncHelper(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::UpdateFolderAsync(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientUpdateFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserOutcome WorkDocsClient::UpdateUser(const UpdateUserRequest& request) const
@@ -1444,13 +1444,13 @@ UpdateUserOutcomeCallable WorkDocsClient::UpdateUserCallable(const UpdateUserReq
   return task->get_future();
 }
 
-void WorkDocsClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClientUpdateUserAsyncHelper(WorkDocsClient const * const clientThis, const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUser(request), context);
 }
 
-void WorkDocsClient::UpdateUserAsyncHelper(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkDocsClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkDocsClientUpdateUserAsyncHelper( this, request, handler, context ); } );
 }
 

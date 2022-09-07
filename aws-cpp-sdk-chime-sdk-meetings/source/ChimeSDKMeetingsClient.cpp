@@ -141,14 +141,14 @@ BatchCreateAttendeeOutcomeCallable ChimeSDKMeetingsClient::BatchCreateAttendeeCa
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::BatchCreateAttendeeAsync(const BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientBatchCreateAttendeeAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchCreateAttendeeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchCreateAttendee(request), context);
 }
 
-void ChimeSDKMeetingsClient::BatchCreateAttendeeAsyncHelper(const BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::BatchCreateAttendeeAsync(const BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchCreateAttendee(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientBatchCreateAttendeeAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchUpdateAttendeeCapabilitiesExceptOutcome ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExcept(const BatchUpdateAttendeeCapabilitiesExceptRequest& request) const
@@ -176,14 +176,14 @@ BatchUpdateAttendeeCapabilitiesExceptOutcomeCallable ChimeSDKMeetingsClient::Bat
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExceptAsync(const BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientBatchUpdateAttendeeCapabilitiesExceptAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdateAttendeeCapabilitiesExceptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchUpdateAttendeeCapabilitiesExcept(request), context);
 }
 
-void ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExceptAsyncHelper(const BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExceptAsync(const BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchUpdateAttendeeCapabilitiesExcept(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientBatchUpdateAttendeeCapabilitiesExceptAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAttendeeOutcome ChimeSDKMeetingsClient::CreateAttendee(const CreateAttendeeRequest& request) const
@@ -208,14 +208,14 @@ CreateAttendeeOutcomeCallable ChimeSDKMeetingsClient::CreateAttendeeCallable(con
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::CreateAttendeeAsync(const CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientCreateAttendeeAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAttendeeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAttendee(request), context);
 }
 
-void ChimeSDKMeetingsClient::CreateAttendeeAsyncHelper(const CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::CreateAttendeeAsync(const CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAttendee(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientCreateAttendeeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMeetingOutcome ChimeSDKMeetingsClient::CreateMeeting(const CreateMeetingRequest& request) const
@@ -233,14 +233,14 @@ CreateMeetingOutcomeCallable ChimeSDKMeetingsClient::CreateMeetingCallable(const
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::CreateMeetingAsync(const CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientCreateMeetingAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMeetingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMeeting(request), context);
 }
 
-void ChimeSDKMeetingsClient::CreateMeetingAsyncHelper(const CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::CreateMeetingAsync(const CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMeeting(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientCreateMeetingAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMeetingWithAttendeesOutcome ChimeSDKMeetingsClient::CreateMeetingWithAttendees(const CreateMeetingWithAttendeesRequest& request) const
@@ -261,14 +261,14 @@ CreateMeetingWithAttendeesOutcomeCallable ChimeSDKMeetingsClient::CreateMeetingW
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::CreateMeetingWithAttendeesAsync(const CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientCreateMeetingWithAttendeesAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMeetingWithAttendeesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMeetingWithAttendees(request), context);
 }
 
-void ChimeSDKMeetingsClient::CreateMeetingWithAttendeesAsyncHelper(const CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::CreateMeetingWithAttendeesAsync(const CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMeetingWithAttendees(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientCreateMeetingWithAttendeesAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAttendeeOutcome ChimeSDKMeetingsClient::DeleteAttendee(const DeleteAttendeeRequest& request) const
@@ -299,14 +299,14 @@ DeleteAttendeeOutcomeCallable ChimeSDKMeetingsClient::DeleteAttendeeCallable(con
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::DeleteAttendeeAsync(const DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientDeleteAttendeeAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAttendeeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAttendee(request), context);
 }
 
-void ChimeSDKMeetingsClient::DeleteAttendeeAsyncHelper(const DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::DeleteAttendeeAsync(const DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAttendee(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientDeleteAttendeeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMeetingOutcome ChimeSDKMeetingsClient::DeleteMeeting(const DeleteMeetingRequest& request) const
@@ -330,14 +330,14 @@ DeleteMeetingOutcomeCallable ChimeSDKMeetingsClient::DeleteMeetingCallable(const
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::DeleteMeetingAsync(const DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientDeleteMeetingAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMeetingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMeeting(request), context);
 }
 
-void ChimeSDKMeetingsClient::DeleteMeetingAsyncHelper(const DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::DeleteMeetingAsync(const DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMeeting(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientDeleteMeetingAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAttendeeOutcome ChimeSDKMeetingsClient::GetAttendee(const GetAttendeeRequest& request) const
@@ -368,14 +368,14 @@ GetAttendeeOutcomeCallable ChimeSDKMeetingsClient::GetAttendeeCallable(const Get
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::GetAttendeeAsync(const GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientGetAttendeeAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAttendeeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAttendee(request), context);
 }
 
-void ChimeSDKMeetingsClient::GetAttendeeAsyncHelper(const GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::GetAttendeeAsync(const GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAttendee(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientGetAttendeeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMeetingOutcome ChimeSDKMeetingsClient::GetMeeting(const GetMeetingRequest& request) const
@@ -399,14 +399,14 @@ GetMeetingOutcomeCallable ChimeSDKMeetingsClient::GetMeetingCallable(const GetMe
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::GetMeetingAsync(const GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientGetMeetingAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMeetingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMeeting(request), context);
 }
 
-void ChimeSDKMeetingsClient::GetMeetingAsyncHelper(const GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::GetMeetingAsync(const GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMeeting(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientGetMeetingAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAttendeesOutcome ChimeSDKMeetingsClient::ListAttendees(const ListAttendeesRequest& request) const
@@ -431,14 +431,14 @@ ListAttendeesOutcomeCallable ChimeSDKMeetingsClient::ListAttendeesCallable(const
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::ListAttendeesAsync(const ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientListAttendeesAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAttendeesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAttendees(request), context);
 }
 
-void ChimeSDKMeetingsClient::ListAttendeesAsyncHelper(const ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::ListAttendeesAsync(const ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAttendees(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientListAttendeesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ChimeSDKMeetingsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -461,14 +461,14 @@ ListTagsForResourceOutcomeCallable ChimeSDKMeetingsClient::ListTagsForResourceCa
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientListTagsForResourceAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ChimeSDKMeetingsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StartMeetingTranscription(const StartMeetingTranscriptionRequest& request) const
@@ -496,14 +496,14 @@ StartMeetingTranscriptionOutcomeCallable ChimeSDKMeetingsClient::StartMeetingTra
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::StartMeetingTranscriptionAsync(const StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientStartMeetingTranscriptionAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMeetingTranscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMeetingTranscription(request), context);
 }
 
-void ChimeSDKMeetingsClient::StartMeetingTranscriptionAsyncHelper(const StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::StartMeetingTranscriptionAsync(const StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMeetingTranscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientStartMeetingTranscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 StopMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StopMeetingTranscription(const StopMeetingTranscriptionRequest& request) const
@@ -531,14 +531,14 @@ StopMeetingTranscriptionOutcomeCallable ChimeSDKMeetingsClient::StopMeetingTrans
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::StopMeetingTranscriptionAsync(const StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientStopMeetingTranscriptionAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopMeetingTranscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopMeetingTranscription(request), context);
 }
 
-void ChimeSDKMeetingsClient::StopMeetingTranscriptionAsyncHelper(const StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::StopMeetingTranscriptionAsync(const StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopMeetingTranscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientStopMeetingTranscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ChimeSDKMeetingsClient::TagResource(const TagResourceRequest& request) const
@@ -559,14 +559,14 @@ TagResourceOutcomeCallable ChimeSDKMeetingsClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientTagResourceAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ChimeSDKMeetingsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ChimeSDKMeetingsClient::UntagResource(const UntagResourceRequest& request) const
@@ -587,14 +587,14 @@ UntagResourceOutcomeCallable ChimeSDKMeetingsClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientUntagResourceAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ChimeSDKMeetingsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAttendeeCapabilitiesOutcome ChimeSDKMeetingsClient::UpdateAttendeeCapabilities(const UpdateAttendeeCapabilitiesRequest& request) const
@@ -626,13 +626,13 @@ UpdateAttendeeCapabilitiesOutcomeCallable ChimeSDKMeetingsClient::UpdateAttendee
   return task->get_future();
 }
 
-void ChimeSDKMeetingsClient::UpdateAttendeeCapabilitiesAsync(const UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClientUpdateAttendeeCapabilitiesAsyncHelper(ChimeSDKMeetingsClient const * const clientThis, const UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAttendeeCapabilitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAttendeeCapabilities(request), context);
 }
 
-void ChimeSDKMeetingsClient::UpdateAttendeeCapabilitiesAsyncHelper(const UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ChimeSDKMeetingsClient::UpdateAttendeeCapabilitiesAsync(const UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAttendeeCapabilities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ChimeSDKMeetingsClientUpdateAttendeeCapabilitiesAsyncHelper( this, request, handler, context ); } );
 }
 

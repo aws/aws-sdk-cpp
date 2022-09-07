@@ -151,14 +151,14 @@ ConvertRecoveryPointToSnapshotOutcomeCallable RedshiftServerlessClient::ConvertR
   return task->get_future();
 }
 
-void RedshiftServerlessClient::ConvertRecoveryPointToSnapshotAsync(const ConvertRecoveryPointToSnapshotRequest& request, const ConvertRecoveryPointToSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientConvertRecoveryPointToSnapshotAsyncHelper(RedshiftServerlessClient const * const clientThis, const ConvertRecoveryPointToSnapshotRequest& request, const ConvertRecoveryPointToSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConvertRecoveryPointToSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConvertRecoveryPointToSnapshot(request), context);
 }
 
-void RedshiftServerlessClient::ConvertRecoveryPointToSnapshotAsyncHelper(const ConvertRecoveryPointToSnapshotRequest& request, const ConvertRecoveryPointToSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::ConvertRecoveryPointToSnapshotAsync(const ConvertRecoveryPointToSnapshotRequest& request, const ConvertRecoveryPointToSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConvertRecoveryPointToSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientConvertRecoveryPointToSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEndpointAccessOutcome RedshiftServerlessClient::CreateEndpointAccess(const CreateEndpointAccessRequest& request) const
@@ -175,14 +175,14 @@ CreateEndpointAccessOutcomeCallable RedshiftServerlessClient::CreateEndpointAcce
   return task->get_future();
 }
 
-void RedshiftServerlessClient::CreateEndpointAccessAsync(const CreateEndpointAccessRequest& request, const CreateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientCreateEndpointAccessAsyncHelper(RedshiftServerlessClient const * const clientThis, const CreateEndpointAccessRequest& request, const CreateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEndpointAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEndpointAccess(request), context);
 }
 
-void RedshiftServerlessClient::CreateEndpointAccessAsyncHelper(const CreateEndpointAccessRequest& request, const CreateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::CreateEndpointAccessAsync(const CreateEndpointAccessRequest& request, const CreateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEndpointAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientCreateEndpointAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNamespaceOutcome RedshiftServerlessClient::CreateNamespace(const CreateNamespaceRequest& request) const
@@ -199,14 +199,14 @@ CreateNamespaceOutcomeCallable RedshiftServerlessClient::CreateNamespaceCallable
   return task->get_future();
 }
 
-void RedshiftServerlessClient::CreateNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientCreateNamespaceAsyncHelper(RedshiftServerlessClient const * const clientThis, const CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNamespace(request), context);
 }
 
-void RedshiftServerlessClient::CreateNamespaceAsyncHelper(const CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::CreateNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientCreateNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSnapshotOutcome RedshiftServerlessClient::CreateSnapshot(const CreateSnapshotRequest& request) const
@@ -223,14 +223,14 @@ CreateSnapshotOutcomeCallable RedshiftServerlessClient::CreateSnapshotCallable(c
   return task->get_future();
 }
 
-void RedshiftServerlessClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientCreateSnapshotAsyncHelper(RedshiftServerlessClient const * const clientThis, const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSnapshot(request), context);
 }
 
-void RedshiftServerlessClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientCreateSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUsageLimitOutcome RedshiftServerlessClient::CreateUsageLimit(const CreateUsageLimitRequest& request) const
@@ -247,14 +247,14 @@ CreateUsageLimitOutcomeCallable RedshiftServerlessClient::CreateUsageLimitCallab
   return task->get_future();
 }
 
-void RedshiftServerlessClient::CreateUsageLimitAsync(const CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientCreateUsageLimitAsyncHelper(RedshiftServerlessClient const * const clientThis, const CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUsageLimitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUsageLimit(request), context);
 }
 
-void RedshiftServerlessClient::CreateUsageLimitAsyncHelper(const CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::CreateUsageLimitAsync(const CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUsageLimit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientCreateUsageLimitAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorkgroupOutcome RedshiftServerlessClient::CreateWorkgroup(const CreateWorkgroupRequest& request) const
@@ -271,14 +271,14 @@ CreateWorkgroupOutcomeCallable RedshiftServerlessClient::CreateWorkgroupCallable
   return task->get_future();
 }
 
-void RedshiftServerlessClient::CreateWorkgroupAsync(const CreateWorkgroupRequest& request, const CreateWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientCreateWorkgroupAsyncHelper(RedshiftServerlessClient const * const clientThis, const CreateWorkgroupRequest& request, const CreateWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkgroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorkgroup(request), context);
 }
 
-void RedshiftServerlessClient::CreateWorkgroupAsyncHelper(const CreateWorkgroupRequest& request, const CreateWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::CreateWorkgroupAsync(const CreateWorkgroupRequest& request, const CreateWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorkgroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientCreateWorkgroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEndpointAccessOutcome RedshiftServerlessClient::DeleteEndpointAccess(const DeleteEndpointAccessRequest& request) const
@@ -295,14 +295,14 @@ DeleteEndpointAccessOutcomeCallable RedshiftServerlessClient::DeleteEndpointAcce
   return task->get_future();
 }
 
-void RedshiftServerlessClient::DeleteEndpointAccessAsync(const DeleteEndpointAccessRequest& request, const DeleteEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientDeleteEndpointAccessAsyncHelper(RedshiftServerlessClient const * const clientThis, const DeleteEndpointAccessRequest& request, const DeleteEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEndpointAccess(request), context);
 }
 
-void RedshiftServerlessClient::DeleteEndpointAccessAsyncHelper(const DeleteEndpointAccessRequest& request, const DeleteEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::DeleteEndpointAccessAsync(const DeleteEndpointAccessRequest& request, const DeleteEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEndpointAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientDeleteEndpointAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNamespaceOutcome RedshiftServerlessClient::DeleteNamespace(const DeleteNamespaceRequest& request) const
@@ -319,14 +319,14 @@ DeleteNamespaceOutcomeCallable RedshiftServerlessClient::DeleteNamespaceCallable
   return task->get_future();
 }
 
-void RedshiftServerlessClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientDeleteNamespaceAsyncHelper(RedshiftServerlessClient const * const clientThis, const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNamespace(request), context);
 }
 
-void RedshiftServerlessClient::DeleteNamespaceAsyncHelper(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientDeleteNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome RedshiftServerlessClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -343,14 +343,14 @@ DeleteResourcePolicyOutcomeCallable RedshiftServerlessClient::DeleteResourcePoli
   return task->get_future();
 }
 
-void RedshiftServerlessClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientDeleteResourcePolicyAsyncHelper(RedshiftServerlessClient const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void RedshiftServerlessClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSnapshotOutcome RedshiftServerlessClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const
@@ -367,14 +367,14 @@ DeleteSnapshotOutcomeCallable RedshiftServerlessClient::DeleteSnapshotCallable(c
   return task->get_future();
 }
 
-void RedshiftServerlessClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientDeleteSnapshotAsyncHelper(RedshiftServerlessClient const * const clientThis, const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSnapshot(request), context);
 }
 
-void RedshiftServerlessClient::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientDeleteSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUsageLimitOutcome RedshiftServerlessClient::DeleteUsageLimit(const DeleteUsageLimitRequest& request) const
@@ -391,14 +391,14 @@ DeleteUsageLimitOutcomeCallable RedshiftServerlessClient::DeleteUsageLimitCallab
   return task->get_future();
 }
 
-void RedshiftServerlessClient::DeleteUsageLimitAsync(const DeleteUsageLimitRequest& request, const DeleteUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientDeleteUsageLimitAsyncHelper(RedshiftServerlessClient const * const clientThis, const DeleteUsageLimitRequest& request, const DeleteUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUsageLimitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUsageLimit(request), context);
 }
 
-void RedshiftServerlessClient::DeleteUsageLimitAsyncHelper(const DeleteUsageLimitRequest& request, const DeleteUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::DeleteUsageLimitAsync(const DeleteUsageLimitRequest& request, const DeleteUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUsageLimit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientDeleteUsageLimitAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorkgroupOutcome RedshiftServerlessClient::DeleteWorkgroup(const DeleteWorkgroupRequest& request) const
@@ -415,14 +415,14 @@ DeleteWorkgroupOutcomeCallable RedshiftServerlessClient::DeleteWorkgroupCallable
   return task->get_future();
 }
 
-void RedshiftServerlessClient::DeleteWorkgroupAsync(const DeleteWorkgroupRequest& request, const DeleteWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientDeleteWorkgroupAsyncHelper(RedshiftServerlessClient const * const clientThis, const DeleteWorkgroupRequest& request, const DeleteWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkgroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorkgroup(request), context);
 }
 
-void RedshiftServerlessClient::DeleteWorkgroupAsyncHelper(const DeleteWorkgroupRequest& request, const DeleteWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::DeleteWorkgroupAsync(const DeleteWorkgroupRequest& request, const DeleteWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorkgroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientDeleteWorkgroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCredentialsOutcome RedshiftServerlessClient::GetCredentials(const GetCredentialsRequest& request) const
@@ -439,14 +439,14 @@ GetCredentialsOutcomeCallable RedshiftServerlessClient::GetCredentialsCallable(c
   return task->get_future();
 }
 
-void RedshiftServerlessClient::GetCredentialsAsync(const GetCredentialsRequest& request, const GetCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientGetCredentialsAsyncHelper(RedshiftServerlessClient const * const clientThis, const GetCredentialsRequest& request, const GetCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCredentialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCredentials(request), context);
 }
 
-void RedshiftServerlessClient::GetCredentialsAsyncHelper(const GetCredentialsRequest& request, const GetCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::GetCredentialsAsync(const GetCredentialsRequest& request, const GetCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientGetCredentialsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEndpointAccessOutcome RedshiftServerlessClient::GetEndpointAccess(const GetEndpointAccessRequest& request) const
@@ -463,14 +463,14 @@ GetEndpointAccessOutcomeCallable RedshiftServerlessClient::GetEndpointAccessCall
   return task->get_future();
 }
 
-void RedshiftServerlessClient::GetEndpointAccessAsync(const GetEndpointAccessRequest& request, const GetEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientGetEndpointAccessAsyncHelper(RedshiftServerlessClient const * const clientThis, const GetEndpointAccessRequest& request, const GetEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEndpointAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEndpointAccess(request), context);
 }
 
-void RedshiftServerlessClient::GetEndpointAccessAsyncHelper(const GetEndpointAccessRequest& request, const GetEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::GetEndpointAccessAsync(const GetEndpointAccessRequest& request, const GetEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEndpointAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientGetEndpointAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNamespaceOutcome RedshiftServerlessClient::GetNamespace(const GetNamespaceRequest& request) const
@@ -487,14 +487,14 @@ GetNamespaceOutcomeCallable RedshiftServerlessClient::GetNamespaceCallable(const
   return task->get_future();
 }
 
-void RedshiftServerlessClient::GetNamespaceAsync(const GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientGetNamespaceAsyncHelper(RedshiftServerlessClient const * const clientThis, const GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNamespace(request), context);
 }
 
-void RedshiftServerlessClient::GetNamespaceAsyncHelper(const GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::GetNamespaceAsync(const GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientGetNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecoveryPointOutcome RedshiftServerlessClient::GetRecoveryPoint(const GetRecoveryPointRequest& request) const
@@ -511,14 +511,14 @@ GetRecoveryPointOutcomeCallable RedshiftServerlessClient::GetRecoveryPointCallab
   return task->get_future();
 }
 
-void RedshiftServerlessClient::GetRecoveryPointAsync(const GetRecoveryPointRequest& request, const GetRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientGetRecoveryPointAsyncHelper(RedshiftServerlessClient const * const clientThis, const GetRecoveryPointRequest& request, const GetRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecoveryPointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecoveryPoint(request), context);
 }
 
-void RedshiftServerlessClient::GetRecoveryPointAsyncHelper(const GetRecoveryPointRequest& request, const GetRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::GetRecoveryPointAsync(const GetRecoveryPointRequest& request, const GetRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecoveryPoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientGetRecoveryPointAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcePolicyOutcome RedshiftServerlessClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
@@ -535,14 +535,14 @@ GetResourcePolicyOutcomeCallable RedshiftServerlessClient::GetResourcePolicyCall
   return task->get_future();
 }
 
-void RedshiftServerlessClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientGetResourcePolicyAsyncHelper(RedshiftServerlessClient const * const clientThis, const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourcePolicy(request), context);
 }
 
-void RedshiftServerlessClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientGetResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSnapshotOutcome RedshiftServerlessClient::GetSnapshot(const GetSnapshotRequest& request) const
@@ -559,14 +559,14 @@ GetSnapshotOutcomeCallable RedshiftServerlessClient::GetSnapshotCallable(const G
   return task->get_future();
 }
 
-void RedshiftServerlessClient::GetSnapshotAsync(const GetSnapshotRequest& request, const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientGetSnapshotAsyncHelper(RedshiftServerlessClient const * const clientThis, const GetSnapshotRequest& request, const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSnapshot(request), context);
 }
 
-void RedshiftServerlessClient::GetSnapshotAsyncHelper(const GetSnapshotRequest& request, const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::GetSnapshotAsync(const GetSnapshotRequest& request, const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientGetSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUsageLimitOutcome RedshiftServerlessClient::GetUsageLimit(const GetUsageLimitRequest& request) const
@@ -583,14 +583,14 @@ GetUsageLimitOutcomeCallable RedshiftServerlessClient::GetUsageLimitCallable(con
   return task->get_future();
 }
 
-void RedshiftServerlessClient::GetUsageLimitAsync(const GetUsageLimitRequest& request, const GetUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientGetUsageLimitAsyncHelper(RedshiftServerlessClient const * const clientThis, const GetUsageLimitRequest& request, const GetUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUsageLimitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUsageLimit(request), context);
 }
 
-void RedshiftServerlessClient::GetUsageLimitAsyncHelper(const GetUsageLimitRequest& request, const GetUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::GetUsageLimitAsync(const GetUsageLimitRequest& request, const GetUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUsageLimit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientGetUsageLimitAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWorkgroupOutcome RedshiftServerlessClient::GetWorkgroup(const GetWorkgroupRequest& request) const
@@ -607,14 +607,14 @@ GetWorkgroupOutcomeCallable RedshiftServerlessClient::GetWorkgroupCallable(const
   return task->get_future();
 }
 
-void RedshiftServerlessClient::GetWorkgroupAsync(const GetWorkgroupRequest& request, const GetWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientGetWorkgroupAsyncHelper(RedshiftServerlessClient const * const clientThis, const GetWorkgroupRequest& request, const GetWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkgroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWorkgroup(request), context);
 }
 
-void RedshiftServerlessClient::GetWorkgroupAsyncHelper(const GetWorkgroupRequest& request, const GetWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::GetWorkgroupAsync(const GetWorkgroupRequest& request, const GetWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWorkgroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientGetWorkgroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEndpointAccessOutcome RedshiftServerlessClient::ListEndpointAccess(const ListEndpointAccessRequest& request) const
@@ -631,14 +631,14 @@ ListEndpointAccessOutcomeCallable RedshiftServerlessClient::ListEndpointAccessCa
   return task->get_future();
 }
 
-void RedshiftServerlessClient::ListEndpointAccessAsync(const ListEndpointAccessRequest& request, const ListEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientListEndpointAccessAsyncHelper(RedshiftServerlessClient const * const clientThis, const ListEndpointAccessRequest& request, const ListEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEndpointAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEndpointAccess(request), context);
 }
 
-void RedshiftServerlessClient::ListEndpointAccessAsyncHelper(const ListEndpointAccessRequest& request, const ListEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::ListEndpointAccessAsync(const ListEndpointAccessRequest& request, const ListEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEndpointAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientListEndpointAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNamespacesOutcome RedshiftServerlessClient::ListNamespaces(const ListNamespacesRequest& request) const
@@ -655,14 +655,14 @@ ListNamespacesOutcomeCallable RedshiftServerlessClient::ListNamespacesCallable(c
   return task->get_future();
 }
 
-void RedshiftServerlessClient::ListNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientListNamespacesAsyncHelper(RedshiftServerlessClient const * const clientThis, const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNamespacesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNamespaces(request), context);
 }
 
-void RedshiftServerlessClient::ListNamespacesAsyncHelper(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::ListNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNamespaces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientListNamespacesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRecoveryPointsOutcome RedshiftServerlessClient::ListRecoveryPoints(const ListRecoveryPointsRequest& request) const
@@ -679,14 +679,14 @@ ListRecoveryPointsOutcomeCallable RedshiftServerlessClient::ListRecoveryPointsCa
   return task->get_future();
 }
 
-void RedshiftServerlessClient::ListRecoveryPointsAsync(const ListRecoveryPointsRequest& request, const ListRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientListRecoveryPointsAsyncHelper(RedshiftServerlessClient const * const clientThis, const ListRecoveryPointsRequest& request, const ListRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecoveryPointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRecoveryPoints(request), context);
 }
 
-void RedshiftServerlessClient::ListRecoveryPointsAsyncHelper(const ListRecoveryPointsRequest& request, const ListRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::ListRecoveryPointsAsync(const ListRecoveryPointsRequest& request, const ListRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRecoveryPoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientListRecoveryPointsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSnapshotsOutcome RedshiftServerlessClient::ListSnapshots(const ListSnapshotsRequest& request) const
@@ -703,14 +703,14 @@ ListSnapshotsOutcomeCallable RedshiftServerlessClient::ListSnapshotsCallable(con
   return task->get_future();
 }
 
-void RedshiftServerlessClient::ListSnapshotsAsync(const ListSnapshotsRequest& request, const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientListSnapshotsAsyncHelper(RedshiftServerlessClient const * const clientThis, const ListSnapshotsRequest& request, const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSnapshots(request), context);
 }
 
-void RedshiftServerlessClient::ListSnapshotsAsyncHelper(const ListSnapshotsRequest& request, const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::ListSnapshotsAsync(const ListSnapshotsRequest& request, const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientListSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome RedshiftServerlessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -727,14 +727,14 @@ ListTagsForResourceOutcomeCallable RedshiftServerlessClient::ListTagsForResource
   return task->get_future();
 }
 
-void RedshiftServerlessClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientListTagsForResourceAsyncHelper(RedshiftServerlessClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void RedshiftServerlessClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUsageLimitsOutcome RedshiftServerlessClient::ListUsageLimits(const ListUsageLimitsRequest& request) const
@@ -751,14 +751,14 @@ ListUsageLimitsOutcomeCallable RedshiftServerlessClient::ListUsageLimitsCallable
   return task->get_future();
 }
 
-void RedshiftServerlessClient::ListUsageLimitsAsync(const ListUsageLimitsRequest& request, const ListUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientListUsageLimitsAsyncHelper(RedshiftServerlessClient const * const clientThis, const ListUsageLimitsRequest& request, const ListUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsageLimitsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUsageLimits(request), context);
 }
 
-void RedshiftServerlessClient::ListUsageLimitsAsyncHelper(const ListUsageLimitsRequest& request, const ListUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::ListUsageLimitsAsync(const ListUsageLimitsRequest& request, const ListUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUsageLimits(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientListUsageLimitsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorkgroupsOutcome RedshiftServerlessClient::ListWorkgroups(const ListWorkgroupsRequest& request) const
@@ -775,14 +775,14 @@ ListWorkgroupsOutcomeCallable RedshiftServerlessClient::ListWorkgroupsCallable(c
   return task->get_future();
 }
 
-void RedshiftServerlessClient::ListWorkgroupsAsync(const ListWorkgroupsRequest& request, const ListWorkgroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientListWorkgroupsAsyncHelper(RedshiftServerlessClient const * const clientThis, const ListWorkgroupsRequest& request, const ListWorkgroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkgroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorkgroups(request), context);
 }
 
-void RedshiftServerlessClient::ListWorkgroupsAsyncHelper(const ListWorkgroupsRequest& request, const ListWorkgroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::ListWorkgroupsAsync(const ListWorkgroupsRequest& request, const ListWorkgroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorkgroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientListWorkgroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourcePolicyOutcome RedshiftServerlessClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -799,14 +799,14 @@ PutResourcePolicyOutcomeCallable RedshiftServerlessClient::PutResourcePolicyCall
   return task->get_future();
 }
 
-void RedshiftServerlessClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientPutResourcePolicyAsyncHelper(RedshiftServerlessClient const * const clientThis, const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourcePolicy(request), context);
 }
 
-void RedshiftServerlessClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientPutResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreFromRecoveryPointOutcome RedshiftServerlessClient::RestoreFromRecoveryPoint(const RestoreFromRecoveryPointRequest& request) const
@@ -823,14 +823,14 @@ RestoreFromRecoveryPointOutcomeCallable RedshiftServerlessClient::RestoreFromRec
   return task->get_future();
 }
 
-void RedshiftServerlessClient::RestoreFromRecoveryPointAsync(const RestoreFromRecoveryPointRequest& request, const RestoreFromRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientRestoreFromRecoveryPointAsyncHelper(RedshiftServerlessClient const * const clientThis, const RestoreFromRecoveryPointRequest& request, const RestoreFromRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreFromRecoveryPointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreFromRecoveryPoint(request), context);
 }
 
-void RedshiftServerlessClient::RestoreFromRecoveryPointAsyncHelper(const RestoreFromRecoveryPointRequest& request, const RestoreFromRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::RestoreFromRecoveryPointAsync(const RestoreFromRecoveryPointRequest& request, const RestoreFromRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreFromRecoveryPoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientRestoreFromRecoveryPointAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreFromSnapshotOutcome RedshiftServerlessClient::RestoreFromSnapshot(const RestoreFromSnapshotRequest& request) const
@@ -847,14 +847,14 @@ RestoreFromSnapshotOutcomeCallable RedshiftServerlessClient::RestoreFromSnapshot
   return task->get_future();
 }
 
-void RedshiftServerlessClient::RestoreFromSnapshotAsync(const RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientRestoreFromSnapshotAsyncHelper(RedshiftServerlessClient const * const clientThis, const RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreFromSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreFromSnapshot(request), context);
 }
 
-void RedshiftServerlessClient::RestoreFromSnapshotAsyncHelper(const RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::RestoreFromSnapshotAsync(const RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreFromSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientRestoreFromSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome RedshiftServerlessClient::TagResource(const TagResourceRequest& request) const
@@ -871,14 +871,14 @@ TagResourceOutcomeCallable RedshiftServerlessClient::TagResourceCallable(const T
   return task->get_future();
 }
 
-void RedshiftServerlessClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientTagResourceAsyncHelper(RedshiftServerlessClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void RedshiftServerlessClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome RedshiftServerlessClient::UntagResource(const UntagResourceRequest& request) const
@@ -895,14 +895,14 @@ UntagResourceOutcomeCallable RedshiftServerlessClient::UntagResourceCallable(con
   return task->get_future();
 }
 
-void RedshiftServerlessClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientUntagResourceAsyncHelper(RedshiftServerlessClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void RedshiftServerlessClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEndpointAccessOutcome RedshiftServerlessClient::UpdateEndpointAccess(const UpdateEndpointAccessRequest& request) const
@@ -919,14 +919,14 @@ UpdateEndpointAccessOutcomeCallable RedshiftServerlessClient::UpdateEndpointAcce
   return task->get_future();
 }
 
-void RedshiftServerlessClient::UpdateEndpointAccessAsync(const UpdateEndpointAccessRequest& request, const UpdateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientUpdateEndpointAccessAsyncHelper(RedshiftServerlessClient const * const clientThis, const UpdateEndpointAccessRequest& request, const UpdateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEndpointAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEndpointAccess(request), context);
 }
 
-void RedshiftServerlessClient::UpdateEndpointAccessAsyncHelper(const UpdateEndpointAccessRequest& request, const UpdateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::UpdateEndpointAccessAsync(const UpdateEndpointAccessRequest& request, const UpdateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEndpointAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientUpdateEndpointAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateNamespaceOutcome RedshiftServerlessClient::UpdateNamespace(const UpdateNamespaceRequest& request) const
@@ -943,14 +943,14 @@ UpdateNamespaceOutcomeCallable RedshiftServerlessClient::UpdateNamespaceCallable
   return task->get_future();
 }
 
-void RedshiftServerlessClient::UpdateNamespaceAsync(const UpdateNamespaceRequest& request, const UpdateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientUpdateNamespaceAsyncHelper(RedshiftServerlessClient const * const clientThis, const UpdateNamespaceRequest& request, const UpdateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateNamespace(request), context);
 }
 
-void RedshiftServerlessClient::UpdateNamespaceAsyncHelper(const UpdateNamespaceRequest& request, const UpdateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::UpdateNamespaceAsync(const UpdateNamespaceRequest& request, const UpdateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientUpdateNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSnapshotOutcome RedshiftServerlessClient::UpdateSnapshot(const UpdateSnapshotRequest& request) const
@@ -967,14 +967,14 @@ UpdateSnapshotOutcomeCallable RedshiftServerlessClient::UpdateSnapshotCallable(c
   return task->get_future();
 }
 
-void RedshiftServerlessClient::UpdateSnapshotAsync(const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientUpdateSnapshotAsyncHelper(RedshiftServerlessClient const * const clientThis, const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSnapshot(request), context);
 }
 
-void RedshiftServerlessClient::UpdateSnapshotAsyncHelper(const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::UpdateSnapshotAsync(const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientUpdateSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUsageLimitOutcome RedshiftServerlessClient::UpdateUsageLimit(const UpdateUsageLimitRequest& request) const
@@ -991,14 +991,14 @@ UpdateUsageLimitOutcomeCallable RedshiftServerlessClient::UpdateUsageLimitCallab
   return task->get_future();
 }
 
-void RedshiftServerlessClient::UpdateUsageLimitAsync(const UpdateUsageLimitRequest& request, const UpdateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientUpdateUsageLimitAsyncHelper(RedshiftServerlessClient const * const clientThis, const UpdateUsageLimitRequest& request, const UpdateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUsageLimitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUsageLimit(request), context);
 }
 
-void RedshiftServerlessClient::UpdateUsageLimitAsyncHelper(const UpdateUsageLimitRequest& request, const UpdateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::UpdateUsageLimitAsync(const UpdateUsageLimitRequest& request, const UpdateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUsageLimit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientUpdateUsageLimitAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWorkgroupOutcome RedshiftServerlessClient::UpdateWorkgroup(const UpdateWorkgroupRequest& request) const
@@ -1015,13 +1015,13 @@ UpdateWorkgroupOutcomeCallable RedshiftServerlessClient::UpdateWorkgroupCallable
   return task->get_future();
 }
 
-void RedshiftServerlessClient::UpdateWorkgroupAsync(const UpdateWorkgroupRequest& request, const UpdateWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClientUpdateWorkgroupAsyncHelper(RedshiftServerlessClient const * const clientThis, const UpdateWorkgroupRequest& request, const UpdateWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkgroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWorkgroup(request), context);
 }
 
-void RedshiftServerlessClient::UpdateWorkgroupAsyncHelper(const UpdateWorkgroupRequest& request, const UpdateWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftServerlessClient::UpdateWorkgroupAsync(const UpdateWorkgroupRequest& request, const UpdateWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWorkgroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftServerlessClientUpdateWorkgroupAsyncHelper( this, request, handler, context ); } );
 }
 

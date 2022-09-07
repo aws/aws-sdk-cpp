@@ -354,14 +354,14 @@ AcceptCertificateTransferOutcomeCallable IoTClient::AcceptCertificateTransferCal
   return task->get_future();
 }
 
-void IoTClient::AcceptCertificateTransferAsync(const AcceptCertificateTransferRequest& request, const AcceptCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientAcceptCertificateTransferAsyncHelper(IoTClient const * const clientThis, const AcceptCertificateTransferRequest& request, const AcceptCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptCertificateTransferAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptCertificateTransfer(request), context);
 }
 
-void IoTClient::AcceptCertificateTransferAsyncHelper(const AcceptCertificateTransferRequest& request, const AcceptCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::AcceptCertificateTransferAsync(const AcceptCertificateTransferRequest& request, const AcceptCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptCertificateTransfer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientAcceptCertificateTransferAsyncHelper( this, request, handler, context ); } );
 }
 
 AddThingToBillingGroupOutcome IoTClient::AddThingToBillingGroup(const AddThingToBillingGroupRequest& request) const
@@ -379,14 +379,14 @@ AddThingToBillingGroupOutcomeCallable IoTClient::AddThingToBillingGroupCallable(
   return task->get_future();
 }
 
-void IoTClient::AddThingToBillingGroupAsync(const AddThingToBillingGroupRequest& request, const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientAddThingToBillingGroupAsyncHelper(IoTClient const * const clientThis, const AddThingToBillingGroupRequest& request, const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddThingToBillingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddThingToBillingGroup(request), context);
 }
 
-void IoTClient::AddThingToBillingGroupAsyncHelper(const AddThingToBillingGroupRequest& request, const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::AddThingToBillingGroupAsync(const AddThingToBillingGroupRequest& request, const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddThingToBillingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientAddThingToBillingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 AddThingToThingGroupOutcome IoTClient::AddThingToThingGroup(const AddThingToThingGroupRequest& request) const
@@ -404,14 +404,14 @@ AddThingToThingGroupOutcomeCallable IoTClient::AddThingToThingGroupCallable(cons
   return task->get_future();
 }
 
-void IoTClient::AddThingToThingGroupAsync(const AddThingToThingGroupRequest& request, const AddThingToThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientAddThingToThingGroupAsyncHelper(IoTClient const * const clientThis, const AddThingToThingGroupRequest& request, const AddThingToThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddThingToThingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddThingToThingGroup(request), context);
 }
 
-void IoTClient::AddThingToThingGroupAsyncHelper(const AddThingToThingGroupRequest& request, const AddThingToThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::AddThingToThingGroupAsync(const AddThingToThingGroupRequest& request, const AddThingToThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddThingToThingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientAddThingToThingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateTargetsWithJobOutcome IoTClient::AssociateTargetsWithJob(const AssociateTargetsWithJobRequest& request) const
@@ -436,14 +436,14 @@ AssociateTargetsWithJobOutcomeCallable IoTClient::AssociateTargetsWithJobCallabl
   return task->get_future();
 }
 
-void IoTClient::AssociateTargetsWithJobAsync(const AssociateTargetsWithJobRequest& request, const AssociateTargetsWithJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientAssociateTargetsWithJobAsyncHelper(IoTClient const * const clientThis, const AssociateTargetsWithJobRequest& request, const AssociateTargetsWithJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTargetsWithJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateTargetsWithJob(request), context);
 }
 
-void IoTClient::AssociateTargetsWithJobAsyncHelper(const AssociateTargetsWithJobRequest& request, const AssociateTargetsWithJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::AssociateTargetsWithJobAsync(const AssociateTargetsWithJobRequest& request, const AssociateTargetsWithJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateTargetsWithJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientAssociateTargetsWithJobAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachPolicyOutcome IoTClient::AttachPolicy(const AttachPolicyRequest& request) const
@@ -467,14 +467,14 @@ AttachPolicyOutcomeCallable IoTClient::AttachPolicyCallable(const AttachPolicyRe
   return task->get_future();
 }
 
-void IoTClient::AttachPolicyAsync(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientAttachPolicyAsyncHelper(IoTClient const * const clientThis, const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachPolicy(request), context);
 }
 
-void IoTClient::AttachPolicyAsyncHelper(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::AttachPolicyAsync(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientAttachPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachSecurityProfileOutcome IoTClient::AttachSecurityProfile(const AttachSecurityProfileRequest& request) const
@@ -504,14 +504,14 @@ AttachSecurityProfileOutcomeCallable IoTClient::AttachSecurityProfileCallable(co
   return task->get_future();
 }
 
-void IoTClient::AttachSecurityProfileAsync(const AttachSecurityProfileRequest& request, const AttachSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientAttachSecurityProfileAsyncHelper(IoTClient const * const clientThis, const AttachSecurityProfileRequest& request, const AttachSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachSecurityProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachSecurityProfile(request), context);
 }
 
-void IoTClient::AttachSecurityProfileAsyncHelper(const AttachSecurityProfileRequest& request, const AttachSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::AttachSecurityProfileAsync(const AttachSecurityProfileRequest& request, const AttachSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientAttachSecurityProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachThingPrincipalOutcome IoTClient::AttachThingPrincipal(const AttachThingPrincipalRequest& request) const
@@ -541,14 +541,14 @@ AttachThingPrincipalOutcomeCallable IoTClient::AttachThingPrincipalCallable(cons
   return task->get_future();
 }
 
-void IoTClient::AttachThingPrincipalAsync(const AttachThingPrincipalRequest& request, const AttachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientAttachThingPrincipalAsyncHelper(IoTClient const * const clientThis, const AttachThingPrincipalRequest& request, const AttachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachThingPrincipalAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachThingPrincipal(request), context);
 }
 
-void IoTClient::AttachThingPrincipalAsyncHelper(const AttachThingPrincipalRequest& request, const AttachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::AttachThingPrincipalAsync(const AttachThingPrincipalRequest& request, const AttachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachThingPrincipal(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientAttachThingPrincipalAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelAuditMitigationActionsTaskOutcome IoTClient::CancelAuditMitigationActionsTask(const CancelAuditMitigationActionsTaskRequest& request) const
@@ -573,14 +573,14 @@ CancelAuditMitigationActionsTaskOutcomeCallable IoTClient::CancelAuditMitigation
   return task->get_future();
 }
 
-void IoTClient::CancelAuditMitigationActionsTaskAsync(const CancelAuditMitigationActionsTaskRequest& request, const CancelAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCancelAuditMitigationActionsTaskAsyncHelper(IoTClient const * const clientThis, const CancelAuditMitigationActionsTaskRequest& request, const CancelAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelAuditMitigationActionsTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelAuditMitigationActionsTask(request), context);
 }
 
-void IoTClient::CancelAuditMitigationActionsTaskAsyncHelper(const CancelAuditMitigationActionsTaskRequest& request, const CancelAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CancelAuditMitigationActionsTaskAsync(const CancelAuditMitigationActionsTaskRequest& request, const CancelAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelAuditMitigationActionsTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCancelAuditMitigationActionsTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelAuditTaskOutcome IoTClient::CancelAuditTask(const CancelAuditTaskRequest& request) const
@@ -605,14 +605,14 @@ CancelAuditTaskOutcomeCallable IoTClient::CancelAuditTaskCallable(const CancelAu
   return task->get_future();
 }
 
-void IoTClient::CancelAuditTaskAsync(const CancelAuditTaskRequest& request, const CancelAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCancelAuditTaskAsyncHelper(IoTClient const * const clientThis, const CancelAuditTaskRequest& request, const CancelAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelAuditTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelAuditTask(request), context);
 }
 
-void IoTClient::CancelAuditTaskAsyncHelper(const CancelAuditTaskRequest& request, const CancelAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CancelAuditTaskAsync(const CancelAuditTaskRequest& request, const CancelAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelAuditTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCancelAuditTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelCertificateTransferOutcome IoTClient::CancelCertificateTransfer(const CancelCertificateTransferRequest& request) const
@@ -636,14 +636,14 @@ CancelCertificateTransferOutcomeCallable IoTClient::CancelCertificateTransferCal
   return task->get_future();
 }
 
-void IoTClient::CancelCertificateTransferAsync(const CancelCertificateTransferRequest& request, const CancelCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCancelCertificateTransferAsyncHelper(IoTClient const * const clientThis, const CancelCertificateTransferRequest& request, const CancelCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelCertificateTransferAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelCertificateTransfer(request), context);
 }
 
-void IoTClient::CancelCertificateTransferAsyncHelper(const CancelCertificateTransferRequest& request, const CancelCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CancelCertificateTransferAsync(const CancelCertificateTransferRequest& request, const CancelCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelCertificateTransfer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCancelCertificateTransferAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelDetectMitigationActionsTaskOutcome IoTClient::CancelDetectMitigationActionsTask(const CancelDetectMitigationActionsTaskRequest& request) const
@@ -668,14 +668,14 @@ CancelDetectMitigationActionsTaskOutcomeCallable IoTClient::CancelDetectMitigati
   return task->get_future();
 }
 
-void IoTClient::CancelDetectMitigationActionsTaskAsync(const CancelDetectMitigationActionsTaskRequest& request, const CancelDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCancelDetectMitigationActionsTaskAsyncHelper(IoTClient const * const clientThis, const CancelDetectMitigationActionsTaskRequest& request, const CancelDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelDetectMitigationActionsTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelDetectMitigationActionsTask(request), context);
 }
 
-void IoTClient::CancelDetectMitigationActionsTaskAsyncHelper(const CancelDetectMitigationActionsTaskRequest& request, const CancelDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CancelDetectMitigationActionsTaskAsync(const CancelDetectMitigationActionsTaskRequest& request, const CancelDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelDetectMitigationActionsTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCancelDetectMitigationActionsTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelJobOutcome IoTClient::CancelJob(const CancelJobRequest& request) const
@@ -700,14 +700,14 @@ CancelJobOutcomeCallable IoTClient::CancelJobCallable(const CancelJobRequest& re
   return task->get_future();
 }
 
-void IoTClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCancelJobAsyncHelper(IoTClient const * const clientThis, const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelJob(request), context);
 }
 
-void IoTClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCancelJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelJobExecutionOutcome IoTClient::CancelJobExecution(const CancelJobExecutionRequest& request) const
@@ -739,14 +739,14 @@ CancelJobExecutionOutcomeCallable IoTClient::CancelJobExecutionCallable(const Ca
   return task->get_future();
 }
 
-void IoTClient::CancelJobExecutionAsync(const CancelJobExecutionRequest& request, const CancelJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCancelJobExecutionAsyncHelper(IoTClient const * const clientThis, const CancelJobExecutionRequest& request, const CancelJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJobExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelJobExecution(request), context);
 }
 
-void IoTClient::CancelJobExecutionAsyncHelper(const CancelJobExecutionRequest& request, const CancelJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CancelJobExecutionAsync(const CancelJobExecutionRequest& request, const CancelJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCancelJobExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 ClearDefaultAuthorizerOutcome IoTClient::ClearDefaultAuthorizer(const ClearDefaultAuthorizerRequest& request) const
@@ -764,14 +764,14 @@ ClearDefaultAuthorizerOutcomeCallable IoTClient::ClearDefaultAuthorizerCallable(
   return task->get_future();
 }
 
-void IoTClient::ClearDefaultAuthorizerAsync(const ClearDefaultAuthorizerRequest& request, const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientClearDefaultAuthorizerAsyncHelper(IoTClient const * const clientThis, const ClearDefaultAuthorizerRequest& request, const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ClearDefaultAuthorizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ClearDefaultAuthorizer(request), context);
 }
 
-void IoTClient::ClearDefaultAuthorizerAsyncHelper(const ClearDefaultAuthorizerRequest& request, const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ClearDefaultAuthorizerAsync(const ClearDefaultAuthorizerRequest& request, const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ClearDefaultAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientClearDefaultAuthorizerAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfirmTopicRuleDestinationOutcome IoTClient::ConfirmTopicRuleDestination(const ConfirmTopicRuleDestinationRequest& request) const
@@ -795,14 +795,14 @@ ConfirmTopicRuleDestinationOutcomeCallable IoTClient::ConfirmTopicRuleDestinatio
   return task->get_future();
 }
 
-void IoTClient::ConfirmTopicRuleDestinationAsync(const ConfirmTopicRuleDestinationRequest& request, const ConfirmTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientConfirmTopicRuleDestinationAsyncHelper(IoTClient const * const clientThis, const ConfirmTopicRuleDestinationRequest& request, const ConfirmTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfirmTopicRuleDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfirmTopicRuleDestination(request), context);
 }
 
-void IoTClient::ConfirmTopicRuleDestinationAsyncHelper(const ConfirmTopicRuleDestinationRequest& request, const ConfirmTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ConfirmTopicRuleDestinationAsync(const ConfirmTopicRuleDestinationRequest& request, const ConfirmTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfirmTopicRuleDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientConfirmTopicRuleDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAuditSuppressionOutcome IoTClient::CreateAuditSuppression(const CreateAuditSuppressionRequest& request) const
@@ -820,14 +820,14 @@ CreateAuditSuppressionOutcomeCallable IoTClient::CreateAuditSuppressionCallable(
   return task->get_future();
 }
 
-void IoTClient::CreateAuditSuppressionAsync(const CreateAuditSuppressionRequest& request, const CreateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateAuditSuppressionAsyncHelper(IoTClient const * const clientThis, const CreateAuditSuppressionRequest& request, const CreateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAuditSuppressionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAuditSuppression(request), context);
 }
 
-void IoTClient::CreateAuditSuppressionAsyncHelper(const CreateAuditSuppressionRequest& request, const CreateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateAuditSuppressionAsync(const CreateAuditSuppressionRequest& request, const CreateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAuditSuppression(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateAuditSuppressionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAuthorizerOutcome IoTClient::CreateAuthorizer(const CreateAuthorizerRequest& request) const
@@ -851,14 +851,14 @@ CreateAuthorizerOutcomeCallable IoTClient::CreateAuthorizerCallable(const Create
   return task->get_future();
 }
 
-void IoTClient::CreateAuthorizerAsync(const CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateAuthorizerAsyncHelper(IoTClient const * const clientThis, const CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAuthorizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAuthorizer(request), context);
 }
 
-void IoTClient::CreateAuthorizerAsyncHelper(const CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateAuthorizerAsync(const CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateAuthorizerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBillingGroupOutcome IoTClient::CreateBillingGroup(const CreateBillingGroupRequest& request) const
@@ -882,14 +882,14 @@ CreateBillingGroupOutcomeCallable IoTClient::CreateBillingGroupCallable(const Cr
   return task->get_future();
 }
 
-void IoTClient::CreateBillingGroupAsync(const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateBillingGroupAsyncHelper(IoTClient const * const clientThis, const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBillingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBillingGroup(request), context);
 }
 
-void IoTClient::CreateBillingGroupAsyncHelper(const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateBillingGroupAsync(const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBillingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateBillingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCertificateFromCsrOutcome IoTClient::CreateCertificateFromCsr(const CreateCertificateFromCsrRequest& request) const
@@ -907,14 +907,14 @@ CreateCertificateFromCsrOutcomeCallable IoTClient::CreateCertificateFromCsrCalla
   return task->get_future();
 }
 
-void IoTClient::CreateCertificateFromCsrAsync(const CreateCertificateFromCsrRequest& request, const CreateCertificateFromCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateCertificateFromCsrAsyncHelper(IoTClient const * const clientThis, const CreateCertificateFromCsrRequest& request, const CreateCertificateFromCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCertificateFromCsrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCertificateFromCsr(request), context);
 }
 
-void IoTClient::CreateCertificateFromCsrAsyncHelper(const CreateCertificateFromCsrRequest& request, const CreateCertificateFromCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateCertificateFromCsrAsync(const CreateCertificateFromCsrRequest& request, const CreateCertificateFromCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCertificateFromCsr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateCertificateFromCsrAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomMetricOutcome IoTClient::CreateCustomMetric(const CreateCustomMetricRequest& request) const
@@ -938,14 +938,14 @@ CreateCustomMetricOutcomeCallable IoTClient::CreateCustomMetricCallable(const Cr
   return task->get_future();
 }
 
-void IoTClient::CreateCustomMetricAsync(const CreateCustomMetricRequest& request, const CreateCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateCustomMetricAsyncHelper(IoTClient const * const clientThis, const CreateCustomMetricRequest& request, const CreateCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomMetricAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomMetric(request), context);
 }
 
-void IoTClient::CreateCustomMetricAsyncHelper(const CreateCustomMetricRequest& request, const CreateCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateCustomMetricAsync(const CreateCustomMetricRequest& request, const CreateCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomMetric(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateCustomMetricAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDimensionOutcome IoTClient::CreateDimension(const CreateDimensionRequest& request) const
@@ -969,14 +969,14 @@ CreateDimensionOutcomeCallable IoTClient::CreateDimensionCallable(const CreateDi
   return task->get_future();
 }
 
-void IoTClient::CreateDimensionAsync(const CreateDimensionRequest& request, const CreateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateDimensionAsyncHelper(IoTClient const * const clientThis, const CreateDimensionRequest& request, const CreateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDimensionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDimension(request), context);
 }
 
-void IoTClient::CreateDimensionAsyncHelper(const CreateDimensionRequest& request, const CreateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateDimensionAsync(const CreateDimensionRequest& request, const CreateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDimension(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateDimensionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDomainConfigurationOutcome IoTClient::CreateDomainConfiguration(const CreateDomainConfigurationRequest& request) const
@@ -1000,14 +1000,14 @@ CreateDomainConfigurationOutcomeCallable IoTClient::CreateDomainConfigurationCal
   return task->get_future();
 }
 
-void IoTClient::CreateDomainConfigurationAsync(const CreateDomainConfigurationRequest& request, const CreateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateDomainConfigurationAsyncHelper(IoTClient const * const clientThis, const CreateDomainConfigurationRequest& request, const CreateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDomainConfiguration(request), context);
 }
 
-void IoTClient::CreateDomainConfigurationAsyncHelper(const CreateDomainConfigurationRequest& request, const CreateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateDomainConfigurationAsync(const CreateDomainConfigurationRequest& request, const CreateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDomainConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateDomainConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDynamicThingGroupOutcome IoTClient::CreateDynamicThingGroup(const CreateDynamicThingGroupRequest& request) const
@@ -1031,14 +1031,14 @@ CreateDynamicThingGroupOutcomeCallable IoTClient::CreateDynamicThingGroupCallabl
   return task->get_future();
 }
 
-void IoTClient::CreateDynamicThingGroupAsync(const CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateDynamicThingGroupAsyncHelper(IoTClient const * const clientThis, const CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDynamicThingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDynamicThingGroup(request), context);
 }
 
-void IoTClient::CreateDynamicThingGroupAsyncHelper(const CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateDynamicThingGroupAsync(const CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDynamicThingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateDynamicThingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFleetMetricOutcome IoTClient::CreateFleetMetric(const CreateFleetMetricRequest& request) const
@@ -1062,14 +1062,14 @@ CreateFleetMetricOutcomeCallable IoTClient::CreateFleetMetricCallable(const Crea
   return task->get_future();
 }
 
-void IoTClient::CreateFleetMetricAsync(const CreateFleetMetricRequest& request, const CreateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateFleetMetricAsyncHelper(IoTClient const * const clientThis, const CreateFleetMetricRequest& request, const CreateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFleetMetricAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFleetMetric(request), context);
 }
 
-void IoTClient::CreateFleetMetricAsyncHelper(const CreateFleetMetricRequest& request, const CreateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateFleetMetricAsync(const CreateFleetMetricRequest& request, const CreateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFleetMetric(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateFleetMetricAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateJobOutcome IoTClient::CreateJob(const CreateJobRequest& request) const
@@ -1093,14 +1093,14 @@ CreateJobOutcomeCallable IoTClient::CreateJobCallable(const CreateJobRequest& re
   return task->get_future();
 }
 
-void IoTClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateJobAsyncHelper(IoTClient const * const clientThis, const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateJob(request), context);
 }
 
-void IoTClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateJobTemplateOutcome IoTClient::CreateJobTemplate(const CreateJobTemplateRequest& request) const
@@ -1124,14 +1124,14 @@ CreateJobTemplateOutcomeCallable IoTClient::CreateJobTemplateCallable(const Crea
   return task->get_future();
 }
 
-void IoTClient::CreateJobTemplateAsync(const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateJobTemplateAsyncHelper(IoTClient const * const clientThis, const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateJobTemplate(request), context);
 }
 
-void IoTClient::CreateJobTemplateAsyncHelper(const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateJobTemplateAsync(const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateJobTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateJobTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateKeysAndCertificateOutcome IoTClient::CreateKeysAndCertificate(const CreateKeysAndCertificateRequest& request) const
@@ -1149,14 +1149,14 @@ CreateKeysAndCertificateOutcomeCallable IoTClient::CreateKeysAndCertificateCalla
   return task->get_future();
 }
 
-void IoTClient::CreateKeysAndCertificateAsync(const CreateKeysAndCertificateRequest& request, const CreateKeysAndCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateKeysAndCertificateAsyncHelper(IoTClient const * const clientThis, const CreateKeysAndCertificateRequest& request, const CreateKeysAndCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateKeysAndCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateKeysAndCertificate(request), context);
 }
 
-void IoTClient::CreateKeysAndCertificateAsyncHelper(const CreateKeysAndCertificateRequest& request, const CreateKeysAndCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateKeysAndCertificateAsync(const CreateKeysAndCertificateRequest& request, const CreateKeysAndCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateKeysAndCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateKeysAndCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMitigationActionOutcome IoTClient::CreateMitigationAction(const CreateMitigationActionRequest& request) const
@@ -1180,14 +1180,14 @@ CreateMitigationActionOutcomeCallable IoTClient::CreateMitigationActionCallable(
   return task->get_future();
 }
 
-void IoTClient::CreateMitigationActionAsync(const CreateMitigationActionRequest& request, const CreateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateMitigationActionAsyncHelper(IoTClient const * const clientThis, const CreateMitigationActionRequest& request, const CreateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMitigationActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMitigationAction(request), context);
 }
 
-void IoTClient::CreateMitigationActionAsyncHelper(const CreateMitigationActionRequest& request, const CreateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateMitigationActionAsync(const CreateMitigationActionRequest& request, const CreateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMitigationAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateMitigationActionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateOTAUpdateOutcome IoTClient::CreateOTAUpdate(const CreateOTAUpdateRequest& request) const
@@ -1211,14 +1211,14 @@ CreateOTAUpdateOutcomeCallable IoTClient::CreateOTAUpdateCallable(const CreateOT
   return task->get_future();
 }
 
-void IoTClient::CreateOTAUpdateAsync(const CreateOTAUpdateRequest& request, const CreateOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateOTAUpdateAsyncHelper(IoTClient const * const clientThis, const CreateOTAUpdateRequest& request, const CreateOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOTAUpdateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateOTAUpdate(request), context);
 }
 
-void IoTClient::CreateOTAUpdateAsyncHelper(const CreateOTAUpdateRequest& request, const CreateOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateOTAUpdateAsync(const CreateOTAUpdateRequest& request, const CreateOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateOTAUpdate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateOTAUpdateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePolicyOutcome IoTClient::CreatePolicy(const CreatePolicyRequest& request) const
@@ -1242,14 +1242,14 @@ CreatePolicyOutcomeCallable IoTClient::CreatePolicyCallable(const CreatePolicyRe
   return task->get_future();
 }
 
-void IoTClient::CreatePolicyAsync(const CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreatePolicyAsyncHelper(IoTClient const * const clientThis, const CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePolicy(request), context);
 }
 
-void IoTClient::CreatePolicyAsyncHelper(const CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreatePolicyAsync(const CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreatePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePolicyVersionOutcome IoTClient::CreatePolicyVersion(const CreatePolicyVersionRequest& request) const
@@ -1274,14 +1274,14 @@ CreatePolicyVersionOutcomeCallable IoTClient::CreatePolicyVersionCallable(const 
   return task->get_future();
 }
 
-void IoTClient::CreatePolicyVersionAsync(const CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreatePolicyVersionAsyncHelper(IoTClient const * const clientThis, const CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePolicyVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePolicyVersion(request), context);
 }
 
-void IoTClient::CreatePolicyVersionAsyncHelper(const CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreatePolicyVersionAsync(const CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePolicyVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreatePolicyVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProvisioningClaimOutcome IoTClient::CreateProvisioningClaim(const CreateProvisioningClaimRequest& request) const
@@ -1306,14 +1306,14 @@ CreateProvisioningClaimOutcomeCallable IoTClient::CreateProvisioningClaimCallabl
   return task->get_future();
 }
 
-void IoTClient::CreateProvisioningClaimAsync(const CreateProvisioningClaimRequest& request, const CreateProvisioningClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateProvisioningClaimAsyncHelper(IoTClient const * const clientThis, const CreateProvisioningClaimRequest& request, const CreateProvisioningClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProvisioningClaimAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProvisioningClaim(request), context);
 }
 
-void IoTClient::CreateProvisioningClaimAsyncHelper(const CreateProvisioningClaimRequest& request, const CreateProvisioningClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateProvisioningClaimAsync(const CreateProvisioningClaimRequest& request, const CreateProvisioningClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProvisioningClaim(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateProvisioningClaimAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProvisioningTemplateOutcome IoTClient::CreateProvisioningTemplate(const CreateProvisioningTemplateRequest& request) const
@@ -1331,14 +1331,14 @@ CreateProvisioningTemplateOutcomeCallable IoTClient::CreateProvisioningTemplateC
   return task->get_future();
 }
 
-void IoTClient::CreateProvisioningTemplateAsync(const CreateProvisioningTemplateRequest& request, const CreateProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateProvisioningTemplateAsyncHelper(IoTClient const * const clientThis, const CreateProvisioningTemplateRequest& request, const CreateProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProvisioningTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProvisioningTemplate(request), context);
 }
 
-void IoTClient::CreateProvisioningTemplateAsyncHelper(const CreateProvisioningTemplateRequest& request, const CreateProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateProvisioningTemplateAsync(const CreateProvisioningTemplateRequest& request, const CreateProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProvisioningTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateProvisioningTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProvisioningTemplateVersionOutcome IoTClient::CreateProvisioningTemplateVersion(const CreateProvisioningTemplateVersionRequest& request) const
@@ -1363,14 +1363,14 @@ CreateProvisioningTemplateVersionOutcomeCallable IoTClient::CreateProvisioningTe
   return task->get_future();
 }
 
-void IoTClient::CreateProvisioningTemplateVersionAsync(const CreateProvisioningTemplateVersionRequest& request, const CreateProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateProvisioningTemplateVersionAsyncHelper(IoTClient const * const clientThis, const CreateProvisioningTemplateVersionRequest& request, const CreateProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProvisioningTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProvisioningTemplateVersion(request), context);
 }
 
-void IoTClient::CreateProvisioningTemplateVersionAsyncHelper(const CreateProvisioningTemplateVersionRequest& request, const CreateProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateProvisioningTemplateVersionAsync(const CreateProvisioningTemplateVersionRequest& request, const CreateProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProvisioningTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateProvisioningTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRoleAliasOutcome IoTClient::CreateRoleAlias(const CreateRoleAliasRequest& request) const
@@ -1394,14 +1394,14 @@ CreateRoleAliasOutcomeCallable IoTClient::CreateRoleAliasCallable(const CreateRo
   return task->get_future();
 }
 
-void IoTClient::CreateRoleAliasAsync(const CreateRoleAliasRequest& request, const CreateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateRoleAliasAsyncHelper(IoTClient const * const clientThis, const CreateRoleAliasRequest& request, const CreateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRoleAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRoleAlias(request), context);
 }
 
-void IoTClient::CreateRoleAliasAsyncHelper(const CreateRoleAliasRequest& request, const CreateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateRoleAliasAsync(const CreateRoleAliasRequest& request, const CreateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRoleAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateRoleAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateScheduledAuditOutcome IoTClient::CreateScheduledAudit(const CreateScheduledAuditRequest& request) const
@@ -1425,14 +1425,14 @@ CreateScheduledAuditOutcomeCallable IoTClient::CreateScheduledAuditCallable(cons
   return task->get_future();
 }
 
-void IoTClient::CreateScheduledAuditAsync(const CreateScheduledAuditRequest& request, const CreateScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateScheduledAuditAsyncHelper(IoTClient const * const clientThis, const CreateScheduledAuditRequest& request, const CreateScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateScheduledAuditAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateScheduledAudit(request), context);
 }
 
-void IoTClient::CreateScheduledAuditAsyncHelper(const CreateScheduledAuditRequest& request, const CreateScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateScheduledAuditAsync(const CreateScheduledAuditRequest& request, const CreateScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateScheduledAudit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateScheduledAuditAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSecurityProfileOutcome IoTClient::CreateSecurityProfile(const CreateSecurityProfileRequest& request) const
@@ -1456,14 +1456,14 @@ CreateSecurityProfileOutcomeCallable IoTClient::CreateSecurityProfileCallable(co
   return task->get_future();
 }
 
-void IoTClient::CreateSecurityProfileAsync(const CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateSecurityProfileAsyncHelper(IoTClient const * const clientThis, const CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSecurityProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSecurityProfile(request), context);
 }
 
-void IoTClient::CreateSecurityProfileAsyncHelper(const CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateSecurityProfileAsync(const CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateSecurityProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStreamOutcome IoTClient::CreateStream(const CreateStreamRequest& request) const
@@ -1487,14 +1487,14 @@ CreateStreamOutcomeCallable IoTClient::CreateStreamCallable(const CreateStreamRe
   return task->get_future();
 }
 
-void IoTClient::CreateStreamAsync(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateStreamAsyncHelper(IoTClient const * const clientThis, const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStream(request), context);
 }
 
-void IoTClient::CreateStreamAsyncHelper(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateStreamAsync(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateThingOutcome IoTClient::CreateThing(const CreateThingRequest& request) const
@@ -1518,14 +1518,14 @@ CreateThingOutcomeCallable IoTClient::CreateThingCallable(const CreateThingReque
   return task->get_future();
 }
 
-void IoTClient::CreateThingAsync(const CreateThingRequest& request, const CreateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateThingAsyncHelper(IoTClient const * const clientThis, const CreateThingRequest& request, const CreateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateThingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateThing(request), context);
 }
 
-void IoTClient::CreateThingAsyncHelper(const CreateThingRequest& request, const CreateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateThingAsync(const CreateThingRequest& request, const CreateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateThing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateThingAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateThingGroupOutcome IoTClient::CreateThingGroup(const CreateThingGroupRequest& request) const
@@ -1549,14 +1549,14 @@ CreateThingGroupOutcomeCallable IoTClient::CreateThingGroupCallable(const Create
   return task->get_future();
 }
 
-void IoTClient::CreateThingGroupAsync(const CreateThingGroupRequest& request, const CreateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateThingGroupAsyncHelper(IoTClient const * const clientThis, const CreateThingGroupRequest& request, const CreateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateThingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateThingGroup(request), context);
 }
 
-void IoTClient::CreateThingGroupAsyncHelper(const CreateThingGroupRequest& request, const CreateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateThingGroupAsync(const CreateThingGroupRequest& request, const CreateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateThingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateThingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateThingTypeOutcome IoTClient::CreateThingType(const CreateThingTypeRequest& request) const
@@ -1580,14 +1580,14 @@ CreateThingTypeOutcomeCallable IoTClient::CreateThingTypeCallable(const CreateTh
   return task->get_future();
 }
 
-void IoTClient::CreateThingTypeAsync(const CreateThingTypeRequest& request, const CreateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateThingTypeAsyncHelper(IoTClient const * const clientThis, const CreateThingTypeRequest& request, const CreateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateThingTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateThingType(request), context);
 }
 
-void IoTClient::CreateThingTypeAsyncHelper(const CreateThingTypeRequest& request, const CreateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateThingTypeAsync(const CreateThingTypeRequest& request, const CreateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateThingType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateThingTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTopicRuleOutcome IoTClient::CreateTopicRule(const CreateTopicRuleRequest& request) const
@@ -1611,14 +1611,14 @@ CreateTopicRuleOutcomeCallable IoTClient::CreateTopicRuleCallable(const CreateTo
   return task->get_future();
 }
 
-void IoTClient::CreateTopicRuleAsync(const CreateTopicRuleRequest& request, const CreateTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateTopicRuleAsyncHelper(IoTClient const * const clientThis, const CreateTopicRuleRequest& request, const CreateTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTopicRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTopicRule(request), context);
 }
 
-void IoTClient::CreateTopicRuleAsyncHelper(const CreateTopicRuleRequest& request, const CreateTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateTopicRuleAsync(const CreateTopicRuleRequest& request, const CreateTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTopicRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateTopicRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTopicRuleDestinationOutcome IoTClient::CreateTopicRuleDestination(const CreateTopicRuleDestinationRequest& request) const
@@ -1636,14 +1636,14 @@ CreateTopicRuleDestinationOutcomeCallable IoTClient::CreateTopicRuleDestinationC
   return task->get_future();
 }
 
-void IoTClient::CreateTopicRuleDestinationAsync(const CreateTopicRuleDestinationRequest& request, const CreateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientCreateTopicRuleDestinationAsyncHelper(IoTClient const * const clientThis, const CreateTopicRuleDestinationRequest& request, const CreateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTopicRuleDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTopicRuleDestination(request), context);
 }
 
-void IoTClient::CreateTopicRuleDestinationAsyncHelper(const CreateTopicRuleDestinationRequest& request, const CreateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::CreateTopicRuleDestinationAsync(const CreateTopicRuleDestinationRequest& request, const CreateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTopicRuleDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientCreateTopicRuleDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAccountAuditConfigurationOutcome IoTClient::DeleteAccountAuditConfiguration(const DeleteAccountAuditConfigurationRequest& request) const
@@ -1661,14 +1661,14 @@ DeleteAccountAuditConfigurationOutcomeCallable IoTClient::DeleteAccountAuditConf
   return task->get_future();
 }
 
-void IoTClient::DeleteAccountAuditConfigurationAsync(const DeleteAccountAuditConfigurationRequest& request, const DeleteAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteAccountAuditConfigurationAsyncHelper(IoTClient const * const clientThis, const DeleteAccountAuditConfigurationRequest& request, const DeleteAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccountAuditConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAccountAuditConfiguration(request), context);
 }
 
-void IoTClient::DeleteAccountAuditConfigurationAsyncHelper(const DeleteAccountAuditConfigurationRequest& request, const DeleteAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteAccountAuditConfigurationAsync(const DeleteAccountAuditConfigurationRequest& request, const DeleteAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAccountAuditConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteAccountAuditConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAuditSuppressionOutcome IoTClient::DeleteAuditSuppression(const DeleteAuditSuppressionRequest& request) const
@@ -1686,14 +1686,14 @@ DeleteAuditSuppressionOutcomeCallable IoTClient::DeleteAuditSuppressionCallable(
   return task->get_future();
 }
 
-void IoTClient::DeleteAuditSuppressionAsync(const DeleteAuditSuppressionRequest& request, const DeleteAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteAuditSuppressionAsyncHelper(IoTClient const * const clientThis, const DeleteAuditSuppressionRequest& request, const DeleteAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAuditSuppressionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAuditSuppression(request), context);
 }
 
-void IoTClient::DeleteAuditSuppressionAsyncHelper(const DeleteAuditSuppressionRequest& request, const DeleteAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteAuditSuppressionAsync(const DeleteAuditSuppressionRequest& request, const DeleteAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAuditSuppression(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteAuditSuppressionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAuthorizerOutcome IoTClient::DeleteAuthorizer(const DeleteAuthorizerRequest& request) const
@@ -1717,14 +1717,14 @@ DeleteAuthorizerOutcomeCallable IoTClient::DeleteAuthorizerCallable(const Delete
   return task->get_future();
 }
 
-void IoTClient::DeleteAuthorizerAsync(const DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteAuthorizerAsyncHelper(IoTClient const * const clientThis, const DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAuthorizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAuthorizer(request), context);
 }
 
-void IoTClient::DeleteAuthorizerAsyncHelper(const DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteAuthorizerAsync(const DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteAuthorizerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBillingGroupOutcome IoTClient::DeleteBillingGroup(const DeleteBillingGroupRequest& request) const
@@ -1748,14 +1748,14 @@ DeleteBillingGroupOutcomeCallable IoTClient::DeleteBillingGroupCallable(const De
   return task->get_future();
 }
 
-void IoTClient::DeleteBillingGroupAsync(const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteBillingGroupAsyncHelper(IoTClient const * const clientThis, const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBillingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBillingGroup(request), context);
 }
 
-void IoTClient::DeleteBillingGroupAsyncHelper(const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteBillingGroupAsync(const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBillingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteBillingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCACertificateOutcome IoTClient::DeleteCACertificate(const DeleteCACertificateRequest& request) const
@@ -1779,14 +1779,14 @@ DeleteCACertificateOutcomeCallable IoTClient::DeleteCACertificateCallable(const 
   return task->get_future();
 }
 
-void IoTClient::DeleteCACertificateAsync(const DeleteCACertificateRequest& request, const DeleteCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteCACertificateAsyncHelper(IoTClient const * const clientThis, const DeleteCACertificateRequest& request, const DeleteCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCACertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCACertificate(request), context);
 }
 
-void IoTClient::DeleteCACertificateAsyncHelper(const DeleteCACertificateRequest& request, const DeleteCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteCACertificateAsync(const DeleteCACertificateRequest& request, const DeleteCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCACertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteCACertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCertificateOutcome IoTClient::DeleteCertificate(const DeleteCertificateRequest& request) const
@@ -1810,14 +1810,14 @@ DeleteCertificateOutcomeCallable IoTClient::DeleteCertificateCallable(const Dele
   return task->get_future();
 }
 
-void IoTClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteCertificateAsyncHelper(IoTClient const * const clientThis, const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCertificate(request), context);
 }
 
-void IoTClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomMetricOutcome IoTClient::DeleteCustomMetric(const DeleteCustomMetricRequest& request) const
@@ -1841,14 +1841,14 @@ DeleteCustomMetricOutcomeCallable IoTClient::DeleteCustomMetricCallable(const De
   return task->get_future();
 }
 
-void IoTClient::DeleteCustomMetricAsync(const DeleteCustomMetricRequest& request, const DeleteCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteCustomMetricAsyncHelper(IoTClient const * const clientThis, const DeleteCustomMetricRequest& request, const DeleteCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomMetricAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomMetric(request), context);
 }
 
-void IoTClient::DeleteCustomMetricAsyncHelper(const DeleteCustomMetricRequest& request, const DeleteCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteCustomMetricAsync(const DeleteCustomMetricRequest& request, const DeleteCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomMetric(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteCustomMetricAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDimensionOutcome IoTClient::DeleteDimension(const DeleteDimensionRequest& request) const
@@ -1872,14 +1872,14 @@ DeleteDimensionOutcomeCallable IoTClient::DeleteDimensionCallable(const DeleteDi
   return task->get_future();
 }
 
-void IoTClient::DeleteDimensionAsync(const DeleteDimensionRequest& request, const DeleteDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteDimensionAsyncHelper(IoTClient const * const clientThis, const DeleteDimensionRequest& request, const DeleteDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDimensionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDimension(request), context);
 }
 
-void IoTClient::DeleteDimensionAsyncHelper(const DeleteDimensionRequest& request, const DeleteDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteDimensionAsync(const DeleteDimensionRequest& request, const DeleteDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDimension(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteDimensionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainConfigurationOutcome IoTClient::DeleteDomainConfiguration(const DeleteDomainConfigurationRequest& request) const
@@ -1903,14 +1903,14 @@ DeleteDomainConfigurationOutcomeCallable IoTClient::DeleteDomainConfigurationCal
   return task->get_future();
 }
 
-void IoTClient::DeleteDomainConfigurationAsync(const DeleteDomainConfigurationRequest& request, const DeleteDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteDomainConfigurationAsyncHelper(IoTClient const * const clientThis, const DeleteDomainConfigurationRequest& request, const DeleteDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomainConfiguration(request), context);
 }
 
-void IoTClient::DeleteDomainConfigurationAsyncHelper(const DeleteDomainConfigurationRequest& request, const DeleteDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteDomainConfigurationAsync(const DeleteDomainConfigurationRequest& request, const DeleteDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomainConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteDomainConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDynamicThingGroupOutcome IoTClient::DeleteDynamicThingGroup(const DeleteDynamicThingGroupRequest& request) const
@@ -1934,14 +1934,14 @@ DeleteDynamicThingGroupOutcomeCallable IoTClient::DeleteDynamicThingGroupCallabl
   return task->get_future();
 }
 
-void IoTClient::DeleteDynamicThingGroupAsync(const DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteDynamicThingGroupAsyncHelper(IoTClient const * const clientThis, const DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDynamicThingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDynamicThingGroup(request), context);
 }
 
-void IoTClient::DeleteDynamicThingGroupAsyncHelper(const DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteDynamicThingGroupAsync(const DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDynamicThingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteDynamicThingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFleetMetricOutcome IoTClient::DeleteFleetMetric(const DeleteFleetMetricRequest& request) const
@@ -1965,14 +1965,14 @@ DeleteFleetMetricOutcomeCallable IoTClient::DeleteFleetMetricCallable(const Dele
   return task->get_future();
 }
 
-void IoTClient::DeleteFleetMetricAsync(const DeleteFleetMetricRequest& request, const DeleteFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteFleetMetricAsyncHelper(IoTClient const * const clientThis, const DeleteFleetMetricRequest& request, const DeleteFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFleetMetricAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFleetMetric(request), context);
 }
 
-void IoTClient::DeleteFleetMetricAsyncHelper(const DeleteFleetMetricRequest& request, const DeleteFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteFleetMetricAsync(const DeleteFleetMetricRequest& request, const DeleteFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFleetMetric(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteFleetMetricAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteJobOutcome IoTClient::DeleteJob(const DeleteJobRequest& request) const
@@ -1996,14 +1996,14 @@ DeleteJobOutcomeCallable IoTClient::DeleteJobCallable(const DeleteJobRequest& re
   return task->get_future();
 }
 
-void IoTClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteJobAsyncHelper(IoTClient const * const clientThis, const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteJob(request), context);
 }
 
-void IoTClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteJobExecutionOutcome IoTClient::DeleteJobExecution(const DeleteJobExecutionRequest& request) const
@@ -2041,14 +2041,14 @@ DeleteJobExecutionOutcomeCallable IoTClient::DeleteJobExecutionCallable(const De
   return task->get_future();
 }
 
-void IoTClient::DeleteJobExecutionAsync(const DeleteJobExecutionRequest& request, const DeleteJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteJobExecutionAsyncHelper(IoTClient const * const clientThis, const DeleteJobExecutionRequest& request, const DeleteJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteJobExecution(request), context);
 }
 
-void IoTClient::DeleteJobExecutionAsyncHelper(const DeleteJobExecutionRequest& request, const DeleteJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteJobExecutionAsync(const DeleteJobExecutionRequest& request, const DeleteJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteJobExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteJobTemplateOutcome IoTClient::DeleteJobTemplate(const DeleteJobTemplateRequest& request) const
@@ -2072,14 +2072,14 @@ DeleteJobTemplateOutcomeCallable IoTClient::DeleteJobTemplateCallable(const Dele
   return task->get_future();
 }
 
-void IoTClient::DeleteJobTemplateAsync(const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteJobTemplateAsyncHelper(IoTClient const * const clientThis, const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteJobTemplate(request), context);
 }
 
-void IoTClient::DeleteJobTemplateAsyncHelper(const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteJobTemplateAsync(const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteJobTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteJobTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMitigationActionOutcome IoTClient::DeleteMitigationAction(const DeleteMitigationActionRequest& request) const
@@ -2103,14 +2103,14 @@ DeleteMitigationActionOutcomeCallable IoTClient::DeleteMitigationActionCallable(
   return task->get_future();
 }
 
-void IoTClient::DeleteMitigationActionAsync(const DeleteMitigationActionRequest& request, const DeleteMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteMitigationActionAsyncHelper(IoTClient const * const clientThis, const DeleteMitigationActionRequest& request, const DeleteMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMitigationActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMitigationAction(request), context);
 }
 
-void IoTClient::DeleteMitigationActionAsyncHelper(const DeleteMitigationActionRequest& request, const DeleteMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteMitigationActionAsync(const DeleteMitigationActionRequest& request, const DeleteMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMitigationAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteMitigationActionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteOTAUpdateOutcome IoTClient::DeleteOTAUpdate(const DeleteOTAUpdateRequest& request) const
@@ -2134,14 +2134,14 @@ DeleteOTAUpdateOutcomeCallable IoTClient::DeleteOTAUpdateCallable(const DeleteOT
   return task->get_future();
 }
 
-void IoTClient::DeleteOTAUpdateAsync(const DeleteOTAUpdateRequest& request, const DeleteOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteOTAUpdateAsyncHelper(IoTClient const * const clientThis, const DeleteOTAUpdateRequest& request, const DeleteOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOTAUpdateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteOTAUpdate(request), context);
 }
 
-void IoTClient::DeleteOTAUpdateAsyncHelper(const DeleteOTAUpdateRequest& request, const DeleteOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteOTAUpdateAsync(const DeleteOTAUpdateRequest& request, const DeleteOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteOTAUpdate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteOTAUpdateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePolicyOutcome IoTClient::DeletePolicy(const DeletePolicyRequest& request) const
@@ -2165,14 +2165,14 @@ DeletePolicyOutcomeCallable IoTClient::DeletePolicyCallable(const DeletePolicyRe
   return task->get_future();
 }
 
-void IoTClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeletePolicyAsyncHelper(IoTClient const * const clientThis, const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePolicy(request), context);
 }
 
-void IoTClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeletePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePolicyVersionOutcome IoTClient::DeletePolicyVersion(const DeletePolicyVersionRequest& request) const
@@ -2203,14 +2203,14 @@ DeletePolicyVersionOutcomeCallable IoTClient::DeletePolicyVersionCallable(const 
   return task->get_future();
 }
 
-void IoTClient::DeletePolicyVersionAsync(const DeletePolicyVersionRequest& request, const DeletePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeletePolicyVersionAsyncHelper(IoTClient const * const clientThis, const DeletePolicyVersionRequest& request, const DeletePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePolicyVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePolicyVersion(request), context);
 }
 
-void IoTClient::DeletePolicyVersionAsyncHelper(const DeletePolicyVersionRequest& request, const DeletePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeletePolicyVersionAsync(const DeletePolicyVersionRequest& request, const DeletePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePolicyVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeletePolicyVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProvisioningTemplateOutcome IoTClient::DeleteProvisioningTemplate(const DeleteProvisioningTemplateRequest& request) const
@@ -2234,14 +2234,14 @@ DeleteProvisioningTemplateOutcomeCallable IoTClient::DeleteProvisioningTemplateC
   return task->get_future();
 }
 
-void IoTClient::DeleteProvisioningTemplateAsync(const DeleteProvisioningTemplateRequest& request, const DeleteProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteProvisioningTemplateAsyncHelper(IoTClient const * const clientThis, const DeleteProvisioningTemplateRequest& request, const DeleteProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProvisioningTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProvisioningTemplate(request), context);
 }
 
-void IoTClient::DeleteProvisioningTemplateAsyncHelper(const DeleteProvisioningTemplateRequest& request, const DeleteProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteProvisioningTemplateAsync(const DeleteProvisioningTemplateRequest& request, const DeleteProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProvisioningTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteProvisioningTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProvisioningTemplateVersionOutcome IoTClient::DeleteProvisioningTemplateVersion(const DeleteProvisioningTemplateVersionRequest& request) const
@@ -2272,14 +2272,14 @@ DeleteProvisioningTemplateVersionOutcomeCallable IoTClient::DeleteProvisioningTe
   return task->get_future();
 }
 
-void IoTClient::DeleteProvisioningTemplateVersionAsync(const DeleteProvisioningTemplateVersionRequest& request, const DeleteProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteProvisioningTemplateVersionAsyncHelper(IoTClient const * const clientThis, const DeleteProvisioningTemplateVersionRequest& request, const DeleteProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProvisioningTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProvisioningTemplateVersion(request), context);
 }
 
-void IoTClient::DeleteProvisioningTemplateVersionAsyncHelper(const DeleteProvisioningTemplateVersionRequest& request, const DeleteProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteProvisioningTemplateVersionAsync(const DeleteProvisioningTemplateVersionRequest& request, const DeleteProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProvisioningTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteProvisioningTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRegistrationCodeOutcome IoTClient::DeleteRegistrationCode(const DeleteRegistrationCodeRequest& request) const
@@ -2297,14 +2297,14 @@ DeleteRegistrationCodeOutcomeCallable IoTClient::DeleteRegistrationCodeCallable(
   return task->get_future();
 }
 
-void IoTClient::DeleteRegistrationCodeAsync(const DeleteRegistrationCodeRequest& request, const DeleteRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteRegistrationCodeAsyncHelper(IoTClient const * const clientThis, const DeleteRegistrationCodeRequest& request, const DeleteRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRegistrationCodeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRegistrationCode(request), context);
 }
 
-void IoTClient::DeleteRegistrationCodeAsyncHelper(const DeleteRegistrationCodeRequest& request, const DeleteRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteRegistrationCodeAsync(const DeleteRegistrationCodeRequest& request, const DeleteRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRegistrationCode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteRegistrationCodeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRoleAliasOutcome IoTClient::DeleteRoleAlias(const DeleteRoleAliasRequest& request) const
@@ -2328,14 +2328,14 @@ DeleteRoleAliasOutcomeCallable IoTClient::DeleteRoleAliasCallable(const DeleteRo
   return task->get_future();
 }
 
-void IoTClient::DeleteRoleAliasAsync(const DeleteRoleAliasRequest& request, const DeleteRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteRoleAliasAsyncHelper(IoTClient const * const clientThis, const DeleteRoleAliasRequest& request, const DeleteRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRoleAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRoleAlias(request), context);
 }
 
-void IoTClient::DeleteRoleAliasAsyncHelper(const DeleteRoleAliasRequest& request, const DeleteRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteRoleAliasAsync(const DeleteRoleAliasRequest& request, const DeleteRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRoleAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteRoleAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteScheduledAuditOutcome IoTClient::DeleteScheduledAudit(const DeleteScheduledAuditRequest& request) const
@@ -2359,14 +2359,14 @@ DeleteScheduledAuditOutcomeCallable IoTClient::DeleteScheduledAuditCallable(cons
   return task->get_future();
 }
 
-void IoTClient::DeleteScheduledAuditAsync(const DeleteScheduledAuditRequest& request, const DeleteScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteScheduledAuditAsyncHelper(IoTClient const * const clientThis, const DeleteScheduledAuditRequest& request, const DeleteScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteScheduledAuditAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteScheduledAudit(request), context);
 }
 
-void IoTClient::DeleteScheduledAuditAsyncHelper(const DeleteScheduledAuditRequest& request, const DeleteScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteScheduledAuditAsync(const DeleteScheduledAuditRequest& request, const DeleteScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteScheduledAudit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteScheduledAuditAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSecurityProfileOutcome IoTClient::DeleteSecurityProfile(const DeleteSecurityProfileRequest& request) const
@@ -2390,14 +2390,14 @@ DeleteSecurityProfileOutcomeCallable IoTClient::DeleteSecurityProfileCallable(co
   return task->get_future();
 }
 
-void IoTClient::DeleteSecurityProfileAsync(const DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteSecurityProfileAsyncHelper(IoTClient const * const clientThis, const DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSecurityProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSecurityProfile(request), context);
 }
 
-void IoTClient::DeleteSecurityProfileAsyncHelper(const DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteSecurityProfileAsync(const DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteSecurityProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteStreamOutcome IoTClient::DeleteStream(const DeleteStreamRequest& request) const
@@ -2421,14 +2421,14 @@ DeleteStreamOutcomeCallable IoTClient::DeleteStreamCallable(const DeleteStreamRe
   return task->get_future();
 }
 
-void IoTClient::DeleteStreamAsync(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteStreamAsyncHelper(IoTClient const * const clientThis, const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteStream(request), context);
 }
 
-void IoTClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteStreamAsync(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteThingOutcome IoTClient::DeleteThing(const DeleteThingRequest& request) const
@@ -2452,14 +2452,14 @@ DeleteThingOutcomeCallable IoTClient::DeleteThingCallable(const DeleteThingReque
   return task->get_future();
 }
 
-void IoTClient::DeleteThingAsync(const DeleteThingRequest& request, const DeleteThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteThingAsyncHelper(IoTClient const * const clientThis, const DeleteThingRequest& request, const DeleteThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteThingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteThing(request), context);
 }
 
-void IoTClient::DeleteThingAsyncHelper(const DeleteThingRequest& request, const DeleteThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteThingAsync(const DeleteThingRequest& request, const DeleteThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteThing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteThingAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteThingGroupOutcome IoTClient::DeleteThingGroup(const DeleteThingGroupRequest& request) const
@@ -2483,14 +2483,14 @@ DeleteThingGroupOutcomeCallable IoTClient::DeleteThingGroupCallable(const Delete
   return task->get_future();
 }
 
-void IoTClient::DeleteThingGroupAsync(const DeleteThingGroupRequest& request, const DeleteThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteThingGroupAsyncHelper(IoTClient const * const clientThis, const DeleteThingGroupRequest& request, const DeleteThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteThingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteThingGroup(request), context);
 }
 
-void IoTClient::DeleteThingGroupAsyncHelper(const DeleteThingGroupRequest& request, const DeleteThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteThingGroupAsync(const DeleteThingGroupRequest& request, const DeleteThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteThingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteThingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteThingTypeOutcome IoTClient::DeleteThingType(const DeleteThingTypeRequest& request) const
@@ -2514,14 +2514,14 @@ DeleteThingTypeOutcomeCallable IoTClient::DeleteThingTypeCallable(const DeleteTh
   return task->get_future();
 }
 
-void IoTClient::DeleteThingTypeAsync(const DeleteThingTypeRequest& request, const DeleteThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteThingTypeAsyncHelper(IoTClient const * const clientThis, const DeleteThingTypeRequest& request, const DeleteThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteThingTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteThingType(request), context);
 }
 
-void IoTClient::DeleteThingTypeAsyncHelper(const DeleteThingTypeRequest& request, const DeleteThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteThingTypeAsync(const DeleteThingTypeRequest& request, const DeleteThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteThingType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteThingTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTopicRuleOutcome IoTClient::DeleteTopicRule(const DeleteTopicRuleRequest& request) const
@@ -2545,14 +2545,14 @@ DeleteTopicRuleOutcomeCallable IoTClient::DeleteTopicRuleCallable(const DeleteTo
   return task->get_future();
 }
 
-void IoTClient::DeleteTopicRuleAsync(const DeleteTopicRuleRequest& request, const DeleteTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteTopicRuleAsyncHelper(IoTClient const * const clientThis, const DeleteTopicRuleRequest& request, const DeleteTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTopicRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTopicRule(request), context);
 }
 
-void IoTClient::DeleteTopicRuleAsyncHelper(const DeleteTopicRuleRequest& request, const DeleteTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteTopicRuleAsync(const DeleteTopicRuleRequest& request, const DeleteTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTopicRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteTopicRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTopicRuleDestinationOutcome IoTClient::DeleteTopicRuleDestination(const DeleteTopicRuleDestinationRequest& request) const
@@ -2576,14 +2576,14 @@ DeleteTopicRuleDestinationOutcomeCallable IoTClient::DeleteTopicRuleDestinationC
   return task->get_future();
 }
 
-void IoTClient::DeleteTopicRuleDestinationAsync(const DeleteTopicRuleDestinationRequest& request, const DeleteTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteTopicRuleDestinationAsyncHelper(IoTClient const * const clientThis, const DeleteTopicRuleDestinationRequest& request, const DeleteTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTopicRuleDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTopicRuleDestination(request), context);
 }
 
-void IoTClient::DeleteTopicRuleDestinationAsyncHelper(const DeleteTopicRuleDestinationRequest& request, const DeleteTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteTopicRuleDestinationAsync(const DeleteTopicRuleDestinationRequest& request, const DeleteTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTopicRuleDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteTopicRuleDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteV2LoggingLevelOutcome IoTClient::DeleteV2LoggingLevel(const DeleteV2LoggingLevelRequest& request) const
@@ -2611,14 +2611,14 @@ DeleteV2LoggingLevelOutcomeCallable IoTClient::DeleteV2LoggingLevelCallable(cons
   return task->get_future();
 }
 
-void IoTClient::DeleteV2LoggingLevelAsync(const DeleteV2LoggingLevelRequest& request, const DeleteV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeleteV2LoggingLevelAsyncHelper(IoTClient const * const clientThis, const DeleteV2LoggingLevelRequest& request, const DeleteV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteV2LoggingLevelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteV2LoggingLevel(request), context);
 }
 
-void IoTClient::DeleteV2LoggingLevelAsyncHelper(const DeleteV2LoggingLevelRequest& request, const DeleteV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeleteV2LoggingLevelAsync(const DeleteV2LoggingLevelRequest& request, const DeleteV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteV2LoggingLevel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeleteV2LoggingLevelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeprecateThingTypeOutcome IoTClient::DeprecateThingType(const DeprecateThingTypeRequest& request) const
@@ -2643,14 +2643,14 @@ DeprecateThingTypeOutcomeCallable IoTClient::DeprecateThingTypeCallable(const De
   return task->get_future();
 }
 
-void IoTClient::DeprecateThingTypeAsync(const DeprecateThingTypeRequest& request, const DeprecateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDeprecateThingTypeAsyncHelper(IoTClient const * const clientThis, const DeprecateThingTypeRequest& request, const DeprecateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeprecateThingTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeprecateThingType(request), context);
 }
 
-void IoTClient::DeprecateThingTypeAsyncHelper(const DeprecateThingTypeRequest& request, const DeprecateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DeprecateThingTypeAsync(const DeprecateThingTypeRequest& request, const DeprecateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeprecateThingType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDeprecateThingTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountAuditConfigurationOutcome IoTClient::DescribeAccountAuditConfiguration(const DescribeAccountAuditConfigurationRequest& request) const
@@ -2668,14 +2668,14 @@ DescribeAccountAuditConfigurationOutcomeCallable IoTClient::DescribeAccountAudit
   return task->get_future();
 }
 
-void IoTClient::DescribeAccountAuditConfigurationAsync(const DescribeAccountAuditConfigurationRequest& request, const DescribeAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeAccountAuditConfigurationAsyncHelper(IoTClient const * const clientThis, const DescribeAccountAuditConfigurationRequest& request, const DescribeAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAuditConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccountAuditConfiguration(request), context);
 }
 
-void IoTClient::DescribeAccountAuditConfigurationAsyncHelper(const DescribeAccountAuditConfigurationRequest& request, const DescribeAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeAccountAuditConfigurationAsync(const DescribeAccountAuditConfigurationRequest& request, const DescribeAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccountAuditConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeAccountAuditConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAuditFindingOutcome IoTClient::DescribeAuditFinding(const DescribeAuditFindingRequest& request) const
@@ -2699,14 +2699,14 @@ DescribeAuditFindingOutcomeCallable IoTClient::DescribeAuditFindingCallable(cons
   return task->get_future();
 }
 
-void IoTClient::DescribeAuditFindingAsync(const DescribeAuditFindingRequest& request, const DescribeAuditFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeAuditFindingAsyncHelper(IoTClient const * const clientThis, const DescribeAuditFindingRequest& request, const DescribeAuditFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAuditFindingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAuditFinding(request), context);
 }
 
-void IoTClient::DescribeAuditFindingAsyncHelper(const DescribeAuditFindingRequest& request, const DescribeAuditFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeAuditFindingAsync(const DescribeAuditFindingRequest& request, const DescribeAuditFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAuditFinding(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeAuditFindingAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAuditMitigationActionsTaskOutcome IoTClient::DescribeAuditMitigationActionsTask(const DescribeAuditMitigationActionsTaskRequest& request) const
@@ -2730,14 +2730,14 @@ DescribeAuditMitigationActionsTaskOutcomeCallable IoTClient::DescribeAuditMitiga
   return task->get_future();
 }
 
-void IoTClient::DescribeAuditMitigationActionsTaskAsync(const DescribeAuditMitigationActionsTaskRequest& request, const DescribeAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeAuditMitigationActionsTaskAsyncHelper(IoTClient const * const clientThis, const DescribeAuditMitigationActionsTaskRequest& request, const DescribeAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAuditMitigationActionsTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAuditMitigationActionsTask(request), context);
 }
 
-void IoTClient::DescribeAuditMitigationActionsTaskAsyncHelper(const DescribeAuditMitigationActionsTaskRequest& request, const DescribeAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeAuditMitigationActionsTaskAsync(const DescribeAuditMitigationActionsTaskRequest& request, const DescribeAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAuditMitigationActionsTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeAuditMitigationActionsTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAuditSuppressionOutcome IoTClient::DescribeAuditSuppression(const DescribeAuditSuppressionRequest& request) const
@@ -2755,14 +2755,14 @@ DescribeAuditSuppressionOutcomeCallable IoTClient::DescribeAuditSuppressionCalla
   return task->get_future();
 }
 
-void IoTClient::DescribeAuditSuppressionAsync(const DescribeAuditSuppressionRequest& request, const DescribeAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeAuditSuppressionAsyncHelper(IoTClient const * const clientThis, const DescribeAuditSuppressionRequest& request, const DescribeAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAuditSuppressionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAuditSuppression(request), context);
 }
 
-void IoTClient::DescribeAuditSuppressionAsyncHelper(const DescribeAuditSuppressionRequest& request, const DescribeAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeAuditSuppressionAsync(const DescribeAuditSuppressionRequest& request, const DescribeAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAuditSuppression(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeAuditSuppressionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAuditTaskOutcome IoTClient::DescribeAuditTask(const DescribeAuditTaskRequest& request) const
@@ -2786,14 +2786,14 @@ DescribeAuditTaskOutcomeCallable IoTClient::DescribeAuditTaskCallable(const Desc
   return task->get_future();
 }
 
-void IoTClient::DescribeAuditTaskAsync(const DescribeAuditTaskRequest& request, const DescribeAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeAuditTaskAsyncHelper(IoTClient const * const clientThis, const DescribeAuditTaskRequest& request, const DescribeAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAuditTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAuditTask(request), context);
 }
 
-void IoTClient::DescribeAuditTaskAsyncHelper(const DescribeAuditTaskRequest& request, const DescribeAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeAuditTaskAsync(const DescribeAuditTaskRequest& request, const DescribeAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAuditTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeAuditTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAuthorizerOutcome IoTClient::DescribeAuthorizer(const DescribeAuthorizerRequest& request) const
@@ -2817,14 +2817,14 @@ DescribeAuthorizerOutcomeCallable IoTClient::DescribeAuthorizerCallable(const De
   return task->get_future();
 }
 
-void IoTClient::DescribeAuthorizerAsync(const DescribeAuthorizerRequest& request, const DescribeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeAuthorizerAsyncHelper(IoTClient const * const clientThis, const DescribeAuthorizerRequest& request, const DescribeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAuthorizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAuthorizer(request), context);
 }
 
-void IoTClient::DescribeAuthorizerAsyncHelper(const DescribeAuthorizerRequest& request, const DescribeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeAuthorizerAsync(const DescribeAuthorizerRequest& request, const DescribeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeAuthorizerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBillingGroupOutcome IoTClient::DescribeBillingGroup(const DescribeBillingGroupRequest& request) const
@@ -2848,14 +2848,14 @@ DescribeBillingGroupOutcomeCallable IoTClient::DescribeBillingGroupCallable(cons
   return task->get_future();
 }
 
-void IoTClient::DescribeBillingGroupAsync(const DescribeBillingGroupRequest& request, const DescribeBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeBillingGroupAsyncHelper(IoTClient const * const clientThis, const DescribeBillingGroupRequest& request, const DescribeBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBillingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBillingGroup(request), context);
 }
 
-void IoTClient::DescribeBillingGroupAsyncHelper(const DescribeBillingGroupRequest& request, const DescribeBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeBillingGroupAsync(const DescribeBillingGroupRequest& request, const DescribeBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBillingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeBillingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCACertificateOutcome IoTClient::DescribeCACertificate(const DescribeCACertificateRequest& request) const
@@ -2879,14 +2879,14 @@ DescribeCACertificateOutcomeCallable IoTClient::DescribeCACertificateCallable(co
   return task->get_future();
 }
 
-void IoTClient::DescribeCACertificateAsync(const DescribeCACertificateRequest& request, const DescribeCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeCACertificateAsyncHelper(IoTClient const * const clientThis, const DescribeCACertificateRequest& request, const DescribeCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCACertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCACertificate(request), context);
 }
 
-void IoTClient::DescribeCACertificateAsyncHelper(const DescribeCACertificateRequest& request, const DescribeCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeCACertificateAsync(const DescribeCACertificateRequest& request, const DescribeCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCACertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeCACertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCertificateOutcome IoTClient::DescribeCertificate(const DescribeCertificateRequest& request) const
@@ -2910,14 +2910,14 @@ DescribeCertificateOutcomeCallable IoTClient::DescribeCertificateCallable(const 
   return task->get_future();
 }
 
-void IoTClient::DescribeCertificateAsync(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeCertificateAsyncHelper(IoTClient const * const clientThis, const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCertificate(request), context);
 }
 
-void IoTClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeCertificateAsync(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCustomMetricOutcome IoTClient::DescribeCustomMetric(const DescribeCustomMetricRequest& request) const
@@ -2941,14 +2941,14 @@ DescribeCustomMetricOutcomeCallable IoTClient::DescribeCustomMetricCallable(cons
   return task->get_future();
 }
 
-void IoTClient::DescribeCustomMetricAsync(const DescribeCustomMetricRequest& request, const DescribeCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeCustomMetricAsyncHelper(IoTClient const * const clientThis, const DescribeCustomMetricRequest& request, const DescribeCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCustomMetricAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCustomMetric(request), context);
 }
 
-void IoTClient::DescribeCustomMetricAsyncHelper(const DescribeCustomMetricRequest& request, const DescribeCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeCustomMetricAsync(const DescribeCustomMetricRequest& request, const DescribeCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCustomMetric(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeCustomMetricAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDefaultAuthorizerOutcome IoTClient::DescribeDefaultAuthorizer(const DescribeDefaultAuthorizerRequest& request) const
@@ -2966,14 +2966,14 @@ DescribeDefaultAuthorizerOutcomeCallable IoTClient::DescribeDefaultAuthorizerCal
   return task->get_future();
 }
 
-void IoTClient::DescribeDefaultAuthorizerAsync(const DescribeDefaultAuthorizerRequest& request, const DescribeDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeDefaultAuthorizerAsyncHelper(IoTClient const * const clientThis, const DescribeDefaultAuthorizerRequest& request, const DescribeDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDefaultAuthorizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDefaultAuthorizer(request), context);
 }
 
-void IoTClient::DescribeDefaultAuthorizerAsyncHelper(const DescribeDefaultAuthorizerRequest& request, const DescribeDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeDefaultAuthorizerAsync(const DescribeDefaultAuthorizerRequest& request, const DescribeDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDefaultAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeDefaultAuthorizerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDetectMitigationActionsTaskOutcome IoTClient::DescribeDetectMitigationActionsTask(const DescribeDetectMitigationActionsTaskRequest& request) const
@@ -2997,14 +2997,14 @@ DescribeDetectMitigationActionsTaskOutcomeCallable IoTClient::DescribeDetectMiti
   return task->get_future();
 }
 
-void IoTClient::DescribeDetectMitigationActionsTaskAsync(const DescribeDetectMitigationActionsTaskRequest& request, const DescribeDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeDetectMitigationActionsTaskAsyncHelper(IoTClient const * const clientThis, const DescribeDetectMitigationActionsTaskRequest& request, const DescribeDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDetectMitigationActionsTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDetectMitigationActionsTask(request), context);
 }
 
-void IoTClient::DescribeDetectMitigationActionsTaskAsyncHelper(const DescribeDetectMitigationActionsTaskRequest& request, const DescribeDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeDetectMitigationActionsTaskAsync(const DescribeDetectMitigationActionsTaskRequest& request, const DescribeDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDetectMitigationActionsTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeDetectMitigationActionsTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDimensionOutcome IoTClient::DescribeDimension(const DescribeDimensionRequest& request) const
@@ -3028,14 +3028,14 @@ DescribeDimensionOutcomeCallable IoTClient::DescribeDimensionCallable(const Desc
   return task->get_future();
 }
 
-void IoTClient::DescribeDimensionAsync(const DescribeDimensionRequest& request, const DescribeDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeDimensionAsyncHelper(IoTClient const * const clientThis, const DescribeDimensionRequest& request, const DescribeDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDimensionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDimension(request), context);
 }
 
-void IoTClient::DescribeDimensionAsyncHelper(const DescribeDimensionRequest& request, const DescribeDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeDimensionAsync(const DescribeDimensionRequest& request, const DescribeDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDimension(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeDimensionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainConfigurationOutcome IoTClient::DescribeDomainConfiguration(const DescribeDomainConfigurationRequest& request) const
@@ -3059,14 +3059,14 @@ DescribeDomainConfigurationOutcomeCallable IoTClient::DescribeDomainConfiguratio
   return task->get_future();
 }
 
-void IoTClient::DescribeDomainConfigurationAsync(const DescribeDomainConfigurationRequest& request, const DescribeDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeDomainConfigurationAsyncHelper(IoTClient const * const clientThis, const DescribeDomainConfigurationRequest& request, const DescribeDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomainConfiguration(request), context);
 }
 
-void IoTClient::DescribeDomainConfigurationAsyncHelper(const DescribeDomainConfigurationRequest& request, const DescribeDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeDomainConfigurationAsync(const DescribeDomainConfigurationRequest& request, const DescribeDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomainConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeDomainConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEndpointOutcome IoTClient::DescribeEndpoint(const DescribeEndpointRequest& request) const
@@ -3084,14 +3084,14 @@ DescribeEndpointOutcomeCallable IoTClient::DescribeEndpointCallable(const Descri
   return task->get_future();
 }
 
-void IoTClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeEndpointAsyncHelper(IoTClient const * const clientThis, const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEndpoint(request), context);
 }
 
-void IoTClient::DescribeEndpointAsyncHelper(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventConfigurationsOutcome IoTClient::DescribeEventConfigurations(const DescribeEventConfigurationsRequest& request) const
@@ -3109,14 +3109,14 @@ DescribeEventConfigurationsOutcomeCallable IoTClient::DescribeEventConfiguration
   return task->get_future();
 }
 
-void IoTClient::DescribeEventConfigurationsAsync(const DescribeEventConfigurationsRequest& request, const DescribeEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeEventConfigurationsAsyncHelper(IoTClient const * const clientThis, const DescribeEventConfigurationsRequest& request, const DescribeEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEventConfigurations(request), context);
 }
 
-void IoTClient::DescribeEventConfigurationsAsyncHelper(const DescribeEventConfigurationsRequest& request, const DescribeEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeEventConfigurationsAsync(const DescribeEventConfigurationsRequest& request, const DescribeEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEventConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeEventConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetMetricOutcome IoTClient::DescribeFleetMetric(const DescribeFleetMetricRequest& request) const
@@ -3140,14 +3140,14 @@ DescribeFleetMetricOutcomeCallable IoTClient::DescribeFleetMetricCallable(const 
   return task->get_future();
 }
 
-void IoTClient::DescribeFleetMetricAsync(const DescribeFleetMetricRequest& request, const DescribeFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeFleetMetricAsyncHelper(IoTClient const * const clientThis, const DescribeFleetMetricRequest& request, const DescribeFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetMetricAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetMetric(request), context);
 }
 
-void IoTClient::DescribeFleetMetricAsyncHelper(const DescribeFleetMetricRequest& request, const DescribeFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeFleetMetricAsync(const DescribeFleetMetricRequest& request, const DescribeFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetMetric(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeFleetMetricAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIndexOutcome IoTClient::DescribeIndex(const DescribeIndexRequest& request) const
@@ -3171,14 +3171,14 @@ DescribeIndexOutcomeCallable IoTClient::DescribeIndexCallable(const DescribeInde
   return task->get_future();
 }
 
-void IoTClient::DescribeIndexAsync(const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeIndexAsyncHelper(IoTClient const * const clientThis, const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIndex(request), context);
 }
 
-void IoTClient::DescribeIndexAsyncHelper(const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeIndexAsync(const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJobOutcome IoTClient::DescribeJob(const DescribeJobRequest& request) const
@@ -3202,14 +3202,14 @@ DescribeJobOutcomeCallable IoTClient::DescribeJobCallable(const DescribeJobReque
   return task->get_future();
 }
 
-void IoTClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeJobAsyncHelper(IoTClient const * const clientThis, const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJob(request), context);
 }
 
-void IoTClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJobExecutionOutcome IoTClient::DescribeJobExecution(const DescribeJobExecutionRequest& request) const
@@ -3240,14 +3240,14 @@ DescribeJobExecutionOutcomeCallable IoTClient::DescribeJobExecutionCallable(cons
   return task->get_future();
 }
 
-void IoTClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeJobExecutionAsyncHelper(IoTClient const * const clientThis, const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJobExecution(request), context);
 }
 
-void IoTClient::DescribeJobExecutionAsyncHelper(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeJobExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJobTemplateOutcome IoTClient::DescribeJobTemplate(const DescribeJobTemplateRequest& request) const
@@ -3271,14 +3271,14 @@ DescribeJobTemplateOutcomeCallable IoTClient::DescribeJobTemplateCallable(const 
   return task->get_future();
 }
 
-void IoTClient::DescribeJobTemplateAsync(const DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeJobTemplateAsyncHelper(IoTClient const * const clientThis, const DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJobTemplate(request), context);
 }
 
-void IoTClient::DescribeJobTemplateAsyncHelper(const DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeJobTemplateAsync(const DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJobTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeJobTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeManagedJobTemplateOutcome IoTClient::DescribeManagedJobTemplate(const DescribeManagedJobTemplateRequest& request) const
@@ -3302,14 +3302,14 @@ DescribeManagedJobTemplateOutcomeCallable IoTClient::DescribeManagedJobTemplateC
   return task->get_future();
 }
 
-void IoTClient::DescribeManagedJobTemplateAsync(const DescribeManagedJobTemplateRequest& request, const DescribeManagedJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeManagedJobTemplateAsyncHelper(IoTClient const * const clientThis, const DescribeManagedJobTemplateRequest& request, const DescribeManagedJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeManagedJobTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeManagedJobTemplate(request), context);
 }
 
-void IoTClient::DescribeManagedJobTemplateAsyncHelper(const DescribeManagedJobTemplateRequest& request, const DescribeManagedJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeManagedJobTemplateAsync(const DescribeManagedJobTemplateRequest& request, const DescribeManagedJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeManagedJobTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeManagedJobTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMitigationActionOutcome IoTClient::DescribeMitigationAction(const DescribeMitigationActionRequest& request) const
@@ -3333,14 +3333,14 @@ DescribeMitigationActionOutcomeCallable IoTClient::DescribeMitigationActionCalla
   return task->get_future();
 }
 
-void IoTClient::DescribeMitigationActionAsync(const DescribeMitigationActionRequest& request, const DescribeMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeMitigationActionAsyncHelper(IoTClient const * const clientThis, const DescribeMitigationActionRequest& request, const DescribeMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMitigationActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMitigationAction(request), context);
 }
 
-void IoTClient::DescribeMitigationActionAsyncHelper(const DescribeMitigationActionRequest& request, const DescribeMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeMitigationActionAsync(const DescribeMitigationActionRequest& request, const DescribeMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMitigationAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeMitigationActionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProvisioningTemplateOutcome IoTClient::DescribeProvisioningTemplate(const DescribeProvisioningTemplateRequest& request) const
@@ -3364,14 +3364,14 @@ DescribeProvisioningTemplateOutcomeCallable IoTClient::DescribeProvisioningTempl
   return task->get_future();
 }
 
-void IoTClient::DescribeProvisioningTemplateAsync(const DescribeProvisioningTemplateRequest& request, const DescribeProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeProvisioningTemplateAsyncHelper(IoTClient const * const clientThis, const DescribeProvisioningTemplateRequest& request, const DescribeProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProvisioningTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProvisioningTemplate(request), context);
 }
 
-void IoTClient::DescribeProvisioningTemplateAsyncHelper(const DescribeProvisioningTemplateRequest& request, const DescribeProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeProvisioningTemplateAsync(const DescribeProvisioningTemplateRequest& request, const DescribeProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProvisioningTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeProvisioningTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProvisioningTemplateVersionOutcome IoTClient::DescribeProvisioningTemplateVersion(const DescribeProvisioningTemplateVersionRequest& request) const
@@ -3402,14 +3402,14 @@ DescribeProvisioningTemplateVersionOutcomeCallable IoTClient::DescribeProvisioni
   return task->get_future();
 }
 
-void IoTClient::DescribeProvisioningTemplateVersionAsync(const DescribeProvisioningTemplateVersionRequest& request, const DescribeProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeProvisioningTemplateVersionAsyncHelper(IoTClient const * const clientThis, const DescribeProvisioningTemplateVersionRequest& request, const DescribeProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProvisioningTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProvisioningTemplateVersion(request), context);
 }
 
-void IoTClient::DescribeProvisioningTemplateVersionAsyncHelper(const DescribeProvisioningTemplateVersionRequest& request, const DescribeProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeProvisioningTemplateVersionAsync(const DescribeProvisioningTemplateVersionRequest& request, const DescribeProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProvisioningTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeProvisioningTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRoleAliasOutcome IoTClient::DescribeRoleAlias(const DescribeRoleAliasRequest& request) const
@@ -3433,14 +3433,14 @@ DescribeRoleAliasOutcomeCallable IoTClient::DescribeRoleAliasCallable(const Desc
   return task->get_future();
 }
 
-void IoTClient::DescribeRoleAliasAsync(const DescribeRoleAliasRequest& request, const DescribeRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeRoleAliasAsyncHelper(IoTClient const * const clientThis, const DescribeRoleAliasRequest& request, const DescribeRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRoleAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRoleAlias(request), context);
 }
 
-void IoTClient::DescribeRoleAliasAsyncHelper(const DescribeRoleAliasRequest& request, const DescribeRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeRoleAliasAsync(const DescribeRoleAliasRequest& request, const DescribeRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRoleAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeRoleAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeScheduledAuditOutcome IoTClient::DescribeScheduledAudit(const DescribeScheduledAuditRequest& request) const
@@ -3464,14 +3464,14 @@ DescribeScheduledAuditOutcomeCallable IoTClient::DescribeScheduledAuditCallable(
   return task->get_future();
 }
 
-void IoTClient::DescribeScheduledAuditAsync(const DescribeScheduledAuditRequest& request, const DescribeScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeScheduledAuditAsyncHelper(IoTClient const * const clientThis, const DescribeScheduledAuditRequest& request, const DescribeScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScheduledAuditAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeScheduledAudit(request), context);
 }
 
-void IoTClient::DescribeScheduledAuditAsyncHelper(const DescribeScheduledAuditRequest& request, const DescribeScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeScheduledAuditAsync(const DescribeScheduledAuditRequest& request, const DescribeScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeScheduledAudit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeScheduledAuditAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSecurityProfileOutcome IoTClient::DescribeSecurityProfile(const DescribeSecurityProfileRequest& request) const
@@ -3495,14 +3495,14 @@ DescribeSecurityProfileOutcomeCallable IoTClient::DescribeSecurityProfileCallabl
   return task->get_future();
 }
 
-void IoTClient::DescribeSecurityProfileAsync(const DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeSecurityProfileAsyncHelper(IoTClient const * const clientThis, const DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSecurityProfile(request), context);
 }
 
-void IoTClient::DescribeSecurityProfileAsyncHelper(const DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeSecurityProfileAsync(const DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeSecurityProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStreamOutcome IoTClient::DescribeStream(const DescribeStreamRequest& request) const
@@ -3526,14 +3526,14 @@ DescribeStreamOutcomeCallable IoTClient::DescribeStreamCallable(const DescribeSt
   return task->get_future();
 }
 
-void IoTClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeStreamAsyncHelper(IoTClient const * const clientThis, const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStream(request), context);
 }
 
-void IoTClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeThingOutcome IoTClient::DescribeThing(const DescribeThingRequest& request) const
@@ -3557,14 +3557,14 @@ DescribeThingOutcomeCallable IoTClient::DescribeThingCallable(const DescribeThin
   return task->get_future();
 }
 
-void IoTClient::DescribeThingAsync(const DescribeThingRequest& request, const DescribeThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeThingAsyncHelper(IoTClient const * const clientThis, const DescribeThingRequest& request, const DescribeThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeThingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeThing(request), context);
 }
 
-void IoTClient::DescribeThingAsyncHelper(const DescribeThingRequest& request, const DescribeThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeThingAsync(const DescribeThingRequest& request, const DescribeThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeThing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeThingAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeThingGroupOutcome IoTClient::DescribeThingGroup(const DescribeThingGroupRequest& request) const
@@ -3588,14 +3588,14 @@ DescribeThingGroupOutcomeCallable IoTClient::DescribeThingGroupCallable(const De
   return task->get_future();
 }
 
-void IoTClient::DescribeThingGroupAsync(const DescribeThingGroupRequest& request, const DescribeThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeThingGroupAsyncHelper(IoTClient const * const clientThis, const DescribeThingGroupRequest& request, const DescribeThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeThingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeThingGroup(request), context);
 }
 
-void IoTClient::DescribeThingGroupAsyncHelper(const DescribeThingGroupRequest& request, const DescribeThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeThingGroupAsync(const DescribeThingGroupRequest& request, const DescribeThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeThingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeThingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeThingRegistrationTaskOutcome IoTClient::DescribeThingRegistrationTask(const DescribeThingRegistrationTaskRequest& request) const
@@ -3619,14 +3619,14 @@ DescribeThingRegistrationTaskOutcomeCallable IoTClient::DescribeThingRegistratio
   return task->get_future();
 }
 
-void IoTClient::DescribeThingRegistrationTaskAsync(const DescribeThingRegistrationTaskRequest& request, const DescribeThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeThingRegistrationTaskAsyncHelper(IoTClient const * const clientThis, const DescribeThingRegistrationTaskRequest& request, const DescribeThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeThingRegistrationTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeThingRegistrationTask(request), context);
 }
 
-void IoTClient::DescribeThingRegistrationTaskAsyncHelper(const DescribeThingRegistrationTaskRequest& request, const DescribeThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeThingRegistrationTaskAsync(const DescribeThingRegistrationTaskRequest& request, const DescribeThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeThingRegistrationTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeThingRegistrationTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeThingTypeOutcome IoTClient::DescribeThingType(const DescribeThingTypeRequest& request) const
@@ -3650,14 +3650,14 @@ DescribeThingTypeOutcomeCallable IoTClient::DescribeThingTypeCallable(const Desc
   return task->get_future();
 }
 
-void IoTClient::DescribeThingTypeAsync(const DescribeThingTypeRequest& request, const DescribeThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDescribeThingTypeAsyncHelper(IoTClient const * const clientThis, const DescribeThingTypeRequest& request, const DescribeThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeThingTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeThingType(request), context);
 }
 
-void IoTClient::DescribeThingTypeAsyncHelper(const DescribeThingTypeRequest& request, const DescribeThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DescribeThingTypeAsync(const DescribeThingTypeRequest& request, const DescribeThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeThingType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDescribeThingTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachPolicyOutcome IoTClient::DetachPolicy(const DetachPolicyRequest& request) const
@@ -3681,14 +3681,14 @@ DetachPolicyOutcomeCallable IoTClient::DetachPolicyCallable(const DetachPolicyRe
   return task->get_future();
 }
 
-void IoTClient::DetachPolicyAsync(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDetachPolicyAsyncHelper(IoTClient const * const clientThis, const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachPolicy(request), context);
 }
 
-void IoTClient::DetachPolicyAsyncHelper(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DetachPolicyAsync(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDetachPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachSecurityProfileOutcome IoTClient::DetachSecurityProfile(const DetachSecurityProfileRequest& request) const
@@ -3718,14 +3718,14 @@ DetachSecurityProfileOutcomeCallable IoTClient::DetachSecurityProfileCallable(co
   return task->get_future();
 }
 
-void IoTClient::DetachSecurityProfileAsync(const DetachSecurityProfileRequest& request, const DetachSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDetachSecurityProfileAsyncHelper(IoTClient const * const clientThis, const DetachSecurityProfileRequest& request, const DetachSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachSecurityProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachSecurityProfile(request), context);
 }
 
-void IoTClient::DetachSecurityProfileAsyncHelper(const DetachSecurityProfileRequest& request, const DetachSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DetachSecurityProfileAsync(const DetachSecurityProfileRequest& request, const DetachSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDetachSecurityProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachThingPrincipalOutcome IoTClient::DetachThingPrincipal(const DetachThingPrincipalRequest& request) const
@@ -3755,14 +3755,14 @@ DetachThingPrincipalOutcomeCallable IoTClient::DetachThingPrincipalCallable(cons
   return task->get_future();
 }
 
-void IoTClient::DetachThingPrincipalAsync(const DetachThingPrincipalRequest& request, const DetachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDetachThingPrincipalAsyncHelper(IoTClient const * const clientThis, const DetachThingPrincipalRequest& request, const DetachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachThingPrincipalAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachThingPrincipal(request), context);
 }
 
-void IoTClient::DetachThingPrincipalAsyncHelper(const DetachThingPrincipalRequest& request, const DetachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DetachThingPrincipalAsync(const DetachThingPrincipalRequest& request, const DetachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachThingPrincipal(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDetachThingPrincipalAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableTopicRuleOutcome IoTClient::DisableTopicRule(const DisableTopicRuleRequest& request) const
@@ -3787,14 +3787,14 @@ DisableTopicRuleOutcomeCallable IoTClient::DisableTopicRuleCallable(const Disabl
   return task->get_future();
 }
 
-void IoTClient::DisableTopicRuleAsync(const DisableTopicRuleRequest& request, const DisableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientDisableTopicRuleAsyncHelper(IoTClient const * const clientThis, const DisableTopicRuleRequest& request, const DisableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableTopicRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableTopicRule(request), context);
 }
 
-void IoTClient::DisableTopicRuleAsyncHelper(const DisableTopicRuleRequest& request, const DisableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DisableTopicRuleAsync(const DisableTopicRuleRequest& request, const DisableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableTopicRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientDisableTopicRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableTopicRuleOutcome IoTClient::EnableTopicRule(const EnableTopicRuleRequest& request) const
@@ -3819,14 +3819,14 @@ EnableTopicRuleOutcomeCallable IoTClient::EnableTopicRuleCallable(const EnableTo
   return task->get_future();
 }
 
-void IoTClient::EnableTopicRuleAsync(const EnableTopicRuleRequest& request, const EnableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientEnableTopicRuleAsyncHelper(IoTClient const * const clientThis, const EnableTopicRuleRequest& request, const EnableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableTopicRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableTopicRule(request), context);
 }
 
-void IoTClient::EnableTopicRuleAsyncHelper(const EnableTopicRuleRequest& request, const EnableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::EnableTopicRuleAsync(const EnableTopicRuleRequest& request, const EnableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableTopicRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientEnableTopicRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBehaviorModelTrainingSummariesOutcome IoTClient::GetBehaviorModelTrainingSummaries(const GetBehaviorModelTrainingSummariesRequest& request) const
@@ -3844,14 +3844,14 @@ GetBehaviorModelTrainingSummariesOutcomeCallable IoTClient::GetBehaviorModelTrai
   return task->get_future();
 }
 
-void IoTClient::GetBehaviorModelTrainingSummariesAsync(const GetBehaviorModelTrainingSummariesRequest& request, const GetBehaviorModelTrainingSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetBehaviorModelTrainingSummariesAsyncHelper(IoTClient const * const clientThis, const GetBehaviorModelTrainingSummariesRequest& request, const GetBehaviorModelTrainingSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBehaviorModelTrainingSummariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBehaviorModelTrainingSummaries(request), context);
 }
 
-void IoTClient::GetBehaviorModelTrainingSummariesAsyncHelper(const GetBehaviorModelTrainingSummariesRequest& request, const GetBehaviorModelTrainingSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetBehaviorModelTrainingSummariesAsync(const GetBehaviorModelTrainingSummariesRequest& request, const GetBehaviorModelTrainingSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBehaviorModelTrainingSummaries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetBehaviorModelTrainingSummariesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBucketsAggregationOutcome IoTClient::GetBucketsAggregation(const GetBucketsAggregationRequest& request) const
@@ -3869,14 +3869,14 @@ GetBucketsAggregationOutcomeCallable IoTClient::GetBucketsAggregationCallable(co
   return task->get_future();
 }
 
-void IoTClient::GetBucketsAggregationAsync(const GetBucketsAggregationRequest& request, const GetBucketsAggregationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetBucketsAggregationAsyncHelper(IoTClient const * const clientThis, const GetBucketsAggregationRequest& request, const GetBucketsAggregationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBucketsAggregationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBucketsAggregation(request), context);
 }
 
-void IoTClient::GetBucketsAggregationAsyncHelper(const GetBucketsAggregationRequest& request, const GetBucketsAggregationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetBucketsAggregationAsync(const GetBucketsAggregationRequest& request, const GetBucketsAggregationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBucketsAggregation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetBucketsAggregationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCardinalityOutcome IoTClient::GetCardinality(const GetCardinalityRequest& request) const
@@ -3894,14 +3894,14 @@ GetCardinalityOutcomeCallable IoTClient::GetCardinalityCallable(const GetCardina
   return task->get_future();
 }
 
-void IoTClient::GetCardinalityAsync(const GetCardinalityRequest& request, const GetCardinalityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetCardinalityAsyncHelper(IoTClient const * const clientThis, const GetCardinalityRequest& request, const GetCardinalityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCardinalityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCardinality(request), context);
 }
 
-void IoTClient::GetCardinalityAsyncHelper(const GetCardinalityRequest& request, const GetCardinalityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetCardinalityAsync(const GetCardinalityRequest& request, const GetCardinalityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCardinality(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetCardinalityAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEffectivePoliciesOutcome IoTClient::GetEffectivePolicies(const GetEffectivePoliciesRequest& request) const
@@ -3919,14 +3919,14 @@ GetEffectivePoliciesOutcomeCallable IoTClient::GetEffectivePoliciesCallable(cons
   return task->get_future();
 }
 
-void IoTClient::GetEffectivePoliciesAsync(const GetEffectivePoliciesRequest& request, const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetEffectivePoliciesAsyncHelper(IoTClient const * const clientThis, const GetEffectivePoliciesRequest& request, const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEffectivePoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEffectivePolicies(request), context);
 }
 
-void IoTClient::GetEffectivePoliciesAsyncHelper(const GetEffectivePoliciesRequest& request, const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetEffectivePoliciesAsync(const GetEffectivePoliciesRequest& request, const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEffectivePolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetEffectivePoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIndexingConfigurationOutcome IoTClient::GetIndexingConfiguration(const GetIndexingConfigurationRequest& request) const
@@ -3944,14 +3944,14 @@ GetIndexingConfigurationOutcomeCallable IoTClient::GetIndexingConfigurationCalla
   return task->get_future();
 }
 
-void IoTClient::GetIndexingConfigurationAsync(const GetIndexingConfigurationRequest& request, const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetIndexingConfigurationAsyncHelper(IoTClient const * const clientThis, const GetIndexingConfigurationRequest& request, const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIndexingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIndexingConfiguration(request), context);
 }
 
-void IoTClient::GetIndexingConfigurationAsyncHelper(const GetIndexingConfigurationRequest& request, const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetIndexingConfigurationAsync(const GetIndexingConfigurationRequest& request, const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIndexingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetIndexingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobDocumentOutcome IoTClient::GetJobDocument(const GetJobDocumentRequest& request) const
@@ -3976,14 +3976,14 @@ GetJobDocumentOutcomeCallable IoTClient::GetJobDocumentCallable(const GetJobDocu
   return task->get_future();
 }
 
-void IoTClient::GetJobDocumentAsync(const GetJobDocumentRequest& request, const GetJobDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetJobDocumentAsyncHelper(IoTClient const * const clientThis, const GetJobDocumentRequest& request, const GetJobDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobDocumentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJobDocument(request), context);
 }
 
-void IoTClient::GetJobDocumentAsyncHelper(const GetJobDocumentRequest& request, const GetJobDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetJobDocumentAsync(const GetJobDocumentRequest& request, const GetJobDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJobDocument(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetJobDocumentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLoggingOptionsOutcome IoTClient::GetLoggingOptions(const GetLoggingOptionsRequest& request) const
@@ -4001,14 +4001,14 @@ GetLoggingOptionsOutcomeCallable IoTClient::GetLoggingOptionsCallable(const GetL
   return task->get_future();
 }
 
-void IoTClient::GetLoggingOptionsAsync(const GetLoggingOptionsRequest& request, const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetLoggingOptionsAsyncHelper(IoTClient const * const clientThis, const GetLoggingOptionsRequest& request, const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLoggingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLoggingOptions(request), context);
 }
 
-void IoTClient::GetLoggingOptionsAsyncHelper(const GetLoggingOptionsRequest& request, const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetLoggingOptionsAsync(const GetLoggingOptionsRequest& request, const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLoggingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetLoggingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetOTAUpdateOutcome IoTClient::GetOTAUpdate(const GetOTAUpdateRequest& request) const
@@ -4032,14 +4032,14 @@ GetOTAUpdateOutcomeCallable IoTClient::GetOTAUpdateCallable(const GetOTAUpdateRe
   return task->get_future();
 }
 
-void IoTClient::GetOTAUpdateAsync(const GetOTAUpdateRequest& request, const GetOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetOTAUpdateAsyncHelper(IoTClient const * const clientThis, const GetOTAUpdateRequest& request, const GetOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOTAUpdateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOTAUpdate(request), context);
 }
 
-void IoTClient::GetOTAUpdateAsyncHelper(const GetOTAUpdateRequest& request, const GetOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetOTAUpdateAsync(const GetOTAUpdateRequest& request, const GetOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOTAUpdate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetOTAUpdateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPercentilesOutcome IoTClient::GetPercentiles(const GetPercentilesRequest& request) const
@@ -4057,14 +4057,14 @@ GetPercentilesOutcomeCallable IoTClient::GetPercentilesCallable(const GetPercent
   return task->get_future();
 }
 
-void IoTClient::GetPercentilesAsync(const GetPercentilesRequest& request, const GetPercentilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetPercentilesAsyncHelper(IoTClient const * const clientThis, const GetPercentilesRequest& request, const GetPercentilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPercentilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPercentiles(request), context);
 }
 
-void IoTClient::GetPercentilesAsyncHelper(const GetPercentilesRequest& request, const GetPercentilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetPercentilesAsync(const GetPercentilesRequest& request, const GetPercentilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPercentiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetPercentilesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPolicyOutcome IoTClient::GetPolicy(const GetPolicyRequest& request) const
@@ -4088,14 +4088,14 @@ GetPolicyOutcomeCallable IoTClient::GetPolicyCallable(const GetPolicyRequest& re
   return task->get_future();
 }
 
-void IoTClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetPolicyAsyncHelper(IoTClient const * const clientThis, const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPolicy(request), context);
 }
 
-void IoTClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPolicyVersionOutcome IoTClient::GetPolicyVersion(const GetPolicyVersionRequest& request) const
@@ -4126,14 +4126,14 @@ GetPolicyVersionOutcomeCallable IoTClient::GetPolicyVersionCallable(const GetPol
   return task->get_future();
 }
 
-void IoTClient::GetPolicyVersionAsync(const GetPolicyVersionRequest& request, const GetPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetPolicyVersionAsyncHelper(IoTClient const * const clientThis, const GetPolicyVersionRequest& request, const GetPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPolicyVersion(request), context);
 }
 
-void IoTClient::GetPolicyVersionAsyncHelper(const GetPolicyVersionRequest& request, const GetPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetPolicyVersionAsync(const GetPolicyVersionRequest& request, const GetPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPolicyVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetPolicyVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRegistrationCodeOutcome IoTClient::GetRegistrationCode(const GetRegistrationCodeRequest& request) const
@@ -4151,14 +4151,14 @@ GetRegistrationCodeOutcomeCallable IoTClient::GetRegistrationCodeCallable(const 
   return task->get_future();
 }
 
-void IoTClient::GetRegistrationCodeAsync(const GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetRegistrationCodeAsyncHelper(IoTClient const * const clientThis, const GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRegistrationCodeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRegistrationCode(request), context);
 }
 
-void IoTClient::GetRegistrationCodeAsyncHelper(const GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetRegistrationCodeAsync(const GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRegistrationCode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetRegistrationCodeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetStatisticsOutcome IoTClient::GetStatistics(const GetStatisticsRequest& request) const
@@ -4176,14 +4176,14 @@ GetStatisticsOutcomeCallable IoTClient::GetStatisticsCallable(const GetStatistic
   return task->get_future();
 }
 
-void IoTClient::GetStatisticsAsync(const GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetStatisticsAsyncHelper(IoTClient const * const clientThis, const GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStatisticsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStatistics(request), context);
 }
 
-void IoTClient::GetStatisticsAsyncHelper(const GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetStatisticsAsync(const GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetStatisticsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTopicRuleOutcome IoTClient::GetTopicRule(const GetTopicRuleRequest& request) const
@@ -4207,14 +4207,14 @@ GetTopicRuleOutcomeCallable IoTClient::GetTopicRuleCallable(const GetTopicRuleRe
   return task->get_future();
 }
 
-void IoTClient::GetTopicRuleAsync(const GetTopicRuleRequest& request, const GetTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetTopicRuleAsyncHelper(IoTClient const * const clientThis, const GetTopicRuleRequest& request, const GetTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTopicRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTopicRule(request), context);
 }
 
-void IoTClient::GetTopicRuleAsyncHelper(const GetTopicRuleRequest& request, const GetTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetTopicRuleAsync(const GetTopicRuleRequest& request, const GetTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTopicRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetTopicRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTopicRuleDestinationOutcome IoTClient::GetTopicRuleDestination(const GetTopicRuleDestinationRequest& request) const
@@ -4238,14 +4238,14 @@ GetTopicRuleDestinationOutcomeCallable IoTClient::GetTopicRuleDestinationCallabl
   return task->get_future();
 }
 
-void IoTClient::GetTopicRuleDestinationAsync(const GetTopicRuleDestinationRequest& request, const GetTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetTopicRuleDestinationAsyncHelper(IoTClient const * const clientThis, const GetTopicRuleDestinationRequest& request, const GetTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTopicRuleDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTopicRuleDestination(request), context);
 }
 
-void IoTClient::GetTopicRuleDestinationAsyncHelper(const GetTopicRuleDestinationRequest& request, const GetTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetTopicRuleDestinationAsync(const GetTopicRuleDestinationRequest& request, const GetTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTopicRuleDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetTopicRuleDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetV2LoggingOptionsOutcome IoTClient::GetV2LoggingOptions(const GetV2LoggingOptionsRequest& request) const
@@ -4263,14 +4263,14 @@ GetV2LoggingOptionsOutcomeCallable IoTClient::GetV2LoggingOptionsCallable(const 
   return task->get_future();
 }
 
-void IoTClient::GetV2LoggingOptionsAsync(const GetV2LoggingOptionsRequest& request, const GetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientGetV2LoggingOptionsAsyncHelper(IoTClient const * const clientThis, const GetV2LoggingOptionsRequest& request, const GetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetV2LoggingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetV2LoggingOptions(request), context);
 }
 
-void IoTClient::GetV2LoggingOptionsAsyncHelper(const GetV2LoggingOptionsRequest& request, const GetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::GetV2LoggingOptionsAsync(const GetV2LoggingOptionsRequest& request, const GetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetV2LoggingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientGetV2LoggingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListActiveViolationsOutcome IoTClient::ListActiveViolations(const ListActiveViolationsRequest& request) const
@@ -4288,14 +4288,14 @@ ListActiveViolationsOutcomeCallable IoTClient::ListActiveViolationsCallable(cons
   return task->get_future();
 }
 
-void IoTClient::ListActiveViolationsAsync(const ListActiveViolationsRequest& request, const ListActiveViolationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListActiveViolationsAsyncHelper(IoTClient const * const clientThis, const ListActiveViolationsRequest& request, const ListActiveViolationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListActiveViolationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListActiveViolations(request), context);
 }
 
-void IoTClient::ListActiveViolationsAsyncHelper(const ListActiveViolationsRequest& request, const ListActiveViolationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListActiveViolationsAsync(const ListActiveViolationsRequest& request, const ListActiveViolationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListActiveViolations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListActiveViolationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAttachedPoliciesOutcome IoTClient::ListAttachedPolicies(const ListAttachedPoliciesRequest& request) const
@@ -4319,14 +4319,14 @@ ListAttachedPoliciesOutcomeCallable IoTClient::ListAttachedPoliciesCallable(cons
   return task->get_future();
 }
 
-void IoTClient::ListAttachedPoliciesAsync(const ListAttachedPoliciesRequest& request, const ListAttachedPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListAttachedPoliciesAsyncHelper(IoTClient const * const clientThis, const ListAttachedPoliciesRequest& request, const ListAttachedPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAttachedPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAttachedPolicies(request), context);
 }
 
-void IoTClient::ListAttachedPoliciesAsyncHelper(const ListAttachedPoliciesRequest& request, const ListAttachedPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListAttachedPoliciesAsync(const ListAttachedPoliciesRequest& request, const ListAttachedPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAttachedPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListAttachedPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAuditFindingsOutcome IoTClient::ListAuditFindings(const ListAuditFindingsRequest& request) const
@@ -4344,14 +4344,14 @@ ListAuditFindingsOutcomeCallable IoTClient::ListAuditFindingsCallable(const List
   return task->get_future();
 }
 
-void IoTClient::ListAuditFindingsAsync(const ListAuditFindingsRequest& request, const ListAuditFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListAuditFindingsAsyncHelper(IoTClient const * const clientThis, const ListAuditFindingsRequest& request, const ListAuditFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAuditFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAuditFindings(request), context);
 }
 
-void IoTClient::ListAuditFindingsAsyncHelper(const ListAuditFindingsRequest& request, const ListAuditFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListAuditFindingsAsync(const ListAuditFindingsRequest& request, const ListAuditFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAuditFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListAuditFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAuditMitigationActionsExecutionsOutcome IoTClient::ListAuditMitigationActionsExecutions(const ListAuditMitigationActionsExecutionsRequest& request) const
@@ -4379,14 +4379,14 @@ ListAuditMitigationActionsExecutionsOutcomeCallable IoTClient::ListAuditMitigati
   return task->get_future();
 }
 
-void IoTClient::ListAuditMitigationActionsExecutionsAsync(const ListAuditMitigationActionsExecutionsRequest& request, const ListAuditMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListAuditMitigationActionsExecutionsAsyncHelper(IoTClient const * const clientThis, const ListAuditMitigationActionsExecutionsRequest& request, const ListAuditMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAuditMitigationActionsExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAuditMitigationActionsExecutions(request), context);
 }
 
-void IoTClient::ListAuditMitigationActionsExecutionsAsyncHelper(const ListAuditMitigationActionsExecutionsRequest& request, const ListAuditMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListAuditMitigationActionsExecutionsAsync(const ListAuditMitigationActionsExecutionsRequest& request, const ListAuditMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAuditMitigationActionsExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListAuditMitigationActionsExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAuditMitigationActionsTasksOutcome IoTClient::ListAuditMitigationActionsTasks(const ListAuditMitigationActionsTasksRequest& request) const
@@ -4414,14 +4414,14 @@ ListAuditMitigationActionsTasksOutcomeCallable IoTClient::ListAuditMitigationAct
   return task->get_future();
 }
 
-void IoTClient::ListAuditMitigationActionsTasksAsync(const ListAuditMitigationActionsTasksRequest& request, const ListAuditMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListAuditMitigationActionsTasksAsyncHelper(IoTClient const * const clientThis, const ListAuditMitigationActionsTasksRequest& request, const ListAuditMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAuditMitigationActionsTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAuditMitigationActionsTasks(request), context);
 }
 
-void IoTClient::ListAuditMitigationActionsTasksAsyncHelper(const ListAuditMitigationActionsTasksRequest& request, const ListAuditMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListAuditMitigationActionsTasksAsync(const ListAuditMitigationActionsTasksRequest& request, const ListAuditMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAuditMitigationActionsTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListAuditMitigationActionsTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAuditSuppressionsOutcome IoTClient::ListAuditSuppressions(const ListAuditSuppressionsRequest& request) const
@@ -4439,14 +4439,14 @@ ListAuditSuppressionsOutcomeCallable IoTClient::ListAuditSuppressionsCallable(co
   return task->get_future();
 }
 
-void IoTClient::ListAuditSuppressionsAsync(const ListAuditSuppressionsRequest& request, const ListAuditSuppressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListAuditSuppressionsAsyncHelper(IoTClient const * const clientThis, const ListAuditSuppressionsRequest& request, const ListAuditSuppressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAuditSuppressionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAuditSuppressions(request), context);
 }
 
-void IoTClient::ListAuditSuppressionsAsyncHelper(const ListAuditSuppressionsRequest& request, const ListAuditSuppressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListAuditSuppressionsAsync(const ListAuditSuppressionsRequest& request, const ListAuditSuppressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAuditSuppressions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListAuditSuppressionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAuditTasksOutcome IoTClient::ListAuditTasks(const ListAuditTasksRequest& request) const
@@ -4474,14 +4474,14 @@ ListAuditTasksOutcomeCallable IoTClient::ListAuditTasksCallable(const ListAuditT
   return task->get_future();
 }
 
-void IoTClient::ListAuditTasksAsync(const ListAuditTasksRequest& request, const ListAuditTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListAuditTasksAsyncHelper(IoTClient const * const clientThis, const ListAuditTasksRequest& request, const ListAuditTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAuditTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAuditTasks(request), context);
 }
 
-void IoTClient::ListAuditTasksAsyncHelper(const ListAuditTasksRequest& request, const ListAuditTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListAuditTasksAsync(const ListAuditTasksRequest& request, const ListAuditTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAuditTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListAuditTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAuthorizersOutcome IoTClient::ListAuthorizers(const ListAuthorizersRequest& request) const
@@ -4499,14 +4499,14 @@ ListAuthorizersOutcomeCallable IoTClient::ListAuthorizersCallable(const ListAuth
   return task->get_future();
 }
 
-void IoTClient::ListAuthorizersAsync(const ListAuthorizersRequest& request, const ListAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListAuthorizersAsyncHelper(IoTClient const * const clientThis, const ListAuthorizersRequest& request, const ListAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAuthorizersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAuthorizers(request), context);
 }
 
-void IoTClient::ListAuthorizersAsyncHelper(const ListAuthorizersRequest& request, const ListAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListAuthorizersAsync(const ListAuthorizersRequest& request, const ListAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAuthorizers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListAuthorizersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBillingGroupsOutcome IoTClient::ListBillingGroups(const ListBillingGroupsRequest& request) const
@@ -4524,14 +4524,14 @@ ListBillingGroupsOutcomeCallable IoTClient::ListBillingGroupsCallable(const List
   return task->get_future();
 }
 
-void IoTClient::ListBillingGroupsAsync(const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListBillingGroupsAsyncHelper(IoTClient const * const clientThis, const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBillingGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBillingGroups(request), context);
 }
 
-void IoTClient::ListBillingGroupsAsyncHelper(const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListBillingGroupsAsync(const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBillingGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListBillingGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificatesRequest& request) const
@@ -4549,14 +4549,14 @@ ListCACertificatesOutcomeCallable IoTClient::ListCACertificatesCallable(const Li
   return task->get_future();
 }
 
-void IoTClient::ListCACertificatesAsync(const ListCACertificatesRequest& request, const ListCACertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListCACertificatesAsyncHelper(IoTClient const * const clientThis, const ListCACertificatesRequest& request, const ListCACertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCACertificatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCACertificates(request), context);
 }
 
-void IoTClient::ListCACertificatesAsyncHelper(const ListCACertificatesRequest& request, const ListCACertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListCACertificatesAsync(const ListCACertificatesRequest& request, const ListCACertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCACertificates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListCACertificatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCertificatesOutcome IoTClient::ListCertificates(const ListCertificatesRequest& request) const
@@ -4574,14 +4574,14 @@ ListCertificatesOutcomeCallable IoTClient::ListCertificatesCallable(const ListCe
   return task->get_future();
 }
 
-void IoTClient::ListCertificatesAsync(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListCertificatesAsyncHelper(IoTClient const * const clientThis, const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCertificatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCertificates(request), context);
 }
 
-void IoTClient::ListCertificatesAsyncHelper(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListCertificatesAsync(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListCertificatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCertificatesByCAOutcome IoTClient::ListCertificatesByCA(const ListCertificatesByCARequest& request) const
@@ -4605,14 +4605,14 @@ ListCertificatesByCAOutcomeCallable IoTClient::ListCertificatesByCACallable(cons
   return task->get_future();
 }
 
-void IoTClient::ListCertificatesByCAAsync(const ListCertificatesByCARequest& request, const ListCertificatesByCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListCertificatesByCAAsyncHelper(IoTClient const * const clientThis, const ListCertificatesByCARequest& request, const ListCertificatesByCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCertificatesByCAAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCertificatesByCA(request), context);
 }
 
-void IoTClient::ListCertificatesByCAAsyncHelper(const ListCertificatesByCARequest& request, const ListCertificatesByCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListCertificatesByCAAsync(const ListCertificatesByCARequest& request, const ListCertificatesByCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCertificatesByCA(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListCertificatesByCAAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomMetricsOutcome IoTClient::ListCustomMetrics(const ListCustomMetricsRequest& request) const
@@ -4630,14 +4630,14 @@ ListCustomMetricsOutcomeCallable IoTClient::ListCustomMetricsCallable(const List
   return task->get_future();
 }
 
-void IoTClient::ListCustomMetricsAsync(const ListCustomMetricsRequest& request, const ListCustomMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListCustomMetricsAsyncHelper(IoTClient const * const clientThis, const ListCustomMetricsRequest& request, const ListCustomMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomMetricsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomMetrics(request), context);
 }
 
-void IoTClient::ListCustomMetricsAsyncHelper(const ListCustomMetricsRequest& request, const ListCustomMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListCustomMetricsAsync(const ListCustomMetricsRequest& request, const ListCustomMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListCustomMetricsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDetectMitigationActionsExecutionsOutcome IoTClient::ListDetectMitigationActionsExecutions(const ListDetectMitigationActionsExecutionsRequest& request) const
@@ -4655,14 +4655,14 @@ ListDetectMitigationActionsExecutionsOutcomeCallable IoTClient::ListDetectMitiga
   return task->get_future();
 }
 
-void IoTClient::ListDetectMitigationActionsExecutionsAsync(const ListDetectMitigationActionsExecutionsRequest& request, const ListDetectMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListDetectMitigationActionsExecutionsAsyncHelper(IoTClient const * const clientThis, const ListDetectMitigationActionsExecutionsRequest& request, const ListDetectMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDetectMitigationActionsExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDetectMitigationActionsExecutions(request), context);
 }
 
-void IoTClient::ListDetectMitigationActionsExecutionsAsyncHelper(const ListDetectMitigationActionsExecutionsRequest& request, const ListDetectMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListDetectMitigationActionsExecutionsAsync(const ListDetectMitigationActionsExecutionsRequest& request, const ListDetectMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDetectMitigationActionsExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListDetectMitigationActionsExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDetectMitigationActionsTasksOutcome IoTClient::ListDetectMitigationActionsTasks(const ListDetectMitigationActionsTasksRequest& request) const
@@ -4690,14 +4690,14 @@ ListDetectMitigationActionsTasksOutcomeCallable IoTClient::ListDetectMitigationA
   return task->get_future();
 }
 
-void IoTClient::ListDetectMitigationActionsTasksAsync(const ListDetectMitigationActionsTasksRequest& request, const ListDetectMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListDetectMitigationActionsTasksAsyncHelper(IoTClient const * const clientThis, const ListDetectMitigationActionsTasksRequest& request, const ListDetectMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDetectMitigationActionsTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDetectMitigationActionsTasks(request), context);
 }
 
-void IoTClient::ListDetectMitigationActionsTasksAsyncHelper(const ListDetectMitigationActionsTasksRequest& request, const ListDetectMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListDetectMitigationActionsTasksAsync(const ListDetectMitigationActionsTasksRequest& request, const ListDetectMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDetectMitigationActionsTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListDetectMitigationActionsTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDimensionsOutcome IoTClient::ListDimensions(const ListDimensionsRequest& request) const
@@ -4715,14 +4715,14 @@ ListDimensionsOutcomeCallable IoTClient::ListDimensionsCallable(const ListDimens
   return task->get_future();
 }
 
-void IoTClient::ListDimensionsAsync(const ListDimensionsRequest& request, const ListDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListDimensionsAsyncHelper(IoTClient const * const clientThis, const ListDimensionsRequest& request, const ListDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDimensionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDimensions(request), context);
 }
 
-void IoTClient::ListDimensionsAsyncHelper(const ListDimensionsRequest& request, const ListDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListDimensionsAsync(const ListDimensionsRequest& request, const ListDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDimensions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListDimensionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainConfigurationsOutcome IoTClient::ListDomainConfigurations(const ListDomainConfigurationsRequest& request) const
@@ -4740,14 +4740,14 @@ ListDomainConfigurationsOutcomeCallable IoTClient::ListDomainConfigurationsCalla
   return task->get_future();
 }
 
-void IoTClient::ListDomainConfigurationsAsync(const ListDomainConfigurationsRequest& request, const ListDomainConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListDomainConfigurationsAsyncHelper(IoTClient const * const clientThis, const ListDomainConfigurationsRequest& request, const ListDomainConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomainConfigurations(request), context);
 }
 
-void IoTClient::ListDomainConfigurationsAsyncHelper(const ListDomainConfigurationsRequest& request, const ListDomainConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListDomainConfigurationsAsync(const ListDomainConfigurationsRequest& request, const ListDomainConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomainConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListDomainConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFleetMetricsOutcome IoTClient::ListFleetMetrics(const ListFleetMetricsRequest& request) const
@@ -4765,14 +4765,14 @@ ListFleetMetricsOutcomeCallable IoTClient::ListFleetMetricsCallable(const ListFl
   return task->get_future();
 }
 
-void IoTClient::ListFleetMetricsAsync(const ListFleetMetricsRequest& request, const ListFleetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListFleetMetricsAsyncHelper(IoTClient const * const clientThis, const ListFleetMetricsRequest& request, const ListFleetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFleetMetricsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFleetMetrics(request), context);
 }
 
-void IoTClient::ListFleetMetricsAsyncHelper(const ListFleetMetricsRequest& request, const ListFleetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListFleetMetricsAsync(const ListFleetMetricsRequest& request, const ListFleetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFleetMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListFleetMetricsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIndicesOutcome IoTClient::ListIndices(const ListIndicesRequest& request) const
@@ -4790,14 +4790,14 @@ ListIndicesOutcomeCallable IoTClient::ListIndicesCallable(const ListIndicesReque
   return task->get_future();
 }
 
-void IoTClient::ListIndicesAsync(const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListIndicesAsyncHelper(IoTClient const * const clientThis, const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIndicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIndices(request), context);
 }
 
-void IoTClient::ListIndicesAsyncHelper(const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListIndicesAsync(const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIndices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListIndicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobExecutionsForJobOutcome IoTClient::ListJobExecutionsForJob(const ListJobExecutionsForJobRequest& request) const
@@ -4822,14 +4822,14 @@ ListJobExecutionsForJobOutcomeCallable IoTClient::ListJobExecutionsForJobCallabl
   return task->get_future();
 }
 
-void IoTClient::ListJobExecutionsForJobAsync(const ListJobExecutionsForJobRequest& request, const ListJobExecutionsForJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListJobExecutionsForJobAsyncHelper(IoTClient const * const clientThis, const ListJobExecutionsForJobRequest& request, const ListJobExecutionsForJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobExecutionsForJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobExecutionsForJob(request), context);
 }
 
-void IoTClient::ListJobExecutionsForJobAsyncHelper(const ListJobExecutionsForJobRequest& request, const ListJobExecutionsForJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListJobExecutionsForJobAsync(const ListJobExecutionsForJobRequest& request, const ListJobExecutionsForJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobExecutionsForJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListJobExecutionsForJobAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobExecutionsForThingOutcome IoTClient::ListJobExecutionsForThing(const ListJobExecutionsForThingRequest& request) const
@@ -4854,14 +4854,14 @@ ListJobExecutionsForThingOutcomeCallable IoTClient::ListJobExecutionsForThingCal
   return task->get_future();
 }
 
-void IoTClient::ListJobExecutionsForThingAsync(const ListJobExecutionsForThingRequest& request, const ListJobExecutionsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListJobExecutionsForThingAsyncHelper(IoTClient const * const clientThis, const ListJobExecutionsForThingRequest& request, const ListJobExecutionsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobExecutionsForThingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobExecutionsForThing(request), context);
 }
 
-void IoTClient::ListJobExecutionsForThingAsyncHelper(const ListJobExecutionsForThingRequest& request, const ListJobExecutionsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListJobExecutionsForThingAsync(const ListJobExecutionsForThingRequest& request, const ListJobExecutionsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobExecutionsForThing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListJobExecutionsForThingAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobTemplatesOutcome IoTClient::ListJobTemplates(const ListJobTemplatesRequest& request) const
@@ -4879,14 +4879,14 @@ ListJobTemplatesOutcomeCallable IoTClient::ListJobTemplatesCallable(const ListJo
   return task->get_future();
 }
 
-void IoTClient::ListJobTemplatesAsync(const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListJobTemplatesAsyncHelper(IoTClient const * const clientThis, const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobTemplates(request), context);
 }
 
-void IoTClient::ListJobTemplatesAsyncHelper(const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListJobTemplatesAsync(const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListJobTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobsOutcome IoTClient::ListJobs(const ListJobsRequest& request) const
@@ -4904,14 +4904,14 @@ ListJobsOutcomeCallable IoTClient::ListJobsCallable(const ListJobsRequest& reque
   return task->get_future();
 }
 
-void IoTClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListJobsAsyncHelper(IoTClient const * const clientThis, const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobs(request), context);
 }
 
-void IoTClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListManagedJobTemplatesOutcome IoTClient::ListManagedJobTemplates(const ListManagedJobTemplatesRequest& request) const
@@ -4929,14 +4929,14 @@ ListManagedJobTemplatesOutcomeCallable IoTClient::ListManagedJobTemplatesCallabl
   return task->get_future();
 }
 
-void IoTClient::ListManagedJobTemplatesAsync(const ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListManagedJobTemplatesAsyncHelper(IoTClient const * const clientThis, const ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListManagedJobTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListManagedJobTemplates(request), context);
 }
 
-void IoTClient::ListManagedJobTemplatesAsyncHelper(const ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListManagedJobTemplatesAsync(const ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListManagedJobTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListManagedJobTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMetricValuesOutcome IoTClient::ListMetricValues(const ListMetricValuesRequest& request) const
@@ -4974,14 +4974,14 @@ ListMetricValuesOutcomeCallable IoTClient::ListMetricValuesCallable(const ListMe
   return task->get_future();
 }
 
-void IoTClient::ListMetricValuesAsync(const ListMetricValuesRequest& request, const ListMetricValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListMetricValuesAsyncHelper(IoTClient const * const clientThis, const ListMetricValuesRequest& request, const ListMetricValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMetricValuesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMetricValues(request), context);
 }
 
-void IoTClient::ListMetricValuesAsyncHelper(const ListMetricValuesRequest& request, const ListMetricValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListMetricValuesAsync(const ListMetricValuesRequest& request, const ListMetricValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMetricValues(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListMetricValuesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMitigationActionsOutcome IoTClient::ListMitigationActions(const ListMitigationActionsRequest& request) const
@@ -4999,14 +4999,14 @@ ListMitigationActionsOutcomeCallable IoTClient::ListMitigationActionsCallable(co
   return task->get_future();
 }
 
-void IoTClient::ListMitigationActionsAsync(const ListMitigationActionsRequest& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListMitigationActionsAsyncHelper(IoTClient const * const clientThis, const ListMitigationActionsRequest& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMitigationActionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMitigationActions(request), context);
 }
 
-void IoTClient::ListMitigationActionsAsyncHelper(const ListMitigationActionsRequest& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListMitigationActionsAsync(const ListMitigationActionsRequest& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMitigationActions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListMitigationActionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOTAUpdatesOutcome IoTClient::ListOTAUpdates(const ListOTAUpdatesRequest& request) const
@@ -5024,14 +5024,14 @@ ListOTAUpdatesOutcomeCallable IoTClient::ListOTAUpdatesCallable(const ListOTAUpd
   return task->get_future();
 }
 
-void IoTClient::ListOTAUpdatesAsync(const ListOTAUpdatesRequest& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListOTAUpdatesAsyncHelper(IoTClient const * const clientThis, const ListOTAUpdatesRequest& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOTAUpdatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOTAUpdates(request), context);
 }
 
-void IoTClient::ListOTAUpdatesAsyncHelper(const ListOTAUpdatesRequest& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListOTAUpdatesAsync(const ListOTAUpdatesRequest& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOTAUpdates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListOTAUpdatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOutgoingCertificatesRequest& request) const
@@ -5049,14 +5049,14 @@ ListOutgoingCertificatesOutcomeCallable IoTClient::ListOutgoingCertificatesCalla
   return task->get_future();
 }
 
-void IoTClient::ListOutgoingCertificatesAsync(const ListOutgoingCertificatesRequest& request, const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListOutgoingCertificatesAsyncHelper(IoTClient const * const clientThis, const ListOutgoingCertificatesRequest& request, const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOutgoingCertificatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOutgoingCertificates(request), context);
 }
 
-void IoTClient::ListOutgoingCertificatesAsyncHelper(const ListOutgoingCertificatesRequest& request, const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListOutgoingCertificatesAsync(const ListOutgoingCertificatesRequest& request, const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOutgoingCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListOutgoingCertificatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPoliciesOutcome IoTClient::ListPolicies(const ListPoliciesRequest& request) const
@@ -5074,14 +5074,14 @@ ListPoliciesOutcomeCallable IoTClient::ListPoliciesCallable(const ListPoliciesRe
   return task->get_future();
 }
 
-void IoTClient::ListPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListPoliciesAsyncHelper(IoTClient const * const clientThis, const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPolicies(request), context);
 }
 
-void IoTClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPolicyVersionsOutcome IoTClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const
@@ -5106,14 +5106,14 @@ ListPolicyVersionsOutcomeCallable IoTClient::ListPolicyVersionsCallable(const Li
   return task->get_future();
 }
 
-void IoTClient::ListPolicyVersionsAsync(const ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListPolicyVersionsAsyncHelper(IoTClient const * const clientThis, const ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPolicyVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPolicyVersions(request), context);
 }
 
-void IoTClient::ListPolicyVersionsAsyncHelper(const ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListPolicyVersionsAsync(const ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPolicyVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListPolicyVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPrincipalThingsOutcome IoTClient::ListPrincipalThings(const ListPrincipalThingsRequest& request) const
@@ -5136,14 +5136,14 @@ ListPrincipalThingsOutcomeCallable IoTClient::ListPrincipalThingsCallable(const 
   return task->get_future();
 }
 
-void IoTClient::ListPrincipalThingsAsync(const ListPrincipalThingsRequest& request, const ListPrincipalThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListPrincipalThingsAsyncHelper(IoTClient const * const clientThis, const ListPrincipalThingsRequest& request, const ListPrincipalThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPrincipalThingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPrincipalThings(request), context);
 }
 
-void IoTClient::ListPrincipalThingsAsyncHelper(const ListPrincipalThingsRequest& request, const ListPrincipalThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListPrincipalThingsAsync(const ListPrincipalThingsRequest& request, const ListPrincipalThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPrincipalThings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListPrincipalThingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProvisioningTemplateVersionsOutcome IoTClient::ListProvisioningTemplateVersions(const ListProvisioningTemplateVersionsRequest& request) const
@@ -5168,14 +5168,14 @@ ListProvisioningTemplateVersionsOutcomeCallable IoTClient::ListProvisioningTempl
   return task->get_future();
 }
 
-void IoTClient::ListProvisioningTemplateVersionsAsync(const ListProvisioningTemplateVersionsRequest& request, const ListProvisioningTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListProvisioningTemplateVersionsAsyncHelper(IoTClient const * const clientThis, const ListProvisioningTemplateVersionsRequest& request, const ListProvisioningTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProvisioningTemplateVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProvisioningTemplateVersions(request), context);
 }
 
-void IoTClient::ListProvisioningTemplateVersionsAsyncHelper(const ListProvisioningTemplateVersionsRequest& request, const ListProvisioningTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListProvisioningTemplateVersionsAsync(const ListProvisioningTemplateVersionsRequest& request, const ListProvisioningTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProvisioningTemplateVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListProvisioningTemplateVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProvisioningTemplatesOutcome IoTClient::ListProvisioningTemplates(const ListProvisioningTemplatesRequest& request) const
@@ -5193,14 +5193,14 @@ ListProvisioningTemplatesOutcomeCallable IoTClient::ListProvisioningTemplatesCal
   return task->get_future();
 }
 
-void IoTClient::ListProvisioningTemplatesAsync(const ListProvisioningTemplatesRequest& request, const ListProvisioningTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListProvisioningTemplatesAsyncHelper(IoTClient const * const clientThis, const ListProvisioningTemplatesRequest& request, const ListProvisioningTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProvisioningTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProvisioningTemplates(request), context);
 }
 
-void IoTClient::ListProvisioningTemplatesAsyncHelper(const ListProvisioningTemplatesRequest& request, const ListProvisioningTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListProvisioningTemplatesAsync(const ListProvisioningTemplatesRequest& request, const ListProvisioningTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProvisioningTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListProvisioningTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRoleAliasesOutcome IoTClient::ListRoleAliases(const ListRoleAliasesRequest& request) const
@@ -5218,14 +5218,14 @@ ListRoleAliasesOutcomeCallable IoTClient::ListRoleAliasesCallable(const ListRole
   return task->get_future();
 }
 
-void IoTClient::ListRoleAliasesAsync(const ListRoleAliasesRequest& request, const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListRoleAliasesAsyncHelper(IoTClient const * const clientThis, const ListRoleAliasesRequest& request, const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRoleAliasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRoleAliases(request), context);
 }
 
-void IoTClient::ListRoleAliasesAsyncHelper(const ListRoleAliasesRequest& request, const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListRoleAliasesAsync(const ListRoleAliasesRequest& request, const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRoleAliases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListRoleAliasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListScheduledAuditsOutcome IoTClient::ListScheduledAudits(const ListScheduledAuditsRequest& request) const
@@ -5243,14 +5243,14 @@ ListScheduledAuditsOutcomeCallable IoTClient::ListScheduledAuditsCallable(const 
   return task->get_future();
 }
 
-void IoTClient::ListScheduledAuditsAsync(const ListScheduledAuditsRequest& request, const ListScheduledAuditsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListScheduledAuditsAsyncHelper(IoTClient const * const clientThis, const ListScheduledAuditsRequest& request, const ListScheduledAuditsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListScheduledAuditsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListScheduledAudits(request), context);
 }
 
-void IoTClient::ListScheduledAuditsAsyncHelper(const ListScheduledAuditsRequest& request, const ListScheduledAuditsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListScheduledAuditsAsync(const ListScheduledAuditsRequest& request, const ListScheduledAuditsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListScheduledAudits(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListScheduledAuditsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSecurityProfilesOutcome IoTClient::ListSecurityProfiles(const ListSecurityProfilesRequest& request) const
@@ -5268,14 +5268,14 @@ ListSecurityProfilesOutcomeCallable IoTClient::ListSecurityProfilesCallable(cons
   return task->get_future();
 }
 
-void IoTClient::ListSecurityProfilesAsync(const ListSecurityProfilesRequest& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListSecurityProfilesAsyncHelper(IoTClient const * const clientThis, const ListSecurityProfilesRequest& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSecurityProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSecurityProfiles(request), context);
 }
 
-void IoTClient::ListSecurityProfilesAsyncHelper(const ListSecurityProfilesRequest& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListSecurityProfilesAsync(const ListSecurityProfilesRequest& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSecurityProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListSecurityProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSecurityProfilesForTargetOutcome IoTClient::ListSecurityProfilesForTarget(const ListSecurityProfilesForTargetRequest& request) const
@@ -5298,14 +5298,14 @@ ListSecurityProfilesForTargetOutcomeCallable IoTClient::ListSecurityProfilesForT
   return task->get_future();
 }
 
-void IoTClient::ListSecurityProfilesForTargetAsync(const ListSecurityProfilesForTargetRequest& request, const ListSecurityProfilesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListSecurityProfilesForTargetAsyncHelper(IoTClient const * const clientThis, const ListSecurityProfilesForTargetRequest& request, const ListSecurityProfilesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSecurityProfilesForTargetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSecurityProfilesForTarget(request), context);
 }
 
-void IoTClient::ListSecurityProfilesForTargetAsyncHelper(const ListSecurityProfilesForTargetRequest& request, const ListSecurityProfilesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListSecurityProfilesForTargetAsync(const ListSecurityProfilesForTargetRequest& request, const ListSecurityProfilesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSecurityProfilesForTarget(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListSecurityProfilesForTargetAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStreamsOutcome IoTClient::ListStreams(const ListStreamsRequest& request) const
@@ -5323,14 +5323,14 @@ ListStreamsOutcomeCallable IoTClient::ListStreamsCallable(const ListStreamsReque
   return task->get_future();
 }
 
-void IoTClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListStreamsAsyncHelper(IoTClient const * const clientThis, const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStreams(request), context);
 }
 
-void IoTClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStreams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListStreamsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome IoTClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -5353,14 +5353,14 @@ ListTagsForResourceOutcomeCallable IoTClient::ListTagsForResourceCallable(const 
   return task->get_future();
 }
 
-void IoTClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListTagsForResourceAsyncHelper(IoTClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void IoTClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTargetsForPolicyOutcome IoTClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest& request) const
@@ -5384,14 +5384,14 @@ ListTargetsForPolicyOutcomeCallable IoTClient::ListTargetsForPolicyCallable(cons
   return task->get_future();
 }
 
-void IoTClient::ListTargetsForPolicyAsync(const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListTargetsForPolicyAsyncHelper(IoTClient const * const clientThis, const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTargetsForPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTargetsForPolicy(request), context);
 }
 
-void IoTClient::ListTargetsForPolicyAsyncHelper(const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListTargetsForPolicyAsync(const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTargetsForPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListTargetsForPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTargetsForSecurityProfileOutcome IoTClient::ListTargetsForSecurityProfile(const ListTargetsForSecurityProfileRequest& request) const
@@ -5416,14 +5416,14 @@ ListTargetsForSecurityProfileOutcomeCallable IoTClient::ListTargetsForSecurityPr
   return task->get_future();
 }
 
-void IoTClient::ListTargetsForSecurityProfileAsync(const ListTargetsForSecurityProfileRequest& request, const ListTargetsForSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListTargetsForSecurityProfileAsyncHelper(IoTClient const * const clientThis, const ListTargetsForSecurityProfileRequest& request, const ListTargetsForSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTargetsForSecurityProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTargetsForSecurityProfile(request), context);
 }
 
-void IoTClient::ListTargetsForSecurityProfileAsyncHelper(const ListTargetsForSecurityProfileRequest& request, const ListTargetsForSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListTargetsForSecurityProfileAsync(const ListTargetsForSecurityProfileRequest& request, const ListTargetsForSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTargetsForSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListTargetsForSecurityProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThingGroupsOutcome IoTClient::ListThingGroups(const ListThingGroupsRequest& request) const
@@ -5441,14 +5441,14 @@ ListThingGroupsOutcomeCallable IoTClient::ListThingGroupsCallable(const ListThin
   return task->get_future();
 }
 
-void IoTClient::ListThingGroupsAsync(const ListThingGroupsRequest& request, const ListThingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListThingGroupsAsyncHelper(IoTClient const * const clientThis, const ListThingGroupsRequest& request, const ListThingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThingGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThingGroups(request), context);
 }
 
-void IoTClient::ListThingGroupsAsyncHelper(const ListThingGroupsRequest& request, const ListThingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListThingGroupsAsync(const ListThingGroupsRequest& request, const ListThingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThingGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListThingGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThingGroupsForThingOutcome IoTClient::ListThingGroupsForThing(const ListThingGroupsForThingRequest& request) const
@@ -5473,14 +5473,14 @@ ListThingGroupsForThingOutcomeCallable IoTClient::ListThingGroupsForThingCallabl
   return task->get_future();
 }
 
-void IoTClient::ListThingGroupsForThingAsync(const ListThingGroupsForThingRequest& request, const ListThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListThingGroupsForThingAsyncHelper(IoTClient const * const clientThis, const ListThingGroupsForThingRequest& request, const ListThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThingGroupsForThingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThingGroupsForThing(request), context);
 }
 
-void IoTClient::ListThingGroupsForThingAsyncHelper(const ListThingGroupsForThingRequest& request, const ListThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListThingGroupsForThingAsync(const ListThingGroupsForThingRequest& request, const ListThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThingGroupsForThing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListThingGroupsForThingAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThingPrincipalsOutcome IoTClient::ListThingPrincipals(const ListThingPrincipalsRequest& request) const
@@ -5505,14 +5505,14 @@ ListThingPrincipalsOutcomeCallable IoTClient::ListThingPrincipalsCallable(const 
   return task->get_future();
 }
 
-void IoTClient::ListThingPrincipalsAsync(const ListThingPrincipalsRequest& request, const ListThingPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListThingPrincipalsAsyncHelper(IoTClient const * const clientThis, const ListThingPrincipalsRequest& request, const ListThingPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThingPrincipalsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThingPrincipals(request), context);
 }
 
-void IoTClient::ListThingPrincipalsAsyncHelper(const ListThingPrincipalsRequest& request, const ListThingPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListThingPrincipalsAsync(const ListThingPrincipalsRequest& request, const ListThingPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThingPrincipals(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListThingPrincipalsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThingRegistrationTaskReportsOutcome IoTClient::ListThingRegistrationTaskReports(const ListThingRegistrationTaskReportsRequest& request) const
@@ -5542,14 +5542,14 @@ ListThingRegistrationTaskReportsOutcomeCallable IoTClient::ListThingRegistration
   return task->get_future();
 }
 
-void IoTClient::ListThingRegistrationTaskReportsAsync(const ListThingRegistrationTaskReportsRequest& request, const ListThingRegistrationTaskReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListThingRegistrationTaskReportsAsyncHelper(IoTClient const * const clientThis, const ListThingRegistrationTaskReportsRequest& request, const ListThingRegistrationTaskReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThingRegistrationTaskReportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThingRegistrationTaskReports(request), context);
 }
 
-void IoTClient::ListThingRegistrationTaskReportsAsyncHelper(const ListThingRegistrationTaskReportsRequest& request, const ListThingRegistrationTaskReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListThingRegistrationTaskReportsAsync(const ListThingRegistrationTaskReportsRequest& request, const ListThingRegistrationTaskReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThingRegistrationTaskReports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListThingRegistrationTaskReportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThingRegistrationTasksOutcome IoTClient::ListThingRegistrationTasks(const ListThingRegistrationTasksRequest& request) const
@@ -5567,14 +5567,14 @@ ListThingRegistrationTasksOutcomeCallable IoTClient::ListThingRegistrationTasksC
   return task->get_future();
 }
 
-void IoTClient::ListThingRegistrationTasksAsync(const ListThingRegistrationTasksRequest& request, const ListThingRegistrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListThingRegistrationTasksAsyncHelper(IoTClient const * const clientThis, const ListThingRegistrationTasksRequest& request, const ListThingRegistrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThingRegistrationTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThingRegistrationTasks(request), context);
 }
 
-void IoTClient::ListThingRegistrationTasksAsyncHelper(const ListThingRegistrationTasksRequest& request, const ListThingRegistrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListThingRegistrationTasksAsync(const ListThingRegistrationTasksRequest& request, const ListThingRegistrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThingRegistrationTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListThingRegistrationTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThingTypesOutcome IoTClient::ListThingTypes(const ListThingTypesRequest& request) const
@@ -5592,14 +5592,14 @@ ListThingTypesOutcomeCallable IoTClient::ListThingTypesCallable(const ListThingT
   return task->get_future();
 }
 
-void IoTClient::ListThingTypesAsync(const ListThingTypesRequest& request, const ListThingTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListThingTypesAsyncHelper(IoTClient const * const clientThis, const ListThingTypesRequest& request, const ListThingTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThingTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThingTypes(request), context);
 }
 
-void IoTClient::ListThingTypesAsyncHelper(const ListThingTypesRequest& request, const ListThingTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListThingTypesAsync(const ListThingTypesRequest& request, const ListThingTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThingTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListThingTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThingsOutcome IoTClient::ListThings(const ListThingsRequest& request) const
@@ -5617,14 +5617,14 @@ ListThingsOutcomeCallable IoTClient::ListThingsCallable(const ListThingsRequest&
   return task->get_future();
 }
 
-void IoTClient::ListThingsAsync(const ListThingsRequest& request, const ListThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListThingsAsyncHelper(IoTClient const * const clientThis, const ListThingsRequest& request, const ListThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThings(request), context);
 }
 
-void IoTClient::ListThingsAsyncHelper(const ListThingsRequest& request, const ListThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListThingsAsync(const ListThingsRequest& request, const ListThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListThingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThingsInBillingGroupOutcome IoTClient::ListThingsInBillingGroup(const ListThingsInBillingGroupRequest& request) const
@@ -5649,14 +5649,14 @@ ListThingsInBillingGroupOutcomeCallable IoTClient::ListThingsInBillingGroupCalla
   return task->get_future();
 }
 
-void IoTClient::ListThingsInBillingGroupAsync(const ListThingsInBillingGroupRequest& request, const ListThingsInBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListThingsInBillingGroupAsyncHelper(IoTClient const * const clientThis, const ListThingsInBillingGroupRequest& request, const ListThingsInBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThingsInBillingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThingsInBillingGroup(request), context);
 }
 
-void IoTClient::ListThingsInBillingGroupAsyncHelper(const ListThingsInBillingGroupRequest& request, const ListThingsInBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListThingsInBillingGroupAsync(const ListThingsInBillingGroupRequest& request, const ListThingsInBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThingsInBillingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListThingsInBillingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThingsInThingGroupOutcome IoTClient::ListThingsInThingGroup(const ListThingsInThingGroupRequest& request) const
@@ -5681,14 +5681,14 @@ ListThingsInThingGroupOutcomeCallable IoTClient::ListThingsInThingGroupCallable(
   return task->get_future();
 }
 
-void IoTClient::ListThingsInThingGroupAsync(const ListThingsInThingGroupRequest& request, const ListThingsInThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListThingsInThingGroupAsyncHelper(IoTClient const * const clientThis, const ListThingsInThingGroupRequest& request, const ListThingsInThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThingsInThingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThingsInThingGroup(request), context);
 }
 
-void IoTClient::ListThingsInThingGroupAsyncHelper(const ListThingsInThingGroupRequest& request, const ListThingsInThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListThingsInThingGroupAsync(const ListThingsInThingGroupRequest& request, const ListThingsInThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThingsInThingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListThingsInThingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTopicRuleDestinationsOutcome IoTClient::ListTopicRuleDestinations(const ListTopicRuleDestinationsRequest& request) const
@@ -5706,14 +5706,14 @@ ListTopicRuleDestinationsOutcomeCallable IoTClient::ListTopicRuleDestinationsCal
   return task->get_future();
 }
 
-void IoTClient::ListTopicRuleDestinationsAsync(const ListTopicRuleDestinationsRequest& request, const ListTopicRuleDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListTopicRuleDestinationsAsyncHelper(IoTClient const * const clientThis, const ListTopicRuleDestinationsRequest& request, const ListTopicRuleDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTopicRuleDestinationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTopicRuleDestinations(request), context);
 }
 
-void IoTClient::ListTopicRuleDestinationsAsyncHelper(const ListTopicRuleDestinationsRequest& request, const ListTopicRuleDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListTopicRuleDestinationsAsync(const ListTopicRuleDestinationsRequest& request, const ListTopicRuleDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTopicRuleDestinations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListTopicRuleDestinationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTopicRulesOutcome IoTClient::ListTopicRules(const ListTopicRulesRequest& request) const
@@ -5731,14 +5731,14 @@ ListTopicRulesOutcomeCallable IoTClient::ListTopicRulesCallable(const ListTopicR
   return task->get_future();
 }
 
-void IoTClient::ListTopicRulesAsync(const ListTopicRulesRequest& request, const ListTopicRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListTopicRulesAsyncHelper(IoTClient const * const clientThis, const ListTopicRulesRequest& request, const ListTopicRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTopicRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTopicRules(request), context);
 }
 
-void IoTClient::ListTopicRulesAsyncHelper(const ListTopicRulesRequest& request, const ListTopicRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListTopicRulesAsync(const ListTopicRulesRequest& request, const ListTopicRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTopicRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListTopicRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListV2LoggingLevelsOutcome IoTClient::ListV2LoggingLevels(const ListV2LoggingLevelsRequest& request) const
@@ -5756,14 +5756,14 @@ ListV2LoggingLevelsOutcomeCallable IoTClient::ListV2LoggingLevelsCallable(const 
   return task->get_future();
 }
 
-void IoTClient::ListV2LoggingLevelsAsync(const ListV2LoggingLevelsRequest& request, const ListV2LoggingLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListV2LoggingLevelsAsyncHelper(IoTClient const * const clientThis, const ListV2LoggingLevelsRequest& request, const ListV2LoggingLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListV2LoggingLevelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListV2LoggingLevels(request), context);
 }
 
-void IoTClient::ListV2LoggingLevelsAsyncHelper(const ListV2LoggingLevelsRequest& request, const ListV2LoggingLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListV2LoggingLevelsAsync(const ListV2LoggingLevelsRequest& request, const ListV2LoggingLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListV2LoggingLevels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListV2LoggingLevelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListViolationEventsOutcome IoTClient::ListViolationEvents(const ListViolationEventsRequest& request) const
@@ -5791,14 +5791,14 @@ ListViolationEventsOutcomeCallable IoTClient::ListViolationEventsCallable(const 
   return task->get_future();
 }
 
-void IoTClient::ListViolationEventsAsync(const ListViolationEventsRequest& request, const ListViolationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientListViolationEventsAsyncHelper(IoTClient const * const clientThis, const ListViolationEventsRequest& request, const ListViolationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListViolationEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListViolationEvents(request), context);
 }
 
-void IoTClient::ListViolationEventsAsyncHelper(const ListViolationEventsRequest& request, const ListViolationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ListViolationEventsAsync(const ListViolationEventsRequest& request, const ListViolationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListViolationEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientListViolationEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutVerificationStateOnViolationOutcome IoTClient::PutVerificationStateOnViolation(const PutVerificationStateOnViolationRequest& request) const
@@ -5822,14 +5822,14 @@ PutVerificationStateOnViolationOutcomeCallable IoTClient::PutVerificationStateOn
   return task->get_future();
 }
 
-void IoTClient::PutVerificationStateOnViolationAsync(const PutVerificationStateOnViolationRequest& request, const PutVerificationStateOnViolationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientPutVerificationStateOnViolationAsyncHelper(IoTClient const * const clientThis, const PutVerificationStateOnViolationRequest& request, const PutVerificationStateOnViolationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutVerificationStateOnViolationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutVerificationStateOnViolation(request), context);
 }
 
-void IoTClient::PutVerificationStateOnViolationAsyncHelper(const PutVerificationStateOnViolationRequest& request, const PutVerificationStateOnViolationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::PutVerificationStateOnViolationAsync(const PutVerificationStateOnViolationRequest& request, const PutVerificationStateOnViolationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutVerificationStateOnViolation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientPutVerificationStateOnViolationAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterCACertificateOutcome IoTClient::RegisterCACertificate(const RegisterCACertificateRequest& request) const
@@ -5847,14 +5847,14 @@ RegisterCACertificateOutcomeCallable IoTClient::RegisterCACertificateCallable(co
   return task->get_future();
 }
 
-void IoTClient::RegisterCACertificateAsync(const RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientRegisterCACertificateAsyncHelper(IoTClient const * const clientThis, const RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterCACertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterCACertificate(request), context);
 }
 
-void IoTClient::RegisterCACertificateAsyncHelper(const RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::RegisterCACertificateAsync(const RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterCACertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientRegisterCACertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterCertificateOutcome IoTClient::RegisterCertificate(const RegisterCertificateRequest& request) const
@@ -5872,14 +5872,14 @@ RegisterCertificateOutcomeCallable IoTClient::RegisterCertificateCallable(const 
   return task->get_future();
 }
 
-void IoTClient::RegisterCertificateAsync(const RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientRegisterCertificateAsyncHelper(IoTClient const * const clientThis, const RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterCertificate(request), context);
 }
 
-void IoTClient::RegisterCertificateAsyncHelper(const RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::RegisterCertificateAsync(const RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientRegisterCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterCertificateWithoutCAOutcome IoTClient::RegisterCertificateWithoutCA(const RegisterCertificateWithoutCARequest& request) const
@@ -5897,14 +5897,14 @@ RegisterCertificateWithoutCAOutcomeCallable IoTClient::RegisterCertificateWithou
   return task->get_future();
 }
 
-void IoTClient::RegisterCertificateWithoutCAAsync(const RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientRegisterCertificateWithoutCAAsyncHelper(IoTClient const * const clientThis, const RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterCertificateWithoutCAAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterCertificateWithoutCA(request), context);
 }
 
-void IoTClient::RegisterCertificateWithoutCAAsyncHelper(const RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::RegisterCertificateWithoutCAAsync(const RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterCertificateWithoutCA(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientRegisterCertificateWithoutCAAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterThingOutcome IoTClient::RegisterThing(const RegisterThingRequest& request) const
@@ -5922,14 +5922,14 @@ RegisterThingOutcomeCallable IoTClient::RegisterThingCallable(const RegisterThin
   return task->get_future();
 }
 
-void IoTClient::RegisterThingAsync(const RegisterThingRequest& request, const RegisterThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientRegisterThingAsyncHelper(IoTClient const * const clientThis, const RegisterThingRequest& request, const RegisterThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterThingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterThing(request), context);
 }
 
-void IoTClient::RegisterThingAsyncHelper(const RegisterThingRequest& request, const RegisterThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::RegisterThingAsync(const RegisterThingRequest& request, const RegisterThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterThing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientRegisterThingAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectCertificateTransferOutcome IoTClient::RejectCertificateTransfer(const RejectCertificateTransferRequest& request) const
@@ -5953,14 +5953,14 @@ RejectCertificateTransferOutcomeCallable IoTClient::RejectCertificateTransferCal
   return task->get_future();
 }
 
-void IoTClient::RejectCertificateTransferAsync(const RejectCertificateTransferRequest& request, const RejectCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientRejectCertificateTransferAsyncHelper(IoTClient const * const clientThis, const RejectCertificateTransferRequest& request, const RejectCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectCertificateTransferAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectCertificateTransfer(request), context);
 }
 
-void IoTClient::RejectCertificateTransferAsyncHelper(const RejectCertificateTransferRequest& request, const RejectCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::RejectCertificateTransferAsync(const RejectCertificateTransferRequest& request, const RejectCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectCertificateTransfer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientRejectCertificateTransferAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveThingFromBillingGroupOutcome IoTClient::RemoveThingFromBillingGroup(const RemoveThingFromBillingGroupRequest& request) const
@@ -5978,14 +5978,14 @@ RemoveThingFromBillingGroupOutcomeCallable IoTClient::RemoveThingFromBillingGrou
   return task->get_future();
 }
 
-void IoTClient::RemoveThingFromBillingGroupAsync(const RemoveThingFromBillingGroupRequest& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientRemoveThingFromBillingGroupAsyncHelper(IoTClient const * const clientThis, const RemoveThingFromBillingGroupRequest& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveThingFromBillingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveThingFromBillingGroup(request), context);
 }
 
-void IoTClient::RemoveThingFromBillingGroupAsyncHelper(const RemoveThingFromBillingGroupRequest& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::RemoveThingFromBillingGroupAsync(const RemoveThingFromBillingGroupRequest& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveThingFromBillingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientRemoveThingFromBillingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveThingFromThingGroupOutcome IoTClient::RemoveThingFromThingGroup(const RemoveThingFromThingGroupRequest& request) const
@@ -6003,14 +6003,14 @@ RemoveThingFromThingGroupOutcomeCallable IoTClient::RemoveThingFromThingGroupCal
   return task->get_future();
 }
 
-void IoTClient::RemoveThingFromThingGroupAsync(const RemoveThingFromThingGroupRequest& request, const RemoveThingFromThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientRemoveThingFromThingGroupAsyncHelper(IoTClient const * const clientThis, const RemoveThingFromThingGroupRequest& request, const RemoveThingFromThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveThingFromThingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveThingFromThingGroup(request), context);
 }
 
-void IoTClient::RemoveThingFromThingGroupAsyncHelper(const RemoveThingFromThingGroupRequest& request, const RemoveThingFromThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::RemoveThingFromThingGroupAsync(const RemoveThingFromThingGroupRequest& request, const RemoveThingFromThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveThingFromThingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientRemoveThingFromThingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ReplaceTopicRuleOutcome IoTClient::ReplaceTopicRule(const ReplaceTopicRuleRequest& request) const
@@ -6034,14 +6034,14 @@ ReplaceTopicRuleOutcomeCallable IoTClient::ReplaceTopicRuleCallable(const Replac
   return task->get_future();
 }
 
-void IoTClient::ReplaceTopicRuleAsync(const ReplaceTopicRuleRequest& request, const ReplaceTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientReplaceTopicRuleAsyncHelper(IoTClient const * const clientThis, const ReplaceTopicRuleRequest& request, const ReplaceTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReplaceTopicRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReplaceTopicRule(request), context);
 }
 
-void IoTClient::ReplaceTopicRuleAsyncHelper(const ReplaceTopicRuleRequest& request, const ReplaceTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ReplaceTopicRuleAsync(const ReplaceTopicRuleRequest& request, const ReplaceTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReplaceTopicRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientReplaceTopicRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchIndexOutcome IoTClient::SearchIndex(const SearchIndexRequest& request) const
@@ -6059,14 +6059,14 @@ SearchIndexOutcomeCallable IoTClient::SearchIndexCallable(const SearchIndexReque
   return task->get_future();
 }
 
-void IoTClient::SearchIndexAsync(const SearchIndexRequest& request, const SearchIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientSearchIndexAsyncHelper(IoTClient const * const clientThis, const SearchIndexRequest& request, const SearchIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchIndex(request), context);
 }
 
-void IoTClient::SearchIndexAsyncHelper(const SearchIndexRequest& request, const SearchIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::SearchIndexAsync(const SearchIndexRequest& request, const SearchIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientSearchIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 SetDefaultAuthorizerOutcome IoTClient::SetDefaultAuthorizer(const SetDefaultAuthorizerRequest& request) const
@@ -6084,14 +6084,14 @@ SetDefaultAuthorizerOutcomeCallable IoTClient::SetDefaultAuthorizerCallable(cons
   return task->get_future();
 }
 
-void IoTClient::SetDefaultAuthorizerAsync(const SetDefaultAuthorizerRequest& request, const SetDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientSetDefaultAuthorizerAsyncHelper(IoTClient const * const clientThis, const SetDefaultAuthorizerRequest& request, const SetDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetDefaultAuthorizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetDefaultAuthorizer(request), context);
 }
 
-void IoTClient::SetDefaultAuthorizerAsyncHelper(const SetDefaultAuthorizerRequest& request, const SetDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::SetDefaultAuthorizerAsync(const SetDefaultAuthorizerRequest& request, const SetDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetDefaultAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientSetDefaultAuthorizerAsyncHelper( this, request, handler, context ); } );
 }
 
 SetDefaultPolicyVersionOutcome IoTClient::SetDefaultPolicyVersion(const SetDefaultPolicyVersionRequest& request) const
@@ -6122,14 +6122,14 @@ SetDefaultPolicyVersionOutcomeCallable IoTClient::SetDefaultPolicyVersionCallabl
   return task->get_future();
 }
 
-void IoTClient::SetDefaultPolicyVersionAsync(const SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientSetDefaultPolicyVersionAsyncHelper(IoTClient const * const clientThis, const SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetDefaultPolicyVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetDefaultPolicyVersion(request), context);
 }
 
-void IoTClient::SetDefaultPolicyVersionAsyncHelper(const SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::SetDefaultPolicyVersionAsync(const SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetDefaultPolicyVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientSetDefaultPolicyVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 SetLoggingOptionsOutcome IoTClient::SetLoggingOptions(const SetLoggingOptionsRequest& request) const
@@ -6147,14 +6147,14 @@ SetLoggingOptionsOutcomeCallable IoTClient::SetLoggingOptionsCallable(const SetL
   return task->get_future();
 }
 
-void IoTClient::SetLoggingOptionsAsync(const SetLoggingOptionsRequest& request, const SetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientSetLoggingOptionsAsyncHelper(IoTClient const * const clientThis, const SetLoggingOptionsRequest& request, const SetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetLoggingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetLoggingOptions(request), context);
 }
 
-void IoTClient::SetLoggingOptionsAsyncHelper(const SetLoggingOptionsRequest& request, const SetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::SetLoggingOptionsAsync(const SetLoggingOptionsRequest& request, const SetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetLoggingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientSetLoggingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 SetV2LoggingLevelOutcome IoTClient::SetV2LoggingLevel(const SetV2LoggingLevelRequest& request) const
@@ -6172,14 +6172,14 @@ SetV2LoggingLevelOutcomeCallable IoTClient::SetV2LoggingLevelCallable(const SetV
   return task->get_future();
 }
 
-void IoTClient::SetV2LoggingLevelAsync(const SetV2LoggingLevelRequest& request, const SetV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientSetV2LoggingLevelAsyncHelper(IoTClient const * const clientThis, const SetV2LoggingLevelRequest& request, const SetV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetV2LoggingLevelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetV2LoggingLevel(request), context);
 }
 
-void IoTClient::SetV2LoggingLevelAsyncHelper(const SetV2LoggingLevelRequest& request, const SetV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::SetV2LoggingLevelAsync(const SetV2LoggingLevelRequest& request, const SetV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetV2LoggingLevel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientSetV2LoggingLevelAsyncHelper( this, request, handler, context ); } );
 }
 
 SetV2LoggingOptionsOutcome IoTClient::SetV2LoggingOptions(const SetV2LoggingOptionsRequest& request) const
@@ -6197,14 +6197,14 @@ SetV2LoggingOptionsOutcomeCallable IoTClient::SetV2LoggingOptionsCallable(const 
   return task->get_future();
 }
 
-void IoTClient::SetV2LoggingOptionsAsync(const SetV2LoggingOptionsRequest& request, const SetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientSetV2LoggingOptionsAsyncHelper(IoTClient const * const clientThis, const SetV2LoggingOptionsRequest& request, const SetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetV2LoggingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetV2LoggingOptions(request), context);
 }
 
-void IoTClient::SetV2LoggingOptionsAsyncHelper(const SetV2LoggingOptionsRequest& request, const SetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::SetV2LoggingOptionsAsync(const SetV2LoggingOptionsRequest& request, const SetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetV2LoggingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientSetV2LoggingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartAuditMitigationActionsTaskOutcome IoTClient::StartAuditMitigationActionsTask(const StartAuditMitigationActionsTaskRequest& request) const
@@ -6228,14 +6228,14 @@ StartAuditMitigationActionsTaskOutcomeCallable IoTClient::StartAuditMitigationAc
   return task->get_future();
 }
 
-void IoTClient::StartAuditMitigationActionsTaskAsync(const StartAuditMitigationActionsTaskRequest& request, const StartAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientStartAuditMitigationActionsTaskAsyncHelper(IoTClient const * const clientThis, const StartAuditMitigationActionsTaskRequest& request, const StartAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartAuditMitigationActionsTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartAuditMitigationActionsTask(request), context);
 }
 
-void IoTClient::StartAuditMitigationActionsTaskAsyncHelper(const StartAuditMitigationActionsTaskRequest& request, const StartAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::StartAuditMitigationActionsTaskAsync(const StartAuditMitigationActionsTaskRequest& request, const StartAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartAuditMitigationActionsTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientStartAuditMitigationActionsTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDetectMitigationActionsTaskOutcome IoTClient::StartDetectMitigationActionsTask(const StartDetectMitigationActionsTaskRequest& request) const
@@ -6259,14 +6259,14 @@ StartDetectMitigationActionsTaskOutcomeCallable IoTClient::StartDetectMitigation
   return task->get_future();
 }
 
-void IoTClient::StartDetectMitigationActionsTaskAsync(const StartDetectMitigationActionsTaskRequest& request, const StartDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientStartDetectMitigationActionsTaskAsyncHelper(IoTClient const * const clientThis, const StartDetectMitigationActionsTaskRequest& request, const StartDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDetectMitigationActionsTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDetectMitigationActionsTask(request), context);
 }
 
-void IoTClient::StartDetectMitigationActionsTaskAsyncHelper(const StartDetectMitigationActionsTaskRequest& request, const StartDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::StartDetectMitigationActionsTaskAsync(const StartDetectMitigationActionsTaskRequest& request, const StartDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDetectMitigationActionsTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientStartDetectMitigationActionsTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 StartOnDemandAuditTaskOutcome IoTClient::StartOnDemandAuditTask(const StartOnDemandAuditTaskRequest& request) const
@@ -6284,14 +6284,14 @@ StartOnDemandAuditTaskOutcomeCallable IoTClient::StartOnDemandAuditTaskCallable(
   return task->get_future();
 }
 
-void IoTClient::StartOnDemandAuditTaskAsync(const StartOnDemandAuditTaskRequest& request, const StartOnDemandAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientStartOnDemandAuditTaskAsyncHelper(IoTClient const * const clientThis, const StartOnDemandAuditTaskRequest& request, const StartOnDemandAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartOnDemandAuditTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartOnDemandAuditTask(request), context);
 }
 
-void IoTClient::StartOnDemandAuditTaskAsyncHelper(const StartOnDemandAuditTaskRequest& request, const StartOnDemandAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::StartOnDemandAuditTaskAsync(const StartOnDemandAuditTaskRequest& request, const StartOnDemandAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartOnDemandAuditTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientStartOnDemandAuditTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 StartThingRegistrationTaskOutcome IoTClient::StartThingRegistrationTask(const StartThingRegistrationTaskRequest& request) const
@@ -6309,14 +6309,14 @@ StartThingRegistrationTaskOutcomeCallable IoTClient::StartThingRegistrationTaskC
   return task->get_future();
 }
 
-void IoTClient::StartThingRegistrationTaskAsync(const StartThingRegistrationTaskRequest& request, const StartThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientStartThingRegistrationTaskAsyncHelper(IoTClient const * const clientThis, const StartThingRegistrationTaskRequest& request, const StartThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartThingRegistrationTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartThingRegistrationTask(request), context);
 }
 
-void IoTClient::StartThingRegistrationTaskAsyncHelper(const StartThingRegistrationTaskRequest& request, const StartThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::StartThingRegistrationTaskAsync(const StartThingRegistrationTaskRequest& request, const StartThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartThingRegistrationTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientStartThingRegistrationTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 StopThingRegistrationTaskOutcome IoTClient::StopThingRegistrationTask(const StopThingRegistrationTaskRequest& request) const
@@ -6341,14 +6341,14 @@ StopThingRegistrationTaskOutcomeCallable IoTClient::StopThingRegistrationTaskCal
   return task->get_future();
 }
 
-void IoTClient::StopThingRegistrationTaskAsync(const StopThingRegistrationTaskRequest& request, const StopThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientStopThingRegistrationTaskAsyncHelper(IoTClient const * const clientThis, const StopThingRegistrationTaskRequest& request, const StopThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopThingRegistrationTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopThingRegistrationTask(request), context);
 }
 
-void IoTClient::StopThingRegistrationTaskAsyncHelper(const StopThingRegistrationTaskRequest& request, const StopThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::StopThingRegistrationTaskAsync(const StopThingRegistrationTaskRequest& request, const StopThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopThingRegistrationTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientStopThingRegistrationTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome IoTClient::TagResource(const TagResourceRequest& request) const
@@ -6366,14 +6366,14 @@ TagResourceOutcomeCallable IoTClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void IoTClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientTagResourceAsyncHelper(IoTClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void IoTClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TestAuthorizationOutcome IoTClient::TestAuthorization(const TestAuthorizationRequest& request) const
@@ -6391,14 +6391,14 @@ TestAuthorizationOutcomeCallable IoTClient::TestAuthorizationCallable(const Test
   return task->get_future();
 }
 
-void IoTClient::TestAuthorizationAsync(const TestAuthorizationRequest& request, const TestAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientTestAuthorizationAsyncHelper(IoTClient const * const clientThis, const TestAuthorizationRequest& request, const TestAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestAuthorizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestAuthorization(request), context);
 }
 
-void IoTClient::TestAuthorizationAsyncHelper(const TestAuthorizationRequest& request, const TestAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::TestAuthorizationAsync(const TestAuthorizationRequest& request, const TestAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientTestAuthorizationAsyncHelper( this, request, handler, context ); } );
 }
 
 TestInvokeAuthorizerOutcome IoTClient::TestInvokeAuthorizer(const TestInvokeAuthorizerRequest& request) const
@@ -6423,14 +6423,14 @@ TestInvokeAuthorizerOutcomeCallable IoTClient::TestInvokeAuthorizerCallable(cons
   return task->get_future();
 }
 
-void IoTClient::TestInvokeAuthorizerAsync(const TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientTestInvokeAuthorizerAsyncHelper(IoTClient const * const clientThis, const TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestInvokeAuthorizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestInvokeAuthorizer(request), context);
 }
 
-void IoTClient::TestInvokeAuthorizerAsyncHelper(const TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::TestInvokeAuthorizerAsync(const TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestInvokeAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientTestInvokeAuthorizerAsyncHelper( this, request, handler, context ); } );
 }
 
 TransferCertificateOutcome IoTClient::TransferCertificate(const TransferCertificateRequest& request) const
@@ -6459,14 +6459,14 @@ TransferCertificateOutcomeCallable IoTClient::TransferCertificateCallable(const 
   return task->get_future();
 }
 
-void IoTClient::TransferCertificateAsync(const TransferCertificateRequest& request, const TransferCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientTransferCertificateAsyncHelper(IoTClient const * const clientThis, const TransferCertificateRequest& request, const TransferCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TransferCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TransferCertificate(request), context);
 }
 
-void IoTClient::TransferCertificateAsyncHelper(const TransferCertificateRequest& request, const TransferCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::TransferCertificateAsync(const TransferCertificateRequest& request, const TransferCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TransferCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientTransferCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome IoTClient::UntagResource(const UntagResourceRequest& request) const
@@ -6484,14 +6484,14 @@ UntagResourceOutcomeCallable IoTClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void IoTClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUntagResourceAsyncHelper(IoTClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void IoTClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAccountAuditConfigurationOutcome IoTClient::UpdateAccountAuditConfiguration(const UpdateAccountAuditConfigurationRequest& request) const
@@ -6509,14 +6509,14 @@ UpdateAccountAuditConfigurationOutcomeCallable IoTClient::UpdateAccountAuditConf
   return task->get_future();
 }
 
-void IoTClient::UpdateAccountAuditConfigurationAsync(const UpdateAccountAuditConfigurationRequest& request, const UpdateAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateAccountAuditConfigurationAsyncHelper(IoTClient const * const clientThis, const UpdateAccountAuditConfigurationRequest& request, const UpdateAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccountAuditConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAccountAuditConfiguration(request), context);
 }
 
-void IoTClient::UpdateAccountAuditConfigurationAsyncHelper(const UpdateAccountAuditConfigurationRequest& request, const UpdateAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateAccountAuditConfigurationAsync(const UpdateAccountAuditConfigurationRequest& request, const UpdateAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAccountAuditConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateAccountAuditConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAuditSuppressionOutcome IoTClient::UpdateAuditSuppression(const UpdateAuditSuppressionRequest& request) const
@@ -6534,14 +6534,14 @@ UpdateAuditSuppressionOutcomeCallable IoTClient::UpdateAuditSuppressionCallable(
   return task->get_future();
 }
 
-void IoTClient::UpdateAuditSuppressionAsync(const UpdateAuditSuppressionRequest& request, const UpdateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateAuditSuppressionAsyncHelper(IoTClient const * const clientThis, const UpdateAuditSuppressionRequest& request, const UpdateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAuditSuppressionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAuditSuppression(request), context);
 }
 
-void IoTClient::UpdateAuditSuppressionAsyncHelper(const UpdateAuditSuppressionRequest& request, const UpdateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateAuditSuppressionAsync(const UpdateAuditSuppressionRequest& request, const UpdateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAuditSuppression(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateAuditSuppressionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAuthorizerOutcome IoTClient::UpdateAuthorizer(const UpdateAuthorizerRequest& request) const
@@ -6565,14 +6565,14 @@ UpdateAuthorizerOutcomeCallable IoTClient::UpdateAuthorizerCallable(const Update
   return task->get_future();
 }
 
-void IoTClient::UpdateAuthorizerAsync(const UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateAuthorizerAsyncHelper(IoTClient const * const clientThis, const UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAuthorizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAuthorizer(request), context);
 }
 
-void IoTClient::UpdateAuthorizerAsyncHelper(const UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateAuthorizerAsync(const UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateAuthorizerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBillingGroupOutcome IoTClient::UpdateBillingGroup(const UpdateBillingGroupRequest& request) const
@@ -6596,14 +6596,14 @@ UpdateBillingGroupOutcomeCallable IoTClient::UpdateBillingGroupCallable(const Up
   return task->get_future();
 }
 
-void IoTClient::UpdateBillingGroupAsync(const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateBillingGroupAsyncHelper(IoTClient const * const clientThis, const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBillingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBillingGroup(request), context);
 }
 
-void IoTClient::UpdateBillingGroupAsyncHelper(const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateBillingGroupAsync(const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBillingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateBillingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCACertificateOutcome IoTClient::UpdateCACertificate(const UpdateCACertificateRequest& request) const
@@ -6627,14 +6627,14 @@ UpdateCACertificateOutcomeCallable IoTClient::UpdateCACertificateCallable(const 
   return task->get_future();
 }
 
-void IoTClient::UpdateCACertificateAsync(const UpdateCACertificateRequest& request, const UpdateCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateCACertificateAsyncHelper(IoTClient const * const clientThis, const UpdateCACertificateRequest& request, const UpdateCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCACertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCACertificate(request), context);
 }
 
-void IoTClient::UpdateCACertificateAsyncHelper(const UpdateCACertificateRequest& request, const UpdateCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateCACertificateAsync(const UpdateCACertificateRequest& request, const UpdateCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCACertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateCACertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCertificateOutcome IoTClient::UpdateCertificate(const UpdateCertificateRequest& request) const
@@ -6663,14 +6663,14 @@ UpdateCertificateOutcomeCallable IoTClient::UpdateCertificateCallable(const Upda
   return task->get_future();
 }
 
-void IoTClient::UpdateCertificateAsync(const UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateCertificateAsyncHelper(IoTClient const * const clientThis, const UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCertificate(request), context);
 }
 
-void IoTClient::UpdateCertificateAsyncHelper(const UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateCertificateAsync(const UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCustomMetricOutcome IoTClient::UpdateCustomMetric(const UpdateCustomMetricRequest& request) const
@@ -6694,14 +6694,14 @@ UpdateCustomMetricOutcomeCallable IoTClient::UpdateCustomMetricCallable(const Up
   return task->get_future();
 }
 
-void IoTClient::UpdateCustomMetricAsync(const UpdateCustomMetricRequest& request, const UpdateCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateCustomMetricAsyncHelper(IoTClient const * const clientThis, const UpdateCustomMetricRequest& request, const UpdateCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCustomMetricAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCustomMetric(request), context);
 }
 
-void IoTClient::UpdateCustomMetricAsyncHelper(const UpdateCustomMetricRequest& request, const UpdateCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateCustomMetricAsync(const UpdateCustomMetricRequest& request, const UpdateCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCustomMetric(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateCustomMetricAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDimensionOutcome IoTClient::UpdateDimension(const UpdateDimensionRequest& request) const
@@ -6725,14 +6725,14 @@ UpdateDimensionOutcomeCallable IoTClient::UpdateDimensionCallable(const UpdateDi
   return task->get_future();
 }
 
-void IoTClient::UpdateDimensionAsync(const UpdateDimensionRequest& request, const UpdateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateDimensionAsyncHelper(IoTClient const * const clientThis, const UpdateDimensionRequest& request, const UpdateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDimensionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDimension(request), context);
 }
 
-void IoTClient::UpdateDimensionAsyncHelper(const UpdateDimensionRequest& request, const UpdateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateDimensionAsync(const UpdateDimensionRequest& request, const UpdateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDimension(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateDimensionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainConfigurationOutcome IoTClient::UpdateDomainConfiguration(const UpdateDomainConfigurationRequest& request) const
@@ -6756,14 +6756,14 @@ UpdateDomainConfigurationOutcomeCallable IoTClient::UpdateDomainConfigurationCal
   return task->get_future();
 }
 
-void IoTClient::UpdateDomainConfigurationAsync(const UpdateDomainConfigurationRequest& request, const UpdateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateDomainConfigurationAsyncHelper(IoTClient const * const clientThis, const UpdateDomainConfigurationRequest& request, const UpdateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomainConfiguration(request), context);
 }
 
-void IoTClient::UpdateDomainConfigurationAsyncHelper(const UpdateDomainConfigurationRequest& request, const UpdateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateDomainConfigurationAsync(const UpdateDomainConfigurationRequest& request, const UpdateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomainConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateDomainConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDynamicThingGroupOutcome IoTClient::UpdateDynamicThingGroup(const UpdateDynamicThingGroupRequest& request) const
@@ -6787,14 +6787,14 @@ UpdateDynamicThingGroupOutcomeCallable IoTClient::UpdateDynamicThingGroupCallabl
   return task->get_future();
 }
 
-void IoTClient::UpdateDynamicThingGroupAsync(const UpdateDynamicThingGroupRequest& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateDynamicThingGroupAsyncHelper(IoTClient const * const clientThis, const UpdateDynamicThingGroupRequest& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDynamicThingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDynamicThingGroup(request), context);
 }
 
-void IoTClient::UpdateDynamicThingGroupAsyncHelper(const UpdateDynamicThingGroupRequest& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateDynamicThingGroupAsync(const UpdateDynamicThingGroupRequest& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDynamicThingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateDynamicThingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEventConfigurationsOutcome IoTClient::UpdateEventConfigurations(const UpdateEventConfigurationsRequest& request) const
@@ -6812,14 +6812,14 @@ UpdateEventConfigurationsOutcomeCallable IoTClient::UpdateEventConfigurationsCal
   return task->get_future();
 }
 
-void IoTClient::UpdateEventConfigurationsAsync(const UpdateEventConfigurationsRequest& request, const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateEventConfigurationsAsyncHelper(IoTClient const * const clientThis, const UpdateEventConfigurationsRequest& request, const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEventConfigurations(request), context);
 }
 
-void IoTClient::UpdateEventConfigurationsAsyncHelper(const UpdateEventConfigurationsRequest& request, const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateEventConfigurationsAsync(const UpdateEventConfigurationsRequest& request, const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEventConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateEventConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFleetMetricOutcome IoTClient::UpdateFleetMetric(const UpdateFleetMetricRequest& request) const
@@ -6843,14 +6843,14 @@ UpdateFleetMetricOutcomeCallable IoTClient::UpdateFleetMetricCallable(const Upda
   return task->get_future();
 }
 
-void IoTClient::UpdateFleetMetricAsync(const UpdateFleetMetricRequest& request, const UpdateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateFleetMetricAsyncHelper(IoTClient const * const clientThis, const UpdateFleetMetricRequest& request, const UpdateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFleetMetricAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFleetMetric(request), context);
 }
 
-void IoTClient::UpdateFleetMetricAsyncHelper(const UpdateFleetMetricRequest& request, const UpdateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateFleetMetricAsync(const UpdateFleetMetricRequest& request, const UpdateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFleetMetric(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateFleetMetricAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateIndexingConfigurationOutcome IoTClient::UpdateIndexingConfiguration(const UpdateIndexingConfigurationRequest& request) const
@@ -6868,14 +6868,14 @@ UpdateIndexingConfigurationOutcomeCallable IoTClient::UpdateIndexingConfiguratio
   return task->get_future();
 }
 
-void IoTClient::UpdateIndexingConfigurationAsync(const UpdateIndexingConfigurationRequest& request, const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateIndexingConfigurationAsyncHelper(IoTClient const * const clientThis, const UpdateIndexingConfigurationRequest& request, const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIndexingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateIndexingConfiguration(request), context);
 }
 
-void IoTClient::UpdateIndexingConfigurationAsyncHelper(const UpdateIndexingConfigurationRequest& request, const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateIndexingConfigurationAsync(const UpdateIndexingConfigurationRequest& request, const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateIndexingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateIndexingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateJobOutcome IoTClient::UpdateJob(const UpdateJobRequest& request) const
@@ -6899,14 +6899,14 @@ UpdateJobOutcomeCallable IoTClient::UpdateJobCallable(const UpdateJobRequest& re
   return task->get_future();
 }
 
-void IoTClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateJobAsyncHelper(IoTClient const * const clientThis, const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateJob(request), context);
 }
 
-void IoTClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMitigationActionOutcome IoTClient::UpdateMitigationAction(const UpdateMitigationActionRequest& request) const
@@ -6930,14 +6930,14 @@ UpdateMitigationActionOutcomeCallable IoTClient::UpdateMitigationActionCallable(
   return task->get_future();
 }
 
-void IoTClient::UpdateMitigationActionAsync(const UpdateMitigationActionRequest& request, const UpdateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateMitigationActionAsyncHelper(IoTClient const * const clientThis, const UpdateMitigationActionRequest& request, const UpdateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMitigationActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMitigationAction(request), context);
 }
 
-void IoTClient::UpdateMitigationActionAsyncHelper(const UpdateMitigationActionRequest& request, const UpdateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateMitigationActionAsync(const UpdateMitigationActionRequest& request, const UpdateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMitigationAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateMitigationActionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProvisioningTemplateOutcome IoTClient::UpdateProvisioningTemplate(const UpdateProvisioningTemplateRequest& request) const
@@ -6961,14 +6961,14 @@ UpdateProvisioningTemplateOutcomeCallable IoTClient::UpdateProvisioningTemplateC
   return task->get_future();
 }
 
-void IoTClient::UpdateProvisioningTemplateAsync(const UpdateProvisioningTemplateRequest& request, const UpdateProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateProvisioningTemplateAsyncHelper(IoTClient const * const clientThis, const UpdateProvisioningTemplateRequest& request, const UpdateProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProvisioningTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProvisioningTemplate(request), context);
 }
 
-void IoTClient::UpdateProvisioningTemplateAsyncHelper(const UpdateProvisioningTemplateRequest& request, const UpdateProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateProvisioningTemplateAsync(const UpdateProvisioningTemplateRequest& request, const UpdateProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProvisioningTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateProvisioningTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRoleAliasOutcome IoTClient::UpdateRoleAlias(const UpdateRoleAliasRequest& request) const
@@ -6992,14 +6992,14 @@ UpdateRoleAliasOutcomeCallable IoTClient::UpdateRoleAliasCallable(const UpdateRo
   return task->get_future();
 }
 
-void IoTClient::UpdateRoleAliasAsync(const UpdateRoleAliasRequest& request, const UpdateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateRoleAliasAsyncHelper(IoTClient const * const clientThis, const UpdateRoleAliasRequest& request, const UpdateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoleAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRoleAlias(request), context);
 }
 
-void IoTClient::UpdateRoleAliasAsyncHelper(const UpdateRoleAliasRequest& request, const UpdateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateRoleAliasAsync(const UpdateRoleAliasRequest& request, const UpdateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRoleAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateRoleAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateScheduledAuditOutcome IoTClient::UpdateScheduledAudit(const UpdateScheduledAuditRequest& request) const
@@ -7023,14 +7023,14 @@ UpdateScheduledAuditOutcomeCallable IoTClient::UpdateScheduledAuditCallable(cons
   return task->get_future();
 }
 
-void IoTClient::UpdateScheduledAuditAsync(const UpdateScheduledAuditRequest& request, const UpdateScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateScheduledAuditAsyncHelper(IoTClient const * const clientThis, const UpdateScheduledAuditRequest& request, const UpdateScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateScheduledAuditAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateScheduledAudit(request), context);
 }
 
-void IoTClient::UpdateScheduledAuditAsyncHelper(const UpdateScheduledAuditRequest& request, const UpdateScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateScheduledAuditAsync(const UpdateScheduledAuditRequest& request, const UpdateScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateScheduledAudit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateScheduledAuditAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSecurityProfileOutcome IoTClient::UpdateSecurityProfile(const UpdateSecurityProfileRequest& request) const
@@ -7054,14 +7054,14 @@ UpdateSecurityProfileOutcomeCallable IoTClient::UpdateSecurityProfileCallable(co
   return task->get_future();
 }
 
-void IoTClient::UpdateSecurityProfileAsync(const UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateSecurityProfileAsyncHelper(IoTClient const * const clientThis, const UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecurityProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSecurityProfile(request), context);
 }
 
-void IoTClient::UpdateSecurityProfileAsyncHelper(const UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateSecurityProfileAsync(const UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateSecurityProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateStreamOutcome IoTClient::UpdateStream(const UpdateStreamRequest& request) const
@@ -7085,14 +7085,14 @@ UpdateStreamOutcomeCallable IoTClient::UpdateStreamCallable(const UpdateStreamRe
   return task->get_future();
 }
 
-void IoTClient::UpdateStreamAsync(const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateStreamAsyncHelper(IoTClient const * const clientThis, const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateStream(request), context);
 }
 
-void IoTClient::UpdateStreamAsyncHelper(const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateStreamAsync(const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateThingOutcome IoTClient::UpdateThing(const UpdateThingRequest& request) const
@@ -7116,14 +7116,14 @@ UpdateThingOutcomeCallable IoTClient::UpdateThingCallable(const UpdateThingReque
   return task->get_future();
 }
 
-void IoTClient::UpdateThingAsync(const UpdateThingRequest& request, const UpdateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateThingAsyncHelper(IoTClient const * const clientThis, const UpdateThingRequest& request, const UpdateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateThing(request), context);
 }
 
-void IoTClient::UpdateThingAsyncHelper(const UpdateThingRequest& request, const UpdateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateThingAsync(const UpdateThingRequest& request, const UpdateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateThing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateThingAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateThingGroupOutcome IoTClient::UpdateThingGroup(const UpdateThingGroupRequest& request) const
@@ -7147,14 +7147,14 @@ UpdateThingGroupOutcomeCallable IoTClient::UpdateThingGroupCallable(const Update
   return task->get_future();
 }
 
-void IoTClient::UpdateThingGroupAsync(const UpdateThingGroupRequest& request, const UpdateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateThingGroupAsyncHelper(IoTClient const * const clientThis, const UpdateThingGroupRequest& request, const UpdateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateThingGroup(request), context);
 }
 
-void IoTClient::UpdateThingGroupAsyncHelper(const UpdateThingGroupRequest& request, const UpdateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateThingGroupAsync(const UpdateThingGroupRequest& request, const UpdateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateThingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateThingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateThingGroupsForThingOutcome IoTClient::UpdateThingGroupsForThing(const UpdateThingGroupsForThingRequest& request) const
@@ -7172,14 +7172,14 @@ UpdateThingGroupsForThingOutcomeCallable IoTClient::UpdateThingGroupsForThingCal
   return task->get_future();
 }
 
-void IoTClient::UpdateThingGroupsForThingAsync(const UpdateThingGroupsForThingRequest& request, const UpdateThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateThingGroupsForThingAsyncHelper(IoTClient const * const clientThis, const UpdateThingGroupsForThingRequest& request, const UpdateThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThingGroupsForThingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateThingGroupsForThing(request), context);
 }
 
-void IoTClient::UpdateThingGroupsForThingAsyncHelper(const UpdateThingGroupsForThingRequest& request, const UpdateThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateThingGroupsForThingAsync(const UpdateThingGroupsForThingRequest& request, const UpdateThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateThingGroupsForThing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateThingGroupsForThingAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTopicRuleDestinationOutcome IoTClient::UpdateTopicRuleDestination(const UpdateTopicRuleDestinationRequest& request) const
@@ -7197,14 +7197,14 @@ UpdateTopicRuleDestinationOutcomeCallable IoTClient::UpdateTopicRuleDestinationC
   return task->get_future();
 }
 
-void IoTClient::UpdateTopicRuleDestinationAsync(const UpdateTopicRuleDestinationRequest& request, const UpdateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientUpdateTopicRuleDestinationAsyncHelper(IoTClient const * const clientThis, const UpdateTopicRuleDestinationRequest& request, const UpdateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTopicRuleDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTopicRuleDestination(request), context);
 }
 
-void IoTClient::UpdateTopicRuleDestinationAsyncHelper(const UpdateTopicRuleDestinationRequest& request, const UpdateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::UpdateTopicRuleDestinationAsync(const UpdateTopicRuleDestinationRequest& request, const UpdateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTopicRuleDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientUpdateTopicRuleDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 ValidateSecurityProfileBehaviorsOutcome IoTClient::ValidateSecurityProfileBehaviors(const ValidateSecurityProfileBehaviorsRequest& request) const
@@ -7222,13 +7222,13 @@ ValidateSecurityProfileBehaviorsOutcomeCallable IoTClient::ValidateSecurityProfi
   return task->get_future();
 }
 
-void IoTClient::ValidateSecurityProfileBehaviorsAsync(const ValidateSecurityProfileBehaviorsRequest& request, const ValidateSecurityProfileBehaviorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClientValidateSecurityProfileBehaviorsAsyncHelper(IoTClient const * const clientThis, const ValidateSecurityProfileBehaviorsRequest& request, const ValidateSecurityProfileBehaviorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ValidateSecurityProfileBehaviorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ValidateSecurityProfileBehaviors(request), context);
 }
 
-void IoTClient::ValidateSecurityProfileBehaviorsAsyncHelper(const ValidateSecurityProfileBehaviorsRequest& request, const ValidateSecurityProfileBehaviorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::ValidateSecurityProfileBehaviorsAsync(const ValidateSecurityProfileBehaviorsRequest& request, const ValidateSecurityProfileBehaviorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ValidateSecurityProfileBehaviors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTClientValidateSecurityProfileBehaviorsAsyncHelper( this, request, handler, context ); } );
 }
 

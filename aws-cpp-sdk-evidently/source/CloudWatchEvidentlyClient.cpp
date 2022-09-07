@@ -178,14 +178,14 @@ BatchEvaluateFeatureOutcomeCallable CloudWatchEvidentlyClient::BatchEvaluateFeat
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::BatchEvaluateFeatureAsync(const BatchEvaluateFeatureRequest& request, const BatchEvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientBatchEvaluateFeatureAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const BatchEvaluateFeatureRequest& request, const BatchEvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchEvaluateFeatureAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchEvaluateFeature(request), context);
 }
 
-void CloudWatchEvidentlyClient::BatchEvaluateFeatureAsyncHelper(const BatchEvaluateFeatureRequest& request, const BatchEvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::BatchEvaluateFeatureAsync(const BatchEvaluateFeatureRequest& request, const BatchEvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchEvaluateFeature(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientBatchEvaluateFeatureAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExperimentOutcome CloudWatchEvidentlyClient::CreateExperiment(const CreateExperimentRequest& request) const
@@ -210,14 +210,14 @@ CreateExperimentOutcomeCallable CloudWatchEvidentlyClient::CreateExperimentCalla
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::CreateExperimentAsync(const CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientCreateExperimentAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExperimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExperiment(request), context);
 }
 
-void CloudWatchEvidentlyClient::CreateExperimentAsyncHelper(const CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::CreateExperimentAsync(const CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientCreateExperimentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFeatureOutcome CloudWatchEvidentlyClient::CreateFeature(const CreateFeatureRequest& request) const
@@ -242,14 +242,14 @@ CreateFeatureOutcomeCallable CloudWatchEvidentlyClient::CreateFeatureCallable(co
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::CreateFeatureAsync(const CreateFeatureRequest& request, const CreateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientCreateFeatureAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const CreateFeatureRequest& request, const CreateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFeatureAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFeature(request), context);
 }
 
-void CloudWatchEvidentlyClient::CreateFeatureAsyncHelper(const CreateFeatureRequest& request, const CreateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::CreateFeatureAsync(const CreateFeatureRequest& request, const CreateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFeature(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientCreateFeatureAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLaunchOutcome CloudWatchEvidentlyClient::CreateLaunch(const CreateLaunchRequest& request) const
@@ -274,14 +274,14 @@ CreateLaunchOutcomeCallable CloudWatchEvidentlyClient::CreateLaunchCallable(cons
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::CreateLaunchAsync(const CreateLaunchRequest& request, const CreateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientCreateLaunchAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const CreateLaunchRequest& request, const CreateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLaunchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLaunch(request), context);
 }
 
-void CloudWatchEvidentlyClient::CreateLaunchAsyncHelper(const CreateLaunchRequest& request, const CreateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::CreateLaunchAsync(const CreateLaunchRequest& request, const CreateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLaunch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientCreateLaunchAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProjectOutcome CloudWatchEvidentlyClient::CreateProject(const CreateProjectRequest& request) const
@@ -299,14 +299,14 @@ CreateProjectOutcomeCallable CloudWatchEvidentlyClient::CreateProjectCallable(co
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientCreateProjectAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProject(request), context);
 }
 
-void CloudWatchEvidentlyClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientCreateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSegmentOutcome CloudWatchEvidentlyClient::CreateSegment(const CreateSegmentRequest& request) const
@@ -324,14 +324,14 @@ CreateSegmentOutcomeCallable CloudWatchEvidentlyClient::CreateSegmentCallable(co
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::CreateSegmentAsync(const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientCreateSegmentAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSegmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSegment(request), context);
 }
 
-void CloudWatchEvidentlyClient::CreateSegmentAsyncHelper(const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::CreateSegmentAsync(const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSegment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientCreateSegmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteExperimentOutcome CloudWatchEvidentlyClient::DeleteExperiment(const DeleteExperimentRequest& request) const
@@ -362,14 +362,14 @@ DeleteExperimentOutcomeCallable CloudWatchEvidentlyClient::DeleteExperimentCalla
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::DeleteExperimentAsync(const DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientDeleteExperimentAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExperimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteExperiment(request), context);
 }
 
-void CloudWatchEvidentlyClient::DeleteExperimentAsyncHelper(const DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::DeleteExperimentAsync(const DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientDeleteExperimentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFeatureOutcome CloudWatchEvidentlyClient::DeleteFeature(const DeleteFeatureRequest& request) const
@@ -400,14 +400,14 @@ DeleteFeatureOutcomeCallable CloudWatchEvidentlyClient::DeleteFeatureCallable(co
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::DeleteFeatureAsync(const DeleteFeatureRequest& request, const DeleteFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientDeleteFeatureAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const DeleteFeatureRequest& request, const DeleteFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFeatureAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFeature(request), context);
 }
 
-void CloudWatchEvidentlyClient::DeleteFeatureAsyncHelper(const DeleteFeatureRequest& request, const DeleteFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::DeleteFeatureAsync(const DeleteFeatureRequest& request, const DeleteFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFeature(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientDeleteFeatureAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLaunchOutcome CloudWatchEvidentlyClient::DeleteLaunch(const DeleteLaunchRequest& request) const
@@ -438,14 +438,14 @@ DeleteLaunchOutcomeCallable CloudWatchEvidentlyClient::DeleteLaunchCallable(cons
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::DeleteLaunchAsync(const DeleteLaunchRequest& request, const DeleteLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientDeleteLaunchAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const DeleteLaunchRequest& request, const DeleteLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLaunchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLaunch(request), context);
 }
 
-void CloudWatchEvidentlyClient::DeleteLaunchAsyncHelper(const DeleteLaunchRequest& request, const DeleteLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::DeleteLaunchAsync(const DeleteLaunchRequest& request, const DeleteLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLaunch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientDeleteLaunchAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProjectOutcome CloudWatchEvidentlyClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -469,14 +469,14 @@ DeleteProjectOutcomeCallable CloudWatchEvidentlyClient::DeleteProjectCallable(co
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientDeleteProjectAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProject(request), context);
 }
 
-void CloudWatchEvidentlyClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientDeleteProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSegmentOutcome CloudWatchEvidentlyClient::DeleteSegment(const DeleteSegmentRequest& request) const
@@ -500,14 +500,14 @@ DeleteSegmentOutcomeCallable CloudWatchEvidentlyClient::DeleteSegmentCallable(co
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::DeleteSegmentAsync(const DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientDeleteSegmentAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSegmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSegment(request), context);
 }
 
-void CloudWatchEvidentlyClient::DeleteSegmentAsyncHelper(const DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::DeleteSegmentAsync(const DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSegment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientDeleteSegmentAsyncHelper( this, request, handler, context ); } );
 }
 
 EvaluateFeatureOutcome CloudWatchEvidentlyClient::EvaluateFeature(const EvaluateFeatureRequest& request) const
@@ -547,14 +547,14 @@ EvaluateFeatureOutcomeCallable CloudWatchEvidentlyClient::EvaluateFeatureCallabl
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::EvaluateFeatureAsync(const EvaluateFeatureRequest& request, const EvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientEvaluateFeatureAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const EvaluateFeatureRequest& request, const EvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EvaluateFeatureAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EvaluateFeature(request), context);
 }
 
-void CloudWatchEvidentlyClient::EvaluateFeatureAsyncHelper(const EvaluateFeatureRequest& request, const EvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::EvaluateFeatureAsync(const EvaluateFeatureRequest& request, const EvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EvaluateFeature(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientEvaluateFeatureAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExperimentOutcome CloudWatchEvidentlyClient::GetExperiment(const GetExperimentRequest& request) const
@@ -585,14 +585,14 @@ GetExperimentOutcomeCallable CloudWatchEvidentlyClient::GetExperimentCallable(co
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::GetExperimentAsync(const GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientGetExperimentAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExperimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExperiment(request), context);
 }
 
-void CloudWatchEvidentlyClient::GetExperimentAsyncHelper(const GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::GetExperimentAsync(const GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientGetExperimentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExperimentResultsOutcome CloudWatchEvidentlyClient::GetExperimentResults(const GetExperimentResultsRequest& request) const
@@ -624,14 +624,14 @@ GetExperimentResultsOutcomeCallable CloudWatchEvidentlyClient::GetExperimentResu
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::GetExperimentResultsAsync(const GetExperimentResultsRequest& request, const GetExperimentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientGetExperimentResultsAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const GetExperimentResultsRequest& request, const GetExperimentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExperimentResultsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExperimentResults(request), context);
 }
 
-void CloudWatchEvidentlyClient::GetExperimentResultsAsyncHelper(const GetExperimentResultsRequest& request, const GetExperimentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::GetExperimentResultsAsync(const GetExperimentResultsRequest& request, const GetExperimentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExperimentResults(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientGetExperimentResultsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFeatureOutcome CloudWatchEvidentlyClient::GetFeature(const GetFeatureRequest& request) const
@@ -662,14 +662,14 @@ GetFeatureOutcomeCallable CloudWatchEvidentlyClient::GetFeatureCallable(const Ge
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::GetFeatureAsync(const GetFeatureRequest& request, const GetFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientGetFeatureAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const GetFeatureRequest& request, const GetFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFeatureAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFeature(request), context);
 }
 
-void CloudWatchEvidentlyClient::GetFeatureAsyncHelper(const GetFeatureRequest& request, const GetFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::GetFeatureAsync(const GetFeatureRequest& request, const GetFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFeature(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientGetFeatureAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLaunchOutcome CloudWatchEvidentlyClient::GetLaunch(const GetLaunchRequest& request) const
@@ -700,14 +700,14 @@ GetLaunchOutcomeCallable CloudWatchEvidentlyClient::GetLaunchCallable(const GetL
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::GetLaunchAsync(const GetLaunchRequest& request, const GetLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientGetLaunchAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const GetLaunchRequest& request, const GetLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLaunchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLaunch(request), context);
 }
 
-void CloudWatchEvidentlyClient::GetLaunchAsyncHelper(const GetLaunchRequest& request, const GetLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::GetLaunchAsync(const GetLaunchRequest& request, const GetLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLaunch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientGetLaunchAsyncHelper( this, request, handler, context ); } );
 }
 
 GetProjectOutcome CloudWatchEvidentlyClient::GetProject(const GetProjectRequest& request) const
@@ -731,14 +731,14 @@ GetProjectOutcomeCallable CloudWatchEvidentlyClient::GetProjectCallable(const Ge
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::GetProjectAsync(const GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientGetProjectAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetProject(request), context);
 }
 
-void CloudWatchEvidentlyClient::GetProjectAsyncHelper(const GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::GetProjectAsync(const GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientGetProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSegmentOutcome CloudWatchEvidentlyClient::GetSegment(const GetSegmentRequest& request) const
@@ -762,14 +762,14 @@ GetSegmentOutcomeCallable CloudWatchEvidentlyClient::GetSegmentCallable(const Ge
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::GetSegmentAsync(const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientGetSegmentAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSegment(request), context);
 }
 
-void CloudWatchEvidentlyClient::GetSegmentAsyncHelper(const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::GetSegmentAsync(const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSegment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientGetSegmentAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExperimentsOutcome CloudWatchEvidentlyClient::ListExperiments(const ListExperimentsRequest& request) const
@@ -794,14 +794,14 @@ ListExperimentsOutcomeCallable CloudWatchEvidentlyClient::ListExperimentsCallabl
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::ListExperimentsAsync(const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientListExperimentsAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExperimentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExperiments(request), context);
 }
 
-void CloudWatchEvidentlyClient::ListExperimentsAsyncHelper(const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::ListExperimentsAsync(const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExperiments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientListExperimentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFeaturesOutcome CloudWatchEvidentlyClient::ListFeatures(const ListFeaturesRequest& request) const
@@ -826,14 +826,14 @@ ListFeaturesOutcomeCallable CloudWatchEvidentlyClient::ListFeaturesCallable(cons
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::ListFeaturesAsync(const ListFeaturesRequest& request, const ListFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientListFeaturesAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const ListFeaturesRequest& request, const ListFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFeaturesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFeatures(request), context);
 }
 
-void CloudWatchEvidentlyClient::ListFeaturesAsyncHelper(const ListFeaturesRequest& request, const ListFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::ListFeaturesAsync(const ListFeaturesRequest& request, const ListFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFeatures(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientListFeaturesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLaunchesOutcome CloudWatchEvidentlyClient::ListLaunches(const ListLaunchesRequest& request) const
@@ -858,14 +858,14 @@ ListLaunchesOutcomeCallable CloudWatchEvidentlyClient::ListLaunchesCallable(cons
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::ListLaunchesAsync(const ListLaunchesRequest& request, const ListLaunchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientListLaunchesAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const ListLaunchesRequest& request, const ListLaunchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLaunchesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLaunches(request), context);
 }
 
-void CloudWatchEvidentlyClient::ListLaunchesAsyncHelper(const ListLaunchesRequest& request, const ListLaunchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::ListLaunchesAsync(const ListLaunchesRequest& request, const ListLaunchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLaunches(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientListLaunchesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProjectsOutcome CloudWatchEvidentlyClient::ListProjects(const ListProjectsRequest& request) const
@@ -883,14 +883,14 @@ ListProjectsOutcomeCallable CloudWatchEvidentlyClient::ListProjectsCallable(cons
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientListProjectsAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProjects(request), context);
 }
 
-void CloudWatchEvidentlyClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientListProjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSegmentReferencesOutcome CloudWatchEvidentlyClient::ListSegmentReferences(const ListSegmentReferencesRequest& request) const
@@ -920,14 +920,14 @@ ListSegmentReferencesOutcomeCallable CloudWatchEvidentlyClient::ListSegmentRefer
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::ListSegmentReferencesAsync(const ListSegmentReferencesRequest& request, const ListSegmentReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientListSegmentReferencesAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const ListSegmentReferencesRequest& request, const ListSegmentReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSegmentReferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSegmentReferences(request), context);
 }
 
-void CloudWatchEvidentlyClient::ListSegmentReferencesAsyncHelper(const ListSegmentReferencesRequest& request, const ListSegmentReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::ListSegmentReferencesAsync(const ListSegmentReferencesRequest& request, const ListSegmentReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSegmentReferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientListSegmentReferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSegmentsOutcome CloudWatchEvidentlyClient::ListSegments(const ListSegmentsRequest& request) const
@@ -945,14 +945,14 @@ ListSegmentsOutcomeCallable CloudWatchEvidentlyClient::ListSegmentsCallable(cons
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::ListSegmentsAsync(const ListSegmentsRequest& request, const ListSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientListSegmentsAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const ListSegmentsRequest& request, const ListSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSegmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSegments(request), context);
 }
 
-void CloudWatchEvidentlyClient::ListSegmentsAsyncHelper(const ListSegmentsRequest& request, const ListSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::ListSegmentsAsync(const ListSegmentsRequest& request, const ListSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSegments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientListSegmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome CloudWatchEvidentlyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -976,14 +976,14 @@ ListTagsForResourceOutcomeCallable CloudWatchEvidentlyClient::ListTagsForResourc
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientListTagsForResourceAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void CloudWatchEvidentlyClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutProjectEventsOutcome CloudWatchEvidentlyClient::PutProjectEvents(const PutProjectEventsRequest& request) const
@@ -1016,14 +1016,14 @@ PutProjectEventsOutcomeCallable CloudWatchEvidentlyClient::PutProjectEventsCalla
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::PutProjectEventsAsync(const PutProjectEventsRequest& request, const PutProjectEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientPutProjectEventsAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const PutProjectEventsRequest& request, const PutProjectEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutProjectEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutProjectEvents(request), context);
 }
 
-void CloudWatchEvidentlyClient::PutProjectEventsAsyncHelper(const PutProjectEventsRequest& request, const PutProjectEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::PutProjectEventsAsync(const PutProjectEventsRequest& request, const PutProjectEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutProjectEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientPutProjectEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartExperimentOutcome CloudWatchEvidentlyClient::StartExperiment(const StartExperimentRequest& request) const
@@ -1055,14 +1055,14 @@ StartExperimentOutcomeCallable CloudWatchEvidentlyClient::StartExperimentCallabl
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::StartExperimentAsync(const StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientStartExperimentAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartExperimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartExperiment(request), context);
 }
 
-void CloudWatchEvidentlyClient::StartExperimentAsyncHelper(const StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::StartExperimentAsync(const StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientStartExperimentAsyncHelper( this, request, handler, context ); } );
 }
 
 StartLaunchOutcome CloudWatchEvidentlyClient::StartLaunch(const StartLaunchRequest& request) const
@@ -1094,14 +1094,14 @@ StartLaunchOutcomeCallable CloudWatchEvidentlyClient::StartLaunchCallable(const 
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::StartLaunchAsync(const StartLaunchRequest& request, const StartLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientStartLaunchAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const StartLaunchRequest& request, const StartLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartLaunchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartLaunch(request), context);
 }
 
-void CloudWatchEvidentlyClient::StartLaunchAsyncHelper(const StartLaunchRequest& request, const StartLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::StartLaunchAsync(const StartLaunchRequest& request, const StartLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartLaunch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientStartLaunchAsyncHelper( this, request, handler, context ); } );
 }
 
 StopExperimentOutcome CloudWatchEvidentlyClient::StopExperiment(const StopExperimentRequest& request) const
@@ -1133,14 +1133,14 @@ StopExperimentOutcomeCallable CloudWatchEvidentlyClient::StopExperimentCallable(
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::StopExperimentAsync(const StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientStopExperimentAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopExperimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopExperiment(request), context);
 }
 
-void CloudWatchEvidentlyClient::StopExperimentAsyncHelper(const StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::StopExperimentAsync(const StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientStopExperimentAsyncHelper( this, request, handler, context ); } );
 }
 
 StopLaunchOutcome CloudWatchEvidentlyClient::StopLaunch(const StopLaunchRequest& request) const
@@ -1172,14 +1172,14 @@ StopLaunchOutcomeCallable CloudWatchEvidentlyClient::StopLaunchCallable(const St
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::StopLaunchAsync(const StopLaunchRequest& request, const StopLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientStopLaunchAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const StopLaunchRequest& request, const StopLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopLaunchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopLaunch(request), context);
 }
 
-void CloudWatchEvidentlyClient::StopLaunchAsyncHelper(const StopLaunchRequest& request, const StopLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::StopLaunchAsync(const StopLaunchRequest& request, const StopLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopLaunch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientStopLaunchAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CloudWatchEvidentlyClient::TagResource(const TagResourceRequest& request) const
@@ -1203,14 +1203,14 @@ TagResourceOutcomeCallable CloudWatchEvidentlyClient::TagResourceCallable(const 
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientTagResourceAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CloudWatchEvidentlyClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TestSegmentPatternOutcome CloudWatchEvidentlyClient::TestSegmentPattern(const TestSegmentPatternRequest& request) const
@@ -1228,14 +1228,14 @@ TestSegmentPatternOutcomeCallable CloudWatchEvidentlyClient::TestSegmentPatternC
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::TestSegmentPatternAsync(const TestSegmentPatternRequest& request, const TestSegmentPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientTestSegmentPatternAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const TestSegmentPatternRequest& request, const TestSegmentPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestSegmentPatternAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestSegmentPattern(request), context);
 }
 
-void CloudWatchEvidentlyClient::TestSegmentPatternAsyncHelper(const TestSegmentPatternRequest& request, const TestSegmentPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::TestSegmentPatternAsync(const TestSegmentPatternRequest& request, const TestSegmentPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestSegmentPattern(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientTestSegmentPatternAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CloudWatchEvidentlyClient::UntagResource(const UntagResourceRequest& request) const
@@ -1264,14 +1264,14 @@ UntagResourceOutcomeCallable CloudWatchEvidentlyClient::UntagResourceCallable(co
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientUntagResourceAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CloudWatchEvidentlyClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateExperimentOutcome CloudWatchEvidentlyClient::UpdateExperiment(const UpdateExperimentRequest& request) const
@@ -1302,14 +1302,14 @@ UpdateExperimentOutcomeCallable CloudWatchEvidentlyClient::UpdateExperimentCalla
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::UpdateExperimentAsync(const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientUpdateExperimentAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateExperimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateExperiment(request), context);
 }
 
-void CloudWatchEvidentlyClient::UpdateExperimentAsyncHelper(const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::UpdateExperimentAsync(const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientUpdateExperimentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFeatureOutcome CloudWatchEvidentlyClient::UpdateFeature(const UpdateFeatureRequest& request) const
@@ -1340,14 +1340,14 @@ UpdateFeatureOutcomeCallable CloudWatchEvidentlyClient::UpdateFeatureCallable(co
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::UpdateFeatureAsync(const UpdateFeatureRequest& request, const UpdateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientUpdateFeatureAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const UpdateFeatureRequest& request, const UpdateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFeatureAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFeature(request), context);
 }
 
-void CloudWatchEvidentlyClient::UpdateFeatureAsyncHelper(const UpdateFeatureRequest& request, const UpdateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::UpdateFeatureAsync(const UpdateFeatureRequest& request, const UpdateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFeature(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientUpdateFeatureAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLaunchOutcome CloudWatchEvidentlyClient::UpdateLaunch(const UpdateLaunchRequest& request) const
@@ -1378,14 +1378,14 @@ UpdateLaunchOutcomeCallable CloudWatchEvidentlyClient::UpdateLaunchCallable(cons
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::UpdateLaunchAsync(const UpdateLaunchRequest& request, const UpdateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientUpdateLaunchAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const UpdateLaunchRequest& request, const UpdateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLaunchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLaunch(request), context);
 }
 
-void CloudWatchEvidentlyClient::UpdateLaunchAsyncHelper(const UpdateLaunchRequest& request, const UpdateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::UpdateLaunchAsync(const UpdateLaunchRequest& request, const UpdateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLaunch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientUpdateLaunchAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProjectOutcome CloudWatchEvidentlyClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -1409,14 +1409,14 @@ UpdateProjectOutcomeCallable CloudWatchEvidentlyClient::UpdateProjectCallable(co
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientUpdateProjectAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProject(request), context);
 }
 
-void CloudWatchEvidentlyClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientUpdateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProjectDataDeliveryOutcome CloudWatchEvidentlyClient::UpdateProjectDataDelivery(const UpdateProjectDataDeliveryRequest& request) const
@@ -1441,13 +1441,13 @@ UpdateProjectDataDeliveryOutcomeCallable CloudWatchEvidentlyClient::UpdateProjec
   return task->get_future();
 }
 
-void CloudWatchEvidentlyClient::UpdateProjectDataDeliveryAsync(const UpdateProjectDataDeliveryRequest& request, const UpdateProjectDataDeliveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClientUpdateProjectDataDeliveryAsyncHelper(CloudWatchEvidentlyClient const * const clientThis, const UpdateProjectDataDeliveryRequest& request, const UpdateProjectDataDeliveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectDataDeliveryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProjectDataDelivery(request), context);
 }
 
-void CloudWatchEvidentlyClient::UpdateProjectDataDeliveryAsyncHelper(const UpdateProjectDataDeliveryRequest& request, const UpdateProjectDataDeliveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchEvidentlyClient::UpdateProjectDataDeliveryAsync(const UpdateProjectDataDeliveryRequest& request, const UpdateProjectDataDeliveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProjectDataDelivery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchEvidentlyClientUpdateProjectDataDeliveryAsyncHelper( this, request, handler, context ); } );
 }
 

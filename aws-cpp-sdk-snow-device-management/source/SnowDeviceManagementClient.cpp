@@ -135,14 +135,14 @@ CancelTaskOutcomeCallable SnowDeviceManagementClient::CancelTaskCallable(const C
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::CancelTaskAsync(const CancelTaskRequest& request, const CancelTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientCancelTaskAsyncHelper(SnowDeviceManagementClient const * const clientThis, const CancelTaskRequest& request, const CancelTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelTask(request), context);
 }
 
-void SnowDeviceManagementClient::CancelTaskAsyncHelper(const CancelTaskRequest& request, const CancelTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::CancelTaskAsync(const CancelTaskRequest& request, const CancelTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientCancelTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTaskOutcome SnowDeviceManagementClient::CreateTask(const CreateTaskRequest& request) const
@@ -160,14 +160,14 @@ CreateTaskOutcomeCallable SnowDeviceManagementClient::CreateTaskCallable(const C
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::CreateTaskAsync(const CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientCreateTaskAsyncHelper(SnowDeviceManagementClient const * const clientThis, const CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTask(request), context);
 }
 
-void SnowDeviceManagementClient::CreateTaskAsyncHelper(const CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::CreateTaskAsync(const CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientCreateTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDeviceOutcome SnowDeviceManagementClient::DescribeDevice(const DescribeDeviceRequest& request) const
@@ -192,14 +192,14 @@ DescribeDeviceOutcomeCallable SnowDeviceManagementClient::DescribeDeviceCallable
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientDescribeDeviceAsyncHelper(SnowDeviceManagementClient const * const clientThis, const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDevice(request), context);
 }
 
-void SnowDeviceManagementClient::DescribeDeviceAsyncHelper(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientDescribeDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDeviceEc2InstancesOutcome SnowDeviceManagementClient::DescribeDeviceEc2Instances(const DescribeDeviceEc2InstancesRequest& request) const
@@ -224,14 +224,14 @@ DescribeDeviceEc2InstancesOutcomeCallable SnowDeviceManagementClient::DescribeDe
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::DescribeDeviceEc2InstancesAsync(const DescribeDeviceEc2InstancesRequest& request, const DescribeDeviceEc2InstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientDescribeDeviceEc2InstancesAsyncHelper(SnowDeviceManagementClient const * const clientThis, const DescribeDeviceEc2InstancesRequest& request, const DescribeDeviceEc2InstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeviceEc2InstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDeviceEc2Instances(request), context);
 }
 
-void SnowDeviceManagementClient::DescribeDeviceEc2InstancesAsyncHelper(const DescribeDeviceEc2InstancesRequest& request, const DescribeDeviceEc2InstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::DescribeDeviceEc2InstancesAsync(const DescribeDeviceEc2InstancesRequest& request, const DescribeDeviceEc2InstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDeviceEc2Instances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientDescribeDeviceEc2InstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExecutionOutcome SnowDeviceManagementClient::DescribeExecution(const DescribeExecutionRequest& request) const
@@ -262,14 +262,14 @@ DescribeExecutionOutcomeCallable SnowDeviceManagementClient::DescribeExecutionCa
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientDescribeExecutionAsyncHelper(SnowDeviceManagementClient const * const clientThis, const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExecution(request), context);
 }
 
-void SnowDeviceManagementClient::DescribeExecutionAsyncHelper(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientDescribeExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTaskOutcome SnowDeviceManagementClient::DescribeTask(const DescribeTaskRequest& request) const
@@ -293,14 +293,14 @@ DescribeTaskOutcomeCallable SnowDeviceManagementClient::DescribeTaskCallable(con
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::DescribeTaskAsync(const DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientDescribeTaskAsyncHelper(SnowDeviceManagementClient const * const clientThis, const DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTask(request), context);
 }
 
-void SnowDeviceManagementClient::DescribeTaskAsyncHelper(const DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::DescribeTaskAsync(const DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientDescribeTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeviceResourcesOutcome SnowDeviceManagementClient::ListDeviceResources(const ListDeviceResourcesRequest& request) const
@@ -325,14 +325,14 @@ ListDeviceResourcesOutcomeCallable SnowDeviceManagementClient::ListDeviceResourc
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::ListDeviceResourcesAsync(const ListDeviceResourcesRequest& request, const ListDeviceResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientListDeviceResourcesAsyncHelper(SnowDeviceManagementClient const * const clientThis, const ListDeviceResourcesRequest& request, const ListDeviceResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeviceResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeviceResources(request), context);
 }
 
-void SnowDeviceManagementClient::ListDeviceResourcesAsyncHelper(const ListDeviceResourcesRequest& request, const ListDeviceResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::ListDeviceResourcesAsync(const ListDeviceResourcesRequest& request, const ListDeviceResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeviceResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientListDeviceResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDevicesOutcome SnowDeviceManagementClient::ListDevices(const ListDevicesRequest& request) const
@@ -350,14 +350,14 @@ ListDevicesOutcomeCallable SnowDeviceManagementClient::ListDevicesCallable(const
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientListDevicesAsyncHelper(SnowDeviceManagementClient const * const clientThis, const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDevices(request), context);
 }
 
-void SnowDeviceManagementClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientListDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExecutionsOutcome SnowDeviceManagementClient::ListExecutions(const ListExecutionsRequest& request) const
@@ -380,14 +380,14 @@ ListExecutionsOutcomeCallable SnowDeviceManagementClient::ListExecutionsCallable
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::ListExecutionsAsync(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientListExecutionsAsyncHelper(SnowDeviceManagementClient const * const clientThis, const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExecutions(request), context);
 }
 
-void SnowDeviceManagementClient::ListExecutionsAsyncHelper(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::ListExecutionsAsync(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientListExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome SnowDeviceManagementClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -411,14 +411,14 @@ ListTagsForResourceOutcomeCallable SnowDeviceManagementClient::ListTagsForResour
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientListTagsForResourceAsyncHelper(SnowDeviceManagementClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void SnowDeviceManagementClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTasksOutcome SnowDeviceManagementClient::ListTasks(const ListTasksRequest& request) const
@@ -436,14 +436,14 @@ ListTasksOutcomeCallable SnowDeviceManagementClient::ListTasksCallable(const Lis
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::ListTasksAsync(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientListTasksAsyncHelper(SnowDeviceManagementClient const * const clientThis, const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTasks(request), context);
 }
 
-void SnowDeviceManagementClient::ListTasksAsyncHelper(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::ListTasksAsync(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientListTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome SnowDeviceManagementClient::TagResource(const TagResourceRequest& request) const
@@ -467,14 +467,14 @@ TagResourceOutcomeCallable SnowDeviceManagementClient::TagResourceCallable(const
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientTagResourceAsyncHelper(SnowDeviceManagementClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void SnowDeviceManagementClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome SnowDeviceManagementClient::UntagResource(const UntagResourceRequest& request) const
@@ -503,13 +503,13 @@ UntagResourceOutcomeCallable SnowDeviceManagementClient::UntagResourceCallable(c
   return task->get_future();
 }
 
-void SnowDeviceManagementClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClientUntagResourceAsyncHelper(SnowDeviceManagementClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void SnowDeviceManagementClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SnowDeviceManagementClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SnowDeviceManagementClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 

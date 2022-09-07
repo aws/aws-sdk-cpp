@@ -298,14 +298,14 @@ BatchCreatePartitionOutcomeCallable GlueClient::BatchCreatePartitionCallable(con
   return task->get_future();
 }
 
-void GlueClient::BatchCreatePartitionAsync(const BatchCreatePartitionRequest& request, const BatchCreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchCreatePartitionAsyncHelper(GlueClient const * const clientThis, const BatchCreatePartitionRequest& request, const BatchCreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchCreatePartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchCreatePartition(request), context);
 }
 
-void GlueClient::BatchCreatePartitionAsyncHelper(const BatchCreatePartitionRequest& request, const BatchCreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchCreatePartitionAsync(const BatchCreatePartitionRequest& request, const BatchCreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchCreatePartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchCreatePartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDeleteConnectionOutcome GlueClient::BatchDeleteConnection(const BatchDeleteConnectionRequest& request) const
@@ -322,14 +322,14 @@ BatchDeleteConnectionOutcomeCallable GlueClient::BatchDeleteConnectionCallable(c
   return task->get_future();
 }
 
-void GlueClient::BatchDeleteConnectionAsync(const BatchDeleteConnectionRequest& request, const BatchDeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchDeleteConnectionAsyncHelper(GlueClient const * const clientThis, const BatchDeleteConnectionRequest& request, const BatchDeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDeleteConnection(request), context);
 }
 
-void GlueClient::BatchDeleteConnectionAsyncHelper(const BatchDeleteConnectionRequest& request, const BatchDeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchDeleteConnectionAsync(const BatchDeleteConnectionRequest& request, const BatchDeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDeleteConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchDeleteConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDeletePartitionOutcome GlueClient::BatchDeletePartition(const BatchDeletePartitionRequest& request) const
@@ -346,14 +346,14 @@ BatchDeletePartitionOutcomeCallable GlueClient::BatchDeletePartitionCallable(con
   return task->get_future();
 }
 
-void GlueClient::BatchDeletePartitionAsync(const BatchDeletePartitionRequest& request, const BatchDeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchDeletePartitionAsyncHelper(GlueClient const * const clientThis, const BatchDeletePartitionRequest& request, const BatchDeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeletePartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDeletePartition(request), context);
 }
 
-void GlueClient::BatchDeletePartitionAsyncHelper(const BatchDeletePartitionRequest& request, const BatchDeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchDeletePartitionAsync(const BatchDeletePartitionRequest& request, const BatchDeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDeletePartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchDeletePartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDeleteTableOutcome GlueClient::BatchDeleteTable(const BatchDeleteTableRequest& request) const
@@ -370,14 +370,14 @@ BatchDeleteTableOutcomeCallable GlueClient::BatchDeleteTableCallable(const Batch
   return task->get_future();
 }
 
-void GlueClient::BatchDeleteTableAsync(const BatchDeleteTableRequest& request, const BatchDeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchDeleteTableAsyncHelper(GlueClient const * const clientThis, const BatchDeleteTableRequest& request, const BatchDeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDeleteTable(request), context);
 }
 
-void GlueClient::BatchDeleteTableAsyncHelper(const BatchDeleteTableRequest& request, const BatchDeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchDeleteTableAsync(const BatchDeleteTableRequest& request, const BatchDeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDeleteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchDeleteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDeleteTableVersionOutcome GlueClient::BatchDeleteTableVersion(const BatchDeleteTableVersionRequest& request) const
@@ -394,14 +394,14 @@ BatchDeleteTableVersionOutcomeCallable GlueClient::BatchDeleteTableVersionCallab
   return task->get_future();
 }
 
-void GlueClient::BatchDeleteTableVersionAsync(const BatchDeleteTableVersionRequest& request, const BatchDeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchDeleteTableVersionAsyncHelper(GlueClient const * const clientThis, const BatchDeleteTableVersionRequest& request, const BatchDeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteTableVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDeleteTableVersion(request), context);
 }
 
-void GlueClient::BatchDeleteTableVersionAsyncHelper(const BatchDeleteTableVersionRequest& request, const BatchDeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchDeleteTableVersionAsync(const BatchDeleteTableVersionRequest& request, const BatchDeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDeleteTableVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchDeleteTableVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetBlueprintsOutcome GlueClient::BatchGetBlueprints(const BatchGetBlueprintsRequest& request) const
@@ -418,14 +418,14 @@ BatchGetBlueprintsOutcomeCallable GlueClient::BatchGetBlueprintsCallable(const B
   return task->get_future();
 }
 
-void GlueClient::BatchGetBlueprintsAsync(const BatchGetBlueprintsRequest& request, const BatchGetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchGetBlueprintsAsyncHelper(GlueClient const * const clientThis, const BatchGetBlueprintsRequest& request, const BatchGetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetBlueprintsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetBlueprints(request), context);
 }
 
-void GlueClient::BatchGetBlueprintsAsyncHelper(const BatchGetBlueprintsRequest& request, const BatchGetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchGetBlueprintsAsync(const BatchGetBlueprintsRequest& request, const BatchGetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetBlueprints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchGetBlueprintsAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetCrawlersOutcome GlueClient::BatchGetCrawlers(const BatchGetCrawlersRequest& request) const
@@ -442,14 +442,14 @@ BatchGetCrawlersOutcomeCallable GlueClient::BatchGetCrawlersCallable(const Batch
   return task->get_future();
 }
 
-void GlueClient::BatchGetCrawlersAsync(const BatchGetCrawlersRequest& request, const BatchGetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchGetCrawlersAsyncHelper(GlueClient const * const clientThis, const BatchGetCrawlersRequest& request, const BatchGetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetCrawlersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetCrawlers(request), context);
 }
 
-void GlueClient::BatchGetCrawlersAsyncHelper(const BatchGetCrawlersRequest& request, const BatchGetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchGetCrawlersAsync(const BatchGetCrawlersRequest& request, const BatchGetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetCrawlers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchGetCrawlersAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetCustomEntityTypesOutcome GlueClient::BatchGetCustomEntityTypes(const BatchGetCustomEntityTypesRequest& request) const
@@ -466,14 +466,14 @@ BatchGetCustomEntityTypesOutcomeCallable GlueClient::BatchGetCustomEntityTypesCa
   return task->get_future();
 }
 
-void GlueClient::BatchGetCustomEntityTypesAsync(const BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchGetCustomEntityTypesAsyncHelper(GlueClient const * const clientThis, const BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetCustomEntityTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetCustomEntityTypes(request), context);
 }
 
-void GlueClient::BatchGetCustomEntityTypesAsyncHelper(const BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchGetCustomEntityTypesAsync(const BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetCustomEntityTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchGetCustomEntityTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetDevEndpointsOutcome GlueClient::BatchGetDevEndpoints(const BatchGetDevEndpointsRequest& request) const
@@ -490,14 +490,14 @@ BatchGetDevEndpointsOutcomeCallable GlueClient::BatchGetDevEndpointsCallable(con
   return task->get_future();
 }
 
-void GlueClient::BatchGetDevEndpointsAsync(const BatchGetDevEndpointsRequest& request, const BatchGetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchGetDevEndpointsAsyncHelper(GlueClient const * const clientThis, const BatchGetDevEndpointsRequest& request, const BatchGetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetDevEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetDevEndpoints(request), context);
 }
 
-void GlueClient::BatchGetDevEndpointsAsyncHelper(const BatchGetDevEndpointsRequest& request, const BatchGetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchGetDevEndpointsAsync(const BatchGetDevEndpointsRequest& request, const BatchGetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetDevEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchGetDevEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetJobsOutcome GlueClient::BatchGetJobs(const BatchGetJobsRequest& request) const
@@ -514,14 +514,14 @@ BatchGetJobsOutcomeCallable GlueClient::BatchGetJobsCallable(const BatchGetJobsR
   return task->get_future();
 }
 
-void GlueClient::BatchGetJobsAsync(const BatchGetJobsRequest& request, const BatchGetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchGetJobsAsyncHelper(GlueClient const * const clientThis, const BatchGetJobsRequest& request, const BatchGetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetJobs(request), context);
 }
 
-void GlueClient::BatchGetJobsAsyncHelper(const BatchGetJobsRequest& request, const BatchGetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchGetJobsAsync(const BatchGetJobsRequest& request, const BatchGetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchGetJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetPartitionOutcome GlueClient::BatchGetPartition(const BatchGetPartitionRequest& request) const
@@ -538,14 +538,14 @@ BatchGetPartitionOutcomeCallable GlueClient::BatchGetPartitionCallable(const Bat
   return task->get_future();
 }
 
-void GlueClient::BatchGetPartitionAsync(const BatchGetPartitionRequest& request, const BatchGetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchGetPartitionAsyncHelper(GlueClient const * const clientThis, const BatchGetPartitionRequest& request, const BatchGetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetPartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetPartition(request), context);
 }
 
-void GlueClient::BatchGetPartitionAsyncHelper(const BatchGetPartitionRequest& request, const BatchGetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchGetPartitionAsync(const BatchGetPartitionRequest& request, const BatchGetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetPartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchGetPartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetTriggersOutcome GlueClient::BatchGetTriggers(const BatchGetTriggersRequest& request) const
@@ -562,14 +562,14 @@ BatchGetTriggersOutcomeCallable GlueClient::BatchGetTriggersCallable(const Batch
   return task->get_future();
 }
 
-void GlueClient::BatchGetTriggersAsync(const BatchGetTriggersRequest& request, const BatchGetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchGetTriggersAsyncHelper(GlueClient const * const clientThis, const BatchGetTriggersRequest& request, const BatchGetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetTriggersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetTriggers(request), context);
 }
 
-void GlueClient::BatchGetTriggersAsyncHelper(const BatchGetTriggersRequest& request, const BatchGetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchGetTriggersAsync(const BatchGetTriggersRequest& request, const BatchGetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetTriggers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchGetTriggersAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetWorkflowsOutcome GlueClient::BatchGetWorkflows(const BatchGetWorkflowsRequest& request) const
@@ -586,14 +586,14 @@ BatchGetWorkflowsOutcomeCallable GlueClient::BatchGetWorkflowsCallable(const Bat
   return task->get_future();
 }
 
-void GlueClient::BatchGetWorkflowsAsync(const BatchGetWorkflowsRequest& request, const BatchGetWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchGetWorkflowsAsyncHelper(GlueClient const * const clientThis, const BatchGetWorkflowsRequest& request, const BatchGetWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetWorkflowsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetWorkflows(request), context);
 }
 
-void GlueClient::BatchGetWorkflowsAsyncHelper(const BatchGetWorkflowsRequest& request, const BatchGetWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchGetWorkflowsAsync(const BatchGetWorkflowsRequest& request, const BatchGetWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetWorkflows(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchGetWorkflowsAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchStopJobRunOutcome GlueClient::BatchStopJobRun(const BatchStopJobRunRequest& request) const
@@ -610,14 +610,14 @@ BatchStopJobRunOutcomeCallable GlueClient::BatchStopJobRunCallable(const BatchSt
   return task->get_future();
 }
 
-void GlueClient::BatchStopJobRunAsync(const BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchStopJobRunAsyncHelper(GlueClient const * const clientThis, const BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchStopJobRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchStopJobRun(request), context);
 }
 
-void GlueClient::BatchStopJobRunAsyncHelper(const BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchStopJobRunAsync(const BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchStopJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchStopJobRunAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchUpdatePartitionOutcome GlueClient::BatchUpdatePartition(const BatchUpdatePartitionRequest& request) const
@@ -634,14 +634,14 @@ BatchUpdatePartitionOutcomeCallable GlueClient::BatchUpdatePartitionCallable(con
   return task->get_future();
 }
 
-void GlueClient::BatchUpdatePartitionAsync(const BatchUpdatePartitionRequest& request, const BatchUpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientBatchUpdatePartitionAsyncHelper(GlueClient const * const clientThis, const BatchUpdatePartitionRequest& request, const BatchUpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdatePartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchUpdatePartition(request), context);
 }
 
-void GlueClient::BatchUpdatePartitionAsyncHelper(const BatchUpdatePartitionRequest& request, const BatchUpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::BatchUpdatePartitionAsync(const BatchUpdatePartitionRequest& request, const BatchUpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchUpdatePartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientBatchUpdatePartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelMLTaskRunOutcome GlueClient::CancelMLTaskRun(const CancelMLTaskRunRequest& request) const
@@ -658,14 +658,14 @@ CancelMLTaskRunOutcomeCallable GlueClient::CancelMLTaskRunCallable(const CancelM
   return task->get_future();
 }
 
-void GlueClient::CancelMLTaskRunAsync(const CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCancelMLTaskRunAsyncHelper(GlueClient const * const clientThis, const CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelMLTaskRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelMLTaskRun(request), context);
 }
 
-void GlueClient::CancelMLTaskRunAsyncHelper(const CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CancelMLTaskRunAsync(const CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelMLTaskRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCancelMLTaskRunAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelStatementOutcome GlueClient::CancelStatement(const CancelStatementRequest& request) const
@@ -682,14 +682,14 @@ CancelStatementOutcomeCallable GlueClient::CancelStatementCallable(const CancelS
   return task->get_future();
 }
 
-void GlueClient::CancelStatementAsync(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCancelStatementAsyncHelper(GlueClient const * const clientThis, const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelStatement(request), context);
 }
 
-void GlueClient::CancelStatementAsyncHelper(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CancelStatementAsync(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCancelStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 CheckSchemaVersionValidityOutcome GlueClient::CheckSchemaVersionValidity(const CheckSchemaVersionValidityRequest& request) const
@@ -706,14 +706,14 @@ CheckSchemaVersionValidityOutcomeCallable GlueClient::CheckSchemaVersionValidity
   return task->get_future();
 }
 
-void GlueClient::CheckSchemaVersionValidityAsync(const CheckSchemaVersionValidityRequest& request, const CheckSchemaVersionValidityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCheckSchemaVersionValidityAsyncHelper(GlueClient const * const clientThis, const CheckSchemaVersionValidityRequest& request, const CheckSchemaVersionValidityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CheckSchemaVersionValidityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CheckSchemaVersionValidity(request), context);
 }
 
-void GlueClient::CheckSchemaVersionValidityAsyncHelper(const CheckSchemaVersionValidityRequest& request, const CheckSchemaVersionValidityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CheckSchemaVersionValidityAsync(const CheckSchemaVersionValidityRequest& request, const CheckSchemaVersionValidityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CheckSchemaVersionValidity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCheckSchemaVersionValidityAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBlueprintOutcome GlueClient::CreateBlueprint(const CreateBlueprintRequest& request) const
@@ -730,14 +730,14 @@ CreateBlueprintOutcomeCallable GlueClient::CreateBlueprintCallable(const CreateB
   return task->get_future();
 }
 
-void GlueClient::CreateBlueprintAsync(const CreateBlueprintRequest& request, const CreateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateBlueprintAsyncHelper(GlueClient const * const clientThis, const CreateBlueprintRequest& request, const CreateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBlueprintAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBlueprint(request), context);
 }
 
-void GlueClient::CreateBlueprintAsyncHelper(const CreateBlueprintRequest& request, const CreateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateBlueprintAsync(const CreateBlueprintRequest& request, const CreateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBlueprint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateBlueprintAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateClassifierOutcome GlueClient::CreateClassifier(const CreateClassifierRequest& request) const
@@ -754,14 +754,14 @@ CreateClassifierOutcomeCallable GlueClient::CreateClassifierCallable(const Creat
   return task->get_future();
 }
 
-void GlueClient::CreateClassifierAsync(const CreateClassifierRequest& request, const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateClassifierAsyncHelper(GlueClient const * const clientThis, const CreateClassifierRequest& request, const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClassifierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateClassifier(request), context);
 }
 
-void GlueClient::CreateClassifierAsyncHelper(const CreateClassifierRequest& request, const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateClassifierAsync(const CreateClassifierRequest& request, const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateClassifier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateClassifierAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConnectionOutcome GlueClient::CreateConnection(const CreateConnectionRequest& request) const
@@ -778,14 +778,14 @@ CreateConnectionOutcomeCallable GlueClient::CreateConnectionCallable(const Creat
   return task->get_future();
 }
 
-void GlueClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateConnectionAsyncHelper(GlueClient const * const clientThis, const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConnection(request), context);
 }
 
-void GlueClient::CreateConnectionAsyncHelper(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCrawlerOutcome GlueClient::CreateCrawler(const CreateCrawlerRequest& request) const
@@ -802,14 +802,14 @@ CreateCrawlerOutcomeCallable GlueClient::CreateCrawlerCallable(const CreateCrawl
   return task->get_future();
 }
 
-void GlueClient::CreateCrawlerAsync(const CreateCrawlerRequest& request, const CreateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateCrawlerAsyncHelper(GlueClient const * const clientThis, const CreateCrawlerRequest& request, const CreateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCrawlerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCrawler(request), context);
 }
 
-void GlueClient::CreateCrawlerAsyncHelper(const CreateCrawlerRequest& request, const CreateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateCrawlerAsync(const CreateCrawlerRequest& request, const CreateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCrawler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateCrawlerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomEntityTypeOutcome GlueClient::CreateCustomEntityType(const CreateCustomEntityTypeRequest& request) const
@@ -826,14 +826,14 @@ CreateCustomEntityTypeOutcomeCallable GlueClient::CreateCustomEntityTypeCallable
   return task->get_future();
 }
 
-void GlueClient::CreateCustomEntityTypeAsync(const CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateCustomEntityTypeAsyncHelper(GlueClient const * const clientThis, const CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomEntityTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomEntityType(request), context);
 }
 
-void GlueClient::CreateCustomEntityTypeAsyncHelper(const CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateCustomEntityTypeAsync(const CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomEntityType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateCustomEntityTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatabaseOutcome GlueClient::CreateDatabase(const CreateDatabaseRequest& request) const
@@ -850,14 +850,14 @@ CreateDatabaseOutcomeCallable GlueClient::CreateDatabaseCallable(const CreateDat
   return task->get_future();
 }
 
-void GlueClient::CreateDatabaseAsync(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateDatabaseAsyncHelper(GlueClient const * const clientThis, const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDatabase(request), context);
 }
 
-void GlueClient::CreateDatabaseAsyncHelper(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateDatabaseAsync(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDevEndpointOutcome GlueClient::CreateDevEndpoint(const CreateDevEndpointRequest& request) const
@@ -874,14 +874,14 @@ CreateDevEndpointOutcomeCallable GlueClient::CreateDevEndpointCallable(const Cre
   return task->get_future();
 }
 
-void GlueClient::CreateDevEndpointAsync(const CreateDevEndpointRequest& request, const CreateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateDevEndpointAsyncHelper(GlueClient const * const clientThis, const CreateDevEndpointRequest& request, const CreateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDevEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDevEndpoint(request), context);
 }
 
-void GlueClient::CreateDevEndpointAsyncHelper(const CreateDevEndpointRequest& request, const CreateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateDevEndpointAsync(const CreateDevEndpointRequest& request, const CreateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDevEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateDevEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateJobOutcome GlueClient::CreateJob(const CreateJobRequest& request) const
@@ -898,14 +898,14 @@ CreateJobOutcomeCallable GlueClient::CreateJobCallable(const CreateJobRequest& r
   return task->get_future();
 }
 
-void GlueClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateJobAsyncHelper(GlueClient const * const clientThis, const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateJob(request), context);
 }
 
-void GlueClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMLTransformOutcome GlueClient::CreateMLTransform(const CreateMLTransformRequest& request) const
@@ -922,14 +922,14 @@ CreateMLTransformOutcomeCallable GlueClient::CreateMLTransformCallable(const Cre
   return task->get_future();
 }
 
-void GlueClient::CreateMLTransformAsync(const CreateMLTransformRequest& request, const CreateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateMLTransformAsyncHelper(GlueClient const * const clientThis, const CreateMLTransformRequest& request, const CreateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMLTransformAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMLTransform(request), context);
 }
 
-void GlueClient::CreateMLTransformAsyncHelper(const CreateMLTransformRequest& request, const CreateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateMLTransformAsync(const CreateMLTransformRequest& request, const CreateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMLTransform(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateMLTransformAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePartitionOutcome GlueClient::CreatePartition(const CreatePartitionRequest& request) const
@@ -946,14 +946,14 @@ CreatePartitionOutcomeCallable GlueClient::CreatePartitionCallable(const CreateP
   return task->get_future();
 }
 
-void GlueClient::CreatePartitionAsync(const CreatePartitionRequest& request, const CreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreatePartitionAsyncHelper(GlueClient const * const clientThis, const CreatePartitionRequest& request, const CreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePartition(request), context);
 }
 
-void GlueClient::CreatePartitionAsyncHelper(const CreatePartitionRequest& request, const CreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreatePartitionAsync(const CreatePartitionRequest& request, const CreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreatePartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePartitionIndexOutcome GlueClient::CreatePartitionIndex(const CreatePartitionIndexRequest& request) const
@@ -970,14 +970,14 @@ CreatePartitionIndexOutcomeCallable GlueClient::CreatePartitionIndexCallable(con
   return task->get_future();
 }
 
-void GlueClient::CreatePartitionIndexAsync(const CreatePartitionIndexRequest& request, const CreatePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreatePartitionIndexAsyncHelper(GlueClient const * const clientThis, const CreatePartitionIndexRequest& request, const CreatePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePartitionIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePartitionIndex(request), context);
 }
 
-void GlueClient::CreatePartitionIndexAsyncHelper(const CreatePartitionIndexRequest& request, const CreatePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreatePartitionIndexAsync(const CreatePartitionIndexRequest& request, const CreatePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePartitionIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreatePartitionIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRegistryOutcome GlueClient::CreateRegistry(const CreateRegistryRequest& request) const
@@ -994,14 +994,14 @@ CreateRegistryOutcomeCallable GlueClient::CreateRegistryCallable(const CreateReg
   return task->get_future();
 }
 
-void GlueClient::CreateRegistryAsync(const CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateRegistryAsyncHelper(GlueClient const * const clientThis, const CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRegistryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRegistry(request), context);
 }
 
-void GlueClient::CreateRegistryAsyncHelper(const CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateRegistryAsync(const CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRegistry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateRegistryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSchemaOutcome GlueClient::CreateSchema(const CreateSchemaRequest& request) const
@@ -1018,14 +1018,14 @@ CreateSchemaOutcomeCallable GlueClient::CreateSchemaCallable(const CreateSchemaR
   return task->get_future();
 }
 
-void GlueClient::CreateSchemaAsync(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateSchemaAsyncHelper(GlueClient const * const clientThis, const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSchema(request), context);
 }
 
-void GlueClient::CreateSchemaAsyncHelper(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateSchemaAsync(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateScriptOutcome GlueClient::CreateScript(const CreateScriptRequest& request) const
@@ -1042,14 +1042,14 @@ CreateScriptOutcomeCallable GlueClient::CreateScriptCallable(const CreateScriptR
   return task->get_future();
 }
 
-void GlueClient::CreateScriptAsync(const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateScriptAsyncHelper(GlueClient const * const clientThis, const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateScriptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateScript(request), context);
 }
 
-void GlueClient::CreateScriptAsyncHelper(const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateScriptAsync(const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateScript(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateScriptAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSecurityConfigurationOutcome GlueClient::CreateSecurityConfiguration(const CreateSecurityConfigurationRequest& request) const
@@ -1066,14 +1066,14 @@ CreateSecurityConfigurationOutcomeCallable GlueClient::CreateSecurityConfigurati
   return task->get_future();
 }
 
-void GlueClient::CreateSecurityConfigurationAsync(const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateSecurityConfigurationAsyncHelper(GlueClient const * const clientThis, const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSecurityConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSecurityConfiguration(request), context);
 }
 
-void GlueClient::CreateSecurityConfigurationAsyncHelper(const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateSecurityConfigurationAsync(const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSecurityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateSecurityConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSessionOutcome GlueClient::CreateSession(const CreateSessionRequest& request) const
@@ -1090,14 +1090,14 @@ CreateSessionOutcomeCallable GlueClient::CreateSessionCallable(const CreateSessi
   return task->get_future();
 }
 
-void GlueClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateSessionAsyncHelper(GlueClient const * const clientThis, const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSession(request), context);
 }
 
-void GlueClient::CreateSessionAsyncHelper(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTableOutcome GlueClient::CreateTable(const CreateTableRequest& request) const
@@ -1114,14 +1114,14 @@ CreateTableOutcomeCallable GlueClient::CreateTableCallable(const CreateTableRequ
   return task->get_future();
 }
 
-void GlueClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateTableAsyncHelper(GlueClient const * const clientThis, const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTable(request), context);
 }
 
-void GlueClient::CreateTableAsyncHelper(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateTableAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTriggerOutcome GlueClient::CreateTrigger(const CreateTriggerRequest& request) const
@@ -1138,14 +1138,14 @@ CreateTriggerOutcomeCallable GlueClient::CreateTriggerCallable(const CreateTrigg
   return task->get_future();
 }
 
-void GlueClient::CreateTriggerAsync(const CreateTriggerRequest& request, const CreateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateTriggerAsyncHelper(GlueClient const * const clientThis, const CreateTriggerRequest& request, const CreateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTriggerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTrigger(request), context);
 }
 
-void GlueClient::CreateTriggerAsyncHelper(const CreateTriggerRequest& request, const CreateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateTriggerAsync(const CreateTriggerRequest& request, const CreateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTrigger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateTriggerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserDefinedFunctionOutcome GlueClient::CreateUserDefinedFunction(const CreateUserDefinedFunctionRequest& request) const
@@ -1162,14 +1162,14 @@ CreateUserDefinedFunctionOutcomeCallable GlueClient::CreateUserDefinedFunctionCa
   return task->get_future();
 }
 
-void GlueClient::CreateUserDefinedFunctionAsync(const CreateUserDefinedFunctionRequest& request, const CreateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateUserDefinedFunctionAsyncHelper(GlueClient const * const clientThis, const CreateUserDefinedFunctionRequest& request, const CreateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserDefinedFunctionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUserDefinedFunction(request), context);
 }
 
-void GlueClient::CreateUserDefinedFunctionAsyncHelper(const CreateUserDefinedFunctionRequest& request, const CreateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateUserDefinedFunctionAsync(const CreateUserDefinedFunctionRequest& request, const CreateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUserDefinedFunction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateUserDefinedFunctionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorkflowOutcome GlueClient::CreateWorkflow(const CreateWorkflowRequest& request) const
@@ -1186,14 +1186,14 @@ CreateWorkflowOutcomeCallable GlueClient::CreateWorkflowCallable(const CreateWor
   return task->get_future();
 }
 
-void GlueClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientCreateWorkflowAsyncHelper(GlueClient const * const clientThis, const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkflowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorkflow(request), context);
 }
 
-void GlueClient::CreateWorkflowAsyncHelper(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorkflow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientCreateWorkflowAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBlueprintOutcome GlueClient::DeleteBlueprint(const DeleteBlueprintRequest& request) const
@@ -1210,14 +1210,14 @@ DeleteBlueprintOutcomeCallable GlueClient::DeleteBlueprintCallable(const DeleteB
   return task->get_future();
 }
 
-void GlueClient::DeleteBlueprintAsync(const DeleteBlueprintRequest& request, const DeleteBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteBlueprintAsyncHelper(GlueClient const * const clientThis, const DeleteBlueprintRequest& request, const DeleteBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBlueprintAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBlueprint(request), context);
 }
 
-void GlueClient::DeleteBlueprintAsyncHelper(const DeleteBlueprintRequest& request, const DeleteBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteBlueprintAsync(const DeleteBlueprintRequest& request, const DeleteBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBlueprint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteBlueprintAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteClassifierOutcome GlueClient::DeleteClassifier(const DeleteClassifierRequest& request) const
@@ -1234,14 +1234,14 @@ DeleteClassifierOutcomeCallable GlueClient::DeleteClassifierCallable(const Delet
   return task->get_future();
 }
 
-void GlueClient::DeleteClassifierAsync(const DeleteClassifierRequest& request, const DeleteClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteClassifierAsyncHelper(GlueClient const * const clientThis, const DeleteClassifierRequest& request, const DeleteClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteClassifierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteClassifier(request), context);
 }
 
-void GlueClient::DeleteClassifierAsyncHelper(const DeleteClassifierRequest& request, const DeleteClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteClassifierAsync(const DeleteClassifierRequest& request, const DeleteClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteClassifier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteClassifierAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteColumnStatisticsForPartitionOutcome GlueClient::DeleteColumnStatisticsForPartition(const DeleteColumnStatisticsForPartitionRequest& request) const
@@ -1258,14 +1258,14 @@ DeleteColumnStatisticsForPartitionOutcomeCallable GlueClient::DeleteColumnStatis
   return task->get_future();
 }
 
-void GlueClient::DeleteColumnStatisticsForPartitionAsync(const DeleteColumnStatisticsForPartitionRequest& request, const DeleteColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteColumnStatisticsForPartitionAsyncHelper(GlueClient const * const clientThis, const DeleteColumnStatisticsForPartitionRequest& request, const DeleteColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteColumnStatisticsForPartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteColumnStatisticsForPartition(request), context);
 }
 
-void GlueClient::DeleteColumnStatisticsForPartitionAsyncHelper(const DeleteColumnStatisticsForPartitionRequest& request, const DeleteColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteColumnStatisticsForPartitionAsync(const DeleteColumnStatisticsForPartitionRequest& request, const DeleteColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteColumnStatisticsForPartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteColumnStatisticsForPartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteColumnStatisticsForTableOutcome GlueClient::DeleteColumnStatisticsForTable(const DeleteColumnStatisticsForTableRequest& request) const
@@ -1282,14 +1282,14 @@ DeleteColumnStatisticsForTableOutcomeCallable GlueClient::DeleteColumnStatistics
   return task->get_future();
 }
 
-void GlueClient::DeleteColumnStatisticsForTableAsync(const DeleteColumnStatisticsForTableRequest& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteColumnStatisticsForTableAsyncHelper(GlueClient const * const clientThis, const DeleteColumnStatisticsForTableRequest& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteColumnStatisticsForTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteColumnStatisticsForTable(request), context);
 }
 
-void GlueClient::DeleteColumnStatisticsForTableAsyncHelper(const DeleteColumnStatisticsForTableRequest& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteColumnStatisticsForTableAsync(const DeleteColumnStatisticsForTableRequest& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteColumnStatisticsForTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteColumnStatisticsForTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConnectionOutcome GlueClient::DeleteConnection(const DeleteConnectionRequest& request) const
@@ -1306,14 +1306,14 @@ DeleteConnectionOutcomeCallable GlueClient::DeleteConnectionCallable(const Delet
   return task->get_future();
 }
 
-void GlueClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteConnectionAsyncHelper(GlueClient const * const clientThis, const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConnection(request), context);
 }
 
-void GlueClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCrawlerOutcome GlueClient::DeleteCrawler(const DeleteCrawlerRequest& request) const
@@ -1330,14 +1330,14 @@ DeleteCrawlerOutcomeCallable GlueClient::DeleteCrawlerCallable(const DeleteCrawl
   return task->get_future();
 }
 
-void GlueClient::DeleteCrawlerAsync(const DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteCrawlerAsyncHelper(GlueClient const * const clientThis, const DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCrawlerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCrawler(request), context);
 }
 
-void GlueClient::DeleteCrawlerAsyncHelper(const DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteCrawlerAsync(const DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCrawler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteCrawlerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomEntityTypeOutcome GlueClient::DeleteCustomEntityType(const DeleteCustomEntityTypeRequest& request) const
@@ -1354,14 +1354,14 @@ DeleteCustomEntityTypeOutcomeCallable GlueClient::DeleteCustomEntityTypeCallable
   return task->get_future();
 }
 
-void GlueClient::DeleteCustomEntityTypeAsync(const DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteCustomEntityTypeAsyncHelper(GlueClient const * const clientThis, const DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomEntityTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomEntityType(request), context);
 }
 
-void GlueClient::DeleteCustomEntityTypeAsyncHelper(const DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteCustomEntityTypeAsync(const DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomEntityType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteCustomEntityTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatabaseOutcome GlueClient::DeleteDatabase(const DeleteDatabaseRequest& request) const
@@ -1378,14 +1378,14 @@ DeleteDatabaseOutcomeCallable GlueClient::DeleteDatabaseCallable(const DeleteDat
   return task->get_future();
 }
 
-void GlueClient::DeleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteDatabaseAsyncHelper(GlueClient const * const clientThis, const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDatabase(request), context);
 }
 
-void GlueClient::DeleteDatabaseAsyncHelper(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDevEndpointOutcome GlueClient::DeleteDevEndpoint(const DeleteDevEndpointRequest& request) const
@@ -1402,14 +1402,14 @@ DeleteDevEndpointOutcomeCallable GlueClient::DeleteDevEndpointCallable(const Del
   return task->get_future();
 }
 
-void GlueClient::DeleteDevEndpointAsync(const DeleteDevEndpointRequest& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteDevEndpointAsyncHelper(GlueClient const * const clientThis, const DeleteDevEndpointRequest& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDevEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDevEndpoint(request), context);
 }
 
-void GlueClient::DeleteDevEndpointAsyncHelper(const DeleteDevEndpointRequest& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteDevEndpointAsync(const DeleteDevEndpointRequest& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDevEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteDevEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteJobOutcome GlueClient::DeleteJob(const DeleteJobRequest& request) const
@@ -1426,14 +1426,14 @@ DeleteJobOutcomeCallable GlueClient::DeleteJobCallable(const DeleteJobRequest& r
   return task->get_future();
 }
 
-void GlueClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteJobAsyncHelper(GlueClient const * const clientThis, const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteJob(request), context);
 }
 
-void GlueClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMLTransformOutcome GlueClient::DeleteMLTransform(const DeleteMLTransformRequest& request) const
@@ -1450,14 +1450,14 @@ DeleteMLTransformOutcomeCallable GlueClient::DeleteMLTransformCallable(const Del
   return task->get_future();
 }
 
-void GlueClient::DeleteMLTransformAsync(const DeleteMLTransformRequest& request, const DeleteMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteMLTransformAsyncHelper(GlueClient const * const clientThis, const DeleteMLTransformRequest& request, const DeleteMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMLTransformAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMLTransform(request), context);
 }
 
-void GlueClient::DeleteMLTransformAsyncHelper(const DeleteMLTransformRequest& request, const DeleteMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteMLTransformAsync(const DeleteMLTransformRequest& request, const DeleteMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMLTransform(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteMLTransformAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePartitionOutcome GlueClient::DeletePartition(const DeletePartitionRequest& request) const
@@ -1474,14 +1474,14 @@ DeletePartitionOutcomeCallable GlueClient::DeletePartitionCallable(const DeleteP
   return task->get_future();
 }
 
-void GlueClient::DeletePartitionAsync(const DeletePartitionRequest& request, const DeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeletePartitionAsyncHelper(GlueClient const * const clientThis, const DeletePartitionRequest& request, const DeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePartition(request), context);
 }
 
-void GlueClient::DeletePartitionAsyncHelper(const DeletePartitionRequest& request, const DeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeletePartitionAsync(const DeletePartitionRequest& request, const DeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeletePartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePartitionIndexOutcome GlueClient::DeletePartitionIndex(const DeletePartitionIndexRequest& request) const
@@ -1498,14 +1498,14 @@ DeletePartitionIndexOutcomeCallable GlueClient::DeletePartitionIndexCallable(con
   return task->get_future();
 }
 
-void GlueClient::DeletePartitionIndexAsync(const DeletePartitionIndexRequest& request, const DeletePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeletePartitionIndexAsyncHelper(GlueClient const * const clientThis, const DeletePartitionIndexRequest& request, const DeletePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePartitionIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePartitionIndex(request), context);
 }
 
-void GlueClient::DeletePartitionIndexAsyncHelper(const DeletePartitionIndexRequest& request, const DeletePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeletePartitionIndexAsync(const DeletePartitionIndexRequest& request, const DeletePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePartitionIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeletePartitionIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRegistryOutcome GlueClient::DeleteRegistry(const DeleteRegistryRequest& request) const
@@ -1522,14 +1522,14 @@ DeleteRegistryOutcomeCallable GlueClient::DeleteRegistryCallable(const DeleteReg
   return task->get_future();
 }
 
-void GlueClient::DeleteRegistryAsync(const DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteRegistryAsyncHelper(GlueClient const * const clientThis, const DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRegistryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRegistry(request), context);
 }
 
-void GlueClient::DeleteRegistryAsyncHelper(const DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteRegistryAsync(const DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRegistry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteRegistryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome GlueClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -1546,14 +1546,14 @@ DeleteResourcePolicyOutcomeCallable GlueClient::DeleteResourcePolicyCallable(con
   return task->get_future();
 }
 
-void GlueClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteResourcePolicyAsyncHelper(GlueClient const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void GlueClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSchemaOutcome GlueClient::DeleteSchema(const DeleteSchemaRequest& request) const
@@ -1570,14 +1570,14 @@ DeleteSchemaOutcomeCallable GlueClient::DeleteSchemaCallable(const DeleteSchemaR
   return task->get_future();
 }
 
-void GlueClient::DeleteSchemaAsync(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteSchemaAsyncHelper(GlueClient const * const clientThis, const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSchema(request), context);
 }
 
-void GlueClient::DeleteSchemaAsyncHelper(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteSchemaAsync(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSchemaVersionsOutcome GlueClient::DeleteSchemaVersions(const DeleteSchemaVersionsRequest& request) const
@@ -1594,14 +1594,14 @@ DeleteSchemaVersionsOutcomeCallable GlueClient::DeleteSchemaVersionsCallable(con
   return task->get_future();
 }
 
-void GlueClient::DeleteSchemaVersionsAsync(const DeleteSchemaVersionsRequest& request, const DeleteSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteSchemaVersionsAsyncHelper(GlueClient const * const clientThis, const DeleteSchemaVersionsRequest& request, const DeleteSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSchemaVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSchemaVersions(request), context);
 }
 
-void GlueClient::DeleteSchemaVersionsAsyncHelper(const DeleteSchemaVersionsRequest& request, const DeleteSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteSchemaVersionsAsync(const DeleteSchemaVersionsRequest& request, const DeleteSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSchemaVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteSchemaVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSecurityConfigurationOutcome GlueClient::DeleteSecurityConfiguration(const DeleteSecurityConfigurationRequest& request) const
@@ -1618,14 +1618,14 @@ DeleteSecurityConfigurationOutcomeCallable GlueClient::DeleteSecurityConfigurati
   return task->get_future();
 }
 
-void GlueClient::DeleteSecurityConfigurationAsync(const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteSecurityConfigurationAsyncHelper(GlueClient const * const clientThis, const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSecurityConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSecurityConfiguration(request), context);
 }
 
-void GlueClient::DeleteSecurityConfigurationAsyncHelper(const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteSecurityConfigurationAsync(const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSecurityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteSecurityConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSessionOutcome GlueClient::DeleteSession(const DeleteSessionRequest& request) const
@@ -1642,14 +1642,14 @@ DeleteSessionOutcomeCallable GlueClient::DeleteSessionCallable(const DeleteSessi
   return task->get_future();
 }
 
-void GlueClient::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteSessionAsyncHelper(GlueClient const * const clientThis, const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSession(request), context);
 }
 
-void GlueClient::DeleteSessionAsyncHelper(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTableOutcome GlueClient::DeleteTable(const DeleteTableRequest& request) const
@@ -1666,14 +1666,14 @@ DeleteTableOutcomeCallable GlueClient::DeleteTableCallable(const DeleteTableRequ
   return task->get_future();
 }
 
-void GlueClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteTableAsyncHelper(GlueClient const * const clientThis, const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTable(request), context);
 }
 
-void GlueClient::DeleteTableAsyncHelper(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTableVersionOutcome GlueClient::DeleteTableVersion(const DeleteTableVersionRequest& request) const
@@ -1690,14 +1690,14 @@ DeleteTableVersionOutcomeCallable GlueClient::DeleteTableVersionCallable(const D
   return task->get_future();
 }
 
-void GlueClient::DeleteTableVersionAsync(const DeleteTableVersionRequest& request, const DeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteTableVersionAsyncHelper(GlueClient const * const clientThis, const DeleteTableVersionRequest& request, const DeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTableVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTableVersion(request), context);
 }
 
-void GlueClient::DeleteTableVersionAsyncHelper(const DeleteTableVersionRequest& request, const DeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteTableVersionAsync(const DeleteTableVersionRequest& request, const DeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTableVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteTableVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTriggerOutcome GlueClient::DeleteTrigger(const DeleteTriggerRequest& request) const
@@ -1714,14 +1714,14 @@ DeleteTriggerOutcomeCallable GlueClient::DeleteTriggerCallable(const DeleteTrigg
   return task->get_future();
 }
 
-void GlueClient::DeleteTriggerAsync(const DeleteTriggerRequest& request, const DeleteTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteTriggerAsyncHelper(GlueClient const * const clientThis, const DeleteTriggerRequest& request, const DeleteTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTriggerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTrigger(request), context);
 }
 
-void GlueClient::DeleteTriggerAsyncHelper(const DeleteTriggerRequest& request, const DeleteTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteTriggerAsync(const DeleteTriggerRequest& request, const DeleteTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTrigger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteTriggerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserDefinedFunctionOutcome GlueClient::DeleteUserDefinedFunction(const DeleteUserDefinedFunctionRequest& request) const
@@ -1738,14 +1738,14 @@ DeleteUserDefinedFunctionOutcomeCallable GlueClient::DeleteUserDefinedFunctionCa
   return task->get_future();
 }
 
-void GlueClient::DeleteUserDefinedFunctionAsync(const DeleteUserDefinedFunctionRequest& request, const DeleteUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteUserDefinedFunctionAsyncHelper(GlueClient const * const clientThis, const DeleteUserDefinedFunctionRequest& request, const DeleteUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserDefinedFunctionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUserDefinedFunction(request), context);
 }
 
-void GlueClient::DeleteUserDefinedFunctionAsyncHelper(const DeleteUserDefinedFunctionRequest& request, const DeleteUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteUserDefinedFunctionAsync(const DeleteUserDefinedFunctionRequest& request, const DeleteUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUserDefinedFunction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteUserDefinedFunctionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorkflowOutcome GlueClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const
@@ -1762,14 +1762,14 @@ DeleteWorkflowOutcomeCallable GlueClient::DeleteWorkflowCallable(const DeleteWor
   return task->get_future();
 }
 
-void GlueClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientDeleteWorkflowAsyncHelper(GlueClient const * const clientThis, const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkflowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorkflow(request), context);
 }
 
-void GlueClient::DeleteWorkflowAsyncHelper(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorkflow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientDeleteWorkflowAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBlueprintOutcome GlueClient::GetBlueprint(const GetBlueprintRequest& request) const
@@ -1786,14 +1786,14 @@ GetBlueprintOutcomeCallable GlueClient::GetBlueprintCallable(const GetBlueprintR
   return task->get_future();
 }
 
-void GlueClient::GetBlueprintAsync(const GetBlueprintRequest& request, const GetBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetBlueprintAsyncHelper(GlueClient const * const clientThis, const GetBlueprintRequest& request, const GetBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBlueprintAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBlueprint(request), context);
 }
 
-void GlueClient::GetBlueprintAsyncHelper(const GetBlueprintRequest& request, const GetBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetBlueprintAsync(const GetBlueprintRequest& request, const GetBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBlueprint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetBlueprintAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBlueprintRunOutcome GlueClient::GetBlueprintRun(const GetBlueprintRunRequest& request) const
@@ -1810,14 +1810,14 @@ GetBlueprintRunOutcomeCallable GlueClient::GetBlueprintRunCallable(const GetBlue
   return task->get_future();
 }
 
-void GlueClient::GetBlueprintRunAsync(const GetBlueprintRunRequest& request, const GetBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetBlueprintRunAsyncHelper(GlueClient const * const clientThis, const GetBlueprintRunRequest& request, const GetBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBlueprintRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBlueprintRun(request), context);
 }
 
-void GlueClient::GetBlueprintRunAsyncHelper(const GetBlueprintRunRequest& request, const GetBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetBlueprintRunAsync(const GetBlueprintRunRequest& request, const GetBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBlueprintRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetBlueprintRunAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBlueprintRunsOutcome GlueClient::GetBlueprintRuns(const GetBlueprintRunsRequest& request) const
@@ -1834,14 +1834,14 @@ GetBlueprintRunsOutcomeCallable GlueClient::GetBlueprintRunsCallable(const GetBl
   return task->get_future();
 }
 
-void GlueClient::GetBlueprintRunsAsync(const GetBlueprintRunsRequest& request, const GetBlueprintRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetBlueprintRunsAsyncHelper(GlueClient const * const clientThis, const GetBlueprintRunsRequest& request, const GetBlueprintRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBlueprintRunsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBlueprintRuns(request), context);
 }
 
-void GlueClient::GetBlueprintRunsAsyncHelper(const GetBlueprintRunsRequest& request, const GetBlueprintRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetBlueprintRunsAsync(const GetBlueprintRunsRequest& request, const GetBlueprintRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBlueprintRuns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetBlueprintRunsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCatalogImportStatusOutcome GlueClient::GetCatalogImportStatus(const GetCatalogImportStatusRequest& request) const
@@ -1858,14 +1858,14 @@ GetCatalogImportStatusOutcomeCallable GlueClient::GetCatalogImportStatusCallable
   return task->get_future();
 }
 
-void GlueClient::GetCatalogImportStatusAsync(const GetCatalogImportStatusRequest& request, const GetCatalogImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetCatalogImportStatusAsyncHelper(GlueClient const * const clientThis, const GetCatalogImportStatusRequest& request, const GetCatalogImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCatalogImportStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCatalogImportStatus(request), context);
 }
 
-void GlueClient::GetCatalogImportStatusAsyncHelper(const GetCatalogImportStatusRequest& request, const GetCatalogImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetCatalogImportStatusAsync(const GetCatalogImportStatusRequest& request, const GetCatalogImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCatalogImportStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetCatalogImportStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetClassifierOutcome GlueClient::GetClassifier(const GetClassifierRequest& request) const
@@ -1882,14 +1882,14 @@ GetClassifierOutcomeCallable GlueClient::GetClassifierCallable(const GetClassifi
   return task->get_future();
 }
 
-void GlueClient::GetClassifierAsync(const GetClassifierRequest& request, const GetClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetClassifierAsyncHelper(GlueClient const * const clientThis, const GetClassifierRequest& request, const GetClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetClassifierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetClassifier(request), context);
 }
 
-void GlueClient::GetClassifierAsyncHelper(const GetClassifierRequest& request, const GetClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetClassifierAsync(const GetClassifierRequest& request, const GetClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetClassifier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetClassifierAsyncHelper( this, request, handler, context ); } );
 }
 
 GetClassifiersOutcome GlueClient::GetClassifiers(const GetClassifiersRequest& request) const
@@ -1906,14 +1906,14 @@ GetClassifiersOutcomeCallable GlueClient::GetClassifiersCallable(const GetClassi
   return task->get_future();
 }
 
-void GlueClient::GetClassifiersAsync(const GetClassifiersRequest& request, const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetClassifiersAsyncHelper(GlueClient const * const clientThis, const GetClassifiersRequest& request, const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetClassifiersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetClassifiers(request), context);
 }
 
-void GlueClient::GetClassifiersAsyncHelper(const GetClassifiersRequest& request, const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetClassifiersAsync(const GetClassifiersRequest& request, const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetClassifiers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetClassifiersAsyncHelper( this, request, handler, context ); } );
 }
 
 GetColumnStatisticsForPartitionOutcome GlueClient::GetColumnStatisticsForPartition(const GetColumnStatisticsForPartitionRequest& request) const
@@ -1930,14 +1930,14 @@ GetColumnStatisticsForPartitionOutcomeCallable GlueClient::GetColumnStatisticsFo
   return task->get_future();
 }
 
-void GlueClient::GetColumnStatisticsForPartitionAsync(const GetColumnStatisticsForPartitionRequest& request, const GetColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetColumnStatisticsForPartitionAsyncHelper(GlueClient const * const clientThis, const GetColumnStatisticsForPartitionRequest& request, const GetColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetColumnStatisticsForPartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetColumnStatisticsForPartition(request), context);
 }
 
-void GlueClient::GetColumnStatisticsForPartitionAsyncHelper(const GetColumnStatisticsForPartitionRequest& request, const GetColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetColumnStatisticsForPartitionAsync(const GetColumnStatisticsForPartitionRequest& request, const GetColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetColumnStatisticsForPartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetColumnStatisticsForPartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetColumnStatisticsForTableOutcome GlueClient::GetColumnStatisticsForTable(const GetColumnStatisticsForTableRequest& request) const
@@ -1954,14 +1954,14 @@ GetColumnStatisticsForTableOutcomeCallable GlueClient::GetColumnStatisticsForTab
   return task->get_future();
 }
 
-void GlueClient::GetColumnStatisticsForTableAsync(const GetColumnStatisticsForTableRequest& request, const GetColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetColumnStatisticsForTableAsyncHelper(GlueClient const * const clientThis, const GetColumnStatisticsForTableRequest& request, const GetColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetColumnStatisticsForTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetColumnStatisticsForTable(request), context);
 }
 
-void GlueClient::GetColumnStatisticsForTableAsyncHelper(const GetColumnStatisticsForTableRequest& request, const GetColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetColumnStatisticsForTableAsync(const GetColumnStatisticsForTableRequest& request, const GetColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetColumnStatisticsForTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetColumnStatisticsForTableAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectionOutcome GlueClient::GetConnection(const GetConnectionRequest& request) const
@@ -1978,14 +1978,14 @@ GetConnectionOutcomeCallable GlueClient::GetConnectionCallable(const GetConnecti
   return task->get_future();
 }
 
-void GlueClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetConnectionAsyncHelper(GlueClient const * const clientThis, const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnection(request), context);
 }
 
-void GlueClient::GetConnectionAsyncHelper(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectionsOutcome GlueClient::GetConnections(const GetConnectionsRequest& request) const
@@ -2002,14 +2002,14 @@ GetConnectionsOutcomeCallable GlueClient::GetConnectionsCallable(const GetConnec
   return task->get_future();
 }
 
-void GlueClient::GetConnectionsAsync(const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetConnectionsAsyncHelper(GlueClient const * const clientThis, const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnections(request), context);
 }
 
-void GlueClient::GetConnectionsAsyncHelper(const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetConnectionsAsync(const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCrawlerOutcome GlueClient::GetCrawler(const GetCrawlerRequest& request) const
@@ -2026,14 +2026,14 @@ GetCrawlerOutcomeCallable GlueClient::GetCrawlerCallable(const GetCrawlerRequest
   return task->get_future();
 }
 
-void GlueClient::GetCrawlerAsync(const GetCrawlerRequest& request, const GetCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetCrawlerAsyncHelper(GlueClient const * const clientThis, const GetCrawlerRequest& request, const GetCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCrawlerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCrawler(request), context);
 }
 
-void GlueClient::GetCrawlerAsyncHelper(const GetCrawlerRequest& request, const GetCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetCrawlerAsync(const GetCrawlerRequest& request, const GetCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCrawler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetCrawlerAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCrawlerMetricsOutcome GlueClient::GetCrawlerMetrics(const GetCrawlerMetricsRequest& request) const
@@ -2050,14 +2050,14 @@ GetCrawlerMetricsOutcomeCallable GlueClient::GetCrawlerMetricsCallable(const Get
   return task->get_future();
 }
 
-void GlueClient::GetCrawlerMetricsAsync(const GetCrawlerMetricsRequest& request, const GetCrawlerMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetCrawlerMetricsAsyncHelper(GlueClient const * const clientThis, const GetCrawlerMetricsRequest& request, const GetCrawlerMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCrawlerMetricsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCrawlerMetrics(request), context);
 }
 
-void GlueClient::GetCrawlerMetricsAsyncHelper(const GetCrawlerMetricsRequest& request, const GetCrawlerMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetCrawlerMetricsAsync(const GetCrawlerMetricsRequest& request, const GetCrawlerMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCrawlerMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetCrawlerMetricsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCrawlersOutcome GlueClient::GetCrawlers(const GetCrawlersRequest& request) const
@@ -2074,14 +2074,14 @@ GetCrawlersOutcomeCallable GlueClient::GetCrawlersCallable(const GetCrawlersRequ
   return task->get_future();
 }
 
-void GlueClient::GetCrawlersAsync(const GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetCrawlersAsyncHelper(GlueClient const * const clientThis, const GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCrawlersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCrawlers(request), context);
 }
 
-void GlueClient::GetCrawlersAsyncHelper(const GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetCrawlersAsync(const GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCrawlers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetCrawlersAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCustomEntityTypeOutcome GlueClient::GetCustomEntityType(const GetCustomEntityTypeRequest& request) const
@@ -2098,14 +2098,14 @@ GetCustomEntityTypeOutcomeCallable GlueClient::GetCustomEntityTypeCallable(const
   return task->get_future();
 }
 
-void GlueClient::GetCustomEntityTypeAsync(const GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetCustomEntityTypeAsyncHelper(GlueClient const * const clientThis, const GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCustomEntityTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCustomEntityType(request), context);
 }
 
-void GlueClient::GetCustomEntityTypeAsyncHelper(const GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetCustomEntityTypeAsync(const GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCustomEntityType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetCustomEntityTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDataCatalogEncryptionSettingsOutcome GlueClient::GetDataCatalogEncryptionSettings(const GetDataCatalogEncryptionSettingsRequest& request) const
@@ -2122,14 +2122,14 @@ GetDataCatalogEncryptionSettingsOutcomeCallable GlueClient::GetDataCatalogEncryp
   return task->get_future();
 }
 
-void GlueClient::GetDataCatalogEncryptionSettingsAsync(const GetDataCatalogEncryptionSettingsRequest& request, const GetDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetDataCatalogEncryptionSettingsAsyncHelper(GlueClient const * const clientThis, const GetDataCatalogEncryptionSettingsRequest& request, const GetDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataCatalogEncryptionSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDataCatalogEncryptionSettings(request), context);
 }
 
-void GlueClient::GetDataCatalogEncryptionSettingsAsyncHelper(const GetDataCatalogEncryptionSettingsRequest& request, const GetDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetDataCatalogEncryptionSettingsAsync(const GetDataCatalogEncryptionSettingsRequest& request, const GetDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDataCatalogEncryptionSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetDataCatalogEncryptionSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDatabaseOutcome GlueClient::GetDatabase(const GetDatabaseRequest& request) const
@@ -2146,14 +2146,14 @@ GetDatabaseOutcomeCallable GlueClient::GetDatabaseCallable(const GetDatabaseRequ
   return task->get_future();
 }
 
-void GlueClient::GetDatabaseAsync(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetDatabaseAsyncHelper(GlueClient const * const clientThis, const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDatabase(request), context);
 }
 
-void GlueClient::GetDatabaseAsyncHelper(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetDatabaseAsync(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDatabasesOutcome GlueClient::GetDatabases(const GetDatabasesRequest& request) const
@@ -2170,14 +2170,14 @@ GetDatabasesOutcomeCallable GlueClient::GetDatabasesCallable(const GetDatabasesR
   return task->get_future();
 }
 
-void GlueClient::GetDatabasesAsync(const GetDatabasesRequest& request, const GetDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetDatabasesAsyncHelper(GlueClient const * const clientThis, const GetDatabasesRequest& request, const GetDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDatabasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDatabases(request), context);
 }
 
-void GlueClient::GetDatabasesAsyncHelper(const GetDatabasesRequest& request, const GetDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetDatabasesAsync(const GetDatabasesRequest& request, const GetDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDatabases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetDatabasesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDataflowGraphOutcome GlueClient::GetDataflowGraph(const GetDataflowGraphRequest& request) const
@@ -2194,14 +2194,14 @@ GetDataflowGraphOutcomeCallable GlueClient::GetDataflowGraphCallable(const GetDa
   return task->get_future();
 }
 
-void GlueClient::GetDataflowGraphAsync(const GetDataflowGraphRequest& request, const GetDataflowGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetDataflowGraphAsyncHelper(GlueClient const * const clientThis, const GetDataflowGraphRequest& request, const GetDataflowGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataflowGraphAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDataflowGraph(request), context);
 }
 
-void GlueClient::GetDataflowGraphAsyncHelper(const GetDataflowGraphRequest& request, const GetDataflowGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetDataflowGraphAsync(const GetDataflowGraphRequest& request, const GetDataflowGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDataflowGraph(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetDataflowGraphAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDevEndpointOutcome GlueClient::GetDevEndpoint(const GetDevEndpointRequest& request) const
@@ -2218,14 +2218,14 @@ GetDevEndpointOutcomeCallable GlueClient::GetDevEndpointCallable(const GetDevEnd
   return task->get_future();
 }
 
-void GlueClient::GetDevEndpointAsync(const GetDevEndpointRequest& request, const GetDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetDevEndpointAsyncHelper(GlueClient const * const clientThis, const GetDevEndpointRequest& request, const GetDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDevEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDevEndpoint(request), context);
 }
 
-void GlueClient::GetDevEndpointAsyncHelper(const GetDevEndpointRequest& request, const GetDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetDevEndpointAsync(const GetDevEndpointRequest& request, const GetDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDevEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetDevEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDevEndpointsOutcome GlueClient::GetDevEndpoints(const GetDevEndpointsRequest& request) const
@@ -2242,14 +2242,14 @@ GetDevEndpointsOutcomeCallable GlueClient::GetDevEndpointsCallable(const GetDevE
   return task->get_future();
 }
 
-void GlueClient::GetDevEndpointsAsync(const GetDevEndpointsRequest& request, const GetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetDevEndpointsAsyncHelper(GlueClient const * const clientThis, const GetDevEndpointsRequest& request, const GetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDevEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDevEndpoints(request), context);
 }
 
-void GlueClient::GetDevEndpointsAsyncHelper(const GetDevEndpointsRequest& request, const GetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetDevEndpointsAsync(const GetDevEndpointsRequest& request, const GetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDevEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetDevEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobOutcome GlueClient::GetJob(const GetJobRequest& request) const
@@ -2266,14 +2266,14 @@ GetJobOutcomeCallable GlueClient::GetJobCallable(const GetJobRequest& request) c
   return task->get_future();
 }
 
-void GlueClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetJobAsyncHelper(GlueClient const * const clientThis, const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJob(request), context);
 }
 
-void GlueClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobBookmarkOutcome GlueClient::GetJobBookmark(const GetJobBookmarkRequest& request) const
@@ -2290,14 +2290,14 @@ GetJobBookmarkOutcomeCallable GlueClient::GetJobBookmarkCallable(const GetJobBoo
   return task->get_future();
 }
 
-void GlueClient::GetJobBookmarkAsync(const GetJobBookmarkRequest& request, const GetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetJobBookmarkAsyncHelper(GlueClient const * const clientThis, const GetJobBookmarkRequest& request, const GetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobBookmarkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJobBookmark(request), context);
 }
 
-void GlueClient::GetJobBookmarkAsyncHelper(const GetJobBookmarkRequest& request, const GetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetJobBookmarkAsync(const GetJobBookmarkRequest& request, const GetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJobBookmark(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetJobBookmarkAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobRunOutcome GlueClient::GetJobRun(const GetJobRunRequest& request) const
@@ -2314,14 +2314,14 @@ GetJobRunOutcomeCallable GlueClient::GetJobRunCallable(const GetJobRunRequest& r
   return task->get_future();
 }
 
-void GlueClient::GetJobRunAsync(const GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetJobRunAsyncHelper(GlueClient const * const clientThis, const GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJobRun(request), context);
 }
 
-void GlueClient::GetJobRunAsyncHelper(const GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetJobRunAsync(const GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetJobRunAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobRunsOutcome GlueClient::GetJobRuns(const GetJobRunsRequest& request) const
@@ -2338,14 +2338,14 @@ GetJobRunsOutcomeCallable GlueClient::GetJobRunsCallable(const GetJobRunsRequest
   return task->get_future();
 }
 
-void GlueClient::GetJobRunsAsync(const GetJobRunsRequest& request, const GetJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetJobRunsAsyncHelper(GlueClient const * const clientThis, const GetJobRunsRequest& request, const GetJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobRunsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJobRuns(request), context);
 }
 
-void GlueClient::GetJobRunsAsyncHelper(const GetJobRunsRequest& request, const GetJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetJobRunsAsync(const GetJobRunsRequest& request, const GetJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJobRuns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetJobRunsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobsOutcome GlueClient::GetJobs(const GetJobsRequest& request) const
@@ -2362,14 +2362,14 @@ GetJobsOutcomeCallable GlueClient::GetJobsCallable(const GetJobsRequest& request
   return task->get_future();
 }
 
-void GlueClient::GetJobsAsync(const GetJobsRequest& request, const GetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetJobsAsyncHelper(GlueClient const * const clientThis, const GetJobsRequest& request, const GetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJobs(request), context);
 }
 
-void GlueClient::GetJobsAsyncHelper(const GetJobsRequest& request, const GetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetJobsAsync(const GetJobsRequest& request, const GetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMLTaskRunOutcome GlueClient::GetMLTaskRun(const GetMLTaskRunRequest& request) const
@@ -2386,14 +2386,14 @@ GetMLTaskRunOutcomeCallable GlueClient::GetMLTaskRunCallable(const GetMLTaskRunR
   return task->get_future();
 }
 
-void GlueClient::GetMLTaskRunAsync(const GetMLTaskRunRequest& request, const GetMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetMLTaskRunAsyncHelper(GlueClient const * const clientThis, const GetMLTaskRunRequest& request, const GetMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMLTaskRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMLTaskRun(request), context);
 }
 
-void GlueClient::GetMLTaskRunAsyncHelper(const GetMLTaskRunRequest& request, const GetMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetMLTaskRunAsync(const GetMLTaskRunRequest& request, const GetMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMLTaskRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetMLTaskRunAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMLTaskRunsOutcome GlueClient::GetMLTaskRuns(const GetMLTaskRunsRequest& request) const
@@ -2410,14 +2410,14 @@ GetMLTaskRunsOutcomeCallable GlueClient::GetMLTaskRunsCallable(const GetMLTaskRu
   return task->get_future();
 }
 
-void GlueClient::GetMLTaskRunsAsync(const GetMLTaskRunsRequest& request, const GetMLTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetMLTaskRunsAsyncHelper(GlueClient const * const clientThis, const GetMLTaskRunsRequest& request, const GetMLTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMLTaskRunsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMLTaskRuns(request), context);
 }
 
-void GlueClient::GetMLTaskRunsAsyncHelper(const GetMLTaskRunsRequest& request, const GetMLTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetMLTaskRunsAsync(const GetMLTaskRunsRequest& request, const GetMLTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMLTaskRuns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetMLTaskRunsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMLTransformOutcome GlueClient::GetMLTransform(const GetMLTransformRequest& request) const
@@ -2434,14 +2434,14 @@ GetMLTransformOutcomeCallable GlueClient::GetMLTransformCallable(const GetMLTran
   return task->get_future();
 }
 
-void GlueClient::GetMLTransformAsync(const GetMLTransformRequest& request, const GetMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetMLTransformAsyncHelper(GlueClient const * const clientThis, const GetMLTransformRequest& request, const GetMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMLTransformAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMLTransform(request), context);
 }
 
-void GlueClient::GetMLTransformAsyncHelper(const GetMLTransformRequest& request, const GetMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetMLTransformAsync(const GetMLTransformRequest& request, const GetMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMLTransform(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetMLTransformAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMLTransformsOutcome GlueClient::GetMLTransforms(const GetMLTransformsRequest& request) const
@@ -2458,14 +2458,14 @@ GetMLTransformsOutcomeCallable GlueClient::GetMLTransformsCallable(const GetMLTr
   return task->get_future();
 }
 
-void GlueClient::GetMLTransformsAsync(const GetMLTransformsRequest& request, const GetMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetMLTransformsAsyncHelper(GlueClient const * const clientThis, const GetMLTransformsRequest& request, const GetMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMLTransformsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMLTransforms(request), context);
 }
 
-void GlueClient::GetMLTransformsAsyncHelper(const GetMLTransformsRequest& request, const GetMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetMLTransformsAsync(const GetMLTransformsRequest& request, const GetMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMLTransforms(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetMLTransformsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMappingOutcome GlueClient::GetMapping(const GetMappingRequest& request) const
@@ -2482,14 +2482,14 @@ GetMappingOutcomeCallable GlueClient::GetMappingCallable(const GetMappingRequest
   return task->get_future();
 }
 
-void GlueClient::GetMappingAsync(const GetMappingRequest& request, const GetMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetMappingAsyncHelper(GlueClient const * const clientThis, const GetMappingRequest& request, const GetMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMappingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMapping(request), context);
 }
 
-void GlueClient::GetMappingAsyncHelper(const GetMappingRequest& request, const GetMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetMappingAsync(const GetMappingRequest& request, const GetMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMapping(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetMappingAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPartitionOutcome GlueClient::GetPartition(const GetPartitionRequest& request) const
@@ -2506,14 +2506,14 @@ GetPartitionOutcomeCallable GlueClient::GetPartitionCallable(const GetPartitionR
   return task->get_future();
 }
 
-void GlueClient::GetPartitionAsync(const GetPartitionRequest& request, const GetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetPartitionAsyncHelper(GlueClient const * const clientThis, const GetPartitionRequest& request, const GetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPartition(request), context);
 }
 
-void GlueClient::GetPartitionAsyncHelper(const GetPartitionRequest& request, const GetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetPartitionAsync(const GetPartitionRequest& request, const GetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetPartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPartitionIndexesOutcome GlueClient::GetPartitionIndexes(const GetPartitionIndexesRequest& request) const
@@ -2530,14 +2530,14 @@ GetPartitionIndexesOutcomeCallable GlueClient::GetPartitionIndexesCallable(const
   return task->get_future();
 }
 
-void GlueClient::GetPartitionIndexesAsync(const GetPartitionIndexesRequest& request, const GetPartitionIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetPartitionIndexesAsyncHelper(GlueClient const * const clientThis, const GetPartitionIndexesRequest& request, const GetPartitionIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPartitionIndexesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPartitionIndexes(request), context);
 }
 
-void GlueClient::GetPartitionIndexesAsyncHelper(const GetPartitionIndexesRequest& request, const GetPartitionIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetPartitionIndexesAsync(const GetPartitionIndexesRequest& request, const GetPartitionIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPartitionIndexes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetPartitionIndexesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPartitionsOutcome GlueClient::GetPartitions(const GetPartitionsRequest& request) const
@@ -2554,14 +2554,14 @@ GetPartitionsOutcomeCallable GlueClient::GetPartitionsCallable(const GetPartitio
   return task->get_future();
 }
 
-void GlueClient::GetPartitionsAsync(const GetPartitionsRequest& request, const GetPartitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetPartitionsAsyncHelper(GlueClient const * const clientThis, const GetPartitionsRequest& request, const GetPartitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPartitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPartitions(request), context);
 }
 
-void GlueClient::GetPartitionsAsyncHelper(const GetPartitionsRequest& request, const GetPartitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetPartitionsAsync(const GetPartitionsRequest& request, const GetPartitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPartitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetPartitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPlanOutcome GlueClient::GetPlan(const GetPlanRequest& request) const
@@ -2578,14 +2578,14 @@ GetPlanOutcomeCallable GlueClient::GetPlanCallable(const GetPlanRequest& request
   return task->get_future();
 }
 
-void GlueClient::GetPlanAsync(const GetPlanRequest& request, const GetPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetPlanAsyncHelper(GlueClient const * const clientThis, const GetPlanRequest& request, const GetPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPlan(request), context);
 }
 
-void GlueClient::GetPlanAsyncHelper(const GetPlanRequest& request, const GetPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetPlanAsync(const GetPlanRequest& request, const GetPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRegistryOutcome GlueClient::GetRegistry(const GetRegistryRequest& request) const
@@ -2602,14 +2602,14 @@ GetRegistryOutcomeCallable GlueClient::GetRegistryCallable(const GetRegistryRequ
   return task->get_future();
 }
 
-void GlueClient::GetRegistryAsync(const GetRegistryRequest& request, const GetRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetRegistryAsyncHelper(GlueClient const * const clientThis, const GetRegistryRequest& request, const GetRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRegistryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRegistry(request), context);
 }
 
-void GlueClient::GetRegistryAsyncHelper(const GetRegistryRequest& request, const GetRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetRegistryAsync(const GetRegistryRequest& request, const GetRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRegistry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetRegistryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcePoliciesOutcome GlueClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
@@ -2626,14 +2626,14 @@ GetResourcePoliciesOutcomeCallable GlueClient::GetResourcePoliciesCallable(const
   return task->get_future();
 }
 
-void GlueClient::GetResourcePoliciesAsync(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetResourcePoliciesAsyncHelper(GlueClient const * const clientThis, const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourcePolicies(request), context);
 }
 
-void GlueClient::GetResourcePoliciesAsyncHelper(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetResourcePoliciesAsync(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourcePolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetResourcePoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcePolicyOutcome GlueClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
@@ -2650,14 +2650,14 @@ GetResourcePolicyOutcomeCallable GlueClient::GetResourcePolicyCallable(const Get
   return task->get_future();
 }
 
-void GlueClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetResourcePolicyAsyncHelper(GlueClient const * const clientThis, const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourcePolicy(request), context);
 }
 
-void GlueClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSchemaOutcome GlueClient::GetSchema(const GetSchemaRequest& request) const
@@ -2674,14 +2674,14 @@ GetSchemaOutcomeCallable GlueClient::GetSchemaCallable(const GetSchemaRequest& r
   return task->get_future();
 }
 
-void GlueClient::GetSchemaAsync(const GetSchemaRequest& request, const GetSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetSchemaAsyncHelper(GlueClient const * const clientThis, const GetSchemaRequest& request, const GetSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSchema(request), context);
 }
 
-void GlueClient::GetSchemaAsyncHelper(const GetSchemaRequest& request, const GetSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetSchemaAsync(const GetSchemaRequest& request, const GetSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSchemaByDefinitionOutcome GlueClient::GetSchemaByDefinition(const GetSchemaByDefinitionRequest& request) const
@@ -2698,14 +2698,14 @@ GetSchemaByDefinitionOutcomeCallable GlueClient::GetSchemaByDefinitionCallable(c
   return task->get_future();
 }
 
-void GlueClient::GetSchemaByDefinitionAsync(const GetSchemaByDefinitionRequest& request, const GetSchemaByDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetSchemaByDefinitionAsyncHelper(GlueClient const * const clientThis, const GetSchemaByDefinitionRequest& request, const GetSchemaByDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSchemaByDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSchemaByDefinition(request), context);
 }
 
-void GlueClient::GetSchemaByDefinitionAsyncHelper(const GetSchemaByDefinitionRequest& request, const GetSchemaByDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetSchemaByDefinitionAsync(const GetSchemaByDefinitionRequest& request, const GetSchemaByDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSchemaByDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetSchemaByDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSchemaVersionOutcome GlueClient::GetSchemaVersion(const GetSchemaVersionRequest& request) const
@@ -2722,14 +2722,14 @@ GetSchemaVersionOutcomeCallable GlueClient::GetSchemaVersionCallable(const GetSc
   return task->get_future();
 }
 
-void GlueClient::GetSchemaVersionAsync(const GetSchemaVersionRequest& request, const GetSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetSchemaVersionAsyncHelper(GlueClient const * const clientThis, const GetSchemaVersionRequest& request, const GetSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSchemaVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSchemaVersion(request), context);
 }
 
-void GlueClient::GetSchemaVersionAsyncHelper(const GetSchemaVersionRequest& request, const GetSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetSchemaVersionAsync(const GetSchemaVersionRequest& request, const GetSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSchemaVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetSchemaVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSchemaVersionsDiffOutcome GlueClient::GetSchemaVersionsDiff(const GetSchemaVersionsDiffRequest& request) const
@@ -2746,14 +2746,14 @@ GetSchemaVersionsDiffOutcomeCallable GlueClient::GetSchemaVersionsDiffCallable(c
   return task->get_future();
 }
 
-void GlueClient::GetSchemaVersionsDiffAsync(const GetSchemaVersionsDiffRequest& request, const GetSchemaVersionsDiffResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetSchemaVersionsDiffAsyncHelper(GlueClient const * const clientThis, const GetSchemaVersionsDiffRequest& request, const GetSchemaVersionsDiffResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSchemaVersionsDiffAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSchemaVersionsDiff(request), context);
 }
 
-void GlueClient::GetSchemaVersionsDiffAsyncHelper(const GetSchemaVersionsDiffRequest& request, const GetSchemaVersionsDiffResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetSchemaVersionsDiffAsync(const GetSchemaVersionsDiffRequest& request, const GetSchemaVersionsDiffResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSchemaVersionsDiff(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetSchemaVersionsDiffAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSecurityConfigurationOutcome GlueClient::GetSecurityConfiguration(const GetSecurityConfigurationRequest& request) const
@@ -2770,14 +2770,14 @@ GetSecurityConfigurationOutcomeCallable GlueClient::GetSecurityConfigurationCall
   return task->get_future();
 }
 
-void GlueClient::GetSecurityConfigurationAsync(const GetSecurityConfigurationRequest& request, const GetSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetSecurityConfigurationAsyncHelper(GlueClient const * const clientThis, const GetSecurityConfigurationRequest& request, const GetSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSecurityConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSecurityConfiguration(request), context);
 }
 
-void GlueClient::GetSecurityConfigurationAsyncHelper(const GetSecurityConfigurationRequest& request, const GetSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetSecurityConfigurationAsync(const GetSecurityConfigurationRequest& request, const GetSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSecurityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetSecurityConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSecurityConfigurationsOutcome GlueClient::GetSecurityConfigurations(const GetSecurityConfigurationsRequest& request) const
@@ -2794,14 +2794,14 @@ GetSecurityConfigurationsOutcomeCallable GlueClient::GetSecurityConfigurationsCa
   return task->get_future();
 }
 
-void GlueClient::GetSecurityConfigurationsAsync(const GetSecurityConfigurationsRequest& request, const GetSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetSecurityConfigurationsAsyncHelper(GlueClient const * const clientThis, const GetSecurityConfigurationsRequest& request, const GetSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSecurityConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSecurityConfigurations(request), context);
 }
 
-void GlueClient::GetSecurityConfigurationsAsyncHelper(const GetSecurityConfigurationsRequest& request, const GetSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetSecurityConfigurationsAsync(const GetSecurityConfigurationsRequest& request, const GetSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSecurityConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetSecurityConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSessionOutcome GlueClient::GetSession(const GetSessionRequest& request) const
@@ -2818,14 +2818,14 @@ GetSessionOutcomeCallable GlueClient::GetSessionCallable(const GetSessionRequest
   return task->get_future();
 }
 
-void GlueClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetSessionAsyncHelper(GlueClient const * const clientThis, const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSession(request), context);
 }
 
-void GlueClient::GetSessionAsyncHelper(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetStatementOutcome GlueClient::GetStatement(const GetStatementRequest& request) const
@@ -2842,14 +2842,14 @@ GetStatementOutcomeCallable GlueClient::GetStatementCallable(const GetStatementR
   return task->get_future();
 }
 
-void GlueClient::GetStatementAsync(const GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetStatementAsyncHelper(GlueClient const * const clientThis, const GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStatement(request), context);
 }
 
-void GlueClient::GetStatementAsyncHelper(const GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetStatementAsync(const GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTableOutcome GlueClient::GetTable(const GetTableRequest& request) const
@@ -2866,14 +2866,14 @@ GetTableOutcomeCallable GlueClient::GetTableCallable(const GetTableRequest& requ
   return task->get_future();
 }
 
-void GlueClient::GetTableAsync(const GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetTableAsyncHelper(GlueClient const * const clientThis, const GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTable(request), context);
 }
 
-void GlueClient::GetTableAsyncHelper(const GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetTableAsync(const GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetTableAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTableVersionOutcome GlueClient::GetTableVersion(const GetTableVersionRequest& request) const
@@ -2890,14 +2890,14 @@ GetTableVersionOutcomeCallable GlueClient::GetTableVersionCallable(const GetTabl
   return task->get_future();
 }
 
-void GlueClient::GetTableVersionAsync(const GetTableVersionRequest& request, const GetTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetTableVersionAsyncHelper(GlueClient const * const clientThis, const GetTableVersionRequest& request, const GetTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTableVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTableVersion(request), context);
 }
 
-void GlueClient::GetTableVersionAsyncHelper(const GetTableVersionRequest& request, const GetTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetTableVersionAsync(const GetTableVersionRequest& request, const GetTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTableVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetTableVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTableVersionsOutcome GlueClient::GetTableVersions(const GetTableVersionsRequest& request) const
@@ -2914,14 +2914,14 @@ GetTableVersionsOutcomeCallable GlueClient::GetTableVersionsCallable(const GetTa
   return task->get_future();
 }
 
-void GlueClient::GetTableVersionsAsync(const GetTableVersionsRequest& request, const GetTableVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetTableVersionsAsyncHelper(GlueClient const * const clientThis, const GetTableVersionsRequest& request, const GetTableVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTableVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTableVersions(request), context);
 }
 
-void GlueClient::GetTableVersionsAsyncHelper(const GetTableVersionsRequest& request, const GetTableVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetTableVersionsAsync(const GetTableVersionsRequest& request, const GetTableVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTableVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetTableVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTablesOutcome GlueClient::GetTables(const GetTablesRequest& request) const
@@ -2938,14 +2938,14 @@ GetTablesOutcomeCallable GlueClient::GetTablesCallable(const GetTablesRequest& r
   return task->get_future();
 }
 
-void GlueClient::GetTablesAsync(const GetTablesRequest& request, const GetTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetTablesAsyncHelper(GlueClient const * const clientThis, const GetTablesRequest& request, const GetTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTables(request), context);
 }
 
-void GlueClient::GetTablesAsyncHelper(const GetTablesRequest& request, const GetTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetTablesAsync(const GetTablesRequest& request, const GetTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetTablesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTagsOutcome GlueClient::GetTags(const GetTagsRequest& request) const
@@ -2962,14 +2962,14 @@ GetTagsOutcomeCallable GlueClient::GetTagsCallable(const GetTagsRequest& request
   return task->get_future();
 }
 
-void GlueClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetTagsAsyncHelper(GlueClient const * const clientThis, const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTags(request), context);
 }
 
-void GlueClient::GetTagsAsyncHelper(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTriggerOutcome GlueClient::GetTrigger(const GetTriggerRequest& request) const
@@ -2986,14 +2986,14 @@ GetTriggerOutcomeCallable GlueClient::GetTriggerCallable(const GetTriggerRequest
   return task->get_future();
 }
 
-void GlueClient::GetTriggerAsync(const GetTriggerRequest& request, const GetTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetTriggerAsyncHelper(GlueClient const * const clientThis, const GetTriggerRequest& request, const GetTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTriggerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTrigger(request), context);
 }
 
-void GlueClient::GetTriggerAsyncHelper(const GetTriggerRequest& request, const GetTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetTriggerAsync(const GetTriggerRequest& request, const GetTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTrigger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetTriggerAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTriggersOutcome GlueClient::GetTriggers(const GetTriggersRequest& request) const
@@ -3010,14 +3010,14 @@ GetTriggersOutcomeCallable GlueClient::GetTriggersCallable(const GetTriggersRequ
   return task->get_future();
 }
 
-void GlueClient::GetTriggersAsync(const GetTriggersRequest& request, const GetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetTriggersAsyncHelper(GlueClient const * const clientThis, const GetTriggersRequest& request, const GetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTriggersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTriggers(request), context);
 }
 
-void GlueClient::GetTriggersAsyncHelper(const GetTriggersRequest& request, const GetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetTriggersAsync(const GetTriggersRequest& request, const GetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTriggers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetTriggersAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUnfilteredPartitionMetadataOutcome GlueClient::GetUnfilteredPartitionMetadata(const GetUnfilteredPartitionMetadataRequest& request) const
@@ -3034,14 +3034,14 @@ GetUnfilteredPartitionMetadataOutcomeCallable GlueClient::GetUnfilteredPartition
   return task->get_future();
 }
 
-void GlueClient::GetUnfilteredPartitionMetadataAsync(const GetUnfilteredPartitionMetadataRequest& request, const GetUnfilteredPartitionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetUnfilteredPartitionMetadataAsyncHelper(GlueClient const * const clientThis, const GetUnfilteredPartitionMetadataRequest& request, const GetUnfilteredPartitionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUnfilteredPartitionMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUnfilteredPartitionMetadata(request), context);
 }
 
-void GlueClient::GetUnfilteredPartitionMetadataAsyncHelper(const GetUnfilteredPartitionMetadataRequest& request, const GetUnfilteredPartitionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetUnfilteredPartitionMetadataAsync(const GetUnfilteredPartitionMetadataRequest& request, const GetUnfilteredPartitionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUnfilteredPartitionMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetUnfilteredPartitionMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUnfilteredPartitionsMetadataOutcome GlueClient::GetUnfilteredPartitionsMetadata(const GetUnfilteredPartitionsMetadataRequest& request) const
@@ -3058,14 +3058,14 @@ GetUnfilteredPartitionsMetadataOutcomeCallable GlueClient::GetUnfilteredPartitio
   return task->get_future();
 }
 
-void GlueClient::GetUnfilteredPartitionsMetadataAsync(const GetUnfilteredPartitionsMetadataRequest& request, const GetUnfilteredPartitionsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetUnfilteredPartitionsMetadataAsyncHelper(GlueClient const * const clientThis, const GetUnfilteredPartitionsMetadataRequest& request, const GetUnfilteredPartitionsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUnfilteredPartitionsMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUnfilteredPartitionsMetadata(request), context);
 }
 
-void GlueClient::GetUnfilteredPartitionsMetadataAsyncHelper(const GetUnfilteredPartitionsMetadataRequest& request, const GetUnfilteredPartitionsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetUnfilteredPartitionsMetadataAsync(const GetUnfilteredPartitionsMetadataRequest& request, const GetUnfilteredPartitionsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUnfilteredPartitionsMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetUnfilteredPartitionsMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUnfilteredTableMetadataOutcome GlueClient::GetUnfilteredTableMetadata(const GetUnfilteredTableMetadataRequest& request) const
@@ -3082,14 +3082,14 @@ GetUnfilteredTableMetadataOutcomeCallable GlueClient::GetUnfilteredTableMetadata
   return task->get_future();
 }
 
-void GlueClient::GetUnfilteredTableMetadataAsync(const GetUnfilteredTableMetadataRequest& request, const GetUnfilteredTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetUnfilteredTableMetadataAsyncHelper(GlueClient const * const clientThis, const GetUnfilteredTableMetadataRequest& request, const GetUnfilteredTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUnfilteredTableMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUnfilteredTableMetadata(request), context);
 }
 
-void GlueClient::GetUnfilteredTableMetadataAsyncHelper(const GetUnfilteredTableMetadataRequest& request, const GetUnfilteredTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetUnfilteredTableMetadataAsync(const GetUnfilteredTableMetadataRequest& request, const GetUnfilteredTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUnfilteredTableMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetUnfilteredTableMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUserDefinedFunctionOutcome GlueClient::GetUserDefinedFunction(const GetUserDefinedFunctionRequest& request) const
@@ -3106,14 +3106,14 @@ GetUserDefinedFunctionOutcomeCallable GlueClient::GetUserDefinedFunctionCallable
   return task->get_future();
 }
 
-void GlueClient::GetUserDefinedFunctionAsync(const GetUserDefinedFunctionRequest& request, const GetUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetUserDefinedFunctionAsyncHelper(GlueClient const * const clientThis, const GetUserDefinedFunctionRequest& request, const GetUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUserDefinedFunctionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUserDefinedFunction(request), context);
 }
 
-void GlueClient::GetUserDefinedFunctionAsyncHelper(const GetUserDefinedFunctionRequest& request, const GetUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetUserDefinedFunctionAsync(const GetUserDefinedFunctionRequest& request, const GetUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUserDefinedFunction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetUserDefinedFunctionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUserDefinedFunctionsOutcome GlueClient::GetUserDefinedFunctions(const GetUserDefinedFunctionsRequest& request) const
@@ -3130,14 +3130,14 @@ GetUserDefinedFunctionsOutcomeCallable GlueClient::GetUserDefinedFunctionsCallab
   return task->get_future();
 }
 
-void GlueClient::GetUserDefinedFunctionsAsync(const GetUserDefinedFunctionsRequest& request, const GetUserDefinedFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetUserDefinedFunctionsAsyncHelper(GlueClient const * const clientThis, const GetUserDefinedFunctionsRequest& request, const GetUserDefinedFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUserDefinedFunctionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUserDefinedFunctions(request), context);
 }
 
-void GlueClient::GetUserDefinedFunctionsAsyncHelper(const GetUserDefinedFunctionsRequest& request, const GetUserDefinedFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetUserDefinedFunctionsAsync(const GetUserDefinedFunctionsRequest& request, const GetUserDefinedFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUserDefinedFunctions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetUserDefinedFunctionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWorkflowOutcome GlueClient::GetWorkflow(const GetWorkflowRequest& request) const
@@ -3154,14 +3154,14 @@ GetWorkflowOutcomeCallable GlueClient::GetWorkflowCallable(const GetWorkflowRequ
   return task->get_future();
 }
 
-void GlueClient::GetWorkflowAsync(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetWorkflowAsyncHelper(GlueClient const * const clientThis, const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWorkflow(request), context);
 }
 
-void GlueClient::GetWorkflowAsyncHelper(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetWorkflowAsync(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWorkflow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetWorkflowAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWorkflowRunOutcome GlueClient::GetWorkflowRun(const GetWorkflowRunRequest& request) const
@@ -3178,14 +3178,14 @@ GetWorkflowRunOutcomeCallable GlueClient::GetWorkflowRunCallable(const GetWorkfl
   return task->get_future();
 }
 
-void GlueClient::GetWorkflowRunAsync(const GetWorkflowRunRequest& request, const GetWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetWorkflowRunAsyncHelper(GlueClient const * const clientThis, const GetWorkflowRunRequest& request, const GetWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWorkflowRun(request), context);
 }
 
-void GlueClient::GetWorkflowRunAsyncHelper(const GetWorkflowRunRequest& request, const GetWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetWorkflowRunAsync(const GetWorkflowRunRequest& request, const GetWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWorkflowRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetWorkflowRunAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWorkflowRunPropertiesOutcome GlueClient::GetWorkflowRunProperties(const GetWorkflowRunPropertiesRequest& request) const
@@ -3202,14 +3202,14 @@ GetWorkflowRunPropertiesOutcomeCallable GlueClient::GetWorkflowRunPropertiesCall
   return task->get_future();
 }
 
-void GlueClient::GetWorkflowRunPropertiesAsync(const GetWorkflowRunPropertiesRequest& request, const GetWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetWorkflowRunPropertiesAsyncHelper(GlueClient const * const clientThis, const GetWorkflowRunPropertiesRequest& request, const GetWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowRunPropertiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWorkflowRunProperties(request), context);
 }
 
-void GlueClient::GetWorkflowRunPropertiesAsyncHelper(const GetWorkflowRunPropertiesRequest& request, const GetWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetWorkflowRunPropertiesAsync(const GetWorkflowRunPropertiesRequest& request, const GetWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWorkflowRunProperties(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetWorkflowRunPropertiesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWorkflowRunsOutcome GlueClient::GetWorkflowRuns(const GetWorkflowRunsRequest& request) const
@@ -3226,14 +3226,14 @@ GetWorkflowRunsOutcomeCallable GlueClient::GetWorkflowRunsCallable(const GetWork
   return task->get_future();
 }
 
-void GlueClient::GetWorkflowRunsAsync(const GetWorkflowRunsRequest& request, const GetWorkflowRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientGetWorkflowRunsAsyncHelper(GlueClient const * const clientThis, const GetWorkflowRunsRequest& request, const GetWorkflowRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowRunsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWorkflowRuns(request), context);
 }
 
-void GlueClient::GetWorkflowRunsAsyncHelper(const GetWorkflowRunsRequest& request, const GetWorkflowRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::GetWorkflowRunsAsync(const GetWorkflowRunsRequest& request, const GetWorkflowRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWorkflowRuns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientGetWorkflowRunsAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportCatalogToGlueOutcome GlueClient::ImportCatalogToGlue(const ImportCatalogToGlueRequest& request) const
@@ -3250,14 +3250,14 @@ ImportCatalogToGlueOutcomeCallable GlueClient::ImportCatalogToGlueCallable(const
   return task->get_future();
 }
 
-void GlueClient::ImportCatalogToGlueAsync(const ImportCatalogToGlueRequest& request, const ImportCatalogToGlueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientImportCatalogToGlueAsyncHelper(GlueClient const * const clientThis, const ImportCatalogToGlueRequest& request, const ImportCatalogToGlueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportCatalogToGlueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportCatalogToGlue(request), context);
 }
 
-void GlueClient::ImportCatalogToGlueAsyncHelper(const ImportCatalogToGlueRequest& request, const ImportCatalogToGlueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ImportCatalogToGlueAsync(const ImportCatalogToGlueRequest& request, const ImportCatalogToGlueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportCatalogToGlue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientImportCatalogToGlueAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBlueprintsOutcome GlueClient::ListBlueprints(const ListBlueprintsRequest& request) const
@@ -3274,14 +3274,14 @@ ListBlueprintsOutcomeCallable GlueClient::ListBlueprintsCallable(const ListBluep
   return task->get_future();
 }
 
-void GlueClient::ListBlueprintsAsync(const ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListBlueprintsAsyncHelper(GlueClient const * const clientThis, const ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBlueprintsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBlueprints(request), context);
 }
 
-void GlueClient::ListBlueprintsAsyncHelper(const ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListBlueprintsAsync(const ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBlueprints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListBlueprintsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCrawlersOutcome GlueClient::ListCrawlers(const ListCrawlersRequest& request) const
@@ -3298,14 +3298,14 @@ ListCrawlersOutcomeCallable GlueClient::ListCrawlersCallable(const ListCrawlersR
   return task->get_future();
 }
 
-void GlueClient::ListCrawlersAsync(const ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListCrawlersAsyncHelper(GlueClient const * const clientThis, const ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCrawlersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCrawlers(request), context);
 }
 
-void GlueClient::ListCrawlersAsyncHelper(const ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListCrawlersAsync(const ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCrawlers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListCrawlersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCrawlsOutcome GlueClient::ListCrawls(const ListCrawlsRequest& request) const
@@ -3322,14 +3322,14 @@ ListCrawlsOutcomeCallable GlueClient::ListCrawlsCallable(const ListCrawlsRequest
   return task->get_future();
 }
 
-void GlueClient::ListCrawlsAsync(const ListCrawlsRequest& request, const ListCrawlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListCrawlsAsyncHelper(GlueClient const * const clientThis, const ListCrawlsRequest& request, const ListCrawlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCrawlsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCrawls(request), context);
 }
 
-void GlueClient::ListCrawlsAsyncHelper(const ListCrawlsRequest& request, const ListCrawlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListCrawlsAsync(const ListCrawlsRequest& request, const ListCrawlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCrawls(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListCrawlsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomEntityTypesOutcome GlueClient::ListCustomEntityTypes(const ListCustomEntityTypesRequest& request) const
@@ -3346,14 +3346,14 @@ ListCustomEntityTypesOutcomeCallable GlueClient::ListCustomEntityTypesCallable(c
   return task->get_future();
 }
 
-void GlueClient::ListCustomEntityTypesAsync(const ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListCustomEntityTypesAsyncHelper(GlueClient const * const clientThis, const ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomEntityTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomEntityTypes(request), context);
 }
 
-void GlueClient::ListCustomEntityTypesAsyncHelper(const ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListCustomEntityTypesAsync(const ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomEntityTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListCustomEntityTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDevEndpointsOutcome GlueClient::ListDevEndpoints(const ListDevEndpointsRequest& request) const
@@ -3370,14 +3370,14 @@ ListDevEndpointsOutcomeCallable GlueClient::ListDevEndpointsCallable(const ListD
   return task->get_future();
 }
 
-void GlueClient::ListDevEndpointsAsync(const ListDevEndpointsRequest& request, const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListDevEndpointsAsyncHelper(GlueClient const * const clientThis, const ListDevEndpointsRequest& request, const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDevEndpoints(request), context);
 }
 
-void GlueClient::ListDevEndpointsAsyncHelper(const ListDevEndpointsRequest& request, const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListDevEndpointsAsync(const ListDevEndpointsRequest& request, const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDevEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListDevEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobsOutcome GlueClient::ListJobs(const ListJobsRequest& request) const
@@ -3394,14 +3394,14 @@ ListJobsOutcomeCallable GlueClient::ListJobsCallable(const ListJobsRequest& requ
   return task->get_future();
 }
 
-void GlueClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListJobsAsyncHelper(GlueClient const * const clientThis, const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobs(request), context);
 }
 
-void GlueClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMLTransformsOutcome GlueClient::ListMLTransforms(const ListMLTransformsRequest& request) const
@@ -3418,14 +3418,14 @@ ListMLTransformsOutcomeCallable GlueClient::ListMLTransformsCallable(const ListM
   return task->get_future();
 }
 
-void GlueClient::ListMLTransformsAsync(const ListMLTransformsRequest& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListMLTransformsAsyncHelper(GlueClient const * const clientThis, const ListMLTransformsRequest& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMLTransformsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMLTransforms(request), context);
 }
 
-void GlueClient::ListMLTransformsAsyncHelper(const ListMLTransformsRequest& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListMLTransformsAsync(const ListMLTransformsRequest& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMLTransforms(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListMLTransformsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRegistriesOutcome GlueClient::ListRegistries(const ListRegistriesRequest& request) const
@@ -3442,14 +3442,14 @@ ListRegistriesOutcomeCallable GlueClient::ListRegistriesCallable(const ListRegis
   return task->get_future();
 }
 
-void GlueClient::ListRegistriesAsync(const ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListRegistriesAsyncHelper(GlueClient const * const clientThis, const ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRegistriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRegistries(request), context);
 }
 
-void GlueClient::ListRegistriesAsyncHelper(const ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListRegistriesAsync(const ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRegistries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListRegistriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSchemaVersionsOutcome GlueClient::ListSchemaVersions(const ListSchemaVersionsRequest& request) const
@@ -3466,14 +3466,14 @@ ListSchemaVersionsOutcomeCallable GlueClient::ListSchemaVersionsCallable(const L
   return task->get_future();
 }
 
-void GlueClient::ListSchemaVersionsAsync(const ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListSchemaVersionsAsyncHelper(GlueClient const * const clientThis, const ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSchemaVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSchemaVersions(request), context);
 }
 
-void GlueClient::ListSchemaVersionsAsyncHelper(const ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListSchemaVersionsAsync(const ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSchemaVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListSchemaVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSchemasOutcome GlueClient::ListSchemas(const ListSchemasRequest& request) const
@@ -3490,14 +3490,14 @@ ListSchemasOutcomeCallable GlueClient::ListSchemasCallable(const ListSchemasRequ
   return task->get_future();
 }
 
-void GlueClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListSchemasAsyncHelper(GlueClient const * const clientThis, const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSchemasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSchemas(request), context);
 }
 
-void GlueClient::ListSchemasAsyncHelper(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSchemas(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListSchemasAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSessionsOutcome GlueClient::ListSessions(const ListSessionsRequest& request) const
@@ -3514,14 +3514,14 @@ ListSessionsOutcomeCallable GlueClient::ListSessionsCallable(const ListSessionsR
   return task->get_future();
 }
 
-void GlueClient::ListSessionsAsync(const ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListSessionsAsyncHelper(GlueClient const * const clientThis, const ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSessions(request), context);
 }
 
-void GlueClient::ListSessionsAsyncHelper(const ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListSessionsAsync(const ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStatementsOutcome GlueClient::ListStatements(const ListStatementsRequest& request) const
@@ -3538,14 +3538,14 @@ ListStatementsOutcomeCallable GlueClient::ListStatementsCallable(const ListState
   return task->get_future();
 }
 
-void GlueClient::ListStatementsAsync(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListStatementsAsyncHelper(GlueClient const * const clientThis, const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStatementsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStatements(request), context);
 }
 
-void GlueClient::ListStatementsAsyncHelper(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListStatementsAsync(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStatements(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListStatementsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTriggersOutcome GlueClient::ListTriggers(const ListTriggersRequest& request) const
@@ -3562,14 +3562,14 @@ ListTriggersOutcomeCallable GlueClient::ListTriggersCallable(const ListTriggersR
   return task->get_future();
 }
 
-void GlueClient::ListTriggersAsync(const ListTriggersRequest& request, const ListTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListTriggersAsyncHelper(GlueClient const * const clientThis, const ListTriggersRequest& request, const ListTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTriggersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTriggers(request), context);
 }
 
-void GlueClient::ListTriggersAsyncHelper(const ListTriggersRequest& request, const ListTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListTriggersAsync(const ListTriggersRequest& request, const ListTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTriggers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListTriggersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorkflowsOutcome GlueClient::ListWorkflows(const ListWorkflowsRequest& request) const
@@ -3586,14 +3586,14 @@ ListWorkflowsOutcomeCallable GlueClient::ListWorkflowsCallable(const ListWorkflo
   return task->get_future();
 }
 
-void GlueClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientListWorkflowsAsyncHelper(GlueClient const * const clientThis, const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkflowsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorkflows(request), context);
 }
 
-void GlueClient::ListWorkflowsAsyncHelper(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorkflows(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientListWorkflowsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutDataCatalogEncryptionSettingsOutcome GlueClient::PutDataCatalogEncryptionSettings(const PutDataCatalogEncryptionSettingsRequest& request) const
@@ -3610,14 +3610,14 @@ PutDataCatalogEncryptionSettingsOutcomeCallable GlueClient::PutDataCatalogEncryp
   return task->get_future();
 }
 
-void GlueClient::PutDataCatalogEncryptionSettingsAsync(const PutDataCatalogEncryptionSettingsRequest& request, const PutDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientPutDataCatalogEncryptionSettingsAsyncHelper(GlueClient const * const clientThis, const PutDataCatalogEncryptionSettingsRequest& request, const PutDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDataCatalogEncryptionSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutDataCatalogEncryptionSettings(request), context);
 }
 
-void GlueClient::PutDataCatalogEncryptionSettingsAsyncHelper(const PutDataCatalogEncryptionSettingsRequest& request, const PutDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::PutDataCatalogEncryptionSettingsAsync(const PutDataCatalogEncryptionSettingsRequest& request, const PutDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutDataCatalogEncryptionSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientPutDataCatalogEncryptionSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourcePolicyOutcome GlueClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -3634,14 +3634,14 @@ PutResourcePolicyOutcomeCallable GlueClient::PutResourcePolicyCallable(const Put
   return task->get_future();
 }
 
-void GlueClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientPutResourcePolicyAsyncHelper(GlueClient const * const clientThis, const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourcePolicy(request), context);
 }
 
-void GlueClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientPutResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutSchemaVersionMetadataOutcome GlueClient::PutSchemaVersionMetadata(const PutSchemaVersionMetadataRequest& request) const
@@ -3658,14 +3658,14 @@ PutSchemaVersionMetadataOutcomeCallable GlueClient::PutSchemaVersionMetadataCall
   return task->get_future();
 }
 
-void GlueClient::PutSchemaVersionMetadataAsync(const PutSchemaVersionMetadataRequest& request, const PutSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientPutSchemaVersionMetadataAsyncHelper(GlueClient const * const clientThis, const PutSchemaVersionMetadataRequest& request, const PutSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSchemaVersionMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutSchemaVersionMetadata(request), context);
 }
 
-void GlueClient::PutSchemaVersionMetadataAsyncHelper(const PutSchemaVersionMetadataRequest& request, const PutSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::PutSchemaVersionMetadataAsync(const PutSchemaVersionMetadataRequest& request, const PutSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutSchemaVersionMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientPutSchemaVersionMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 PutWorkflowRunPropertiesOutcome GlueClient::PutWorkflowRunProperties(const PutWorkflowRunPropertiesRequest& request) const
@@ -3682,14 +3682,14 @@ PutWorkflowRunPropertiesOutcomeCallable GlueClient::PutWorkflowRunPropertiesCall
   return task->get_future();
 }
 
-void GlueClient::PutWorkflowRunPropertiesAsync(const PutWorkflowRunPropertiesRequest& request, const PutWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientPutWorkflowRunPropertiesAsyncHelper(GlueClient const * const clientThis, const PutWorkflowRunPropertiesRequest& request, const PutWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutWorkflowRunPropertiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutWorkflowRunProperties(request), context);
 }
 
-void GlueClient::PutWorkflowRunPropertiesAsyncHelper(const PutWorkflowRunPropertiesRequest& request, const PutWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::PutWorkflowRunPropertiesAsync(const PutWorkflowRunPropertiesRequest& request, const PutWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutWorkflowRunProperties(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientPutWorkflowRunPropertiesAsyncHelper( this, request, handler, context ); } );
 }
 
 QuerySchemaVersionMetadataOutcome GlueClient::QuerySchemaVersionMetadata(const QuerySchemaVersionMetadataRequest& request) const
@@ -3706,14 +3706,14 @@ QuerySchemaVersionMetadataOutcomeCallable GlueClient::QuerySchemaVersionMetadata
   return task->get_future();
 }
 
-void GlueClient::QuerySchemaVersionMetadataAsync(const QuerySchemaVersionMetadataRequest& request, const QuerySchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientQuerySchemaVersionMetadataAsyncHelper(GlueClient const * const clientThis, const QuerySchemaVersionMetadataRequest& request, const QuerySchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->QuerySchemaVersionMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->QuerySchemaVersionMetadata(request), context);
 }
 
-void GlueClient::QuerySchemaVersionMetadataAsyncHelper(const QuerySchemaVersionMetadataRequest& request, const QuerySchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::QuerySchemaVersionMetadataAsync(const QuerySchemaVersionMetadataRequest& request, const QuerySchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, QuerySchemaVersionMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientQuerySchemaVersionMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterSchemaVersionOutcome GlueClient::RegisterSchemaVersion(const RegisterSchemaVersionRequest& request) const
@@ -3730,14 +3730,14 @@ RegisterSchemaVersionOutcomeCallable GlueClient::RegisterSchemaVersionCallable(c
   return task->get_future();
 }
 
-void GlueClient::RegisterSchemaVersionAsync(const RegisterSchemaVersionRequest& request, const RegisterSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientRegisterSchemaVersionAsyncHelper(GlueClient const * const clientThis, const RegisterSchemaVersionRequest& request, const RegisterSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterSchemaVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterSchemaVersion(request), context);
 }
 
-void GlueClient::RegisterSchemaVersionAsyncHelper(const RegisterSchemaVersionRequest& request, const RegisterSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::RegisterSchemaVersionAsync(const RegisterSchemaVersionRequest& request, const RegisterSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterSchemaVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientRegisterSchemaVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveSchemaVersionMetadataOutcome GlueClient::RemoveSchemaVersionMetadata(const RemoveSchemaVersionMetadataRequest& request) const
@@ -3754,14 +3754,14 @@ RemoveSchemaVersionMetadataOutcomeCallable GlueClient::RemoveSchemaVersionMetada
   return task->get_future();
 }
 
-void GlueClient::RemoveSchemaVersionMetadataAsync(const RemoveSchemaVersionMetadataRequest& request, const RemoveSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientRemoveSchemaVersionMetadataAsyncHelper(GlueClient const * const clientThis, const RemoveSchemaVersionMetadataRequest& request, const RemoveSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveSchemaVersionMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveSchemaVersionMetadata(request), context);
 }
 
-void GlueClient::RemoveSchemaVersionMetadataAsyncHelper(const RemoveSchemaVersionMetadataRequest& request, const RemoveSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::RemoveSchemaVersionMetadataAsync(const RemoveSchemaVersionMetadataRequest& request, const RemoveSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveSchemaVersionMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientRemoveSchemaVersionMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetJobBookmarkOutcome GlueClient::ResetJobBookmark(const ResetJobBookmarkRequest& request) const
@@ -3778,14 +3778,14 @@ ResetJobBookmarkOutcomeCallable GlueClient::ResetJobBookmarkCallable(const Reset
   return task->get_future();
 }
 
-void GlueClient::ResetJobBookmarkAsync(const ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientResetJobBookmarkAsyncHelper(GlueClient const * const clientThis, const ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetJobBookmarkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetJobBookmark(request), context);
 }
 
-void GlueClient::ResetJobBookmarkAsyncHelper(const ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ResetJobBookmarkAsync(const ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetJobBookmark(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientResetJobBookmarkAsyncHelper( this, request, handler, context ); } );
 }
 
 ResumeWorkflowRunOutcome GlueClient::ResumeWorkflowRun(const ResumeWorkflowRunRequest& request) const
@@ -3802,14 +3802,14 @@ ResumeWorkflowRunOutcomeCallable GlueClient::ResumeWorkflowRunCallable(const Res
   return task->get_future();
 }
 
-void GlueClient::ResumeWorkflowRunAsync(const ResumeWorkflowRunRequest& request, const ResumeWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientResumeWorkflowRunAsyncHelper(GlueClient const * const clientThis, const ResumeWorkflowRunRequest& request, const ResumeWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResumeWorkflowRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResumeWorkflowRun(request), context);
 }
 
-void GlueClient::ResumeWorkflowRunAsyncHelper(const ResumeWorkflowRunRequest& request, const ResumeWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::ResumeWorkflowRunAsync(const ResumeWorkflowRunRequest& request, const ResumeWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResumeWorkflowRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientResumeWorkflowRunAsyncHelper( this, request, handler, context ); } );
 }
 
 RunStatementOutcome GlueClient::RunStatement(const RunStatementRequest& request) const
@@ -3826,14 +3826,14 @@ RunStatementOutcomeCallable GlueClient::RunStatementCallable(const RunStatementR
   return task->get_future();
 }
 
-void GlueClient::RunStatementAsync(const RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientRunStatementAsyncHelper(GlueClient const * const clientThis, const RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RunStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RunStatement(request), context);
 }
 
-void GlueClient::RunStatementAsyncHelper(const RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::RunStatementAsync(const RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RunStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientRunStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchTablesOutcome GlueClient::SearchTables(const SearchTablesRequest& request) const
@@ -3850,14 +3850,14 @@ SearchTablesOutcomeCallable GlueClient::SearchTablesCallable(const SearchTablesR
   return task->get_future();
 }
 
-void GlueClient::SearchTablesAsync(const SearchTablesRequest& request, const SearchTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientSearchTablesAsyncHelper(GlueClient const * const clientThis, const SearchTablesRequest& request, const SearchTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchTables(request), context);
 }
 
-void GlueClient::SearchTablesAsyncHelper(const SearchTablesRequest& request, const SearchTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::SearchTablesAsync(const SearchTablesRequest& request, const SearchTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientSearchTablesAsyncHelper( this, request, handler, context ); } );
 }
 
 StartBlueprintRunOutcome GlueClient::StartBlueprintRun(const StartBlueprintRunRequest& request) const
@@ -3874,14 +3874,14 @@ StartBlueprintRunOutcomeCallable GlueClient::StartBlueprintRunCallable(const Sta
   return task->get_future();
 }
 
-void GlueClient::StartBlueprintRunAsync(const StartBlueprintRunRequest& request, const StartBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStartBlueprintRunAsyncHelper(GlueClient const * const clientThis, const StartBlueprintRunRequest& request, const StartBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartBlueprintRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartBlueprintRun(request), context);
 }
 
-void GlueClient::StartBlueprintRunAsyncHelper(const StartBlueprintRunRequest& request, const StartBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StartBlueprintRunAsync(const StartBlueprintRunRequest& request, const StartBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartBlueprintRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStartBlueprintRunAsyncHelper( this, request, handler, context ); } );
 }
 
 StartCrawlerOutcome GlueClient::StartCrawler(const StartCrawlerRequest& request) const
@@ -3898,14 +3898,14 @@ StartCrawlerOutcomeCallable GlueClient::StartCrawlerCallable(const StartCrawlerR
   return task->get_future();
 }
 
-void GlueClient::StartCrawlerAsync(const StartCrawlerRequest& request, const StartCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStartCrawlerAsyncHelper(GlueClient const * const clientThis, const StartCrawlerRequest& request, const StartCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartCrawlerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartCrawler(request), context);
 }
 
-void GlueClient::StartCrawlerAsyncHelper(const StartCrawlerRequest& request, const StartCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StartCrawlerAsync(const StartCrawlerRequest& request, const StartCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartCrawler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStartCrawlerAsyncHelper( this, request, handler, context ); } );
 }
 
 StartCrawlerScheduleOutcome GlueClient::StartCrawlerSchedule(const StartCrawlerScheduleRequest& request) const
@@ -3922,14 +3922,14 @@ StartCrawlerScheduleOutcomeCallable GlueClient::StartCrawlerScheduleCallable(con
   return task->get_future();
 }
 
-void GlueClient::StartCrawlerScheduleAsync(const StartCrawlerScheduleRequest& request, const StartCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStartCrawlerScheduleAsyncHelper(GlueClient const * const clientThis, const StartCrawlerScheduleRequest& request, const StartCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartCrawlerScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartCrawlerSchedule(request), context);
 }
 
-void GlueClient::StartCrawlerScheduleAsyncHelper(const StartCrawlerScheduleRequest& request, const StartCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StartCrawlerScheduleAsync(const StartCrawlerScheduleRequest& request, const StartCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartCrawlerSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStartCrawlerScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 StartExportLabelsTaskRunOutcome GlueClient::StartExportLabelsTaskRun(const StartExportLabelsTaskRunRequest& request) const
@@ -3946,14 +3946,14 @@ StartExportLabelsTaskRunOutcomeCallable GlueClient::StartExportLabelsTaskRunCall
   return task->get_future();
 }
 
-void GlueClient::StartExportLabelsTaskRunAsync(const StartExportLabelsTaskRunRequest& request, const StartExportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStartExportLabelsTaskRunAsyncHelper(GlueClient const * const clientThis, const StartExportLabelsTaskRunRequest& request, const StartExportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartExportLabelsTaskRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartExportLabelsTaskRun(request), context);
 }
 
-void GlueClient::StartExportLabelsTaskRunAsyncHelper(const StartExportLabelsTaskRunRequest& request, const StartExportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StartExportLabelsTaskRunAsync(const StartExportLabelsTaskRunRequest& request, const StartExportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartExportLabelsTaskRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStartExportLabelsTaskRunAsyncHelper( this, request, handler, context ); } );
 }
 
 StartImportLabelsTaskRunOutcome GlueClient::StartImportLabelsTaskRun(const StartImportLabelsTaskRunRequest& request) const
@@ -3970,14 +3970,14 @@ StartImportLabelsTaskRunOutcomeCallable GlueClient::StartImportLabelsTaskRunCall
   return task->get_future();
 }
 
-void GlueClient::StartImportLabelsTaskRunAsync(const StartImportLabelsTaskRunRequest& request, const StartImportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStartImportLabelsTaskRunAsyncHelper(GlueClient const * const clientThis, const StartImportLabelsTaskRunRequest& request, const StartImportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartImportLabelsTaskRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartImportLabelsTaskRun(request), context);
 }
 
-void GlueClient::StartImportLabelsTaskRunAsyncHelper(const StartImportLabelsTaskRunRequest& request, const StartImportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StartImportLabelsTaskRunAsync(const StartImportLabelsTaskRunRequest& request, const StartImportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartImportLabelsTaskRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStartImportLabelsTaskRunAsyncHelper( this, request, handler, context ); } );
 }
 
 StartJobRunOutcome GlueClient::StartJobRun(const StartJobRunRequest& request) const
@@ -3994,14 +3994,14 @@ StartJobRunOutcomeCallable GlueClient::StartJobRunCallable(const StartJobRunRequ
   return task->get_future();
 }
 
-void GlueClient::StartJobRunAsync(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStartJobRunAsyncHelper(GlueClient const * const clientThis, const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartJobRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartJobRun(request), context);
 }
 
-void GlueClient::StartJobRunAsyncHelper(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StartJobRunAsync(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStartJobRunAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMLEvaluationTaskRunOutcome GlueClient::StartMLEvaluationTaskRun(const StartMLEvaluationTaskRunRequest& request) const
@@ -4018,14 +4018,14 @@ StartMLEvaluationTaskRunOutcomeCallable GlueClient::StartMLEvaluationTaskRunCall
   return task->get_future();
 }
 
-void GlueClient::StartMLEvaluationTaskRunAsync(const StartMLEvaluationTaskRunRequest& request, const StartMLEvaluationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStartMLEvaluationTaskRunAsyncHelper(GlueClient const * const clientThis, const StartMLEvaluationTaskRunRequest& request, const StartMLEvaluationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMLEvaluationTaskRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMLEvaluationTaskRun(request), context);
 }
 
-void GlueClient::StartMLEvaluationTaskRunAsyncHelper(const StartMLEvaluationTaskRunRequest& request, const StartMLEvaluationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StartMLEvaluationTaskRunAsync(const StartMLEvaluationTaskRunRequest& request, const StartMLEvaluationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMLEvaluationTaskRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStartMLEvaluationTaskRunAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMLLabelingSetGenerationTaskRunOutcome GlueClient::StartMLLabelingSetGenerationTaskRun(const StartMLLabelingSetGenerationTaskRunRequest& request) const
@@ -4042,14 +4042,14 @@ StartMLLabelingSetGenerationTaskRunOutcomeCallable GlueClient::StartMLLabelingSe
   return task->get_future();
 }
 
-void GlueClient::StartMLLabelingSetGenerationTaskRunAsync(const StartMLLabelingSetGenerationTaskRunRequest& request, const StartMLLabelingSetGenerationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStartMLLabelingSetGenerationTaskRunAsyncHelper(GlueClient const * const clientThis, const StartMLLabelingSetGenerationTaskRunRequest& request, const StartMLLabelingSetGenerationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMLLabelingSetGenerationTaskRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMLLabelingSetGenerationTaskRun(request), context);
 }
 
-void GlueClient::StartMLLabelingSetGenerationTaskRunAsyncHelper(const StartMLLabelingSetGenerationTaskRunRequest& request, const StartMLLabelingSetGenerationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StartMLLabelingSetGenerationTaskRunAsync(const StartMLLabelingSetGenerationTaskRunRequest& request, const StartMLLabelingSetGenerationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMLLabelingSetGenerationTaskRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStartMLLabelingSetGenerationTaskRunAsyncHelper( this, request, handler, context ); } );
 }
 
 StartTriggerOutcome GlueClient::StartTrigger(const StartTriggerRequest& request) const
@@ -4066,14 +4066,14 @@ StartTriggerOutcomeCallable GlueClient::StartTriggerCallable(const StartTriggerR
   return task->get_future();
 }
 
-void GlueClient::StartTriggerAsync(const StartTriggerRequest& request, const StartTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStartTriggerAsyncHelper(GlueClient const * const clientThis, const StartTriggerRequest& request, const StartTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTriggerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartTrigger(request), context);
 }
 
-void GlueClient::StartTriggerAsyncHelper(const StartTriggerRequest& request, const StartTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StartTriggerAsync(const StartTriggerRequest& request, const StartTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartTrigger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStartTriggerAsyncHelper( this, request, handler, context ); } );
 }
 
 StartWorkflowRunOutcome GlueClient::StartWorkflowRun(const StartWorkflowRunRequest& request) const
@@ -4090,14 +4090,14 @@ StartWorkflowRunOutcomeCallable GlueClient::StartWorkflowRunCallable(const Start
   return task->get_future();
 }
 
-void GlueClient::StartWorkflowRunAsync(const StartWorkflowRunRequest& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStartWorkflowRunAsyncHelper(GlueClient const * const clientThis, const StartWorkflowRunRequest& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartWorkflowRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartWorkflowRun(request), context);
 }
 
-void GlueClient::StartWorkflowRunAsyncHelper(const StartWorkflowRunRequest& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StartWorkflowRunAsync(const StartWorkflowRunRequest& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartWorkflowRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStartWorkflowRunAsyncHelper( this, request, handler, context ); } );
 }
 
 StopCrawlerOutcome GlueClient::StopCrawler(const StopCrawlerRequest& request) const
@@ -4114,14 +4114,14 @@ StopCrawlerOutcomeCallable GlueClient::StopCrawlerCallable(const StopCrawlerRequ
   return task->get_future();
 }
 
-void GlueClient::StopCrawlerAsync(const StopCrawlerRequest& request, const StopCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStopCrawlerAsyncHelper(GlueClient const * const clientThis, const StopCrawlerRequest& request, const StopCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopCrawlerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopCrawler(request), context);
 }
 
-void GlueClient::StopCrawlerAsyncHelper(const StopCrawlerRequest& request, const StopCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StopCrawlerAsync(const StopCrawlerRequest& request, const StopCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopCrawler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStopCrawlerAsyncHelper( this, request, handler, context ); } );
 }
 
 StopCrawlerScheduleOutcome GlueClient::StopCrawlerSchedule(const StopCrawlerScheduleRequest& request) const
@@ -4138,14 +4138,14 @@ StopCrawlerScheduleOutcomeCallable GlueClient::StopCrawlerScheduleCallable(const
   return task->get_future();
 }
 
-void GlueClient::StopCrawlerScheduleAsync(const StopCrawlerScheduleRequest& request, const StopCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStopCrawlerScheduleAsyncHelper(GlueClient const * const clientThis, const StopCrawlerScheduleRequest& request, const StopCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopCrawlerScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopCrawlerSchedule(request), context);
 }
 
-void GlueClient::StopCrawlerScheduleAsyncHelper(const StopCrawlerScheduleRequest& request, const StopCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StopCrawlerScheduleAsync(const StopCrawlerScheduleRequest& request, const StopCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopCrawlerSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStopCrawlerScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 StopSessionOutcome GlueClient::StopSession(const StopSessionRequest& request) const
@@ -4162,14 +4162,14 @@ StopSessionOutcomeCallable GlueClient::StopSessionCallable(const StopSessionRequ
   return task->get_future();
 }
 
-void GlueClient::StopSessionAsync(const StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStopSessionAsyncHelper(GlueClient const * const clientThis, const StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopSession(request), context);
 }
 
-void GlueClient::StopSessionAsyncHelper(const StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StopSessionAsync(const StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStopSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 StopTriggerOutcome GlueClient::StopTrigger(const StopTriggerRequest& request) const
@@ -4186,14 +4186,14 @@ StopTriggerOutcomeCallable GlueClient::StopTriggerCallable(const StopTriggerRequ
   return task->get_future();
 }
 
-void GlueClient::StopTriggerAsync(const StopTriggerRequest& request, const StopTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStopTriggerAsyncHelper(GlueClient const * const clientThis, const StopTriggerRequest& request, const StopTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopTriggerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopTrigger(request), context);
 }
 
-void GlueClient::StopTriggerAsyncHelper(const StopTriggerRequest& request, const StopTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StopTriggerAsync(const StopTriggerRequest& request, const StopTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopTrigger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStopTriggerAsyncHelper( this, request, handler, context ); } );
 }
 
 StopWorkflowRunOutcome GlueClient::StopWorkflowRun(const StopWorkflowRunRequest& request) const
@@ -4210,14 +4210,14 @@ StopWorkflowRunOutcomeCallable GlueClient::StopWorkflowRunCallable(const StopWor
   return task->get_future();
 }
 
-void GlueClient::StopWorkflowRunAsync(const StopWorkflowRunRequest& request, const StopWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientStopWorkflowRunAsyncHelper(GlueClient const * const clientThis, const StopWorkflowRunRequest& request, const StopWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopWorkflowRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopWorkflowRun(request), context);
 }
 
-void GlueClient::StopWorkflowRunAsyncHelper(const StopWorkflowRunRequest& request, const StopWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::StopWorkflowRunAsync(const StopWorkflowRunRequest& request, const StopWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopWorkflowRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientStopWorkflowRunAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome GlueClient::TagResource(const TagResourceRequest& request) const
@@ -4234,14 +4234,14 @@ TagResourceOutcomeCallable GlueClient::TagResourceCallable(const TagResourceRequ
   return task->get_future();
 }
 
-void GlueClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientTagResourceAsyncHelper(GlueClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void GlueClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome GlueClient::UntagResource(const UntagResourceRequest& request) const
@@ -4258,14 +4258,14 @@ UntagResourceOutcomeCallable GlueClient::UntagResourceCallable(const UntagResour
   return task->get_future();
 }
 
-void GlueClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUntagResourceAsyncHelper(GlueClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void GlueClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBlueprintOutcome GlueClient::UpdateBlueprint(const UpdateBlueprintRequest& request) const
@@ -4282,14 +4282,14 @@ UpdateBlueprintOutcomeCallable GlueClient::UpdateBlueprintCallable(const UpdateB
   return task->get_future();
 }
 
-void GlueClient::UpdateBlueprintAsync(const UpdateBlueprintRequest& request, const UpdateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateBlueprintAsyncHelper(GlueClient const * const clientThis, const UpdateBlueprintRequest& request, const UpdateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBlueprintAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBlueprint(request), context);
 }
 
-void GlueClient::UpdateBlueprintAsyncHelper(const UpdateBlueprintRequest& request, const UpdateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateBlueprintAsync(const UpdateBlueprintRequest& request, const UpdateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBlueprint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateBlueprintAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateClassifierOutcome GlueClient::UpdateClassifier(const UpdateClassifierRequest& request) const
@@ -4306,14 +4306,14 @@ UpdateClassifierOutcomeCallable GlueClient::UpdateClassifierCallable(const Updat
   return task->get_future();
 }
 
-void GlueClient::UpdateClassifierAsync(const UpdateClassifierRequest& request, const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateClassifierAsyncHelper(GlueClient const * const clientThis, const UpdateClassifierRequest& request, const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClassifierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateClassifier(request), context);
 }
 
-void GlueClient::UpdateClassifierAsyncHelper(const UpdateClassifierRequest& request, const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateClassifierAsync(const UpdateClassifierRequest& request, const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateClassifier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateClassifierAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateColumnStatisticsForPartitionOutcome GlueClient::UpdateColumnStatisticsForPartition(const UpdateColumnStatisticsForPartitionRequest& request) const
@@ -4330,14 +4330,14 @@ UpdateColumnStatisticsForPartitionOutcomeCallable GlueClient::UpdateColumnStatis
   return task->get_future();
 }
 
-void GlueClient::UpdateColumnStatisticsForPartitionAsync(const UpdateColumnStatisticsForPartitionRequest& request, const UpdateColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateColumnStatisticsForPartitionAsyncHelper(GlueClient const * const clientThis, const UpdateColumnStatisticsForPartitionRequest& request, const UpdateColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateColumnStatisticsForPartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateColumnStatisticsForPartition(request), context);
 }
 
-void GlueClient::UpdateColumnStatisticsForPartitionAsyncHelper(const UpdateColumnStatisticsForPartitionRequest& request, const UpdateColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateColumnStatisticsForPartitionAsync(const UpdateColumnStatisticsForPartitionRequest& request, const UpdateColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateColumnStatisticsForPartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateColumnStatisticsForPartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateColumnStatisticsForTableOutcome GlueClient::UpdateColumnStatisticsForTable(const UpdateColumnStatisticsForTableRequest& request) const
@@ -4354,14 +4354,14 @@ UpdateColumnStatisticsForTableOutcomeCallable GlueClient::UpdateColumnStatistics
   return task->get_future();
 }
 
-void GlueClient::UpdateColumnStatisticsForTableAsync(const UpdateColumnStatisticsForTableRequest& request, const UpdateColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateColumnStatisticsForTableAsyncHelper(GlueClient const * const clientThis, const UpdateColumnStatisticsForTableRequest& request, const UpdateColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateColumnStatisticsForTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateColumnStatisticsForTable(request), context);
 }
 
-void GlueClient::UpdateColumnStatisticsForTableAsyncHelper(const UpdateColumnStatisticsForTableRequest& request, const UpdateColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateColumnStatisticsForTableAsync(const UpdateColumnStatisticsForTableRequest& request, const UpdateColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateColumnStatisticsForTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateColumnStatisticsForTableAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConnectionOutcome GlueClient::UpdateConnection(const UpdateConnectionRequest& request) const
@@ -4378,14 +4378,14 @@ UpdateConnectionOutcomeCallable GlueClient::UpdateConnectionCallable(const Updat
   return task->get_future();
 }
 
-void GlueClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateConnectionAsyncHelper(GlueClient const * const clientThis, const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConnection(request), context);
 }
 
-void GlueClient::UpdateConnectionAsyncHelper(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCrawlerOutcome GlueClient::UpdateCrawler(const UpdateCrawlerRequest& request) const
@@ -4402,14 +4402,14 @@ UpdateCrawlerOutcomeCallable GlueClient::UpdateCrawlerCallable(const UpdateCrawl
   return task->get_future();
 }
 
-void GlueClient::UpdateCrawlerAsync(const UpdateCrawlerRequest& request, const UpdateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateCrawlerAsyncHelper(GlueClient const * const clientThis, const UpdateCrawlerRequest& request, const UpdateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCrawlerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCrawler(request), context);
 }
 
-void GlueClient::UpdateCrawlerAsyncHelper(const UpdateCrawlerRequest& request, const UpdateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateCrawlerAsync(const UpdateCrawlerRequest& request, const UpdateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCrawler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateCrawlerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCrawlerScheduleOutcome GlueClient::UpdateCrawlerSchedule(const UpdateCrawlerScheduleRequest& request) const
@@ -4426,14 +4426,14 @@ UpdateCrawlerScheduleOutcomeCallable GlueClient::UpdateCrawlerScheduleCallable(c
   return task->get_future();
 }
 
-void GlueClient::UpdateCrawlerScheduleAsync(const UpdateCrawlerScheduleRequest& request, const UpdateCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateCrawlerScheduleAsyncHelper(GlueClient const * const clientThis, const UpdateCrawlerScheduleRequest& request, const UpdateCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCrawlerScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCrawlerSchedule(request), context);
 }
 
-void GlueClient::UpdateCrawlerScheduleAsyncHelper(const UpdateCrawlerScheduleRequest& request, const UpdateCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateCrawlerScheduleAsync(const UpdateCrawlerScheduleRequest& request, const UpdateCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCrawlerSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateCrawlerScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDatabaseOutcome GlueClient::UpdateDatabase(const UpdateDatabaseRequest& request) const
@@ -4450,14 +4450,14 @@ UpdateDatabaseOutcomeCallable GlueClient::UpdateDatabaseCallable(const UpdateDat
   return task->get_future();
 }
 
-void GlueClient::UpdateDatabaseAsync(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateDatabaseAsyncHelper(GlueClient const * const clientThis, const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDatabase(request), context);
 }
 
-void GlueClient::UpdateDatabaseAsyncHelper(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateDatabaseAsync(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDevEndpointOutcome GlueClient::UpdateDevEndpoint(const UpdateDevEndpointRequest& request) const
@@ -4474,14 +4474,14 @@ UpdateDevEndpointOutcomeCallable GlueClient::UpdateDevEndpointCallable(const Upd
   return task->get_future();
 }
 
-void GlueClient::UpdateDevEndpointAsync(const UpdateDevEndpointRequest& request, const UpdateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateDevEndpointAsyncHelper(GlueClient const * const clientThis, const UpdateDevEndpointRequest& request, const UpdateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDevEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDevEndpoint(request), context);
 }
 
-void GlueClient::UpdateDevEndpointAsyncHelper(const UpdateDevEndpointRequest& request, const UpdateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateDevEndpointAsync(const UpdateDevEndpointRequest& request, const UpdateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDevEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateDevEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateJobOutcome GlueClient::UpdateJob(const UpdateJobRequest& request) const
@@ -4498,14 +4498,14 @@ UpdateJobOutcomeCallable GlueClient::UpdateJobCallable(const UpdateJobRequest& r
   return task->get_future();
 }
 
-void GlueClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateJobAsyncHelper(GlueClient const * const clientThis, const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateJob(request), context);
 }
 
-void GlueClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMLTransformOutcome GlueClient::UpdateMLTransform(const UpdateMLTransformRequest& request) const
@@ -4522,14 +4522,14 @@ UpdateMLTransformOutcomeCallable GlueClient::UpdateMLTransformCallable(const Upd
   return task->get_future();
 }
 
-void GlueClient::UpdateMLTransformAsync(const UpdateMLTransformRequest& request, const UpdateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateMLTransformAsyncHelper(GlueClient const * const clientThis, const UpdateMLTransformRequest& request, const UpdateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMLTransformAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMLTransform(request), context);
 }
 
-void GlueClient::UpdateMLTransformAsyncHelper(const UpdateMLTransformRequest& request, const UpdateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateMLTransformAsync(const UpdateMLTransformRequest& request, const UpdateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMLTransform(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateMLTransformAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePartitionOutcome GlueClient::UpdatePartition(const UpdatePartitionRequest& request) const
@@ -4546,14 +4546,14 @@ UpdatePartitionOutcomeCallable GlueClient::UpdatePartitionCallable(const UpdateP
   return task->get_future();
 }
 
-void GlueClient::UpdatePartitionAsync(const UpdatePartitionRequest& request, const UpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdatePartitionAsyncHelper(GlueClient const * const clientThis, const UpdatePartitionRequest& request, const UpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePartitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePartition(request), context);
 }
 
-void GlueClient::UpdatePartitionAsyncHelper(const UpdatePartitionRequest& request, const UpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdatePartitionAsync(const UpdatePartitionRequest& request, const UpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePartition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdatePartitionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRegistryOutcome GlueClient::UpdateRegistry(const UpdateRegistryRequest& request) const
@@ -4570,14 +4570,14 @@ UpdateRegistryOutcomeCallable GlueClient::UpdateRegistryCallable(const UpdateReg
   return task->get_future();
 }
 
-void GlueClient::UpdateRegistryAsync(const UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateRegistryAsyncHelper(GlueClient const * const clientThis, const UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRegistryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRegistry(request), context);
 }
 
-void GlueClient::UpdateRegistryAsyncHelper(const UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateRegistryAsync(const UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRegistry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateRegistryAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSchemaOutcome GlueClient::UpdateSchema(const UpdateSchemaRequest& request) const
@@ -4594,14 +4594,14 @@ UpdateSchemaOutcomeCallable GlueClient::UpdateSchemaCallable(const UpdateSchemaR
   return task->get_future();
 }
 
-void GlueClient::UpdateSchemaAsync(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateSchemaAsyncHelper(GlueClient const * const clientThis, const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSchema(request), context);
 }
 
-void GlueClient::UpdateSchemaAsyncHelper(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateSchemaAsync(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTableOutcome GlueClient::UpdateTable(const UpdateTableRequest& request) const
@@ -4618,14 +4618,14 @@ UpdateTableOutcomeCallable GlueClient::UpdateTableCallable(const UpdateTableRequ
   return task->get_future();
 }
 
-void GlueClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateTableAsyncHelper(GlueClient const * const clientThis, const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTable(request), context);
 }
 
-void GlueClient::UpdateTableAsyncHelper(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateTableAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTriggerOutcome GlueClient::UpdateTrigger(const UpdateTriggerRequest& request) const
@@ -4642,14 +4642,14 @@ UpdateTriggerOutcomeCallable GlueClient::UpdateTriggerCallable(const UpdateTrigg
   return task->get_future();
 }
 
-void GlueClient::UpdateTriggerAsync(const UpdateTriggerRequest& request, const UpdateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateTriggerAsyncHelper(GlueClient const * const clientThis, const UpdateTriggerRequest& request, const UpdateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTriggerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTrigger(request), context);
 }
 
-void GlueClient::UpdateTriggerAsyncHelper(const UpdateTriggerRequest& request, const UpdateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateTriggerAsync(const UpdateTriggerRequest& request, const UpdateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTrigger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateTriggerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserDefinedFunctionOutcome GlueClient::UpdateUserDefinedFunction(const UpdateUserDefinedFunctionRequest& request) const
@@ -4666,14 +4666,14 @@ UpdateUserDefinedFunctionOutcomeCallable GlueClient::UpdateUserDefinedFunctionCa
   return task->get_future();
 }
 
-void GlueClient::UpdateUserDefinedFunctionAsync(const UpdateUserDefinedFunctionRequest& request, const UpdateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateUserDefinedFunctionAsyncHelper(GlueClient const * const clientThis, const UpdateUserDefinedFunctionRequest& request, const UpdateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserDefinedFunctionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUserDefinedFunction(request), context);
 }
 
-void GlueClient::UpdateUserDefinedFunctionAsyncHelper(const UpdateUserDefinedFunctionRequest& request, const UpdateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateUserDefinedFunctionAsync(const UpdateUserDefinedFunctionRequest& request, const UpdateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUserDefinedFunction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateUserDefinedFunctionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWorkflowOutcome GlueClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const
@@ -4690,13 +4690,13 @@ UpdateWorkflowOutcomeCallable GlueClient::UpdateWorkflowCallable(const UpdateWor
   return task->get_future();
 }
 
-void GlueClient::UpdateWorkflowAsync(const UpdateWorkflowRequest& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClientUpdateWorkflowAsyncHelper(GlueClient const * const clientThis, const UpdateWorkflowRequest& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkflowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWorkflow(request), context);
 }
 
-void GlueClient::UpdateWorkflowAsyncHelper(const UpdateWorkflowRequest& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlueClient::UpdateWorkflowAsync(const UpdateWorkflowRequest& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWorkflow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlueClientUpdateWorkflowAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -136,14 +136,14 @@ CancelRotateSecretOutcomeCallable SecretsManagerClient::CancelRotateSecretCallab
   return task->get_future();
 }
 
-void SecretsManagerClient::CancelRotateSecretAsync(const CancelRotateSecretRequest& request, const CancelRotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientCancelRotateSecretAsyncHelper(SecretsManagerClient const * const clientThis, const CancelRotateSecretRequest& request, const CancelRotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelRotateSecretAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelRotateSecret(request), context);
 }
 
-void SecretsManagerClient::CancelRotateSecretAsyncHelper(const CancelRotateSecretRequest& request, const CancelRotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::CancelRotateSecretAsync(const CancelRotateSecretRequest& request, const CancelRotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelRotateSecret(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientCancelRotateSecretAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSecretOutcome SecretsManagerClient::CreateSecret(const CreateSecretRequest& request) const
@@ -160,14 +160,14 @@ CreateSecretOutcomeCallable SecretsManagerClient::CreateSecretCallable(const Cre
   return task->get_future();
 }
 
-void SecretsManagerClient::CreateSecretAsync(const CreateSecretRequest& request, const CreateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientCreateSecretAsyncHelper(SecretsManagerClient const * const clientThis, const CreateSecretRequest& request, const CreateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSecretAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSecret(request), context);
 }
 
-void SecretsManagerClient::CreateSecretAsyncHelper(const CreateSecretRequest& request, const CreateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::CreateSecretAsync(const CreateSecretRequest& request, const CreateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSecret(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientCreateSecretAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome SecretsManagerClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -184,14 +184,14 @@ DeleteResourcePolicyOutcomeCallable SecretsManagerClient::DeleteResourcePolicyCa
   return task->get_future();
 }
 
-void SecretsManagerClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientDeleteResourcePolicyAsyncHelper(SecretsManagerClient const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void SecretsManagerClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSecretOutcome SecretsManagerClient::DeleteSecret(const DeleteSecretRequest& request) const
@@ -208,14 +208,14 @@ DeleteSecretOutcomeCallable SecretsManagerClient::DeleteSecretCallable(const Del
   return task->get_future();
 }
 
-void SecretsManagerClient::DeleteSecretAsync(const DeleteSecretRequest& request, const DeleteSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientDeleteSecretAsyncHelper(SecretsManagerClient const * const clientThis, const DeleteSecretRequest& request, const DeleteSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSecretAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSecret(request), context);
 }
 
-void SecretsManagerClient::DeleteSecretAsyncHelper(const DeleteSecretRequest& request, const DeleteSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::DeleteSecretAsync(const DeleteSecretRequest& request, const DeleteSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSecret(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientDeleteSecretAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSecretOutcome SecretsManagerClient::DescribeSecret(const DescribeSecretRequest& request) const
@@ -232,14 +232,14 @@ DescribeSecretOutcomeCallable SecretsManagerClient::DescribeSecretCallable(const
   return task->get_future();
 }
 
-void SecretsManagerClient::DescribeSecretAsync(const DescribeSecretRequest& request, const DescribeSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientDescribeSecretAsyncHelper(SecretsManagerClient const * const clientThis, const DescribeSecretRequest& request, const DescribeSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecretAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSecret(request), context);
 }
 
-void SecretsManagerClient::DescribeSecretAsyncHelper(const DescribeSecretRequest& request, const DescribeSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::DescribeSecretAsync(const DescribeSecretRequest& request, const DescribeSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSecret(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientDescribeSecretAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRandomPasswordOutcome SecretsManagerClient::GetRandomPassword(const GetRandomPasswordRequest& request) const
@@ -256,14 +256,14 @@ GetRandomPasswordOutcomeCallable SecretsManagerClient::GetRandomPasswordCallable
   return task->get_future();
 }
 
-void SecretsManagerClient::GetRandomPasswordAsync(const GetRandomPasswordRequest& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientGetRandomPasswordAsyncHelper(SecretsManagerClient const * const clientThis, const GetRandomPasswordRequest& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRandomPasswordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRandomPassword(request), context);
 }
 
-void SecretsManagerClient::GetRandomPasswordAsyncHelper(const GetRandomPasswordRequest& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::GetRandomPasswordAsync(const GetRandomPasswordRequest& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRandomPassword(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientGetRandomPasswordAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcePolicyOutcome SecretsManagerClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
@@ -280,14 +280,14 @@ GetResourcePolicyOutcomeCallable SecretsManagerClient::GetResourcePolicyCallable
   return task->get_future();
 }
 
-void SecretsManagerClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientGetResourcePolicyAsyncHelper(SecretsManagerClient const * const clientThis, const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourcePolicy(request), context);
 }
 
-void SecretsManagerClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientGetResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSecretValueOutcome SecretsManagerClient::GetSecretValue(const GetSecretValueRequest& request) const
@@ -304,14 +304,14 @@ GetSecretValueOutcomeCallable SecretsManagerClient::GetSecretValueCallable(const
   return task->get_future();
 }
 
-void SecretsManagerClient::GetSecretValueAsync(const GetSecretValueRequest& request, const GetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientGetSecretValueAsyncHelper(SecretsManagerClient const * const clientThis, const GetSecretValueRequest& request, const GetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSecretValueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSecretValue(request), context);
 }
 
-void SecretsManagerClient::GetSecretValueAsyncHelper(const GetSecretValueRequest& request, const GetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::GetSecretValueAsync(const GetSecretValueRequest& request, const GetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSecretValue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientGetSecretValueAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSecretVersionIdsOutcome SecretsManagerClient::ListSecretVersionIds(const ListSecretVersionIdsRequest& request) const
@@ -328,14 +328,14 @@ ListSecretVersionIdsOutcomeCallable SecretsManagerClient::ListSecretVersionIdsCa
   return task->get_future();
 }
 
-void SecretsManagerClient::ListSecretVersionIdsAsync(const ListSecretVersionIdsRequest& request, const ListSecretVersionIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientListSecretVersionIdsAsyncHelper(SecretsManagerClient const * const clientThis, const ListSecretVersionIdsRequest& request, const ListSecretVersionIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSecretVersionIdsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSecretVersionIds(request), context);
 }
 
-void SecretsManagerClient::ListSecretVersionIdsAsyncHelper(const ListSecretVersionIdsRequest& request, const ListSecretVersionIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::ListSecretVersionIdsAsync(const ListSecretVersionIdsRequest& request, const ListSecretVersionIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSecretVersionIds(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientListSecretVersionIdsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSecretsOutcome SecretsManagerClient::ListSecrets(const ListSecretsRequest& request) const
@@ -352,14 +352,14 @@ ListSecretsOutcomeCallable SecretsManagerClient::ListSecretsCallable(const ListS
   return task->get_future();
 }
 
-void SecretsManagerClient::ListSecretsAsync(const ListSecretsRequest& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientListSecretsAsyncHelper(SecretsManagerClient const * const clientThis, const ListSecretsRequest& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSecretsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSecrets(request), context);
 }
 
-void SecretsManagerClient::ListSecretsAsyncHelper(const ListSecretsRequest& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::ListSecretsAsync(const ListSecretsRequest& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSecrets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientListSecretsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourcePolicyOutcome SecretsManagerClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -376,14 +376,14 @@ PutResourcePolicyOutcomeCallable SecretsManagerClient::PutResourcePolicyCallable
   return task->get_future();
 }
 
-void SecretsManagerClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientPutResourcePolicyAsyncHelper(SecretsManagerClient const * const clientThis, const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourcePolicy(request), context);
 }
 
-void SecretsManagerClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientPutResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutSecretValueOutcome SecretsManagerClient::PutSecretValue(const PutSecretValueRequest& request) const
@@ -400,14 +400,14 @@ PutSecretValueOutcomeCallable SecretsManagerClient::PutSecretValueCallable(const
   return task->get_future();
 }
 
-void SecretsManagerClient::PutSecretValueAsync(const PutSecretValueRequest& request, const PutSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientPutSecretValueAsyncHelper(SecretsManagerClient const * const clientThis, const PutSecretValueRequest& request, const PutSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSecretValueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutSecretValue(request), context);
 }
 
-void SecretsManagerClient::PutSecretValueAsyncHelper(const PutSecretValueRequest& request, const PutSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::PutSecretValueAsync(const PutSecretValueRequest& request, const PutSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutSecretValue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientPutSecretValueAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveRegionsFromReplicationOutcome SecretsManagerClient::RemoveRegionsFromReplication(const RemoveRegionsFromReplicationRequest& request) const
@@ -424,14 +424,14 @@ RemoveRegionsFromReplicationOutcomeCallable SecretsManagerClient::RemoveRegionsF
   return task->get_future();
 }
 
-void SecretsManagerClient::RemoveRegionsFromReplicationAsync(const RemoveRegionsFromReplicationRequest& request, const RemoveRegionsFromReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientRemoveRegionsFromReplicationAsyncHelper(SecretsManagerClient const * const clientThis, const RemoveRegionsFromReplicationRequest& request, const RemoveRegionsFromReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveRegionsFromReplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveRegionsFromReplication(request), context);
 }
 
-void SecretsManagerClient::RemoveRegionsFromReplicationAsyncHelper(const RemoveRegionsFromReplicationRequest& request, const RemoveRegionsFromReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::RemoveRegionsFromReplicationAsync(const RemoveRegionsFromReplicationRequest& request, const RemoveRegionsFromReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveRegionsFromReplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientRemoveRegionsFromReplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 ReplicateSecretToRegionsOutcome SecretsManagerClient::ReplicateSecretToRegions(const ReplicateSecretToRegionsRequest& request) const
@@ -448,14 +448,14 @@ ReplicateSecretToRegionsOutcomeCallable SecretsManagerClient::ReplicateSecretToR
   return task->get_future();
 }
 
-void SecretsManagerClient::ReplicateSecretToRegionsAsync(const ReplicateSecretToRegionsRequest& request, const ReplicateSecretToRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientReplicateSecretToRegionsAsyncHelper(SecretsManagerClient const * const clientThis, const ReplicateSecretToRegionsRequest& request, const ReplicateSecretToRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReplicateSecretToRegionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReplicateSecretToRegions(request), context);
 }
 
-void SecretsManagerClient::ReplicateSecretToRegionsAsyncHelper(const ReplicateSecretToRegionsRequest& request, const ReplicateSecretToRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::ReplicateSecretToRegionsAsync(const ReplicateSecretToRegionsRequest& request, const ReplicateSecretToRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReplicateSecretToRegions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientReplicateSecretToRegionsAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreSecretOutcome SecretsManagerClient::RestoreSecret(const RestoreSecretRequest& request) const
@@ -472,14 +472,14 @@ RestoreSecretOutcomeCallable SecretsManagerClient::RestoreSecretCallable(const R
   return task->get_future();
 }
 
-void SecretsManagerClient::RestoreSecretAsync(const RestoreSecretRequest& request, const RestoreSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientRestoreSecretAsyncHelper(SecretsManagerClient const * const clientThis, const RestoreSecretRequest& request, const RestoreSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreSecretAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreSecret(request), context);
 }
 
-void SecretsManagerClient::RestoreSecretAsyncHelper(const RestoreSecretRequest& request, const RestoreSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::RestoreSecretAsync(const RestoreSecretRequest& request, const RestoreSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreSecret(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientRestoreSecretAsyncHelper( this, request, handler, context ); } );
 }
 
 RotateSecretOutcome SecretsManagerClient::RotateSecret(const RotateSecretRequest& request) const
@@ -496,14 +496,14 @@ RotateSecretOutcomeCallable SecretsManagerClient::RotateSecretCallable(const Rot
   return task->get_future();
 }
 
-void SecretsManagerClient::RotateSecretAsync(const RotateSecretRequest& request, const RotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientRotateSecretAsyncHelper(SecretsManagerClient const * const clientThis, const RotateSecretRequest& request, const RotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RotateSecretAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RotateSecret(request), context);
 }
 
-void SecretsManagerClient::RotateSecretAsyncHelper(const RotateSecretRequest& request, const RotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::RotateSecretAsync(const RotateSecretRequest& request, const RotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RotateSecret(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientRotateSecretAsyncHelper( this, request, handler, context ); } );
 }
 
 StopReplicationToReplicaOutcome SecretsManagerClient::StopReplicationToReplica(const StopReplicationToReplicaRequest& request) const
@@ -520,14 +520,14 @@ StopReplicationToReplicaOutcomeCallable SecretsManagerClient::StopReplicationToR
   return task->get_future();
 }
 
-void SecretsManagerClient::StopReplicationToReplicaAsync(const StopReplicationToReplicaRequest& request, const StopReplicationToReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientStopReplicationToReplicaAsyncHelper(SecretsManagerClient const * const clientThis, const StopReplicationToReplicaRequest& request, const StopReplicationToReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopReplicationToReplicaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopReplicationToReplica(request), context);
 }
 
-void SecretsManagerClient::StopReplicationToReplicaAsyncHelper(const StopReplicationToReplicaRequest& request, const StopReplicationToReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::StopReplicationToReplicaAsync(const StopReplicationToReplicaRequest& request, const StopReplicationToReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopReplicationToReplica(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientStopReplicationToReplicaAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome SecretsManagerClient::TagResource(const TagResourceRequest& request) const
@@ -544,14 +544,14 @@ TagResourceOutcomeCallable SecretsManagerClient::TagResourceCallable(const TagRe
   return task->get_future();
 }
 
-void SecretsManagerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientTagResourceAsyncHelper(SecretsManagerClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void SecretsManagerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome SecretsManagerClient::UntagResource(const UntagResourceRequest& request) const
@@ -568,14 +568,14 @@ UntagResourceOutcomeCallable SecretsManagerClient::UntagResourceCallable(const U
   return task->get_future();
 }
 
-void SecretsManagerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientUntagResourceAsyncHelper(SecretsManagerClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void SecretsManagerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSecretOutcome SecretsManagerClient::UpdateSecret(const UpdateSecretRequest& request) const
@@ -592,14 +592,14 @@ UpdateSecretOutcomeCallable SecretsManagerClient::UpdateSecretCallable(const Upd
   return task->get_future();
 }
 
-void SecretsManagerClient::UpdateSecretAsync(const UpdateSecretRequest& request, const UpdateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientUpdateSecretAsyncHelper(SecretsManagerClient const * const clientThis, const UpdateSecretRequest& request, const UpdateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecretAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSecret(request), context);
 }
 
-void SecretsManagerClient::UpdateSecretAsyncHelper(const UpdateSecretRequest& request, const UpdateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::UpdateSecretAsync(const UpdateSecretRequest& request, const UpdateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSecret(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientUpdateSecretAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSecretVersionStageOutcome SecretsManagerClient::UpdateSecretVersionStage(const UpdateSecretVersionStageRequest& request) const
@@ -616,14 +616,14 @@ UpdateSecretVersionStageOutcomeCallable SecretsManagerClient::UpdateSecretVersio
   return task->get_future();
 }
 
-void SecretsManagerClient::UpdateSecretVersionStageAsync(const UpdateSecretVersionStageRequest& request, const UpdateSecretVersionStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientUpdateSecretVersionStageAsyncHelper(SecretsManagerClient const * const clientThis, const UpdateSecretVersionStageRequest& request, const UpdateSecretVersionStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecretVersionStageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSecretVersionStage(request), context);
 }
 
-void SecretsManagerClient::UpdateSecretVersionStageAsyncHelper(const UpdateSecretVersionStageRequest& request, const UpdateSecretVersionStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::UpdateSecretVersionStageAsync(const UpdateSecretVersionStageRequest& request, const UpdateSecretVersionStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSecretVersionStage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientUpdateSecretVersionStageAsyncHelper( this, request, handler, context ); } );
 }
 
 ValidateResourcePolicyOutcome SecretsManagerClient::ValidateResourcePolicy(const ValidateResourcePolicyRequest& request) const
@@ -640,13 +640,13 @@ ValidateResourcePolicyOutcomeCallable SecretsManagerClient::ValidateResourcePoli
   return task->get_future();
 }
 
-void SecretsManagerClient::ValidateResourcePolicyAsync(const ValidateResourcePolicyRequest& request, const ValidateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClientValidateResourcePolicyAsyncHelper(SecretsManagerClient const * const clientThis, const ValidateResourcePolicyRequest& request, const ValidateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ValidateResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ValidateResourcePolicy(request), context);
 }
 
-void SecretsManagerClient::ValidateResourcePolicyAsyncHelper(const ValidateResourcePolicyRequest& request, const ValidateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecretsManagerClient::ValidateResourcePolicyAsync(const ValidateResourcePolicyRequest& request, const ValidateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ValidateResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SecretsManagerClientValidateResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 

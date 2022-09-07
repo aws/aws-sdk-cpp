@@ -135,14 +135,14 @@ CancelJobOutcomeCallable BraketClient::CancelJobCallable(const CancelJobRequest&
   return task->get_future();
 }
 
-void BraketClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientCancelJobAsyncHelper(BraketClient const * const clientThis, const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelJob(request), context);
 }
 
-void BraketClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientCancelJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelQuantumTaskOutcome BraketClient::CancelQuantumTask(const CancelQuantumTaskRequest& request) const
@@ -167,14 +167,14 @@ CancelQuantumTaskOutcomeCallable BraketClient::CancelQuantumTaskCallable(const C
   return task->get_future();
 }
 
-void BraketClient::CancelQuantumTaskAsync(const CancelQuantumTaskRequest& request, const CancelQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientCancelQuantumTaskAsyncHelper(BraketClient const * const clientThis, const CancelQuantumTaskRequest& request, const CancelQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelQuantumTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelQuantumTask(request), context);
 }
 
-void BraketClient::CancelQuantumTaskAsyncHelper(const CancelQuantumTaskRequest& request, const CancelQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::CancelQuantumTaskAsync(const CancelQuantumTaskRequest& request, const CancelQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelQuantumTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientCancelQuantumTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateJobOutcome BraketClient::CreateJob(const CreateJobRequest& request) const
@@ -192,14 +192,14 @@ CreateJobOutcomeCallable BraketClient::CreateJobCallable(const CreateJobRequest&
   return task->get_future();
 }
 
-void BraketClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientCreateJobAsyncHelper(BraketClient const * const clientThis, const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateJob(request), context);
 }
 
-void BraketClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientCreateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateQuantumTaskOutcome BraketClient::CreateQuantumTask(const CreateQuantumTaskRequest& request) const
@@ -217,14 +217,14 @@ CreateQuantumTaskOutcomeCallable BraketClient::CreateQuantumTaskCallable(const C
   return task->get_future();
 }
 
-void BraketClient::CreateQuantumTaskAsync(const CreateQuantumTaskRequest& request, const CreateQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientCreateQuantumTaskAsyncHelper(BraketClient const * const clientThis, const CreateQuantumTaskRequest& request, const CreateQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateQuantumTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateQuantumTask(request), context);
 }
 
-void BraketClient::CreateQuantumTaskAsyncHelper(const CreateQuantumTaskRequest& request, const CreateQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::CreateQuantumTaskAsync(const CreateQuantumTaskRequest& request, const CreateQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateQuantumTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientCreateQuantumTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeviceOutcome BraketClient::GetDevice(const GetDeviceRequest& request) const
@@ -248,14 +248,14 @@ GetDeviceOutcomeCallable BraketClient::GetDeviceCallable(const GetDeviceRequest&
   return task->get_future();
 }
 
-void BraketClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientGetDeviceAsyncHelper(BraketClient const * const clientThis, const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDevice(request), context);
 }
 
-void BraketClient::GetDeviceAsyncHelper(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientGetDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobOutcome BraketClient::GetJob(const GetJobRequest& request) const
@@ -279,14 +279,14 @@ GetJobOutcomeCallable BraketClient::GetJobCallable(const GetJobRequest& request)
   return task->get_future();
 }
 
-void BraketClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientGetJobAsyncHelper(BraketClient const * const clientThis, const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJob(request), context);
 }
 
-void BraketClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientGetJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetQuantumTaskOutcome BraketClient::GetQuantumTask(const GetQuantumTaskRequest& request) const
@@ -310,14 +310,14 @@ GetQuantumTaskOutcomeCallable BraketClient::GetQuantumTaskCallable(const GetQuan
   return task->get_future();
 }
 
-void BraketClient::GetQuantumTaskAsync(const GetQuantumTaskRequest& request, const GetQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientGetQuantumTaskAsyncHelper(BraketClient const * const clientThis, const GetQuantumTaskRequest& request, const GetQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQuantumTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetQuantumTask(request), context);
 }
 
-void BraketClient::GetQuantumTaskAsyncHelper(const GetQuantumTaskRequest& request, const GetQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::GetQuantumTaskAsync(const GetQuantumTaskRequest& request, const GetQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetQuantumTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientGetQuantumTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome BraketClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -341,14 +341,14 @@ ListTagsForResourceOutcomeCallable BraketClient::ListTagsForResourceCallable(con
   return task->get_future();
 }
 
-void BraketClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientListTagsForResourceAsyncHelper(BraketClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void BraketClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchDevicesOutcome BraketClient::SearchDevices(const SearchDevicesRequest& request) const
@@ -366,14 +366,14 @@ SearchDevicesOutcomeCallable BraketClient::SearchDevicesCallable(const SearchDev
   return task->get_future();
 }
 
-void BraketClient::SearchDevicesAsync(const SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientSearchDevicesAsyncHelper(BraketClient const * const clientThis, const SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchDevices(request), context);
 }
 
-void BraketClient::SearchDevicesAsyncHelper(const SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::SearchDevicesAsync(const SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientSearchDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchJobsOutcome BraketClient::SearchJobs(const SearchJobsRequest& request) const
@@ -391,14 +391,14 @@ SearchJobsOutcomeCallable BraketClient::SearchJobsCallable(const SearchJobsReque
   return task->get_future();
 }
 
-void BraketClient::SearchJobsAsync(const SearchJobsRequest& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientSearchJobsAsyncHelper(BraketClient const * const clientThis, const SearchJobsRequest& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchJobs(request), context);
 }
 
-void BraketClient::SearchJobsAsyncHelper(const SearchJobsRequest& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::SearchJobsAsync(const SearchJobsRequest& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientSearchJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchQuantumTasksOutcome BraketClient::SearchQuantumTasks(const SearchQuantumTasksRequest& request) const
@@ -416,14 +416,14 @@ SearchQuantumTasksOutcomeCallable BraketClient::SearchQuantumTasksCallable(const
   return task->get_future();
 }
 
-void BraketClient::SearchQuantumTasksAsync(const SearchQuantumTasksRequest& request, const SearchQuantumTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientSearchQuantumTasksAsyncHelper(BraketClient const * const clientThis, const SearchQuantumTasksRequest& request, const SearchQuantumTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchQuantumTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchQuantumTasks(request), context);
 }
 
-void BraketClient::SearchQuantumTasksAsyncHelper(const SearchQuantumTasksRequest& request, const SearchQuantumTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::SearchQuantumTasksAsync(const SearchQuantumTasksRequest& request, const SearchQuantumTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchQuantumTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientSearchQuantumTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome BraketClient::TagResource(const TagResourceRequest& request) const
@@ -447,14 +447,14 @@ TagResourceOutcomeCallable BraketClient::TagResourceCallable(const TagResourceRe
   return task->get_future();
 }
 
-void BraketClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientTagResourceAsyncHelper(BraketClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void BraketClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome BraketClient::UntagResource(const UntagResourceRequest& request) const
@@ -483,13 +483,13 @@ UntagResourceOutcomeCallable BraketClient::UntagResourceCallable(const UntagReso
   return task->get_future();
 }
 
-void BraketClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClientUntagResourceAsyncHelper(BraketClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void BraketClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BraketClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BraketClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 

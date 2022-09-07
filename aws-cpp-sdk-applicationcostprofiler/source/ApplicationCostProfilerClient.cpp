@@ -127,14 +127,14 @@ DeleteReportDefinitionOutcomeCallable ApplicationCostProfilerClient::DeleteRepor
   return task->get_future();
 }
 
-void ApplicationCostProfilerClient::DeleteReportDefinitionAsync(const DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClientDeleteReportDefinitionAsyncHelper(ApplicationCostProfilerClient const * const clientThis, const DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReportDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReportDefinition(request), context);
 }
 
-void ApplicationCostProfilerClient::DeleteReportDefinitionAsyncHelper(const DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClient::DeleteReportDefinitionAsync(const DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReportDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationCostProfilerClientDeleteReportDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetReportDefinitionOutcome ApplicationCostProfilerClient::GetReportDefinition(const GetReportDefinitionRequest& request) const
@@ -158,14 +158,14 @@ GetReportDefinitionOutcomeCallable ApplicationCostProfilerClient::GetReportDefin
   return task->get_future();
 }
 
-void ApplicationCostProfilerClient::GetReportDefinitionAsync(const GetReportDefinitionRequest& request, const GetReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClientGetReportDefinitionAsyncHelper(ApplicationCostProfilerClient const * const clientThis, const GetReportDefinitionRequest& request, const GetReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReportDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetReportDefinition(request), context);
 }
 
-void ApplicationCostProfilerClient::GetReportDefinitionAsyncHelper(const GetReportDefinitionRequest& request, const GetReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClient::GetReportDefinitionAsync(const GetReportDefinitionRequest& request, const GetReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetReportDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationCostProfilerClientGetReportDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportApplicationUsageOutcome ApplicationCostProfilerClient::ImportApplicationUsage(const ImportApplicationUsageRequest& request) const
@@ -183,14 +183,14 @@ ImportApplicationUsageOutcomeCallable ApplicationCostProfilerClient::ImportAppli
   return task->get_future();
 }
 
-void ApplicationCostProfilerClient::ImportApplicationUsageAsync(const ImportApplicationUsageRequest& request, const ImportApplicationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClientImportApplicationUsageAsyncHelper(ApplicationCostProfilerClient const * const clientThis, const ImportApplicationUsageRequest& request, const ImportApplicationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportApplicationUsageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportApplicationUsage(request), context);
 }
 
-void ApplicationCostProfilerClient::ImportApplicationUsageAsyncHelper(const ImportApplicationUsageRequest& request, const ImportApplicationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClient::ImportApplicationUsageAsync(const ImportApplicationUsageRequest& request, const ImportApplicationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportApplicationUsage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationCostProfilerClientImportApplicationUsageAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReportDefinitionsOutcome ApplicationCostProfilerClient::ListReportDefinitions(const ListReportDefinitionsRequest& request) const
@@ -208,14 +208,14 @@ ListReportDefinitionsOutcomeCallable ApplicationCostProfilerClient::ListReportDe
   return task->get_future();
 }
 
-void ApplicationCostProfilerClient::ListReportDefinitionsAsync(const ListReportDefinitionsRequest& request, const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClientListReportDefinitionsAsyncHelper(ApplicationCostProfilerClient const * const clientThis, const ListReportDefinitionsRequest& request, const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReportDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReportDefinitions(request), context);
 }
 
-void ApplicationCostProfilerClient::ListReportDefinitionsAsyncHelper(const ListReportDefinitionsRequest& request, const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClient::ListReportDefinitionsAsync(const ListReportDefinitionsRequest& request, const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReportDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationCostProfilerClientListReportDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutReportDefinitionOutcome ApplicationCostProfilerClient::PutReportDefinition(const PutReportDefinitionRequest& request) const
@@ -233,14 +233,14 @@ PutReportDefinitionOutcomeCallable ApplicationCostProfilerClient::PutReportDefin
   return task->get_future();
 }
 
-void ApplicationCostProfilerClient::PutReportDefinitionAsync(const PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClientPutReportDefinitionAsyncHelper(ApplicationCostProfilerClient const * const clientThis, const PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutReportDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutReportDefinition(request), context);
 }
 
-void ApplicationCostProfilerClient::PutReportDefinitionAsyncHelper(const PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClient::PutReportDefinitionAsync(const PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutReportDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationCostProfilerClientPutReportDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateReportDefinitionOutcome ApplicationCostProfilerClient::UpdateReportDefinition(const UpdateReportDefinitionRequest& request) const
@@ -264,13 +264,13 @@ UpdateReportDefinitionOutcomeCallable ApplicationCostProfilerClient::UpdateRepor
   return task->get_future();
 }
 
-void ApplicationCostProfilerClient::UpdateReportDefinitionAsync(const UpdateReportDefinitionRequest& request, const UpdateReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClientUpdateReportDefinitionAsyncHelper(ApplicationCostProfilerClient const * const clientThis, const UpdateReportDefinitionRequest& request, const UpdateReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReportDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateReportDefinition(request), context);
 }
 
-void ApplicationCostProfilerClient::UpdateReportDefinitionAsyncHelper(const UpdateReportDefinitionRequest& request, const UpdateReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationCostProfilerClient::UpdateReportDefinitionAsync(const UpdateReportDefinitionRequest& request, const UpdateReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateReportDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationCostProfilerClientUpdateReportDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 

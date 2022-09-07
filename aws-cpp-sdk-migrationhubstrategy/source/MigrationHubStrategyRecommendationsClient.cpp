@@ -141,14 +141,14 @@ GetApplicationComponentDetailsOutcomeCallable MigrationHubStrategyRecommendation
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::GetApplicationComponentDetailsAsync(const GetApplicationComponentDetailsRequest& request, const GetApplicationComponentDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientGetApplicationComponentDetailsAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const GetApplicationComponentDetailsRequest& request, const GetApplicationComponentDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationComponentDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApplicationComponentDetails(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::GetApplicationComponentDetailsAsyncHelper(const GetApplicationComponentDetailsRequest& request, const GetApplicationComponentDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::GetApplicationComponentDetailsAsync(const GetApplicationComponentDetailsRequest& request, const GetApplicationComponentDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApplicationComponentDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientGetApplicationComponentDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApplicationComponentStrategiesOutcome MigrationHubStrategyRecommendationsClient::GetApplicationComponentStrategies(const GetApplicationComponentStrategiesRequest& request) const
@@ -172,14 +172,14 @@ GetApplicationComponentStrategiesOutcomeCallable MigrationHubStrategyRecommendat
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::GetApplicationComponentStrategiesAsync(const GetApplicationComponentStrategiesRequest& request, const GetApplicationComponentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientGetApplicationComponentStrategiesAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const GetApplicationComponentStrategiesRequest& request, const GetApplicationComponentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationComponentStrategiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApplicationComponentStrategies(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::GetApplicationComponentStrategiesAsyncHelper(const GetApplicationComponentStrategiesRequest& request, const GetApplicationComponentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::GetApplicationComponentStrategiesAsync(const GetApplicationComponentStrategiesRequest& request, const GetApplicationComponentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApplicationComponentStrategies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientGetApplicationComponentStrategiesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssessmentOutcome MigrationHubStrategyRecommendationsClient::GetAssessment(const GetAssessmentRequest& request) const
@@ -203,14 +203,14 @@ GetAssessmentOutcomeCallable MigrationHubStrategyRecommendationsClient::GetAsses
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::GetAssessmentAsync(const GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientGetAssessmentAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssessment(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::GetAssessmentAsyncHelper(const GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::GetAssessmentAsync(const GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientGetAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::GetImportFileTask(const GetImportFileTaskRequest& request) const
@@ -234,14 +234,14 @@ GetImportFileTaskOutcomeCallable MigrationHubStrategyRecommendationsClient::GetI
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::GetImportFileTaskAsync(const GetImportFileTaskRequest& request, const GetImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientGetImportFileTaskAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const GetImportFileTaskRequest& request, const GetImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetImportFileTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetImportFileTask(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::GetImportFileTaskAsyncHelper(const GetImportFileTaskRequest& request, const GetImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::GetImportFileTaskAsync(const GetImportFileTaskRequest& request, const GetImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetImportFileTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientGetImportFileTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPortfolioPreferencesOutcome MigrationHubStrategyRecommendationsClient::GetPortfolioPreferences(const GetPortfolioPreferencesRequest& request) const
@@ -259,14 +259,14 @@ GetPortfolioPreferencesOutcomeCallable MigrationHubStrategyRecommendationsClient
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::GetPortfolioPreferencesAsync(const GetPortfolioPreferencesRequest& request, const GetPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientGetPortfolioPreferencesAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const GetPortfolioPreferencesRequest& request, const GetPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPortfolioPreferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPortfolioPreferences(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::GetPortfolioPreferencesAsyncHelper(const GetPortfolioPreferencesRequest& request, const GetPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::GetPortfolioPreferencesAsync(const GetPortfolioPreferencesRequest& request, const GetPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPortfolioPreferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientGetPortfolioPreferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPortfolioSummaryOutcome MigrationHubStrategyRecommendationsClient::GetPortfolioSummary(const GetPortfolioSummaryRequest& request) const
@@ -284,14 +284,14 @@ GetPortfolioSummaryOutcomeCallable MigrationHubStrategyRecommendationsClient::Ge
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::GetPortfolioSummaryAsync(const GetPortfolioSummaryRequest& request, const GetPortfolioSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientGetPortfolioSummaryAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const GetPortfolioSummaryRequest& request, const GetPortfolioSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPortfolioSummaryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPortfolioSummary(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::GetPortfolioSummaryAsyncHelper(const GetPortfolioSummaryRequest& request, const GetPortfolioSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::GetPortfolioSummaryAsync(const GetPortfolioSummaryRequest& request, const GetPortfolioSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPortfolioSummary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientGetPortfolioSummaryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecommendationReportDetailsOutcome MigrationHubStrategyRecommendationsClient::GetRecommendationReportDetails(const GetRecommendationReportDetailsRequest& request) const
@@ -315,14 +315,14 @@ GetRecommendationReportDetailsOutcomeCallable MigrationHubStrategyRecommendation
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::GetRecommendationReportDetailsAsync(const GetRecommendationReportDetailsRequest& request, const GetRecommendationReportDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientGetRecommendationReportDetailsAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const GetRecommendationReportDetailsRequest& request, const GetRecommendationReportDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecommendationReportDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecommendationReportDetails(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::GetRecommendationReportDetailsAsyncHelper(const GetRecommendationReportDetailsRequest& request, const GetRecommendationReportDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::GetRecommendationReportDetailsAsync(const GetRecommendationReportDetailsRequest& request, const GetRecommendationReportDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecommendationReportDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientGetRecommendationReportDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServerDetailsOutcome MigrationHubStrategyRecommendationsClient::GetServerDetails(const GetServerDetailsRequest& request) const
@@ -346,14 +346,14 @@ GetServerDetailsOutcomeCallable MigrationHubStrategyRecommendationsClient::GetSe
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::GetServerDetailsAsync(const GetServerDetailsRequest& request, const GetServerDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientGetServerDetailsAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const GetServerDetailsRequest& request, const GetServerDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServerDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServerDetails(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::GetServerDetailsAsyncHelper(const GetServerDetailsRequest& request, const GetServerDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::GetServerDetailsAsync(const GetServerDetailsRequest& request, const GetServerDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServerDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientGetServerDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServerStrategiesOutcome MigrationHubStrategyRecommendationsClient::GetServerStrategies(const GetServerStrategiesRequest& request) const
@@ -377,14 +377,14 @@ GetServerStrategiesOutcomeCallable MigrationHubStrategyRecommendationsClient::Ge
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::GetServerStrategiesAsync(const GetServerStrategiesRequest& request, const GetServerStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientGetServerStrategiesAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const GetServerStrategiesRequest& request, const GetServerStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServerStrategiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServerStrategies(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::GetServerStrategiesAsyncHelper(const GetServerStrategiesRequest& request, const GetServerStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::GetServerStrategiesAsync(const GetServerStrategiesRequest& request, const GetServerStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServerStrategies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientGetServerStrategiesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationComponentsOutcome MigrationHubStrategyRecommendationsClient::ListApplicationComponents(const ListApplicationComponentsRequest& request) const
@@ -402,14 +402,14 @@ ListApplicationComponentsOutcomeCallable MigrationHubStrategyRecommendationsClie
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::ListApplicationComponentsAsync(const ListApplicationComponentsRequest& request, const ListApplicationComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientListApplicationComponentsAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const ListApplicationComponentsRequest& request, const ListApplicationComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationComponentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplicationComponents(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::ListApplicationComponentsAsyncHelper(const ListApplicationComponentsRequest& request, const ListApplicationComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::ListApplicationComponentsAsync(const ListApplicationComponentsRequest& request, const ListApplicationComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplicationComponents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientListApplicationComponentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCollectorsOutcome MigrationHubStrategyRecommendationsClient::ListCollectors(const ListCollectorsRequest& request) const
@@ -427,14 +427,14 @@ ListCollectorsOutcomeCallable MigrationHubStrategyRecommendationsClient::ListCol
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::ListCollectorsAsync(const ListCollectorsRequest& request, const ListCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientListCollectorsAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const ListCollectorsRequest& request, const ListCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCollectorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCollectors(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::ListCollectorsAsyncHelper(const ListCollectorsRequest& request, const ListCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::ListCollectorsAsync(const ListCollectorsRequest& request, const ListCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCollectors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientListCollectorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::ListImportFileTask(const ListImportFileTaskRequest& request) const
@@ -452,14 +452,14 @@ ListImportFileTaskOutcomeCallable MigrationHubStrategyRecommendationsClient::Lis
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::ListImportFileTaskAsync(const ListImportFileTaskRequest& request, const ListImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientListImportFileTaskAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const ListImportFileTaskRequest& request, const ListImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImportFileTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImportFileTask(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::ListImportFileTaskAsyncHelper(const ListImportFileTaskRequest& request, const ListImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::ListImportFileTaskAsync(const ListImportFileTaskRequest& request, const ListImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImportFileTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientListImportFileTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServersOutcome MigrationHubStrategyRecommendationsClient::ListServers(const ListServersRequest& request) const
@@ -477,14 +477,14 @@ ListServersOutcomeCallable MigrationHubStrategyRecommendationsClient::ListServer
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::ListServersAsync(const ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientListServersAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServers(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::ListServersAsyncHelper(const ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::ListServersAsync(const ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientListServersAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPortfolioPreferencesOutcome MigrationHubStrategyRecommendationsClient::PutPortfolioPreferences(const PutPortfolioPreferencesRequest& request) const
@@ -502,14 +502,14 @@ PutPortfolioPreferencesOutcomeCallable MigrationHubStrategyRecommendationsClient
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::PutPortfolioPreferencesAsync(const PutPortfolioPreferencesRequest& request, const PutPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientPutPortfolioPreferencesAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const PutPortfolioPreferencesRequest& request, const PutPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPortfolioPreferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPortfolioPreferences(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::PutPortfolioPreferencesAsyncHelper(const PutPortfolioPreferencesRequest& request, const PutPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::PutPortfolioPreferencesAsync(const PutPortfolioPreferencesRequest& request, const PutPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPortfolioPreferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientPutPortfolioPreferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 StartAssessmentOutcome MigrationHubStrategyRecommendationsClient::StartAssessment(const StartAssessmentRequest& request) const
@@ -527,14 +527,14 @@ StartAssessmentOutcomeCallable MigrationHubStrategyRecommendationsClient::StartA
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::StartAssessmentAsync(const StartAssessmentRequest& request, const StartAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientStartAssessmentAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const StartAssessmentRequest& request, const StartAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartAssessment(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::StartAssessmentAsyncHelper(const StartAssessmentRequest& request, const StartAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::StartAssessmentAsync(const StartAssessmentRequest& request, const StartAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientStartAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 StartImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::StartImportFileTask(const StartImportFileTaskRequest& request) const
@@ -552,14 +552,14 @@ StartImportFileTaskOutcomeCallable MigrationHubStrategyRecommendationsClient::St
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::StartImportFileTaskAsync(const StartImportFileTaskRequest& request, const StartImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientStartImportFileTaskAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const StartImportFileTaskRequest& request, const StartImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartImportFileTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartImportFileTask(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::StartImportFileTaskAsyncHelper(const StartImportFileTaskRequest& request, const StartImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::StartImportFileTaskAsync(const StartImportFileTaskRequest& request, const StartImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartImportFileTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientStartImportFileTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 StartRecommendationReportGenerationOutcome MigrationHubStrategyRecommendationsClient::StartRecommendationReportGeneration(const StartRecommendationReportGenerationRequest& request) const
@@ -577,14 +577,14 @@ StartRecommendationReportGenerationOutcomeCallable MigrationHubStrategyRecommend
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::StartRecommendationReportGenerationAsync(const StartRecommendationReportGenerationRequest& request, const StartRecommendationReportGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientStartRecommendationReportGenerationAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const StartRecommendationReportGenerationRequest& request, const StartRecommendationReportGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartRecommendationReportGenerationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartRecommendationReportGeneration(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::StartRecommendationReportGenerationAsyncHelper(const StartRecommendationReportGenerationRequest& request, const StartRecommendationReportGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::StartRecommendationReportGenerationAsync(const StartRecommendationReportGenerationRequest& request, const StartRecommendationReportGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartRecommendationReportGeneration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientStartRecommendationReportGenerationAsyncHelper( this, request, handler, context ); } );
 }
 
 StopAssessmentOutcome MigrationHubStrategyRecommendationsClient::StopAssessment(const StopAssessmentRequest& request) const
@@ -602,14 +602,14 @@ StopAssessmentOutcomeCallable MigrationHubStrategyRecommendationsClient::StopAss
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::StopAssessmentAsync(const StopAssessmentRequest& request, const StopAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientStopAssessmentAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const StopAssessmentRequest& request, const StopAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopAssessment(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::StopAssessmentAsyncHelper(const StopAssessmentRequest& request, const StopAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::StopAssessmentAsync(const StopAssessmentRequest& request, const StopAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientStopAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationComponentConfigOutcome MigrationHubStrategyRecommendationsClient::UpdateApplicationComponentConfig(const UpdateApplicationComponentConfigRequest& request) const
@@ -627,14 +627,14 @@ UpdateApplicationComponentConfigOutcomeCallable MigrationHubStrategyRecommendati
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::UpdateApplicationComponentConfigAsync(const UpdateApplicationComponentConfigRequest& request, const UpdateApplicationComponentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientUpdateApplicationComponentConfigAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const UpdateApplicationComponentConfigRequest& request, const UpdateApplicationComponentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationComponentConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplicationComponentConfig(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::UpdateApplicationComponentConfigAsyncHelper(const UpdateApplicationComponentConfigRequest& request, const UpdateApplicationComponentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::UpdateApplicationComponentConfigAsync(const UpdateApplicationComponentConfigRequest& request, const UpdateApplicationComponentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplicationComponentConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientUpdateApplicationComponentConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServerConfigOutcome MigrationHubStrategyRecommendationsClient::UpdateServerConfig(const UpdateServerConfigRequest& request) const
@@ -652,13 +652,13 @@ UpdateServerConfigOutcomeCallable MigrationHubStrategyRecommendationsClient::Upd
   return task->get_future();
 }
 
-void MigrationHubStrategyRecommendationsClient::UpdateServerConfigAsync(const UpdateServerConfigRequest& request, const UpdateServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClientUpdateServerConfigAsyncHelper(MigrationHubStrategyRecommendationsClient const * const clientThis, const UpdateServerConfigRequest& request, const UpdateServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServerConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServerConfig(request), context);
 }
 
-void MigrationHubStrategyRecommendationsClient::UpdateServerConfigAsyncHelper(const UpdateServerConfigRequest& request, const UpdateServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubStrategyRecommendationsClient::UpdateServerConfigAsync(const UpdateServerConfigRequest& request, const UpdateServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServerConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubStrategyRecommendationsClientUpdateServerConfigAsyncHelper( this, request, handler, context ); } );
 }
 

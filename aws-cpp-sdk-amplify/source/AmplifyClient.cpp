@@ -152,14 +152,14 @@ CreateAppOutcomeCallable AmplifyClient::CreateAppCallable(const CreateAppRequest
   return task->get_future();
 }
 
-void AmplifyClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientCreateAppAsyncHelper(AmplifyClient const * const clientThis, const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApp(request), context);
 }
 
-void AmplifyClient::CreateAppAsyncHelper(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientCreateAppAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackendEnvironmentOutcome AmplifyClient::CreateBackendEnvironment(const CreateBackendEnvironmentRequest& request) const
@@ -184,14 +184,14 @@ CreateBackendEnvironmentOutcomeCallable AmplifyClient::CreateBackendEnvironmentC
   return task->get_future();
 }
 
-void AmplifyClient::CreateBackendEnvironmentAsync(const CreateBackendEnvironmentRequest& request, const CreateBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientCreateBackendEnvironmentAsyncHelper(AmplifyClient const * const clientThis, const CreateBackendEnvironmentRequest& request, const CreateBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackendEnvironment(request), context);
 }
 
-void AmplifyClient::CreateBackendEnvironmentAsyncHelper(const CreateBackendEnvironmentRequest& request, const CreateBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::CreateBackendEnvironmentAsync(const CreateBackendEnvironmentRequest& request, const CreateBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackendEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientCreateBackendEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& request) const
@@ -216,14 +216,14 @@ CreateBranchOutcomeCallable AmplifyClient::CreateBranchCallable(const CreateBran
   return task->get_future();
 }
 
-void AmplifyClient::CreateBranchAsync(const CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientCreateBranchAsyncHelper(AmplifyClient const * const clientThis, const CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBranchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBranch(request), context);
 }
 
-void AmplifyClient::CreateBranchAsyncHelper(const CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::CreateBranchAsync(const CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBranch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientCreateBranchAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRequest& request) const
@@ -255,14 +255,14 @@ CreateDeploymentOutcomeCallable AmplifyClient::CreateDeploymentCallable(const Cr
   return task->get_future();
 }
 
-void AmplifyClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientCreateDeploymentAsyncHelper(AmplifyClient const * const clientThis, const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDeployment(request), context);
 }
 
-void AmplifyClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientCreateDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const CreateDomainAssociationRequest& request) const
@@ -287,14 +287,14 @@ CreateDomainAssociationOutcomeCallable AmplifyClient::CreateDomainAssociationCal
   return task->get_future();
 }
 
-void AmplifyClient::CreateDomainAssociationAsync(const CreateDomainAssociationRequest& request, const CreateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientCreateDomainAssociationAsyncHelper(AmplifyClient const * const clientThis, const CreateDomainAssociationRequest& request, const CreateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDomainAssociation(request), context);
 }
 
-void AmplifyClient::CreateDomainAssociationAsyncHelper(const CreateDomainAssociationRequest& request, const CreateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::CreateDomainAssociationAsync(const CreateDomainAssociationRequest& request, const CreateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDomainAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientCreateDomainAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& request) const
@@ -319,14 +319,14 @@ CreateWebhookOutcomeCallable AmplifyClient::CreateWebhookCallable(const CreateWe
   return task->get_future();
 }
 
-void AmplifyClient::CreateWebhookAsync(const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientCreateWebhookAsyncHelper(AmplifyClient const * const clientThis, const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWebhookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWebhook(request), context);
 }
 
-void AmplifyClient::CreateWebhookAsyncHelper(const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::CreateWebhookAsync(const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWebhook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientCreateWebhookAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
@@ -350,14 +350,14 @@ DeleteAppOutcomeCallable AmplifyClient::DeleteAppCallable(const DeleteAppRequest
   return task->get_future();
 }
 
-void AmplifyClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientDeleteAppAsyncHelper(AmplifyClient const * const clientThis, const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApp(request), context);
 }
 
-void AmplifyClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientDeleteAppAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackendEnvironmentOutcome AmplifyClient::DeleteBackendEnvironment(const DeleteBackendEnvironmentRequest& request) const
@@ -388,14 +388,14 @@ DeleteBackendEnvironmentOutcomeCallable AmplifyClient::DeleteBackendEnvironmentC
   return task->get_future();
 }
 
-void AmplifyClient::DeleteBackendEnvironmentAsync(const DeleteBackendEnvironmentRequest& request, const DeleteBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientDeleteBackendEnvironmentAsyncHelper(AmplifyClient const * const clientThis, const DeleteBackendEnvironmentRequest& request, const DeleteBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackendEnvironment(request), context);
 }
 
-void AmplifyClient::DeleteBackendEnvironmentAsyncHelper(const DeleteBackendEnvironmentRequest& request, const DeleteBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::DeleteBackendEnvironmentAsync(const DeleteBackendEnvironmentRequest& request, const DeleteBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackendEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientDeleteBackendEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& request) const
@@ -426,14 +426,14 @@ DeleteBranchOutcomeCallable AmplifyClient::DeleteBranchCallable(const DeleteBran
   return task->get_future();
 }
 
-void AmplifyClient::DeleteBranchAsync(const DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientDeleteBranchAsyncHelper(AmplifyClient const * const clientThis, const DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBranchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBranch(request), context);
 }
 
-void AmplifyClient::DeleteBranchAsyncHelper(const DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::DeleteBranchAsync(const DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBranch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientDeleteBranchAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const DeleteDomainAssociationRequest& request) const
@@ -464,14 +464,14 @@ DeleteDomainAssociationOutcomeCallable AmplifyClient::DeleteDomainAssociationCal
   return task->get_future();
 }
 
-void AmplifyClient::DeleteDomainAssociationAsync(const DeleteDomainAssociationRequest& request, const DeleteDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientDeleteDomainAssociationAsyncHelper(AmplifyClient const * const clientThis, const DeleteDomainAssociationRequest& request, const DeleteDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomainAssociation(request), context);
 }
 
-void AmplifyClient::DeleteDomainAssociationAsyncHelper(const DeleteDomainAssociationRequest& request, const DeleteDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::DeleteDomainAssociationAsync(const DeleteDomainAssociationRequest& request, const DeleteDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomainAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientDeleteDomainAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
@@ -509,14 +509,14 @@ DeleteJobOutcomeCallable AmplifyClient::DeleteJobCallable(const DeleteJobRequest
   return task->get_future();
 }
 
-void AmplifyClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientDeleteJobAsyncHelper(AmplifyClient const * const clientThis, const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteJob(request), context);
 }
 
-void AmplifyClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientDeleteJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& request) const
@@ -540,14 +540,14 @@ DeleteWebhookOutcomeCallable AmplifyClient::DeleteWebhookCallable(const DeleteWe
   return task->get_future();
 }
 
-void AmplifyClient::DeleteWebhookAsync(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientDeleteWebhookAsyncHelper(AmplifyClient const * const clientThis, const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWebhookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWebhook(request), context);
 }
 
-void AmplifyClient::DeleteWebhookAsyncHelper(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::DeleteWebhookAsync(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWebhook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientDeleteWebhookAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateAccessLogsOutcome AmplifyClient::GenerateAccessLogs(const GenerateAccessLogsRequest& request) const
@@ -572,14 +572,14 @@ GenerateAccessLogsOutcomeCallable AmplifyClient::GenerateAccessLogsCallable(cons
   return task->get_future();
 }
 
-void AmplifyClient::GenerateAccessLogsAsync(const GenerateAccessLogsRequest& request, const GenerateAccessLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientGenerateAccessLogsAsyncHelper(AmplifyClient const * const clientThis, const GenerateAccessLogsRequest& request, const GenerateAccessLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateAccessLogsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateAccessLogs(request), context);
 }
 
-void AmplifyClient::GenerateAccessLogsAsyncHelper(const GenerateAccessLogsRequest& request, const GenerateAccessLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::GenerateAccessLogsAsync(const GenerateAccessLogsRequest& request, const GenerateAccessLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateAccessLogs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientGenerateAccessLogsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
@@ -603,14 +603,14 @@ GetAppOutcomeCallable AmplifyClient::GetAppCallable(const GetAppRequest& request
   return task->get_future();
 }
 
-void AmplifyClient::GetAppAsync(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientGetAppAsyncHelper(AmplifyClient const * const clientThis, const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApp(request), context);
 }
 
-void AmplifyClient::GetAppAsyncHelper(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::GetAppAsync(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientGetAppAsyncHelper( this, request, handler, context ); } );
 }
 
 GetArtifactUrlOutcome AmplifyClient::GetArtifactUrl(const GetArtifactUrlRequest& request) const
@@ -634,14 +634,14 @@ GetArtifactUrlOutcomeCallable AmplifyClient::GetArtifactUrlCallable(const GetArt
   return task->get_future();
 }
 
-void AmplifyClient::GetArtifactUrlAsync(const GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientGetArtifactUrlAsyncHelper(AmplifyClient const * const clientThis, const GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetArtifactUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetArtifactUrl(request), context);
 }
 
-void AmplifyClient::GetArtifactUrlAsyncHelper(const GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::GetArtifactUrlAsync(const GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetArtifactUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientGetArtifactUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackendEnvironmentOutcome AmplifyClient::GetBackendEnvironment(const GetBackendEnvironmentRequest& request) const
@@ -672,14 +672,14 @@ GetBackendEnvironmentOutcomeCallable AmplifyClient::GetBackendEnvironmentCallabl
   return task->get_future();
 }
 
-void AmplifyClient::GetBackendEnvironmentAsync(const GetBackendEnvironmentRequest& request, const GetBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientGetBackendEnvironmentAsyncHelper(AmplifyClient const * const clientThis, const GetBackendEnvironmentRequest& request, const GetBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackendEnvironment(request), context);
 }
 
-void AmplifyClient::GetBackendEnvironmentAsyncHelper(const GetBackendEnvironmentRequest& request, const GetBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::GetBackendEnvironmentAsync(const GetBackendEnvironmentRequest& request, const GetBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackendEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientGetBackendEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
@@ -710,14 +710,14 @@ GetBranchOutcomeCallable AmplifyClient::GetBranchCallable(const GetBranchRequest
   return task->get_future();
 }
 
-void AmplifyClient::GetBranchAsync(const GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientGetBranchAsyncHelper(AmplifyClient const * const clientThis, const GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBranchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBranch(request), context);
 }
 
-void AmplifyClient::GetBranchAsyncHelper(const GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::GetBranchAsync(const GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBranch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientGetBranchAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainAssociationRequest& request) const
@@ -748,14 +748,14 @@ GetDomainAssociationOutcomeCallable AmplifyClient::GetDomainAssociationCallable(
   return task->get_future();
 }
 
-void AmplifyClient::GetDomainAssociationAsync(const GetDomainAssociationRequest& request, const GetDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientGetDomainAssociationAsyncHelper(AmplifyClient const * const clientThis, const GetDomainAssociationRequest& request, const GetDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDomainAssociation(request), context);
 }
 
-void AmplifyClient::GetDomainAssociationAsyncHelper(const GetDomainAssociationRequest& request, const GetDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::GetDomainAssociationAsync(const GetDomainAssociationRequest& request, const GetDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDomainAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientGetDomainAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const
@@ -793,14 +793,14 @@ GetJobOutcomeCallable AmplifyClient::GetJobCallable(const GetJobRequest& request
   return task->get_future();
 }
 
-void AmplifyClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientGetJobAsyncHelper(AmplifyClient const * const clientThis, const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJob(request), context);
 }
 
-void AmplifyClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientGetJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) const
@@ -824,14 +824,14 @@ GetWebhookOutcomeCallable AmplifyClient::GetWebhookCallable(const GetWebhookRequ
   return task->get_future();
 }
 
-void AmplifyClient::GetWebhookAsync(const GetWebhookRequest& request, const GetWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientGetWebhookAsyncHelper(AmplifyClient const * const clientThis, const GetWebhookRequest& request, const GetWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWebhookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWebhook(request), context);
 }
 
-void AmplifyClient::GetWebhookAsyncHelper(const GetWebhookRequest& request, const GetWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::GetWebhookAsync(const GetWebhookRequest& request, const GetWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWebhook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientGetWebhookAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const
@@ -849,14 +849,14 @@ ListAppsOutcomeCallable AmplifyClient::ListAppsCallable(const ListAppsRequest& r
   return task->get_future();
 }
 
-void AmplifyClient::ListAppsAsync(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientListAppsAsyncHelper(AmplifyClient const * const clientThis, const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApps(request), context);
 }
 
-void AmplifyClient::ListAppsAsyncHelper(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::ListAppsAsync(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApps(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientListAppsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListArtifactsOutcome AmplifyClient::ListArtifacts(const ListArtifactsRequest& request) const
@@ -895,14 +895,14 @@ ListArtifactsOutcomeCallable AmplifyClient::ListArtifactsCallable(const ListArti
   return task->get_future();
 }
 
-void AmplifyClient::ListArtifactsAsync(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientListArtifactsAsyncHelper(AmplifyClient const * const clientThis, const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListArtifactsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListArtifacts(request), context);
 }
 
-void AmplifyClient::ListArtifactsAsyncHelper(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::ListArtifactsAsync(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListArtifacts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientListArtifactsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBackendEnvironmentsOutcome AmplifyClient::ListBackendEnvironments(const ListBackendEnvironmentsRequest& request) const
@@ -927,14 +927,14 @@ ListBackendEnvironmentsOutcomeCallable AmplifyClient::ListBackendEnvironmentsCal
   return task->get_future();
 }
 
-void AmplifyClient::ListBackendEnvironmentsAsync(const ListBackendEnvironmentsRequest& request, const ListBackendEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientListBackendEnvironmentsAsyncHelper(AmplifyClient const * const clientThis, const ListBackendEnvironmentsRequest& request, const ListBackendEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackendEnvironmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBackendEnvironments(request), context);
 }
 
-void AmplifyClient::ListBackendEnvironmentsAsyncHelper(const ListBackendEnvironmentsRequest& request, const ListBackendEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::ListBackendEnvironmentsAsync(const ListBackendEnvironmentsRequest& request, const ListBackendEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBackendEnvironments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientListBackendEnvironmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& request) const
@@ -959,14 +959,14 @@ ListBranchesOutcomeCallable AmplifyClient::ListBranchesCallable(const ListBranch
   return task->get_future();
 }
 
-void AmplifyClient::ListBranchesAsync(const ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientListBranchesAsyncHelper(AmplifyClient const * const clientThis, const ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBranchesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBranches(request), context);
 }
 
-void AmplifyClient::ListBranchesAsyncHelper(const ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::ListBranchesAsync(const ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBranches(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientListBranchesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDomainAssociationsRequest& request) const
@@ -991,14 +991,14 @@ ListDomainAssociationsOutcomeCallable AmplifyClient::ListDomainAssociationsCalla
   return task->get_future();
 }
 
-void AmplifyClient::ListDomainAssociationsAsync(const ListDomainAssociationsRequest& request, const ListDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientListDomainAssociationsAsyncHelper(AmplifyClient const * const clientThis, const ListDomainAssociationsRequest& request, const ListDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomainAssociations(request), context);
 }
 
-void AmplifyClient::ListDomainAssociationsAsyncHelper(const ListDomainAssociationsRequest& request, const ListDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::ListDomainAssociationsAsync(const ListDomainAssociationsRequest& request, const ListDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomainAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientListDomainAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const
@@ -1030,14 +1030,14 @@ ListJobsOutcomeCallable AmplifyClient::ListJobsCallable(const ListJobsRequest& r
   return task->get_future();
 }
 
-void AmplifyClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientListJobsAsyncHelper(AmplifyClient const * const clientThis, const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobs(request), context);
 }
 
-void AmplifyClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientListJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1061,14 +1061,14 @@ ListTagsForResourceOutcomeCallable AmplifyClient::ListTagsForResourceCallable(co
   return task->get_future();
 }
 
-void AmplifyClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientListTagsForResourceAsyncHelper(AmplifyClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void AmplifyClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& request) const
@@ -1093,14 +1093,14 @@ ListWebhooksOutcomeCallable AmplifyClient::ListWebhooksCallable(const ListWebhoo
   return task->get_future();
 }
 
-void AmplifyClient::ListWebhooksAsync(const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientListWebhooksAsyncHelper(AmplifyClient const * const clientThis, const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWebhooksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWebhooks(request), context);
 }
 
-void AmplifyClient::ListWebhooksAsyncHelper(const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::ListWebhooksAsync(const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWebhooks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientListWebhooksAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentRequest& request) const
@@ -1132,14 +1132,14 @@ StartDeploymentOutcomeCallable AmplifyClient::StartDeploymentCallable(const Star
   return task->get_future();
 }
 
-void AmplifyClient::StartDeploymentAsync(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientStartDeploymentAsyncHelper(AmplifyClient const * const clientThis, const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDeployment(request), context);
 }
 
-void AmplifyClient::StartDeploymentAsyncHelper(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::StartDeploymentAsync(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientStartDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
@@ -1171,14 +1171,14 @@ StartJobOutcomeCallable AmplifyClient::StartJobCallable(const StartJobRequest& r
   return task->get_future();
 }
 
-void AmplifyClient::StartJobAsync(const StartJobRequest& request, const StartJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientStartJobAsyncHelper(AmplifyClient const * const clientThis, const StartJobRequest& request, const StartJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartJob(request), context);
 }
 
-void AmplifyClient::StartJobAsyncHelper(const StartJobRequest& request, const StartJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::StartJobAsync(const StartJobRequest& request, const StartJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientStartJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const
@@ -1217,14 +1217,14 @@ StopJobOutcomeCallable AmplifyClient::StopJobCallable(const StopJobRequest& requ
   return task->get_future();
 }
 
-void AmplifyClient::StopJobAsync(const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientStopJobAsyncHelper(AmplifyClient const * const clientThis, const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopJob(request), context);
 }
 
-void AmplifyClient::StopJobAsyncHelper(const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::StopJobAsync(const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientStopJobAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request) const
@@ -1248,14 +1248,14 @@ TagResourceOutcomeCallable AmplifyClient::TagResourceCallable(const TagResourceR
   return task->get_future();
 }
 
-void AmplifyClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientTagResourceAsyncHelper(AmplifyClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void AmplifyClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& request) const
@@ -1284,14 +1284,14 @@ UntagResourceOutcomeCallable AmplifyClient::UntagResourceCallable(const UntagRes
   return task->get_future();
 }
 
-void AmplifyClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientUntagResourceAsyncHelper(AmplifyClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void AmplifyClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
@@ -1315,14 +1315,14 @@ UpdateAppOutcomeCallable AmplifyClient::UpdateAppCallable(const UpdateAppRequest
   return task->get_future();
 }
 
-void AmplifyClient::UpdateAppAsync(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientUpdateAppAsyncHelper(AmplifyClient const * const clientThis, const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApp(request), context);
 }
 
-void AmplifyClient::UpdateAppAsyncHelper(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::UpdateAppAsync(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientUpdateAppAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& request) const
@@ -1353,14 +1353,14 @@ UpdateBranchOutcomeCallable AmplifyClient::UpdateBranchCallable(const UpdateBran
   return task->get_future();
 }
 
-void AmplifyClient::UpdateBranchAsync(const UpdateBranchRequest& request, const UpdateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientUpdateBranchAsyncHelper(AmplifyClient const * const clientThis, const UpdateBranchRequest& request, const UpdateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBranchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBranch(request), context);
 }
 
-void AmplifyClient::UpdateBranchAsyncHelper(const UpdateBranchRequest& request, const UpdateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::UpdateBranchAsync(const UpdateBranchRequest& request, const UpdateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBranch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientUpdateBranchAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const UpdateDomainAssociationRequest& request) const
@@ -1391,14 +1391,14 @@ UpdateDomainAssociationOutcomeCallable AmplifyClient::UpdateDomainAssociationCal
   return task->get_future();
 }
 
-void AmplifyClient::UpdateDomainAssociationAsync(const UpdateDomainAssociationRequest& request, const UpdateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientUpdateDomainAssociationAsyncHelper(AmplifyClient const * const clientThis, const UpdateDomainAssociationRequest& request, const UpdateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomainAssociation(request), context);
 }
 
-void AmplifyClient::UpdateDomainAssociationAsyncHelper(const UpdateDomainAssociationRequest& request, const UpdateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::UpdateDomainAssociationAsync(const UpdateDomainAssociationRequest& request, const UpdateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomainAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientUpdateDomainAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWebhookOutcome AmplifyClient::UpdateWebhook(const UpdateWebhookRequest& request) const
@@ -1422,13 +1422,13 @@ UpdateWebhookOutcomeCallable AmplifyClient::UpdateWebhookCallable(const UpdateWe
   return task->get_future();
 }
 
-void AmplifyClient::UpdateWebhookAsync(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClientUpdateWebhookAsyncHelper(AmplifyClient const * const clientThis, const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWebhookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWebhook(request), context);
 }
 
-void AmplifyClient::UpdateWebhookAsyncHelper(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyClient::UpdateWebhookAsync(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWebhook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyClientUpdateWebhookAsyncHelper( this, request, handler, context ); } );
 }
 

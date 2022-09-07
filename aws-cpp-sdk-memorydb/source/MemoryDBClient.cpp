@@ -149,14 +149,14 @@ BatchUpdateClusterOutcomeCallable MemoryDBClient::BatchUpdateClusterCallable(con
   return task->get_future();
 }
 
-void MemoryDBClient::BatchUpdateClusterAsync(const BatchUpdateClusterRequest& request, const BatchUpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientBatchUpdateClusterAsyncHelper(MemoryDBClient const * const clientThis, const BatchUpdateClusterRequest& request, const BatchUpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdateClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchUpdateCluster(request), context);
 }
 
-void MemoryDBClient::BatchUpdateClusterAsyncHelper(const BatchUpdateClusterRequest& request, const BatchUpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::BatchUpdateClusterAsync(const BatchUpdateClusterRequest& request, const BatchUpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchUpdateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientBatchUpdateClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 CopySnapshotOutcome MemoryDBClient::CopySnapshot(const CopySnapshotRequest& request) const
@@ -173,14 +173,14 @@ CopySnapshotOutcomeCallable MemoryDBClient::CopySnapshotCallable(const CopySnaps
   return task->get_future();
 }
 
-void MemoryDBClient::CopySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientCopySnapshotAsyncHelper(MemoryDBClient const * const clientThis, const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopySnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CopySnapshot(request), context);
 }
 
-void MemoryDBClient::CopySnapshotAsyncHelper(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::CopySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CopySnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientCopySnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateACLOutcome MemoryDBClient::CreateACL(const CreateACLRequest& request) const
@@ -197,14 +197,14 @@ CreateACLOutcomeCallable MemoryDBClient::CreateACLCallable(const CreateACLReques
   return task->get_future();
 }
 
-void MemoryDBClient::CreateACLAsync(const CreateACLRequest& request, const CreateACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientCreateACLAsyncHelper(MemoryDBClient const * const clientThis, const CreateACLRequest& request, const CreateACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateACL(request), context);
 }
 
-void MemoryDBClient::CreateACLAsyncHelper(const CreateACLRequest& request, const CreateACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::CreateACLAsync(const CreateACLRequest& request, const CreateACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientCreateACLAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateClusterOutcome MemoryDBClient::CreateCluster(const CreateClusterRequest& request) const
@@ -221,14 +221,14 @@ CreateClusterOutcomeCallable MemoryDBClient::CreateClusterCallable(const CreateC
   return task->get_future();
 }
 
-void MemoryDBClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientCreateClusterAsyncHelper(MemoryDBClient const * const clientThis, const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCluster(request), context);
 }
 
-void MemoryDBClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientCreateClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateParameterGroupOutcome MemoryDBClient::CreateParameterGroup(const CreateParameterGroupRequest& request) const
@@ -245,14 +245,14 @@ CreateParameterGroupOutcomeCallable MemoryDBClient::CreateParameterGroupCallable
   return task->get_future();
 }
 
-void MemoryDBClient::CreateParameterGroupAsync(const CreateParameterGroupRequest& request, const CreateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientCreateParameterGroupAsyncHelper(MemoryDBClient const * const clientThis, const CreateParameterGroupRequest& request, const CreateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateParameterGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateParameterGroup(request), context);
 }
 
-void MemoryDBClient::CreateParameterGroupAsyncHelper(const CreateParameterGroupRequest& request, const CreateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::CreateParameterGroupAsync(const CreateParameterGroupRequest& request, const CreateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientCreateParameterGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSnapshotOutcome MemoryDBClient::CreateSnapshot(const CreateSnapshotRequest& request) const
@@ -269,14 +269,14 @@ CreateSnapshotOutcomeCallable MemoryDBClient::CreateSnapshotCallable(const Creat
   return task->get_future();
 }
 
-void MemoryDBClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientCreateSnapshotAsyncHelper(MemoryDBClient const * const clientThis, const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSnapshot(request), context);
 }
 
-void MemoryDBClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientCreateSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSubnetGroupOutcome MemoryDBClient::CreateSubnetGroup(const CreateSubnetGroupRequest& request) const
@@ -293,14 +293,14 @@ CreateSubnetGroupOutcomeCallable MemoryDBClient::CreateSubnetGroupCallable(const
   return task->get_future();
 }
 
-void MemoryDBClient::CreateSubnetGroupAsync(const CreateSubnetGroupRequest& request, const CreateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientCreateSubnetGroupAsyncHelper(MemoryDBClient const * const clientThis, const CreateSubnetGroupRequest& request, const CreateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSubnetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSubnetGroup(request), context);
 }
 
-void MemoryDBClient::CreateSubnetGroupAsyncHelper(const CreateSubnetGroupRequest& request, const CreateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::CreateSubnetGroupAsync(const CreateSubnetGroupRequest& request, const CreateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSubnetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientCreateSubnetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserOutcome MemoryDBClient::CreateUser(const CreateUserRequest& request) const
@@ -317,14 +317,14 @@ CreateUserOutcomeCallable MemoryDBClient::CreateUserCallable(const CreateUserReq
   return task->get_future();
 }
 
-void MemoryDBClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientCreateUserAsyncHelper(MemoryDBClient const * const clientThis, const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUser(request), context);
 }
 
-void MemoryDBClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientCreateUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteACLOutcome MemoryDBClient::DeleteACL(const DeleteACLRequest& request) const
@@ -341,14 +341,14 @@ DeleteACLOutcomeCallable MemoryDBClient::DeleteACLCallable(const DeleteACLReques
   return task->get_future();
 }
 
-void MemoryDBClient::DeleteACLAsync(const DeleteACLRequest& request, const DeleteACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDeleteACLAsyncHelper(MemoryDBClient const * const clientThis, const DeleteACLRequest& request, const DeleteACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteACL(request), context);
 }
 
-void MemoryDBClient::DeleteACLAsyncHelper(const DeleteACLRequest& request, const DeleteACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DeleteACLAsync(const DeleteACLRequest& request, const DeleteACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDeleteACLAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteClusterOutcome MemoryDBClient::DeleteCluster(const DeleteClusterRequest& request) const
@@ -365,14 +365,14 @@ DeleteClusterOutcomeCallable MemoryDBClient::DeleteClusterCallable(const DeleteC
   return task->get_future();
 }
 
-void MemoryDBClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDeleteClusterAsyncHelper(MemoryDBClient const * const clientThis, const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCluster(request), context);
 }
 
-void MemoryDBClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDeleteClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteParameterGroupOutcome MemoryDBClient::DeleteParameterGroup(const DeleteParameterGroupRequest& request) const
@@ -389,14 +389,14 @@ DeleteParameterGroupOutcomeCallable MemoryDBClient::DeleteParameterGroupCallable
   return task->get_future();
 }
 
-void MemoryDBClient::DeleteParameterGroupAsync(const DeleteParameterGroupRequest& request, const DeleteParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDeleteParameterGroupAsyncHelper(MemoryDBClient const * const clientThis, const DeleteParameterGroupRequest& request, const DeleteParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteParameterGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteParameterGroup(request), context);
 }
 
-void MemoryDBClient::DeleteParameterGroupAsyncHelper(const DeleteParameterGroupRequest& request, const DeleteParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DeleteParameterGroupAsync(const DeleteParameterGroupRequest& request, const DeleteParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDeleteParameterGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSnapshotOutcome MemoryDBClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const
@@ -413,14 +413,14 @@ DeleteSnapshotOutcomeCallable MemoryDBClient::DeleteSnapshotCallable(const Delet
   return task->get_future();
 }
 
-void MemoryDBClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDeleteSnapshotAsyncHelper(MemoryDBClient const * const clientThis, const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSnapshot(request), context);
 }
 
-void MemoryDBClient::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDeleteSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSubnetGroupOutcome MemoryDBClient::DeleteSubnetGroup(const DeleteSubnetGroupRequest& request) const
@@ -437,14 +437,14 @@ DeleteSubnetGroupOutcomeCallable MemoryDBClient::DeleteSubnetGroupCallable(const
   return task->get_future();
 }
 
-void MemoryDBClient::DeleteSubnetGroupAsync(const DeleteSubnetGroupRequest& request, const DeleteSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDeleteSubnetGroupAsyncHelper(MemoryDBClient const * const clientThis, const DeleteSubnetGroupRequest& request, const DeleteSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSubnetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSubnetGroup(request), context);
 }
 
-void MemoryDBClient::DeleteSubnetGroupAsyncHelper(const DeleteSubnetGroupRequest& request, const DeleteSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DeleteSubnetGroupAsync(const DeleteSubnetGroupRequest& request, const DeleteSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSubnetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDeleteSubnetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserOutcome MemoryDBClient::DeleteUser(const DeleteUserRequest& request) const
@@ -461,14 +461,14 @@ DeleteUserOutcomeCallable MemoryDBClient::DeleteUserCallable(const DeleteUserReq
   return task->get_future();
 }
 
-void MemoryDBClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDeleteUserAsyncHelper(MemoryDBClient const * const clientThis, const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUser(request), context);
 }
 
-void MemoryDBClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDeleteUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeACLsOutcome MemoryDBClient::DescribeACLs(const DescribeACLsRequest& request) const
@@ -485,14 +485,14 @@ DescribeACLsOutcomeCallable MemoryDBClient::DescribeACLsCallable(const DescribeA
   return task->get_future();
 }
 
-void MemoryDBClient::DescribeACLsAsync(const DescribeACLsRequest& request, const DescribeACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDescribeACLsAsyncHelper(MemoryDBClient const * const clientThis, const DescribeACLsRequest& request, const DescribeACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeACLsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeACLs(request), context);
 }
 
-void MemoryDBClient::DescribeACLsAsyncHelper(const DescribeACLsRequest& request, const DescribeACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DescribeACLsAsync(const DescribeACLsRequest& request, const DescribeACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeACLs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDescribeACLsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClustersOutcome MemoryDBClient::DescribeClusters(const DescribeClustersRequest& request) const
@@ -509,14 +509,14 @@ DescribeClustersOutcomeCallable MemoryDBClient::DescribeClustersCallable(const D
   return task->get_future();
 }
 
-void MemoryDBClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDescribeClustersAsyncHelper(MemoryDBClient const * const clientThis, const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClustersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClusters(request), context);
 }
 
-void MemoryDBClient::DescribeClustersAsyncHelper(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClusters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDescribeClustersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEngineVersionsOutcome MemoryDBClient::DescribeEngineVersions(const DescribeEngineVersionsRequest& request) const
@@ -533,14 +533,14 @@ DescribeEngineVersionsOutcomeCallable MemoryDBClient::DescribeEngineVersionsCall
   return task->get_future();
 }
 
-void MemoryDBClient::DescribeEngineVersionsAsync(const DescribeEngineVersionsRequest& request, const DescribeEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDescribeEngineVersionsAsyncHelper(MemoryDBClient const * const clientThis, const DescribeEngineVersionsRequest& request, const DescribeEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEngineVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEngineVersions(request), context);
 }
 
-void MemoryDBClient::DescribeEngineVersionsAsyncHelper(const DescribeEngineVersionsRequest& request, const DescribeEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DescribeEngineVersionsAsync(const DescribeEngineVersionsRequest& request, const DescribeEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEngineVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDescribeEngineVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventsOutcome MemoryDBClient::DescribeEvents(const DescribeEventsRequest& request) const
@@ -557,14 +557,14 @@ DescribeEventsOutcomeCallable MemoryDBClient::DescribeEventsCallable(const Descr
   return task->get_future();
 }
 
-void MemoryDBClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDescribeEventsAsyncHelper(MemoryDBClient const * const clientThis, const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEvents(request), context);
 }
 
-void MemoryDBClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDescribeEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeParameterGroupsOutcome MemoryDBClient::DescribeParameterGroups(const DescribeParameterGroupsRequest& request) const
@@ -581,14 +581,14 @@ DescribeParameterGroupsOutcomeCallable MemoryDBClient::DescribeParameterGroupsCa
   return task->get_future();
 }
 
-void MemoryDBClient::DescribeParameterGroupsAsync(const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDescribeParameterGroupsAsyncHelper(MemoryDBClient const * const clientThis, const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeParameterGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeParameterGroups(request), context);
 }
 
-void MemoryDBClient::DescribeParameterGroupsAsyncHelper(const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DescribeParameterGroupsAsync(const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeParameterGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDescribeParameterGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeParametersOutcome MemoryDBClient::DescribeParameters(const DescribeParametersRequest& request) const
@@ -605,14 +605,14 @@ DescribeParametersOutcomeCallable MemoryDBClient::DescribeParametersCallable(con
   return task->get_future();
 }
 
-void MemoryDBClient::DescribeParametersAsync(const DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDescribeParametersAsyncHelper(MemoryDBClient const * const clientThis, const DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeParametersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeParameters(request), context);
 }
 
-void MemoryDBClient::DescribeParametersAsyncHelper(const DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DescribeParametersAsync(const DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeParameters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDescribeParametersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeServiceUpdatesOutcome MemoryDBClient::DescribeServiceUpdates(const DescribeServiceUpdatesRequest& request) const
@@ -629,14 +629,14 @@ DescribeServiceUpdatesOutcomeCallable MemoryDBClient::DescribeServiceUpdatesCall
   return task->get_future();
 }
 
-void MemoryDBClient::DescribeServiceUpdatesAsync(const DescribeServiceUpdatesRequest& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDescribeServiceUpdatesAsyncHelper(MemoryDBClient const * const clientThis, const DescribeServiceUpdatesRequest& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServiceUpdatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeServiceUpdates(request), context);
 }
 
-void MemoryDBClient::DescribeServiceUpdatesAsyncHelper(const DescribeServiceUpdatesRequest& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DescribeServiceUpdatesAsync(const DescribeServiceUpdatesRequest& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeServiceUpdates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDescribeServiceUpdatesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSnapshotsOutcome MemoryDBClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const
@@ -653,14 +653,14 @@ DescribeSnapshotsOutcomeCallable MemoryDBClient::DescribeSnapshotsCallable(const
   return task->get_future();
 }
 
-void MemoryDBClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDescribeSnapshotsAsyncHelper(MemoryDBClient const * const clientThis, const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSnapshots(request), context);
 }
 
-void MemoryDBClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDescribeSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSubnetGroupsOutcome MemoryDBClient::DescribeSubnetGroups(const DescribeSubnetGroupsRequest& request) const
@@ -677,14 +677,14 @@ DescribeSubnetGroupsOutcomeCallable MemoryDBClient::DescribeSubnetGroupsCallable
   return task->get_future();
 }
 
-void MemoryDBClient::DescribeSubnetGroupsAsync(const DescribeSubnetGroupsRequest& request, const DescribeSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDescribeSubnetGroupsAsyncHelper(MemoryDBClient const * const clientThis, const DescribeSubnetGroupsRequest& request, const DescribeSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSubnetGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSubnetGroups(request), context);
 }
 
-void MemoryDBClient::DescribeSubnetGroupsAsyncHelper(const DescribeSubnetGroupsRequest& request, const DescribeSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DescribeSubnetGroupsAsync(const DescribeSubnetGroupsRequest& request, const DescribeSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSubnetGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDescribeSubnetGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUsersOutcome MemoryDBClient::DescribeUsers(const DescribeUsersRequest& request) const
@@ -701,14 +701,14 @@ DescribeUsersOutcomeCallable MemoryDBClient::DescribeUsersCallable(const Describ
   return task->get_future();
 }
 
-void MemoryDBClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientDescribeUsersAsyncHelper(MemoryDBClient const * const clientThis, const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUsers(request), context);
 }
 
-void MemoryDBClient::DescribeUsersAsyncHelper(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientDescribeUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 FailoverShardOutcome MemoryDBClient::FailoverShard(const FailoverShardRequest& request) const
@@ -725,14 +725,14 @@ FailoverShardOutcomeCallable MemoryDBClient::FailoverShardCallable(const Failove
   return task->get_future();
 }
 
-void MemoryDBClient::FailoverShardAsync(const FailoverShardRequest& request, const FailoverShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientFailoverShardAsyncHelper(MemoryDBClient const * const clientThis, const FailoverShardRequest& request, const FailoverShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->FailoverShardAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->FailoverShard(request), context);
 }
 
-void MemoryDBClient::FailoverShardAsyncHelper(const FailoverShardRequest& request, const FailoverShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::FailoverShardAsync(const FailoverShardRequest& request, const FailoverShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, FailoverShard(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientFailoverShardAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAllowedNodeTypeUpdatesOutcome MemoryDBClient::ListAllowedNodeTypeUpdates(const ListAllowedNodeTypeUpdatesRequest& request) const
@@ -749,14 +749,14 @@ ListAllowedNodeTypeUpdatesOutcomeCallable MemoryDBClient::ListAllowedNodeTypeUpd
   return task->get_future();
 }
 
-void MemoryDBClient::ListAllowedNodeTypeUpdatesAsync(const ListAllowedNodeTypeUpdatesRequest& request, const ListAllowedNodeTypeUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientListAllowedNodeTypeUpdatesAsyncHelper(MemoryDBClient const * const clientThis, const ListAllowedNodeTypeUpdatesRequest& request, const ListAllowedNodeTypeUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAllowedNodeTypeUpdatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAllowedNodeTypeUpdates(request), context);
 }
 
-void MemoryDBClient::ListAllowedNodeTypeUpdatesAsyncHelper(const ListAllowedNodeTypeUpdatesRequest& request, const ListAllowedNodeTypeUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::ListAllowedNodeTypeUpdatesAsync(const ListAllowedNodeTypeUpdatesRequest& request, const ListAllowedNodeTypeUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAllowedNodeTypeUpdates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientListAllowedNodeTypeUpdatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsOutcome MemoryDBClient::ListTags(const ListTagsRequest& request) const
@@ -773,14 +773,14 @@ ListTagsOutcomeCallable MemoryDBClient::ListTagsCallable(const ListTagsRequest& 
   return task->get_future();
 }
 
-void MemoryDBClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientListTagsAsyncHelper(MemoryDBClient const * const clientThis, const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTags(request), context);
 }
 
-void MemoryDBClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientListTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetParameterGroupOutcome MemoryDBClient::ResetParameterGroup(const ResetParameterGroupRequest& request) const
@@ -797,14 +797,14 @@ ResetParameterGroupOutcomeCallable MemoryDBClient::ResetParameterGroupCallable(c
   return task->get_future();
 }
 
-void MemoryDBClient::ResetParameterGroupAsync(const ResetParameterGroupRequest& request, const ResetParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientResetParameterGroupAsyncHelper(MemoryDBClient const * const clientThis, const ResetParameterGroupRequest& request, const ResetParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetParameterGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetParameterGroup(request), context);
 }
 
-void MemoryDBClient::ResetParameterGroupAsyncHelper(const ResetParameterGroupRequest& request, const ResetParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::ResetParameterGroupAsync(const ResetParameterGroupRequest& request, const ResetParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientResetParameterGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome MemoryDBClient::TagResource(const TagResourceRequest& request) const
@@ -821,14 +821,14 @@ TagResourceOutcomeCallable MemoryDBClient::TagResourceCallable(const TagResource
   return task->get_future();
 }
 
-void MemoryDBClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientTagResourceAsyncHelper(MemoryDBClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void MemoryDBClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome MemoryDBClient::UntagResource(const UntagResourceRequest& request) const
@@ -845,14 +845,14 @@ UntagResourceOutcomeCallable MemoryDBClient::UntagResourceCallable(const UntagRe
   return task->get_future();
 }
 
-void MemoryDBClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientUntagResourceAsyncHelper(MemoryDBClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void MemoryDBClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateACLOutcome MemoryDBClient::UpdateACL(const UpdateACLRequest& request) const
@@ -869,14 +869,14 @@ UpdateACLOutcomeCallable MemoryDBClient::UpdateACLCallable(const UpdateACLReques
   return task->get_future();
 }
 
-void MemoryDBClient::UpdateACLAsync(const UpdateACLRequest& request, const UpdateACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientUpdateACLAsyncHelper(MemoryDBClient const * const clientThis, const UpdateACLRequest& request, const UpdateACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateACL(request), context);
 }
 
-void MemoryDBClient::UpdateACLAsyncHelper(const UpdateACLRequest& request, const UpdateACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::UpdateACLAsync(const UpdateACLRequest& request, const UpdateACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientUpdateACLAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateClusterOutcome MemoryDBClient::UpdateCluster(const UpdateClusterRequest& request) const
@@ -893,14 +893,14 @@ UpdateClusterOutcomeCallable MemoryDBClient::UpdateClusterCallable(const UpdateC
   return task->get_future();
 }
 
-void MemoryDBClient::UpdateClusterAsync(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientUpdateClusterAsyncHelper(MemoryDBClient const * const clientThis, const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCluster(request), context);
 }
 
-void MemoryDBClient::UpdateClusterAsyncHelper(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::UpdateClusterAsync(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientUpdateClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateParameterGroupOutcome MemoryDBClient::UpdateParameterGroup(const UpdateParameterGroupRequest& request) const
@@ -917,14 +917,14 @@ UpdateParameterGroupOutcomeCallable MemoryDBClient::UpdateParameterGroupCallable
   return task->get_future();
 }
 
-void MemoryDBClient::UpdateParameterGroupAsync(const UpdateParameterGroupRequest& request, const UpdateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientUpdateParameterGroupAsyncHelper(MemoryDBClient const * const clientThis, const UpdateParameterGroupRequest& request, const UpdateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateParameterGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateParameterGroup(request), context);
 }
 
-void MemoryDBClient::UpdateParameterGroupAsyncHelper(const UpdateParameterGroupRequest& request, const UpdateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::UpdateParameterGroupAsync(const UpdateParameterGroupRequest& request, const UpdateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientUpdateParameterGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSubnetGroupOutcome MemoryDBClient::UpdateSubnetGroup(const UpdateSubnetGroupRequest& request) const
@@ -941,14 +941,14 @@ UpdateSubnetGroupOutcomeCallable MemoryDBClient::UpdateSubnetGroupCallable(const
   return task->get_future();
 }
 
-void MemoryDBClient::UpdateSubnetGroupAsync(const UpdateSubnetGroupRequest& request, const UpdateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientUpdateSubnetGroupAsyncHelper(MemoryDBClient const * const clientThis, const UpdateSubnetGroupRequest& request, const UpdateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSubnetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSubnetGroup(request), context);
 }
 
-void MemoryDBClient::UpdateSubnetGroupAsyncHelper(const UpdateSubnetGroupRequest& request, const UpdateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::UpdateSubnetGroupAsync(const UpdateSubnetGroupRequest& request, const UpdateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSubnetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientUpdateSubnetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserOutcome MemoryDBClient::UpdateUser(const UpdateUserRequest& request) const
@@ -965,13 +965,13 @@ UpdateUserOutcomeCallable MemoryDBClient::UpdateUserCallable(const UpdateUserReq
   return task->get_future();
 }
 
-void MemoryDBClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClientUpdateUserAsyncHelper(MemoryDBClient const * const clientThis, const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUser(request), context);
 }
 
-void MemoryDBClient::UpdateUserAsyncHelper(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MemoryDBClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MemoryDBClientUpdateUserAsyncHelper( this, request, handler, context ); } );
 }
 

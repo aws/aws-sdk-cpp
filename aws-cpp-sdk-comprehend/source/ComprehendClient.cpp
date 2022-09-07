@@ -185,14 +185,14 @@ BatchDetectDominantLanguageOutcomeCallable ComprehendClient::BatchDetectDominant
   return task->get_future();
 }
 
-void ComprehendClient::BatchDetectDominantLanguageAsync(const BatchDetectDominantLanguageRequest& request, const BatchDetectDominantLanguageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientBatchDetectDominantLanguageAsyncHelper(ComprehendClient const * const clientThis, const BatchDetectDominantLanguageRequest& request, const BatchDetectDominantLanguageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDetectDominantLanguageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDetectDominantLanguage(request), context);
 }
 
-void ComprehendClient::BatchDetectDominantLanguageAsyncHelper(const BatchDetectDominantLanguageRequest& request, const BatchDetectDominantLanguageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::BatchDetectDominantLanguageAsync(const BatchDetectDominantLanguageRequest& request, const BatchDetectDominantLanguageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDetectDominantLanguage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientBatchDetectDominantLanguageAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDetectEntitiesOutcome ComprehendClient::BatchDetectEntities(const BatchDetectEntitiesRequest& request) const
@@ -209,14 +209,14 @@ BatchDetectEntitiesOutcomeCallable ComprehendClient::BatchDetectEntitiesCallable
   return task->get_future();
 }
 
-void ComprehendClient::BatchDetectEntitiesAsync(const BatchDetectEntitiesRequest& request, const BatchDetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientBatchDetectEntitiesAsyncHelper(ComprehendClient const * const clientThis, const BatchDetectEntitiesRequest& request, const BatchDetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDetectEntitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDetectEntities(request), context);
 }
 
-void ComprehendClient::BatchDetectEntitiesAsyncHelper(const BatchDetectEntitiesRequest& request, const BatchDetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::BatchDetectEntitiesAsync(const BatchDetectEntitiesRequest& request, const BatchDetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDetectEntities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientBatchDetectEntitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDetectKeyPhrasesOutcome ComprehendClient::BatchDetectKeyPhrases(const BatchDetectKeyPhrasesRequest& request) const
@@ -233,14 +233,14 @@ BatchDetectKeyPhrasesOutcomeCallable ComprehendClient::BatchDetectKeyPhrasesCall
   return task->get_future();
 }
 
-void ComprehendClient::BatchDetectKeyPhrasesAsync(const BatchDetectKeyPhrasesRequest& request, const BatchDetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientBatchDetectKeyPhrasesAsyncHelper(ComprehendClient const * const clientThis, const BatchDetectKeyPhrasesRequest& request, const BatchDetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDetectKeyPhrasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDetectKeyPhrases(request), context);
 }
 
-void ComprehendClient::BatchDetectKeyPhrasesAsyncHelper(const BatchDetectKeyPhrasesRequest& request, const BatchDetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::BatchDetectKeyPhrasesAsync(const BatchDetectKeyPhrasesRequest& request, const BatchDetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDetectKeyPhrases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientBatchDetectKeyPhrasesAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDetectSentimentOutcome ComprehendClient::BatchDetectSentiment(const BatchDetectSentimentRequest& request) const
@@ -257,14 +257,14 @@ BatchDetectSentimentOutcomeCallable ComprehendClient::BatchDetectSentimentCallab
   return task->get_future();
 }
 
-void ComprehendClient::BatchDetectSentimentAsync(const BatchDetectSentimentRequest& request, const BatchDetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientBatchDetectSentimentAsyncHelper(ComprehendClient const * const clientThis, const BatchDetectSentimentRequest& request, const BatchDetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDetectSentimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDetectSentiment(request), context);
 }
 
-void ComprehendClient::BatchDetectSentimentAsyncHelper(const BatchDetectSentimentRequest& request, const BatchDetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::BatchDetectSentimentAsync(const BatchDetectSentimentRequest& request, const BatchDetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDetectSentiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientBatchDetectSentimentAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDetectSyntaxOutcome ComprehendClient::BatchDetectSyntax(const BatchDetectSyntaxRequest& request) const
@@ -281,14 +281,14 @@ BatchDetectSyntaxOutcomeCallable ComprehendClient::BatchDetectSyntaxCallable(con
   return task->get_future();
 }
 
-void ComprehendClient::BatchDetectSyntaxAsync(const BatchDetectSyntaxRequest& request, const BatchDetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientBatchDetectSyntaxAsyncHelper(ComprehendClient const * const clientThis, const BatchDetectSyntaxRequest& request, const BatchDetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDetectSyntaxAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDetectSyntax(request), context);
 }
 
-void ComprehendClient::BatchDetectSyntaxAsyncHelper(const BatchDetectSyntaxRequest& request, const BatchDetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::BatchDetectSyntaxAsync(const BatchDetectSyntaxRequest& request, const BatchDetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDetectSyntax(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientBatchDetectSyntaxAsyncHelper( this, request, handler, context ); } );
 }
 
 ClassifyDocumentOutcome ComprehendClient::ClassifyDocument(const ClassifyDocumentRequest& request) const
@@ -305,14 +305,14 @@ ClassifyDocumentOutcomeCallable ComprehendClient::ClassifyDocumentCallable(const
   return task->get_future();
 }
 
-void ComprehendClient::ClassifyDocumentAsync(const ClassifyDocumentRequest& request, const ClassifyDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientClassifyDocumentAsyncHelper(ComprehendClient const * const clientThis, const ClassifyDocumentRequest& request, const ClassifyDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ClassifyDocumentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ClassifyDocument(request), context);
 }
 
-void ComprehendClient::ClassifyDocumentAsyncHelper(const ClassifyDocumentRequest& request, const ClassifyDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ClassifyDocumentAsync(const ClassifyDocumentRequest& request, const ClassifyDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ClassifyDocument(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientClassifyDocumentAsyncHelper( this, request, handler, context ); } );
 }
 
 ContainsPiiEntitiesOutcome ComprehendClient::ContainsPiiEntities(const ContainsPiiEntitiesRequest& request) const
@@ -329,14 +329,14 @@ ContainsPiiEntitiesOutcomeCallable ComprehendClient::ContainsPiiEntitiesCallable
   return task->get_future();
 }
 
-void ComprehendClient::ContainsPiiEntitiesAsync(const ContainsPiiEntitiesRequest& request, const ContainsPiiEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientContainsPiiEntitiesAsyncHelper(ComprehendClient const * const clientThis, const ContainsPiiEntitiesRequest& request, const ContainsPiiEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ContainsPiiEntitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ContainsPiiEntities(request), context);
 }
 
-void ComprehendClient::ContainsPiiEntitiesAsyncHelper(const ContainsPiiEntitiesRequest& request, const ContainsPiiEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ContainsPiiEntitiesAsync(const ContainsPiiEntitiesRequest& request, const ContainsPiiEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ContainsPiiEntities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientContainsPiiEntitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDocumentClassifierOutcome ComprehendClient::CreateDocumentClassifier(const CreateDocumentClassifierRequest& request) const
@@ -353,14 +353,14 @@ CreateDocumentClassifierOutcomeCallable ComprehendClient::CreateDocumentClassifi
   return task->get_future();
 }
 
-void ComprehendClient::CreateDocumentClassifierAsync(const CreateDocumentClassifierRequest& request, const CreateDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientCreateDocumentClassifierAsyncHelper(ComprehendClient const * const clientThis, const CreateDocumentClassifierRequest& request, const CreateDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDocumentClassifierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDocumentClassifier(request), context);
 }
 
-void ComprehendClient::CreateDocumentClassifierAsyncHelper(const CreateDocumentClassifierRequest& request, const CreateDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::CreateDocumentClassifierAsync(const CreateDocumentClassifierRequest& request, const CreateDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDocumentClassifier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientCreateDocumentClassifierAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEndpointOutcome ComprehendClient::CreateEndpoint(const CreateEndpointRequest& request) const
@@ -377,14 +377,14 @@ CreateEndpointOutcomeCallable ComprehendClient::CreateEndpointCallable(const Cre
   return task->get_future();
 }
 
-void ComprehendClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientCreateEndpointAsyncHelper(ComprehendClient const * const clientThis, const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEndpoint(request), context);
 }
 
-void ComprehendClient::CreateEndpointAsyncHelper(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientCreateEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEntityRecognizerOutcome ComprehendClient::CreateEntityRecognizer(const CreateEntityRecognizerRequest& request) const
@@ -401,14 +401,14 @@ CreateEntityRecognizerOutcomeCallable ComprehendClient::CreateEntityRecognizerCa
   return task->get_future();
 }
 
-void ComprehendClient::CreateEntityRecognizerAsync(const CreateEntityRecognizerRequest& request, const CreateEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientCreateEntityRecognizerAsyncHelper(ComprehendClient const * const clientThis, const CreateEntityRecognizerRequest& request, const CreateEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEntityRecognizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEntityRecognizer(request), context);
 }
 
-void ComprehendClient::CreateEntityRecognizerAsyncHelper(const CreateEntityRecognizerRequest& request, const CreateEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::CreateEntityRecognizerAsync(const CreateEntityRecognizerRequest& request, const CreateEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEntityRecognizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientCreateEntityRecognizerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDocumentClassifierOutcome ComprehendClient::DeleteDocumentClassifier(const DeleteDocumentClassifierRequest& request) const
@@ -425,14 +425,14 @@ DeleteDocumentClassifierOutcomeCallable ComprehendClient::DeleteDocumentClassifi
   return task->get_future();
 }
 
-void ComprehendClient::DeleteDocumentClassifierAsync(const DeleteDocumentClassifierRequest& request, const DeleteDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDeleteDocumentClassifierAsyncHelper(ComprehendClient const * const clientThis, const DeleteDocumentClassifierRequest& request, const DeleteDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDocumentClassifierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDocumentClassifier(request), context);
 }
 
-void ComprehendClient::DeleteDocumentClassifierAsyncHelper(const DeleteDocumentClassifierRequest& request, const DeleteDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DeleteDocumentClassifierAsync(const DeleteDocumentClassifierRequest& request, const DeleteDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDocumentClassifier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDeleteDocumentClassifierAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEndpointOutcome ComprehendClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
@@ -449,14 +449,14 @@ DeleteEndpointOutcomeCallable ComprehendClient::DeleteEndpointCallable(const Del
   return task->get_future();
 }
 
-void ComprehendClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDeleteEndpointAsyncHelper(ComprehendClient const * const clientThis, const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEndpoint(request), context);
 }
 
-void ComprehendClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDeleteEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEntityRecognizerOutcome ComprehendClient::DeleteEntityRecognizer(const DeleteEntityRecognizerRequest& request) const
@@ -473,14 +473,14 @@ DeleteEntityRecognizerOutcomeCallable ComprehendClient::DeleteEntityRecognizerCa
   return task->get_future();
 }
 
-void ComprehendClient::DeleteEntityRecognizerAsync(const DeleteEntityRecognizerRequest& request, const DeleteEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDeleteEntityRecognizerAsyncHelper(ComprehendClient const * const clientThis, const DeleteEntityRecognizerRequest& request, const DeleteEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEntityRecognizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEntityRecognizer(request), context);
 }
 
-void ComprehendClient::DeleteEntityRecognizerAsyncHelper(const DeleteEntityRecognizerRequest& request, const DeleteEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DeleteEntityRecognizerAsync(const DeleteEntityRecognizerRequest& request, const DeleteEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEntityRecognizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDeleteEntityRecognizerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome ComprehendClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -497,14 +497,14 @@ DeleteResourcePolicyOutcomeCallable ComprehendClient::DeleteResourcePolicyCallab
   return task->get_future();
 }
 
-void ComprehendClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDeleteResourcePolicyAsyncHelper(ComprehendClient const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void ComprehendClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDocumentClassificationJobOutcome ComprehendClient::DescribeDocumentClassificationJob(const DescribeDocumentClassificationJobRequest& request) const
@@ -521,14 +521,14 @@ DescribeDocumentClassificationJobOutcomeCallable ComprehendClient::DescribeDocum
   return task->get_future();
 }
 
-void ComprehendClient::DescribeDocumentClassificationJobAsync(const DescribeDocumentClassificationJobRequest& request, const DescribeDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeDocumentClassificationJobAsyncHelper(ComprehendClient const * const clientThis, const DescribeDocumentClassificationJobRequest& request, const DescribeDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDocumentClassificationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDocumentClassificationJob(request), context);
 }
 
-void ComprehendClient::DescribeDocumentClassificationJobAsyncHelper(const DescribeDocumentClassificationJobRequest& request, const DescribeDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeDocumentClassificationJobAsync(const DescribeDocumentClassificationJobRequest& request, const DescribeDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDocumentClassificationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeDocumentClassificationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDocumentClassifierOutcome ComprehendClient::DescribeDocumentClassifier(const DescribeDocumentClassifierRequest& request) const
@@ -545,14 +545,14 @@ DescribeDocumentClassifierOutcomeCallable ComprehendClient::DescribeDocumentClas
   return task->get_future();
 }
 
-void ComprehendClient::DescribeDocumentClassifierAsync(const DescribeDocumentClassifierRequest& request, const DescribeDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeDocumentClassifierAsyncHelper(ComprehendClient const * const clientThis, const DescribeDocumentClassifierRequest& request, const DescribeDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDocumentClassifierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDocumentClassifier(request), context);
 }
 
-void ComprehendClient::DescribeDocumentClassifierAsyncHelper(const DescribeDocumentClassifierRequest& request, const DescribeDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeDocumentClassifierAsync(const DescribeDocumentClassifierRequest& request, const DescribeDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDocumentClassifier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeDocumentClassifierAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDominantLanguageDetectionJobOutcome ComprehendClient::DescribeDominantLanguageDetectionJob(const DescribeDominantLanguageDetectionJobRequest& request) const
@@ -569,14 +569,14 @@ DescribeDominantLanguageDetectionJobOutcomeCallable ComprehendClient::DescribeDo
   return task->get_future();
 }
 
-void ComprehendClient::DescribeDominantLanguageDetectionJobAsync(const DescribeDominantLanguageDetectionJobRequest& request, const DescribeDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeDominantLanguageDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const DescribeDominantLanguageDetectionJobRequest& request, const DescribeDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDominantLanguageDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDominantLanguageDetectionJob(request), context);
 }
 
-void ComprehendClient::DescribeDominantLanguageDetectionJobAsyncHelper(const DescribeDominantLanguageDetectionJobRequest& request, const DescribeDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeDominantLanguageDetectionJobAsync(const DescribeDominantLanguageDetectionJobRequest& request, const DescribeDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDominantLanguageDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeDominantLanguageDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEndpointOutcome ComprehendClient::DescribeEndpoint(const DescribeEndpointRequest& request) const
@@ -593,14 +593,14 @@ DescribeEndpointOutcomeCallable ComprehendClient::DescribeEndpointCallable(const
   return task->get_future();
 }
 
-void ComprehendClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeEndpointAsyncHelper(ComprehendClient const * const clientThis, const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEndpoint(request), context);
 }
 
-void ComprehendClient::DescribeEndpointAsyncHelper(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEntitiesDetectionJobOutcome ComprehendClient::DescribeEntitiesDetectionJob(const DescribeEntitiesDetectionJobRequest& request) const
@@ -617,14 +617,14 @@ DescribeEntitiesDetectionJobOutcomeCallable ComprehendClient::DescribeEntitiesDe
   return task->get_future();
 }
 
-void ComprehendClient::DescribeEntitiesDetectionJobAsync(const DescribeEntitiesDetectionJobRequest& request, const DescribeEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeEntitiesDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const DescribeEntitiesDetectionJobRequest& request, const DescribeEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEntitiesDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEntitiesDetectionJob(request), context);
 }
 
-void ComprehendClient::DescribeEntitiesDetectionJobAsyncHelper(const DescribeEntitiesDetectionJobRequest& request, const DescribeEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeEntitiesDetectionJobAsync(const DescribeEntitiesDetectionJobRequest& request, const DescribeEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEntitiesDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeEntitiesDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEntityRecognizerOutcome ComprehendClient::DescribeEntityRecognizer(const DescribeEntityRecognizerRequest& request) const
@@ -641,14 +641,14 @@ DescribeEntityRecognizerOutcomeCallable ComprehendClient::DescribeEntityRecogniz
   return task->get_future();
 }
 
-void ComprehendClient::DescribeEntityRecognizerAsync(const DescribeEntityRecognizerRequest& request, const DescribeEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeEntityRecognizerAsyncHelper(ComprehendClient const * const clientThis, const DescribeEntityRecognizerRequest& request, const DescribeEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEntityRecognizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEntityRecognizer(request), context);
 }
 
-void ComprehendClient::DescribeEntityRecognizerAsyncHelper(const DescribeEntityRecognizerRequest& request, const DescribeEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeEntityRecognizerAsync(const DescribeEntityRecognizerRequest& request, const DescribeEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEntityRecognizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeEntityRecognizerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventsDetectionJobOutcome ComprehendClient::DescribeEventsDetectionJob(const DescribeEventsDetectionJobRequest& request) const
@@ -665,14 +665,14 @@ DescribeEventsDetectionJobOutcomeCallable ComprehendClient::DescribeEventsDetect
   return task->get_future();
 }
 
-void ComprehendClient::DescribeEventsDetectionJobAsync(const DescribeEventsDetectionJobRequest& request, const DescribeEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeEventsDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const DescribeEventsDetectionJobRequest& request, const DescribeEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventsDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEventsDetectionJob(request), context);
 }
 
-void ComprehendClient::DescribeEventsDetectionJobAsyncHelper(const DescribeEventsDetectionJobRequest& request, const DescribeEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeEventsDetectionJobAsync(const DescribeEventsDetectionJobRequest& request, const DescribeEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEventsDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeEventsDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeKeyPhrasesDetectionJobOutcome ComprehendClient::DescribeKeyPhrasesDetectionJob(const DescribeKeyPhrasesDetectionJobRequest& request) const
@@ -689,14 +689,14 @@ DescribeKeyPhrasesDetectionJobOutcomeCallable ComprehendClient::DescribeKeyPhras
   return task->get_future();
 }
 
-void ComprehendClient::DescribeKeyPhrasesDetectionJobAsync(const DescribeKeyPhrasesDetectionJobRequest& request, const DescribeKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeKeyPhrasesDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const DescribeKeyPhrasesDetectionJobRequest& request, const DescribeKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeKeyPhrasesDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeKeyPhrasesDetectionJob(request), context);
 }
 
-void ComprehendClient::DescribeKeyPhrasesDetectionJobAsyncHelper(const DescribeKeyPhrasesDetectionJobRequest& request, const DescribeKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeKeyPhrasesDetectionJobAsync(const DescribeKeyPhrasesDetectionJobRequest& request, const DescribeKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeKeyPhrasesDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeKeyPhrasesDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePiiEntitiesDetectionJobOutcome ComprehendClient::DescribePiiEntitiesDetectionJob(const DescribePiiEntitiesDetectionJobRequest& request) const
@@ -713,14 +713,14 @@ DescribePiiEntitiesDetectionJobOutcomeCallable ComprehendClient::DescribePiiEnti
   return task->get_future();
 }
 
-void ComprehendClient::DescribePiiEntitiesDetectionJobAsync(const DescribePiiEntitiesDetectionJobRequest& request, const DescribePiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribePiiEntitiesDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const DescribePiiEntitiesDetectionJobRequest& request, const DescribePiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePiiEntitiesDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePiiEntitiesDetectionJob(request), context);
 }
 
-void ComprehendClient::DescribePiiEntitiesDetectionJobAsyncHelper(const DescribePiiEntitiesDetectionJobRequest& request, const DescribePiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribePiiEntitiesDetectionJobAsync(const DescribePiiEntitiesDetectionJobRequest& request, const DescribePiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePiiEntitiesDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribePiiEntitiesDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeResourcePolicyOutcome ComprehendClient::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const
@@ -737,14 +737,14 @@ DescribeResourcePolicyOutcomeCallable ComprehendClient::DescribeResourcePolicyCa
   return task->get_future();
 }
 
-void ComprehendClient::DescribeResourcePolicyAsync(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeResourcePolicyAsyncHelper(ComprehendClient const * const clientThis, const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeResourcePolicy(request), context);
 }
 
-void ComprehendClient::DescribeResourcePolicyAsyncHelper(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeResourcePolicyAsync(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSentimentDetectionJobOutcome ComprehendClient::DescribeSentimentDetectionJob(const DescribeSentimentDetectionJobRequest& request) const
@@ -761,14 +761,14 @@ DescribeSentimentDetectionJobOutcomeCallable ComprehendClient::DescribeSentiment
   return task->get_future();
 }
 
-void ComprehendClient::DescribeSentimentDetectionJobAsync(const DescribeSentimentDetectionJobRequest& request, const DescribeSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeSentimentDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const DescribeSentimentDetectionJobRequest& request, const DescribeSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSentimentDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSentimentDetectionJob(request), context);
 }
 
-void ComprehendClient::DescribeSentimentDetectionJobAsyncHelper(const DescribeSentimentDetectionJobRequest& request, const DescribeSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeSentimentDetectionJobAsync(const DescribeSentimentDetectionJobRequest& request, const DescribeSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSentimentDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeSentimentDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTargetedSentimentDetectionJobOutcome ComprehendClient::DescribeTargetedSentimentDetectionJob(const DescribeTargetedSentimentDetectionJobRequest& request) const
@@ -785,14 +785,14 @@ DescribeTargetedSentimentDetectionJobOutcomeCallable ComprehendClient::DescribeT
   return task->get_future();
 }
 
-void ComprehendClient::DescribeTargetedSentimentDetectionJobAsync(const DescribeTargetedSentimentDetectionJobRequest& request, const DescribeTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeTargetedSentimentDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const DescribeTargetedSentimentDetectionJobRequest& request, const DescribeTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTargetedSentimentDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTargetedSentimentDetectionJob(request), context);
 }
 
-void ComprehendClient::DescribeTargetedSentimentDetectionJobAsyncHelper(const DescribeTargetedSentimentDetectionJobRequest& request, const DescribeTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeTargetedSentimentDetectionJobAsync(const DescribeTargetedSentimentDetectionJobRequest& request, const DescribeTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTargetedSentimentDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeTargetedSentimentDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTopicsDetectionJobOutcome ComprehendClient::DescribeTopicsDetectionJob(const DescribeTopicsDetectionJobRequest& request) const
@@ -809,14 +809,14 @@ DescribeTopicsDetectionJobOutcomeCallable ComprehendClient::DescribeTopicsDetect
   return task->get_future();
 }
 
-void ComprehendClient::DescribeTopicsDetectionJobAsync(const DescribeTopicsDetectionJobRequest& request, const DescribeTopicsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDescribeTopicsDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const DescribeTopicsDetectionJobRequest& request, const DescribeTopicsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTopicsDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTopicsDetectionJob(request), context);
 }
 
-void ComprehendClient::DescribeTopicsDetectionJobAsyncHelper(const DescribeTopicsDetectionJobRequest& request, const DescribeTopicsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DescribeTopicsDetectionJobAsync(const DescribeTopicsDetectionJobRequest& request, const DescribeTopicsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTopicsDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDescribeTopicsDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DetectDominantLanguageOutcome ComprehendClient::DetectDominantLanguage(const DetectDominantLanguageRequest& request) const
@@ -833,14 +833,14 @@ DetectDominantLanguageOutcomeCallable ComprehendClient::DetectDominantLanguageCa
   return task->get_future();
 }
 
-void ComprehendClient::DetectDominantLanguageAsync(const DetectDominantLanguageRequest& request, const DetectDominantLanguageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDetectDominantLanguageAsyncHelper(ComprehendClient const * const clientThis, const DetectDominantLanguageRequest& request, const DetectDominantLanguageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectDominantLanguageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectDominantLanguage(request), context);
 }
 
-void ComprehendClient::DetectDominantLanguageAsyncHelper(const DetectDominantLanguageRequest& request, const DetectDominantLanguageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DetectDominantLanguageAsync(const DetectDominantLanguageRequest& request, const DetectDominantLanguageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectDominantLanguage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDetectDominantLanguageAsyncHelper( this, request, handler, context ); } );
 }
 
 DetectEntitiesOutcome ComprehendClient::DetectEntities(const DetectEntitiesRequest& request) const
@@ -857,14 +857,14 @@ DetectEntitiesOutcomeCallable ComprehendClient::DetectEntitiesCallable(const Det
   return task->get_future();
 }
 
-void ComprehendClient::DetectEntitiesAsync(const DetectEntitiesRequest& request, const DetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDetectEntitiesAsyncHelper(ComprehendClient const * const clientThis, const DetectEntitiesRequest& request, const DetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectEntitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectEntities(request), context);
 }
 
-void ComprehendClient::DetectEntitiesAsyncHelper(const DetectEntitiesRequest& request, const DetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DetectEntitiesAsync(const DetectEntitiesRequest& request, const DetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectEntities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDetectEntitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 DetectKeyPhrasesOutcome ComprehendClient::DetectKeyPhrases(const DetectKeyPhrasesRequest& request) const
@@ -881,14 +881,14 @@ DetectKeyPhrasesOutcomeCallable ComprehendClient::DetectKeyPhrasesCallable(const
   return task->get_future();
 }
 
-void ComprehendClient::DetectKeyPhrasesAsync(const DetectKeyPhrasesRequest& request, const DetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDetectKeyPhrasesAsyncHelper(ComprehendClient const * const clientThis, const DetectKeyPhrasesRequest& request, const DetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectKeyPhrasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectKeyPhrases(request), context);
 }
 
-void ComprehendClient::DetectKeyPhrasesAsyncHelper(const DetectKeyPhrasesRequest& request, const DetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DetectKeyPhrasesAsync(const DetectKeyPhrasesRequest& request, const DetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectKeyPhrases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDetectKeyPhrasesAsyncHelper( this, request, handler, context ); } );
 }
 
 DetectPiiEntitiesOutcome ComprehendClient::DetectPiiEntities(const DetectPiiEntitiesRequest& request) const
@@ -905,14 +905,14 @@ DetectPiiEntitiesOutcomeCallable ComprehendClient::DetectPiiEntitiesCallable(con
   return task->get_future();
 }
 
-void ComprehendClient::DetectPiiEntitiesAsync(const DetectPiiEntitiesRequest& request, const DetectPiiEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDetectPiiEntitiesAsyncHelper(ComprehendClient const * const clientThis, const DetectPiiEntitiesRequest& request, const DetectPiiEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectPiiEntitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectPiiEntities(request), context);
 }
 
-void ComprehendClient::DetectPiiEntitiesAsyncHelper(const DetectPiiEntitiesRequest& request, const DetectPiiEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DetectPiiEntitiesAsync(const DetectPiiEntitiesRequest& request, const DetectPiiEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectPiiEntities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDetectPiiEntitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 DetectSentimentOutcome ComprehendClient::DetectSentiment(const DetectSentimentRequest& request) const
@@ -929,14 +929,14 @@ DetectSentimentOutcomeCallable ComprehendClient::DetectSentimentCallable(const D
   return task->get_future();
 }
 
-void ComprehendClient::DetectSentimentAsync(const DetectSentimentRequest& request, const DetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDetectSentimentAsyncHelper(ComprehendClient const * const clientThis, const DetectSentimentRequest& request, const DetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectSentimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectSentiment(request), context);
 }
 
-void ComprehendClient::DetectSentimentAsyncHelper(const DetectSentimentRequest& request, const DetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DetectSentimentAsync(const DetectSentimentRequest& request, const DetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectSentiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDetectSentimentAsyncHelper( this, request, handler, context ); } );
 }
 
 DetectSyntaxOutcome ComprehendClient::DetectSyntax(const DetectSyntaxRequest& request) const
@@ -953,14 +953,14 @@ DetectSyntaxOutcomeCallable ComprehendClient::DetectSyntaxCallable(const DetectS
   return task->get_future();
 }
 
-void ComprehendClient::DetectSyntaxAsync(const DetectSyntaxRequest& request, const DetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientDetectSyntaxAsyncHelper(ComprehendClient const * const clientThis, const DetectSyntaxRequest& request, const DetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectSyntaxAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectSyntax(request), context);
 }
 
-void ComprehendClient::DetectSyntaxAsyncHelper(const DetectSyntaxRequest& request, const DetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::DetectSyntaxAsync(const DetectSyntaxRequest& request, const DetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectSyntax(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientDetectSyntaxAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportModelOutcome ComprehendClient::ImportModel(const ImportModelRequest& request) const
@@ -977,14 +977,14 @@ ImportModelOutcomeCallable ComprehendClient::ImportModelCallable(const ImportMod
   return task->get_future();
 }
 
-void ComprehendClient::ImportModelAsync(const ImportModelRequest& request, const ImportModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientImportModelAsyncHelper(ComprehendClient const * const clientThis, const ImportModelRequest& request, const ImportModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportModel(request), context);
 }
 
-void ComprehendClient::ImportModelAsyncHelper(const ImportModelRequest& request, const ImportModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ImportModelAsync(const ImportModelRequest& request, const ImportModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientImportModelAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDocumentClassificationJobsOutcome ComprehendClient::ListDocumentClassificationJobs(const ListDocumentClassificationJobsRequest& request) const
@@ -1001,14 +1001,14 @@ ListDocumentClassificationJobsOutcomeCallable ComprehendClient::ListDocumentClas
   return task->get_future();
 }
 
-void ComprehendClient::ListDocumentClassificationJobsAsync(const ListDocumentClassificationJobsRequest& request, const ListDocumentClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListDocumentClassificationJobsAsyncHelper(ComprehendClient const * const clientThis, const ListDocumentClassificationJobsRequest& request, const ListDocumentClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDocumentClassificationJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDocumentClassificationJobs(request), context);
 }
 
-void ComprehendClient::ListDocumentClassificationJobsAsyncHelper(const ListDocumentClassificationJobsRequest& request, const ListDocumentClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListDocumentClassificationJobsAsync(const ListDocumentClassificationJobsRequest& request, const ListDocumentClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDocumentClassificationJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListDocumentClassificationJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDocumentClassifierSummariesOutcome ComprehendClient::ListDocumentClassifierSummaries(const ListDocumentClassifierSummariesRequest& request) const
@@ -1025,14 +1025,14 @@ ListDocumentClassifierSummariesOutcomeCallable ComprehendClient::ListDocumentCla
   return task->get_future();
 }
 
-void ComprehendClient::ListDocumentClassifierSummariesAsync(const ListDocumentClassifierSummariesRequest& request, const ListDocumentClassifierSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListDocumentClassifierSummariesAsyncHelper(ComprehendClient const * const clientThis, const ListDocumentClassifierSummariesRequest& request, const ListDocumentClassifierSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDocumentClassifierSummariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDocumentClassifierSummaries(request), context);
 }
 
-void ComprehendClient::ListDocumentClassifierSummariesAsyncHelper(const ListDocumentClassifierSummariesRequest& request, const ListDocumentClassifierSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListDocumentClassifierSummariesAsync(const ListDocumentClassifierSummariesRequest& request, const ListDocumentClassifierSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDocumentClassifierSummaries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListDocumentClassifierSummariesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDocumentClassifiersOutcome ComprehendClient::ListDocumentClassifiers(const ListDocumentClassifiersRequest& request) const
@@ -1049,14 +1049,14 @@ ListDocumentClassifiersOutcomeCallable ComprehendClient::ListDocumentClassifiers
   return task->get_future();
 }
 
-void ComprehendClient::ListDocumentClassifiersAsync(const ListDocumentClassifiersRequest& request, const ListDocumentClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListDocumentClassifiersAsyncHelper(ComprehendClient const * const clientThis, const ListDocumentClassifiersRequest& request, const ListDocumentClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDocumentClassifiersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDocumentClassifiers(request), context);
 }
 
-void ComprehendClient::ListDocumentClassifiersAsyncHelper(const ListDocumentClassifiersRequest& request, const ListDocumentClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListDocumentClassifiersAsync(const ListDocumentClassifiersRequest& request, const ListDocumentClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDocumentClassifiers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListDocumentClassifiersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDominantLanguageDetectionJobsOutcome ComprehendClient::ListDominantLanguageDetectionJobs(const ListDominantLanguageDetectionJobsRequest& request) const
@@ -1073,14 +1073,14 @@ ListDominantLanguageDetectionJobsOutcomeCallable ComprehendClient::ListDominantL
   return task->get_future();
 }
 
-void ComprehendClient::ListDominantLanguageDetectionJobsAsync(const ListDominantLanguageDetectionJobsRequest& request, const ListDominantLanguageDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListDominantLanguageDetectionJobsAsyncHelper(ComprehendClient const * const clientThis, const ListDominantLanguageDetectionJobsRequest& request, const ListDominantLanguageDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDominantLanguageDetectionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDominantLanguageDetectionJobs(request), context);
 }
 
-void ComprehendClient::ListDominantLanguageDetectionJobsAsyncHelper(const ListDominantLanguageDetectionJobsRequest& request, const ListDominantLanguageDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListDominantLanguageDetectionJobsAsync(const ListDominantLanguageDetectionJobsRequest& request, const ListDominantLanguageDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDominantLanguageDetectionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListDominantLanguageDetectionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEndpointsOutcome ComprehendClient::ListEndpoints(const ListEndpointsRequest& request) const
@@ -1097,14 +1097,14 @@ ListEndpointsOutcomeCallable ComprehendClient::ListEndpointsCallable(const ListE
   return task->get_future();
 }
 
-void ComprehendClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListEndpointsAsyncHelper(ComprehendClient const * const clientThis, const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEndpoints(request), context);
 }
 
-void ComprehendClient::ListEndpointsAsyncHelper(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEntitiesDetectionJobsOutcome ComprehendClient::ListEntitiesDetectionJobs(const ListEntitiesDetectionJobsRequest& request) const
@@ -1121,14 +1121,14 @@ ListEntitiesDetectionJobsOutcomeCallable ComprehendClient::ListEntitiesDetection
   return task->get_future();
 }
 
-void ComprehendClient::ListEntitiesDetectionJobsAsync(const ListEntitiesDetectionJobsRequest& request, const ListEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListEntitiesDetectionJobsAsyncHelper(ComprehendClient const * const clientThis, const ListEntitiesDetectionJobsRequest& request, const ListEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEntitiesDetectionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEntitiesDetectionJobs(request), context);
 }
 
-void ComprehendClient::ListEntitiesDetectionJobsAsyncHelper(const ListEntitiesDetectionJobsRequest& request, const ListEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListEntitiesDetectionJobsAsync(const ListEntitiesDetectionJobsRequest& request, const ListEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEntitiesDetectionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListEntitiesDetectionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEntityRecognizerSummariesOutcome ComprehendClient::ListEntityRecognizerSummaries(const ListEntityRecognizerSummariesRequest& request) const
@@ -1145,14 +1145,14 @@ ListEntityRecognizerSummariesOutcomeCallable ComprehendClient::ListEntityRecogni
   return task->get_future();
 }
 
-void ComprehendClient::ListEntityRecognizerSummariesAsync(const ListEntityRecognizerSummariesRequest& request, const ListEntityRecognizerSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListEntityRecognizerSummariesAsyncHelper(ComprehendClient const * const clientThis, const ListEntityRecognizerSummariesRequest& request, const ListEntityRecognizerSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEntityRecognizerSummariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEntityRecognizerSummaries(request), context);
 }
 
-void ComprehendClient::ListEntityRecognizerSummariesAsyncHelper(const ListEntityRecognizerSummariesRequest& request, const ListEntityRecognizerSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListEntityRecognizerSummariesAsync(const ListEntityRecognizerSummariesRequest& request, const ListEntityRecognizerSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEntityRecognizerSummaries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListEntityRecognizerSummariesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEntityRecognizersOutcome ComprehendClient::ListEntityRecognizers(const ListEntityRecognizersRequest& request) const
@@ -1169,14 +1169,14 @@ ListEntityRecognizersOutcomeCallable ComprehendClient::ListEntityRecognizersCall
   return task->get_future();
 }
 
-void ComprehendClient::ListEntityRecognizersAsync(const ListEntityRecognizersRequest& request, const ListEntityRecognizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListEntityRecognizersAsyncHelper(ComprehendClient const * const clientThis, const ListEntityRecognizersRequest& request, const ListEntityRecognizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEntityRecognizersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEntityRecognizers(request), context);
 }
 
-void ComprehendClient::ListEntityRecognizersAsyncHelper(const ListEntityRecognizersRequest& request, const ListEntityRecognizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListEntityRecognizersAsync(const ListEntityRecognizersRequest& request, const ListEntityRecognizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEntityRecognizers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListEntityRecognizersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEventsDetectionJobsOutcome ComprehendClient::ListEventsDetectionJobs(const ListEventsDetectionJobsRequest& request) const
@@ -1193,14 +1193,14 @@ ListEventsDetectionJobsOutcomeCallable ComprehendClient::ListEventsDetectionJobs
   return task->get_future();
 }
 
-void ComprehendClient::ListEventsDetectionJobsAsync(const ListEventsDetectionJobsRequest& request, const ListEventsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListEventsDetectionJobsAsyncHelper(ComprehendClient const * const clientThis, const ListEventsDetectionJobsRequest& request, const ListEventsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventsDetectionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEventsDetectionJobs(request), context);
 }
 
-void ComprehendClient::ListEventsDetectionJobsAsyncHelper(const ListEventsDetectionJobsRequest& request, const ListEventsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListEventsDetectionJobsAsync(const ListEventsDetectionJobsRequest& request, const ListEventsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEventsDetectionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListEventsDetectionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListKeyPhrasesDetectionJobsOutcome ComprehendClient::ListKeyPhrasesDetectionJobs(const ListKeyPhrasesDetectionJobsRequest& request) const
@@ -1217,14 +1217,14 @@ ListKeyPhrasesDetectionJobsOutcomeCallable ComprehendClient::ListKeyPhrasesDetec
   return task->get_future();
 }
 
-void ComprehendClient::ListKeyPhrasesDetectionJobsAsync(const ListKeyPhrasesDetectionJobsRequest& request, const ListKeyPhrasesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListKeyPhrasesDetectionJobsAsyncHelper(ComprehendClient const * const clientThis, const ListKeyPhrasesDetectionJobsRequest& request, const ListKeyPhrasesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListKeyPhrasesDetectionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListKeyPhrasesDetectionJobs(request), context);
 }
 
-void ComprehendClient::ListKeyPhrasesDetectionJobsAsyncHelper(const ListKeyPhrasesDetectionJobsRequest& request, const ListKeyPhrasesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListKeyPhrasesDetectionJobsAsync(const ListKeyPhrasesDetectionJobsRequest& request, const ListKeyPhrasesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListKeyPhrasesDetectionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListKeyPhrasesDetectionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPiiEntitiesDetectionJobsOutcome ComprehendClient::ListPiiEntitiesDetectionJobs(const ListPiiEntitiesDetectionJobsRequest& request) const
@@ -1241,14 +1241,14 @@ ListPiiEntitiesDetectionJobsOutcomeCallable ComprehendClient::ListPiiEntitiesDet
   return task->get_future();
 }
 
-void ComprehendClient::ListPiiEntitiesDetectionJobsAsync(const ListPiiEntitiesDetectionJobsRequest& request, const ListPiiEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListPiiEntitiesDetectionJobsAsyncHelper(ComprehendClient const * const clientThis, const ListPiiEntitiesDetectionJobsRequest& request, const ListPiiEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPiiEntitiesDetectionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPiiEntitiesDetectionJobs(request), context);
 }
 
-void ComprehendClient::ListPiiEntitiesDetectionJobsAsyncHelper(const ListPiiEntitiesDetectionJobsRequest& request, const ListPiiEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListPiiEntitiesDetectionJobsAsync(const ListPiiEntitiesDetectionJobsRequest& request, const ListPiiEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPiiEntitiesDetectionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListPiiEntitiesDetectionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSentimentDetectionJobsOutcome ComprehendClient::ListSentimentDetectionJobs(const ListSentimentDetectionJobsRequest& request) const
@@ -1265,14 +1265,14 @@ ListSentimentDetectionJobsOutcomeCallable ComprehendClient::ListSentimentDetecti
   return task->get_future();
 }
 
-void ComprehendClient::ListSentimentDetectionJobsAsync(const ListSentimentDetectionJobsRequest& request, const ListSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListSentimentDetectionJobsAsyncHelper(ComprehendClient const * const clientThis, const ListSentimentDetectionJobsRequest& request, const ListSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSentimentDetectionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSentimentDetectionJobs(request), context);
 }
 
-void ComprehendClient::ListSentimentDetectionJobsAsyncHelper(const ListSentimentDetectionJobsRequest& request, const ListSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListSentimentDetectionJobsAsync(const ListSentimentDetectionJobsRequest& request, const ListSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSentimentDetectionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListSentimentDetectionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ComprehendClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1289,14 +1289,14 @@ ListTagsForResourceOutcomeCallable ComprehendClient::ListTagsForResourceCallable
   return task->get_future();
 }
 
-void ComprehendClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListTagsForResourceAsyncHelper(ComprehendClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ComprehendClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTargetedSentimentDetectionJobsOutcome ComprehendClient::ListTargetedSentimentDetectionJobs(const ListTargetedSentimentDetectionJobsRequest& request) const
@@ -1313,14 +1313,14 @@ ListTargetedSentimentDetectionJobsOutcomeCallable ComprehendClient::ListTargeted
   return task->get_future();
 }
 
-void ComprehendClient::ListTargetedSentimentDetectionJobsAsync(const ListTargetedSentimentDetectionJobsRequest& request, const ListTargetedSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListTargetedSentimentDetectionJobsAsyncHelper(ComprehendClient const * const clientThis, const ListTargetedSentimentDetectionJobsRequest& request, const ListTargetedSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTargetedSentimentDetectionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTargetedSentimentDetectionJobs(request), context);
 }
 
-void ComprehendClient::ListTargetedSentimentDetectionJobsAsyncHelper(const ListTargetedSentimentDetectionJobsRequest& request, const ListTargetedSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListTargetedSentimentDetectionJobsAsync(const ListTargetedSentimentDetectionJobsRequest& request, const ListTargetedSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTargetedSentimentDetectionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListTargetedSentimentDetectionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTopicsDetectionJobsOutcome ComprehendClient::ListTopicsDetectionJobs(const ListTopicsDetectionJobsRequest& request) const
@@ -1337,14 +1337,14 @@ ListTopicsDetectionJobsOutcomeCallable ComprehendClient::ListTopicsDetectionJobs
   return task->get_future();
 }
 
-void ComprehendClient::ListTopicsDetectionJobsAsync(const ListTopicsDetectionJobsRequest& request, const ListTopicsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientListTopicsDetectionJobsAsyncHelper(ComprehendClient const * const clientThis, const ListTopicsDetectionJobsRequest& request, const ListTopicsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTopicsDetectionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTopicsDetectionJobs(request), context);
 }
 
-void ComprehendClient::ListTopicsDetectionJobsAsyncHelper(const ListTopicsDetectionJobsRequest& request, const ListTopicsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::ListTopicsDetectionJobsAsync(const ListTopicsDetectionJobsRequest& request, const ListTopicsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTopicsDetectionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientListTopicsDetectionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourcePolicyOutcome ComprehendClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -1361,14 +1361,14 @@ PutResourcePolicyOutcomeCallable ComprehendClient::PutResourcePolicyCallable(con
   return task->get_future();
 }
 
-void ComprehendClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientPutResourcePolicyAsyncHelper(ComprehendClient const * const clientThis, const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourcePolicy(request), context);
 }
 
-void ComprehendClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientPutResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDocumentClassificationJobOutcome ComprehendClient::StartDocumentClassificationJob(const StartDocumentClassificationJobRequest& request) const
@@ -1385,14 +1385,14 @@ StartDocumentClassificationJobOutcomeCallable ComprehendClient::StartDocumentCla
   return task->get_future();
 }
 
-void ComprehendClient::StartDocumentClassificationJobAsync(const StartDocumentClassificationJobRequest& request, const StartDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStartDocumentClassificationJobAsyncHelper(ComprehendClient const * const clientThis, const StartDocumentClassificationJobRequest& request, const StartDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDocumentClassificationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDocumentClassificationJob(request), context);
 }
 
-void ComprehendClient::StartDocumentClassificationJobAsyncHelper(const StartDocumentClassificationJobRequest& request, const StartDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StartDocumentClassificationJobAsync(const StartDocumentClassificationJobRequest& request, const StartDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDocumentClassificationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStartDocumentClassificationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDominantLanguageDetectionJobOutcome ComprehendClient::StartDominantLanguageDetectionJob(const StartDominantLanguageDetectionJobRequest& request) const
@@ -1409,14 +1409,14 @@ StartDominantLanguageDetectionJobOutcomeCallable ComprehendClient::StartDominant
   return task->get_future();
 }
 
-void ComprehendClient::StartDominantLanguageDetectionJobAsync(const StartDominantLanguageDetectionJobRequest& request, const StartDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStartDominantLanguageDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StartDominantLanguageDetectionJobRequest& request, const StartDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDominantLanguageDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDominantLanguageDetectionJob(request), context);
 }
 
-void ComprehendClient::StartDominantLanguageDetectionJobAsyncHelper(const StartDominantLanguageDetectionJobRequest& request, const StartDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StartDominantLanguageDetectionJobAsync(const StartDominantLanguageDetectionJobRequest& request, const StartDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDominantLanguageDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStartDominantLanguageDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartEntitiesDetectionJobOutcome ComprehendClient::StartEntitiesDetectionJob(const StartEntitiesDetectionJobRequest& request) const
@@ -1433,14 +1433,14 @@ StartEntitiesDetectionJobOutcomeCallable ComprehendClient::StartEntitiesDetectio
   return task->get_future();
 }
 
-void ComprehendClient::StartEntitiesDetectionJobAsync(const StartEntitiesDetectionJobRequest& request, const StartEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStartEntitiesDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StartEntitiesDetectionJobRequest& request, const StartEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartEntitiesDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartEntitiesDetectionJob(request), context);
 }
 
-void ComprehendClient::StartEntitiesDetectionJobAsyncHelper(const StartEntitiesDetectionJobRequest& request, const StartEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StartEntitiesDetectionJobAsync(const StartEntitiesDetectionJobRequest& request, const StartEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartEntitiesDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStartEntitiesDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartEventsDetectionJobOutcome ComprehendClient::StartEventsDetectionJob(const StartEventsDetectionJobRequest& request) const
@@ -1457,14 +1457,14 @@ StartEventsDetectionJobOutcomeCallable ComprehendClient::StartEventsDetectionJob
   return task->get_future();
 }
 
-void ComprehendClient::StartEventsDetectionJobAsync(const StartEventsDetectionJobRequest& request, const StartEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStartEventsDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StartEventsDetectionJobRequest& request, const StartEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartEventsDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartEventsDetectionJob(request), context);
 }
 
-void ComprehendClient::StartEventsDetectionJobAsyncHelper(const StartEventsDetectionJobRequest& request, const StartEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StartEventsDetectionJobAsync(const StartEventsDetectionJobRequest& request, const StartEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartEventsDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStartEventsDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartKeyPhrasesDetectionJobOutcome ComprehendClient::StartKeyPhrasesDetectionJob(const StartKeyPhrasesDetectionJobRequest& request) const
@@ -1481,14 +1481,14 @@ StartKeyPhrasesDetectionJobOutcomeCallable ComprehendClient::StartKeyPhrasesDete
   return task->get_future();
 }
 
-void ComprehendClient::StartKeyPhrasesDetectionJobAsync(const StartKeyPhrasesDetectionJobRequest& request, const StartKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStartKeyPhrasesDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StartKeyPhrasesDetectionJobRequest& request, const StartKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartKeyPhrasesDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartKeyPhrasesDetectionJob(request), context);
 }
 
-void ComprehendClient::StartKeyPhrasesDetectionJobAsyncHelper(const StartKeyPhrasesDetectionJobRequest& request, const StartKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StartKeyPhrasesDetectionJobAsync(const StartKeyPhrasesDetectionJobRequest& request, const StartKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartKeyPhrasesDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStartKeyPhrasesDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartPiiEntitiesDetectionJobOutcome ComprehendClient::StartPiiEntitiesDetectionJob(const StartPiiEntitiesDetectionJobRequest& request) const
@@ -1505,14 +1505,14 @@ StartPiiEntitiesDetectionJobOutcomeCallable ComprehendClient::StartPiiEntitiesDe
   return task->get_future();
 }
 
-void ComprehendClient::StartPiiEntitiesDetectionJobAsync(const StartPiiEntitiesDetectionJobRequest& request, const StartPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStartPiiEntitiesDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StartPiiEntitiesDetectionJobRequest& request, const StartPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartPiiEntitiesDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartPiiEntitiesDetectionJob(request), context);
 }
 
-void ComprehendClient::StartPiiEntitiesDetectionJobAsyncHelper(const StartPiiEntitiesDetectionJobRequest& request, const StartPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StartPiiEntitiesDetectionJobAsync(const StartPiiEntitiesDetectionJobRequest& request, const StartPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartPiiEntitiesDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStartPiiEntitiesDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartSentimentDetectionJobOutcome ComprehendClient::StartSentimentDetectionJob(const StartSentimentDetectionJobRequest& request) const
@@ -1529,14 +1529,14 @@ StartSentimentDetectionJobOutcomeCallable ComprehendClient::StartSentimentDetect
   return task->get_future();
 }
 
-void ComprehendClient::StartSentimentDetectionJobAsync(const StartSentimentDetectionJobRequest& request, const StartSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStartSentimentDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StartSentimentDetectionJobRequest& request, const StartSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSentimentDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartSentimentDetectionJob(request), context);
 }
 
-void ComprehendClient::StartSentimentDetectionJobAsyncHelper(const StartSentimentDetectionJobRequest& request, const StartSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StartSentimentDetectionJobAsync(const StartSentimentDetectionJobRequest& request, const StartSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartSentimentDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStartSentimentDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartTargetedSentimentDetectionJobOutcome ComprehendClient::StartTargetedSentimentDetectionJob(const StartTargetedSentimentDetectionJobRequest& request) const
@@ -1553,14 +1553,14 @@ StartTargetedSentimentDetectionJobOutcomeCallable ComprehendClient::StartTargete
   return task->get_future();
 }
 
-void ComprehendClient::StartTargetedSentimentDetectionJobAsync(const StartTargetedSentimentDetectionJobRequest& request, const StartTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStartTargetedSentimentDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StartTargetedSentimentDetectionJobRequest& request, const StartTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTargetedSentimentDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartTargetedSentimentDetectionJob(request), context);
 }
 
-void ComprehendClient::StartTargetedSentimentDetectionJobAsyncHelper(const StartTargetedSentimentDetectionJobRequest& request, const StartTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StartTargetedSentimentDetectionJobAsync(const StartTargetedSentimentDetectionJobRequest& request, const StartTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartTargetedSentimentDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStartTargetedSentimentDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartTopicsDetectionJobOutcome ComprehendClient::StartTopicsDetectionJob(const StartTopicsDetectionJobRequest& request) const
@@ -1577,14 +1577,14 @@ StartTopicsDetectionJobOutcomeCallable ComprehendClient::StartTopicsDetectionJob
   return task->get_future();
 }
 
-void ComprehendClient::StartTopicsDetectionJobAsync(const StartTopicsDetectionJobRequest& request, const StartTopicsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStartTopicsDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StartTopicsDetectionJobRequest& request, const StartTopicsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTopicsDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartTopicsDetectionJob(request), context);
 }
 
-void ComprehendClient::StartTopicsDetectionJobAsyncHelper(const StartTopicsDetectionJobRequest& request, const StartTopicsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StartTopicsDetectionJobAsync(const StartTopicsDetectionJobRequest& request, const StartTopicsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartTopicsDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStartTopicsDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopDominantLanguageDetectionJobOutcome ComprehendClient::StopDominantLanguageDetectionJob(const StopDominantLanguageDetectionJobRequest& request) const
@@ -1601,14 +1601,14 @@ StopDominantLanguageDetectionJobOutcomeCallable ComprehendClient::StopDominantLa
   return task->get_future();
 }
 
-void ComprehendClient::StopDominantLanguageDetectionJobAsync(const StopDominantLanguageDetectionJobRequest& request, const StopDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStopDominantLanguageDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StopDominantLanguageDetectionJobRequest& request, const StopDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopDominantLanguageDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopDominantLanguageDetectionJob(request), context);
 }
 
-void ComprehendClient::StopDominantLanguageDetectionJobAsyncHelper(const StopDominantLanguageDetectionJobRequest& request, const StopDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StopDominantLanguageDetectionJobAsync(const StopDominantLanguageDetectionJobRequest& request, const StopDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopDominantLanguageDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStopDominantLanguageDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopEntitiesDetectionJobOutcome ComprehendClient::StopEntitiesDetectionJob(const StopEntitiesDetectionJobRequest& request) const
@@ -1625,14 +1625,14 @@ StopEntitiesDetectionJobOutcomeCallable ComprehendClient::StopEntitiesDetectionJ
   return task->get_future();
 }
 
-void ComprehendClient::StopEntitiesDetectionJobAsync(const StopEntitiesDetectionJobRequest& request, const StopEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStopEntitiesDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StopEntitiesDetectionJobRequest& request, const StopEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopEntitiesDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopEntitiesDetectionJob(request), context);
 }
 
-void ComprehendClient::StopEntitiesDetectionJobAsyncHelper(const StopEntitiesDetectionJobRequest& request, const StopEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StopEntitiesDetectionJobAsync(const StopEntitiesDetectionJobRequest& request, const StopEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopEntitiesDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStopEntitiesDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopEventsDetectionJobOutcome ComprehendClient::StopEventsDetectionJob(const StopEventsDetectionJobRequest& request) const
@@ -1649,14 +1649,14 @@ StopEventsDetectionJobOutcomeCallable ComprehendClient::StopEventsDetectionJobCa
   return task->get_future();
 }
 
-void ComprehendClient::StopEventsDetectionJobAsync(const StopEventsDetectionJobRequest& request, const StopEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStopEventsDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StopEventsDetectionJobRequest& request, const StopEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopEventsDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopEventsDetectionJob(request), context);
 }
 
-void ComprehendClient::StopEventsDetectionJobAsyncHelper(const StopEventsDetectionJobRequest& request, const StopEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StopEventsDetectionJobAsync(const StopEventsDetectionJobRequest& request, const StopEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopEventsDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStopEventsDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopKeyPhrasesDetectionJobOutcome ComprehendClient::StopKeyPhrasesDetectionJob(const StopKeyPhrasesDetectionJobRequest& request) const
@@ -1673,14 +1673,14 @@ StopKeyPhrasesDetectionJobOutcomeCallable ComprehendClient::StopKeyPhrasesDetect
   return task->get_future();
 }
 
-void ComprehendClient::StopKeyPhrasesDetectionJobAsync(const StopKeyPhrasesDetectionJobRequest& request, const StopKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStopKeyPhrasesDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StopKeyPhrasesDetectionJobRequest& request, const StopKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopKeyPhrasesDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopKeyPhrasesDetectionJob(request), context);
 }
 
-void ComprehendClient::StopKeyPhrasesDetectionJobAsyncHelper(const StopKeyPhrasesDetectionJobRequest& request, const StopKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StopKeyPhrasesDetectionJobAsync(const StopKeyPhrasesDetectionJobRequest& request, const StopKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopKeyPhrasesDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStopKeyPhrasesDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopPiiEntitiesDetectionJobOutcome ComprehendClient::StopPiiEntitiesDetectionJob(const StopPiiEntitiesDetectionJobRequest& request) const
@@ -1697,14 +1697,14 @@ StopPiiEntitiesDetectionJobOutcomeCallable ComprehendClient::StopPiiEntitiesDete
   return task->get_future();
 }
 
-void ComprehendClient::StopPiiEntitiesDetectionJobAsync(const StopPiiEntitiesDetectionJobRequest& request, const StopPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStopPiiEntitiesDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StopPiiEntitiesDetectionJobRequest& request, const StopPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopPiiEntitiesDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopPiiEntitiesDetectionJob(request), context);
 }
 
-void ComprehendClient::StopPiiEntitiesDetectionJobAsyncHelper(const StopPiiEntitiesDetectionJobRequest& request, const StopPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StopPiiEntitiesDetectionJobAsync(const StopPiiEntitiesDetectionJobRequest& request, const StopPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopPiiEntitiesDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStopPiiEntitiesDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopSentimentDetectionJobOutcome ComprehendClient::StopSentimentDetectionJob(const StopSentimentDetectionJobRequest& request) const
@@ -1721,14 +1721,14 @@ StopSentimentDetectionJobOutcomeCallable ComprehendClient::StopSentimentDetectio
   return task->get_future();
 }
 
-void ComprehendClient::StopSentimentDetectionJobAsync(const StopSentimentDetectionJobRequest& request, const StopSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStopSentimentDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StopSentimentDetectionJobRequest& request, const StopSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopSentimentDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopSentimentDetectionJob(request), context);
 }
 
-void ComprehendClient::StopSentimentDetectionJobAsyncHelper(const StopSentimentDetectionJobRequest& request, const StopSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StopSentimentDetectionJobAsync(const StopSentimentDetectionJobRequest& request, const StopSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopSentimentDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStopSentimentDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopTargetedSentimentDetectionJobOutcome ComprehendClient::StopTargetedSentimentDetectionJob(const StopTargetedSentimentDetectionJobRequest& request) const
@@ -1745,14 +1745,14 @@ StopTargetedSentimentDetectionJobOutcomeCallable ComprehendClient::StopTargetedS
   return task->get_future();
 }
 
-void ComprehendClient::StopTargetedSentimentDetectionJobAsync(const StopTargetedSentimentDetectionJobRequest& request, const StopTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStopTargetedSentimentDetectionJobAsyncHelper(ComprehendClient const * const clientThis, const StopTargetedSentimentDetectionJobRequest& request, const StopTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopTargetedSentimentDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopTargetedSentimentDetectionJob(request), context);
 }
 
-void ComprehendClient::StopTargetedSentimentDetectionJobAsyncHelper(const StopTargetedSentimentDetectionJobRequest& request, const StopTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StopTargetedSentimentDetectionJobAsync(const StopTargetedSentimentDetectionJobRequest& request, const StopTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopTargetedSentimentDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStopTargetedSentimentDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopTrainingDocumentClassifierOutcome ComprehendClient::StopTrainingDocumentClassifier(const StopTrainingDocumentClassifierRequest& request) const
@@ -1769,14 +1769,14 @@ StopTrainingDocumentClassifierOutcomeCallable ComprehendClient::StopTrainingDocu
   return task->get_future();
 }
 
-void ComprehendClient::StopTrainingDocumentClassifierAsync(const StopTrainingDocumentClassifierRequest& request, const StopTrainingDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStopTrainingDocumentClassifierAsyncHelper(ComprehendClient const * const clientThis, const StopTrainingDocumentClassifierRequest& request, const StopTrainingDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopTrainingDocumentClassifierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopTrainingDocumentClassifier(request), context);
 }
 
-void ComprehendClient::StopTrainingDocumentClassifierAsyncHelper(const StopTrainingDocumentClassifierRequest& request, const StopTrainingDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StopTrainingDocumentClassifierAsync(const StopTrainingDocumentClassifierRequest& request, const StopTrainingDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopTrainingDocumentClassifier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStopTrainingDocumentClassifierAsyncHelper( this, request, handler, context ); } );
 }
 
 StopTrainingEntityRecognizerOutcome ComprehendClient::StopTrainingEntityRecognizer(const StopTrainingEntityRecognizerRequest& request) const
@@ -1793,14 +1793,14 @@ StopTrainingEntityRecognizerOutcomeCallable ComprehendClient::StopTrainingEntity
   return task->get_future();
 }
 
-void ComprehendClient::StopTrainingEntityRecognizerAsync(const StopTrainingEntityRecognizerRequest& request, const StopTrainingEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientStopTrainingEntityRecognizerAsyncHelper(ComprehendClient const * const clientThis, const StopTrainingEntityRecognizerRequest& request, const StopTrainingEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopTrainingEntityRecognizerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopTrainingEntityRecognizer(request), context);
 }
 
-void ComprehendClient::StopTrainingEntityRecognizerAsyncHelper(const StopTrainingEntityRecognizerRequest& request, const StopTrainingEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::StopTrainingEntityRecognizerAsync(const StopTrainingEntityRecognizerRequest& request, const StopTrainingEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopTrainingEntityRecognizer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientStopTrainingEntityRecognizerAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ComprehendClient::TagResource(const TagResourceRequest& request) const
@@ -1817,14 +1817,14 @@ TagResourceOutcomeCallable ComprehendClient::TagResourceCallable(const TagResour
   return task->get_future();
 }
 
-void ComprehendClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientTagResourceAsyncHelper(ComprehendClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ComprehendClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ComprehendClient::UntagResource(const UntagResourceRequest& request) const
@@ -1841,14 +1841,14 @@ UntagResourceOutcomeCallable ComprehendClient::UntagResourceCallable(const Untag
   return task->get_future();
 }
 
-void ComprehendClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientUntagResourceAsyncHelper(ComprehendClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ComprehendClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEndpointOutcome ComprehendClient::UpdateEndpoint(const UpdateEndpointRequest& request) const
@@ -1865,13 +1865,13 @@ UpdateEndpointOutcomeCallable ComprehendClient::UpdateEndpointCallable(const Upd
   return task->get_future();
 }
 
-void ComprehendClient::UpdateEndpointAsync(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClientUpdateEndpointAsyncHelper(ComprehendClient const * const clientThis, const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEndpoint(request), context);
 }
 
-void ComprehendClient::UpdateEndpointAsyncHelper(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendClient::UpdateEndpointAsync(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendClientUpdateEndpointAsyncHelper( this, request, handler, context ); } );
 }
 

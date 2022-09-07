@@ -126,14 +126,14 @@ CreateConnectionOutcomeCallable CodeStarconnectionsClient::CreateConnectionCalla
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientCreateConnectionAsyncHelper(CodeStarconnectionsClient const * const clientThis, const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConnection(request), context);
 }
 
-void CodeStarconnectionsClient::CreateConnectionAsyncHelper(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientCreateConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateHostOutcome CodeStarconnectionsClient::CreateHost(const CreateHostRequest& request) const
@@ -150,14 +150,14 @@ CreateHostOutcomeCallable CodeStarconnectionsClient::CreateHostCallable(const Cr
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::CreateHostAsync(const CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientCreateHostAsyncHelper(CodeStarconnectionsClient const * const clientThis, const CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHostAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateHost(request), context);
 }
 
-void CodeStarconnectionsClient::CreateHostAsyncHelper(const CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::CreateHostAsync(const CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateHost(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientCreateHostAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConnectionOutcome CodeStarconnectionsClient::DeleteConnection(const DeleteConnectionRequest& request) const
@@ -174,14 +174,14 @@ DeleteConnectionOutcomeCallable CodeStarconnectionsClient::DeleteConnectionCalla
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientDeleteConnectionAsyncHelper(CodeStarconnectionsClient const * const clientThis, const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConnection(request), context);
 }
 
-void CodeStarconnectionsClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientDeleteConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteHostOutcome CodeStarconnectionsClient::DeleteHost(const DeleteHostRequest& request) const
@@ -198,14 +198,14 @@ DeleteHostOutcomeCallable CodeStarconnectionsClient::DeleteHostCallable(const De
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::DeleteHostAsync(const DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientDeleteHostAsyncHelper(CodeStarconnectionsClient const * const clientThis, const DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHostAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteHost(request), context);
 }
 
-void CodeStarconnectionsClient::DeleteHostAsyncHelper(const DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::DeleteHostAsync(const DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteHost(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientDeleteHostAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectionOutcome CodeStarconnectionsClient::GetConnection(const GetConnectionRequest& request) const
@@ -222,14 +222,14 @@ GetConnectionOutcomeCallable CodeStarconnectionsClient::GetConnectionCallable(co
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientGetConnectionAsyncHelper(CodeStarconnectionsClient const * const clientThis, const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnection(request), context);
 }
 
-void CodeStarconnectionsClient::GetConnectionAsyncHelper(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientGetConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetHostOutcome CodeStarconnectionsClient::GetHost(const GetHostRequest& request) const
@@ -246,14 +246,14 @@ GetHostOutcomeCallable CodeStarconnectionsClient::GetHostCallable(const GetHostR
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::GetHostAsync(const GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientGetHostAsyncHelper(CodeStarconnectionsClient const * const clientThis, const GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHostAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetHost(request), context);
 }
 
-void CodeStarconnectionsClient::GetHostAsyncHelper(const GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::GetHostAsync(const GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetHost(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientGetHostAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConnectionsOutcome CodeStarconnectionsClient::ListConnections(const ListConnectionsRequest& request) const
@@ -270,14 +270,14 @@ ListConnectionsOutcomeCallable CodeStarconnectionsClient::ListConnectionsCallabl
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::ListConnectionsAsync(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientListConnectionsAsyncHelper(CodeStarconnectionsClient const * const clientThis, const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConnections(request), context);
 }
 
-void CodeStarconnectionsClient::ListConnectionsAsyncHelper(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::ListConnectionsAsync(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientListConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListHostsOutcome CodeStarconnectionsClient::ListHosts(const ListHostsRequest& request) const
@@ -294,14 +294,14 @@ ListHostsOutcomeCallable CodeStarconnectionsClient::ListHostsCallable(const List
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::ListHostsAsync(const ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientListHostsAsyncHelper(CodeStarconnectionsClient const * const clientThis, const ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHostsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListHosts(request), context);
 }
 
-void CodeStarconnectionsClient::ListHostsAsyncHelper(const ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::ListHostsAsync(const ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListHosts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientListHostsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome CodeStarconnectionsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -318,14 +318,14 @@ ListTagsForResourceOutcomeCallable CodeStarconnectionsClient::ListTagsForResourc
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientListTagsForResourceAsyncHelper(CodeStarconnectionsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void CodeStarconnectionsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CodeStarconnectionsClient::TagResource(const TagResourceRequest& request) const
@@ -342,14 +342,14 @@ TagResourceOutcomeCallable CodeStarconnectionsClient::TagResourceCallable(const 
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientTagResourceAsyncHelper(CodeStarconnectionsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CodeStarconnectionsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CodeStarconnectionsClient::UntagResource(const UntagResourceRequest& request) const
@@ -366,14 +366,14 @@ UntagResourceOutcomeCallable CodeStarconnectionsClient::UntagResourceCallable(co
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientUntagResourceAsyncHelper(CodeStarconnectionsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CodeStarconnectionsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateHostOutcome CodeStarconnectionsClient::UpdateHost(const UpdateHostRequest& request) const
@@ -390,13 +390,13 @@ UpdateHostOutcomeCallable CodeStarconnectionsClient::UpdateHostCallable(const Up
   return task->get_future();
 }
 
-void CodeStarconnectionsClient::UpdateHostAsync(const UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClientUpdateHostAsyncHelper(CodeStarconnectionsClient const * const clientThis, const UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateHostAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateHost(request), context);
 }
 
-void CodeStarconnectionsClient::UpdateHostAsyncHelper(const UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarconnectionsClient::UpdateHostAsync(const UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateHost(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarconnectionsClientUpdateHostAsyncHelper( this, request, handler, context ); } );
 }
 

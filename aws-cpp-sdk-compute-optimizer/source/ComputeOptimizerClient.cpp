@@ -132,14 +132,14 @@ DeleteRecommendationPreferencesOutcomeCallable ComputeOptimizerClient::DeleteRec
   return task->get_future();
 }
 
-void ComputeOptimizerClient::DeleteRecommendationPreferencesAsync(const DeleteRecommendationPreferencesRequest& request, const DeleteRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientDeleteRecommendationPreferencesAsyncHelper(ComputeOptimizerClient const * const clientThis, const DeleteRecommendationPreferencesRequest& request, const DeleteRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecommendationPreferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRecommendationPreferences(request), context);
 }
 
-void ComputeOptimizerClient::DeleteRecommendationPreferencesAsyncHelper(const DeleteRecommendationPreferencesRequest& request, const DeleteRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::DeleteRecommendationPreferencesAsync(const DeleteRecommendationPreferencesRequest& request, const DeleteRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRecommendationPreferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientDeleteRecommendationPreferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRecommendationExportJobsOutcome ComputeOptimizerClient::DescribeRecommendationExportJobs(const DescribeRecommendationExportJobsRequest& request) const
@@ -156,14 +156,14 @@ DescribeRecommendationExportJobsOutcomeCallable ComputeOptimizerClient::Describe
   return task->get_future();
 }
 
-void ComputeOptimizerClient::DescribeRecommendationExportJobsAsync(const DescribeRecommendationExportJobsRequest& request, const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientDescribeRecommendationExportJobsAsyncHelper(ComputeOptimizerClient const * const clientThis, const DescribeRecommendationExportJobsRequest& request, const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecommendationExportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRecommendationExportJobs(request), context);
 }
 
-void ComputeOptimizerClient::DescribeRecommendationExportJobsAsyncHelper(const DescribeRecommendationExportJobsRequest& request, const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::DescribeRecommendationExportJobsAsync(const DescribeRecommendationExportJobsRequest& request, const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRecommendationExportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientDescribeRecommendationExportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportAutoScalingGroupRecommendationsOutcome ComputeOptimizerClient::ExportAutoScalingGroupRecommendations(const ExportAutoScalingGroupRecommendationsRequest& request) const
@@ -180,14 +180,14 @@ ExportAutoScalingGroupRecommendationsOutcomeCallable ComputeOptimizerClient::Exp
   return task->get_future();
 }
 
-void ComputeOptimizerClient::ExportAutoScalingGroupRecommendationsAsync(const ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientExportAutoScalingGroupRecommendationsAsyncHelper(ComputeOptimizerClient const * const clientThis, const ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportAutoScalingGroupRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportAutoScalingGroupRecommendations(request), context);
 }
 
-void ComputeOptimizerClient::ExportAutoScalingGroupRecommendationsAsyncHelper(const ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::ExportAutoScalingGroupRecommendationsAsync(const ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportAutoScalingGroupRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientExportAutoScalingGroupRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportEBSVolumeRecommendationsOutcome ComputeOptimizerClient::ExportEBSVolumeRecommendations(const ExportEBSVolumeRecommendationsRequest& request) const
@@ -204,14 +204,14 @@ ExportEBSVolumeRecommendationsOutcomeCallable ComputeOptimizerClient::ExportEBSV
   return task->get_future();
 }
 
-void ComputeOptimizerClient::ExportEBSVolumeRecommendationsAsync(const ExportEBSVolumeRecommendationsRequest& request, const ExportEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientExportEBSVolumeRecommendationsAsyncHelper(ComputeOptimizerClient const * const clientThis, const ExportEBSVolumeRecommendationsRequest& request, const ExportEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportEBSVolumeRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportEBSVolumeRecommendations(request), context);
 }
 
-void ComputeOptimizerClient::ExportEBSVolumeRecommendationsAsyncHelper(const ExportEBSVolumeRecommendationsRequest& request, const ExportEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::ExportEBSVolumeRecommendationsAsync(const ExportEBSVolumeRecommendationsRequest& request, const ExportEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportEBSVolumeRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientExportEBSVolumeRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportEC2InstanceRecommendationsOutcome ComputeOptimizerClient::ExportEC2InstanceRecommendations(const ExportEC2InstanceRecommendationsRequest& request) const
@@ -228,14 +228,14 @@ ExportEC2InstanceRecommendationsOutcomeCallable ComputeOptimizerClient::ExportEC
   return task->get_future();
 }
 
-void ComputeOptimizerClient::ExportEC2InstanceRecommendationsAsync(const ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientExportEC2InstanceRecommendationsAsyncHelper(ComputeOptimizerClient const * const clientThis, const ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportEC2InstanceRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportEC2InstanceRecommendations(request), context);
 }
 
-void ComputeOptimizerClient::ExportEC2InstanceRecommendationsAsyncHelper(const ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::ExportEC2InstanceRecommendationsAsync(const ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportEC2InstanceRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientExportEC2InstanceRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportLambdaFunctionRecommendationsOutcome ComputeOptimizerClient::ExportLambdaFunctionRecommendations(const ExportLambdaFunctionRecommendationsRequest& request) const
@@ -252,14 +252,14 @@ ExportLambdaFunctionRecommendationsOutcomeCallable ComputeOptimizerClient::Expor
   return task->get_future();
 }
 
-void ComputeOptimizerClient::ExportLambdaFunctionRecommendationsAsync(const ExportLambdaFunctionRecommendationsRequest& request, const ExportLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientExportLambdaFunctionRecommendationsAsyncHelper(ComputeOptimizerClient const * const clientThis, const ExportLambdaFunctionRecommendationsRequest& request, const ExportLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportLambdaFunctionRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportLambdaFunctionRecommendations(request), context);
 }
 
-void ComputeOptimizerClient::ExportLambdaFunctionRecommendationsAsyncHelper(const ExportLambdaFunctionRecommendationsRequest& request, const ExportLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::ExportLambdaFunctionRecommendationsAsync(const ExportLambdaFunctionRecommendationsRequest& request, const ExportLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportLambdaFunctionRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientExportLambdaFunctionRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAutoScalingGroupRecommendationsOutcome ComputeOptimizerClient::GetAutoScalingGroupRecommendations(const GetAutoScalingGroupRecommendationsRequest& request) const
@@ -276,14 +276,14 @@ GetAutoScalingGroupRecommendationsOutcomeCallable ComputeOptimizerClient::GetAut
   return task->get_future();
 }
 
-void ComputeOptimizerClient::GetAutoScalingGroupRecommendationsAsync(const GetAutoScalingGroupRecommendationsRequest& request, const GetAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientGetAutoScalingGroupRecommendationsAsyncHelper(ComputeOptimizerClient const * const clientThis, const GetAutoScalingGroupRecommendationsRequest& request, const GetAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAutoScalingGroupRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAutoScalingGroupRecommendations(request), context);
 }
 
-void ComputeOptimizerClient::GetAutoScalingGroupRecommendationsAsyncHelper(const GetAutoScalingGroupRecommendationsRequest& request, const GetAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::GetAutoScalingGroupRecommendationsAsync(const GetAutoScalingGroupRecommendationsRequest& request, const GetAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAutoScalingGroupRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientGetAutoScalingGroupRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEBSVolumeRecommendationsOutcome ComputeOptimizerClient::GetEBSVolumeRecommendations(const GetEBSVolumeRecommendationsRequest& request) const
@@ -300,14 +300,14 @@ GetEBSVolumeRecommendationsOutcomeCallable ComputeOptimizerClient::GetEBSVolumeR
   return task->get_future();
 }
 
-void ComputeOptimizerClient::GetEBSVolumeRecommendationsAsync(const GetEBSVolumeRecommendationsRequest& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientGetEBSVolumeRecommendationsAsyncHelper(ComputeOptimizerClient const * const clientThis, const GetEBSVolumeRecommendationsRequest& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEBSVolumeRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEBSVolumeRecommendations(request), context);
 }
 
-void ComputeOptimizerClient::GetEBSVolumeRecommendationsAsyncHelper(const GetEBSVolumeRecommendationsRequest& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::GetEBSVolumeRecommendationsAsync(const GetEBSVolumeRecommendationsRequest& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEBSVolumeRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientGetEBSVolumeRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEC2InstanceRecommendationsOutcome ComputeOptimizerClient::GetEC2InstanceRecommendations(const GetEC2InstanceRecommendationsRequest& request) const
@@ -324,14 +324,14 @@ GetEC2InstanceRecommendationsOutcomeCallable ComputeOptimizerClient::GetEC2Insta
   return task->get_future();
 }
 
-void ComputeOptimizerClient::GetEC2InstanceRecommendationsAsync(const GetEC2InstanceRecommendationsRequest& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientGetEC2InstanceRecommendationsAsyncHelper(ComputeOptimizerClient const * const clientThis, const GetEC2InstanceRecommendationsRequest& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEC2InstanceRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEC2InstanceRecommendations(request), context);
 }
 
-void ComputeOptimizerClient::GetEC2InstanceRecommendationsAsyncHelper(const GetEC2InstanceRecommendationsRequest& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::GetEC2InstanceRecommendationsAsync(const GetEC2InstanceRecommendationsRequest& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEC2InstanceRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientGetEC2InstanceRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEC2RecommendationProjectedMetricsOutcome ComputeOptimizerClient::GetEC2RecommendationProjectedMetrics(const GetEC2RecommendationProjectedMetricsRequest& request) const
@@ -348,14 +348,14 @@ GetEC2RecommendationProjectedMetricsOutcomeCallable ComputeOptimizerClient::GetE
   return task->get_future();
 }
 
-void ComputeOptimizerClient::GetEC2RecommendationProjectedMetricsAsync(const GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientGetEC2RecommendationProjectedMetricsAsyncHelper(ComputeOptimizerClient const * const clientThis, const GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEC2RecommendationProjectedMetricsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEC2RecommendationProjectedMetrics(request), context);
 }
 
-void ComputeOptimizerClient::GetEC2RecommendationProjectedMetricsAsyncHelper(const GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::GetEC2RecommendationProjectedMetricsAsync(const GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEC2RecommendationProjectedMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientGetEC2RecommendationProjectedMetricsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEffectiveRecommendationPreferencesOutcome ComputeOptimizerClient::GetEffectiveRecommendationPreferences(const GetEffectiveRecommendationPreferencesRequest& request) const
@@ -372,14 +372,14 @@ GetEffectiveRecommendationPreferencesOutcomeCallable ComputeOptimizerClient::Get
   return task->get_future();
 }
 
-void ComputeOptimizerClient::GetEffectiveRecommendationPreferencesAsync(const GetEffectiveRecommendationPreferencesRequest& request, const GetEffectiveRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientGetEffectiveRecommendationPreferencesAsyncHelper(ComputeOptimizerClient const * const clientThis, const GetEffectiveRecommendationPreferencesRequest& request, const GetEffectiveRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEffectiveRecommendationPreferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEffectiveRecommendationPreferences(request), context);
 }
 
-void ComputeOptimizerClient::GetEffectiveRecommendationPreferencesAsyncHelper(const GetEffectiveRecommendationPreferencesRequest& request, const GetEffectiveRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::GetEffectiveRecommendationPreferencesAsync(const GetEffectiveRecommendationPreferencesRequest& request, const GetEffectiveRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEffectiveRecommendationPreferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientGetEffectiveRecommendationPreferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEnrollmentStatusOutcome ComputeOptimizerClient::GetEnrollmentStatus(const GetEnrollmentStatusRequest& request) const
@@ -396,14 +396,14 @@ GetEnrollmentStatusOutcomeCallable ComputeOptimizerClient::GetEnrollmentStatusCa
   return task->get_future();
 }
 
-void ComputeOptimizerClient::GetEnrollmentStatusAsync(const GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientGetEnrollmentStatusAsyncHelper(ComputeOptimizerClient const * const clientThis, const GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnrollmentStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEnrollmentStatus(request), context);
 }
 
-void ComputeOptimizerClient::GetEnrollmentStatusAsyncHelper(const GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::GetEnrollmentStatusAsync(const GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEnrollmentStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientGetEnrollmentStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEnrollmentStatusesForOrganizationOutcome ComputeOptimizerClient::GetEnrollmentStatusesForOrganization(const GetEnrollmentStatusesForOrganizationRequest& request) const
@@ -420,14 +420,14 @@ GetEnrollmentStatusesForOrganizationOutcomeCallable ComputeOptimizerClient::GetE
   return task->get_future();
 }
 
-void ComputeOptimizerClient::GetEnrollmentStatusesForOrganizationAsync(const GetEnrollmentStatusesForOrganizationRequest& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientGetEnrollmentStatusesForOrganizationAsyncHelper(ComputeOptimizerClient const * const clientThis, const GetEnrollmentStatusesForOrganizationRequest& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnrollmentStatusesForOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEnrollmentStatusesForOrganization(request), context);
 }
 
-void ComputeOptimizerClient::GetEnrollmentStatusesForOrganizationAsyncHelper(const GetEnrollmentStatusesForOrganizationRequest& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::GetEnrollmentStatusesForOrganizationAsync(const GetEnrollmentStatusesForOrganizationRequest& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEnrollmentStatusesForOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientGetEnrollmentStatusesForOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLambdaFunctionRecommendationsOutcome ComputeOptimizerClient::GetLambdaFunctionRecommendations(const GetLambdaFunctionRecommendationsRequest& request) const
@@ -444,14 +444,14 @@ GetLambdaFunctionRecommendationsOutcomeCallable ComputeOptimizerClient::GetLambd
   return task->get_future();
 }
 
-void ComputeOptimizerClient::GetLambdaFunctionRecommendationsAsync(const GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientGetLambdaFunctionRecommendationsAsyncHelper(ComputeOptimizerClient const * const clientThis, const GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLambdaFunctionRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLambdaFunctionRecommendations(request), context);
 }
 
-void ComputeOptimizerClient::GetLambdaFunctionRecommendationsAsyncHelper(const GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::GetLambdaFunctionRecommendationsAsync(const GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLambdaFunctionRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientGetLambdaFunctionRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecommendationPreferencesOutcome ComputeOptimizerClient::GetRecommendationPreferences(const GetRecommendationPreferencesRequest& request) const
@@ -468,14 +468,14 @@ GetRecommendationPreferencesOutcomeCallable ComputeOptimizerClient::GetRecommend
   return task->get_future();
 }
 
-void ComputeOptimizerClient::GetRecommendationPreferencesAsync(const GetRecommendationPreferencesRequest& request, const GetRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientGetRecommendationPreferencesAsyncHelper(ComputeOptimizerClient const * const clientThis, const GetRecommendationPreferencesRequest& request, const GetRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecommendationPreferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecommendationPreferences(request), context);
 }
 
-void ComputeOptimizerClient::GetRecommendationPreferencesAsyncHelper(const GetRecommendationPreferencesRequest& request, const GetRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::GetRecommendationPreferencesAsync(const GetRecommendationPreferencesRequest& request, const GetRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecommendationPreferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientGetRecommendationPreferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecommendationSummariesOutcome ComputeOptimizerClient::GetRecommendationSummaries(const GetRecommendationSummariesRequest& request) const
@@ -492,14 +492,14 @@ GetRecommendationSummariesOutcomeCallable ComputeOptimizerClient::GetRecommendat
   return task->get_future();
 }
 
-void ComputeOptimizerClient::GetRecommendationSummariesAsync(const GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientGetRecommendationSummariesAsyncHelper(ComputeOptimizerClient const * const clientThis, const GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecommendationSummariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecommendationSummaries(request), context);
 }
 
-void ComputeOptimizerClient::GetRecommendationSummariesAsyncHelper(const GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::GetRecommendationSummariesAsync(const GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecommendationSummaries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientGetRecommendationSummariesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRecommendationPreferencesOutcome ComputeOptimizerClient::PutRecommendationPreferences(const PutRecommendationPreferencesRequest& request) const
@@ -516,14 +516,14 @@ PutRecommendationPreferencesOutcomeCallable ComputeOptimizerClient::PutRecommend
   return task->get_future();
 }
 
-void ComputeOptimizerClient::PutRecommendationPreferencesAsync(const PutRecommendationPreferencesRequest& request, const PutRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientPutRecommendationPreferencesAsyncHelper(ComputeOptimizerClient const * const clientThis, const PutRecommendationPreferencesRequest& request, const PutRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRecommendationPreferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRecommendationPreferences(request), context);
 }
 
-void ComputeOptimizerClient::PutRecommendationPreferencesAsyncHelper(const PutRecommendationPreferencesRequest& request, const PutRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::PutRecommendationPreferencesAsync(const PutRecommendationPreferencesRequest& request, const PutRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRecommendationPreferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientPutRecommendationPreferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEnrollmentStatusOutcome ComputeOptimizerClient::UpdateEnrollmentStatus(const UpdateEnrollmentStatusRequest& request) const
@@ -540,13 +540,13 @@ UpdateEnrollmentStatusOutcomeCallable ComputeOptimizerClient::UpdateEnrollmentSt
   return task->get_future();
 }
 
-void ComputeOptimizerClient::UpdateEnrollmentStatusAsync(const UpdateEnrollmentStatusRequest& request, const UpdateEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClientUpdateEnrollmentStatusAsyncHelper(ComputeOptimizerClient const * const clientThis, const UpdateEnrollmentStatusRequest& request, const UpdateEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnrollmentStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEnrollmentStatus(request), context);
 }
 
-void ComputeOptimizerClient::UpdateEnrollmentStatusAsyncHelper(const UpdateEnrollmentStatusRequest& request, const UpdateEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComputeOptimizerClient::UpdateEnrollmentStatusAsync(const UpdateEnrollmentStatusRequest& request, const UpdateEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEnrollmentStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComputeOptimizerClientUpdateEnrollmentStatusAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -191,14 +191,14 @@ CreateDevicePoolOutcomeCallable DeviceFarmClient::CreateDevicePoolCallable(const
   return task->get_future();
 }
 
-void DeviceFarmClient::CreateDevicePoolAsync(const CreateDevicePoolRequest& request, const CreateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientCreateDevicePoolAsyncHelper(DeviceFarmClient const * const clientThis, const CreateDevicePoolRequest& request, const CreateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDevicePoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDevicePool(request), context);
 }
 
-void DeviceFarmClient::CreateDevicePoolAsyncHelper(const CreateDevicePoolRequest& request, const CreateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::CreateDevicePoolAsync(const CreateDevicePoolRequest& request, const CreateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDevicePool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientCreateDevicePoolAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInstanceProfileOutcome DeviceFarmClient::CreateInstanceProfile(const CreateInstanceProfileRequest& request) const
@@ -215,14 +215,14 @@ CreateInstanceProfileOutcomeCallable DeviceFarmClient::CreateInstanceProfileCall
   return task->get_future();
 }
 
-void DeviceFarmClient::CreateInstanceProfileAsync(const CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientCreateInstanceProfileAsyncHelper(DeviceFarmClient const * const clientThis, const CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInstanceProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInstanceProfile(request), context);
 }
 
-void DeviceFarmClient::CreateInstanceProfileAsyncHelper(const CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::CreateInstanceProfileAsync(const CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInstanceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientCreateInstanceProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNetworkProfileOutcome DeviceFarmClient::CreateNetworkProfile(const CreateNetworkProfileRequest& request) const
@@ -239,14 +239,14 @@ CreateNetworkProfileOutcomeCallable DeviceFarmClient::CreateNetworkProfileCallab
   return task->get_future();
 }
 
-void DeviceFarmClient::CreateNetworkProfileAsync(const CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientCreateNetworkProfileAsyncHelper(DeviceFarmClient const * const clientThis, const CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNetworkProfile(request), context);
 }
 
-void DeviceFarmClient::CreateNetworkProfileAsyncHelper(const CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::CreateNetworkProfileAsync(const CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNetworkProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientCreateNetworkProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProjectOutcome DeviceFarmClient::CreateProject(const CreateProjectRequest& request) const
@@ -263,14 +263,14 @@ CreateProjectOutcomeCallable DeviceFarmClient::CreateProjectCallable(const Creat
   return task->get_future();
 }
 
-void DeviceFarmClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientCreateProjectAsyncHelper(DeviceFarmClient const * const clientThis, const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProject(request), context);
 }
 
-void DeviceFarmClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientCreateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRemoteAccessSessionOutcome DeviceFarmClient::CreateRemoteAccessSession(const CreateRemoteAccessSessionRequest& request) const
@@ -287,14 +287,14 @@ CreateRemoteAccessSessionOutcomeCallable DeviceFarmClient::CreateRemoteAccessSes
   return task->get_future();
 }
 
-void DeviceFarmClient::CreateRemoteAccessSessionAsync(const CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientCreateRemoteAccessSessionAsyncHelper(DeviceFarmClient const * const clientThis, const CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRemoteAccessSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRemoteAccessSession(request), context);
 }
 
-void DeviceFarmClient::CreateRemoteAccessSessionAsyncHelper(const CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::CreateRemoteAccessSessionAsync(const CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRemoteAccessSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientCreateRemoteAccessSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTestGridProjectOutcome DeviceFarmClient::CreateTestGridProject(const CreateTestGridProjectRequest& request) const
@@ -311,14 +311,14 @@ CreateTestGridProjectOutcomeCallable DeviceFarmClient::CreateTestGridProjectCall
   return task->get_future();
 }
 
-void DeviceFarmClient::CreateTestGridProjectAsync(const CreateTestGridProjectRequest& request, const CreateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientCreateTestGridProjectAsyncHelper(DeviceFarmClient const * const clientThis, const CreateTestGridProjectRequest& request, const CreateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTestGridProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTestGridProject(request), context);
 }
 
-void DeviceFarmClient::CreateTestGridProjectAsyncHelper(const CreateTestGridProjectRequest& request, const CreateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::CreateTestGridProjectAsync(const CreateTestGridProjectRequest& request, const CreateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTestGridProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientCreateTestGridProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTestGridUrlOutcome DeviceFarmClient::CreateTestGridUrl(const CreateTestGridUrlRequest& request) const
@@ -335,14 +335,14 @@ CreateTestGridUrlOutcomeCallable DeviceFarmClient::CreateTestGridUrlCallable(con
   return task->get_future();
 }
 
-void DeviceFarmClient::CreateTestGridUrlAsync(const CreateTestGridUrlRequest& request, const CreateTestGridUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientCreateTestGridUrlAsyncHelper(DeviceFarmClient const * const clientThis, const CreateTestGridUrlRequest& request, const CreateTestGridUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTestGridUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTestGridUrl(request), context);
 }
 
-void DeviceFarmClient::CreateTestGridUrlAsyncHelper(const CreateTestGridUrlRequest& request, const CreateTestGridUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::CreateTestGridUrlAsync(const CreateTestGridUrlRequest& request, const CreateTestGridUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTestGridUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientCreateTestGridUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUploadOutcome DeviceFarmClient::CreateUpload(const CreateUploadRequest& request) const
@@ -359,14 +359,14 @@ CreateUploadOutcomeCallable DeviceFarmClient::CreateUploadCallable(const CreateU
   return task->get_future();
 }
 
-void DeviceFarmClient::CreateUploadAsync(const CreateUploadRequest& request, const CreateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientCreateUploadAsyncHelper(DeviceFarmClient const * const clientThis, const CreateUploadRequest& request, const CreateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUploadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUpload(request), context);
 }
 
-void DeviceFarmClient::CreateUploadAsyncHelper(const CreateUploadRequest& request, const CreateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::CreateUploadAsync(const CreateUploadRequest& request, const CreateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUpload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientCreateUploadAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVPCEConfigurationOutcome DeviceFarmClient::CreateVPCEConfiguration(const CreateVPCEConfigurationRequest& request) const
@@ -383,14 +383,14 @@ CreateVPCEConfigurationOutcomeCallable DeviceFarmClient::CreateVPCEConfiguration
   return task->get_future();
 }
 
-void DeviceFarmClient::CreateVPCEConfigurationAsync(const CreateVPCEConfigurationRequest& request, const CreateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientCreateVPCEConfigurationAsyncHelper(DeviceFarmClient const * const clientThis, const CreateVPCEConfigurationRequest& request, const CreateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVPCEConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVPCEConfiguration(request), context);
 }
 
-void DeviceFarmClient::CreateVPCEConfigurationAsyncHelper(const CreateVPCEConfigurationRequest& request, const CreateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::CreateVPCEConfigurationAsync(const CreateVPCEConfigurationRequest& request, const CreateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVPCEConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientCreateVPCEConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDevicePoolOutcome DeviceFarmClient::DeleteDevicePool(const DeleteDevicePoolRequest& request) const
@@ -407,14 +407,14 @@ DeleteDevicePoolOutcomeCallable DeviceFarmClient::DeleteDevicePoolCallable(const
   return task->get_future();
 }
 
-void DeviceFarmClient::DeleteDevicePoolAsync(const DeleteDevicePoolRequest& request, const DeleteDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientDeleteDevicePoolAsyncHelper(DeviceFarmClient const * const clientThis, const DeleteDevicePoolRequest& request, const DeleteDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDevicePoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDevicePool(request), context);
 }
 
-void DeviceFarmClient::DeleteDevicePoolAsyncHelper(const DeleteDevicePoolRequest& request, const DeleteDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::DeleteDevicePoolAsync(const DeleteDevicePoolRequest& request, const DeleteDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDevicePool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientDeleteDevicePoolAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInstanceProfileOutcome DeviceFarmClient::DeleteInstanceProfile(const DeleteInstanceProfileRequest& request) const
@@ -431,14 +431,14 @@ DeleteInstanceProfileOutcomeCallable DeviceFarmClient::DeleteInstanceProfileCall
   return task->get_future();
 }
 
-void DeviceFarmClient::DeleteInstanceProfileAsync(const DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientDeleteInstanceProfileAsyncHelper(DeviceFarmClient const * const clientThis, const DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInstanceProfile(request), context);
 }
 
-void DeviceFarmClient::DeleteInstanceProfileAsyncHelper(const DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::DeleteInstanceProfileAsync(const DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInstanceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientDeleteInstanceProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNetworkProfileOutcome DeviceFarmClient::DeleteNetworkProfile(const DeleteNetworkProfileRequest& request) const
@@ -455,14 +455,14 @@ DeleteNetworkProfileOutcomeCallable DeviceFarmClient::DeleteNetworkProfileCallab
   return task->get_future();
 }
 
-void DeviceFarmClient::DeleteNetworkProfileAsync(const DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientDeleteNetworkProfileAsyncHelper(DeviceFarmClient const * const clientThis, const DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNetworkProfile(request), context);
 }
 
-void DeviceFarmClient::DeleteNetworkProfileAsyncHelper(const DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::DeleteNetworkProfileAsync(const DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNetworkProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientDeleteNetworkProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProjectOutcome DeviceFarmClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -479,14 +479,14 @@ DeleteProjectOutcomeCallable DeviceFarmClient::DeleteProjectCallable(const Delet
   return task->get_future();
 }
 
-void DeviceFarmClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientDeleteProjectAsyncHelper(DeviceFarmClient const * const clientThis, const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProject(request), context);
 }
 
-void DeviceFarmClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientDeleteProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRemoteAccessSessionOutcome DeviceFarmClient::DeleteRemoteAccessSession(const DeleteRemoteAccessSessionRequest& request) const
@@ -503,14 +503,14 @@ DeleteRemoteAccessSessionOutcomeCallable DeviceFarmClient::DeleteRemoteAccessSes
   return task->get_future();
 }
 
-void DeviceFarmClient::DeleteRemoteAccessSessionAsync(const DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientDeleteRemoteAccessSessionAsyncHelper(DeviceFarmClient const * const clientThis, const DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRemoteAccessSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRemoteAccessSession(request), context);
 }
 
-void DeviceFarmClient::DeleteRemoteAccessSessionAsyncHelper(const DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::DeleteRemoteAccessSessionAsync(const DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRemoteAccessSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientDeleteRemoteAccessSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRunOutcome DeviceFarmClient::DeleteRun(const DeleteRunRequest& request) const
@@ -527,14 +527,14 @@ DeleteRunOutcomeCallable DeviceFarmClient::DeleteRunCallable(const DeleteRunRequ
   return task->get_future();
 }
 
-void DeviceFarmClient::DeleteRunAsync(const DeleteRunRequest& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientDeleteRunAsyncHelper(DeviceFarmClient const * const clientThis, const DeleteRunRequest& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRun(request), context);
 }
 
-void DeviceFarmClient::DeleteRunAsyncHelper(const DeleteRunRequest& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::DeleteRunAsync(const DeleteRunRequest& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientDeleteRunAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTestGridProjectOutcome DeviceFarmClient::DeleteTestGridProject(const DeleteTestGridProjectRequest& request) const
@@ -551,14 +551,14 @@ DeleteTestGridProjectOutcomeCallable DeviceFarmClient::DeleteTestGridProjectCall
   return task->get_future();
 }
 
-void DeviceFarmClient::DeleteTestGridProjectAsync(const DeleteTestGridProjectRequest& request, const DeleteTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientDeleteTestGridProjectAsyncHelper(DeviceFarmClient const * const clientThis, const DeleteTestGridProjectRequest& request, const DeleteTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTestGridProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTestGridProject(request), context);
 }
 
-void DeviceFarmClient::DeleteTestGridProjectAsyncHelper(const DeleteTestGridProjectRequest& request, const DeleteTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::DeleteTestGridProjectAsync(const DeleteTestGridProjectRequest& request, const DeleteTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTestGridProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientDeleteTestGridProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUploadOutcome DeviceFarmClient::DeleteUpload(const DeleteUploadRequest& request) const
@@ -575,14 +575,14 @@ DeleteUploadOutcomeCallable DeviceFarmClient::DeleteUploadCallable(const DeleteU
   return task->get_future();
 }
 
-void DeviceFarmClient::DeleteUploadAsync(const DeleteUploadRequest& request, const DeleteUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientDeleteUploadAsyncHelper(DeviceFarmClient const * const clientThis, const DeleteUploadRequest& request, const DeleteUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUploadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUpload(request), context);
 }
 
-void DeviceFarmClient::DeleteUploadAsyncHelper(const DeleteUploadRequest& request, const DeleteUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::DeleteUploadAsync(const DeleteUploadRequest& request, const DeleteUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUpload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientDeleteUploadAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVPCEConfigurationOutcome DeviceFarmClient::DeleteVPCEConfiguration(const DeleteVPCEConfigurationRequest& request) const
@@ -599,14 +599,14 @@ DeleteVPCEConfigurationOutcomeCallable DeviceFarmClient::DeleteVPCEConfiguration
   return task->get_future();
 }
 
-void DeviceFarmClient::DeleteVPCEConfigurationAsync(const DeleteVPCEConfigurationRequest& request, const DeleteVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientDeleteVPCEConfigurationAsyncHelper(DeviceFarmClient const * const clientThis, const DeleteVPCEConfigurationRequest& request, const DeleteVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVPCEConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVPCEConfiguration(request), context);
 }
 
-void DeviceFarmClient::DeleteVPCEConfigurationAsyncHelper(const DeleteVPCEConfigurationRequest& request, const DeleteVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::DeleteVPCEConfigurationAsync(const DeleteVPCEConfigurationRequest& request, const DeleteVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVPCEConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientDeleteVPCEConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccountSettingsOutcome DeviceFarmClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
@@ -623,14 +623,14 @@ GetAccountSettingsOutcomeCallable DeviceFarmClient::GetAccountSettingsCallable(c
   return task->get_future();
 }
 
-void DeviceFarmClient::GetAccountSettingsAsync(const GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetAccountSettingsAsyncHelper(DeviceFarmClient const * const clientThis, const GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccountSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccountSettings(request), context);
 }
 
-void DeviceFarmClient::GetAccountSettingsAsyncHelper(const GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetAccountSettingsAsync(const GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccountSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetAccountSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeviceOutcome DeviceFarmClient::GetDevice(const GetDeviceRequest& request) const
@@ -647,14 +647,14 @@ GetDeviceOutcomeCallable DeviceFarmClient::GetDeviceCallable(const GetDeviceRequ
   return task->get_future();
 }
 
-void DeviceFarmClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetDeviceAsyncHelper(DeviceFarmClient const * const clientThis, const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDevice(request), context);
 }
 
-void DeviceFarmClient::GetDeviceAsyncHelper(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeviceInstanceOutcome DeviceFarmClient::GetDeviceInstance(const GetDeviceInstanceRequest& request) const
@@ -671,14 +671,14 @@ GetDeviceInstanceOutcomeCallable DeviceFarmClient::GetDeviceInstanceCallable(con
   return task->get_future();
 }
 
-void DeviceFarmClient::GetDeviceInstanceAsync(const GetDeviceInstanceRequest& request, const GetDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetDeviceInstanceAsyncHelper(DeviceFarmClient const * const clientThis, const GetDeviceInstanceRequest& request, const GetDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeviceInstance(request), context);
 }
 
-void DeviceFarmClient::GetDeviceInstanceAsyncHelper(const GetDeviceInstanceRequest& request, const GetDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetDeviceInstanceAsync(const GetDeviceInstanceRequest& request, const GetDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeviceInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetDeviceInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDevicePoolOutcome DeviceFarmClient::GetDevicePool(const GetDevicePoolRequest& request) const
@@ -695,14 +695,14 @@ GetDevicePoolOutcomeCallable DeviceFarmClient::GetDevicePoolCallable(const GetDe
   return task->get_future();
 }
 
-void DeviceFarmClient::GetDevicePoolAsync(const GetDevicePoolRequest& request, const GetDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetDevicePoolAsyncHelper(DeviceFarmClient const * const clientThis, const GetDevicePoolRequest& request, const GetDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDevicePoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDevicePool(request), context);
 }
 
-void DeviceFarmClient::GetDevicePoolAsyncHelper(const GetDevicePoolRequest& request, const GetDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetDevicePoolAsync(const GetDevicePoolRequest& request, const GetDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDevicePool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetDevicePoolAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDevicePoolCompatibilityOutcome DeviceFarmClient::GetDevicePoolCompatibility(const GetDevicePoolCompatibilityRequest& request) const
@@ -719,14 +719,14 @@ GetDevicePoolCompatibilityOutcomeCallable DeviceFarmClient::GetDevicePoolCompati
   return task->get_future();
 }
 
-void DeviceFarmClient::GetDevicePoolCompatibilityAsync(const GetDevicePoolCompatibilityRequest& request, const GetDevicePoolCompatibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetDevicePoolCompatibilityAsyncHelper(DeviceFarmClient const * const clientThis, const GetDevicePoolCompatibilityRequest& request, const GetDevicePoolCompatibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDevicePoolCompatibilityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDevicePoolCompatibility(request), context);
 }
 
-void DeviceFarmClient::GetDevicePoolCompatibilityAsyncHelper(const GetDevicePoolCompatibilityRequest& request, const GetDevicePoolCompatibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetDevicePoolCompatibilityAsync(const GetDevicePoolCompatibilityRequest& request, const GetDevicePoolCompatibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDevicePoolCompatibility(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetDevicePoolCompatibilityAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceProfileOutcome DeviceFarmClient::GetInstanceProfile(const GetInstanceProfileRequest& request) const
@@ -743,14 +743,14 @@ GetInstanceProfileOutcomeCallable DeviceFarmClient::GetInstanceProfileCallable(c
   return task->get_future();
 }
 
-void DeviceFarmClient::GetInstanceProfileAsync(const GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetInstanceProfileAsyncHelper(DeviceFarmClient const * const clientThis, const GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstanceProfile(request), context);
 }
 
-void DeviceFarmClient::GetInstanceProfileAsyncHelper(const GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetInstanceProfileAsync(const GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstanceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetInstanceProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobOutcome DeviceFarmClient::GetJob(const GetJobRequest& request) const
@@ -767,14 +767,14 @@ GetJobOutcomeCallable DeviceFarmClient::GetJobCallable(const GetJobRequest& requ
   return task->get_future();
 }
 
-void DeviceFarmClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetJobAsyncHelper(DeviceFarmClient const * const clientThis, const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJob(request), context);
 }
 
-void DeviceFarmClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNetworkProfileOutcome DeviceFarmClient::GetNetworkProfile(const GetNetworkProfileRequest& request) const
@@ -791,14 +791,14 @@ GetNetworkProfileOutcomeCallable DeviceFarmClient::GetNetworkProfileCallable(con
   return task->get_future();
 }
 
-void DeviceFarmClient::GetNetworkProfileAsync(const GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetNetworkProfileAsyncHelper(DeviceFarmClient const * const clientThis, const GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNetworkProfile(request), context);
 }
 
-void DeviceFarmClient::GetNetworkProfileAsyncHelper(const GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetNetworkProfileAsync(const GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNetworkProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetNetworkProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 GetOfferingStatusOutcome DeviceFarmClient::GetOfferingStatus(const GetOfferingStatusRequest& request) const
@@ -815,14 +815,14 @@ GetOfferingStatusOutcomeCallable DeviceFarmClient::GetOfferingStatusCallable(con
   return task->get_future();
 }
 
-void DeviceFarmClient::GetOfferingStatusAsync(const GetOfferingStatusRequest& request, const GetOfferingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetOfferingStatusAsyncHelper(DeviceFarmClient const * const clientThis, const GetOfferingStatusRequest& request, const GetOfferingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOfferingStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOfferingStatus(request), context);
 }
 
-void DeviceFarmClient::GetOfferingStatusAsyncHelper(const GetOfferingStatusRequest& request, const GetOfferingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetOfferingStatusAsync(const GetOfferingStatusRequest& request, const GetOfferingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOfferingStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetOfferingStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetProjectOutcome DeviceFarmClient::GetProject(const GetProjectRequest& request) const
@@ -839,14 +839,14 @@ GetProjectOutcomeCallable DeviceFarmClient::GetProjectCallable(const GetProjectR
   return task->get_future();
 }
 
-void DeviceFarmClient::GetProjectAsync(const GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetProjectAsyncHelper(DeviceFarmClient const * const clientThis, const GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetProject(request), context);
 }
 
-void DeviceFarmClient::GetProjectAsyncHelper(const GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetProjectAsync(const GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRemoteAccessSessionOutcome DeviceFarmClient::GetRemoteAccessSession(const GetRemoteAccessSessionRequest& request) const
@@ -863,14 +863,14 @@ GetRemoteAccessSessionOutcomeCallable DeviceFarmClient::GetRemoteAccessSessionCa
   return task->get_future();
 }
 
-void DeviceFarmClient::GetRemoteAccessSessionAsync(const GetRemoteAccessSessionRequest& request, const GetRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetRemoteAccessSessionAsyncHelper(DeviceFarmClient const * const clientThis, const GetRemoteAccessSessionRequest& request, const GetRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRemoteAccessSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRemoteAccessSession(request), context);
 }
 
-void DeviceFarmClient::GetRemoteAccessSessionAsyncHelper(const GetRemoteAccessSessionRequest& request, const GetRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetRemoteAccessSessionAsync(const GetRemoteAccessSessionRequest& request, const GetRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRemoteAccessSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetRemoteAccessSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRunOutcome DeviceFarmClient::GetRun(const GetRunRequest& request) const
@@ -887,14 +887,14 @@ GetRunOutcomeCallable DeviceFarmClient::GetRunCallable(const GetRunRequest& requ
   return task->get_future();
 }
 
-void DeviceFarmClient::GetRunAsync(const GetRunRequest& request, const GetRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetRunAsyncHelper(DeviceFarmClient const * const clientThis, const GetRunRequest& request, const GetRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRun(request), context);
 }
 
-void DeviceFarmClient::GetRunAsyncHelper(const GetRunRequest& request, const GetRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetRunAsync(const GetRunRequest& request, const GetRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetRunAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSuiteOutcome DeviceFarmClient::GetSuite(const GetSuiteRequest& request) const
@@ -911,14 +911,14 @@ GetSuiteOutcomeCallable DeviceFarmClient::GetSuiteCallable(const GetSuiteRequest
   return task->get_future();
 }
 
-void DeviceFarmClient::GetSuiteAsync(const GetSuiteRequest& request, const GetSuiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetSuiteAsyncHelper(DeviceFarmClient const * const clientThis, const GetSuiteRequest& request, const GetSuiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSuiteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSuite(request), context);
 }
 
-void DeviceFarmClient::GetSuiteAsyncHelper(const GetSuiteRequest& request, const GetSuiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetSuiteAsync(const GetSuiteRequest& request, const GetSuiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSuite(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetSuiteAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTestOutcome DeviceFarmClient::GetTest(const GetTestRequest& request) const
@@ -935,14 +935,14 @@ GetTestOutcomeCallable DeviceFarmClient::GetTestCallable(const GetTestRequest& r
   return task->get_future();
 }
 
-void DeviceFarmClient::GetTestAsync(const GetTestRequest& request, const GetTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetTestAsyncHelper(DeviceFarmClient const * const clientThis, const GetTestRequest& request, const GetTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTestAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTest(request), context);
 }
 
-void DeviceFarmClient::GetTestAsyncHelper(const GetTestRequest& request, const GetTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetTestAsync(const GetTestRequest& request, const GetTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTest(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetTestAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTestGridProjectOutcome DeviceFarmClient::GetTestGridProject(const GetTestGridProjectRequest& request) const
@@ -959,14 +959,14 @@ GetTestGridProjectOutcomeCallable DeviceFarmClient::GetTestGridProjectCallable(c
   return task->get_future();
 }
 
-void DeviceFarmClient::GetTestGridProjectAsync(const GetTestGridProjectRequest& request, const GetTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetTestGridProjectAsyncHelper(DeviceFarmClient const * const clientThis, const GetTestGridProjectRequest& request, const GetTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTestGridProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTestGridProject(request), context);
 }
 
-void DeviceFarmClient::GetTestGridProjectAsyncHelper(const GetTestGridProjectRequest& request, const GetTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetTestGridProjectAsync(const GetTestGridProjectRequest& request, const GetTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTestGridProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetTestGridProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTestGridSessionOutcome DeviceFarmClient::GetTestGridSession(const GetTestGridSessionRequest& request) const
@@ -983,14 +983,14 @@ GetTestGridSessionOutcomeCallable DeviceFarmClient::GetTestGridSessionCallable(c
   return task->get_future();
 }
 
-void DeviceFarmClient::GetTestGridSessionAsync(const GetTestGridSessionRequest& request, const GetTestGridSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetTestGridSessionAsyncHelper(DeviceFarmClient const * const clientThis, const GetTestGridSessionRequest& request, const GetTestGridSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTestGridSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTestGridSession(request), context);
 }
 
-void DeviceFarmClient::GetTestGridSessionAsyncHelper(const GetTestGridSessionRequest& request, const GetTestGridSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetTestGridSessionAsync(const GetTestGridSessionRequest& request, const GetTestGridSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTestGridSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetTestGridSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUploadOutcome DeviceFarmClient::GetUpload(const GetUploadRequest& request) const
@@ -1007,14 +1007,14 @@ GetUploadOutcomeCallable DeviceFarmClient::GetUploadCallable(const GetUploadRequ
   return task->get_future();
 }
 
-void DeviceFarmClient::GetUploadAsync(const GetUploadRequest& request, const GetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetUploadAsyncHelper(DeviceFarmClient const * const clientThis, const GetUploadRequest& request, const GetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUploadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUpload(request), context);
 }
 
-void DeviceFarmClient::GetUploadAsyncHelper(const GetUploadRequest& request, const GetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetUploadAsync(const GetUploadRequest& request, const GetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUpload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetUploadAsyncHelper( this, request, handler, context ); } );
 }
 
 GetVPCEConfigurationOutcome DeviceFarmClient::GetVPCEConfiguration(const GetVPCEConfigurationRequest& request) const
@@ -1031,14 +1031,14 @@ GetVPCEConfigurationOutcomeCallable DeviceFarmClient::GetVPCEConfigurationCallab
   return task->get_future();
 }
 
-void DeviceFarmClient::GetVPCEConfigurationAsync(const GetVPCEConfigurationRequest& request, const GetVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientGetVPCEConfigurationAsyncHelper(DeviceFarmClient const * const clientThis, const GetVPCEConfigurationRequest& request, const GetVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVPCEConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetVPCEConfiguration(request), context);
 }
 
-void DeviceFarmClient::GetVPCEConfigurationAsyncHelper(const GetVPCEConfigurationRequest& request, const GetVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::GetVPCEConfigurationAsync(const GetVPCEConfigurationRequest& request, const GetVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetVPCEConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientGetVPCEConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 InstallToRemoteAccessSessionOutcome DeviceFarmClient::InstallToRemoteAccessSession(const InstallToRemoteAccessSessionRequest& request) const
@@ -1055,14 +1055,14 @@ InstallToRemoteAccessSessionOutcomeCallable DeviceFarmClient::InstallToRemoteAcc
   return task->get_future();
 }
 
-void DeviceFarmClient::InstallToRemoteAccessSessionAsync(const InstallToRemoteAccessSessionRequest& request, const InstallToRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientInstallToRemoteAccessSessionAsyncHelper(DeviceFarmClient const * const clientThis, const InstallToRemoteAccessSessionRequest& request, const InstallToRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InstallToRemoteAccessSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InstallToRemoteAccessSession(request), context);
 }
 
-void DeviceFarmClient::InstallToRemoteAccessSessionAsyncHelper(const InstallToRemoteAccessSessionRequest& request, const InstallToRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::InstallToRemoteAccessSessionAsync(const InstallToRemoteAccessSessionRequest& request, const InstallToRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InstallToRemoteAccessSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientInstallToRemoteAccessSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListArtifactsOutcome DeviceFarmClient::ListArtifacts(const ListArtifactsRequest& request) const
@@ -1079,14 +1079,14 @@ ListArtifactsOutcomeCallable DeviceFarmClient::ListArtifactsCallable(const ListA
   return task->get_future();
 }
 
-void DeviceFarmClient::ListArtifactsAsync(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListArtifactsAsyncHelper(DeviceFarmClient const * const clientThis, const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListArtifactsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListArtifacts(request), context);
 }
 
-void DeviceFarmClient::ListArtifactsAsyncHelper(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListArtifactsAsync(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListArtifacts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListArtifactsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeviceInstancesOutcome DeviceFarmClient::ListDeviceInstances(const ListDeviceInstancesRequest& request) const
@@ -1103,14 +1103,14 @@ ListDeviceInstancesOutcomeCallable DeviceFarmClient::ListDeviceInstancesCallable
   return task->get_future();
 }
 
-void DeviceFarmClient::ListDeviceInstancesAsync(const ListDeviceInstancesRequest& request, const ListDeviceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListDeviceInstancesAsyncHelper(DeviceFarmClient const * const clientThis, const ListDeviceInstancesRequest& request, const ListDeviceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeviceInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeviceInstances(request), context);
 }
 
-void DeviceFarmClient::ListDeviceInstancesAsyncHelper(const ListDeviceInstancesRequest& request, const ListDeviceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListDeviceInstancesAsync(const ListDeviceInstancesRequest& request, const ListDeviceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeviceInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListDeviceInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDevicePoolsOutcome DeviceFarmClient::ListDevicePools(const ListDevicePoolsRequest& request) const
@@ -1127,14 +1127,14 @@ ListDevicePoolsOutcomeCallable DeviceFarmClient::ListDevicePoolsCallable(const L
   return task->get_future();
 }
 
-void DeviceFarmClient::ListDevicePoolsAsync(const ListDevicePoolsRequest& request, const ListDevicePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListDevicePoolsAsyncHelper(DeviceFarmClient const * const clientThis, const ListDevicePoolsRequest& request, const ListDevicePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevicePoolsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDevicePools(request), context);
 }
 
-void DeviceFarmClient::ListDevicePoolsAsyncHelper(const ListDevicePoolsRequest& request, const ListDevicePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListDevicePoolsAsync(const ListDevicePoolsRequest& request, const ListDevicePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDevicePools(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListDevicePoolsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDevicesOutcome DeviceFarmClient::ListDevices(const ListDevicesRequest& request) const
@@ -1151,14 +1151,14 @@ ListDevicesOutcomeCallable DeviceFarmClient::ListDevicesCallable(const ListDevic
   return task->get_future();
 }
 
-void DeviceFarmClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListDevicesAsyncHelper(DeviceFarmClient const * const clientThis, const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDevices(request), context);
 }
 
-void DeviceFarmClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInstanceProfilesOutcome DeviceFarmClient::ListInstanceProfiles(const ListInstanceProfilesRequest& request) const
@@ -1175,14 +1175,14 @@ ListInstanceProfilesOutcomeCallable DeviceFarmClient::ListInstanceProfilesCallab
   return task->get_future();
 }
 
-void DeviceFarmClient::ListInstanceProfilesAsync(const ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListInstanceProfilesAsyncHelper(DeviceFarmClient const * const clientThis, const ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstanceProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInstanceProfiles(request), context);
 }
 
-void DeviceFarmClient::ListInstanceProfilesAsyncHelper(const ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListInstanceProfilesAsync(const ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInstanceProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListInstanceProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobsOutcome DeviceFarmClient::ListJobs(const ListJobsRequest& request) const
@@ -1199,14 +1199,14 @@ ListJobsOutcomeCallable DeviceFarmClient::ListJobsCallable(const ListJobsRequest
   return task->get_future();
 }
 
-void DeviceFarmClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListJobsAsyncHelper(DeviceFarmClient const * const clientThis, const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobs(request), context);
 }
 
-void DeviceFarmClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNetworkProfilesOutcome DeviceFarmClient::ListNetworkProfiles(const ListNetworkProfilesRequest& request) const
@@ -1223,14 +1223,14 @@ ListNetworkProfilesOutcomeCallable DeviceFarmClient::ListNetworkProfilesCallable
   return task->get_future();
 }
 
-void DeviceFarmClient::ListNetworkProfilesAsync(const ListNetworkProfilesRequest& request, const ListNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListNetworkProfilesAsyncHelper(DeviceFarmClient const * const clientThis, const ListNetworkProfilesRequest& request, const ListNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNetworkProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNetworkProfiles(request), context);
 }
 
-void DeviceFarmClient::ListNetworkProfilesAsyncHelper(const ListNetworkProfilesRequest& request, const ListNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListNetworkProfilesAsync(const ListNetworkProfilesRequest& request, const ListNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNetworkProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListNetworkProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOfferingPromotionsOutcome DeviceFarmClient::ListOfferingPromotions(const ListOfferingPromotionsRequest& request) const
@@ -1247,14 +1247,14 @@ ListOfferingPromotionsOutcomeCallable DeviceFarmClient::ListOfferingPromotionsCa
   return task->get_future();
 }
 
-void DeviceFarmClient::ListOfferingPromotionsAsync(const ListOfferingPromotionsRequest& request, const ListOfferingPromotionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListOfferingPromotionsAsyncHelper(DeviceFarmClient const * const clientThis, const ListOfferingPromotionsRequest& request, const ListOfferingPromotionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOfferingPromotionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOfferingPromotions(request), context);
 }
 
-void DeviceFarmClient::ListOfferingPromotionsAsyncHelper(const ListOfferingPromotionsRequest& request, const ListOfferingPromotionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListOfferingPromotionsAsync(const ListOfferingPromotionsRequest& request, const ListOfferingPromotionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOfferingPromotions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListOfferingPromotionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOfferingTransactionsOutcome DeviceFarmClient::ListOfferingTransactions(const ListOfferingTransactionsRequest& request) const
@@ -1271,14 +1271,14 @@ ListOfferingTransactionsOutcomeCallable DeviceFarmClient::ListOfferingTransactio
   return task->get_future();
 }
 
-void DeviceFarmClient::ListOfferingTransactionsAsync(const ListOfferingTransactionsRequest& request, const ListOfferingTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListOfferingTransactionsAsyncHelper(DeviceFarmClient const * const clientThis, const ListOfferingTransactionsRequest& request, const ListOfferingTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOfferingTransactionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOfferingTransactions(request), context);
 }
 
-void DeviceFarmClient::ListOfferingTransactionsAsyncHelper(const ListOfferingTransactionsRequest& request, const ListOfferingTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListOfferingTransactionsAsync(const ListOfferingTransactionsRequest& request, const ListOfferingTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOfferingTransactions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListOfferingTransactionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOfferingsOutcome DeviceFarmClient::ListOfferings(const ListOfferingsRequest& request) const
@@ -1295,14 +1295,14 @@ ListOfferingsOutcomeCallable DeviceFarmClient::ListOfferingsCallable(const ListO
   return task->get_future();
 }
 
-void DeviceFarmClient::ListOfferingsAsync(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListOfferingsAsyncHelper(DeviceFarmClient const * const clientThis, const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOfferingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOfferings(request), context);
 }
 
-void DeviceFarmClient::ListOfferingsAsyncHelper(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListOfferingsAsync(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListOfferingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProjectsOutcome DeviceFarmClient::ListProjects(const ListProjectsRequest& request) const
@@ -1319,14 +1319,14 @@ ListProjectsOutcomeCallable DeviceFarmClient::ListProjectsCallable(const ListPro
   return task->get_future();
 }
 
-void DeviceFarmClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListProjectsAsyncHelper(DeviceFarmClient const * const clientThis, const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProjects(request), context);
 }
 
-void DeviceFarmClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListProjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRemoteAccessSessionsOutcome DeviceFarmClient::ListRemoteAccessSessions(const ListRemoteAccessSessionsRequest& request) const
@@ -1343,14 +1343,14 @@ ListRemoteAccessSessionsOutcomeCallable DeviceFarmClient::ListRemoteAccessSessio
   return task->get_future();
 }
 
-void DeviceFarmClient::ListRemoteAccessSessionsAsync(const ListRemoteAccessSessionsRequest& request, const ListRemoteAccessSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListRemoteAccessSessionsAsyncHelper(DeviceFarmClient const * const clientThis, const ListRemoteAccessSessionsRequest& request, const ListRemoteAccessSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRemoteAccessSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRemoteAccessSessions(request), context);
 }
 
-void DeviceFarmClient::ListRemoteAccessSessionsAsyncHelper(const ListRemoteAccessSessionsRequest& request, const ListRemoteAccessSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListRemoteAccessSessionsAsync(const ListRemoteAccessSessionsRequest& request, const ListRemoteAccessSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRemoteAccessSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListRemoteAccessSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRunsOutcome DeviceFarmClient::ListRuns(const ListRunsRequest& request) const
@@ -1367,14 +1367,14 @@ ListRunsOutcomeCallable DeviceFarmClient::ListRunsCallable(const ListRunsRequest
   return task->get_future();
 }
 
-void DeviceFarmClient::ListRunsAsync(const ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListRunsAsyncHelper(DeviceFarmClient const * const clientThis, const ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRunsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRuns(request), context);
 }
 
-void DeviceFarmClient::ListRunsAsyncHelper(const ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListRunsAsync(const ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRuns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListRunsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSamplesOutcome DeviceFarmClient::ListSamples(const ListSamplesRequest& request) const
@@ -1391,14 +1391,14 @@ ListSamplesOutcomeCallable DeviceFarmClient::ListSamplesCallable(const ListSampl
   return task->get_future();
 }
 
-void DeviceFarmClient::ListSamplesAsync(const ListSamplesRequest& request, const ListSamplesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListSamplesAsyncHelper(DeviceFarmClient const * const clientThis, const ListSamplesRequest& request, const ListSamplesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSamplesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSamples(request), context);
 }
 
-void DeviceFarmClient::ListSamplesAsyncHelper(const ListSamplesRequest& request, const ListSamplesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListSamplesAsync(const ListSamplesRequest& request, const ListSamplesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSamples(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListSamplesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSuitesOutcome DeviceFarmClient::ListSuites(const ListSuitesRequest& request) const
@@ -1415,14 +1415,14 @@ ListSuitesOutcomeCallable DeviceFarmClient::ListSuitesCallable(const ListSuitesR
   return task->get_future();
 }
 
-void DeviceFarmClient::ListSuitesAsync(const ListSuitesRequest& request, const ListSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListSuitesAsyncHelper(DeviceFarmClient const * const clientThis, const ListSuitesRequest& request, const ListSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSuitesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSuites(request), context);
 }
 
-void DeviceFarmClient::ListSuitesAsyncHelper(const ListSuitesRequest& request, const ListSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListSuitesAsync(const ListSuitesRequest& request, const ListSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSuites(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListSuitesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome DeviceFarmClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1439,14 +1439,14 @@ ListTagsForResourceOutcomeCallable DeviceFarmClient::ListTagsForResourceCallable
   return task->get_future();
 }
 
-void DeviceFarmClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListTagsForResourceAsyncHelper(DeviceFarmClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void DeviceFarmClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTestGridProjectsOutcome DeviceFarmClient::ListTestGridProjects(const ListTestGridProjectsRequest& request) const
@@ -1463,14 +1463,14 @@ ListTestGridProjectsOutcomeCallable DeviceFarmClient::ListTestGridProjectsCallab
   return task->get_future();
 }
 
-void DeviceFarmClient::ListTestGridProjectsAsync(const ListTestGridProjectsRequest& request, const ListTestGridProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListTestGridProjectsAsyncHelper(DeviceFarmClient const * const clientThis, const ListTestGridProjectsRequest& request, const ListTestGridProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTestGridProjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTestGridProjects(request), context);
 }
 
-void DeviceFarmClient::ListTestGridProjectsAsyncHelper(const ListTestGridProjectsRequest& request, const ListTestGridProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListTestGridProjectsAsync(const ListTestGridProjectsRequest& request, const ListTestGridProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTestGridProjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListTestGridProjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTestGridSessionActionsOutcome DeviceFarmClient::ListTestGridSessionActions(const ListTestGridSessionActionsRequest& request) const
@@ -1487,14 +1487,14 @@ ListTestGridSessionActionsOutcomeCallable DeviceFarmClient::ListTestGridSessionA
   return task->get_future();
 }
 
-void DeviceFarmClient::ListTestGridSessionActionsAsync(const ListTestGridSessionActionsRequest& request, const ListTestGridSessionActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListTestGridSessionActionsAsyncHelper(DeviceFarmClient const * const clientThis, const ListTestGridSessionActionsRequest& request, const ListTestGridSessionActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTestGridSessionActionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTestGridSessionActions(request), context);
 }
 
-void DeviceFarmClient::ListTestGridSessionActionsAsyncHelper(const ListTestGridSessionActionsRequest& request, const ListTestGridSessionActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListTestGridSessionActionsAsync(const ListTestGridSessionActionsRequest& request, const ListTestGridSessionActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTestGridSessionActions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListTestGridSessionActionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTestGridSessionArtifactsOutcome DeviceFarmClient::ListTestGridSessionArtifacts(const ListTestGridSessionArtifactsRequest& request) const
@@ -1511,14 +1511,14 @@ ListTestGridSessionArtifactsOutcomeCallable DeviceFarmClient::ListTestGridSessio
   return task->get_future();
 }
 
-void DeviceFarmClient::ListTestGridSessionArtifactsAsync(const ListTestGridSessionArtifactsRequest& request, const ListTestGridSessionArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListTestGridSessionArtifactsAsyncHelper(DeviceFarmClient const * const clientThis, const ListTestGridSessionArtifactsRequest& request, const ListTestGridSessionArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTestGridSessionArtifactsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTestGridSessionArtifacts(request), context);
 }
 
-void DeviceFarmClient::ListTestGridSessionArtifactsAsyncHelper(const ListTestGridSessionArtifactsRequest& request, const ListTestGridSessionArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListTestGridSessionArtifactsAsync(const ListTestGridSessionArtifactsRequest& request, const ListTestGridSessionArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTestGridSessionArtifacts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListTestGridSessionArtifactsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTestGridSessionsOutcome DeviceFarmClient::ListTestGridSessions(const ListTestGridSessionsRequest& request) const
@@ -1535,14 +1535,14 @@ ListTestGridSessionsOutcomeCallable DeviceFarmClient::ListTestGridSessionsCallab
   return task->get_future();
 }
 
-void DeviceFarmClient::ListTestGridSessionsAsync(const ListTestGridSessionsRequest& request, const ListTestGridSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListTestGridSessionsAsyncHelper(DeviceFarmClient const * const clientThis, const ListTestGridSessionsRequest& request, const ListTestGridSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTestGridSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTestGridSessions(request), context);
 }
 
-void DeviceFarmClient::ListTestGridSessionsAsyncHelper(const ListTestGridSessionsRequest& request, const ListTestGridSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListTestGridSessionsAsync(const ListTestGridSessionsRequest& request, const ListTestGridSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTestGridSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListTestGridSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTestsOutcome DeviceFarmClient::ListTests(const ListTestsRequest& request) const
@@ -1559,14 +1559,14 @@ ListTestsOutcomeCallable DeviceFarmClient::ListTestsCallable(const ListTestsRequ
   return task->get_future();
 }
 
-void DeviceFarmClient::ListTestsAsync(const ListTestsRequest& request, const ListTestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListTestsAsyncHelper(DeviceFarmClient const * const clientThis, const ListTestsRequest& request, const ListTestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTestsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTests(request), context);
 }
 
-void DeviceFarmClient::ListTestsAsyncHelper(const ListTestsRequest& request, const ListTestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListTestsAsync(const ListTestsRequest& request, const ListTestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTests(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListTestsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUniqueProblemsOutcome DeviceFarmClient::ListUniqueProblems(const ListUniqueProblemsRequest& request) const
@@ -1583,14 +1583,14 @@ ListUniqueProblemsOutcomeCallable DeviceFarmClient::ListUniqueProblemsCallable(c
   return task->get_future();
 }
 
-void DeviceFarmClient::ListUniqueProblemsAsync(const ListUniqueProblemsRequest& request, const ListUniqueProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListUniqueProblemsAsyncHelper(DeviceFarmClient const * const clientThis, const ListUniqueProblemsRequest& request, const ListUniqueProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUniqueProblemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUniqueProblems(request), context);
 }
 
-void DeviceFarmClient::ListUniqueProblemsAsyncHelper(const ListUniqueProblemsRequest& request, const ListUniqueProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListUniqueProblemsAsync(const ListUniqueProblemsRequest& request, const ListUniqueProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUniqueProblems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListUniqueProblemsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUploadsOutcome DeviceFarmClient::ListUploads(const ListUploadsRequest& request) const
@@ -1607,14 +1607,14 @@ ListUploadsOutcomeCallable DeviceFarmClient::ListUploadsCallable(const ListUploa
   return task->get_future();
 }
 
-void DeviceFarmClient::ListUploadsAsync(const ListUploadsRequest& request, const ListUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListUploadsAsyncHelper(DeviceFarmClient const * const clientThis, const ListUploadsRequest& request, const ListUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUploadsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUploads(request), context);
 }
 
-void DeviceFarmClient::ListUploadsAsyncHelper(const ListUploadsRequest& request, const ListUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListUploadsAsync(const ListUploadsRequest& request, const ListUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUploads(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListUploadsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVPCEConfigurationsOutcome DeviceFarmClient::ListVPCEConfigurations(const ListVPCEConfigurationsRequest& request) const
@@ -1631,14 +1631,14 @@ ListVPCEConfigurationsOutcomeCallable DeviceFarmClient::ListVPCEConfigurationsCa
   return task->get_future();
 }
 
-void DeviceFarmClient::ListVPCEConfigurationsAsync(const ListVPCEConfigurationsRequest& request, const ListVPCEConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientListVPCEConfigurationsAsyncHelper(DeviceFarmClient const * const clientThis, const ListVPCEConfigurationsRequest& request, const ListVPCEConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVPCEConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVPCEConfigurations(request), context);
 }
 
-void DeviceFarmClient::ListVPCEConfigurationsAsyncHelper(const ListVPCEConfigurationsRequest& request, const ListVPCEConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ListVPCEConfigurationsAsync(const ListVPCEConfigurationsRequest& request, const ListVPCEConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVPCEConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientListVPCEConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 PurchaseOfferingOutcome DeviceFarmClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
@@ -1655,14 +1655,14 @@ PurchaseOfferingOutcomeCallable DeviceFarmClient::PurchaseOfferingCallable(const
   return task->get_future();
 }
 
-void DeviceFarmClient::PurchaseOfferingAsync(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientPurchaseOfferingAsyncHelper(DeviceFarmClient const * const clientThis, const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PurchaseOfferingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PurchaseOffering(request), context);
 }
 
-void DeviceFarmClient::PurchaseOfferingAsyncHelper(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::PurchaseOfferingAsync(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PurchaseOffering(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientPurchaseOfferingAsyncHelper( this, request, handler, context ); } );
 }
 
 RenewOfferingOutcome DeviceFarmClient::RenewOffering(const RenewOfferingRequest& request) const
@@ -1679,14 +1679,14 @@ RenewOfferingOutcomeCallable DeviceFarmClient::RenewOfferingCallable(const Renew
   return task->get_future();
 }
 
-void DeviceFarmClient::RenewOfferingAsync(const RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientRenewOfferingAsyncHelper(DeviceFarmClient const * const clientThis, const RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RenewOfferingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RenewOffering(request), context);
 }
 
-void DeviceFarmClient::RenewOfferingAsyncHelper(const RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::RenewOfferingAsync(const RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RenewOffering(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientRenewOfferingAsyncHelper( this, request, handler, context ); } );
 }
 
 ScheduleRunOutcome DeviceFarmClient::ScheduleRun(const ScheduleRunRequest& request) const
@@ -1703,14 +1703,14 @@ ScheduleRunOutcomeCallable DeviceFarmClient::ScheduleRunCallable(const ScheduleR
   return task->get_future();
 }
 
-void DeviceFarmClient::ScheduleRunAsync(const ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientScheduleRunAsyncHelper(DeviceFarmClient const * const clientThis, const ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ScheduleRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ScheduleRun(request), context);
 }
 
-void DeviceFarmClient::ScheduleRunAsyncHelper(const ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::ScheduleRunAsync(const ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ScheduleRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientScheduleRunAsyncHelper( this, request, handler, context ); } );
 }
 
 StopJobOutcome DeviceFarmClient::StopJob(const StopJobRequest& request) const
@@ -1727,14 +1727,14 @@ StopJobOutcomeCallable DeviceFarmClient::StopJobCallable(const StopJobRequest& r
   return task->get_future();
 }
 
-void DeviceFarmClient::StopJobAsync(const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientStopJobAsyncHelper(DeviceFarmClient const * const clientThis, const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopJob(request), context);
 }
 
-void DeviceFarmClient::StopJobAsyncHelper(const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::StopJobAsync(const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientStopJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopRemoteAccessSessionOutcome DeviceFarmClient::StopRemoteAccessSession(const StopRemoteAccessSessionRequest& request) const
@@ -1751,14 +1751,14 @@ StopRemoteAccessSessionOutcomeCallable DeviceFarmClient::StopRemoteAccessSession
   return task->get_future();
 }
 
-void DeviceFarmClient::StopRemoteAccessSessionAsync(const StopRemoteAccessSessionRequest& request, const StopRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientStopRemoteAccessSessionAsyncHelper(DeviceFarmClient const * const clientThis, const StopRemoteAccessSessionRequest& request, const StopRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopRemoteAccessSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopRemoteAccessSession(request), context);
 }
 
-void DeviceFarmClient::StopRemoteAccessSessionAsyncHelper(const StopRemoteAccessSessionRequest& request, const StopRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::StopRemoteAccessSessionAsync(const StopRemoteAccessSessionRequest& request, const StopRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopRemoteAccessSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientStopRemoteAccessSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 StopRunOutcome DeviceFarmClient::StopRun(const StopRunRequest& request) const
@@ -1775,14 +1775,14 @@ StopRunOutcomeCallable DeviceFarmClient::StopRunCallable(const StopRunRequest& r
   return task->get_future();
 }
 
-void DeviceFarmClient::StopRunAsync(const StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientStopRunAsyncHelper(DeviceFarmClient const * const clientThis, const StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopRun(request), context);
 }
 
-void DeviceFarmClient::StopRunAsyncHelper(const StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::StopRunAsync(const StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientStopRunAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome DeviceFarmClient::TagResource(const TagResourceRequest& request) const
@@ -1799,14 +1799,14 @@ TagResourceOutcomeCallable DeviceFarmClient::TagResourceCallable(const TagResour
   return task->get_future();
 }
 
-void DeviceFarmClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientTagResourceAsyncHelper(DeviceFarmClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void DeviceFarmClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome DeviceFarmClient::UntagResource(const UntagResourceRequest& request) const
@@ -1823,14 +1823,14 @@ UntagResourceOutcomeCallable DeviceFarmClient::UntagResourceCallable(const Untag
   return task->get_future();
 }
 
-void DeviceFarmClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientUntagResourceAsyncHelper(DeviceFarmClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void DeviceFarmClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDeviceInstanceOutcome DeviceFarmClient::UpdateDeviceInstance(const UpdateDeviceInstanceRequest& request) const
@@ -1847,14 +1847,14 @@ UpdateDeviceInstanceOutcomeCallable DeviceFarmClient::UpdateDeviceInstanceCallab
   return task->get_future();
 }
 
-void DeviceFarmClient::UpdateDeviceInstanceAsync(const UpdateDeviceInstanceRequest& request, const UpdateDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientUpdateDeviceInstanceAsyncHelper(DeviceFarmClient const * const clientThis, const UpdateDeviceInstanceRequest& request, const UpdateDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeviceInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDeviceInstance(request), context);
 }
 
-void DeviceFarmClient::UpdateDeviceInstanceAsyncHelper(const UpdateDeviceInstanceRequest& request, const UpdateDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::UpdateDeviceInstanceAsync(const UpdateDeviceInstanceRequest& request, const UpdateDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDeviceInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientUpdateDeviceInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDevicePoolOutcome DeviceFarmClient::UpdateDevicePool(const UpdateDevicePoolRequest& request) const
@@ -1871,14 +1871,14 @@ UpdateDevicePoolOutcomeCallable DeviceFarmClient::UpdateDevicePoolCallable(const
   return task->get_future();
 }
 
-void DeviceFarmClient::UpdateDevicePoolAsync(const UpdateDevicePoolRequest& request, const UpdateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientUpdateDevicePoolAsyncHelper(DeviceFarmClient const * const clientThis, const UpdateDevicePoolRequest& request, const UpdateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDevicePoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDevicePool(request), context);
 }
 
-void DeviceFarmClient::UpdateDevicePoolAsyncHelper(const UpdateDevicePoolRequest& request, const UpdateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::UpdateDevicePoolAsync(const UpdateDevicePoolRequest& request, const UpdateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDevicePool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientUpdateDevicePoolAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateInstanceProfileOutcome DeviceFarmClient::UpdateInstanceProfile(const UpdateInstanceProfileRequest& request) const
@@ -1895,14 +1895,14 @@ UpdateInstanceProfileOutcomeCallable DeviceFarmClient::UpdateInstanceProfileCall
   return task->get_future();
 }
 
-void DeviceFarmClient::UpdateInstanceProfileAsync(const UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientUpdateInstanceProfileAsyncHelper(DeviceFarmClient const * const clientThis, const UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInstanceProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateInstanceProfile(request), context);
 }
 
-void DeviceFarmClient::UpdateInstanceProfileAsyncHelper(const UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::UpdateInstanceProfileAsync(const UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateInstanceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientUpdateInstanceProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateNetworkProfileOutcome DeviceFarmClient::UpdateNetworkProfile(const UpdateNetworkProfileRequest& request) const
@@ -1919,14 +1919,14 @@ UpdateNetworkProfileOutcomeCallable DeviceFarmClient::UpdateNetworkProfileCallab
   return task->get_future();
 }
 
-void DeviceFarmClient::UpdateNetworkProfileAsync(const UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientUpdateNetworkProfileAsyncHelper(DeviceFarmClient const * const clientThis, const UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNetworkProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateNetworkProfile(request), context);
 }
 
-void DeviceFarmClient::UpdateNetworkProfileAsyncHelper(const UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::UpdateNetworkProfileAsync(const UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateNetworkProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientUpdateNetworkProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProjectOutcome DeviceFarmClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -1943,14 +1943,14 @@ UpdateProjectOutcomeCallable DeviceFarmClient::UpdateProjectCallable(const Updat
   return task->get_future();
 }
 
-void DeviceFarmClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientUpdateProjectAsyncHelper(DeviceFarmClient const * const clientThis, const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProject(request), context);
 }
 
-void DeviceFarmClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientUpdateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTestGridProjectOutcome DeviceFarmClient::UpdateTestGridProject(const UpdateTestGridProjectRequest& request) const
@@ -1967,14 +1967,14 @@ UpdateTestGridProjectOutcomeCallable DeviceFarmClient::UpdateTestGridProjectCall
   return task->get_future();
 }
 
-void DeviceFarmClient::UpdateTestGridProjectAsync(const UpdateTestGridProjectRequest& request, const UpdateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientUpdateTestGridProjectAsyncHelper(DeviceFarmClient const * const clientThis, const UpdateTestGridProjectRequest& request, const UpdateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTestGridProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTestGridProject(request), context);
 }
 
-void DeviceFarmClient::UpdateTestGridProjectAsyncHelper(const UpdateTestGridProjectRequest& request, const UpdateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::UpdateTestGridProjectAsync(const UpdateTestGridProjectRequest& request, const UpdateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTestGridProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientUpdateTestGridProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUploadOutcome DeviceFarmClient::UpdateUpload(const UpdateUploadRequest& request) const
@@ -1991,14 +1991,14 @@ UpdateUploadOutcomeCallable DeviceFarmClient::UpdateUploadCallable(const UpdateU
   return task->get_future();
 }
 
-void DeviceFarmClient::UpdateUploadAsync(const UpdateUploadRequest& request, const UpdateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientUpdateUploadAsyncHelper(DeviceFarmClient const * const clientThis, const UpdateUploadRequest& request, const UpdateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUploadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUpload(request), context);
 }
 
-void DeviceFarmClient::UpdateUploadAsyncHelper(const UpdateUploadRequest& request, const UpdateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::UpdateUploadAsync(const UpdateUploadRequest& request, const UpdateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUpload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientUpdateUploadAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateVPCEConfigurationOutcome DeviceFarmClient::UpdateVPCEConfiguration(const UpdateVPCEConfigurationRequest& request) const
@@ -2015,13 +2015,13 @@ UpdateVPCEConfigurationOutcomeCallable DeviceFarmClient::UpdateVPCEConfiguration
   return task->get_future();
 }
 
-void DeviceFarmClient::UpdateVPCEConfigurationAsync(const UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClientUpdateVPCEConfigurationAsyncHelper(DeviceFarmClient const * const clientThis, const UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVPCEConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateVPCEConfiguration(request), context);
 }
 
-void DeviceFarmClient::UpdateVPCEConfigurationAsyncHelper(const UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DeviceFarmClient::UpdateVPCEConfigurationAsync(const UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateVPCEConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DeviceFarmClientUpdateVPCEConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 

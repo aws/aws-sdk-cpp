@@ -145,14 +145,14 @@ AddApplicationCloudWatchLoggingOptionOutcomeCallable KinesisAnalyticsV2Client::A
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::AddApplicationCloudWatchLoggingOptionAsync(const AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientAddApplicationCloudWatchLoggingOptionAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddApplicationCloudWatchLoggingOptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddApplicationCloudWatchLoggingOption(request), context);
 }
 
-void KinesisAnalyticsV2Client::AddApplicationCloudWatchLoggingOptionAsyncHelper(const AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::AddApplicationCloudWatchLoggingOptionAsync(const AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddApplicationCloudWatchLoggingOption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientAddApplicationCloudWatchLoggingOptionAsyncHelper( this, request, handler, context ); } );
 }
 
 AddApplicationInputOutcome KinesisAnalyticsV2Client::AddApplicationInput(const AddApplicationInputRequest& request) const
@@ -169,14 +169,14 @@ AddApplicationInputOutcomeCallable KinesisAnalyticsV2Client::AddApplicationInput
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::AddApplicationInputAsync(const AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientAddApplicationInputAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddApplicationInputAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddApplicationInput(request), context);
 }
 
-void KinesisAnalyticsV2Client::AddApplicationInputAsyncHelper(const AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::AddApplicationInputAsync(const AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddApplicationInput(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientAddApplicationInputAsyncHelper( this, request, handler, context ); } );
 }
 
 AddApplicationInputProcessingConfigurationOutcome KinesisAnalyticsV2Client::AddApplicationInputProcessingConfiguration(const AddApplicationInputProcessingConfigurationRequest& request) const
@@ -193,14 +193,14 @@ AddApplicationInputProcessingConfigurationOutcomeCallable KinesisAnalyticsV2Clie
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::AddApplicationInputProcessingConfigurationAsync(const AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientAddApplicationInputProcessingConfigurationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddApplicationInputProcessingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddApplicationInputProcessingConfiguration(request), context);
 }
 
-void KinesisAnalyticsV2Client::AddApplicationInputProcessingConfigurationAsyncHelper(const AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::AddApplicationInputProcessingConfigurationAsync(const AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddApplicationInputProcessingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientAddApplicationInputProcessingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 AddApplicationOutputOutcome KinesisAnalyticsV2Client::AddApplicationOutput(const AddApplicationOutputRequest& request) const
@@ -217,14 +217,14 @@ AddApplicationOutputOutcomeCallable KinesisAnalyticsV2Client::AddApplicationOutp
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::AddApplicationOutputAsync(const AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientAddApplicationOutputAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddApplicationOutputAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddApplicationOutput(request), context);
 }
 
-void KinesisAnalyticsV2Client::AddApplicationOutputAsyncHelper(const AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::AddApplicationOutputAsync(const AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddApplicationOutput(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientAddApplicationOutputAsyncHelper( this, request, handler, context ); } );
 }
 
 AddApplicationReferenceDataSourceOutcome KinesisAnalyticsV2Client::AddApplicationReferenceDataSource(const AddApplicationReferenceDataSourceRequest& request) const
@@ -241,14 +241,14 @@ AddApplicationReferenceDataSourceOutcomeCallable KinesisAnalyticsV2Client::AddAp
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::AddApplicationReferenceDataSourceAsync(const AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientAddApplicationReferenceDataSourceAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddApplicationReferenceDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddApplicationReferenceDataSource(request), context);
 }
 
-void KinesisAnalyticsV2Client::AddApplicationReferenceDataSourceAsyncHelper(const AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::AddApplicationReferenceDataSourceAsync(const AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddApplicationReferenceDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientAddApplicationReferenceDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 AddApplicationVpcConfigurationOutcome KinesisAnalyticsV2Client::AddApplicationVpcConfiguration(const AddApplicationVpcConfigurationRequest& request) const
@@ -265,14 +265,14 @@ AddApplicationVpcConfigurationOutcomeCallable KinesisAnalyticsV2Client::AddAppli
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::AddApplicationVpcConfigurationAsync(const AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientAddApplicationVpcConfigurationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddApplicationVpcConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddApplicationVpcConfiguration(request), context);
 }
 
-void KinesisAnalyticsV2Client::AddApplicationVpcConfigurationAsyncHelper(const AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::AddApplicationVpcConfigurationAsync(const AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddApplicationVpcConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientAddApplicationVpcConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateApplicationOutcome KinesisAnalyticsV2Client::CreateApplication(const CreateApplicationRequest& request) const
@@ -289,14 +289,14 @@ CreateApplicationOutcomeCallable KinesisAnalyticsV2Client::CreateApplicationCall
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientCreateApplicationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplication(request), context);
 }
 
-void KinesisAnalyticsV2Client::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientCreateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateApplicationPresignedUrlOutcome KinesisAnalyticsV2Client::CreateApplicationPresignedUrl(const CreateApplicationPresignedUrlRequest& request) const
@@ -313,14 +313,14 @@ CreateApplicationPresignedUrlOutcomeCallable KinesisAnalyticsV2Client::CreateApp
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::CreateApplicationPresignedUrlAsync(const CreateApplicationPresignedUrlRequest& request, const CreateApplicationPresignedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientCreateApplicationPresignedUrlAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const CreateApplicationPresignedUrlRequest& request, const CreateApplicationPresignedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationPresignedUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplicationPresignedUrl(request), context);
 }
 
-void KinesisAnalyticsV2Client::CreateApplicationPresignedUrlAsyncHelper(const CreateApplicationPresignedUrlRequest& request, const CreateApplicationPresignedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::CreateApplicationPresignedUrlAsync(const CreateApplicationPresignedUrlRequest& request, const CreateApplicationPresignedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplicationPresignedUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientCreateApplicationPresignedUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateApplicationSnapshotOutcome KinesisAnalyticsV2Client::CreateApplicationSnapshot(const CreateApplicationSnapshotRequest& request) const
@@ -337,14 +337,14 @@ CreateApplicationSnapshotOutcomeCallable KinesisAnalyticsV2Client::CreateApplica
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::CreateApplicationSnapshotAsync(const CreateApplicationSnapshotRequest& request, const CreateApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientCreateApplicationSnapshotAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const CreateApplicationSnapshotRequest& request, const CreateApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplicationSnapshot(request), context);
 }
 
-void KinesisAnalyticsV2Client::CreateApplicationSnapshotAsyncHelper(const CreateApplicationSnapshotRequest& request, const CreateApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::CreateApplicationSnapshotAsync(const CreateApplicationSnapshotRequest& request, const CreateApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplicationSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientCreateApplicationSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationOutcome KinesisAnalyticsV2Client::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -361,14 +361,14 @@ DeleteApplicationOutcomeCallable KinesisAnalyticsV2Client::DeleteApplicationCall
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDeleteApplicationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplication(request), context);
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDeleteApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationCloudWatchLoggingOptionOutcome KinesisAnalyticsV2Client::DeleteApplicationCloudWatchLoggingOption(const DeleteApplicationCloudWatchLoggingOptionRequest& request) const
@@ -385,14 +385,14 @@ DeleteApplicationCloudWatchLoggingOptionOutcomeCallable KinesisAnalyticsV2Client
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationCloudWatchLoggingOptionAsync(const DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDeleteApplicationCloudWatchLoggingOptionAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationCloudWatchLoggingOptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplicationCloudWatchLoggingOption(request), context);
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationCloudWatchLoggingOptionAsyncHelper(const DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DeleteApplicationCloudWatchLoggingOptionAsync(const DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplicationCloudWatchLoggingOption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDeleteApplicationCloudWatchLoggingOptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationInputProcessingConfigurationOutcome KinesisAnalyticsV2Client::DeleteApplicationInputProcessingConfiguration(const DeleteApplicationInputProcessingConfigurationRequest& request) const
@@ -409,14 +409,14 @@ DeleteApplicationInputProcessingConfigurationOutcomeCallable KinesisAnalyticsV2C
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationInputProcessingConfigurationAsync(const DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDeleteApplicationInputProcessingConfigurationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationInputProcessingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplicationInputProcessingConfiguration(request), context);
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationInputProcessingConfigurationAsyncHelper(const DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DeleteApplicationInputProcessingConfigurationAsync(const DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplicationInputProcessingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDeleteApplicationInputProcessingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationOutputOutcome KinesisAnalyticsV2Client::DeleteApplicationOutput(const DeleteApplicationOutputRequest& request) const
@@ -433,14 +433,14 @@ DeleteApplicationOutputOutcomeCallable KinesisAnalyticsV2Client::DeleteApplicati
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationOutputAsync(const DeleteApplicationOutputRequest& request, const DeleteApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDeleteApplicationOutputAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DeleteApplicationOutputRequest& request, const DeleteApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationOutputAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplicationOutput(request), context);
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationOutputAsyncHelper(const DeleteApplicationOutputRequest& request, const DeleteApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DeleteApplicationOutputAsync(const DeleteApplicationOutputRequest& request, const DeleteApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplicationOutput(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDeleteApplicationOutputAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationReferenceDataSourceOutcome KinesisAnalyticsV2Client::DeleteApplicationReferenceDataSource(const DeleteApplicationReferenceDataSourceRequest& request) const
@@ -457,14 +457,14 @@ DeleteApplicationReferenceDataSourceOutcomeCallable KinesisAnalyticsV2Client::De
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationReferenceDataSourceAsync(const DeleteApplicationReferenceDataSourceRequest& request, const DeleteApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDeleteApplicationReferenceDataSourceAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DeleteApplicationReferenceDataSourceRequest& request, const DeleteApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationReferenceDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplicationReferenceDataSource(request), context);
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationReferenceDataSourceAsyncHelper(const DeleteApplicationReferenceDataSourceRequest& request, const DeleteApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DeleteApplicationReferenceDataSourceAsync(const DeleteApplicationReferenceDataSourceRequest& request, const DeleteApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplicationReferenceDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDeleteApplicationReferenceDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationSnapshotOutcome KinesisAnalyticsV2Client::DeleteApplicationSnapshot(const DeleteApplicationSnapshotRequest& request) const
@@ -481,14 +481,14 @@ DeleteApplicationSnapshotOutcomeCallable KinesisAnalyticsV2Client::DeleteApplica
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationSnapshotAsync(const DeleteApplicationSnapshotRequest& request, const DeleteApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDeleteApplicationSnapshotAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DeleteApplicationSnapshotRequest& request, const DeleteApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplicationSnapshot(request), context);
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationSnapshotAsyncHelper(const DeleteApplicationSnapshotRequest& request, const DeleteApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DeleteApplicationSnapshotAsync(const DeleteApplicationSnapshotRequest& request, const DeleteApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplicationSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDeleteApplicationSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationVpcConfigurationOutcome KinesisAnalyticsV2Client::DeleteApplicationVpcConfiguration(const DeleteApplicationVpcConfigurationRequest& request) const
@@ -505,14 +505,14 @@ DeleteApplicationVpcConfigurationOutcomeCallable KinesisAnalyticsV2Client::Delet
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationVpcConfigurationAsync(const DeleteApplicationVpcConfigurationRequest& request, const DeleteApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDeleteApplicationVpcConfigurationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DeleteApplicationVpcConfigurationRequest& request, const DeleteApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationVpcConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplicationVpcConfiguration(request), context);
 }
 
-void KinesisAnalyticsV2Client::DeleteApplicationVpcConfigurationAsyncHelper(const DeleteApplicationVpcConfigurationRequest& request, const DeleteApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DeleteApplicationVpcConfigurationAsync(const DeleteApplicationVpcConfigurationRequest& request, const DeleteApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplicationVpcConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDeleteApplicationVpcConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeApplicationOutcome KinesisAnalyticsV2Client::DescribeApplication(const DescribeApplicationRequest& request) const
@@ -529,14 +529,14 @@ DescribeApplicationOutcomeCallable KinesisAnalyticsV2Client::DescribeApplication
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DescribeApplicationAsync(const DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDescribeApplicationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApplication(request), context);
 }
 
-void KinesisAnalyticsV2Client::DescribeApplicationAsyncHelper(const DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DescribeApplicationAsync(const DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDescribeApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeApplicationSnapshotOutcome KinesisAnalyticsV2Client::DescribeApplicationSnapshot(const DescribeApplicationSnapshotRequest& request) const
@@ -553,14 +553,14 @@ DescribeApplicationSnapshotOutcomeCallable KinesisAnalyticsV2Client::DescribeApp
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DescribeApplicationSnapshotAsync(const DescribeApplicationSnapshotRequest& request, const DescribeApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDescribeApplicationSnapshotAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DescribeApplicationSnapshotRequest& request, const DescribeApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApplicationSnapshot(request), context);
 }
 
-void KinesisAnalyticsV2Client::DescribeApplicationSnapshotAsyncHelper(const DescribeApplicationSnapshotRequest& request, const DescribeApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DescribeApplicationSnapshotAsync(const DescribeApplicationSnapshotRequest& request, const DescribeApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApplicationSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDescribeApplicationSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeApplicationVersionOutcome KinesisAnalyticsV2Client::DescribeApplicationVersion(const DescribeApplicationVersionRequest& request) const
@@ -577,14 +577,14 @@ DescribeApplicationVersionOutcomeCallable KinesisAnalyticsV2Client::DescribeAppl
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DescribeApplicationVersionAsync(const DescribeApplicationVersionRequest& request, const DescribeApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDescribeApplicationVersionAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DescribeApplicationVersionRequest& request, const DescribeApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApplicationVersion(request), context);
 }
 
-void KinesisAnalyticsV2Client::DescribeApplicationVersionAsyncHelper(const DescribeApplicationVersionRequest& request, const DescribeApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DescribeApplicationVersionAsync(const DescribeApplicationVersionRequest& request, const DescribeApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApplicationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDescribeApplicationVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DiscoverInputSchemaOutcome KinesisAnalyticsV2Client::DiscoverInputSchema(const DiscoverInputSchemaRequest& request) const
@@ -601,14 +601,14 @@ DiscoverInputSchemaOutcomeCallable KinesisAnalyticsV2Client::DiscoverInputSchema
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::DiscoverInputSchemaAsync(const DiscoverInputSchemaRequest& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientDiscoverInputSchemaAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const DiscoverInputSchemaRequest& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DiscoverInputSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DiscoverInputSchema(request), context);
 }
 
-void KinesisAnalyticsV2Client::DiscoverInputSchemaAsyncHelper(const DiscoverInputSchemaRequest& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::DiscoverInputSchemaAsync(const DiscoverInputSchemaRequest& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DiscoverInputSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientDiscoverInputSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationSnapshotsOutcome KinesisAnalyticsV2Client::ListApplicationSnapshots(const ListApplicationSnapshotsRequest& request) const
@@ -625,14 +625,14 @@ ListApplicationSnapshotsOutcomeCallable KinesisAnalyticsV2Client::ListApplicatio
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::ListApplicationSnapshotsAsync(const ListApplicationSnapshotsRequest& request, const ListApplicationSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientListApplicationSnapshotsAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const ListApplicationSnapshotsRequest& request, const ListApplicationSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplicationSnapshots(request), context);
 }
 
-void KinesisAnalyticsV2Client::ListApplicationSnapshotsAsyncHelper(const ListApplicationSnapshotsRequest& request, const ListApplicationSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::ListApplicationSnapshotsAsync(const ListApplicationSnapshotsRequest& request, const ListApplicationSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplicationSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientListApplicationSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationVersionsOutcome KinesisAnalyticsV2Client::ListApplicationVersions(const ListApplicationVersionsRequest& request) const
@@ -649,14 +649,14 @@ ListApplicationVersionsOutcomeCallable KinesisAnalyticsV2Client::ListApplication
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::ListApplicationVersionsAsync(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientListApplicationVersionsAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplicationVersions(request), context);
 }
 
-void KinesisAnalyticsV2Client::ListApplicationVersionsAsyncHelper(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::ListApplicationVersionsAsync(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplicationVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientListApplicationVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationsOutcome KinesisAnalyticsV2Client::ListApplications(const ListApplicationsRequest& request) const
@@ -673,14 +673,14 @@ ListApplicationsOutcomeCallable KinesisAnalyticsV2Client::ListApplicationsCallab
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientListApplicationsAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplications(request), context);
 }
 
-void KinesisAnalyticsV2Client::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientListApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome KinesisAnalyticsV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -697,14 +697,14 @@ ListTagsForResourceOutcomeCallable KinesisAnalyticsV2Client::ListTagsForResource
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientListTagsForResourceAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void KinesisAnalyticsV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 RollbackApplicationOutcome KinesisAnalyticsV2Client::RollbackApplication(const RollbackApplicationRequest& request) const
@@ -721,14 +721,14 @@ RollbackApplicationOutcomeCallable KinesisAnalyticsV2Client::RollbackApplication
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::RollbackApplicationAsync(const RollbackApplicationRequest& request, const RollbackApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientRollbackApplicationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const RollbackApplicationRequest& request, const RollbackApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RollbackApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RollbackApplication(request), context);
 }
 
-void KinesisAnalyticsV2Client::RollbackApplicationAsyncHelper(const RollbackApplicationRequest& request, const RollbackApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::RollbackApplicationAsync(const RollbackApplicationRequest& request, const RollbackApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RollbackApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientRollbackApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 StartApplicationOutcome KinesisAnalyticsV2Client::StartApplication(const StartApplicationRequest& request) const
@@ -745,14 +745,14 @@ StartApplicationOutcomeCallable KinesisAnalyticsV2Client::StartApplicationCallab
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::StartApplicationAsync(const StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientStartApplicationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartApplication(request), context);
 }
 
-void KinesisAnalyticsV2Client::StartApplicationAsyncHelper(const StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::StartApplicationAsync(const StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientStartApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 StopApplicationOutcome KinesisAnalyticsV2Client::StopApplication(const StopApplicationRequest& request) const
@@ -769,14 +769,14 @@ StopApplicationOutcomeCallable KinesisAnalyticsV2Client::StopApplicationCallable
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::StopApplicationAsync(const StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientStopApplicationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopApplication(request), context);
 }
 
-void KinesisAnalyticsV2Client::StopApplicationAsyncHelper(const StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::StopApplicationAsync(const StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientStopApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome KinesisAnalyticsV2Client::TagResource(const TagResourceRequest& request) const
@@ -793,14 +793,14 @@ TagResourceOutcomeCallable KinesisAnalyticsV2Client::TagResourceCallable(const T
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientTagResourceAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void KinesisAnalyticsV2Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome KinesisAnalyticsV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -817,14 +817,14 @@ UntagResourceOutcomeCallable KinesisAnalyticsV2Client::UntagResourceCallable(con
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientUntagResourceAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void KinesisAnalyticsV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationOutcome KinesisAnalyticsV2Client::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -841,14 +841,14 @@ UpdateApplicationOutcomeCallable KinesisAnalyticsV2Client::UpdateApplicationCall
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientUpdateApplicationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplication(request), context);
 }
 
-void KinesisAnalyticsV2Client::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientUpdateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationMaintenanceConfigurationOutcome KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfiguration(const UpdateApplicationMaintenanceConfigurationRequest& request) const
@@ -865,13 +865,13 @@ UpdateApplicationMaintenanceConfigurationOutcomeCallable KinesisAnalyticsV2Clien
   return task->get_future();
 }
 
-void KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfigurationAsync(const UpdateApplicationMaintenanceConfigurationRequest& request, const UpdateApplicationMaintenanceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2ClientUpdateApplicationMaintenanceConfigurationAsyncHelper(KinesisAnalyticsV2Client const * const clientThis, const UpdateApplicationMaintenanceConfigurationRequest& request, const UpdateApplicationMaintenanceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationMaintenanceConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplicationMaintenanceConfiguration(request), context);
 }
 
-void KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfigurationAsyncHelper(const UpdateApplicationMaintenanceConfigurationRequest& request, const UpdateApplicationMaintenanceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfigurationAsync(const UpdateApplicationMaintenanceConfigurationRequest& request, const UpdateApplicationMaintenanceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplicationMaintenanceConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisAnalyticsV2ClientUpdateApplicationMaintenanceConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -124,14 +124,14 @@ DescribeAffectedAccountsForOrganizationOutcomeCallable HealthClient::DescribeAff
   return task->get_future();
 }
 
-void HealthClient::DescribeAffectedAccountsForOrganizationAsync(const DescribeAffectedAccountsForOrganizationRequest& request, const DescribeAffectedAccountsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeAffectedAccountsForOrganizationAsyncHelper(HealthClient const * const clientThis, const DescribeAffectedAccountsForOrganizationRequest& request, const DescribeAffectedAccountsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAffectedAccountsForOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAffectedAccountsForOrganization(request), context);
 }
 
-void HealthClient::DescribeAffectedAccountsForOrganizationAsyncHelper(const DescribeAffectedAccountsForOrganizationRequest& request, const DescribeAffectedAccountsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeAffectedAccountsForOrganizationAsync(const DescribeAffectedAccountsForOrganizationRequest& request, const DescribeAffectedAccountsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAffectedAccountsForOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthClientDescribeAffectedAccountsForOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAffectedEntitiesOutcome HealthClient::DescribeAffectedEntities(const DescribeAffectedEntitiesRequest& request) const
@@ -148,14 +148,14 @@ DescribeAffectedEntitiesOutcomeCallable HealthClient::DescribeAffectedEntitiesCa
   return task->get_future();
 }
 
-void HealthClient::DescribeAffectedEntitiesAsync(const DescribeAffectedEntitiesRequest& request, const DescribeAffectedEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeAffectedEntitiesAsyncHelper(HealthClient const * const clientThis, const DescribeAffectedEntitiesRequest& request, const DescribeAffectedEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAffectedEntitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAffectedEntities(request), context);
 }
 
-void HealthClient::DescribeAffectedEntitiesAsyncHelper(const DescribeAffectedEntitiesRequest& request, const DescribeAffectedEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeAffectedEntitiesAsync(const DescribeAffectedEntitiesRequest& request, const DescribeAffectedEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAffectedEntities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthClientDescribeAffectedEntitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAffectedEntitiesForOrganizationOutcome HealthClient::DescribeAffectedEntitiesForOrganization(const DescribeAffectedEntitiesForOrganizationRequest& request) const
@@ -172,14 +172,14 @@ DescribeAffectedEntitiesForOrganizationOutcomeCallable HealthClient::DescribeAff
   return task->get_future();
 }
 
-void HealthClient::DescribeAffectedEntitiesForOrganizationAsync(const DescribeAffectedEntitiesForOrganizationRequest& request, const DescribeAffectedEntitiesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeAffectedEntitiesForOrganizationAsyncHelper(HealthClient const * const clientThis, const DescribeAffectedEntitiesForOrganizationRequest& request, const DescribeAffectedEntitiesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAffectedEntitiesForOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAffectedEntitiesForOrganization(request), context);
 }
 
-void HealthClient::DescribeAffectedEntitiesForOrganizationAsyncHelper(const DescribeAffectedEntitiesForOrganizationRequest& request, const DescribeAffectedEntitiesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeAffectedEntitiesForOrganizationAsync(const DescribeAffectedEntitiesForOrganizationRequest& request, const DescribeAffectedEntitiesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAffectedEntitiesForOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthClientDescribeAffectedEntitiesForOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEntityAggregatesOutcome HealthClient::DescribeEntityAggregates(const DescribeEntityAggregatesRequest& request) const
@@ -196,14 +196,14 @@ DescribeEntityAggregatesOutcomeCallable HealthClient::DescribeEntityAggregatesCa
   return task->get_future();
 }
 
-void HealthClient::DescribeEntityAggregatesAsync(const DescribeEntityAggregatesRequest& request, const DescribeEntityAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeEntityAggregatesAsyncHelper(HealthClient const * const clientThis, const DescribeEntityAggregatesRequest& request, const DescribeEntityAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEntityAggregatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEntityAggregates(request), context);
 }
 
-void HealthClient::DescribeEntityAggregatesAsyncHelper(const DescribeEntityAggregatesRequest& request, const DescribeEntityAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeEntityAggregatesAsync(const DescribeEntityAggregatesRequest& request, const DescribeEntityAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEntityAggregates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthClientDescribeEntityAggregatesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventAggregatesOutcome HealthClient::DescribeEventAggregates(const DescribeEventAggregatesRequest& request) const
@@ -220,14 +220,14 @@ DescribeEventAggregatesOutcomeCallable HealthClient::DescribeEventAggregatesCall
   return task->get_future();
 }
 
-void HealthClient::DescribeEventAggregatesAsync(const DescribeEventAggregatesRequest& request, const DescribeEventAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeEventAggregatesAsyncHelper(HealthClient const * const clientThis, const DescribeEventAggregatesRequest& request, const DescribeEventAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventAggregatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEventAggregates(request), context);
 }
 
-void HealthClient::DescribeEventAggregatesAsyncHelper(const DescribeEventAggregatesRequest& request, const DescribeEventAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeEventAggregatesAsync(const DescribeEventAggregatesRequest& request, const DescribeEventAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEventAggregates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthClientDescribeEventAggregatesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventDetailsOutcome HealthClient::DescribeEventDetails(const DescribeEventDetailsRequest& request) const
@@ -244,14 +244,14 @@ DescribeEventDetailsOutcomeCallable HealthClient::DescribeEventDetailsCallable(c
   return task->get_future();
 }
 
-void HealthClient::DescribeEventDetailsAsync(const DescribeEventDetailsRequest& request, const DescribeEventDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeEventDetailsAsyncHelper(HealthClient const * const clientThis, const DescribeEventDetailsRequest& request, const DescribeEventDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEventDetails(request), context);
 }
 
-void HealthClient::DescribeEventDetailsAsyncHelper(const DescribeEventDetailsRequest& request, const DescribeEventDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeEventDetailsAsync(const DescribeEventDetailsRequest& request, const DescribeEventDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEventDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthClientDescribeEventDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventDetailsForOrganizationOutcome HealthClient::DescribeEventDetailsForOrganization(const DescribeEventDetailsForOrganizationRequest& request) const
@@ -268,14 +268,14 @@ DescribeEventDetailsForOrganizationOutcomeCallable HealthClient::DescribeEventDe
   return task->get_future();
 }
 
-void HealthClient::DescribeEventDetailsForOrganizationAsync(const DescribeEventDetailsForOrganizationRequest& request, const DescribeEventDetailsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeEventDetailsForOrganizationAsyncHelper(HealthClient const * const clientThis, const DescribeEventDetailsForOrganizationRequest& request, const DescribeEventDetailsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventDetailsForOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEventDetailsForOrganization(request), context);
 }
 
-void HealthClient::DescribeEventDetailsForOrganizationAsyncHelper(const DescribeEventDetailsForOrganizationRequest& request, const DescribeEventDetailsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeEventDetailsForOrganizationAsync(const DescribeEventDetailsForOrganizationRequest& request, const DescribeEventDetailsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEventDetailsForOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthClientDescribeEventDetailsForOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventTypesOutcome HealthClient::DescribeEventTypes(const DescribeEventTypesRequest& request) const
@@ -292,14 +292,14 @@ DescribeEventTypesOutcomeCallable HealthClient::DescribeEventTypesCallable(const
   return task->get_future();
 }
 
-void HealthClient::DescribeEventTypesAsync(const DescribeEventTypesRequest& request, const DescribeEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeEventTypesAsyncHelper(HealthClient const * const clientThis, const DescribeEventTypesRequest& request, const DescribeEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEventTypes(request), context);
 }
 
-void HealthClient::DescribeEventTypesAsyncHelper(const DescribeEventTypesRequest& request, const DescribeEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeEventTypesAsync(const DescribeEventTypesRequest& request, const DescribeEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEventTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthClientDescribeEventTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventsOutcome HealthClient::DescribeEvents(const DescribeEventsRequest& request) const
@@ -316,14 +316,14 @@ DescribeEventsOutcomeCallable HealthClient::DescribeEventsCallable(const Describ
   return task->get_future();
 }
 
-void HealthClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeEventsAsyncHelper(HealthClient const * const clientThis, const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEvents(request), context);
 }
 
-void HealthClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthClientDescribeEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventsForOrganizationOutcome HealthClient::DescribeEventsForOrganization(const DescribeEventsForOrganizationRequest& request) const
@@ -340,14 +340,14 @@ DescribeEventsForOrganizationOutcomeCallable HealthClient::DescribeEventsForOrga
   return task->get_future();
 }
 
-void HealthClient::DescribeEventsForOrganizationAsync(const DescribeEventsForOrganizationRequest& request, const DescribeEventsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeEventsForOrganizationAsyncHelper(HealthClient const * const clientThis, const DescribeEventsForOrganizationRequest& request, const DescribeEventsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventsForOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEventsForOrganization(request), context);
 }
 
-void HealthClient::DescribeEventsForOrganizationAsyncHelper(const DescribeEventsForOrganizationRequest& request, const DescribeEventsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeEventsForOrganizationAsync(const DescribeEventsForOrganizationRequest& request, const DescribeEventsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEventsForOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthClientDescribeEventsForOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeHealthServiceStatusForOrganizationOutcome HealthClient::DescribeHealthServiceStatusForOrganization() const
@@ -365,14 +365,14 @@ DescribeHealthServiceStatusForOrganizationOutcomeCallable HealthClient::Describe
   return task->get_future();
 }
 
-void HealthClient::DescribeHealthServiceStatusForOrganizationAsync(const DescribeHealthServiceStatusForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDescribeHealthServiceStatusForOrganizationAsyncHelper(HealthClient const * const clientThis, const DescribeHealthServiceStatusForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->DescribeHealthServiceStatusForOrganizationAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->DescribeHealthServiceStatusForOrganization(), context);
 }
 
-void HealthClient::DescribeHealthServiceStatusForOrganizationAsyncHelper(const DescribeHealthServiceStatusForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DescribeHealthServiceStatusForOrganizationAsync(const DescribeHealthServiceStatusForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, DescribeHealthServiceStatusForOrganization(), context);
+  m_executor->Submit( [this, handler, context](){ HealthClientDescribeHealthServiceStatusForOrganizationAsyncHelper( this, handler, context ); } );
 }
 
 DisableHealthServiceAccessForOrganizationOutcome HealthClient::DisableHealthServiceAccessForOrganization() const
@@ -390,14 +390,14 @@ DisableHealthServiceAccessForOrganizationOutcomeCallable HealthClient::DisableHe
   return task->get_future();
 }
 
-void HealthClient::DisableHealthServiceAccessForOrganizationAsync(const DisableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientDisableHealthServiceAccessForOrganizationAsyncHelper(HealthClient const * const clientThis, const DisableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->DisableHealthServiceAccessForOrganizationAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->DisableHealthServiceAccessForOrganization(), context);
 }
 
-void HealthClient::DisableHealthServiceAccessForOrganizationAsyncHelper(const DisableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::DisableHealthServiceAccessForOrganizationAsync(const DisableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, DisableHealthServiceAccessForOrganization(), context);
+  m_executor->Submit( [this, handler, context](){ HealthClientDisableHealthServiceAccessForOrganizationAsyncHelper( this, handler, context ); } );
 }
 
 EnableHealthServiceAccessForOrganizationOutcome HealthClient::EnableHealthServiceAccessForOrganization() const
@@ -415,13 +415,13 @@ EnableHealthServiceAccessForOrganizationOutcomeCallable HealthClient::EnableHeal
   return task->get_future();
 }
 
-void HealthClient::EnableHealthServiceAccessForOrganizationAsync(const EnableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClientEnableHealthServiceAccessForOrganizationAsyncHelper(HealthClient const * const clientThis, const EnableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->EnableHealthServiceAccessForOrganizationAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->EnableHealthServiceAccessForOrganization(), context);
 }
 
-void HealthClient::EnableHealthServiceAccessForOrganizationAsyncHelper(const EnableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthClient::EnableHealthServiceAccessForOrganizationAsync(const EnableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, EnableHealthServiceAccessForOrganization(), context);
+  m_executor->Submit( [this, handler, context](){ HealthClientEnableHealthServiceAccessForOrganizationAsyncHelper( this, handler, context ); } );
 }
 

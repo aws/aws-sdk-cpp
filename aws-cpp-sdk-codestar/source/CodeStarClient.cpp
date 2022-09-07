@@ -132,14 +132,14 @@ AssociateTeamMemberOutcomeCallable CodeStarClient::AssociateTeamMemberCallable(c
   return task->get_future();
 }
 
-void CodeStarClient::AssociateTeamMemberAsync(const AssociateTeamMemberRequest& request, const AssociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientAssociateTeamMemberAsyncHelper(CodeStarClient const * const clientThis, const AssociateTeamMemberRequest& request, const AssociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTeamMemberAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateTeamMember(request), context);
 }
 
-void CodeStarClient::AssociateTeamMemberAsyncHelper(const AssociateTeamMemberRequest& request, const AssociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::AssociateTeamMemberAsync(const AssociateTeamMemberRequest& request, const AssociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateTeamMember(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientAssociateTeamMemberAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProjectOutcome CodeStarClient::CreateProject(const CreateProjectRequest& request) const
@@ -156,14 +156,14 @@ CreateProjectOutcomeCallable CodeStarClient::CreateProjectCallable(const CreateP
   return task->get_future();
 }
 
-void CodeStarClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientCreateProjectAsyncHelper(CodeStarClient const * const clientThis, const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProject(request), context);
 }
 
-void CodeStarClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientCreateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserProfileOutcome CodeStarClient::CreateUserProfile(const CreateUserProfileRequest& request) const
@@ -180,14 +180,14 @@ CreateUserProfileOutcomeCallable CodeStarClient::CreateUserProfileCallable(const
   return task->get_future();
 }
 
-void CodeStarClient::CreateUserProfileAsync(const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientCreateUserProfileAsyncHelper(CodeStarClient const * const clientThis, const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUserProfile(request), context);
 }
 
-void CodeStarClient::CreateUserProfileAsyncHelper(const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::CreateUserProfileAsync(const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientCreateUserProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProjectOutcome CodeStarClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -204,14 +204,14 @@ DeleteProjectOutcomeCallable CodeStarClient::DeleteProjectCallable(const DeleteP
   return task->get_future();
 }
 
-void CodeStarClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientDeleteProjectAsyncHelper(CodeStarClient const * const clientThis, const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProject(request), context);
 }
 
-void CodeStarClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientDeleteProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserProfileOutcome CodeStarClient::DeleteUserProfile(const DeleteUserProfileRequest& request) const
@@ -228,14 +228,14 @@ DeleteUserProfileOutcomeCallable CodeStarClient::DeleteUserProfileCallable(const
   return task->get_future();
 }
 
-void CodeStarClient::DeleteUserProfileAsync(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientDeleteUserProfileAsyncHelper(CodeStarClient const * const clientThis, const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUserProfile(request), context);
 }
 
-void CodeStarClient::DeleteUserProfileAsyncHelper(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::DeleteUserProfileAsync(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientDeleteUserProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProjectOutcome CodeStarClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -252,14 +252,14 @@ DescribeProjectOutcomeCallable CodeStarClient::DescribeProjectCallable(const Des
   return task->get_future();
 }
 
-void CodeStarClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientDescribeProjectAsyncHelper(CodeStarClient const * const clientThis, const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProject(request), context);
 }
 
-void CodeStarClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientDescribeProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUserProfileOutcome CodeStarClient::DescribeUserProfile(const DescribeUserProfileRequest& request) const
@@ -276,14 +276,14 @@ DescribeUserProfileOutcomeCallable CodeStarClient::DescribeUserProfileCallable(c
   return task->get_future();
 }
 
-void CodeStarClient::DescribeUserProfileAsync(const DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientDescribeUserProfileAsyncHelper(CodeStarClient const * const clientThis, const DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUserProfile(request), context);
 }
 
-void CodeStarClient::DescribeUserProfileAsyncHelper(const DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::DescribeUserProfileAsync(const DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientDescribeUserProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateTeamMemberOutcome CodeStarClient::DisassociateTeamMember(const DisassociateTeamMemberRequest& request) const
@@ -300,14 +300,14 @@ DisassociateTeamMemberOutcomeCallable CodeStarClient::DisassociateTeamMemberCall
   return task->get_future();
 }
 
-void CodeStarClient::DisassociateTeamMemberAsync(const DisassociateTeamMemberRequest& request, const DisassociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientDisassociateTeamMemberAsyncHelper(CodeStarClient const * const clientThis, const DisassociateTeamMemberRequest& request, const DisassociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTeamMemberAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateTeamMember(request), context);
 }
 
-void CodeStarClient::DisassociateTeamMemberAsyncHelper(const DisassociateTeamMemberRequest& request, const DisassociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::DisassociateTeamMemberAsync(const DisassociateTeamMemberRequest& request, const DisassociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateTeamMember(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientDisassociateTeamMemberAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProjectsOutcome CodeStarClient::ListProjects(const ListProjectsRequest& request) const
@@ -324,14 +324,14 @@ ListProjectsOutcomeCallable CodeStarClient::ListProjectsCallable(const ListProje
   return task->get_future();
 }
 
-void CodeStarClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientListProjectsAsyncHelper(CodeStarClient const * const clientThis, const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProjects(request), context);
 }
 
-void CodeStarClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientListProjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourcesOutcome CodeStarClient::ListResources(const ListResourcesRequest& request) const
@@ -348,14 +348,14 @@ ListResourcesOutcomeCallable CodeStarClient::ListResourcesCallable(const ListRes
   return task->get_future();
 }
 
-void CodeStarClient::ListResourcesAsync(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientListResourcesAsyncHelper(CodeStarClient const * const clientThis, const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResources(request), context);
 }
 
-void CodeStarClient::ListResourcesAsyncHelper(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::ListResourcesAsync(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientListResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForProjectOutcome CodeStarClient::ListTagsForProject(const ListTagsForProjectRequest& request) const
@@ -372,14 +372,14 @@ ListTagsForProjectOutcomeCallable CodeStarClient::ListTagsForProjectCallable(con
   return task->get_future();
 }
 
-void CodeStarClient::ListTagsForProjectAsync(const ListTagsForProjectRequest& request, const ListTagsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientListTagsForProjectAsyncHelper(CodeStarClient const * const clientThis, const ListTagsForProjectRequest& request, const ListTagsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForProject(request), context);
 }
 
-void CodeStarClient::ListTagsForProjectAsyncHelper(const ListTagsForProjectRequest& request, const ListTagsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::ListTagsForProjectAsync(const ListTagsForProjectRequest& request, const ListTagsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientListTagsForProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTeamMembersOutcome CodeStarClient::ListTeamMembers(const ListTeamMembersRequest& request) const
@@ -396,14 +396,14 @@ ListTeamMembersOutcomeCallable CodeStarClient::ListTeamMembersCallable(const Lis
   return task->get_future();
 }
 
-void CodeStarClient::ListTeamMembersAsync(const ListTeamMembersRequest& request, const ListTeamMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientListTeamMembersAsyncHelper(CodeStarClient const * const clientThis, const ListTeamMembersRequest& request, const ListTeamMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTeamMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTeamMembers(request), context);
 }
 
-void CodeStarClient::ListTeamMembersAsyncHelper(const ListTeamMembersRequest& request, const ListTeamMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::ListTeamMembersAsync(const ListTeamMembersRequest& request, const ListTeamMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTeamMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientListTeamMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUserProfilesOutcome CodeStarClient::ListUserProfiles(const ListUserProfilesRequest& request) const
@@ -420,14 +420,14 @@ ListUserProfilesOutcomeCallable CodeStarClient::ListUserProfilesCallable(const L
   return task->get_future();
 }
 
-void CodeStarClient::ListUserProfilesAsync(const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientListUserProfilesAsyncHelper(CodeStarClient const * const clientThis, const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUserProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUserProfiles(request), context);
 }
 
-void CodeStarClient::ListUserProfilesAsyncHelper(const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::ListUserProfilesAsync(const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUserProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientListUserProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 TagProjectOutcome CodeStarClient::TagProject(const TagProjectRequest& request) const
@@ -444,14 +444,14 @@ TagProjectOutcomeCallable CodeStarClient::TagProjectCallable(const TagProjectReq
   return task->get_future();
 }
 
-void CodeStarClient::TagProjectAsync(const TagProjectRequest& request, const TagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientTagProjectAsyncHelper(CodeStarClient const * const clientThis, const TagProjectRequest& request, const TagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagProject(request), context);
 }
 
-void CodeStarClient::TagProjectAsyncHelper(const TagProjectRequest& request, const TagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::TagProjectAsync(const TagProjectRequest& request, const TagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientTagProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagProjectOutcome CodeStarClient::UntagProject(const UntagProjectRequest& request) const
@@ -468,14 +468,14 @@ UntagProjectOutcomeCallable CodeStarClient::UntagProjectCallable(const UntagProj
   return task->get_future();
 }
 
-void CodeStarClient::UntagProjectAsync(const UntagProjectRequest& request, const UntagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientUntagProjectAsyncHelper(CodeStarClient const * const clientThis, const UntagProjectRequest& request, const UntagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagProject(request), context);
 }
 
-void CodeStarClient::UntagProjectAsyncHelper(const UntagProjectRequest& request, const UntagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::UntagProjectAsync(const UntagProjectRequest& request, const UntagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientUntagProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProjectOutcome CodeStarClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -492,14 +492,14 @@ UpdateProjectOutcomeCallable CodeStarClient::UpdateProjectCallable(const UpdateP
   return task->get_future();
 }
 
-void CodeStarClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientUpdateProjectAsyncHelper(CodeStarClient const * const clientThis, const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProject(request), context);
 }
 
-void CodeStarClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientUpdateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTeamMemberOutcome CodeStarClient::UpdateTeamMember(const UpdateTeamMemberRequest& request) const
@@ -516,14 +516,14 @@ UpdateTeamMemberOutcomeCallable CodeStarClient::UpdateTeamMemberCallable(const U
   return task->get_future();
 }
 
-void CodeStarClient::UpdateTeamMemberAsync(const UpdateTeamMemberRequest& request, const UpdateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientUpdateTeamMemberAsyncHelper(CodeStarClient const * const clientThis, const UpdateTeamMemberRequest& request, const UpdateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTeamMemberAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTeamMember(request), context);
 }
 
-void CodeStarClient::UpdateTeamMemberAsyncHelper(const UpdateTeamMemberRequest& request, const UpdateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::UpdateTeamMemberAsync(const UpdateTeamMemberRequest& request, const UpdateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTeamMember(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientUpdateTeamMemberAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserProfileOutcome CodeStarClient::UpdateUserProfile(const UpdateUserProfileRequest& request) const
@@ -540,13 +540,13 @@ UpdateUserProfileOutcomeCallable CodeStarClient::UpdateUserProfileCallable(const
   return task->get_future();
 }
 
-void CodeStarClient::UpdateUserProfileAsync(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClientUpdateUserProfileAsyncHelper(CodeStarClient const * const clientThis, const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUserProfile(request), context);
 }
 
-void CodeStarClient::UpdateUserProfileAsyncHelper(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeStarClient::UpdateUserProfileAsync(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeStarClientUpdateUserProfileAsyncHelper( this, request, handler, context ); } );
 }
 

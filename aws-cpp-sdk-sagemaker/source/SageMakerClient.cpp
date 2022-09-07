@@ -377,14 +377,14 @@ AddAssociationOutcomeCallable SageMakerClient::AddAssociationCallable(const AddA
   return task->get_future();
 }
 
-void SageMakerClient::AddAssociationAsync(const AddAssociationRequest& request, const AddAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientAddAssociationAsyncHelper(SageMakerClient const * const clientThis, const AddAssociationRequest& request, const AddAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddAssociation(request), context);
 }
 
-void SageMakerClient::AddAssociationAsyncHelper(const AddAssociationRequest& request, const AddAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::AddAssociationAsync(const AddAssociationRequest& request, const AddAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientAddAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 AddTagsOutcome SageMakerClient::AddTags(const AddTagsRequest& request) const
@@ -401,14 +401,14 @@ AddTagsOutcomeCallable SageMakerClient::AddTagsCallable(const AddTagsRequest& re
   return task->get_future();
 }
 
-void SageMakerClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientAddTagsAsyncHelper(SageMakerClient const * const clientThis, const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddTags(request), context);
 }
 
-void SageMakerClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientAddTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateTrialComponentOutcome SageMakerClient::AssociateTrialComponent(const AssociateTrialComponentRequest& request) const
@@ -425,14 +425,14 @@ AssociateTrialComponentOutcomeCallable SageMakerClient::AssociateTrialComponentC
   return task->get_future();
 }
 
-void SageMakerClient::AssociateTrialComponentAsync(const AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientAssociateTrialComponentAsyncHelper(SageMakerClient const * const clientThis, const AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTrialComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateTrialComponent(request), context);
 }
 
-void SageMakerClient::AssociateTrialComponentAsyncHelper(const AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::AssociateTrialComponentAsync(const AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateTrialComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientAssociateTrialComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDescribeModelPackageOutcome SageMakerClient::BatchDescribeModelPackage(const BatchDescribeModelPackageRequest& request) const
@@ -449,14 +449,14 @@ BatchDescribeModelPackageOutcomeCallable SageMakerClient::BatchDescribeModelPack
   return task->get_future();
 }
 
-void SageMakerClient::BatchDescribeModelPackageAsync(const BatchDescribeModelPackageRequest& request, const BatchDescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientBatchDescribeModelPackageAsyncHelper(SageMakerClient const * const clientThis, const BatchDescribeModelPackageRequest& request, const BatchDescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDescribeModelPackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDescribeModelPackage(request), context);
 }
 
-void SageMakerClient::BatchDescribeModelPackageAsyncHelper(const BatchDescribeModelPackageRequest& request, const BatchDescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::BatchDescribeModelPackageAsync(const BatchDescribeModelPackageRequest& request, const BatchDescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDescribeModelPackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientBatchDescribeModelPackageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateActionOutcome SageMakerClient::CreateAction(const CreateActionRequest& request) const
@@ -473,14 +473,14 @@ CreateActionOutcomeCallable SageMakerClient::CreateActionCallable(const CreateAc
   return task->get_future();
 }
 
-void SageMakerClient::CreateActionAsync(const CreateActionRequest& request, const CreateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateActionAsyncHelper(SageMakerClient const * const clientThis, const CreateActionRequest& request, const CreateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAction(request), context);
 }
 
-void SageMakerClient::CreateActionAsyncHelper(const CreateActionRequest& request, const CreateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateActionAsync(const CreateActionRequest& request, const CreateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateActionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAlgorithmOutcome SageMakerClient::CreateAlgorithm(const CreateAlgorithmRequest& request) const
@@ -497,14 +497,14 @@ CreateAlgorithmOutcomeCallable SageMakerClient::CreateAlgorithmCallable(const Cr
   return task->get_future();
 }
 
-void SageMakerClient::CreateAlgorithmAsync(const CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateAlgorithmAsyncHelper(SageMakerClient const * const clientThis, const CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAlgorithmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAlgorithm(request), context);
 }
 
-void SageMakerClient::CreateAlgorithmAsyncHelper(const CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateAlgorithmAsync(const CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAlgorithm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateAlgorithmAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAppOutcome SageMakerClient::CreateApp(const CreateAppRequest& request) const
@@ -521,14 +521,14 @@ CreateAppOutcomeCallable SageMakerClient::CreateAppCallable(const CreateAppReque
   return task->get_future();
 }
 
-void SageMakerClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateAppAsyncHelper(SageMakerClient const * const clientThis, const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApp(request), context);
 }
 
-void SageMakerClient::CreateAppAsyncHelper(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateAppAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAppImageConfigOutcome SageMakerClient::CreateAppImageConfig(const CreateAppImageConfigRequest& request) const
@@ -545,14 +545,14 @@ CreateAppImageConfigOutcomeCallable SageMakerClient::CreateAppImageConfigCallabl
   return task->get_future();
 }
 
-void SageMakerClient::CreateAppImageConfigAsync(const CreateAppImageConfigRequest& request, const CreateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateAppImageConfigAsyncHelper(SageMakerClient const * const clientThis, const CreateAppImageConfigRequest& request, const CreateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppImageConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAppImageConfig(request), context);
 }
 
-void SageMakerClient::CreateAppImageConfigAsyncHelper(const CreateAppImageConfigRequest& request, const CreateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateAppImageConfigAsync(const CreateAppImageConfigRequest& request, const CreateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAppImageConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateAppImageConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateArtifactOutcome SageMakerClient::CreateArtifact(const CreateArtifactRequest& request) const
@@ -569,14 +569,14 @@ CreateArtifactOutcomeCallable SageMakerClient::CreateArtifactCallable(const Crea
   return task->get_future();
 }
 
-void SageMakerClient::CreateArtifactAsync(const CreateArtifactRequest& request, const CreateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateArtifactAsyncHelper(SageMakerClient const * const clientThis, const CreateArtifactRequest& request, const CreateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateArtifact(request), context);
 }
 
-void SageMakerClient::CreateArtifactAsyncHelper(const CreateArtifactRequest& request, const CreateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateArtifactAsync(const CreateArtifactRequest& request, const CreateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAutoMLJobOutcome SageMakerClient::CreateAutoMLJob(const CreateAutoMLJobRequest& request) const
@@ -593,14 +593,14 @@ CreateAutoMLJobOutcomeCallable SageMakerClient::CreateAutoMLJobCallable(const Cr
   return task->get_future();
 }
 
-void SageMakerClient::CreateAutoMLJobAsync(const CreateAutoMLJobRequest& request, const CreateAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateAutoMLJobAsyncHelper(SageMakerClient const * const clientThis, const CreateAutoMLJobRequest& request, const CreateAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAutoMLJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAutoMLJob(request), context);
 }
 
-void SageMakerClient::CreateAutoMLJobAsyncHelper(const CreateAutoMLJobRequest& request, const CreateAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateAutoMLJobAsync(const CreateAutoMLJobRequest& request, const CreateAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAutoMLJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateAutoMLJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCodeRepositoryOutcome SageMakerClient::CreateCodeRepository(const CreateCodeRepositoryRequest& request) const
@@ -617,14 +617,14 @@ CreateCodeRepositoryOutcomeCallable SageMakerClient::CreateCodeRepositoryCallabl
   return task->get_future();
 }
 
-void SageMakerClient::CreateCodeRepositoryAsync(const CreateCodeRepositoryRequest& request, const CreateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateCodeRepositoryAsyncHelper(SageMakerClient const * const clientThis, const CreateCodeRepositoryRequest& request, const CreateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCodeRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCodeRepository(request), context);
 }
 
-void SageMakerClient::CreateCodeRepositoryAsyncHelper(const CreateCodeRepositoryRequest& request, const CreateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateCodeRepositoryAsync(const CreateCodeRepositoryRequest& request, const CreateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCodeRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateCodeRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCompilationJobOutcome SageMakerClient::CreateCompilationJob(const CreateCompilationJobRequest& request) const
@@ -641,14 +641,14 @@ CreateCompilationJobOutcomeCallable SageMakerClient::CreateCompilationJobCallabl
   return task->get_future();
 }
 
-void SageMakerClient::CreateCompilationJobAsync(const CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateCompilationJobAsyncHelper(SageMakerClient const * const clientThis, const CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCompilationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCompilationJob(request), context);
 }
 
-void SageMakerClient::CreateCompilationJobAsyncHelper(const CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateCompilationJobAsync(const CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCompilationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateCompilationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateContextOutcome SageMakerClient::CreateContext(const CreateContextRequest& request) const
@@ -665,14 +665,14 @@ CreateContextOutcomeCallable SageMakerClient::CreateContextCallable(const Create
   return task->get_future();
 }
 
-void SageMakerClient::CreateContextAsync(const CreateContextRequest& request, const CreateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateContextAsyncHelper(SageMakerClient const * const clientThis, const CreateContextRequest& request, const CreateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContextAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateContext(request), context);
 }
 
-void SageMakerClient::CreateContextAsyncHelper(const CreateContextRequest& request, const CreateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateContextAsync(const CreateContextRequest& request, const CreateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateContext(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateContextAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDataQualityJobDefinitionOutcome SageMakerClient::CreateDataQualityJobDefinition(const CreateDataQualityJobDefinitionRequest& request) const
@@ -689,14 +689,14 @@ CreateDataQualityJobDefinitionOutcomeCallable SageMakerClient::CreateDataQuality
   return task->get_future();
 }
 
-void SageMakerClient::CreateDataQualityJobDefinitionAsync(const CreateDataQualityJobDefinitionRequest& request, const CreateDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateDataQualityJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const CreateDataQualityJobDefinitionRequest& request, const CreateDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataQualityJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataQualityJobDefinition(request), context);
 }
 
-void SageMakerClient::CreateDataQualityJobDefinitionAsyncHelper(const CreateDataQualityJobDefinitionRequest& request, const CreateDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateDataQualityJobDefinitionAsync(const CreateDataQualityJobDefinitionRequest& request, const CreateDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataQualityJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateDataQualityJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDeviceFleetOutcome SageMakerClient::CreateDeviceFleet(const CreateDeviceFleetRequest& request) const
@@ -713,14 +713,14 @@ CreateDeviceFleetOutcomeCallable SageMakerClient::CreateDeviceFleetCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::CreateDeviceFleetAsync(const CreateDeviceFleetRequest& request, const CreateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateDeviceFleetAsyncHelper(SageMakerClient const * const clientThis, const CreateDeviceFleetRequest& request, const CreateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeviceFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDeviceFleet(request), context);
 }
 
-void SageMakerClient::CreateDeviceFleetAsyncHelper(const CreateDeviceFleetRequest& request, const CreateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateDeviceFleetAsync(const CreateDeviceFleetRequest& request, const CreateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDeviceFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateDeviceFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDomainOutcome SageMakerClient::CreateDomain(const CreateDomainRequest& request) const
@@ -737,14 +737,14 @@ CreateDomainOutcomeCallable SageMakerClient::CreateDomainCallable(const CreateDo
   return task->get_future();
 }
 
-void SageMakerClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateDomainAsyncHelper(SageMakerClient const * const clientThis, const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDomain(request), context);
 }
 
-void SageMakerClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEdgeDeploymentPlanOutcome SageMakerClient::CreateEdgeDeploymentPlan(const CreateEdgeDeploymentPlanRequest& request) const
@@ -761,14 +761,14 @@ CreateEdgeDeploymentPlanOutcomeCallable SageMakerClient::CreateEdgeDeploymentPla
   return task->get_future();
 }
 
-void SageMakerClient::CreateEdgeDeploymentPlanAsync(const CreateEdgeDeploymentPlanRequest& request, const CreateEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateEdgeDeploymentPlanAsyncHelper(SageMakerClient const * const clientThis, const CreateEdgeDeploymentPlanRequest& request, const CreateEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEdgeDeploymentPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEdgeDeploymentPlan(request), context);
 }
 
-void SageMakerClient::CreateEdgeDeploymentPlanAsyncHelper(const CreateEdgeDeploymentPlanRequest& request, const CreateEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateEdgeDeploymentPlanAsync(const CreateEdgeDeploymentPlanRequest& request, const CreateEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEdgeDeploymentPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateEdgeDeploymentPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEdgeDeploymentStageOutcome SageMakerClient::CreateEdgeDeploymentStage(const CreateEdgeDeploymentStageRequest& request) const
@@ -785,14 +785,14 @@ CreateEdgeDeploymentStageOutcomeCallable SageMakerClient::CreateEdgeDeploymentSt
   return task->get_future();
 }
 
-void SageMakerClient::CreateEdgeDeploymentStageAsync(const CreateEdgeDeploymentStageRequest& request, const CreateEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateEdgeDeploymentStageAsyncHelper(SageMakerClient const * const clientThis, const CreateEdgeDeploymentStageRequest& request, const CreateEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEdgeDeploymentStageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEdgeDeploymentStage(request), context);
 }
 
-void SageMakerClient::CreateEdgeDeploymentStageAsyncHelper(const CreateEdgeDeploymentStageRequest& request, const CreateEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateEdgeDeploymentStageAsync(const CreateEdgeDeploymentStageRequest& request, const CreateEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEdgeDeploymentStage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateEdgeDeploymentStageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEdgePackagingJobOutcome SageMakerClient::CreateEdgePackagingJob(const CreateEdgePackagingJobRequest& request) const
@@ -809,14 +809,14 @@ CreateEdgePackagingJobOutcomeCallable SageMakerClient::CreateEdgePackagingJobCal
   return task->get_future();
 }
 
-void SageMakerClient::CreateEdgePackagingJobAsync(const CreateEdgePackagingJobRequest& request, const CreateEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateEdgePackagingJobAsyncHelper(SageMakerClient const * const clientThis, const CreateEdgePackagingJobRequest& request, const CreateEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEdgePackagingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEdgePackagingJob(request), context);
 }
 
-void SageMakerClient::CreateEdgePackagingJobAsyncHelper(const CreateEdgePackagingJobRequest& request, const CreateEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateEdgePackagingJobAsync(const CreateEdgePackagingJobRequest& request, const CreateEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEdgePackagingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateEdgePackagingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEndpointOutcome SageMakerClient::CreateEndpoint(const CreateEndpointRequest& request) const
@@ -833,14 +833,14 @@ CreateEndpointOutcomeCallable SageMakerClient::CreateEndpointCallable(const Crea
   return task->get_future();
 }
 
-void SageMakerClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateEndpointAsyncHelper(SageMakerClient const * const clientThis, const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEndpoint(request), context);
 }
 
-void SageMakerClient::CreateEndpointAsyncHelper(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEndpointConfigOutcome SageMakerClient::CreateEndpointConfig(const CreateEndpointConfigRequest& request) const
@@ -857,14 +857,14 @@ CreateEndpointConfigOutcomeCallable SageMakerClient::CreateEndpointConfigCallabl
   return task->get_future();
 }
 
-void SageMakerClient::CreateEndpointConfigAsync(const CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateEndpointConfigAsyncHelper(SageMakerClient const * const clientThis, const CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEndpointConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEndpointConfig(request), context);
 }
 
-void SageMakerClient::CreateEndpointConfigAsyncHelper(const CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateEndpointConfigAsync(const CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEndpointConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateEndpointConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExperimentOutcome SageMakerClient::CreateExperiment(const CreateExperimentRequest& request) const
@@ -881,14 +881,14 @@ CreateExperimentOutcomeCallable SageMakerClient::CreateExperimentCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::CreateExperimentAsync(const CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateExperimentAsyncHelper(SageMakerClient const * const clientThis, const CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExperimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExperiment(request), context);
 }
 
-void SageMakerClient::CreateExperimentAsyncHelper(const CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateExperimentAsync(const CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateExperimentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFeatureGroupOutcome SageMakerClient::CreateFeatureGroup(const CreateFeatureGroupRequest& request) const
@@ -905,14 +905,14 @@ CreateFeatureGroupOutcomeCallable SageMakerClient::CreateFeatureGroupCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::CreateFeatureGroupAsync(const CreateFeatureGroupRequest& request, const CreateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateFeatureGroupAsyncHelper(SageMakerClient const * const clientThis, const CreateFeatureGroupRequest& request, const CreateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFeatureGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFeatureGroup(request), context);
 }
 
-void SageMakerClient::CreateFeatureGroupAsyncHelper(const CreateFeatureGroupRequest& request, const CreateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateFeatureGroupAsync(const CreateFeatureGroupRequest& request, const CreateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFeatureGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateFeatureGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFlowDefinitionOutcome SageMakerClient::CreateFlowDefinition(const CreateFlowDefinitionRequest& request) const
@@ -929,14 +929,14 @@ CreateFlowDefinitionOutcomeCallable SageMakerClient::CreateFlowDefinitionCallabl
   return task->get_future();
 }
 
-void SageMakerClient::CreateFlowDefinitionAsync(const CreateFlowDefinitionRequest& request, const CreateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateFlowDefinitionAsyncHelper(SageMakerClient const * const clientThis, const CreateFlowDefinitionRequest& request, const CreateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFlowDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFlowDefinition(request), context);
 }
 
-void SageMakerClient::CreateFlowDefinitionAsyncHelper(const CreateFlowDefinitionRequest& request, const CreateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateFlowDefinitionAsync(const CreateFlowDefinitionRequest& request, const CreateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFlowDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateFlowDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateHumanTaskUiOutcome SageMakerClient::CreateHumanTaskUi(const CreateHumanTaskUiRequest& request) const
@@ -953,14 +953,14 @@ CreateHumanTaskUiOutcomeCallable SageMakerClient::CreateHumanTaskUiCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::CreateHumanTaskUiAsync(const CreateHumanTaskUiRequest& request, const CreateHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateHumanTaskUiAsyncHelper(SageMakerClient const * const clientThis, const CreateHumanTaskUiRequest& request, const CreateHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHumanTaskUiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateHumanTaskUi(request), context);
 }
 
-void SageMakerClient::CreateHumanTaskUiAsyncHelper(const CreateHumanTaskUiRequest& request, const CreateHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateHumanTaskUiAsync(const CreateHumanTaskUiRequest& request, const CreateHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateHumanTaskUi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateHumanTaskUiAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateHyperParameterTuningJobOutcome SageMakerClient::CreateHyperParameterTuningJob(const CreateHyperParameterTuningJobRequest& request) const
@@ -977,14 +977,14 @@ CreateHyperParameterTuningJobOutcomeCallable SageMakerClient::CreateHyperParamet
   return task->get_future();
 }
 
-void SageMakerClient::CreateHyperParameterTuningJobAsync(const CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateHyperParameterTuningJobAsyncHelper(SageMakerClient const * const clientThis, const CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHyperParameterTuningJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateHyperParameterTuningJob(request), context);
 }
 
-void SageMakerClient::CreateHyperParameterTuningJobAsyncHelper(const CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateHyperParameterTuningJobAsync(const CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateHyperParameterTuningJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateHyperParameterTuningJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateImageOutcome SageMakerClient::CreateImage(const CreateImageRequest& request) const
@@ -1001,14 +1001,14 @@ CreateImageOutcomeCallable SageMakerClient::CreateImageCallable(const CreateImag
   return task->get_future();
 }
 
-void SageMakerClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateImageAsyncHelper(SageMakerClient const * const clientThis, const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateImage(request), context);
 }
 
-void SageMakerClient::CreateImageAsyncHelper(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateImageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateImageVersionOutcome SageMakerClient::CreateImageVersion(const CreateImageVersionRequest& request) const
@@ -1025,14 +1025,14 @@ CreateImageVersionOutcomeCallable SageMakerClient::CreateImageVersionCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::CreateImageVersionAsync(const CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateImageVersionAsyncHelper(SageMakerClient const * const clientThis, const CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateImageVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateImageVersion(request), context);
 }
 
-void SageMakerClient::CreateImageVersionAsyncHelper(const CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateImageVersionAsync(const CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateImageVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateImageVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInferenceRecommendationsJobOutcome SageMakerClient::CreateInferenceRecommendationsJob(const CreateInferenceRecommendationsJobRequest& request) const
@@ -1049,14 +1049,14 @@ CreateInferenceRecommendationsJobOutcomeCallable SageMakerClient::CreateInferenc
   return task->get_future();
 }
 
-void SageMakerClient::CreateInferenceRecommendationsJobAsync(const CreateInferenceRecommendationsJobRequest& request, const CreateInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateInferenceRecommendationsJobAsyncHelper(SageMakerClient const * const clientThis, const CreateInferenceRecommendationsJobRequest& request, const CreateInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInferenceRecommendationsJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInferenceRecommendationsJob(request), context);
 }
 
-void SageMakerClient::CreateInferenceRecommendationsJobAsyncHelper(const CreateInferenceRecommendationsJobRequest& request, const CreateInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateInferenceRecommendationsJobAsync(const CreateInferenceRecommendationsJobRequest& request, const CreateInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInferenceRecommendationsJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateInferenceRecommendationsJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLabelingJobOutcome SageMakerClient::CreateLabelingJob(const CreateLabelingJobRequest& request) const
@@ -1073,14 +1073,14 @@ CreateLabelingJobOutcomeCallable SageMakerClient::CreateLabelingJobCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::CreateLabelingJobAsync(const CreateLabelingJobRequest& request, const CreateLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateLabelingJobAsyncHelper(SageMakerClient const * const clientThis, const CreateLabelingJobRequest& request, const CreateLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLabelingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLabelingJob(request), context);
 }
 
-void SageMakerClient::CreateLabelingJobAsyncHelper(const CreateLabelingJobRequest& request, const CreateLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateLabelingJobAsync(const CreateLabelingJobRequest& request, const CreateLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLabelingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateLabelingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateModelOutcome SageMakerClient::CreateModel(const CreateModelRequest& request) const
@@ -1097,14 +1097,14 @@ CreateModelOutcomeCallable SageMakerClient::CreateModelCallable(const CreateMode
   return task->get_future();
 }
 
-void SageMakerClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateModelAsyncHelper(SageMakerClient const * const clientThis, const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateModel(request), context);
 }
 
-void SageMakerClient::CreateModelAsyncHelper(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateModelAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateModelBiasJobDefinitionOutcome SageMakerClient::CreateModelBiasJobDefinition(const CreateModelBiasJobDefinitionRequest& request) const
@@ -1121,14 +1121,14 @@ CreateModelBiasJobDefinitionOutcomeCallable SageMakerClient::CreateModelBiasJobD
   return task->get_future();
 }
 
-void SageMakerClient::CreateModelBiasJobDefinitionAsync(const CreateModelBiasJobDefinitionRequest& request, const CreateModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateModelBiasJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const CreateModelBiasJobDefinitionRequest& request, const CreateModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelBiasJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateModelBiasJobDefinition(request), context);
 }
 
-void SageMakerClient::CreateModelBiasJobDefinitionAsyncHelper(const CreateModelBiasJobDefinitionRequest& request, const CreateModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateModelBiasJobDefinitionAsync(const CreateModelBiasJobDefinitionRequest& request, const CreateModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateModelBiasJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateModelBiasJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateModelExplainabilityJobDefinitionOutcome SageMakerClient::CreateModelExplainabilityJobDefinition(const CreateModelExplainabilityJobDefinitionRequest& request) const
@@ -1145,14 +1145,14 @@ CreateModelExplainabilityJobDefinitionOutcomeCallable SageMakerClient::CreateMod
   return task->get_future();
 }
 
-void SageMakerClient::CreateModelExplainabilityJobDefinitionAsync(const CreateModelExplainabilityJobDefinitionRequest& request, const CreateModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateModelExplainabilityJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const CreateModelExplainabilityJobDefinitionRequest& request, const CreateModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelExplainabilityJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateModelExplainabilityJobDefinition(request), context);
 }
 
-void SageMakerClient::CreateModelExplainabilityJobDefinitionAsyncHelper(const CreateModelExplainabilityJobDefinitionRequest& request, const CreateModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateModelExplainabilityJobDefinitionAsync(const CreateModelExplainabilityJobDefinitionRequest& request, const CreateModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateModelExplainabilityJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateModelExplainabilityJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateModelPackageOutcome SageMakerClient::CreateModelPackage(const CreateModelPackageRequest& request) const
@@ -1169,14 +1169,14 @@ CreateModelPackageOutcomeCallable SageMakerClient::CreateModelPackageCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::CreateModelPackageAsync(const CreateModelPackageRequest& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateModelPackageAsyncHelper(SageMakerClient const * const clientThis, const CreateModelPackageRequest& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelPackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateModelPackage(request), context);
 }
 
-void SageMakerClient::CreateModelPackageAsyncHelper(const CreateModelPackageRequest& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateModelPackageAsync(const CreateModelPackageRequest& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateModelPackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateModelPackageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateModelPackageGroupOutcome SageMakerClient::CreateModelPackageGroup(const CreateModelPackageGroupRequest& request) const
@@ -1193,14 +1193,14 @@ CreateModelPackageGroupOutcomeCallable SageMakerClient::CreateModelPackageGroupC
   return task->get_future();
 }
 
-void SageMakerClient::CreateModelPackageGroupAsync(const CreateModelPackageGroupRequest& request, const CreateModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateModelPackageGroupAsyncHelper(SageMakerClient const * const clientThis, const CreateModelPackageGroupRequest& request, const CreateModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelPackageGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateModelPackageGroup(request), context);
 }
 
-void SageMakerClient::CreateModelPackageGroupAsyncHelper(const CreateModelPackageGroupRequest& request, const CreateModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateModelPackageGroupAsync(const CreateModelPackageGroupRequest& request, const CreateModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateModelPackageGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateModelPackageGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateModelQualityJobDefinitionOutcome SageMakerClient::CreateModelQualityJobDefinition(const CreateModelQualityJobDefinitionRequest& request) const
@@ -1217,14 +1217,14 @@ CreateModelQualityJobDefinitionOutcomeCallable SageMakerClient::CreateModelQuali
   return task->get_future();
 }
 
-void SageMakerClient::CreateModelQualityJobDefinitionAsync(const CreateModelQualityJobDefinitionRequest& request, const CreateModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateModelQualityJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const CreateModelQualityJobDefinitionRequest& request, const CreateModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelQualityJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateModelQualityJobDefinition(request), context);
 }
 
-void SageMakerClient::CreateModelQualityJobDefinitionAsyncHelper(const CreateModelQualityJobDefinitionRequest& request, const CreateModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateModelQualityJobDefinitionAsync(const CreateModelQualityJobDefinitionRequest& request, const CreateModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateModelQualityJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateModelQualityJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMonitoringScheduleOutcome SageMakerClient::CreateMonitoringSchedule(const CreateMonitoringScheduleRequest& request) const
@@ -1241,14 +1241,14 @@ CreateMonitoringScheduleOutcomeCallable SageMakerClient::CreateMonitoringSchedul
   return task->get_future();
 }
 
-void SageMakerClient::CreateMonitoringScheduleAsync(const CreateMonitoringScheduleRequest& request, const CreateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateMonitoringScheduleAsyncHelper(SageMakerClient const * const clientThis, const CreateMonitoringScheduleRequest& request, const CreateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMonitoringScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMonitoringSchedule(request), context);
 }
 
-void SageMakerClient::CreateMonitoringScheduleAsyncHelper(const CreateMonitoringScheduleRequest& request, const CreateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateMonitoringScheduleAsync(const CreateMonitoringScheduleRequest& request, const CreateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMonitoringSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateMonitoringScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNotebookInstanceOutcome SageMakerClient::CreateNotebookInstance(const CreateNotebookInstanceRequest& request) const
@@ -1265,14 +1265,14 @@ CreateNotebookInstanceOutcomeCallable SageMakerClient::CreateNotebookInstanceCal
   return task->get_future();
 }
 
-void SageMakerClient::CreateNotebookInstanceAsync(const CreateNotebookInstanceRequest& request, const CreateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateNotebookInstanceAsyncHelper(SageMakerClient const * const clientThis, const CreateNotebookInstanceRequest& request, const CreateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNotebookInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNotebookInstance(request), context);
 }
 
-void SageMakerClient::CreateNotebookInstanceAsyncHelper(const CreateNotebookInstanceRequest& request, const CreateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateNotebookInstanceAsync(const CreateNotebookInstanceRequest& request, const CreateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNotebookInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateNotebookInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNotebookInstanceLifecycleConfigOutcome SageMakerClient::CreateNotebookInstanceLifecycleConfig(const CreateNotebookInstanceLifecycleConfigRequest& request) const
@@ -1289,14 +1289,14 @@ CreateNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::CreateNote
   return task->get_future();
 }
 
-void SageMakerClient::CreateNotebookInstanceLifecycleConfigAsync(const CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateNotebookInstanceLifecycleConfigAsyncHelper(SageMakerClient const * const clientThis, const CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNotebookInstanceLifecycleConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNotebookInstanceLifecycleConfig(request), context);
 }
 
-void SageMakerClient::CreateNotebookInstanceLifecycleConfigAsyncHelper(const CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateNotebookInstanceLifecycleConfigAsync(const CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNotebookInstanceLifecycleConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateNotebookInstanceLifecycleConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePipelineOutcome SageMakerClient::CreatePipeline(const CreatePipelineRequest& request) const
@@ -1313,14 +1313,14 @@ CreatePipelineOutcomeCallable SageMakerClient::CreatePipelineCallable(const Crea
   return task->get_future();
 }
 
-void SageMakerClient::CreatePipelineAsync(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreatePipelineAsyncHelper(SageMakerClient const * const clientThis, const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePipeline(request), context);
 }
 
-void SageMakerClient::CreatePipelineAsyncHelper(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreatePipelineAsync(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreatePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePresignedDomainUrlOutcome SageMakerClient::CreatePresignedDomainUrl(const CreatePresignedDomainUrlRequest& request) const
@@ -1337,14 +1337,14 @@ CreatePresignedDomainUrlOutcomeCallable SageMakerClient::CreatePresignedDomainUr
   return task->get_future();
 }
 
-void SageMakerClient::CreatePresignedDomainUrlAsync(const CreatePresignedDomainUrlRequest& request, const CreatePresignedDomainUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreatePresignedDomainUrlAsyncHelper(SageMakerClient const * const clientThis, const CreatePresignedDomainUrlRequest& request, const CreatePresignedDomainUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePresignedDomainUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePresignedDomainUrl(request), context);
 }
 
-void SageMakerClient::CreatePresignedDomainUrlAsyncHelper(const CreatePresignedDomainUrlRequest& request, const CreatePresignedDomainUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreatePresignedDomainUrlAsync(const CreatePresignedDomainUrlRequest& request, const CreatePresignedDomainUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePresignedDomainUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreatePresignedDomainUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePresignedNotebookInstanceUrlOutcome SageMakerClient::CreatePresignedNotebookInstanceUrl(const CreatePresignedNotebookInstanceUrlRequest& request) const
@@ -1361,14 +1361,14 @@ CreatePresignedNotebookInstanceUrlOutcomeCallable SageMakerClient::CreatePresign
   return task->get_future();
 }
 
-void SageMakerClient::CreatePresignedNotebookInstanceUrlAsync(const CreatePresignedNotebookInstanceUrlRequest& request, const CreatePresignedNotebookInstanceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreatePresignedNotebookInstanceUrlAsyncHelper(SageMakerClient const * const clientThis, const CreatePresignedNotebookInstanceUrlRequest& request, const CreatePresignedNotebookInstanceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePresignedNotebookInstanceUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePresignedNotebookInstanceUrl(request), context);
 }
 
-void SageMakerClient::CreatePresignedNotebookInstanceUrlAsyncHelper(const CreatePresignedNotebookInstanceUrlRequest& request, const CreatePresignedNotebookInstanceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreatePresignedNotebookInstanceUrlAsync(const CreatePresignedNotebookInstanceUrlRequest& request, const CreatePresignedNotebookInstanceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePresignedNotebookInstanceUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreatePresignedNotebookInstanceUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProcessingJobOutcome SageMakerClient::CreateProcessingJob(const CreateProcessingJobRequest& request) const
@@ -1385,14 +1385,14 @@ CreateProcessingJobOutcomeCallable SageMakerClient::CreateProcessingJobCallable(
   return task->get_future();
 }
 
-void SageMakerClient::CreateProcessingJobAsync(const CreateProcessingJobRequest& request, const CreateProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateProcessingJobAsyncHelper(SageMakerClient const * const clientThis, const CreateProcessingJobRequest& request, const CreateProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProcessingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProcessingJob(request), context);
 }
 
-void SageMakerClient::CreateProcessingJobAsyncHelper(const CreateProcessingJobRequest& request, const CreateProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateProcessingJobAsync(const CreateProcessingJobRequest& request, const CreateProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProcessingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateProcessingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProjectOutcome SageMakerClient::CreateProject(const CreateProjectRequest& request) const
@@ -1409,14 +1409,14 @@ CreateProjectOutcomeCallable SageMakerClient::CreateProjectCallable(const Create
   return task->get_future();
 }
 
-void SageMakerClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateProjectAsyncHelper(SageMakerClient const * const clientThis, const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProject(request), context);
 }
 
-void SageMakerClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStudioLifecycleConfigOutcome SageMakerClient::CreateStudioLifecycleConfig(const CreateStudioLifecycleConfigRequest& request) const
@@ -1433,14 +1433,14 @@ CreateStudioLifecycleConfigOutcomeCallable SageMakerClient::CreateStudioLifecycl
   return task->get_future();
 }
 
-void SageMakerClient::CreateStudioLifecycleConfigAsync(const CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateStudioLifecycleConfigAsyncHelper(SageMakerClient const * const clientThis, const CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStudioLifecycleConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStudioLifecycleConfig(request), context);
 }
 
-void SageMakerClient::CreateStudioLifecycleConfigAsyncHelper(const CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateStudioLifecycleConfigAsync(const CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStudioLifecycleConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateStudioLifecycleConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTrainingJobOutcome SageMakerClient::CreateTrainingJob(const CreateTrainingJobRequest& request) const
@@ -1457,14 +1457,14 @@ CreateTrainingJobOutcomeCallable SageMakerClient::CreateTrainingJobCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::CreateTrainingJobAsync(const CreateTrainingJobRequest& request, const CreateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateTrainingJobAsyncHelper(SageMakerClient const * const clientThis, const CreateTrainingJobRequest& request, const CreateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrainingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTrainingJob(request), context);
 }
 
-void SageMakerClient::CreateTrainingJobAsyncHelper(const CreateTrainingJobRequest& request, const CreateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateTrainingJobAsync(const CreateTrainingJobRequest& request, const CreateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTrainingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateTrainingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransformJobOutcome SageMakerClient::CreateTransformJob(const CreateTransformJobRequest& request) const
@@ -1481,14 +1481,14 @@ CreateTransformJobOutcomeCallable SageMakerClient::CreateTransformJobCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::CreateTransformJobAsync(const CreateTransformJobRequest& request, const CreateTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateTransformJobAsyncHelper(SageMakerClient const * const clientThis, const CreateTransformJobRequest& request, const CreateTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransformJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransformJob(request), context);
 }
 
-void SageMakerClient::CreateTransformJobAsyncHelper(const CreateTransformJobRequest& request, const CreateTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateTransformJobAsync(const CreateTransformJobRequest& request, const CreateTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransformJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateTransformJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTrialOutcome SageMakerClient::CreateTrial(const CreateTrialRequest& request) const
@@ -1505,14 +1505,14 @@ CreateTrialOutcomeCallable SageMakerClient::CreateTrialCallable(const CreateTria
   return task->get_future();
 }
 
-void SageMakerClient::CreateTrialAsync(const CreateTrialRequest& request, const CreateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateTrialAsyncHelper(SageMakerClient const * const clientThis, const CreateTrialRequest& request, const CreateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrialAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTrial(request), context);
 }
 
-void SageMakerClient::CreateTrialAsyncHelper(const CreateTrialRequest& request, const CreateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateTrialAsync(const CreateTrialRequest& request, const CreateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTrial(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateTrialAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTrialComponentOutcome SageMakerClient::CreateTrialComponent(const CreateTrialComponentRequest& request) const
@@ -1529,14 +1529,14 @@ CreateTrialComponentOutcomeCallable SageMakerClient::CreateTrialComponentCallabl
   return task->get_future();
 }
 
-void SageMakerClient::CreateTrialComponentAsync(const CreateTrialComponentRequest& request, const CreateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateTrialComponentAsyncHelper(SageMakerClient const * const clientThis, const CreateTrialComponentRequest& request, const CreateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrialComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTrialComponent(request), context);
 }
 
-void SageMakerClient::CreateTrialComponentAsyncHelper(const CreateTrialComponentRequest& request, const CreateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateTrialComponentAsync(const CreateTrialComponentRequest& request, const CreateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTrialComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateTrialComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserProfileOutcome SageMakerClient::CreateUserProfile(const CreateUserProfileRequest& request) const
@@ -1553,14 +1553,14 @@ CreateUserProfileOutcomeCallable SageMakerClient::CreateUserProfileCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::CreateUserProfileAsync(const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateUserProfileAsyncHelper(SageMakerClient const * const clientThis, const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUserProfile(request), context);
 }
 
-void SageMakerClient::CreateUserProfileAsyncHelper(const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateUserProfileAsync(const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateUserProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorkforceOutcome SageMakerClient::CreateWorkforce(const CreateWorkforceRequest& request) const
@@ -1577,14 +1577,14 @@ CreateWorkforceOutcomeCallable SageMakerClient::CreateWorkforceCallable(const Cr
   return task->get_future();
 }
 
-void SageMakerClient::CreateWorkforceAsync(const CreateWorkforceRequest& request, const CreateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateWorkforceAsyncHelper(SageMakerClient const * const clientThis, const CreateWorkforceRequest& request, const CreateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkforceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorkforce(request), context);
 }
 
-void SageMakerClient::CreateWorkforceAsyncHelper(const CreateWorkforceRequest& request, const CreateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateWorkforceAsync(const CreateWorkforceRequest& request, const CreateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorkforce(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateWorkforceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorkteamOutcome SageMakerClient::CreateWorkteam(const CreateWorkteamRequest& request) const
@@ -1601,14 +1601,14 @@ CreateWorkteamOutcomeCallable SageMakerClient::CreateWorkteamCallable(const Crea
   return task->get_future();
 }
 
-void SageMakerClient::CreateWorkteamAsync(const CreateWorkteamRequest& request, const CreateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientCreateWorkteamAsyncHelper(SageMakerClient const * const clientThis, const CreateWorkteamRequest& request, const CreateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkteamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorkteam(request), context);
 }
 
-void SageMakerClient::CreateWorkteamAsyncHelper(const CreateWorkteamRequest& request, const CreateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::CreateWorkteamAsync(const CreateWorkteamRequest& request, const CreateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorkteam(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientCreateWorkteamAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteActionOutcome SageMakerClient::DeleteAction(const DeleteActionRequest& request) const
@@ -1625,14 +1625,14 @@ DeleteActionOutcomeCallable SageMakerClient::DeleteActionCallable(const DeleteAc
   return task->get_future();
 }
 
-void SageMakerClient::DeleteActionAsync(const DeleteActionRequest& request, const DeleteActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteActionAsyncHelper(SageMakerClient const * const clientThis, const DeleteActionRequest& request, const DeleteActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAction(request), context);
 }
 
-void SageMakerClient::DeleteActionAsyncHelper(const DeleteActionRequest& request, const DeleteActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteActionAsync(const DeleteActionRequest& request, const DeleteActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteActionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAlgorithmOutcome SageMakerClient::DeleteAlgorithm(const DeleteAlgorithmRequest& request) const
@@ -1649,14 +1649,14 @@ DeleteAlgorithmOutcomeCallable SageMakerClient::DeleteAlgorithmCallable(const De
   return task->get_future();
 }
 
-void SageMakerClient::DeleteAlgorithmAsync(const DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteAlgorithmAsyncHelper(SageMakerClient const * const clientThis, const DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAlgorithmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAlgorithm(request), context);
 }
 
-void SageMakerClient::DeleteAlgorithmAsyncHelper(const DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteAlgorithmAsync(const DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAlgorithm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteAlgorithmAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAppOutcome SageMakerClient::DeleteApp(const DeleteAppRequest& request) const
@@ -1673,14 +1673,14 @@ DeleteAppOutcomeCallable SageMakerClient::DeleteAppCallable(const DeleteAppReque
   return task->get_future();
 }
 
-void SageMakerClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteAppAsyncHelper(SageMakerClient const * const clientThis, const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApp(request), context);
 }
 
-void SageMakerClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteAppAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAppImageConfigOutcome SageMakerClient::DeleteAppImageConfig(const DeleteAppImageConfigRequest& request) const
@@ -1697,14 +1697,14 @@ DeleteAppImageConfigOutcomeCallable SageMakerClient::DeleteAppImageConfigCallabl
   return task->get_future();
 }
 
-void SageMakerClient::DeleteAppImageConfigAsync(const DeleteAppImageConfigRequest& request, const DeleteAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteAppImageConfigAsyncHelper(SageMakerClient const * const clientThis, const DeleteAppImageConfigRequest& request, const DeleteAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppImageConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAppImageConfig(request), context);
 }
 
-void SageMakerClient::DeleteAppImageConfigAsyncHelper(const DeleteAppImageConfigRequest& request, const DeleteAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteAppImageConfigAsync(const DeleteAppImageConfigRequest& request, const DeleteAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAppImageConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteAppImageConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteArtifactOutcome SageMakerClient::DeleteArtifact(const DeleteArtifactRequest& request) const
@@ -1721,14 +1721,14 @@ DeleteArtifactOutcomeCallable SageMakerClient::DeleteArtifactCallable(const Dele
   return task->get_future();
 }
 
-void SageMakerClient::DeleteArtifactAsync(const DeleteArtifactRequest& request, const DeleteArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteArtifactAsyncHelper(SageMakerClient const * const clientThis, const DeleteArtifactRequest& request, const DeleteArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteArtifact(request), context);
 }
 
-void SageMakerClient::DeleteArtifactAsyncHelper(const DeleteArtifactRequest& request, const DeleteArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteArtifactAsync(const DeleteArtifactRequest& request, const DeleteArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAssociationOutcome SageMakerClient::DeleteAssociation(const DeleteAssociationRequest& request) const
@@ -1745,14 +1745,14 @@ DeleteAssociationOutcomeCallable SageMakerClient::DeleteAssociationCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::DeleteAssociationAsync(const DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteAssociationAsyncHelper(SageMakerClient const * const clientThis, const DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAssociation(request), context);
 }
 
-void SageMakerClient::DeleteAssociationAsyncHelper(const DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteAssociationAsync(const DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCodeRepositoryOutcome SageMakerClient::DeleteCodeRepository(const DeleteCodeRepositoryRequest& request) const
@@ -1769,14 +1769,14 @@ DeleteCodeRepositoryOutcomeCallable SageMakerClient::DeleteCodeRepositoryCallabl
   return task->get_future();
 }
 
-void SageMakerClient::DeleteCodeRepositoryAsync(const DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteCodeRepositoryAsyncHelper(SageMakerClient const * const clientThis, const DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCodeRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCodeRepository(request), context);
 }
 
-void SageMakerClient::DeleteCodeRepositoryAsyncHelper(const DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteCodeRepositoryAsync(const DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCodeRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteCodeRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteContextOutcome SageMakerClient::DeleteContext(const DeleteContextRequest& request) const
@@ -1793,14 +1793,14 @@ DeleteContextOutcomeCallable SageMakerClient::DeleteContextCallable(const Delete
   return task->get_future();
 }
 
-void SageMakerClient::DeleteContextAsync(const DeleteContextRequest& request, const DeleteContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteContextAsyncHelper(SageMakerClient const * const clientThis, const DeleteContextRequest& request, const DeleteContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContextAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteContext(request), context);
 }
 
-void SageMakerClient::DeleteContextAsyncHelper(const DeleteContextRequest& request, const DeleteContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteContextAsync(const DeleteContextRequest& request, const DeleteContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteContext(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteContextAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDataQualityJobDefinitionOutcome SageMakerClient::DeleteDataQualityJobDefinition(const DeleteDataQualityJobDefinitionRequest& request) const
@@ -1817,14 +1817,14 @@ DeleteDataQualityJobDefinitionOutcomeCallable SageMakerClient::DeleteDataQuality
   return task->get_future();
 }
 
-void SageMakerClient::DeleteDataQualityJobDefinitionAsync(const DeleteDataQualityJobDefinitionRequest& request, const DeleteDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteDataQualityJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const DeleteDataQualityJobDefinitionRequest& request, const DeleteDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataQualityJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataQualityJobDefinition(request), context);
 }
 
-void SageMakerClient::DeleteDataQualityJobDefinitionAsyncHelper(const DeleteDataQualityJobDefinitionRequest& request, const DeleteDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteDataQualityJobDefinitionAsync(const DeleteDataQualityJobDefinitionRequest& request, const DeleteDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataQualityJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteDataQualityJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDeviceFleetOutcome SageMakerClient::DeleteDeviceFleet(const DeleteDeviceFleetRequest& request) const
@@ -1841,14 +1841,14 @@ DeleteDeviceFleetOutcomeCallable SageMakerClient::DeleteDeviceFleetCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::DeleteDeviceFleetAsync(const DeleteDeviceFleetRequest& request, const DeleteDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteDeviceFleetAsyncHelper(SageMakerClient const * const clientThis, const DeleteDeviceFleetRequest& request, const DeleteDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeviceFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDeviceFleet(request), context);
 }
 
-void SageMakerClient::DeleteDeviceFleetAsyncHelper(const DeleteDeviceFleetRequest& request, const DeleteDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteDeviceFleetAsync(const DeleteDeviceFleetRequest& request, const DeleteDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDeviceFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteDeviceFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainOutcome SageMakerClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -1865,14 +1865,14 @@ DeleteDomainOutcomeCallable SageMakerClient::DeleteDomainCallable(const DeleteDo
   return task->get_future();
 }
 
-void SageMakerClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteDomainAsyncHelper(SageMakerClient const * const clientThis, const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomain(request), context);
 }
 
-void SageMakerClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEdgeDeploymentPlanOutcome SageMakerClient::DeleteEdgeDeploymentPlan(const DeleteEdgeDeploymentPlanRequest& request) const
@@ -1889,14 +1889,14 @@ DeleteEdgeDeploymentPlanOutcomeCallable SageMakerClient::DeleteEdgeDeploymentPla
   return task->get_future();
 }
 
-void SageMakerClient::DeleteEdgeDeploymentPlanAsync(const DeleteEdgeDeploymentPlanRequest& request, const DeleteEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteEdgeDeploymentPlanAsyncHelper(SageMakerClient const * const clientThis, const DeleteEdgeDeploymentPlanRequest& request, const DeleteEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEdgeDeploymentPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEdgeDeploymentPlan(request), context);
 }
 
-void SageMakerClient::DeleteEdgeDeploymentPlanAsyncHelper(const DeleteEdgeDeploymentPlanRequest& request, const DeleteEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteEdgeDeploymentPlanAsync(const DeleteEdgeDeploymentPlanRequest& request, const DeleteEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEdgeDeploymentPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteEdgeDeploymentPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEdgeDeploymentStageOutcome SageMakerClient::DeleteEdgeDeploymentStage(const DeleteEdgeDeploymentStageRequest& request) const
@@ -1913,14 +1913,14 @@ DeleteEdgeDeploymentStageOutcomeCallable SageMakerClient::DeleteEdgeDeploymentSt
   return task->get_future();
 }
 
-void SageMakerClient::DeleteEdgeDeploymentStageAsync(const DeleteEdgeDeploymentStageRequest& request, const DeleteEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteEdgeDeploymentStageAsyncHelper(SageMakerClient const * const clientThis, const DeleteEdgeDeploymentStageRequest& request, const DeleteEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEdgeDeploymentStageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEdgeDeploymentStage(request), context);
 }
 
-void SageMakerClient::DeleteEdgeDeploymentStageAsyncHelper(const DeleteEdgeDeploymentStageRequest& request, const DeleteEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteEdgeDeploymentStageAsync(const DeleteEdgeDeploymentStageRequest& request, const DeleteEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEdgeDeploymentStage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteEdgeDeploymentStageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEndpointOutcome SageMakerClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
@@ -1937,14 +1937,14 @@ DeleteEndpointOutcomeCallable SageMakerClient::DeleteEndpointCallable(const Dele
   return task->get_future();
 }
 
-void SageMakerClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteEndpointAsyncHelper(SageMakerClient const * const clientThis, const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEndpoint(request), context);
 }
 
-void SageMakerClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEndpointConfigOutcome SageMakerClient::DeleteEndpointConfig(const DeleteEndpointConfigRequest& request) const
@@ -1961,14 +1961,14 @@ DeleteEndpointConfigOutcomeCallable SageMakerClient::DeleteEndpointConfigCallabl
   return task->get_future();
 }
 
-void SageMakerClient::DeleteEndpointConfigAsync(const DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteEndpointConfigAsyncHelper(SageMakerClient const * const clientThis, const DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEndpointConfig(request), context);
 }
 
-void SageMakerClient::DeleteEndpointConfigAsyncHelper(const DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteEndpointConfigAsync(const DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEndpointConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteEndpointConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteExperimentOutcome SageMakerClient::DeleteExperiment(const DeleteExperimentRequest& request) const
@@ -1985,14 +1985,14 @@ DeleteExperimentOutcomeCallable SageMakerClient::DeleteExperimentCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::DeleteExperimentAsync(const DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteExperimentAsyncHelper(SageMakerClient const * const clientThis, const DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExperimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteExperiment(request), context);
 }
 
-void SageMakerClient::DeleteExperimentAsyncHelper(const DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteExperimentAsync(const DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteExperimentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFeatureGroupOutcome SageMakerClient::DeleteFeatureGroup(const DeleteFeatureGroupRequest& request) const
@@ -2009,14 +2009,14 @@ DeleteFeatureGroupOutcomeCallable SageMakerClient::DeleteFeatureGroupCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::DeleteFeatureGroupAsync(const DeleteFeatureGroupRequest& request, const DeleteFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteFeatureGroupAsyncHelper(SageMakerClient const * const clientThis, const DeleteFeatureGroupRequest& request, const DeleteFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFeatureGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFeatureGroup(request), context);
 }
 
-void SageMakerClient::DeleteFeatureGroupAsyncHelper(const DeleteFeatureGroupRequest& request, const DeleteFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteFeatureGroupAsync(const DeleteFeatureGroupRequest& request, const DeleteFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFeatureGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteFeatureGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFlowDefinitionOutcome SageMakerClient::DeleteFlowDefinition(const DeleteFlowDefinitionRequest& request) const
@@ -2033,14 +2033,14 @@ DeleteFlowDefinitionOutcomeCallable SageMakerClient::DeleteFlowDefinitionCallabl
   return task->get_future();
 }
 
-void SageMakerClient::DeleteFlowDefinitionAsync(const DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteFlowDefinitionAsyncHelper(SageMakerClient const * const clientThis, const DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFlowDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFlowDefinition(request), context);
 }
 
-void SageMakerClient::DeleteFlowDefinitionAsyncHelper(const DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteFlowDefinitionAsync(const DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFlowDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteFlowDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteHumanTaskUiOutcome SageMakerClient::DeleteHumanTaskUi(const DeleteHumanTaskUiRequest& request) const
@@ -2057,14 +2057,14 @@ DeleteHumanTaskUiOutcomeCallable SageMakerClient::DeleteHumanTaskUiCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::DeleteHumanTaskUiAsync(const DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteHumanTaskUiAsyncHelper(SageMakerClient const * const clientThis, const DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHumanTaskUiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteHumanTaskUi(request), context);
 }
 
-void SageMakerClient::DeleteHumanTaskUiAsyncHelper(const DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteHumanTaskUiAsync(const DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteHumanTaskUi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteHumanTaskUiAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteImageOutcome SageMakerClient::DeleteImage(const DeleteImageRequest& request) const
@@ -2081,14 +2081,14 @@ DeleteImageOutcomeCallable SageMakerClient::DeleteImageCallable(const DeleteImag
   return task->get_future();
 }
 
-void SageMakerClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteImageAsyncHelper(SageMakerClient const * const clientThis, const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteImage(request), context);
 }
 
-void SageMakerClient::DeleteImageAsyncHelper(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteImageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteImageVersionOutcome SageMakerClient::DeleteImageVersion(const DeleteImageVersionRequest& request) const
@@ -2105,14 +2105,14 @@ DeleteImageVersionOutcomeCallable SageMakerClient::DeleteImageVersionCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::DeleteImageVersionAsync(const DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteImageVersionAsyncHelper(SageMakerClient const * const clientThis, const DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteImageVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteImageVersion(request), context);
 }
 
-void SageMakerClient::DeleteImageVersionAsyncHelper(const DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteImageVersionAsync(const DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteImageVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteImageVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelOutcome SageMakerClient::DeleteModel(const DeleteModelRequest& request) const
@@ -2129,14 +2129,14 @@ DeleteModelOutcomeCallable SageMakerClient::DeleteModelCallable(const DeleteMode
   return task->get_future();
 }
 
-void SageMakerClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteModelAsyncHelper(SageMakerClient const * const clientThis, const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModel(request), context);
 }
 
-void SageMakerClient::DeleteModelAsyncHelper(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteModelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelBiasJobDefinitionOutcome SageMakerClient::DeleteModelBiasJobDefinition(const DeleteModelBiasJobDefinitionRequest& request) const
@@ -2153,14 +2153,14 @@ DeleteModelBiasJobDefinitionOutcomeCallable SageMakerClient::DeleteModelBiasJobD
   return task->get_future();
 }
 
-void SageMakerClient::DeleteModelBiasJobDefinitionAsync(const DeleteModelBiasJobDefinitionRequest& request, const DeleteModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteModelBiasJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const DeleteModelBiasJobDefinitionRequest& request, const DeleteModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelBiasJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModelBiasJobDefinition(request), context);
 }
 
-void SageMakerClient::DeleteModelBiasJobDefinitionAsyncHelper(const DeleteModelBiasJobDefinitionRequest& request, const DeleteModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteModelBiasJobDefinitionAsync(const DeleteModelBiasJobDefinitionRequest& request, const DeleteModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModelBiasJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteModelBiasJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelExplainabilityJobDefinitionOutcome SageMakerClient::DeleteModelExplainabilityJobDefinition(const DeleteModelExplainabilityJobDefinitionRequest& request) const
@@ -2177,14 +2177,14 @@ DeleteModelExplainabilityJobDefinitionOutcomeCallable SageMakerClient::DeleteMod
   return task->get_future();
 }
 
-void SageMakerClient::DeleteModelExplainabilityJobDefinitionAsync(const DeleteModelExplainabilityJobDefinitionRequest& request, const DeleteModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteModelExplainabilityJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const DeleteModelExplainabilityJobDefinitionRequest& request, const DeleteModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelExplainabilityJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModelExplainabilityJobDefinition(request), context);
 }
 
-void SageMakerClient::DeleteModelExplainabilityJobDefinitionAsyncHelper(const DeleteModelExplainabilityJobDefinitionRequest& request, const DeleteModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteModelExplainabilityJobDefinitionAsync(const DeleteModelExplainabilityJobDefinitionRequest& request, const DeleteModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModelExplainabilityJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteModelExplainabilityJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelPackageOutcome SageMakerClient::DeleteModelPackage(const DeleteModelPackageRequest& request) const
@@ -2201,14 +2201,14 @@ DeleteModelPackageOutcomeCallable SageMakerClient::DeleteModelPackageCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::DeleteModelPackageAsync(const DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteModelPackageAsyncHelper(SageMakerClient const * const clientThis, const DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelPackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModelPackage(request), context);
 }
 
-void SageMakerClient::DeleteModelPackageAsyncHelper(const DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteModelPackageAsync(const DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModelPackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteModelPackageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelPackageGroupOutcome SageMakerClient::DeleteModelPackageGroup(const DeleteModelPackageGroupRequest& request) const
@@ -2225,14 +2225,14 @@ DeleteModelPackageGroupOutcomeCallable SageMakerClient::DeleteModelPackageGroupC
   return task->get_future();
 }
 
-void SageMakerClient::DeleteModelPackageGroupAsync(const DeleteModelPackageGroupRequest& request, const DeleteModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteModelPackageGroupAsyncHelper(SageMakerClient const * const clientThis, const DeleteModelPackageGroupRequest& request, const DeleteModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelPackageGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModelPackageGroup(request), context);
 }
 
-void SageMakerClient::DeleteModelPackageGroupAsyncHelper(const DeleteModelPackageGroupRequest& request, const DeleteModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteModelPackageGroupAsync(const DeleteModelPackageGroupRequest& request, const DeleteModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModelPackageGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteModelPackageGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelPackageGroupPolicyOutcome SageMakerClient::DeleteModelPackageGroupPolicy(const DeleteModelPackageGroupPolicyRequest& request) const
@@ -2249,14 +2249,14 @@ DeleteModelPackageGroupPolicyOutcomeCallable SageMakerClient::DeleteModelPackage
   return task->get_future();
 }
 
-void SageMakerClient::DeleteModelPackageGroupPolicyAsync(const DeleteModelPackageGroupPolicyRequest& request, const DeleteModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteModelPackageGroupPolicyAsyncHelper(SageMakerClient const * const clientThis, const DeleteModelPackageGroupPolicyRequest& request, const DeleteModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelPackageGroupPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModelPackageGroupPolicy(request), context);
 }
 
-void SageMakerClient::DeleteModelPackageGroupPolicyAsyncHelper(const DeleteModelPackageGroupPolicyRequest& request, const DeleteModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteModelPackageGroupPolicyAsync(const DeleteModelPackageGroupPolicyRequest& request, const DeleteModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModelPackageGroupPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteModelPackageGroupPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelQualityJobDefinitionOutcome SageMakerClient::DeleteModelQualityJobDefinition(const DeleteModelQualityJobDefinitionRequest& request) const
@@ -2273,14 +2273,14 @@ DeleteModelQualityJobDefinitionOutcomeCallable SageMakerClient::DeleteModelQuali
   return task->get_future();
 }
 
-void SageMakerClient::DeleteModelQualityJobDefinitionAsync(const DeleteModelQualityJobDefinitionRequest& request, const DeleteModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteModelQualityJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const DeleteModelQualityJobDefinitionRequest& request, const DeleteModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelQualityJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModelQualityJobDefinition(request), context);
 }
 
-void SageMakerClient::DeleteModelQualityJobDefinitionAsyncHelper(const DeleteModelQualityJobDefinitionRequest& request, const DeleteModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteModelQualityJobDefinitionAsync(const DeleteModelQualityJobDefinitionRequest& request, const DeleteModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModelQualityJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteModelQualityJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMonitoringScheduleOutcome SageMakerClient::DeleteMonitoringSchedule(const DeleteMonitoringScheduleRequest& request) const
@@ -2297,14 +2297,14 @@ DeleteMonitoringScheduleOutcomeCallable SageMakerClient::DeleteMonitoringSchedul
   return task->get_future();
 }
 
-void SageMakerClient::DeleteMonitoringScheduleAsync(const DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteMonitoringScheduleAsyncHelper(SageMakerClient const * const clientThis, const DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMonitoringScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMonitoringSchedule(request), context);
 }
 
-void SageMakerClient::DeleteMonitoringScheduleAsyncHelper(const DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteMonitoringScheduleAsync(const DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMonitoringSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteMonitoringScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNotebookInstanceOutcome SageMakerClient::DeleteNotebookInstance(const DeleteNotebookInstanceRequest& request) const
@@ -2321,14 +2321,14 @@ DeleteNotebookInstanceOutcomeCallable SageMakerClient::DeleteNotebookInstanceCal
   return task->get_future();
 }
 
-void SageMakerClient::DeleteNotebookInstanceAsync(const DeleteNotebookInstanceRequest& request, const DeleteNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteNotebookInstanceAsyncHelper(SageMakerClient const * const clientThis, const DeleteNotebookInstanceRequest& request, const DeleteNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNotebookInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNotebookInstance(request), context);
 }
 
-void SageMakerClient::DeleteNotebookInstanceAsyncHelper(const DeleteNotebookInstanceRequest& request, const DeleteNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteNotebookInstanceAsync(const DeleteNotebookInstanceRequest& request, const DeleteNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNotebookInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteNotebookInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNotebookInstanceLifecycleConfigOutcome SageMakerClient::DeleteNotebookInstanceLifecycleConfig(const DeleteNotebookInstanceLifecycleConfigRequest& request) const
@@ -2345,14 +2345,14 @@ DeleteNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::DeleteNote
   return task->get_future();
 }
 
-void SageMakerClient::DeleteNotebookInstanceLifecycleConfigAsync(const DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteNotebookInstanceLifecycleConfigAsyncHelper(SageMakerClient const * const clientThis, const DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNotebookInstanceLifecycleConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNotebookInstanceLifecycleConfig(request), context);
 }
 
-void SageMakerClient::DeleteNotebookInstanceLifecycleConfigAsyncHelper(const DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteNotebookInstanceLifecycleConfigAsync(const DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNotebookInstanceLifecycleConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteNotebookInstanceLifecycleConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePipelineOutcome SageMakerClient::DeletePipeline(const DeletePipelineRequest& request) const
@@ -2369,14 +2369,14 @@ DeletePipelineOutcomeCallable SageMakerClient::DeletePipelineCallable(const Dele
   return task->get_future();
 }
 
-void SageMakerClient::DeletePipelineAsync(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeletePipelineAsyncHelper(SageMakerClient const * const clientThis, const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePipeline(request), context);
 }
 
-void SageMakerClient::DeletePipelineAsyncHelper(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeletePipelineAsync(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeletePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProjectOutcome SageMakerClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -2393,14 +2393,14 @@ DeleteProjectOutcomeCallable SageMakerClient::DeleteProjectCallable(const Delete
   return task->get_future();
 }
 
-void SageMakerClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteProjectAsyncHelper(SageMakerClient const * const clientThis, const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProject(request), context);
 }
 
-void SageMakerClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteStudioLifecycleConfigOutcome SageMakerClient::DeleteStudioLifecycleConfig(const DeleteStudioLifecycleConfigRequest& request) const
@@ -2417,14 +2417,14 @@ DeleteStudioLifecycleConfigOutcomeCallable SageMakerClient::DeleteStudioLifecycl
   return task->get_future();
 }
 
-void SageMakerClient::DeleteStudioLifecycleConfigAsync(const DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteStudioLifecycleConfigAsyncHelper(SageMakerClient const * const clientThis, const DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStudioLifecycleConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteStudioLifecycleConfig(request), context);
 }
 
-void SageMakerClient::DeleteStudioLifecycleConfigAsyncHelper(const DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteStudioLifecycleConfigAsync(const DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteStudioLifecycleConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteStudioLifecycleConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTagsOutcome SageMakerClient::DeleteTags(const DeleteTagsRequest& request) const
@@ -2441,14 +2441,14 @@ DeleteTagsOutcomeCallable SageMakerClient::DeleteTagsCallable(const DeleteTagsRe
   return task->get_future();
 }
 
-void SageMakerClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteTagsAsyncHelper(SageMakerClient const * const clientThis, const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTags(request), context);
 }
 
-void SageMakerClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTrialOutcome SageMakerClient::DeleteTrial(const DeleteTrialRequest& request) const
@@ -2465,14 +2465,14 @@ DeleteTrialOutcomeCallable SageMakerClient::DeleteTrialCallable(const DeleteTria
   return task->get_future();
 }
 
-void SageMakerClient::DeleteTrialAsync(const DeleteTrialRequest& request, const DeleteTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteTrialAsyncHelper(SageMakerClient const * const clientThis, const DeleteTrialRequest& request, const DeleteTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrialAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTrial(request), context);
 }
 
-void SageMakerClient::DeleteTrialAsyncHelper(const DeleteTrialRequest& request, const DeleteTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteTrialAsync(const DeleteTrialRequest& request, const DeleteTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTrial(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteTrialAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTrialComponentOutcome SageMakerClient::DeleteTrialComponent(const DeleteTrialComponentRequest& request) const
@@ -2489,14 +2489,14 @@ DeleteTrialComponentOutcomeCallable SageMakerClient::DeleteTrialComponentCallabl
   return task->get_future();
 }
 
-void SageMakerClient::DeleteTrialComponentAsync(const DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteTrialComponentAsyncHelper(SageMakerClient const * const clientThis, const DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrialComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTrialComponent(request), context);
 }
 
-void SageMakerClient::DeleteTrialComponentAsyncHelper(const DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteTrialComponentAsync(const DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTrialComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteTrialComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserProfileOutcome SageMakerClient::DeleteUserProfile(const DeleteUserProfileRequest& request) const
@@ -2513,14 +2513,14 @@ DeleteUserProfileOutcomeCallable SageMakerClient::DeleteUserProfileCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::DeleteUserProfileAsync(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteUserProfileAsyncHelper(SageMakerClient const * const clientThis, const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUserProfile(request), context);
 }
 
-void SageMakerClient::DeleteUserProfileAsyncHelper(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteUserProfileAsync(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteUserProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorkforceOutcome SageMakerClient::DeleteWorkforce(const DeleteWorkforceRequest& request) const
@@ -2537,14 +2537,14 @@ DeleteWorkforceOutcomeCallable SageMakerClient::DeleteWorkforceCallable(const De
   return task->get_future();
 }
 
-void SageMakerClient::DeleteWorkforceAsync(const DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteWorkforceAsyncHelper(SageMakerClient const * const clientThis, const DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkforceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorkforce(request), context);
 }
 
-void SageMakerClient::DeleteWorkforceAsyncHelper(const DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteWorkforceAsync(const DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorkforce(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteWorkforceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorkteamOutcome SageMakerClient::DeleteWorkteam(const DeleteWorkteamRequest& request) const
@@ -2561,14 +2561,14 @@ DeleteWorkteamOutcomeCallable SageMakerClient::DeleteWorkteamCallable(const Dele
   return task->get_future();
 }
 
-void SageMakerClient::DeleteWorkteamAsync(const DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeleteWorkteamAsyncHelper(SageMakerClient const * const clientThis, const DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkteamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorkteam(request), context);
 }
 
-void SageMakerClient::DeleteWorkteamAsyncHelper(const DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeleteWorkteamAsync(const DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorkteam(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeleteWorkteamAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterDevicesOutcome SageMakerClient::DeregisterDevices(const DeregisterDevicesRequest& request) const
@@ -2585,14 +2585,14 @@ DeregisterDevicesOutcomeCallable SageMakerClient::DeregisterDevicesCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::DeregisterDevicesAsync(const DeregisterDevicesRequest& request, const DeregisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDeregisterDevicesAsyncHelper(SageMakerClient const * const clientThis, const DeregisterDevicesRequest& request, const DeregisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterDevices(request), context);
 }
 
-void SageMakerClient::DeregisterDevicesAsyncHelper(const DeregisterDevicesRequest& request, const DeregisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DeregisterDevicesAsync(const DeregisterDevicesRequest& request, const DeregisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDeregisterDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeActionOutcome SageMakerClient::DescribeAction(const DescribeActionRequest& request) const
@@ -2609,14 +2609,14 @@ DescribeActionOutcomeCallable SageMakerClient::DescribeActionCallable(const Desc
   return task->get_future();
 }
 
-void SageMakerClient::DescribeActionAsync(const DescribeActionRequest& request, const DescribeActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeActionAsyncHelper(SageMakerClient const * const clientThis, const DescribeActionRequest& request, const DescribeActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAction(request), context);
 }
 
-void SageMakerClient::DescribeActionAsyncHelper(const DescribeActionRequest& request, const DescribeActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeActionAsync(const DescribeActionRequest& request, const DescribeActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeActionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAlgorithmOutcome SageMakerClient::DescribeAlgorithm(const DescribeAlgorithmRequest& request) const
@@ -2633,14 +2633,14 @@ DescribeAlgorithmOutcomeCallable SageMakerClient::DescribeAlgorithmCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::DescribeAlgorithmAsync(const DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeAlgorithmAsyncHelper(SageMakerClient const * const clientThis, const DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAlgorithmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAlgorithm(request), context);
 }
 
-void SageMakerClient::DescribeAlgorithmAsyncHelper(const DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeAlgorithmAsync(const DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAlgorithm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeAlgorithmAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAppOutcome SageMakerClient::DescribeApp(const DescribeAppRequest& request) const
@@ -2657,14 +2657,14 @@ DescribeAppOutcomeCallable SageMakerClient::DescribeAppCallable(const DescribeAp
   return task->get_future();
 }
 
-void SageMakerClient::DescribeAppAsync(const DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeAppAsyncHelper(SageMakerClient const * const clientThis, const DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApp(request), context);
 }
 
-void SageMakerClient::DescribeAppAsyncHelper(const DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeAppAsync(const DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeAppAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAppImageConfigOutcome SageMakerClient::DescribeAppImageConfig(const DescribeAppImageConfigRequest& request) const
@@ -2681,14 +2681,14 @@ DescribeAppImageConfigOutcomeCallable SageMakerClient::DescribeAppImageConfigCal
   return task->get_future();
 }
 
-void SageMakerClient::DescribeAppImageConfigAsync(const DescribeAppImageConfigRequest& request, const DescribeAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeAppImageConfigAsyncHelper(SageMakerClient const * const clientThis, const DescribeAppImageConfigRequest& request, const DescribeAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppImageConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAppImageConfig(request), context);
 }
 
-void SageMakerClient::DescribeAppImageConfigAsyncHelper(const DescribeAppImageConfigRequest& request, const DescribeAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeAppImageConfigAsync(const DescribeAppImageConfigRequest& request, const DescribeAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAppImageConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeAppImageConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeArtifactOutcome SageMakerClient::DescribeArtifact(const DescribeArtifactRequest& request) const
@@ -2705,14 +2705,14 @@ DescribeArtifactOutcomeCallable SageMakerClient::DescribeArtifactCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::DescribeArtifactAsync(const DescribeArtifactRequest& request, const DescribeArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeArtifactAsyncHelper(SageMakerClient const * const clientThis, const DescribeArtifactRequest& request, const DescribeArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeArtifact(request), context);
 }
 
-void SageMakerClient::DescribeArtifactAsyncHelper(const DescribeArtifactRequest& request, const DescribeArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeArtifactAsync(const DescribeArtifactRequest& request, const DescribeArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAutoMLJobOutcome SageMakerClient::DescribeAutoMLJob(const DescribeAutoMLJobRequest& request) const
@@ -2729,14 +2729,14 @@ DescribeAutoMLJobOutcomeCallable SageMakerClient::DescribeAutoMLJobCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::DescribeAutoMLJobAsync(const DescribeAutoMLJobRequest& request, const DescribeAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeAutoMLJobAsyncHelper(SageMakerClient const * const clientThis, const DescribeAutoMLJobRequest& request, const DescribeAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAutoMLJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAutoMLJob(request), context);
 }
 
-void SageMakerClient::DescribeAutoMLJobAsyncHelper(const DescribeAutoMLJobRequest& request, const DescribeAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeAutoMLJobAsync(const DescribeAutoMLJobRequest& request, const DescribeAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAutoMLJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeAutoMLJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCodeRepositoryOutcome SageMakerClient::DescribeCodeRepository(const DescribeCodeRepositoryRequest& request) const
@@ -2753,14 +2753,14 @@ DescribeCodeRepositoryOutcomeCallable SageMakerClient::DescribeCodeRepositoryCal
   return task->get_future();
 }
 
-void SageMakerClient::DescribeCodeRepositoryAsync(const DescribeCodeRepositoryRequest& request, const DescribeCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeCodeRepositoryAsyncHelper(SageMakerClient const * const clientThis, const DescribeCodeRepositoryRequest& request, const DescribeCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCodeRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCodeRepository(request), context);
 }
 
-void SageMakerClient::DescribeCodeRepositoryAsyncHelper(const DescribeCodeRepositoryRequest& request, const DescribeCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeCodeRepositoryAsync(const DescribeCodeRepositoryRequest& request, const DescribeCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCodeRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeCodeRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCompilationJobOutcome SageMakerClient::DescribeCompilationJob(const DescribeCompilationJobRequest& request) const
@@ -2777,14 +2777,14 @@ DescribeCompilationJobOutcomeCallable SageMakerClient::DescribeCompilationJobCal
   return task->get_future();
 }
 
-void SageMakerClient::DescribeCompilationJobAsync(const DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeCompilationJobAsyncHelper(SageMakerClient const * const clientThis, const DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCompilationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCompilationJob(request), context);
 }
 
-void SageMakerClient::DescribeCompilationJobAsyncHelper(const DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeCompilationJobAsync(const DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCompilationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeCompilationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeContextOutcome SageMakerClient::DescribeContext(const DescribeContextRequest& request) const
@@ -2801,14 +2801,14 @@ DescribeContextOutcomeCallable SageMakerClient::DescribeContextCallable(const De
   return task->get_future();
 }
 
-void SageMakerClient::DescribeContextAsync(const DescribeContextRequest& request, const DescribeContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeContextAsyncHelper(SageMakerClient const * const clientThis, const DescribeContextRequest& request, const DescribeContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeContextAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeContext(request), context);
 }
 
-void SageMakerClient::DescribeContextAsyncHelper(const DescribeContextRequest& request, const DescribeContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeContextAsync(const DescribeContextRequest& request, const DescribeContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeContext(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeContextAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDataQualityJobDefinitionOutcome SageMakerClient::DescribeDataQualityJobDefinition(const DescribeDataQualityJobDefinitionRequest& request) const
@@ -2825,14 +2825,14 @@ DescribeDataQualityJobDefinitionOutcomeCallable SageMakerClient::DescribeDataQua
   return task->get_future();
 }
 
-void SageMakerClient::DescribeDataQualityJobDefinitionAsync(const DescribeDataQualityJobDefinitionRequest& request, const DescribeDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeDataQualityJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const DescribeDataQualityJobDefinitionRequest& request, const DescribeDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataQualityJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataQualityJobDefinition(request), context);
 }
 
-void SageMakerClient::DescribeDataQualityJobDefinitionAsyncHelper(const DescribeDataQualityJobDefinitionRequest& request, const DescribeDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeDataQualityJobDefinitionAsync(const DescribeDataQualityJobDefinitionRequest& request, const DescribeDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataQualityJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeDataQualityJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDeviceOutcome SageMakerClient::DescribeDevice(const DescribeDeviceRequest& request) const
@@ -2849,14 +2849,14 @@ DescribeDeviceOutcomeCallable SageMakerClient::DescribeDeviceCallable(const Desc
   return task->get_future();
 }
 
-void SageMakerClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeDeviceAsyncHelper(SageMakerClient const * const clientThis, const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDevice(request), context);
 }
 
-void SageMakerClient::DescribeDeviceAsyncHelper(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDeviceFleetOutcome SageMakerClient::DescribeDeviceFleet(const DescribeDeviceFleetRequest& request) const
@@ -2873,14 +2873,14 @@ DescribeDeviceFleetOutcomeCallable SageMakerClient::DescribeDeviceFleetCallable(
   return task->get_future();
 }
 
-void SageMakerClient::DescribeDeviceFleetAsync(const DescribeDeviceFleetRequest& request, const DescribeDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeDeviceFleetAsyncHelper(SageMakerClient const * const clientThis, const DescribeDeviceFleetRequest& request, const DescribeDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeviceFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDeviceFleet(request), context);
 }
 
-void SageMakerClient::DescribeDeviceFleetAsyncHelper(const DescribeDeviceFleetRequest& request, const DescribeDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeDeviceFleetAsync(const DescribeDeviceFleetRequest& request, const DescribeDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDeviceFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeDeviceFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainOutcome SageMakerClient::DescribeDomain(const DescribeDomainRequest& request) const
@@ -2897,14 +2897,14 @@ DescribeDomainOutcomeCallable SageMakerClient::DescribeDomainCallable(const Desc
   return task->get_future();
 }
 
-void SageMakerClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeDomainAsyncHelper(SageMakerClient const * const clientThis, const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomain(request), context);
 }
 
-void SageMakerClient::DescribeDomainAsyncHelper(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEdgeDeploymentPlanOutcome SageMakerClient::DescribeEdgeDeploymentPlan(const DescribeEdgeDeploymentPlanRequest& request) const
@@ -2921,14 +2921,14 @@ DescribeEdgeDeploymentPlanOutcomeCallable SageMakerClient::DescribeEdgeDeploymen
   return task->get_future();
 }
 
-void SageMakerClient::DescribeEdgeDeploymentPlanAsync(const DescribeEdgeDeploymentPlanRequest& request, const DescribeEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeEdgeDeploymentPlanAsyncHelper(SageMakerClient const * const clientThis, const DescribeEdgeDeploymentPlanRequest& request, const DescribeEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEdgeDeploymentPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEdgeDeploymentPlan(request), context);
 }
 
-void SageMakerClient::DescribeEdgeDeploymentPlanAsyncHelper(const DescribeEdgeDeploymentPlanRequest& request, const DescribeEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeEdgeDeploymentPlanAsync(const DescribeEdgeDeploymentPlanRequest& request, const DescribeEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEdgeDeploymentPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeEdgeDeploymentPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEdgePackagingJobOutcome SageMakerClient::DescribeEdgePackagingJob(const DescribeEdgePackagingJobRequest& request) const
@@ -2945,14 +2945,14 @@ DescribeEdgePackagingJobOutcomeCallable SageMakerClient::DescribeEdgePackagingJo
   return task->get_future();
 }
 
-void SageMakerClient::DescribeEdgePackagingJobAsync(const DescribeEdgePackagingJobRequest& request, const DescribeEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeEdgePackagingJobAsyncHelper(SageMakerClient const * const clientThis, const DescribeEdgePackagingJobRequest& request, const DescribeEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEdgePackagingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEdgePackagingJob(request), context);
 }
 
-void SageMakerClient::DescribeEdgePackagingJobAsyncHelper(const DescribeEdgePackagingJobRequest& request, const DescribeEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeEdgePackagingJobAsync(const DescribeEdgePackagingJobRequest& request, const DescribeEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEdgePackagingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeEdgePackagingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEndpointOutcome SageMakerClient::DescribeEndpoint(const DescribeEndpointRequest& request) const
@@ -2969,14 +2969,14 @@ DescribeEndpointOutcomeCallable SageMakerClient::DescribeEndpointCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeEndpointAsyncHelper(SageMakerClient const * const clientThis, const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEndpoint(request), context);
 }
 
-void SageMakerClient::DescribeEndpointAsyncHelper(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEndpointConfigOutcome SageMakerClient::DescribeEndpointConfig(const DescribeEndpointConfigRequest& request) const
@@ -2993,14 +2993,14 @@ DescribeEndpointConfigOutcomeCallable SageMakerClient::DescribeEndpointConfigCal
   return task->get_future();
 }
 
-void SageMakerClient::DescribeEndpointConfigAsync(const DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeEndpointConfigAsyncHelper(SageMakerClient const * const clientThis, const DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEndpointConfig(request), context);
 }
 
-void SageMakerClient::DescribeEndpointConfigAsyncHelper(const DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeEndpointConfigAsync(const DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEndpointConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeEndpointConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExperimentOutcome SageMakerClient::DescribeExperiment(const DescribeExperimentRequest& request) const
@@ -3017,14 +3017,14 @@ DescribeExperimentOutcomeCallable SageMakerClient::DescribeExperimentCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::DescribeExperimentAsync(const DescribeExperimentRequest& request, const DescribeExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeExperimentAsyncHelper(SageMakerClient const * const clientThis, const DescribeExperimentRequest& request, const DescribeExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExperimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExperiment(request), context);
 }
 
-void SageMakerClient::DescribeExperimentAsyncHelper(const DescribeExperimentRequest& request, const DescribeExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeExperimentAsync(const DescribeExperimentRequest& request, const DescribeExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeExperimentAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFeatureGroupOutcome SageMakerClient::DescribeFeatureGroup(const DescribeFeatureGroupRequest& request) const
@@ -3041,14 +3041,14 @@ DescribeFeatureGroupOutcomeCallable SageMakerClient::DescribeFeatureGroupCallabl
   return task->get_future();
 }
 
-void SageMakerClient::DescribeFeatureGroupAsync(const DescribeFeatureGroupRequest& request, const DescribeFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeFeatureGroupAsyncHelper(SageMakerClient const * const clientThis, const DescribeFeatureGroupRequest& request, const DescribeFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFeatureGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFeatureGroup(request), context);
 }
 
-void SageMakerClient::DescribeFeatureGroupAsyncHelper(const DescribeFeatureGroupRequest& request, const DescribeFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeFeatureGroupAsync(const DescribeFeatureGroupRequest& request, const DescribeFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFeatureGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeFeatureGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFeatureMetadataOutcome SageMakerClient::DescribeFeatureMetadata(const DescribeFeatureMetadataRequest& request) const
@@ -3065,14 +3065,14 @@ DescribeFeatureMetadataOutcomeCallable SageMakerClient::DescribeFeatureMetadataC
   return task->get_future();
 }
 
-void SageMakerClient::DescribeFeatureMetadataAsync(const DescribeFeatureMetadataRequest& request, const DescribeFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeFeatureMetadataAsyncHelper(SageMakerClient const * const clientThis, const DescribeFeatureMetadataRequest& request, const DescribeFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFeatureMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFeatureMetadata(request), context);
 }
 
-void SageMakerClient::DescribeFeatureMetadataAsyncHelper(const DescribeFeatureMetadataRequest& request, const DescribeFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeFeatureMetadataAsync(const DescribeFeatureMetadataRequest& request, const DescribeFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFeatureMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeFeatureMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFlowDefinitionOutcome SageMakerClient::DescribeFlowDefinition(const DescribeFlowDefinitionRequest& request) const
@@ -3089,14 +3089,14 @@ DescribeFlowDefinitionOutcomeCallable SageMakerClient::DescribeFlowDefinitionCal
   return task->get_future();
 }
 
-void SageMakerClient::DescribeFlowDefinitionAsync(const DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeFlowDefinitionAsyncHelper(SageMakerClient const * const clientThis, const DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFlowDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFlowDefinition(request), context);
 }
 
-void SageMakerClient::DescribeFlowDefinitionAsyncHelper(const DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeFlowDefinitionAsync(const DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFlowDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeFlowDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeHumanTaskUiOutcome SageMakerClient::DescribeHumanTaskUi(const DescribeHumanTaskUiRequest& request) const
@@ -3113,14 +3113,14 @@ DescribeHumanTaskUiOutcomeCallable SageMakerClient::DescribeHumanTaskUiCallable(
   return task->get_future();
 }
 
-void SageMakerClient::DescribeHumanTaskUiAsync(const DescribeHumanTaskUiRequest& request, const DescribeHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeHumanTaskUiAsyncHelper(SageMakerClient const * const clientThis, const DescribeHumanTaskUiRequest& request, const DescribeHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHumanTaskUiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeHumanTaskUi(request), context);
 }
 
-void SageMakerClient::DescribeHumanTaskUiAsyncHelper(const DescribeHumanTaskUiRequest& request, const DescribeHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeHumanTaskUiAsync(const DescribeHumanTaskUiRequest& request, const DescribeHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeHumanTaskUi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeHumanTaskUiAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeHyperParameterTuningJobOutcome SageMakerClient::DescribeHyperParameterTuningJob(const DescribeHyperParameterTuningJobRequest& request) const
@@ -3137,14 +3137,14 @@ DescribeHyperParameterTuningJobOutcomeCallable SageMakerClient::DescribeHyperPar
   return task->get_future();
 }
 
-void SageMakerClient::DescribeHyperParameterTuningJobAsync(const DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeHyperParameterTuningJobAsyncHelper(SageMakerClient const * const clientThis, const DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHyperParameterTuningJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeHyperParameterTuningJob(request), context);
 }
 
-void SageMakerClient::DescribeHyperParameterTuningJobAsyncHelper(const DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeHyperParameterTuningJobAsync(const DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeHyperParameterTuningJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeHyperParameterTuningJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImageOutcome SageMakerClient::DescribeImage(const DescribeImageRequest& request) const
@@ -3161,14 +3161,14 @@ DescribeImageOutcomeCallable SageMakerClient::DescribeImageCallable(const Descri
   return task->get_future();
 }
 
-void SageMakerClient::DescribeImageAsync(const DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeImageAsyncHelper(SageMakerClient const * const clientThis, const DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImage(request), context);
 }
 
-void SageMakerClient::DescribeImageAsyncHelper(const DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeImageAsync(const DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeImageAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImageVersionOutcome SageMakerClient::DescribeImageVersion(const DescribeImageVersionRequest& request) const
@@ -3185,14 +3185,14 @@ DescribeImageVersionOutcomeCallable SageMakerClient::DescribeImageVersionCallabl
   return task->get_future();
 }
 
-void SageMakerClient::DescribeImageVersionAsync(const DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeImageVersionAsyncHelper(SageMakerClient const * const clientThis, const DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImageVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImageVersion(request), context);
 }
 
-void SageMakerClient::DescribeImageVersionAsyncHelper(const DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeImageVersionAsync(const DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImageVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeImageVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInferenceRecommendationsJobOutcome SageMakerClient::DescribeInferenceRecommendationsJob(const DescribeInferenceRecommendationsJobRequest& request) const
@@ -3209,14 +3209,14 @@ DescribeInferenceRecommendationsJobOutcomeCallable SageMakerClient::DescribeInfe
   return task->get_future();
 }
 
-void SageMakerClient::DescribeInferenceRecommendationsJobAsync(const DescribeInferenceRecommendationsJobRequest& request, const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeInferenceRecommendationsJobAsyncHelper(SageMakerClient const * const clientThis, const DescribeInferenceRecommendationsJobRequest& request, const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInferenceRecommendationsJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInferenceRecommendationsJob(request), context);
 }
 
-void SageMakerClient::DescribeInferenceRecommendationsJobAsyncHelper(const DescribeInferenceRecommendationsJobRequest& request, const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeInferenceRecommendationsJobAsync(const DescribeInferenceRecommendationsJobRequest& request, const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInferenceRecommendationsJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeInferenceRecommendationsJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLabelingJobOutcome SageMakerClient::DescribeLabelingJob(const DescribeLabelingJobRequest& request) const
@@ -3233,14 +3233,14 @@ DescribeLabelingJobOutcomeCallable SageMakerClient::DescribeLabelingJobCallable(
   return task->get_future();
 }
 
-void SageMakerClient::DescribeLabelingJobAsync(const DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeLabelingJobAsyncHelper(SageMakerClient const * const clientThis, const DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLabelingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLabelingJob(request), context);
 }
 
-void SageMakerClient::DescribeLabelingJobAsyncHelper(const DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeLabelingJobAsync(const DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLabelingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeLabelingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLineageGroupOutcome SageMakerClient::DescribeLineageGroup(const DescribeLineageGroupRequest& request) const
@@ -3257,14 +3257,14 @@ DescribeLineageGroupOutcomeCallable SageMakerClient::DescribeLineageGroupCallabl
   return task->get_future();
 }
 
-void SageMakerClient::DescribeLineageGroupAsync(const DescribeLineageGroupRequest& request, const DescribeLineageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeLineageGroupAsyncHelper(SageMakerClient const * const clientThis, const DescribeLineageGroupRequest& request, const DescribeLineageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLineageGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLineageGroup(request), context);
 }
 
-void SageMakerClient::DescribeLineageGroupAsyncHelper(const DescribeLineageGroupRequest& request, const DescribeLineageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeLineageGroupAsync(const DescribeLineageGroupRequest& request, const DescribeLineageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLineageGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeLineageGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeModelOutcome SageMakerClient::DescribeModel(const DescribeModelRequest& request) const
@@ -3281,14 +3281,14 @@ DescribeModelOutcomeCallable SageMakerClient::DescribeModelCallable(const Descri
   return task->get_future();
 }
 
-void SageMakerClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeModelAsyncHelper(SageMakerClient const * const clientThis, const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeModel(request), context);
 }
 
-void SageMakerClient::DescribeModelAsyncHelper(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeModelAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeModelBiasJobDefinitionOutcome SageMakerClient::DescribeModelBiasJobDefinition(const DescribeModelBiasJobDefinitionRequest& request) const
@@ -3305,14 +3305,14 @@ DescribeModelBiasJobDefinitionOutcomeCallable SageMakerClient::DescribeModelBias
   return task->get_future();
 }
 
-void SageMakerClient::DescribeModelBiasJobDefinitionAsync(const DescribeModelBiasJobDefinitionRequest& request, const DescribeModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeModelBiasJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const DescribeModelBiasJobDefinitionRequest& request, const DescribeModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelBiasJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeModelBiasJobDefinition(request), context);
 }
 
-void SageMakerClient::DescribeModelBiasJobDefinitionAsyncHelper(const DescribeModelBiasJobDefinitionRequest& request, const DescribeModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeModelBiasJobDefinitionAsync(const DescribeModelBiasJobDefinitionRequest& request, const DescribeModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeModelBiasJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeModelBiasJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeModelExplainabilityJobDefinitionOutcome SageMakerClient::DescribeModelExplainabilityJobDefinition(const DescribeModelExplainabilityJobDefinitionRequest& request) const
@@ -3329,14 +3329,14 @@ DescribeModelExplainabilityJobDefinitionOutcomeCallable SageMakerClient::Describ
   return task->get_future();
 }
 
-void SageMakerClient::DescribeModelExplainabilityJobDefinitionAsync(const DescribeModelExplainabilityJobDefinitionRequest& request, const DescribeModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeModelExplainabilityJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const DescribeModelExplainabilityJobDefinitionRequest& request, const DescribeModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelExplainabilityJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeModelExplainabilityJobDefinition(request), context);
 }
 
-void SageMakerClient::DescribeModelExplainabilityJobDefinitionAsyncHelper(const DescribeModelExplainabilityJobDefinitionRequest& request, const DescribeModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeModelExplainabilityJobDefinitionAsync(const DescribeModelExplainabilityJobDefinitionRequest& request, const DescribeModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeModelExplainabilityJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeModelExplainabilityJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeModelPackageOutcome SageMakerClient::DescribeModelPackage(const DescribeModelPackageRequest& request) const
@@ -3353,14 +3353,14 @@ DescribeModelPackageOutcomeCallable SageMakerClient::DescribeModelPackageCallabl
   return task->get_future();
 }
 
-void SageMakerClient::DescribeModelPackageAsync(const DescribeModelPackageRequest& request, const DescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeModelPackageAsyncHelper(SageMakerClient const * const clientThis, const DescribeModelPackageRequest& request, const DescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelPackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeModelPackage(request), context);
 }
 
-void SageMakerClient::DescribeModelPackageAsyncHelper(const DescribeModelPackageRequest& request, const DescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeModelPackageAsync(const DescribeModelPackageRequest& request, const DescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeModelPackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeModelPackageAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeModelPackageGroupOutcome SageMakerClient::DescribeModelPackageGroup(const DescribeModelPackageGroupRequest& request) const
@@ -3377,14 +3377,14 @@ DescribeModelPackageGroupOutcomeCallable SageMakerClient::DescribeModelPackageGr
   return task->get_future();
 }
 
-void SageMakerClient::DescribeModelPackageGroupAsync(const DescribeModelPackageGroupRequest& request, const DescribeModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeModelPackageGroupAsyncHelper(SageMakerClient const * const clientThis, const DescribeModelPackageGroupRequest& request, const DescribeModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelPackageGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeModelPackageGroup(request), context);
 }
 
-void SageMakerClient::DescribeModelPackageGroupAsyncHelper(const DescribeModelPackageGroupRequest& request, const DescribeModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeModelPackageGroupAsync(const DescribeModelPackageGroupRequest& request, const DescribeModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeModelPackageGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeModelPackageGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeModelQualityJobDefinitionOutcome SageMakerClient::DescribeModelQualityJobDefinition(const DescribeModelQualityJobDefinitionRequest& request) const
@@ -3401,14 +3401,14 @@ DescribeModelQualityJobDefinitionOutcomeCallable SageMakerClient::DescribeModelQ
   return task->get_future();
 }
 
-void SageMakerClient::DescribeModelQualityJobDefinitionAsync(const DescribeModelQualityJobDefinitionRequest& request, const DescribeModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeModelQualityJobDefinitionAsyncHelper(SageMakerClient const * const clientThis, const DescribeModelQualityJobDefinitionRequest& request, const DescribeModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelQualityJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeModelQualityJobDefinition(request), context);
 }
 
-void SageMakerClient::DescribeModelQualityJobDefinitionAsyncHelper(const DescribeModelQualityJobDefinitionRequest& request, const DescribeModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeModelQualityJobDefinitionAsync(const DescribeModelQualityJobDefinitionRequest& request, const DescribeModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeModelQualityJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeModelQualityJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMonitoringScheduleOutcome SageMakerClient::DescribeMonitoringSchedule(const DescribeMonitoringScheduleRequest& request) const
@@ -3425,14 +3425,14 @@ DescribeMonitoringScheduleOutcomeCallable SageMakerClient::DescribeMonitoringSch
   return task->get_future();
 }
 
-void SageMakerClient::DescribeMonitoringScheduleAsync(const DescribeMonitoringScheduleRequest& request, const DescribeMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeMonitoringScheduleAsyncHelper(SageMakerClient const * const clientThis, const DescribeMonitoringScheduleRequest& request, const DescribeMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMonitoringScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMonitoringSchedule(request), context);
 }
 
-void SageMakerClient::DescribeMonitoringScheduleAsyncHelper(const DescribeMonitoringScheduleRequest& request, const DescribeMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeMonitoringScheduleAsync(const DescribeMonitoringScheduleRequest& request, const DescribeMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMonitoringSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeMonitoringScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNotebookInstanceOutcome SageMakerClient::DescribeNotebookInstance(const DescribeNotebookInstanceRequest& request) const
@@ -3449,14 +3449,14 @@ DescribeNotebookInstanceOutcomeCallable SageMakerClient::DescribeNotebookInstanc
   return task->get_future();
 }
 
-void SageMakerClient::DescribeNotebookInstanceAsync(const DescribeNotebookInstanceRequest& request, const DescribeNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeNotebookInstanceAsyncHelper(SageMakerClient const * const clientThis, const DescribeNotebookInstanceRequest& request, const DescribeNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNotebookInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNotebookInstance(request), context);
 }
 
-void SageMakerClient::DescribeNotebookInstanceAsyncHelper(const DescribeNotebookInstanceRequest& request, const DescribeNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeNotebookInstanceAsync(const DescribeNotebookInstanceRequest& request, const DescribeNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNotebookInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeNotebookInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNotebookInstanceLifecycleConfigOutcome SageMakerClient::DescribeNotebookInstanceLifecycleConfig(const DescribeNotebookInstanceLifecycleConfigRequest& request) const
@@ -3473,14 +3473,14 @@ DescribeNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::Describe
   return task->get_future();
 }
 
-void SageMakerClient::DescribeNotebookInstanceLifecycleConfigAsync(const DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeNotebookInstanceLifecycleConfigAsyncHelper(SageMakerClient const * const clientThis, const DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNotebookInstanceLifecycleConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNotebookInstanceLifecycleConfig(request), context);
 }
 
-void SageMakerClient::DescribeNotebookInstanceLifecycleConfigAsyncHelper(const DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeNotebookInstanceLifecycleConfigAsync(const DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNotebookInstanceLifecycleConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeNotebookInstanceLifecycleConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePipelineOutcome SageMakerClient::DescribePipeline(const DescribePipelineRequest& request) const
@@ -3497,14 +3497,14 @@ DescribePipelineOutcomeCallable SageMakerClient::DescribePipelineCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::DescribePipelineAsync(const DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribePipelineAsyncHelper(SageMakerClient const * const clientThis, const DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePipeline(request), context);
 }
 
-void SageMakerClient::DescribePipelineAsyncHelper(const DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribePipelineAsync(const DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePipelineDefinitionForExecutionOutcome SageMakerClient::DescribePipelineDefinitionForExecution(const DescribePipelineDefinitionForExecutionRequest& request) const
@@ -3521,14 +3521,14 @@ DescribePipelineDefinitionForExecutionOutcomeCallable SageMakerClient::DescribeP
   return task->get_future();
 }
 
-void SageMakerClient::DescribePipelineDefinitionForExecutionAsync(const DescribePipelineDefinitionForExecutionRequest& request, const DescribePipelineDefinitionForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribePipelineDefinitionForExecutionAsyncHelper(SageMakerClient const * const clientThis, const DescribePipelineDefinitionForExecutionRequest& request, const DescribePipelineDefinitionForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePipelineDefinitionForExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePipelineDefinitionForExecution(request), context);
 }
 
-void SageMakerClient::DescribePipelineDefinitionForExecutionAsyncHelper(const DescribePipelineDefinitionForExecutionRequest& request, const DescribePipelineDefinitionForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribePipelineDefinitionForExecutionAsync(const DescribePipelineDefinitionForExecutionRequest& request, const DescribePipelineDefinitionForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePipelineDefinitionForExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribePipelineDefinitionForExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePipelineExecutionOutcome SageMakerClient::DescribePipelineExecution(const DescribePipelineExecutionRequest& request) const
@@ -3545,14 +3545,14 @@ DescribePipelineExecutionOutcomeCallable SageMakerClient::DescribePipelineExecut
   return task->get_future();
 }
 
-void SageMakerClient::DescribePipelineExecutionAsync(const DescribePipelineExecutionRequest& request, const DescribePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribePipelineExecutionAsyncHelper(SageMakerClient const * const clientThis, const DescribePipelineExecutionRequest& request, const DescribePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePipelineExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePipelineExecution(request), context);
 }
 
-void SageMakerClient::DescribePipelineExecutionAsyncHelper(const DescribePipelineExecutionRequest& request, const DescribePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribePipelineExecutionAsync(const DescribePipelineExecutionRequest& request, const DescribePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePipelineExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribePipelineExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProcessingJobOutcome SageMakerClient::DescribeProcessingJob(const DescribeProcessingJobRequest& request) const
@@ -3569,14 +3569,14 @@ DescribeProcessingJobOutcomeCallable SageMakerClient::DescribeProcessingJobCalla
   return task->get_future();
 }
 
-void SageMakerClient::DescribeProcessingJobAsync(const DescribeProcessingJobRequest& request, const DescribeProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeProcessingJobAsyncHelper(SageMakerClient const * const clientThis, const DescribeProcessingJobRequest& request, const DescribeProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProcessingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProcessingJob(request), context);
 }
 
-void SageMakerClient::DescribeProcessingJobAsyncHelper(const DescribeProcessingJobRequest& request, const DescribeProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeProcessingJobAsync(const DescribeProcessingJobRequest& request, const DescribeProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProcessingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeProcessingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProjectOutcome SageMakerClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -3593,14 +3593,14 @@ DescribeProjectOutcomeCallable SageMakerClient::DescribeProjectCallable(const De
   return task->get_future();
 }
 
-void SageMakerClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeProjectAsyncHelper(SageMakerClient const * const clientThis, const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProject(request), context);
 }
 
-void SageMakerClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStudioLifecycleConfigOutcome SageMakerClient::DescribeStudioLifecycleConfig(const DescribeStudioLifecycleConfigRequest& request) const
@@ -3617,14 +3617,14 @@ DescribeStudioLifecycleConfigOutcomeCallable SageMakerClient::DescribeStudioLife
   return task->get_future();
 }
 
-void SageMakerClient::DescribeStudioLifecycleConfigAsync(const DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeStudioLifecycleConfigAsyncHelper(SageMakerClient const * const clientThis, const DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStudioLifecycleConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStudioLifecycleConfig(request), context);
 }
 
-void SageMakerClient::DescribeStudioLifecycleConfigAsyncHelper(const DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeStudioLifecycleConfigAsync(const DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStudioLifecycleConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeStudioLifecycleConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSubscribedWorkteamOutcome SageMakerClient::DescribeSubscribedWorkteam(const DescribeSubscribedWorkteamRequest& request) const
@@ -3641,14 +3641,14 @@ DescribeSubscribedWorkteamOutcomeCallable SageMakerClient::DescribeSubscribedWor
   return task->get_future();
 }
 
-void SageMakerClient::DescribeSubscribedWorkteamAsync(const DescribeSubscribedWorkteamRequest& request, const DescribeSubscribedWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeSubscribedWorkteamAsyncHelper(SageMakerClient const * const clientThis, const DescribeSubscribedWorkteamRequest& request, const DescribeSubscribedWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSubscribedWorkteamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSubscribedWorkteam(request), context);
 }
 
-void SageMakerClient::DescribeSubscribedWorkteamAsyncHelper(const DescribeSubscribedWorkteamRequest& request, const DescribeSubscribedWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeSubscribedWorkteamAsync(const DescribeSubscribedWorkteamRequest& request, const DescribeSubscribedWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSubscribedWorkteam(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeSubscribedWorkteamAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrainingJobOutcome SageMakerClient::DescribeTrainingJob(const DescribeTrainingJobRequest& request) const
@@ -3665,14 +3665,14 @@ DescribeTrainingJobOutcomeCallable SageMakerClient::DescribeTrainingJobCallable(
   return task->get_future();
 }
 
-void SageMakerClient::DescribeTrainingJobAsync(const DescribeTrainingJobRequest& request, const DescribeTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeTrainingJobAsyncHelper(SageMakerClient const * const clientThis, const DescribeTrainingJobRequest& request, const DescribeTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrainingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrainingJob(request), context);
 }
 
-void SageMakerClient::DescribeTrainingJobAsyncHelper(const DescribeTrainingJobRequest& request, const DescribeTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeTrainingJobAsync(const DescribeTrainingJobRequest& request, const DescribeTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrainingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeTrainingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransformJobOutcome SageMakerClient::DescribeTransformJob(const DescribeTransformJobRequest& request) const
@@ -3689,14 +3689,14 @@ DescribeTransformJobOutcomeCallable SageMakerClient::DescribeTransformJobCallabl
   return task->get_future();
 }
 
-void SageMakerClient::DescribeTransformJobAsync(const DescribeTransformJobRequest& request, const DescribeTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeTransformJobAsyncHelper(SageMakerClient const * const clientThis, const DescribeTransformJobRequest& request, const DescribeTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransformJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransformJob(request), context);
 }
 
-void SageMakerClient::DescribeTransformJobAsyncHelper(const DescribeTransformJobRequest& request, const DescribeTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeTransformJobAsync(const DescribeTransformJobRequest& request, const DescribeTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransformJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeTransformJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrialOutcome SageMakerClient::DescribeTrial(const DescribeTrialRequest& request) const
@@ -3713,14 +3713,14 @@ DescribeTrialOutcomeCallable SageMakerClient::DescribeTrialCallable(const Descri
   return task->get_future();
 }
 
-void SageMakerClient::DescribeTrialAsync(const DescribeTrialRequest& request, const DescribeTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeTrialAsyncHelper(SageMakerClient const * const clientThis, const DescribeTrialRequest& request, const DescribeTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrialAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrial(request), context);
 }
 
-void SageMakerClient::DescribeTrialAsyncHelper(const DescribeTrialRequest& request, const DescribeTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeTrialAsync(const DescribeTrialRequest& request, const DescribeTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrial(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeTrialAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrialComponentOutcome SageMakerClient::DescribeTrialComponent(const DescribeTrialComponentRequest& request) const
@@ -3737,14 +3737,14 @@ DescribeTrialComponentOutcomeCallable SageMakerClient::DescribeTrialComponentCal
   return task->get_future();
 }
 
-void SageMakerClient::DescribeTrialComponentAsync(const DescribeTrialComponentRequest& request, const DescribeTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeTrialComponentAsyncHelper(SageMakerClient const * const clientThis, const DescribeTrialComponentRequest& request, const DescribeTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrialComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrialComponent(request), context);
 }
 
-void SageMakerClient::DescribeTrialComponentAsyncHelper(const DescribeTrialComponentRequest& request, const DescribeTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeTrialComponentAsync(const DescribeTrialComponentRequest& request, const DescribeTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrialComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeTrialComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUserProfileOutcome SageMakerClient::DescribeUserProfile(const DescribeUserProfileRequest& request) const
@@ -3761,14 +3761,14 @@ DescribeUserProfileOutcomeCallable SageMakerClient::DescribeUserProfileCallable(
   return task->get_future();
 }
 
-void SageMakerClient::DescribeUserProfileAsync(const DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeUserProfileAsyncHelper(SageMakerClient const * const clientThis, const DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUserProfile(request), context);
 }
 
-void SageMakerClient::DescribeUserProfileAsyncHelper(const DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeUserProfileAsync(const DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeUserProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWorkforceOutcome SageMakerClient::DescribeWorkforce(const DescribeWorkforceRequest& request) const
@@ -3785,14 +3785,14 @@ DescribeWorkforceOutcomeCallable SageMakerClient::DescribeWorkforceCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::DescribeWorkforceAsync(const DescribeWorkforceRequest& request, const DescribeWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeWorkforceAsyncHelper(SageMakerClient const * const clientThis, const DescribeWorkforceRequest& request, const DescribeWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkforceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWorkforce(request), context);
 }
 
-void SageMakerClient::DescribeWorkforceAsyncHelper(const DescribeWorkforceRequest& request, const DescribeWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeWorkforceAsync(const DescribeWorkforceRequest& request, const DescribeWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWorkforce(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeWorkforceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWorkteamOutcome SageMakerClient::DescribeWorkteam(const DescribeWorkteamRequest& request) const
@@ -3809,14 +3809,14 @@ DescribeWorkteamOutcomeCallable SageMakerClient::DescribeWorkteamCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::DescribeWorkteamAsync(const DescribeWorkteamRequest& request, const DescribeWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDescribeWorkteamAsyncHelper(SageMakerClient const * const clientThis, const DescribeWorkteamRequest& request, const DescribeWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkteamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWorkteam(request), context);
 }
 
-void SageMakerClient::DescribeWorkteamAsyncHelper(const DescribeWorkteamRequest& request, const DescribeWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DescribeWorkteamAsync(const DescribeWorkteamRequest& request, const DescribeWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWorkteam(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDescribeWorkteamAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableSagemakerServicecatalogPortfolioOutcome SageMakerClient::DisableSagemakerServicecatalogPortfolio(const DisableSagemakerServicecatalogPortfolioRequest& request) const
@@ -3833,14 +3833,14 @@ DisableSagemakerServicecatalogPortfolioOutcomeCallable SageMakerClient::DisableS
   return task->get_future();
 }
 
-void SageMakerClient::DisableSagemakerServicecatalogPortfolioAsync(const DisableSagemakerServicecatalogPortfolioRequest& request, const DisableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDisableSagemakerServicecatalogPortfolioAsyncHelper(SageMakerClient const * const clientThis, const DisableSagemakerServicecatalogPortfolioRequest& request, const DisableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableSagemakerServicecatalogPortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableSagemakerServicecatalogPortfolio(request), context);
 }
 
-void SageMakerClient::DisableSagemakerServicecatalogPortfolioAsyncHelper(const DisableSagemakerServicecatalogPortfolioRequest& request, const DisableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DisableSagemakerServicecatalogPortfolioAsync(const DisableSagemakerServicecatalogPortfolioRequest& request, const DisableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableSagemakerServicecatalogPortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDisableSagemakerServicecatalogPortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateTrialComponentOutcome SageMakerClient::DisassociateTrialComponent(const DisassociateTrialComponentRequest& request) const
@@ -3857,14 +3857,14 @@ DisassociateTrialComponentOutcomeCallable SageMakerClient::DisassociateTrialComp
   return task->get_future();
 }
 
-void SageMakerClient::DisassociateTrialComponentAsync(const DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientDisassociateTrialComponentAsyncHelper(SageMakerClient const * const clientThis, const DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTrialComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateTrialComponent(request), context);
 }
 
-void SageMakerClient::DisassociateTrialComponentAsyncHelper(const DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::DisassociateTrialComponentAsync(const DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateTrialComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientDisassociateTrialComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableSagemakerServicecatalogPortfolioOutcome SageMakerClient::EnableSagemakerServicecatalogPortfolio(const EnableSagemakerServicecatalogPortfolioRequest& request) const
@@ -3881,14 +3881,14 @@ EnableSagemakerServicecatalogPortfolioOutcomeCallable SageMakerClient::EnableSag
   return task->get_future();
 }
 
-void SageMakerClient::EnableSagemakerServicecatalogPortfolioAsync(const EnableSagemakerServicecatalogPortfolioRequest& request, const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientEnableSagemakerServicecatalogPortfolioAsyncHelper(SageMakerClient const * const clientThis, const EnableSagemakerServicecatalogPortfolioRequest& request, const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableSagemakerServicecatalogPortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableSagemakerServicecatalogPortfolio(request), context);
 }
 
-void SageMakerClient::EnableSagemakerServicecatalogPortfolioAsyncHelper(const EnableSagemakerServicecatalogPortfolioRequest& request, const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::EnableSagemakerServicecatalogPortfolioAsync(const EnableSagemakerServicecatalogPortfolioRequest& request, const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableSagemakerServicecatalogPortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientEnableSagemakerServicecatalogPortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeviceFleetReportOutcome SageMakerClient::GetDeviceFleetReport(const GetDeviceFleetReportRequest& request) const
@@ -3905,14 +3905,14 @@ GetDeviceFleetReportOutcomeCallable SageMakerClient::GetDeviceFleetReportCallabl
   return task->get_future();
 }
 
-void SageMakerClient::GetDeviceFleetReportAsync(const GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientGetDeviceFleetReportAsyncHelper(SageMakerClient const * const clientThis, const GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceFleetReportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeviceFleetReport(request), context);
 }
 
-void SageMakerClient::GetDeviceFleetReportAsyncHelper(const GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::GetDeviceFleetReportAsync(const GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeviceFleetReport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientGetDeviceFleetReportAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLineageGroupPolicyOutcome SageMakerClient::GetLineageGroupPolicy(const GetLineageGroupPolicyRequest& request) const
@@ -3929,14 +3929,14 @@ GetLineageGroupPolicyOutcomeCallable SageMakerClient::GetLineageGroupPolicyCalla
   return task->get_future();
 }
 
-void SageMakerClient::GetLineageGroupPolicyAsync(const GetLineageGroupPolicyRequest& request, const GetLineageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientGetLineageGroupPolicyAsyncHelper(SageMakerClient const * const clientThis, const GetLineageGroupPolicyRequest& request, const GetLineageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLineageGroupPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLineageGroupPolicy(request), context);
 }
 
-void SageMakerClient::GetLineageGroupPolicyAsyncHelper(const GetLineageGroupPolicyRequest& request, const GetLineageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::GetLineageGroupPolicyAsync(const GetLineageGroupPolicyRequest& request, const GetLineageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLineageGroupPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientGetLineageGroupPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetModelPackageGroupPolicyOutcome SageMakerClient::GetModelPackageGroupPolicy(const GetModelPackageGroupPolicyRequest& request) const
@@ -3953,14 +3953,14 @@ GetModelPackageGroupPolicyOutcomeCallable SageMakerClient::GetModelPackageGroupP
   return task->get_future();
 }
 
-void SageMakerClient::GetModelPackageGroupPolicyAsync(const GetModelPackageGroupPolicyRequest& request, const GetModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientGetModelPackageGroupPolicyAsyncHelper(SageMakerClient const * const clientThis, const GetModelPackageGroupPolicyRequest& request, const GetModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetModelPackageGroupPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetModelPackageGroupPolicy(request), context);
 }
 
-void SageMakerClient::GetModelPackageGroupPolicyAsyncHelper(const GetModelPackageGroupPolicyRequest& request, const GetModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::GetModelPackageGroupPolicyAsync(const GetModelPackageGroupPolicyRequest& request, const GetModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetModelPackageGroupPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientGetModelPackageGroupPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSagemakerServicecatalogPortfolioStatusOutcome SageMakerClient::GetSagemakerServicecatalogPortfolioStatus(const GetSagemakerServicecatalogPortfolioStatusRequest& request) const
@@ -3977,14 +3977,14 @@ GetSagemakerServicecatalogPortfolioStatusOutcomeCallable SageMakerClient::GetSag
   return task->get_future();
 }
 
-void SageMakerClient::GetSagemakerServicecatalogPortfolioStatusAsync(const GetSagemakerServicecatalogPortfolioStatusRequest& request, const GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientGetSagemakerServicecatalogPortfolioStatusAsyncHelper(SageMakerClient const * const clientThis, const GetSagemakerServicecatalogPortfolioStatusRequest& request, const GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSagemakerServicecatalogPortfolioStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSagemakerServicecatalogPortfolioStatus(request), context);
 }
 
-void SageMakerClient::GetSagemakerServicecatalogPortfolioStatusAsyncHelper(const GetSagemakerServicecatalogPortfolioStatusRequest& request, const GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::GetSagemakerServicecatalogPortfolioStatusAsync(const GetSagemakerServicecatalogPortfolioStatusRequest& request, const GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSagemakerServicecatalogPortfolioStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientGetSagemakerServicecatalogPortfolioStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSearchSuggestionsOutcome SageMakerClient::GetSearchSuggestions(const GetSearchSuggestionsRequest& request) const
@@ -4001,14 +4001,14 @@ GetSearchSuggestionsOutcomeCallable SageMakerClient::GetSearchSuggestionsCallabl
   return task->get_future();
 }
 
-void SageMakerClient::GetSearchSuggestionsAsync(const GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientGetSearchSuggestionsAsyncHelper(SageMakerClient const * const clientThis, const GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSearchSuggestionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSearchSuggestions(request), context);
 }
 
-void SageMakerClient::GetSearchSuggestionsAsyncHelper(const GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::GetSearchSuggestionsAsync(const GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSearchSuggestions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientGetSearchSuggestionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListActionsOutcome SageMakerClient::ListActions(const ListActionsRequest& request) const
@@ -4025,14 +4025,14 @@ ListActionsOutcomeCallable SageMakerClient::ListActionsCallable(const ListAction
   return task->get_future();
 }
 
-void SageMakerClient::ListActionsAsync(const ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListActionsAsyncHelper(SageMakerClient const * const clientThis, const ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListActionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListActions(request), context);
 }
 
-void SageMakerClient::ListActionsAsyncHelper(const ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListActionsAsync(const ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListActions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListActionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAlgorithmsOutcome SageMakerClient::ListAlgorithms(const ListAlgorithmsRequest& request) const
@@ -4049,14 +4049,14 @@ ListAlgorithmsOutcomeCallable SageMakerClient::ListAlgorithmsCallable(const List
   return task->get_future();
 }
 
-void SageMakerClient::ListAlgorithmsAsync(const ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListAlgorithmsAsyncHelper(SageMakerClient const * const clientThis, const ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAlgorithmsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAlgorithms(request), context);
 }
 
-void SageMakerClient::ListAlgorithmsAsyncHelper(const ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListAlgorithmsAsync(const ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAlgorithms(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListAlgorithmsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAppImageConfigsOutcome SageMakerClient::ListAppImageConfigs(const ListAppImageConfigsRequest& request) const
@@ -4073,14 +4073,14 @@ ListAppImageConfigsOutcomeCallable SageMakerClient::ListAppImageConfigsCallable(
   return task->get_future();
 }
 
-void SageMakerClient::ListAppImageConfigsAsync(const ListAppImageConfigsRequest& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListAppImageConfigsAsyncHelper(SageMakerClient const * const clientThis, const ListAppImageConfigsRequest& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppImageConfigsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAppImageConfigs(request), context);
 }
 
-void SageMakerClient::ListAppImageConfigsAsyncHelper(const ListAppImageConfigsRequest& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListAppImageConfigsAsync(const ListAppImageConfigsRequest& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAppImageConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListAppImageConfigsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAppsOutcome SageMakerClient::ListApps(const ListAppsRequest& request) const
@@ -4097,14 +4097,14 @@ ListAppsOutcomeCallable SageMakerClient::ListAppsCallable(const ListAppsRequest&
   return task->get_future();
 }
 
-void SageMakerClient::ListAppsAsync(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListAppsAsyncHelper(SageMakerClient const * const clientThis, const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApps(request), context);
 }
 
-void SageMakerClient::ListAppsAsyncHelper(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListAppsAsync(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApps(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListAppsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListArtifactsOutcome SageMakerClient::ListArtifacts(const ListArtifactsRequest& request) const
@@ -4121,14 +4121,14 @@ ListArtifactsOutcomeCallable SageMakerClient::ListArtifactsCallable(const ListAr
   return task->get_future();
 }
 
-void SageMakerClient::ListArtifactsAsync(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListArtifactsAsyncHelper(SageMakerClient const * const clientThis, const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListArtifactsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListArtifacts(request), context);
 }
 
-void SageMakerClient::ListArtifactsAsyncHelper(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListArtifactsAsync(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListArtifacts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListArtifactsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssociationsOutcome SageMakerClient::ListAssociations(const ListAssociationsRequest& request) const
@@ -4145,14 +4145,14 @@ ListAssociationsOutcomeCallable SageMakerClient::ListAssociationsCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::ListAssociationsAsync(const ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListAssociationsAsyncHelper(SageMakerClient const * const clientThis, const ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssociations(request), context);
 }
 
-void SageMakerClient::ListAssociationsAsyncHelper(const ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListAssociationsAsync(const ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAutoMLJobsOutcome SageMakerClient::ListAutoMLJobs(const ListAutoMLJobsRequest& request) const
@@ -4169,14 +4169,14 @@ ListAutoMLJobsOutcomeCallable SageMakerClient::ListAutoMLJobsCallable(const List
   return task->get_future();
 }
 
-void SageMakerClient::ListAutoMLJobsAsync(const ListAutoMLJobsRequest& request, const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListAutoMLJobsAsyncHelper(SageMakerClient const * const clientThis, const ListAutoMLJobsRequest& request, const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAutoMLJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAutoMLJobs(request), context);
 }
 
-void SageMakerClient::ListAutoMLJobsAsyncHelper(const ListAutoMLJobsRequest& request, const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListAutoMLJobsAsync(const ListAutoMLJobsRequest& request, const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAutoMLJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListAutoMLJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCandidatesForAutoMLJobOutcome SageMakerClient::ListCandidatesForAutoMLJob(const ListCandidatesForAutoMLJobRequest& request) const
@@ -4193,14 +4193,14 @@ ListCandidatesForAutoMLJobOutcomeCallable SageMakerClient::ListCandidatesForAuto
   return task->get_future();
 }
 
-void SageMakerClient::ListCandidatesForAutoMLJobAsync(const ListCandidatesForAutoMLJobRequest& request, const ListCandidatesForAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListCandidatesForAutoMLJobAsyncHelper(SageMakerClient const * const clientThis, const ListCandidatesForAutoMLJobRequest& request, const ListCandidatesForAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCandidatesForAutoMLJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCandidatesForAutoMLJob(request), context);
 }
 
-void SageMakerClient::ListCandidatesForAutoMLJobAsyncHelper(const ListCandidatesForAutoMLJobRequest& request, const ListCandidatesForAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListCandidatesForAutoMLJobAsync(const ListCandidatesForAutoMLJobRequest& request, const ListCandidatesForAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCandidatesForAutoMLJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListCandidatesForAutoMLJobAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCodeRepositoriesOutcome SageMakerClient::ListCodeRepositories(const ListCodeRepositoriesRequest& request) const
@@ -4217,14 +4217,14 @@ ListCodeRepositoriesOutcomeCallable SageMakerClient::ListCodeRepositoriesCallabl
   return task->get_future();
 }
 
-void SageMakerClient::ListCodeRepositoriesAsync(const ListCodeRepositoriesRequest& request, const ListCodeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListCodeRepositoriesAsyncHelper(SageMakerClient const * const clientThis, const ListCodeRepositoriesRequest& request, const ListCodeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCodeRepositoriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCodeRepositories(request), context);
 }
 
-void SageMakerClient::ListCodeRepositoriesAsyncHelper(const ListCodeRepositoriesRequest& request, const ListCodeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListCodeRepositoriesAsync(const ListCodeRepositoriesRequest& request, const ListCodeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCodeRepositories(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListCodeRepositoriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCompilationJobsOutcome SageMakerClient::ListCompilationJobs(const ListCompilationJobsRequest& request) const
@@ -4241,14 +4241,14 @@ ListCompilationJobsOutcomeCallable SageMakerClient::ListCompilationJobsCallable(
   return task->get_future();
 }
 
-void SageMakerClient::ListCompilationJobsAsync(const ListCompilationJobsRequest& request, const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListCompilationJobsAsyncHelper(SageMakerClient const * const clientThis, const ListCompilationJobsRequest& request, const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCompilationJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCompilationJobs(request), context);
 }
 
-void SageMakerClient::ListCompilationJobsAsyncHelper(const ListCompilationJobsRequest& request, const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListCompilationJobsAsync(const ListCompilationJobsRequest& request, const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCompilationJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListCompilationJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListContextsOutcome SageMakerClient::ListContexts(const ListContextsRequest& request) const
@@ -4265,14 +4265,14 @@ ListContextsOutcomeCallable SageMakerClient::ListContextsCallable(const ListCont
   return task->get_future();
 }
 
-void SageMakerClient::ListContextsAsync(const ListContextsRequest& request, const ListContextsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListContextsAsyncHelper(SageMakerClient const * const clientThis, const ListContextsRequest& request, const ListContextsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContextsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListContexts(request), context);
 }
 
-void SageMakerClient::ListContextsAsyncHelper(const ListContextsRequest& request, const ListContextsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListContextsAsync(const ListContextsRequest& request, const ListContextsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListContexts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListContextsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDataQualityJobDefinitionsOutcome SageMakerClient::ListDataQualityJobDefinitions(const ListDataQualityJobDefinitionsRequest& request) const
@@ -4289,14 +4289,14 @@ ListDataQualityJobDefinitionsOutcomeCallable SageMakerClient::ListDataQualityJob
   return task->get_future();
 }
 
-void SageMakerClient::ListDataQualityJobDefinitionsAsync(const ListDataQualityJobDefinitionsRequest& request, const ListDataQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListDataQualityJobDefinitionsAsyncHelper(SageMakerClient const * const clientThis, const ListDataQualityJobDefinitionsRequest& request, const ListDataQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataQualityJobDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDataQualityJobDefinitions(request), context);
 }
 
-void SageMakerClient::ListDataQualityJobDefinitionsAsyncHelper(const ListDataQualityJobDefinitionsRequest& request, const ListDataQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListDataQualityJobDefinitionsAsync(const ListDataQualityJobDefinitionsRequest& request, const ListDataQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDataQualityJobDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListDataQualityJobDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeviceFleetsOutcome SageMakerClient::ListDeviceFleets(const ListDeviceFleetsRequest& request) const
@@ -4313,14 +4313,14 @@ ListDeviceFleetsOutcomeCallable SageMakerClient::ListDeviceFleetsCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::ListDeviceFleetsAsync(const ListDeviceFleetsRequest& request, const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListDeviceFleetsAsyncHelper(SageMakerClient const * const clientThis, const ListDeviceFleetsRequest& request, const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeviceFleetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeviceFleets(request), context);
 }
 
-void SageMakerClient::ListDeviceFleetsAsyncHelper(const ListDeviceFleetsRequest& request, const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListDeviceFleetsAsync(const ListDeviceFleetsRequest& request, const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeviceFleets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListDeviceFleetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDevicesOutcome SageMakerClient::ListDevices(const ListDevicesRequest& request) const
@@ -4337,14 +4337,14 @@ ListDevicesOutcomeCallable SageMakerClient::ListDevicesCallable(const ListDevice
   return task->get_future();
 }
 
-void SageMakerClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListDevicesAsyncHelper(SageMakerClient const * const clientThis, const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDevices(request), context);
 }
 
-void SageMakerClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainsOutcome SageMakerClient::ListDomains(const ListDomainsRequest& request) const
@@ -4361,14 +4361,14 @@ ListDomainsOutcomeCallable SageMakerClient::ListDomainsCallable(const ListDomain
   return task->get_future();
 }
 
-void SageMakerClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListDomainsAsyncHelper(SageMakerClient const * const clientThis, const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomains(request), context);
 }
 
-void SageMakerClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomains(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListDomainsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEdgeDeploymentPlansOutcome SageMakerClient::ListEdgeDeploymentPlans(const ListEdgeDeploymentPlansRequest& request) const
@@ -4385,14 +4385,14 @@ ListEdgeDeploymentPlansOutcomeCallable SageMakerClient::ListEdgeDeploymentPlansC
   return task->get_future();
 }
 
-void SageMakerClient::ListEdgeDeploymentPlansAsync(const ListEdgeDeploymentPlansRequest& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListEdgeDeploymentPlansAsyncHelper(SageMakerClient const * const clientThis, const ListEdgeDeploymentPlansRequest& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEdgeDeploymentPlansAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEdgeDeploymentPlans(request), context);
 }
 
-void SageMakerClient::ListEdgeDeploymentPlansAsyncHelper(const ListEdgeDeploymentPlansRequest& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListEdgeDeploymentPlansAsync(const ListEdgeDeploymentPlansRequest& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEdgeDeploymentPlans(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListEdgeDeploymentPlansAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEdgePackagingJobsOutcome SageMakerClient::ListEdgePackagingJobs(const ListEdgePackagingJobsRequest& request) const
@@ -4409,14 +4409,14 @@ ListEdgePackagingJobsOutcomeCallable SageMakerClient::ListEdgePackagingJobsCalla
   return task->get_future();
 }
 
-void SageMakerClient::ListEdgePackagingJobsAsync(const ListEdgePackagingJobsRequest& request, const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListEdgePackagingJobsAsyncHelper(SageMakerClient const * const clientThis, const ListEdgePackagingJobsRequest& request, const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEdgePackagingJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEdgePackagingJobs(request), context);
 }
 
-void SageMakerClient::ListEdgePackagingJobsAsyncHelper(const ListEdgePackagingJobsRequest& request, const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListEdgePackagingJobsAsync(const ListEdgePackagingJobsRequest& request, const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEdgePackagingJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListEdgePackagingJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEndpointConfigsOutcome SageMakerClient::ListEndpointConfigs(const ListEndpointConfigsRequest& request) const
@@ -4433,14 +4433,14 @@ ListEndpointConfigsOutcomeCallable SageMakerClient::ListEndpointConfigsCallable(
   return task->get_future();
 }
 
-void SageMakerClient::ListEndpointConfigsAsync(const ListEndpointConfigsRequest& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListEndpointConfigsAsyncHelper(SageMakerClient const * const clientThis, const ListEndpointConfigsRequest& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEndpointConfigsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEndpointConfigs(request), context);
 }
 
-void SageMakerClient::ListEndpointConfigsAsyncHelper(const ListEndpointConfigsRequest& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListEndpointConfigsAsync(const ListEndpointConfigsRequest& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEndpointConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListEndpointConfigsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEndpointsOutcome SageMakerClient::ListEndpoints(const ListEndpointsRequest& request) const
@@ -4457,14 +4457,14 @@ ListEndpointsOutcomeCallable SageMakerClient::ListEndpointsCallable(const ListEn
   return task->get_future();
 }
 
-void SageMakerClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListEndpointsAsyncHelper(SageMakerClient const * const clientThis, const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEndpoints(request), context);
 }
 
-void SageMakerClient::ListEndpointsAsyncHelper(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExperimentsOutcome SageMakerClient::ListExperiments(const ListExperimentsRequest& request) const
@@ -4481,14 +4481,14 @@ ListExperimentsOutcomeCallable SageMakerClient::ListExperimentsCallable(const Li
   return task->get_future();
 }
 
-void SageMakerClient::ListExperimentsAsync(const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListExperimentsAsyncHelper(SageMakerClient const * const clientThis, const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExperimentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExperiments(request), context);
 }
 
-void SageMakerClient::ListExperimentsAsyncHelper(const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListExperimentsAsync(const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExperiments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListExperimentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFeatureGroupsOutcome SageMakerClient::ListFeatureGroups(const ListFeatureGroupsRequest& request) const
@@ -4505,14 +4505,14 @@ ListFeatureGroupsOutcomeCallable SageMakerClient::ListFeatureGroupsCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::ListFeatureGroupsAsync(const ListFeatureGroupsRequest& request, const ListFeatureGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListFeatureGroupsAsyncHelper(SageMakerClient const * const clientThis, const ListFeatureGroupsRequest& request, const ListFeatureGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFeatureGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFeatureGroups(request), context);
 }
 
-void SageMakerClient::ListFeatureGroupsAsyncHelper(const ListFeatureGroupsRequest& request, const ListFeatureGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListFeatureGroupsAsync(const ListFeatureGroupsRequest& request, const ListFeatureGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFeatureGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListFeatureGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFlowDefinitionsOutcome SageMakerClient::ListFlowDefinitions(const ListFlowDefinitionsRequest& request) const
@@ -4529,14 +4529,14 @@ ListFlowDefinitionsOutcomeCallable SageMakerClient::ListFlowDefinitionsCallable(
   return task->get_future();
 }
 
-void SageMakerClient::ListFlowDefinitionsAsync(const ListFlowDefinitionsRequest& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListFlowDefinitionsAsyncHelper(SageMakerClient const * const clientThis, const ListFlowDefinitionsRequest& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFlowDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFlowDefinitions(request), context);
 }
 
-void SageMakerClient::ListFlowDefinitionsAsyncHelper(const ListFlowDefinitionsRequest& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListFlowDefinitionsAsync(const ListFlowDefinitionsRequest& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFlowDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListFlowDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListHumanTaskUisOutcome SageMakerClient::ListHumanTaskUis(const ListHumanTaskUisRequest& request) const
@@ -4553,14 +4553,14 @@ ListHumanTaskUisOutcomeCallable SageMakerClient::ListHumanTaskUisCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::ListHumanTaskUisAsync(const ListHumanTaskUisRequest& request, const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListHumanTaskUisAsyncHelper(SageMakerClient const * const clientThis, const ListHumanTaskUisRequest& request, const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHumanTaskUisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListHumanTaskUis(request), context);
 }
 
-void SageMakerClient::ListHumanTaskUisAsyncHelper(const ListHumanTaskUisRequest& request, const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListHumanTaskUisAsync(const ListHumanTaskUisRequest& request, const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListHumanTaskUis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListHumanTaskUisAsyncHelper( this, request, handler, context ); } );
 }
 
 ListHyperParameterTuningJobsOutcome SageMakerClient::ListHyperParameterTuningJobs(const ListHyperParameterTuningJobsRequest& request) const
@@ -4577,14 +4577,14 @@ ListHyperParameterTuningJobsOutcomeCallable SageMakerClient::ListHyperParameterT
   return task->get_future();
 }
 
-void SageMakerClient::ListHyperParameterTuningJobsAsync(const ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListHyperParameterTuningJobsAsyncHelper(SageMakerClient const * const clientThis, const ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHyperParameterTuningJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListHyperParameterTuningJobs(request), context);
 }
 
-void SageMakerClient::ListHyperParameterTuningJobsAsyncHelper(const ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListHyperParameterTuningJobsAsync(const ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListHyperParameterTuningJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListHyperParameterTuningJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImageVersionsOutcome SageMakerClient::ListImageVersions(const ListImageVersionsRequest& request) const
@@ -4601,14 +4601,14 @@ ListImageVersionsOutcomeCallable SageMakerClient::ListImageVersionsCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::ListImageVersionsAsync(const ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListImageVersionsAsyncHelper(SageMakerClient const * const clientThis, const ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImageVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImageVersions(request), context);
 }
 
-void SageMakerClient::ListImageVersionsAsyncHelper(const ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListImageVersionsAsync(const ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImageVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListImageVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImagesOutcome SageMakerClient::ListImages(const ListImagesRequest& request) const
@@ -4625,14 +4625,14 @@ ListImagesOutcomeCallable SageMakerClient::ListImagesCallable(const ListImagesRe
   return task->get_future();
 }
 
-void SageMakerClient::ListImagesAsync(const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListImagesAsyncHelper(SageMakerClient const * const clientThis, const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImages(request), context);
 }
 
-void SageMakerClient::ListImagesAsyncHelper(const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListImagesAsync(const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListImagesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInferenceRecommendationsJobsOutcome SageMakerClient::ListInferenceRecommendationsJobs(const ListInferenceRecommendationsJobsRequest& request) const
@@ -4649,14 +4649,14 @@ ListInferenceRecommendationsJobsOutcomeCallable SageMakerClient::ListInferenceRe
   return task->get_future();
 }
 
-void SageMakerClient::ListInferenceRecommendationsJobsAsync(const ListInferenceRecommendationsJobsRequest& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListInferenceRecommendationsJobsAsyncHelper(SageMakerClient const * const clientThis, const ListInferenceRecommendationsJobsRequest& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInferenceRecommendationsJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInferenceRecommendationsJobs(request), context);
 }
 
-void SageMakerClient::ListInferenceRecommendationsJobsAsyncHelper(const ListInferenceRecommendationsJobsRequest& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListInferenceRecommendationsJobsAsync(const ListInferenceRecommendationsJobsRequest& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInferenceRecommendationsJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListInferenceRecommendationsJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLabelingJobsOutcome SageMakerClient::ListLabelingJobs(const ListLabelingJobsRequest& request) const
@@ -4673,14 +4673,14 @@ ListLabelingJobsOutcomeCallable SageMakerClient::ListLabelingJobsCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::ListLabelingJobsAsync(const ListLabelingJobsRequest& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListLabelingJobsAsyncHelper(SageMakerClient const * const clientThis, const ListLabelingJobsRequest& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLabelingJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLabelingJobs(request), context);
 }
 
-void SageMakerClient::ListLabelingJobsAsyncHelper(const ListLabelingJobsRequest& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListLabelingJobsAsync(const ListLabelingJobsRequest& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLabelingJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListLabelingJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLabelingJobsForWorkteamOutcome SageMakerClient::ListLabelingJobsForWorkteam(const ListLabelingJobsForWorkteamRequest& request) const
@@ -4697,14 +4697,14 @@ ListLabelingJobsForWorkteamOutcomeCallable SageMakerClient::ListLabelingJobsForW
   return task->get_future();
 }
 
-void SageMakerClient::ListLabelingJobsForWorkteamAsync(const ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListLabelingJobsForWorkteamAsyncHelper(SageMakerClient const * const clientThis, const ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLabelingJobsForWorkteamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLabelingJobsForWorkteam(request), context);
 }
 
-void SageMakerClient::ListLabelingJobsForWorkteamAsyncHelper(const ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListLabelingJobsForWorkteamAsync(const ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLabelingJobsForWorkteam(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListLabelingJobsForWorkteamAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLineageGroupsOutcome SageMakerClient::ListLineageGroups(const ListLineageGroupsRequest& request) const
@@ -4721,14 +4721,14 @@ ListLineageGroupsOutcomeCallable SageMakerClient::ListLineageGroupsCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::ListLineageGroupsAsync(const ListLineageGroupsRequest& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListLineageGroupsAsyncHelper(SageMakerClient const * const clientThis, const ListLineageGroupsRequest& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLineageGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLineageGroups(request), context);
 }
 
-void SageMakerClient::ListLineageGroupsAsyncHelper(const ListLineageGroupsRequest& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListLineageGroupsAsync(const ListLineageGroupsRequest& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLineageGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListLineageGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListModelBiasJobDefinitionsOutcome SageMakerClient::ListModelBiasJobDefinitions(const ListModelBiasJobDefinitionsRequest& request) const
@@ -4745,14 +4745,14 @@ ListModelBiasJobDefinitionsOutcomeCallable SageMakerClient::ListModelBiasJobDefi
   return task->get_future();
 }
 
-void SageMakerClient::ListModelBiasJobDefinitionsAsync(const ListModelBiasJobDefinitionsRequest& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListModelBiasJobDefinitionsAsyncHelper(SageMakerClient const * const clientThis, const ListModelBiasJobDefinitionsRequest& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListModelBiasJobDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListModelBiasJobDefinitions(request), context);
 }
 
-void SageMakerClient::ListModelBiasJobDefinitionsAsyncHelper(const ListModelBiasJobDefinitionsRequest& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListModelBiasJobDefinitionsAsync(const ListModelBiasJobDefinitionsRequest& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListModelBiasJobDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListModelBiasJobDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListModelExplainabilityJobDefinitionsOutcome SageMakerClient::ListModelExplainabilityJobDefinitions(const ListModelExplainabilityJobDefinitionsRequest& request) const
@@ -4769,14 +4769,14 @@ ListModelExplainabilityJobDefinitionsOutcomeCallable SageMakerClient::ListModelE
   return task->get_future();
 }
 
-void SageMakerClient::ListModelExplainabilityJobDefinitionsAsync(const ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListModelExplainabilityJobDefinitionsAsyncHelper(SageMakerClient const * const clientThis, const ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListModelExplainabilityJobDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListModelExplainabilityJobDefinitions(request), context);
 }
 
-void SageMakerClient::ListModelExplainabilityJobDefinitionsAsyncHelper(const ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListModelExplainabilityJobDefinitionsAsync(const ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListModelExplainabilityJobDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListModelExplainabilityJobDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListModelMetadataOutcome SageMakerClient::ListModelMetadata(const ListModelMetadataRequest& request) const
@@ -4793,14 +4793,14 @@ ListModelMetadataOutcomeCallable SageMakerClient::ListModelMetadataCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::ListModelMetadataAsync(const ListModelMetadataRequest& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListModelMetadataAsyncHelper(SageMakerClient const * const clientThis, const ListModelMetadataRequest& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListModelMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListModelMetadata(request), context);
 }
 
-void SageMakerClient::ListModelMetadataAsyncHelper(const ListModelMetadataRequest& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListModelMetadataAsync(const ListModelMetadataRequest& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListModelMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListModelMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 ListModelPackageGroupsOutcome SageMakerClient::ListModelPackageGroups(const ListModelPackageGroupsRequest& request) const
@@ -4817,14 +4817,14 @@ ListModelPackageGroupsOutcomeCallable SageMakerClient::ListModelPackageGroupsCal
   return task->get_future();
 }
 
-void SageMakerClient::ListModelPackageGroupsAsync(const ListModelPackageGroupsRequest& request, const ListModelPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListModelPackageGroupsAsyncHelper(SageMakerClient const * const clientThis, const ListModelPackageGroupsRequest& request, const ListModelPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListModelPackageGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListModelPackageGroups(request), context);
 }
 
-void SageMakerClient::ListModelPackageGroupsAsyncHelper(const ListModelPackageGroupsRequest& request, const ListModelPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListModelPackageGroupsAsync(const ListModelPackageGroupsRequest& request, const ListModelPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListModelPackageGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListModelPackageGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListModelPackagesOutcome SageMakerClient::ListModelPackages(const ListModelPackagesRequest& request) const
@@ -4841,14 +4841,14 @@ ListModelPackagesOutcomeCallable SageMakerClient::ListModelPackagesCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::ListModelPackagesAsync(const ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListModelPackagesAsyncHelper(SageMakerClient const * const clientThis, const ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListModelPackagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListModelPackages(request), context);
 }
 
-void SageMakerClient::ListModelPackagesAsyncHelper(const ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListModelPackagesAsync(const ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListModelPackages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListModelPackagesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListModelQualityJobDefinitionsOutcome SageMakerClient::ListModelQualityJobDefinitions(const ListModelQualityJobDefinitionsRequest& request) const
@@ -4865,14 +4865,14 @@ ListModelQualityJobDefinitionsOutcomeCallable SageMakerClient::ListModelQualityJ
   return task->get_future();
 }
 
-void SageMakerClient::ListModelQualityJobDefinitionsAsync(const ListModelQualityJobDefinitionsRequest& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListModelQualityJobDefinitionsAsyncHelper(SageMakerClient const * const clientThis, const ListModelQualityJobDefinitionsRequest& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListModelQualityJobDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListModelQualityJobDefinitions(request), context);
 }
 
-void SageMakerClient::ListModelQualityJobDefinitionsAsyncHelper(const ListModelQualityJobDefinitionsRequest& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListModelQualityJobDefinitionsAsync(const ListModelQualityJobDefinitionsRequest& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListModelQualityJobDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListModelQualityJobDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListModelsOutcome SageMakerClient::ListModels(const ListModelsRequest& request) const
@@ -4889,14 +4889,14 @@ ListModelsOutcomeCallable SageMakerClient::ListModelsCallable(const ListModelsRe
   return task->get_future();
 }
 
-void SageMakerClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListModelsAsyncHelper(SageMakerClient const * const clientThis, const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListModelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListModels(request), context);
 }
 
-void SageMakerClient::ListModelsAsyncHelper(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListModels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListModelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMonitoringExecutionsOutcome SageMakerClient::ListMonitoringExecutions(const ListMonitoringExecutionsRequest& request) const
@@ -4913,14 +4913,14 @@ ListMonitoringExecutionsOutcomeCallable SageMakerClient::ListMonitoringExecution
   return task->get_future();
 }
 
-void SageMakerClient::ListMonitoringExecutionsAsync(const ListMonitoringExecutionsRequest& request, const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListMonitoringExecutionsAsyncHelper(SageMakerClient const * const clientThis, const ListMonitoringExecutionsRequest& request, const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMonitoringExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMonitoringExecutions(request), context);
 }
 
-void SageMakerClient::ListMonitoringExecutionsAsyncHelper(const ListMonitoringExecutionsRequest& request, const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListMonitoringExecutionsAsync(const ListMonitoringExecutionsRequest& request, const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMonitoringExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListMonitoringExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMonitoringSchedulesOutcome SageMakerClient::ListMonitoringSchedules(const ListMonitoringSchedulesRequest& request) const
@@ -4937,14 +4937,14 @@ ListMonitoringSchedulesOutcomeCallable SageMakerClient::ListMonitoringSchedulesC
   return task->get_future();
 }
 
-void SageMakerClient::ListMonitoringSchedulesAsync(const ListMonitoringSchedulesRequest& request, const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListMonitoringSchedulesAsyncHelper(SageMakerClient const * const clientThis, const ListMonitoringSchedulesRequest& request, const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMonitoringSchedulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMonitoringSchedules(request), context);
 }
 
-void SageMakerClient::ListMonitoringSchedulesAsyncHelper(const ListMonitoringSchedulesRequest& request, const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListMonitoringSchedulesAsync(const ListMonitoringSchedulesRequest& request, const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMonitoringSchedules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListMonitoringSchedulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNotebookInstanceLifecycleConfigsOutcome SageMakerClient::ListNotebookInstanceLifecycleConfigs(const ListNotebookInstanceLifecycleConfigsRequest& request) const
@@ -4961,14 +4961,14 @@ ListNotebookInstanceLifecycleConfigsOutcomeCallable SageMakerClient::ListNoteboo
   return task->get_future();
 }
 
-void SageMakerClient::ListNotebookInstanceLifecycleConfigsAsync(const ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListNotebookInstanceLifecycleConfigsAsyncHelper(SageMakerClient const * const clientThis, const ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNotebookInstanceLifecycleConfigsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNotebookInstanceLifecycleConfigs(request), context);
 }
 
-void SageMakerClient::ListNotebookInstanceLifecycleConfigsAsyncHelper(const ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListNotebookInstanceLifecycleConfigsAsync(const ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNotebookInstanceLifecycleConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListNotebookInstanceLifecycleConfigsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNotebookInstancesOutcome SageMakerClient::ListNotebookInstances(const ListNotebookInstancesRequest& request) const
@@ -4985,14 +4985,14 @@ ListNotebookInstancesOutcomeCallable SageMakerClient::ListNotebookInstancesCalla
   return task->get_future();
 }
 
-void SageMakerClient::ListNotebookInstancesAsync(const ListNotebookInstancesRequest& request, const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListNotebookInstancesAsyncHelper(SageMakerClient const * const clientThis, const ListNotebookInstancesRequest& request, const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNotebookInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNotebookInstances(request), context);
 }
 
-void SageMakerClient::ListNotebookInstancesAsyncHelper(const ListNotebookInstancesRequest& request, const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListNotebookInstancesAsync(const ListNotebookInstancesRequest& request, const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNotebookInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListNotebookInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPipelineExecutionStepsOutcome SageMakerClient::ListPipelineExecutionSteps(const ListPipelineExecutionStepsRequest& request) const
@@ -5009,14 +5009,14 @@ ListPipelineExecutionStepsOutcomeCallable SageMakerClient::ListPipelineExecution
   return task->get_future();
 }
 
-void SageMakerClient::ListPipelineExecutionStepsAsync(const ListPipelineExecutionStepsRequest& request, const ListPipelineExecutionStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListPipelineExecutionStepsAsyncHelper(SageMakerClient const * const clientThis, const ListPipelineExecutionStepsRequest& request, const ListPipelineExecutionStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPipelineExecutionStepsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPipelineExecutionSteps(request), context);
 }
 
-void SageMakerClient::ListPipelineExecutionStepsAsyncHelper(const ListPipelineExecutionStepsRequest& request, const ListPipelineExecutionStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListPipelineExecutionStepsAsync(const ListPipelineExecutionStepsRequest& request, const ListPipelineExecutionStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPipelineExecutionSteps(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListPipelineExecutionStepsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPipelineExecutionsOutcome SageMakerClient::ListPipelineExecutions(const ListPipelineExecutionsRequest& request) const
@@ -5033,14 +5033,14 @@ ListPipelineExecutionsOutcomeCallable SageMakerClient::ListPipelineExecutionsCal
   return task->get_future();
 }
 
-void SageMakerClient::ListPipelineExecutionsAsync(const ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListPipelineExecutionsAsyncHelper(SageMakerClient const * const clientThis, const ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPipelineExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPipelineExecutions(request), context);
 }
 
-void SageMakerClient::ListPipelineExecutionsAsyncHelper(const ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListPipelineExecutionsAsync(const ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPipelineExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListPipelineExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPipelineParametersForExecutionOutcome SageMakerClient::ListPipelineParametersForExecution(const ListPipelineParametersForExecutionRequest& request) const
@@ -5057,14 +5057,14 @@ ListPipelineParametersForExecutionOutcomeCallable SageMakerClient::ListPipelineP
   return task->get_future();
 }
 
-void SageMakerClient::ListPipelineParametersForExecutionAsync(const ListPipelineParametersForExecutionRequest& request, const ListPipelineParametersForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListPipelineParametersForExecutionAsyncHelper(SageMakerClient const * const clientThis, const ListPipelineParametersForExecutionRequest& request, const ListPipelineParametersForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPipelineParametersForExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPipelineParametersForExecution(request), context);
 }
 
-void SageMakerClient::ListPipelineParametersForExecutionAsyncHelper(const ListPipelineParametersForExecutionRequest& request, const ListPipelineParametersForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListPipelineParametersForExecutionAsync(const ListPipelineParametersForExecutionRequest& request, const ListPipelineParametersForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPipelineParametersForExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListPipelineParametersForExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPipelinesOutcome SageMakerClient::ListPipelines(const ListPipelinesRequest& request) const
@@ -5081,14 +5081,14 @@ ListPipelinesOutcomeCallable SageMakerClient::ListPipelinesCallable(const ListPi
   return task->get_future();
 }
 
-void SageMakerClient::ListPipelinesAsync(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListPipelinesAsyncHelper(SageMakerClient const * const clientThis, const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPipelinesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPipelines(request), context);
 }
 
-void SageMakerClient::ListPipelinesAsyncHelper(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListPipelinesAsync(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPipelines(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListPipelinesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProcessingJobsOutcome SageMakerClient::ListProcessingJobs(const ListProcessingJobsRequest& request) const
@@ -5105,14 +5105,14 @@ ListProcessingJobsOutcomeCallable SageMakerClient::ListProcessingJobsCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::ListProcessingJobsAsync(const ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListProcessingJobsAsyncHelper(SageMakerClient const * const clientThis, const ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProcessingJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProcessingJobs(request), context);
 }
 
-void SageMakerClient::ListProcessingJobsAsyncHelper(const ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListProcessingJobsAsync(const ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProcessingJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListProcessingJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProjectsOutcome SageMakerClient::ListProjects(const ListProjectsRequest& request) const
@@ -5129,14 +5129,14 @@ ListProjectsOutcomeCallable SageMakerClient::ListProjectsCallable(const ListProj
   return task->get_future();
 }
 
-void SageMakerClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListProjectsAsyncHelper(SageMakerClient const * const clientThis, const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProjects(request), context);
 }
 
-void SageMakerClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListProjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStageDevicesOutcome SageMakerClient::ListStageDevices(const ListStageDevicesRequest& request) const
@@ -5153,14 +5153,14 @@ ListStageDevicesOutcomeCallable SageMakerClient::ListStageDevicesCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::ListStageDevicesAsync(const ListStageDevicesRequest& request, const ListStageDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListStageDevicesAsyncHelper(SageMakerClient const * const clientThis, const ListStageDevicesRequest& request, const ListStageDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStageDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStageDevices(request), context);
 }
 
-void SageMakerClient::ListStageDevicesAsyncHelper(const ListStageDevicesRequest& request, const ListStageDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListStageDevicesAsync(const ListStageDevicesRequest& request, const ListStageDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStageDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListStageDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStudioLifecycleConfigsOutcome SageMakerClient::ListStudioLifecycleConfigs(const ListStudioLifecycleConfigsRequest& request) const
@@ -5177,14 +5177,14 @@ ListStudioLifecycleConfigsOutcomeCallable SageMakerClient::ListStudioLifecycleCo
   return task->get_future();
 }
 
-void SageMakerClient::ListStudioLifecycleConfigsAsync(const ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListStudioLifecycleConfigsAsyncHelper(SageMakerClient const * const clientThis, const ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStudioLifecycleConfigsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStudioLifecycleConfigs(request), context);
 }
 
-void SageMakerClient::ListStudioLifecycleConfigsAsyncHelper(const ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListStudioLifecycleConfigsAsync(const ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStudioLifecycleConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListStudioLifecycleConfigsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSubscribedWorkteamsOutcome SageMakerClient::ListSubscribedWorkteams(const ListSubscribedWorkteamsRequest& request) const
@@ -5201,14 +5201,14 @@ ListSubscribedWorkteamsOutcomeCallable SageMakerClient::ListSubscribedWorkteamsC
   return task->get_future();
 }
 
-void SageMakerClient::ListSubscribedWorkteamsAsync(const ListSubscribedWorkteamsRequest& request, const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListSubscribedWorkteamsAsyncHelper(SageMakerClient const * const clientThis, const ListSubscribedWorkteamsRequest& request, const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSubscribedWorkteamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSubscribedWorkteams(request), context);
 }
 
-void SageMakerClient::ListSubscribedWorkteamsAsyncHelper(const ListSubscribedWorkteamsRequest& request, const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListSubscribedWorkteamsAsync(const ListSubscribedWorkteamsRequest& request, const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSubscribedWorkteams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListSubscribedWorkteamsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsOutcome SageMakerClient::ListTags(const ListTagsRequest& request) const
@@ -5225,14 +5225,14 @@ ListTagsOutcomeCallable SageMakerClient::ListTagsCallable(const ListTagsRequest&
   return task->get_future();
 }
 
-void SageMakerClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListTagsAsyncHelper(SageMakerClient const * const clientThis, const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTags(request), context);
 }
 
-void SageMakerClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTrainingJobsOutcome SageMakerClient::ListTrainingJobs(const ListTrainingJobsRequest& request) const
@@ -5249,14 +5249,14 @@ ListTrainingJobsOutcomeCallable SageMakerClient::ListTrainingJobsCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::ListTrainingJobsAsync(const ListTrainingJobsRequest& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListTrainingJobsAsyncHelper(SageMakerClient const * const clientThis, const ListTrainingJobsRequest& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrainingJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTrainingJobs(request), context);
 }
 
-void SageMakerClient::ListTrainingJobsAsyncHelper(const ListTrainingJobsRequest& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListTrainingJobsAsync(const ListTrainingJobsRequest& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTrainingJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListTrainingJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTrainingJobsForHyperParameterTuningJobOutcome SageMakerClient::ListTrainingJobsForHyperParameterTuningJob(const ListTrainingJobsForHyperParameterTuningJobRequest& request) const
@@ -5273,14 +5273,14 @@ ListTrainingJobsForHyperParameterTuningJobOutcomeCallable SageMakerClient::ListT
   return task->get_future();
 }
 
-void SageMakerClient::ListTrainingJobsForHyperParameterTuningJobAsync(const ListTrainingJobsForHyperParameterTuningJobRequest& request, const ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListTrainingJobsForHyperParameterTuningJobAsyncHelper(SageMakerClient const * const clientThis, const ListTrainingJobsForHyperParameterTuningJobRequest& request, const ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrainingJobsForHyperParameterTuningJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTrainingJobsForHyperParameterTuningJob(request), context);
 }
 
-void SageMakerClient::ListTrainingJobsForHyperParameterTuningJobAsyncHelper(const ListTrainingJobsForHyperParameterTuningJobRequest& request, const ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListTrainingJobsForHyperParameterTuningJobAsync(const ListTrainingJobsForHyperParameterTuningJobRequest& request, const ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTrainingJobsForHyperParameterTuningJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListTrainingJobsForHyperParameterTuningJobAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTransformJobsOutcome SageMakerClient::ListTransformJobs(const ListTransformJobsRequest& request) const
@@ -5297,14 +5297,14 @@ ListTransformJobsOutcomeCallable SageMakerClient::ListTransformJobsCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::ListTransformJobsAsync(const ListTransformJobsRequest& request, const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListTransformJobsAsyncHelper(SageMakerClient const * const clientThis, const ListTransformJobsRequest& request, const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTransformJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTransformJobs(request), context);
 }
 
-void SageMakerClient::ListTransformJobsAsyncHelper(const ListTransformJobsRequest& request, const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListTransformJobsAsync(const ListTransformJobsRequest& request, const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTransformJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListTransformJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTrialComponentsOutcome SageMakerClient::ListTrialComponents(const ListTrialComponentsRequest& request) const
@@ -5321,14 +5321,14 @@ ListTrialComponentsOutcomeCallable SageMakerClient::ListTrialComponentsCallable(
   return task->get_future();
 }
 
-void SageMakerClient::ListTrialComponentsAsync(const ListTrialComponentsRequest& request, const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListTrialComponentsAsyncHelper(SageMakerClient const * const clientThis, const ListTrialComponentsRequest& request, const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrialComponentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTrialComponents(request), context);
 }
 
-void SageMakerClient::ListTrialComponentsAsyncHelper(const ListTrialComponentsRequest& request, const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListTrialComponentsAsync(const ListTrialComponentsRequest& request, const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTrialComponents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListTrialComponentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTrialsOutcome SageMakerClient::ListTrials(const ListTrialsRequest& request) const
@@ -5345,14 +5345,14 @@ ListTrialsOutcomeCallable SageMakerClient::ListTrialsCallable(const ListTrialsRe
   return task->get_future();
 }
 
-void SageMakerClient::ListTrialsAsync(const ListTrialsRequest& request, const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListTrialsAsyncHelper(SageMakerClient const * const clientThis, const ListTrialsRequest& request, const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTrials(request), context);
 }
 
-void SageMakerClient::ListTrialsAsyncHelper(const ListTrialsRequest& request, const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListTrialsAsync(const ListTrialsRequest& request, const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTrials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListTrialsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUserProfilesOutcome SageMakerClient::ListUserProfiles(const ListUserProfilesRequest& request) const
@@ -5369,14 +5369,14 @@ ListUserProfilesOutcomeCallable SageMakerClient::ListUserProfilesCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::ListUserProfilesAsync(const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListUserProfilesAsyncHelper(SageMakerClient const * const clientThis, const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUserProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUserProfiles(request), context);
 }
 
-void SageMakerClient::ListUserProfilesAsyncHelper(const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListUserProfilesAsync(const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUserProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListUserProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorkforcesOutcome SageMakerClient::ListWorkforces(const ListWorkforcesRequest& request) const
@@ -5393,14 +5393,14 @@ ListWorkforcesOutcomeCallable SageMakerClient::ListWorkforcesCallable(const List
   return task->get_future();
 }
 
-void SageMakerClient::ListWorkforcesAsync(const ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListWorkforcesAsyncHelper(SageMakerClient const * const clientThis, const ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkforcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorkforces(request), context);
 }
 
-void SageMakerClient::ListWorkforcesAsyncHelper(const ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListWorkforcesAsync(const ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorkforces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListWorkforcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorkteamsOutcome SageMakerClient::ListWorkteams(const ListWorkteamsRequest& request) const
@@ -5417,14 +5417,14 @@ ListWorkteamsOutcomeCallable SageMakerClient::ListWorkteamsCallable(const ListWo
   return task->get_future();
 }
 
-void SageMakerClient::ListWorkteamsAsync(const ListWorkteamsRequest& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientListWorkteamsAsyncHelper(SageMakerClient const * const clientThis, const ListWorkteamsRequest& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkteamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorkteams(request), context);
 }
 
-void SageMakerClient::ListWorkteamsAsyncHelper(const ListWorkteamsRequest& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::ListWorkteamsAsync(const ListWorkteamsRequest& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorkteams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientListWorkteamsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutModelPackageGroupPolicyOutcome SageMakerClient::PutModelPackageGroupPolicy(const PutModelPackageGroupPolicyRequest& request) const
@@ -5441,14 +5441,14 @@ PutModelPackageGroupPolicyOutcomeCallable SageMakerClient::PutModelPackageGroupP
   return task->get_future();
 }
 
-void SageMakerClient::PutModelPackageGroupPolicyAsync(const PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientPutModelPackageGroupPolicyAsyncHelper(SageMakerClient const * const clientThis, const PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutModelPackageGroupPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutModelPackageGroupPolicy(request), context);
 }
 
-void SageMakerClient::PutModelPackageGroupPolicyAsyncHelper(const PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::PutModelPackageGroupPolicyAsync(const PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutModelPackageGroupPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientPutModelPackageGroupPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 QueryLineageOutcome SageMakerClient::QueryLineage(const QueryLineageRequest& request) const
@@ -5465,14 +5465,14 @@ QueryLineageOutcomeCallable SageMakerClient::QueryLineageCallable(const QueryLin
   return task->get_future();
 }
 
-void SageMakerClient::QueryLineageAsync(const QueryLineageRequest& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientQueryLineageAsyncHelper(SageMakerClient const * const clientThis, const QueryLineageRequest& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->QueryLineageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->QueryLineage(request), context);
 }
 
-void SageMakerClient::QueryLineageAsyncHelper(const QueryLineageRequest& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::QueryLineageAsync(const QueryLineageRequest& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, QueryLineage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientQueryLineageAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterDevicesOutcome SageMakerClient::RegisterDevices(const RegisterDevicesRequest& request) const
@@ -5489,14 +5489,14 @@ RegisterDevicesOutcomeCallable SageMakerClient::RegisterDevicesCallable(const Re
   return task->get_future();
 }
 
-void SageMakerClient::RegisterDevicesAsync(const RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientRegisterDevicesAsyncHelper(SageMakerClient const * const clientThis, const RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterDevices(request), context);
 }
 
-void SageMakerClient::RegisterDevicesAsyncHelper(const RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::RegisterDevicesAsync(const RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientRegisterDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 RenderUiTemplateOutcome SageMakerClient::RenderUiTemplate(const RenderUiTemplateRequest& request) const
@@ -5513,14 +5513,14 @@ RenderUiTemplateOutcomeCallable SageMakerClient::RenderUiTemplateCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::RenderUiTemplateAsync(const RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientRenderUiTemplateAsyncHelper(SageMakerClient const * const clientThis, const RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RenderUiTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RenderUiTemplate(request), context);
 }
 
-void SageMakerClient::RenderUiTemplateAsyncHelper(const RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::RenderUiTemplateAsync(const RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RenderUiTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientRenderUiTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 RetryPipelineExecutionOutcome SageMakerClient::RetryPipelineExecution(const RetryPipelineExecutionRequest& request) const
@@ -5537,14 +5537,14 @@ RetryPipelineExecutionOutcomeCallable SageMakerClient::RetryPipelineExecutionCal
   return task->get_future();
 }
 
-void SageMakerClient::RetryPipelineExecutionAsync(const RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientRetryPipelineExecutionAsyncHelper(SageMakerClient const * const clientThis, const RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RetryPipelineExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RetryPipelineExecution(request), context);
 }
 
-void SageMakerClient::RetryPipelineExecutionAsyncHelper(const RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::RetryPipelineExecutionAsync(const RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RetryPipelineExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientRetryPipelineExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchOutcome SageMakerClient::Search(const SearchRequest& request) const
@@ -5561,14 +5561,14 @@ SearchOutcomeCallable SageMakerClient::SearchCallable(const SearchRequest& reque
   return task->get_future();
 }
 
-void SageMakerClient::SearchAsync(const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientSearchAsyncHelper(SageMakerClient const * const clientThis, const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Search(request), context);
 }
 
-void SageMakerClient::SearchAsyncHelper(const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::SearchAsync(const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Search(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientSearchAsyncHelper( this, request, handler, context ); } );
 }
 
 SendPipelineExecutionStepFailureOutcome SageMakerClient::SendPipelineExecutionStepFailure(const SendPipelineExecutionStepFailureRequest& request) const
@@ -5585,14 +5585,14 @@ SendPipelineExecutionStepFailureOutcomeCallable SageMakerClient::SendPipelineExe
   return task->get_future();
 }
 
-void SageMakerClient::SendPipelineExecutionStepFailureAsync(const SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientSendPipelineExecutionStepFailureAsyncHelper(SageMakerClient const * const clientThis, const SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendPipelineExecutionStepFailureAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendPipelineExecutionStepFailure(request), context);
 }
 
-void SageMakerClient::SendPipelineExecutionStepFailureAsyncHelper(const SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::SendPipelineExecutionStepFailureAsync(const SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendPipelineExecutionStepFailure(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientSendPipelineExecutionStepFailureAsyncHelper( this, request, handler, context ); } );
 }
 
 SendPipelineExecutionStepSuccessOutcome SageMakerClient::SendPipelineExecutionStepSuccess(const SendPipelineExecutionStepSuccessRequest& request) const
@@ -5609,14 +5609,14 @@ SendPipelineExecutionStepSuccessOutcomeCallable SageMakerClient::SendPipelineExe
   return task->get_future();
 }
 
-void SageMakerClient::SendPipelineExecutionStepSuccessAsync(const SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientSendPipelineExecutionStepSuccessAsyncHelper(SageMakerClient const * const clientThis, const SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendPipelineExecutionStepSuccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendPipelineExecutionStepSuccess(request), context);
 }
 
-void SageMakerClient::SendPipelineExecutionStepSuccessAsyncHelper(const SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::SendPipelineExecutionStepSuccessAsync(const SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendPipelineExecutionStepSuccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientSendPipelineExecutionStepSuccessAsyncHelper( this, request, handler, context ); } );
 }
 
 StartEdgeDeploymentStageOutcome SageMakerClient::StartEdgeDeploymentStage(const StartEdgeDeploymentStageRequest& request) const
@@ -5633,14 +5633,14 @@ StartEdgeDeploymentStageOutcomeCallable SageMakerClient::StartEdgeDeploymentStag
   return task->get_future();
 }
 
-void SageMakerClient::StartEdgeDeploymentStageAsync(const StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStartEdgeDeploymentStageAsyncHelper(SageMakerClient const * const clientThis, const StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartEdgeDeploymentStageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartEdgeDeploymentStage(request), context);
 }
 
-void SageMakerClient::StartEdgeDeploymentStageAsyncHelper(const StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StartEdgeDeploymentStageAsync(const StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartEdgeDeploymentStage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStartEdgeDeploymentStageAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMonitoringScheduleOutcome SageMakerClient::StartMonitoringSchedule(const StartMonitoringScheduleRequest& request) const
@@ -5657,14 +5657,14 @@ StartMonitoringScheduleOutcomeCallable SageMakerClient::StartMonitoringScheduleC
   return task->get_future();
 }
 
-void SageMakerClient::StartMonitoringScheduleAsync(const StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStartMonitoringScheduleAsyncHelper(SageMakerClient const * const clientThis, const StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMonitoringScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMonitoringSchedule(request), context);
 }
 
-void SageMakerClient::StartMonitoringScheduleAsyncHelper(const StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StartMonitoringScheduleAsync(const StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMonitoringSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStartMonitoringScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 StartNotebookInstanceOutcome SageMakerClient::StartNotebookInstance(const StartNotebookInstanceRequest& request) const
@@ -5681,14 +5681,14 @@ StartNotebookInstanceOutcomeCallable SageMakerClient::StartNotebookInstanceCalla
   return task->get_future();
 }
 
-void SageMakerClient::StartNotebookInstanceAsync(const StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStartNotebookInstanceAsyncHelper(SageMakerClient const * const clientThis, const StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartNotebookInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartNotebookInstance(request), context);
 }
 
-void SageMakerClient::StartNotebookInstanceAsyncHelper(const StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StartNotebookInstanceAsync(const StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartNotebookInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStartNotebookInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartPipelineExecutionOutcome SageMakerClient::StartPipelineExecution(const StartPipelineExecutionRequest& request) const
@@ -5705,14 +5705,14 @@ StartPipelineExecutionOutcomeCallable SageMakerClient::StartPipelineExecutionCal
   return task->get_future();
 }
 
-void SageMakerClient::StartPipelineExecutionAsync(const StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStartPipelineExecutionAsyncHelper(SageMakerClient const * const clientThis, const StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartPipelineExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartPipelineExecution(request), context);
 }
 
-void SageMakerClient::StartPipelineExecutionAsyncHelper(const StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StartPipelineExecutionAsync(const StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartPipelineExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStartPipelineExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 StopAutoMLJobOutcome SageMakerClient::StopAutoMLJob(const StopAutoMLJobRequest& request) const
@@ -5729,14 +5729,14 @@ StopAutoMLJobOutcomeCallable SageMakerClient::StopAutoMLJobCallable(const StopAu
   return task->get_future();
 }
 
-void SageMakerClient::StopAutoMLJobAsync(const StopAutoMLJobRequest& request, const StopAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopAutoMLJobAsyncHelper(SageMakerClient const * const clientThis, const StopAutoMLJobRequest& request, const StopAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopAutoMLJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopAutoMLJob(request), context);
 }
 
-void SageMakerClient::StopAutoMLJobAsyncHelper(const StopAutoMLJobRequest& request, const StopAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopAutoMLJobAsync(const StopAutoMLJobRequest& request, const StopAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopAutoMLJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopAutoMLJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopCompilationJobOutcome SageMakerClient::StopCompilationJob(const StopCompilationJobRequest& request) const
@@ -5753,14 +5753,14 @@ StopCompilationJobOutcomeCallable SageMakerClient::StopCompilationJobCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::StopCompilationJobAsync(const StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopCompilationJobAsyncHelper(SageMakerClient const * const clientThis, const StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopCompilationJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopCompilationJob(request), context);
 }
 
-void SageMakerClient::StopCompilationJobAsyncHelper(const StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopCompilationJobAsync(const StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopCompilationJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopCompilationJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopEdgeDeploymentStageOutcome SageMakerClient::StopEdgeDeploymentStage(const StopEdgeDeploymentStageRequest& request) const
@@ -5777,14 +5777,14 @@ StopEdgeDeploymentStageOutcomeCallable SageMakerClient::StopEdgeDeploymentStageC
   return task->get_future();
 }
 
-void SageMakerClient::StopEdgeDeploymentStageAsync(const StopEdgeDeploymentStageRequest& request, const StopEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopEdgeDeploymentStageAsyncHelper(SageMakerClient const * const clientThis, const StopEdgeDeploymentStageRequest& request, const StopEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopEdgeDeploymentStageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopEdgeDeploymentStage(request), context);
 }
 
-void SageMakerClient::StopEdgeDeploymentStageAsyncHelper(const StopEdgeDeploymentStageRequest& request, const StopEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopEdgeDeploymentStageAsync(const StopEdgeDeploymentStageRequest& request, const StopEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopEdgeDeploymentStage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopEdgeDeploymentStageAsyncHelper( this, request, handler, context ); } );
 }
 
 StopEdgePackagingJobOutcome SageMakerClient::StopEdgePackagingJob(const StopEdgePackagingJobRequest& request) const
@@ -5801,14 +5801,14 @@ StopEdgePackagingJobOutcomeCallable SageMakerClient::StopEdgePackagingJobCallabl
   return task->get_future();
 }
 
-void SageMakerClient::StopEdgePackagingJobAsync(const StopEdgePackagingJobRequest& request, const StopEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopEdgePackagingJobAsyncHelper(SageMakerClient const * const clientThis, const StopEdgePackagingJobRequest& request, const StopEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopEdgePackagingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopEdgePackagingJob(request), context);
 }
 
-void SageMakerClient::StopEdgePackagingJobAsyncHelper(const StopEdgePackagingJobRequest& request, const StopEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopEdgePackagingJobAsync(const StopEdgePackagingJobRequest& request, const StopEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopEdgePackagingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopEdgePackagingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopHyperParameterTuningJobOutcome SageMakerClient::StopHyperParameterTuningJob(const StopHyperParameterTuningJobRequest& request) const
@@ -5825,14 +5825,14 @@ StopHyperParameterTuningJobOutcomeCallable SageMakerClient::StopHyperParameterTu
   return task->get_future();
 }
 
-void SageMakerClient::StopHyperParameterTuningJobAsync(const StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopHyperParameterTuningJobAsyncHelper(SageMakerClient const * const clientThis, const StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopHyperParameterTuningJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopHyperParameterTuningJob(request), context);
 }
 
-void SageMakerClient::StopHyperParameterTuningJobAsyncHelper(const StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopHyperParameterTuningJobAsync(const StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopHyperParameterTuningJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopHyperParameterTuningJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopInferenceRecommendationsJobOutcome SageMakerClient::StopInferenceRecommendationsJob(const StopInferenceRecommendationsJobRequest& request) const
@@ -5849,14 +5849,14 @@ StopInferenceRecommendationsJobOutcomeCallable SageMakerClient::StopInferenceRec
   return task->get_future();
 }
 
-void SageMakerClient::StopInferenceRecommendationsJobAsync(const StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopInferenceRecommendationsJobAsyncHelper(SageMakerClient const * const clientThis, const StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopInferenceRecommendationsJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopInferenceRecommendationsJob(request), context);
 }
 
-void SageMakerClient::StopInferenceRecommendationsJobAsyncHelper(const StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopInferenceRecommendationsJobAsync(const StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopInferenceRecommendationsJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopInferenceRecommendationsJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopLabelingJobOutcome SageMakerClient::StopLabelingJob(const StopLabelingJobRequest& request) const
@@ -5873,14 +5873,14 @@ StopLabelingJobOutcomeCallable SageMakerClient::StopLabelingJobCallable(const St
   return task->get_future();
 }
 
-void SageMakerClient::StopLabelingJobAsync(const StopLabelingJobRequest& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopLabelingJobAsyncHelper(SageMakerClient const * const clientThis, const StopLabelingJobRequest& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopLabelingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopLabelingJob(request), context);
 }
 
-void SageMakerClient::StopLabelingJobAsyncHelper(const StopLabelingJobRequest& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopLabelingJobAsync(const StopLabelingJobRequest& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopLabelingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopLabelingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopMonitoringScheduleOutcome SageMakerClient::StopMonitoringSchedule(const StopMonitoringScheduleRequest& request) const
@@ -5897,14 +5897,14 @@ StopMonitoringScheduleOutcomeCallable SageMakerClient::StopMonitoringScheduleCal
   return task->get_future();
 }
 
-void SageMakerClient::StopMonitoringScheduleAsync(const StopMonitoringScheduleRequest& request, const StopMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopMonitoringScheduleAsyncHelper(SageMakerClient const * const clientThis, const StopMonitoringScheduleRequest& request, const StopMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopMonitoringScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopMonitoringSchedule(request), context);
 }
 
-void SageMakerClient::StopMonitoringScheduleAsyncHelper(const StopMonitoringScheduleRequest& request, const StopMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopMonitoringScheduleAsync(const StopMonitoringScheduleRequest& request, const StopMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopMonitoringSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopMonitoringScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 StopNotebookInstanceOutcome SageMakerClient::StopNotebookInstance(const StopNotebookInstanceRequest& request) const
@@ -5921,14 +5921,14 @@ StopNotebookInstanceOutcomeCallable SageMakerClient::StopNotebookInstanceCallabl
   return task->get_future();
 }
 
-void SageMakerClient::StopNotebookInstanceAsync(const StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopNotebookInstanceAsyncHelper(SageMakerClient const * const clientThis, const StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopNotebookInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopNotebookInstance(request), context);
 }
 
-void SageMakerClient::StopNotebookInstanceAsyncHelper(const StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopNotebookInstanceAsync(const StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopNotebookInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopNotebookInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 StopPipelineExecutionOutcome SageMakerClient::StopPipelineExecution(const StopPipelineExecutionRequest& request) const
@@ -5945,14 +5945,14 @@ StopPipelineExecutionOutcomeCallable SageMakerClient::StopPipelineExecutionCalla
   return task->get_future();
 }
 
-void SageMakerClient::StopPipelineExecutionAsync(const StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopPipelineExecutionAsyncHelper(SageMakerClient const * const clientThis, const StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopPipelineExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopPipelineExecution(request), context);
 }
 
-void SageMakerClient::StopPipelineExecutionAsyncHelper(const StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopPipelineExecutionAsync(const StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopPipelineExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopPipelineExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 StopProcessingJobOutcome SageMakerClient::StopProcessingJob(const StopProcessingJobRequest& request) const
@@ -5969,14 +5969,14 @@ StopProcessingJobOutcomeCallable SageMakerClient::StopProcessingJobCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::StopProcessingJobAsync(const StopProcessingJobRequest& request, const StopProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopProcessingJobAsyncHelper(SageMakerClient const * const clientThis, const StopProcessingJobRequest& request, const StopProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopProcessingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopProcessingJob(request), context);
 }
 
-void SageMakerClient::StopProcessingJobAsyncHelper(const StopProcessingJobRequest& request, const StopProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopProcessingJobAsync(const StopProcessingJobRequest& request, const StopProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopProcessingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopProcessingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopTrainingJobOutcome SageMakerClient::StopTrainingJob(const StopTrainingJobRequest& request) const
@@ -5993,14 +5993,14 @@ StopTrainingJobOutcomeCallable SageMakerClient::StopTrainingJobCallable(const St
   return task->get_future();
 }
 
-void SageMakerClient::StopTrainingJobAsync(const StopTrainingJobRequest& request, const StopTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopTrainingJobAsyncHelper(SageMakerClient const * const clientThis, const StopTrainingJobRequest& request, const StopTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopTrainingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopTrainingJob(request), context);
 }
 
-void SageMakerClient::StopTrainingJobAsyncHelper(const StopTrainingJobRequest& request, const StopTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopTrainingJobAsync(const StopTrainingJobRequest& request, const StopTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopTrainingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopTrainingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopTransformJobOutcome SageMakerClient::StopTransformJob(const StopTransformJobRequest& request) const
@@ -6017,14 +6017,14 @@ StopTransformJobOutcomeCallable SageMakerClient::StopTransformJobCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::StopTransformJobAsync(const StopTransformJobRequest& request, const StopTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientStopTransformJobAsyncHelper(SageMakerClient const * const clientThis, const StopTransformJobRequest& request, const StopTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopTransformJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopTransformJob(request), context);
 }
 
-void SageMakerClient::StopTransformJobAsyncHelper(const StopTransformJobRequest& request, const StopTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::StopTransformJobAsync(const StopTransformJobRequest& request, const StopTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopTransformJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientStopTransformJobAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateActionOutcome SageMakerClient::UpdateAction(const UpdateActionRequest& request) const
@@ -6041,14 +6041,14 @@ UpdateActionOutcomeCallable SageMakerClient::UpdateActionCallable(const UpdateAc
   return task->get_future();
 }
 
-void SageMakerClient::UpdateActionAsync(const UpdateActionRequest& request, const UpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateActionAsyncHelper(SageMakerClient const * const clientThis, const UpdateActionRequest& request, const UpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAction(request), context);
 }
 
-void SageMakerClient::UpdateActionAsyncHelper(const UpdateActionRequest& request, const UpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateActionAsync(const UpdateActionRequest& request, const UpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateActionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAppImageConfigOutcome SageMakerClient::UpdateAppImageConfig(const UpdateAppImageConfigRequest& request) const
@@ -6065,14 +6065,14 @@ UpdateAppImageConfigOutcomeCallable SageMakerClient::UpdateAppImageConfigCallabl
   return task->get_future();
 }
 
-void SageMakerClient::UpdateAppImageConfigAsync(const UpdateAppImageConfigRequest& request, const UpdateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateAppImageConfigAsyncHelper(SageMakerClient const * const clientThis, const UpdateAppImageConfigRequest& request, const UpdateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppImageConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAppImageConfig(request), context);
 }
 
-void SageMakerClient::UpdateAppImageConfigAsyncHelper(const UpdateAppImageConfigRequest& request, const UpdateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateAppImageConfigAsync(const UpdateAppImageConfigRequest& request, const UpdateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAppImageConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateAppImageConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateArtifactOutcome SageMakerClient::UpdateArtifact(const UpdateArtifactRequest& request) const
@@ -6089,14 +6089,14 @@ UpdateArtifactOutcomeCallable SageMakerClient::UpdateArtifactCallable(const Upda
   return task->get_future();
 }
 
-void SageMakerClient::UpdateArtifactAsync(const UpdateArtifactRequest& request, const UpdateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateArtifactAsyncHelper(SageMakerClient const * const clientThis, const UpdateArtifactRequest& request, const UpdateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateArtifact(request), context);
 }
 
-void SageMakerClient::UpdateArtifactAsyncHelper(const UpdateArtifactRequest& request, const UpdateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateArtifactAsync(const UpdateArtifactRequest& request, const UpdateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCodeRepositoryOutcome SageMakerClient::UpdateCodeRepository(const UpdateCodeRepositoryRequest& request) const
@@ -6113,14 +6113,14 @@ UpdateCodeRepositoryOutcomeCallable SageMakerClient::UpdateCodeRepositoryCallabl
   return task->get_future();
 }
 
-void SageMakerClient::UpdateCodeRepositoryAsync(const UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateCodeRepositoryAsyncHelper(SageMakerClient const * const clientThis, const UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCodeRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCodeRepository(request), context);
 }
 
-void SageMakerClient::UpdateCodeRepositoryAsyncHelper(const UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateCodeRepositoryAsync(const UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCodeRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateCodeRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateContextOutcome SageMakerClient::UpdateContext(const UpdateContextRequest& request) const
@@ -6137,14 +6137,14 @@ UpdateContextOutcomeCallable SageMakerClient::UpdateContextCallable(const Update
   return task->get_future();
 }
 
-void SageMakerClient::UpdateContextAsync(const UpdateContextRequest& request, const UpdateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateContextAsyncHelper(SageMakerClient const * const clientThis, const UpdateContextRequest& request, const UpdateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContextAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateContext(request), context);
 }
 
-void SageMakerClient::UpdateContextAsyncHelper(const UpdateContextRequest& request, const UpdateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateContextAsync(const UpdateContextRequest& request, const UpdateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateContext(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateContextAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDeviceFleetOutcome SageMakerClient::UpdateDeviceFleet(const UpdateDeviceFleetRequest& request) const
@@ -6161,14 +6161,14 @@ UpdateDeviceFleetOutcomeCallable SageMakerClient::UpdateDeviceFleetCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::UpdateDeviceFleetAsync(const UpdateDeviceFleetRequest& request, const UpdateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateDeviceFleetAsyncHelper(SageMakerClient const * const clientThis, const UpdateDeviceFleetRequest& request, const UpdateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeviceFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDeviceFleet(request), context);
 }
 
-void SageMakerClient::UpdateDeviceFleetAsyncHelper(const UpdateDeviceFleetRequest& request, const UpdateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateDeviceFleetAsync(const UpdateDeviceFleetRequest& request, const UpdateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDeviceFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateDeviceFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDevicesOutcome SageMakerClient::UpdateDevices(const UpdateDevicesRequest& request) const
@@ -6185,14 +6185,14 @@ UpdateDevicesOutcomeCallable SageMakerClient::UpdateDevicesCallable(const Update
   return task->get_future();
 }
 
-void SageMakerClient::UpdateDevicesAsync(const UpdateDevicesRequest& request, const UpdateDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateDevicesAsyncHelper(SageMakerClient const * const clientThis, const UpdateDevicesRequest& request, const UpdateDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDevices(request), context);
 }
 
-void SageMakerClient::UpdateDevicesAsyncHelper(const UpdateDevicesRequest& request, const UpdateDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateDevicesAsync(const UpdateDevicesRequest& request, const UpdateDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainOutcome SageMakerClient::UpdateDomain(const UpdateDomainRequest& request) const
@@ -6209,14 +6209,14 @@ UpdateDomainOutcomeCallable SageMakerClient::UpdateDomainCallable(const UpdateDo
   return task->get_future();
 }
 
-void SageMakerClient::UpdateDomainAsync(const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateDomainAsyncHelper(SageMakerClient const * const clientThis, const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomain(request), context);
 }
 
-void SageMakerClient::UpdateDomainAsyncHelper(const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateDomainAsync(const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEndpointOutcome SageMakerClient::UpdateEndpoint(const UpdateEndpointRequest& request) const
@@ -6233,14 +6233,14 @@ UpdateEndpointOutcomeCallable SageMakerClient::UpdateEndpointCallable(const Upda
   return task->get_future();
 }
 
-void SageMakerClient::UpdateEndpointAsync(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateEndpointAsyncHelper(SageMakerClient const * const clientThis, const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEndpoint(request), context);
 }
 
-void SageMakerClient::UpdateEndpointAsyncHelper(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateEndpointAsync(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEndpointWeightsAndCapacitiesOutcome SageMakerClient::UpdateEndpointWeightsAndCapacities(const UpdateEndpointWeightsAndCapacitiesRequest& request) const
@@ -6257,14 +6257,14 @@ UpdateEndpointWeightsAndCapacitiesOutcomeCallable SageMakerClient::UpdateEndpoin
   return task->get_future();
 }
 
-void SageMakerClient::UpdateEndpointWeightsAndCapacitiesAsync(const UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateEndpointWeightsAndCapacitiesAsyncHelper(SageMakerClient const * const clientThis, const UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEndpointWeightsAndCapacitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEndpointWeightsAndCapacities(request), context);
 }
 
-void SageMakerClient::UpdateEndpointWeightsAndCapacitiesAsyncHelper(const UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateEndpointWeightsAndCapacitiesAsync(const UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEndpointWeightsAndCapacities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateEndpointWeightsAndCapacitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateExperimentOutcome SageMakerClient::UpdateExperiment(const UpdateExperimentRequest& request) const
@@ -6281,14 +6281,14 @@ UpdateExperimentOutcomeCallable SageMakerClient::UpdateExperimentCallable(const 
   return task->get_future();
 }
 
-void SageMakerClient::UpdateExperimentAsync(const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateExperimentAsyncHelper(SageMakerClient const * const clientThis, const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateExperimentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateExperiment(request), context);
 }
 
-void SageMakerClient::UpdateExperimentAsyncHelper(const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateExperimentAsync(const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateExperimentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFeatureGroupOutcome SageMakerClient::UpdateFeatureGroup(const UpdateFeatureGroupRequest& request) const
@@ -6305,14 +6305,14 @@ UpdateFeatureGroupOutcomeCallable SageMakerClient::UpdateFeatureGroupCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::UpdateFeatureGroupAsync(const UpdateFeatureGroupRequest& request, const UpdateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateFeatureGroupAsyncHelper(SageMakerClient const * const clientThis, const UpdateFeatureGroupRequest& request, const UpdateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFeatureGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFeatureGroup(request), context);
 }
 
-void SageMakerClient::UpdateFeatureGroupAsyncHelper(const UpdateFeatureGroupRequest& request, const UpdateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateFeatureGroupAsync(const UpdateFeatureGroupRequest& request, const UpdateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFeatureGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateFeatureGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFeatureMetadataOutcome SageMakerClient::UpdateFeatureMetadata(const UpdateFeatureMetadataRequest& request) const
@@ -6329,14 +6329,14 @@ UpdateFeatureMetadataOutcomeCallable SageMakerClient::UpdateFeatureMetadataCalla
   return task->get_future();
 }
 
-void SageMakerClient::UpdateFeatureMetadataAsync(const UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateFeatureMetadataAsyncHelper(SageMakerClient const * const clientThis, const UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFeatureMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFeatureMetadata(request), context);
 }
 
-void SageMakerClient::UpdateFeatureMetadataAsyncHelper(const UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateFeatureMetadataAsync(const UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFeatureMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateFeatureMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateImageOutcome SageMakerClient::UpdateImage(const UpdateImageRequest& request) const
@@ -6353,14 +6353,14 @@ UpdateImageOutcomeCallable SageMakerClient::UpdateImageCallable(const UpdateImag
   return task->get_future();
 }
 
-void SageMakerClient::UpdateImageAsync(const UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateImageAsyncHelper(SageMakerClient const * const clientThis, const UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateImage(request), context);
 }
 
-void SageMakerClient::UpdateImageAsyncHelper(const UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateImageAsync(const UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateImageAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateModelPackageOutcome SageMakerClient::UpdateModelPackage(const UpdateModelPackageRequest& request) const
@@ -6377,14 +6377,14 @@ UpdateModelPackageOutcomeCallable SageMakerClient::UpdateModelPackageCallable(co
   return task->get_future();
 }
 
-void SageMakerClient::UpdateModelPackageAsync(const UpdateModelPackageRequest& request, const UpdateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateModelPackageAsyncHelper(SageMakerClient const * const clientThis, const UpdateModelPackageRequest& request, const UpdateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateModelPackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateModelPackage(request), context);
 }
 
-void SageMakerClient::UpdateModelPackageAsyncHelper(const UpdateModelPackageRequest& request, const UpdateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateModelPackageAsync(const UpdateModelPackageRequest& request, const UpdateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateModelPackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateModelPackageAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMonitoringScheduleOutcome SageMakerClient::UpdateMonitoringSchedule(const UpdateMonitoringScheduleRequest& request) const
@@ -6401,14 +6401,14 @@ UpdateMonitoringScheduleOutcomeCallable SageMakerClient::UpdateMonitoringSchedul
   return task->get_future();
 }
 
-void SageMakerClient::UpdateMonitoringScheduleAsync(const UpdateMonitoringScheduleRequest& request, const UpdateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateMonitoringScheduleAsyncHelper(SageMakerClient const * const clientThis, const UpdateMonitoringScheduleRequest& request, const UpdateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMonitoringScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMonitoringSchedule(request), context);
 }
 
-void SageMakerClient::UpdateMonitoringScheduleAsyncHelper(const UpdateMonitoringScheduleRequest& request, const UpdateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateMonitoringScheduleAsync(const UpdateMonitoringScheduleRequest& request, const UpdateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMonitoringSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateMonitoringScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateNotebookInstanceOutcome SageMakerClient::UpdateNotebookInstance(const UpdateNotebookInstanceRequest& request) const
@@ -6425,14 +6425,14 @@ UpdateNotebookInstanceOutcomeCallable SageMakerClient::UpdateNotebookInstanceCal
   return task->get_future();
 }
 
-void SageMakerClient::UpdateNotebookInstanceAsync(const UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateNotebookInstanceAsyncHelper(SageMakerClient const * const clientThis, const UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNotebookInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateNotebookInstance(request), context);
 }
 
-void SageMakerClient::UpdateNotebookInstanceAsyncHelper(const UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateNotebookInstanceAsync(const UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateNotebookInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateNotebookInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateNotebookInstanceLifecycleConfigOutcome SageMakerClient::UpdateNotebookInstanceLifecycleConfig(const UpdateNotebookInstanceLifecycleConfigRequest& request) const
@@ -6449,14 +6449,14 @@ UpdateNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::UpdateNote
   return task->get_future();
 }
 
-void SageMakerClient::UpdateNotebookInstanceLifecycleConfigAsync(const UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateNotebookInstanceLifecycleConfigAsyncHelper(SageMakerClient const * const clientThis, const UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNotebookInstanceLifecycleConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateNotebookInstanceLifecycleConfig(request), context);
 }
 
-void SageMakerClient::UpdateNotebookInstanceLifecycleConfigAsyncHelper(const UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateNotebookInstanceLifecycleConfigAsync(const UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateNotebookInstanceLifecycleConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateNotebookInstanceLifecycleConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePipelineOutcome SageMakerClient::UpdatePipeline(const UpdatePipelineRequest& request) const
@@ -6473,14 +6473,14 @@ UpdatePipelineOutcomeCallable SageMakerClient::UpdatePipelineCallable(const Upda
   return task->get_future();
 }
 
-void SageMakerClient::UpdatePipelineAsync(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdatePipelineAsyncHelper(SageMakerClient const * const clientThis, const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePipeline(request), context);
 }
 
-void SageMakerClient::UpdatePipelineAsyncHelper(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdatePipelineAsync(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdatePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePipelineExecutionOutcome SageMakerClient::UpdatePipelineExecution(const UpdatePipelineExecutionRequest& request) const
@@ -6497,14 +6497,14 @@ UpdatePipelineExecutionOutcomeCallable SageMakerClient::UpdatePipelineExecutionC
   return task->get_future();
 }
 
-void SageMakerClient::UpdatePipelineExecutionAsync(const UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdatePipelineExecutionAsyncHelper(SageMakerClient const * const clientThis, const UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePipelineExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePipelineExecution(request), context);
 }
 
-void SageMakerClient::UpdatePipelineExecutionAsyncHelper(const UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdatePipelineExecutionAsync(const UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePipelineExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdatePipelineExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProjectOutcome SageMakerClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -6521,14 +6521,14 @@ UpdateProjectOutcomeCallable SageMakerClient::UpdateProjectCallable(const Update
   return task->get_future();
 }
 
-void SageMakerClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateProjectAsyncHelper(SageMakerClient const * const clientThis, const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProject(request), context);
 }
 
-void SageMakerClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTrainingJobOutcome SageMakerClient::UpdateTrainingJob(const UpdateTrainingJobRequest& request) const
@@ -6545,14 +6545,14 @@ UpdateTrainingJobOutcomeCallable SageMakerClient::UpdateTrainingJobCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::UpdateTrainingJobAsync(const UpdateTrainingJobRequest& request, const UpdateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateTrainingJobAsyncHelper(SageMakerClient const * const clientThis, const UpdateTrainingJobRequest& request, const UpdateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrainingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTrainingJob(request), context);
 }
 
-void SageMakerClient::UpdateTrainingJobAsyncHelper(const UpdateTrainingJobRequest& request, const UpdateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateTrainingJobAsync(const UpdateTrainingJobRequest& request, const UpdateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTrainingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateTrainingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTrialOutcome SageMakerClient::UpdateTrial(const UpdateTrialRequest& request) const
@@ -6569,14 +6569,14 @@ UpdateTrialOutcomeCallable SageMakerClient::UpdateTrialCallable(const UpdateTria
   return task->get_future();
 }
 
-void SageMakerClient::UpdateTrialAsync(const UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateTrialAsyncHelper(SageMakerClient const * const clientThis, const UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrialAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTrial(request), context);
 }
 
-void SageMakerClient::UpdateTrialAsyncHelper(const UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateTrialAsync(const UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTrial(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateTrialAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTrialComponentOutcome SageMakerClient::UpdateTrialComponent(const UpdateTrialComponentRequest& request) const
@@ -6593,14 +6593,14 @@ UpdateTrialComponentOutcomeCallable SageMakerClient::UpdateTrialComponentCallabl
   return task->get_future();
 }
 
-void SageMakerClient::UpdateTrialComponentAsync(const UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateTrialComponentAsyncHelper(SageMakerClient const * const clientThis, const UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrialComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTrialComponent(request), context);
 }
 
-void SageMakerClient::UpdateTrialComponentAsyncHelper(const UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateTrialComponentAsync(const UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTrialComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateTrialComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserProfileOutcome SageMakerClient::UpdateUserProfile(const UpdateUserProfileRequest& request) const
@@ -6617,14 +6617,14 @@ UpdateUserProfileOutcomeCallable SageMakerClient::UpdateUserProfileCallable(cons
   return task->get_future();
 }
 
-void SageMakerClient::UpdateUserProfileAsync(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateUserProfileAsyncHelper(SageMakerClient const * const clientThis, const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUserProfile(request), context);
 }
 
-void SageMakerClient::UpdateUserProfileAsyncHelper(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateUserProfileAsync(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateUserProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWorkforceOutcome SageMakerClient::UpdateWorkforce(const UpdateWorkforceRequest& request) const
@@ -6641,14 +6641,14 @@ UpdateWorkforceOutcomeCallable SageMakerClient::UpdateWorkforceCallable(const Up
   return task->get_future();
 }
 
-void SageMakerClient::UpdateWorkforceAsync(const UpdateWorkforceRequest& request, const UpdateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateWorkforceAsyncHelper(SageMakerClient const * const clientThis, const UpdateWorkforceRequest& request, const UpdateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkforceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWorkforce(request), context);
 }
 
-void SageMakerClient::UpdateWorkforceAsyncHelper(const UpdateWorkforceRequest& request, const UpdateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateWorkforceAsync(const UpdateWorkforceRequest& request, const UpdateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWorkforce(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateWorkforceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWorkteamOutcome SageMakerClient::UpdateWorkteam(const UpdateWorkteamRequest& request) const
@@ -6665,13 +6665,13 @@ UpdateWorkteamOutcomeCallable SageMakerClient::UpdateWorkteamCallable(const Upda
   return task->get_future();
 }
 
-void SageMakerClient::UpdateWorkteamAsync(const UpdateWorkteamRequest& request, const UpdateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClientUpdateWorkteamAsyncHelper(SageMakerClient const * const clientThis, const UpdateWorkteamRequest& request, const UpdateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkteamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWorkteam(request), context);
 }
 
-void SageMakerClient::UpdateWorkteamAsyncHelper(const UpdateWorkteamRequest& request, const UpdateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SageMakerClient::UpdateWorkteamAsync(const UpdateWorkteamRequest& request, const UpdateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWorkteam(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SageMakerClientUpdateWorkteamAsyncHelper( this, request, handler, context ); } );
 }
 

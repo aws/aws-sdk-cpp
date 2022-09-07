@@ -132,14 +132,14 @@ DescribeJobExecutionOutcomeCallable IoTJobsDataPlaneClient::DescribeJobExecution
   return task->get_future();
 }
 
-void IoTJobsDataPlaneClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTJobsDataPlaneClientDescribeJobExecutionAsyncHelper(IoTJobsDataPlaneClient const * const clientThis, const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJobExecution(request), context);
 }
 
-void IoTJobsDataPlaneClient::DescribeJobExecutionAsyncHelper(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTJobsDataPlaneClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTJobsDataPlaneClientDescribeJobExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(const GetPendingJobExecutionsRequest& request) const
@@ -164,14 +164,14 @@ GetPendingJobExecutionsOutcomeCallable IoTJobsDataPlaneClient::GetPendingJobExec
   return task->get_future();
 }
 
-void IoTJobsDataPlaneClient::GetPendingJobExecutionsAsync(const GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTJobsDataPlaneClientGetPendingJobExecutionsAsyncHelper(IoTJobsDataPlaneClient const * const clientThis, const GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPendingJobExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPendingJobExecutions(request), context);
 }
 
-void IoTJobsDataPlaneClient::GetPendingJobExecutionsAsyncHelper(const GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTJobsDataPlaneClient::GetPendingJobExecutionsAsync(const GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPendingJobExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTJobsDataPlaneClientGetPendingJobExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobExecution(const StartNextPendingJobExecutionRequest& request) const
@@ -196,14 +196,14 @@ StartNextPendingJobExecutionOutcomeCallable IoTJobsDataPlaneClient::StartNextPen
   return task->get_future();
 }
 
-void IoTJobsDataPlaneClient::StartNextPendingJobExecutionAsync(const StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTJobsDataPlaneClientStartNextPendingJobExecutionAsyncHelper(IoTJobsDataPlaneClient const * const clientThis, const StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartNextPendingJobExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartNextPendingJobExecution(request), context);
 }
 
-void IoTJobsDataPlaneClient::StartNextPendingJobExecutionAsyncHelper(const StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTJobsDataPlaneClient::StartNextPendingJobExecutionAsync(const StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartNextPendingJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTJobsDataPlaneClientStartNextPendingJobExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const UpdateJobExecutionRequest& request) const
@@ -234,13 +234,13 @@ UpdateJobExecutionOutcomeCallable IoTJobsDataPlaneClient::UpdateJobExecutionCall
   return task->get_future();
 }
 
-void IoTJobsDataPlaneClient::UpdateJobExecutionAsync(const UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTJobsDataPlaneClientUpdateJobExecutionAsyncHelper(IoTJobsDataPlaneClient const * const clientThis, const UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateJobExecution(request), context);
 }
 
-void IoTJobsDataPlaneClient::UpdateJobExecutionAsyncHelper(const UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTJobsDataPlaneClient::UpdateJobExecutionAsync(const UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTJobsDataPlaneClientUpdateJobExecutionAsyncHelper( this, request, handler, context ); } );
 }
 

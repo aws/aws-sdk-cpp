@@ -167,14 +167,14 @@ CreateAccessOutcomeCallable TransferClient::CreateAccessCallable(const CreateAcc
   return task->get_future();
 }
 
-void TransferClient::CreateAccessAsync(const CreateAccessRequest& request, const CreateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientCreateAccessAsyncHelper(TransferClient const * const clientThis, const CreateAccessRequest& request, const CreateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAccess(request), context);
 }
 
-void TransferClient::CreateAccessAsyncHelper(const CreateAccessRequest& request, const CreateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::CreateAccessAsync(const CreateAccessRequest& request, const CreateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientCreateAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAgreementOutcome TransferClient::CreateAgreement(const CreateAgreementRequest& request) const
@@ -191,14 +191,14 @@ CreateAgreementOutcomeCallable TransferClient::CreateAgreementCallable(const Cre
   return task->get_future();
 }
 
-void TransferClient::CreateAgreementAsync(const CreateAgreementRequest& request, const CreateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientCreateAgreementAsyncHelper(TransferClient const * const clientThis, const CreateAgreementRequest& request, const CreateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAgreementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAgreement(request), context);
 }
 
-void TransferClient::CreateAgreementAsyncHelper(const CreateAgreementRequest& request, const CreateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::CreateAgreementAsync(const CreateAgreementRequest& request, const CreateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAgreement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientCreateAgreementAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConnectorOutcome TransferClient::CreateConnector(const CreateConnectorRequest& request) const
@@ -215,14 +215,14 @@ CreateConnectorOutcomeCallable TransferClient::CreateConnectorCallable(const Cre
   return task->get_future();
 }
 
-void TransferClient::CreateConnectorAsync(const CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientCreateConnectorAsyncHelper(TransferClient const * const clientThis, const CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConnector(request), context);
 }
 
-void TransferClient::CreateConnectorAsyncHelper(const CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::CreateConnectorAsync(const CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConnector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientCreateConnectorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProfileOutcome TransferClient::CreateProfile(const CreateProfileRequest& request) const
@@ -239,14 +239,14 @@ CreateProfileOutcomeCallable TransferClient::CreateProfileCallable(const CreateP
   return task->get_future();
 }
 
-void TransferClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientCreateProfileAsyncHelper(TransferClient const * const clientThis, const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProfile(request), context);
 }
 
-void TransferClient::CreateProfileAsyncHelper(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientCreateProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateServerOutcome TransferClient::CreateServer(const CreateServerRequest& request) const
@@ -263,14 +263,14 @@ CreateServerOutcomeCallable TransferClient::CreateServerCallable(const CreateSer
   return task->get_future();
 }
 
-void TransferClient::CreateServerAsync(const CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientCreateServerAsyncHelper(TransferClient const * const clientThis, const CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateServer(request), context);
 }
 
-void TransferClient::CreateServerAsyncHelper(const CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::CreateServerAsync(const CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientCreateServerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserOutcome TransferClient::CreateUser(const CreateUserRequest& request) const
@@ -287,14 +287,14 @@ CreateUserOutcomeCallable TransferClient::CreateUserCallable(const CreateUserReq
   return task->get_future();
 }
 
-void TransferClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientCreateUserAsyncHelper(TransferClient const * const clientThis, const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUser(request), context);
 }
 
-void TransferClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientCreateUserAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorkflowOutcome TransferClient::CreateWorkflow(const CreateWorkflowRequest& request) const
@@ -311,14 +311,14 @@ CreateWorkflowOutcomeCallable TransferClient::CreateWorkflowCallable(const Creat
   return task->get_future();
 }
 
-void TransferClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientCreateWorkflowAsyncHelper(TransferClient const * const clientThis, const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkflowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorkflow(request), context);
 }
 
-void TransferClient::CreateWorkflowAsyncHelper(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorkflow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientCreateWorkflowAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAccessOutcome TransferClient::DeleteAccess(const DeleteAccessRequest& request) const
@@ -335,14 +335,14 @@ DeleteAccessOutcomeCallable TransferClient::DeleteAccessCallable(const DeleteAcc
   return task->get_future();
 }
 
-void TransferClient::DeleteAccessAsync(const DeleteAccessRequest& request, const DeleteAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDeleteAccessAsyncHelper(TransferClient const * const clientThis, const DeleteAccessRequest& request, const DeleteAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAccess(request), context);
 }
 
-void TransferClient::DeleteAccessAsyncHelper(const DeleteAccessRequest& request, const DeleteAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DeleteAccessAsync(const DeleteAccessRequest& request, const DeleteAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDeleteAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAgreementOutcome TransferClient::DeleteAgreement(const DeleteAgreementRequest& request) const
@@ -359,14 +359,14 @@ DeleteAgreementOutcomeCallable TransferClient::DeleteAgreementCallable(const Del
   return task->get_future();
 }
 
-void TransferClient::DeleteAgreementAsync(const DeleteAgreementRequest& request, const DeleteAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDeleteAgreementAsyncHelper(TransferClient const * const clientThis, const DeleteAgreementRequest& request, const DeleteAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAgreementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAgreement(request), context);
 }
 
-void TransferClient::DeleteAgreementAsyncHelper(const DeleteAgreementRequest& request, const DeleteAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DeleteAgreementAsync(const DeleteAgreementRequest& request, const DeleteAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAgreement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDeleteAgreementAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCertificateOutcome TransferClient::DeleteCertificate(const DeleteCertificateRequest& request) const
@@ -383,14 +383,14 @@ DeleteCertificateOutcomeCallable TransferClient::DeleteCertificateCallable(const
   return task->get_future();
 }
 
-void TransferClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDeleteCertificateAsyncHelper(TransferClient const * const clientThis, const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCertificate(request), context);
 }
 
-void TransferClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDeleteCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConnectorOutcome TransferClient::DeleteConnector(const DeleteConnectorRequest& request) const
@@ -407,14 +407,14 @@ DeleteConnectorOutcomeCallable TransferClient::DeleteConnectorCallable(const Del
   return task->get_future();
 }
 
-void TransferClient::DeleteConnectorAsync(const DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDeleteConnectorAsyncHelper(TransferClient const * const clientThis, const DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConnector(request), context);
 }
 
-void TransferClient::DeleteConnectorAsyncHelper(const DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DeleteConnectorAsync(const DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConnector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDeleteConnectorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProfileOutcome TransferClient::DeleteProfile(const DeleteProfileRequest& request) const
@@ -431,14 +431,14 @@ DeleteProfileOutcomeCallable TransferClient::DeleteProfileCallable(const DeleteP
   return task->get_future();
 }
 
-void TransferClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDeleteProfileAsyncHelper(TransferClient const * const clientThis, const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProfile(request), context);
 }
 
-void TransferClient::DeleteProfileAsyncHelper(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDeleteProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteServerOutcome TransferClient::DeleteServer(const DeleteServerRequest& request) const
@@ -455,14 +455,14 @@ DeleteServerOutcomeCallable TransferClient::DeleteServerCallable(const DeleteSer
   return task->get_future();
 }
 
-void TransferClient::DeleteServerAsync(const DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDeleteServerAsyncHelper(TransferClient const * const clientThis, const DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteServer(request), context);
 }
 
-void TransferClient::DeleteServerAsyncHelper(const DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DeleteServerAsync(const DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDeleteServerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSshPublicKeyOutcome TransferClient::DeleteSshPublicKey(const DeleteSshPublicKeyRequest& request) const
@@ -479,14 +479,14 @@ DeleteSshPublicKeyOutcomeCallable TransferClient::DeleteSshPublicKeyCallable(con
   return task->get_future();
 }
 
-void TransferClient::DeleteSshPublicKeyAsync(const DeleteSshPublicKeyRequest& request, const DeleteSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDeleteSshPublicKeyAsyncHelper(TransferClient const * const clientThis, const DeleteSshPublicKeyRequest& request, const DeleteSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSshPublicKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSshPublicKey(request), context);
 }
 
-void TransferClient::DeleteSshPublicKeyAsyncHelper(const DeleteSshPublicKeyRequest& request, const DeleteSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DeleteSshPublicKeyAsync(const DeleteSshPublicKeyRequest& request, const DeleteSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSshPublicKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDeleteSshPublicKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserOutcome TransferClient::DeleteUser(const DeleteUserRequest& request) const
@@ -503,14 +503,14 @@ DeleteUserOutcomeCallable TransferClient::DeleteUserCallable(const DeleteUserReq
   return task->get_future();
 }
 
-void TransferClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDeleteUserAsyncHelper(TransferClient const * const clientThis, const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUser(request), context);
 }
 
-void TransferClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDeleteUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorkflowOutcome TransferClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const
@@ -527,14 +527,14 @@ DeleteWorkflowOutcomeCallable TransferClient::DeleteWorkflowCallable(const Delet
   return task->get_future();
 }
 
-void TransferClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDeleteWorkflowAsyncHelper(TransferClient const * const clientThis, const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkflowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorkflow(request), context);
 }
 
-void TransferClient::DeleteWorkflowAsyncHelper(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorkflow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDeleteWorkflowAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccessOutcome TransferClient::DescribeAccess(const DescribeAccessRequest& request) const
@@ -551,14 +551,14 @@ DescribeAccessOutcomeCallable TransferClient::DescribeAccessCallable(const Descr
   return task->get_future();
 }
 
-void TransferClient::DescribeAccessAsync(const DescribeAccessRequest& request, const DescribeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDescribeAccessAsyncHelper(TransferClient const * const clientThis, const DescribeAccessRequest& request, const DescribeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccess(request), context);
 }
 
-void TransferClient::DescribeAccessAsyncHelper(const DescribeAccessRequest& request, const DescribeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DescribeAccessAsync(const DescribeAccessRequest& request, const DescribeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDescribeAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAgreementOutcome TransferClient::DescribeAgreement(const DescribeAgreementRequest& request) const
@@ -575,14 +575,14 @@ DescribeAgreementOutcomeCallable TransferClient::DescribeAgreementCallable(const
   return task->get_future();
 }
 
-void TransferClient::DescribeAgreementAsync(const DescribeAgreementRequest& request, const DescribeAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDescribeAgreementAsyncHelper(TransferClient const * const clientThis, const DescribeAgreementRequest& request, const DescribeAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAgreementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAgreement(request), context);
 }
 
-void TransferClient::DescribeAgreementAsyncHelper(const DescribeAgreementRequest& request, const DescribeAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DescribeAgreementAsync(const DescribeAgreementRequest& request, const DescribeAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAgreement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDescribeAgreementAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCertificateOutcome TransferClient::DescribeCertificate(const DescribeCertificateRequest& request) const
@@ -599,14 +599,14 @@ DescribeCertificateOutcomeCallable TransferClient::DescribeCertificateCallable(c
   return task->get_future();
 }
 
-void TransferClient::DescribeCertificateAsync(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDescribeCertificateAsyncHelper(TransferClient const * const clientThis, const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCertificate(request), context);
 }
 
-void TransferClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DescribeCertificateAsync(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDescribeCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeConnectorOutcome TransferClient::DescribeConnector(const DescribeConnectorRequest& request) const
@@ -623,14 +623,14 @@ DescribeConnectorOutcomeCallable TransferClient::DescribeConnectorCallable(const
   return task->get_future();
 }
 
-void TransferClient::DescribeConnectorAsync(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDescribeConnectorAsyncHelper(TransferClient const * const clientThis, const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeConnector(request), context);
 }
 
-void TransferClient::DescribeConnectorAsyncHelper(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DescribeConnectorAsync(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeConnector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDescribeConnectorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExecutionOutcome TransferClient::DescribeExecution(const DescribeExecutionRequest& request) const
@@ -647,14 +647,14 @@ DescribeExecutionOutcomeCallable TransferClient::DescribeExecutionCallable(const
   return task->get_future();
 }
 
-void TransferClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDescribeExecutionAsyncHelper(TransferClient const * const clientThis, const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExecution(request), context);
 }
 
-void TransferClient::DescribeExecutionAsyncHelper(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDescribeExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProfileOutcome TransferClient::DescribeProfile(const DescribeProfileRequest& request) const
@@ -671,14 +671,14 @@ DescribeProfileOutcomeCallable TransferClient::DescribeProfileCallable(const Des
   return task->get_future();
 }
 
-void TransferClient::DescribeProfileAsync(const DescribeProfileRequest& request, const DescribeProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDescribeProfileAsyncHelper(TransferClient const * const clientThis, const DescribeProfileRequest& request, const DescribeProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProfile(request), context);
 }
 
-void TransferClient::DescribeProfileAsyncHelper(const DescribeProfileRequest& request, const DescribeProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DescribeProfileAsync(const DescribeProfileRequest& request, const DescribeProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDescribeProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSecurityPolicyOutcome TransferClient::DescribeSecurityPolicy(const DescribeSecurityPolicyRequest& request) const
@@ -695,14 +695,14 @@ DescribeSecurityPolicyOutcomeCallable TransferClient::DescribeSecurityPolicyCall
   return task->get_future();
 }
 
-void TransferClient::DescribeSecurityPolicyAsync(const DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDescribeSecurityPolicyAsyncHelper(TransferClient const * const clientThis, const DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSecurityPolicy(request), context);
 }
 
-void TransferClient::DescribeSecurityPolicyAsyncHelper(const DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DescribeSecurityPolicyAsync(const DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSecurityPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDescribeSecurityPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeServerOutcome TransferClient::DescribeServer(const DescribeServerRequest& request) const
@@ -719,14 +719,14 @@ DescribeServerOutcomeCallable TransferClient::DescribeServerCallable(const Descr
   return task->get_future();
 }
 
-void TransferClient::DescribeServerAsync(const DescribeServerRequest& request, const DescribeServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDescribeServerAsyncHelper(TransferClient const * const clientThis, const DescribeServerRequest& request, const DescribeServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeServer(request), context);
 }
 
-void TransferClient::DescribeServerAsyncHelper(const DescribeServerRequest& request, const DescribeServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DescribeServerAsync(const DescribeServerRequest& request, const DescribeServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDescribeServerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUserOutcome TransferClient::DescribeUser(const DescribeUserRequest& request) const
@@ -743,14 +743,14 @@ DescribeUserOutcomeCallable TransferClient::DescribeUserCallable(const DescribeU
   return task->get_future();
 }
 
-void TransferClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDescribeUserAsyncHelper(TransferClient const * const clientThis, const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUser(request), context);
 }
 
-void TransferClient::DescribeUserAsyncHelper(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDescribeUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWorkflowOutcome TransferClient::DescribeWorkflow(const DescribeWorkflowRequest& request) const
@@ -767,14 +767,14 @@ DescribeWorkflowOutcomeCallable TransferClient::DescribeWorkflowCallable(const D
   return task->get_future();
 }
 
-void TransferClient::DescribeWorkflowAsync(const DescribeWorkflowRequest& request, const DescribeWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientDescribeWorkflowAsyncHelper(TransferClient const * const clientThis, const DescribeWorkflowRequest& request, const DescribeWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkflowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWorkflow(request), context);
 }
 
-void TransferClient::DescribeWorkflowAsyncHelper(const DescribeWorkflowRequest& request, const DescribeWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::DescribeWorkflowAsync(const DescribeWorkflowRequest& request, const DescribeWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWorkflow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientDescribeWorkflowAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportCertificateOutcome TransferClient::ImportCertificate(const ImportCertificateRequest& request) const
@@ -791,14 +791,14 @@ ImportCertificateOutcomeCallable TransferClient::ImportCertificateCallable(const
   return task->get_future();
 }
 
-void TransferClient::ImportCertificateAsync(const ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientImportCertificateAsyncHelper(TransferClient const * const clientThis, const ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportCertificate(request), context);
 }
 
-void TransferClient::ImportCertificateAsyncHelper(const ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ImportCertificateAsync(const ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientImportCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportSshPublicKeyOutcome TransferClient::ImportSshPublicKey(const ImportSshPublicKeyRequest& request) const
@@ -815,14 +815,14 @@ ImportSshPublicKeyOutcomeCallable TransferClient::ImportSshPublicKeyCallable(con
   return task->get_future();
 }
 
-void TransferClient::ImportSshPublicKeyAsync(const ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientImportSshPublicKeyAsyncHelper(TransferClient const * const clientThis, const ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportSshPublicKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportSshPublicKey(request), context);
 }
 
-void TransferClient::ImportSshPublicKeyAsyncHelper(const ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ImportSshPublicKeyAsync(const ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportSshPublicKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientImportSshPublicKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccessesOutcome TransferClient::ListAccesses(const ListAccessesRequest& request) const
@@ -839,14 +839,14 @@ ListAccessesOutcomeCallable TransferClient::ListAccessesCallable(const ListAcces
   return task->get_future();
 }
 
-void TransferClient::ListAccessesAsync(const ListAccessesRequest& request, const ListAccessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListAccessesAsyncHelper(TransferClient const * const clientThis, const ListAccessesRequest& request, const ListAccessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccessesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccesses(request), context);
 }
 
-void TransferClient::ListAccessesAsyncHelper(const ListAccessesRequest& request, const ListAccessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListAccessesAsync(const ListAccessesRequest& request, const ListAccessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccesses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListAccessesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAgreementsOutcome TransferClient::ListAgreements(const ListAgreementsRequest& request) const
@@ -863,14 +863,14 @@ ListAgreementsOutcomeCallable TransferClient::ListAgreementsCallable(const ListA
   return task->get_future();
 }
 
-void TransferClient::ListAgreementsAsync(const ListAgreementsRequest& request, const ListAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListAgreementsAsyncHelper(TransferClient const * const clientThis, const ListAgreementsRequest& request, const ListAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAgreementsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAgreements(request), context);
 }
 
-void TransferClient::ListAgreementsAsyncHelper(const ListAgreementsRequest& request, const ListAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListAgreementsAsync(const ListAgreementsRequest& request, const ListAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAgreements(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListAgreementsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCertificatesOutcome TransferClient::ListCertificates(const ListCertificatesRequest& request) const
@@ -887,14 +887,14 @@ ListCertificatesOutcomeCallable TransferClient::ListCertificatesCallable(const L
   return task->get_future();
 }
 
-void TransferClient::ListCertificatesAsync(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListCertificatesAsyncHelper(TransferClient const * const clientThis, const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCertificatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCertificates(request), context);
 }
 
-void TransferClient::ListCertificatesAsyncHelper(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListCertificatesAsync(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListCertificatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConnectorsOutcome TransferClient::ListConnectors(const ListConnectorsRequest& request) const
@@ -911,14 +911,14 @@ ListConnectorsOutcomeCallable TransferClient::ListConnectorsCallable(const ListC
   return task->get_future();
 }
 
-void TransferClient::ListConnectorsAsync(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListConnectorsAsyncHelper(TransferClient const * const clientThis, const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConnectorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConnectors(request), context);
 }
 
-void TransferClient::ListConnectorsAsyncHelper(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListConnectorsAsync(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConnectors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListConnectorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExecutionsOutcome TransferClient::ListExecutions(const ListExecutionsRequest& request) const
@@ -935,14 +935,14 @@ ListExecutionsOutcomeCallable TransferClient::ListExecutionsCallable(const ListE
   return task->get_future();
 }
 
-void TransferClient::ListExecutionsAsync(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListExecutionsAsyncHelper(TransferClient const * const clientThis, const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExecutions(request), context);
 }
 
-void TransferClient::ListExecutionsAsyncHelper(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListExecutionsAsync(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProfilesOutcome TransferClient::ListProfiles(const ListProfilesRequest& request) const
@@ -959,14 +959,14 @@ ListProfilesOutcomeCallable TransferClient::ListProfilesCallable(const ListProfi
   return task->get_future();
 }
 
-void TransferClient::ListProfilesAsync(const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListProfilesAsyncHelper(TransferClient const * const clientThis, const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProfiles(request), context);
 }
 
-void TransferClient::ListProfilesAsyncHelper(const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListProfilesAsync(const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSecurityPoliciesOutcome TransferClient::ListSecurityPolicies(const ListSecurityPoliciesRequest& request) const
@@ -983,14 +983,14 @@ ListSecurityPoliciesOutcomeCallable TransferClient::ListSecurityPoliciesCallable
   return task->get_future();
 }
 
-void TransferClient::ListSecurityPoliciesAsync(const ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListSecurityPoliciesAsyncHelper(TransferClient const * const clientThis, const ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSecurityPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSecurityPolicies(request), context);
 }
 
-void TransferClient::ListSecurityPoliciesAsyncHelper(const ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListSecurityPoliciesAsync(const ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSecurityPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListSecurityPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServersOutcome TransferClient::ListServers(const ListServersRequest& request) const
@@ -1007,14 +1007,14 @@ ListServersOutcomeCallable TransferClient::ListServersCallable(const ListServers
   return task->get_future();
 }
 
-void TransferClient::ListServersAsync(const ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListServersAsyncHelper(TransferClient const * const clientThis, const ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServers(request), context);
 }
 
-void TransferClient::ListServersAsyncHelper(const ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListServersAsync(const ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListServersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome TransferClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1031,14 +1031,14 @@ ListTagsForResourceOutcomeCallable TransferClient::ListTagsForResourceCallable(c
   return task->get_future();
 }
 
-void TransferClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListTagsForResourceAsyncHelper(TransferClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void TransferClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUsersOutcome TransferClient::ListUsers(const ListUsersRequest& request) const
@@ -1055,14 +1055,14 @@ ListUsersOutcomeCallable TransferClient::ListUsersCallable(const ListUsersReques
   return task->get_future();
 }
 
-void TransferClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListUsersAsyncHelper(TransferClient const * const clientThis, const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUsers(request), context);
 }
 
-void TransferClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorkflowsOutcome TransferClient::ListWorkflows(const ListWorkflowsRequest& request) const
@@ -1079,14 +1079,14 @@ ListWorkflowsOutcomeCallable TransferClient::ListWorkflowsCallable(const ListWor
   return task->get_future();
 }
 
-void TransferClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientListWorkflowsAsyncHelper(TransferClient const * const clientThis, const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkflowsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorkflows(request), context);
 }
 
-void TransferClient::ListWorkflowsAsyncHelper(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorkflows(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientListWorkflowsAsyncHelper( this, request, handler, context ); } );
 }
 
 SendWorkflowStepStateOutcome TransferClient::SendWorkflowStepState(const SendWorkflowStepStateRequest& request) const
@@ -1103,14 +1103,14 @@ SendWorkflowStepStateOutcomeCallable TransferClient::SendWorkflowStepStateCallab
   return task->get_future();
 }
 
-void TransferClient::SendWorkflowStepStateAsync(const SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientSendWorkflowStepStateAsyncHelper(TransferClient const * const clientThis, const SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendWorkflowStepStateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendWorkflowStepState(request), context);
 }
 
-void TransferClient::SendWorkflowStepStateAsyncHelper(const SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::SendWorkflowStepStateAsync(const SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendWorkflowStepState(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientSendWorkflowStepStateAsyncHelper( this, request, handler, context ); } );
 }
 
 StartFileTransferOutcome TransferClient::StartFileTransfer(const StartFileTransferRequest& request) const
@@ -1127,14 +1127,14 @@ StartFileTransferOutcomeCallable TransferClient::StartFileTransferCallable(const
   return task->get_future();
 }
 
-void TransferClient::StartFileTransferAsync(const StartFileTransferRequest& request, const StartFileTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientStartFileTransferAsyncHelper(TransferClient const * const clientThis, const StartFileTransferRequest& request, const StartFileTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFileTransferAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartFileTransfer(request), context);
 }
 
-void TransferClient::StartFileTransferAsyncHelper(const StartFileTransferRequest& request, const StartFileTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::StartFileTransferAsync(const StartFileTransferRequest& request, const StartFileTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartFileTransfer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientStartFileTransferAsyncHelper( this, request, handler, context ); } );
 }
 
 StartServerOutcome TransferClient::StartServer(const StartServerRequest& request) const
@@ -1151,14 +1151,14 @@ StartServerOutcomeCallable TransferClient::StartServerCallable(const StartServer
   return task->get_future();
 }
 
-void TransferClient::StartServerAsync(const StartServerRequest& request, const StartServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientStartServerAsyncHelper(TransferClient const * const clientThis, const StartServerRequest& request, const StartServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartServer(request), context);
 }
 
-void TransferClient::StartServerAsyncHelper(const StartServerRequest& request, const StartServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::StartServerAsync(const StartServerRequest& request, const StartServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientStartServerAsyncHelper( this, request, handler, context ); } );
 }
 
 StopServerOutcome TransferClient::StopServer(const StopServerRequest& request) const
@@ -1175,14 +1175,14 @@ StopServerOutcomeCallable TransferClient::StopServerCallable(const StopServerReq
   return task->get_future();
 }
 
-void TransferClient::StopServerAsync(const StopServerRequest& request, const StopServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientStopServerAsyncHelper(TransferClient const * const clientThis, const StopServerRequest& request, const StopServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopServer(request), context);
 }
 
-void TransferClient::StopServerAsyncHelper(const StopServerRequest& request, const StopServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::StopServerAsync(const StopServerRequest& request, const StopServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientStopServerAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome TransferClient::TagResource(const TagResourceRequest& request) const
@@ -1199,14 +1199,14 @@ TagResourceOutcomeCallable TransferClient::TagResourceCallable(const TagResource
   return task->get_future();
 }
 
-void TransferClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientTagResourceAsyncHelper(TransferClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void TransferClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TestIdentityProviderOutcome TransferClient::TestIdentityProvider(const TestIdentityProviderRequest& request) const
@@ -1223,14 +1223,14 @@ TestIdentityProviderOutcomeCallable TransferClient::TestIdentityProviderCallable
   return task->get_future();
 }
 
-void TransferClient::TestIdentityProviderAsync(const TestIdentityProviderRequest& request, const TestIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientTestIdentityProviderAsyncHelper(TransferClient const * const clientThis, const TestIdentityProviderRequest& request, const TestIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestIdentityProviderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestIdentityProvider(request), context);
 }
 
-void TransferClient::TestIdentityProviderAsyncHelper(const TestIdentityProviderRequest& request, const TestIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::TestIdentityProviderAsync(const TestIdentityProviderRequest& request, const TestIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientTestIdentityProviderAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome TransferClient::UntagResource(const UntagResourceRequest& request) const
@@ -1247,14 +1247,14 @@ UntagResourceOutcomeCallable TransferClient::UntagResourceCallable(const UntagRe
   return task->get_future();
 }
 
-void TransferClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientUntagResourceAsyncHelper(TransferClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void TransferClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAccessOutcome TransferClient::UpdateAccess(const UpdateAccessRequest& request) const
@@ -1271,14 +1271,14 @@ UpdateAccessOutcomeCallable TransferClient::UpdateAccessCallable(const UpdateAcc
   return task->get_future();
 }
 
-void TransferClient::UpdateAccessAsync(const UpdateAccessRequest& request, const UpdateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientUpdateAccessAsyncHelper(TransferClient const * const clientThis, const UpdateAccessRequest& request, const UpdateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAccess(request), context);
 }
 
-void TransferClient::UpdateAccessAsyncHelper(const UpdateAccessRequest& request, const UpdateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::UpdateAccessAsync(const UpdateAccessRequest& request, const UpdateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientUpdateAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAgreementOutcome TransferClient::UpdateAgreement(const UpdateAgreementRequest& request) const
@@ -1295,14 +1295,14 @@ UpdateAgreementOutcomeCallable TransferClient::UpdateAgreementCallable(const Upd
   return task->get_future();
 }
 
-void TransferClient::UpdateAgreementAsync(const UpdateAgreementRequest& request, const UpdateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientUpdateAgreementAsyncHelper(TransferClient const * const clientThis, const UpdateAgreementRequest& request, const UpdateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAgreementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAgreement(request), context);
 }
 
-void TransferClient::UpdateAgreementAsyncHelper(const UpdateAgreementRequest& request, const UpdateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::UpdateAgreementAsync(const UpdateAgreementRequest& request, const UpdateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAgreement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientUpdateAgreementAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCertificateOutcome TransferClient::UpdateCertificate(const UpdateCertificateRequest& request) const
@@ -1319,14 +1319,14 @@ UpdateCertificateOutcomeCallable TransferClient::UpdateCertificateCallable(const
   return task->get_future();
 }
 
-void TransferClient::UpdateCertificateAsync(const UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientUpdateCertificateAsyncHelper(TransferClient const * const clientThis, const UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCertificate(request), context);
 }
 
-void TransferClient::UpdateCertificateAsyncHelper(const UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::UpdateCertificateAsync(const UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientUpdateCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConnectorOutcome TransferClient::UpdateConnector(const UpdateConnectorRequest& request) const
@@ -1343,14 +1343,14 @@ UpdateConnectorOutcomeCallable TransferClient::UpdateConnectorCallable(const Upd
   return task->get_future();
 }
 
-void TransferClient::UpdateConnectorAsync(const UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientUpdateConnectorAsyncHelper(TransferClient const * const clientThis, const UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConnector(request), context);
 }
 
-void TransferClient::UpdateConnectorAsyncHelper(const UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::UpdateConnectorAsync(const UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConnector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientUpdateConnectorAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProfileOutcome TransferClient::UpdateProfile(const UpdateProfileRequest& request) const
@@ -1367,14 +1367,14 @@ UpdateProfileOutcomeCallable TransferClient::UpdateProfileCallable(const UpdateP
   return task->get_future();
 }
 
-void TransferClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientUpdateProfileAsyncHelper(TransferClient const * const clientThis, const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProfile(request), context);
 }
 
-void TransferClient::UpdateProfileAsyncHelper(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientUpdateProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServerOutcome TransferClient::UpdateServer(const UpdateServerRequest& request) const
@@ -1391,14 +1391,14 @@ UpdateServerOutcomeCallable TransferClient::UpdateServerCallable(const UpdateSer
   return task->get_future();
 }
 
-void TransferClient::UpdateServerAsync(const UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientUpdateServerAsyncHelper(TransferClient const * const clientThis, const UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServer(request), context);
 }
 
-void TransferClient::UpdateServerAsyncHelper(const UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::UpdateServerAsync(const UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientUpdateServerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserOutcome TransferClient::UpdateUser(const UpdateUserRequest& request) const
@@ -1415,13 +1415,13 @@ UpdateUserOutcomeCallable TransferClient::UpdateUserCallable(const UpdateUserReq
   return task->get_future();
 }
 
-void TransferClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClientUpdateUserAsyncHelper(TransferClient const * const clientThis, const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUser(request), context);
 }
 
-void TransferClient::UpdateUserAsyncHelper(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TransferClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TransferClientUpdateUserAsyncHelper( this, request, handler, context ); } );
 }
 

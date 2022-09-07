@@ -174,14 +174,14 @@ AssociateEntitiesToExperienceOutcomeCallable KendraClient::AssociateEntitiesToEx
   return task->get_future();
 }
 
-void KendraClient::AssociateEntitiesToExperienceAsync(const AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientAssociateEntitiesToExperienceAsyncHelper(KendraClient const * const clientThis, const AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateEntitiesToExperienceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateEntitiesToExperience(request), context);
 }
 
-void KendraClient::AssociateEntitiesToExperienceAsyncHelper(const AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::AssociateEntitiesToExperienceAsync(const AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateEntitiesToExperience(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientAssociateEntitiesToExperienceAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociatePersonasToEntitiesOutcome KendraClient::AssociatePersonasToEntities(const AssociatePersonasToEntitiesRequest& request) const
@@ -198,14 +198,14 @@ AssociatePersonasToEntitiesOutcomeCallable KendraClient::AssociatePersonasToEnti
   return task->get_future();
 }
 
-void KendraClient::AssociatePersonasToEntitiesAsync(const AssociatePersonasToEntitiesRequest& request, const AssociatePersonasToEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientAssociatePersonasToEntitiesAsyncHelper(KendraClient const * const clientThis, const AssociatePersonasToEntitiesRequest& request, const AssociatePersonasToEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociatePersonasToEntitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociatePersonasToEntities(request), context);
 }
 
-void KendraClient::AssociatePersonasToEntitiesAsyncHelper(const AssociatePersonasToEntitiesRequest& request, const AssociatePersonasToEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::AssociatePersonasToEntitiesAsync(const AssociatePersonasToEntitiesRequest& request, const AssociatePersonasToEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociatePersonasToEntities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientAssociatePersonasToEntitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDeleteDocumentOutcome KendraClient::BatchDeleteDocument(const BatchDeleteDocumentRequest& request) const
@@ -222,14 +222,14 @@ BatchDeleteDocumentOutcomeCallable KendraClient::BatchDeleteDocumentCallable(con
   return task->get_future();
 }
 
-void KendraClient::BatchDeleteDocumentAsync(const BatchDeleteDocumentRequest& request, const BatchDeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientBatchDeleteDocumentAsyncHelper(KendraClient const * const clientThis, const BatchDeleteDocumentRequest& request, const BatchDeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteDocumentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDeleteDocument(request), context);
 }
 
-void KendraClient::BatchDeleteDocumentAsyncHelper(const BatchDeleteDocumentRequest& request, const BatchDeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::BatchDeleteDocumentAsync(const BatchDeleteDocumentRequest& request, const BatchDeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDeleteDocument(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientBatchDeleteDocumentAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetDocumentStatusOutcome KendraClient::BatchGetDocumentStatus(const BatchGetDocumentStatusRequest& request) const
@@ -246,14 +246,14 @@ BatchGetDocumentStatusOutcomeCallable KendraClient::BatchGetDocumentStatusCallab
   return task->get_future();
 }
 
-void KendraClient::BatchGetDocumentStatusAsync(const BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientBatchGetDocumentStatusAsyncHelper(KendraClient const * const clientThis, const BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetDocumentStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetDocumentStatus(request), context);
 }
 
-void KendraClient::BatchGetDocumentStatusAsyncHelper(const BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::BatchGetDocumentStatusAsync(const BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetDocumentStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientBatchGetDocumentStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchPutDocumentOutcome KendraClient::BatchPutDocument(const BatchPutDocumentRequest& request) const
@@ -270,14 +270,14 @@ BatchPutDocumentOutcomeCallable KendraClient::BatchPutDocumentCallable(const Bat
   return task->get_future();
 }
 
-void KendraClient::BatchPutDocumentAsync(const BatchPutDocumentRequest& request, const BatchPutDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientBatchPutDocumentAsyncHelper(KendraClient const * const clientThis, const BatchPutDocumentRequest& request, const BatchPutDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchPutDocumentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchPutDocument(request), context);
 }
 
-void KendraClient::BatchPutDocumentAsyncHelper(const BatchPutDocumentRequest& request, const BatchPutDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::BatchPutDocumentAsync(const BatchPutDocumentRequest& request, const BatchPutDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchPutDocument(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientBatchPutDocumentAsyncHelper( this, request, handler, context ); } );
 }
 
 ClearQuerySuggestionsOutcome KendraClient::ClearQuerySuggestions(const ClearQuerySuggestionsRequest& request) const
@@ -294,14 +294,14 @@ ClearQuerySuggestionsOutcomeCallable KendraClient::ClearQuerySuggestionsCallable
   return task->get_future();
 }
 
-void KendraClient::ClearQuerySuggestionsAsync(const ClearQuerySuggestionsRequest& request, const ClearQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientClearQuerySuggestionsAsyncHelper(KendraClient const * const clientThis, const ClearQuerySuggestionsRequest& request, const ClearQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ClearQuerySuggestionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ClearQuerySuggestions(request), context);
 }
 
-void KendraClient::ClearQuerySuggestionsAsyncHelper(const ClearQuerySuggestionsRequest& request, const ClearQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ClearQuerySuggestionsAsync(const ClearQuerySuggestionsRequest& request, const ClearQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ClearQuerySuggestions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientClearQuerySuggestionsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAccessControlConfigurationOutcome KendraClient::CreateAccessControlConfiguration(const CreateAccessControlConfigurationRequest& request) const
@@ -318,14 +318,14 @@ CreateAccessControlConfigurationOutcomeCallable KendraClient::CreateAccessContro
   return task->get_future();
 }
 
-void KendraClient::CreateAccessControlConfigurationAsync(const CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientCreateAccessControlConfigurationAsyncHelper(KendraClient const * const clientThis, const CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessControlConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAccessControlConfiguration(request), context);
 }
 
-void KendraClient::CreateAccessControlConfigurationAsyncHelper(const CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::CreateAccessControlConfigurationAsync(const CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAccessControlConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientCreateAccessControlConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDataSourceOutcome KendraClient::CreateDataSource(const CreateDataSourceRequest& request) const
@@ -342,14 +342,14 @@ CreateDataSourceOutcomeCallable KendraClient::CreateDataSourceCallable(const Cre
   return task->get_future();
 }
 
-void KendraClient::CreateDataSourceAsync(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientCreateDataSourceAsyncHelper(KendraClient const * const clientThis, const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataSource(request), context);
 }
 
-void KendraClient::CreateDataSourceAsyncHelper(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::CreateDataSourceAsync(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientCreateDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExperienceOutcome KendraClient::CreateExperience(const CreateExperienceRequest& request) const
@@ -366,14 +366,14 @@ CreateExperienceOutcomeCallable KendraClient::CreateExperienceCallable(const Cre
   return task->get_future();
 }
 
-void KendraClient::CreateExperienceAsync(const CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientCreateExperienceAsyncHelper(KendraClient const * const clientThis, const CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExperienceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExperience(request), context);
 }
 
-void KendraClient::CreateExperienceAsyncHelper(const CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::CreateExperienceAsync(const CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExperience(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientCreateExperienceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFaqOutcome KendraClient::CreateFaq(const CreateFaqRequest& request) const
@@ -390,14 +390,14 @@ CreateFaqOutcomeCallable KendraClient::CreateFaqCallable(const CreateFaqRequest&
   return task->get_future();
 }
 
-void KendraClient::CreateFaqAsync(const CreateFaqRequest& request, const CreateFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientCreateFaqAsyncHelper(KendraClient const * const clientThis, const CreateFaqRequest& request, const CreateFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFaqAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFaq(request), context);
 }
 
-void KendraClient::CreateFaqAsyncHelper(const CreateFaqRequest& request, const CreateFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::CreateFaqAsync(const CreateFaqRequest& request, const CreateFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFaq(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientCreateFaqAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIndexOutcome KendraClient::CreateIndex(const CreateIndexRequest& request) const
@@ -414,14 +414,14 @@ CreateIndexOutcomeCallable KendraClient::CreateIndexCallable(const CreateIndexRe
   return task->get_future();
 }
 
-void KendraClient::CreateIndexAsync(const CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientCreateIndexAsyncHelper(KendraClient const * const clientThis, const CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIndex(request), context);
 }
 
-void KendraClient::CreateIndexAsyncHelper(const CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::CreateIndexAsync(const CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientCreateIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateQuerySuggestionsBlockListOutcome KendraClient::CreateQuerySuggestionsBlockList(const CreateQuerySuggestionsBlockListRequest& request) const
@@ -438,14 +438,14 @@ CreateQuerySuggestionsBlockListOutcomeCallable KendraClient::CreateQuerySuggesti
   return task->get_future();
 }
 
-void KendraClient::CreateQuerySuggestionsBlockListAsync(const CreateQuerySuggestionsBlockListRequest& request, const CreateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientCreateQuerySuggestionsBlockListAsyncHelper(KendraClient const * const clientThis, const CreateQuerySuggestionsBlockListRequest& request, const CreateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateQuerySuggestionsBlockListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateQuerySuggestionsBlockList(request), context);
 }
 
-void KendraClient::CreateQuerySuggestionsBlockListAsyncHelper(const CreateQuerySuggestionsBlockListRequest& request, const CreateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::CreateQuerySuggestionsBlockListAsync(const CreateQuerySuggestionsBlockListRequest& request, const CreateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateQuerySuggestionsBlockList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientCreateQuerySuggestionsBlockListAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateThesaurusOutcome KendraClient::CreateThesaurus(const CreateThesaurusRequest& request) const
@@ -462,14 +462,14 @@ CreateThesaurusOutcomeCallable KendraClient::CreateThesaurusCallable(const Creat
   return task->get_future();
 }
 
-void KendraClient::CreateThesaurusAsync(const CreateThesaurusRequest& request, const CreateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientCreateThesaurusAsyncHelper(KendraClient const * const clientThis, const CreateThesaurusRequest& request, const CreateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateThesaurusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateThesaurus(request), context);
 }
 
-void KendraClient::CreateThesaurusAsyncHelper(const CreateThesaurusRequest& request, const CreateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::CreateThesaurusAsync(const CreateThesaurusRequest& request, const CreateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateThesaurus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientCreateThesaurusAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAccessControlConfigurationOutcome KendraClient::DeleteAccessControlConfiguration(const DeleteAccessControlConfigurationRequest& request) const
@@ -486,14 +486,14 @@ DeleteAccessControlConfigurationOutcomeCallable KendraClient::DeleteAccessContro
   return task->get_future();
 }
 
-void KendraClient::DeleteAccessControlConfigurationAsync(const DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDeleteAccessControlConfigurationAsyncHelper(KendraClient const * const clientThis, const DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessControlConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAccessControlConfiguration(request), context);
 }
 
-void KendraClient::DeleteAccessControlConfigurationAsyncHelper(const DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DeleteAccessControlConfigurationAsync(const DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAccessControlConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDeleteAccessControlConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDataSourceOutcome KendraClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
@@ -510,14 +510,14 @@ DeleteDataSourceOutcomeCallable KendraClient::DeleteDataSourceCallable(const Del
   return task->get_future();
 }
 
-void KendraClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDeleteDataSourceAsyncHelper(KendraClient const * const clientThis, const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataSource(request), context);
 }
 
-void KendraClient::DeleteDataSourceAsyncHelper(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDeleteDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteExperienceOutcome KendraClient::DeleteExperience(const DeleteExperienceRequest& request) const
@@ -534,14 +534,14 @@ DeleteExperienceOutcomeCallable KendraClient::DeleteExperienceCallable(const Del
   return task->get_future();
 }
 
-void KendraClient::DeleteExperienceAsync(const DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDeleteExperienceAsyncHelper(KendraClient const * const clientThis, const DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExperienceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteExperience(request), context);
 }
 
-void KendraClient::DeleteExperienceAsyncHelper(const DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DeleteExperienceAsync(const DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteExperience(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDeleteExperienceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFaqOutcome KendraClient::DeleteFaq(const DeleteFaqRequest& request) const
@@ -558,14 +558,14 @@ DeleteFaqOutcomeCallable KendraClient::DeleteFaqCallable(const DeleteFaqRequest&
   return task->get_future();
 }
 
-void KendraClient::DeleteFaqAsync(const DeleteFaqRequest& request, const DeleteFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDeleteFaqAsyncHelper(KendraClient const * const clientThis, const DeleteFaqRequest& request, const DeleteFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFaqAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFaq(request), context);
 }
 
-void KendraClient::DeleteFaqAsyncHelper(const DeleteFaqRequest& request, const DeleteFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DeleteFaqAsync(const DeleteFaqRequest& request, const DeleteFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFaq(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDeleteFaqAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIndexOutcome KendraClient::DeleteIndex(const DeleteIndexRequest& request) const
@@ -582,14 +582,14 @@ DeleteIndexOutcomeCallable KendraClient::DeleteIndexCallable(const DeleteIndexRe
   return task->get_future();
 }
 
-void KendraClient::DeleteIndexAsync(const DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDeleteIndexAsyncHelper(KendraClient const * const clientThis, const DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIndex(request), context);
 }
 
-void KendraClient::DeleteIndexAsyncHelper(const DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DeleteIndexAsync(const DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDeleteIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePrincipalMappingOutcome KendraClient::DeletePrincipalMapping(const DeletePrincipalMappingRequest& request) const
@@ -606,14 +606,14 @@ DeletePrincipalMappingOutcomeCallable KendraClient::DeletePrincipalMappingCallab
   return task->get_future();
 }
 
-void KendraClient::DeletePrincipalMappingAsync(const DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDeletePrincipalMappingAsyncHelper(KendraClient const * const clientThis, const DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePrincipalMappingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePrincipalMapping(request), context);
 }
 
-void KendraClient::DeletePrincipalMappingAsyncHelper(const DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DeletePrincipalMappingAsync(const DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePrincipalMapping(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDeletePrincipalMappingAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteQuerySuggestionsBlockListOutcome KendraClient::DeleteQuerySuggestionsBlockList(const DeleteQuerySuggestionsBlockListRequest& request) const
@@ -630,14 +630,14 @@ DeleteQuerySuggestionsBlockListOutcomeCallable KendraClient::DeleteQuerySuggesti
   return task->get_future();
 }
 
-void KendraClient::DeleteQuerySuggestionsBlockListAsync(const DeleteQuerySuggestionsBlockListRequest& request, const DeleteQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDeleteQuerySuggestionsBlockListAsyncHelper(KendraClient const * const clientThis, const DeleteQuerySuggestionsBlockListRequest& request, const DeleteQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteQuerySuggestionsBlockListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteQuerySuggestionsBlockList(request), context);
 }
 
-void KendraClient::DeleteQuerySuggestionsBlockListAsyncHelper(const DeleteQuerySuggestionsBlockListRequest& request, const DeleteQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DeleteQuerySuggestionsBlockListAsync(const DeleteQuerySuggestionsBlockListRequest& request, const DeleteQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteQuerySuggestionsBlockList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDeleteQuerySuggestionsBlockListAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteThesaurusOutcome KendraClient::DeleteThesaurus(const DeleteThesaurusRequest& request) const
@@ -654,14 +654,14 @@ DeleteThesaurusOutcomeCallable KendraClient::DeleteThesaurusCallable(const Delet
   return task->get_future();
 }
 
-void KendraClient::DeleteThesaurusAsync(const DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDeleteThesaurusAsyncHelper(KendraClient const * const clientThis, const DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteThesaurusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteThesaurus(request), context);
 }
 
-void KendraClient::DeleteThesaurusAsyncHelper(const DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DeleteThesaurusAsync(const DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteThesaurus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDeleteThesaurusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccessControlConfigurationOutcome KendraClient::DescribeAccessControlConfiguration(const DescribeAccessControlConfigurationRequest& request) const
@@ -678,14 +678,14 @@ DescribeAccessControlConfigurationOutcomeCallable KendraClient::DescribeAccessCo
   return task->get_future();
 }
 
-void KendraClient::DescribeAccessControlConfigurationAsync(const DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDescribeAccessControlConfigurationAsyncHelper(KendraClient const * const clientThis, const DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccessControlConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccessControlConfiguration(request), context);
 }
 
-void KendraClient::DescribeAccessControlConfigurationAsyncHelper(const DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DescribeAccessControlConfigurationAsync(const DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccessControlConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDescribeAccessControlConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDataSourceOutcome KendraClient::DescribeDataSource(const DescribeDataSourceRequest& request) const
@@ -702,14 +702,14 @@ DescribeDataSourceOutcomeCallable KendraClient::DescribeDataSourceCallable(const
   return task->get_future();
 }
 
-void KendraClient::DescribeDataSourceAsync(const DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDescribeDataSourceAsyncHelper(KendraClient const * const clientThis, const DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataSource(request), context);
 }
 
-void KendraClient::DescribeDataSourceAsyncHelper(const DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DescribeDataSourceAsync(const DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDescribeDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExperienceOutcome KendraClient::DescribeExperience(const DescribeExperienceRequest& request) const
@@ -726,14 +726,14 @@ DescribeExperienceOutcomeCallable KendraClient::DescribeExperienceCallable(const
   return task->get_future();
 }
 
-void KendraClient::DescribeExperienceAsync(const DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDescribeExperienceAsyncHelper(KendraClient const * const clientThis, const DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExperienceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExperience(request), context);
 }
 
-void KendraClient::DescribeExperienceAsyncHelper(const DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DescribeExperienceAsync(const DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExperience(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDescribeExperienceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFaqOutcome KendraClient::DescribeFaq(const DescribeFaqRequest& request) const
@@ -750,14 +750,14 @@ DescribeFaqOutcomeCallable KendraClient::DescribeFaqCallable(const DescribeFaqRe
   return task->get_future();
 }
 
-void KendraClient::DescribeFaqAsync(const DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDescribeFaqAsyncHelper(KendraClient const * const clientThis, const DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFaqAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFaq(request), context);
 }
 
-void KendraClient::DescribeFaqAsyncHelper(const DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DescribeFaqAsync(const DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFaq(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDescribeFaqAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIndexOutcome KendraClient::DescribeIndex(const DescribeIndexRequest& request) const
@@ -774,14 +774,14 @@ DescribeIndexOutcomeCallable KendraClient::DescribeIndexCallable(const DescribeI
   return task->get_future();
 }
 
-void KendraClient::DescribeIndexAsync(const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDescribeIndexAsyncHelper(KendraClient const * const clientThis, const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIndex(request), context);
 }
 
-void KendraClient::DescribeIndexAsyncHelper(const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DescribeIndexAsync(const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDescribeIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePrincipalMappingOutcome KendraClient::DescribePrincipalMapping(const DescribePrincipalMappingRequest& request) const
@@ -798,14 +798,14 @@ DescribePrincipalMappingOutcomeCallable KendraClient::DescribePrincipalMappingCa
   return task->get_future();
 }
 
-void KendraClient::DescribePrincipalMappingAsync(const DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDescribePrincipalMappingAsyncHelper(KendraClient const * const clientThis, const DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePrincipalMappingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePrincipalMapping(request), context);
 }
 
-void KendraClient::DescribePrincipalMappingAsyncHelper(const DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DescribePrincipalMappingAsync(const DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePrincipalMapping(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDescribePrincipalMappingAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeQuerySuggestionsBlockListOutcome KendraClient::DescribeQuerySuggestionsBlockList(const DescribeQuerySuggestionsBlockListRequest& request) const
@@ -822,14 +822,14 @@ DescribeQuerySuggestionsBlockListOutcomeCallable KendraClient::DescribeQuerySugg
   return task->get_future();
 }
 
-void KendraClient::DescribeQuerySuggestionsBlockListAsync(const DescribeQuerySuggestionsBlockListRequest& request, const DescribeQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDescribeQuerySuggestionsBlockListAsyncHelper(KendraClient const * const clientThis, const DescribeQuerySuggestionsBlockListRequest& request, const DescribeQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeQuerySuggestionsBlockListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeQuerySuggestionsBlockList(request), context);
 }
 
-void KendraClient::DescribeQuerySuggestionsBlockListAsyncHelper(const DescribeQuerySuggestionsBlockListRequest& request, const DescribeQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DescribeQuerySuggestionsBlockListAsync(const DescribeQuerySuggestionsBlockListRequest& request, const DescribeQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeQuerySuggestionsBlockList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDescribeQuerySuggestionsBlockListAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeQuerySuggestionsConfigOutcome KendraClient::DescribeQuerySuggestionsConfig(const DescribeQuerySuggestionsConfigRequest& request) const
@@ -846,14 +846,14 @@ DescribeQuerySuggestionsConfigOutcomeCallable KendraClient::DescribeQuerySuggest
   return task->get_future();
 }
 
-void KendraClient::DescribeQuerySuggestionsConfigAsync(const DescribeQuerySuggestionsConfigRequest& request, const DescribeQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDescribeQuerySuggestionsConfigAsyncHelper(KendraClient const * const clientThis, const DescribeQuerySuggestionsConfigRequest& request, const DescribeQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeQuerySuggestionsConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeQuerySuggestionsConfig(request), context);
 }
 
-void KendraClient::DescribeQuerySuggestionsConfigAsyncHelper(const DescribeQuerySuggestionsConfigRequest& request, const DescribeQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DescribeQuerySuggestionsConfigAsync(const DescribeQuerySuggestionsConfigRequest& request, const DescribeQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeQuerySuggestionsConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDescribeQuerySuggestionsConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeThesaurusOutcome KendraClient::DescribeThesaurus(const DescribeThesaurusRequest& request) const
@@ -870,14 +870,14 @@ DescribeThesaurusOutcomeCallable KendraClient::DescribeThesaurusCallable(const D
   return task->get_future();
 }
 
-void KendraClient::DescribeThesaurusAsync(const DescribeThesaurusRequest& request, const DescribeThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDescribeThesaurusAsyncHelper(KendraClient const * const clientThis, const DescribeThesaurusRequest& request, const DescribeThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeThesaurusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeThesaurus(request), context);
 }
 
-void KendraClient::DescribeThesaurusAsyncHelper(const DescribeThesaurusRequest& request, const DescribeThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DescribeThesaurusAsync(const DescribeThesaurusRequest& request, const DescribeThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeThesaurus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDescribeThesaurusAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateEntitiesFromExperienceOutcome KendraClient::DisassociateEntitiesFromExperience(const DisassociateEntitiesFromExperienceRequest& request) const
@@ -894,14 +894,14 @@ DisassociateEntitiesFromExperienceOutcomeCallable KendraClient::DisassociateEnti
   return task->get_future();
 }
 
-void KendraClient::DisassociateEntitiesFromExperienceAsync(const DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDisassociateEntitiesFromExperienceAsyncHelper(KendraClient const * const clientThis, const DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateEntitiesFromExperienceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateEntitiesFromExperience(request), context);
 }
 
-void KendraClient::DisassociateEntitiesFromExperienceAsyncHelper(const DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DisassociateEntitiesFromExperienceAsync(const DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateEntitiesFromExperience(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDisassociateEntitiesFromExperienceAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociatePersonasFromEntitiesOutcome KendraClient::DisassociatePersonasFromEntities(const DisassociatePersonasFromEntitiesRequest& request) const
@@ -918,14 +918,14 @@ DisassociatePersonasFromEntitiesOutcomeCallable KendraClient::DisassociatePerson
   return task->get_future();
 }
 
-void KendraClient::DisassociatePersonasFromEntitiesAsync(const DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientDisassociatePersonasFromEntitiesAsyncHelper(KendraClient const * const clientThis, const DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociatePersonasFromEntitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociatePersonasFromEntities(request), context);
 }
 
-void KendraClient::DisassociatePersonasFromEntitiesAsyncHelper(const DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::DisassociatePersonasFromEntitiesAsync(const DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociatePersonasFromEntities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientDisassociatePersonasFromEntitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetQuerySuggestionsOutcome KendraClient::GetQuerySuggestions(const GetQuerySuggestionsRequest& request) const
@@ -942,14 +942,14 @@ GetQuerySuggestionsOutcomeCallable KendraClient::GetQuerySuggestionsCallable(con
   return task->get_future();
 }
 
-void KendraClient::GetQuerySuggestionsAsync(const GetQuerySuggestionsRequest& request, const GetQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientGetQuerySuggestionsAsyncHelper(KendraClient const * const clientThis, const GetQuerySuggestionsRequest& request, const GetQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQuerySuggestionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetQuerySuggestions(request), context);
 }
 
-void KendraClient::GetQuerySuggestionsAsyncHelper(const GetQuerySuggestionsRequest& request, const GetQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::GetQuerySuggestionsAsync(const GetQuerySuggestionsRequest& request, const GetQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetQuerySuggestions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientGetQuerySuggestionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSnapshotsOutcome KendraClient::GetSnapshots(const GetSnapshotsRequest& request) const
@@ -966,14 +966,14 @@ GetSnapshotsOutcomeCallable KendraClient::GetSnapshotsCallable(const GetSnapshot
   return task->get_future();
 }
 
-void KendraClient::GetSnapshotsAsync(const GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientGetSnapshotsAsyncHelper(KendraClient const * const clientThis, const GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSnapshots(request), context);
 }
 
-void KendraClient::GetSnapshotsAsyncHelper(const GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::GetSnapshotsAsync(const GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientGetSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccessControlConfigurationsOutcome KendraClient::ListAccessControlConfigurations(const ListAccessControlConfigurationsRequest& request) const
@@ -990,14 +990,14 @@ ListAccessControlConfigurationsOutcomeCallable KendraClient::ListAccessControlCo
   return task->get_future();
 }
 
-void KendraClient::ListAccessControlConfigurationsAsync(const ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListAccessControlConfigurationsAsyncHelper(KendraClient const * const clientThis, const ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccessControlConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccessControlConfigurations(request), context);
 }
 
-void KendraClient::ListAccessControlConfigurationsAsyncHelper(const ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListAccessControlConfigurationsAsync(const ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccessControlConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListAccessControlConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDataSourceSyncJobsOutcome KendraClient::ListDataSourceSyncJobs(const ListDataSourceSyncJobsRequest& request) const
@@ -1014,14 +1014,14 @@ ListDataSourceSyncJobsOutcomeCallable KendraClient::ListDataSourceSyncJobsCallab
   return task->get_future();
 }
 
-void KendraClient::ListDataSourceSyncJobsAsync(const ListDataSourceSyncJobsRequest& request, const ListDataSourceSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListDataSourceSyncJobsAsyncHelper(KendraClient const * const clientThis, const ListDataSourceSyncJobsRequest& request, const ListDataSourceSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataSourceSyncJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDataSourceSyncJobs(request), context);
 }
 
-void KendraClient::ListDataSourceSyncJobsAsyncHelper(const ListDataSourceSyncJobsRequest& request, const ListDataSourceSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListDataSourceSyncJobsAsync(const ListDataSourceSyncJobsRequest& request, const ListDataSourceSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDataSourceSyncJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListDataSourceSyncJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDataSourcesOutcome KendraClient::ListDataSources(const ListDataSourcesRequest& request) const
@@ -1038,14 +1038,14 @@ ListDataSourcesOutcomeCallable KendraClient::ListDataSourcesCallable(const ListD
   return task->get_future();
 }
 
-void KendraClient::ListDataSourcesAsync(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListDataSourcesAsyncHelper(KendraClient const * const clientThis, const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataSourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDataSources(request), context);
 }
 
-void KendraClient::ListDataSourcesAsyncHelper(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListDataSourcesAsync(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDataSources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListDataSourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEntityPersonasOutcome KendraClient::ListEntityPersonas(const ListEntityPersonasRequest& request) const
@@ -1062,14 +1062,14 @@ ListEntityPersonasOutcomeCallable KendraClient::ListEntityPersonasCallable(const
   return task->get_future();
 }
 
-void KendraClient::ListEntityPersonasAsync(const ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListEntityPersonasAsyncHelper(KendraClient const * const clientThis, const ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEntityPersonasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEntityPersonas(request), context);
 }
 
-void KendraClient::ListEntityPersonasAsyncHelper(const ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListEntityPersonasAsync(const ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEntityPersonas(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListEntityPersonasAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExperienceEntitiesOutcome KendraClient::ListExperienceEntities(const ListExperienceEntitiesRequest& request) const
@@ -1086,14 +1086,14 @@ ListExperienceEntitiesOutcomeCallable KendraClient::ListExperienceEntitiesCallab
   return task->get_future();
 }
 
-void KendraClient::ListExperienceEntitiesAsync(const ListExperienceEntitiesRequest& request, const ListExperienceEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListExperienceEntitiesAsyncHelper(KendraClient const * const clientThis, const ListExperienceEntitiesRequest& request, const ListExperienceEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExperienceEntitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExperienceEntities(request), context);
 }
 
-void KendraClient::ListExperienceEntitiesAsyncHelper(const ListExperienceEntitiesRequest& request, const ListExperienceEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListExperienceEntitiesAsync(const ListExperienceEntitiesRequest& request, const ListExperienceEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExperienceEntities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListExperienceEntitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExperiencesOutcome KendraClient::ListExperiences(const ListExperiencesRequest& request) const
@@ -1110,14 +1110,14 @@ ListExperiencesOutcomeCallable KendraClient::ListExperiencesCallable(const ListE
   return task->get_future();
 }
 
-void KendraClient::ListExperiencesAsync(const ListExperiencesRequest& request, const ListExperiencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListExperiencesAsyncHelper(KendraClient const * const clientThis, const ListExperiencesRequest& request, const ListExperiencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExperiencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExperiences(request), context);
 }
 
-void KendraClient::ListExperiencesAsyncHelper(const ListExperiencesRequest& request, const ListExperiencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListExperiencesAsync(const ListExperiencesRequest& request, const ListExperiencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExperiences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListExperiencesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFaqsOutcome KendraClient::ListFaqs(const ListFaqsRequest& request) const
@@ -1134,14 +1134,14 @@ ListFaqsOutcomeCallable KendraClient::ListFaqsCallable(const ListFaqsRequest& re
   return task->get_future();
 }
 
-void KendraClient::ListFaqsAsync(const ListFaqsRequest& request, const ListFaqsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListFaqsAsyncHelper(KendraClient const * const clientThis, const ListFaqsRequest& request, const ListFaqsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFaqsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFaqs(request), context);
 }
 
-void KendraClient::ListFaqsAsyncHelper(const ListFaqsRequest& request, const ListFaqsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListFaqsAsync(const ListFaqsRequest& request, const ListFaqsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFaqs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListFaqsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupsOlderThanOrderingIdOutcome KendraClient::ListGroupsOlderThanOrderingId(const ListGroupsOlderThanOrderingIdRequest& request) const
@@ -1158,14 +1158,14 @@ ListGroupsOlderThanOrderingIdOutcomeCallable KendraClient::ListGroupsOlderThanOr
   return task->get_future();
 }
 
-void KendraClient::ListGroupsOlderThanOrderingIdAsync(const ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListGroupsOlderThanOrderingIdAsyncHelper(KendraClient const * const clientThis, const ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsOlderThanOrderingIdAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroupsOlderThanOrderingId(request), context);
 }
 
-void KendraClient::ListGroupsOlderThanOrderingIdAsyncHelper(const ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListGroupsOlderThanOrderingIdAsync(const ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroupsOlderThanOrderingId(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListGroupsOlderThanOrderingIdAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIndicesOutcome KendraClient::ListIndices(const ListIndicesRequest& request) const
@@ -1182,14 +1182,14 @@ ListIndicesOutcomeCallable KendraClient::ListIndicesCallable(const ListIndicesRe
   return task->get_future();
 }
 
-void KendraClient::ListIndicesAsync(const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListIndicesAsyncHelper(KendraClient const * const clientThis, const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIndicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIndices(request), context);
 }
 
-void KendraClient::ListIndicesAsyncHelper(const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListIndicesAsync(const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIndices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListIndicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListQuerySuggestionsBlockListsOutcome KendraClient::ListQuerySuggestionsBlockLists(const ListQuerySuggestionsBlockListsRequest& request) const
@@ -1206,14 +1206,14 @@ ListQuerySuggestionsBlockListsOutcomeCallable KendraClient::ListQuerySuggestions
   return task->get_future();
 }
 
-void KendraClient::ListQuerySuggestionsBlockListsAsync(const ListQuerySuggestionsBlockListsRequest& request, const ListQuerySuggestionsBlockListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListQuerySuggestionsBlockListsAsyncHelper(KendraClient const * const clientThis, const ListQuerySuggestionsBlockListsRequest& request, const ListQuerySuggestionsBlockListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQuerySuggestionsBlockListsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListQuerySuggestionsBlockLists(request), context);
 }
 
-void KendraClient::ListQuerySuggestionsBlockListsAsyncHelper(const ListQuerySuggestionsBlockListsRequest& request, const ListQuerySuggestionsBlockListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListQuerySuggestionsBlockListsAsync(const ListQuerySuggestionsBlockListsRequest& request, const ListQuerySuggestionsBlockListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListQuerySuggestionsBlockLists(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListQuerySuggestionsBlockListsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome KendraClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1230,14 +1230,14 @@ ListTagsForResourceOutcomeCallable KendraClient::ListTagsForResourceCallable(con
   return task->get_future();
 }
 
-void KendraClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListTagsForResourceAsyncHelper(KendraClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void KendraClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThesauriOutcome KendraClient::ListThesauri(const ListThesauriRequest& request) const
@@ -1254,14 +1254,14 @@ ListThesauriOutcomeCallable KendraClient::ListThesauriCallable(const ListThesaur
   return task->get_future();
 }
 
-void KendraClient::ListThesauriAsync(const ListThesauriRequest& request, const ListThesauriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientListThesauriAsyncHelper(KendraClient const * const clientThis, const ListThesauriRequest& request, const ListThesauriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThesauriAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThesauri(request), context);
 }
 
-void KendraClient::ListThesauriAsyncHelper(const ListThesauriRequest& request, const ListThesauriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::ListThesauriAsync(const ListThesauriRequest& request, const ListThesauriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThesauri(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientListThesauriAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPrincipalMappingOutcome KendraClient::PutPrincipalMapping(const PutPrincipalMappingRequest& request) const
@@ -1278,14 +1278,14 @@ PutPrincipalMappingOutcomeCallable KendraClient::PutPrincipalMappingCallable(con
   return task->get_future();
 }
 
-void KendraClient::PutPrincipalMappingAsync(const PutPrincipalMappingRequest& request, const PutPrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientPutPrincipalMappingAsyncHelper(KendraClient const * const clientThis, const PutPrincipalMappingRequest& request, const PutPrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPrincipalMappingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPrincipalMapping(request), context);
 }
 
-void KendraClient::PutPrincipalMappingAsyncHelper(const PutPrincipalMappingRequest& request, const PutPrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::PutPrincipalMappingAsync(const PutPrincipalMappingRequest& request, const PutPrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPrincipalMapping(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientPutPrincipalMappingAsyncHelper( this, request, handler, context ); } );
 }
 
 QueryOutcome KendraClient::Query(const QueryRequest& request) const
@@ -1302,14 +1302,14 @@ QueryOutcomeCallable KendraClient::QueryCallable(const QueryRequest& request) co
   return task->get_future();
 }
 
-void KendraClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientQueryAsyncHelper(KendraClient const * const clientThis, const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->QueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Query(request), context);
 }
 
-void KendraClient::QueryAsyncHelper(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Query(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDataSourceSyncJobOutcome KendraClient::StartDataSourceSyncJob(const StartDataSourceSyncJobRequest& request) const
@@ -1326,14 +1326,14 @@ StartDataSourceSyncJobOutcomeCallable KendraClient::StartDataSourceSyncJobCallab
   return task->get_future();
 }
 
-void KendraClient::StartDataSourceSyncJobAsync(const StartDataSourceSyncJobRequest& request, const StartDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientStartDataSourceSyncJobAsyncHelper(KendraClient const * const clientThis, const StartDataSourceSyncJobRequest& request, const StartDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDataSourceSyncJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDataSourceSyncJob(request), context);
 }
 
-void KendraClient::StartDataSourceSyncJobAsyncHelper(const StartDataSourceSyncJobRequest& request, const StartDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::StartDataSourceSyncJobAsync(const StartDataSourceSyncJobRequest& request, const StartDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDataSourceSyncJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientStartDataSourceSyncJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopDataSourceSyncJobOutcome KendraClient::StopDataSourceSyncJob(const StopDataSourceSyncJobRequest& request) const
@@ -1350,14 +1350,14 @@ StopDataSourceSyncJobOutcomeCallable KendraClient::StopDataSourceSyncJobCallable
   return task->get_future();
 }
 
-void KendraClient::StopDataSourceSyncJobAsync(const StopDataSourceSyncJobRequest& request, const StopDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientStopDataSourceSyncJobAsyncHelper(KendraClient const * const clientThis, const StopDataSourceSyncJobRequest& request, const StopDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopDataSourceSyncJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopDataSourceSyncJob(request), context);
 }
 
-void KendraClient::StopDataSourceSyncJobAsyncHelper(const StopDataSourceSyncJobRequest& request, const StopDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::StopDataSourceSyncJobAsync(const StopDataSourceSyncJobRequest& request, const StopDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopDataSourceSyncJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientStopDataSourceSyncJobAsyncHelper( this, request, handler, context ); } );
 }
 
 SubmitFeedbackOutcome KendraClient::SubmitFeedback(const SubmitFeedbackRequest& request) const
@@ -1374,14 +1374,14 @@ SubmitFeedbackOutcomeCallable KendraClient::SubmitFeedbackCallable(const SubmitF
   return task->get_future();
 }
 
-void KendraClient::SubmitFeedbackAsync(const SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientSubmitFeedbackAsyncHelper(KendraClient const * const clientThis, const SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SubmitFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SubmitFeedback(request), context);
 }
 
-void KendraClient::SubmitFeedbackAsyncHelper(const SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::SubmitFeedbackAsync(const SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SubmitFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientSubmitFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome KendraClient::TagResource(const TagResourceRequest& request) const
@@ -1398,14 +1398,14 @@ TagResourceOutcomeCallable KendraClient::TagResourceCallable(const TagResourceRe
   return task->get_future();
 }
 
-void KendraClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientTagResourceAsyncHelper(KendraClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void KendraClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome KendraClient::UntagResource(const UntagResourceRequest& request) const
@@ -1422,14 +1422,14 @@ UntagResourceOutcomeCallable KendraClient::UntagResourceCallable(const UntagReso
   return task->get_future();
 }
 
-void KendraClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientUntagResourceAsyncHelper(KendraClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void KendraClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAccessControlConfigurationOutcome KendraClient::UpdateAccessControlConfiguration(const UpdateAccessControlConfigurationRequest& request) const
@@ -1446,14 +1446,14 @@ UpdateAccessControlConfigurationOutcomeCallable KendraClient::UpdateAccessContro
   return task->get_future();
 }
 
-void KendraClient::UpdateAccessControlConfigurationAsync(const UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientUpdateAccessControlConfigurationAsyncHelper(KendraClient const * const clientThis, const UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccessControlConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAccessControlConfiguration(request), context);
 }
 
-void KendraClient::UpdateAccessControlConfigurationAsyncHelper(const UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::UpdateAccessControlConfigurationAsync(const UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAccessControlConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientUpdateAccessControlConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDataSourceOutcome KendraClient::UpdateDataSource(const UpdateDataSourceRequest& request) const
@@ -1470,14 +1470,14 @@ UpdateDataSourceOutcomeCallable KendraClient::UpdateDataSourceCallable(const Upd
   return task->get_future();
 }
 
-void KendraClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientUpdateDataSourceAsyncHelper(KendraClient const * const clientThis, const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataSource(request), context);
 }
 
-void KendraClient::UpdateDataSourceAsyncHelper(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientUpdateDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateExperienceOutcome KendraClient::UpdateExperience(const UpdateExperienceRequest& request) const
@@ -1494,14 +1494,14 @@ UpdateExperienceOutcomeCallable KendraClient::UpdateExperienceCallable(const Upd
   return task->get_future();
 }
 
-void KendraClient::UpdateExperienceAsync(const UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientUpdateExperienceAsyncHelper(KendraClient const * const clientThis, const UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateExperienceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateExperience(request), context);
 }
 
-void KendraClient::UpdateExperienceAsyncHelper(const UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::UpdateExperienceAsync(const UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateExperience(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientUpdateExperienceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateIndexOutcome KendraClient::UpdateIndex(const UpdateIndexRequest& request) const
@@ -1518,14 +1518,14 @@ UpdateIndexOutcomeCallable KendraClient::UpdateIndexCallable(const UpdateIndexRe
   return task->get_future();
 }
 
-void KendraClient::UpdateIndexAsync(const UpdateIndexRequest& request, const UpdateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientUpdateIndexAsyncHelper(KendraClient const * const clientThis, const UpdateIndexRequest& request, const UpdateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateIndex(request), context);
 }
 
-void KendraClient::UpdateIndexAsyncHelper(const UpdateIndexRequest& request, const UpdateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::UpdateIndexAsync(const UpdateIndexRequest& request, const UpdateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientUpdateIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateQuerySuggestionsBlockListOutcome KendraClient::UpdateQuerySuggestionsBlockList(const UpdateQuerySuggestionsBlockListRequest& request) const
@@ -1542,14 +1542,14 @@ UpdateQuerySuggestionsBlockListOutcomeCallable KendraClient::UpdateQuerySuggesti
   return task->get_future();
 }
 
-void KendraClient::UpdateQuerySuggestionsBlockListAsync(const UpdateQuerySuggestionsBlockListRequest& request, const UpdateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientUpdateQuerySuggestionsBlockListAsyncHelper(KendraClient const * const clientThis, const UpdateQuerySuggestionsBlockListRequest& request, const UpdateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQuerySuggestionsBlockListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateQuerySuggestionsBlockList(request), context);
 }
 
-void KendraClient::UpdateQuerySuggestionsBlockListAsyncHelper(const UpdateQuerySuggestionsBlockListRequest& request, const UpdateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::UpdateQuerySuggestionsBlockListAsync(const UpdateQuerySuggestionsBlockListRequest& request, const UpdateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateQuerySuggestionsBlockList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientUpdateQuerySuggestionsBlockListAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateQuerySuggestionsConfigOutcome KendraClient::UpdateQuerySuggestionsConfig(const UpdateQuerySuggestionsConfigRequest& request) const
@@ -1566,14 +1566,14 @@ UpdateQuerySuggestionsConfigOutcomeCallable KendraClient::UpdateQuerySuggestions
   return task->get_future();
 }
 
-void KendraClient::UpdateQuerySuggestionsConfigAsync(const UpdateQuerySuggestionsConfigRequest& request, const UpdateQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientUpdateQuerySuggestionsConfigAsyncHelper(KendraClient const * const clientThis, const UpdateQuerySuggestionsConfigRequest& request, const UpdateQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQuerySuggestionsConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateQuerySuggestionsConfig(request), context);
 }
 
-void KendraClient::UpdateQuerySuggestionsConfigAsyncHelper(const UpdateQuerySuggestionsConfigRequest& request, const UpdateQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::UpdateQuerySuggestionsConfigAsync(const UpdateQuerySuggestionsConfigRequest& request, const UpdateQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateQuerySuggestionsConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientUpdateQuerySuggestionsConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateThesaurusOutcome KendraClient::UpdateThesaurus(const UpdateThesaurusRequest& request) const
@@ -1590,13 +1590,13 @@ UpdateThesaurusOutcomeCallable KendraClient::UpdateThesaurusCallable(const Updat
   return task->get_future();
 }
 
-void KendraClient::UpdateThesaurusAsync(const UpdateThesaurusRequest& request, const UpdateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClientUpdateThesaurusAsyncHelper(KendraClient const * const clientThis, const UpdateThesaurusRequest& request, const UpdateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThesaurusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateThesaurus(request), context);
 }
 
-void KendraClient::UpdateThesaurusAsyncHelper(const UpdateThesaurusRequest& request, const UpdateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KendraClient::UpdateThesaurusAsync(const UpdateThesaurusRequest& request, const UpdateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateThesaurus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KendraClientUpdateThesaurusAsyncHelper( this, request, handler, context ); } );
 }
 

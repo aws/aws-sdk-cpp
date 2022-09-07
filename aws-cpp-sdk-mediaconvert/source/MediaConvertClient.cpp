@@ -143,14 +143,14 @@ AssociateCertificateOutcomeCallable MediaConvertClient::AssociateCertificateCall
   return task->get_future();
 }
 
-void MediaConvertClient::AssociateCertificateAsync(const AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientAssociateCertificateAsyncHelper(MediaConvertClient const * const clientThis, const AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateCertificate(request), context);
 }
 
-void MediaConvertClient::AssociateCertificateAsyncHelper(const AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::AssociateCertificateAsync(const AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientAssociateCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelJobOutcome MediaConvertClient::CancelJob(const CancelJobRequest& request) const
@@ -174,14 +174,14 @@ CancelJobOutcomeCallable MediaConvertClient::CancelJobCallable(const CancelJobRe
   return task->get_future();
 }
 
-void MediaConvertClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientCancelJobAsyncHelper(MediaConvertClient const * const clientThis, const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelJob(request), context);
 }
 
-void MediaConvertClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientCancelJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateJobOutcome MediaConvertClient::CreateJob(const CreateJobRequest& request) const
@@ -199,14 +199,14 @@ CreateJobOutcomeCallable MediaConvertClient::CreateJobCallable(const CreateJobRe
   return task->get_future();
 }
 
-void MediaConvertClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientCreateJobAsyncHelper(MediaConvertClient const * const clientThis, const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateJob(request), context);
 }
 
-void MediaConvertClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientCreateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateJobTemplateOutcome MediaConvertClient::CreateJobTemplate(const CreateJobTemplateRequest& request) const
@@ -224,14 +224,14 @@ CreateJobTemplateOutcomeCallable MediaConvertClient::CreateJobTemplateCallable(c
   return task->get_future();
 }
 
-void MediaConvertClient::CreateJobTemplateAsync(const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientCreateJobTemplateAsyncHelper(MediaConvertClient const * const clientThis, const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateJobTemplate(request), context);
 }
 
-void MediaConvertClient::CreateJobTemplateAsyncHelper(const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::CreateJobTemplateAsync(const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateJobTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientCreateJobTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePresetOutcome MediaConvertClient::CreatePreset(const CreatePresetRequest& request) const
@@ -249,14 +249,14 @@ CreatePresetOutcomeCallable MediaConvertClient::CreatePresetCallable(const Creat
   return task->get_future();
 }
 
-void MediaConvertClient::CreatePresetAsync(const CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientCreatePresetAsyncHelper(MediaConvertClient const * const clientThis, const CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePresetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePreset(request), context);
 }
 
-void MediaConvertClient::CreatePresetAsyncHelper(const CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::CreatePresetAsync(const CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePreset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientCreatePresetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateQueueOutcome MediaConvertClient::CreateQueue(const CreateQueueRequest& request) const
@@ -274,14 +274,14 @@ CreateQueueOutcomeCallable MediaConvertClient::CreateQueueCallable(const CreateQ
   return task->get_future();
 }
 
-void MediaConvertClient::CreateQueueAsync(const CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientCreateQueueAsyncHelper(MediaConvertClient const * const clientThis, const CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateQueueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateQueue(request), context);
 }
 
-void MediaConvertClient::CreateQueueAsyncHelper(const CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::CreateQueueAsync(const CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateQueue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientCreateQueueAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteJobTemplateOutcome MediaConvertClient::DeleteJobTemplate(const DeleteJobTemplateRequest& request) const
@@ -305,14 +305,14 @@ DeleteJobTemplateOutcomeCallable MediaConvertClient::DeleteJobTemplateCallable(c
   return task->get_future();
 }
 
-void MediaConvertClient::DeleteJobTemplateAsync(const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientDeleteJobTemplateAsyncHelper(MediaConvertClient const * const clientThis, const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteJobTemplate(request), context);
 }
 
-void MediaConvertClient::DeleteJobTemplateAsyncHelper(const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::DeleteJobTemplateAsync(const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteJobTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientDeleteJobTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePolicyOutcome MediaConvertClient::DeletePolicy(const DeletePolicyRequest& request) const
@@ -330,14 +330,14 @@ DeletePolicyOutcomeCallable MediaConvertClient::DeletePolicyCallable(const Delet
   return task->get_future();
 }
 
-void MediaConvertClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientDeletePolicyAsyncHelper(MediaConvertClient const * const clientThis, const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePolicy(request), context);
 }
 
-void MediaConvertClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientDeletePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePresetOutcome MediaConvertClient::DeletePreset(const DeletePresetRequest& request) const
@@ -361,14 +361,14 @@ DeletePresetOutcomeCallable MediaConvertClient::DeletePresetCallable(const Delet
   return task->get_future();
 }
 
-void MediaConvertClient::DeletePresetAsync(const DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientDeletePresetAsyncHelper(MediaConvertClient const * const clientThis, const DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePresetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePreset(request), context);
 }
 
-void MediaConvertClient::DeletePresetAsyncHelper(const DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::DeletePresetAsync(const DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePreset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientDeletePresetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteQueueOutcome MediaConvertClient::DeleteQueue(const DeleteQueueRequest& request) const
@@ -392,14 +392,14 @@ DeleteQueueOutcomeCallable MediaConvertClient::DeleteQueueCallable(const DeleteQ
   return task->get_future();
 }
 
-void MediaConvertClient::DeleteQueueAsync(const DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientDeleteQueueAsyncHelper(MediaConvertClient const * const clientThis, const DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteQueue(request), context);
 }
 
-void MediaConvertClient::DeleteQueueAsyncHelper(const DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::DeleteQueueAsync(const DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteQueue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientDeleteQueueAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEndpointsOutcome MediaConvertClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
@@ -417,14 +417,14 @@ DescribeEndpointsOutcomeCallable MediaConvertClient::DescribeEndpointsCallable(c
   return task->get_future();
 }
 
-void MediaConvertClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientDescribeEndpointsAsyncHelper(MediaConvertClient const * const clientThis, const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEndpoints(request), context);
 }
 
-void MediaConvertClient::DescribeEndpointsAsyncHelper(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientDescribeEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateCertificateOutcome MediaConvertClient::DisassociateCertificate(const DisassociateCertificateRequest& request) const
@@ -448,14 +448,14 @@ DisassociateCertificateOutcomeCallable MediaConvertClient::DisassociateCertifica
   return task->get_future();
 }
 
-void MediaConvertClient::DisassociateCertificateAsync(const DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientDisassociateCertificateAsyncHelper(MediaConvertClient const * const clientThis, const DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateCertificate(request), context);
 }
 
-void MediaConvertClient::DisassociateCertificateAsyncHelper(const DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::DisassociateCertificateAsync(const DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientDisassociateCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobOutcome MediaConvertClient::GetJob(const GetJobRequest& request) const
@@ -479,14 +479,14 @@ GetJobOutcomeCallable MediaConvertClient::GetJobCallable(const GetJobRequest& re
   return task->get_future();
 }
 
-void MediaConvertClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientGetJobAsyncHelper(MediaConvertClient const * const clientThis, const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJob(request), context);
 }
 
-void MediaConvertClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientGetJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetJobTemplateOutcome MediaConvertClient::GetJobTemplate(const GetJobTemplateRequest& request) const
@@ -510,14 +510,14 @@ GetJobTemplateOutcomeCallable MediaConvertClient::GetJobTemplateCallable(const G
   return task->get_future();
 }
 
-void MediaConvertClient::GetJobTemplateAsync(const GetJobTemplateRequest& request, const GetJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientGetJobTemplateAsyncHelper(MediaConvertClient const * const clientThis, const GetJobTemplateRequest& request, const GetJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetJobTemplate(request), context);
 }
 
-void MediaConvertClient::GetJobTemplateAsyncHelper(const GetJobTemplateRequest& request, const GetJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::GetJobTemplateAsync(const GetJobTemplateRequest& request, const GetJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetJobTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientGetJobTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPolicyOutcome MediaConvertClient::GetPolicy(const GetPolicyRequest& request) const
@@ -535,14 +535,14 @@ GetPolicyOutcomeCallable MediaConvertClient::GetPolicyCallable(const GetPolicyRe
   return task->get_future();
 }
 
-void MediaConvertClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientGetPolicyAsyncHelper(MediaConvertClient const * const clientThis, const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPolicy(request), context);
 }
 
-void MediaConvertClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientGetPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPresetOutcome MediaConvertClient::GetPreset(const GetPresetRequest& request) const
@@ -566,14 +566,14 @@ GetPresetOutcomeCallable MediaConvertClient::GetPresetCallable(const GetPresetRe
   return task->get_future();
 }
 
-void MediaConvertClient::GetPresetAsync(const GetPresetRequest& request, const GetPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientGetPresetAsyncHelper(MediaConvertClient const * const clientThis, const GetPresetRequest& request, const GetPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPresetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPreset(request), context);
 }
 
-void MediaConvertClient::GetPresetAsyncHelper(const GetPresetRequest& request, const GetPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::GetPresetAsync(const GetPresetRequest& request, const GetPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPreset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientGetPresetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetQueueOutcome MediaConvertClient::GetQueue(const GetQueueRequest& request) const
@@ -597,14 +597,14 @@ GetQueueOutcomeCallable MediaConvertClient::GetQueueCallable(const GetQueueReque
   return task->get_future();
 }
 
-void MediaConvertClient::GetQueueAsync(const GetQueueRequest& request, const GetQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientGetQueueAsyncHelper(MediaConvertClient const * const clientThis, const GetQueueRequest& request, const GetQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQueueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetQueue(request), context);
 }
 
-void MediaConvertClient::GetQueueAsyncHelper(const GetQueueRequest& request, const GetQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::GetQueueAsync(const GetQueueRequest& request, const GetQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetQueue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientGetQueueAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobTemplatesOutcome MediaConvertClient::ListJobTemplates(const ListJobTemplatesRequest& request) const
@@ -622,14 +622,14 @@ ListJobTemplatesOutcomeCallable MediaConvertClient::ListJobTemplatesCallable(con
   return task->get_future();
 }
 
-void MediaConvertClient::ListJobTemplatesAsync(const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientListJobTemplatesAsyncHelper(MediaConvertClient const * const clientThis, const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobTemplates(request), context);
 }
 
-void MediaConvertClient::ListJobTemplatesAsyncHelper(const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::ListJobTemplatesAsync(const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientListJobTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobsOutcome MediaConvertClient::ListJobs(const ListJobsRequest& request) const
@@ -647,14 +647,14 @@ ListJobsOutcomeCallable MediaConvertClient::ListJobsCallable(const ListJobsReque
   return task->get_future();
 }
 
-void MediaConvertClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientListJobsAsyncHelper(MediaConvertClient const * const clientThis, const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobs(request), context);
 }
 
-void MediaConvertClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientListJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPresetsOutcome MediaConvertClient::ListPresets(const ListPresetsRequest& request) const
@@ -672,14 +672,14 @@ ListPresetsOutcomeCallable MediaConvertClient::ListPresetsCallable(const ListPre
   return task->get_future();
 }
 
-void MediaConvertClient::ListPresetsAsync(const ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientListPresetsAsyncHelper(MediaConvertClient const * const clientThis, const ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPresetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPresets(request), context);
 }
 
-void MediaConvertClient::ListPresetsAsyncHelper(const ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::ListPresetsAsync(const ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPresets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientListPresetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListQueuesOutcome MediaConvertClient::ListQueues(const ListQueuesRequest& request) const
@@ -697,14 +697,14 @@ ListQueuesOutcomeCallable MediaConvertClient::ListQueuesCallable(const ListQueue
   return task->get_future();
 }
 
-void MediaConvertClient::ListQueuesAsync(const ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientListQueuesAsyncHelper(MediaConvertClient const * const clientThis, const ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQueuesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListQueues(request), context);
 }
 
-void MediaConvertClient::ListQueuesAsyncHelper(const ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::ListQueuesAsync(const ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListQueues(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientListQueuesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome MediaConvertClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -728,14 +728,14 @@ ListTagsForResourceOutcomeCallable MediaConvertClient::ListTagsForResourceCallab
   return task->get_future();
 }
 
-void MediaConvertClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientListTagsForResourceAsyncHelper(MediaConvertClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void MediaConvertClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPolicyOutcome MediaConvertClient::PutPolicy(const PutPolicyRequest& request) const
@@ -753,14 +753,14 @@ PutPolicyOutcomeCallable MediaConvertClient::PutPolicyCallable(const PutPolicyRe
   return task->get_future();
 }
 
-void MediaConvertClient::PutPolicyAsync(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientPutPolicyAsyncHelper(MediaConvertClient const * const clientThis, const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPolicy(request), context);
 }
 
-void MediaConvertClient::PutPolicyAsyncHelper(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::PutPolicyAsync(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientPutPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome MediaConvertClient::TagResource(const TagResourceRequest& request) const
@@ -778,14 +778,14 @@ TagResourceOutcomeCallable MediaConvertClient::TagResourceCallable(const TagReso
   return task->get_future();
 }
 
-void MediaConvertClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientTagResourceAsyncHelper(MediaConvertClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void MediaConvertClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome MediaConvertClient::UntagResource(const UntagResourceRequest& request) const
@@ -809,14 +809,14 @@ UntagResourceOutcomeCallable MediaConvertClient::UntagResourceCallable(const Unt
   return task->get_future();
 }
 
-void MediaConvertClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientUntagResourceAsyncHelper(MediaConvertClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void MediaConvertClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateJobTemplateOutcome MediaConvertClient::UpdateJobTemplate(const UpdateJobTemplateRequest& request) const
@@ -840,14 +840,14 @@ UpdateJobTemplateOutcomeCallable MediaConvertClient::UpdateJobTemplateCallable(c
   return task->get_future();
 }
 
-void MediaConvertClient::UpdateJobTemplateAsync(const UpdateJobTemplateRequest& request, const UpdateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientUpdateJobTemplateAsyncHelper(MediaConvertClient const * const clientThis, const UpdateJobTemplateRequest& request, const UpdateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateJobTemplate(request), context);
 }
 
-void MediaConvertClient::UpdateJobTemplateAsyncHelper(const UpdateJobTemplateRequest& request, const UpdateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::UpdateJobTemplateAsync(const UpdateJobTemplateRequest& request, const UpdateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateJobTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientUpdateJobTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePresetOutcome MediaConvertClient::UpdatePreset(const UpdatePresetRequest& request) const
@@ -871,14 +871,14 @@ UpdatePresetOutcomeCallable MediaConvertClient::UpdatePresetCallable(const Updat
   return task->get_future();
 }
 
-void MediaConvertClient::UpdatePresetAsync(const UpdatePresetRequest& request, const UpdatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientUpdatePresetAsyncHelper(MediaConvertClient const * const clientThis, const UpdatePresetRequest& request, const UpdatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePresetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePreset(request), context);
 }
 
-void MediaConvertClient::UpdatePresetAsyncHelper(const UpdatePresetRequest& request, const UpdatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::UpdatePresetAsync(const UpdatePresetRequest& request, const UpdatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePreset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientUpdatePresetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateQueueOutcome MediaConvertClient::UpdateQueue(const UpdateQueueRequest& request) const
@@ -902,13 +902,13 @@ UpdateQueueOutcomeCallable MediaConvertClient::UpdateQueueCallable(const UpdateQ
   return task->get_future();
 }
 
-void MediaConvertClient::UpdateQueueAsync(const UpdateQueueRequest& request, const UpdateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClientUpdateQueueAsyncHelper(MediaConvertClient const * const clientThis, const UpdateQueueRequest& request, const UpdateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQueueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateQueue(request), context);
 }
 
-void MediaConvertClient::UpdateQueueAsyncHelper(const UpdateQueueRequest& request, const UpdateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaConvertClient::UpdateQueueAsync(const UpdateQueueRequest& request, const UpdateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateQueue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaConvertClientUpdateQueueAsyncHelper( this, request, handler, context ); } );
 }
 

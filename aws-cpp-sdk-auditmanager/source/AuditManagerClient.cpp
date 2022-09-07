@@ -183,14 +183,14 @@ AssociateAssessmentReportEvidenceFolderOutcomeCallable AuditManagerClient::Assoc
   return task->get_future();
 }
 
-void AuditManagerClient::AssociateAssessmentReportEvidenceFolderAsync(const AssociateAssessmentReportEvidenceFolderRequest& request, const AssociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientAssociateAssessmentReportEvidenceFolderAsyncHelper(AuditManagerClient const * const clientThis, const AssociateAssessmentReportEvidenceFolderRequest& request, const AssociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateAssessmentReportEvidenceFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateAssessmentReportEvidenceFolder(request), context);
 }
 
-void AuditManagerClient::AssociateAssessmentReportEvidenceFolderAsyncHelper(const AssociateAssessmentReportEvidenceFolderRequest& request, const AssociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::AssociateAssessmentReportEvidenceFolderAsync(const AssociateAssessmentReportEvidenceFolderRequest& request, const AssociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateAssessmentReportEvidenceFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientAssociateAssessmentReportEvidenceFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchAssociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchAssociateAssessmentReportEvidence(const BatchAssociateAssessmentReportEvidenceRequest& request) const
@@ -215,14 +215,14 @@ BatchAssociateAssessmentReportEvidenceOutcomeCallable AuditManagerClient::BatchA
   return task->get_future();
 }
 
-void AuditManagerClient::BatchAssociateAssessmentReportEvidenceAsync(const BatchAssociateAssessmentReportEvidenceRequest& request, const BatchAssociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientBatchAssociateAssessmentReportEvidenceAsyncHelper(AuditManagerClient const * const clientThis, const BatchAssociateAssessmentReportEvidenceRequest& request, const BatchAssociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateAssessmentReportEvidenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchAssociateAssessmentReportEvidence(request), context);
 }
 
-void AuditManagerClient::BatchAssociateAssessmentReportEvidenceAsyncHelper(const BatchAssociateAssessmentReportEvidenceRequest& request, const BatchAssociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::BatchAssociateAssessmentReportEvidenceAsync(const BatchAssociateAssessmentReportEvidenceRequest& request, const BatchAssociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchAssociateAssessmentReportEvidence(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientBatchAssociateAssessmentReportEvidenceAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchCreateDelegationByAssessmentOutcome AuditManagerClient::BatchCreateDelegationByAssessment(const BatchCreateDelegationByAssessmentRequest& request) const
@@ -247,14 +247,14 @@ BatchCreateDelegationByAssessmentOutcomeCallable AuditManagerClient::BatchCreate
   return task->get_future();
 }
 
-void AuditManagerClient::BatchCreateDelegationByAssessmentAsync(const BatchCreateDelegationByAssessmentRequest& request, const BatchCreateDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientBatchCreateDelegationByAssessmentAsyncHelper(AuditManagerClient const * const clientThis, const BatchCreateDelegationByAssessmentRequest& request, const BatchCreateDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchCreateDelegationByAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchCreateDelegationByAssessment(request), context);
 }
 
-void AuditManagerClient::BatchCreateDelegationByAssessmentAsyncHelper(const BatchCreateDelegationByAssessmentRequest& request, const BatchCreateDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::BatchCreateDelegationByAssessmentAsync(const BatchCreateDelegationByAssessmentRequest& request, const BatchCreateDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchCreateDelegationByAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientBatchCreateDelegationByAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDeleteDelegationByAssessmentOutcome AuditManagerClient::BatchDeleteDelegationByAssessment(const BatchDeleteDelegationByAssessmentRequest& request) const
@@ -279,14 +279,14 @@ BatchDeleteDelegationByAssessmentOutcomeCallable AuditManagerClient::BatchDelete
   return task->get_future();
 }
 
-void AuditManagerClient::BatchDeleteDelegationByAssessmentAsync(const BatchDeleteDelegationByAssessmentRequest& request, const BatchDeleteDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientBatchDeleteDelegationByAssessmentAsyncHelper(AuditManagerClient const * const clientThis, const BatchDeleteDelegationByAssessmentRequest& request, const BatchDeleteDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteDelegationByAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDeleteDelegationByAssessment(request), context);
 }
 
-void AuditManagerClient::BatchDeleteDelegationByAssessmentAsyncHelper(const BatchDeleteDelegationByAssessmentRequest& request, const BatchDeleteDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::BatchDeleteDelegationByAssessmentAsync(const BatchDeleteDelegationByAssessmentRequest& request, const BatchDeleteDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDeleteDelegationByAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientBatchDeleteDelegationByAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDisassociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchDisassociateAssessmentReportEvidence(const BatchDisassociateAssessmentReportEvidenceRequest& request) const
@@ -311,14 +311,14 @@ BatchDisassociateAssessmentReportEvidenceOutcomeCallable AuditManagerClient::Bat
   return task->get_future();
 }
 
-void AuditManagerClient::BatchDisassociateAssessmentReportEvidenceAsync(const BatchDisassociateAssessmentReportEvidenceRequest& request, const BatchDisassociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientBatchDisassociateAssessmentReportEvidenceAsyncHelper(AuditManagerClient const * const clientThis, const BatchDisassociateAssessmentReportEvidenceRequest& request, const BatchDisassociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateAssessmentReportEvidenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDisassociateAssessmentReportEvidence(request), context);
 }
 
-void AuditManagerClient::BatchDisassociateAssessmentReportEvidenceAsyncHelper(const BatchDisassociateAssessmentReportEvidenceRequest& request, const BatchDisassociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::BatchDisassociateAssessmentReportEvidenceAsync(const BatchDisassociateAssessmentReportEvidenceRequest& request, const BatchDisassociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDisassociateAssessmentReportEvidence(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientBatchDisassociateAssessmentReportEvidenceAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchImportEvidenceToAssessmentControlOutcome AuditManagerClient::BatchImportEvidenceToAssessmentControl(const BatchImportEvidenceToAssessmentControlRequest& request) const
@@ -357,14 +357,14 @@ BatchImportEvidenceToAssessmentControlOutcomeCallable AuditManagerClient::BatchI
   return task->get_future();
 }
 
-void AuditManagerClient::BatchImportEvidenceToAssessmentControlAsync(const BatchImportEvidenceToAssessmentControlRequest& request, const BatchImportEvidenceToAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientBatchImportEvidenceToAssessmentControlAsyncHelper(AuditManagerClient const * const clientThis, const BatchImportEvidenceToAssessmentControlRequest& request, const BatchImportEvidenceToAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchImportEvidenceToAssessmentControlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchImportEvidenceToAssessmentControl(request), context);
 }
 
-void AuditManagerClient::BatchImportEvidenceToAssessmentControlAsyncHelper(const BatchImportEvidenceToAssessmentControlRequest& request, const BatchImportEvidenceToAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::BatchImportEvidenceToAssessmentControlAsync(const BatchImportEvidenceToAssessmentControlRequest& request, const BatchImportEvidenceToAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchImportEvidenceToAssessmentControl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientBatchImportEvidenceToAssessmentControlAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAssessmentOutcome AuditManagerClient::CreateAssessment(const CreateAssessmentRequest& request) const
@@ -382,14 +382,14 @@ CreateAssessmentOutcomeCallable AuditManagerClient::CreateAssessmentCallable(con
   return task->get_future();
 }
 
-void AuditManagerClient::CreateAssessmentAsync(const CreateAssessmentRequest& request, const CreateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientCreateAssessmentAsyncHelper(AuditManagerClient const * const clientThis, const CreateAssessmentRequest& request, const CreateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAssessment(request), context);
 }
 
-void AuditManagerClient::CreateAssessmentAsyncHelper(const CreateAssessmentRequest& request, const CreateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::CreateAssessmentAsync(const CreateAssessmentRequest& request, const CreateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientCreateAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAssessmentFrameworkOutcome AuditManagerClient::CreateAssessmentFramework(const CreateAssessmentFrameworkRequest& request) const
@@ -407,14 +407,14 @@ CreateAssessmentFrameworkOutcomeCallable AuditManagerClient::CreateAssessmentFra
   return task->get_future();
 }
 
-void AuditManagerClient::CreateAssessmentFrameworkAsync(const CreateAssessmentFrameworkRequest& request, const CreateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientCreateAssessmentFrameworkAsyncHelper(AuditManagerClient const * const clientThis, const CreateAssessmentFrameworkRequest& request, const CreateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssessmentFrameworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAssessmentFramework(request), context);
 }
 
-void AuditManagerClient::CreateAssessmentFrameworkAsyncHelper(const CreateAssessmentFrameworkRequest& request, const CreateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::CreateAssessmentFrameworkAsync(const CreateAssessmentFrameworkRequest& request, const CreateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAssessmentFramework(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientCreateAssessmentFrameworkAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAssessmentReportOutcome AuditManagerClient::CreateAssessmentReport(const CreateAssessmentReportRequest& request) const
@@ -439,14 +439,14 @@ CreateAssessmentReportOutcomeCallable AuditManagerClient::CreateAssessmentReport
   return task->get_future();
 }
 
-void AuditManagerClient::CreateAssessmentReportAsync(const CreateAssessmentReportRequest& request, const CreateAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientCreateAssessmentReportAsyncHelper(AuditManagerClient const * const clientThis, const CreateAssessmentReportRequest& request, const CreateAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssessmentReportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAssessmentReport(request), context);
 }
 
-void AuditManagerClient::CreateAssessmentReportAsyncHelper(const CreateAssessmentReportRequest& request, const CreateAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::CreateAssessmentReportAsync(const CreateAssessmentReportRequest& request, const CreateAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAssessmentReport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientCreateAssessmentReportAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateControlOutcome AuditManagerClient::CreateControl(const CreateControlRequest& request) const
@@ -464,14 +464,14 @@ CreateControlOutcomeCallable AuditManagerClient::CreateControlCallable(const Cre
   return task->get_future();
 }
 
-void AuditManagerClient::CreateControlAsync(const CreateControlRequest& request, const CreateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientCreateControlAsyncHelper(AuditManagerClient const * const clientThis, const CreateControlRequest& request, const CreateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateControlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateControl(request), context);
 }
 
-void AuditManagerClient::CreateControlAsyncHelper(const CreateControlRequest& request, const CreateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::CreateControlAsync(const CreateControlRequest& request, const CreateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateControl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientCreateControlAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAssessmentOutcome AuditManagerClient::DeleteAssessment(const DeleteAssessmentRequest& request) const
@@ -495,14 +495,14 @@ DeleteAssessmentOutcomeCallable AuditManagerClient::DeleteAssessmentCallable(con
   return task->get_future();
 }
 
-void AuditManagerClient::DeleteAssessmentAsync(const DeleteAssessmentRequest& request, const DeleteAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientDeleteAssessmentAsyncHelper(AuditManagerClient const * const clientThis, const DeleteAssessmentRequest& request, const DeleteAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAssessment(request), context);
 }
 
-void AuditManagerClient::DeleteAssessmentAsyncHelper(const DeleteAssessmentRequest& request, const DeleteAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::DeleteAssessmentAsync(const DeleteAssessmentRequest& request, const DeleteAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientDeleteAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAssessmentFrameworkOutcome AuditManagerClient::DeleteAssessmentFramework(const DeleteAssessmentFrameworkRequest& request) const
@@ -526,14 +526,14 @@ DeleteAssessmentFrameworkOutcomeCallable AuditManagerClient::DeleteAssessmentFra
   return task->get_future();
 }
 
-void AuditManagerClient::DeleteAssessmentFrameworkAsync(const DeleteAssessmentFrameworkRequest& request, const DeleteAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientDeleteAssessmentFrameworkAsyncHelper(AuditManagerClient const * const clientThis, const DeleteAssessmentFrameworkRequest& request, const DeleteAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentFrameworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAssessmentFramework(request), context);
 }
 
-void AuditManagerClient::DeleteAssessmentFrameworkAsyncHelper(const DeleteAssessmentFrameworkRequest& request, const DeleteAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::DeleteAssessmentFrameworkAsync(const DeleteAssessmentFrameworkRequest& request, const DeleteAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssessmentFramework(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientDeleteAssessmentFrameworkAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAssessmentFrameworkShareOutcome AuditManagerClient::DeleteAssessmentFrameworkShare(const DeleteAssessmentFrameworkShareRequest& request) const
@@ -562,14 +562,14 @@ DeleteAssessmentFrameworkShareOutcomeCallable AuditManagerClient::DeleteAssessme
   return task->get_future();
 }
 
-void AuditManagerClient::DeleteAssessmentFrameworkShareAsync(const DeleteAssessmentFrameworkShareRequest& request, const DeleteAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientDeleteAssessmentFrameworkShareAsyncHelper(AuditManagerClient const * const clientThis, const DeleteAssessmentFrameworkShareRequest& request, const DeleteAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentFrameworkShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAssessmentFrameworkShare(request), context);
 }
 
-void AuditManagerClient::DeleteAssessmentFrameworkShareAsyncHelper(const DeleteAssessmentFrameworkShareRequest& request, const DeleteAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::DeleteAssessmentFrameworkShareAsync(const DeleteAssessmentFrameworkShareRequest& request, const DeleteAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssessmentFrameworkShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientDeleteAssessmentFrameworkShareAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAssessmentReportOutcome AuditManagerClient::DeleteAssessmentReport(const DeleteAssessmentReportRequest& request) const
@@ -600,14 +600,14 @@ DeleteAssessmentReportOutcomeCallable AuditManagerClient::DeleteAssessmentReport
   return task->get_future();
 }
 
-void AuditManagerClient::DeleteAssessmentReportAsync(const DeleteAssessmentReportRequest& request, const DeleteAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientDeleteAssessmentReportAsyncHelper(AuditManagerClient const * const clientThis, const DeleteAssessmentReportRequest& request, const DeleteAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentReportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAssessmentReport(request), context);
 }
 
-void AuditManagerClient::DeleteAssessmentReportAsyncHelper(const DeleteAssessmentReportRequest& request, const DeleteAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::DeleteAssessmentReportAsync(const DeleteAssessmentReportRequest& request, const DeleteAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssessmentReport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientDeleteAssessmentReportAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteControlOutcome AuditManagerClient::DeleteControl(const DeleteControlRequest& request) const
@@ -631,14 +631,14 @@ DeleteControlOutcomeCallable AuditManagerClient::DeleteControlCallable(const Del
   return task->get_future();
 }
 
-void AuditManagerClient::DeleteControlAsync(const DeleteControlRequest& request, const DeleteControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientDeleteControlAsyncHelper(AuditManagerClient const * const clientThis, const DeleteControlRequest& request, const DeleteControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteControlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteControl(request), context);
 }
 
-void AuditManagerClient::DeleteControlAsyncHelper(const DeleteControlRequest& request, const DeleteControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::DeleteControlAsync(const DeleteControlRequest& request, const DeleteControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteControl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientDeleteControlAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterAccountOutcome AuditManagerClient::DeregisterAccount(const DeregisterAccountRequest& request) const
@@ -656,14 +656,14 @@ DeregisterAccountOutcomeCallable AuditManagerClient::DeregisterAccountCallable(c
   return task->get_future();
 }
 
-void AuditManagerClient::DeregisterAccountAsync(const DeregisterAccountRequest& request, const DeregisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientDeregisterAccountAsyncHelper(AuditManagerClient const * const clientThis, const DeregisterAccountRequest& request, const DeregisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterAccount(request), context);
 }
 
-void AuditManagerClient::DeregisterAccountAsyncHelper(const DeregisterAccountRequest& request, const DeregisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::DeregisterAccountAsync(const DeregisterAccountRequest& request, const DeregisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientDeregisterAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterOrganizationAdminAccountOutcome AuditManagerClient::DeregisterOrganizationAdminAccount(const DeregisterOrganizationAdminAccountRequest& request) const
@@ -681,14 +681,14 @@ DeregisterOrganizationAdminAccountOutcomeCallable AuditManagerClient::Deregister
   return task->get_future();
 }
 
-void AuditManagerClient::DeregisterOrganizationAdminAccountAsync(const DeregisterOrganizationAdminAccountRequest& request, const DeregisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientDeregisterOrganizationAdminAccountAsyncHelper(AuditManagerClient const * const clientThis, const DeregisterOrganizationAdminAccountRequest& request, const DeregisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterOrganizationAdminAccount(request), context);
 }
 
-void AuditManagerClient::DeregisterOrganizationAdminAccountAsyncHelper(const DeregisterOrganizationAdminAccountRequest& request, const DeregisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::DeregisterOrganizationAdminAccountAsync(const DeregisterOrganizationAdminAccountRequest& request, const DeregisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientDeregisterOrganizationAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateAssessmentReportEvidenceFolderOutcome AuditManagerClient::DisassociateAssessmentReportEvidenceFolder(const DisassociateAssessmentReportEvidenceFolderRequest& request) const
@@ -713,14 +713,14 @@ DisassociateAssessmentReportEvidenceFolderOutcomeCallable AuditManagerClient::Di
   return task->get_future();
 }
 
-void AuditManagerClient::DisassociateAssessmentReportEvidenceFolderAsync(const DisassociateAssessmentReportEvidenceFolderRequest& request, const DisassociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientDisassociateAssessmentReportEvidenceFolderAsyncHelper(AuditManagerClient const * const clientThis, const DisassociateAssessmentReportEvidenceFolderRequest& request, const DisassociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateAssessmentReportEvidenceFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateAssessmentReportEvidenceFolder(request), context);
 }
 
-void AuditManagerClient::DisassociateAssessmentReportEvidenceFolderAsyncHelper(const DisassociateAssessmentReportEvidenceFolderRequest& request, const DisassociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::DisassociateAssessmentReportEvidenceFolderAsync(const DisassociateAssessmentReportEvidenceFolderRequest& request, const DisassociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateAssessmentReportEvidenceFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientDisassociateAssessmentReportEvidenceFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccountStatusOutcome AuditManagerClient::GetAccountStatus(const GetAccountStatusRequest& request) const
@@ -738,14 +738,14 @@ GetAccountStatusOutcomeCallable AuditManagerClient::GetAccountStatusCallable(con
   return task->get_future();
 }
 
-void AuditManagerClient::GetAccountStatusAsync(const GetAccountStatusRequest& request, const GetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetAccountStatusAsyncHelper(AuditManagerClient const * const clientThis, const GetAccountStatusRequest& request, const GetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccountStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccountStatus(request), context);
 }
 
-void AuditManagerClient::GetAccountStatusAsyncHelper(const GetAccountStatusRequest& request, const GetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetAccountStatusAsync(const GetAccountStatusRequest& request, const GetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccountStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetAccountStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssessmentOutcome AuditManagerClient::GetAssessment(const GetAssessmentRequest& request) const
@@ -769,14 +769,14 @@ GetAssessmentOutcomeCallable AuditManagerClient::GetAssessmentCallable(const Get
   return task->get_future();
 }
 
-void AuditManagerClient::GetAssessmentAsync(const GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetAssessmentAsyncHelper(AuditManagerClient const * const clientThis, const GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssessment(request), context);
 }
 
-void AuditManagerClient::GetAssessmentAsyncHelper(const GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetAssessmentAsync(const GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssessmentFrameworkOutcome AuditManagerClient::GetAssessmentFramework(const GetAssessmentFrameworkRequest& request) const
@@ -800,14 +800,14 @@ GetAssessmentFrameworkOutcomeCallable AuditManagerClient::GetAssessmentFramework
   return task->get_future();
 }
 
-void AuditManagerClient::GetAssessmentFrameworkAsync(const GetAssessmentFrameworkRequest& request, const GetAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetAssessmentFrameworkAsyncHelper(AuditManagerClient const * const clientThis, const GetAssessmentFrameworkRequest& request, const GetAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssessmentFrameworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssessmentFramework(request), context);
 }
 
-void AuditManagerClient::GetAssessmentFrameworkAsyncHelper(const GetAssessmentFrameworkRequest& request, const GetAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetAssessmentFrameworkAsync(const GetAssessmentFrameworkRequest& request, const GetAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssessmentFramework(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetAssessmentFrameworkAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssessmentReportUrlOutcome AuditManagerClient::GetAssessmentReportUrl(const GetAssessmentReportUrlRequest& request) const
@@ -839,14 +839,14 @@ GetAssessmentReportUrlOutcomeCallable AuditManagerClient::GetAssessmentReportUrl
   return task->get_future();
 }
 
-void AuditManagerClient::GetAssessmentReportUrlAsync(const GetAssessmentReportUrlRequest& request, const GetAssessmentReportUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetAssessmentReportUrlAsyncHelper(AuditManagerClient const * const clientThis, const GetAssessmentReportUrlRequest& request, const GetAssessmentReportUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssessmentReportUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssessmentReportUrl(request), context);
 }
 
-void AuditManagerClient::GetAssessmentReportUrlAsyncHelper(const GetAssessmentReportUrlRequest& request, const GetAssessmentReportUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetAssessmentReportUrlAsync(const GetAssessmentReportUrlRequest& request, const GetAssessmentReportUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssessmentReportUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetAssessmentReportUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 GetChangeLogsOutcome AuditManagerClient::GetChangeLogs(const GetChangeLogsRequest& request) const
@@ -871,14 +871,14 @@ GetChangeLogsOutcomeCallable AuditManagerClient::GetChangeLogsCallable(const Get
   return task->get_future();
 }
 
-void AuditManagerClient::GetChangeLogsAsync(const GetChangeLogsRequest& request, const GetChangeLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetChangeLogsAsyncHelper(AuditManagerClient const * const clientThis, const GetChangeLogsRequest& request, const GetChangeLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChangeLogsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetChangeLogs(request), context);
 }
 
-void AuditManagerClient::GetChangeLogsAsyncHelper(const GetChangeLogsRequest& request, const GetChangeLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetChangeLogsAsync(const GetChangeLogsRequest& request, const GetChangeLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetChangeLogs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetChangeLogsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetControlOutcome AuditManagerClient::GetControl(const GetControlRequest& request) const
@@ -902,14 +902,14 @@ GetControlOutcomeCallable AuditManagerClient::GetControlCallable(const GetContro
   return task->get_future();
 }
 
-void AuditManagerClient::GetControlAsync(const GetControlRequest& request, const GetControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetControlAsyncHelper(AuditManagerClient const * const clientThis, const GetControlRequest& request, const GetControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetControlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetControl(request), context);
 }
 
-void AuditManagerClient::GetControlAsyncHelper(const GetControlRequest& request, const GetControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetControlAsync(const GetControlRequest& request, const GetControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetControl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetControlAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDelegationsOutcome AuditManagerClient::GetDelegations(const GetDelegationsRequest& request) const
@@ -927,14 +927,14 @@ GetDelegationsOutcomeCallable AuditManagerClient::GetDelegationsCallable(const G
   return task->get_future();
 }
 
-void AuditManagerClient::GetDelegationsAsync(const GetDelegationsRequest& request, const GetDelegationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetDelegationsAsyncHelper(AuditManagerClient const * const clientThis, const GetDelegationsRequest& request, const GetDelegationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDelegationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDelegations(request), context);
 }
 
-void AuditManagerClient::GetDelegationsAsyncHelper(const GetDelegationsRequest& request, const GetDelegationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetDelegationsAsync(const GetDelegationsRequest& request, const GetDelegationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDelegations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetDelegationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEvidenceOutcome AuditManagerClient::GetEvidence(const GetEvidenceRequest& request) const
@@ -979,14 +979,14 @@ GetEvidenceOutcomeCallable AuditManagerClient::GetEvidenceCallable(const GetEvid
   return task->get_future();
 }
 
-void AuditManagerClient::GetEvidenceAsync(const GetEvidenceRequest& request, const GetEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetEvidenceAsyncHelper(AuditManagerClient const * const clientThis, const GetEvidenceRequest& request, const GetEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEvidenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEvidence(request), context);
 }
 
-void AuditManagerClient::GetEvidenceAsyncHelper(const GetEvidenceRequest& request, const GetEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetEvidenceAsync(const GetEvidenceRequest& request, const GetEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEvidence(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetEvidenceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEvidenceByEvidenceFolderOutcome AuditManagerClient::GetEvidenceByEvidenceFolder(const GetEvidenceByEvidenceFolderRequest& request) const
@@ -1025,14 +1025,14 @@ GetEvidenceByEvidenceFolderOutcomeCallable AuditManagerClient::GetEvidenceByEvid
   return task->get_future();
 }
 
-void AuditManagerClient::GetEvidenceByEvidenceFolderAsync(const GetEvidenceByEvidenceFolderRequest& request, const GetEvidenceByEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetEvidenceByEvidenceFolderAsyncHelper(AuditManagerClient const * const clientThis, const GetEvidenceByEvidenceFolderRequest& request, const GetEvidenceByEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEvidenceByEvidenceFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEvidenceByEvidenceFolder(request), context);
 }
 
-void AuditManagerClient::GetEvidenceByEvidenceFolderAsyncHelper(const GetEvidenceByEvidenceFolderRequest& request, const GetEvidenceByEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetEvidenceByEvidenceFolderAsync(const GetEvidenceByEvidenceFolderRequest& request, const GetEvidenceByEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEvidenceByEvidenceFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetEvidenceByEvidenceFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEvidenceFolderOutcome AuditManagerClient::GetEvidenceFolder(const GetEvidenceFolderRequest& request) const
@@ -1070,14 +1070,14 @@ GetEvidenceFolderOutcomeCallable AuditManagerClient::GetEvidenceFolderCallable(c
   return task->get_future();
 }
 
-void AuditManagerClient::GetEvidenceFolderAsync(const GetEvidenceFolderRequest& request, const GetEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetEvidenceFolderAsyncHelper(AuditManagerClient const * const clientThis, const GetEvidenceFolderRequest& request, const GetEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEvidenceFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEvidenceFolder(request), context);
 }
 
-void AuditManagerClient::GetEvidenceFolderAsyncHelper(const GetEvidenceFolderRequest& request, const GetEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetEvidenceFolderAsync(const GetEvidenceFolderRequest& request, const GetEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEvidenceFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetEvidenceFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEvidenceFoldersByAssessmentOutcome AuditManagerClient::GetEvidenceFoldersByAssessment(const GetEvidenceFoldersByAssessmentRequest& request) const
@@ -1102,14 +1102,14 @@ GetEvidenceFoldersByAssessmentOutcomeCallable AuditManagerClient::GetEvidenceFol
   return task->get_future();
 }
 
-void AuditManagerClient::GetEvidenceFoldersByAssessmentAsync(const GetEvidenceFoldersByAssessmentRequest& request, const GetEvidenceFoldersByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetEvidenceFoldersByAssessmentAsyncHelper(AuditManagerClient const * const clientThis, const GetEvidenceFoldersByAssessmentRequest& request, const GetEvidenceFoldersByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEvidenceFoldersByAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEvidenceFoldersByAssessment(request), context);
 }
 
-void AuditManagerClient::GetEvidenceFoldersByAssessmentAsyncHelper(const GetEvidenceFoldersByAssessmentRequest& request, const GetEvidenceFoldersByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetEvidenceFoldersByAssessmentAsync(const GetEvidenceFoldersByAssessmentRequest& request, const GetEvidenceFoldersByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEvidenceFoldersByAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetEvidenceFoldersByAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEvidenceFoldersByAssessmentControlOutcome AuditManagerClient::GetEvidenceFoldersByAssessmentControl(const GetEvidenceFoldersByAssessmentControlRequest& request) const
@@ -1146,14 +1146,14 @@ GetEvidenceFoldersByAssessmentControlOutcomeCallable AuditManagerClient::GetEvid
   return task->get_future();
 }
 
-void AuditManagerClient::GetEvidenceFoldersByAssessmentControlAsync(const GetEvidenceFoldersByAssessmentControlRequest& request, const GetEvidenceFoldersByAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetEvidenceFoldersByAssessmentControlAsyncHelper(AuditManagerClient const * const clientThis, const GetEvidenceFoldersByAssessmentControlRequest& request, const GetEvidenceFoldersByAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEvidenceFoldersByAssessmentControlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEvidenceFoldersByAssessmentControl(request), context);
 }
 
-void AuditManagerClient::GetEvidenceFoldersByAssessmentControlAsyncHelper(const GetEvidenceFoldersByAssessmentControlRequest& request, const GetEvidenceFoldersByAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetEvidenceFoldersByAssessmentControlAsync(const GetEvidenceFoldersByAssessmentControlRequest& request, const GetEvidenceFoldersByAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEvidenceFoldersByAssessmentControl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetEvidenceFoldersByAssessmentControlAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInsightsOutcome AuditManagerClient::GetInsights(const GetInsightsRequest& request) const
@@ -1171,14 +1171,14 @@ GetInsightsOutcomeCallable AuditManagerClient::GetInsightsCallable(const GetInsi
   return task->get_future();
 }
 
-void AuditManagerClient::GetInsightsAsync(const GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetInsightsAsyncHelper(AuditManagerClient const * const clientThis, const GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInsightsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInsights(request), context);
 }
 
-void AuditManagerClient::GetInsightsAsyncHelper(const GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetInsightsAsync(const GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInsights(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetInsightsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInsightsByAssessmentOutcome AuditManagerClient::GetInsightsByAssessment(const GetInsightsByAssessmentRequest& request) const
@@ -1202,14 +1202,14 @@ GetInsightsByAssessmentOutcomeCallable AuditManagerClient::GetInsightsByAssessme
   return task->get_future();
 }
 
-void AuditManagerClient::GetInsightsByAssessmentAsync(const GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetInsightsByAssessmentAsyncHelper(AuditManagerClient const * const clientThis, const GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInsightsByAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInsightsByAssessment(request), context);
 }
 
-void AuditManagerClient::GetInsightsByAssessmentAsyncHelper(const GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetInsightsByAssessmentAsync(const GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInsightsByAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetInsightsByAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetOrganizationAdminAccountOutcome AuditManagerClient::GetOrganizationAdminAccount(const GetOrganizationAdminAccountRequest& request) const
@@ -1227,14 +1227,14 @@ GetOrganizationAdminAccountOutcomeCallable AuditManagerClient::GetOrganizationAd
   return task->get_future();
 }
 
-void AuditManagerClient::GetOrganizationAdminAccountAsync(const GetOrganizationAdminAccountRequest& request, const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetOrganizationAdminAccountAsyncHelper(AuditManagerClient const * const clientThis, const GetOrganizationAdminAccountRequest& request, const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOrganizationAdminAccount(request), context);
 }
 
-void AuditManagerClient::GetOrganizationAdminAccountAsyncHelper(const GetOrganizationAdminAccountRequest& request, const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetOrganizationAdminAccountAsync(const GetOrganizationAdminAccountRequest& request, const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetOrganizationAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServicesInScopeOutcome AuditManagerClient::GetServicesInScope(const GetServicesInScopeRequest& request) const
@@ -1252,14 +1252,14 @@ GetServicesInScopeOutcomeCallable AuditManagerClient::GetServicesInScopeCallable
   return task->get_future();
 }
 
-void AuditManagerClient::GetServicesInScopeAsync(const GetServicesInScopeRequest& request, const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetServicesInScopeAsyncHelper(AuditManagerClient const * const clientThis, const GetServicesInScopeRequest& request, const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServicesInScopeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServicesInScope(request), context);
 }
 
-void AuditManagerClient::GetServicesInScopeAsyncHelper(const GetServicesInScopeRequest& request, const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetServicesInScopeAsync(const GetServicesInScopeRequest& request, const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServicesInScope(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetServicesInScopeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSettingsOutcome AuditManagerClient::GetSettings(const GetSettingsRequest& request) const
@@ -1283,14 +1283,14 @@ GetSettingsOutcomeCallable AuditManagerClient::GetSettingsCallable(const GetSett
   return task->get_future();
 }
 
-void AuditManagerClient::GetSettingsAsync(const GetSettingsRequest& request, const GetSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientGetSettingsAsyncHelper(AuditManagerClient const * const clientThis, const GetSettingsRequest& request, const GetSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSettings(request), context);
 }
 
-void AuditManagerClient::GetSettingsAsyncHelper(const GetSettingsRequest& request, const GetSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::GetSettingsAsync(const GetSettingsRequest& request, const GetSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientGetSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssessmentControlInsightsByControlDomainOutcome AuditManagerClient::ListAssessmentControlInsightsByControlDomain(const ListAssessmentControlInsightsByControlDomainRequest& request) const
@@ -1318,14 +1318,14 @@ ListAssessmentControlInsightsByControlDomainOutcomeCallable AuditManagerClient::
   return task->get_future();
 }
 
-void AuditManagerClient::ListAssessmentControlInsightsByControlDomainAsync(const ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListAssessmentControlInsightsByControlDomainAsyncHelper(AuditManagerClient const * const clientThis, const ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentControlInsightsByControlDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssessmentControlInsightsByControlDomain(request), context);
 }
 
-void AuditManagerClient::ListAssessmentControlInsightsByControlDomainAsyncHelper(const ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListAssessmentControlInsightsByControlDomainAsync(const ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessmentControlInsightsByControlDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListAssessmentControlInsightsByControlDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssessmentFrameworkShareRequestsOutcome AuditManagerClient::ListAssessmentFrameworkShareRequests(const ListAssessmentFrameworkShareRequestsRequest& request) const
@@ -1348,14 +1348,14 @@ ListAssessmentFrameworkShareRequestsOutcomeCallable AuditManagerClient::ListAsse
   return task->get_future();
 }
 
-void AuditManagerClient::ListAssessmentFrameworkShareRequestsAsync(const ListAssessmentFrameworkShareRequestsRequest& request, const ListAssessmentFrameworkShareRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListAssessmentFrameworkShareRequestsAsyncHelper(AuditManagerClient const * const clientThis, const ListAssessmentFrameworkShareRequestsRequest& request, const ListAssessmentFrameworkShareRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentFrameworkShareRequestsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssessmentFrameworkShareRequests(request), context);
 }
 
-void AuditManagerClient::ListAssessmentFrameworkShareRequestsAsyncHelper(const ListAssessmentFrameworkShareRequestsRequest& request, const ListAssessmentFrameworkShareRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListAssessmentFrameworkShareRequestsAsync(const ListAssessmentFrameworkShareRequestsRequest& request, const ListAssessmentFrameworkShareRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessmentFrameworkShareRequests(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListAssessmentFrameworkShareRequestsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssessmentFrameworksOutcome AuditManagerClient::ListAssessmentFrameworks(const ListAssessmentFrameworksRequest& request) const
@@ -1378,14 +1378,14 @@ ListAssessmentFrameworksOutcomeCallable AuditManagerClient::ListAssessmentFramew
   return task->get_future();
 }
 
-void AuditManagerClient::ListAssessmentFrameworksAsync(const ListAssessmentFrameworksRequest& request, const ListAssessmentFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListAssessmentFrameworksAsyncHelper(AuditManagerClient const * const clientThis, const ListAssessmentFrameworksRequest& request, const ListAssessmentFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentFrameworksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssessmentFrameworks(request), context);
 }
 
-void AuditManagerClient::ListAssessmentFrameworksAsyncHelper(const ListAssessmentFrameworksRequest& request, const ListAssessmentFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListAssessmentFrameworksAsync(const ListAssessmentFrameworksRequest& request, const ListAssessmentFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessmentFrameworks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListAssessmentFrameworksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssessmentReportsOutcome AuditManagerClient::ListAssessmentReports(const ListAssessmentReportsRequest& request) const
@@ -1403,14 +1403,14 @@ ListAssessmentReportsOutcomeCallable AuditManagerClient::ListAssessmentReportsCa
   return task->get_future();
 }
 
-void AuditManagerClient::ListAssessmentReportsAsync(const ListAssessmentReportsRequest& request, const ListAssessmentReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListAssessmentReportsAsyncHelper(AuditManagerClient const * const clientThis, const ListAssessmentReportsRequest& request, const ListAssessmentReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentReportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssessmentReports(request), context);
 }
 
-void AuditManagerClient::ListAssessmentReportsAsyncHelper(const ListAssessmentReportsRequest& request, const ListAssessmentReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListAssessmentReportsAsync(const ListAssessmentReportsRequest& request, const ListAssessmentReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessmentReports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListAssessmentReportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssessmentsOutcome AuditManagerClient::ListAssessments(const ListAssessmentsRequest& request) const
@@ -1428,14 +1428,14 @@ ListAssessmentsOutcomeCallable AuditManagerClient::ListAssessmentsCallable(const
   return task->get_future();
 }
 
-void AuditManagerClient::ListAssessmentsAsync(const ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListAssessmentsAsyncHelper(AuditManagerClient const * const clientThis, const ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssessments(request), context);
 }
 
-void AuditManagerClient::ListAssessmentsAsyncHelper(const ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListAssessmentsAsync(const ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListAssessmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListControlDomainInsightsOutcome AuditManagerClient::ListControlDomainInsights(const ListControlDomainInsightsRequest& request) const
@@ -1453,14 +1453,14 @@ ListControlDomainInsightsOutcomeCallable AuditManagerClient::ListControlDomainIn
   return task->get_future();
 }
 
-void AuditManagerClient::ListControlDomainInsightsAsync(const ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListControlDomainInsightsAsyncHelper(AuditManagerClient const * const clientThis, const ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListControlDomainInsightsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListControlDomainInsights(request), context);
 }
 
-void AuditManagerClient::ListControlDomainInsightsAsyncHelper(const ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListControlDomainInsightsAsync(const ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListControlDomainInsights(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListControlDomainInsightsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListControlDomainInsightsByAssessmentOutcome AuditManagerClient::ListControlDomainInsightsByAssessment(const ListControlDomainInsightsByAssessmentRequest& request) const
@@ -1483,14 +1483,14 @@ ListControlDomainInsightsByAssessmentOutcomeCallable AuditManagerClient::ListCon
   return task->get_future();
 }
 
-void AuditManagerClient::ListControlDomainInsightsByAssessmentAsync(const ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListControlDomainInsightsByAssessmentAsyncHelper(AuditManagerClient const * const clientThis, const ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListControlDomainInsightsByAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListControlDomainInsightsByAssessment(request), context);
 }
 
-void AuditManagerClient::ListControlDomainInsightsByAssessmentAsyncHelper(const ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListControlDomainInsightsByAssessmentAsync(const ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListControlDomainInsightsByAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListControlDomainInsightsByAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 ListControlInsightsByControlDomainOutcome AuditManagerClient::ListControlInsightsByControlDomain(const ListControlInsightsByControlDomainRequest& request) const
@@ -1513,14 +1513,14 @@ ListControlInsightsByControlDomainOutcomeCallable AuditManagerClient::ListContro
   return task->get_future();
 }
 
-void AuditManagerClient::ListControlInsightsByControlDomainAsync(const ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListControlInsightsByControlDomainAsyncHelper(AuditManagerClient const * const clientThis, const ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListControlInsightsByControlDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListControlInsightsByControlDomain(request), context);
 }
 
-void AuditManagerClient::ListControlInsightsByControlDomainAsyncHelper(const ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListControlInsightsByControlDomainAsync(const ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListControlInsightsByControlDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListControlInsightsByControlDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 ListControlsOutcome AuditManagerClient::ListControls(const ListControlsRequest& request) const
@@ -1543,14 +1543,14 @@ ListControlsOutcomeCallable AuditManagerClient::ListControlsCallable(const ListC
   return task->get_future();
 }
 
-void AuditManagerClient::ListControlsAsync(const ListControlsRequest& request, const ListControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListControlsAsyncHelper(AuditManagerClient const * const clientThis, const ListControlsRequest& request, const ListControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListControlsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListControls(request), context);
 }
 
-void AuditManagerClient::ListControlsAsyncHelper(const ListControlsRequest& request, const ListControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListControlsAsync(const ListControlsRequest& request, const ListControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListControls(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListControlsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListKeywordsForDataSourceOutcome AuditManagerClient::ListKeywordsForDataSource(const ListKeywordsForDataSourceRequest& request) const
@@ -1573,14 +1573,14 @@ ListKeywordsForDataSourceOutcomeCallable AuditManagerClient::ListKeywordsForData
   return task->get_future();
 }
 
-void AuditManagerClient::ListKeywordsForDataSourceAsync(const ListKeywordsForDataSourceRequest& request, const ListKeywordsForDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListKeywordsForDataSourceAsyncHelper(AuditManagerClient const * const clientThis, const ListKeywordsForDataSourceRequest& request, const ListKeywordsForDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListKeywordsForDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListKeywordsForDataSource(request), context);
 }
 
-void AuditManagerClient::ListKeywordsForDataSourceAsyncHelper(const ListKeywordsForDataSourceRequest& request, const ListKeywordsForDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListKeywordsForDataSourceAsync(const ListKeywordsForDataSourceRequest& request, const ListKeywordsForDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListKeywordsForDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListKeywordsForDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNotificationsOutcome AuditManagerClient::ListNotifications(const ListNotificationsRequest& request) const
@@ -1598,14 +1598,14 @@ ListNotificationsOutcomeCallable AuditManagerClient::ListNotificationsCallable(c
   return task->get_future();
 }
 
-void AuditManagerClient::ListNotificationsAsync(const ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListNotificationsAsyncHelper(AuditManagerClient const * const clientThis, const ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNotificationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNotifications(request), context);
 }
 
-void AuditManagerClient::ListNotificationsAsyncHelper(const ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListNotificationsAsync(const ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNotifications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListNotificationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome AuditManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1629,14 +1629,14 @@ ListTagsForResourceOutcomeCallable AuditManagerClient::ListTagsForResourceCallab
   return task->get_future();
 }
 
-void AuditManagerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientListTagsForResourceAsyncHelper(AuditManagerClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void AuditManagerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterAccountOutcome AuditManagerClient::RegisterAccount(const RegisterAccountRequest& request) const
@@ -1654,14 +1654,14 @@ RegisterAccountOutcomeCallable AuditManagerClient::RegisterAccountCallable(const
   return task->get_future();
 }
 
-void AuditManagerClient::RegisterAccountAsync(const RegisterAccountRequest& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientRegisterAccountAsyncHelper(AuditManagerClient const * const clientThis, const RegisterAccountRequest& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterAccount(request), context);
 }
 
-void AuditManagerClient::RegisterAccountAsyncHelper(const RegisterAccountRequest& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::RegisterAccountAsync(const RegisterAccountRequest& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientRegisterAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterOrganizationAdminAccountOutcome AuditManagerClient::RegisterOrganizationAdminAccount(const RegisterOrganizationAdminAccountRequest& request) const
@@ -1679,14 +1679,14 @@ RegisterOrganizationAdminAccountOutcomeCallable AuditManagerClient::RegisterOrga
   return task->get_future();
 }
 
-void AuditManagerClient::RegisterOrganizationAdminAccountAsync(const RegisterOrganizationAdminAccountRequest& request, const RegisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientRegisterOrganizationAdminAccountAsyncHelper(AuditManagerClient const * const clientThis, const RegisterOrganizationAdminAccountRequest& request, const RegisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterOrganizationAdminAccount(request), context);
 }
 
-void AuditManagerClient::RegisterOrganizationAdminAccountAsyncHelper(const RegisterOrganizationAdminAccountRequest& request, const RegisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::RegisterOrganizationAdminAccountAsync(const RegisterOrganizationAdminAccountRequest& request, const RegisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientRegisterOrganizationAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 StartAssessmentFrameworkShareOutcome AuditManagerClient::StartAssessmentFrameworkShare(const StartAssessmentFrameworkShareRequest& request) const
@@ -1711,14 +1711,14 @@ StartAssessmentFrameworkShareOutcomeCallable AuditManagerClient::StartAssessment
   return task->get_future();
 }
 
-void AuditManagerClient::StartAssessmentFrameworkShareAsync(const StartAssessmentFrameworkShareRequest& request, const StartAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientStartAssessmentFrameworkShareAsyncHelper(AuditManagerClient const * const clientThis, const StartAssessmentFrameworkShareRequest& request, const StartAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartAssessmentFrameworkShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartAssessmentFrameworkShare(request), context);
 }
 
-void AuditManagerClient::StartAssessmentFrameworkShareAsyncHelper(const StartAssessmentFrameworkShareRequest& request, const StartAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::StartAssessmentFrameworkShareAsync(const StartAssessmentFrameworkShareRequest& request, const StartAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartAssessmentFrameworkShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientStartAssessmentFrameworkShareAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome AuditManagerClient::TagResource(const TagResourceRequest& request) const
@@ -1742,14 +1742,14 @@ TagResourceOutcomeCallable AuditManagerClient::TagResourceCallable(const TagReso
   return task->get_future();
 }
 
-void AuditManagerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientTagResourceAsyncHelper(AuditManagerClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void AuditManagerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome AuditManagerClient::UntagResource(const UntagResourceRequest& request) const
@@ -1778,14 +1778,14 @@ UntagResourceOutcomeCallable AuditManagerClient::UntagResourceCallable(const Unt
   return task->get_future();
 }
 
-void AuditManagerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientUntagResourceAsyncHelper(AuditManagerClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void AuditManagerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAssessmentOutcome AuditManagerClient::UpdateAssessment(const UpdateAssessmentRequest& request) const
@@ -1809,14 +1809,14 @@ UpdateAssessmentOutcomeCallable AuditManagerClient::UpdateAssessmentCallable(con
   return task->get_future();
 }
 
-void AuditManagerClient::UpdateAssessmentAsync(const UpdateAssessmentRequest& request, const UpdateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientUpdateAssessmentAsyncHelper(AuditManagerClient const * const clientThis, const UpdateAssessmentRequest& request, const UpdateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssessmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAssessment(request), context);
 }
 
-void AuditManagerClient::UpdateAssessmentAsyncHelper(const UpdateAssessmentRequest& request, const UpdateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::UpdateAssessmentAsync(const UpdateAssessmentRequest& request, const UpdateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientUpdateAssessmentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAssessmentControlOutcome AuditManagerClient::UpdateAssessmentControl(const UpdateAssessmentControlRequest& request) const
@@ -1854,14 +1854,14 @@ UpdateAssessmentControlOutcomeCallable AuditManagerClient::UpdateAssessmentContr
   return task->get_future();
 }
 
-void AuditManagerClient::UpdateAssessmentControlAsync(const UpdateAssessmentControlRequest& request, const UpdateAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientUpdateAssessmentControlAsyncHelper(AuditManagerClient const * const clientThis, const UpdateAssessmentControlRequest& request, const UpdateAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssessmentControlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAssessmentControl(request), context);
 }
 
-void AuditManagerClient::UpdateAssessmentControlAsyncHelper(const UpdateAssessmentControlRequest& request, const UpdateAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::UpdateAssessmentControlAsync(const UpdateAssessmentControlRequest& request, const UpdateAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAssessmentControl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientUpdateAssessmentControlAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAssessmentControlSetStatusOutcome AuditManagerClient::UpdateAssessmentControlSetStatus(const UpdateAssessmentControlSetStatusRequest& request) const
@@ -1893,14 +1893,14 @@ UpdateAssessmentControlSetStatusOutcomeCallable AuditManagerClient::UpdateAssess
   return task->get_future();
 }
 
-void AuditManagerClient::UpdateAssessmentControlSetStatusAsync(const UpdateAssessmentControlSetStatusRequest& request, const UpdateAssessmentControlSetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientUpdateAssessmentControlSetStatusAsyncHelper(AuditManagerClient const * const clientThis, const UpdateAssessmentControlSetStatusRequest& request, const UpdateAssessmentControlSetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssessmentControlSetStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAssessmentControlSetStatus(request), context);
 }
 
-void AuditManagerClient::UpdateAssessmentControlSetStatusAsyncHelper(const UpdateAssessmentControlSetStatusRequest& request, const UpdateAssessmentControlSetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::UpdateAssessmentControlSetStatusAsync(const UpdateAssessmentControlSetStatusRequest& request, const UpdateAssessmentControlSetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAssessmentControlSetStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientUpdateAssessmentControlSetStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAssessmentFrameworkOutcome AuditManagerClient::UpdateAssessmentFramework(const UpdateAssessmentFrameworkRequest& request) const
@@ -1924,14 +1924,14 @@ UpdateAssessmentFrameworkOutcomeCallable AuditManagerClient::UpdateAssessmentFra
   return task->get_future();
 }
 
-void AuditManagerClient::UpdateAssessmentFrameworkAsync(const UpdateAssessmentFrameworkRequest& request, const UpdateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientUpdateAssessmentFrameworkAsyncHelper(AuditManagerClient const * const clientThis, const UpdateAssessmentFrameworkRequest& request, const UpdateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssessmentFrameworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAssessmentFramework(request), context);
 }
 
-void AuditManagerClient::UpdateAssessmentFrameworkAsyncHelper(const UpdateAssessmentFrameworkRequest& request, const UpdateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::UpdateAssessmentFrameworkAsync(const UpdateAssessmentFrameworkRequest& request, const UpdateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAssessmentFramework(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientUpdateAssessmentFrameworkAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAssessmentFrameworkShareOutcome AuditManagerClient::UpdateAssessmentFrameworkShare(const UpdateAssessmentFrameworkShareRequest& request) const
@@ -1955,14 +1955,14 @@ UpdateAssessmentFrameworkShareOutcomeCallable AuditManagerClient::UpdateAssessme
   return task->get_future();
 }
 
-void AuditManagerClient::UpdateAssessmentFrameworkShareAsync(const UpdateAssessmentFrameworkShareRequest& request, const UpdateAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientUpdateAssessmentFrameworkShareAsyncHelper(AuditManagerClient const * const clientThis, const UpdateAssessmentFrameworkShareRequest& request, const UpdateAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssessmentFrameworkShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAssessmentFrameworkShare(request), context);
 }
 
-void AuditManagerClient::UpdateAssessmentFrameworkShareAsyncHelper(const UpdateAssessmentFrameworkShareRequest& request, const UpdateAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::UpdateAssessmentFrameworkShareAsync(const UpdateAssessmentFrameworkShareRequest& request, const UpdateAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAssessmentFrameworkShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientUpdateAssessmentFrameworkShareAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAssessmentStatusOutcome AuditManagerClient::UpdateAssessmentStatus(const UpdateAssessmentStatusRequest& request) const
@@ -1987,14 +1987,14 @@ UpdateAssessmentStatusOutcomeCallable AuditManagerClient::UpdateAssessmentStatus
   return task->get_future();
 }
 
-void AuditManagerClient::UpdateAssessmentStatusAsync(const UpdateAssessmentStatusRequest& request, const UpdateAssessmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientUpdateAssessmentStatusAsyncHelper(AuditManagerClient const * const clientThis, const UpdateAssessmentStatusRequest& request, const UpdateAssessmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssessmentStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAssessmentStatus(request), context);
 }
 
-void AuditManagerClient::UpdateAssessmentStatusAsyncHelper(const UpdateAssessmentStatusRequest& request, const UpdateAssessmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::UpdateAssessmentStatusAsync(const UpdateAssessmentStatusRequest& request, const UpdateAssessmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAssessmentStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientUpdateAssessmentStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateControlOutcome AuditManagerClient::UpdateControl(const UpdateControlRequest& request) const
@@ -2018,14 +2018,14 @@ UpdateControlOutcomeCallable AuditManagerClient::UpdateControlCallable(const Upd
   return task->get_future();
 }
 
-void AuditManagerClient::UpdateControlAsync(const UpdateControlRequest& request, const UpdateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientUpdateControlAsyncHelper(AuditManagerClient const * const clientThis, const UpdateControlRequest& request, const UpdateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateControlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateControl(request), context);
 }
 
-void AuditManagerClient::UpdateControlAsyncHelper(const UpdateControlRequest& request, const UpdateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::UpdateControlAsync(const UpdateControlRequest& request, const UpdateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateControl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientUpdateControlAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSettingsOutcome AuditManagerClient::UpdateSettings(const UpdateSettingsRequest& request) const
@@ -2043,14 +2043,14 @@ UpdateSettingsOutcomeCallable AuditManagerClient::UpdateSettingsCallable(const U
   return task->get_future();
 }
 
-void AuditManagerClient::UpdateSettingsAsync(const UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientUpdateSettingsAsyncHelper(AuditManagerClient const * const clientThis, const UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSettings(request), context);
 }
 
-void AuditManagerClient::UpdateSettingsAsyncHelper(const UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::UpdateSettingsAsync(const UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientUpdateSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ValidateAssessmentReportIntegrityOutcome AuditManagerClient::ValidateAssessmentReportIntegrity(const ValidateAssessmentReportIntegrityRequest& request) const
@@ -2068,13 +2068,13 @@ ValidateAssessmentReportIntegrityOutcomeCallable AuditManagerClient::ValidateAss
   return task->get_future();
 }
 
-void AuditManagerClient::ValidateAssessmentReportIntegrityAsync(const ValidateAssessmentReportIntegrityRequest& request, const ValidateAssessmentReportIntegrityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClientValidateAssessmentReportIntegrityAsyncHelper(AuditManagerClient const * const clientThis, const ValidateAssessmentReportIntegrityRequest& request, const ValidateAssessmentReportIntegrityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ValidateAssessmentReportIntegrityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ValidateAssessmentReportIntegrity(request), context);
 }
 
-void AuditManagerClient::ValidateAssessmentReportIntegrityAsyncHelper(const ValidateAssessmentReportIntegrityRequest& request, const ValidateAssessmentReportIntegrityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AuditManagerClient::ValidateAssessmentReportIntegrityAsync(const ValidateAssessmentReportIntegrityRequest& request, const ValidateAssessmentReportIntegrityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ValidateAssessmentReportIntegrity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AuditManagerClientValidateAssessmentReportIntegrityAsyncHelper( this, request, handler, context ); } );
 }
 

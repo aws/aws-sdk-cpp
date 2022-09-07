@@ -131,14 +131,14 @@ AssociateCreatedArtifactOutcomeCallable MigrationHubClient::AssociateCreatedArti
   return task->get_future();
 }
 
-void MigrationHubClient::AssociateCreatedArtifactAsync(const AssociateCreatedArtifactRequest& request, const AssociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientAssociateCreatedArtifactAsyncHelper(MigrationHubClient const * const clientThis, const AssociateCreatedArtifactRequest& request, const AssociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateCreatedArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateCreatedArtifact(request), context);
 }
 
-void MigrationHubClient::AssociateCreatedArtifactAsyncHelper(const AssociateCreatedArtifactRequest& request, const AssociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::AssociateCreatedArtifactAsync(const AssociateCreatedArtifactRequest& request, const AssociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateCreatedArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientAssociateCreatedArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateDiscoveredResourceOutcome MigrationHubClient::AssociateDiscoveredResource(const AssociateDiscoveredResourceRequest& request) const
@@ -155,14 +155,14 @@ AssociateDiscoveredResourceOutcomeCallable MigrationHubClient::AssociateDiscover
   return task->get_future();
 }
 
-void MigrationHubClient::AssociateDiscoveredResourceAsync(const AssociateDiscoveredResourceRequest& request, const AssociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientAssociateDiscoveredResourceAsyncHelper(MigrationHubClient const * const clientThis, const AssociateDiscoveredResourceRequest& request, const AssociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateDiscoveredResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateDiscoveredResource(request), context);
 }
 
-void MigrationHubClient::AssociateDiscoveredResourceAsyncHelper(const AssociateDiscoveredResourceRequest& request, const AssociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::AssociateDiscoveredResourceAsync(const AssociateDiscoveredResourceRequest& request, const AssociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateDiscoveredResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientAssociateDiscoveredResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProgressUpdateStreamOutcome MigrationHubClient::CreateProgressUpdateStream(const CreateProgressUpdateStreamRequest& request) const
@@ -179,14 +179,14 @@ CreateProgressUpdateStreamOutcomeCallable MigrationHubClient::CreateProgressUpda
   return task->get_future();
 }
 
-void MigrationHubClient::CreateProgressUpdateStreamAsync(const CreateProgressUpdateStreamRequest& request, const CreateProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientCreateProgressUpdateStreamAsyncHelper(MigrationHubClient const * const clientThis, const CreateProgressUpdateStreamRequest& request, const CreateProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProgressUpdateStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProgressUpdateStream(request), context);
 }
 
-void MigrationHubClient::CreateProgressUpdateStreamAsyncHelper(const CreateProgressUpdateStreamRequest& request, const CreateProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::CreateProgressUpdateStreamAsync(const CreateProgressUpdateStreamRequest& request, const CreateProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProgressUpdateStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientCreateProgressUpdateStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProgressUpdateStreamOutcome MigrationHubClient::DeleteProgressUpdateStream(const DeleteProgressUpdateStreamRequest& request) const
@@ -203,14 +203,14 @@ DeleteProgressUpdateStreamOutcomeCallable MigrationHubClient::DeleteProgressUpda
   return task->get_future();
 }
 
-void MigrationHubClient::DeleteProgressUpdateStreamAsync(const DeleteProgressUpdateStreamRequest& request, const DeleteProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientDeleteProgressUpdateStreamAsyncHelper(MigrationHubClient const * const clientThis, const DeleteProgressUpdateStreamRequest& request, const DeleteProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProgressUpdateStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProgressUpdateStream(request), context);
 }
 
-void MigrationHubClient::DeleteProgressUpdateStreamAsyncHelper(const DeleteProgressUpdateStreamRequest& request, const DeleteProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::DeleteProgressUpdateStreamAsync(const DeleteProgressUpdateStreamRequest& request, const DeleteProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProgressUpdateStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientDeleteProgressUpdateStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeApplicationStateOutcome MigrationHubClient::DescribeApplicationState(const DescribeApplicationStateRequest& request) const
@@ -227,14 +227,14 @@ DescribeApplicationStateOutcomeCallable MigrationHubClient::DescribeApplicationS
   return task->get_future();
 }
 
-void MigrationHubClient::DescribeApplicationStateAsync(const DescribeApplicationStateRequest& request, const DescribeApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientDescribeApplicationStateAsyncHelper(MigrationHubClient const * const clientThis, const DescribeApplicationStateRequest& request, const DescribeApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationStateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApplicationState(request), context);
 }
 
-void MigrationHubClient::DescribeApplicationStateAsyncHelper(const DescribeApplicationStateRequest& request, const DescribeApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::DescribeApplicationStateAsync(const DescribeApplicationStateRequest& request, const DescribeApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApplicationState(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientDescribeApplicationStateAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMigrationTaskOutcome MigrationHubClient::DescribeMigrationTask(const DescribeMigrationTaskRequest& request) const
@@ -251,14 +251,14 @@ DescribeMigrationTaskOutcomeCallable MigrationHubClient::DescribeMigrationTaskCa
   return task->get_future();
 }
 
-void MigrationHubClient::DescribeMigrationTaskAsync(const DescribeMigrationTaskRequest& request, const DescribeMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientDescribeMigrationTaskAsyncHelper(MigrationHubClient const * const clientThis, const DescribeMigrationTaskRequest& request, const DescribeMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMigrationTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMigrationTask(request), context);
 }
 
-void MigrationHubClient::DescribeMigrationTaskAsyncHelper(const DescribeMigrationTaskRequest& request, const DescribeMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::DescribeMigrationTaskAsync(const DescribeMigrationTaskRequest& request, const DescribeMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMigrationTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientDescribeMigrationTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateCreatedArtifactOutcome MigrationHubClient::DisassociateCreatedArtifact(const DisassociateCreatedArtifactRequest& request) const
@@ -275,14 +275,14 @@ DisassociateCreatedArtifactOutcomeCallable MigrationHubClient::DisassociateCreat
   return task->get_future();
 }
 
-void MigrationHubClient::DisassociateCreatedArtifactAsync(const DisassociateCreatedArtifactRequest& request, const DisassociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientDisassociateCreatedArtifactAsyncHelper(MigrationHubClient const * const clientThis, const DisassociateCreatedArtifactRequest& request, const DisassociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateCreatedArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateCreatedArtifact(request), context);
 }
 
-void MigrationHubClient::DisassociateCreatedArtifactAsyncHelper(const DisassociateCreatedArtifactRequest& request, const DisassociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::DisassociateCreatedArtifactAsync(const DisassociateCreatedArtifactRequest& request, const DisassociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateCreatedArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientDisassociateCreatedArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateDiscoveredResourceOutcome MigrationHubClient::DisassociateDiscoveredResource(const DisassociateDiscoveredResourceRequest& request) const
@@ -299,14 +299,14 @@ DisassociateDiscoveredResourceOutcomeCallable MigrationHubClient::DisassociateDi
   return task->get_future();
 }
 
-void MigrationHubClient::DisassociateDiscoveredResourceAsync(const DisassociateDiscoveredResourceRequest& request, const DisassociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientDisassociateDiscoveredResourceAsyncHelper(MigrationHubClient const * const clientThis, const DisassociateDiscoveredResourceRequest& request, const DisassociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateDiscoveredResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateDiscoveredResource(request), context);
 }
 
-void MigrationHubClient::DisassociateDiscoveredResourceAsyncHelper(const DisassociateDiscoveredResourceRequest& request, const DisassociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::DisassociateDiscoveredResourceAsync(const DisassociateDiscoveredResourceRequest& request, const DisassociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateDiscoveredResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientDisassociateDiscoveredResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportMigrationTaskOutcome MigrationHubClient::ImportMigrationTask(const ImportMigrationTaskRequest& request) const
@@ -323,14 +323,14 @@ ImportMigrationTaskOutcomeCallable MigrationHubClient::ImportMigrationTaskCallab
   return task->get_future();
 }
 
-void MigrationHubClient::ImportMigrationTaskAsync(const ImportMigrationTaskRequest& request, const ImportMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientImportMigrationTaskAsyncHelper(MigrationHubClient const * const clientThis, const ImportMigrationTaskRequest& request, const ImportMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportMigrationTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportMigrationTask(request), context);
 }
 
-void MigrationHubClient::ImportMigrationTaskAsyncHelper(const ImportMigrationTaskRequest& request, const ImportMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::ImportMigrationTaskAsync(const ImportMigrationTaskRequest& request, const ImportMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportMigrationTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientImportMigrationTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationStatesOutcome MigrationHubClient::ListApplicationStates(const ListApplicationStatesRequest& request) const
@@ -347,14 +347,14 @@ ListApplicationStatesOutcomeCallable MigrationHubClient::ListApplicationStatesCa
   return task->get_future();
 }
 
-void MigrationHubClient::ListApplicationStatesAsync(const ListApplicationStatesRequest& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientListApplicationStatesAsyncHelper(MigrationHubClient const * const clientThis, const ListApplicationStatesRequest& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationStatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplicationStates(request), context);
 }
 
-void MigrationHubClient::ListApplicationStatesAsyncHelper(const ListApplicationStatesRequest& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::ListApplicationStatesAsync(const ListApplicationStatesRequest& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplicationStates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientListApplicationStatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCreatedArtifactsOutcome MigrationHubClient::ListCreatedArtifacts(const ListCreatedArtifactsRequest& request) const
@@ -371,14 +371,14 @@ ListCreatedArtifactsOutcomeCallable MigrationHubClient::ListCreatedArtifactsCall
   return task->get_future();
 }
 
-void MigrationHubClient::ListCreatedArtifactsAsync(const ListCreatedArtifactsRequest& request, const ListCreatedArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientListCreatedArtifactsAsyncHelper(MigrationHubClient const * const clientThis, const ListCreatedArtifactsRequest& request, const ListCreatedArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCreatedArtifactsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCreatedArtifacts(request), context);
 }
 
-void MigrationHubClient::ListCreatedArtifactsAsyncHelper(const ListCreatedArtifactsRequest& request, const ListCreatedArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::ListCreatedArtifactsAsync(const ListCreatedArtifactsRequest& request, const ListCreatedArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCreatedArtifacts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientListCreatedArtifactsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDiscoveredResourcesOutcome MigrationHubClient::ListDiscoveredResources(const ListDiscoveredResourcesRequest& request) const
@@ -395,14 +395,14 @@ ListDiscoveredResourcesOutcomeCallable MigrationHubClient::ListDiscoveredResourc
   return task->get_future();
 }
 
-void MigrationHubClient::ListDiscoveredResourcesAsync(const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientListDiscoveredResourcesAsyncHelper(MigrationHubClient const * const clientThis, const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDiscoveredResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDiscoveredResources(request), context);
 }
 
-void MigrationHubClient::ListDiscoveredResourcesAsyncHelper(const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::ListDiscoveredResourcesAsync(const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDiscoveredResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientListDiscoveredResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMigrationTasksOutcome MigrationHubClient::ListMigrationTasks(const ListMigrationTasksRequest& request) const
@@ -419,14 +419,14 @@ ListMigrationTasksOutcomeCallable MigrationHubClient::ListMigrationTasksCallable
   return task->get_future();
 }
 
-void MigrationHubClient::ListMigrationTasksAsync(const ListMigrationTasksRequest& request, const ListMigrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientListMigrationTasksAsyncHelper(MigrationHubClient const * const clientThis, const ListMigrationTasksRequest& request, const ListMigrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMigrationTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMigrationTasks(request), context);
 }
 
-void MigrationHubClient::ListMigrationTasksAsyncHelper(const ListMigrationTasksRequest& request, const ListMigrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::ListMigrationTasksAsync(const ListMigrationTasksRequest& request, const ListMigrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMigrationTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientListMigrationTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProgressUpdateStreamsOutcome MigrationHubClient::ListProgressUpdateStreams(const ListProgressUpdateStreamsRequest& request) const
@@ -443,14 +443,14 @@ ListProgressUpdateStreamsOutcomeCallable MigrationHubClient::ListProgressUpdateS
   return task->get_future();
 }
 
-void MigrationHubClient::ListProgressUpdateStreamsAsync(const ListProgressUpdateStreamsRequest& request, const ListProgressUpdateStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientListProgressUpdateStreamsAsyncHelper(MigrationHubClient const * const clientThis, const ListProgressUpdateStreamsRequest& request, const ListProgressUpdateStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProgressUpdateStreamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProgressUpdateStreams(request), context);
 }
 
-void MigrationHubClient::ListProgressUpdateStreamsAsyncHelper(const ListProgressUpdateStreamsRequest& request, const ListProgressUpdateStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::ListProgressUpdateStreamsAsync(const ListProgressUpdateStreamsRequest& request, const ListProgressUpdateStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProgressUpdateStreams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientListProgressUpdateStreamsAsyncHelper( this, request, handler, context ); } );
 }
 
 NotifyApplicationStateOutcome MigrationHubClient::NotifyApplicationState(const NotifyApplicationStateRequest& request) const
@@ -467,14 +467,14 @@ NotifyApplicationStateOutcomeCallable MigrationHubClient::NotifyApplicationState
   return task->get_future();
 }
 
-void MigrationHubClient::NotifyApplicationStateAsync(const NotifyApplicationStateRequest& request, const NotifyApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientNotifyApplicationStateAsyncHelper(MigrationHubClient const * const clientThis, const NotifyApplicationStateRequest& request, const NotifyApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->NotifyApplicationStateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->NotifyApplicationState(request), context);
 }
 
-void MigrationHubClient::NotifyApplicationStateAsyncHelper(const NotifyApplicationStateRequest& request, const NotifyApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::NotifyApplicationStateAsync(const NotifyApplicationStateRequest& request, const NotifyApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, NotifyApplicationState(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientNotifyApplicationStateAsyncHelper( this, request, handler, context ); } );
 }
 
 NotifyMigrationTaskStateOutcome MigrationHubClient::NotifyMigrationTaskState(const NotifyMigrationTaskStateRequest& request) const
@@ -491,14 +491,14 @@ NotifyMigrationTaskStateOutcomeCallable MigrationHubClient::NotifyMigrationTaskS
   return task->get_future();
 }
 
-void MigrationHubClient::NotifyMigrationTaskStateAsync(const NotifyMigrationTaskStateRequest& request, const NotifyMigrationTaskStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientNotifyMigrationTaskStateAsyncHelper(MigrationHubClient const * const clientThis, const NotifyMigrationTaskStateRequest& request, const NotifyMigrationTaskStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->NotifyMigrationTaskStateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->NotifyMigrationTaskState(request), context);
 }
 
-void MigrationHubClient::NotifyMigrationTaskStateAsyncHelper(const NotifyMigrationTaskStateRequest& request, const NotifyMigrationTaskStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::NotifyMigrationTaskStateAsync(const NotifyMigrationTaskStateRequest& request, const NotifyMigrationTaskStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, NotifyMigrationTaskState(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientNotifyMigrationTaskStateAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourceAttributesOutcome MigrationHubClient::PutResourceAttributes(const PutResourceAttributesRequest& request) const
@@ -515,13 +515,13 @@ PutResourceAttributesOutcomeCallable MigrationHubClient::PutResourceAttributesCa
   return task->get_future();
 }
 
-void MigrationHubClient::PutResourceAttributesAsync(const PutResourceAttributesRequest& request, const PutResourceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClientPutResourceAttributesAsyncHelper(MigrationHubClient const * const clientThis, const PutResourceAttributesRequest& request, const PutResourceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourceAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourceAttributes(request), context);
 }
 
-void MigrationHubClient::PutResourceAttributesAsyncHelper(const PutResourceAttributesRequest& request, const PutResourceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubClient::PutResourceAttributesAsync(const PutResourceAttributesRequest& request, const PutResourceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourceAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubClientPutResourceAttributesAsyncHelper( this, request, handler, context ); } );
 }
 

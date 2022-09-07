@@ -172,14 +172,14 @@ AssociateApiOutcomeCallable AppSyncClient::AssociateApiCallable(const AssociateA
   return task->get_future();
 }
 
-void AppSyncClient::AssociateApiAsync(const AssociateApiRequest& request, const AssociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientAssociateApiAsyncHelper(AppSyncClient const * const clientThis, const AssociateApiRequest& request, const AssociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateApiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateApi(request), context);
 }
 
-void AppSyncClient::AssociateApiAsyncHelper(const AssociateApiRequest& request, const AssociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::AssociateApiAsync(const AssociateApiRequest& request, const AssociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateApi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientAssociateApiAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateApiCacheOutcome AppSyncClient::CreateApiCache(const CreateApiCacheRequest& request) const
@@ -204,14 +204,14 @@ CreateApiCacheOutcomeCallable AppSyncClient::CreateApiCacheCallable(const Create
   return task->get_future();
 }
 
-void AppSyncClient::CreateApiCacheAsync(const CreateApiCacheRequest& request, const CreateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientCreateApiCacheAsyncHelper(AppSyncClient const * const clientThis, const CreateApiCacheRequest& request, const CreateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApiCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApiCache(request), context);
 }
 
-void AppSyncClient::CreateApiCacheAsyncHelper(const CreateApiCacheRequest& request, const CreateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::CreateApiCacheAsync(const CreateApiCacheRequest& request, const CreateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApiCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientCreateApiCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateApiKeyOutcome AppSyncClient::CreateApiKey(const CreateApiKeyRequest& request) const
@@ -236,14 +236,14 @@ CreateApiKeyOutcomeCallable AppSyncClient::CreateApiKeyCallable(const CreateApiK
   return task->get_future();
 }
 
-void AppSyncClient::CreateApiKeyAsync(const CreateApiKeyRequest& request, const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientCreateApiKeyAsyncHelper(AppSyncClient const * const clientThis, const CreateApiKeyRequest& request, const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApiKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApiKey(request), context);
 }
 
-void AppSyncClient::CreateApiKeyAsyncHelper(const CreateApiKeyRequest& request, const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::CreateApiKeyAsync(const CreateApiKeyRequest& request, const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApiKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientCreateApiKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDataSourceOutcome AppSyncClient::CreateDataSource(const CreateDataSourceRequest& request) const
@@ -268,14 +268,14 @@ CreateDataSourceOutcomeCallable AppSyncClient::CreateDataSourceCallable(const Cr
   return task->get_future();
 }
 
-void AppSyncClient::CreateDataSourceAsync(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientCreateDataSourceAsyncHelper(AppSyncClient const * const clientThis, const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataSource(request), context);
 }
 
-void AppSyncClient::CreateDataSourceAsyncHelper(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::CreateDataSourceAsync(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientCreateDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDomainNameOutcome AppSyncClient::CreateDomainName(const CreateDomainNameRequest& request) const
@@ -293,14 +293,14 @@ CreateDomainNameOutcomeCallable AppSyncClient::CreateDomainNameCallable(const Cr
   return task->get_future();
 }
 
-void AppSyncClient::CreateDomainNameAsync(const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientCreateDomainNameAsyncHelper(AppSyncClient const * const clientThis, const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainNameAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDomainName(request), context);
 }
 
-void AppSyncClient::CreateDomainNameAsyncHelper(const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::CreateDomainNameAsync(const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDomainName(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientCreateDomainNameAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFunctionOutcome AppSyncClient::CreateFunction(const CreateFunctionRequest& request) const
@@ -325,14 +325,14 @@ CreateFunctionOutcomeCallable AppSyncClient::CreateFunctionCallable(const Create
   return task->get_future();
 }
 
-void AppSyncClient::CreateFunctionAsync(const CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientCreateFunctionAsyncHelper(AppSyncClient const * const clientThis, const CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFunctionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFunction(request), context);
 }
 
-void AppSyncClient::CreateFunctionAsyncHelper(const CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::CreateFunctionAsync(const CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFunction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientCreateFunctionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGraphqlApiOutcome AppSyncClient::CreateGraphqlApi(const CreateGraphqlApiRequest& request) const
@@ -350,14 +350,14 @@ CreateGraphqlApiOutcomeCallable AppSyncClient::CreateGraphqlApiCallable(const Cr
   return task->get_future();
 }
 
-void AppSyncClient::CreateGraphqlApiAsync(const CreateGraphqlApiRequest& request, const CreateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientCreateGraphqlApiAsyncHelper(AppSyncClient const * const clientThis, const CreateGraphqlApiRequest& request, const CreateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGraphqlApiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGraphqlApi(request), context);
 }
 
-void AppSyncClient::CreateGraphqlApiAsyncHelper(const CreateGraphqlApiRequest& request, const CreateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::CreateGraphqlApiAsync(const CreateGraphqlApiRequest& request, const CreateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGraphqlApi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientCreateGraphqlApiAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResolverOutcome AppSyncClient::CreateResolver(const CreateResolverRequest& request) const
@@ -389,14 +389,14 @@ CreateResolverOutcomeCallable AppSyncClient::CreateResolverCallable(const Create
   return task->get_future();
 }
 
-void AppSyncClient::CreateResolverAsync(const CreateResolverRequest& request, const CreateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientCreateResolverAsyncHelper(AppSyncClient const * const clientThis, const CreateResolverRequest& request, const CreateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResolverAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResolver(request), context);
 }
 
-void AppSyncClient::CreateResolverAsyncHelper(const CreateResolverRequest& request, const CreateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::CreateResolverAsync(const CreateResolverRequest& request, const CreateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResolver(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientCreateResolverAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTypeOutcome AppSyncClient::CreateType(const CreateTypeRequest& request) const
@@ -421,14 +421,14 @@ CreateTypeOutcomeCallable AppSyncClient::CreateTypeCallable(const CreateTypeRequ
   return task->get_future();
 }
 
-void AppSyncClient::CreateTypeAsync(const CreateTypeRequest& request, const CreateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientCreateTypeAsyncHelper(AppSyncClient const * const clientThis, const CreateTypeRequest& request, const CreateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateType(request), context);
 }
 
-void AppSyncClient::CreateTypeAsyncHelper(const CreateTypeRequest& request, const CreateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::CreateTypeAsync(const CreateTypeRequest& request, const CreateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientCreateTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApiCacheOutcome AppSyncClient::DeleteApiCache(const DeleteApiCacheRequest& request) const
@@ -453,14 +453,14 @@ DeleteApiCacheOutcomeCallable AppSyncClient::DeleteApiCacheCallable(const Delete
   return task->get_future();
 }
 
-void AppSyncClient::DeleteApiCacheAsync(const DeleteApiCacheRequest& request, const DeleteApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientDeleteApiCacheAsyncHelper(AppSyncClient const * const clientThis, const DeleteApiCacheRequest& request, const DeleteApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApiCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApiCache(request), context);
 }
 
-void AppSyncClient::DeleteApiCacheAsyncHelper(const DeleteApiCacheRequest& request, const DeleteApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::DeleteApiCacheAsync(const DeleteApiCacheRequest& request, const DeleteApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApiCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientDeleteApiCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApiKeyOutcome AppSyncClient::DeleteApiKey(const DeleteApiKeyRequest& request) const
@@ -491,14 +491,14 @@ DeleteApiKeyOutcomeCallable AppSyncClient::DeleteApiKeyCallable(const DeleteApiK
   return task->get_future();
 }
 
-void AppSyncClient::DeleteApiKeyAsync(const DeleteApiKeyRequest& request, const DeleteApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientDeleteApiKeyAsyncHelper(AppSyncClient const * const clientThis, const DeleteApiKeyRequest& request, const DeleteApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApiKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApiKey(request), context);
 }
 
-void AppSyncClient::DeleteApiKeyAsyncHelper(const DeleteApiKeyRequest& request, const DeleteApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::DeleteApiKeyAsync(const DeleteApiKeyRequest& request, const DeleteApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApiKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientDeleteApiKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDataSourceOutcome AppSyncClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
@@ -529,14 +529,14 @@ DeleteDataSourceOutcomeCallable AppSyncClient::DeleteDataSourceCallable(const De
   return task->get_future();
 }
 
-void AppSyncClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientDeleteDataSourceAsyncHelper(AppSyncClient const * const clientThis, const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataSource(request), context);
 }
 
-void AppSyncClient::DeleteDataSourceAsyncHelper(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientDeleteDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainNameOutcome AppSyncClient::DeleteDomainName(const DeleteDomainNameRequest& request) const
@@ -560,14 +560,14 @@ DeleteDomainNameOutcomeCallable AppSyncClient::DeleteDomainNameCallable(const De
   return task->get_future();
 }
 
-void AppSyncClient::DeleteDomainNameAsync(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientDeleteDomainNameAsyncHelper(AppSyncClient const * const clientThis, const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainNameAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomainName(request), context);
 }
 
-void AppSyncClient::DeleteDomainNameAsyncHelper(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::DeleteDomainNameAsync(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomainName(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientDeleteDomainNameAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFunctionOutcome AppSyncClient::DeleteFunction(const DeleteFunctionRequest& request) const
@@ -598,14 +598,14 @@ DeleteFunctionOutcomeCallable AppSyncClient::DeleteFunctionCallable(const Delete
   return task->get_future();
 }
 
-void AppSyncClient::DeleteFunctionAsync(const DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientDeleteFunctionAsyncHelper(AppSyncClient const * const clientThis, const DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFunctionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFunction(request), context);
 }
 
-void AppSyncClient::DeleteFunctionAsyncHelper(const DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::DeleteFunctionAsync(const DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFunction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientDeleteFunctionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGraphqlApiOutcome AppSyncClient::DeleteGraphqlApi(const DeleteGraphqlApiRequest& request) const
@@ -629,14 +629,14 @@ DeleteGraphqlApiOutcomeCallable AppSyncClient::DeleteGraphqlApiCallable(const De
   return task->get_future();
 }
 
-void AppSyncClient::DeleteGraphqlApiAsync(const DeleteGraphqlApiRequest& request, const DeleteGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientDeleteGraphqlApiAsyncHelper(AppSyncClient const * const clientThis, const DeleteGraphqlApiRequest& request, const DeleteGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGraphqlApiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGraphqlApi(request), context);
 }
 
-void AppSyncClient::DeleteGraphqlApiAsyncHelper(const DeleteGraphqlApiRequest& request, const DeleteGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::DeleteGraphqlApiAsync(const DeleteGraphqlApiRequest& request, const DeleteGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGraphqlApi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientDeleteGraphqlApiAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResolverOutcome AppSyncClient::DeleteResolver(const DeleteResolverRequest& request) const
@@ -674,14 +674,14 @@ DeleteResolverOutcomeCallable AppSyncClient::DeleteResolverCallable(const Delete
   return task->get_future();
 }
 
-void AppSyncClient::DeleteResolverAsync(const DeleteResolverRequest& request, const DeleteResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientDeleteResolverAsyncHelper(AppSyncClient const * const clientThis, const DeleteResolverRequest& request, const DeleteResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResolverAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResolver(request), context);
 }
 
-void AppSyncClient::DeleteResolverAsyncHelper(const DeleteResolverRequest& request, const DeleteResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::DeleteResolverAsync(const DeleteResolverRequest& request, const DeleteResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResolver(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientDeleteResolverAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTypeOutcome AppSyncClient::DeleteType(const DeleteTypeRequest& request) const
@@ -712,14 +712,14 @@ DeleteTypeOutcomeCallable AppSyncClient::DeleteTypeCallable(const DeleteTypeRequ
   return task->get_future();
 }
 
-void AppSyncClient::DeleteTypeAsync(const DeleteTypeRequest& request, const DeleteTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientDeleteTypeAsyncHelper(AppSyncClient const * const clientThis, const DeleteTypeRequest& request, const DeleteTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteType(request), context);
 }
 
-void AppSyncClient::DeleteTypeAsyncHelper(const DeleteTypeRequest& request, const DeleteTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::DeleteTypeAsync(const DeleteTypeRequest& request, const DeleteTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientDeleteTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateApiOutcome AppSyncClient::DisassociateApi(const DisassociateApiRequest& request) const
@@ -744,14 +744,14 @@ DisassociateApiOutcomeCallable AppSyncClient::DisassociateApiCallable(const Disa
   return task->get_future();
 }
 
-void AppSyncClient::DisassociateApiAsync(const DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientDisassociateApiAsyncHelper(AppSyncClient const * const clientThis, const DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateApi(request), context);
 }
 
-void AppSyncClient::DisassociateApiAsyncHelper(const DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::DisassociateApiAsync(const DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateApi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientDisassociateApiAsyncHelper( this, request, handler, context ); } );
 }
 
 EvaluateMappingTemplateOutcome AppSyncClient::EvaluateMappingTemplate(const EvaluateMappingTemplateRequest& request) const
@@ -769,14 +769,14 @@ EvaluateMappingTemplateOutcomeCallable AppSyncClient::EvaluateMappingTemplateCal
   return task->get_future();
 }
 
-void AppSyncClient::EvaluateMappingTemplateAsync(const EvaluateMappingTemplateRequest& request, const EvaluateMappingTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientEvaluateMappingTemplateAsyncHelper(AppSyncClient const * const clientThis, const EvaluateMappingTemplateRequest& request, const EvaluateMappingTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EvaluateMappingTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EvaluateMappingTemplate(request), context);
 }
 
-void AppSyncClient::EvaluateMappingTemplateAsyncHelper(const EvaluateMappingTemplateRequest& request, const EvaluateMappingTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::EvaluateMappingTemplateAsync(const EvaluateMappingTemplateRequest& request, const EvaluateMappingTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EvaluateMappingTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientEvaluateMappingTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 FlushApiCacheOutcome AppSyncClient::FlushApiCache(const FlushApiCacheRequest& request) const
@@ -801,14 +801,14 @@ FlushApiCacheOutcomeCallable AppSyncClient::FlushApiCacheCallable(const FlushApi
   return task->get_future();
 }
 
-void AppSyncClient::FlushApiCacheAsync(const FlushApiCacheRequest& request, const FlushApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientFlushApiCacheAsyncHelper(AppSyncClient const * const clientThis, const FlushApiCacheRequest& request, const FlushApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->FlushApiCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->FlushApiCache(request), context);
 }
 
-void AppSyncClient::FlushApiCacheAsyncHelper(const FlushApiCacheRequest& request, const FlushApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::FlushApiCacheAsync(const FlushApiCacheRequest& request, const FlushApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, FlushApiCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientFlushApiCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApiAssociationOutcome AppSyncClient::GetApiAssociation(const GetApiAssociationRequest& request) const
@@ -833,14 +833,14 @@ GetApiAssociationOutcomeCallable AppSyncClient::GetApiAssociationCallable(const 
   return task->get_future();
 }
 
-void AppSyncClient::GetApiAssociationAsync(const GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientGetApiAssociationAsyncHelper(AppSyncClient const * const clientThis, const GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApiAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApiAssociation(request), context);
 }
 
-void AppSyncClient::GetApiAssociationAsyncHelper(const GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::GetApiAssociationAsync(const GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApiAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientGetApiAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApiCacheOutcome AppSyncClient::GetApiCache(const GetApiCacheRequest& request) const
@@ -865,14 +865,14 @@ GetApiCacheOutcomeCallable AppSyncClient::GetApiCacheCallable(const GetApiCacheR
   return task->get_future();
 }
 
-void AppSyncClient::GetApiCacheAsync(const GetApiCacheRequest& request, const GetApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientGetApiCacheAsyncHelper(AppSyncClient const * const clientThis, const GetApiCacheRequest& request, const GetApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApiCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApiCache(request), context);
 }
 
-void AppSyncClient::GetApiCacheAsyncHelper(const GetApiCacheRequest& request, const GetApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::GetApiCacheAsync(const GetApiCacheRequest& request, const GetApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApiCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientGetApiCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDataSourceOutcome AppSyncClient::GetDataSource(const GetDataSourceRequest& request) const
@@ -903,14 +903,14 @@ GetDataSourceOutcomeCallable AppSyncClient::GetDataSourceCallable(const GetDataS
   return task->get_future();
 }
 
-void AppSyncClient::GetDataSourceAsync(const GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientGetDataSourceAsyncHelper(AppSyncClient const * const clientThis, const GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDataSource(request), context);
 }
 
-void AppSyncClient::GetDataSourceAsyncHelper(const GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::GetDataSourceAsync(const GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientGetDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDomainNameOutcome AppSyncClient::GetDomainName(const GetDomainNameRequest& request) const
@@ -934,14 +934,14 @@ GetDomainNameOutcomeCallable AppSyncClient::GetDomainNameCallable(const GetDomai
   return task->get_future();
 }
 
-void AppSyncClient::GetDomainNameAsync(const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientGetDomainNameAsyncHelper(AppSyncClient const * const clientThis, const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainNameAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDomainName(request), context);
 }
 
-void AppSyncClient::GetDomainNameAsyncHelper(const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::GetDomainNameAsync(const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDomainName(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientGetDomainNameAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFunctionOutcome AppSyncClient::GetFunction(const GetFunctionRequest& request) const
@@ -972,14 +972,14 @@ GetFunctionOutcomeCallable AppSyncClient::GetFunctionCallable(const GetFunctionR
   return task->get_future();
 }
 
-void AppSyncClient::GetFunctionAsync(const GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientGetFunctionAsyncHelper(AppSyncClient const * const clientThis, const GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFunctionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFunction(request), context);
 }
 
-void AppSyncClient::GetFunctionAsyncHelper(const GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::GetFunctionAsync(const GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFunction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientGetFunctionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGraphqlApiOutcome AppSyncClient::GetGraphqlApi(const GetGraphqlApiRequest& request) const
@@ -1003,14 +1003,14 @@ GetGraphqlApiOutcomeCallable AppSyncClient::GetGraphqlApiCallable(const GetGraph
   return task->get_future();
 }
 
-void AppSyncClient::GetGraphqlApiAsync(const GetGraphqlApiRequest& request, const GetGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientGetGraphqlApiAsyncHelper(AppSyncClient const * const clientThis, const GetGraphqlApiRequest& request, const GetGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGraphqlApiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGraphqlApi(request), context);
 }
 
-void AppSyncClient::GetGraphqlApiAsyncHelper(const GetGraphqlApiRequest& request, const GetGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::GetGraphqlApiAsync(const GetGraphqlApiRequest& request, const GetGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGraphqlApi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientGetGraphqlApiAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIntrospectionSchemaOutcome AppSyncClient::GetIntrospectionSchema(const GetIntrospectionSchemaRequest& request) const
@@ -1040,14 +1040,14 @@ GetIntrospectionSchemaOutcomeCallable AppSyncClient::GetIntrospectionSchemaCalla
   return task->get_future();
 }
 
-void AppSyncClient::GetIntrospectionSchemaAsync(const GetIntrospectionSchemaRequest& request, const GetIntrospectionSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientGetIntrospectionSchemaAsyncHelper(AppSyncClient const * const clientThis, const GetIntrospectionSchemaRequest& request, const GetIntrospectionSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIntrospectionSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIntrospectionSchema(request), context);
 }
 
-void AppSyncClient::GetIntrospectionSchemaAsyncHelper(const GetIntrospectionSchemaRequest& request, const GetIntrospectionSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::GetIntrospectionSchemaAsync(const GetIntrospectionSchemaRequest& request, const GetIntrospectionSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIntrospectionSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientGetIntrospectionSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResolverOutcome AppSyncClient::GetResolver(const GetResolverRequest& request) const
@@ -1085,14 +1085,14 @@ GetResolverOutcomeCallable AppSyncClient::GetResolverCallable(const GetResolverR
   return task->get_future();
 }
 
-void AppSyncClient::GetResolverAsync(const GetResolverRequest& request, const GetResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientGetResolverAsyncHelper(AppSyncClient const * const clientThis, const GetResolverRequest& request, const GetResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResolverAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResolver(request), context);
 }
 
-void AppSyncClient::GetResolverAsyncHelper(const GetResolverRequest& request, const GetResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::GetResolverAsync(const GetResolverRequest& request, const GetResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResolver(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientGetResolverAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSchemaCreationStatusOutcome AppSyncClient::GetSchemaCreationStatus(const GetSchemaCreationStatusRequest& request) const
@@ -1117,14 +1117,14 @@ GetSchemaCreationStatusOutcomeCallable AppSyncClient::GetSchemaCreationStatusCal
   return task->get_future();
 }
 
-void AppSyncClient::GetSchemaCreationStatusAsync(const GetSchemaCreationStatusRequest& request, const GetSchemaCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientGetSchemaCreationStatusAsyncHelper(AppSyncClient const * const clientThis, const GetSchemaCreationStatusRequest& request, const GetSchemaCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSchemaCreationStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSchemaCreationStatus(request), context);
 }
 
-void AppSyncClient::GetSchemaCreationStatusAsyncHelper(const GetSchemaCreationStatusRequest& request, const GetSchemaCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::GetSchemaCreationStatusAsync(const GetSchemaCreationStatusRequest& request, const GetSchemaCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSchemaCreationStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientGetSchemaCreationStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTypeOutcome AppSyncClient::GetType(const GetTypeRequest& request) const
@@ -1160,14 +1160,14 @@ GetTypeOutcomeCallable AppSyncClient::GetTypeCallable(const GetTypeRequest& requ
   return task->get_future();
 }
 
-void AppSyncClient::GetTypeAsync(const GetTypeRequest& request, const GetTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientGetTypeAsyncHelper(AppSyncClient const * const clientThis, const GetTypeRequest& request, const GetTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetType(request), context);
 }
 
-void AppSyncClient::GetTypeAsyncHelper(const GetTypeRequest& request, const GetTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::GetTypeAsync(const GetTypeRequest& request, const GetTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientGetTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApiKeysOutcome AppSyncClient::ListApiKeys(const ListApiKeysRequest& request) const
@@ -1192,14 +1192,14 @@ ListApiKeysOutcomeCallable AppSyncClient::ListApiKeysCallable(const ListApiKeysR
   return task->get_future();
 }
 
-void AppSyncClient::ListApiKeysAsync(const ListApiKeysRequest& request, const ListApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientListApiKeysAsyncHelper(AppSyncClient const * const clientThis, const ListApiKeysRequest& request, const ListApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApiKeysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApiKeys(request), context);
 }
 
-void AppSyncClient::ListApiKeysAsyncHelper(const ListApiKeysRequest& request, const ListApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::ListApiKeysAsync(const ListApiKeysRequest& request, const ListApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApiKeys(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientListApiKeysAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDataSourcesOutcome AppSyncClient::ListDataSources(const ListDataSourcesRequest& request) const
@@ -1224,14 +1224,14 @@ ListDataSourcesOutcomeCallable AppSyncClient::ListDataSourcesCallable(const List
   return task->get_future();
 }
 
-void AppSyncClient::ListDataSourcesAsync(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientListDataSourcesAsyncHelper(AppSyncClient const * const clientThis, const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataSourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDataSources(request), context);
 }
 
-void AppSyncClient::ListDataSourcesAsyncHelper(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::ListDataSourcesAsync(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDataSources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientListDataSourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainNamesOutcome AppSyncClient::ListDomainNames(const ListDomainNamesRequest& request) const
@@ -1249,14 +1249,14 @@ ListDomainNamesOutcomeCallable AppSyncClient::ListDomainNamesCallable(const List
   return task->get_future();
 }
 
-void AppSyncClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientListDomainNamesAsyncHelper(AppSyncClient const * const clientThis, const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainNamesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomainNames(request), context);
 }
 
-void AppSyncClient::ListDomainNamesAsyncHelper(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomainNames(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientListDomainNamesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFunctionsOutcome AppSyncClient::ListFunctions(const ListFunctionsRequest& request) const
@@ -1281,14 +1281,14 @@ ListFunctionsOutcomeCallable AppSyncClient::ListFunctionsCallable(const ListFunc
   return task->get_future();
 }
 
-void AppSyncClient::ListFunctionsAsync(const ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientListFunctionsAsyncHelper(AppSyncClient const * const clientThis, const ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFunctionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFunctions(request), context);
 }
 
-void AppSyncClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::ListFunctionsAsync(const ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFunctions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientListFunctionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGraphqlApisOutcome AppSyncClient::ListGraphqlApis(const ListGraphqlApisRequest& request) const
@@ -1306,14 +1306,14 @@ ListGraphqlApisOutcomeCallable AppSyncClient::ListGraphqlApisCallable(const List
   return task->get_future();
 }
 
-void AppSyncClient::ListGraphqlApisAsync(const ListGraphqlApisRequest& request, const ListGraphqlApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientListGraphqlApisAsyncHelper(AppSyncClient const * const clientThis, const ListGraphqlApisRequest& request, const ListGraphqlApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGraphqlApisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGraphqlApis(request), context);
 }
 
-void AppSyncClient::ListGraphqlApisAsyncHelper(const ListGraphqlApisRequest& request, const ListGraphqlApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::ListGraphqlApisAsync(const ListGraphqlApisRequest& request, const ListGraphqlApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGraphqlApis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientListGraphqlApisAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResolversOutcome AppSyncClient::ListResolvers(const ListResolversRequest& request) const
@@ -1345,14 +1345,14 @@ ListResolversOutcomeCallable AppSyncClient::ListResolversCallable(const ListReso
   return task->get_future();
 }
 
-void AppSyncClient::ListResolversAsync(const ListResolversRequest& request, const ListResolversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientListResolversAsyncHelper(AppSyncClient const * const clientThis, const ListResolversRequest& request, const ListResolversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResolversAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResolvers(request), context);
 }
 
-void AppSyncClient::ListResolversAsyncHelper(const ListResolversRequest& request, const ListResolversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::ListResolversAsync(const ListResolversRequest& request, const ListResolversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResolvers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientListResolversAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResolversByFunctionOutcome AppSyncClient::ListResolversByFunction(const ListResolversByFunctionRequest& request) const
@@ -1384,14 +1384,14 @@ ListResolversByFunctionOutcomeCallable AppSyncClient::ListResolversByFunctionCal
   return task->get_future();
 }
 
-void AppSyncClient::ListResolversByFunctionAsync(const ListResolversByFunctionRequest& request, const ListResolversByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientListResolversByFunctionAsyncHelper(AppSyncClient const * const clientThis, const ListResolversByFunctionRequest& request, const ListResolversByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResolversByFunctionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResolversByFunction(request), context);
 }
 
-void AppSyncClient::ListResolversByFunctionAsyncHelper(const ListResolversByFunctionRequest& request, const ListResolversByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::ListResolversByFunctionAsync(const ListResolversByFunctionRequest& request, const ListResolversByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResolversByFunction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientListResolversByFunctionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome AppSyncClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1415,14 +1415,14 @@ ListTagsForResourceOutcomeCallable AppSyncClient::ListTagsForResourceCallable(co
   return task->get_future();
 }
 
-void AppSyncClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientListTagsForResourceAsyncHelper(AppSyncClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void AppSyncClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTypesOutcome AppSyncClient::ListTypes(const ListTypesRequest& request) const
@@ -1452,14 +1452,14 @@ ListTypesOutcomeCallable AppSyncClient::ListTypesCallable(const ListTypesRequest
   return task->get_future();
 }
 
-void AppSyncClient::ListTypesAsync(const ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientListTypesAsyncHelper(AppSyncClient const * const clientThis, const ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTypes(request), context);
 }
 
-void AppSyncClient::ListTypesAsyncHelper(const ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::ListTypesAsync(const ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientListTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 StartSchemaCreationOutcome AppSyncClient::StartSchemaCreation(const StartSchemaCreationRequest& request) const
@@ -1484,14 +1484,14 @@ StartSchemaCreationOutcomeCallable AppSyncClient::StartSchemaCreationCallable(co
   return task->get_future();
 }
 
-void AppSyncClient::StartSchemaCreationAsync(const StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientStartSchemaCreationAsyncHelper(AppSyncClient const * const clientThis, const StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSchemaCreationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartSchemaCreation(request), context);
 }
 
-void AppSyncClient::StartSchemaCreationAsyncHelper(const StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::StartSchemaCreationAsync(const StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartSchemaCreation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientStartSchemaCreationAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome AppSyncClient::TagResource(const TagResourceRequest& request) const
@@ -1515,14 +1515,14 @@ TagResourceOutcomeCallable AppSyncClient::TagResourceCallable(const TagResourceR
   return task->get_future();
 }
 
-void AppSyncClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientTagResourceAsyncHelper(AppSyncClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void AppSyncClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome AppSyncClient::UntagResource(const UntagResourceRequest& request) const
@@ -1551,14 +1551,14 @@ UntagResourceOutcomeCallable AppSyncClient::UntagResourceCallable(const UntagRes
   return task->get_future();
 }
 
-void AppSyncClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientUntagResourceAsyncHelper(AppSyncClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void AppSyncClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApiCacheOutcome AppSyncClient::UpdateApiCache(const UpdateApiCacheRequest& request) const
@@ -1583,14 +1583,14 @@ UpdateApiCacheOutcomeCallable AppSyncClient::UpdateApiCacheCallable(const Update
   return task->get_future();
 }
 
-void AppSyncClient::UpdateApiCacheAsync(const UpdateApiCacheRequest& request, const UpdateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientUpdateApiCacheAsyncHelper(AppSyncClient const * const clientThis, const UpdateApiCacheRequest& request, const UpdateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApiCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApiCache(request), context);
 }
 
-void AppSyncClient::UpdateApiCacheAsyncHelper(const UpdateApiCacheRequest& request, const UpdateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::UpdateApiCacheAsync(const UpdateApiCacheRequest& request, const UpdateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApiCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientUpdateApiCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApiKeyOutcome AppSyncClient::UpdateApiKey(const UpdateApiKeyRequest& request) const
@@ -1621,14 +1621,14 @@ UpdateApiKeyOutcomeCallable AppSyncClient::UpdateApiKeyCallable(const UpdateApiK
   return task->get_future();
 }
 
-void AppSyncClient::UpdateApiKeyAsync(const UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientUpdateApiKeyAsyncHelper(AppSyncClient const * const clientThis, const UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApiKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApiKey(request), context);
 }
 
-void AppSyncClient::UpdateApiKeyAsyncHelper(const UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::UpdateApiKeyAsync(const UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApiKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientUpdateApiKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDataSourceOutcome AppSyncClient::UpdateDataSource(const UpdateDataSourceRequest& request) const
@@ -1659,14 +1659,14 @@ UpdateDataSourceOutcomeCallable AppSyncClient::UpdateDataSourceCallable(const Up
   return task->get_future();
 }
 
-void AppSyncClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientUpdateDataSourceAsyncHelper(AppSyncClient const * const clientThis, const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataSource(request), context);
 }
 
-void AppSyncClient::UpdateDataSourceAsyncHelper(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientUpdateDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainNameOutcome AppSyncClient::UpdateDomainName(const UpdateDomainNameRequest& request) const
@@ -1690,14 +1690,14 @@ UpdateDomainNameOutcomeCallable AppSyncClient::UpdateDomainNameCallable(const Up
   return task->get_future();
 }
 
-void AppSyncClient::UpdateDomainNameAsync(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientUpdateDomainNameAsyncHelper(AppSyncClient const * const clientThis, const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainNameAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomainName(request), context);
 }
 
-void AppSyncClient::UpdateDomainNameAsyncHelper(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::UpdateDomainNameAsync(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomainName(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientUpdateDomainNameAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFunctionOutcome AppSyncClient::UpdateFunction(const UpdateFunctionRequest& request) const
@@ -1728,14 +1728,14 @@ UpdateFunctionOutcomeCallable AppSyncClient::UpdateFunctionCallable(const Update
   return task->get_future();
 }
 
-void AppSyncClient::UpdateFunctionAsync(const UpdateFunctionRequest& request, const UpdateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientUpdateFunctionAsyncHelper(AppSyncClient const * const clientThis, const UpdateFunctionRequest& request, const UpdateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFunctionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFunction(request), context);
 }
 
-void AppSyncClient::UpdateFunctionAsyncHelper(const UpdateFunctionRequest& request, const UpdateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::UpdateFunctionAsync(const UpdateFunctionRequest& request, const UpdateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFunction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientUpdateFunctionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGraphqlApiOutcome AppSyncClient::UpdateGraphqlApi(const UpdateGraphqlApiRequest& request) const
@@ -1759,14 +1759,14 @@ UpdateGraphqlApiOutcomeCallable AppSyncClient::UpdateGraphqlApiCallable(const Up
   return task->get_future();
 }
 
-void AppSyncClient::UpdateGraphqlApiAsync(const UpdateGraphqlApiRequest& request, const UpdateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientUpdateGraphqlApiAsyncHelper(AppSyncClient const * const clientThis, const UpdateGraphqlApiRequest& request, const UpdateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGraphqlApiAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGraphqlApi(request), context);
 }
 
-void AppSyncClient::UpdateGraphqlApiAsyncHelper(const UpdateGraphqlApiRequest& request, const UpdateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::UpdateGraphqlApiAsync(const UpdateGraphqlApiRequest& request, const UpdateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGraphqlApi(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientUpdateGraphqlApiAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateResolverOutcome AppSyncClient::UpdateResolver(const UpdateResolverRequest& request) const
@@ -1804,14 +1804,14 @@ UpdateResolverOutcomeCallable AppSyncClient::UpdateResolverCallable(const Update
   return task->get_future();
 }
 
-void AppSyncClient::UpdateResolverAsync(const UpdateResolverRequest& request, const UpdateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientUpdateResolverAsyncHelper(AppSyncClient const * const clientThis, const UpdateResolverRequest& request, const UpdateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResolverAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateResolver(request), context);
 }
 
-void AppSyncClient::UpdateResolverAsyncHelper(const UpdateResolverRequest& request, const UpdateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::UpdateResolverAsync(const UpdateResolverRequest& request, const UpdateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateResolver(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientUpdateResolverAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTypeOutcome AppSyncClient::UpdateType(const UpdateTypeRequest& request) const
@@ -1842,13 +1842,13 @@ UpdateTypeOutcomeCallable AppSyncClient::UpdateTypeCallable(const UpdateTypeRequ
   return task->get_future();
 }
 
-void AppSyncClient::UpdateTypeAsync(const UpdateTypeRequest& request, const UpdateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClientUpdateTypeAsyncHelper(AppSyncClient const * const clientThis, const UpdateTypeRequest& request, const UpdateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateType(request), context);
 }
 
-void AppSyncClient::UpdateTypeAsyncHelper(const UpdateTypeRequest& request, const UpdateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppSyncClient::UpdateTypeAsync(const UpdateTypeRequest& request, const UpdateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppSyncClientUpdateTypeAsyncHelper( this, request, handler, context ); } );
 }
 

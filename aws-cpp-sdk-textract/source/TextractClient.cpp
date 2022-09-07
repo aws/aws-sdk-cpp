@@ -124,14 +124,14 @@ AnalyzeDocumentOutcomeCallable TextractClient::AnalyzeDocumentCallable(const Ana
   return task->get_future();
 }
 
-void TextractClient::AnalyzeDocumentAsync(const AnalyzeDocumentRequest& request, const AnalyzeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClientAnalyzeDocumentAsyncHelper(TextractClient const * const clientThis, const AnalyzeDocumentRequest& request, const AnalyzeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AnalyzeDocumentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AnalyzeDocument(request), context);
 }
 
-void TextractClient::AnalyzeDocumentAsyncHelper(const AnalyzeDocumentRequest& request, const AnalyzeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClient::AnalyzeDocumentAsync(const AnalyzeDocumentRequest& request, const AnalyzeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AnalyzeDocument(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TextractClientAnalyzeDocumentAsyncHelper( this, request, handler, context ); } );
 }
 
 AnalyzeExpenseOutcome TextractClient::AnalyzeExpense(const AnalyzeExpenseRequest& request) const
@@ -148,14 +148,14 @@ AnalyzeExpenseOutcomeCallable TextractClient::AnalyzeExpenseCallable(const Analy
   return task->get_future();
 }
 
-void TextractClient::AnalyzeExpenseAsync(const AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClientAnalyzeExpenseAsyncHelper(TextractClient const * const clientThis, const AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AnalyzeExpenseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AnalyzeExpense(request), context);
 }
 
-void TextractClient::AnalyzeExpenseAsyncHelper(const AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClient::AnalyzeExpenseAsync(const AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AnalyzeExpense(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TextractClientAnalyzeExpenseAsyncHelper( this, request, handler, context ); } );
 }
 
 AnalyzeIDOutcome TextractClient::AnalyzeID(const AnalyzeIDRequest& request) const
@@ -172,14 +172,14 @@ AnalyzeIDOutcomeCallable TextractClient::AnalyzeIDCallable(const AnalyzeIDReques
   return task->get_future();
 }
 
-void TextractClient::AnalyzeIDAsync(const AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClientAnalyzeIDAsyncHelper(TextractClient const * const clientThis, const AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AnalyzeIDAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AnalyzeID(request), context);
 }
 
-void TextractClient::AnalyzeIDAsyncHelper(const AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClient::AnalyzeIDAsync(const AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AnalyzeID(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TextractClientAnalyzeIDAsyncHelper( this, request, handler, context ); } );
 }
 
 DetectDocumentTextOutcome TextractClient::DetectDocumentText(const DetectDocumentTextRequest& request) const
@@ -196,14 +196,14 @@ DetectDocumentTextOutcomeCallable TextractClient::DetectDocumentTextCallable(con
   return task->get_future();
 }
 
-void TextractClient::DetectDocumentTextAsync(const DetectDocumentTextRequest& request, const DetectDocumentTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClientDetectDocumentTextAsyncHelper(TextractClient const * const clientThis, const DetectDocumentTextRequest& request, const DetectDocumentTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectDocumentTextAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectDocumentText(request), context);
 }
 
-void TextractClient::DetectDocumentTextAsyncHelper(const DetectDocumentTextRequest& request, const DetectDocumentTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClient::DetectDocumentTextAsync(const DetectDocumentTextRequest& request, const DetectDocumentTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectDocumentText(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TextractClientDetectDocumentTextAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDocumentAnalysisOutcome TextractClient::GetDocumentAnalysis(const GetDocumentAnalysisRequest& request) const
@@ -220,14 +220,14 @@ GetDocumentAnalysisOutcomeCallable TextractClient::GetDocumentAnalysisCallable(c
   return task->get_future();
 }
 
-void TextractClient::GetDocumentAnalysisAsync(const GetDocumentAnalysisRequest& request, const GetDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClientGetDocumentAnalysisAsyncHelper(TextractClient const * const clientThis, const GetDocumentAnalysisRequest& request, const GetDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDocumentAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDocumentAnalysis(request), context);
 }
 
-void TextractClient::GetDocumentAnalysisAsyncHelper(const GetDocumentAnalysisRequest& request, const GetDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClient::GetDocumentAnalysisAsync(const GetDocumentAnalysisRequest& request, const GetDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDocumentAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TextractClientGetDocumentAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDocumentTextDetectionOutcome TextractClient::GetDocumentTextDetection(const GetDocumentTextDetectionRequest& request) const
@@ -244,14 +244,14 @@ GetDocumentTextDetectionOutcomeCallable TextractClient::GetDocumentTextDetection
   return task->get_future();
 }
 
-void TextractClient::GetDocumentTextDetectionAsync(const GetDocumentTextDetectionRequest& request, const GetDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClientGetDocumentTextDetectionAsyncHelper(TextractClient const * const clientThis, const GetDocumentTextDetectionRequest& request, const GetDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDocumentTextDetectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDocumentTextDetection(request), context);
 }
 
-void TextractClient::GetDocumentTextDetectionAsyncHelper(const GetDocumentTextDetectionRequest& request, const GetDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClient::GetDocumentTextDetectionAsync(const GetDocumentTextDetectionRequest& request, const GetDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDocumentTextDetection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TextractClientGetDocumentTextDetectionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExpenseAnalysisOutcome TextractClient::GetExpenseAnalysis(const GetExpenseAnalysisRequest& request) const
@@ -268,14 +268,14 @@ GetExpenseAnalysisOutcomeCallable TextractClient::GetExpenseAnalysisCallable(con
   return task->get_future();
 }
 
-void TextractClient::GetExpenseAnalysisAsync(const GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClientGetExpenseAnalysisAsyncHelper(TextractClient const * const clientThis, const GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExpenseAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExpenseAnalysis(request), context);
 }
 
-void TextractClient::GetExpenseAnalysisAsyncHelper(const GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClient::GetExpenseAnalysisAsync(const GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExpenseAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TextractClientGetExpenseAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDocumentAnalysisOutcome TextractClient::StartDocumentAnalysis(const StartDocumentAnalysisRequest& request) const
@@ -292,14 +292,14 @@ StartDocumentAnalysisOutcomeCallable TextractClient::StartDocumentAnalysisCallab
   return task->get_future();
 }
 
-void TextractClient::StartDocumentAnalysisAsync(const StartDocumentAnalysisRequest& request, const StartDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClientStartDocumentAnalysisAsyncHelper(TextractClient const * const clientThis, const StartDocumentAnalysisRequest& request, const StartDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDocumentAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDocumentAnalysis(request), context);
 }
 
-void TextractClient::StartDocumentAnalysisAsyncHelper(const StartDocumentAnalysisRequest& request, const StartDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClient::StartDocumentAnalysisAsync(const StartDocumentAnalysisRequest& request, const StartDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDocumentAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TextractClientStartDocumentAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDocumentTextDetectionOutcome TextractClient::StartDocumentTextDetection(const StartDocumentTextDetectionRequest& request) const
@@ -316,14 +316,14 @@ StartDocumentTextDetectionOutcomeCallable TextractClient::StartDocumentTextDetec
   return task->get_future();
 }
 
-void TextractClient::StartDocumentTextDetectionAsync(const StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClientStartDocumentTextDetectionAsyncHelper(TextractClient const * const clientThis, const StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDocumentTextDetectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDocumentTextDetection(request), context);
 }
 
-void TextractClient::StartDocumentTextDetectionAsyncHelper(const StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClient::StartDocumentTextDetectionAsync(const StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDocumentTextDetection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TextractClientStartDocumentTextDetectionAsyncHelper( this, request, handler, context ); } );
 }
 
 StartExpenseAnalysisOutcome TextractClient::StartExpenseAnalysis(const StartExpenseAnalysisRequest& request) const
@@ -340,13 +340,13 @@ StartExpenseAnalysisOutcomeCallable TextractClient::StartExpenseAnalysisCallable
   return task->get_future();
 }
 
-void TextractClient::StartExpenseAnalysisAsync(const StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClientStartExpenseAnalysisAsyncHelper(TextractClient const * const clientThis, const StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartExpenseAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartExpenseAnalysis(request), context);
 }
 
-void TextractClient::StartExpenseAnalysisAsyncHelper(const StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TextractClient::StartExpenseAnalysisAsync(const StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartExpenseAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TextractClientStartExpenseAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 

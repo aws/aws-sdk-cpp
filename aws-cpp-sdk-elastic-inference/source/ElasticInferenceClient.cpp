@@ -121,14 +121,14 @@ DescribeAcceleratorOfferingsOutcomeCallable ElasticInferenceClient::DescribeAcce
   return task->get_future();
 }
 
-void ElasticInferenceClient::DescribeAcceleratorOfferingsAsync(const DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClientDescribeAcceleratorOfferingsAsyncHelper(ElasticInferenceClient const * const clientThis, const DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorOfferingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAcceleratorOfferings(request), context);
 }
 
-void ElasticInferenceClient::DescribeAcceleratorOfferingsAsyncHelper(const DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClient::DescribeAcceleratorOfferingsAsync(const DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAcceleratorOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticInferenceClientDescribeAcceleratorOfferingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAcceleratorTypesOutcome ElasticInferenceClient::DescribeAcceleratorTypes(const DescribeAcceleratorTypesRequest& request) const
@@ -146,14 +146,14 @@ DescribeAcceleratorTypesOutcomeCallable ElasticInferenceClient::DescribeAccelera
   return task->get_future();
 }
 
-void ElasticInferenceClient::DescribeAcceleratorTypesAsync(const DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClientDescribeAcceleratorTypesAsyncHelper(ElasticInferenceClient const * const clientThis, const DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAcceleratorTypes(request), context);
 }
 
-void ElasticInferenceClient::DescribeAcceleratorTypesAsyncHelper(const DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClient::DescribeAcceleratorTypesAsync(const DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAcceleratorTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticInferenceClientDescribeAcceleratorTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAcceleratorsOutcome ElasticInferenceClient::DescribeAccelerators(const DescribeAcceleratorsRequest& request) const
@@ -171,14 +171,14 @@ DescribeAcceleratorsOutcomeCallable ElasticInferenceClient::DescribeAccelerators
   return task->get_future();
 }
 
-void ElasticInferenceClient::DescribeAcceleratorsAsync(const DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClientDescribeAcceleratorsAsyncHelper(ElasticInferenceClient const * const clientThis, const DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccelerators(request), context);
 }
 
-void ElasticInferenceClient::DescribeAcceleratorsAsyncHelper(const DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClient::DescribeAcceleratorsAsync(const DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccelerators(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticInferenceClientDescribeAcceleratorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ElasticInferenceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -202,14 +202,14 @@ ListTagsForResourceOutcomeCallable ElasticInferenceClient::ListTagsForResourceCa
   return task->get_future();
 }
 
-void ElasticInferenceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClientListTagsForResourceAsyncHelper(ElasticInferenceClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ElasticInferenceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticInferenceClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ElasticInferenceClient::TagResource(const TagResourceRequest& request) const
@@ -233,14 +233,14 @@ TagResourceOutcomeCallable ElasticInferenceClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void ElasticInferenceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClientTagResourceAsyncHelper(ElasticInferenceClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ElasticInferenceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticInferenceClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ElasticInferenceClient::UntagResource(const UntagResourceRequest& request) const
@@ -269,13 +269,13 @@ UntagResourceOutcomeCallable ElasticInferenceClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void ElasticInferenceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClientUntagResourceAsyncHelper(ElasticInferenceClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ElasticInferenceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticInferenceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticInferenceClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 

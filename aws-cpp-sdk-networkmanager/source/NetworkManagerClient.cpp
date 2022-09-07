@@ -207,14 +207,14 @@ AcceptAttachmentOutcomeCallable NetworkManagerClient::AcceptAttachmentCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::AcceptAttachmentAsync(const AcceptAttachmentRequest& request, const AcceptAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientAcceptAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const AcceptAttachmentRequest& request, const AcceptAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptAttachment(request), context);
 }
 
-void NetworkManagerClient::AcceptAttachmentAsyncHelper(const AcceptAttachmentRequest& request, const AcceptAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::AcceptAttachmentAsync(const AcceptAttachmentRequest& request, const AcceptAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientAcceptAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateConnectPeerOutcome NetworkManagerClient::AssociateConnectPeer(const AssociateConnectPeerRequest& request) const
@@ -239,14 +239,14 @@ AssociateConnectPeerOutcomeCallable NetworkManagerClient::AssociateConnectPeerCa
   return task->get_future();
 }
 
-void NetworkManagerClient::AssociateConnectPeerAsync(const AssociateConnectPeerRequest& request, const AssociateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientAssociateConnectPeerAsyncHelper(NetworkManagerClient const * const clientThis, const AssociateConnectPeerRequest& request, const AssociateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateConnectPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateConnectPeer(request), context);
 }
 
-void NetworkManagerClient::AssociateConnectPeerAsyncHelper(const AssociateConnectPeerRequest& request, const AssociateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::AssociateConnectPeerAsync(const AssociateConnectPeerRequest& request, const AssociateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateConnectPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientAssociateConnectPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateCustomerGatewayOutcome NetworkManagerClient::AssociateCustomerGateway(const AssociateCustomerGatewayRequest& request) const
@@ -271,14 +271,14 @@ AssociateCustomerGatewayOutcomeCallable NetworkManagerClient::AssociateCustomerG
   return task->get_future();
 }
 
-void NetworkManagerClient::AssociateCustomerGatewayAsync(const AssociateCustomerGatewayRequest& request, const AssociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientAssociateCustomerGatewayAsyncHelper(NetworkManagerClient const * const clientThis, const AssociateCustomerGatewayRequest& request, const AssociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateCustomerGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateCustomerGateway(request), context);
 }
 
-void NetworkManagerClient::AssociateCustomerGatewayAsyncHelper(const AssociateCustomerGatewayRequest& request, const AssociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::AssociateCustomerGatewayAsync(const AssociateCustomerGatewayRequest& request, const AssociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateCustomerGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientAssociateCustomerGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateLinkOutcome NetworkManagerClient::AssociateLink(const AssociateLinkRequest& request) const
@@ -303,14 +303,14 @@ AssociateLinkOutcomeCallable NetworkManagerClient::AssociateLinkCallable(const A
   return task->get_future();
 }
 
-void NetworkManagerClient::AssociateLinkAsync(const AssociateLinkRequest& request, const AssociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientAssociateLinkAsyncHelper(NetworkManagerClient const * const clientThis, const AssociateLinkRequest& request, const AssociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateLinkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateLink(request), context);
 }
 
-void NetworkManagerClient::AssociateLinkAsyncHelper(const AssociateLinkRequest& request, const AssociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::AssociateLinkAsync(const AssociateLinkRequest& request, const AssociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateLink(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientAssociateLinkAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateTransitGatewayConnectPeerOutcome NetworkManagerClient::AssociateTransitGatewayConnectPeer(const AssociateTransitGatewayConnectPeerRequest& request) const
@@ -335,14 +335,14 @@ AssociateTransitGatewayConnectPeerOutcomeCallable NetworkManagerClient::Associat
   return task->get_future();
 }
 
-void NetworkManagerClient::AssociateTransitGatewayConnectPeerAsync(const AssociateTransitGatewayConnectPeerRequest& request, const AssociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientAssociateTransitGatewayConnectPeerAsyncHelper(NetworkManagerClient const * const clientThis, const AssociateTransitGatewayConnectPeerRequest& request, const AssociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTransitGatewayConnectPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateTransitGatewayConnectPeer(request), context);
 }
 
-void NetworkManagerClient::AssociateTransitGatewayConnectPeerAsyncHelper(const AssociateTransitGatewayConnectPeerRequest& request, const AssociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::AssociateTransitGatewayConnectPeerAsync(const AssociateTransitGatewayConnectPeerRequest& request, const AssociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateTransitGatewayConnectPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientAssociateTransitGatewayConnectPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConnectAttachmentOutcome NetworkManagerClient::CreateConnectAttachment(const CreateConnectAttachmentRequest& request) const
@@ -360,14 +360,14 @@ CreateConnectAttachmentOutcomeCallable NetworkManagerClient::CreateConnectAttach
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateConnectAttachmentAsync(const CreateConnectAttachmentRequest& request, const CreateConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateConnectAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const CreateConnectAttachmentRequest& request, const CreateConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConnectAttachment(request), context);
 }
 
-void NetworkManagerClient::CreateConnectAttachmentAsyncHelper(const CreateConnectAttachmentRequest& request, const CreateConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateConnectAttachmentAsync(const CreateConnectAttachmentRequest& request, const CreateConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConnectAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateConnectAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConnectPeerOutcome NetworkManagerClient::CreateConnectPeer(const CreateConnectPeerRequest& request) const
@@ -385,14 +385,14 @@ CreateConnectPeerOutcomeCallable NetworkManagerClient::CreateConnectPeerCallable
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateConnectPeerAsync(const CreateConnectPeerRequest& request, const CreateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateConnectPeerAsyncHelper(NetworkManagerClient const * const clientThis, const CreateConnectPeerRequest& request, const CreateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConnectPeer(request), context);
 }
 
-void NetworkManagerClient::CreateConnectPeerAsyncHelper(const CreateConnectPeerRequest& request, const CreateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateConnectPeerAsync(const CreateConnectPeerRequest& request, const CreateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConnectPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateConnectPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConnectionOutcome NetworkManagerClient::CreateConnection(const CreateConnectionRequest& request) const
@@ -417,14 +417,14 @@ CreateConnectionOutcomeCallable NetworkManagerClient::CreateConnectionCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateConnectionAsyncHelper(NetworkManagerClient const * const clientThis, const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConnection(request), context);
 }
 
-void NetworkManagerClient::CreateConnectionAsyncHelper(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCoreNetworkOutcome NetworkManagerClient::CreateCoreNetwork(const CreateCoreNetworkRequest& request) const
@@ -442,14 +442,14 @@ CreateCoreNetworkOutcomeCallable NetworkManagerClient::CreateCoreNetworkCallable
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateCoreNetworkAsync(const CreateCoreNetworkRequest& request, const CreateCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateCoreNetworkAsyncHelper(NetworkManagerClient const * const clientThis, const CreateCoreNetworkRequest& request, const CreateCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCoreNetworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCoreNetwork(request), context);
 }
 
-void NetworkManagerClient::CreateCoreNetworkAsyncHelper(const CreateCoreNetworkRequest& request, const CreateCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateCoreNetworkAsync(const CreateCoreNetworkRequest& request, const CreateCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCoreNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateCoreNetworkAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDeviceOutcome NetworkManagerClient::CreateDevice(const CreateDeviceRequest& request) const
@@ -474,14 +474,14 @@ CreateDeviceOutcomeCallable NetworkManagerClient::CreateDeviceCallable(const Cre
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateDeviceAsync(const CreateDeviceRequest& request, const CreateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateDeviceAsyncHelper(NetworkManagerClient const * const clientThis, const CreateDeviceRequest& request, const CreateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDevice(request), context);
 }
 
-void NetworkManagerClient::CreateDeviceAsyncHelper(const CreateDeviceRequest& request, const CreateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateDeviceAsync(const CreateDeviceRequest& request, const CreateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGlobalNetworkOutcome NetworkManagerClient::CreateGlobalNetwork(const CreateGlobalNetworkRequest& request) const
@@ -499,14 +499,14 @@ CreateGlobalNetworkOutcomeCallable NetworkManagerClient::CreateGlobalNetworkCall
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateGlobalNetworkAsync(const CreateGlobalNetworkRequest& request, const CreateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateGlobalNetworkAsyncHelper(NetworkManagerClient const * const clientThis, const CreateGlobalNetworkRequest& request, const CreateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGlobalNetworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGlobalNetwork(request), context);
 }
 
-void NetworkManagerClient::CreateGlobalNetworkAsyncHelper(const CreateGlobalNetworkRequest& request, const CreateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateGlobalNetworkAsync(const CreateGlobalNetworkRequest& request, const CreateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGlobalNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateGlobalNetworkAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLinkOutcome NetworkManagerClient::CreateLink(const CreateLinkRequest& request) const
@@ -531,14 +531,14 @@ CreateLinkOutcomeCallable NetworkManagerClient::CreateLinkCallable(const CreateL
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateLinkAsync(const CreateLinkRequest& request, const CreateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateLinkAsyncHelper(NetworkManagerClient const * const clientThis, const CreateLinkRequest& request, const CreateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLinkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLink(request), context);
 }
 
-void NetworkManagerClient::CreateLinkAsyncHelper(const CreateLinkRequest& request, const CreateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateLinkAsync(const CreateLinkRequest& request, const CreateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLink(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateLinkAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSiteOutcome NetworkManagerClient::CreateSite(const CreateSiteRequest& request) const
@@ -563,14 +563,14 @@ CreateSiteOutcomeCallable NetworkManagerClient::CreateSiteCallable(const CreateS
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateSiteAsync(const CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateSiteAsyncHelper(NetworkManagerClient const * const clientThis, const CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSiteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSite(request), context);
 }
 
-void NetworkManagerClient::CreateSiteAsyncHelper(const CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateSiteAsync(const CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSite(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateSiteAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSiteToSiteVpnAttachmentOutcome NetworkManagerClient::CreateSiteToSiteVpnAttachment(const CreateSiteToSiteVpnAttachmentRequest& request) const
@@ -588,14 +588,14 @@ CreateSiteToSiteVpnAttachmentOutcomeCallable NetworkManagerClient::CreateSiteToS
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateSiteToSiteVpnAttachmentAsync(const CreateSiteToSiteVpnAttachmentRequest& request, const CreateSiteToSiteVpnAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateSiteToSiteVpnAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const CreateSiteToSiteVpnAttachmentRequest& request, const CreateSiteToSiteVpnAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSiteToSiteVpnAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSiteToSiteVpnAttachment(request), context);
 }
 
-void NetworkManagerClient::CreateSiteToSiteVpnAttachmentAsyncHelper(const CreateSiteToSiteVpnAttachmentRequest& request, const CreateSiteToSiteVpnAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateSiteToSiteVpnAttachmentAsync(const CreateSiteToSiteVpnAttachmentRequest& request, const CreateSiteToSiteVpnAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSiteToSiteVpnAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateSiteToSiteVpnAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayPeeringOutcome NetworkManagerClient::CreateTransitGatewayPeering(const CreateTransitGatewayPeeringRequest& request) const
@@ -613,14 +613,14 @@ CreateTransitGatewayPeeringOutcomeCallable NetworkManagerClient::CreateTransitGa
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateTransitGatewayPeeringAsync(const CreateTransitGatewayPeeringRequest& request, const CreateTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateTransitGatewayPeeringAsyncHelper(NetworkManagerClient const * const clientThis, const CreateTransitGatewayPeeringRequest& request, const CreateTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayPeeringAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayPeering(request), context);
 }
 
-void NetworkManagerClient::CreateTransitGatewayPeeringAsyncHelper(const CreateTransitGatewayPeeringRequest& request, const CreateTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateTransitGatewayPeeringAsync(const CreateTransitGatewayPeeringRequest& request, const CreateTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayPeering(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateTransitGatewayPeeringAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::CreateTransitGatewayRouteTableAttachment(const CreateTransitGatewayRouteTableAttachmentRequest& request) const
@@ -638,14 +638,14 @@ CreateTransitGatewayRouteTableAttachmentOutcomeCallable NetworkManagerClient::Cr
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateTransitGatewayRouteTableAttachmentAsync(const CreateTransitGatewayRouteTableAttachmentRequest& request, const CreateTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateTransitGatewayRouteTableAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const CreateTransitGatewayRouteTableAttachmentRequest& request, const CreateTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayRouteTableAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayRouteTableAttachment(request), context);
 }
 
-void NetworkManagerClient::CreateTransitGatewayRouteTableAttachmentAsyncHelper(const CreateTransitGatewayRouteTableAttachmentRequest& request, const CreateTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateTransitGatewayRouteTableAttachmentAsync(const CreateTransitGatewayRouteTableAttachmentRequest& request, const CreateTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayRouteTableAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateTransitGatewayRouteTableAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpcAttachmentOutcome NetworkManagerClient::CreateVpcAttachment(const CreateVpcAttachmentRequest& request) const
@@ -663,14 +663,14 @@ CreateVpcAttachmentOutcomeCallable NetworkManagerClient::CreateVpcAttachmentCall
   return task->get_future();
 }
 
-void NetworkManagerClient::CreateVpcAttachmentAsync(const CreateVpcAttachmentRequest& request, const CreateVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientCreateVpcAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const CreateVpcAttachmentRequest& request, const CreateVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpcAttachment(request), context);
 }
 
-void NetworkManagerClient::CreateVpcAttachmentAsyncHelper(const CreateVpcAttachmentRequest& request, const CreateVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::CreateVpcAttachmentAsync(const CreateVpcAttachmentRequest& request, const CreateVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpcAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientCreateVpcAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAttachmentOutcome NetworkManagerClient::DeleteAttachment(const DeleteAttachmentRequest& request) const
@@ -694,14 +694,14 @@ DeleteAttachmentOutcomeCallable NetworkManagerClient::DeleteAttachmentCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::DeleteAttachmentAsync(const DeleteAttachmentRequest& request, const DeleteAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeleteAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const DeleteAttachmentRequest& request, const DeleteAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAttachment(request), context);
 }
 
-void NetworkManagerClient::DeleteAttachmentAsyncHelper(const DeleteAttachmentRequest& request, const DeleteAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeleteAttachmentAsync(const DeleteAttachmentRequest& request, const DeleteAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeleteAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConnectPeerOutcome NetworkManagerClient::DeleteConnectPeer(const DeleteConnectPeerRequest& request) const
@@ -725,14 +725,14 @@ DeleteConnectPeerOutcomeCallable NetworkManagerClient::DeleteConnectPeerCallable
   return task->get_future();
 }
 
-void NetworkManagerClient::DeleteConnectPeerAsync(const DeleteConnectPeerRequest& request, const DeleteConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeleteConnectPeerAsyncHelper(NetworkManagerClient const * const clientThis, const DeleteConnectPeerRequest& request, const DeleteConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConnectPeer(request), context);
 }
 
-void NetworkManagerClient::DeleteConnectPeerAsyncHelper(const DeleteConnectPeerRequest& request, const DeleteConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeleteConnectPeerAsync(const DeleteConnectPeerRequest& request, const DeleteConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConnectPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeleteConnectPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConnectionOutcome NetworkManagerClient::DeleteConnection(const DeleteConnectionRequest& request) const
@@ -763,14 +763,14 @@ DeleteConnectionOutcomeCallable NetworkManagerClient::DeleteConnectionCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeleteConnectionAsyncHelper(NetworkManagerClient const * const clientThis, const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConnection(request), context);
 }
 
-void NetworkManagerClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeleteConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCoreNetworkOutcome NetworkManagerClient::DeleteCoreNetwork(const DeleteCoreNetworkRequest& request) const
@@ -794,14 +794,14 @@ DeleteCoreNetworkOutcomeCallable NetworkManagerClient::DeleteCoreNetworkCallable
   return task->get_future();
 }
 
-void NetworkManagerClient::DeleteCoreNetworkAsync(const DeleteCoreNetworkRequest& request, const DeleteCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeleteCoreNetworkAsyncHelper(NetworkManagerClient const * const clientThis, const DeleteCoreNetworkRequest& request, const DeleteCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCoreNetworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCoreNetwork(request), context);
 }
 
-void NetworkManagerClient::DeleteCoreNetworkAsyncHelper(const DeleteCoreNetworkRequest& request, const DeleteCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeleteCoreNetworkAsync(const DeleteCoreNetworkRequest& request, const DeleteCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCoreNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeleteCoreNetworkAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCoreNetworkPolicyVersionOutcome NetworkManagerClient::DeleteCoreNetworkPolicyVersion(const DeleteCoreNetworkPolicyVersionRequest& request) const
@@ -832,14 +832,14 @@ DeleteCoreNetworkPolicyVersionOutcomeCallable NetworkManagerClient::DeleteCoreNe
   return task->get_future();
 }
 
-void NetworkManagerClient::DeleteCoreNetworkPolicyVersionAsync(const DeleteCoreNetworkPolicyVersionRequest& request, const DeleteCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeleteCoreNetworkPolicyVersionAsyncHelper(NetworkManagerClient const * const clientThis, const DeleteCoreNetworkPolicyVersionRequest& request, const DeleteCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCoreNetworkPolicyVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCoreNetworkPolicyVersion(request), context);
 }
 
-void NetworkManagerClient::DeleteCoreNetworkPolicyVersionAsyncHelper(const DeleteCoreNetworkPolicyVersionRequest& request, const DeleteCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeleteCoreNetworkPolicyVersionAsync(const DeleteCoreNetworkPolicyVersionRequest& request, const DeleteCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCoreNetworkPolicyVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeleteCoreNetworkPolicyVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDeviceOutcome NetworkManagerClient::DeleteDevice(const DeleteDeviceRequest& request) const
@@ -870,14 +870,14 @@ DeleteDeviceOutcomeCallable NetworkManagerClient::DeleteDeviceCallable(const Del
   return task->get_future();
 }
 
-void NetworkManagerClient::DeleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeleteDeviceAsyncHelper(NetworkManagerClient const * const clientThis, const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDevice(request), context);
 }
 
-void NetworkManagerClient::DeleteDeviceAsyncHelper(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeleteDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGlobalNetworkOutcome NetworkManagerClient::DeleteGlobalNetwork(const DeleteGlobalNetworkRequest& request) const
@@ -901,14 +901,14 @@ DeleteGlobalNetworkOutcomeCallable NetworkManagerClient::DeleteGlobalNetworkCall
   return task->get_future();
 }
 
-void NetworkManagerClient::DeleteGlobalNetworkAsync(const DeleteGlobalNetworkRequest& request, const DeleteGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeleteGlobalNetworkAsyncHelper(NetworkManagerClient const * const clientThis, const DeleteGlobalNetworkRequest& request, const DeleteGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGlobalNetworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGlobalNetwork(request), context);
 }
 
-void NetworkManagerClient::DeleteGlobalNetworkAsyncHelper(const DeleteGlobalNetworkRequest& request, const DeleteGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeleteGlobalNetworkAsync(const DeleteGlobalNetworkRequest& request, const DeleteGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGlobalNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeleteGlobalNetworkAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLinkOutcome NetworkManagerClient::DeleteLink(const DeleteLinkRequest& request) const
@@ -939,14 +939,14 @@ DeleteLinkOutcomeCallable NetworkManagerClient::DeleteLinkCallable(const DeleteL
   return task->get_future();
 }
 
-void NetworkManagerClient::DeleteLinkAsync(const DeleteLinkRequest& request, const DeleteLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeleteLinkAsyncHelper(NetworkManagerClient const * const clientThis, const DeleteLinkRequest& request, const DeleteLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLinkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLink(request), context);
 }
 
-void NetworkManagerClient::DeleteLinkAsyncHelper(const DeleteLinkRequest& request, const DeleteLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeleteLinkAsync(const DeleteLinkRequest& request, const DeleteLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLink(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeleteLinkAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePeeringOutcome NetworkManagerClient::DeletePeering(const DeletePeeringRequest& request) const
@@ -970,14 +970,14 @@ DeletePeeringOutcomeCallable NetworkManagerClient::DeletePeeringCallable(const D
   return task->get_future();
 }
 
-void NetworkManagerClient::DeletePeeringAsync(const DeletePeeringRequest& request, const DeletePeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeletePeeringAsyncHelper(NetworkManagerClient const * const clientThis, const DeletePeeringRequest& request, const DeletePeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePeeringAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePeering(request), context);
 }
 
-void NetworkManagerClient::DeletePeeringAsyncHelper(const DeletePeeringRequest& request, const DeletePeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeletePeeringAsync(const DeletePeeringRequest& request, const DeletePeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePeering(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeletePeeringAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome NetworkManagerClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -1001,14 +1001,14 @@ DeleteResourcePolicyOutcomeCallable NetworkManagerClient::DeleteResourcePolicyCa
   return task->get_future();
 }
 
-void NetworkManagerClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeleteResourcePolicyAsyncHelper(NetworkManagerClient const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void NetworkManagerClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSiteOutcome NetworkManagerClient::DeleteSite(const DeleteSiteRequest& request) const
@@ -1039,14 +1039,14 @@ DeleteSiteOutcomeCallable NetworkManagerClient::DeleteSiteCallable(const DeleteS
   return task->get_future();
 }
 
-void NetworkManagerClient::DeleteSiteAsync(const DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeleteSiteAsyncHelper(NetworkManagerClient const * const clientThis, const DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSiteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSite(request), context);
 }
 
-void NetworkManagerClient::DeleteSiteAsyncHelper(const DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeleteSiteAsync(const DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSite(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeleteSiteAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterTransitGatewayOutcome NetworkManagerClient::DeregisterTransitGateway(const DeregisterTransitGatewayRequest& request) const
@@ -1077,14 +1077,14 @@ DeregisterTransitGatewayOutcomeCallable NetworkManagerClient::DeregisterTransitG
   return task->get_future();
 }
 
-void NetworkManagerClient::DeregisterTransitGatewayAsync(const DeregisterTransitGatewayRequest& request, const DeregisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDeregisterTransitGatewayAsyncHelper(NetworkManagerClient const * const clientThis, const DeregisterTransitGatewayRequest& request, const DeregisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterTransitGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterTransitGateway(request), context);
 }
 
-void NetworkManagerClient::DeregisterTransitGatewayAsyncHelper(const DeregisterTransitGatewayRequest& request, const DeregisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DeregisterTransitGatewayAsync(const DeregisterTransitGatewayRequest& request, const DeregisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterTransitGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDeregisterTransitGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGlobalNetworksOutcome NetworkManagerClient::DescribeGlobalNetworks(const DescribeGlobalNetworksRequest& request) const
@@ -1102,14 +1102,14 @@ DescribeGlobalNetworksOutcomeCallable NetworkManagerClient::DescribeGlobalNetwor
   return task->get_future();
 }
 
-void NetworkManagerClient::DescribeGlobalNetworksAsync(const DescribeGlobalNetworksRequest& request, const DescribeGlobalNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDescribeGlobalNetworksAsyncHelper(NetworkManagerClient const * const clientThis, const DescribeGlobalNetworksRequest& request, const DescribeGlobalNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGlobalNetworksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGlobalNetworks(request), context);
 }
 
-void NetworkManagerClient::DescribeGlobalNetworksAsyncHelper(const DescribeGlobalNetworksRequest& request, const DescribeGlobalNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DescribeGlobalNetworksAsync(const DescribeGlobalNetworksRequest& request, const DescribeGlobalNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGlobalNetworks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDescribeGlobalNetworksAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateConnectPeerOutcome NetworkManagerClient::DisassociateConnectPeer(const DisassociateConnectPeerRequest& request) const
@@ -1140,14 +1140,14 @@ DisassociateConnectPeerOutcomeCallable NetworkManagerClient::DisassociateConnect
   return task->get_future();
 }
 
-void NetworkManagerClient::DisassociateConnectPeerAsync(const DisassociateConnectPeerRequest& request, const DisassociateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDisassociateConnectPeerAsyncHelper(NetworkManagerClient const * const clientThis, const DisassociateConnectPeerRequest& request, const DisassociateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateConnectPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateConnectPeer(request), context);
 }
 
-void NetworkManagerClient::DisassociateConnectPeerAsyncHelper(const DisassociateConnectPeerRequest& request, const DisassociateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DisassociateConnectPeerAsync(const DisassociateConnectPeerRequest& request, const DisassociateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateConnectPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDisassociateConnectPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateCustomerGatewayOutcome NetworkManagerClient::DisassociateCustomerGateway(const DisassociateCustomerGatewayRequest& request) const
@@ -1178,14 +1178,14 @@ DisassociateCustomerGatewayOutcomeCallable NetworkManagerClient::DisassociateCus
   return task->get_future();
 }
 
-void NetworkManagerClient::DisassociateCustomerGatewayAsync(const DisassociateCustomerGatewayRequest& request, const DisassociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDisassociateCustomerGatewayAsyncHelper(NetworkManagerClient const * const clientThis, const DisassociateCustomerGatewayRequest& request, const DisassociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateCustomerGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateCustomerGateway(request), context);
 }
 
-void NetworkManagerClient::DisassociateCustomerGatewayAsyncHelper(const DisassociateCustomerGatewayRequest& request, const DisassociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DisassociateCustomerGatewayAsync(const DisassociateCustomerGatewayRequest& request, const DisassociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateCustomerGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDisassociateCustomerGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateLinkOutcome NetworkManagerClient::DisassociateLink(const DisassociateLinkRequest& request) const
@@ -1220,14 +1220,14 @@ DisassociateLinkOutcomeCallable NetworkManagerClient::DisassociateLinkCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::DisassociateLinkAsync(const DisassociateLinkRequest& request, const DisassociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDisassociateLinkAsyncHelper(NetworkManagerClient const * const clientThis, const DisassociateLinkRequest& request, const DisassociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateLinkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateLink(request), context);
 }
 
-void NetworkManagerClient::DisassociateLinkAsyncHelper(const DisassociateLinkRequest& request, const DisassociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DisassociateLinkAsync(const DisassociateLinkRequest& request, const DisassociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateLink(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDisassociateLinkAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateTransitGatewayConnectPeerOutcome NetworkManagerClient::DisassociateTransitGatewayConnectPeer(const DisassociateTransitGatewayConnectPeerRequest& request) const
@@ -1258,14 +1258,14 @@ DisassociateTransitGatewayConnectPeerOutcomeCallable NetworkManagerClient::Disas
   return task->get_future();
 }
 
-void NetworkManagerClient::DisassociateTransitGatewayConnectPeerAsync(const DisassociateTransitGatewayConnectPeerRequest& request, const DisassociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientDisassociateTransitGatewayConnectPeerAsyncHelper(NetworkManagerClient const * const clientThis, const DisassociateTransitGatewayConnectPeerRequest& request, const DisassociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTransitGatewayConnectPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateTransitGatewayConnectPeer(request), context);
 }
 
-void NetworkManagerClient::DisassociateTransitGatewayConnectPeerAsyncHelper(const DisassociateTransitGatewayConnectPeerRequest& request, const DisassociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::DisassociateTransitGatewayConnectPeerAsync(const DisassociateTransitGatewayConnectPeerRequest& request, const DisassociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateTransitGatewayConnectPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientDisassociateTransitGatewayConnectPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 ExecuteCoreNetworkChangeSetOutcome NetworkManagerClient::ExecuteCoreNetworkChangeSet(const ExecuteCoreNetworkChangeSetRequest& request) const
@@ -1297,14 +1297,14 @@ ExecuteCoreNetworkChangeSetOutcomeCallable NetworkManagerClient::ExecuteCoreNetw
   return task->get_future();
 }
 
-void NetworkManagerClient::ExecuteCoreNetworkChangeSetAsync(const ExecuteCoreNetworkChangeSetRequest& request, const ExecuteCoreNetworkChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientExecuteCoreNetworkChangeSetAsyncHelper(NetworkManagerClient const * const clientThis, const ExecuteCoreNetworkChangeSetRequest& request, const ExecuteCoreNetworkChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteCoreNetworkChangeSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExecuteCoreNetworkChangeSet(request), context);
 }
 
-void NetworkManagerClient::ExecuteCoreNetworkChangeSetAsyncHelper(const ExecuteCoreNetworkChangeSetRequest& request, const ExecuteCoreNetworkChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::ExecuteCoreNetworkChangeSetAsync(const ExecuteCoreNetworkChangeSetRequest& request, const ExecuteCoreNetworkChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExecuteCoreNetworkChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientExecuteCoreNetworkChangeSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectAttachmentOutcome NetworkManagerClient::GetConnectAttachment(const GetConnectAttachmentRequest& request) const
@@ -1328,14 +1328,14 @@ GetConnectAttachmentOutcomeCallable NetworkManagerClient::GetConnectAttachmentCa
   return task->get_future();
 }
 
-void NetworkManagerClient::GetConnectAttachmentAsync(const GetConnectAttachmentRequest& request, const GetConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetConnectAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const GetConnectAttachmentRequest& request, const GetConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnectAttachment(request), context);
 }
 
-void NetworkManagerClient::GetConnectAttachmentAsyncHelper(const GetConnectAttachmentRequest& request, const GetConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetConnectAttachmentAsync(const GetConnectAttachmentRequest& request, const GetConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnectAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetConnectAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectPeerOutcome NetworkManagerClient::GetConnectPeer(const GetConnectPeerRequest& request) const
@@ -1359,14 +1359,14 @@ GetConnectPeerOutcomeCallable NetworkManagerClient::GetConnectPeerCallable(const
   return task->get_future();
 }
 
-void NetworkManagerClient::GetConnectPeerAsync(const GetConnectPeerRequest& request, const GetConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetConnectPeerAsyncHelper(NetworkManagerClient const * const clientThis, const GetConnectPeerRequest& request, const GetConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnectPeer(request), context);
 }
 
-void NetworkManagerClient::GetConnectPeerAsyncHelper(const GetConnectPeerRequest& request, const GetConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetConnectPeerAsync(const GetConnectPeerRequest& request, const GetConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnectPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetConnectPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectPeerAssociationsOutcome NetworkManagerClient::GetConnectPeerAssociations(const GetConnectPeerAssociationsRequest& request) const
@@ -1391,14 +1391,14 @@ GetConnectPeerAssociationsOutcomeCallable NetworkManagerClient::GetConnectPeerAs
   return task->get_future();
 }
 
-void NetworkManagerClient::GetConnectPeerAssociationsAsync(const GetConnectPeerAssociationsRequest& request, const GetConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetConnectPeerAssociationsAsyncHelper(NetworkManagerClient const * const clientThis, const GetConnectPeerAssociationsRequest& request, const GetConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectPeerAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnectPeerAssociations(request), context);
 }
 
-void NetworkManagerClient::GetConnectPeerAssociationsAsyncHelper(const GetConnectPeerAssociationsRequest& request, const GetConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetConnectPeerAssociationsAsync(const GetConnectPeerAssociationsRequest& request, const GetConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnectPeerAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetConnectPeerAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectionsOutcome NetworkManagerClient::GetConnections(const GetConnectionsRequest& request) const
@@ -1423,14 +1423,14 @@ GetConnectionsOutcomeCallable NetworkManagerClient::GetConnectionsCallable(const
   return task->get_future();
 }
 
-void NetworkManagerClient::GetConnectionsAsync(const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetConnectionsAsyncHelper(NetworkManagerClient const * const clientThis, const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnections(request), context);
 }
 
-void NetworkManagerClient::GetConnectionsAsyncHelper(const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetConnectionsAsync(const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCoreNetworkOutcome NetworkManagerClient::GetCoreNetwork(const GetCoreNetworkRequest& request) const
@@ -1454,14 +1454,14 @@ GetCoreNetworkOutcomeCallable NetworkManagerClient::GetCoreNetworkCallable(const
   return task->get_future();
 }
 
-void NetworkManagerClient::GetCoreNetworkAsync(const GetCoreNetworkRequest& request, const GetCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetCoreNetworkAsyncHelper(NetworkManagerClient const * const clientThis, const GetCoreNetworkRequest& request, const GetCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCoreNetworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCoreNetwork(request), context);
 }
 
-void NetworkManagerClient::GetCoreNetworkAsyncHelper(const GetCoreNetworkRequest& request, const GetCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetCoreNetworkAsync(const GetCoreNetworkRequest& request, const GetCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCoreNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetCoreNetworkAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCoreNetworkChangeEventsOutcome NetworkManagerClient::GetCoreNetworkChangeEvents(const GetCoreNetworkChangeEventsRequest& request) const
@@ -1492,14 +1492,14 @@ GetCoreNetworkChangeEventsOutcomeCallable NetworkManagerClient::GetCoreNetworkCh
   return task->get_future();
 }
 
-void NetworkManagerClient::GetCoreNetworkChangeEventsAsync(const GetCoreNetworkChangeEventsRequest& request, const GetCoreNetworkChangeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetCoreNetworkChangeEventsAsyncHelper(NetworkManagerClient const * const clientThis, const GetCoreNetworkChangeEventsRequest& request, const GetCoreNetworkChangeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCoreNetworkChangeEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCoreNetworkChangeEvents(request), context);
 }
 
-void NetworkManagerClient::GetCoreNetworkChangeEventsAsyncHelper(const GetCoreNetworkChangeEventsRequest& request, const GetCoreNetworkChangeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetCoreNetworkChangeEventsAsync(const GetCoreNetworkChangeEventsRequest& request, const GetCoreNetworkChangeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCoreNetworkChangeEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetCoreNetworkChangeEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCoreNetworkChangeSetOutcome NetworkManagerClient::GetCoreNetworkChangeSet(const GetCoreNetworkChangeSetRequest& request) const
@@ -1530,14 +1530,14 @@ GetCoreNetworkChangeSetOutcomeCallable NetworkManagerClient::GetCoreNetworkChang
   return task->get_future();
 }
 
-void NetworkManagerClient::GetCoreNetworkChangeSetAsync(const GetCoreNetworkChangeSetRequest& request, const GetCoreNetworkChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetCoreNetworkChangeSetAsyncHelper(NetworkManagerClient const * const clientThis, const GetCoreNetworkChangeSetRequest& request, const GetCoreNetworkChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCoreNetworkChangeSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCoreNetworkChangeSet(request), context);
 }
 
-void NetworkManagerClient::GetCoreNetworkChangeSetAsyncHelper(const GetCoreNetworkChangeSetRequest& request, const GetCoreNetworkChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetCoreNetworkChangeSetAsync(const GetCoreNetworkChangeSetRequest& request, const GetCoreNetworkChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCoreNetworkChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetCoreNetworkChangeSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCoreNetworkPolicyOutcome NetworkManagerClient::GetCoreNetworkPolicy(const GetCoreNetworkPolicyRequest& request) const
@@ -1562,14 +1562,14 @@ GetCoreNetworkPolicyOutcomeCallable NetworkManagerClient::GetCoreNetworkPolicyCa
   return task->get_future();
 }
 
-void NetworkManagerClient::GetCoreNetworkPolicyAsync(const GetCoreNetworkPolicyRequest& request, const GetCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetCoreNetworkPolicyAsyncHelper(NetworkManagerClient const * const clientThis, const GetCoreNetworkPolicyRequest& request, const GetCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCoreNetworkPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCoreNetworkPolicy(request), context);
 }
 
-void NetworkManagerClient::GetCoreNetworkPolicyAsyncHelper(const GetCoreNetworkPolicyRequest& request, const GetCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetCoreNetworkPolicyAsync(const GetCoreNetworkPolicyRequest& request, const GetCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCoreNetworkPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetCoreNetworkPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCustomerGatewayAssociationsOutcome NetworkManagerClient::GetCustomerGatewayAssociations(const GetCustomerGatewayAssociationsRequest& request) const
@@ -1594,14 +1594,14 @@ GetCustomerGatewayAssociationsOutcomeCallable NetworkManagerClient::GetCustomerG
   return task->get_future();
 }
 
-void NetworkManagerClient::GetCustomerGatewayAssociationsAsync(const GetCustomerGatewayAssociationsRequest& request, const GetCustomerGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetCustomerGatewayAssociationsAsyncHelper(NetworkManagerClient const * const clientThis, const GetCustomerGatewayAssociationsRequest& request, const GetCustomerGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCustomerGatewayAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCustomerGatewayAssociations(request), context);
 }
 
-void NetworkManagerClient::GetCustomerGatewayAssociationsAsyncHelper(const GetCustomerGatewayAssociationsRequest& request, const GetCustomerGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetCustomerGatewayAssociationsAsync(const GetCustomerGatewayAssociationsRequest& request, const GetCustomerGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCustomerGatewayAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetCustomerGatewayAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDevicesOutcome NetworkManagerClient::GetDevices(const GetDevicesRequest& request) const
@@ -1626,14 +1626,14 @@ GetDevicesOutcomeCallable NetworkManagerClient::GetDevicesCallable(const GetDevi
   return task->get_future();
 }
 
-void NetworkManagerClient::GetDevicesAsync(const GetDevicesRequest& request, const GetDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetDevicesAsyncHelper(NetworkManagerClient const * const clientThis, const GetDevicesRequest& request, const GetDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDevices(request), context);
 }
 
-void NetworkManagerClient::GetDevicesAsyncHelper(const GetDevicesRequest& request, const GetDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetDevicesAsync(const GetDevicesRequest& request, const GetDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLinkAssociationsOutcome NetworkManagerClient::GetLinkAssociations(const GetLinkAssociationsRequest& request) const
@@ -1658,14 +1658,14 @@ GetLinkAssociationsOutcomeCallable NetworkManagerClient::GetLinkAssociationsCall
   return task->get_future();
 }
 
-void NetworkManagerClient::GetLinkAssociationsAsync(const GetLinkAssociationsRequest& request, const GetLinkAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetLinkAssociationsAsyncHelper(NetworkManagerClient const * const clientThis, const GetLinkAssociationsRequest& request, const GetLinkAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLinkAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLinkAssociations(request), context);
 }
 
-void NetworkManagerClient::GetLinkAssociationsAsyncHelper(const GetLinkAssociationsRequest& request, const GetLinkAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetLinkAssociationsAsync(const GetLinkAssociationsRequest& request, const GetLinkAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLinkAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetLinkAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLinksOutcome NetworkManagerClient::GetLinks(const GetLinksRequest& request) const
@@ -1690,14 +1690,14 @@ GetLinksOutcomeCallable NetworkManagerClient::GetLinksCallable(const GetLinksReq
   return task->get_future();
 }
 
-void NetworkManagerClient::GetLinksAsync(const GetLinksRequest& request, const GetLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetLinksAsyncHelper(NetworkManagerClient const * const clientThis, const GetLinksRequest& request, const GetLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLinksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLinks(request), context);
 }
 
-void NetworkManagerClient::GetLinksAsyncHelper(const GetLinksRequest& request, const GetLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetLinksAsync(const GetLinksRequest& request, const GetLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLinks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetLinksAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNetworkResourceCountsOutcome NetworkManagerClient::GetNetworkResourceCounts(const GetNetworkResourceCountsRequest& request) const
@@ -1722,14 +1722,14 @@ GetNetworkResourceCountsOutcomeCallable NetworkManagerClient::GetNetworkResource
   return task->get_future();
 }
 
-void NetworkManagerClient::GetNetworkResourceCountsAsync(const GetNetworkResourceCountsRequest& request, const GetNetworkResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetNetworkResourceCountsAsyncHelper(NetworkManagerClient const * const clientThis, const GetNetworkResourceCountsRequest& request, const GetNetworkResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkResourceCountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNetworkResourceCounts(request), context);
 }
 
-void NetworkManagerClient::GetNetworkResourceCountsAsyncHelper(const GetNetworkResourceCountsRequest& request, const GetNetworkResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetNetworkResourceCountsAsync(const GetNetworkResourceCountsRequest& request, const GetNetworkResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNetworkResourceCounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetNetworkResourceCountsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNetworkResourceRelationshipsOutcome NetworkManagerClient::GetNetworkResourceRelationships(const GetNetworkResourceRelationshipsRequest& request) const
@@ -1754,14 +1754,14 @@ GetNetworkResourceRelationshipsOutcomeCallable NetworkManagerClient::GetNetworkR
   return task->get_future();
 }
 
-void NetworkManagerClient::GetNetworkResourceRelationshipsAsync(const GetNetworkResourceRelationshipsRequest& request, const GetNetworkResourceRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetNetworkResourceRelationshipsAsyncHelper(NetworkManagerClient const * const clientThis, const GetNetworkResourceRelationshipsRequest& request, const GetNetworkResourceRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkResourceRelationshipsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNetworkResourceRelationships(request), context);
 }
 
-void NetworkManagerClient::GetNetworkResourceRelationshipsAsyncHelper(const GetNetworkResourceRelationshipsRequest& request, const GetNetworkResourceRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetNetworkResourceRelationshipsAsync(const GetNetworkResourceRelationshipsRequest& request, const GetNetworkResourceRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNetworkResourceRelationships(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetNetworkResourceRelationshipsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNetworkResourcesOutcome NetworkManagerClient::GetNetworkResources(const GetNetworkResourcesRequest& request) const
@@ -1786,14 +1786,14 @@ GetNetworkResourcesOutcomeCallable NetworkManagerClient::GetNetworkResourcesCall
   return task->get_future();
 }
 
-void NetworkManagerClient::GetNetworkResourcesAsync(const GetNetworkResourcesRequest& request, const GetNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetNetworkResourcesAsyncHelper(NetworkManagerClient const * const clientThis, const GetNetworkResourcesRequest& request, const GetNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNetworkResources(request), context);
 }
 
-void NetworkManagerClient::GetNetworkResourcesAsyncHelper(const GetNetworkResourcesRequest& request, const GetNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetNetworkResourcesAsync(const GetNetworkResourcesRequest& request, const GetNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNetworkResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetNetworkResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNetworkRoutesOutcome NetworkManagerClient::GetNetworkRoutes(const GetNetworkRoutesRequest& request) const
@@ -1818,14 +1818,14 @@ GetNetworkRoutesOutcomeCallable NetworkManagerClient::GetNetworkRoutesCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::GetNetworkRoutesAsync(const GetNetworkRoutesRequest& request, const GetNetworkRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetNetworkRoutesAsyncHelper(NetworkManagerClient const * const clientThis, const GetNetworkRoutesRequest& request, const GetNetworkRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkRoutesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNetworkRoutes(request), context);
 }
 
-void NetworkManagerClient::GetNetworkRoutesAsyncHelper(const GetNetworkRoutesRequest& request, const GetNetworkRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetNetworkRoutesAsync(const GetNetworkRoutesRequest& request, const GetNetworkRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNetworkRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetNetworkRoutesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNetworkTelemetryOutcome NetworkManagerClient::GetNetworkTelemetry(const GetNetworkTelemetryRequest& request) const
@@ -1850,14 +1850,14 @@ GetNetworkTelemetryOutcomeCallable NetworkManagerClient::GetNetworkTelemetryCall
   return task->get_future();
 }
 
-void NetworkManagerClient::GetNetworkTelemetryAsync(const GetNetworkTelemetryRequest& request, const GetNetworkTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetNetworkTelemetryAsyncHelper(NetworkManagerClient const * const clientThis, const GetNetworkTelemetryRequest& request, const GetNetworkTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkTelemetryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNetworkTelemetry(request), context);
 }
 
-void NetworkManagerClient::GetNetworkTelemetryAsyncHelper(const GetNetworkTelemetryRequest& request, const GetNetworkTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetNetworkTelemetryAsync(const GetNetworkTelemetryRequest& request, const GetNetworkTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNetworkTelemetry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetNetworkTelemetryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcePolicyOutcome NetworkManagerClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
@@ -1881,14 +1881,14 @@ GetResourcePolicyOutcomeCallable NetworkManagerClient::GetResourcePolicyCallable
   return task->get_future();
 }
 
-void NetworkManagerClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetResourcePolicyAsyncHelper(NetworkManagerClient const * const clientThis, const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourcePolicy(request), context);
 }
 
-void NetworkManagerClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRouteAnalysisOutcome NetworkManagerClient::GetRouteAnalysis(const GetRouteAnalysisRequest& request) const
@@ -1919,14 +1919,14 @@ GetRouteAnalysisOutcomeCallable NetworkManagerClient::GetRouteAnalysisCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::GetRouteAnalysisAsync(const GetRouteAnalysisRequest& request, const GetRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetRouteAnalysisAsyncHelper(NetworkManagerClient const * const clientThis, const GetRouteAnalysisRequest& request, const GetRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRouteAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRouteAnalysis(request), context);
 }
 
-void NetworkManagerClient::GetRouteAnalysisAsyncHelper(const GetRouteAnalysisRequest& request, const GetRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetRouteAnalysisAsync(const GetRouteAnalysisRequest& request, const GetRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRouteAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetRouteAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSiteToSiteVpnAttachmentOutcome NetworkManagerClient::GetSiteToSiteVpnAttachment(const GetSiteToSiteVpnAttachmentRequest& request) const
@@ -1950,14 +1950,14 @@ GetSiteToSiteVpnAttachmentOutcomeCallable NetworkManagerClient::GetSiteToSiteVpn
   return task->get_future();
 }
 
-void NetworkManagerClient::GetSiteToSiteVpnAttachmentAsync(const GetSiteToSiteVpnAttachmentRequest& request, const GetSiteToSiteVpnAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetSiteToSiteVpnAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const GetSiteToSiteVpnAttachmentRequest& request, const GetSiteToSiteVpnAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSiteToSiteVpnAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSiteToSiteVpnAttachment(request), context);
 }
 
-void NetworkManagerClient::GetSiteToSiteVpnAttachmentAsyncHelper(const GetSiteToSiteVpnAttachmentRequest& request, const GetSiteToSiteVpnAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetSiteToSiteVpnAttachmentAsync(const GetSiteToSiteVpnAttachmentRequest& request, const GetSiteToSiteVpnAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSiteToSiteVpnAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetSiteToSiteVpnAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSitesOutcome NetworkManagerClient::GetSites(const GetSitesRequest& request) const
@@ -1982,14 +1982,14 @@ GetSitesOutcomeCallable NetworkManagerClient::GetSitesCallable(const GetSitesReq
   return task->get_future();
 }
 
-void NetworkManagerClient::GetSitesAsync(const GetSitesRequest& request, const GetSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetSitesAsyncHelper(NetworkManagerClient const * const clientThis, const GetSitesRequest& request, const GetSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSitesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSites(request), context);
 }
 
-void NetworkManagerClient::GetSitesAsyncHelper(const GetSitesRequest& request, const GetSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetSitesAsync(const GetSitesRequest& request, const GetSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSites(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetSitesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayConnectPeerAssociationsOutcome NetworkManagerClient::GetTransitGatewayConnectPeerAssociations(const GetTransitGatewayConnectPeerAssociationsRequest& request) const
@@ -2014,14 +2014,14 @@ GetTransitGatewayConnectPeerAssociationsOutcomeCallable NetworkManagerClient::Ge
   return task->get_future();
 }
 
-void NetworkManagerClient::GetTransitGatewayConnectPeerAssociationsAsync(const GetTransitGatewayConnectPeerAssociationsRequest& request, const GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetTransitGatewayConnectPeerAssociationsAsyncHelper(NetworkManagerClient const * const clientThis, const GetTransitGatewayConnectPeerAssociationsRequest& request, const GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayConnectPeerAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayConnectPeerAssociations(request), context);
 }
 
-void NetworkManagerClient::GetTransitGatewayConnectPeerAssociationsAsyncHelper(const GetTransitGatewayConnectPeerAssociationsRequest& request, const GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetTransitGatewayConnectPeerAssociationsAsync(const GetTransitGatewayConnectPeerAssociationsRequest& request, const GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayConnectPeerAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetTransitGatewayConnectPeerAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayPeeringOutcome NetworkManagerClient::GetTransitGatewayPeering(const GetTransitGatewayPeeringRequest& request) const
@@ -2045,14 +2045,14 @@ GetTransitGatewayPeeringOutcomeCallable NetworkManagerClient::GetTransitGatewayP
   return task->get_future();
 }
 
-void NetworkManagerClient::GetTransitGatewayPeeringAsync(const GetTransitGatewayPeeringRequest& request, const GetTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetTransitGatewayPeeringAsyncHelper(NetworkManagerClient const * const clientThis, const GetTransitGatewayPeeringRequest& request, const GetTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayPeeringAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayPeering(request), context);
 }
 
-void NetworkManagerClient::GetTransitGatewayPeeringAsyncHelper(const GetTransitGatewayPeeringRequest& request, const GetTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetTransitGatewayPeeringAsync(const GetTransitGatewayPeeringRequest& request, const GetTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayPeering(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetTransitGatewayPeeringAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayRegistrationsOutcome NetworkManagerClient::GetTransitGatewayRegistrations(const GetTransitGatewayRegistrationsRequest& request) const
@@ -2077,14 +2077,14 @@ GetTransitGatewayRegistrationsOutcomeCallable NetworkManagerClient::GetTransitGa
   return task->get_future();
 }
 
-void NetworkManagerClient::GetTransitGatewayRegistrationsAsync(const GetTransitGatewayRegistrationsRequest& request, const GetTransitGatewayRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetTransitGatewayRegistrationsAsyncHelper(NetworkManagerClient const * const clientThis, const GetTransitGatewayRegistrationsRequest& request, const GetTransitGatewayRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayRegistrationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayRegistrations(request), context);
 }
 
-void NetworkManagerClient::GetTransitGatewayRegistrationsAsyncHelper(const GetTransitGatewayRegistrationsRequest& request, const GetTransitGatewayRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetTransitGatewayRegistrationsAsync(const GetTransitGatewayRegistrationsRequest& request, const GetTransitGatewayRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayRegistrations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetTransitGatewayRegistrationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::GetTransitGatewayRouteTableAttachment(const GetTransitGatewayRouteTableAttachmentRequest& request) const
@@ -2108,14 +2108,14 @@ GetTransitGatewayRouteTableAttachmentOutcomeCallable NetworkManagerClient::GetTr
   return task->get_future();
 }
 
-void NetworkManagerClient::GetTransitGatewayRouteTableAttachmentAsync(const GetTransitGatewayRouteTableAttachmentRequest& request, const GetTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetTransitGatewayRouteTableAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const GetTransitGatewayRouteTableAttachmentRequest& request, const GetTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayRouteTableAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayRouteTableAttachment(request), context);
 }
 
-void NetworkManagerClient::GetTransitGatewayRouteTableAttachmentAsyncHelper(const GetTransitGatewayRouteTableAttachmentRequest& request, const GetTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetTransitGatewayRouteTableAttachmentAsync(const GetTransitGatewayRouteTableAttachmentRequest& request, const GetTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayRouteTableAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetTransitGatewayRouteTableAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetVpcAttachmentOutcome NetworkManagerClient::GetVpcAttachment(const GetVpcAttachmentRequest& request) const
@@ -2139,14 +2139,14 @@ GetVpcAttachmentOutcomeCallable NetworkManagerClient::GetVpcAttachmentCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::GetVpcAttachmentAsync(const GetVpcAttachmentRequest& request, const GetVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientGetVpcAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const GetVpcAttachmentRequest& request, const GetVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVpcAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetVpcAttachment(request), context);
 }
 
-void NetworkManagerClient::GetVpcAttachmentAsyncHelper(const GetVpcAttachmentRequest& request, const GetVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::GetVpcAttachmentAsync(const GetVpcAttachmentRequest& request, const GetVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetVpcAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientGetVpcAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAttachmentsOutcome NetworkManagerClient::ListAttachments(const ListAttachmentsRequest& request) const
@@ -2164,14 +2164,14 @@ ListAttachmentsOutcomeCallable NetworkManagerClient::ListAttachmentsCallable(con
   return task->get_future();
 }
 
-void NetworkManagerClient::ListAttachmentsAsync(const ListAttachmentsRequest& request, const ListAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientListAttachmentsAsyncHelper(NetworkManagerClient const * const clientThis, const ListAttachmentsRequest& request, const ListAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAttachmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAttachments(request), context);
 }
 
-void NetworkManagerClient::ListAttachmentsAsyncHelper(const ListAttachmentsRequest& request, const ListAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::ListAttachmentsAsync(const ListAttachmentsRequest& request, const ListAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAttachments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientListAttachmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConnectPeersOutcome NetworkManagerClient::ListConnectPeers(const ListConnectPeersRequest& request) const
@@ -2189,14 +2189,14 @@ ListConnectPeersOutcomeCallable NetworkManagerClient::ListConnectPeersCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::ListConnectPeersAsync(const ListConnectPeersRequest& request, const ListConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientListConnectPeersAsyncHelper(NetworkManagerClient const * const clientThis, const ListConnectPeersRequest& request, const ListConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConnectPeersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConnectPeers(request), context);
 }
 
-void NetworkManagerClient::ListConnectPeersAsyncHelper(const ListConnectPeersRequest& request, const ListConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::ListConnectPeersAsync(const ListConnectPeersRequest& request, const ListConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConnectPeers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientListConnectPeersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCoreNetworkPolicyVersionsOutcome NetworkManagerClient::ListCoreNetworkPolicyVersions(const ListCoreNetworkPolicyVersionsRequest& request) const
@@ -2221,14 +2221,14 @@ ListCoreNetworkPolicyVersionsOutcomeCallable NetworkManagerClient::ListCoreNetwo
   return task->get_future();
 }
 
-void NetworkManagerClient::ListCoreNetworkPolicyVersionsAsync(const ListCoreNetworkPolicyVersionsRequest& request, const ListCoreNetworkPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientListCoreNetworkPolicyVersionsAsyncHelper(NetworkManagerClient const * const clientThis, const ListCoreNetworkPolicyVersionsRequest& request, const ListCoreNetworkPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCoreNetworkPolicyVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCoreNetworkPolicyVersions(request), context);
 }
 
-void NetworkManagerClient::ListCoreNetworkPolicyVersionsAsyncHelper(const ListCoreNetworkPolicyVersionsRequest& request, const ListCoreNetworkPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::ListCoreNetworkPolicyVersionsAsync(const ListCoreNetworkPolicyVersionsRequest& request, const ListCoreNetworkPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCoreNetworkPolicyVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientListCoreNetworkPolicyVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCoreNetworksOutcome NetworkManagerClient::ListCoreNetworks(const ListCoreNetworksRequest& request) const
@@ -2246,14 +2246,14 @@ ListCoreNetworksOutcomeCallable NetworkManagerClient::ListCoreNetworksCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::ListCoreNetworksAsync(const ListCoreNetworksRequest& request, const ListCoreNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientListCoreNetworksAsyncHelper(NetworkManagerClient const * const clientThis, const ListCoreNetworksRequest& request, const ListCoreNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCoreNetworksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCoreNetworks(request), context);
 }
 
-void NetworkManagerClient::ListCoreNetworksAsyncHelper(const ListCoreNetworksRequest& request, const ListCoreNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::ListCoreNetworksAsync(const ListCoreNetworksRequest& request, const ListCoreNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCoreNetworks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientListCoreNetworksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOrganizationServiceAccessStatusOutcome NetworkManagerClient::ListOrganizationServiceAccessStatus(const ListOrganizationServiceAccessStatusRequest& request) const
@@ -2271,14 +2271,14 @@ ListOrganizationServiceAccessStatusOutcomeCallable NetworkManagerClient::ListOrg
   return task->get_future();
 }
 
-void NetworkManagerClient::ListOrganizationServiceAccessStatusAsync(const ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientListOrganizationServiceAccessStatusAsyncHelper(NetworkManagerClient const * const clientThis, const ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationServiceAccessStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOrganizationServiceAccessStatus(request), context);
 }
 
-void NetworkManagerClient::ListOrganizationServiceAccessStatusAsyncHelper(const ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::ListOrganizationServiceAccessStatusAsync(const ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOrganizationServiceAccessStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientListOrganizationServiceAccessStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPeeringsOutcome NetworkManagerClient::ListPeerings(const ListPeeringsRequest& request) const
@@ -2296,14 +2296,14 @@ ListPeeringsOutcomeCallable NetworkManagerClient::ListPeeringsCallable(const Lis
   return task->get_future();
 }
 
-void NetworkManagerClient::ListPeeringsAsync(const ListPeeringsRequest& request, const ListPeeringsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientListPeeringsAsyncHelper(NetworkManagerClient const * const clientThis, const ListPeeringsRequest& request, const ListPeeringsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPeeringsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPeerings(request), context);
 }
 
-void NetworkManagerClient::ListPeeringsAsyncHelper(const ListPeeringsRequest& request, const ListPeeringsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::ListPeeringsAsync(const ListPeeringsRequest& request, const ListPeeringsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPeerings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientListPeeringsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome NetworkManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -2327,14 +2327,14 @@ ListTagsForResourceOutcomeCallable NetworkManagerClient::ListTagsForResourceCall
   return task->get_future();
 }
 
-void NetworkManagerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientListTagsForResourceAsyncHelper(NetworkManagerClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void NetworkManagerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutCoreNetworkPolicyOutcome NetworkManagerClient::PutCoreNetworkPolicy(const PutCoreNetworkPolicyRequest& request) const
@@ -2359,14 +2359,14 @@ PutCoreNetworkPolicyOutcomeCallable NetworkManagerClient::PutCoreNetworkPolicyCa
   return task->get_future();
 }
 
-void NetworkManagerClient::PutCoreNetworkPolicyAsync(const PutCoreNetworkPolicyRequest& request, const PutCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientPutCoreNetworkPolicyAsyncHelper(NetworkManagerClient const * const clientThis, const PutCoreNetworkPolicyRequest& request, const PutCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutCoreNetworkPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutCoreNetworkPolicy(request), context);
 }
 
-void NetworkManagerClient::PutCoreNetworkPolicyAsyncHelper(const PutCoreNetworkPolicyRequest& request, const PutCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::PutCoreNetworkPolicyAsync(const PutCoreNetworkPolicyRequest& request, const PutCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutCoreNetworkPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientPutCoreNetworkPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourcePolicyOutcome NetworkManagerClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -2390,14 +2390,14 @@ PutResourcePolicyOutcomeCallable NetworkManagerClient::PutResourcePolicyCallable
   return task->get_future();
 }
 
-void NetworkManagerClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientPutResourcePolicyAsyncHelper(NetworkManagerClient const * const clientThis, const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourcePolicy(request), context);
 }
 
-void NetworkManagerClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientPutResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterTransitGatewayOutcome NetworkManagerClient::RegisterTransitGateway(const RegisterTransitGatewayRequest& request) const
@@ -2422,14 +2422,14 @@ RegisterTransitGatewayOutcomeCallable NetworkManagerClient::RegisterTransitGatew
   return task->get_future();
 }
 
-void NetworkManagerClient::RegisterTransitGatewayAsync(const RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientRegisterTransitGatewayAsyncHelper(NetworkManagerClient const * const clientThis, const RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterTransitGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterTransitGateway(request), context);
 }
 
-void NetworkManagerClient::RegisterTransitGatewayAsyncHelper(const RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::RegisterTransitGatewayAsync(const RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterTransitGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientRegisterTransitGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectAttachmentOutcome NetworkManagerClient::RejectAttachment(const RejectAttachmentRequest& request) const
@@ -2454,14 +2454,14 @@ RejectAttachmentOutcomeCallable NetworkManagerClient::RejectAttachmentCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::RejectAttachmentAsync(const RejectAttachmentRequest& request, const RejectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientRejectAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const RejectAttachmentRequest& request, const RejectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectAttachment(request), context);
 }
 
-void NetworkManagerClient::RejectAttachmentAsyncHelper(const RejectAttachmentRequest& request, const RejectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::RejectAttachmentAsync(const RejectAttachmentRequest& request, const RejectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientRejectAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreCoreNetworkPolicyVersionOutcome NetworkManagerClient::RestoreCoreNetworkPolicyVersion(const RestoreCoreNetworkPolicyVersionRequest& request) const
@@ -2493,14 +2493,14 @@ RestoreCoreNetworkPolicyVersionOutcomeCallable NetworkManagerClient::RestoreCore
   return task->get_future();
 }
 
-void NetworkManagerClient::RestoreCoreNetworkPolicyVersionAsync(const RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientRestoreCoreNetworkPolicyVersionAsyncHelper(NetworkManagerClient const * const clientThis, const RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreCoreNetworkPolicyVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreCoreNetworkPolicyVersion(request), context);
 }
 
-void NetworkManagerClient::RestoreCoreNetworkPolicyVersionAsyncHelper(const RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::RestoreCoreNetworkPolicyVersionAsync(const RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreCoreNetworkPolicyVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientRestoreCoreNetworkPolicyVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 StartOrganizationServiceAccessUpdateOutcome NetworkManagerClient::StartOrganizationServiceAccessUpdate(const StartOrganizationServiceAccessUpdateRequest& request) const
@@ -2518,14 +2518,14 @@ StartOrganizationServiceAccessUpdateOutcomeCallable NetworkManagerClient::StartO
   return task->get_future();
 }
 
-void NetworkManagerClient::StartOrganizationServiceAccessUpdateAsync(const StartOrganizationServiceAccessUpdateRequest& request, const StartOrganizationServiceAccessUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientStartOrganizationServiceAccessUpdateAsyncHelper(NetworkManagerClient const * const clientThis, const StartOrganizationServiceAccessUpdateRequest& request, const StartOrganizationServiceAccessUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartOrganizationServiceAccessUpdateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartOrganizationServiceAccessUpdate(request), context);
 }
 
-void NetworkManagerClient::StartOrganizationServiceAccessUpdateAsyncHelper(const StartOrganizationServiceAccessUpdateRequest& request, const StartOrganizationServiceAccessUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::StartOrganizationServiceAccessUpdateAsync(const StartOrganizationServiceAccessUpdateRequest& request, const StartOrganizationServiceAccessUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartOrganizationServiceAccessUpdate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientStartOrganizationServiceAccessUpdateAsyncHelper( this, request, handler, context ); } );
 }
 
 StartRouteAnalysisOutcome NetworkManagerClient::StartRouteAnalysis(const StartRouteAnalysisRequest& request) const
@@ -2550,14 +2550,14 @@ StartRouteAnalysisOutcomeCallable NetworkManagerClient::StartRouteAnalysisCallab
   return task->get_future();
 }
 
-void NetworkManagerClient::StartRouteAnalysisAsync(const StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientStartRouteAnalysisAsyncHelper(NetworkManagerClient const * const clientThis, const StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartRouteAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartRouteAnalysis(request), context);
 }
 
-void NetworkManagerClient::StartRouteAnalysisAsyncHelper(const StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::StartRouteAnalysisAsync(const StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartRouteAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientStartRouteAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome NetworkManagerClient::TagResource(const TagResourceRequest& request) const
@@ -2581,14 +2581,14 @@ TagResourceOutcomeCallable NetworkManagerClient::TagResourceCallable(const TagRe
   return task->get_future();
 }
 
-void NetworkManagerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientTagResourceAsyncHelper(NetworkManagerClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void NetworkManagerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome NetworkManagerClient::UntagResource(const UntagResourceRequest& request) const
@@ -2617,14 +2617,14 @@ UntagResourceOutcomeCallable NetworkManagerClient::UntagResourceCallable(const U
   return task->get_future();
 }
 
-void NetworkManagerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientUntagResourceAsyncHelper(NetworkManagerClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void NetworkManagerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConnectionOutcome NetworkManagerClient::UpdateConnection(const UpdateConnectionRequest& request) const
@@ -2655,14 +2655,14 @@ UpdateConnectionOutcomeCallable NetworkManagerClient::UpdateConnectionCallable(c
   return task->get_future();
 }
 
-void NetworkManagerClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientUpdateConnectionAsyncHelper(NetworkManagerClient const * const clientThis, const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConnection(request), context);
 }
 
-void NetworkManagerClient::UpdateConnectionAsyncHelper(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientUpdateConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCoreNetworkOutcome NetworkManagerClient::UpdateCoreNetwork(const UpdateCoreNetworkRequest& request) const
@@ -2686,14 +2686,14 @@ UpdateCoreNetworkOutcomeCallable NetworkManagerClient::UpdateCoreNetworkCallable
   return task->get_future();
 }
 
-void NetworkManagerClient::UpdateCoreNetworkAsync(const UpdateCoreNetworkRequest& request, const UpdateCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientUpdateCoreNetworkAsyncHelper(NetworkManagerClient const * const clientThis, const UpdateCoreNetworkRequest& request, const UpdateCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCoreNetworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCoreNetwork(request), context);
 }
 
-void NetworkManagerClient::UpdateCoreNetworkAsyncHelper(const UpdateCoreNetworkRequest& request, const UpdateCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::UpdateCoreNetworkAsync(const UpdateCoreNetworkRequest& request, const UpdateCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCoreNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientUpdateCoreNetworkAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDeviceOutcome NetworkManagerClient::UpdateDevice(const UpdateDeviceRequest& request) const
@@ -2724,14 +2724,14 @@ UpdateDeviceOutcomeCallable NetworkManagerClient::UpdateDeviceCallable(const Upd
   return task->get_future();
 }
 
-void NetworkManagerClient::UpdateDeviceAsync(const UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientUpdateDeviceAsyncHelper(NetworkManagerClient const * const clientThis, const UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDevice(request), context);
 }
 
-void NetworkManagerClient::UpdateDeviceAsyncHelper(const UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::UpdateDeviceAsync(const UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientUpdateDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGlobalNetworkOutcome NetworkManagerClient::UpdateGlobalNetwork(const UpdateGlobalNetworkRequest& request) const
@@ -2755,14 +2755,14 @@ UpdateGlobalNetworkOutcomeCallable NetworkManagerClient::UpdateGlobalNetworkCall
   return task->get_future();
 }
 
-void NetworkManagerClient::UpdateGlobalNetworkAsync(const UpdateGlobalNetworkRequest& request, const UpdateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientUpdateGlobalNetworkAsyncHelper(NetworkManagerClient const * const clientThis, const UpdateGlobalNetworkRequest& request, const UpdateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGlobalNetworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGlobalNetwork(request), context);
 }
 
-void NetworkManagerClient::UpdateGlobalNetworkAsyncHelper(const UpdateGlobalNetworkRequest& request, const UpdateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::UpdateGlobalNetworkAsync(const UpdateGlobalNetworkRequest& request, const UpdateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGlobalNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientUpdateGlobalNetworkAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLinkOutcome NetworkManagerClient::UpdateLink(const UpdateLinkRequest& request) const
@@ -2793,14 +2793,14 @@ UpdateLinkOutcomeCallable NetworkManagerClient::UpdateLinkCallable(const UpdateL
   return task->get_future();
 }
 
-void NetworkManagerClient::UpdateLinkAsync(const UpdateLinkRequest& request, const UpdateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientUpdateLinkAsyncHelper(NetworkManagerClient const * const clientThis, const UpdateLinkRequest& request, const UpdateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLinkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLink(request), context);
 }
 
-void NetworkManagerClient::UpdateLinkAsyncHelper(const UpdateLinkRequest& request, const UpdateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::UpdateLinkAsync(const UpdateLinkRequest& request, const UpdateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLink(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientUpdateLinkAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateNetworkResourceMetadataOutcome NetworkManagerClient::UpdateNetworkResourceMetadata(const UpdateNetworkResourceMetadataRequest& request) const
@@ -2832,14 +2832,14 @@ UpdateNetworkResourceMetadataOutcomeCallable NetworkManagerClient::UpdateNetwork
   return task->get_future();
 }
 
-void NetworkManagerClient::UpdateNetworkResourceMetadataAsync(const UpdateNetworkResourceMetadataRequest& request, const UpdateNetworkResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientUpdateNetworkResourceMetadataAsyncHelper(NetworkManagerClient const * const clientThis, const UpdateNetworkResourceMetadataRequest& request, const UpdateNetworkResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNetworkResourceMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateNetworkResourceMetadata(request), context);
 }
 
-void NetworkManagerClient::UpdateNetworkResourceMetadataAsyncHelper(const UpdateNetworkResourceMetadataRequest& request, const UpdateNetworkResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::UpdateNetworkResourceMetadataAsync(const UpdateNetworkResourceMetadataRequest& request, const UpdateNetworkResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateNetworkResourceMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientUpdateNetworkResourceMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSiteOutcome NetworkManagerClient::UpdateSite(const UpdateSiteRequest& request) const
@@ -2870,14 +2870,14 @@ UpdateSiteOutcomeCallable NetworkManagerClient::UpdateSiteCallable(const UpdateS
   return task->get_future();
 }
 
-void NetworkManagerClient::UpdateSiteAsync(const UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientUpdateSiteAsyncHelper(NetworkManagerClient const * const clientThis, const UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSiteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSite(request), context);
 }
 
-void NetworkManagerClient::UpdateSiteAsyncHelper(const UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::UpdateSiteAsync(const UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSite(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientUpdateSiteAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateVpcAttachmentOutcome NetworkManagerClient::UpdateVpcAttachment(const UpdateVpcAttachmentRequest& request) const
@@ -2901,13 +2901,13 @@ UpdateVpcAttachmentOutcomeCallable NetworkManagerClient::UpdateVpcAttachmentCall
   return task->get_future();
 }
 
-void NetworkManagerClient::UpdateVpcAttachmentAsync(const UpdateVpcAttachmentRequest& request, const UpdateVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClientUpdateVpcAttachmentAsyncHelper(NetworkManagerClient const * const clientThis, const UpdateVpcAttachmentRequest& request, const UpdateVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVpcAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateVpcAttachment(request), context);
 }
 
-void NetworkManagerClient::UpdateVpcAttachmentAsyncHelper(const UpdateVpcAttachmentRequest& request, const UpdateVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void NetworkManagerClient::UpdateVpcAttachmentAsync(const UpdateVpcAttachmentRequest& request, const UpdateVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateVpcAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ NetworkManagerClientUpdateVpcAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 

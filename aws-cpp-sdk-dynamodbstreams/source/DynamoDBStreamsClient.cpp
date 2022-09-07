@@ -118,14 +118,14 @@ DescribeStreamOutcomeCallable DynamoDBStreamsClient::DescribeStreamCallable(cons
   return task->get_future();
 }
 
-void DynamoDBStreamsClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBStreamsClientDescribeStreamAsyncHelper(DynamoDBStreamsClient const * const clientThis, const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStream(request), context);
 }
 
-void DynamoDBStreamsClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBStreamsClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBStreamsClientDescribeStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecordsOutcome DynamoDBStreamsClient::GetRecords(const GetRecordsRequest& request) const
@@ -142,14 +142,14 @@ GetRecordsOutcomeCallable DynamoDBStreamsClient::GetRecordsCallable(const GetRec
   return task->get_future();
 }
 
-void DynamoDBStreamsClient::GetRecordsAsync(const GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBStreamsClientGetRecordsAsyncHelper(DynamoDBStreamsClient const * const clientThis, const GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecordsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecords(request), context);
 }
 
-void DynamoDBStreamsClient::GetRecordsAsyncHelper(const GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBStreamsClient::GetRecordsAsync(const GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecords(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBStreamsClientGetRecordsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetShardIteratorOutcome DynamoDBStreamsClient::GetShardIterator(const GetShardIteratorRequest& request) const
@@ -166,14 +166,14 @@ GetShardIteratorOutcomeCallable DynamoDBStreamsClient::GetShardIteratorCallable(
   return task->get_future();
 }
 
-void DynamoDBStreamsClient::GetShardIteratorAsync(const GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBStreamsClientGetShardIteratorAsyncHelper(DynamoDBStreamsClient const * const clientThis, const GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetShardIteratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetShardIterator(request), context);
 }
 
-void DynamoDBStreamsClient::GetShardIteratorAsyncHelper(const GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBStreamsClient::GetShardIteratorAsync(const GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetShardIterator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBStreamsClientGetShardIteratorAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStreamsOutcome DynamoDBStreamsClient::ListStreams(const ListStreamsRequest& request) const
@@ -190,13 +190,13 @@ ListStreamsOutcomeCallable DynamoDBStreamsClient::ListStreamsCallable(const List
   return task->get_future();
 }
 
-void DynamoDBStreamsClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBStreamsClientListStreamsAsyncHelper(DynamoDBStreamsClient const * const clientThis, const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStreams(request), context);
 }
 
-void DynamoDBStreamsClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBStreamsClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStreams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBStreamsClientListStreamsAsyncHelper( this, request, handler, context ); } );
 }
 

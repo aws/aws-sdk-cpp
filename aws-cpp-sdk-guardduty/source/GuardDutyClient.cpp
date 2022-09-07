@@ -184,14 +184,14 @@ AcceptAdministratorInvitationOutcomeCallable GuardDutyClient::AcceptAdministrato
   return task->get_future();
 }
 
-void GuardDutyClient::AcceptAdministratorInvitationAsync(const AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientAcceptAdministratorInvitationAsyncHelper(GuardDutyClient const * const clientThis, const AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptAdministratorInvitationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptAdministratorInvitation(request), context);
 }
 
-void GuardDutyClient::AcceptAdministratorInvitationAsyncHelper(const AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::AcceptAdministratorInvitationAsync(const AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptAdministratorInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientAcceptAdministratorInvitationAsyncHelper( this, request, handler, context ); } );
 }
 
 ArchiveFindingsOutcome GuardDutyClient::ArchiveFindings(const ArchiveFindingsRequest& request) const
@@ -216,14 +216,14 @@ ArchiveFindingsOutcomeCallable GuardDutyClient::ArchiveFindingsCallable(const Ar
   return task->get_future();
 }
 
-void GuardDutyClient::ArchiveFindingsAsync(const ArchiveFindingsRequest& request, const ArchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientArchiveFindingsAsyncHelper(GuardDutyClient const * const clientThis, const ArchiveFindingsRequest& request, const ArchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ArchiveFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ArchiveFindings(request), context);
 }
 
-void GuardDutyClient::ArchiveFindingsAsyncHelper(const ArchiveFindingsRequest& request, const ArchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ArchiveFindingsAsync(const ArchiveFindingsRequest& request, const ArchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ArchiveFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientArchiveFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDetectorOutcome GuardDutyClient::CreateDetector(const CreateDetectorRequest& request) const
@@ -241,14 +241,14 @@ CreateDetectorOutcomeCallable GuardDutyClient::CreateDetectorCallable(const Crea
   return task->get_future();
 }
 
-void GuardDutyClient::CreateDetectorAsync(const CreateDetectorRequest& request, const CreateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientCreateDetectorAsyncHelper(GuardDutyClient const * const clientThis, const CreateDetectorRequest& request, const CreateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDetector(request), context);
 }
 
-void GuardDutyClient::CreateDetectorAsyncHelper(const CreateDetectorRequest& request, const CreateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::CreateDetectorAsync(const CreateDetectorRequest& request, const CreateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientCreateDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFilterOutcome GuardDutyClient::CreateFilter(const CreateFilterRequest& request) const
@@ -273,14 +273,14 @@ CreateFilterOutcomeCallable GuardDutyClient::CreateFilterCallable(const CreateFi
   return task->get_future();
 }
 
-void GuardDutyClient::CreateFilterAsync(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientCreateFilterAsyncHelper(GuardDutyClient const * const clientThis, const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFilter(request), context);
 }
 
-void GuardDutyClient::CreateFilterAsyncHelper(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::CreateFilterAsync(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientCreateFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIPSetOutcome GuardDutyClient::CreateIPSet(const CreateIPSetRequest& request) const
@@ -305,14 +305,14 @@ CreateIPSetOutcomeCallable GuardDutyClient::CreateIPSetCallable(const CreateIPSe
   return task->get_future();
 }
 
-void GuardDutyClient::CreateIPSetAsync(const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientCreateIPSetAsyncHelper(GuardDutyClient const * const clientThis, const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIPSet(request), context);
 }
 
-void GuardDutyClient::CreateIPSetAsyncHelper(const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::CreateIPSetAsync(const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientCreateIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMembersOutcome GuardDutyClient::CreateMembers(const CreateMembersRequest& request) const
@@ -337,14 +337,14 @@ CreateMembersOutcomeCallable GuardDutyClient::CreateMembersCallable(const Create
   return task->get_future();
 }
 
-void GuardDutyClient::CreateMembersAsync(const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientCreateMembersAsyncHelper(GuardDutyClient const * const clientThis, const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMembers(request), context);
 }
 
-void GuardDutyClient::CreateMembersAsyncHelper(const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::CreateMembersAsync(const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientCreateMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePublishingDestinationOutcome GuardDutyClient::CreatePublishingDestination(const CreatePublishingDestinationRequest& request) const
@@ -369,14 +369,14 @@ CreatePublishingDestinationOutcomeCallable GuardDutyClient::CreatePublishingDest
   return task->get_future();
 }
 
-void GuardDutyClient::CreatePublishingDestinationAsync(const CreatePublishingDestinationRequest& request, const CreatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientCreatePublishingDestinationAsyncHelper(GuardDutyClient const * const clientThis, const CreatePublishingDestinationRequest& request, const CreatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePublishingDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePublishingDestination(request), context);
 }
 
-void GuardDutyClient::CreatePublishingDestinationAsyncHelper(const CreatePublishingDestinationRequest& request, const CreatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::CreatePublishingDestinationAsync(const CreatePublishingDestinationRequest& request, const CreatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePublishingDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientCreatePublishingDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSampleFindingsOutcome GuardDutyClient::CreateSampleFindings(const CreateSampleFindingsRequest& request) const
@@ -401,14 +401,14 @@ CreateSampleFindingsOutcomeCallable GuardDutyClient::CreateSampleFindingsCallabl
   return task->get_future();
 }
 
-void GuardDutyClient::CreateSampleFindingsAsync(const CreateSampleFindingsRequest& request, const CreateSampleFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientCreateSampleFindingsAsyncHelper(GuardDutyClient const * const clientThis, const CreateSampleFindingsRequest& request, const CreateSampleFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSampleFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSampleFindings(request), context);
 }
 
-void GuardDutyClient::CreateSampleFindingsAsyncHelper(const CreateSampleFindingsRequest& request, const CreateSampleFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::CreateSampleFindingsAsync(const CreateSampleFindingsRequest& request, const CreateSampleFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSampleFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientCreateSampleFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateThreatIntelSetOutcome GuardDutyClient::CreateThreatIntelSet(const CreateThreatIntelSetRequest& request) const
@@ -433,14 +433,14 @@ CreateThreatIntelSetOutcomeCallable GuardDutyClient::CreateThreatIntelSetCallabl
   return task->get_future();
 }
 
-void GuardDutyClient::CreateThreatIntelSetAsync(const CreateThreatIntelSetRequest& request, const CreateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientCreateThreatIntelSetAsyncHelper(GuardDutyClient const * const clientThis, const CreateThreatIntelSetRequest& request, const CreateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateThreatIntelSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateThreatIntelSet(request), context);
 }
 
-void GuardDutyClient::CreateThreatIntelSetAsyncHelper(const CreateThreatIntelSetRequest& request, const CreateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::CreateThreatIntelSetAsync(const CreateThreatIntelSetRequest& request, const CreateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateThreatIntelSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientCreateThreatIntelSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeclineInvitationsOutcome GuardDutyClient::DeclineInvitations(const DeclineInvitationsRequest& request) const
@@ -458,14 +458,14 @@ DeclineInvitationsOutcomeCallable GuardDutyClient::DeclineInvitationsCallable(co
   return task->get_future();
 }
 
-void GuardDutyClient::DeclineInvitationsAsync(const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDeclineInvitationsAsyncHelper(GuardDutyClient const * const clientThis, const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeclineInvitationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeclineInvitations(request), context);
 }
 
-void GuardDutyClient::DeclineInvitationsAsyncHelper(const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DeclineInvitationsAsync(const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeclineInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDeclineInvitationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDetectorOutcome GuardDutyClient::DeleteDetector(const DeleteDetectorRequest& request) const
@@ -489,14 +489,14 @@ DeleteDetectorOutcomeCallable GuardDutyClient::DeleteDetectorCallable(const Dele
   return task->get_future();
 }
 
-void GuardDutyClient::DeleteDetectorAsync(const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDeleteDetectorAsyncHelper(GuardDutyClient const * const clientThis, const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDetector(request), context);
 }
 
-void GuardDutyClient::DeleteDetectorAsyncHelper(const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DeleteDetectorAsync(const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDeleteDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFilterOutcome GuardDutyClient::DeleteFilter(const DeleteFilterRequest& request) const
@@ -527,14 +527,14 @@ DeleteFilterOutcomeCallable GuardDutyClient::DeleteFilterCallable(const DeleteFi
   return task->get_future();
 }
 
-void GuardDutyClient::DeleteFilterAsync(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDeleteFilterAsyncHelper(GuardDutyClient const * const clientThis, const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFilter(request), context);
 }
 
-void GuardDutyClient::DeleteFilterAsyncHelper(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DeleteFilterAsync(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDeleteFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIPSetOutcome GuardDutyClient::DeleteIPSet(const DeleteIPSetRequest& request) const
@@ -565,14 +565,14 @@ DeleteIPSetOutcomeCallable GuardDutyClient::DeleteIPSetCallable(const DeleteIPSe
   return task->get_future();
 }
 
-void GuardDutyClient::DeleteIPSetAsync(const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDeleteIPSetAsyncHelper(GuardDutyClient const * const clientThis, const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIPSet(request), context);
 }
 
-void GuardDutyClient::DeleteIPSetAsyncHelper(const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DeleteIPSetAsync(const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDeleteIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInvitationsOutcome GuardDutyClient::DeleteInvitations(const DeleteInvitationsRequest& request) const
@@ -590,14 +590,14 @@ DeleteInvitationsOutcomeCallable GuardDutyClient::DeleteInvitationsCallable(cons
   return task->get_future();
 }
 
-void GuardDutyClient::DeleteInvitationsAsync(const DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDeleteInvitationsAsyncHelper(GuardDutyClient const * const clientThis, const DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInvitationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInvitations(request), context);
 }
 
-void GuardDutyClient::DeleteInvitationsAsyncHelper(const DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DeleteInvitationsAsync(const DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDeleteInvitationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMembersOutcome GuardDutyClient::DeleteMembers(const DeleteMembersRequest& request) const
@@ -622,14 +622,14 @@ DeleteMembersOutcomeCallable GuardDutyClient::DeleteMembersCallable(const Delete
   return task->get_future();
 }
 
-void GuardDutyClient::DeleteMembersAsync(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDeleteMembersAsyncHelper(GuardDutyClient const * const clientThis, const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMembers(request), context);
 }
 
-void GuardDutyClient::DeleteMembersAsyncHelper(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DeleteMembersAsync(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDeleteMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePublishingDestinationOutcome GuardDutyClient::DeletePublishingDestination(const DeletePublishingDestinationRequest& request) const
@@ -660,14 +660,14 @@ DeletePublishingDestinationOutcomeCallable GuardDutyClient::DeletePublishingDest
   return task->get_future();
 }
 
-void GuardDutyClient::DeletePublishingDestinationAsync(const DeletePublishingDestinationRequest& request, const DeletePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDeletePublishingDestinationAsyncHelper(GuardDutyClient const * const clientThis, const DeletePublishingDestinationRequest& request, const DeletePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePublishingDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePublishingDestination(request), context);
 }
 
-void GuardDutyClient::DeletePublishingDestinationAsyncHelper(const DeletePublishingDestinationRequest& request, const DeletePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DeletePublishingDestinationAsync(const DeletePublishingDestinationRequest& request, const DeletePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePublishingDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDeletePublishingDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteThreatIntelSetOutcome GuardDutyClient::DeleteThreatIntelSet(const DeleteThreatIntelSetRequest& request) const
@@ -698,14 +698,14 @@ DeleteThreatIntelSetOutcomeCallable GuardDutyClient::DeleteThreatIntelSetCallabl
   return task->get_future();
 }
 
-void GuardDutyClient::DeleteThreatIntelSetAsync(const DeleteThreatIntelSetRequest& request, const DeleteThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDeleteThreatIntelSetAsyncHelper(GuardDutyClient const * const clientThis, const DeleteThreatIntelSetRequest& request, const DeleteThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteThreatIntelSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteThreatIntelSet(request), context);
 }
 
-void GuardDutyClient::DeleteThreatIntelSetAsyncHelper(const DeleteThreatIntelSetRequest& request, const DeleteThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DeleteThreatIntelSetAsync(const DeleteThreatIntelSetRequest& request, const DeleteThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteThreatIntelSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDeleteThreatIntelSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMalwareScansOutcome GuardDutyClient::DescribeMalwareScans(const DescribeMalwareScansRequest& request) const
@@ -730,14 +730,14 @@ DescribeMalwareScansOutcomeCallable GuardDutyClient::DescribeMalwareScansCallabl
   return task->get_future();
 }
 
-void GuardDutyClient::DescribeMalwareScansAsync(const DescribeMalwareScansRequest& request, const DescribeMalwareScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDescribeMalwareScansAsyncHelper(GuardDutyClient const * const clientThis, const DescribeMalwareScansRequest& request, const DescribeMalwareScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMalwareScansAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMalwareScans(request), context);
 }
 
-void GuardDutyClient::DescribeMalwareScansAsyncHelper(const DescribeMalwareScansRequest& request, const DescribeMalwareScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DescribeMalwareScansAsync(const DescribeMalwareScansRequest& request, const DescribeMalwareScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMalwareScans(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDescribeMalwareScansAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeOrganizationConfigurationOutcome GuardDutyClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
@@ -762,14 +762,14 @@ DescribeOrganizationConfigurationOutcomeCallable GuardDutyClient::DescribeOrgani
   return task->get_future();
 }
 
-void GuardDutyClient::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDescribeOrganizationConfigurationAsyncHelper(GuardDutyClient const * const clientThis, const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeOrganizationConfiguration(request), context);
 }
 
-void GuardDutyClient::DescribeOrganizationConfigurationAsyncHelper(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeOrganizationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDescribeOrganizationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePublishingDestinationOutcome GuardDutyClient::DescribePublishingDestination(const DescribePublishingDestinationRequest& request) const
@@ -800,14 +800,14 @@ DescribePublishingDestinationOutcomeCallable GuardDutyClient::DescribePublishing
   return task->get_future();
 }
 
-void GuardDutyClient::DescribePublishingDestinationAsync(const DescribePublishingDestinationRequest& request, const DescribePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDescribePublishingDestinationAsyncHelper(GuardDutyClient const * const clientThis, const DescribePublishingDestinationRequest& request, const DescribePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePublishingDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePublishingDestination(request), context);
 }
 
-void GuardDutyClient::DescribePublishingDestinationAsyncHelper(const DescribePublishingDestinationRequest& request, const DescribePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DescribePublishingDestinationAsync(const DescribePublishingDestinationRequest& request, const DescribePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePublishingDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDescribePublishingDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableOrganizationAdminAccountOutcome GuardDutyClient::DisableOrganizationAdminAccount(const DisableOrganizationAdminAccountRequest& request) const
@@ -825,14 +825,14 @@ DisableOrganizationAdminAccountOutcomeCallable GuardDutyClient::DisableOrganizat
   return task->get_future();
 }
 
-void GuardDutyClient::DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDisableOrganizationAdminAccountAsyncHelper(GuardDutyClient const * const clientThis, const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableOrganizationAdminAccount(request), context);
 }
 
-void GuardDutyClient::DisableOrganizationAdminAccountAsyncHelper(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDisableOrganizationAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateFromAdministratorAccountOutcome GuardDutyClient::DisassociateFromAdministratorAccount(const DisassociateFromAdministratorAccountRequest& request) const
@@ -857,14 +857,14 @@ DisassociateFromAdministratorAccountOutcomeCallable GuardDutyClient::Disassociat
   return task->get_future();
 }
 
-void GuardDutyClient::DisassociateFromAdministratorAccountAsync(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDisassociateFromAdministratorAccountAsyncHelper(GuardDutyClient const * const clientThis, const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFromAdministratorAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateFromAdministratorAccount(request), context);
 }
 
-void GuardDutyClient::DisassociateFromAdministratorAccountAsyncHelper(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DisassociateFromAdministratorAccountAsync(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateFromAdministratorAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDisassociateFromAdministratorAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateMembersOutcome GuardDutyClient::DisassociateMembers(const DisassociateMembersRequest& request) const
@@ -889,14 +889,14 @@ DisassociateMembersOutcomeCallable GuardDutyClient::DisassociateMembersCallable(
   return task->get_future();
 }
 
-void GuardDutyClient::DisassociateMembersAsync(const DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientDisassociateMembersAsyncHelper(GuardDutyClient const * const clientThis, const DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateMembers(request), context);
 }
 
-void GuardDutyClient::DisassociateMembersAsyncHelper(const DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::DisassociateMembersAsync(const DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientDisassociateMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableOrganizationAdminAccountOutcome GuardDutyClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
@@ -914,14 +914,14 @@ EnableOrganizationAdminAccountOutcomeCallable GuardDutyClient::EnableOrganizatio
   return task->get_future();
 }
 
-void GuardDutyClient::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientEnableOrganizationAdminAccountAsyncHelper(GuardDutyClient const * const clientThis, const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableOrganizationAdminAccount(request), context);
 }
 
-void GuardDutyClient::EnableOrganizationAdminAccountAsyncHelper(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientEnableOrganizationAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAdministratorAccountOutcome GuardDutyClient::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const
@@ -946,14 +946,14 @@ GetAdministratorAccountOutcomeCallable GuardDutyClient::GetAdministratorAccountC
   return task->get_future();
 }
 
-void GuardDutyClient::GetAdministratorAccountAsync(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetAdministratorAccountAsyncHelper(GuardDutyClient const * const clientThis, const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAdministratorAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAdministratorAccount(request), context);
 }
 
-void GuardDutyClient::GetAdministratorAccountAsyncHelper(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetAdministratorAccountAsync(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAdministratorAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetAdministratorAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDetectorOutcome GuardDutyClient::GetDetector(const GetDetectorRequest& request) const
@@ -977,14 +977,14 @@ GetDetectorOutcomeCallable GuardDutyClient::GetDetectorCallable(const GetDetecto
   return task->get_future();
 }
 
-void GuardDutyClient::GetDetectorAsync(const GetDetectorRequest& request, const GetDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetDetectorAsyncHelper(GuardDutyClient const * const clientThis, const GetDetectorRequest& request, const GetDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDetector(request), context);
 }
 
-void GuardDutyClient::GetDetectorAsyncHelper(const GetDetectorRequest& request, const GetDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetDetectorAsync(const GetDetectorRequest& request, const GetDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFilterOutcome GuardDutyClient::GetFilter(const GetFilterRequest& request) const
@@ -1015,14 +1015,14 @@ GetFilterOutcomeCallable GuardDutyClient::GetFilterCallable(const GetFilterReque
   return task->get_future();
 }
 
-void GuardDutyClient::GetFilterAsync(const GetFilterRequest& request, const GetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetFilterAsyncHelper(GuardDutyClient const * const clientThis, const GetFilterRequest& request, const GetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFilter(request), context);
 }
 
-void GuardDutyClient::GetFilterAsyncHelper(const GetFilterRequest& request, const GetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetFilterAsync(const GetFilterRequest& request, const GetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFindingsOutcome GuardDutyClient::GetFindings(const GetFindingsRequest& request) const
@@ -1047,14 +1047,14 @@ GetFindingsOutcomeCallable GuardDutyClient::GetFindingsCallable(const GetFinding
   return task->get_future();
 }
 
-void GuardDutyClient::GetFindingsAsync(const GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetFindingsAsyncHelper(GuardDutyClient const * const clientThis, const GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFindings(request), context);
 }
 
-void GuardDutyClient::GetFindingsAsyncHelper(const GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetFindingsAsync(const GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFindingsStatisticsOutcome GuardDutyClient::GetFindingsStatistics(const GetFindingsStatisticsRequest& request) const
@@ -1079,14 +1079,14 @@ GetFindingsStatisticsOutcomeCallable GuardDutyClient::GetFindingsStatisticsCalla
   return task->get_future();
 }
 
-void GuardDutyClient::GetFindingsStatisticsAsync(const GetFindingsStatisticsRequest& request, const GetFindingsStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetFindingsStatisticsAsyncHelper(GuardDutyClient const * const clientThis, const GetFindingsStatisticsRequest& request, const GetFindingsStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFindingsStatisticsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFindingsStatistics(request), context);
 }
 
-void GuardDutyClient::GetFindingsStatisticsAsyncHelper(const GetFindingsStatisticsRequest& request, const GetFindingsStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetFindingsStatisticsAsync(const GetFindingsStatisticsRequest& request, const GetFindingsStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFindingsStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetFindingsStatisticsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIPSetOutcome GuardDutyClient::GetIPSet(const GetIPSetRequest& request) const
@@ -1117,14 +1117,14 @@ GetIPSetOutcomeCallable GuardDutyClient::GetIPSetCallable(const GetIPSetRequest&
   return task->get_future();
 }
 
-void GuardDutyClient::GetIPSetAsync(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetIPSetAsyncHelper(GuardDutyClient const * const clientThis, const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIPSet(request), context);
 }
 
-void GuardDutyClient::GetIPSetAsyncHelper(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetIPSetAsync(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInvitationsCountOutcome GuardDutyClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const
@@ -1142,14 +1142,14 @@ GetInvitationsCountOutcomeCallable GuardDutyClient::GetInvitationsCountCallable(
   return task->get_future();
 }
 
-void GuardDutyClient::GetInvitationsCountAsync(const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetInvitationsCountAsyncHelper(GuardDutyClient const * const clientThis, const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInvitationsCountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInvitationsCount(request), context);
 }
 
-void GuardDutyClient::GetInvitationsCountAsyncHelper(const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetInvitationsCountAsync(const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInvitationsCount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetInvitationsCountAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMalwareScanSettingsOutcome GuardDutyClient::GetMalwareScanSettings(const GetMalwareScanSettingsRequest& request) const
@@ -1174,14 +1174,14 @@ GetMalwareScanSettingsOutcomeCallable GuardDutyClient::GetMalwareScanSettingsCal
   return task->get_future();
 }
 
-void GuardDutyClient::GetMalwareScanSettingsAsync(const GetMalwareScanSettingsRequest& request, const GetMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetMalwareScanSettingsAsyncHelper(GuardDutyClient const * const clientThis, const GetMalwareScanSettingsRequest& request, const GetMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMalwareScanSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMalwareScanSettings(request), context);
 }
 
-void GuardDutyClient::GetMalwareScanSettingsAsyncHelper(const GetMalwareScanSettingsRequest& request, const GetMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetMalwareScanSettingsAsync(const GetMalwareScanSettingsRequest& request, const GetMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMalwareScanSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetMalwareScanSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMemberDetectorsOutcome GuardDutyClient::GetMemberDetectors(const GetMemberDetectorsRequest& request) const
@@ -1206,14 +1206,14 @@ GetMemberDetectorsOutcomeCallable GuardDutyClient::GetMemberDetectorsCallable(co
   return task->get_future();
 }
 
-void GuardDutyClient::GetMemberDetectorsAsync(const GetMemberDetectorsRequest& request, const GetMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetMemberDetectorsAsyncHelper(GuardDutyClient const * const clientThis, const GetMemberDetectorsRequest& request, const GetMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMemberDetectorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMemberDetectors(request), context);
 }
 
-void GuardDutyClient::GetMemberDetectorsAsyncHelper(const GetMemberDetectorsRequest& request, const GetMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetMemberDetectorsAsync(const GetMemberDetectorsRequest& request, const GetMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMemberDetectors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetMemberDetectorsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMembersOutcome GuardDutyClient::GetMembers(const GetMembersRequest& request) const
@@ -1238,14 +1238,14 @@ GetMembersOutcomeCallable GuardDutyClient::GetMembersCallable(const GetMembersRe
   return task->get_future();
 }
 
-void GuardDutyClient::GetMembersAsync(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetMembersAsyncHelper(GuardDutyClient const * const clientThis, const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMembers(request), context);
 }
 
-void GuardDutyClient::GetMembersAsyncHelper(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetMembersAsync(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRemainingFreeTrialDaysOutcome GuardDutyClient::GetRemainingFreeTrialDays(const GetRemainingFreeTrialDaysRequest& request) const
@@ -1270,14 +1270,14 @@ GetRemainingFreeTrialDaysOutcomeCallable GuardDutyClient::GetRemainingFreeTrialD
   return task->get_future();
 }
 
-void GuardDutyClient::GetRemainingFreeTrialDaysAsync(const GetRemainingFreeTrialDaysRequest& request, const GetRemainingFreeTrialDaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetRemainingFreeTrialDaysAsyncHelper(GuardDutyClient const * const clientThis, const GetRemainingFreeTrialDaysRequest& request, const GetRemainingFreeTrialDaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRemainingFreeTrialDaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRemainingFreeTrialDays(request), context);
 }
 
-void GuardDutyClient::GetRemainingFreeTrialDaysAsyncHelper(const GetRemainingFreeTrialDaysRequest& request, const GetRemainingFreeTrialDaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetRemainingFreeTrialDaysAsync(const GetRemainingFreeTrialDaysRequest& request, const GetRemainingFreeTrialDaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRemainingFreeTrialDays(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetRemainingFreeTrialDaysAsyncHelper( this, request, handler, context ); } );
 }
 
 GetThreatIntelSetOutcome GuardDutyClient::GetThreatIntelSet(const GetThreatIntelSetRequest& request) const
@@ -1308,14 +1308,14 @@ GetThreatIntelSetOutcomeCallable GuardDutyClient::GetThreatIntelSetCallable(cons
   return task->get_future();
 }
 
-void GuardDutyClient::GetThreatIntelSetAsync(const GetThreatIntelSetRequest& request, const GetThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetThreatIntelSetAsyncHelper(GuardDutyClient const * const clientThis, const GetThreatIntelSetRequest& request, const GetThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetThreatIntelSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetThreatIntelSet(request), context);
 }
 
-void GuardDutyClient::GetThreatIntelSetAsyncHelper(const GetThreatIntelSetRequest& request, const GetThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetThreatIntelSetAsync(const GetThreatIntelSetRequest& request, const GetThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetThreatIntelSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetThreatIntelSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUsageStatisticsOutcome GuardDutyClient::GetUsageStatistics(const GetUsageStatisticsRequest& request) const
@@ -1340,14 +1340,14 @@ GetUsageStatisticsOutcomeCallable GuardDutyClient::GetUsageStatisticsCallable(co
   return task->get_future();
 }
 
-void GuardDutyClient::GetUsageStatisticsAsync(const GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientGetUsageStatisticsAsyncHelper(GuardDutyClient const * const clientThis, const GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUsageStatisticsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUsageStatistics(request), context);
 }
 
-void GuardDutyClient::GetUsageStatisticsAsyncHelper(const GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::GetUsageStatisticsAsync(const GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUsageStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientGetUsageStatisticsAsyncHelper( this, request, handler, context ); } );
 }
 
 InviteMembersOutcome GuardDutyClient::InviteMembers(const InviteMembersRequest& request) const
@@ -1372,14 +1372,14 @@ InviteMembersOutcomeCallable GuardDutyClient::InviteMembersCallable(const Invite
   return task->get_future();
 }
 
-void GuardDutyClient::InviteMembersAsync(const InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientInviteMembersAsyncHelper(GuardDutyClient const * const clientThis, const InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InviteMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InviteMembers(request), context);
 }
 
-void GuardDutyClient::InviteMembersAsyncHelper(const InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::InviteMembersAsync(const InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InviteMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientInviteMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDetectorsOutcome GuardDutyClient::ListDetectors(const ListDetectorsRequest& request) const
@@ -1397,14 +1397,14 @@ ListDetectorsOutcomeCallable GuardDutyClient::ListDetectorsCallable(const ListDe
   return task->get_future();
 }
 
-void GuardDutyClient::ListDetectorsAsync(const ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientListDetectorsAsyncHelper(GuardDutyClient const * const clientThis, const ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDetectorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDetectors(request), context);
 }
 
-void GuardDutyClient::ListDetectorsAsyncHelper(const ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ListDetectorsAsync(const ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDetectors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientListDetectorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFiltersOutcome GuardDutyClient::ListFilters(const ListFiltersRequest& request) const
@@ -1429,14 +1429,14 @@ ListFiltersOutcomeCallable GuardDutyClient::ListFiltersCallable(const ListFilter
   return task->get_future();
 }
 
-void GuardDutyClient::ListFiltersAsync(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientListFiltersAsyncHelper(GuardDutyClient const * const clientThis, const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFiltersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFilters(request), context);
 }
 
-void GuardDutyClient::ListFiltersAsyncHelper(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ListFiltersAsync(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFilters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientListFiltersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFindingsOutcome GuardDutyClient::ListFindings(const ListFindingsRequest& request) const
@@ -1461,14 +1461,14 @@ ListFindingsOutcomeCallable GuardDutyClient::ListFindingsCallable(const ListFind
   return task->get_future();
 }
 
-void GuardDutyClient::ListFindingsAsync(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientListFindingsAsyncHelper(GuardDutyClient const * const clientThis, const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFindings(request), context);
 }
 
-void GuardDutyClient::ListFindingsAsyncHelper(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ListFindingsAsync(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientListFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIPSetsOutcome GuardDutyClient::ListIPSets(const ListIPSetsRequest& request) const
@@ -1493,14 +1493,14 @@ ListIPSetsOutcomeCallable GuardDutyClient::ListIPSetsCallable(const ListIPSetsRe
   return task->get_future();
 }
 
-void GuardDutyClient::ListIPSetsAsync(const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientListIPSetsAsyncHelper(GuardDutyClient const * const clientThis, const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIPSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIPSets(request), context);
 }
 
-void GuardDutyClient::ListIPSetsAsyncHelper(const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ListIPSetsAsync(const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIPSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientListIPSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInvitationsOutcome GuardDutyClient::ListInvitations(const ListInvitationsRequest& request) const
@@ -1518,14 +1518,14 @@ ListInvitationsOutcomeCallable GuardDutyClient::ListInvitationsCallable(const Li
   return task->get_future();
 }
 
-void GuardDutyClient::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientListInvitationsAsyncHelper(GuardDutyClient const * const clientThis, const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInvitationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInvitations(request), context);
 }
 
-void GuardDutyClient::ListInvitationsAsyncHelper(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientListInvitationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMembersOutcome GuardDutyClient::ListMembers(const ListMembersRequest& request) const
@@ -1550,14 +1550,14 @@ ListMembersOutcomeCallable GuardDutyClient::ListMembersCallable(const ListMember
   return task->get_future();
 }
 
-void GuardDutyClient::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientListMembersAsyncHelper(GuardDutyClient const * const clientThis, const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMembers(request), context);
 }
 
-void GuardDutyClient::ListMembersAsyncHelper(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientListMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOrganizationAdminAccountsOutcome GuardDutyClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
@@ -1575,14 +1575,14 @@ ListOrganizationAdminAccountsOutcomeCallable GuardDutyClient::ListOrganizationAd
   return task->get_future();
 }
 
-void GuardDutyClient::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientListOrganizationAdminAccountsAsyncHelper(GuardDutyClient const * const clientThis, const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationAdminAccountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOrganizationAdminAccounts(request), context);
 }
 
-void GuardDutyClient::ListOrganizationAdminAccountsAsyncHelper(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOrganizationAdminAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientListOrganizationAdminAccountsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPublishingDestinationsOutcome GuardDutyClient::ListPublishingDestinations(const ListPublishingDestinationsRequest& request) const
@@ -1607,14 +1607,14 @@ ListPublishingDestinationsOutcomeCallable GuardDutyClient::ListPublishingDestina
   return task->get_future();
 }
 
-void GuardDutyClient::ListPublishingDestinationsAsync(const ListPublishingDestinationsRequest& request, const ListPublishingDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientListPublishingDestinationsAsyncHelper(GuardDutyClient const * const clientThis, const ListPublishingDestinationsRequest& request, const ListPublishingDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPublishingDestinationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPublishingDestinations(request), context);
 }
 
-void GuardDutyClient::ListPublishingDestinationsAsyncHelper(const ListPublishingDestinationsRequest& request, const ListPublishingDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ListPublishingDestinationsAsync(const ListPublishingDestinationsRequest& request, const ListPublishingDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPublishingDestinations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientListPublishingDestinationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome GuardDutyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1638,14 +1638,14 @@ ListTagsForResourceOutcomeCallable GuardDutyClient::ListTagsForResourceCallable(
   return task->get_future();
 }
 
-void GuardDutyClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientListTagsForResourceAsyncHelper(GuardDutyClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void GuardDutyClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThreatIntelSetsOutcome GuardDutyClient::ListThreatIntelSets(const ListThreatIntelSetsRequest& request) const
@@ -1670,14 +1670,14 @@ ListThreatIntelSetsOutcomeCallable GuardDutyClient::ListThreatIntelSetsCallable(
   return task->get_future();
 }
 
-void GuardDutyClient::ListThreatIntelSetsAsync(const ListThreatIntelSetsRequest& request, const ListThreatIntelSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientListThreatIntelSetsAsyncHelper(GuardDutyClient const * const clientThis, const ListThreatIntelSetsRequest& request, const ListThreatIntelSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThreatIntelSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThreatIntelSets(request), context);
 }
 
-void GuardDutyClient::ListThreatIntelSetsAsyncHelper(const ListThreatIntelSetsRequest& request, const ListThreatIntelSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::ListThreatIntelSetsAsync(const ListThreatIntelSetsRequest& request, const ListThreatIntelSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThreatIntelSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientListThreatIntelSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMonitoringMembersOutcome GuardDutyClient::StartMonitoringMembers(const StartMonitoringMembersRequest& request) const
@@ -1702,14 +1702,14 @@ StartMonitoringMembersOutcomeCallable GuardDutyClient::StartMonitoringMembersCal
   return task->get_future();
 }
 
-void GuardDutyClient::StartMonitoringMembersAsync(const StartMonitoringMembersRequest& request, const StartMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientStartMonitoringMembersAsyncHelper(GuardDutyClient const * const clientThis, const StartMonitoringMembersRequest& request, const StartMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMonitoringMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMonitoringMembers(request), context);
 }
 
-void GuardDutyClient::StartMonitoringMembersAsyncHelper(const StartMonitoringMembersRequest& request, const StartMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::StartMonitoringMembersAsync(const StartMonitoringMembersRequest& request, const StartMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMonitoringMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientStartMonitoringMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 StopMonitoringMembersOutcome GuardDutyClient::StopMonitoringMembers(const StopMonitoringMembersRequest& request) const
@@ -1734,14 +1734,14 @@ StopMonitoringMembersOutcomeCallable GuardDutyClient::StopMonitoringMembersCalla
   return task->get_future();
 }
 
-void GuardDutyClient::StopMonitoringMembersAsync(const StopMonitoringMembersRequest& request, const StopMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientStopMonitoringMembersAsyncHelper(GuardDutyClient const * const clientThis, const StopMonitoringMembersRequest& request, const StopMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopMonitoringMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopMonitoringMembers(request), context);
 }
 
-void GuardDutyClient::StopMonitoringMembersAsyncHelper(const StopMonitoringMembersRequest& request, const StopMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::StopMonitoringMembersAsync(const StopMonitoringMembersRequest& request, const StopMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopMonitoringMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientStopMonitoringMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome GuardDutyClient::TagResource(const TagResourceRequest& request) const
@@ -1765,14 +1765,14 @@ TagResourceOutcomeCallable GuardDutyClient::TagResourceCallable(const TagResourc
   return task->get_future();
 }
 
-void GuardDutyClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientTagResourceAsyncHelper(GuardDutyClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void GuardDutyClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UnarchiveFindingsOutcome GuardDutyClient::UnarchiveFindings(const UnarchiveFindingsRequest& request) const
@@ -1797,14 +1797,14 @@ UnarchiveFindingsOutcomeCallable GuardDutyClient::UnarchiveFindingsCallable(cons
   return task->get_future();
 }
 
-void GuardDutyClient::UnarchiveFindingsAsync(const UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUnarchiveFindingsAsyncHelper(GuardDutyClient const * const clientThis, const UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnarchiveFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UnarchiveFindings(request), context);
 }
 
-void GuardDutyClient::UnarchiveFindingsAsyncHelper(const UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UnarchiveFindingsAsync(const UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UnarchiveFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUnarchiveFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome GuardDutyClient::UntagResource(const UntagResourceRequest& request) const
@@ -1833,14 +1833,14 @@ UntagResourceOutcomeCallable GuardDutyClient::UntagResourceCallable(const UntagR
   return task->get_future();
 }
 
-void GuardDutyClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUntagResourceAsyncHelper(GuardDutyClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void GuardDutyClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDetectorOutcome GuardDutyClient::UpdateDetector(const UpdateDetectorRequest& request) const
@@ -1864,14 +1864,14 @@ UpdateDetectorOutcomeCallable GuardDutyClient::UpdateDetectorCallable(const Upda
   return task->get_future();
 }
 
-void GuardDutyClient::UpdateDetectorAsync(const UpdateDetectorRequest& request, const UpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUpdateDetectorAsyncHelper(GuardDutyClient const * const clientThis, const UpdateDetectorRequest& request, const UpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDetector(request), context);
 }
 
-void GuardDutyClient::UpdateDetectorAsyncHelper(const UpdateDetectorRequest& request, const UpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UpdateDetectorAsync(const UpdateDetectorRequest& request, const UpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUpdateDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFilterOutcome GuardDutyClient::UpdateFilter(const UpdateFilterRequest& request) const
@@ -1902,14 +1902,14 @@ UpdateFilterOutcomeCallable GuardDutyClient::UpdateFilterCallable(const UpdateFi
   return task->get_future();
 }
 
-void GuardDutyClient::UpdateFilterAsync(const UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUpdateFilterAsyncHelper(GuardDutyClient const * const clientThis, const UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFilter(request), context);
 }
 
-void GuardDutyClient::UpdateFilterAsyncHelper(const UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UpdateFilterAsync(const UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUpdateFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFindingsFeedbackOutcome GuardDutyClient::UpdateFindingsFeedback(const UpdateFindingsFeedbackRequest& request) const
@@ -1934,14 +1934,14 @@ UpdateFindingsFeedbackOutcomeCallable GuardDutyClient::UpdateFindingsFeedbackCal
   return task->get_future();
 }
 
-void GuardDutyClient::UpdateFindingsFeedbackAsync(const UpdateFindingsFeedbackRequest& request, const UpdateFindingsFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUpdateFindingsFeedbackAsyncHelper(GuardDutyClient const * const clientThis, const UpdateFindingsFeedbackRequest& request, const UpdateFindingsFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFindingsFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFindingsFeedback(request), context);
 }
 
-void GuardDutyClient::UpdateFindingsFeedbackAsyncHelper(const UpdateFindingsFeedbackRequest& request, const UpdateFindingsFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UpdateFindingsFeedbackAsync(const UpdateFindingsFeedbackRequest& request, const UpdateFindingsFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFindingsFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUpdateFindingsFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateIPSetOutcome GuardDutyClient::UpdateIPSet(const UpdateIPSetRequest& request) const
@@ -1972,14 +1972,14 @@ UpdateIPSetOutcomeCallable GuardDutyClient::UpdateIPSetCallable(const UpdateIPSe
   return task->get_future();
 }
 
-void GuardDutyClient::UpdateIPSetAsync(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUpdateIPSetAsyncHelper(GuardDutyClient const * const clientThis, const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateIPSet(request), context);
 }
 
-void GuardDutyClient::UpdateIPSetAsyncHelper(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UpdateIPSetAsync(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUpdateIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMalwareScanSettingsOutcome GuardDutyClient::UpdateMalwareScanSettings(const UpdateMalwareScanSettingsRequest& request) const
@@ -2004,14 +2004,14 @@ UpdateMalwareScanSettingsOutcomeCallable GuardDutyClient::UpdateMalwareScanSetti
   return task->get_future();
 }
 
-void GuardDutyClient::UpdateMalwareScanSettingsAsync(const UpdateMalwareScanSettingsRequest& request, const UpdateMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUpdateMalwareScanSettingsAsyncHelper(GuardDutyClient const * const clientThis, const UpdateMalwareScanSettingsRequest& request, const UpdateMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMalwareScanSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMalwareScanSettings(request), context);
 }
 
-void GuardDutyClient::UpdateMalwareScanSettingsAsyncHelper(const UpdateMalwareScanSettingsRequest& request, const UpdateMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UpdateMalwareScanSettingsAsync(const UpdateMalwareScanSettingsRequest& request, const UpdateMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMalwareScanSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUpdateMalwareScanSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMemberDetectorsOutcome GuardDutyClient::UpdateMemberDetectors(const UpdateMemberDetectorsRequest& request) const
@@ -2036,14 +2036,14 @@ UpdateMemberDetectorsOutcomeCallable GuardDutyClient::UpdateMemberDetectorsCalla
   return task->get_future();
 }
 
-void GuardDutyClient::UpdateMemberDetectorsAsync(const UpdateMemberDetectorsRequest& request, const UpdateMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUpdateMemberDetectorsAsyncHelper(GuardDutyClient const * const clientThis, const UpdateMemberDetectorsRequest& request, const UpdateMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMemberDetectorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMemberDetectors(request), context);
 }
 
-void GuardDutyClient::UpdateMemberDetectorsAsyncHelper(const UpdateMemberDetectorsRequest& request, const UpdateMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UpdateMemberDetectorsAsync(const UpdateMemberDetectorsRequest& request, const UpdateMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMemberDetectors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUpdateMemberDetectorsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateOrganizationConfigurationOutcome GuardDutyClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
@@ -2068,14 +2068,14 @@ UpdateOrganizationConfigurationOutcomeCallable GuardDutyClient::UpdateOrganizati
   return task->get_future();
 }
 
-void GuardDutyClient::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUpdateOrganizationConfigurationAsyncHelper(GuardDutyClient const * const clientThis, const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateOrganizationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateOrganizationConfiguration(request), context);
 }
 
-void GuardDutyClient::UpdateOrganizationConfigurationAsyncHelper(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateOrganizationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUpdateOrganizationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePublishingDestinationOutcome GuardDutyClient::UpdatePublishingDestination(const UpdatePublishingDestinationRequest& request) const
@@ -2106,14 +2106,14 @@ UpdatePublishingDestinationOutcomeCallable GuardDutyClient::UpdatePublishingDest
   return task->get_future();
 }
 
-void GuardDutyClient::UpdatePublishingDestinationAsync(const UpdatePublishingDestinationRequest& request, const UpdatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUpdatePublishingDestinationAsyncHelper(GuardDutyClient const * const clientThis, const UpdatePublishingDestinationRequest& request, const UpdatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePublishingDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePublishingDestination(request), context);
 }
 
-void GuardDutyClient::UpdatePublishingDestinationAsyncHelper(const UpdatePublishingDestinationRequest& request, const UpdatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UpdatePublishingDestinationAsync(const UpdatePublishingDestinationRequest& request, const UpdatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePublishingDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUpdatePublishingDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateThreatIntelSetOutcome GuardDutyClient::UpdateThreatIntelSet(const UpdateThreatIntelSetRequest& request) const
@@ -2144,13 +2144,13 @@ UpdateThreatIntelSetOutcomeCallable GuardDutyClient::UpdateThreatIntelSetCallabl
   return task->get_future();
 }
 
-void GuardDutyClient::UpdateThreatIntelSetAsync(const UpdateThreatIntelSetRequest& request, const UpdateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClientUpdateThreatIntelSetAsyncHelper(GuardDutyClient const * const clientThis, const UpdateThreatIntelSetRequest& request, const UpdateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThreatIntelSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateThreatIntelSet(request), context);
 }
 
-void GuardDutyClient::UpdateThreatIntelSetAsyncHelper(const UpdateThreatIntelSetRequest& request, const UpdateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GuardDutyClient::UpdateThreatIntelSetAsync(const UpdateThreatIntelSetRequest& request, const UpdateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateThreatIntelSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GuardDutyClientUpdateThreatIntelSetAsyncHelper( this, request, handler, context ); } );
 }
 

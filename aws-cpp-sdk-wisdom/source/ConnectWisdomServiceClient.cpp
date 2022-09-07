@@ -147,14 +147,14 @@ CreateAssistantOutcomeCallable ConnectWisdomServiceClient::CreateAssistantCallab
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::CreateAssistantAsync(const CreateAssistantRequest& request, const CreateAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientCreateAssistantAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const CreateAssistantRequest& request, const CreateAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssistantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAssistant(request), context);
 }
 
-void ConnectWisdomServiceClient::CreateAssistantAsyncHelper(const CreateAssistantRequest& request, const CreateAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::CreateAssistantAsync(const CreateAssistantRequest& request, const CreateAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAssistant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientCreateAssistantAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAssistantAssociationOutcome ConnectWisdomServiceClient::CreateAssistantAssociation(const CreateAssistantAssociationRequest& request) const
@@ -179,14 +179,14 @@ CreateAssistantAssociationOutcomeCallable ConnectWisdomServiceClient::CreateAssi
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::CreateAssistantAssociationAsync(const CreateAssistantAssociationRequest& request, const CreateAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientCreateAssistantAssociationAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const CreateAssistantAssociationRequest& request, const CreateAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssistantAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAssistantAssociation(request), context);
 }
 
-void ConnectWisdomServiceClient::CreateAssistantAssociationAsyncHelper(const CreateAssistantAssociationRequest& request, const CreateAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::CreateAssistantAssociationAsync(const CreateAssistantAssociationRequest& request, const CreateAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAssistantAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientCreateAssistantAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateContentOutcome ConnectWisdomServiceClient::CreateContent(const CreateContentRequest& request) const
@@ -211,14 +211,14 @@ CreateContentOutcomeCallable ConnectWisdomServiceClient::CreateContentCallable(c
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::CreateContentAsync(const CreateContentRequest& request, const CreateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientCreateContentAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const CreateContentRequest& request, const CreateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateContent(request), context);
 }
 
-void ConnectWisdomServiceClient::CreateContentAsyncHelper(const CreateContentRequest& request, const CreateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::CreateContentAsync(const CreateContentRequest& request, const CreateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateContent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientCreateContentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateKnowledgeBaseOutcome ConnectWisdomServiceClient::CreateKnowledgeBase(const CreateKnowledgeBaseRequest& request) const
@@ -236,14 +236,14 @@ CreateKnowledgeBaseOutcomeCallable ConnectWisdomServiceClient::CreateKnowledgeBa
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::CreateKnowledgeBaseAsync(const CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientCreateKnowledgeBaseAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateKnowledgeBaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateKnowledgeBase(request), context);
 }
 
-void ConnectWisdomServiceClient::CreateKnowledgeBaseAsyncHelper(const CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::CreateKnowledgeBaseAsync(const CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateKnowledgeBase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientCreateKnowledgeBaseAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSessionOutcome ConnectWisdomServiceClient::CreateSession(const CreateSessionRequest& request) const
@@ -268,14 +268,14 @@ CreateSessionOutcomeCallable ConnectWisdomServiceClient::CreateSessionCallable(c
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientCreateSessionAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSession(request), context);
 }
 
-void ConnectWisdomServiceClient::CreateSessionAsyncHelper(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientCreateSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAssistantOutcome ConnectWisdomServiceClient::DeleteAssistant(const DeleteAssistantRequest& request) const
@@ -299,14 +299,14 @@ DeleteAssistantOutcomeCallable ConnectWisdomServiceClient::DeleteAssistantCallab
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::DeleteAssistantAsync(const DeleteAssistantRequest& request, const DeleteAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientDeleteAssistantAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const DeleteAssistantRequest& request, const DeleteAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssistantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAssistant(request), context);
 }
 
-void ConnectWisdomServiceClient::DeleteAssistantAsyncHelper(const DeleteAssistantRequest& request, const DeleteAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::DeleteAssistantAsync(const DeleteAssistantRequest& request, const DeleteAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssistant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientDeleteAssistantAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAssistantAssociationOutcome ConnectWisdomServiceClient::DeleteAssistantAssociation(const DeleteAssistantAssociationRequest& request) const
@@ -337,14 +337,14 @@ DeleteAssistantAssociationOutcomeCallable ConnectWisdomServiceClient::DeleteAssi
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::DeleteAssistantAssociationAsync(const DeleteAssistantAssociationRequest& request, const DeleteAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientDeleteAssistantAssociationAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const DeleteAssistantAssociationRequest& request, const DeleteAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssistantAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAssistantAssociation(request), context);
 }
 
-void ConnectWisdomServiceClient::DeleteAssistantAssociationAsyncHelper(const DeleteAssistantAssociationRequest& request, const DeleteAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::DeleteAssistantAssociationAsync(const DeleteAssistantAssociationRequest& request, const DeleteAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssistantAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientDeleteAssistantAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteContentOutcome ConnectWisdomServiceClient::DeleteContent(const DeleteContentRequest& request) const
@@ -375,14 +375,14 @@ DeleteContentOutcomeCallable ConnectWisdomServiceClient::DeleteContentCallable(c
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::DeleteContentAsync(const DeleteContentRequest& request, const DeleteContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientDeleteContentAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const DeleteContentRequest& request, const DeleteContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteContent(request), context);
 }
 
-void ConnectWisdomServiceClient::DeleteContentAsyncHelper(const DeleteContentRequest& request, const DeleteContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::DeleteContentAsync(const DeleteContentRequest& request, const DeleteContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteContent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientDeleteContentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteKnowledgeBaseOutcome ConnectWisdomServiceClient::DeleteKnowledgeBase(const DeleteKnowledgeBaseRequest& request) const
@@ -406,14 +406,14 @@ DeleteKnowledgeBaseOutcomeCallable ConnectWisdomServiceClient::DeleteKnowledgeBa
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::DeleteKnowledgeBaseAsync(const DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientDeleteKnowledgeBaseAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteKnowledgeBaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteKnowledgeBase(request), context);
 }
 
-void ConnectWisdomServiceClient::DeleteKnowledgeBaseAsyncHelper(const DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::DeleteKnowledgeBaseAsync(const DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteKnowledgeBase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientDeleteKnowledgeBaseAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssistantOutcome ConnectWisdomServiceClient::GetAssistant(const GetAssistantRequest& request) const
@@ -437,14 +437,14 @@ GetAssistantOutcomeCallable ConnectWisdomServiceClient::GetAssistantCallable(con
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::GetAssistantAsync(const GetAssistantRequest& request, const GetAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientGetAssistantAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const GetAssistantRequest& request, const GetAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssistantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssistant(request), context);
 }
 
-void ConnectWisdomServiceClient::GetAssistantAsyncHelper(const GetAssistantRequest& request, const GetAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::GetAssistantAsync(const GetAssistantRequest& request, const GetAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssistant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientGetAssistantAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssistantAssociationOutcome ConnectWisdomServiceClient::GetAssistantAssociation(const GetAssistantAssociationRequest& request) const
@@ -475,14 +475,14 @@ GetAssistantAssociationOutcomeCallable ConnectWisdomServiceClient::GetAssistantA
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::GetAssistantAssociationAsync(const GetAssistantAssociationRequest& request, const GetAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientGetAssistantAssociationAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const GetAssistantAssociationRequest& request, const GetAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssistantAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssistantAssociation(request), context);
 }
 
-void ConnectWisdomServiceClient::GetAssistantAssociationAsyncHelper(const GetAssistantAssociationRequest& request, const GetAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::GetAssistantAssociationAsync(const GetAssistantAssociationRequest& request, const GetAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssistantAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientGetAssistantAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContentOutcome ConnectWisdomServiceClient::GetContent(const GetContentRequest& request) const
@@ -513,14 +513,14 @@ GetContentOutcomeCallable ConnectWisdomServiceClient::GetContentCallable(const G
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::GetContentAsync(const GetContentRequest& request, const GetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientGetContentAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const GetContentRequest& request, const GetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContent(request), context);
 }
 
-void ConnectWisdomServiceClient::GetContentAsyncHelper(const GetContentRequest& request, const GetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::GetContentAsync(const GetContentRequest& request, const GetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientGetContentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContentSummaryOutcome ConnectWisdomServiceClient::GetContentSummary(const GetContentSummaryRequest& request) const
@@ -552,14 +552,14 @@ GetContentSummaryOutcomeCallable ConnectWisdomServiceClient::GetContentSummaryCa
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::GetContentSummaryAsync(const GetContentSummaryRequest& request, const GetContentSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientGetContentSummaryAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const GetContentSummaryRequest& request, const GetContentSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContentSummaryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContentSummary(request), context);
 }
 
-void ConnectWisdomServiceClient::GetContentSummaryAsyncHelper(const GetContentSummaryRequest& request, const GetContentSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::GetContentSummaryAsync(const GetContentSummaryRequest& request, const GetContentSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContentSummary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientGetContentSummaryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetKnowledgeBaseOutcome ConnectWisdomServiceClient::GetKnowledgeBase(const GetKnowledgeBaseRequest& request) const
@@ -583,14 +583,14 @@ GetKnowledgeBaseOutcomeCallable ConnectWisdomServiceClient::GetKnowledgeBaseCall
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::GetKnowledgeBaseAsync(const GetKnowledgeBaseRequest& request, const GetKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientGetKnowledgeBaseAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const GetKnowledgeBaseRequest& request, const GetKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetKnowledgeBaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetKnowledgeBase(request), context);
 }
 
-void ConnectWisdomServiceClient::GetKnowledgeBaseAsyncHelper(const GetKnowledgeBaseRequest& request, const GetKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::GetKnowledgeBaseAsync(const GetKnowledgeBaseRequest& request, const GetKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetKnowledgeBase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientGetKnowledgeBaseAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecommendationsOutcome ConnectWisdomServiceClient::GetRecommendations(const GetRecommendationsRequest& request) const
@@ -622,14 +622,14 @@ GetRecommendationsOutcomeCallable ConnectWisdomServiceClient::GetRecommendations
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::GetRecommendationsAsync(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientGetRecommendationsAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecommendations(request), context);
 }
 
-void ConnectWisdomServiceClient::GetRecommendationsAsyncHelper(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::GetRecommendationsAsync(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientGetRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSessionOutcome ConnectWisdomServiceClient::GetSession(const GetSessionRequest& request) const
@@ -660,14 +660,14 @@ GetSessionOutcomeCallable ConnectWisdomServiceClient::GetSessionCallable(const G
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientGetSessionAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSession(request), context);
 }
 
-void ConnectWisdomServiceClient::GetSessionAsyncHelper(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientGetSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssistantAssociationsOutcome ConnectWisdomServiceClient::ListAssistantAssociations(const ListAssistantAssociationsRequest& request) const
@@ -692,14 +692,14 @@ ListAssistantAssociationsOutcomeCallable ConnectWisdomServiceClient::ListAssista
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::ListAssistantAssociationsAsync(const ListAssistantAssociationsRequest& request, const ListAssistantAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientListAssistantAssociationsAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const ListAssistantAssociationsRequest& request, const ListAssistantAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssistantAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssistantAssociations(request), context);
 }
 
-void ConnectWisdomServiceClient::ListAssistantAssociationsAsyncHelper(const ListAssistantAssociationsRequest& request, const ListAssistantAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::ListAssistantAssociationsAsync(const ListAssistantAssociationsRequest& request, const ListAssistantAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssistantAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientListAssistantAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssistantsOutcome ConnectWisdomServiceClient::ListAssistants(const ListAssistantsRequest& request) const
@@ -717,14 +717,14 @@ ListAssistantsOutcomeCallable ConnectWisdomServiceClient::ListAssistantsCallable
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::ListAssistantsAsync(const ListAssistantsRequest& request, const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientListAssistantsAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const ListAssistantsRequest& request, const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssistantsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssistants(request), context);
 }
 
-void ConnectWisdomServiceClient::ListAssistantsAsyncHelper(const ListAssistantsRequest& request, const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::ListAssistantsAsync(const ListAssistantsRequest& request, const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssistants(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientListAssistantsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListContentsOutcome ConnectWisdomServiceClient::ListContents(const ListContentsRequest& request) const
@@ -749,14 +749,14 @@ ListContentsOutcomeCallable ConnectWisdomServiceClient::ListContentsCallable(con
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::ListContentsAsync(const ListContentsRequest& request, const ListContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientListContentsAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const ListContentsRequest& request, const ListContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListContents(request), context);
 }
 
-void ConnectWisdomServiceClient::ListContentsAsyncHelper(const ListContentsRequest& request, const ListContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::ListContentsAsync(const ListContentsRequest& request, const ListContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListContents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientListContentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListKnowledgeBasesOutcome ConnectWisdomServiceClient::ListKnowledgeBases(const ListKnowledgeBasesRequest& request) const
@@ -774,14 +774,14 @@ ListKnowledgeBasesOutcomeCallable ConnectWisdomServiceClient::ListKnowledgeBases
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::ListKnowledgeBasesAsync(const ListKnowledgeBasesRequest& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientListKnowledgeBasesAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const ListKnowledgeBasesRequest& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListKnowledgeBasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListKnowledgeBases(request), context);
 }
 
-void ConnectWisdomServiceClient::ListKnowledgeBasesAsyncHelper(const ListKnowledgeBasesRequest& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::ListKnowledgeBasesAsync(const ListKnowledgeBasesRequest& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListKnowledgeBases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientListKnowledgeBasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ConnectWisdomServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -805,14 +805,14 @@ ListTagsForResourceOutcomeCallable ConnectWisdomServiceClient::ListTagsForResour
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientListTagsForResourceAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ConnectWisdomServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 NotifyRecommendationsReceivedOutcome ConnectWisdomServiceClient::NotifyRecommendationsReceived(const NotifyRecommendationsReceivedRequest& request) const
@@ -844,14 +844,14 @@ NotifyRecommendationsReceivedOutcomeCallable ConnectWisdomServiceClient::NotifyR
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::NotifyRecommendationsReceivedAsync(const NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientNotifyRecommendationsReceivedAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->NotifyRecommendationsReceivedAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->NotifyRecommendationsReceived(request), context);
 }
 
-void ConnectWisdomServiceClient::NotifyRecommendationsReceivedAsyncHelper(const NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::NotifyRecommendationsReceivedAsync(const NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, NotifyRecommendationsReceived(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientNotifyRecommendationsReceivedAsyncHelper( this, request, handler, context ); } );
 }
 
 PutFeedbackOutcome ConnectWisdomServiceClient::PutFeedback(const PutFeedbackRequest& request) const
@@ -876,14 +876,14 @@ PutFeedbackOutcomeCallable ConnectWisdomServiceClient::PutFeedbackCallable(const
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::PutFeedbackAsync(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientPutFeedbackAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutFeedback(request), context);
 }
 
-void ConnectWisdomServiceClient::PutFeedbackAsyncHelper(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::PutFeedbackAsync(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientPutFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 QueryAssistantOutcome ConnectWisdomServiceClient::QueryAssistant(const QueryAssistantRequest& request) const
@@ -908,14 +908,14 @@ QueryAssistantOutcomeCallable ConnectWisdomServiceClient::QueryAssistantCallable
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::QueryAssistantAsync(const QueryAssistantRequest& request, const QueryAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientQueryAssistantAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const QueryAssistantRequest& request, const QueryAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->QueryAssistantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->QueryAssistant(request), context);
 }
 
-void ConnectWisdomServiceClient::QueryAssistantAsyncHelper(const QueryAssistantRequest& request, const QueryAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::QueryAssistantAsync(const QueryAssistantRequest& request, const QueryAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, QueryAssistant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientQueryAssistantAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUri(const RemoveKnowledgeBaseTemplateUriRequest& request) const
@@ -940,14 +940,14 @@ RemoveKnowledgeBaseTemplateUriOutcomeCallable ConnectWisdomServiceClient::Remove
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUriAsync(const RemoveKnowledgeBaseTemplateUriRequest& request, const RemoveKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientRemoveKnowledgeBaseTemplateUriAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const RemoveKnowledgeBaseTemplateUriRequest& request, const RemoveKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveKnowledgeBaseTemplateUriAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveKnowledgeBaseTemplateUri(request), context);
 }
 
-void ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUriAsyncHelper(const RemoveKnowledgeBaseTemplateUriRequest& request, const RemoveKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUriAsync(const RemoveKnowledgeBaseTemplateUriRequest& request, const RemoveKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveKnowledgeBaseTemplateUri(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientRemoveKnowledgeBaseTemplateUriAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchContentOutcome ConnectWisdomServiceClient::SearchContent(const SearchContentRequest& request) const
@@ -972,14 +972,14 @@ SearchContentOutcomeCallable ConnectWisdomServiceClient::SearchContentCallable(c
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::SearchContentAsync(const SearchContentRequest& request, const SearchContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientSearchContentAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const SearchContentRequest& request, const SearchContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchContentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchContent(request), context);
 }
 
-void ConnectWisdomServiceClient::SearchContentAsyncHelper(const SearchContentRequest& request, const SearchContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::SearchContentAsync(const SearchContentRequest& request, const SearchContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchContent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientSearchContentAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchSessionsOutcome ConnectWisdomServiceClient::SearchSessions(const SearchSessionsRequest& request) const
@@ -1004,14 +1004,14 @@ SearchSessionsOutcomeCallable ConnectWisdomServiceClient::SearchSessionsCallable
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::SearchSessionsAsync(const SearchSessionsRequest& request, const SearchSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientSearchSessionsAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const SearchSessionsRequest& request, const SearchSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchSessions(request), context);
 }
 
-void ConnectWisdomServiceClient::SearchSessionsAsyncHelper(const SearchSessionsRequest& request, const SearchSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::SearchSessionsAsync(const SearchSessionsRequest& request, const SearchSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientSearchSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartContentUploadOutcome ConnectWisdomServiceClient::StartContentUpload(const StartContentUploadRequest& request) const
@@ -1036,14 +1036,14 @@ StartContentUploadOutcomeCallable ConnectWisdomServiceClient::StartContentUpload
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::StartContentUploadAsync(const StartContentUploadRequest& request, const StartContentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientStartContentUploadAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const StartContentUploadRequest& request, const StartContentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartContentUploadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartContentUpload(request), context);
 }
 
-void ConnectWisdomServiceClient::StartContentUploadAsyncHelper(const StartContentUploadRequest& request, const StartContentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::StartContentUploadAsync(const StartContentUploadRequest& request, const StartContentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartContentUpload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientStartContentUploadAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ConnectWisdomServiceClient::TagResource(const TagResourceRequest& request) const
@@ -1067,14 +1067,14 @@ TagResourceOutcomeCallable ConnectWisdomServiceClient::TagResourceCallable(const
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientTagResourceAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ConnectWisdomServiceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ConnectWisdomServiceClient::UntagResource(const UntagResourceRequest& request) const
@@ -1103,14 +1103,14 @@ UntagResourceOutcomeCallable ConnectWisdomServiceClient::UntagResourceCallable(c
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientUntagResourceAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ConnectWisdomServiceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateContentOutcome ConnectWisdomServiceClient::UpdateContent(const UpdateContentRequest& request) const
@@ -1141,14 +1141,14 @@ UpdateContentOutcomeCallable ConnectWisdomServiceClient::UpdateContentCallable(c
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::UpdateContentAsync(const UpdateContentRequest& request, const UpdateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientUpdateContentAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const UpdateContentRequest& request, const UpdateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateContent(request), context);
 }
 
-void ConnectWisdomServiceClient::UpdateContentAsyncHelper(const UpdateContentRequest& request, const UpdateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::UpdateContentAsync(const UpdateContentRequest& request, const UpdateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateContent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientUpdateContentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUri(const UpdateKnowledgeBaseTemplateUriRequest& request) const
@@ -1173,13 +1173,13 @@ UpdateKnowledgeBaseTemplateUriOutcomeCallable ConnectWisdomServiceClient::Update
   return task->get_future();
 }
 
-void ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUriAsync(const UpdateKnowledgeBaseTemplateUriRequest& request, const UpdateKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClientUpdateKnowledgeBaseTemplateUriAsyncHelper(ConnectWisdomServiceClient const * const clientThis, const UpdateKnowledgeBaseTemplateUriRequest& request, const UpdateKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateKnowledgeBaseTemplateUriAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateKnowledgeBaseTemplateUri(request), context);
 }
 
-void ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUriAsyncHelper(const UpdateKnowledgeBaseTemplateUriRequest& request, const UpdateKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUriAsync(const UpdateKnowledgeBaseTemplateUriRequest& request, const UpdateKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateKnowledgeBaseTemplateUri(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectWisdomServiceClientUpdateKnowledgeBaseTemplateUriAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -118,14 +118,14 @@ CreateTokenOutcomeCallable SSOOIDCClient::CreateTokenCallable(const CreateTokenR
   return task->get_future();
 }
 
-void SSOOIDCClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOOIDCClientCreateTokenAsyncHelper(SSOOIDCClient const * const clientThis, const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateToken(request), context);
 }
 
-void SSOOIDCClient::CreateTokenAsyncHelper(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOOIDCClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOOIDCClientCreateTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest& request) const
@@ -143,14 +143,14 @@ RegisterClientOutcomeCallable SSOOIDCClient::RegisterClientCallable(const Regist
   return task->get_future();
 }
 
-void SSOOIDCClient::RegisterClientAsync(const RegisterClientRequest& request, const RegisterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOOIDCClientRegisterClientAsyncHelper(SSOOIDCClient const * const clientThis, const RegisterClientRequest& request, const RegisterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterClientAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterClient(request), context);
 }
 
-void SSOOIDCClient::RegisterClientAsyncHelper(const RegisterClientRequest& request, const RegisterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOOIDCClient::RegisterClientAsync(const RegisterClientRequest& request, const RegisterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterClient(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOOIDCClientRegisterClientAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDeviceAuthorizationOutcome SSOOIDCClient::StartDeviceAuthorization(const StartDeviceAuthorizationRequest& request) const
@@ -168,13 +168,13 @@ StartDeviceAuthorizationOutcomeCallable SSOOIDCClient::StartDeviceAuthorizationC
   return task->get_future();
 }
 
-void SSOOIDCClient::StartDeviceAuthorizationAsync(const StartDeviceAuthorizationRequest& request, const StartDeviceAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOOIDCClientStartDeviceAuthorizationAsyncHelper(SSOOIDCClient const * const clientThis, const StartDeviceAuthorizationRequest& request, const StartDeviceAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDeviceAuthorizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDeviceAuthorization(request), context);
 }
 
-void SSOOIDCClient::StartDeviceAuthorizationAsyncHelper(const StartDeviceAuthorizationRequest& request, const StartDeviceAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOOIDCClient::StartDeviceAuthorizationAsync(const StartDeviceAuthorizationRequest& request, const StartDeviceAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDeviceAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOOIDCClientStartDeviceAuthorizationAsyncHelper( this, request, handler, context ); } );
 }
 

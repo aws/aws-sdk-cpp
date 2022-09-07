@@ -186,14 +186,14 @@ AddFacetToObjectOutcomeCallable CloudDirectoryClient::AddFacetToObjectCallable(c
   return task->get_future();
 }
 
-void CloudDirectoryClient::AddFacetToObjectAsync(const AddFacetToObjectRequest& request, const AddFacetToObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientAddFacetToObjectAsyncHelper(CloudDirectoryClient const * const clientThis, const AddFacetToObjectRequest& request, const AddFacetToObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddFacetToObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddFacetToObject(request), context);
 }
 
-void CloudDirectoryClient::AddFacetToObjectAsyncHelper(const AddFacetToObjectRequest& request, const AddFacetToObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::AddFacetToObjectAsync(const AddFacetToObjectRequest& request, const AddFacetToObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddFacetToObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientAddFacetToObjectAsyncHelper( this, request, handler, context ); } );
 }
 
 ApplySchemaOutcome CloudDirectoryClient::ApplySchema(const ApplySchemaRequest& request) const
@@ -216,14 +216,14 @@ ApplySchemaOutcomeCallable CloudDirectoryClient::ApplySchemaCallable(const Apply
   return task->get_future();
 }
 
-void CloudDirectoryClient::ApplySchemaAsync(const ApplySchemaRequest& request, const ApplySchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientApplySchemaAsyncHelper(CloudDirectoryClient const * const clientThis, const ApplySchemaRequest& request, const ApplySchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ApplySchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ApplySchema(request), context);
 }
 
-void CloudDirectoryClient::ApplySchemaAsyncHelper(const ApplySchemaRequest& request, const ApplySchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ApplySchemaAsync(const ApplySchemaRequest& request, const ApplySchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ApplySchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientApplySchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachObjectOutcome CloudDirectoryClient::AttachObject(const AttachObjectRequest& request) const
@@ -246,14 +246,14 @@ AttachObjectOutcomeCallable CloudDirectoryClient::AttachObjectCallable(const Att
   return task->get_future();
 }
 
-void CloudDirectoryClient::AttachObjectAsync(const AttachObjectRequest& request, const AttachObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientAttachObjectAsyncHelper(CloudDirectoryClient const * const clientThis, const AttachObjectRequest& request, const AttachObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachObject(request), context);
 }
 
-void CloudDirectoryClient::AttachObjectAsyncHelper(const AttachObjectRequest& request, const AttachObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::AttachObjectAsync(const AttachObjectRequest& request, const AttachObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientAttachObjectAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachPolicyOutcome CloudDirectoryClient::AttachPolicy(const AttachPolicyRequest& request) const
@@ -276,14 +276,14 @@ AttachPolicyOutcomeCallable CloudDirectoryClient::AttachPolicyCallable(const Att
   return task->get_future();
 }
 
-void CloudDirectoryClient::AttachPolicyAsync(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientAttachPolicyAsyncHelper(CloudDirectoryClient const * const clientThis, const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachPolicy(request), context);
 }
 
-void CloudDirectoryClient::AttachPolicyAsyncHelper(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::AttachPolicyAsync(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientAttachPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachToIndexOutcome CloudDirectoryClient::AttachToIndex(const AttachToIndexRequest& request) const
@@ -306,14 +306,14 @@ AttachToIndexOutcomeCallable CloudDirectoryClient::AttachToIndexCallable(const A
   return task->get_future();
 }
 
-void CloudDirectoryClient::AttachToIndexAsync(const AttachToIndexRequest& request, const AttachToIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientAttachToIndexAsyncHelper(CloudDirectoryClient const * const clientThis, const AttachToIndexRequest& request, const AttachToIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachToIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachToIndex(request), context);
 }
 
-void CloudDirectoryClient::AttachToIndexAsyncHelper(const AttachToIndexRequest& request, const AttachToIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::AttachToIndexAsync(const AttachToIndexRequest& request, const AttachToIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachToIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientAttachToIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachTypedLinkOutcome CloudDirectoryClient::AttachTypedLink(const AttachTypedLinkRequest& request) const
@@ -336,14 +336,14 @@ AttachTypedLinkOutcomeCallable CloudDirectoryClient::AttachTypedLinkCallable(con
   return task->get_future();
 }
 
-void CloudDirectoryClient::AttachTypedLinkAsync(const AttachTypedLinkRequest& request, const AttachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientAttachTypedLinkAsyncHelper(CloudDirectoryClient const * const clientThis, const AttachTypedLinkRequest& request, const AttachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachTypedLinkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachTypedLink(request), context);
 }
 
-void CloudDirectoryClient::AttachTypedLinkAsyncHelper(const AttachTypedLinkRequest& request, const AttachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::AttachTypedLinkAsync(const AttachTypedLinkRequest& request, const AttachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachTypedLink(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientAttachTypedLinkAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchReadOutcome CloudDirectoryClient::BatchRead(const BatchReadRequest& request) const
@@ -366,14 +366,14 @@ BatchReadOutcomeCallable CloudDirectoryClient::BatchReadCallable(const BatchRead
   return task->get_future();
 }
 
-void CloudDirectoryClient::BatchReadAsync(const BatchReadRequest& request, const BatchReadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientBatchReadAsyncHelper(CloudDirectoryClient const * const clientThis, const BatchReadRequest& request, const BatchReadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchReadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchRead(request), context);
 }
 
-void CloudDirectoryClient::BatchReadAsyncHelper(const BatchReadRequest& request, const BatchReadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::BatchReadAsync(const BatchReadRequest& request, const BatchReadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchRead(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientBatchReadAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchWriteOutcome CloudDirectoryClient::BatchWrite(const BatchWriteRequest& request) const
@@ -396,14 +396,14 @@ BatchWriteOutcomeCallable CloudDirectoryClient::BatchWriteCallable(const BatchWr
   return task->get_future();
 }
 
-void CloudDirectoryClient::BatchWriteAsync(const BatchWriteRequest& request, const BatchWriteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientBatchWriteAsyncHelper(CloudDirectoryClient const * const clientThis, const BatchWriteRequest& request, const BatchWriteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchWriteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchWrite(request), context);
 }
 
-void CloudDirectoryClient::BatchWriteAsyncHelper(const BatchWriteRequest& request, const BatchWriteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::BatchWriteAsync(const BatchWriteRequest& request, const BatchWriteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchWrite(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientBatchWriteAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDirectoryOutcome CloudDirectoryClient::CreateDirectory(const CreateDirectoryRequest& request) const
@@ -426,14 +426,14 @@ CreateDirectoryOutcomeCallable CloudDirectoryClient::CreateDirectoryCallable(con
   return task->get_future();
 }
 
-void CloudDirectoryClient::CreateDirectoryAsync(const CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientCreateDirectoryAsyncHelper(CloudDirectoryClient const * const clientThis, const CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDirectoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDirectory(request), context);
 }
 
-void CloudDirectoryClient::CreateDirectoryAsyncHelper(const CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::CreateDirectoryAsync(const CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientCreateDirectoryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFacetOutcome CloudDirectoryClient::CreateFacet(const CreateFacetRequest& request) const
@@ -456,14 +456,14 @@ CreateFacetOutcomeCallable CloudDirectoryClient::CreateFacetCallable(const Creat
   return task->get_future();
 }
 
-void CloudDirectoryClient::CreateFacetAsync(const CreateFacetRequest& request, const CreateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientCreateFacetAsyncHelper(CloudDirectoryClient const * const clientThis, const CreateFacetRequest& request, const CreateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFacetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFacet(request), context);
 }
 
-void CloudDirectoryClient::CreateFacetAsyncHelper(const CreateFacetRequest& request, const CreateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::CreateFacetAsync(const CreateFacetRequest& request, const CreateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFacet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientCreateFacetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIndexOutcome CloudDirectoryClient::CreateIndex(const CreateIndexRequest& request) const
@@ -486,14 +486,14 @@ CreateIndexOutcomeCallable CloudDirectoryClient::CreateIndexCallable(const Creat
   return task->get_future();
 }
 
-void CloudDirectoryClient::CreateIndexAsync(const CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientCreateIndexAsyncHelper(CloudDirectoryClient const * const clientThis, const CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIndex(request), context);
 }
 
-void CloudDirectoryClient::CreateIndexAsyncHelper(const CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::CreateIndexAsync(const CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientCreateIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateObjectOutcome CloudDirectoryClient::CreateObject(const CreateObjectRequest& request) const
@@ -516,14 +516,14 @@ CreateObjectOutcomeCallable CloudDirectoryClient::CreateObjectCallable(const Cre
   return task->get_future();
 }
 
-void CloudDirectoryClient::CreateObjectAsync(const CreateObjectRequest& request, const CreateObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientCreateObjectAsyncHelper(CloudDirectoryClient const * const clientThis, const CreateObjectRequest& request, const CreateObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateObject(request), context);
 }
 
-void CloudDirectoryClient::CreateObjectAsyncHelper(const CreateObjectRequest& request, const CreateObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::CreateObjectAsync(const CreateObjectRequest& request, const CreateObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientCreateObjectAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSchemaOutcome CloudDirectoryClient::CreateSchema(const CreateSchemaRequest& request) const
@@ -541,14 +541,14 @@ CreateSchemaOutcomeCallable CloudDirectoryClient::CreateSchemaCallable(const Cre
   return task->get_future();
 }
 
-void CloudDirectoryClient::CreateSchemaAsync(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientCreateSchemaAsyncHelper(CloudDirectoryClient const * const clientThis, const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSchema(request), context);
 }
 
-void CloudDirectoryClient::CreateSchemaAsyncHelper(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::CreateSchemaAsync(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientCreateSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTypedLinkFacetOutcome CloudDirectoryClient::CreateTypedLinkFacet(const CreateTypedLinkFacetRequest& request) const
@@ -571,14 +571,14 @@ CreateTypedLinkFacetOutcomeCallable CloudDirectoryClient::CreateTypedLinkFacetCa
   return task->get_future();
 }
 
-void CloudDirectoryClient::CreateTypedLinkFacetAsync(const CreateTypedLinkFacetRequest& request, const CreateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientCreateTypedLinkFacetAsyncHelper(CloudDirectoryClient const * const clientThis, const CreateTypedLinkFacetRequest& request, const CreateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTypedLinkFacetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTypedLinkFacet(request), context);
 }
 
-void CloudDirectoryClient::CreateTypedLinkFacetAsyncHelper(const CreateTypedLinkFacetRequest& request, const CreateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::CreateTypedLinkFacetAsync(const CreateTypedLinkFacetRequest& request, const CreateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTypedLinkFacet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientCreateTypedLinkFacetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDirectoryOutcome CloudDirectoryClient::DeleteDirectory(const DeleteDirectoryRequest& request) const
@@ -601,14 +601,14 @@ DeleteDirectoryOutcomeCallable CloudDirectoryClient::DeleteDirectoryCallable(con
   return task->get_future();
 }
 
-void CloudDirectoryClient::DeleteDirectoryAsync(const DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientDeleteDirectoryAsyncHelper(CloudDirectoryClient const * const clientThis, const DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDirectoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDirectory(request), context);
 }
 
-void CloudDirectoryClient::DeleteDirectoryAsyncHelper(const DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::DeleteDirectoryAsync(const DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientDeleteDirectoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFacetOutcome CloudDirectoryClient::DeleteFacet(const DeleteFacetRequest& request) const
@@ -631,14 +631,14 @@ DeleteFacetOutcomeCallable CloudDirectoryClient::DeleteFacetCallable(const Delet
   return task->get_future();
 }
 
-void CloudDirectoryClient::DeleteFacetAsync(const DeleteFacetRequest& request, const DeleteFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientDeleteFacetAsyncHelper(CloudDirectoryClient const * const clientThis, const DeleteFacetRequest& request, const DeleteFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFacetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFacet(request), context);
 }
 
-void CloudDirectoryClient::DeleteFacetAsyncHelper(const DeleteFacetRequest& request, const DeleteFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::DeleteFacetAsync(const DeleteFacetRequest& request, const DeleteFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFacet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientDeleteFacetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteObjectOutcome CloudDirectoryClient::DeleteObject(const DeleteObjectRequest& request) const
@@ -661,14 +661,14 @@ DeleteObjectOutcomeCallable CloudDirectoryClient::DeleteObjectCallable(const Del
   return task->get_future();
 }
 
-void CloudDirectoryClient::DeleteObjectAsync(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientDeleteObjectAsyncHelper(CloudDirectoryClient const * const clientThis, const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteObject(request), context);
 }
 
-void CloudDirectoryClient::DeleteObjectAsyncHelper(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::DeleteObjectAsync(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientDeleteObjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSchemaOutcome CloudDirectoryClient::DeleteSchema(const DeleteSchemaRequest& request) const
@@ -691,14 +691,14 @@ DeleteSchemaOutcomeCallable CloudDirectoryClient::DeleteSchemaCallable(const Del
   return task->get_future();
 }
 
-void CloudDirectoryClient::DeleteSchemaAsync(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientDeleteSchemaAsyncHelper(CloudDirectoryClient const * const clientThis, const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSchema(request), context);
 }
 
-void CloudDirectoryClient::DeleteSchemaAsyncHelper(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::DeleteSchemaAsync(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientDeleteSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTypedLinkFacetOutcome CloudDirectoryClient::DeleteTypedLinkFacet(const DeleteTypedLinkFacetRequest& request) const
@@ -721,14 +721,14 @@ DeleteTypedLinkFacetOutcomeCallable CloudDirectoryClient::DeleteTypedLinkFacetCa
   return task->get_future();
 }
 
-void CloudDirectoryClient::DeleteTypedLinkFacetAsync(const DeleteTypedLinkFacetRequest& request, const DeleteTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientDeleteTypedLinkFacetAsyncHelper(CloudDirectoryClient const * const clientThis, const DeleteTypedLinkFacetRequest& request, const DeleteTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTypedLinkFacetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTypedLinkFacet(request), context);
 }
 
-void CloudDirectoryClient::DeleteTypedLinkFacetAsyncHelper(const DeleteTypedLinkFacetRequest& request, const DeleteTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::DeleteTypedLinkFacetAsync(const DeleteTypedLinkFacetRequest& request, const DeleteTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTypedLinkFacet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientDeleteTypedLinkFacetAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachFromIndexOutcome CloudDirectoryClient::DetachFromIndex(const DetachFromIndexRequest& request) const
@@ -751,14 +751,14 @@ DetachFromIndexOutcomeCallable CloudDirectoryClient::DetachFromIndexCallable(con
   return task->get_future();
 }
 
-void CloudDirectoryClient::DetachFromIndexAsync(const DetachFromIndexRequest& request, const DetachFromIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientDetachFromIndexAsyncHelper(CloudDirectoryClient const * const clientThis, const DetachFromIndexRequest& request, const DetachFromIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachFromIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachFromIndex(request), context);
 }
 
-void CloudDirectoryClient::DetachFromIndexAsyncHelper(const DetachFromIndexRequest& request, const DetachFromIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::DetachFromIndexAsync(const DetachFromIndexRequest& request, const DetachFromIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachFromIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientDetachFromIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachObjectOutcome CloudDirectoryClient::DetachObject(const DetachObjectRequest& request) const
@@ -781,14 +781,14 @@ DetachObjectOutcomeCallable CloudDirectoryClient::DetachObjectCallable(const Det
   return task->get_future();
 }
 
-void CloudDirectoryClient::DetachObjectAsync(const DetachObjectRequest& request, const DetachObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientDetachObjectAsyncHelper(CloudDirectoryClient const * const clientThis, const DetachObjectRequest& request, const DetachObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachObject(request), context);
 }
 
-void CloudDirectoryClient::DetachObjectAsyncHelper(const DetachObjectRequest& request, const DetachObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::DetachObjectAsync(const DetachObjectRequest& request, const DetachObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientDetachObjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachPolicyOutcome CloudDirectoryClient::DetachPolicy(const DetachPolicyRequest& request) const
@@ -811,14 +811,14 @@ DetachPolicyOutcomeCallable CloudDirectoryClient::DetachPolicyCallable(const Det
   return task->get_future();
 }
 
-void CloudDirectoryClient::DetachPolicyAsync(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientDetachPolicyAsyncHelper(CloudDirectoryClient const * const clientThis, const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachPolicy(request), context);
 }
 
-void CloudDirectoryClient::DetachPolicyAsyncHelper(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::DetachPolicyAsync(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientDetachPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachTypedLinkOutcome CloudDirectoryClient::DetachTypedLink(const DetachTypedLinkRequest& request) const
@@ -841,14 +841,14 @@ DetachTypedLinkOutcomeCallable CloudDirectoryClient::DetachTypedLinkCallable(con
   return task->get_future();
 }
 
-void CloudDirectoryClient::DetachTypedLinkAsync(const DetachTypedLinkRequest& request, const DetachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientDetachTypedLinkAsyncHelper(CloudDirectoryClient const * const clientThis, const DetachTypedLinkRequest& request, const DetachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachTypedLinkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachTypedLink(request), context);
 }
 
-void CloudDirectoryClient::DetachTypedLinkAsyncHelper(const DetachTypedLinkRequest& request, const DetachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::DetachTypedLinkAsync(const DetachTypedLinkRequest& request, const DetachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachTypedLink(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientDetachTypedLinkAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableDirectoryOutcome CloudDirectoryClient::DisableDirectory(const DisableDirectoryRequest& request) const
@@ -871,14 +871,14 @@ DisableDirectoryOutcomeCallable CloudDirectoryClient::DisableDirectoryCallable(c
   return task->get_future();
 }
 
-void CloudDirectoryClient::DisableDirectoryAsync(const DisableDirectoryRequest& request, const DisableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientDisableDirectoryAsyncHelper(CloudDirectoryClient const * const clientThis, const DisableDirectoryRequest& request, const DisableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableDirectoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableDirectory(request), context);
 }
 
-void CloudDirectoryClient::DisableDirectoryAsyncHelper(const DisableDirectoryRequest& request, const DisableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::DisableDirectoryAsync(const DisableDirectoryRequest& request, const DisableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientDisableDirectoryAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableDirectoryOutcome CloudDirectoryClient::EnableDirectory(const EnableDirectoryRequest& request) const
@@ -901,14 +901,14 @@ EnableDirectoryOutcomeCallable CloudDirectoryClient::EnableDirectoryCallable(con
   return task->get_future();
 }
 
-void CloudDirectoryClient::EnableDirectoryAsync(const EnableDirectoryRequest& request, const EnableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientEnableDirectoryAsyncHelper(CloudDirectoryClient const * const clientThis, const EnableDirectoryRequest& request, const EnableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableDirectoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableDirectory(request), context);
 }
 
-void CloudDirectoryClient::EnableDirectoryAsyncHelper(const EnableDirectoryRequest& request, const EnableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::EnableDirectoryAsync(const EnableDirectoryRequest& request, const EnableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientEnableDirectoryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAppliedSchemaVersionOutcome CloudDirectoryClient::GetAppliedSchemaVersion(const GetAppliedSchemaVersionRequest& request) const
@@ -926,14 +926,14 @@ GetAppliedSchemaVersionOutcomeCallable CloudDirectoryClient::GetAppliedSchemaVer
   return task->get_future();
 }
 
-void CloudDirectoryClient::GetAppliedSchemaVersionAsync(const GetAppliedSchemaVersionRequest& request, const GetAppliedSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientGetAppliedSchemaVersionAsyncHelper(CloudDirectoryClient const * const clientThis, const GetAppliedSchemaVersionRequest& request, const GetAppliedSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppliedSchemaVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAppliedSchemaVersion(request), context);
 }
 
-void CloudDirectoryClient::GetAppliedSchemaVersionAsyncHelper(const GetAppliedSchemaVersionRequest& request, const GetAppliedSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::GetAppliedSchemaVersionAsync(const GetAppliedSchemaVersionRequest& request, const GetAppliedSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAppliedSchemaVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientGetAppliedSchemaVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDirectoryOutcome CloudDirectoryClient::GetDirectory(const GetDirectoryRequest& request) const
@@ -956,14 +956,14 @@ GetDirectoryOutcomeCallable CloudDirectoryClient::GetDirectoryCallable(const Get
   return task->get_future();
 }
 
-void CloudDirectoryClient::GetDirectoryAsync(const GetDirectoryRequest& request, const GetDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientGetDirectoryAsyncHelper(CloudDirectoryClient const * const clientThis, const GetDirectoryRequest& request, const GetDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDirectoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDirectory(request), context);
 }
 
-void CloudDirectoryClient::GetDirectoryAsyncHelper(const GetDirectoryRequest& request, const GetDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::GetDirectoryAsync(const GetDirectoryRequest& request, const GetDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientGetDirectoryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFacetOutcome CloudDirectoryClient::GetFacet(const GetFacetRequest& request) const
@@ -986,14 +986,14 @@ GetFacetOutcomeCallable CloudDirectoryClient::GetFacetCallable(const GetFacetReq
   return task->get_future();
 }
 
-void CloudDirectoryClient::GetFacetAsync(const GetFacetRequest& request, const GetFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientGetFacetAsyncHelper(CloudDirectoryClient const * const clientThis, const GetFacetRequest& request, const GetFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFacetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFacet(request), context);
 }
 
-void CloudDirectoryClient::GetFacetAsyncHelper(const GetFacetRequest& request, const GetFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::GetFacetAsync(const GetFacetRequest& request, const GetFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFacet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientGetFacetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLinkAttributesOutcome CloudDirectoryClient::GetLinkAttributes(const GetLinkAttributesRequest& request) const
@@ -1016,14 +1016,14 @@ GetLinkAttributesOutcomeCallable CloudDirectoryClient::GetLinkAttributesCallable
   return task->get_future();
 }
 
-void CloudDirectoryClient::GetLinkAttributesAsync(const GetLinkAttributesRequest& request, const GetLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientGetLinkAttributesAsyncHelper(CloudDirectoryClient const * const clientThis, const GetLinkAttributesRequest& request, const GetLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLinkAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLinkAttributes(request), context);
 }
 
-void CloudDirectoryClient::GetLinkAttributesAsyncHelper(const GetLinkAttributesRequest& request, const GetLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::GetLinkAttributesAsync(const GetLinkAttributesRequest& request, const GetLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLinkAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientGetLinkAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetObjectAttributesOutcome CloudDirectoryClient::GetObjectAttributes(const GetObjectAttributesRequest& request) const
@@ -1046,14 +1046,14 @@ GetObjectAttributesOutcomeCallable CloudDirectoryClient::GetObjectAttributesCall
   return task->get_future();
 }
 
-void CloudDirectoryClient::GetObjectAttributesAsync(const GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientGetObjectAttributesAsyncHelper(CloudDirectoryClient const * const clientThis, const GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetObjectAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetObjectAttributes(request), context);
 }
 
-void CloudDirectoryClient::GetObjectAttributesAsyncHelper(const GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::GetObjectAttributesAsync(const GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetObjectAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientGetObjectAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetObjectInformationOutcome CloudDirectoryClient::GetObjectInformation(const GetObjectInformationRequest& request) const
@@ -1076,14 +1076,14 @@ GetObjectInformationOutcomeCallable CloudDirectoryClient::GetObjectInformationCa
   return task->get_future();
 }
 
-void CloudDirectoryClient::GetObjectInformationAsync(const GetObjectInformationRequest& request, const GetObjectInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientGetObjectInformationAsyncHelper(CloudDirectoryClient const * const clientThis, const GetObjectInformationRequest& request, const GetObjectInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetObjectInformationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetObjectInformation(request), context);
 }
 
-void CloudDirectoryClient::GetObjectInformationAsyncHelper(const GetObjectInformationRequest& request, const GetObjectInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::GetObjectInformationAsync(const GetObjectInformationRequest& request, const GetObjectInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetObjectInformation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientGetObjectInformationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSchemaAsJsonOutcome CloudDirectoryClient::GetSchemaAsJson(const GetSchemaAsJsonRequest& request) const
@@ -1106,14 +1106,14 @@ GetSchemaAsJsonOutcomeCallable CloudDirectoryClient::GetSchemaAsJsonCallable(con
   return task->get_future();
 }
 
-void CloudDirectoryClient::GetSchemaAsJsonAsync(const GetSchemaAsJsonRequest& request, const GetSchemaAsJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientGetSchemaAsJsonAsyncHelper(CloudDirectoryClient const * const clientThis, const GetSchemaAsJsonRequest& request, const GetSchemaAsJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSchemaAsJsonAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSchemaAsJson(request), context);
 }
 
-void CloudDirectoryClient::GetSchemaAsJsonAsyncHelper(const GetSchemaAsJsonRequest& request, const GetSchemaAsJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::GetSchemaAsJsonAsync(const GetSchemaAsJsonRequest& request, const GetSchemaAsJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSchemaAsJson(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientGetSchemaAsJsonAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTypedLinkFacetInformationOutcome CloudDirectoryClient::GetTypedLinkFacetInformation(const GetTypedLinkFacetInformationRequest& request) const
@@ -1136,14 +1136,14 @@ GetTypedLinkFacetInformationOutcomeCallable CloudDirectoryClient::GetTypedLinkFa
   return task->get_future();
 }
 
-void CloudDirectoryClient::GetTypedLinkFacetInformationAsync(const GetTypedLinkFacetInformationRequest& request, const GetTypedLinkFacetInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientGetTypedLinkFacetInformationAsyncHelper(CloudDirectoryClient const * const clientThis, const GetTypedLinkFacetInformationRequest& request, const GetTypedLinkFacetInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTypedLinkFacetInformationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTypedLinkFacetInformation(request), context);
 }
 
-void CloudDirectoryClient::GetTypedLinkFacetInformationAsyncHelper(const GetTypedLinkFacetInformationRequest& request, const GetTypedLinkFacetInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::GetTypedLinkFacetInformationAsync(const GetTypedLinkFacetInformationRequest& request, const GetTypedLinkFacetInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTypedLinkFacetInformation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientGetTypedLinkFacetInformationAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAppliedSchemaArnsOutcome CloudDirectoryClient::ListAppliedSchemaArns(const ListAppliedSchemaArnsRequest& request) const
@@ -1161,14 +1161,14 @@ ListAppliedSchemaArnsOutcomeCallable CloudDirectoryClient::ListAppliedSchemaArns
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListAppliedSchemaArnsAsync(const ListAppliedSchemaArnsRequest& request, const ListAppliedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListAppliedSchemaArnsAsyncHelper(CloudDirectoryClient const * const clientThis, const ListAppliedSchemaArnsRequest& request, const ListAppliedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppliedSchemaArnsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAppliedSchemaArns(request), context);
 }
 
-void CloudDirectoryClient::ListAppliedSchemaArnsAsyncHelper(const ListAppliedSchemaArnsRequest& request, const ListAppliedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListAppliedSchemaArnsAsync(const ListAppliedSchemaArnsRequest& request, const ListAppliedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAppliedSchemaArns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListAppliedSchemaArnsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAttachedIndicesOutcome CloudDirectoryClient::ListAttachedIndices(const ListAttachedIndicesRequest& request) const
@@ -1191,14 +1191,14 @@ ListAttachedIndicesOutcomeCallable CloudDirectoryClient::ListAttachedIndicesCall
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListAttachedIndicesAsync(const ListAttachedIndicesRequest& request, const ListAttachedIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListAttachedIndicesAsyncHelper(CloudDirectoryClient const * const clientThis, const ListAttachedIndicesRequest& request, const ListAttachedIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAttachedIndicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAttachedIndices(request), context);
 }
 
-void CloudDirectoryClient::ListAttachedIndicesAsyncHelper(const ListAttachedIndicesRequest& request, const ListAttachedIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListAttachedIndicesAsync(const ListAttachedIndicesRequest& request, const ListAttachedIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAttachedIndices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListAttachedIndicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDevelopmentSchemaArnsOutcome CloudDirectoryClient::ListDevelopmentSchemaArns(const ListDevelopmentSchemaArnsRequest& request) const
@@ -1216,14 +1216,14 @@ ListDevelopmentSchemaArnsOutcomeCallable CloudDirectoryClient::ListDevelopmentSc
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListDevelopmentSchemaArnsAsync(const ListDevelopmentSchemaArnsRequest& request, const ListDevelopmentSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListDevelopmentSchemaArnsAsyncHelper(CloudDirectoryClient const * const clientThis, const ListDevelopmentSchemaArnsRequest& request, const ListDevelopmentSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevelopmentSchemaArnsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDevelopmentSchemaArns(request), context);
 }
 
-void CloudDirectoryClient::ListDevelopmentSchemaArnsAsyncHelper(const ListDevelopmentSchemaArnsRequest& request, const ListDevelopmentSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListDevelopmentSchemaArnsAsync(const ListDevelopmentSchemaArnsRequest& request, const ListDevelopmentSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDevelopmentSchemaArns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListDevelopmentSchemaArnsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDirectoriesOutcome CloudDirectoryClient::ListDirectories(const ListDirectoriesRequest& request) const
@@ -1241,14 +1241,14 @@ ListDirectoriesOutcomeCallable CloudDirectoryClient::ListDirectoriesCallable(con
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListDirectoriesAsync(const ListDirectoriesRequest& request, const ListDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListDirectoriesAsyncHelper(CloudDirectoryClient const * const clientThis, const ListDirectoriesRequest& request, const ListDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDirectoriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDirectories(request), context);
 }
 
-void CloudDirectoryClient::ListDirectoriesAsyncHelper(const ListDirectoriesRequest& request, const ListDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListDirectoriesAsync(const ListDirectoriesRequest& request, const ListDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDirectories(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListDirectoriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFacetAttributesOutcome CloudDirectoryClient::ListFacetAttributes(const ListFacetAttributesRequest& request) const
@@ -1271,14 +1271,14 @@ ListFacetAttributesOutcomeCallable CloudDirectoryClient::ListFacetAttributesCall
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListFacetAttributesAsync(const ListFacetAttributesRequest& request, const ListFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListFacetAttributesAsyncHelper(CloudDirectoryClient const * const clientThis, const ListFacetAttributesRequest& request, const ListFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFacetAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFacetAttributes(request), context);
 }
 
-void CloudDirectoryClient::ListFacetAttributesAsyncHelper(const ListFacetAttributesRequest& request, const ListFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListFacetAttributesAsync(const ListFacetAttributesRequest& request, const ListFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFacetAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListFacetAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFacetNamesOutcome CloudDirectoryClient::ListFacetNames(const ListFacetNamesRequest& request) const
@@ -1301,14 +1301,14 @@ ListFacetNamesOutcomeCallable CloudDirectoryClient::ListFacetNamesCallable(const
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListFacetNamesAsync(const ListFacetNamesRequest& request, const ListFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListFacetNamesAsyncHelper(CloudDirectoryClient const * const clientThis, const ListFacetNamesRequest& request, const ListFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFacetNamesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFacetNames(request), context);
 }
 
-void CloudDirectoryClient::ListFacetNamesAsyncHelper(const ListFacetNamesRequest& request, const ListFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListFacetNamesAsync(const ListFacetNamesRequest& request, const ListFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFacetNames(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListFacetNamesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIncomingTypedLinksOutcome CloudDirectoryClient::ListIncomingTypedLinks(const ListIncomingTypedLinksRequest& request) const
@@ -1331,14 +1331,14 @@ ListIncomingTypedLinksOutcomeCallable CloudDirectoryClient::ListIncomingTypedLin
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListIncomingTypedLinksAsync(const ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListIncomingTypedLinksAsyncHelper(CloudDirectoryClient const * const clientThis, const ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIncomingTypedLinksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIncomingTypedLinks(request), context);
 }
 
-void CloudDirectoryClient::ListIncomingTypedLinksAsyncHelper(const ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListIncomingTypedLinksAsync(const ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIncomingTypedLinks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListIncomingTypedLinksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIndexOutcome CloudDirectoryClient::ListIndex(const ListIndexRequest& request) const
@@ -1361,14 +1361,14 @@ ListIndexOutcomeCallable CloudDirectoryClient::ListIndexCallable(const ListIndex
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListIndexAsync(const ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListIndexAsyncHelper(CloudDirectoryClient const * const clientThis, const ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIndexAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIndex(request), context);
 }
 
-void CloudDirectoryClient::ListIndexAsyncHelper(const ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListIndexAsync(const ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIndex(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListIndexAsyncHelper( this, request, handler, context ); } );
 }
 
 ListManagedSchemaArnsOutcome CloudDirectoryClient::ListManagedSchemaArns(const ListManagedSchemaArnsRequest& request) const
@@ -1386,14 +1386,14 @@ ListManagedSchemaArnsOutcomeCallable CloudDirectoryClient::ListManagedSchemaArns
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListManagedSchemaArnsAsync(const ListManagedSchemaArnsRequest& request, const ListManagedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListManagedSchemaArnsAsyncHelper(CloudDirectoryClient const * const clientThis, const ListManagedSchemaArnsRequest& request, const ListManagedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListManagedSchemaArnsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListManagedSchemaArns(request), context);
 }
 
-void CloudDirectoryClient::ListManagedSchemaArnsAsyncHelper(const ListManagedSchemaArnsRequest& request, const ListManagedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListManagedSchemaArnsAsync(const ListManagedSchemaArnsRequest& request, const ListManagedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListManagedSchemaArns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListManagedSchemaArnsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListObjectAttributesOutcome CloudDirectoryClient::ListObjectAttributes(const ListObjectAttributesRequest& request) const
@@ -1416,14 +1416,14 @@ ListObjectAttributesOutcomeCallable CloudDirectoryClient::ListObjectAttributesCa
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListObjectAttributesAsync(const ListObjectAttributesRequest& request, const ListObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListObjectAttributesAsyncHelper(CloudDirectoryClient const * const clientThis, const ListObjectAttributesRequest& request, const ListObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListObjectAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListObjectAttributes(request), context);
 }
 
-void CloudDirectoryClient::ListObjectAttributesAsyncHelper(const ListObjectAttributesRequest& request, const ListObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListObjectAttributesAsync(const ListObjectAttributesRequest& request, const ListObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListObjectAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListObjectAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListObjectChildrenOutcome CloudDirectoryClient::ListObjectChildren(const ListObjectChildrenRequest& request) const
@@ -1446,14 +1446,14 @@ ListObjectChildrenOutcomeCallable CloudDirectoryClient::ListObjectChildrenCallab
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListObjectChildrenAsync(const ListObjectChildrenRequest& request, const ListObjectChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListObjectChildrenAsyncHelper(CloudDirectoryClient const * const clientThis, const ListObjectChildrenRequest& request, const ListObjectChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListObjectChildrenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListObjectChildren(request), context);
 }
 
-void CloudDirectoryClient::ListObjectChildrenAsyncHelper(const ListObjectChildrenRequest& request, const ListObjectChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListObjectChildrenAsync(const ListObjectChildrenRequest& request, const ListObjectChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListObjectChildren(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListObjectChildrenAsyncHelper( this, request, handler, context ); } );
 }
 
 ListObjectParentPathsOutcome CloudDirectoryClient::ListObjectParentPaths(const ListObjectParentPathsRequest& request) const
@@ -1476,14 +1476,14 @@ ListObjectParentPathsOutcomeCallable CloudDirectoryClient::ListObjectParentPaths
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListObjectParentPathsAsync(const ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListObjectParentPathsAsyncHelper(CloudDirectoryClient const * const clientThis, const ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListObjectParentPathsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListObjectParentPaths(request), context);
 }
 
-void CloudDirectoryClient::ListObjectParentPathsAsyncHelper(const ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListObjectParentPathsAsync(const ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListObjectParentPaths(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListObjectParentPathsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListObjectParentsOutcome CloudDirectoryClient::ListObjectParents(const ListObjectParentsRequest& request) const
@@ -1506,14 +1506,14 @@ ListObjectParentsOutcomeCallable CloudDirectoryClient::ListObjectParentsCallable
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListObjectParentsAsync(const ListObjectParentsRequest& request, const ListObjectParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListObjectParentsAsyncHelper(CloudDirectoryClient const * const clientThis, const ListObjectParentsRequest& request, const ListObjectParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListObjectParentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListObjectParents(request), context);
 }
 
-void CloudDirectoryClient::ListObjectParentsAsyncHelper(const ListObjectParentsRequest& request, const ListObjectParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListObjectParentsAsync(const ListObjectParentsRequest& request, const ListObjectParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListObjectParents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListObjectParentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListObjectPoliciesOutcome CloudDirectoryClient::ListObjectPolicies(const ListObjectPoliciesRequest& request) const
@@ -1536,14 +1536,14 @@ ListObjectPoliciesOutcomeCallable CloudDirectoryClient::ListObjectPoliciesCallab
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListObjectPoliciesAsync(const ListObjectPoliciesRequest& request, const ListObjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListObjectPoliciesAsyncHelper(CloudDirectoryClient const * const clientThis, const ListObjectPoliciesRequest& request, const ListObjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListObjectPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListObjectPolicies(request), context);
 }
 
-void CloudDirectoryClient::ListObjectPoliciesAsyncHelper(const ListObjectPoliciesRequest& request, const ListObjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListObjectPoliciesAsync(const ListObjectPoliciesRequest& request, const ListObjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListObjectPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListObjectPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOutgoingTypedLinksOutcome CloudDirectoryClient::ListOutgoingTypedLinks(const ListOutgoingTypedLinksRequest& request) const
@@ -1566,14 +1566,14 @@ ListOutgoingTypedLinksOutcomeCallable CloudDirectoryClient::ListOutgoingTypedLin
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListOutgoingTypedLinksAsync(const ListOutgoingTypedLinksRequest& request, const ListOutgoingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListOutgoingTypedLinksAsyncHelper(CloudDirectoryClient const * const clientThis, const ListOutgoingTypedLinksRequest& request, const ListOutgoingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOutgoingTypedLinksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOutgoingTypedLinks(request), context);
 }
 
-void CloudDirectoryClient::ListOutgoingTypedLinksAsyncHelper(const ListOutgoingTypedLinksRequest& request, const ListOutgoingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListOutgoingTypedLinksAsync(const ListOutgoingTypedLinksRequest& request, const ListOutgoingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOutgoingTypedLinks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListOutgoingTypedLinksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPolicyAttachmentsOutcome CloudDirectoryClient::ListPolicyAttachments(const ListPolicyAttachmentsRequest& request) const
@@ -1596,14 +1596,14 @@ ListPolicyAttachmentsOutcomeCallable CloudDirectoryClient::ListPolicyAttachments
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListPolicyAttachmentsAsync(const ListPolicyAttachmentsRequest& request, const ListPolicyAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListPolicyAttachmentsAsyncHelper(CloudDirectoryClient const * const clientThis, const ListPolicyAttachmentsRequest& request, const ListPolicyAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPolicyAttachmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPolicyAttachments(request), context);
 }
 
-void CloudDirectoryClient::ListPolicyAttachmentsAsyncHelper(const ListPolicyAttachmentsRequest& request, const ListPolicyAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListPolicyAttachmentsAsync(const ListPolicyAttachmentsRequest& request, const ListPolicyAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPolicyAttachments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListPolicyAttachmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPublishedSchemaArnsOutcome CloudDirectoryClient::ListPublishedSchemaArns(const ListPublishedSchemaArnsRequest& request) const
@@ -1621,14 +1621,14 @@ ListPublishedSchemaArnsOutcomeCallable CloudDirectoryClient::ListPublishedSchema
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListPublishedSchemaArnsAsync(const ListPublishedSchemaArnsRequest& request, const ListPublishedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListPublishedSchemaArnsAsyncHelper(CloudDirectoryClient const * const clientThis, const ListPublishedSchemaArnsRequest& request, const ListPublishedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPublishedSchemaArnsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPublishedSchemaArns(request), context);
 }
 
-void CloudDirectoryClient::ListPublishedSchemaArnsAsyncHelper(const ListPublishedSchemaArnsRequest& request, const ListPublishedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListPublishedSchemaArnsAsync(const ListPublishedSchemaArnsRequest& request, const ListPublishedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPublishedSchemaArns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListPublishedSchemaArnsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome CloudDirectoryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1646,14 +1646,14 @@ ListTagsForResourceOutcomeCallable CloudDirectoryClient::ListTagsForResourceCall
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListTagsForResourceAsyncHelper(CloudDirectoryClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void CloudDirectoryClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTypedLinkFacetAttributesOutcome CloudDirectoryClient::ListTypedLinkFacetAttributes(const ListTypedLinkFacetAttributesRequest& request) const
@@ -1676,14 +1676,14 @@ ListTypedLinkFacetAttributesOutcomeCallable CloudDirectoryClient::ListTypedLinkF
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListTypedLinkFacetAttributesAsync(const ListTypedLinkFacetAttributesRequest& request, const ListTypedLinkFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListTypedLinkFacetAttributesAsyncHelper(CloudDirectoryClient const * const clientThis, const ListTypedLinkFacetAttributesRequest& request, const ListTypedLinkFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTypedLinkFacetAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTypedLinkFacetAttributes(request), context);
 }
 
-void CloudDirectoryClient::ListTypedLinkFacetAttributesAsyncHelper(const ListTypedLinkFacetAttributesRequest& request, const ListTypedLinkFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListTypedLinkFacetAttributesAsync(const ListTypedLinkFacetAttributesRequest& request, const ListTypedLinkFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTypedLinkFacetAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListTypedLinkFacetAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTypedLinkFacetNamesOutcome CloudDirectoryClient::ListTypedLinkFacetNames(const ListTypedLinkFacetNamesRequest& request) const
@@ -1706,14 +1706,14 @@ ListTypedLinkFacetNamesOutcomeCallable CloudDirectoryClient::ListTypedLinkFacetN
   return task->get_future();
 }
 
-void CloudDirectoryClient::ListTypedLinkFacetNamesAsync(const ListTypedLinkFacetNamesRequest& request, const ListTypedLinkFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientListTypedLinkFacetNamesAsyncHelper(CloudDirectoryClient const * const clientThis, const ListTypedLinkFacetNamesRequest& request, const ListTypedLinkFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTypedLinkFacetNamesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTypedLinkFacetNames(request), context);
 }
 
-void CloudDirectoryClient::ListTypedLinkFacetNamesAsyncHelper(const ListTypedLinkFacetNamesRequest& request, const ListTypedLinkFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::ListTypedLinkFacetNamesAsync(const ListTypedLinkFacetNamesRequest& request, const ListTypedLinkFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTypedLinkFacetNames(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientListTypedLinkFacetNamesAsyncHelper( this, request, handler, context ); } );
 }
 
 LookupPolicyOutcome CloudDirectoryClient::LookupPolicy(const LookupPolicyRequest& request) const
@@ -1736,14 +1736,14 @@ LookupPolicyOutcomeCallable CloudDirectoryClient::LookupPolicyCallable(const Loo
   return task->get_future();
 }
 
-void CloudDirectoryClient::LookupPolicyAsync(const LookupPolicyRequest& request, const LookupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientLookupPolicyAsyncHelper(CloudDirectoryClient const * const clientThis, const LookupPolicyRequest& request, const LookupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->LookupPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->LookupPolicy(request), context);
 }
 
-void CloudDirectoryClient::LookupPolicyAsyncHelper(const LookupPolicyRequest& request, const LookupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::LookupPolicyAsync(const LookupPolicyRequest& request, const LookupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, LookupPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientLookupPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PublishSchemaOutcome CloudDirectoryClient::PublishSchema(const PublishSchemaRequest& request) const
@@ -1766,14 +1766,14 @@ PublishSchemaOutcomeCallable CloudDirectoryClient::PublishSchemaCallable(const P
   return task->get_future();
 }
 
-void CloudDirectoryClient::PublishSchemaAsync(const PublishSchemaRequest& request, const PublishSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientPublishSchemaAsyncHelper(CloudDirectoryClient const * const clientThis, const PublishSchemaRequest& request, const PublishSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PublishSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PublishSchema(request), context);
 }
 
-void CloudDirectoryClient::PublishSchemaAsyncHelper(const PublishSchemaRequest& request, const PublishSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::PublishSchemaAsync(const PublishSchemaRequest& request, const PublishSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PublishSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientPublishSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 PutSchemaFromJsonOutcome CloudDirectoryClient::PutSchemaFromJson(const PutSchemaFromJsonRequest& request) const
@@ -1796,14 +1796,14 @@ PutSchemaFromJsonOutcomeCallable CloudDirectoryClient::PutSchemaFromJsonCallable
   return task->get_future();
 }
 
-void CloudDirectoryClient::PutSchemaFromJsonAsync(const PutSchemaFromJsonRequest& request, const PutSchemaFromJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientPutSchemaFromJsonAsyncHelper(CloudDirectoryClient const * const clientThis, const PutSchemaFromJsonRequest& request, const PutSchemaFromJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSchemaFromJsonAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutSchemaFromJson(request), context);
 }
 
-void CloudDirectoryClient::PutSchemaFromJsonAsyncHelper(const PutSchemaFromJsonRequest& request, const PutSchemaFromJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::PutSchemaFromJsonAsync(const PutSchemaFromJsonRequest& request, const PutSchemaFromJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutSchemaFromJson(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientPutSchemaFromJsonAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveFacetFromObjectOutcome CloudDirectoryClient::RemoveFacetFromObject(const RemoveFacetFromObjectRequest& request) const
@@ -1826,14 +1826,14 @@ RemoveFacetFromObjectOutcomeCallable CloudDirectoryClient::RemoveFacetFromObject
   return task->get_future();
 }
 
-void CloudDirectoryClient::RemoveFacetFromObjectAsync(const RemoveFacetFromObjectRequest& request, const RemoveFacetFromObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientRemoveFacetFromObjectAsyncHelper(CloudDirectoryClient const * const clientThis, const RemoveFacetFromObjectRequest& request, const RemoveFacetFromObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveFacetFromObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveFacetFromObject(request), context);
 }
 
-void CloudDirectoryClient::RemoveFacetFromObjectAsyncHelper(const RemoveFacetFromObjectRequest& request, const RemoveFacetFromObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::RemoveFacetFromObjectAsync(const RemoveFacetFromObjectRequest& request, const RemoveFacetFromObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveFacetFromObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientRemoveFacetFromObjectAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CloudDirectoryClient::TagResource(const TagResourceRequest& request) const
@@ -1851,14 +1851,14 @@ TagResourceOutcomeCallable CloudDirectoryClient::TagResourceCallable(const TagRe
   return task->get_future();
 }
 
-void CloudDirectoryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientTagResourceAsyncHelper(CloudDirectoryClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CloudDirectoryClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CloudDirectoryClient::UntagResource(const UntagResourceRequest& request) const
@@ -1876,14 +1876,14 @@ UntagResourceOutcomeCallable CloudDirectoryClient::UntagResourceCallable(const U
   return task->get_future();
 }
 
-void CloudDirectoryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientUntagResourceAsyncHelper(CloudDirectoryClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CloudDirectoryClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFacetOutcome CloudDirectoryClient::UpdateFacet(const UpdateFacetRequest& request) const
@@ -1906,14 +1906,14 @@ UpdateFacetOutcomeCallable CloudDirectoryClient::UpdateFacetCallable(const Updat
   return task->get_future();
 }
 
-void CloudDirectoryClient::UpdateFacetAsync(const UpdateFacetRequest& request, const UpdateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientUpdateFacetAsyncHelper(CloudDirectoryClient const * const clientThis, const UpdateFacetRequest& request, const UpdateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFacetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFacet(request), context);
 }
 
-void CloudDirectoryClient::UpdateFacetAsyncHelper(const UpdateFacetRequest& request, const UpdateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::UpdateFacetAsync(const UpdateFacetRequest& request, const UpdateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFacet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientUpdateFacetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLinkAttributesOutcome CloudDirectoryClient::UpdateLinkAttributes(const UpdateLinkAttributesRequest& request) const
@@ -1936,14 +1936,14 @@ UpdateLinkAttributesOutcomeCallable CloudDirectoryClient::UpdateLinkAttributesCa
   return task->get_future();
 }
 
-void CloudDirectoryClient::UpdateLinkAttributesAsync(const UpdateLinkAttributesRequest& request, const UpdateLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientUpdateLinkAttributesAsyncHelper(CloudDirectoryClient const * const clientThis, const UpdateLinkAttributesRequest& request, const UpdateLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLinkAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLinkAttributes(request), context);
 }
 
-void CloudDirectoryClient::UpdateLinkAttributesAsyncHelper(const UpdateLinkAttributesRequest& request, const UpdateLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::UpdateLinkAttributesAsync(const UpdateLinkAttributesRequest& request, const UpdateLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLinkAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientUpdateLinkAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateObjectAttributesOutcome CloudDirectoryClient::UpdateObjectAttributes(const UpdateObjectAttributesRequest& request) const
@@ -1966,14 +1966,14 @@ UpdateObjectAttributesOutcomeCallable CloudDirectoryClient::UpdateObjectAttribut
   return task->get_future();
 }
 
-void CloudDirectoryClient::UpdateObjectAttributesAsync(const UpdateObjectAttributesRequest& request, const UpdateObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientUpdateObjectAttributesAsyncHelper(CloudDirectoryClient const * const clientThis, const UpdateObjectAttributesRequest& request, const UpdateObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateObjectAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateObjectAttributes(request), context);
 }
 
-void CloudDirectoryClient::UpdateObjectAttributesAsyncHelper(const UpdateObjectAttributesRequest& request, const UpdateObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::UpdateObjectAttributesAsync(const UpdateObjectAttributesRequest& request, const UpdateObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateObjectAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientUpdateObjectAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSchemaOutcome CloudDirectoryClient::UpdateSchema(const UpdateSchemaRequest& request) const
@@ -1996,14 +1996,14 @@ UpdateSchemaOutcomeCallable CloudDirectoryClient::UpdateSchemaCallable(const Upd
   return task->get_future();
 }
 
-void CloudDirectoryClient::UpdateSchemaAsync(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientUpdateSchemaAsyncHelper(CloudDirectoryClient const * const clientThis, const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSchema(request), context);
 }
 
-void CloudDirectoryClient::UpdateSchemaAsyncHelper(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::UpdateSchemaAsync(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientUpdateSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTypedLinkFacetOutcome CloudDirectoryClient::UpdateTypedLinkFacet(const UpdateTypedLinkFacetRequest& request) const
@@ -2026,14 +2026,14 @@ UpdateTypedLinkFacetOutcomeCallable CloudDirectoryClient::UpdateTypedLinkFacetCa
   return task->get_future();
 }
 
-void CloudDirectoryClient::UpdateTypedLinkFacetAsync(const UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientUpdateTypedLinkFacetAsyncHelper(CloudDirectoryClient const * const clientThis, const UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTypedLinkFacetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTypedLinkFacet(request), context);
 }
 
-void CloudDirectoryClient::UpdateTypedLinkFacetAsyncHelper(const UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::UpdateTypedLinkFacetAsync(const UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTypedLinkFacet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientUpdateTypedLinkFacetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpgradeAppliedSchemaOutcome CloudDirectoryClient::UpgradeAppliedSchema(const UpgradeAppliedSchemaRequest& request) const
@@ -2051,14 +2051,14 @@ UpgradeAppliedSchemaOutcomeCallable CloudDirectoryClient::UpgradeAppliedSchemaCa
   return task->get_future();
 }
 
-void CloudDirectoryClient::UpgradeAppliedSchemaAsync(const UpgradeAppliedSchemaRequest& request, const UpgradeAppliedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientUpgradeAppliedSchemaAsyncHelper(CloudDirectoryClient const * const clientThis, const UpgradeAppliedSchemaRequest& request, const UpgradeAppliedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpgradeAppliedSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpgradeAppliedSchema(request), context);
 }
 
-void CloudDirectoryClient::UpgradeAppliedSchemaAsyncHelper(const UpgradeAppliedSchemaRequest& request, const UpgradeAppliedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::UpgradeAppliedSchemaAsync(const UpgradeAppliedSchemaRequest& request, const UpgradeAppliedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpgradeAppliedSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientUpgradeAppliedSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 UpgradePublishedSchemaOutcome CloudDirectoryClient::UpgradePublishedSchema(const UpgradePublishedSchemaRequest& request) const
@@ -2076,13 +2076,13 @@ UpgradePublishedSchemaOutcomeCallable CloudDirectoryClient::UpgradePublishedSche
   return task->get_future();
 }
 
-void CloudDirectoryClient::UpgradePublishedSchemaAsync(const UpgradePublishedSchemaRequest& request, const UpgradePublishedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClientUpgradePublishedSchemaAsyncHelper(CloudDirectoryClient const * const clientThis, const UpgradePublishedSchemaRequest& request, const UpgradePublishedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpgradePublishedSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpgradePublishedSchema(request), context);
 }
 
-void CloudDirectoryClient::UpgradePublishedSchemaAsyncHelper(const UpgradePublishedSchemaRequest& request, const UpgradePublishedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudDirectoryClient::UpgradePublishedSchemaAsync(const UpgradePublishedSchemaRequest& request, const UpgradePublishedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpgradePublishedSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudDirectoryClientUpgradePublishedSchemaAsyncHelper( this, request, handler, context ); } );
 }
 

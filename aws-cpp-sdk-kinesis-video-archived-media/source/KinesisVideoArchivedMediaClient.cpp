@@ -121,14 +121,14 @@ GetClipOutcomeCallable KinesisVideoArchivedMediaClient::GetClipCallable(const Ge
   return task->get_future();
 }
 
-void KinesisVideoArchivedMediaClient::GetClipAsync(const GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClientGetClipAsyncHelper(KinesisVideoArchivedMediaClient const * const clientThis, const GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetClipAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetClip(request), context);
 }
 
-void KinesisVideoArchivedMediaClient::GetClipAsyncHelper(const GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClient::GetClipAsync(const GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetClip(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoArchivedMediaClientGetClipAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURL(const GetDASHStreamingSessionURLRequest& request) const
@@ -146,14 +146,14 @@ GetDASHStreamingSessionURLOutcomeCallable KinesisVideoArchivedMediaClient::GetDA
   return task->get_future();
 }
 
-void KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURLAsync(const GetDASHStreamingSessionURLRequest& request, const GetDASHStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClientGetDASHStreamingSessionURLAsyncHelper(KinesisVideoArchivedMediaClient const * const clientThis, const GetDASHStreamingSessionURLRequest& request, const GetDASHStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDASHStreamingSessionURLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDASHStreamingSessionURL(request), context);
 }
 
-void KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURLAsyncHelper(const GetDASHStreamingSessionURLRequest& request, const GetDASHStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURLAsync(const GetDASHStreamingSessionURLRequest& request, const GetDASHStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDASHStreamingSessionURL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoArchivedMediaClientGetDASHStreamingSessionURLAsyncHelper( this, request, handler, context ); } );
 }
 
 GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURL(const GetHLSStreamingSessionURLRequest& request) const
@@ -171,14 +171,14 @@ GetHLSStreamingSessionURLOutcomeCallable KinesisVideoArchivedMediaClient::GetHLS
   return task->get_future();
 }
 
-void KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURLAsync(const GetHLSStreamingSessionURLRequest& request, const GetHLSStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClientGetHLSStreamingSessionURLAsyncHelper(KinesisVideoArchivedMediaClient const * const clientThis, const GetHLSStreamingSessionURLRequest& request, const GetHLSStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHLSStreamingSessionURLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetHLSStreamingSessionURL(request), context);
 }
 
-void KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURLAsyncHelper(const GetHLSStreamingSessionURLRequest& request, const GetHLSStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURLAsync(const GetHLSStreamingSessionURLRequest& request, const GetHLSStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetHLSStreamingSessionURL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoArchivedMediaClientGetHLSStreamingSessionURLAsyncHelper( this, request, handler, context ); } );
 }
 
 GetImagesOutcome KinesisVideoArchivedMediaClient::GetImages(const GetImagesRequest& request) const
@@ -196,14 +196,14 @@ GetImagesOutcomeCallable KinesisVideoArchivedMediaClient::GetImagesCallable(cons
   return task->get_future();
 }
 
-void KinesisVideoArchivedMediaClient::GetImagesAsync(const GetImagesRequest& request, const GetImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClientGetImagesAsyncHelper(KinesisVideoArchivedMediaClient const * const clientThis, const GetImagesRequest& request, const GetImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetImagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetImages(request), context);
 }
 
-void KinesisVideoArchivedMediaClient::GetImagesAsyncHelper(const GetImagesRequest& request, const GetImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClient::GetImagesAsync(const GetImagesRequest& request, const GetImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetImages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoArchivedMediaClientGetImagesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragmentList(const GetMediaForFragmentListRequest& request) const
@@ -221,14 +221,14 @@ GetMediaForFragmentListOutcomeCallable KinesisVideoArchivedMediaClient::GetMedia
   return task->get_future();
 }
 
-void KinesisVideoArchivedMediaClient::GetMediaForFragmentListAsync(const GetMediaForFragmentListRequest& request, const GetMediaForFragmentListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClientGetMediaForFragmentListAsyncHelper(KinesisVideoArchivedMediaClient const * const clientThis, const GetMediaForFragmentListRequest& request, const GetMediaForFragmentListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMediaForFragmentListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMediaForFragmentList(request), context);
 }
 
-void KinesisVideoArchivedMediaClient::GetMediaForFragmentListAsyncHelper(const GetMediaForFragmentListRequest& request, const GetMediaForFragmentListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClient::GetMediaForFragmentListAsync(const GetMediaForFragmentListRequest& request, const GetMediaForFragmentListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMediaForFragmentList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoArchivedMediaClientGetMediaForFragmentListAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFragmentsOutcome KinesisVideoArchivedMediaClient::ListFragments(const ListFragmentsRequest& request) const
@@ -246,13 +246,13 @@ ListFragmentsOutcomeCallable KinesisVideoArchivedMediaClient::ListFragmentsCalla
   return task->get_future();
 }
 
-void KinesisVideoArchivedMediaClient::ListFragmentsAsync(const ListFragmentsRequest& request, const ListFragmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClientListFragmentsAsyncHelper(KinesisVideoArchivedMediaClient const * const clientThis, const ListFragmentsRequest& request, const ListFragmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFragmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFragments(request), context);
 }
 
-void KinesisVideoArchivedMediaClient::ListFragmentsAsyncHelper(const ListFragmentsRequest& request, const ListFragmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoArchivedMediaClient::ListFragmentsAsync(const ListFragmentsRequest& request, const ListFragmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFragments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoArchivedMediaClientListFragmentsAsyncHelper( this, request, handler, context ); } );
 }
 

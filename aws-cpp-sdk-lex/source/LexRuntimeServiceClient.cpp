@@ -141,14 +141,14 @@ DeleteSessionOutcomeCallable LexRuntimeServiceClient::DeleteSessionCallable(cons
   return task->get_future();
 }
 
-void LexRuntimeServiceClient::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexRuntimeServiceClientDeleteSessionAsyncHelper(LexRuntimeServiceClient const * const clientThis, const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSession(request), context);
 }
 
-void LexRuntimeServiceClient::DeleteSessionAsyncHelper(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexRuntimeServiceClient::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexRuntimeServiceClientDeleteSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& request) const
@@ -187,14 +187,14 @@ GetSessionOutcomeCallable LexRuntimeServiceClient::GetSessionCallable(const GetS
   return task->get_future();
 }
 
-void LexRuntimeServiceClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexRuntimeServiceClientGetSessionAsyncHelper(LexRuntimeServiceClient const * const clientThis, const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSession(request), context);
 }
 
-void LexRuntimeServiceClient::GetSessionAsyncHelper(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexRuntimeServiceClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexRuntimeServiceClientGetSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const
@@ -233,14 +233,14 @@ PostContentOutcomeCallable LexRuntimeServiceClient::PostContentCallable(const Po
   return task->get_future();
 }
 
-void LexRuntimeServiceClient::PostContentAsync(const PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexRuntimeServiceClientPostContentAsyncHelper(LexRuntimeServiceClient const * const clientThis, const PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostContentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PostContent(request), context);
 }
 
-void LexRuntimeServiceClient::PostContentAsyncHelper(const PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexRuntimeServiceClient::PostContentAsync(const PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PostContent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexRuntimeServiceClientPostContentAsyncHelper( this, request, handler, context ); } );
 }
 
 PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request) const
@@ -279,14 +279,14 @@ PostTextOutcomeCallable LexRuntimeServiceClient::PostTextCallable(const PostText
   return task->get_future();
 }
 
-void LexRuntimeServiceClient::PostTextAsync(const PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexRuntimeServiceClientPostTextAsyncHelper(LexRuntimeServiceClient const * const clientThis, const PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostTextAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PostText(request), context);
 }
 
-void LexRuntimeServiceClient::PostTextAsyncHelper(const PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexRuntimeServiceClient::PostTextAsync(const PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PostText(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexRuntimeServiceClientPostTextAsyncHelper( this, request, handler, context ); } );
 }
 
 PutSessionOutcome LexRuntimeServiceClient::PutSession(const PutSessionRequest& request) const
@@ -325,13 +325,13 @@ PutSessionOutcomeCallable LexRuntimeServiceClient::PutSessionCallable(const PutS
   return task->get_future();
 }
 
-void LexRuntimeServiceClient::PutSessionAsync(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexRuntimeServiceClientPutSessionAsyncHelper(LexRuntimeServiceClient const * const clientThis, const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutSession(request), context);
 }
 
-void LexRuntimeServiceClient::PutSessionAsyncHelper(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexRuntimeServiceClient::PutSessionAsync(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexRuntimeServiceClientPutSessionAsyncHelper( this, request, handler, context ); } );
 }
 

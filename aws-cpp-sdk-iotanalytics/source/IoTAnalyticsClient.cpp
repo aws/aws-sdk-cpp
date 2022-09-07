@@ -149,14 +149,14 @@ BatchPutMessageOutcomeCallable IoTAnalyticsClient::BatchPutMessageCallable(const
   return task->get_future();
 }
 
-void IoTAnalyticsClient::BatchPutMessageAsync(const BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientBatchPutMessageAsyncHelper(IoTAnalyticsClient const * const clientThis, const BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchPutMessageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchPutMessage(request), context);
 }
 
-void IoTAnalyticsClient::BatchPutMessageAsyncHelper(const BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::BatchPutMessageAsync(const BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchPutMessage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientBatchPutMessageAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelPipelineReprocessingOutcome IoTAnalyticsClient::CancelPipelineReprocessing(const CancelPipelineReprocessingRequest& request) const
@@ -187,14 +187,14 @@ CancelPipelineReprocessingOutcomeCallable IoTAnalyticsClient::CancelPipelineRepr
   return task->get_future();
 }
 
-void IoTAnalyticsClient::CancelPipelineReprocessingAsync(const CancelPipelineReprocessingRequest& request, const CancelPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientCancelPipelineReprocessingAsyncHelper(IoTAnalyticsClient const * const clientThis, const CancelPipelineReprocessingRequest& request, const CancelPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelPipelineReprocessingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelPipelineReprocessing(request), context);
 }
 
-void IoTAnalyticsClient::CancelPipelineReprocessingAsyncHelper(const CancelPipelineReprocessingRequest& request, const CancelPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::CancelPipelineReprocessingAsync(const CancelPipelineReprocessingRequest& request, const CancelPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelPipelineReprocessing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientCancelPipelineReprocessingAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateChannelOutcome IoTAnalyticsClient::CreateChannel(const CreateChannelRequest& request) const
@@ -212,14 +212,14 @@ CreateChannelOutcomeCallable IoTAnalyticsClient::CreateChannelCallable(const Cre
   return task->get_future();
 }
 
-void IoTAnalyticsClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientCreateChannelAsyncHelper(IoTAnalyticsClient const * const clientThis, const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateChannel(request), context);
 }
 
-void IoTAnalyticsClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientCreateChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatasetOutcome IoTAnalyticsClient::CreateDataset(const CreateDatasetRequest& request) const
@@ -237,14 +237,14 @@ CreateDatasetOutcomeCallable IoTAnalyticsClient::CreateDatasetCallable(const Cre
   return task->get_future();
 }
 
-void IoTAnalyticsClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientCreateDatasetAsyncHelper(IoTAnalyticsClient const * const clientThis, const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataset(request), context);
 }
 
-void IoTAnalyticsClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientCreateDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatasetContentOutcome IoTAnalyticsClient::CreateDatasetContent(const CreateDatasetContentRequest& request) const
@@ -269,14 +269,14 @@ CreateDatasetContentOutcomeCallable IoTAnalyticsClient::CreateDatasetContentCall
   return task->get_future();
 }
 
-void IoTAnalyticsClient::CreateDatasetContentAsync(const CreateDatasetContentRequest& request, const CreateDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientCreateDatasetContentAsyncHelper(IoTAnalyticsClient const * const clientThis, const CreateDatasetContentRequest& request, const CreateDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetContentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDatasetContent(request), context);
 }
 
-void IoTAnalyticsClient::CreateDatasetContentAsyncHelper(const CreateDatasetContentRequest& request, const CreateDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::CreateDatasetContentAsync(const CreateDatasetContentRequest& request, const CreateDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDatasetContent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientCreateDatasetContentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatastoreOutcome IoTAnalyticsClient::CreateDatastore(const CreateDatastoreRequest& request) const
@@ -294,14 +294,14 @@ CreateDatastoreOutcomeCallable IoTAnalyticsClient::CreateDatastoreCallable(const
   return task->get_future();
 }
 
-void IoTAnalyticsClient::CreateDatastoreAsync(const CreateDatastoreRequest& request, const CreateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientCreateDatastoreAsyncHelper(IoTAnalyticsClient const * const clientThis, const CreateDatastoreRequest& request, const CreateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatastoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDatastore(request), context);
 }
 
-void IoTAnalyticsClient::CreateDatastoreAsyncHelper(const CreateDatastoreRequest& request, const CreateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::CreateDatastoreAsync(const CreateDatastoreRequest& request, const CreateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDatastore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientCreateDatastoreAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePipelineOutcome IoTAnalyticsClient::CreatePipeline(const CreatePipelineRequest& request) const
@@ -319,14 +319,14 @@ CreatePipelineOutcomeCallable IoTAnalyticsClient::CreatePipelineCallable(const C
   return task->get_future();
 }
 
-void IoTAnalyticsClient::CreatePipelineAsync(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientCreatePipelineAsyncHelper(IoTAnalyticsClient const * const clientThis, const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePipeline(request), context);
 }
 
-void IoTAnalyticsClient::CreatePipelineAsyncHelper(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::CreatePipelineAsync(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientCreatePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteChannelOutcome IoTAnalyticsClient::DeleteChannel(const DeleteChannelRequest& request) const
@@ -350,14 +350,14 @@ DeleteChannelOutcomeCallable IoTAnalyticsClient::DeleteChannelCallable(const Del
   return task->get_future();
 }
 
-void IoTAnalyticsClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientDeleteChannelAsyncHelper(IoTAnalyticsClient const * const clientThis, const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteChannel(request), context);
 }
 
-void IoTAnalyticsClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientDeleteChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatasetOutcome IoTAnalyticsClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -381,14 +381,14 @@ DeleteDatasetOutcomeCallable IoTAnalyticsClient::DeleteDatasetCallable(const Del
   return task->get_future();
 }
 
-void IoTAnalyticsClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientDeleteDatasetAsyncHelper(IoTAnalyticsClient const * const clientThis, const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataset(request), context);
 }
 
-void IoTAnalyticsClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientDeleteDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatasetContentOutcome IoTAnalyticsClient::DeleteDatasetContent(const DeleteDatasetContentRequest& request) const
@@ -413,14 +413,14 @@ DeleteDatasetContentOutcomeCallable IoTAnalyticsClient::DeleteDatasetContentCall
   return task->get_future();
 }
 
-void IoTAnalyticsClient::DeleteDatasetContentAsync(const DeleteDatasetContentRequest& request, const DeleteDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientDeleteDatasetContentAsyncHelper(IoTAnalyticsClient const * const clientThis, const DeleteDatasetContentRequest& request, const DeleteDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetContentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDatasetContent(request), context);
 }
 
-void IoTAnalyticsClient::DeleteDatasetContentAsyncHelper(const DeleteDatasetContentRequest& request, const DeleteDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::DeleteDatasetContentAsync(const DeleteDatasetContentRequest& request, const DeleteDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDatasetContent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientDeleteDatasetContentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatastoreOutcome IoTAnalyticsClient::DeleteDatastore(const DeleteDatastoreRequest& request) const
@@ -444,14 +444,14 @@ DeleteDatastoreOutcomeCallable IoTAnalyticsClient::DeleteDatastoreCallable(const
   return task->get_future();
 }
 
-void IoTAnalyticsClient::DeleteDatastoreAsync(const DeleteDatastoreRequest& request, const DeleteDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientDeleteDatastoreAsyncHelper(IoTAnalyticsClient const * const clientThis, const DeleteDatastoreRequest& request, const DeleteDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatastoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDatastore(request), context);
 }
 
-void IoTAnalyticsClient::DeleteDatastoreAsyncHelper(const DeleteDatastoreRequest& request, const DeleteDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::DeleteDatastoreAsync(const DeleteDatastoreRequest& request, const DeleteDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDatastore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientDeleteDatastoreAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePipelineOutcome IoTAnalyticsClient::DeletePipeline(const DeletePipelineRequest& request) const
@@ -475,14 +475,14 @@ DeletePipelineOutcomeCallable IoTAnalyticsClient::DeletePipelineCallable(const D
   return task->get_future();
 }
 
-void IoTAnalyticsClient::DeletePipelineAsync(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientDeletePipelineAsyncHelper(IoTAnalyticsClient const * const clientThis, const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePipeline(request), context);
 }
 
-void IoTAnalyticsClient::DeletePipelineAsyncHelper(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::DeletePipelineAsync(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientDeletePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeChannelOutcome IoTAnalyticsClient::DescribeChannel(const DescribeChannelRequest& request) const
@@ -506,14 +506,14 @@ DescribeChannelOutcomeCallable IoTAnalyticsClient::DescribeChannelCallable(const
   return task->get_future();
 }
 
-void IoTAnalyticsClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientDescribeChannelAsyncHelper(IoTAnalyticsClient const * const clientThis, const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeChannel(request), context);
 }
 
-void IoTAnalyticsClient::DescribeChannelAsyncHelper(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientDescribeChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatasetOutcome IoTAnalyticsClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -537,14 +537,14 @@ DescribeDatasetOutcomeCallable IoTAnalyticsClient::DescribeDatasetCallable(const
   return task->get_future();
 }
 
-void IoTAnalyticsClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientDescribeDatasetAsyncHelper(IoTAnalyticsClient const * const clientThis, const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataset(request), context);
 }
 
-void IoTAnalyticsClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientDescribeDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatastoreOutcome IoTAnalyticsClient::DescribeDatastore(const DescribeDatastoreRequest& request) const
@@ -568,14 +568,14 @@ DescribeDatastoreOutcomeCallable IoTAnalyticsClient::DescribeDatastoreCallable(c
   return task->get_future();
 }
 
-void IoTAnalyticsClient::DescribeDatastoreAsync(const DescribeDatastoreRequest& request, const DescribeDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientDescribeDatastoreAsyncHelper(IoTAnalyticsClient const * const clientThis, const DescribeDatastoreRequest& request, const DescribeDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatastoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDatastore(request), context);
 }
 
-void IoTAnalyticsClient::DescribeDatastoreAsyncHelper(const DescribeDatastoreRequest& request, const DescribeDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::DescribeDatastoreAsync(const DescribeDatastoreRequest& request, const DescribeDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDatastore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientDescribeDatastoreAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLoggingOptionsOutcome IoTAnalyticsClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const
@@ -593,14 +593,14 @@ DescribeLoggingOptionsOutcomeCallable IoTAnalyticsClient::DescribeLoggingOptions
   return task->get_future();
 }
 
-void IoTAnalyticsClient::DescribeLoggingOptionsAsync(const DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientDescribeLoggingOptionsAsyncHelper(IoTAnalyticsClient const * const clientThis, const DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoggingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLoggingOptions(request), context);
 }
 
-void IoTAnalyticsClient::DescribeLoggingOptionsAsyncHelper(const DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::DescribeLoggingOptionsAsync(const DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLoggingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientDescribeLoggingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePipelineOutcome IoTAnalyticsClient::DescribePipeline(const DescribePipelineRequest& request) const
@@ -624,14 +624,14 @@ DescribePipelineOutcomeCallable IoTAnalyticsClient::DescribePipelineCallable(con
   return task->get_future();
 }
 
-void IoTAnalyticsClient::DescribePipelineAsync(const DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientDescribePipelineAsyncHelper(IoTAnalyticsClient const * const clientThis, const DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePipeline(request), context);
 }
 
-void IoTAnalyticsClient::DescribePipelineAsyncHelper(const DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::DescribePipelineAsync(const DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientDescribePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDatasetContentOutcome IoTAnalyticsClient::GetDatasetContent(const GetDatasetContentRequest& request) const
@@ -656,14 +656,14 @@ GetDatasetContentOutcomeCallable IoTAnalyticsClient::GetDatasetContentCallable(c
   return task->get_future();
 }
 
-void IoTAnalyticsClient::GetDatasetContentAsync(const GetDatasetContentRequest& request, const GetDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientGetDatasetContentAsyncHelper(IoTAnalyticsClient const * const clientThis, const GetDatasetContentRequest& request, const GetDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDatasetContentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDatasetContent(request), context);
 }
 
-void IoTAnalyticsClient::GetDatasetContentAsyncHelper(const GetDatasetContentRequest& request, const GetDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::GetDatasetContentAsync(const GetDatasetContentRequest& request, const GetDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDatasetContent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientGetDatasetContentAsyncHelper( this, request, handler, context ); } );
 }
 
 ListChannelsOutcome IoTAnalyticsClient::ListChannels(const ListChannelsRequest& request) const
@@ -681,14 +681,14 @@ ListChannelsOutcomeCallable IoTAnalyticsClient::ListChannelsCallable(const ListC
   return task->get_future();
 }
 
-void IoTAnalyticsClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientListChannelsAsyncHelper(IoTAnalyticsClient const * const clientThis, const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListChannels(request), context);
 }
 
-void IoTAnalyticsClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListChannels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientListChannelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetContentsOutcome IoTAnalyticsClient::ListDatasetContents(const ListDatasetContentsRequest& request) const
@@ -713,14 +713,14 @@ ListDatasetContentsOutcomeCallable IoTAnalyticsClient::ListDatasetContentsCallab
   return task->get_future();
 }
 
-void IoTAnalyticsClient::ListDatasetContentsAsync(const ListDatasetContentsRequest& request, const ListDatasetContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientListDatasetContentsAsyncHelper(IoTAnalyticsClient const * const clientThis, const ListDatasetContentsRequest& request, const ListDatasetContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetContentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasetContents(request), context);
 }
 
-void IoTAnalyticsClient::ListDatasetContentsAsyncHelper(const ListDatasetContentsRequest& request, const ListDatasetContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::ListDatasetContentsAsync(const ListDatasetContentsRequest& request, const ListDatasetContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasetContents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientListDatasetContentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetsOutcome IoTAnalyticsClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -738,14 +738,14 @@ ListDatasetsOutcomeCallable IoTAnalyticsClient::ListDatasetsCallable(const ListD
   return task->get_future();
 }
 
-void IoTAnalyticsClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientListDatasetsAsyncHelper(IoTAnalyticsClient const * const clientThis, const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasets(request), context);
 }
 
-void IoTAnalyticsClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientListDatasetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatastoresOutcome IoTAnalyticsClient::ListDatastores(const ListDatastoresRequest& request) const
@@ -763,14 +763,14 @@ ListDatastoresOutcomeCallable IoTAnalyticsClient::ListDatastoresCallable(const L
   return task->get_future();
 }
 
-void IoTAnalyticsClient::ListDatastoresAsync(const ListDatastoresRequest& request, const ListDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientListDatastoresAsyncHelper(IoTAnalyticsClient const * const clientThis, const ListDatastoresRequest& request, const ListDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatastoresAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatastores(request), context);
 }
 
-void IoTAnalyticsClient::ListDatastoresAsyncHelper(const ListDatastoresRequest& request, const ListDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::ListDatastoresAsync(const ListDatastoresRequest& request, const ListDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatastores(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientListDatastoresAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPipelinesOutcome IoTAnalyticsClient::ListPipelines(const ListPipelinesRequest& request) const
@@ -788,14 +788,14 @@ ListPipelinesOutcomeCallable IoTAnalyticsClient::ListPipelinesCallable(const Lis
   return task->get_future();
 }
 
-void IoTAnalyticsClient::ListPipelinesAsync(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientListPipelinesAsyncHelper(IoTAnalyticsClient const * const clientThis, const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPipelinesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPipelines(request), context);
 }
 
-void IoTAnalyticsClient::ListPipelinesAsyncHelper(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::ListPipelinesAsync(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPipelines(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientListPipelinesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome IoTAnalyticsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -818,14 +818,14 @@ ListTagsForResourceOutcomeCallable IoTAnalyticsClient::ListTagsForResourceCallab
   return task->get_future();
 }
 
-void IoTAnalyticsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientListTagsForResourceAsyncHelper(IoTAnalyticsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void IoTAnalyticsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutLoggingOptionsOutcome IoTAnalyticsClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const
@@ -843,14 +843,14 @@ PutLoggingOptionsOutcomeCallable IoTAnalyticsClient::PutLoggingOptionsCallable(c
   return task->get_future();
 }
 
-void IoTAnalyticsClient::PutLoggingOptionsAsync(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientPutLoggingOptionsAsyncHelper(IoTAnalyticsClient const * const clientThis, const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLoggingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutLoggingOptions(request), context);
 }
 
-void IoTAnalyticsClient::PutLoggingOptionsAsyncHelper(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::PutLoggingOptionsAsync(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutLoggingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientPutLoggingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 RunPipelineActivityOutcome IoTAnalyticsClient::RunPipelineActivity(const RunPipelineActivityRequest& request) const
@@ -868,14 +868,14 @@ RunPipelineActivityOutcomeCallable IoTAnalyticsClient::RunPipelineActivityCallab
   return task->get_future();
 }
 
-void IoTAnalyticsClient::RunPipelineActivityAsync(const RunPipelineActivityRequest& request, const RunPipelineActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientRunPipelineActivityAsyncHelper(IoTAnalyticsClient const * const clientThis, const RunPipelineActivityRequest& request, const RunPipelineActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RunPipelineActivityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RunPipelineActivity(request), context);
 }
 
-void IoTAnalyticsClient::RunPipelineActivityAsyncHelper(const RunPipelineActivityRequest& request, const RunPipelineActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::RunPipelineActivityAsync(const RunPipelineActivityRequest& request, const RunPipelineActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RunPipelineActivity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientRunPipelineActivityAsyncHelper( this, request, handler, context ); } );
 }
 
 SampleChannelDataOutcome IoTAnalyticsClient::SampleChannelData(const SampleChannelDataRequest& request) const
@@ -900,14 +900,14 @@ SampleChannelDataOutcomeCallable IoTAnalyticsClient::SampleChannelDataCallable(c
   return task->get_future();
 }
 
-void IoTAnalyticsClient::SampleChannelDataAsync(const SampleChannelDataRequest& request, const SampleChannelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientSampleChannelDataAsyncHelper(IoTAnalyticsClient const * const clientThis, const SampleChannelDataRequest& request, const SampleChannelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SampleChannelDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SampleChannelData(request), context);
 }
 
-void IoTAnalyticsClient::SampleChannelDataAsyncHelper(const SampleChannelDataRequest& request, const SampleChannelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::SampleChannelDataAsync(const SampleChannelDataRequest& request, const SampleChannelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SampleChannelData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientSampleChannelDataAsyncHelper( this, request, handler, context ); } );
 }
 
 StartPipelineReprocessingOutcome IoTAnalyticsClient::StartPipelineReprocessing(const StartPipelineReprocessingRequest& request) const
@@ -932,14 +932,14 @@ StartPipelineReprocessingOutcomeCallable IoTAnalyticsClient::StartPipelineReproc
   return task->get_future();
 }
 
-void IoTAnalyticsClient::StartPipelineReprocessingAsync(const StartPipelineReprocessingRequest& request, const StartPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientStartPipelineReprocessingAsyncHelper(IoTAnalyticsClient const * const clientThis, const StartPipelineReprocessingRequest& request, const StartPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartPipelineReprocessingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartPipelineReprocessing(request), context);
 }
 
-void IoTAnalyticsClient::StartPipelineReprocessingAsyncHelper(const StartPipelineReprocessingRequest& request, const StartPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::StartPipelineReprocessingAsync(const StartPipelineReprocessingRequest& request, const StartPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartPipelineReprocessing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientStartPipelineReprocessingAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome IoTAnalyticsClient::TagResource(const TagResourceRequest& request) const
@@ -962,14 +962,14 @@ TagResourceOutcomeCallable IoTAnalyticsClient::TagResourceCallable(const TagReso
   return task->get_future();
 }
 
-void IoTAnalyticsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientTagResourceAsyncHelper(IoTAnalyticsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void IoTAnalyticsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome IoTAnalyticsClient::UntagResource(const UntagResourceRequest& request) const
@@ -997,14 +997,14 @@ UntagResourceOutcomeCallable IoTAnalyticsClient::UntagResourceCallable(const Unt
   return task->get_future();
 }
 
-void IoTAnalyticsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientUntagResourceAsyncHelper(IoTAnalyticsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void IoTAnalyticsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateChannelOutcome IoTAnalyticsClient::UpdateChannel(const UpdateChannelRequest& request) const
@@ -1028,14 +1028,14 @@ UpdateChannelOutcomeCallable IoTAnalyticsClient::UpdateChannelCallable(const Upd
   return task->get_future();
 }
 
-void IoTAnalyticsClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientUpdateChannelAsyncHelper(IoTAnalyticsClient const * const clientThis, const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateChannel(request), context);
 }
 
-void IoTAnalyticsClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientUpdateChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDatasetOutcome IoTAnalyticsClient::UpdateDataset(const UpdateDatasetRequest& request) const
@@ -1059,14 +1059,14 @@ UpdateDatasetOutcomeCallable IoTAnalyticsClient::UpdateDatasetCallable(const Upd
   return task->get_future();
 }
 
-void IoTAnalyticsClient::UpdateDatasetAsync(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientUpdateDatasetAsyncHelper(IoTAnalyticsClient const * const clientThis, const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataset(request), context);
 }
 
-void IoTAnalyticsClient::UpdateDatasetAsyncHelper(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::UpdateDatasetAsync(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientUpdateDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDatastoreOutcome IoTAnalyticsClient::UpdateDatastore(const UpdateDatastoreRequest& request) const
@@ -1090,14 +1090,14 @@ UpdateDatastoreOutcomeCallable IoTAnalyticsClient::UpdateDatastoreCallable(const
   return task->get_future();
 }
 
-void IoTAnalyticsClient::UpdateDatastoreAsync(const UpdateDatastoreRequest& request, const UpdateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientUpdateDatastoreAsyncHelper(IoTAnalyticsClient const * const clientThis, const UpdateDatastoreRequest& request, const UpdateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatastoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDatastore(request), context);
 }
 
-void IoTAnalyticsClient::UpdateDatastoreAsyncHelper(const UpdateDatastoreRequest& request, const UpdateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::UpdateDatastoreAsync(const UpdateDatastoreRequest& request, const UpdateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDatastore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientUpdateDatastoreAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePipelineOutcome IoTAnalyticsClient::UpdatePipeline(const UpdatePipelineRequest& request) const
@@ -1121,13 +1121,13 @@ UpdatePipelineOutcomeCallable IoTAnalyticsClient::UpdatePipelineCallable(const U
   return task->get_future();
 }
 
-void IoTAnalyticsClient::UpdatePipelineAsync(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClientUpdatePipelineAsyncHelper(IoTAnalyticsClient const * const clientThis, const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePipeline(request), context);
 }
 
-void IoTAnalyticsClient::UpdatePipelineAsyncHelper(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTAnalyticsClient::UpdatePipelineAsync(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoTAnalyticsClientUpdatePipelineAsyncHelper( this, request, handler, context ); } );
 }
 

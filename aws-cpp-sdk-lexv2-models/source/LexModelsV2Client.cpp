@@ -202,14 +202,14 @@ BuildBotLocaleOutcomeCallable LexModelsV2Client::BuildBotLocaleCallable(const Bu
   return task->get_future();
 }
 
-void LexModelsV2Client::BuildBotLocaleAsync(const BuildBotLocaleRequest& request, const BuildBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientBuildBotLocaleAsyncHelper(LexModelsV2Client const * const clientThis, const BuildBotLocaleRequest& request, const BuildBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BuildBotLocaleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BuildBotLocale(request), context);
 }
 
-void LexModelsV2Client::BuildBotLocaleAsyncHelper(const BuildBotLocaleRequest& request, const BuildBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::BuildBotLocaleAsync(const BuildBotLocaleRequest& request, const BuildBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BuildBotLocale(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientBuildBotLocaleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBotOutcome LexModelsV2Client::CreateBot(const CreateBotRequest& request) const
@@ -227,14 +227,14 @@ CreateBotOutcomeCallable LexModelsV2Client::CreateBotCallable(const CreateBotReq
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateBotAsync(const CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateBotAsyncHelper(LexModelsV2Client const * const clientThis, const CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBot(request), context);
 }
 
-void LexModelsV2Client::CreateBotAsyncHelper(const CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateBotAsync(const CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateBotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBotAliasOutcome LexModelsV2Client::CreateBotAlias(const CreateBotAliasRequest& request) const
@@ -259,14 +259,14 @@ CreateBotAliasOutcomeCallable LexModelsV2Client::CreateBotAliasCallable(const Cr
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateBotAliasAsync(const CreateBotAliasRequest& request, const CreateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateBotAliasAsyncHelper(LexModelsV2Client const * const clientThis, const CreateBotAliasRequest& request, const CreateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBotAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBotAlias(request), context);
 }
 
-void LexModelsV2Client::CreateBotAliasAsyncHelper(const CreateBotAliasRequest& request, const CreateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateBotAliasAsync(const CreateBotAliasRequest& request, const CreateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBotAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateBotAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBotLocaleOutcome LexModelsV2Client::CreateBotLocale(const CreateBotLocaleRequest& request) const
@@ -298,14 +298,14 @@ CreateBotLocaleOutcomeCallable LexModelsV2Client::CreateBotLocaleCallable(const 
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateBotLocaleAsync(const CreateBotLocaleRequest& request, const CreateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateBotLocaleAsyncHelper(LexModelsV2Client const * const clientThis, const CreateBotLocaleRequest& request, const CreateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBotLocaleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBotLocale(request), context);
 }
 
-void LexModelsV2Client::CreateBotLocaleAsyncHelper(const CreateBotLocaleRequest& request, const CreateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateBotLocaleAsync(const CreateBotLocaleRequest& request, const CreateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBotLocale(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateBotLocaleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBotVersionOutcome LexModelsV2Client::CreateBotVersion(const CreateBotVersionRequest& request) const
@@ -330,14 +330,14 @@ CreateBotVersionOutcomeCallable LexModelsV2Client::CreateBotVersionCallable(cons
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateBotVersionAsync(const CreateBotVersionRequest& request, const CreateBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateBotVersionAsyncHelper(LexModelsV2Client const * const clientThis, const CreateBotVersionRequest& request, const CreateBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBotVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBotVersion(request), context);
 }
 
-void LexModelsV2Client::CreateBotVersionAsyncHelper(const CreateBotVersionRequest& request, const CreateBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateBotVersionAsync(const CreateBotVersionRequest& request, const CreateBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBotVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateBotVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExportOutcome LexModelsV2Client::CreateExport(const CreateExportRequest& request) const
@@ -355,14 +355,14 @@ CreateExportOutcomeCallable LexModelsV2Client::CreateExportCallable(const Create
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateExportAsync(const CreateExportRequest& request, const CreateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateExportAsyncHelper(LexModelsV2Client const * const clientThis, const CreateExportRequest& request, const CreateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExport(request), context);
 }
 
-void LexModelsV2Client::CreateExportAsyncHelper(const CreateExportRequest& request, const CreateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateExportAsync(const CreateExportRequest& request, const CreateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateExportAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIntentOutcome LexModelsV2Client::CreateIntent(const CreateIntentRequest& request) const
@@ -401,14 +401,14 @@ CreateIntentOutcomeCallable LexModelsV2Client::CreateIntentCallable(const Create
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateIntentAsync(const CreateIntentRequest& request, const CreateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateIntentAsyncHelper(LexModelsV2Client const * const clientThis, const CreateIntentRequest& request, const CreateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIntentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIntent(request), context);
 }
 
-void LexModelsV2Client::CreateIntentAsyncHelper(const CreateIntentRequest& request, const CreateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateIntentAsync(const CreateIntentRequest& request, const CreateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIntent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateIntentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResourcePolicyOutcome LexModelsV2Client::CreateResourcePolicy(const CreateResourcePolicyRequest& request) const
@@ -432,14 +432,14 @@ CreateResourcePolicyOutcomeCallable LexModelsV2Client::CreateResourcePolicyCalla
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateResourcePolicyAsync(const CreateResourcePolicyRequest& request, const CreateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateResourcePolicyAsyncHelper(LexModelsV2Client const * const clientThis, const CreateResourcePolicyRequest& request, const CreateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResourcePolicy(request), context);
 }
 
-void LexModelsV2Client::CreateResourcePolicyAsyncHelper(const CreateResourcePolicyRequest& request, const CreateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateResourcePolicyAsync(const CreateResourcePolicyRequest& request, const CreateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResourcePolicyStatementOutcome LexModelsV2Client::CreateResourcePolicyStatement(const CreateResourcePolicyStatementRequest& request) const
@@ -464,14 +464,14 @@ CreateResourcePolicyStatementOutcomeCallable LexModelsV2Client::CreateResourcePo
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateResourcePolicyStatementAsync(const CreateResourcePolicyStatementRequest& request, const CreateResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateResourcePolicyStatementAsyncHelper(LexModelsV2Client const * const clientThis, const CreateResourcePolicyStatementRequest& request, const CreateResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResourcePolicyStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResourcePolicyStatement(request), context);
 }
 
-void LexModelsV2Client::CreateResourcePolicyStatementAsyncHelper(const CreateResourcePolicyStatementRequest& request, const CreateResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateResourcePolicyStatementAsync(const CreateResourcePolicyStatementRequest& request, const CreateResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResourcePolicyStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateResourcePolicyStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSlotOutcome LexModelsV2Client::CreateSlot(const CreateSlotRequest& request) const
@@ -517,14 +517,14 @@ CreateSlotOutcomeCallable LexModelsV2Client::CreateSlotCallable(const CreateSlot
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateSlotAsync(const CreateSlotRequest& request, const CreateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateSlotAsyncHelper(LexModelsV2Client const * const clientThis, const CreateSlotRequest& request, const CreateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSlotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSlot(request), context);
 }
 
-void LexModelsV2Client::CreateSlotAsyncHelper(const CreateSlotRequest& request, const CreateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateSlotAsync(const CreateSlotRequest& request, const CreateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSlot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateSlotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSlotTypeOutcome LexModelsV2Client::CreateSlotType(const CreateSlotTypeRequest& request) const
@@ -563,14 +563,14 @@ CreateSlotTypeOutcomeCallable LexModelsV2Client::CreateSlotTypeCallable(const Cr
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateSlotTypeAsync(const CreateSlotTypeRequest& request, const CreateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateSlotTypeAsyncHelper(LexModelsV2Client const * const clientThis, const CreateSlotTypeRequest& request, const CreateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSlotTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSlotType(request), context);
 }
 
-void LexModelsV2Client::CreateSlotTypeAsyncHelper(const CreateSlotTypeRequest& request, const CreateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateSlotTypeAsync(const CreateSlotTypeRequest& request, const CreateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSlotType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateSlotTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUploadUrlOutcome LexModelsV2Client::CreateUploadUrl(const CreateUploadUrlRequest& request) const
@@ -588,14 +588,14 @@ CreateUploadUrlOutcomeCallable LexModelsV2Client::CreateUploadUrlCallable(const 
   return task->get_future();
 }
 
-void LexModelsV2Client::CreateUploadUrlAsync(const CreateUploadUrlRequest& request, const CreateUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientCreateUploadUrlAsyncHelper(LexModelsV2Client const * const clientThis, const CreateUploadUrlRequest& request, const CreateUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUploadUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUploadUrl(request), context);
 }
 
-void LexModelsV2Client::CreateUploadUrlAsyncHelper(const CreateUploadUrlRequest& request, const CreateUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::CreateUploadUrlAsync(const CreateUploadUrlRequest& request, const CreateUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUploadUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientCreateUploadUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBotOutcome LexModelsV2Client::DeleteBot(const DeleteBotRequest& request) const
@@ -619,14 +619,14 @@ DeleteBotOutcomeCallable LexModelsV2Client::DeleteBotCallable(const DeleteBotReq
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteBotAsync(const DeleteBotRequest& request, const DeleteBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteBotAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteBotRequest& request, const DeleteBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBot(request), context);
 }
 
-void LexModelsV2Client::DeleteBotAsyncHelper(const DeleteBotRequest& request, const DeleteBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteBotAsync(const DeleteBotRequest& request, const DeleteBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteBotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBotAliasOutcome LexModelsV2Client::DeleteBotAlias(const DeleteBotAliasRequest& request) const
@@ -657,14 +657,14 @@ DeleteBotAliasOutcomeCallable LexModelsV2Client::DeleteBotAliasCallable(const De
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteBotAliasAsync(const DeleteBotAliasRequest& request, const DeleteBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteBotAliasAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteBotAliasRequest& request, const DeleteBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBotAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBotAlias(request), context);
 }
 
-void LexModelsV2Client::DeleteBotAliasAsyncHelper(const DeleteBotAliasRequest& request, const DeleteBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteBotAliasAsync(const DeleteBotAliasRequest& request, const DeleteBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBotAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteBotAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBotLocaleOutcome LexModelsV2Client::DeleteBotLocale(const DeleteBotLocaleRequest& request) const
@@ -702,14 +702,14 @@ DeleteBotLocaleOutcomeCallable LexModelsV2Client::DeleteBotLocaleCallable(const 
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteBotLocaleAsync(const DeleteBotLocaleRequest& request, const DeleteBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteBotLocaleAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteBotLocaleRequest& request, const DeleteBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBotLocaleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBotLocale(request), context);
 }
 
-void LexModelsV2Client::DeleteBotLocaleAsyncHelper(const DeleteBotLocaleRequest& request, const DeleteBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteBotLocaleAsync(const DeleteBotLocaleRequest& request, const DeleteBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBotLocale(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteBotLocaleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBotVersionOutcome LexModelsV2Client::DeleteBotVersion(const DeleteBotVersionRequest& request) const
@@ -740,14 +740,14 @@ DeleteBotVersionOutcomeCallable LexModelsV2Client::DeleteBotVersionCallable(cons
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteBotVersionAsync(const DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteBotVersionAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBotVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBotVersion(request), context);
 }
 
-void LexModelsV2Client::DeleteBotVersionAsyncHelper(const DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteBotVersionAsync(const DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBotVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteBotVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomVocabularyOutcome LexModelsV2Client::DeleteCustomVocabulary(const DeleteCustomVocabularyRequest& request) const
@@ -786,14 +786,14 @@ DeleteCustomVocabularyOutcomeCallable LexModelsV2Client::DeleteCustomVocabularyC
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteCustomVocabularyAsync(const DeleteCustomVocabularyRequest& request, const DeleteCustomVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteCustomVocabularyAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteCustomVocabularyRequest& request, const DeleteCustomVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomVocabularyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomVocabulary(request), context);
 }
 
-void LexModelsV2Client::DeleteCustomVocabularyAsyncHelper(const DeleteCustomVocabularyRequest& request, const DeleteCustomVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteCustomVocabularyAsync(const DeleteCustomVocabularyRequest& request, const DeleteCustomVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteCustomVocabularyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteExportOutcome LexModelsV2Client::DeleteExport(const DeleteExportRequest& request) const
@@ -817,14 +817,14 @@ DeleteExportOutcomeCallable LexModelsV2Client::DeleteExportCallable(const Delete
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteExportAsync(const DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteExportAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteExport(request), context);
 }
 
-void LexModelsV2Client::DeleteExportAsyncHelper(const DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteExportAsync(const DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteExportAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteImportOutcome LexModelsV2Client::DeleteImport(const DeleteImportRequest& request) const
@@ -848,14 +848,14 @@ DeleteImportOutcomeCallable LexModelsV2Client::DeleteImportCallable(const Delete
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteImportAsync(const DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteImportAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteImportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteImport(request), context);
 }
 
-void LexModelsV2Client::DeleteImportAsyncHelper(const DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteImportAsync(const DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteImport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteImportAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIntentOutcome LexModelsV2Client::DeleteIntent(const DeleteIntentRequest& request) const
@@ -900,14 +900,14 @@ DeleteIntentOutcomeCallable LexModelsV2Client::DeleteIntentCallable(const Delete
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteIntentAsync(const DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteIntentAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIntentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIntent(request), context);
 }
 
-void LexModelsV2Client::DeleteIntentAsyncHelper(const DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteIntentAsync(const DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIntent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteIntentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome LexModelsV2Client::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -931,14 +931,14 @@ DeleteResourcePolicyOutcomeCallable LexModelsV2Client::DeleteResourcePolicyCalla
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteResourcePolicyAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void LexModelsV2Client::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyStatementOutcome LexModelsV2Client::DeleteResourcePolicyStatement(const DeleteResourcePolicyStatementRequest& request) const
@@ -969,14 +969,14 @@ DeleteResourcePolicyStatementOutcomeCallable LexModelsV2Client::DeleteResourcePo
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteResourcePolicyStatementAsync(const DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteResourcePolicyStatementAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicyStatement(request), context);
 }
 
-void LexModelsV2Client::DeleteResourcePolicyStatementAsyncHelper(const DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteResourcePolicyStatementAsync(const DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicyStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteResourcePolicyStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSlotOutcome LexModelsV2Client::DeleteSlot(const DeleteSlotRequest& request) const
@@ -1028,14 +1028,14 @@ DeleteSlotOutcomeCallable LexModelsV2Client::DeleteSlotCallable(const DeleteSlot
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteSlotAsync(const DeleteSlotRequest& request, const DeleteSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteSlotAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteSlotRequest& request, const DeleteSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSlotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSlot(request), context);
 }
 
-void LexModelsV2Client::DeleteSlotAsyncHelper(const DeleteSlotRequest& request, const DeleteSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteSlotAsync(const DeleteSlotRequest& request, const DeleteSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSlot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteSlotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSlotTypeOutcome LexModelsV2Client::DeleteSlotType(const DeleteSlotTypeRequest& request) const
@@ -1080,14 +1080,14 @@ DeleteSlotTypeOutcomeCallable LexModelsV2Client::DeleteSlotTypeCallable(const De
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteSlotTypeAsync(const DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteSlotTypeAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSlotTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSlotType(request), context);
 }
 
-void LexModelsV2Client::DeleteSlotTypeAsyncHelper(const DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteSlotTypeAsync(const DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSlotType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteSlotTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUtterancesOutcome LexModelsV2Client::DeleteUtterances(const DeleteUtterancesRequest& request) const
@@ -1112,14 +1112,14 @@ DeleteUtterancesOutcomeCallable LexModelsV2Client::DeleteUtterancesCallable(cons
   return task->get_future();
 }
 
-void LexModelsV2Client::DeleteUtterancesAsync(const DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDeleteUtterancesAsyncHelper(LexModelsV2Client const * const clientThis, const DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUtterancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUtterances(request), context);
 }
 
-void LexModelsV2Client::DeleteUtterancesAsyncHelper(const DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DeleteUtterancesAsync(const DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUtterances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDeleteUtterancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBotOutcome LexModelsV2Client::DescribeBot(const DescribeBotRequest& request) const
@@ -1143,14 +1143,14 @@ DescribeBotOutcomeCallable LexModelsV2Client::DescribeBotCallable(const Describe
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeBotAsync(const DescribeBotRequest& request, const DescribeBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeBotAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeBotRequest& request, const DescribeBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBot(request), context);
 }
 
-void LexModelsV2Client::DescribeBotAsyncHelper(const DescribeBotRequest& request, const DescribeBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeBotAsync(const DescribeBotRequest& request, const DescribeBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeBotAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBotAliasOutcome LexModelsV2Client::DescribeBotAlias(const DescribeBotAliasRequest& request) const
@@ -1181,14 +1181,14 @@ DescribeBotAliasOutcomeCallable LexModelsV2Client::DescribeBotAliasCallable(cons
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeBotAliasAsync(const DescribeBotAliasRequest& request, const DescribeBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeBotAliasAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeBotAliasRequest& request, const DescribeBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBotAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBotAlias(request), context);
 }
 
-void LexModelsV2Client::DescribeBotAliasAsyncHelper(const DescribeBotAliasRequest& request, const DescribeBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeBotAliasAsync(const DescribeBotAliasRequest& request, const DescribeBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBotAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeBotAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBotLocaleOutcome LexModelsV2Client::DescribeBotLocale(const DescribeBotLocaleRequest& request) const
@@ -1226,14 +1226,14 @@ DescribeBotLocaleOutcomeCallable LexModelsV2Client::DescribeBotLocaleCallable(co
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeBotLocaleAsync(const DescribeBotLocaleRequest& request, const DescribeBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeBotLocaleAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeBotLocaleRequest& request, const DescribeBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBotLocaleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBotLocale(request), context);
 }
 
-void LexModelsV2Client::DescribeBotLocaleAsyncHelper(const DescribeBotLocaleRequest& request, const DescribeBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeBotLocaleAsync(const DescribeBotLocaleRequest& request, const DescribeBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBotLocale(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeBotLocaleAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBotRecommendationOutcome LexModelsV2Client::DescribeBotRecommendation(const DescribeBotRecommendationRequest& request) const
@@ -1278,14 +1278,14 @@ DescribeBotRecommendationOutcomeCallable LexModelsV2Client::DescribeBotRecommend
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeBotRecommendationAsync(const DescribeBotRecommendationRequest& request, const DescribeBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeBotRecommendationAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeBotRecommendationRequest& request, const DescribeBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBotRecommendationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBotRecommendation(request), context);
 }
 
-void LexModelsV2Client::DescribeBotRecommendationAsyncHelper(const DescribeBotRecommendationRequest& request, const DescribeBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeBotRecommendationAsync(const DescribeBotRecommendationRequest& request, const DescribeBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBotRecommendation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeBotRecommendationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBotVersionOutcome LexModelsV2Client::DescribeBotVersion(const DescribeBotVersionRequest& request) const
@@ -1316,14 +1316,14 @@ DescribeBotVersionOutcomeCallable LexModelsV2Client::DescribeBotVersionCallable(
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeBotVersionAsync(const DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeBotVersionAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBotVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBotVersion(request), context);
 }
 
-void LexModelsV2Client::DescribeBotVersionAsyncHelper(const DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeBotVersionAsync(const DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBotVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeBotVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCustomVocabularyMetadataOutcome LexModelsV2Client::DescribeCustomVocabularyMetadata(const DescribeCustomVocabularyMetadataRequest& request) const
@@ -1362,14 +1362,14 @@ DescribeCustomVocabularyMetadataOutcomeCallable LexModelsV2Client::DescribeCusto
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeCustomVocabularyMetadataAsync(const DescribeCustomVocabularyMetadataRequest& request, const DescribeCustomVocabularyMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeCustomVocabularyMetadataAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeCustomVocabularyMetadataRequest& request, const DescribeCustomVocabularyMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCustomVocabularyMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCustomVocabularyMetadata(request), context);
 }
 
-void LexModelsV2Client::DescribeCustomVocabularyMetadataAsyncHelper(const DescribeCustomVocabularyMetadataRequest& request, const DescribeCustomVocabularyMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeCustomVocabularyMetadataAsync(const DescribeCustomVocabularyMetadataRequest& request, const DescribeCustomVocabularyMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCustomVocabularyMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeCustomVocabularyMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExportOutcome LexModelsV2Client::DescribeExport(const DescribeExportRequest& request) const
@@ -1393,14 +1393,14 @@ DescribeExportOutcomeCallable LexModelsV2Client::DescribeExportCallable(const De
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeExportAsync(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeExportAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExport(request), context);
 }
 
-void LexModelsV2Client::DescribeExportAsyncHelper(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeExportAsync(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeExportAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImportOutcome LexModelsV2Client::DescribeImport(const DescribeImportRequest& request) const
@@ -1424,14 +1424,14 @@ DescribeImportOutcomeCallable LexModelsV2Client::DescribeImportCallable(const De
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeImportAsync(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeImportAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImport(request), context);
 }
 
-void LexModelsV2Client::DescribeImportAsyncHelper(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeImportAsync(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeImportAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIntentOutcome LexModelsV2Client::DescribeIntent(const DescribeIntentRequest& request) const
@@ -1476,14 +1476,14 @@ DescribeIntentOutcomeCallable LexModelsV2Client::DescribeIntentCallable(const De
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeIntentAsync(const DescribeIntentRequest& request, const DescribeIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeIntentAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeIntentRequest& request, const DescribeIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIntentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIntent(request), context);
 }
 
-void LexModelsV2Client::DescribeIntentAsyncHelper(const DescribeIntentRequest& request, const DescribeIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeIntentAsync(const DescribeIntentRequest& request, const DescribeIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIntent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeIntentAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeResourcePolicyOutcome LexModelsV2Client::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const
@@ -1507,14 +1507,14 @@ DescribeResourcePolicyOutcomeCallable LexModelsV2Client::DescribeResourcePolicyC
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeResourcePolicyAsync(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeResourcePolicyAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeResourcePolicy(request), context);
 }
 
-void LexModelsV2Client::DescribeResourcePolicyAsyncHelper(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeResourcePolicyAsync(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSlotOutcome LexModelsV2Client::DescribeSlot(const DescribeSlotRequest& request) const
@@ -1566,14 +1566,14 @@ DescribeSlotOutcomeCallable LexModelsV2Client::DescribeSlotCallable(const Descri
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeSlotAsync(const DescribeSlotRequest& request, const DescribeSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeSlotAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeSlotRequest& request, const DescribeSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSlotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSlot(request), context);
 }
 
-void LexModelsV2Client::DescribeSlotAsyncHelper(const DescribeSlotRequest& request, const DescribeSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeSlotAsync(const DescribeSlotRequest& request, const DescribeSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSlot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeSlotAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSlotTypeOutcome LexModelsV2Client::DescribeSlotType(const DescribeSlotTypeRequest& request) const
@@ -1618,14 +1618,14 @@ DescribeSlotTypeOutcomeCallable LexModelsV2Client::DescribeSlotTypeCallable(cons
   return task->get_future();
 }
 
-void LexModelsV2Client::DescribeSlotTypeAsync(const DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientDescribeSlotTypeAsyncHelper(LexModelsV2Client const * const clientThis, const DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSlotTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSlotType(request), context);
 }
 
-void LexModelsV2Client::DescribeSlotTypeAsyncHelper(const DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::DescribeSlotTypeAsync(const DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSlotType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientDescribeSlotTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAggregatedUtterancesOutcome LexModelsV2Client::ListAggregatedUtterances(const ListAggregatedUtterancesRequest& request) const
@@ -1650,14 +1650,14 @@ ListAggregatedUtterancesOutcomeCallable LexModelsV2Client::ListAggregatedUtteran
   return task->get_future();
 }
 
-void LexModelsV2Client::ListAggregatedUtterancesAsync(const ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListAggregatedUtterancesAsyncHelper(LexModelsV2Client const * const clientThis, const ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAggregatedUtterancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAggregatedUtterances(request), context);
 }
 
-void LexModelsV2Client::ListAggregatedUtterancesAsyncHelper(const ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListAggregatedUtterancesAsync(const ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAggregatedUtterances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListAggregatedUtterancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBotAliasesOutcome LexModelsV2Client::ListBotAliases(const ListBotAliasesRequest& request) const
@@ -1682,14 +1682,14 @@ ListBotAliasesOutcomeCallable LexModelsV2Client::ListBotAliasesCallable(const Li
   return task->get_future();
 }
 
-void LexModelsV2Client::ListBotAliasesAsync(const ListBotAliasesRequest& request, const ListBotAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListBotAliasesAsyncHelper(LexModelsV2Client const * const clientThis, const ListBotAliasesRequest& request, const ListBotAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBotAliasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBotAliases(request), context);
 }
 
-void LexModelsV2Client::ListBotAliasesAsyncHelper(const ListBotAliasesRequest& request, const ListBotAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListBotAliasesAsync(const ListBotAliasesRequest& request, const ListBotAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBotAliases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListBotAliasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBotLocalesOutcome LexModelsV2Client::ListBotLocales(const ListBotLocalesRequest& request) const
@@ -1721,14 +1721,14 @@ ListBotLocalesOutcomeCallable LexModelsV2Client::ListBotLocalesCallable(const Li
   return task->get_future();
 }
 
-void LexModelsV2Client::ListBotLocalesAsync(const ListBotLocalesRequest& request, const ListBotLocalesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListBotLocalesAsyncHelper(LexModelsV2Client const * const clientThis, const ListBotLocalesRequest& request, const ListBotLocalesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBotLocalesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBotLocales(request), context);
 }
 
-void LexModelsV2Client::ListBotLocalesAsyncHelper(const ListBotLocalesRequest& request, const ListBotLocalesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListBotLocalesAsync(const ListBotLocalesRequest& request, const ListBotLocalesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBotLocales(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListBotLocalesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBotRecommendationsOutcome LexModelsV2Client::ListBotRecommendations(const ListBotRecommendationsRequest& request) const
@@ -1767,14 +1767,14 @@ ListBotRecommendationsOutcomeCallable LexModelsV2Client::ListBotRecommendationsC
   return task->get_future();
 }
 
-void LexModelsV2Client::ListBotRecommendationsAsync(const ListBotRecommendationsRequest& request, const ListBotRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListBotRecommendationsAsyncHelper(LexModelsV2Client const * const clientThis, const ListBotRecommendationsRequest& request, const ListBotRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBotRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBotRecommendations(request), context);
 }
 
-void LexModelsV2Client::ListBotRecommendationsAsyncHelper(const ListBotRecommendationsRequest& request, const ListBotRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListBotRecommendationsAsync(const ListBotRecommendationsRequest& request, const ListBotRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBotRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListBotRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBotVersionsOutcome LexModelsV2Client::ListBotVersions(const ListBotVersionsRequest& request) const
@@ -1799,14 +1799,14 @@ ListBotVersionsOutcomeCallable LexModelsV2Client::ListBotVersionsCallable(const 
   return task->get_future();
 }
 
-void LexModelsV2Client::ListBotVersionsAsync(const ListBotVersionsRequest& request, const ListBotVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListBotVersionsAsyncHelper(LexModelsV2Client const * const clientThis, const ListBotVersionsRequest& request, const ListBotVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBotVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBotVersions(request), context);
 }
 
-void LexModelsV2Client::ListBotVersionsAsyncHelper(const ListBotVersionsRequest& request, const ListBotVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListBotVersionsAsync(const ListBotVersionsRequest& request, const ListBotVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBotVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListBotVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBotsOutcome LexModelsV2Client::ListBots(const ListBotsRequest& request) const
@@ -1824,14 +1824,14 @@ ListBotsOutcomeCallable LexModelsV2Client::ListBotsCallable(const ListBotsReques
   return task->get_future();
 }
 
-void LexModelsV2Client::ListBotsAsync(const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListBotsAsyncHelper(LexModelsV2Client const * const clientThis, const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBots(request), context);
 }
 
-void LexModelsV2Client::ListBotsAsyncHelper(const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListBotsAsync(const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListBotsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBuiltInIntentsOutcome LexModelsV2Client::ListBuiltInIntents(const ListBuiltInIntentsRequest& request) const
@@ -1856,14 +1856,14 @@ ListBuiltInIntentsOutcomeCallable LexModelsV2Client::ListBuiltInIntentsCallable(
   return task->get_future();
 }
 
-void LexModelsV2Client::ListBuiltInIntentsAsync(const ListBuiltInIntentsRequest& request, const ListBuiltInIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListBuiltInIntentsAsyncHelper(LexModelsV2Client const * const clientThis, const ListBuiltInIntentsRequest& request, const ListBuiltInIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBuiltInIntentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBuiltInIntents(request), context);
 }
 
-void LexModelsV2Client::ListBuiltInIntentsAsyncHelper(const ListBuiltInIntentsRequest& request, const ListBuiltInIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListBuiltInIntentsAsync(const ListBuiltInIntentsRequest& request, const ListBuiltInIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBuiltInIntents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListBuiltInIntentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBuiltInSlotTypesOutcome LexModelsV2Client::ListBuiltInSlotTypes(const ListBuiltInSlotTypesRequest& request) const
@@ -1888,14 +1888,14 @@ ListBuiltInSlotTypesOutcomeCallable LexModelsV2Client::ListBuiltInSlotTypesCalla
   return task->get_future();
 }
 
-void LexModelsV2Client::ListBuiltInSlotTypesAsync(const ListBuiltInSlotTypesRequest& request, const ListBuiltInSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListBuiltInSlotTypesAsyncHelper(LexModelsV2Client const * const clientThis, const ListBuiltInSlotTypesRequest& request, const ListBuiltInSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBuiltInSlotTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBuiltInSlotTypes(request), context);
 }
 
-void LexModelsV2Client::ListBuiltInSlotTypesAsyncHelper(const ListBuiltInSlotTypesRequest& request, const ListBuiltInSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListBuiltInSlotTypesAsync(const ListBuiltInSlotTypesRequest& request, const ListBuiltInSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBuiltInSlotTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListBuiltInSlotTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExportsOutcome LexModelsV2Client::ListExports(const ListExportsRequest& request) const
@@ -1913,14 +1913,14 @@ ListExportsOutcomeCallable LexModelsV2Client::ListExportsCallable(const ListExpo
   return task->get_future();
 }
 
-void LexModelsV2Client::ListExportsAsync(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListExportsAsyncHelper(LexModelsV2Client const * const clientThis, const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExports(request), context);
 }
 
-void LexModelsV2Client::ListExportsAsyncHelper(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListExportsAsync(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListExportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImportsOutcome LexModelsV2Client::ListImports(const ListImportsRequest& request) const
@@ -1938,14 +1938,14 @@ ListImportsOutcomeCallable LexModelsV2Client::ListImportsCallable(const ListImpo
   return task->get_future();
 }
 
-void LexModelsV2Client::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListImportsAsyncHelper(LexModelsV2Client const * const clientThis, const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImports(request), context);
 }
 
-void LexModelsV2Client::ListImportsAsyncHelper(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListImportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIntentsOutcome LexModelsV2Client::ListIntents(const ListIntentsRequest& request) const
@@ -1984,14 +1984,14 @@ ListIntentsOutcomeCallable LexModelsV2Client::ListIntentsCallable(const ListInte
   return task->get_future();
 }
 
-void LexModelsV2Client::ListIntentsAsync(const ListIntentsRequest& request, const ListIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListIntentsAsyncHelper(LexModelsV2Client const * const clientThis, const ListIntentsRequest& request, const ListIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIntentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIntents(request), context);
 }
 
-void LexModelsV2Client::ListIntentsAsyncHelper(const ListIntentsRequest& request, const ListIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListIntentsAsync(const ListIntentsRequest& request, const ListIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIntents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListIntentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRecommendedIntentsOutcome LexModelsV2Client::ListRecommendedIntents(const ListRecommendedIntentsRequest& request) const
@@ -2037,14 +2037,14 @@ ListRecommendedIntentsOutcomeCallable LexModelsV2Client::ListRecommendedIntentsC
   return task->get_future();
 }
 
-void LexModelsV2Client::ListRecommendedIntentsAsync(const ListRecommendedIntentsRequest& request, const ListRecommendedIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListRecommendedIntentsAsyncHelper(LexModelsV2Client const * const clientThis, const ListRecommendedIntentsRequest& request, const ListRecommendedIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecommendedIntentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRecommendedIntents(request), context);
 }
 
-void LexModelsV2Client::ListRecommendedIntentsAsyncHelper(const ListRecommendedIntentsRequest& request, const ListRecommendedIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListRecommendedIntentsAsync(const ListRecommendedIntentsRequest& request, const ListRecommendedIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRecommendedIntents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListRecommendedIntentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSlotTypesOutcome LexModelsV2Client::ListSlotTypes(const ListSlotTypesRequest& request) const
@@ -2083,14 +2083,14 @@ ListSlotTypesOutcomeCallable LexModelsV2Client::ListSlotTypesCallable(const List
   return task->get_future();
 }
 
-void LexModelsV2Client::ListSlotTypesAsync(const ListSlotTypesRequest& request, const ListSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListSlotTypesAsyncHelper(LexModelsV2Client const * const clientThis, const ListSlotTypesRequest& request, const ListSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSlotTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSlotTypes(request), context);
 }
 
-void LexModelsV2Client::ListSlotTypesAsyncHelper(const ListSlotTypesRequest& request, const ListSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListSlotTypesAsync(const ListSlotTypesRequest& request, const ListSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSlotTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListSlotTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSlotsOutcome LexModelsV2Client::ListSlots(const ListSlotsRequest& request) const
@@ -2136,14 +2136,14 @@ ListSlotsOutcomeCallable LexModelsV2Client::ListSlotsCallable(const ListSlotsReq
   return task->get_future();
 }
 
-void LexModelsV2Client::ListSlotsAsync(const ListSlotsRequest& request, const ListSlotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListSlotsAsyncHelper(LexModelsV2Client const * const clientThis, const ListSlotsRequest& request, const ListSlotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSlotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSlots(request), context);
 }
 
-void LexModelsV2Client::ListSlotsAsyncHelper(const ListSlotsRequest& request, const ListSlotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListSlotsAsync(const ListSlotsRequest& request, const ListSlotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSlots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListSlotsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome LexModelsV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -2167,14 +2167,14 @@ ListTagsForResourceOutcomeCallable LexModelsV2Client::ListTagsForResourceCallabl
   return task->get_future();
 }
 
-void LexModelsV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientListTagsForResourceAsyncHelper(LexModelsV2Client const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void LexModelsV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchAssociatedTranscriptsOutcome LexModelsV2Client::SearchAssociatedTranscripts(const SearchAssociatedTranscriptsRequest& request) const
@@ -2220,14 +2220,14 @@ SearchAssociatedTranscriptsOutcomeCallable LexModelsV2Client::SearchAssociatedTr
   return task->get_future();
 }
 
-void LexModelsV2Client::SearchAssociatedTranscriptsAsync(const SearchAssociatedTranscriptsRequest& request, const SearchAssociatedTranscriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientSearchAssociatedTranscriptsAsyncHelper(LexModelsV2Client const * const clientThis, const SearchAssociatedTranscriptsRequest& request, const SearchAssociatedTranscriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchAssociatedTranscriptsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchAssociatedTranscripts(request), context);
 }
 
-void LexModelsV2Client::SearchAssociatedTranscriptsAsyncHelper(const SearchAssociatedTranscriptsRequest& request, const SearchAssociatedTranscriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::SearchAssociatedTranscriptsAsync(const SearchAssociatedTranscriptsRequest& request, const SearchAssociatedTranscriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchAssociatedTranscripts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientSearchAssociatedTranscriptsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartBotRecommendationOutcome LexModelsV2Client::StartBotRecommendation(const StartBotRecommendationRequest& request) const
@@ -2266,14 +2266,14 @@ StartBotRecommendationOutcomeCallable LexModelsV2Client::StartBotRecommendationC
   return task->get_future();
 }
 
-void LexModelsV2Client::StartBotRecommendationAsync(const StartBotRecommendationRequest& request, const StartBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientStartBotRecommendationAsyncHelper(LexModelsV2Client const * const clientThis, const StartBotRecommendationRequest& request, const StartBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartBotRecommendationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartBotRecommendation(request), context);
 }
 
-void LexModelsV2Client::StartBotRecommendationAsyncHelper(const StartBotRecommendationRequest& request, const StartBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::StartBotRecommendationAsync(const StartBotRecommendationRequest& request, const StartBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartBotRecommendation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientStartBotRecommendationAsyncHelper( this, request, handler, context ); } );
 }
 
 StartImportOutcome LexModelsV2Client::StartImport(const StartImportRequest& request) const
@@ -2291,14 +2291,14 @@ StartImportOutcomeCallable LexModelsV2Client::StartImportCallable(const StartImp
   return task->get_future();
 }
 
-void LexModelsV2Client::StartImportAsync(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientStartImportAsyncHelper(LexModelsV2Client const * const clientThis, const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartImportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartImport(request), context);
 }
 
-void LexModelsV2Client::StartImportAsyncHelper(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::StartImportAsync(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartImport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientStartImportAsyncHelper( this, request, handler, context ); } );
 }
 
 StopBotRecommendationOutcome LexModelsV2Client::StopBotRecommendation(const StopBotRecommendationRequest& request) const
@@ -2344,14 +2344,14 @@ StopBotRecommendationOutcomeCallable LexModelsV2Client::StopBotRecommendationCal
   return task->get_future();
 }
 
-void LexModelsV2Client::StopBotRecommendationAsync(const StopBotRecommendationRequest& request, const StopBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientStopBotRecommendationAsyncHelper(LexModelsV2Client const * const clientThis, const StopBotRecommendationRequest& request, const StopBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopBotRecommendationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopBotRecommendation(request), context);
 }
 
-void LexModelsV2Client::StopBotRecommendationAsyncHelper(const StopBotRecommendationRequest& request, const StopBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::StopBotRecommendationAsync(const StopBotRecommendationRequest& request, const StopBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopBotRecommendation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientStopBotRecommendationAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome LexModelsV2Client::TagResource(const TagResourceRequest& request) const
@@ -2375,14 +2375,14 @@ TagResourceOutcomeCallable LexModelsV2Client::TagResourceCallable(const TagResou
   return task->get_future();
 }
 
-void LexModelsV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientTagResourceAsyncHelper(LexModelsV2Client const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void LexModelsV2Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome LexModelsV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -2411,14 +2411,14 @@ UntagResourceOutcomeCallable LexModelsV2Client::UntagResourceCallable(const Unta
   return task->get_future();
 }
 
-void LexModelsV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientUntagResourceAsyncHelper(LexModelsV2Client const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void LexModelsV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBotOutcome LexModelsV2Client::UpdateBot(const UpdateBotRequest& request) const
@@ -2442,14 +2442,14 @@ UpdateBotOutcomeCallable LexModelsV2Client::UpdateBotCallable(const UpdateBotReq
   return task->get_future();
 }
 
-void LexModelsV2Client::UpdateBotAsync(const UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientUpdateBotAsyncHelper(LexModelsV2Client const * const clientThis, const UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBot(request), context);
 }
 
-void LexModelsV2Client::UpdateBotAsyncHelper(const UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::UpdateBotAsync(const UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientUpdateBotAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBotAliasOutcome LexModelsV2Client::UpdateBotAlias(const UpdateBotAliasRequest& request) const
@@ -2480,14 +2480,14 @@ UpdateBotAliasOutcomeCallable LexModelsV2Client::UpdateBotAliasCallable(const Up
   return task->get_future();
 }
 
-void LexModelsV2Client::UpdateBotAliasAsync(const UpdateBotAliasRequest& request, const UpdateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientUpdateBotAliasAsyncHelper(LexModelsV2Client const * const clientThis, const UpdateBotAliasRequest& request, const UpdateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBotAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBotAlias(request), context);
 }
 
-void LexModelsV2Client::UpdateBotAliasAsyncHelper(const UpdateBotAliasRequest& request, const UpdateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::UpdateBotAliasAsync(const UpdateBotAliasRequest& request, const UpdateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBotAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientUpdateBotAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBotLocaleOutcome LexModelsV2Client::UpdateBotLocale(const UpdateBotLocaleRequest& request) const
@@ -2525,14 +2525,14 @@ UpdateBotLocaleOutcomeCallable LexModelsV2Client::UpdateBotLocaleCallable(const 
   return task->get_future();
 }
 
-void LexModelsV2Client::UpdateBotLocaleAsync(const UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientUpdateBotLocaleAsyncHelper(LexModelsV2Client const * const clientThis, const UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBotLocaleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBotLocale(request), context);
 }
 
-void LexModelsV2Client::UpdateBotLocaleAsyncHelper(const UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::UpdateBotLocaleAsync(const UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBotLocale(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientUpdateBotLocaleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBotRecommendationOutcome LexModelsV2Client::UpdateBotRecommendation(const UpdateBotRecommendationRequest& request) const
@@ -2577,14 +2577,14 @@ UpdateBotRecommendationOutcomeCallable LexModelsV2Client::UpdateBotRecommendatio
   return task->get_future();
 }
 
-void LexModelsV2Client::UpdateBotRecommendationAsync(const UpdateBotRecommendationRequest& request, const UpdateBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientUpdateBotRecommendationAsyncHelper(LexModelsV2Client const * const clientThis, const UpdateBotRecommendationRequest& request, const UpdateBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBotRecommendationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBotRecommendation(request), context);
 }
 
-void LexModelsV2Client::UpdateBotRecommendationAsyncHelper(const UpdateBotRecommendationRequest& request, const UpdateBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::UpdateBotRecommendationAsync(const UpdateBotRecommendationRequest& request, const UpdateBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBotRecommendation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientUpdateBotRecommendationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateExportOutcome LexModelsV2Client::UpdateExport(const UpdateExportRequest& request) const
@@ -2608,14 +2608,14 @@ UpdateExportOutcomeCallable LexModelsV2Client::UpdateExportCallable(const Update
   return task->get_future();
 }
 
-void LexModelsV2Client::UpdateExportAsync(const UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientUpdateExportAsyncHelper(LexModelsV2Client const * const clientThis, const UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateExport(request), context);
 }
 
-void LexModelsV2Client::UpdateExportAsyncHelper(const UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::UpdateExportAsync(const UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientUpdateExportAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateIntentOutcome LexModelsV2Client::UpdateIntent(const UpdateIntentRequest& request) const
@@ -2660,14 +2660,14 @@ UpdateIntentOutcomeCallable LexModelsV2Client::UpdateIntentCallable(const Update
   return task->get_future();
 }
 
-void LexModelsV2Client::UpdateIntentAsync(const UpdateIntentRequest& request, const UpdateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientUpdateIntentAsyncHelper(LexModelsV2Client const * const clientThis, const UpdateIntentRequest& request, const UpdateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIntentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateIntent(request), context);
 }
 
-void LexModelsV2Client::UpdateIntentAsyncHelper(const UpdateIntentRequest& request, const UpdateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::UpdateIntentAsync(const UpdateIntentRequest& request, const UpdateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateIntent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientUpdateIntentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateResourcePolicyOutcome LexModelsV2Client::UpdateResourcePolicy(const UpdateResourcePolicyRequest& request) const
@@ -2691,14 +2691,14 @@ UpdateResourcePolicyOutcomeCallable LexModelsV2Client::UpdateResourcePolicyCalla
   return task->get_future();
 }
 
-void LexModelsV2Client::UpdateResourcePolicyAsync(const UpdateResourcePolicyRequest& request, const UpdateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientUpdateResourcePolicyAsyncHelper(LexModelsV2Client const * const clientThis, const UpdateResourcePolicyRequest& request, const UpdateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateResourcePolicy(request), context);
 }
 
-void LexModelsV2Client::UpdateResourcePolicyAsyncHelper(const UpdateResourcePolicyRequest& request, const UpdateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::UpdateResourcePolicyAsync(const UpdateResourcePolicyRequest& request, const UpdateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientUpdateResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSlotOutcome LexModelsV2Client::UpdateSlot(const UpdateSlotRequest& request) const
@@ -2750,14 +2750,14 @@ UpdateSlotOutcomeCallable LexModelsV2Client::UpdateSlotCallable(const UpdateSlot
   return task->get_future();
 }
 
-void LexModelsV2Client::UpdateSlotAsync(const UpdateSlotRequest& request, const UpdateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientUpdateSlotAsyncHelper(LexModelsV2Client const * const clientThis, const UpdateSlotRequest& request, const UpdateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSlotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSlot(request), context);
 }
 
-void LexModelsV2Client::UpdateSlotAsyncHelper(const UpdateSlotRequest& request, const UpdateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::UpdateSlotAsync(const UpdateSlotRequest& request, const UpdateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSlot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientUpdateSlotAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSlotTypeOutcome LexModelsV2Client::UpdateSlotType(const UpdateSlotTypeRequest& request) const
@@ -2802,13 +2802,13 @@ UpdateSlotTypeOutcomeCallable LexModelsV2Client::UpdateSlotTypeCallable(const Up
   return task->get_future();
 }
 
-void LexModelsV2Client::UpdateSlotTypeAsync(const UpdateSlotTypeRequest& request, const UpdateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2ClientUpdateSlotTypeAsyncHelper(LexModelsV2Client const * const clientThis, const UpdateSlotTypeRequest& request, const UpdateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSlotTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSlotType(request), context);
 }
 
-void LexModelsV2Client::UpdateSlotTypeAsyncHelper(const UpdateSlotTypeRequest& request, const UpdateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LexModelsV2Client::UpdateSlotTypeAsync(const UpdateSlotTypeRequest& request, const UpdateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSlotType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LexModelsV2ClientUpdateSlotTypeAsyncHelper( this, request, handler, context ); } );
 }
 

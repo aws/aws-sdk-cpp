@@ -127,14 +127,14 @@ CreateEnvironmentEC2OutcomeCallable Cloud9Client::CreateEnvironmentEC2Callable(c
   return task->get_future();
 }
 
-void Cloud9Client::CreateEnvironmentEC2Async(const CreateEnvironmentEC2Request& request, const CreateEnvironmentEC2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientCreateEnvironmentEC2AsyncHelper(Cloud9Client const * const clientThis, const CreateEnvironmentEC2Request& request, const CreateEnvironmentEC2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentEC2AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEnvironmentEC2(request), context);
 }
 
-void Cloud9Client::CreateEnvironmentEC2AsyncHelper(const CreateEnvironmentEC2Request& request, const CreateEnvironmentEC2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::CreateEnvironmentEC2Async(const CreateEnvironmentEC2Request& request, const CreateEnvironmentEC2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEnvironmentEC2(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientCreateEnvironmentEC2AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEnvironmentMembershipOutcome Cloud9Client::CreateEnvironmentMembership(const CreateEnvironmentMembershipRequest& request) const
@@ -151,14 +151,14 @@ CreateEnvironmentMembershipOutcomeCallable Cloud9Client::CreateEnvironmentMember
   return task->get_future();
 }
 
-void Cloud9Client::CreateEnvironmentMembershipAsync(const CreateEnvironmentMembershipRequest& request, const CreateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientCreateEnvironmentMembershipAsyncHelper(Cloud9Client const * const clientThis, const CreateEnvironmentMembershipRequest& request, const CreateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentMembershipAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEnvironmentMembership(request), context);
 }
 
-void Cloud9Client::CreateEnvironmentMembershipAsyncHelper(const CreateEnvironmentMembershipRequest& request, const CreateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::CreateEnvironmentMembershipAsync(const CreateEnvironmentMembershipRequest& request, const CreateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEnvironmentMembership(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientCreateEnvironmentMembershipAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEnvironmentOutcome Cloud9Client::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
@@ -175,14 +175,14 @@ DeleteEnvironmentOutcomeCallable Cloud9Client::DeleteEnvironmentCallable(const D
   return task->get_future();
 }
 
-void Cloud9Client::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientDeleteEnvironmentAsyncHelper(Cloud9Client const * const clientThis, const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEnvironment(request), context);
 }
 
-void Cloud9Client::DeleteEnvironmentAsyncHelper(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientDeleteEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEnvironmentMembershipOutcome Cloud9Client::DeleteEnvironmentMembership(const DeleteEnvironmentMembershipRequest& request) const
@@ -199,14 +199,14 @@ DeleteEnvironmentMembershipOutcomeCallable Cloud9Client::DeleteEnvironmentMember
   return task->get_future();
 }
 
-void Cloud9Client::DeleteEnvironmentMembershipAsync(const DeleteEnvironmentMembershipRequest& request, const DeleteEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientDeleteEnvironmentMembershipAsyncHelper(Cloud9Client const * const clientThis, const DeleteEnvironmentMembershipRequest& request, const DeleteEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentMembershipAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEnvironmentMembership(request), context);
 }
 
-void Cloud9Client::DeleteEnvironmentMembershipAsyncHelper(const DeleteEnvironmentMembershipRequest& request, const DeleteEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::DeleteEnvironmentMembershipAsync(const DeleteEnvironmentMembershipRequest& request, const DeleteEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEnvironmentMembership(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientDeleteEnvironmentMembershipAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEnvironmentMembershipsOutcome Cloud9Client::DescribeEnvironmentMemberships(const DescribeEnvironmentMembershipsRequest& request) const
@@ -223,14 +223,14 @@ DescribeEnvironmentMembershipsOutcomeCallable Cloud9Client::DescribeEnvironmentM
   return task->get_future();
 }
 
-void Cloud9Client::DescribeEnvironmentMembershipsAsync(const DescribeEnvironmentMembershipsRequest& request, const DescribeEnvironmentMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientDescribeEnvironmentMembershipsAsyncHelper(Cloud9Client const * const clientThis, const DescribeEnvironmentMembershipsRequest& request, const DescribeEnvironmentMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEnvironmentMembershipsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEnvironmentMemberships(request), context);
 }
 
-void Cloud9Client::DescribeEnvironmentMembershipsAsyncHelper(const DescribeEnvironmentMembershipsRequest& request, const DescribeEnvironmentMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::DescribeEnvironmentMembershipsAsync(const DescribeEnvironmentMembershipsRequest& request, const DescribeEnvironmentMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEnvironmentMemberships(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientDescribeEnvironmentMembershipsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEnvironmentStatusOutcome Cloud9Client::DescribeEnvironmentStatus(const DescribeEnvironmentStatusRequest& request) const
@@ -247,14 +247,14 @@ DescribeEnvironmentStatusOutcomeCallable Cloud9Client::DescribeEnvironmentStatus
   return task->get_future();
 }
 
-void Cloud9Client::DescribeEnvironmentStatusAsync(const DescribeEnvironmentStatusRequest& request, const DescribeEnvironmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientDescribeEnvironmentStatusAsyncHelper(Cloud9Client const * const clientThis, const DescribeEnvironmentStatusRequest& request, const DescribeEnvironmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEnvironmentStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEnvironmentStatus(request), context);
 }
 
-void Cloud9Client::DescribeEnvironmentStatusAsyncHelper(const DescribeEnvironmentStatusRequest& request, const DescribeEnvironmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::DescribeEnvironmentStatusAsync(const DescribeEnvironmentStatusRequest& request, const DescribeEnvironmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEnvironmentStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientDescribeEnvironmentStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEnvironmentsOutcome Cloud9Client::DescribeEnvironments(const DescribeEnvironmentsRequest& request) const
@@ -271,14 +271,14 @@ DescribeEnvironmentsOutcomeCallable Cloud9Client::DescribeEnvironmentsCallable(c
   return task->get_future();
 }
 
-void Cloud9Client::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientDescribeEnvironmentsAsyncHelper(Cloud9Client const * const clientThis, const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEnvironmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEnvironments(request), context);
 }
 
-void Cloud9Client::DescribeEnvironmentsAsyncHelper(const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEnvironments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientDescribeEnvironmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEnvironmentsOutcome Cloud9Client::ListEnvironments(const ListEnvironmentsRequest& request) const
@@ -295,14 +295,14 @@ ListEnvironmentsOutcomeCallable Cloud9Client::ListEnvironmentsCallable(const Lis
   return task->get_future();
 }
 
-void Cloud9Client::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientListEnvironmentsAsyncHelper(Cloud9Client const * const clientThis, const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEnvironments(request), context);
 }
 
-void Cloud9Client::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEnvironments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientListEnvironmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome Cloud9Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -319,14 +319,14 @@ ListTagsForResourceOutcomeCallable Cloud9Client::ListTagsForResourceCallable(con
   return task->get_future();
 }
 
-void Cloud9Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientListTagsForResourceAsyncHelper(Cloud9Client const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void Cloud9Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome Cloud9Client::TagResource(const TagResourceRequest& request) const
@@ -343,14 +343,14 @@ TagResourceOutcomeCallable Cloud9Client::TagResourceCallable(const TagResourceRe
   return task->get_future();
 }
 
-void Cloud9Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientTagResourceAsyncHelper(Cloud9Client const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void Cloud9Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome Cloud9Client::UntagResource(const UntagResourceRequest& request) const
@@ -367,14 +367,14 @@ UntagResourceOutcomeCallable Cloud9Client::UntagResourceCallable(const UntagReso
   return task->get_future();
 }
 
-void Cloud9Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientUntagResourceAsyncHelper(Cloud9Client const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void Cloud9Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEnvironmentOutcome Cloud9Client::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
@@ -391,14 +391,14 @@ UpdateEnvironmentOutcomeCallable Cloud9Client::UpdateEnvironmentCallable(const U
   return task->get_future();
 }
 
-void Cloud9Client::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientUpdateEnvironmentAsyncHelper(Cloud9Client const * const clientThis, const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEnvironment(request), context);
 }
 
-void Cloud9Client::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientUpdateEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEnvironmentMembershipOutcome Cloud9Client::UpdateEnvironmentMembership(const UpdateEnvironmentMembershipRequest& request) const
@@ -415,13 +415,13 @@ UpdateEnvironmentMembershipOutcomeCallable Cloud9Client::UpdateEnvironmentMember
   return task->get_future();
 }
 
-void Cloud9Client::UpdateEnvironmentMembershipAsync(const UpdateEnvironmentMembershipRequest& request, const UpdateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9ClientUpdateEnvironmentMembershipAsyncHelper(Cloud9Client const * const clientThis, const UpdateEnvironmentMembershipRequest& request, const UpdateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnvironmentMembershipAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEnvironmentMembership(request), context);
 }
 
-void Cloud9Client::UpdateEnvironmentMembershipAsyncHelper(const UpdateEnvironmentMembershipRequest& request, const UpdateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Cloud9Client::UpdateEnvironmentMembershipAsync(const UpdateEnvironmentMembershipRequest& request, const UpdateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEnvironmentMembership(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Cloud9ClientUpdateEnvironmentMembershipAsyncHelper( this, request, handler, context ); } );
 }
 

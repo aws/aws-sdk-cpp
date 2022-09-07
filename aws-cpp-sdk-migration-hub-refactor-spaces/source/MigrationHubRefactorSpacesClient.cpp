@@ -146,14 +146,14 @@ CreateApplicationOutcomeCallable MigrationHubRefactorSpacesClient::CreateApplica
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientCreateApplicationAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplication(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientCreateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEnvironmentOutcome MigrationHubRefactorSpacesClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
@@ -171,14 +171,14 @@ CreateEnvironmentOutcomeCallable MigrationHubRefactorSpacesClient::CreateEnviron
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientCreateEnvironmentAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEnvironment(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientCreateEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRouteOutcome MigrationHubRefactorSpacesClient::CreateRoute(const CreateRouteRequest& request) const
@@ -210,14 +210,14 @@ CreateRouteOutcomeCallable MigrationHubRefactorSpacesClient::CreateRouteCallable
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::CreateRouteAsync(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientCreateRouteAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRoute(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::CreateRouteAsyncHelper(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::CreateRouteAsync(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientCreateRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateServiceOutcome MigrationHubRefactorSpacesClient::CreateService(const CreateServiceRequest& request) const
@@ -249,14 +249,14 @@ CreateServiceOutcomeCallable MigrationHubRefactorSpacesClient::CreateServiceCall
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientCreateServiceAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateService(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::CreateServiceAsyncHelper(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientCreateServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationOutcome MigrationHubRefactorSpacesClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -287,14 +287,14 @@ DeleteApplicationOutcomeCallable MigrationHubRefactorSpacesClient::DeleteApplica
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientDeleteApplicationAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplication(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientDeleteApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEnvironmentOutcome MigrationHubRefactorSpacesClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
@@ -318,14 +318,14 @@ DeleteEnvironmentOutcomeCallable MigrationHubRefactorSpacesClient::DeleteEnviron
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientDeleteEnvironmentAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEnvironment(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::DeleteEnvironmentAsyncHelper(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientDeleteEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome MigrationHubRefactorSpacesClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -349,14 +349,14 @@ DeleteResourcePolicyOutcomeCallable MigrationHubRefactorSpacesClient::DeleteReso
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientDeleteResourcePolicyAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRouteOutcome MigrationHubRefactorSpacesClient::DeleteRoute(const DeleteRouteRequest& request) const
@@ -394,14 +394,14 @@ DeleteRouteOutcomeCallable MigrationHubRefactorSpacesClient::DeleteRouteCallable
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::DeleteRouteAsync(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientDeleteRouteAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRoute(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::DeleteRouteAsyncHelper(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::DeleteRouteAsync(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientDeleteRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteServiceOutcome MigrationHubRefactorSpacesClient::DeleteService(const DeleteServiceRequest& request) const
@@ -439,14 +439,14 @@ DeleteServiceOutcomeCallable MigrationHubRefactorSpacesClient::DeleteServiceCall
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientDeleteServiceAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteService(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::DeleteServiceAsyncHelper(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientDeleteServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApplicationOutcome MigrationHubRefactorSpacesClient::GetApplication(const GetApplicationRequest& request) const
@@ -477,14 +477,14 @@ GetApplicationOutcomeCallable MigrationHubRefactorSpacesClient::GetApplicationCa
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientGetApplicationAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApplication(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientGetApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEnvironmentOutcome MigrationHubRefactorSpacesClient::GetEnvironment(const GetEnvironmentRequest& request) const
@@ -508,14 +508,14 @@ GetEnvironmentOutcomeCallable MigrationHubRefactorSpacesClient::GetEnvironmentCa
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientGetEnvironmentAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEnvironment(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::GetEnvironmentAsyncHelper(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientGetEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcePolicyOutcome MigrationHubRefactorSpacesClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
@@ -539,14 +539,14 @@ GetResourcePolicyOutcomeCallable MigrationHubRefactorSpacesClient::GetResourcePo
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientGetResourcePolicyAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourcePolicy(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientGetResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRouteOutcome MigrationHubRefactorSpacesClient::GetRoute(const GetRouteRequest& request) const
@@ -584,14 +584,14 @@ GetRouteOutcomeCallable MigrationHubRefactorSpacesClient::GetRouteCallable(const
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::GetRouteAsync(const GetRouteRequest& request, const GetRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientGetRouteAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const GetRouteRequest& request, const GetRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRoute(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::GetRouteAsyncHelper(const GetRouteRequest& request, const GetRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::GetRouteAsync(const GetRouteRequest& request, const GetRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientGetRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceOutcome MigrationHubRefactorSpacesClient::GetService(const GetServiceRequest& request) const
@@ -629,14 +629,14 @@ GetServiceOutcomeCallable MigrationHubRefactorSpacesClient::GetServiceCallable(c
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::GetServiceAsync(const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientGetServiceAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetService(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::GetServiceAsyncHelper(const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::GetServiceAsync(const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientGetServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationsOutcome MigrationHubRefactorSpacesClient::ListApplications(const ListApplicationsRequest& request) const
@@ -661,14 +661,14 @@ ListApplicationsOutcomeCallable MigrationHubRefactorSpacesClient::ListApplicatio
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientListApplicationsAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplications(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientListApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEnvironmentVpcsOutcome MigrationHubRefactorSpacesClient::ListEnvironmentVpcs(const ListEnvironmentVpcsRequest& request) const
@@ -693,14 +693,14 @@ ListEnvironmentVpcsOutcomeCallable MigrationHubRefactorSpacesClient::ListEnviron
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::ListEnvironmentVpcsAsync(const ListEnvironmentVpcsRequest& request, const ListEnvironmentVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientListEnvironmentVpcsAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const ListEnvironmentVpcsRequest& request, const ListEnvironmentVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentVpcsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEnvironmentVpcs(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::ListEnvironmentVpcsAsyncHelper(const ListEnvironmentVpcsRequest& request, const ListEnvironmentVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::ListEnvironmentVpcsAsync(const ListEnvironmentVpcsRequest& request, const ListEnvironmentVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEnvironmentVpcs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientListEnvironmentVpcsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEnvironmentsOutcome MigrationHubRefactorSpacesClient::ListEnvironments(const ListEnvironmentsRequest& request) const
@@ -718,14 +718,14 @@ ListEnvironmentsOutcomeCallable MigrationHubRefactorSpacesClient::ListEnvironmen
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientListEnvironmentsAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEnvironments(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEnvironments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientListEnvironmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRoutesOutcome MigrationHubRefactorSpacesClient::ListRoutes(const ListRoutesRequest& request) const
@@ -757,14 +757,14 @@ ListRoutesOutcomeCallable MigrationHubRefactorSpacesClient::ListRoutesCallable(c
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::ListRoutesAsync(const ListRoutesRequest& request, const ListRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientListRoutesAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const ListRoutesRequest& request, const ListRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRoutesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRoutes(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::ListRoutesAsyncHelper(const ListRoutesRequest& request, const ListRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::ListRoutesAsync(const ListRoutesRequest& request, const ListRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientListRoutesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServicesOutcome MigrationHubRefactorSpacesClient::ListServices(const ListServicesRequest& request) const
@@ -796,14 +796,14 @@ ListServicesOutcomeCallable MigrationHubRefactorSpacesClient::ListServicesCallab
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientListServicesAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServices(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::ListServicesAsyncHelper(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientListServicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome MigrationHubRefactorSpacesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -827,14 +827,14 @@ ListTagsForResourceOutcomeCallable MigrationHubRefactorSpacesClient::ListTagsFor
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientListTagsForResourceAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourcePolicyOutcome MigrationHubRefactorSpacesClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -852,14 +852,14 @@ PutResourcePolicyOutcomeCallable MigrationHubRefactorSpacesClient::PutResourcePo
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientPutResourcePolicyAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourcePolicy(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientPutResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome MigrationHubRefactorSpacesClient::TagResource(const TagResourceRequest& request) const
@@ -883,14 +883,14 @@ TagResourceOutcomeCallable MigrationHubRefactorSpacesClient::TagResourceCallable
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientTagResourceAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome MigrationHubRefactorSpacesClient::UntagResource(const UntagResourceRequest& request) const
@@ -919,14 +919,14 @@ UntagResourceOutcomeCallable MigrationHubRefactorSpacesClient::UntagResourceCall
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientUntagResourceAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRouteOutcome MigrationHubRefactorSpacesClient::UpdateRoute(const UpdateRouteRequest& request) const
@@ -964,13 +964,13 @@ UpdateRouteOutcomeCallable MigrationHubRefactorSpacesClient::UpdateRouteCallable
   return task->get_future();
 }
 
-void MigrationHubRefactorSpacesClient::UpdateRouteAsync(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClientUpdateRouteAsyncHelper(MigrationHubRefactorSpacesClient const * const clientThis, const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRoute(request), context);
 }
 
-void MigrationHubRefactorSpacesClient::UpdateRouteAsyncHelper(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MigrationHubRefactorSpacesClient::UpdateRouteAsync(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MigrationHubRefactorSpacesClientUpdateRouteAsyncHelper( this, request, handler, context ); } );
 }
 

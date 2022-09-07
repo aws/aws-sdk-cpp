@@ -209,14 +209,14 @@ AcceptMatchOutcomeCallable GameLiftClient::AcceptMatchCallable(const AcceptMatch
   return task->get_future();
 }
 
-void GameLiftClient::AcceptMatchAsync(const AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientAcceptMatchAsyncHelper(GameLiftClient const * const clientThis, const AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptMatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptMatch(request), context);
 }
 
-void GameLiftClient::AcceptMatchAsyncHelper(const AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::AcceptMatchAsync(const AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptMatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientAcceptMatchAsyncHelper( this, request, handler, context ); } );
 }
 
 ClaimGameServerOutcome GameLiftClient::ClaimGameServer(const ClaimGameServerRequest& request) const
@@ -233,14 +233,14 @@ ClaimGameServerOutcomeCallable GameLiftClient::ClaimGameServerCallable(const Cla
   return task->get_future();
 }
 
-void GameLiftClient::ClaimGameServerAsync(const ClaimGameServerRequest& request, const ClaimGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientClaimGameServerAsyncHelper(GameLiftClient const * const clientThis, const ClaimGameServerRequest& request, const ClaimGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ClaimGameServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ClaimGameServer(request), context);
 }
 
-void GameLiftClient::ClaimGameServerAsyncHelper(const ClaimGameServerRequest& request, const ClaimGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ClaimGameServerAsync(const ClaimGameServerRequest& request, const ClaimGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ClaimGameServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientClaimGameServerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAliasOutcome GameLiftClient::CreateAlias(const CreateAliasRequest& request) const
@@ -257,14 +257,14 @@ CreateAliasOutcomeCallable GameLiftClient::CreateAliasCallable(const CreateAlias
   return task->get_future();
 }
 
-void GameLiftClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateAliasAsyncHelper(GameLiftClient const * const clientThis, const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAlias(request), context);
 }
 
-void GameLiftClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBuildOutcome GameLiftClient::CreateBuild(const CreateBuildRequest& request) const
@@ -281,14 +281,14 @@ CreateBuildOutcomeCallable GameLiftClient::CreateBuildCallable(const CreateBuild
   return task->get_future();
 }
 
-void GameLiftClient::CreateBuildAsync(const CreateBuildRequest& request, const CreateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateBuildAsyncHelper(GameLiftClient const * const clientThis, const CreateBuildRequest& request, const CreateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBuildAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBuild(request), context);
 }
 
-void GameLiftClient::CreateBuildAsyncHelper(const CreateBuildRequest& request, const CreateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateBuildAsync(const CreateBuildRequest& request, const CreateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBuild(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateBuildAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFleetOutcome GameLiftClient::CreateFleet(const CreateFleetRequest& request) const
@@ -305,14 +305,14 @@ CreateFleetOutcomeCallable GameLiftClient::CreateFleetCallable(const CreateFleet
   return task->get_future();
 }
 
-void GameLiftClient::CreateFleetAsync(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateFleetAsyncHelper(GameLiftClient const * const clientThis, const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFleet(request), context);
 }
 
-void GameLiftClient::CreateFleetAsyncHelper(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateFleetAsync(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFleetLocationsOutcome GameLiftClient::CreateFleetLocations(const CreateFleetLocationsRequest& request) const
@@ -329,14 +329,14 @@ CreateFleetLocationsOutcomeCallable GameLiftClient::CreateFleetLocationsCallable
   return task->get_future();
 }
 
-void GameLiftClient::CreateFleetLocationsAsync(const CreateFleetLocationsRequest& request, const CreateFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateFleetLocationsAsyncHelper(GameLiftClient const * const clientThis, const CreateFleetLocationsRequest& request, const CreateFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFleetLocationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFleetLocations(request), context);
 }
 
-void GameLiftClient::CreateFleetLocationsAsyncHelper(const CreateFleetLocationsRequest& request, const CreateFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateFleetLocationsAsync(const CreateFleetLocationsRequest& request, const CreateFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFleetLocations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateFleetLocationsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGameServerGroupOutcome GameLiftClient::CreateGameServerGroup(const CreateGameServerGroupRequest& request) const
@@ -353,14 +353,14 @@ CreateGameServerGroupOutcomeCallable GameLiftClient::CreateGameServerGroupCallab
   return task->get_future();
 }
 
-void GameLiftClient::CreateGameServerGroupAsync(const CreateGameServerGroupRequest& request, const CreateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateGameServerGroupAsyncHelper(GameLiftClient const * const clientThis, const CreateGameServerGroupRequest& request, const CreateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGameServerGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGameServerGroup(request), context);
 }
 
-void GameLiftClient::CreateGameServerGroupAsyncHelper(const CreateGameServerGroupRequest& request, const CreateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateGameServerGroupAsync(const CreateGameServerGroupRequest& request, const CreateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGameServerGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateGameServerGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGameSessionOutcome GameLiftClient::CreateGameSession(const CreateGameSessionRequest& request) const
@@ -377,14 +377,14 @@ CreateGameSessionOutcomeCallable GameLiftClient::CreateGameSessionCallable(const
   return task->get_future();
 }
 
-void GameLiftClient::CreateGameSessionAsync(const CreateGameSessionRequest& request, const CreateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateGameSessionAsyncHelper(GameLiftClient const * const clientThis, const CreateGameSessionRequest& request, const CreateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGameSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGameSession(request), context);
 }
 
-void GameLiftClient::CreateGameSessionAsyncHelper(const CreateGameSessionRequest& request, const CreateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateGameSessionAsync(const CreateGameSessionRequest& request, const CreateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGameSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateGameSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGameSessionQueueOutcome GameLiftClient::CreateGameSessionQueue(const CreateGameSessionQueueRequest& request) const
@@ -401,14 +401,14 @@ CreateGameSessionQueueOutcomeCallable GameLiftClient::CreateGameSessionQueueCall
   return task->get_future();
 }
 
-void GameLiftClient::CreateGameSessionQueueAsync(const CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateGameSessionQueueAsyncHelper(GameLiftClient const * const clientThis, const CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGameSessionQueueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGameSessionQueue(request), context);
 }
 
-void GameLiftClient::CreateGameSessionQueueAsyncHelper(const CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateGameSessionQueueAsync(const CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGameSessionQueue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateGameSessionQueueAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMatchmakingConfigurationOutcome GameLiftClient::CreateMatchmakingConfiguration(const CreateMatchmakingConfigurationRequest& request) const
@@ -425,14 +425,14 @@ CreateMatchmakingConfigurationOutcomeCallable GameLiftClient::CreateMatchmakingC
   return task->get_future();
 }
 
-void GameLiftClient::CreateMatchmakingConfigurationAsync(const CreateMatchmakingConfigurationRequest& request, const CreateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateMatchmakingConfigurationAsyncHelper(GameLiftClient const * const clientThis, const CreateMatchmakingConfigurationRequest& request, const CreateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMatchmakingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMatchmakingConfiguration(request), context);
 }
 
-void GameLiftClient::CreateMatchmakingConfigurationAsyncHelper(const CreateMatchmakingConfigurationRequest& request, const CreateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateMatchmakingConfigurationAsync(const CreateMatchmakingConfigurationRequest& request, const CreateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMatchmakingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateMatchmakingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMatchmakingRuleSetOutcome GameLiftClient::CreateMatchmakingRuleSet(const CreateMatchmakingRuleSetRequest& request) const
@@ -449,14 +449,14 @@ CreateMatchmakingRuleSetOutcomeCallable GameLiftClient::CreateMatchmakingRuleSet
   return task->get_future();
 }
 
-void GameLiftClient::CreateMatchmakingRuleSetAsync(const CreateMatchmakingRuleSetRequest& request, const CreateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateMatchmakingRuleSetAsyncHelper(GameLiftClient const * const clientThis, const CreateMatchmakingRuleSetRequest& request, const CreateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMatchmakingRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMatchmakingRuleSet(request), context);
 }
 
-void GameLiftClient::CreateMatchmakingRuleSetAsyncHelper(const CreateMatchmakingRuleSetRequest& request, const CreateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateMatchmakingRuleSetAsync(const CreateMatchmakingRuleSetRequest& request, const CreateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMatchmakingRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateMatchmakingRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePlayerSessionOutcome GameLiftClient::CreatePlayerSession(const CreatePlayerSessionRequest& request) const
@@ -473,14 +473,14 @@ CreatePlayerSessionOutcomeCallable GameLiftClient::CreatePlayerSessionCallable(c
   return task->get_future();
 }
 
-void GameLiftClient::CreatePlayerSessionAsync(const CreatePlayerSessionRequest& request, const CreatePlayerSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreatePlayerSessionAsyncHelper(GameLiftClient const * const clientThis, const CreatePlayerSessionRequest& request, const CreatePlayerSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePlayerSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePlayerSession(request), context);
 }
 
-void GameLiftClient::CreatePlayerSessionAsyncHelper(const CreatePlayerSessionRequest& request, const CreatePlayerSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreatePlayerSessionAsync(const CreatePlayerSessionRequest& request, const CreatePlayerSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePlayerSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreatePlayerSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePlayerSessionsOutcome GameLiftClient::CreatePlayerSessions(const CreatePlayerSessionsRequest& request) const
@@ -497,14 +497,14 @@ CreatePlayerSessionsOutcomeCallable GameLiftClient::CreatePlayerSessionsCallable
   return task->get_future();
 }
 
-void GameLiftClient::CreatePlayerSessionsAsync(const CreatePlayerSessionsRequest& request, const CreatePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreatePlayerSessionsAsyncHelper(GameLiftClient const * const clientThis, const CreatePlayerSessionsRequest& request, const CreatePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePlayerSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePlayerSessions(request), context);
 }
 
-void GameLiftClient::CreatePlayerSessionsAsyncHelper(const CreatePlayerSessionsRequest& request, const CreatePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreatePlayerSessionsAsync(const CreatePlayerSessionsRequest& request, const CreatePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePlayerSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreatePlayerSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateScriptOutcome GameLiftClient::CreateScript(const CreateScriptRequest& request) const
@@ -521,14 +521,14 @@ CreateScriptOutcomeCallable GameLiftClient::CreateScriptCallable(const CreateScr
   return task->get_future();
 }
 
-void GameLiftClient::CreateScriptAsync(const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateScriptAsyncHelper(GameLiftClient const * const clientThis, const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateScriptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateScript(request), context);
 }
 
-void GameLiftClient::CreateScriptAsyncHelper(const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateScriptAsync(const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateScript(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateScriptAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpcPeeringAuthorizationOutcome GameLiftClient::CreateVpcPeeringAuthorization(const CreateVpcPeeringAuthorizationRequest& request) const
@@ -545,14 +545,14 @@ CreateVpcPeeringAuthorizationOutcomeCallable GameLiftClient::CreateVpcPeeringAut
   return task->get_future();
 }
 
-void GameLiftClient::CreateVpcPeeringAuthorizationAsync(const CreateVpcPeeringAuthorizationRequest& request, const CreateVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateVpcPeeringAuthorizationAsyncHelper(GameLiftClient const * const clientThis, const CreateVpcPeeringAuthorizationRequest& request, const CreateVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcPeeringAuthorizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpcPeeringAuthorization(request), context);
 }
 
-void GameLiftClient::CreateVpcPeeringAuthorizationAsyncHelper(const CreateVpcPeeringAuthorizationRequest& request, const CreateVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateVpcPeeringAuthorizationAsync(const CreateVpcPeeringAuthorizationRequest& request, const CreateVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpcPeeringAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateVpcPeeringAuthorizationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpcPeeringConnectionOutcome GameLiftClient::CreateVpcPeeringConnection(const CreateVpcPeeringConnectionRequest& request) const
@@ -569,14 +569,14 @@ CreateVpcPeeringConnectionOutcomeCallable GameLiftClient::CreateVpcPeeringConnec
   return task->get_future();
 }
 
-void GameLiftClient::CreateVpcPeeringConnectionAsync(const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientCreateVpcPeeringConnectionAsyncHelper(GameLiftClient const * const clientThis, const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcPeeringConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpcPeeringConnection(request), context);
 }
 
-void GameLiftClient::CreateVpcPeeringConnectionAsyncHelper(const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::CreateVpcPeeringConnectionAsync(const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpcPeeringConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientCreateVpcPeeringConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAliasOutcome GameLiftClient::DeleteAlias(const DeleteAliasRequest& request) const
@@ -593,14 +593,14 @@ DeleteAliasOutcomeCallable GameLiftClient::DeleteAliasCallable(const DeleteAlias
   return task->get_future();
 }
 
-void GameLiftClient::DeleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteAliasAsyncHelper(GameLiftClient const * const clientThis, const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAlias(request), context);
 }
 
-void GameLiftClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBuildOutcome GameLiftClient::DeleteBuild(const DeleteBuildRequest& request) const
@@ -617,14 +617,14 @@ DeleteBuildOutcomeCallable GameLiftClient::DeleteBuildCallable(const DeleteBuild
   return task->get_future();
 }
 
-void GameLiftClient::DeleteBuildAsync(const DeleteBuildRequest& request, const DeleteBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteBuildAsyncHelper(GameLiftClient const * const clientThis, const DeleteBuildRequest& request, const DeleteBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBuildAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBuild(request), context);
 }
 
-void GameLiftClient::DeleteBuildAsyncHelper(const DeleteBuildRequest& request, const DeleteBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteBuildAsync(const DeleteBuildRequest& request, const DeleteBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBuild(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteBuildAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFleetOutcome GameLiftClient::DeleteFleet(const DeleteFleetRequest& request) const
@@ -641,14 +641,14 @@ DeleteFleetOutcomeCallable GameLiftClient::DeleteFleetCallable(const DeleteFleet
   return task->get_future();
 }
 
-void GameLiftClient::DeleteFleetAsync(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteFleetAsyncHelper(GameLiftClient const * const clientThis, const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFleet(request), context);
 }
 
-void GameLiftClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteFleetAsync(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFleetLocationsOutcome GameLiftClient::DeleteFleetLocations(const DeleteFleetLocationsRequest& request) const
@@ -665,14 +665,14 @@ DeleteFleetLocationsOutcomeCallable GameLiftClient::DeleteFleetLocationsCallable
   return task->get_future();
 }
 
-void GameLiftClient::DeleteFleetLocationsAsync(const DeleteFleetLocationsRequest& request, const DeleteFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteFleetLocationsAsyncHelper(GameLiftClient const * const clientThis, const DeleteFleetLocationsRequest& request, const DeleteFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFleetLocationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFleetLocations(request), context);
 }
 
-void GameLiftClient::DeleteFleetLocationsAsyncHelper(const DeleteFleetLocationsRequest& request, const DeleteFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteFleetLocationsAsync(const DeleteFleetLocationsRequest& request, const DeleteFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFleetLocations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteFleetLocationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGameServerGroupOutcome GameLiftClient::DeleteGameServerGroup(const DeleteGameServerGroupRequest& request) const
@@ -689,14 +689,14 @@ DeleteGameServerGroupOutcomeCallable GameLiftClient::DeleteGameServerGroupCallab
   return task->get_future();
 }
 
-void GameLiftClient::DeleteGameServerGroupAsync(const DeleteGameServerGroupRequest& request, const DeleteGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteGameServerGroupAsyncHelper(GameLiftClient const * const clientThis, const DeleteGameServerGroupRequest& request, const DeleteGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGameServerGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGameServerGroup(request), context);
 }
 
-void GameLiftClient::DeleteGameServerGroupAsyncHelper(const DeleteGameServerGroupRequest& request, const DeleteGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteGameServerGroupAsync(const DeleteGameServerGroupRequest& request, const DeleteGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGameServerGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteGameServerGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGameSessionQueueOutcome GameLiftClient::DeleteGameSessionQueue(const DeleteGameSessionQueueRequest& request) const
@@ -713,14 +713,14 @@ DeleteGameSessionQueueOutcomeCallable GameLiftClient::DeleteGameSessionQueueCall
   return task->get_future();
 }
 
-void GameLiftClient::DeleteGameSessionQueueAsync(const DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteGameSessionQueueAsyncHelper(GameLiftClient const * const clientThis, const DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGameSessionQueueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGameSessionQueue(request), context);
 }
 
-void GameLiftClient::DeleteGameSessionQueueAsyncHelper(const DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteGameSessionQueueAsync(const DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGameSessionQueue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteGameSessionQueueAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMatchmakingConfigurationOutcome GameLiftClient::DeleteMatchmakingConfiguration(const DeleteMatchmakingConfigurationRequest& request) const
@@ -737,14 +737,14 @@ DeleteMatchmakingConfigurationOutcomeCallable GameLiftClient::DeleteMatchmakingC
   return task->get_future();
 }
 
-void GameLiftClient::DeleteMatchmakingConfigurationAsync(const DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteMatchmakingConfigurationAsyncHelper(GameLiftClient const * const clientThis, const DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMatchmakingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMatchmakingConfiguration(request), context);
 }
 
-void GameLiftClient::DeleteMatchmakingConfigurationAsyncHelper(const DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteMatchmakingConfigurationAsync(const DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMatchmakingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteMatchmakingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMatchmakingRuleSetOutcome GameLiftClient::DeleteMatchmakingRuleSet(const DeleteMatchmakingRuleSetRequest& request) const
@@ -761,14 +761,14 @@ DeleteMatchmakingRuleSetOutcomeCallable GameLiftClient::DeleteMatchmakingRuleSet
   return task->get_future();
 }
 
-void GameLiftClient::DeleteMatchmakingRuleSetAsync(const DeleteMatchmakingRuleSetRequest& request, const DeleteMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteMatchmakingRuleSetAsyncHelper(GameLiftClient const * const clientThis, const DeleteMatchmakingRuleSetRequest& request, const DeleteMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMatchmakingRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMatchmakingRuleSet(request), context);
 }
 
-void GameLiftClient::DeleteMatchmakingRuleSetAsyncHelper(const DeleteMatchmakingRuleSetRequest& request, const DeleteMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteMatchmakingRuleSetAsync(const DeleteMatchmakingRuleSetRequest& request, const DeleteMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMatchmakingRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteMatchmakingRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteScalingPolicyOutcome GameLiftClient::DeleteScalingPolicy(const DeleteScalingPolicyRequest& request) const
@@ -785,14 +785,14 @@ DeleteScalingPolicyOutcomeCallable GameLiftClient::DeleteScalingPolicyCallable(c
   return task->get_future();
 }
 
-void GameLiftClient::DeleteScalingPolicyAsync(const DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteScalingPolicyAsyncHelper(GameLiftClient const * const clientThis, const DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteScalingPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteScalingPolicy(request), context);
 }
 
-void GameLiftClient::DeleteScalingPolicyAsyncHelper(const DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteScalingPolicyAsync(const DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteScalingPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteScalingPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteScriptOutcome GameLiftClient::DeleteScript(const DeleteScriptRequest& request) const
@@ -809,14 +809,14 @@ DeleteScriptOutcomeCallable GameLiftClient::DeleteScriptCallable(const DeleteScr
   return task->get_future();
 }
 
-void GameLiftClient::DeleteScriptAsync(const DeleteScriptRequest& request, const DeleteScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteScriptAsyncHelper(GameLiftClient const * const clientThis, const DeleteScriptRequest& request, const DeleteScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteScriptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteScript(request), context);
 }
 
-void GameLiftClient::DeleteScriptAsyncHelper(const DeleteScriptRequest& request, const DeleteScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteScriptAsync(const DeleteScriptRequest& request, const DeleteScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteScript(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteScriptAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVpcPeeringAuthorizationOutcome GameLiftClient::DeleteVpcPeeringAuthorization(const DeleteVpcPeeringAuthorizationRequest& request) const
@@ -833,14 +833,14 @@ DeleteVpcPeeringAuthorizationOutcomeCallable GameLiftClient::DeleteVpcPeeringAut
   return task->get_future();
 }
 
-void GameLiftClient::DeleteVpcPeeringAuthorizationAsync(const DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteVpcPeeringAuthorizationAsyncHelper(GameLiftClient const * const clientThis, const DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcPeeringAuthorizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVpcPeeringAuthorization(request), context);
 }
 
-void GameLiftClient::DeleteVpcPeeringAuthorizationAsyncHelper(const DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteVpcPeeringAuthorizationAsync(const DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVpcPeeringAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteVpcPeeringAuthorizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVpcPeeringConnectionOutcome GameLiftClient::DeleteVpcPeeringConnection(const DeleteVpcPeeringConnectionRequest& request) const
@@ -857,14 +857,14 @@ DeleteVpcPeeringConnectionOutcomeCallable GameLiftClient::DeleteVpcPeeringConnec
   return task->get_future();
 }
 
-void GameLiftClient::DeleteVpcPeeringConnectionAsync(const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeleteVpcPeeringConnectionAsyncHelper(GameLiftClient const * const clientThis, const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcPeeringConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVpcPeeringConnection(request), context);
 }
 
-void GameLiftClient::DeleteVpcPeeringConnectionAsyncHelper(const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeleteVpcPeeringConnectionAsync(const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVpcPeeringConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeleteVpcPeeringConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterGameServerOutcome GameLiftClient::DeregisterGameServer(const DeregisterGameServerRequest& request) const
@@ -881,14 +881,14 @@ DeregisterGameServerOutcomeCallable GameLiftClient::DeregisterGameServerCallable
   return task->get_future();
 }
 
-void GameLiftClient::DeregisterGameServerAsync(const DeregisterGameServerRequest& request, const DeregisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDeregisterGameServerAsyncHelper(GameLiftClient const * const clientThis, const DeregisterGameServerRequest& request, const DeregisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterGameServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterGameServer(request), context);
 }
 
-void GameLiftClient::DeregisterGameServerAsyncHelper(const DeregisterGameServerRequest& request, const DeregisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DeregisterGameServerAsync(const DeregisterGameServerRequest& request, const DeregisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterGameServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDeregisterGameServerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAliasOutcome GameLiftClient::DescribeAlias(const DescribeAliasRequest& request) const
@@ -905,14 +905,14 @@ DescribeAliasOutcomeCallable GameLiftClient::DescribeAliasCallable(const Describ
   return task->get_future();
 }
 
-void GameLiftClient::DescribeAliasAsync(const DescribeAliasRequest& request, const DescribeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeAliasAsyncHelper(GameLiftClient const * const clientThis, const DescribeAliasRequest& request, const DescribeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAlias(request), context);
 }
 
-void GameLiftClient::DescribeAliasAsyncHelper(const DescribeAliasRequest& request, const DescribeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeAliasAsync(const DescribeAliasRequest& request, const DescribeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBuildOutcome GameLiftClient::DescribeBuild(const DescribeBuildRequest& request) const
@@ -929,14 +929,14 @@ DescribeBuildOutcomeCallable GameLiftClient::DescribeBuildCallable(const Describ
   return task->get_future();
 }
 
-void GameLiftClient::DescribeBuildAsync(const DescribeBuildRequest& request, const DescribeBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeBuildAsyncHelper(GameLiftClient const * const clientThis, const DescribeBuildRequest& request, const DescribeBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBuildAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBuild(request), context);
 }
 
-void GameLiftClient::DescribeBuildAsyncHelper(const DescribeBuildRequest& request, const DescribeBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeBuildAsync(const DescribeBuildRequest& request, const DescribeBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBuild(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeBuildAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEC2InstanceLimitsOutcome GameLiftClient::DescribeEC2InstanceLimits(const DescribeEC2InstanceLimitsRequest& request) const
@@ -953,14 +953,14 @@ DescribeEC2InstanceLimitsOutcomeCallable GameLiftClient::DescribeEC2InstanceLimi
   return task->get_future();
 }
 
-void GameLiftClient::DescribeEC2InstanceLimitsAsync(const DescribeEC2InstanceLimitsRequest& request, const DescribeEC2InstanceLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeEC2InstanceLimitsAsyncHelper(GameLiftClient const * const clientThis, const DescribeEC2InstanceLimitsRequest& request, const DescribeEC2InstanceLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEC2InstanceLimitsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEC2InstanceLimits(request), context);
 }
 
-void GameLiftClient::DescribeEC2InstanceLimitsAsyncHelper(const DescribeEC2InstanceLimitsRequest& request, const DescribeEC2InstanceLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeEC2InstanceLimitsAsync(const DescribeEC2InstanceLimitsRequest& request, const DescribeEC2InstanceLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEC2InstanceLimits(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeEC2InstanceLimitsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetAttributesOutcome GameLiftClient::DescribeFleetAttributes(const DescribeFleetAttributesRequest& request) const
@@ -977,14 +977,14 @@ DescribeFleetAttributesOutcomeCallable GameLiftClient::DescribeFleetAttributesCa
   return task->get_future();
 }
 
-void GameLiftClient::DescribeFleetAttributesAsync(const DescribeFleetAttributesRequest& request, const DescribeFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeFleetAttributesAsyncHelper(GameLiftClient const * const clientThis, const DescribeFleetAttributesRequest& request, const DescribeFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetAttributes(request), context);
 }
 
-void GameLiftClient::DescribeFleetAttributesAsyncHelper(const DescribeFleetAttributesRequest& request, const DescribeFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeFleetAttributesAsync(const DescribeFleetAttributesRequest& request, const DescribeFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeFleetAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetCapacityOutcome GameLiftClient::DescribeFleetCapacity(const DescribeFleetCapacityRequest& request) const
@@ -1001,14 +1001,14 @@ DescribeFleetCapacityOutcomeCallable GameLiftClient::DescribeFleetCapacityCallab
   return task->get_future();
 }
 
-void GameLiftClient::DescribeFleetCapacityAsync(const DescribeFleetCapacityRequest& request, const DescribeFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeFleetCapacityAsyncHelper(GameLiftClient const * const clientThis, const DescribeFleetCapacityRequest& request, const DescribeFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetCapacityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetCapacity(request), context);
 }
 
-void GameLiftClient::DescribeFleetCapacityAsyncHelper(const DescribeFleetCapacityRequest& request, const DescribeFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeFleetCapacityAsync(const DescribeFleetCapacityRequest& request, const DescribeFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetCapacity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeFleetCapacityAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetEventsOutcome GameLiftClient::DescribeFleetEvents(const DescribeFleetEventsRequest& request) const
@@ -1025,14 +1025,14 @@ DescribeFleetEventsOutcomeCallable GameLiftClient::DescribeFleetEventsCallable(c
   return task->get_future();
 }
 
-void GameLiftClient::DescribeFleetEventsAsync(const DescribeFleetEventsRequest& request, const DescribeFleetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeFleetEventsAsyncHelper(GameLiftClient const * const clientThis, const DescribeFleetEventsRequest& request, const DescribeFleetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetEvents(request), context);
 }
 
-void GameLiftClient::DescribeFleetEventsAsyncHelper(const DescribeFleetEventsRequest& request, const DescribeFleetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeFleetEventsAsync(const DescribeFleetEventsRequest& request, const DescribeFleetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeFleetEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetLocationAttributesOutcome GameLiftClient::DescribeFleetLocationAttributes(const DescribeFleetLocationAttributesRequest& request) const
@@ -1049,14 +1049,14 @@ DescribeFleetLocationAttributesOutcomeCallable GameLiftClient::DescribeFleetLoca
   return task->get_future();
 }
 
-void GameLiftClient::DescribeFleetLocationAttributesAsync(const DescribeFleetLocationAttributesRequest& request, const DescribeFleetLocationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeFleetLocationAttributesAsyncHelper(GameLiftClient const * const clientThis, const DescribeFleetLocationAttributesRequest& request, const DescribeFleetLocationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetLocationAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetLocationAttributes(request), context);
 }
 
-void GameLiftClient::DescribeFleetLocationAttributesAsyncHelper(const DescribeFleetLocationAttributesRequest& request, const DescribeFleetLocationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeFleetLocationAttributesAsync(const DescribeFleetLocationAttributesRequest& request, const DescribeFleetLocationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetLocationAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeFleetLocationAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetLocationCapacityOutcome GameLiftClient::DescribeFleetLocationCapacity(const DescribeFleetLocationCapacityRequest& request) const
@@ -1073,14 +1073,14 @@ DescribeFleetLocationCapacityOutcomeCallable GameLiftClient::DescribeFleetLocati
   return task->get_future();
 }
 
-void GameLiftClient::DescribeFleetLocationCapacityAsync(const DescribeFleetLocationCapacityRequest& request, const DescribeFleetLocationCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeFleetLocationCapacityAsyncHelper(GameLiftClient const * const clientThis, const DescribeFleetLocationCapacityRequest& request, const DescribeFleetLocationCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetLocationCapacityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetLocationCapacity(request), context);
 }
 
-void GameLiftClient::DescribeFleetLocationCapacityAsyncHelper(const DescribeFleetLocationCapacityRequest& request, const DescribeFleetLocationCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeFleetLocationCapacityAsync(const DescribeFleetLocationCapacityRequest& request, const DescribeFleetLocationCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetLocationCapacity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeFleetLocationCapacityAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetLocationUtilizationOutcome GameLiftClient::DescribeFleetLocationUtilization(const DescribeFleetLocationUtilizationRequest& request) const
@@ -1097,14 +1097,14 @@ DescribeFleetLocationUtilizationOutcomeCallable GameLiftClient::DescribeFleetLoc
   return task->get_future();
 }
 
-void GameLiftClient::DescribeFleetLocationUtilizationAsync(const DescribeFleetLocationUtilizationRequest& request, const DescribeFleetLocationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeFleetLocationUtilizationAsyncHelper(GameLiftClient const * const clientThis, const DescribeFleetLocationUtilizationRequest& request, const DescribeFleetLocationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetLocationUtilizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetLocationUtilization(request), context);
 }
 
-void GameLiftClient::DescribeFleetLocationUtilizationAsyncHelper(const DescribeFleetLocationUtilizationRequest& request, const DescribeFleetLocationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeFleetLocationUtilizationAsync(const DescribeFleetLocationUtilizationRequest& request, const DescribeFleetLocationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetLocationUtilization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeFleetLocationUtilizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetPortSettingsOutcome GameLiftClient::DescribeFleetPortSettings(const DescribeFleetPortSettingsRequest& request) const
@@ -1121,14 +1121,14 @@ DescribeFleetPortSettingsOutcomeCallable GameLiftClient::DescribeFleetPortSettin
   return task->get_future();
 }
 
-void GameLiftClient::DescribeFleetPortSettingsAsync(const DescribeFleetPortSettingsRequest& request, const DescribeFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeFleetPortSettingsAsyncHelper(GameLiftClient const * const clientThis, const DescribeFleetPortSettingsRequest& request, const DescribeFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetPortSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetPortSettings(request), context);
 }
 
-void GameLiftClient::DescribeFleetPortSettingsAsyncHelper(const DescribeFleetPortSettingsRequest& request, const DescribeFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeFleetPortSettingsAsync(const DescribeFleetPortSettingsRequest& request, const DescribeFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetPortSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeFleetPortSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetUtilizationOutcome GameLiftClient::DescribeFleetUtilization(const DescribeFleetUtilizationRequest& request) const
@@ -1145,14 +1145,14 @@ DescribeFleetUtilizationOutcomeCallable GameLiftClient::DescribeFleetUtilization
   return task->get_future();
 }
 
-void GameLiftClient::DescribeFleetUtilizationAsync(const DescribeFleetUtilizationRequest& request, const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeFleetUtilizationAsyncHelper(GameLiftClient const * const clientThis, const DescribeFleetUtilizationRequest& request, const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetUtilizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetUtilization(request), context);
 }
 
-void GameLiftClient::DescribeFleetUtilizationAsyncHelper(const DescribeFleetUtilizationRequest& request, const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeFleetUtilizationAsync(const DescribeFleetUtilizationRequest& request, const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetUtilization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeFleetUtilizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGameServerOutcome GameLiftClient::DescribeGameServer(const DescribeGameServerRequest& request) const
@@ -1169,14 +1169,14 @@ DescribeGameServerOutcomeCallable GameLiftClient::DescribeGameServerCallable(con
   return task->get_future();
 }
 
-void GameLiftClient::DescribeGameServerAsync(const DescribeGameServerRequest& request, const DescribeGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeGameServerAsyncHelper(GameLiftClient const * const clientThis, const DescribeGameServerRequest& request, const DescribeGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGameServer(request), context);
 }
 
-void GameLiftClient::DescribeGameServerAsyncHelper(const DescribeGameServerRequest& request, const DescribeGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeGameServerAsync(const DescribeGameServerRequest& request, const DescribeGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGameServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeGameServerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGameServerGroupOutcome GameLiftClient::DescribeGameServerGroup(const DescribeGameServerGroupRequest& request) const
@@ -1193,14 +1193,14 @@ DescribeGameServerGroupOutcomeCallable GameLiftClient::DescribeGameServerGroupCa
   return task->get_future();
 }
 
-void GameLiftClient::DescribeGameServerGroupAsync(const DescribeGameServerGroupRequest& request, const DescribeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeGameServerGroupAsyncHelper(GameLiftClient const * const clientThis, const DescribeGameServerGroupRequest& request, const DescribeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameServerGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGameServerGroup(request), context);
 }
 
-void GameLiftClient::DescribeGameServerGroupAsyncHelper(const DescribeGameServerGroupRequest& request, const DescribeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeGameServerGroupAsync(const DescribeGameServerGroupRequest& request, const DescribeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGameServerGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeGameServerGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGameServerInstancesOutcome GameLiftClient::DescribeGameServerInstances(const DescribeGameServerInstancesRequest& request) const
@@ -1217,14 +1217,14 @@ DescribeGameServerInstancesOutcomeCallable GameLiftClient::DescribeGameServerIns
   return task->get_future();
 }
 
-void GameLiftClient::DescribeGameServerInstancesAsync(const DescribeGameServerInstancesRequest& request, const DescribeGameServerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeGameServerInstancesAsyncHelper(GameLiftClient const * const clientThis, const DescribeGameServerInstancesRequest& request, const DescribeGameServerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameServerInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGameServerInstances(request), context);
 }
 
-void GameLiftClient::DescribeGameServerInstancesAsyncHelper(const DescribeGameServerInstancesRequest& request, const DescribeGameServerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeGameServerInstancesAsync(const DescribeGameServerInstancesRequest& request, const DescribeGameServerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGameServerInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeGameServerInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGameSessionDetailsOutcome GameLiftClient::DescribeGameSessionDetails(const DescribeGameSessionDetailsRequest& request) const
@@ -1241,14 +1241,14 @@ DescribeGameSessionDetailsOutcomeCallable GameLiftClient::DescribeGameSessionDet
   return task->get_future();
 }
 
-void GameLiftClient::DescribeGameSessionDetailsAsync(const DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeGameSessionDetailsAsyncHelper(GameLiftClient const * const clientThis, const DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameSessionDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGameSessionDetails(request), context);
 }
 
-void GameLiftClient::DescribeGameSessionDetailsAsyncHelper(const DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeGameSessionDetailsAsync(const DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGameSessionDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeGameSessionDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGameSessionPlacementOutcome GameLiftClient::DescribeGameSessionPlacement(const DescribeGameSessionPlacementRequest& request) const
@@ -1265,14 +1265,14 @@ DescribeGameSessionPlacementOutcomeCallable GameLiftClient::DescribeGameSessionP
   return task->get_future();
 }
 
-void GameLiftClient::DescribeGameSessionPlacementAsync(const DescribeGameSessionPlacementRequest& request, const DescribeGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeGameSessionPlacementAsyncHelper(GameLiftClient const * const clientThis, const DescribeGameSessionPlacementRequest& request, const DescribeGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameSessionPlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGameSessionPlacement(request), context);
 }
 
-void GameLiftClient::DescribeGameSessionPlacementAsyncHelper(const DescribeGameSessionPlacementRequest& request, const DescribeGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeGameSessionPlacementAsync(const DescribeGameSessionPlacementRequest& request, const DescribeGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGameSessionPlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeGameSessionPlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGameSessionQueuesOutcome GameLiftClient::DescribeGameSessionQueues(const DescribeGameSessionQueuesRequest& request) const
@@ -1289,14 +1289,14 @@ DescribeGameSessionQueuesOutcomeCallable GameLiftClient::DescribeGameSessionQueu
   return task->get_future();
 }
 
-void GameLiftClient::DescribeGameSessionQueuesAsync(const DescribeGameSessionQueuesRequest& request, const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeGameSessionQueuesAsyncHelper(GameLiftClient const * const clientThis, const DescribeGameSessionQueuesRequest& request, const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameSessionQueuesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGameSessionQueues(request), context);
 }
 
-void GameLiftClient::DescribeGameSessionQueuesAsyncHelper(const DescribeGameSessionQueuesRequest& request, const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeGameSessionQueuesAsync(const DescribeGameSessionQueuesRequest& request, const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGameSessionQueues(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeGameSessionQueuesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGameSessionsOutcome GameLiftClient::DescribeGameSessions(const DescribeGameSessionsRequest& request) const
@@ -1313,14 +1313,14 @@ DescribeGameSessionsOutcomeCallable GameLiftClient::DescribeGameSessionsCallable
   return task->get_future();
 }
 
-void GameLiftClient::DescribeGameSessionsAsync(const DescribeGameSessionsRequest& request, const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeGameSessionsAsyncHelper(GameLiftClient const * const clientThis, const DescribeGameSessionsRequest& request, const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGameSessions(request), context);
 }
 
-void GameLiftClient::DescribeGameSessionsAsyncHelper(const DescribeGameSessionsRequest& request, const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeGameSessionsAsync(const DescribeGameSessionsRequest& request, const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGameSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeGameSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstancesOutcome GameLiftClient::DescribeInstances(const DescribeInstancesRequest& request) const
@@ -1337,14 +1337,14 @@ DescribeInstancesOutcomeCallable GameLiftClient::DescribeInstancesCallable(const
   return task->get_future();
 }
 
-void GameLiftClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeInstancesAsyncHelper(GameLiftClient const * const clientThis, const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstances(request), context);
 }
 
-void GameLiftClient::DescribeInstancesAsyncHelper(const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMatchmakingOutcome GameLiftClient::DescribeMatchmaking(const DescribeMatchmakingRequest& request) const
@@ -1361,14 +1361,14 @@ DescribeMatchmakingOutcomeCallable GameLiftClient::DescribeMatchmakingCallable(c
   return task->get_future();
 }
 
-void GameLiftClient::DescribeMatchmakingAsync(const DescribeMatchmakingRequest& request, const DescribeMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeMatchmakingAsyncHelper(GameLiftClient const * const clientThis, const DescribeMatchmakingRequest& request, const DescribeMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMatchmakingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMatchmaking(request), context);
 }
 
-void GameLiftClient::DescribeMatchmakingAsyncHelper(const DescribeMatchmakingRequest& request, const DescribeMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeMatchmakingAsync(const DescribeMatchmakingRequest& request, const DescribeMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMatchmaking(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeMatchmakingAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMatchmakingConfigurationsOutcome GameLiftClient::DescribeMatchmakingConfigurations(const DescribeMatchmakingConfigurationsRequest& request) const
@@ -1385,14 +1385,14 @@ DescribeMatchmakingConfigurationsOutcomeCallable GameLiftClient::DescribeMatchma
   return task->get_future();
 }
 
-void GameLiftClient::DescribeMatchmakingConfigurationsAsync(const DescribeMatchmakingConfigurationsRequest& request, const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeMatchmakingConfigurationsAsyncHelper(GameLiftClient const * const clientThis, const DescribeMatchmakingConfigurationsRequest& request, const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMatchmakingConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMatchmakingConfigurations(request), context);
 }
 
-void GameLiftClient::DescribeMatchmakingConfigurationsAsyncHelper(const DescribeMatchmakingConfigurationsRequest& request, const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeMatchmakingConfigurationsAsync(const DescribeMatchmakingConfigurationsRequest& request, const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMatchmakingConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeMatchmakingConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMatchmakingRuleSetsOutcome GameLiftClient::DescribeMatchmakingRuleSets(const DescribeMatchmakingRuleSetsRequest& request) const
@@ -1409,14 +1409,14 @@ DescribeMatchmakingRuleSetsOutcomeCallable GameLiftClient::DescribeMatchmakingRu
   return task->get_future();
 }
 
-void GameLiftClient::DescribeMatchmakingRuleSetsAsync(const DescribeMatchmakingRuleSetsRequest& request, const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeMatchmakingRuleSetsAsyncHelper(GameLiftClient const * const clientThis, const DescribeMatchmakingRuleSetsRequest& request, const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMatchmakingRuleSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMatchmakingRuleSets(request), context);
 }
 
-void GameLiftClient::DescribeMatchmakingRuleSetsAsyncHelper(const DescribeMatchmakingRuleSetsRequest& request, const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeMatchmakingRuleSetsAsync(const DescribeMatchmakingRuleSetsRequest& request, const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMatchmakingRuleSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeMatchmakingRuleSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePlayerSessionsOutcome GameLiftClient::DescribePlayerSessions(const DescribePlayerSessionsRequest& request) const
@@ -1433,14 +1433,14 @@ DescribePlayerSessionsOutcomeCallable GameLiftClient::DescribePlayerSessionsCall
   return task->get_future();
 }
 
-void GameLiftClient::DescribePlayerSessionsAsync(const DescribePlayerSessionsRequest& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribePlayerSessionsAsyncHelper(GameLiftClient const * const clientThis, const DescribePlayerSessionsRequest& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePlayerSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePlayerSessions(request), context);
 }
 
-void GameLiftClient::DescribePlayerSessionsAsyncHelper(const DescribePlayerSessionsRequest& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribePlayerSessionsAsync(const DescribePlayerSessionsRequest& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePlayerSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribePlayerSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRuntimeConfigurationOutcome GameLiftClient::DescribeRuntimeConfiguration(const DescribeRuntimeConfigurationRequest& request) const
@@ -1457,14 +1457,14 @@ DescribeRuntimeConfigurationOutcomeCallable GameLiftClient::DescribeRuntimeConfi
   return task->get_future();
 }
 
-void GameLiftClient::DescribeRuntimeConfigurationAsync(const DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeRuntimeConfigurationAsyncHelper(GameLiftClient const * const clientThis, const DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRuntimeConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRuntimeConfiguration(request), context);
 }
 
-void GameLiftClient::DescribeRuntimeConfigurationAsyncHelper(const DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeRuntimeConfigurationAsync(const DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRuntimeConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeRuntimeConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeScalingPoliciesOutcome GameLiftClient::DescribeScalingPolicies(const DescribeScalingPoliciesRequest& request) const
@@ -1481,14 +1481,14 @@ DescribeScalingPoliciesOutcomeCallable GameLiftClient::DescribeScalingPoliciesCa
   return task->get_future();
 }
 
-void GameLiftClient::DescribeScalingPoliciesAsync(const DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeScalingPoliciesAsyncHelper(GameLiftClient const * const clientThis, const DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScalingPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeScalingPolicies(request), context);
 }
 
-void GameLiftClient::DescribeScalingPoliciesAsyncHelper(const DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeScalingPoliciesAsync(const DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeScalingPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeScalingPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeScriptOutcome GameLiftClient::DescribeScript(const DescribeScriptRequest& request) const
@@ -1505,14 +1505,14 @@ DescribeScriptOutcomeCallable GameLiftClient::DescribeScriptCallable(const Descr
   return task->get_future();
 }
 
-void GameLiftClient::DescribeScriptAsync(const DescribeScriptRequest& request, const DescribeScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeScriptAsyncHelper(GameLiftClient const * const clientThis, const DescribeScriptRequest& request, const DescribeScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScriptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeScript(request), context);
 }
 
-void GameLiftClient::DescribeScriptAsyncHelper(const DescribeScriptRequest& request, const DescribeScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeScriptAsync(const DescribeScriptRequest& request, const DescribeScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeScript(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeScriptAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcPeeringAuthorizationsOutcome GameLiftClient::DescribeVpcPeeringAuthorizations(const DescribeVpcPeeringAuthorizationsRequest& request) const
@@ -1529,14 +1529,14 @@ DescribeVpcPeeringAuthorizationsOutcomeCallable GameLiftClient::DescribeVpcPeeri
   return task->get_future();
 }
 
-void GameLiftClient::DescribeVpcPeeringAuthorizationsAsync(const DescribeVpcPeeringAuthorizationsRequest& request, const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeVpcPeeringAuthorizationsAsyncHelper(GameLiftClient const * const clientThis, const DescribeVpcPeeringAuthorizationsRequest& request, const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcPeeringAuthorizationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcPeeringAuthorizations(request), context);
 }
 
-void GameLiftClient::DescribeVpcPeeringAuthorizationsAsyncHelper(const DescribeVpcPeeringAuthorizationsRequest& request, const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeVpcPeeringAuthorizationsAsync(const DescribeVpcPeeringAuthorizationsRequest& request, const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcPeeringAuthorizations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeVpcPeeringAuthorizationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcPeeringConnectionsOutcome GameLiftClient::DescribeVpcPeeringConnections(const DescribeVpcPeeringConnectionsRequest& request) const
@@ -1553,14 +1553,14 @@ DescribeVpcPeeringConnectionsOutcomeCallable GameLiftClient::DescribeVpcPeeringC
   return task->get_future();
 }
 
-void GameLiftClient::DescribeVpcPeeringConnectionsAsync(const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientDescribeVpcPeeringConnectionsAsyncHelper(GameLiftClient const * const clientThis, const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcPeeringConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcPeeringConnections(request), context);
 }
 
-void GameLiftClient::DescribeVpcPeeringConnectionsAsyncHelper(const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::DescribeVpcPeeringConnectionsAsync(const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcPeeringConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientDescribeVpcPeeringConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGameSessionLogUrlOutcome GameLiftClient::GetGameSessionLogUrl(const GetGameSessionLogUrlRequest& request) const
@@ -1577,14 +1577,14 @@ GetGameSessionLogUrlOutcomeCallable GameLiftClient::GetGameSessionLogUrlCallable
   return task->get_future();
 }
 
-void GameLiftClient::GetGameSessionLogUrlAsync(const GetGameSessionLogUrlRequest& request, const GetGameSessionLogUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientGetGameSessionLogUrlAsyncHelper(GameLiftClient const * const clientThis, const GetGameSessionLogUrlRequest& request, const GetGameSessionLogUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGameSessionLogUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGameSessionLogUrl(request), context);
 }
 
-void GameLiftClient::GetGameSessionLogUrlAsyncHelper(const GetGameSessionLogUrlRequest& request, const GetGameSessionLogUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::GetGameSessionLogUrlAsync(const GetGameSessionLogUrlRequest& request, const GetGameSessionLogUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGameSessionLogUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientGetGameSessionLogUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceAccessOutcome GameLiftClient::GetInstanceAccess(const GetInstanceAccessRequest& request) const
@@ -1601,14 +1601,14 @@ GetInstanceAccessOutcomeCallable GameLiftClient::GetInstanceAccessCallable(const
   return task->get_future();
 }
 
-void GameLiftClient::GetInstanceAccessAsync(const GetInstanceAccessRequest& request, const GetInstanceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientGetInstanceAccessAsyncHelper(GameLiftClient const * const clientThis, const GetInstanceAccessRequest& request, const GetInstanceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstanceAccess(request), context);
 }
 
-void GameLiftClient::GetInstanceAccessAsyncHelper(const GetInstanceAccessRequest& request, const GetInstanceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::GetInstanceAccessAsync(const GetInstanceAccessRequest& request, const GetInstanceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstanceAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientGetInstanceAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAliasesOutcome GameLiftClient::ListAliases(const ListAliasesRequest& request) const
@@ -1625,14 +1625,14 @@ ListAliasesOutcomeCallable GameLiftClient::ListAliasesCallable(const ListAliases
   return task->get_future();
 }
 
-void GameLiftClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientListAliasesAsyncHelper(GameLiftClient const * const clientThis, const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAliasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAliases(request), context);
 }
 
-void GameLiftClient::ListAliasesAsyncHelper(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAliases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientListAliasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBuildsOutcome GameLiftClient::ListBuilds(const ListBuildsRequest& request) const
@@ -1649,14 +1649,14 @@ ListBuildsOutcomeCallable GameLiftClient::ListBuildsCallable(const ListBuildsReq
   return task->get_future();
 }
 
-void GameLiftClient::ListBuildsAsync(const ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientListBuildsAsyncHelper(GameLiftClient const * const clientThis, const ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBuildsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBuilds(request), context);
 }
 
-void GameLiftClient::ListBuildsAsyncHelper(const ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ListBuildsAsync(const ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBuilds(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientListBuildsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFleetsOutcome GameLiftClient::ListFleets(const ListFleetsRequest& request) const
@@ -1673,14 +1673,14 @@ ListFleetsOutcomeCallable GameLiftClient::ListFleetsCallable(const ListFleetsReq
   return task->get_future();
 }
 
-void GameLiftClient::ListFleetsAsync(const ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientListFleetsAsyncHelper(GameLiftClient const * const clientThis, const ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFleetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFleets(request), context);
 }
 
-void GameLiftClient::ListFleetsAsyncHelper(const ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ListFleetsAsync(const ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFleets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientListFleetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGameServerGroupsOutcome GameLiftClient::ListGameServerGroups(const ListGameServerGroupsRequest& request) const
@@ -1697,14 +1697,14 @@ ListGameServerGroupsOutcomeCallable GameLiftClient::ListGameServerGroupsCallable
   return task->get_future();
 }
 
-void GameLiftClient::ListGameServerGroupsAsync(const ListGameServerGroupsRequest& request, const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientListGameServerGroupsAsyncHelper(GameLiftClient const * const clientThis, const ListGameServerGroupsRequest& request, const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGameServerGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGameServerGroups(request), context);
 }
 
-void GameLiftClient::ListGameServerGroupsAsyncHelper(const ListGameServerGroupsRequest& request, const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ListGameServerGroupsAsync(const ListGameServerGroupsRequest& request, const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGameServerGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientListGameServerGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGameServersOutcome GameLiftClient::ListGameServers(const ListGameServersRequest& request) const
@@ -1721,14 +1721,14 @@ ListGameServersOutcomeCallable GameLiftClient::ListGameServersCallable(const Lis
   return task->get_future();
 }
 
-void GameLiftClient::ListGameServersAsync(const ListGameServersRequest& request, const ListGameServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientListGameServersAsyncHelper(GameLiftClient const * const clientThis, const ListGameServersRequest& request, const ListGameServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGameServersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGameServers(request), context);
 }
 
-void GameLiftClient::ListGameServersAsyncHelper(const ListGameServersRequest& request, const ListGameServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ListGameServersAsync(const ListGameServersRequest& request, const ListGameServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGameServers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientListGameServersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListScriptsOutcome GameLiftClient::ListScripts(const ListScriptsRequest& request) const
@@ -1745,14 +1745,14 @@ ListScriptsOutcomeCallable GameLiftClient::ListScriptsCallable(const ListScripts
   return task->get_future();
 }
 
-void GameLiftClient::ListScriptsAsync(const ListScriptsRequest& request, const ListScriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientListScriptsAsyncHelper(GameLiftClient const * const clientThis, const ListScriptsRequest& request, const ListScriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListScriptsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListScripts(request), context);
 }
 
-void GameLiftClient::ListScriptsAsyncHelper(const ListScriptsRequest& request, const ListScriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ListScriptsAsync(const ListScriptsRequest& request, const ListScriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListScripts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientListScriptsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome GameLiftClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1769,14 +1769,14 @@ ListTagsForResourceOutcomeCallable GameLiftClient::ListTagsForResourceCallable(c
   return task->get_future();
 }
 
-void GameLiftClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientListTagsForResourceAsyncHelper(GameLiftClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void GameLiftClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutScalingPolicyOutcome GameLiftClient::PutScalingPolicy(const PutScalingPolicyRequest& request) const
@@ -1793,14 +1793,14 @@ PutScalingPolicyOutcomeCallable GameLiftClient::PutScalingPolicyCallable(const P
   return task->get_future();
 }
 
-void GameLiftClient::PutScalingPolicyAsync(const PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientPutScalingPolicyAsyncHelper(GameLiftClient const * const clientThis, const PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutScalingPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutScalingPolicy(request), context);
 }
 
-void GameLiftClient::PutScalingPolicyAsyncHelper(const PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::PutScalingPolicyAsync(const PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutScalingPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientPutScalingPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterGameServerOutcome GameLiftClient::RegisterGameServer(const RegisterGameServerRequest& request) const
@@ -1817,14 +1817,14 @@ RegisterGameServerOutcomeCallable GameLiftClient::RegisterGameServerCallable(con
   return task->get_future();
 }
 
-void GameLiftClient::RegisterGameServerAsync(const RegisterGameServerRequest& request, const RegisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientRegisterGameServerAsyncHelper(GameLiftClient const * const clientThis, const RegisterGameServerRequest& request, const RegisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterGameServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterGameServer(request), context);
 }
 
-void GameLiftClient::RegisterGameServerAsyncHelper(const RegisterGameServerRequest& request, const RegisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::RegisterGameServerAsync(const RegisterGameServerRequest& request, const RegisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterGameServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientRegisterGameServerAsyncHelper( this, request, handler, context ); } );
 }
 
 RequestUploadCredentialsOutcome GameLiftClient::RequestUploadCredentials(const RequestUploadCredentialsRequest& request) const
@@ -1841,14 +1841,14 @@ RequestUploadCredentialsOutcomeCallable GameLiftClient::RequestUploadCredentials
   return task->get_future();
 }
 
-void GameLiftClient::RequestUploadCredentialsAsync(const RequestUploadCredentialsRequest& request, const RequestUploadCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientRequestUploadCredentialsAsyncHelper(GameLiftClient const * const clientThis, const RequestUploadCredentialsRequest& request, const RequestUploadCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RequestUploadCredentialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RequestUploadCredentials(request), context);
 }
 
-void GameLiftClient::RequestUploadCredentialsAsyncHelper(const RequestUploadCredentialsRequest& request, const RequestUploadCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::RequestUploadCredentialsAsync(const RequestUploadCredentialsRequest& request, const RequestUploadCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RequestUploadCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientRequestUploadCredentialsAsyncHelper( this, request, handler, context ); } );
 }
 
 ResolveAliasOutcome GameLiftClient::ResolveAlias(const ResolveAliasRequest& request) const
@@ -1865,14 +1865,14 @@ ResolveAliasOutcomeCallable GameLiftClient::ResolveAliasCallable(const ResolveAl
   return task->get_future();
 }
 
-void GameLiftClient::ResolveAliasAsync(const ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientResolveAliasAsyncHelper(GameLiftClient const * const clientThis, const ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResolveAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResolveAlias(request), context);
 }
 
-void GameLiftClient::ResolveAliasAsyncHelper(const ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ResolveAliasAsync(const ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResolveAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientResolveAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 ResumeGameServerGroupOutcome GameLiftClient::ResumeGameServerGroup(const ResumeGameServerGroupRequest& request) const
@@ -1889,14 +1889,14 @@ ResumeGameServerGroupOutcomeCallable GameLiftClient::ResumeGameServerGroupCallab
   return task->get_future();
 }
 
-void GameLiftClient::ResumeGameServerGroupAsync(const ResumeGameServerGroupRequest& request, const ResumeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientResumeGameServerGroupAsyncHelper(GameLiftClient const * const clientThis, const ResumeGameServerGroupRequest& request, const ResumeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResumeGameServerGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResumeGameServerGroup(request), context);
 }
 
-void GameLiftClient::ResumeGameServerGroupAsyncHelper(const ResumeGameServerGroupRequest& request, const ResumeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ResumeGameServerGroupAsync(const ResumeGameServerGroupRequest& request, const ResumeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResumeGameServerGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientResumeGameServerGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchGameSessionsOutcome GameLiftClient::SearchGameSessions(const SearchGameSessionsRequest& request) const
@@ -1913,14 +1913,14 @@ SearchGameSessionsOutcomeCallable GameLiftClient::SearchGameSessionsCallable(con
   return task->get_future();
 }
 
-void GameLiftClient::SearchGameSessionsAsync(const SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientSearchGameSessionsAsyncHelper(GameLiftClient const * const clientThis, const SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchGameSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchGameSessions(request), context);
 }
 
-void GameLiftClient::SearchGameSessionsAsyncHelper(const SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::SearchGameSessionsAsync(const SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchGameSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientSearchGameSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartFleetActionsOutcome GameLiftClient::StartFleetActions(const StartFleetActionsRequest& request) const
@@ -1937,14 +1937,14 @@ StartFleetActionsOutcomeCallable GameLiftClient::StartFleetActionsCallable(const
   return task->get_future();
 }
 
-void GameLiftClient::StartFleetActionsAsync(const StartFleetActionsRequest& request, const StartFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientStartFleetActionsAsyncHelper(GameLiftClient const * const clientThis, const StartFleetActionsRequest& request, const StartFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFleetActionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartFleetActions(request), context);
 }
 
-void GameLiftClient::StartFleetActionsAsyncHelper(const StartFleetActionsRequest& request, const StartFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::StartFleetActionsAsync(const StartFleetActionsRequest& request, const StartFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartFleetActions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientStartFleetActionsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartGameSessionPlacementOutcome GameLiftClient::StartGameSessionPlacement(const StartGameSessionPlacementRequest& request) const
@@ -1961,14 +1961,14 @@ StartGameSessionPlacementOutcomeCallable GameLiftClient::StartGameSessionPlaceme
   return task->get_future();
 }
 
-void GameLiftClient::StartGameSessionPlacementAsync(const StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientStartGameSessionPlacementAsyncHelper(GameLiftClient const * const clientThis, const StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartGameSessionPlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartGameSessionPlacement(request), context);
 }
 
-void GameLiftClient::StartGameSessionPlacementAsyncHelper(const StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::StartGameSessionPlacementAsync(const StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartGameSessionPlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientStartGameSessionPlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMatchBackfillOutcome GameLiftClient::StartMatchBackfill(const StartMatchBackfillRequest& request) const
@@ -1985,14 +1985,14 @@ StartMatchBackfillOutcomeCallable GameLiftClient::StartMatchBackfillCallable(con
   return task->get_future();
 }
 
-void GameLiftClient::StartMatchBackfillAsync(const StartMatchBackfillRequest& request, const StartMatchBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientStartMatchBackfillAsyncHelper(GameLiftClient const * const clientThis, const StartMatchBackfillRequest& request, const StartMatchBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMatchBackfillAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMatchBackfill(request), context);
 }
 
-void GameLiftClient::StartMatchBackfillAsyncHelper(const StartMatchBackfillRequest& request, const StartMatchBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::StartMatchBackfillAsync(const StartMatchBackfillRequest& request, const StartMatchBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMatchBackfill(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientStartMatchBackfillAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMatchmakingOutcome GameLiftClient::StartMatchmaking(const StartMatchmakingRequest& request) const
@@ -2009,14 +2009,14 @@ StartMatchmakingOutcomeCallable GameLiftClient::StartMatchmakingCallable(const S
   return task->get_future();
 }
 
-void GameLiftClient::StartMatchmakingAsync(const StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientStartMatchmakingAsyncHelper(GameLiftClient const * const clientThis, const StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMatchmakingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMatchmaking(request), context);
 }
 
-void GameLiftClient::StartMatchmakingAsyncHelper(const StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::StartMatchmakingAsync(const StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMatchmaking(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientStartMatchmakingAsyncHelper( this, request, handler, context ); } );
 }
 
 StopFleetActionsOutcome GameLiftClient::StopFleetActions(const StopFleetActionsRequest& request) const
@@ -2033,14 +2033,14 @@ StopFleetActionsOutcomeCallable GameLiftClient::StopFleetActionsCallable(const S
   return task->get_future();
 }
 
-void GameLiftClient::StopFleetActionsAsync(const StopFleetActionsRequest& request, const StopFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientStopFleetActionsAsyncHelper(GameLiftClient const * const clientThis, const StopFleetActionsRequest& request, const StopFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopFleetActionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopFleetActions(request), context);
 }
 
-void GameLiftClient::StopFleetActionsAsyncHelper(const StopFleetActionsRequest& request, const StopFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::StopFleetActionsAsync(const StopFleetActionsRequest& request, const StopFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopFleetActions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientStopFleetActionsAsyncHelper( this, request, handler, context ); } );
 }
 
 StopGameSessionPlacementOutcome GameLiftClient::StopGameSessionPlacement(const StopGameSessionPlacementRequest& request) const
@@ -2057,14 +2057,14 @@ StopGameSessionPlacementOutcomeCallable GameLiftClient::StopGameSessionPlacement
   return task->get_future();
 }
 
-void GameLiftClient::StopGameSessionPlacementAsync(const StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientStopGameSessionPlacementAsyncHelper(GameLiftClient const * const clientThis, const StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopGameSessionPlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopGameSessionPlacement(request), context);
 }
 
-void GameLiftClient::StopGameSessionPlacementAsyncHelper(const StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::StopGameSessionPlacementAsync(const StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopGameSessionPlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientStopGameSessionPlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 StopMatchmakingOutcome GameLiftClient::StopMatchmaking(const StopMatchmakingRequest& request) const
@@ -2081,14 +2081,14 @@ StopMatchmakingOutcomeCallable GameLiftClient::StopMatchmakingCallable(const Sto
   return task->get_future();
 }
 
-void GameLiftClient::StopMatchmakingAsync(const StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientStopMatchmakingAsyncHelper(GameLiftClient const * const clientThis, const StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopMatchmakingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopMatchmaking(request), context);
 }
 
-void GameLiftClient::StopMatchmakingAsyncHelper(const StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::StopMatchmakingAsync(const StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopMatchmaking(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientStopMatchmakingAsyncHelper( this, request, handler, context ); } );
 }
 
 SuspendGameServerGroupOutcome GameLiftClient::SuspendGameServerGroup(const SuspendGameServerGroupRequest& request) const
@@ -2105,14 +2105,14 @@ SuspendGameServerGroupOutcomeCallable GameLiftClient::SuspendGameServerGroupCall
   return task->get_future();
 }
 
-void GameLiftClient::SuspendGameServerGroupAsync(const SuspendGameServerGroupRequest& request, const SuspendGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientSuspendGameServerGroupAsyncHelper(GameLiftClient const * const clientThis, const SuspendGameServerGroupRequest& request, const SuspendGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SuspendGameServerGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SuspendGameServerGroup(request), context);
 }
 
-void GameLiftClient::SuspendGameServerGroupAsyncHelper(const SuspendGameServerGroupRequest& request, const SuspendGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::SuspendGameServerGroupAsync(const SuspendGameServerGroupRequest& request, const SuspendGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SuspendGameServerGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientSuspendGameServerGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome GameLiftClient::TagResource(const TagResourceRequest& request) const
@@ -2129,14 +2129,14 @@ TagResourceOutcomeCallable GameLiftClient::TagResourceCallable(const TagResource
   return task->get_future();
 }
 
-void GameLiftClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientTagResourceAsyncHelper(GameLiftClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void GameLiftClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome GameLiftClient::UntagResource(const UntagResourceRequest& request) const
@@ -2153,14 +2153,14 @@ UntagResourceOutcomeCallable GameLiftClient::UntagResourceCallable(const UntagRe
   return task->get_future();
 }
 
-void GameLiftClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUntagResourceAsyncHelper(GameLiftClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void GameLiftClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAliasOutcome GameLiftClient::UpdateAlias(const UpdateAliasRequest& request) const
@@ -2177,14 +2177,14 @@ UpdateAliasOutcomeCallable GameLiftClient::UpdateAliasCallable(const UpdateAlias
   return task->get_future();
 }
 
-void GameLiftClient::UpdateAliasAsync(const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateAliasAsyncHelper(GameLiftClient const * const clientThis, const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAlias(request), context);
 }
 
-void GameLiftClient::UpdateAliasAsyncHelper(const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateAliasAsync(const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBuildOutcome GameLiftClient::UpdateBuild(const UpdateBuildRequest& request) const
@@ -2201,14 +2201,14 @@ UpdateBuildOutcomeCallable GameLiftClient::UpdateBuildCallable(const UpdateBuild
   return task->get_future();
 }
 
-void GameLiftClient::UpdateBuildAsync(const UpdateBuildRequest& request, const UpdateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateBuildAsyncHelper(GameLiftClient const * const clientThis, const UpdateBuildRequest& request, const UpdateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBuildAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBuild(request), context);
 }
 
-void GameLiftClient::UpdateBuildAsyncHelper(const UpdateBuildRequest& request, const UpdateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateBuildAsync(const UpdateBuildRequest& request, const UpdateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBuild(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateBuildAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFleetAttributesOutcome GameLiftClient::UpdateFleetAttributes(const UpdateFleetAttributesRequest& request) const
@@ -2225,14 +2225,14 @@ UpdateFleetAttributesOutcomeCallable GameLiftClient::UpdateFleetAttributesCallab
   return task->get_future();
 }
 
-void GameLiftClient::UpdateFleetAttributesAsync(const UpdateFleetAttributesRequest& request, const UpdateFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateFleetAttributesAsyncHelper(GameLiftClient const * const clientThis, const UpdateFleetAttributesRequest& request, const UpdateFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFleetAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFleetAttributes(request), context);
 }
 
-void GameLiftClient::UpdateFleetAttributesAsyncHelper(const UpdateFleetAttributesRequest& request, const UpdateFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateFleetAttributesAsync(const UpdateFleetAttributesRequest& request, const UpdateFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFleetAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateFleetAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFleetCapacityOutcome GameLiftClient::UpdateFleetCapacity(const UpdateFleetCapacityRequest& request) const
@@ -2249,14 +2249,14 @@ UpdateFleetCapacityOutcomeCallable GameLiftClient::UpdateFleetCapacityCallable(c
   return task->get_future();
 }
 
-void GameLiftClient::UpdateFleetCapacityAsync(const UpdateFleetCapacityRequest& request, const UpdateFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateFleetCapacityAsyncHelper(GameLiftClient const * const clientThis, const UpdateFleetCapacityRequest& request, const UpdateFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFleetCapacityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFleetCapacity(request), context);
 }
 
-void GameLiftClient::UpdateFleetCapacityAsyncHelper(const UpdateFleetCapacityRequest& request, const UpdateFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateFleetCapacityAsync(const UpdateFleetCapacityRequest& request, const UpdateFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFleetCapacity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateFleetCapacityAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFleetPortSettingsOutcome GameLiftClient::UpdateFleetPortSettings(const UpdateFleetPortSettingsRequest& request) const
@@ -2273,14 +2273,14 @@ UpdateFleetPortSettingsOutcomeCallable GameLiftClient::UpdateFleetPortSettingsCa
   return task->get_future();
 }
 
-void GameLiftClient::UpdateFleetPortSettingsAsync(const UpdateFleetPortSettingsRequest& request, const UpdateFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateFleetPortSettingsAsyncHelper(GameLiftClient const * const clientThis, const UpdateFleetPortSettingsRequest& request, const UpdateFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFleetPortSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFleetPortSettings(request), context);
 }
 
-void GameLiftClient::UpdateFleetPortSettingsAsyncHelper(const UpdateFleetPortSettingsRequest& request, const UpdateFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateFleetPortSettingsAsync(const UpdateFleetPortSettingsRequest& request, const UpdateFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFleetPortSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateFleetPortSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGameServerOutcome GameLiftClient::UpdateGameServer(const UpdateGameServerRequest& request) const
@@ -2297,14 +2297,14 @@ UpdateGameServerOutcomeCallable GameLiftClient::UpdateGameServerCallable(const U
   return task->get_future();
 }
 
-void GameLiftClient::UpdateGameServerAsync(const UpdateGameServerRequest& request, const UpdateGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateGameServerAsyncHelper(GameLiftClient const * const clientThis, const UpdateGameServerRequest& request, const UpdateGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGameServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGameServer(request), context);
 }
 
-void GameLiftClient::UpdateGameServerAsyncHelper(const UpdateGameServerRequest& request, const UpdateGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateGameServerAsync(const UpdateGameServerRequest& request, const UpdateGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGameServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateGameServerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGameServerGroupOutcome GameLiftClient::UpdateGameServerGroup(const UpdateGameServerGroupRequest& request) const
@@ -2321,14 +2321,14 @@ UpdateGameServerGroupOutcomeCallable GameLiftClient::UpdateGameServerGroupCallab
   return task->get_future();
 }
 
-void GameLiftClient::UpdateGameServerGroupAsync(const UpdateGameServerGroupRequest& request, const UpdateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateGameServerGroupAsyncHelper(GameLiftClient const * const clientThis, const UpdateGameServerGroupRequest& request, const UpdateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGameServerGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGameServerGroup(request), context);
 }
 
-void GameLiftClient::UpdateGameServerGroupAsyncHelper(const UpdateGameServerGroupRequest& request, const UpdateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateGameServerGroupAsync(const UpdateGameServerGroupRequest& request, const UpdateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGameServerGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateGameServerGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGameSessionOutcome GameLiftClient::UpdateGameSession(const UpdateGameSessionRequest& request) const
@@ -2345,14 +2345,14 @@ UpdateGameSessionOutcomeCallable GameLiftClient::UpdateGameSessionCallable(const
   return task->get_future();
 }
 
-void GameLiftClient::UpdateGameSessionAsync(const UpdateGameSessionRequest& request, const UpdateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateGameSessionAsyncHelper(GameLiftClient const * const clientThis, const UpdateGameSessionRequest& request, const UpdateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGameSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGameSession(request), context);
 }
 
-void GameLiftClient::UpdateGameSessionAsyncHelper(const UpdateGameSessionRequest& request, const UpdateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateGameSessionAsync(const UpdateGameSessionRequest& request, const UpdateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGameSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateGameSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGameSessionQueueOutcome GameLiftClient::UpdateGameSessionQueue(const UpdateGameSessionQueueRequest& request) const
@@ -2369,14 +2369,14 @@ UpdateGameSessionQueueOutcomeCallable GameLiftClient::UpdateGameSessionQueueCall
   return task->get_future();
 }
 
-void GameLiftClient::UpdateGameSessionQueueAsync(const UpdateGameSessionQueueRequest& request, const UpdateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateGameSessionQueueAsyncHelper(GameLiftClient const * const clientThis, const UpdateGameSessionQueueRequest& request, const UpdateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGameSessionQueueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGameSessionQueue(request), context);
 }
 
-void GameLiftClient::UpdateGameSessionQueueAsyncHelper(const UpdateGameSessionQueueRequest& request, const UpdateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateGameSessionQueueAsync(const UpdateGameSessionQueueRequest& request, const UpdateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGameSessionQueue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateGameSessionQueueAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMatchmakingConfigurationOutcome GameLiftClient::UpdateMatchmakingConfiguration(const UpdateMatchmakingConfigurationRequest& request) const
@@ -2393,14 +2393,14 @@ UpdateMatchmakingConfigurationOutcomeCallable GameLiftClient::UpdateMatchmakingC
   return task->get_future();
 }
 
-void GameLiftClient::UpdateMatchmakingConfigurationAsync(const UpdateMatchmakingConfigurationRequest& request, const UpdateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateMatchmakingConfigurationAsyncHelper(GameLiftClient const * const clientThis, const UpdateMatchmakingConfigurationRequest& request, const UpdateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMatchmakingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMatchmakingConfiguration(request), context);
 }
 
-void GameLiftClient::UpdateMatchmakingConfigurationAsyncHelper(const UpdateMatchmakingConfigurationRequest& request, const UpdateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateMatchmakingConfigurationAsync(const UpdateMatchmakingConfigurationRequest& request, const UpdateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMatchmakingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateMatchmakingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRuntimeConfigurationOutcome GameLiftClient::UpdateRuntimeConfiguration(const UpdateRuntimeConfigurationRequest& request) const
@@ -2417,14 +2417,14 @@ UpdateRuntimeConfigurationOutcomeCallable GameLiftClient::UpdateRuntimeConfigura
   return task->get_future();
 }
 
-void GameLiftClient::UpdateRuntimeConfigurationAsync(const UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateRuntimeConfigurationAsyncHelper(GameLiftClient const * const clientThis, const UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRuntimeConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRuntimeConfiguration(request), context);
 }
 
-void GameLiftClient::UpdateRuntimeConfigurationAsyncHelper(const UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateRuntimeConfigurationAsync(const UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRuntimeConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateRuntimeConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateScriptOutcome GameLiftClient::UpdateScript(const UpdateScriptRequest& request) const
@@ -2441,14 +2441,14 @@ UpdateScriptOutcomeCallable GameLiftClient::UpdateScriptCallable(const UpdateScr
   return task->get_future();
 }
 
-void GameLiftClient::UpdateScriptAsync(const UpdateScriptRequest& request, const UpdateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientUpdateScriptAsyncHelper(GameLiftClient const * const clientThis, const UpdateScriptRequest& request, const UpdateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateScriptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateScript(request), context);
 }
 
-void GameLiftClient::UpdateScriptAsyncHelper(const UpdateScriptRequest& request, const UpdateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::UpdateScriptAsync(const UpdateScriptRequest& request, const UpdateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateScript(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientUpdateScriptAsyncHelper( this, request, handler, context ); } );
 }
 
 ValidateMatchmakingRuleSetOutcome GameLiftClient::ValidateMatchmakingRuleSet(const ValidateMatchmakingRuleSetRequest& request) const
@@ -2465,13 +2465,13 @@ ValidateMatchmakingRuleSetOutcomeCallable GameLiftClient::ValidateMatchmakingRul
   return task->get_future();
 }
 
-void GameLiftClient::ValidateMatchmakingRuleSetAsync(const ValidateMatchmakingRuleSetRequest& request, const ValidateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClientValidateMatchmakingRuleSetAsyncHelper(GameLiftClient const * const clientThis, const ValidateMatchmakingRuleSetRequest& request, const ValidateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ValidateMatchmakingRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ValidateMatchmakingRuleSet(request), context);
 }
 
-void GameLiftClient::ValidateMatchmakingRuleSetAsyncHelper(const ValidateMatchmakingRuleSetRequest& request, const ValidateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GameLiftClient::ValidateMatchmakingRuleSetAsync(const ValidateMatchmakingRuleSetRequest& request, const ValidateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ValidateMatchmakingRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GameLiftClientValidateMatchmakingRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 

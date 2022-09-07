@@ -142,15 +142,16 @@ AddTagsOutcomeCallable MachineLearningClient::AddTagsCallable(const AddTagsReque
   return task->get_future();
 }
 
-void MachineLearningClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientAddTagsAsyncHelper(MachineLearningClient const * const clientThis, const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->AddTags(request), context);
 }
 
-void MachineLearningClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientAddTagsAsyncHelper(this, request, handler, context); } );
 }
+
 
 CreateBatchPredictionOutcome MachineLearningClient::CreateBatchPrediction(const CreateBatchPredictionRequest& request) const
 {
@@ -166,15 +167,16 @@ CreateBatchPredictionOutcomeCallable MachineLearningClient::CreateBatchPredictio
   return task->get_future();
 }
 
-void MachineLearningClient::CreateBatchPredictionAsync(const CreateBatchPredictionRequest& request, const CreateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientCreateBatchPredictionAsyncHelper(MachineLearningClient const * const clientThis, const CreateBatchPredictionRequest& request, const CreateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBatchPredictionAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->CreateBatchPrediction(request), context);
 }
 
-void MachineLearningClient::CreateBatchPredictionAsyncHelper(const CreateBatchPredictionRequest& request, const CreateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::CreateBatchPredictionAsync(const CreateBatchPredictionRequest& request, const CreateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBatchPrediction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientCreateBatchPredictionAsyncHelper(this, request, handler, context); } );
 }
+
 
 CreateDataSourceFromRDSOutcome MachineLearningClient::CreateDataSourceFromRDS(const CreateDataSourceFromRDSRequest& request) const
 {
@@ -190,15 +192,16 @@ CreateDataSourceFromRDSOutcomeCallable MachineLearningClient::CreateDataSourceFr
   return task->get_future();
 }
 
-void MachineLearningClient::CreateDataSourceFromRDSAsync(const CreateDataSourceFromRDSRequest& request, const CreateDataSourceFromRDSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientCreateDataSourceFromRDSAsyncHelper(MachineLearningClient const * const clientThis, const CreateDataSourceFromRDSRequest& request, const CreateDataSourceFromRDSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataSourceFromRDSAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->CreateDataSourceFromRDS(request), context);
 }
 
-void MachineLearningClient::CreateDataSourceFromRDSAsyncHelper(const CreateDataSourceFromRDSRequest& request, const CreateDataSourceFromRDSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::CreateDataSourceFromRDSAsync(const CreateDataSourceFromRDSRequest& request, const CreateDataSourceFromRDSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataSourceFromRDS(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientCreateDataSourceFromRDSAsyncHelper(this, request, handler, context); } );
 }
+
 
 CreateDataSourceFromRedshiftOutcome MachineLearningClient::CreateDataSourceFromRedshift(const CreateDataSourceFromRedshiftRequest& request) const
 {
@@ -214,15 +217,16 @@ CreateDataSourceFromRedshiftOutcomeCallable MachineLearningClient::CreateDataSou
   return task->get_future();
 }
 
-void MachineLearningClient::CreateDataSourceFromRedshiftAsync(const CreateDataSourceFromRedshiftRequest& request, const CreateDataSourceFromRedshiftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientCreateDataSourceFromRedshiftAsyncHelper(MachineLearningClient const * const clientThis, const CreateDataSourceFromRedshiftRequest& request, const CreateDataSourceFromRedshiftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataSourceFromRedshiftAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->CreateDataSourceFromRedshift(request), context);
 }
 
-void MachineLearningClient::CreateDataSourceFromRedshiftAsyncHelper(const CreateDataSourceFromRedshiftRequest& request, const CreateDataSourceFromRedshiftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::CreateDataSourceFromRedshiftAsync(const CreateDataSourceFromRedshiftRequest& request, const CreateDataSourceFromRedshiftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataSourceFromRedshift(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientCreateDataSourceFromRedshiftAsyncHelper(this, request, handler, context); } );
 }
+
 
 CreateDataSourceFromS3Outcome MachineLearningClient::CreateDataSourceFromS3(const CreateDataSourceFromS3Request& request) const
 {
@@ -238,15 +242,16 @@ CreateDataSourceFromS3OutcomeCallable MachineLearningClient::CreateDataSourceFro
   return task->get_future();
 }
 
-void MachineLearningClient::CreateDataSourceFromS3Async(const CreateDataSourceFromS3Request& request, const CreateDataSourceFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientCreateDataSourceFromS3AsyncHelper(MachineLearningClient const * const clientThis, const CreateDataSourceFromS3Request& request, const CreateDataSourceFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataSourceFromS3AsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->CreateDataSourceFromS3(request), context);
 }
 
-void MachineLearningClient::CreateDataSourceFromS3AsyncHelper(const CreateDataSourceFromS3Request& request, const CreateDataSourceFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::CreateDataSourceFromS3Async(const CreateDataSourceFromS3Request& request, const CreateDataSourceFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataSourceFromS3(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientCreateDataSourceFromS3AsyncHelper(this, request, handler, context); } );
 }
+
 
 CreateEvaluationOutcome MachineLearningClient::CreateEvaluation(const CreateEvaluationRequest& request) const
 {
@@ -262,15 +267,16 @@ CreateEvaluationOutcomeCallable MachineLearningClient::CreateEvaluationCallable(
   return task->get_future();
 }
 
-void MachineLearningClient::CreateEvaluationAsync(const CreateEvaluationRequest& request, const CreateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientCreateEvaluationAsyncHelper(MachineLearningClient const * const clientThis, const CreateEvaluationRequest& request, const CreateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEvaluationAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->CreateEvaluation(request), context);
 }
 
-void MachineLearningClient::CreateEvaluationAsyncHelper(const CreateEvaluationRequest& request, const CreateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::CreateEvaluationAsync(const CreateEvaluationRequest& request, const CreateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEvaluation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientCreateEvaluationAsyncHelper(this, request, handler, context); } );
 }
+
 
 CreateMLModelOutcome MachineLearningClient::CreateMLModel(const CreateMLModelRequest& request) const
 {
@@ -286,15 +292,16 @@ CreateMLModelOutcomeCallable MachineLearningClient::CreateMLModelCallable(const 
   return task->get_future();
 }
 
-void MachineLearningClient::CreateMLModelAsync(const CreateMLModelRequest& request, const CreateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientCreateMLModelAsyncHelper(MachineLearningClient const * const clientThis, const CreateMLModelRequest& request, const CreateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMLModelAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->CreateMLModel(request), context);
 }
 
-void MachineLearningClient::CreateMLModelAsyncHelper(const CreateMLModelRequest& request, const CreateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::CreateMLModelAsync(const CreateMLModelRequest& request, const CreateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMLModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientCreateMLModelAsyncHelper(this, request, handler, context); } );
 }
+
 
 CreateRealtimeEndpointOutcome MachineLearningClient::CreateRealtimeEndpoint(const CreateRealtimeEndpointRequest& request) const
 {
@@ -310,15 +317,16 @@ CreateRealtimeEndpointOutcomeCallable MachineLearningClient::CreateRealtimeEndpo
   return task->get_future();
 }
 
-void MachineLearningClient::CreateRealtimeEndpointAsync(const CreateRealtimeEndpointRequest& request, const CreateRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientCreateRealtimeEndpointAsyncHelper(MachineLearningClient const * const clientThis, const CreateRealtimeEndpointRequest& request, const CreateRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRealtimeEndpointAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->CreateRealtimeEndpoint(request), context);
 }
 
-void MachineLearningClient::CreateRealtimeEndpointAsyncHelper(const CreateRealtimeEndpointRequest& request, const CreateRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::CreateRealtimeEndpointAsync(const CreateRealtimeEndpointRequest& request, const CreateRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRealtimeEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientCreateRealtimeEndpointAsyncHelper(this, request, handler, context); } );
 }
+
 
 DeleteBatchPredictionOutcome MachineLearningClient::DeleteBatchPrediction(const DeleteBatchPredictionRequest& request) const
 {
@@ -334,15 +342,16 @@ DeleteBatchPredictionOutcomeCallable MachineLearningClient::DeleteBatchPredictio
   return task->get_future();
 }
 
-void MachineLearningClient::DeleteBatchPredictionAsync(const DeleteBatchPredictionRequest& request, const DeleteBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDeleteBatchPredictionAsyncHelper(MachineLearningClient const * const clientThis, const DeleteBatchPredictionRequest& request, const DeleteBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBatchPredictionAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DeleteBatchPrediction(request), context);
 }
 
-void MachineLearningClient::DeleteBatchPredictionAsyncHelper(const DeleteBatchPredictionRequest& request, const DeleteBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DeleteBatchPredictionAsync(const DeleteBatchPredictionRequest& request, const DeleteBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBatchPrediction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDeleteBatchPredictionAsyncHelper(this, request, handler, context); } );
 }
+
 
 DeleteDataSourceOutcome MachineLearningClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
 {
@@ -358,15 +367,16 @@ DeleteDataSourceOutcomeCallable MachineLearningClient::DeleteDataSourceCallable(
   return task->get_future();
 }
 
-void MachineLearningClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDeleteDataSourceAsyncHelper(MachineLearningClient const * const clientThis, const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataSourceAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DeleteDataSource(request), context);
 }
 
-void MachineLearningClient::DeleteDataSourceAsyncHelper(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDeleteDataSourceAsyncHelper(this, request, handler, context); } );
 }
+
 
 DeleteEvaluationOutcome MachineLearningClient::DeleteEvaluation(const DeleteEvaluationRequest& request) const
 {
@@ -382,15 +392,16 @@ DeleteEvaluationOutcomeCallable MachineLearningClient::DeleteEvaluationCallable(
   return task->get_future();
 }
 
-void MachineLearningClient::DeleteEvaluationAsync(const DeleteEvaluationRequest& request, const DeleteEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDeleteEvaluationAsyncHelper(MachineLearningClient const * const clientThis, const DeleteEvaluationRequest& request, const DeleteEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEvaluationAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DeleteEvaluation(request), context);
 }
 
-void MachineLearningClient::DeleteEvaluationAsyncHelper(const DeleteEvaluationRequest& request, const DeleteEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DeleteEvaluationAsync(const DeleteEvaluationRequest& request, const DeleteEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEvaluation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDeleteEvaluationAsyncHelper(this, request, handler, context); } );
 }
+
 
 DeleteMLModelOutcome MachineLearningClient::DeleteMLModel(const DeleteMLModelRequest& request) const
 {
@@ -406,15 +417,16 @@ DeleteMLModelOutcomeCallable MachineLearningClient::DeleteMLModelCallable(const 
   return task->get_future();
 }
 
-void MachineLearningClient::DeleteMLModelAsync(const DeleteMLModelRequest& request, const DeleteMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDeleteMLModelAsyncHelper(MachineLearningClient const * const clientThis, const DeleteMLModelRequest& request, const DeleteMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMLModelAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DeleteMLModel(request), context);
 }
 
-void MachineLearningClient::DeleteMLModelAsyncHelper(const DeleteMLModelRequest& request, const DeleteMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DeleteMLModelAsync(const DeleteMLModelRequest& request, const DeleteMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMLModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDeleteMLModelAsyncHelper(this, request, handler, context); } );
 }
+
 
 DeleteRealtimeEndpointOutcome MachineLearningClient::DeleteRealtimeEndpoint(const DeleteRealtimeEndpointRequest& request) const
 {
@@ -430,15 +442,16 @@ DeleteRealtimeEndpointOutcomeCallable MachineLearningClient::DeleteRealtimeEndpo
   return task->get_future();
 }
 
-void MachineLearningClient::DeleteRealtimeEndpointAsync(const DeleteRealtimeEndpointRequest& request, const DeleteRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDeleteRealtimeEndpointAsyncHelper(MachineLearningClient const * const clientThis, const DeleteRealtimeEndpointRequest& request, const DeleteRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRealtimeEndpointAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DeleteRealtimeEndpoint(request), context);
 }
 
-void MachineLearningClient::DeleteRealtimeEndpointAsyncHelper(const DeleteRealtimeEndpointRequest& request, const DeleteRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DeleteRealtimeEndpointAsync(const DeleteRealtimeEndpointRequest& request, const DeleteRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRealtimeEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDeleteRealtimeEndpointAsyncHelper(this, request, handler, context); } );
 }
+
 
 DeleteTagsOutcome MachineLearningClient::DeleteTags(const DeleteTagsRequest& request) const
 {
@@ -454,15 +467,16 @@ DeleteTagsOutcomeCallable MachineLearningClient::DeleteTagsCallable(const Delete
   return task->get_future();
 }
 
-void MachineLearningClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDeleteTagsAsyncHelper(MachineLearningClient const * const clientThis, const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagsAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DeleteTags(request), context);
 }
 
-void MachineLearningClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDeleteTagsAsyncHelper(this, request, handler, context); } );
 }
+
 
 DescribeBatchPredictionsOutcome MachineLearningClient::DescribeBatchPredictions(const DescribeBatchPredictionsRequest& request) const
 {
@@ -478,15 +492,16 @@ DescribeBatchPredictionsOutcomeCallable MachineLearningClient::DescribeBatchPred
   return task->get_future();
 }
 
-void MachineLearningClient::DescribeBatchPredictionsAsync(const DescribeBatchPredictionsRequest& request, const DescribeBatchPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDescribeBatchPredictionsAsyncHelper(MachineLearningClient const * const clientThis, const DescribeBatchPredictionsRequest& request, const DescribeBatchPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBatchPredictionsAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DescribeBatchPredictions(request), context);
 }
 
-void MachineLearningClient::DescribeBatchPredictionsAsyncHelper(const DescribeBatchPredictionsRequest& request, const DescribeBatchPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DescribeBatchPredictionsAsync(const DescribeBatchPredictionsRequest& request, const DescribeBatchPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBatchPredictions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDescribeBatchPredictionsAsyncHelper(this, request, handler, context); } );
 }
+
 
 DescribeDataSourcesOutcome MachineLearningClient::DescribeDataSources(const DescribeDataSourcesRequest& request) const
 {
@@ -502,15 +517,16 @@ DescribeDataSourcesOutcomeCallable MachineLearningClient::DescribeDataSourcesCal
   return task->get_future();
 }
 
-void MachineLearningClient::DescribeDataSourcesAsync(const DescribeDataSourcesRequest& request, const DescribeDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDescribeDataSourcesAsyncHelper(MachineLearningClient const * const clientThis, const DescribeDataSourcesRequest& request, const DescribeDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataSourcesAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DescribeDataSources(request), context);
 }
 
-void MachineLearningClient::DescribeDataSourcesAsyncHelper(const DescribeDataSourcesRequest& request, const DescribeDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DescribeDataSourcesAsync(const DescribeDataSourcesRequest& request, const DescribeDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataSources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDescribeDataSourcesAsyncHelper(this, request, handler, context); } );
 }
+
 
 DescribeEvaluationsOutcome MachineLearningClient::DescribeEvaluations(const DescribeEvaluationsRequest& request) const
 {
@@ -526,15 +542,16 @@ DescribeEvaluationsOutcomeCallable MachineLearningClient::DescribeEvaluationsCal
   return task->get_future();
 }
 
-void MachineLearningClient::DescribeEvaluationsAsync(const DescribeEvaluationsRequest& request, const DescribeEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDescribeEvaluationsAsyncHelper(MachineLearningClient const * const clientThis, const DescribeEvaluationsRequest& request, const DescribeEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEvaluationsAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DescribeEvaluations(request), context);
 }
 
-void MachineLearningClient::DescribeEvaluationsAsyncHelper(const DescribeEvaluationsRequest& request, const DescribeEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DescribeEvaluationsAsync(const DescribeEvaluationsRequest& request, const DescribeEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEvaluations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDescribeEvaluationsAsyncHelper(this, request, handler, context); } );
 }
+
 
 DescribeMLModelsOutcome MachineLearningClient::DescribeMLModels(const DescribeMLModelsRequest& request) const
 {
@@ -550,15 +567,16 @@ DescribeMLModelsOutcomeCallable MachineLearningClient::DescribeMLModelsCallable(
   return task->get_future();
 }
 
-void MachineLearningClient::DescribeMLModelsAsync(const DescribeMLModelsRequest& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDescribeMLModelsAsyncHelper(MachineLearningClient const * const clientThis, const DescribeMLModelsRequest& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMLModelsAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DescribeMLModels(request), context);
 }
 
-void MachineLearningClient::DescribeMLModelsAsyncHelper(const DescribeMLModelsRequest& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DescribeMLModelsAsync(const DescribeMLModelsRequest& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMLModels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDescribeMLModelsAsyncHelper(this, request, handler, context); } );
 }
+
 
 DescribeTagsOutcome MachineLearningClient::DescribeTags(const DescribeTagsRequest& request) const
 {
@@ -574,15 +592,16 @@ DescribeTagsOutcomeCallable MachineLearningClient::DescribeTagsCallable(const De
   return task->get_future();
 }
 
-void MachineLearningClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientDescribeTagsAsyncHelper(MachineLearningClient const * const clientThis, const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTagsAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->DescribeTags(request), context);
 }
 
-void MachineLearningClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientDescribeTagsAsyncHelper(this, request, handler, context); } );
 }
+
 
 GetBatchPredictionOutcome MachineLearningClient::GetBatchPrediction(const GetBatchPredictionRequest& request) const
 {
@@ -598,15 +617,16 @@ GetBatchPredictionOutcomeCallable MachineLearningClient::GetBatchPredictionCalla
   return task->get_future();
 }
 
-void MachineLearningClient::GetBatchPredictionAsync(const GetBatchPredictionRequest& request, const GetBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientGetBatchPredictionAsyncHelper(MachineLearningClient const * const clientThis, const GetBatchPredictionRequest& request, const GetBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBatchPredictionAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->GetBatchPrediction(request), context);
 }
 
-void MachineLearningClient::GetBatchPredictionAsyncHelper(const GetBatchPredictionRequest& request, const GetBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::GetBatchPredictionAsync(const GetBatchPredictionRequest& request, const GetBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBatchPrediction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientGetBatchPredictionAsyncHelper(this, request, handler, context); } );
 }
+
 
 GetDataSourceOutcome MachineLearningClient::GetDataSource(const GetDataSourceRequest& request) const
 {
@@ -622,15 +642,16 @@ GetDataSourceOutcomeCallable MachineLearningClient::GetDataSourceCallable(const 
   return task->get_future();
 }
 
-void MachineLearningClient::GetDataSourceAsync(const GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientGetDataSourceAsyncHelper(MachineLearningClient const * const clientThis, const GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataSourceAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->GetDataSource(request), context);
 }
 
-void MachineLearningClient::GetDataSourceAsyncHelper(const GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::GetDataSourceAsync(const GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientGetDataSourceAsyncHelper(this, request, handler, context); } );
 }
+
 
 GetEvaluationOutcome MachineLearningClient::GetEvaluation(const GetEvaluationRequest& request) const
 {
@@ -646,15 +667,16 @@ GetEvaluationOutcomeCallable MachineLearningClient::GetEvaluationCallable(const 
   return task->get_future();
 }
 
-void MachineLearningClient::GetEvaluationAsync(const GetEvaluationRequest& request, const GetEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientGetEvaluationAsyncHelper(MachineLearningClient const * const clientThis, const GetEvaluationRequest& request, const GetEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEvaluationAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->GetEvaluation(request), context);
 }
 
-void MachineLearningClient::GetEvaluationAsyncHelper(const GetEvaluationRequest& request, const GetEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::GetEvaluationAsync(const GetEvaluationRequest& request, const GetEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEvaluation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientGetEvaluationAsyncHelper(this, request, handler, context); } );
 }
+
 
 GetMLModelOutcome MachineLearningClient::GetMLModel(const GetMLModelRequest& request) const
 {
@@ -670,15 +692,16 @@ GetMLModelOutcomeCallable MachineLearningClient::GetMLModelCallable(const GetMLM
   return task->get_future();
 }
 
-void MachineLearningClient::GetMLModelAsync(const GetMLModelRequest& request, const GetMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientGetMLModelAsyncHelper(MachineLearningClient const * const clientThis, const GetMLModelRequest& request, const GetMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMLModelAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->GetMLModel(request), context);
 }
 
-void MachineLearningClient::GetMLModelAsyncHelper(const GetMLModelRequest& request, const GetMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::GetMLModelAsync(const GetMLModelRequest& request, const GetMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMLModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientGetMLModelAsyncHelper(this, request, handler, context); } );
 }
+
 
 PredictOutcome MachineLearningClient::Predict(const PredictRequest& request) const
 {
@@ -693,15 +716,16 @@ PredictOutcomeCallable MachineLearningClient::PredictCallable(const PredictReque
   return task->get_future();
 }
 
-void MachineLearningClient::PredictAsync(const PredictRequest& request, const PredictResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientPredictAsyncHelper(MachineLearningClient const * const clientThis, const PredictRequest& request, const PredictResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PredictAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->Predict(request), context);
 }
 
-void MachineLearningClient::PredictAsyncHelper(const PredictRequest& request, const PredictResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::PredictAsync(const PredictRequest& request, const PredictResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Predict(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientPredictAsyncHelper(this, request, handler, context); } );
 }
+
 
 UpdateBatchPredictionOutcome MachineLearningClient::UpdateBatchPrediction(const UpdateBatchPredictionRequest& request) const
 {
@@ -717,15 +741,16 @@ UpdateBatchPredictionOutcomeCallable MachineLearningClient::UpdateBatchPredictio
   return task->get_future();
 }
 
-void MachineLearningClient::UpdateBatchPredictionAsync(const UpdateBatchPredictionRequest& request, const UpdateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientUpdateBatchPredictionAsyncHelper(MachineLearningClient const * const clientThis, const UpdateBatchPredictionRequest& request, const UpdateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBatchPredictionAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->UpdateBatchPrediction(request), context);
 }
 
-void MachineLearningClient::UpdateBatchPredictionAsyncHelper(const UpdateBatchPredictionRequest& request, const UpdateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::UpdateBatchPredictionAsync(const UpdateBatchPredictionRequest& request, const UpdateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBatchPrediction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientUpdateBatchPredictionAsyncHelper(this, request, handler, context); } );
 }
+
 
 UpdateDataSourceOutcome MachineLearningClient::UpdateDataSource(const UpdateDataSourceRequest& request) const
 {
@@ -741,15 +766,16 @@ UpdateDataSourceOutcomeCallable MachineLearningClient::UpdateDataSourceCallable(
   return task->get_future();
 }
 
-void MachineLearningClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientUpdateDataSourceAsyncHelper(MachineLearningClient const * const clientThis, const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataSourceAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->UpdateDataSource(request), context);
 }
 
-void MachineLearningClient::UpdateDataSourceAsyncHelper(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientUpdateDataSourceAsyncHelper(this, request, handler, context); } );
 }
+
 
 UpdateEvaluationOutcome MachineLearningClient::UpdateEvaluation(const UpdateEvaluationRequest& request) const
 {
@@ -765,15 +791,16 @@ UpdateEvaluationOutcomeCallable MachineLearningClient::UpdateEvaluationCallable(
   return task->get_future();
 }
 
-void MachineLearningClient::UpdateEvaluationAsync(const UpdateEvaluationRequest& request, const UpdateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientUpdateEvaluationAsyncHelper(MachineLearningClient const * const clientThis, const UpdateEvaluationRequest& request, const UpdateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEvaluationAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->UpdateEvaluation(request), context);
 }
 
-void MachineLearningClient::UpdateEvaluationAsyncHelper(const UpdateEvaluationRequest& request, const UpdateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::UpdateEvaluationAsync(const UpdateEvaluationRequest& request, const UpdateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEvaluation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientUpdateEvaluationAsyncHelper(this, request, handler, context); } );
 }
+
 
 UpdateMLModelOutcome MachineLearningClient::UpdateMLModel(const UpdateMLModelRequest& request) const
 {
@@ -789,13 +816,14 @@ UpdateMLModelOutcomeCallable MachineLearningClient::UpdateMLModelCallable(const 
   return task->get_future();
 }
 
-void MachineLearningClient::UpdateMLModelAsync(const UpdateMLModelRequest& request, const UpdateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClientUpdateMLModelAsyncHelper(MachineLearningClient const * const clientThis, const UpdateMLModelRequest& request, const UpdateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMLModelAsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->UpdateMLModel(request), context);
 }
 
-void MachineLearningClient::UpdateMLModelAsyncHelper(const UpdateMLModelRequest& request, const UpdateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MachineLearningClient::UpdateMLModelAsync(const UpdateMLModelRequest& request, const UpdateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMLModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MachineLearningClientUpdateMLModelAsyncHelper(this, request, handler, context); } );
 }
+
 

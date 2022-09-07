@@ -165,14 +165,14 @@ AddInstanceFleetOutcomeCallable EMRClient::AddInstanceFleetCallable(const AddIns
   return task->get_future();
 }
 
-void EMRClient::AddInstanceFleetAsync(const AddInstanceFleetRequest& request, const AddInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientAddInstanceFleetAsyncHelper(EMRClient const * const clientThis, const AddInstanceFleetRequest& request, const AddInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddInstanceFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddInstanceFleet(request), context);
 }
 
-void EMRClient::AddInstanceFleetAsyncHelper(const AddInstanceFleetRequest& request, const AddInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::AddInstanceFleetAsync(const AddInstanceFleetRequest& request, const AddInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddInstanceFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientAddInstanceFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 AddInstanceGroupsOutcome EMRClient::AddInstanceGroups(const AddInstanceGroupsRequest& request) const
@@ -189,14 +189,14 @@ AddInstanceGroupsOutcomeCallable EMRClient::AddInstanceGroupsCallable(const AddI
   return task->get_future();
 }
 
-void EMRClient::AddInstanceGroupsAsync(const AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientAddInstanceGroupsAsyncHelper(EMRClient const * const clientThis, const AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddInstanceGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddInstanceGroups(request), context);
 }
 
-void EMRClient::AddInstanceGroupsAsyncHelper(const AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::AddInstanceGroupsAsync(const AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddInstanceGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientAddInstanceGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 AddJobFlowStepsOutcome EMRClient::AddJobFlowSteps(const AddJobFlowStepsRequest& request) const
@@ -213,14 +213,14 @@ AddJobFlowStepsOutcomeCallable EMRClient::AddJobFlowStepsCallable(const AddJobFl
   return task->get_future();
 }
 
-void EMRClient::AddJobFlowStepsAsync(const AddJobFlowStepsRequest& request, const AddJobFlowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientAddJobFlowStepsAsyncHelper(EMRClient const * const clientThis, const AddJobFlowStepsRequest& request, const AddJobFlowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddJobFlowStepsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddJobFlowSteps(request), context);
 }
 
-void EMRClient::AddJobFlowStepsAsyncHelper(const AddJobFlowStepsRequest& request, const AddJobFlowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::AddJobFlowStepsAsync(const AddJobFlowStepsRequest& request, const AddJobFlowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddJobFlowSteps(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientAddJobFlowStepsAsyncHelper( this, request, handler, context ); } );
 }
 
 AddTagsOutcome EMRClient::AddTags(const AddTagsRequest& request) const
@@ -237,14 +237,14 @@ AddTagsOutcomeCallable EMRClient::AddTagsCallable(const AddTagsRequest& request)
   return task->get_future();
 }
 
-void EMRClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientAddTagsAsyncHelper(EMRClient const * const clientThis, const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddTags(request), context);
 }
 
-void EMRClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientAddTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelStepsOutcome EMRClient::CancelSteps(const CancelStepsRequest& request) const
@@ -261,14 +261,14 @@ CancelStepsOutcomeCallable EMRClient::CancelStepsCallable(const CancelStepsReque
   return task->get_future();
 }
 
-void EMRClient::CancelStepsAsync(const CancelStepsRequest& request, const CancelStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientCancelStepsAsyncHelper(EMRClient const * const clientThis, const CancelStepsRequest& request, const CancelStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelStepsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelSteps(request), context);
 }
 
-void EMRClient::CancelStepsAsyncHelper(const CancelStepsRequest& request, const CancelStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::CancelStepsAsync(const CancelStepsRequest& request, const CancelStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelSteps(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientCancelStepsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSecurityConfigurationOutcome EMRClient::CreateSecurityConfiguration(const CreateSecurityConfigurationRequest& request) const
@@ -285,14 +285,14 @@ CreateSecurityConfigurationOutcomeCallable EMRClient::CreateSecurityConfiguratio
   return task->get_future();
 }
 
-void EMRClient::CreateSecurityConfigurationAsync(const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientCreateSecurityConfigurationAsyncHelper(EMRClient const * const clientThis, const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSecurityConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSecurityConfiguration(request), context);
 }
 
-void EMRClient::CreateSecurityConfigurationAsyncHelper(const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::CreateSecurityConfigurationAsync(const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSecurityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientCreateSecurityConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStudioOutcome EMRClient::CreateStudio(const CreateStudioRequest& request) const
@@ -309,14 +309,14 @@ CreateStudioOutcomeCallable EMRClient::CreateStudioCallable(const CreateStudioRe
   return task->get_future();
 }
 
-void EMRClient::CreateStudioAsync(const CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientCreateStudioAsyncHelper(EMRClient const * const clientThis, const CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStudioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStudio(request), context);
 }
 
-void EMRClient::CreateStudioAsyncHelper(const CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::CreateStudioAsync(const CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStudio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientCreateStudioAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStudioSessionMappingOutcome EMRClient::CreateStudioSessionMapping(const CreateStudioSessionMappingRequest& request) const
@@ -333,14 +333,14 @@ CreateStudioSessionMappingOutcomeCallable EMRClient::CreateStudioSessionMappingC
   return task->get_future();
 }
 
-void EMRClient::CreateStudioSessionMappingAsync(const CreateStudioSessionMappingRequest& request, const CreateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientCreateStudioSessionMappingAsyncHelper(EMRClient const * const clientThis, const CreateStudioSessionMappingRequest& request, const CreateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStudioSessionMappingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStudioSessionMapping(request), context);
 }
 
-void EMRClient::CreateStudioSessionMappingAsyncHelper(const CreateStudioSessionMappingRequest& request, const CreateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::CreateStudioSessionMappingAsync(const CreateStudioSessionMappingRequest& request, const CreateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStudioSessionMapping(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientCreateStudioSessionMappingAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSecurityConfigurationOutcome EMRClient::DeleteSecurityConfiguration(const DeleteSecurityConfigurationRequest& request) const
@@ -357,14 +357,14 @@ DeleteSecurityConfigurationOutcomeCallable EMRClient::DeleteSecurityConfiguratio
   return task->get_future();
 }
 
-void EMRClient::DeleteSecurityConfigurationAsync(const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientDeleteSecurityConfigurationAsyncHelper(EMRClient const * const clientThis, const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSecurityConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSecurityConfiguration(request), context);
 }
 
-void EMRClient::DeleteSecurityConfigurationAsyncHelper(const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::DeleteSecurityConfigurationAsync(const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSecurityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientDeleteSecurityConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteStudioOutcome EMRClient::DeleteStudio(const DeleteStudioRequest& request) const
@@ -381,14 +381,14 @@ DeleteStudioOutcomeCallable EMRClient::DeleteStudioCallable(const DeleteStudioRe
   return task->get_future();
 }
 
-void EMRClient::DeleteStudioAsync(const DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientDeleteStudioAsyncHelper(EMRClient const * const clientThis, const DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStudioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteStudio(request), context);
 }
 
-void EMRClient::DeleteStudioAsyncHelper(const DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::DeleteStudioAsync(const DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteStudio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientDeleteStudioAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteStudioSessionMappingOutcome EMRClient::DeleteStudioSessionMapping(const DeleteStudioSessionMappingRequest& request) const
@@ -405,14 +405,14 @@ DeleteStudioSessionMappingOutcomeCallable EMRClient::DeleteStudioSessionMappingC
   return task->get_future();
 }
 
-void EMRClient::DeleteStudioSessionMappingAsync(const DeleteStudioSessionMappingRequest& request, const DeleteStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientDeleteStudioSessionMappingAsyncHelper(EMRClient const * const clientThis, const DeleteStudioSessionMappingRequest& request, const DeleteStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStudioSessionMappingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteStudioSessionMapping(request), context);
 }
 
-void EMRClient::DeleteStudioSessionMappingAsyncHelper(const DeleteStudioSessionMappingRequest& request, const DeleteStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::DeleteStudioSessionMappingAsync(const DeleteStudioSessionMappingRequest& request, const DeleteStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteStudioSessionMapping(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientDeleteStudioSessionMappingAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClusterOutcome EMRClient::DescribeCluster(const DescribeClusterRequest& request) const
@@ -429,14 +429,14 @@ DescribeClusterOutcomeCallable EMRClient::DescribeClusterCallable(const Describe
   return task->get_future();
 }
 
-void EMRClient::DescribeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientDescribeClusterAsyncHelper(EMRClient const * const clientThis, const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCluster(request), context);
 }
 
-void EMRClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::DescribeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientDescribeClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNotebookExecutionOutcome EMRClient::DescribeNotebookExecution(const DescribeNotebookExecutionRequest& request) const
@@ -453,14 +453,14 @@ DescribeNotebookExecutionOutcomeCallable EMRClient::DescribeNotebookExecutionCal
   return task->get_future();
 }
 
-void EMRClient::DescribeNotebookExecutionAsync(const DescribeNotebookExecutionRequest& request, const DescribeNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientDescribeNotebookExecutionAsyncHelper(EMRClient const * const clientThis, const DescribeNotebookExecutionRequest& request, const DescribeNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNotebookExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNotebookExecution(request), context);
 }
 
-void EMRClient::DescribeNotebookExecutionAsyncHelper(const DescribeNotebookExecutionRequest& request, const DescribeNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::DescribeNotebookExecutionAsync(const DescribeNotebookExecutionRequest& request, const DescribeNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNotebookExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientDescribeNotebookExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReleaseLabelOutcome EMRClient::DescribeReleaseLabel(const DescribeReleaseLabelRequest& request) const
@@ -477,14 +477,14 @@ DescribeReleaseLabelOutcomeCallable EMRClient::DescribeReleaseLabelCallable(cons
   return task->get_future();
 }
 
-void EMRClient::DescribeReleaseLabelAsync(const DescribeReleaseLabelRequest& request, const DescribeReleaseLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientDescribeReleaseLabelAsyncHelper(EMRClient const * const clientThis, const DescribeReleaseLabelRequest& request, const DescribeReleaseLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReleaseLabelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReleaseLabel(request), context);
 }
 
-void EMRClient::DescribeReleaseLabelAsyncHelper(const DescribeReleaseLabelRequest& request, const DescribeReleaseLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::DescribeReleaseLabelAsync(const DescribeReleaseLabelRequest& request, const DescribeReleaseLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReleaseLabel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientDescribeReleaseLabelAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSecurityConfigurationOutcome EMRClient::DescribeSecurityConfiguration(const DescribeSecurityConfigurationRequest& request) const
@@ -501,14 +501,14 @@ DescribeSecurityConfigurationOutcomeCallable EMRClient::DescribeSecurityConfigur
   return task->get_future();
 }
 
-void EMRClient::DescribeSecurityConfigurationAsync(const DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientDescribeSecurityConfigurationAsyncHelper(EMRClient const * const clientThis, const DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSecurityConfiguration(request), context);
 }
 
-void EMRClient::DescribeSecurityConfigurationAsyncHelper(const DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::DescribeSecurityConfigurationAsync(const DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSecurityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientDescribeSecurityConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStepOutcome EMRClient::DescribeStep(const DescribeStepRequest& request) const
@@ -525,14 +525,14 @@ DescribeStepOutcomeCallable EMRClient::DescribeStepCallable(const DescribeStepRe
   return task->get_future();
 }
 
-void EMRClient::DescribeStepAsync(const DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientDescribeStepAsyncHelper(EMRClient const * const clientThis, const DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStepAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStep(request), context);
 }
 
-void EMRClient::DescribeStepAsyncHelper(const DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::DescribeStepAsync(const DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStep(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientDescribeStepAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStudioOutcome EMRClient::DescribeStudio(const DescribeStudioRequest& request) const
@@ -549,14 +549,14 @@ DescribeStudioOutcomeCallable EMRClient::DescribeStudioCallable(const DescribeSt
   return task->get_future();
 }
 
-void EMRClient::DescribeStudioAsync(const DescribeStudioRequest& request, const DescribeStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientDescribeStudioAsyncHelper(EMRClient const * const clientThis, const DescribeStudioRequest& request, const DescribeStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStudioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStudio(request), context);
 }
 
-void EMRClient::DescribeStudioAsyncHelper(const DescribeStudioRequest& request, const DescribeStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::DescribeStudioAsync(const DescribeStudioRequest& request, const DescribeStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStudio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientDescribeStudioAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAutoTerminationPolicyOutcome EMRClient::GetAutoTerminationPolicy(const GetAutoTerminationPolicyRequest& request) const
@@ -573,14 +573,14 @@ GetAutoTerminationPolicyOutcomeCallable EMRClient::GetAutoTerminationPolicyCalla
   return task->get_future();
 }
 
-void EMRClient::GetAutoTerminationPolicyAsync(const GetAutoTerminationPolicyRequest& request, const GetAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientGetAutoTerminationPolicyAsyncHelper(EMRClient const * const clientThis, const GetAutoTerminationPolicyRequest& request, const GetAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAutoTerminationPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAutoTerminationPolicy(request), context);
 }
 
-void EMRClient::GetAutoTerminationPolicyAsyncHelper(const GetAutoTerminationPolicyRequest& request, const GetAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::GetAutoTerminationPolicyAsync(const GetAutoTerminationPolicyRequest& request, const GetAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAutoTerminationPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientGetAutoTerminationPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBlockPublicAccessConfigurationOutcome EMRClient::GetBlockPublicAccessConfiguration(const GetBlockPublicAccessConfigurationRequest& request) const
@@ -597,14 +597,14 @@ GetBlockPublicAccessConfigurationOutcomeCallable EMRClient::GetBlockPublicAccess
   return task->get_future();
 }
 
-void EMRClient::GetBlockPublicAccessConfigurationAsync(const GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientGetBlockPublicAccessConfigurationAsyncHelper(EMRClient const * const clientThis, const GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBlockPublicAccessConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBlockPublicAccessConfiguration(request), context);
 }
 
-void EMRClient::GetBlockPublicAccessConfigurationAsyncHelper(const GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::GetBlockPublicAccessConfigurationAsync(const GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBlockPublicAccessConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientGetBlockPublicAccessConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetManagedScalingPolicyOutcome EMRClient::GetManagedScalingPolicy(const GetManagedScalingPolicyRequest& request) const
@@ -621,14 +621,14 @@ GetManagedScalingPolicyOutcomeCallable EMRClient::GetManagedScalingPolicyCallabl
   return task->get_future();
 }
 
-void EMRClient::GetManagedScalingPolicyAsync(const GetManagedScalingPolicyRequest& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientGetManagedScalingPolicyAsyncHelper(EMRClient const * const clientThis, const GetManagedScalingPolicyRequest& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetManagedScalingPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetManagedScalingPolicy(request), context);
 }
 
-void EMRClient::GetManagedScalingPolicyAsyncHelper(const GetManagedScalingPolicyRequest& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::GetManagedScalingPolicyAsync(const GetManagedScalingPolicyRequest& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetManagedScalingPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientGetManagedScalingPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetStudioSessionMappingOutcome EMRClient::GetStudioSessionMapping(const GetStudioSessionMappingRequest& request) const
@@ -645,14 +645,14 @@ GetStudioSessionMappingOutcomeCallable EMRClient::GetStudioSessionMappingCallabl
   return task->get_future();
 }
 
-void EMRClient::GetStudioSessionMappingAsync(const GetStudioSessionMappingRequest& request, const GetStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientGetStudioSessionMappingAsyncHelper(EMRClient const * const clientThis, const GetStudioSessionMappingRequest& request, const GetStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStudioSessionMappingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStudioSessionMapping(request), context);
 }
 
-void EMRClient::GetStudioSessionMappingAsyncHelper(const GetStudioSessionMappingRequest& request, const GetStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::GetStudioSessionMappingAsync(const GetStudioSessionMappingRequest& request, const GetStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStudioSessionMapping(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientGetStudioSessionMappingAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBootstrapActionsOutcome EMRClient::ListBootstrapActions(const ListBootstrapActionsRequest& request) const
@@ -669,14 +669,14 @@ ListBootstrapActionsOutcomeCallable EMRClient::ListBootstrapActionsCallable(cons
   return task->get_future();
 }
 
-void EMRClient::ListBootstrapActionsAsync(const ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListBootstrapActionsAsyncHelper(EMRClient const * const clientThis, const ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBootstrapActionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBootstrapActions(request), context);
 }
 
-void EMRClient::ListBootstrapActionsAsyncHelper(const ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListBootstrapActionsAsync(const ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBootstrapActions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListBootstrapActionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListClustersOutcome EMRClient::ListClusters(const ListClustersRequest& request) const
@@ -693,14 +693,14 @@ ListClustersOutcomeCallable EMRClient::ListClustersCallable(const ListClustersRe
   return task->get_future();
 }
 
-void EMRClient::ListClustersAsync(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListClustersAsyncHelper(EMRClient const * const clientThis, const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClustersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListClusters(request), context);
 }
 
-void EMRClient::ListClustersAsyncHelper(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListClustersAsync(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListClusters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListClustersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInstanceFleetsOutcome EMRClient::ListInstanceFleets(const ListInstanceFleetsRequest& request) const
@@ -717,14 +717,14 @@ ListInstanceFleetsOutcomeCallable EMRClient::ListInstanceFleetsCallable(const Li
   return task->get_future();
 }
 
-void EMRClient::ListInstanceFleetsAsync(const ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListInstanceFleetsAsyncHelper(EMRClient const * const clientThis, const ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstanceFleetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInstanceFleets(request), context);
 }
 
-void EMRClient::ListInstanceFleetsAsyncHelper(const ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListInstanceFleetsAsync(const ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInstanceFleets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListInstanceFleetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInstanceGroupsOutcome EMRClient::ListInstanceGroups(const ListInstanceGroupsRequest& request) const
@@ -741,14 +741,14 @@ ListInstanceGroupsOutcomeCallable EMRClient::ListInstanceGroupsCallable(const Li
   return task->get_future();
 }
 
-void EMRClient::ListInstanceGroupsAsync(const ListInstanceGroupsRequest& request, const ListInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListInstanceGroupsAsyncHelper(EMRClient const * const clientThis, const ListInstanceGroupsRequest& request, const ListInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstanceGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInstanceGroups(request), context);
 }
 
-void EMRClient::ListInstanceGroupsAsyncHelper(const ListInstanceGroupsRequest& request, const ListInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListInstanceGroupsAsync(const ListInstanceGroupsRequest& request, const ListInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInstanceGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListInstanceGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInstancesOutcome EMRClient::ListInstances(const ListInstancesRequest& request) const
@@ -765,14 +765,14 @@ ListInstancesOutcomeCallable EMRClient::ListInstancesCallable(const ListInstance
   return task->get_future();
 }
 
-void EMRClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListInstancesAsyncHelper(EMRClient const * const clientThis, const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInstances(request), context);
 }
 
-void EMRClient::ListInstancesAsyncHelper(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNotebookExecutionsOutcome EMRClient::ListNotebookExecutions(const ListNotebookExecutionsRequest& request) const
@@ -789,14 +789,14 @@ ListNotebookExecutionsOutcomeCallable EMRClient::ListNotebookExecutionsCallable(
   return task->get_future();
 }
 
-void EMRClient::ListNotebookExecutionsAsync(const ListNotebookExecutionsRequest& request, const ListNotebookExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListNotebookExecutionsAsyncHelper(EMRClient const * const clientThis, const ListNotebookExecutionsRequest& request, const ListNotebookExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNotebookExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNotebookExecutions(request), context);
 }
 
-void EMRClient::ListNotebookExecutionsAsyncHelper(const ListNotebookExecutionsRequest& request, const ListNotebookExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListNotebookExecutionsAsync(const ListNotebookExecutionsRequest& request, const ListNotebookExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNotebookExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListNotebookExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReleaseLabelsOutcome EMRClient::ListReleaseLabels(const ListReleaseLabelsRequest& request) const
@@ -813,14 +813,14 @@ ListReleaseLabelsOutcomeCallable EMRClient::ListReleaseLabelsCallable(const List
   return task->get_future();
 }
 
-void EMRClient::ListReleaseLabelsAsync(const ListReleaseLabelsRequest& request, const ListReleaseLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListReleaseLabelsAsyncHelper(EMRClient const * const clientThis, const ListReleaseLabelsRequest& request, const ListReleaseLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReleaseLabelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReleaseLabels(request), context);
 }
 
-void EMRClient::ListReleaseLabelsAsyncHelper(const ListReleaseLabelsRequest& request, const ListReleaseLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListReleaseLabelsAsync(const ListReleaseLabelsRequest& request, const ListReleaseLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReleaseLabels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListReleaseLabelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSecurityConfigurationsOutcome EMRClient::ListSecurityConfigurations(const ListSecurityConfigurationsRequest& request) const
@@ -837,14 +837,14 @@ ListSecurityConfigurationsOutcomeCallable EMRClient::ListSecurityConfigurationsC
   return task->get_future();
 }
 
-void EMRClient::ListSecurityConfigurationsAsync(const ListSecurityConfigurationsRequest& request, const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListSecurityConfigurationsAsyncHelper(EMRClient const * const clientThis, const ListSecurityConfigurationsRequest& request, const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSecurityConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSecurityConfigurations(request), context);
 }
 
-void EMRClient::ListSecurityConfigurationsAsyncHelper(const ListSecurityConfigurationsRequest& request, const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListSecurityConfigurationsAsync(const ListSecurityConfigurationsRequest& request, const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSecurityConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListSecurityConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStepsOutcome EMRClient::ListSteps(const ListStepsRequest& request) const
@@ -861,14 +861,14 @@ ListStepsOutcomeCallable EMRClient::ListStepsCallable(const ListStepsRequest& re
   return task->get_future();
 }
 
-void EMRClient::ListStepsAsync(const ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListStepsAsyncHelper(EMRClient const * const clientThis, const ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStepsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSteps(request), context);
 }
 
-void EMRClient::ListStepsAsyncHelper(const ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListStepsAsync(const ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSteps(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListStepsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStudioSessionMappingsOutcome EMRClient::ListStudioSessionMappings(const ListStudioSessionMappingsRequest& request) const
@@ -885,14 +885,14 @@ ListStudioSessionMappingsOutcomeCallable EMRClient::ListStudioSessionMappingsCal
   return task->get_future();
 }
 
-void EMRClient::ListStudioSessionMappingsAsync(const ListStudioSessionMappingsRequest& request, const ListStudioSessionMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListStudioSessionMappingsAsyncHelper(EMRClient const * const clientThis, const ListStudioSessionMappingsRequest& request, const ListStudioSessionMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStudioSessionMappingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStudioSessionMappings(request), context);
 }
 
-void EMRClient::ListStudioSessionMappingsAsyncHelper(const ListStudioSessionMappingsRequest& request, const ListStudioSessionMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListStudioSessionMappingsAsync(const ListStudioSessionMappingsRequest& request, const ListStudioSessionMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStudioSessionMappings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListStudioSessionMappingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStudiosOutcome EMRClient::ListStudios(const ListStudiosRequest& request) const
@@ -909,14 +909,14 @@ ListStudiosOutcomeCallable EMRClient::ListStudiosCallable(const ListStudiosReque
   return task->get_future();
 }
 
-void EMRClient::ListStudiosAsync(const ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientListStudiosAsyncHelper(EMRClient const * const clientThis, const ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStudiosAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStudios(request), context);
 }
 
-void EMRClient::ListStudiosAsyncHelper(const ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ListStudiosAsync(const ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStudios(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientListStudiosAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyClusterOutcome EMRClient::ModifyCluster(const ModifyClusterRequest& request) const
@@ -933,14 +933,14 @@ ModifyClusterOutcomeCallable EMRClient::ModifyClusterCallable(const ModifyCluste
   return task->get_future();
 }
 
-void EMRClient::ModifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientModifyClusterAsyncHelper(EMRClient const * const clientThis, const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyCluster(request), context);
 }
 
-void EMRClient::ModifyClusterAsyncHelper(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ModifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientModifyClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyInstanceFleetOutcome EMRClient::ModifyInstanceFleet(const ModifyInstanceFleetRequest& request) const
@@ -957,14 +957,14 @@ ModifyInstanceFleetOutcomeCallable EMRClient::ModifyInstanceFleetCallable(const 
   return task->get_future();
 }
 
-void EMRClient::ModifyInstanceFleetAsync(const ModifyInstanceFleetRequest& request, const ModifyInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientModifyInstanceFleetAsyncHelper(EMRClient const * const clientThis, const ModifyInstanceFleetRequest& request, const ModifyInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyInstanceFleet(request), context);
 }
 
-void EMRClient::ModifyInstanceFleetAsyncHelper(const ModifyInstanceFleetRequest& request, const ModifyInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ModifyInstanceFleetAsync(const ModifyInstanceFleetRequest& request, const ModifyInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyInstanceFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientModifyInstanceFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyInstanceGroupsOutcome EMRClient::ModifyInstanceGroups(const ModifyInstanceGroupsRequest& request) const
@@ -981,14 +981,14 @@ ModifyInstanceGroupsOutcomeCallable EMRClient::ModifyInstanceGroupsCallable(cons
   return task->get_future();
 }
 
-void EMRClient::ModifyInstanceGroupsAsync(const ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientModifyInstanceGroupsAsyncHelper(EMRClient const * const clientThis, const ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyInstanceGroups(request), context);
 }
 
-void EMRClient::ModifyInstanceGroupsAsyncHelper(const ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::ModifyInstanceGroupsAsync(const ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyInstanceGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientModifyInstanceGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAutoScalingPolicyOutcome EMRClient::PutAutoScalingPolicy(const PutAutoScalingPolicyRequest& request) const
@@ -1005,14 +1005,14 @@ PutAutoScalingPolicyOutcomeCallable EMRClient::PutAutoScalingPolicyCallable(cons
   return task->get_future();
 }
 
-void EMRClient::PutAutoScalingPolicyAsync(const PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientPutAutoScalingPolicyAsyncHelper(EMRClient const * const clientThis, const PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAutoScalingPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAutoScalingPolicy(request), context);
 }
 
-void EMRClient::PutAutoScalingPolicyAsyncHelper(const PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::PutAutoScalingPolicyAsync(const PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAutoScalingPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientPutAutoScalingPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAutoTerminationPolicyOutcome EMRClient::PutAutoTerminationPolicy(const PutAutoTerminationPolicyRequest& request) const
@@ -1029,14 +1029,14 @@ PutAutoTerminationPolicyOutcomeCallable EMRClient::PutAutoTerminationPolicyCalla
   return task->get_future();
 }
 
-void EMRClient::PutAutoTerminationPolicyAsync(const PutAutoTerminationPolicyRequest& request, const PutAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientPutAutoTerminationPolicyAsyncHelper(EMRClient const * const clientThis, const PutAutoTerminationPolicyRequest& request, const PutAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAutoTerminationPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAutoTerminationPolicy(request), context);
 }
 
-void EMRClient::PutAutoTerminationPolicyAsyncHelper(const PutAutoTerminationPolicyRequest& request, const PutAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::PutAutoTerminationPolicyAsync(const PutAutoTerminationPolicyRequest& request, const PutAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAutoTerminationPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientPutAutoTerminationPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutBlockPublicAccessConfigurationOutcome EMRClient::PutBlockPublicAccessConfiguration(const PutBlockPublicAccessConfigurationRequest& request) const
@@ -1053,14 +1053,14 @@ PutBlockPublicAccessConfigurationOutcomeCallable EMRClient::PutBlockPublicAccess
   return task->get_future();
 }
 
-void EMRClient::PutBlockPublicAccessConfigurationAsync(const PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientPutBlockPublicAccessConfigurationAsyncHelper(EMRClient const * const clientThis, const PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutBlockPublicAccessConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutBlockPublicAccessConfiguration(request), context);
 }
 
-void EMRClient::PutBlockPublicAccessConfigurationAsyncHelper(const PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::PutBlockPublicAccessConfigurationAsync(const PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutBlockPublicAccessConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientPutBlockPublicAccessConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 PutManagedScalingPolicyOutcome EMRClient::PutManagedScalingPolicy(const PutManagedScalingPolicyRequest& request) const
@@ -1077,14 +1077,14 @@ PutManagedScalingPolicyOutcomeCallable EMRClient::PutManagedScalingPolicyCallabl
   return task->get_future();
 }
 
-void EMRClient::PutManagedScalingPolicyAsync(const PutManagedScalingPolicyRequest& request, const PutManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientPutManagedScalingPolicyAsyncHelper(EMRClient const * const clientThis, const PutManagedScalingPolicyRequest& request, const PutManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutManagedScalingPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutManagedScalingPolicy(request), context);
 }
 
-void EMRClient::PutManagedScalingPolicyAsyncHelper(const PutManagedScalingPolicyRequest& request, const PutManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::PutManagedScalingPolicyAsync(const PutManagedScalingPolicyRequest& request, const PutManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutManagedScalingPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientPutManagedScalingPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveAutoScalingPolicyOutcome EMRClient::RemoveAutoScalingPolicy(const RemoveAutoScalingPolicyRequest& request) const
@@ -1101,14 +1101,14 @@ RemoveAutoScalingPolicyOutcomeCallable EMRClient::RemoveAutoScalingPolicyCallabl
   return task->get_future();
 }
 
-void EMRClient::RemoveAutoScalingPolicyAsync(const RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientRemoveAutoScalingPolicyAsyncHelper(EMRClient const * const clientThis, const RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveAutoScalingPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveAutoScalingPolicy(request), context);
 }
 
-void EMRClient::RemoveAutoScalingPolicyAsyncHelper(const RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::RemoveAutoScalingPolicyAsync(const RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveAutoScalingPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientRemoveAutoScalingPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveAutoTerminationPolicyOutcome EMRClient::RemoveAutoTerminationPolicy(const RemoveAutoTerminationPolicyRequest& request) const
@@ -1125,14 +1125,14 @@ RemoveAutoTerminationPolicyOutcomeCallable EMRClient::RemoveAutoTerminationPolic
   return task->get_future();
 }
 
-void EMRClient::RemoveAutoTerminationPolicyAsync(const RemoveAutoTerminationPolicyRequest& request, const RemoveAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientRemoveAutoTerminationPolicyAsyncHelper(EMRClient const * const clientThis, const RemoveAutoTerminationPolicyRequest& request, const RemoveAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveAutoTerminationPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveAutoTerminationPolicy(request), context);
 }
 
-void EMRClient::RemoveAutoTerminationPolicyAsyncHelper(const RemoveAutoTerminationPolicyRequest& request, const RemoveAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::RemoveAutoTerminationPolicyAsync(const RemoveAutoTerminationPolicyRequest& request, const RemoveAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveAutoTerminationPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientRemoveAutoTerminationPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveManagedScalingPolicyOutcome EMRClient::RemoveManagedScalingPolicy(const RemoveManagedScalingPolicyRequest& request) const
@@ -1149,14 +1149,14 @@ RemoveManagedScalingPolicyOutcomeCallable EMRClient::RemoveManagedScalingPolicyC
   return task->get_future();
 }
 
-void EMRClient::RemoveManagedScalingPolicyAsync(const RemoveManagedScalingPolicyRequest& request, const RemoveManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientRemoveManagedScalingPolicyAsyncHelper(EMRClient const * const clientThis, const RemoveManagedScalingPolicyRequest& request, const RemoveManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveManagedScalingPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveManagedScalingPolicy(request), context);
 }
 
-void EMRClient::RemoveManagedScalingPolicyAsyncHelper(const RemoveManagedScalingPolicyRequest& request, const RemoveManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::RemoveManagedScalingPolicyAsync(const RemoveManagedScalingPolicyRequest& request, const RemoveManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveManagedScalingPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientRemoveManagedScalingPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveTagsOutcome EMRClient::RemoveTags(const RemoveTagsRequest& request) const
@@ -1173,14 +1173,14 @@ RemoveTagsOutcomeCallable EMRClient::RemoveTagsCallable(const RemoveTagsRequest&
   return task->get_future();
 }
 
-void EMRClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientRemoveTagsAsyncHelper(EMRClient const * const clientThis, const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveTags(request), context);
 }
 
-void EMRClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientRemoveTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 RunJobFlowOutcome EMRClient::RunJobFlow(const RunJobFlowRequest& request) const
@@ -1197,14 +1197,14 @@ RunJobFlowOutcomeCallable EMRClient::RunJobFlowCallable(const RunJobFlowRequest&
   return task->get_future();
 }
 
-void EMRClient::RunJobFlowAsync(const RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientRunJobFlowAsyncHelper(EMRClient const * const clientThis, const RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RunJobFlowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RunJobFlow(request), context);
 }
 
-void EMRClient::RunJobFlowAsyncHelper(const RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::RunJobFlowAsync(const RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RunJobFlow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientRunJobFlowAsyncHelper( this, request, handler, context ); } );
 }
 
 SetTerminationProtectionOutcome EMRClient::SetTerminationProtection(const SetTerminationProtectionRequest& request) const
@@ -1221,14 +1221,14 @@ SetTerminationProtectionOutcomeCallable EMRClient::SetTerminationProtectionCalla
   return task->get_future();
 }
 
-void EMRClient::SetTerminationProtectionAsync(const SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientSetTerminationProtectionAsyncHelper(EMRClient const * const clientThis, const SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetTerminationProtectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetTerminationProtection(request), context);
 }
 
-void EMRClient::SetTerminationProtectionAsyncHelper(const SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::SetTerminationProtectionAsync(const SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetTerminationProtection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientSetTerminationProtectionAsyncHelper( this, request, handler, context ); } );
 }
 
 SetVisibleToAllUsersOutcome EMRClient::SetVisibleToAllUsers(const SetVisibleToAllUsersRequest& request) const
@@ -1245,14 +1245,14 @@ SetVisibleToAllUsersOutcomeCallable EMRClient::SetVisibleToAllUsersCallable(cons
   return task->get_future();
 }
 
-void EMRClient::SetVisibleToAllUsersAsync(const SetVisibleToAllUsersRequest& request, const SetVisibleToAllUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientSetVisibleToAllUsersAsyncHelper(EMRClient const * const clientThis, const SetVisibleToAllUsersRequest& request, const SetVisibleToAllUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetVisibleToAllUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetVisibleToAllUsers(request), context);
 }
 
-void EMRClient::SetVisibleToAllUsersAsyncHelper(const SetVisibleToAllUsersRequest& request, const SetVisibleToAllUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::SetVisibleToAllUsersAsync(const SetVisibleToAllUsersRequest& request, const SetVisibleToAllUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetVisibleToAllUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientSetVisibleToAllUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 StartNotebookExecutionOutcome EMRClient::StartNotebookExecution(const StartNotebookExecutionRequest& request) const
@@ -1269,14 +1269,14 @@ StartNotebookExecutionOutcomeCallable EMRClient::StartNotebookExecutionCallable(
   return task->get_future();
 }
 
-void EMRClient::StartNotebookExecutionAsync(const StartNotebookExecutionRequest& request, const StartNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientStartNotebookExecutionAsyncHelper(EMRClient const * const clientThis, const StartNotebookExecutionRequest& request, const StartNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartNotebookExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartNotebookExecution(request), context);
 }
 
-void EMRClient::StartNotebookExecutionAsyncHelper(const StartNotebookExecutionRequest& request, const StartNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::StartNotebookExecutionAsync(const StartNotebookExecutionRequest& request, const StartNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartNotebookExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientStartNotebookExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 StopNotebookExecutionOutcome EMRClient::StopNotebookExecution(const StopNotebookExecutionRequest& request) const
@@ -1293,14 +1293,14 @@ StopNotebookExecutionOutcomeCallable EMRClient::StopNotebookExecutionCallable(co
   return task->get_future();
 }
 
-void EMRClient::StopNotebookExecutionAsync(const StopNotebookExecutionRequest& request, const StopNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientStopNotebookExecutionAsyncHelper(EMRClient const * const clientThis, const StopNotebookExecutionRequest& request, const StopNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopNotebookExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopNotebookExecution(request), context);
 }
 
-void EMRClient::StopNotebookExecutionAsyncHelper(const StopNotebookExecutionRequest& request, const StopNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::StopNotebookExecutionAsync(const StopNotebookExecutionRequest& request, const StopNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopNotebookExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientStopNotebookExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 TerminateJobFlowsOutcome EMRClient::TerminateJobFlows(const TerminateJobFlowsRequest& request) const
@@ -1317,14 +1317,14 @@ TerminateJobFlowsOutcomeCallable EMRClient::TerminateJobFlowsCallable(const Term
   return task->get_future();
 }
 
-void EMRClient::TerminateJobFlowsAsync(const TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientTerminateJobFlowsAsyncHelper(EMRClient const * const clientThis, const TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TerminateJobFlowsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TerminateJobFlows(request), context);
 }
 
-void EMRClient::TerminateJobFlowsAsyncHelper(const TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::TerminateJobFlowsAsync(const TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TerminateJobFlows(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientTerminateJobFlowsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateStudioOutcome EMRClient::UpdateStudio(const UpdateStudioRequest& request) const
@@ -1341,14 +1341,14 @@ UpdateStudioOutcomeCallable EMRClient::UpdateStudioCallable(const UpdateStudioRe
   return task->get_future();
 }
 
-void EMRClient::UpdateStudioAsync(const UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientUpdateStudioAsyncHelper(EMRClient const * const clientThis, const UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStudioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateStudio(request), context);
 }
 
-void EMRClient::UpdateStudioAsyncHelper(const UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::UpdateStudioAsync(const UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateStudio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientUpdateStudioAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateStudioSessionMappingOutcome EMRClient::UpdateStudioSessionMapping(const UpdateStudioSessionMappingRequest& request) const
@@ -1365,13 +1365,13 @@ UpdateStudioSessionMappingOutcomeCallable EMRClient::UpdateStudioSessionMappingC
   return task->get_future();
 }
 
-void EMRClient::UpdateStudioSessionMappingAsync(const UpdateStudioSessionMappingRequest& request, const UpdateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClientUpdateStudioSessionMappingAsyncHelper(EMRClient const * const clientThis, const UpdateStudioSessionMappingRequest& request, const UpdateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStudioSessionMappingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateStudioSessionMapping(request), context);
 }
 
-void EMRClient::UpdateStudioSessionMappingAsyncHelper(const UpdateStudioSessionMappingRequest& request, const UpdateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRClient::UpdateStudioSessionMappingAsync(const UpdateStudioSessionMappingRequest& request, const UpdateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateStudioSessionMapping(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRClientUpdateStudioSessionMappingAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -143,14 +143,14 @@ CancelJobRunOutcomeCallable EMRContainersClient::CancelJobRunCallable(const Canc
   return task->get_future();
 }
 
-void EMRContainersClient::CancelJobRunAsync(const CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientCancelJobRunAsyncHelper(EMRContainersClient const * const clientThis, const CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJobRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelJobRun(request), context);
 }
 
-void EMRContainersClient::CancelJobRunAsyncHelper(const CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::CancelJobRunAsync(const CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientCancelJobRunAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateManagedEndpointOutcome EMRContainersClient::CreateManagedEndpoint(const CreateManagedEndpointRequest& request) const
@@ -175,14 +175,14 @@ CreateManagedEndpointOutcomeCallable EMRContainersClient::CreateManagedEndpointC
   return task->get_future();
 }
 
-void EMRContainersClient::CreateManagedEndpointAsync(const CreateManagedEndpointRequest& request, const CreateManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientCreateManagedEndpointAsyncHelper(EMRContainersClient const * const clientThis, const CreateManagedEndpointRequest& request, const CreateManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateManagedEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateManagedEndpoint(request), context);
 }
 
-void EMRContainersClient::CreateManagedEndpointAsyncHelper(const CreateManagedEndpointRequest& request, const CreateManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::CreateManagedEndpointAsync(const CreateManagedEndpointRequest& request, const CreateManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateManagedEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientCreateManagedEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVirtualClusterOutcome EMRContainersClient::CreateVirtualCluster(const CreateVirtualClusterRequest& request) const
@@ -200,14 +200,14 @@ CreateVirtualClusterOutcomeCallable EMRContainersClient::CreateVirtualClusterCal
   return task->get_future();
 }
 
-void EMRContainersClient::CreateVirtualClusterAsync(const CreateVirtualClusterRequest& request, const CreateVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientCreateVirtualClusterAsyncHelper(EMRContainersClient const * const clientThis, const CreateVirtualClusterRequest& request, const CreateVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVirtualClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVirtualCluster(request), context);
 }
 
-void EMRContainersClient::CreateVirtualClusterAsyncHelper(const CreateVirtualClusterRequest& request, const CreateVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::CreateVirtualClusterAsync(const CreateVirtualClusterRequest& request, const CreateVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVirtualCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientCreateVirtualClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteManagedEndpointOutcome EMRContainersClient::DeleteManagedEndpoint(const DeleteManagedEndpointRequest& request) const
@@ -238,14 +238,14 @@ DeleteManagedEndpointOutcomeCallable EMRContainersClient::DeleteManagedEndpointC
   return task->get_future();
 }
 
-void EMRContainersClient::DeleteManagedEndpointAsync(const DeleteManagedEndpointRequest& request, const DeleteManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientDeleteManagedEndpointAsyncHelper(EMRContainersClient const * const clientThis, const DeleteManagedEndpointRequest& request, const DeleteManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteManagedEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteManagedEndpoint(request), context);
 }
 
-void EMRContainersClient::DeleteManagedEndpointAsyncHelper(const DeleteManagedEndpointRequest& request, const DeleteManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::DeleteManagedEndpointAsync(const DeleteManagedEndpointRequest& request, const DeleteManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteManagedEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientDeleteManagedEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVirtualClusterOutcome EMRContainersClient::DeleteVirtualCluster(const DeleteVirtualClusterRequest& request) const
@@ -269,14 +269,14 @@ DeleteVirtualClusterOutcomeCallable EMRContainersClient::DeleteVirtualClusterCal
   return task->get_future();
 }
 
-void EMRContainersClient::DeleteVirtualClusterAsync(const DeleteVirtualClusterRequest& request, const DeleteVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientDeleteVirtualClusterAsyncHelper(EMRContainersClient const * const clientThis, const DeleteVirtualClusterRequest& request, const DeleteVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVirtualClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVirtualCluster(request), context);
 }
 
-void EMRContainersClient::DeleteVirtualClusterAsyncHelper(const DeleteVirtualClusterRequest& request, const DeleteVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::DeleteVirtualClusterAsync(const DeleteVirtualClusterRequest& request, const DeleteVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVirtualCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientDeleteVirtualClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJobRunOutcome EMRContainersClient::DescribeJobRun(const DescribeJobRunRequest& request) const
@@ -307,14 +307,14 @@ DescribeJobRunOutcomeCallable EMRContainersClient::DescribeJobRunCallable(const 
   return task->get_future();
 }
 
-void EMRContainersClient::DescribeJobRunAsync(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientDescribeJobRunAsyncHelper(EMRContainersClient const * const clientThis, const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJobRun(request), context);
 }
 
-void EMRContainersClient::DescribeJobRunAsyncHelper(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::DescribeJobRunAsync(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientDescribeJobRunAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeManagedEndpointOutcome EMRContainersClient::DescribeManagedEndpoint(const DescribeManagedEndpointRequest& request) const
@@ -345,14 +345,14 @@ DescribeManagedEndpointOutcomeCallable EMRContainersClient::DescribeManagedEndpo
   return task->get_future();
 }
 
-void EMRContainersClient::DescribeManagedEndpointAsync(const DescribeManagedEndpointRequest& request, const DescribeManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientDescribeManagedEndpointAsyncHelper(EMRContainersClient const * const clientThis, const DescribeManagedEndpointRequest& request, const DescribeManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeManagedEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeManagedEndpoint(request), context);
 }
 
-void EMRContainersClient::DescribeManagedEndpointAsyncHelper(const DescribeManagedEndpointRequest& request, const DescribeManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::DescribeManagedEndpointAsync(const DescribeManagedEndpointRequest& request, const DescribeManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeManagedEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientDescribeManagedEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVirtualClusterOutcome EMRContainersClient::DescribeVirtualCluster(const DescribeVirtualClusterRequest& request) const
@@ -376,14 +376,14 @@ DescribeVirtualClusterOutcomeCallable EMRContainersClient::DescribeVirtualCluste
   return task->get_future();
 }
 
-void EMRContainersClient::DescribeVirtualClusterAsync(const DescribeVirtualClusterRequest& request, const DescribeVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientDescribeVirtualClusterAsyncHelper(EMRContainersClient const * const clientThis, const DescribeVirtualClusterRequest& request, const DescribeVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVirtualClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVirtualCluster(request), context);
 }
 
-void EMRContainersClient::DescribeVirtualClusterAsyncHelper(const DescribeVirtualClusterRequest& request, const DescribeVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::DescribeVirtualClusterAsync(const DescribeVirtualClusterRequest& request, const DescribeVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVirtualCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientDescribeVirtualClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobRunsOutcome EMRContainersClient::ListJobRuns(const ListJobRunsRequest& request) const
@@ -408,14 +408,14 @@ ListJobRunsOutcomeCallable EMRContainersClient::ListJobRunsCallable(const ListJo
   return task->get_future();
 }
 
-void EMRContainersClient::ListJobRunsAsync(const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientListJobRunsAsyncHelper(EMRContainersClient const * const clientThis, const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobRunsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobRuns(request), context);
 }
 
-void EMRContainersClient::ListJobRunsAsyncHelper(const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::ListJobRunsAsync(const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobRuns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientListJobRunsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListManagedEndpointsOutcome EMRContainersClient::ListManagedEndpoints(const ListManagedEndpointsRequest& request) const
@@ -440,14 +440,14 @@ ListManagedEndpointsOutcomeCallable EMRContainersClient::ListManagedEndpointsCal
   return task->get_future();
 }
 
-void EMRContainersClient::ListManagedEndpointsAsync(const ListManagedEndpointsRequest& request, const ListManagedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientListManagedEndpointsAsyncHelper(EMRContainersClient const * const clientThis, const ListManagedEndpointsRequest& request, const ListManagedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListManagedEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListManagedEndpoints(request), context);
 }
 
-void EMRContainersClient::ListManagedEndpointsAsyncHelper(const ListManagedEndpointsRequest& request, const ListManagedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::ListManagedEndpointsAsync(const ListManagedEndpointsRequest& request, const ListManagedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListManagedEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientListManagedEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome EMRContainersClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -471,14 +471,14 @@ ListTagsForResourceOutcomeCallable EMRContainersClient::ListTagsForResourceCalla
   return task->get_future();
 }
 
-void EMRContainersClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientListTagsForResourceAsyncHelper(EMRContainersClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void EMRContainersClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVirtualClustersOutcome EMRContainersClient::ListVirtualClusters(const ListVirtualClustersRequest& request) const
@@ -496,14 +496,14 @@ ListVirtualClustersOutcomeCallable EMRContainersClient::ListVirtualClustersCalla
   return task->get_future();
 }
 
-void EMRContainersClient::ListVirtualClustersAsync(const ListVirtualClustersRequest& request, const ListVirtualClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientListVirtualClustersAsyncHelper(EMRContainersClient const * const clientThis, const ListVirtualClustersRequest& request, const ListVirtualClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualClustersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVirtualClusters(request), context);
 }
 
-void EMRContainersClient::ListVirtualClustersAsyncHelper(const ListVirtualClustersRequest& request, const ListVirtualClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::ListVirtualClustersAsync(const ListVirtualClustersRequest& request, const ListVirtualClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVirtualClusters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientListVirtualClustersAsyncHelper( this, request, handler, context ); } );
 }
 
 StartJobRunOutcome EMRContainersClient::StartJobRun(const StartJobRunRequest& request) const
@@ -528,14 +528,14 @@ StartJobRunOutcomeCallable EMRContainersClient::StartJobRunCallable(const StartJ
   return task->get_future();
 }
 
-void EMRContainersClient::StartJobRunAsync(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientStartJobRunAsyncHelper(EMRContainersClient const * const clientThis, const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartJobRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartJobRun(request), context);
 }
 
-void EMRContainersClient::StartJobRunAsyncHelper(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::StartJobRunAsync(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientStartJobRunAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome EMRContainersClient::TagResource(const TagResourceRequest& request) const
@@ -559,14 +559,14 @@ TagResourceOutcomeCallable EMRContainersClient::TagResourceCallable(const TagRes
   return task->get_future();
 }
 
-void EMRContainersClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientTagResourceAsyncHelper(EMRContainersClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void EMRContainersClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome EMRContainersClient::UntagResource(const UntagResourceRequest& request) const
@@ -595,13 +595,13 @@ UntagResourceOutcomeCallable EMRContainersClient::UntagResourceCallable(const Un
   return task->get_future();
 }
 
-void EMRContainersClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClientUntagResourceAsyncHelper(EMRContainersClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void EMRContainersClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EMRContainersClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EMRContainersClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 

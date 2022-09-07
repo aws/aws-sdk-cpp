@@ -159,14 +159,14 @@ AddListenerCertificatesOutcomeCallable ElasticLoadBalancingv2Client::AddListener
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::AddListenerCertificatesAsync(const AddListenerCertificatesRequest& request, const AddListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientAddListenerCertificatesAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const AddListenerCertificatesRequest& request, const AddListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddListenerCertificatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddListenerCertificates(request), context);
 }
 
-void ElasticLoadBalancingv2Client::AddListenerCertificatesAsyncHelper(const AddListenerCertificatesRequest& request, const AddListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::AddListenerCertificatesAsync(const AddListenerCertificatesRequest& request, const AddListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddListenerCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientAddListenerCertificatesAsyncHelper( this, request, handler, context ); } );
 }
 
 AddTagsOutcome ElasticLoadBalancingv2Client::AddTags(const AddTagsRequest& request) const
@@ -183,14 +183,14 @@ AddTagsOutcomeCallable ElasticLoadBalancingv2Client::AddTagsCallable(const AddTa
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientAddTagsAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddTags(request), context);
 }
 
-void ElasticLoadBalancingv2Client::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientAddTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateListenerOutcome ElasticLoadBalancingv2Client::CreateListener(const CreateListenerRequest& request) const
@@ -207,14 +207,14 @@ CreateListenerOutcomeCallable ElasticLoadBalancingv2Client::CreateListenerCallab
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::CreateListenerAsync(const CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientCreateListenerAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateListener(request), context);
 }
 
-void ElasticLoadBalancingv2Client::CreateListenerAsyncHelper(const CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::CreateListenerAsync(const CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientCreateListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLoadBalancerOutcome ElasticLoadBalancingv2Client::CreateLoadBalancer(const CreateLoadBalancerRequest& request) const
@@ -231,14 +231,14 @@ CreateLoadBalancerOutcomeCallable ElasticLoadBalancingv2Client::CreateLoadBalanc
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientCreateLoadBalancerAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLoadBalancerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLoadBalancer(request), context);
 }
 
-void ElasticLoadBalancingv2Client::CreateLoadBalancerAsyncHelper(const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLoadBalancer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientCreateLoadBalancerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRuleOutcome ElasticLoadBalancingv2Client::CreateRule(const CreateRuleRequest& request) const
@@ -255,14 +255,14 @@ CreateRuleOutcomeCallable ElasticLoadBalancingv2Client::CreateRuleCallable(const
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::CreateRuleAsync(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientCreateRuleAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRule(request), context);
 }
 
-void ElasticLoadBalancingv2Client::CreateRuleAsyncHelper(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::CreateRuleAsync(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientCreateRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTargetGroupOutcome ElasticLoadBalancingv2Client::CreateTargetGroup(const CreateTargetGroupRequest& request) const
@@ -279,14 +279,14 @@ CreateTargetGroupOutcomeCallable ElasticLoadBalancingv2Client::CreateTargetGroup
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::CreateTargetGroupAsync(const CreateTargetGroupRequest& request, const CreateTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientCreateTargetGroupAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const CreateTargetGroupRequest& request, const CreateTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTargetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTargetGroup(request), context);
 }
 
-void ElasticLoadBalancingv2Client::CreateTargetGroupAsyncHelper(const CreateTargetGroupRequest& request, const CreateTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::CreateTargetGroupAsync(const CreateTargetGroupRequest& request, const CreateTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTargetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientCreateTargetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteListenerOutcome ElasticLoadBalancingv2Client::DeleteListener(const DeleteListenerRequest& request) const
@@ -303,14 +303,14 @@ DeleteListenerOutcomeCallable ElasticLoadBalancingv2Client::DeleteListenerCallab
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DeleteListenerAsync(const DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDeleteListenerAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteListener(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DeleteListenerAsyncHelper(const DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DeleteListenerAsync(const DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDeleteListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLoadBalancerOutcome ElasticLoadBalancingv2Client::DeleteLoadBalancer(const DeleteLoadBalancerRequest& request) const
@@ -327,14 +327,14 @@ DeleteLoadBalancerOutcomeCallable ElasticLoadBalancingv2Client::DeleteLoadBalanc
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDeleteLoadBalancerAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLoadBalancerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLoadBalancer(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DeleteLoadBalancerAsyncHelper(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLoadBalancer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDeleteLoadBalancerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRuleOutcome ElasticLoadBalancingv2Client::DeleteRule(const DeleteRuleRequest& request) const
@@ -351,14 +351,14 @@ DeleteRuleOutcomeCallable ElasticLoadBalancingv2Client::DeleteRuleCallable(const
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDeleteRuleAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRule(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DeleteRuleAsyncHelper(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDeleteRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTargetGroupOutcome ElasticLoadBalancingv2Client::DeleteTargetGroup(const DeleteTargetGroupRequest& request) const
@@ -375,14 +375,14 @@ DeleteTargetGroupOutcomeCallable ElasticLoadBalancingv2Client::DeleteTargetGroup
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DeleteTargetGroupAsync(const DeleteTargetGroupRequest& request, const DeleteTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDeleteTargetGroupAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DeleteTargetGroupRequest& request, const DeleteTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTargetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTargetGroup(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DeleteTargetGroupAsyncHelper(const DeleteTargetGroupRequest& request, const DeleteTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DeleteTargetGroupAsync(const DeleteTargetGroupRequest& request, const DeleteTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTargetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDeleteTargetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterTargetsOutcome ElasticLoadBalancingv2Client::DeregisterTargets(const DeregisterTargetsRequest& request) const
@@ -399,14 +399,14 @@ DeregisterTargetsOutcomeCallable ElasticLoadBalancingv2Client::DeregisterTargets
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DeregisterTargetsAsync(const DeregisterTargetsRequest& request, const DeregisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDeregisterTargetsAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DeregisterTargetsRequest& request, const DeregisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterTargetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterTargets(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DeregisterTargetsAsyncHelper(const DeregisterTargetsRequest& request, const DeregisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DeregisterTargetsAsync(const DeregisterTargetsRequest& request, const DeregisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterTargets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDeregisterTargetsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountLimitsOutcome ElasticLoadBalancingv2Client::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
@@ -423,14 +423,14 @@ DescribeAccountLimitsOutcomeCallable ElasticLoadBalancingv2Client::DescribeAccou
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeAccountLimitsAsync(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeAccountLimitsAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountLimitsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccountLimits(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeAccountLimitsAsyncHelper(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeAccountLimitsAsync(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccountLimits(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeAccountLimitsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeListenerCertificatesOutcome ElasticLoadBalancingv2Client::DescribeListenerCertificates(const DescribeListenerCertificatesRequest& request) const
@@ -447,14 +447,14 @@ DescribeListenerCertificatesOutcomeCallable ElasticLoadBalancingv2Client::Descri
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeListenerCertificatesAsync(const DescribeListenerCertificatesRequest& request, const DescribeListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeListenerCertificatesAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeListenerCertificatesRequest& request, const DescribeListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeListenerCertificatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeListenerCertificates(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeListenerCertificatesAsyncHelper(const DescribeListenerCertificatesRequest& request, const DescribeListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeListenerCertificatesAsync(const DescribeListenerCertificatesRequest& request, const DescribeListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeListenerCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeListenerCertificatesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeListenersOutcome ElasticLoadBalancingv2Client::DescribeListeners(const DescribeListenersRequest& request) const
@@ -471,14 +471,14 @@ DescribeListenersOutcomeCallable ElasticLoadBalancingv2Client::DescribeListeners
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeListenersAsync(const DescribeListenersRequest& request, const DescribeListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeListenersAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeListenersRequest& request, const DescribeListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeListenersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeListeners(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeListenersAsyncHelper(const DescribeListenersRequest& request, const DescribeListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeListenersAsync(const DescribeListenersRequest& request, const DescribeListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeListeners(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeListenersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLoadBalancerAttributesOutcome ElasticLoadBalancingv2Client::DescribeLoadBalancerAttributes(const DescribeLoadBalancerAttributesRequest& request) const
@@ -495,14 +495,14 @@ DescribeLoadBalancerAttributesOutcomeCallable ElasticLoadBalancingv2Client::Desc
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeLoadBalancerAttributesAsync(const DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeLoadBalancerAttributesAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoadBalancerAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLoadBalancerAttributes(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeLoadBalancerAttributesAsyncHelper(const DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeLoadBalancerAttributesAsync(const DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLoadBalancerAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeLoadBalancerAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLoadBalancersOutcome ElasticLoadBalancingv2Client::DescribeLoadBalancers(const DescribeLoadBalancersRequest& request) const
@@ -519,14 +519,14 @@ DescribeLoadBalancersOutcomeCallable ElasticLoadBalancingv2Client::DescribeLoadB
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeLoadBalancersAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoadBalancersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLoadBalancers(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeLoadBalancersAsyncHelper(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLoadBalancers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeLoadBalancersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRulesOutcome ElasticLoadBalancingv2Client::DescribeRules(const DescribeRulesRequest& request) const
@@ -543,14 +543,14 @@ DescribeRulesOutcomeCallable ElasticLoadBalancingv2Client::DescribeRulesCallable
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeRulesAsync(const DescribeRulesRequest& request, const DescribeRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeRulesAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeRulesRequest& request, const DescribeRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRules(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeRulesAsyncHelper(const DescribeRulesRequest& request, const DescribeRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeRulesAsync(const DescribeRulesRequest& request, const DescribeRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSSLPoliciesOutcome ElasticLoadBalancingv2Client::DescribeSSLPolicies(const DescribeSSLPoliciesRequest& request) const
@@ -567,14 +567,14 @@ DescribeSSLPoliciesOutcomeCallable ElasticLoadBalancingv2Client::DescribeSSLPoli
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeSSLPoliciesAsync(const DescribeSSLPoliciesRequest& request, const DescribeSSLPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeSSLPoliciesAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeSSLPoliciesRequest& request, const DescribeSSLPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSSLPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSSLPolicies(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeSSLPoliciesAsyncHelper(const DescribeSSLPoliciesRequest& request, const DescribeSSLPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeSSLPoliciesAsync(const DescribeSSLPoliciesRequest& request, const DescribeSSLPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSSLPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeSSLPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTagsOutcome ElasticLoadBalancingv2Client::DescribeTags(const DescribeTagsRequest& request) const
@@ -591,14 +591,14 @@ DescribeTagsOutcomeCallable ElasticLoadBalancingv2Client::DescribeTagsCallable(c
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeTagsAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTags(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTargetGroupAttributesOutcome ElasticLoadBalancingv2Client::DescribeTargetGroupAttributes(const DescribeTargetGroupAttributesRequest& request) const
@@ -615,14 +615,14 @@ DescribeTargetGroupAttributesOutcomeCallable ElasticLoadBalancingv2Client::Descr
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeTargetGroupAttributesAsync(const DescribeTargetGroupAttributesRequest& request, const DescribeTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeTargetGroupAttributesAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeTargetGroupAttributesRequest& request, const DescribeTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTargetGroupAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTargetGroupAttributes(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeTargetGroupAttributesAsyncHelper(const DescribeTargetGroupAttributesRequest& request, const DescribeTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeTargetGroupAttributesAsync(const DescribeTargetGroupAttributesRequest& request, const DescribeTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTargetGroupAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeTargetGroupAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTargetGroupsOutcome ElasticLoadBalancingv2Client::DescribeTargetGroups(const DescribeTargetGroupsRequest& request) const
@@ -639,14 +639,14 @@ DescribeTargetGroupsOutcomeCallable ElasticLoadBalancingv2Client::DescribeTarget
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeTargetGroupsAsync(const DescribeTargetGroupsRequest& request, const DescribeTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeTargetGroupsAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeTargetGroupsRequest& request, const DescribeTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTargetGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTargetGroups(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeTargetGroupsAsyncHelper(const DescribeTargetGroupsRequest& request, const DescribeTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeTargetGroupsAsync(const DescribeTargetGroupsRequest& request, const DescribeTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTargetGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeTargetGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTargetHealthOutcome ElasticLoadBalancingv2Client::DescribeTargetHealth(const DescribeTargetHealthRequest& request) const
@@ -663,14 +663,14 @@ DescribeTargetHealthOutcomeCallable ElasticLoadBalancingv2Client::DescribeTarget
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::DescribeTargetHealthAsync(const DescribeTargetHealthRequest& request, const DescribeTargetHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientDescribeTargetHealthAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const DescribeTargetHealthRequest& request, const DescribeTargetHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTargetHealthAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTargetHealth(request), context);
 }
 
-void ElasticLoadBalancingv2Client::DescribeTargetHealthAsyncHelper(const DescribeTargetHealthRequest& request, const DescribeTargetHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::DescribeTargetHealthAsync(const DescribeTargetHealthRequest& request, const DescribeTargetHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTargetHealth(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientDescribeTargetHealthAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyListenerOutcome ElasticLoadBalancingv2Client::ModifyListener(const ModifyListenerRequest& request) const
@@ -687,14 +687,14 @@ ModifyListenerOutcomeCallable ElasticLoadBalancingv2Client::ModifyListenerCallab
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::ModifyListenerAsync(const ModifyListenerRequest& request, const ModifyListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientModifyListenerAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const ModifyListenerRequest& request, const ModifyListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyListener(request), context);
 }
 
-void ElasticLoadBalancingv2Client::ModifyListenerAsyncHelper(const ModifyListenerRequest& request, const ModifyListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::ModifyListenerAsync(const ModifyListenerRequest& request, const ModifyListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientModifyListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyLoadBalancerAttributesOutcome ElasticLoadBalancingv2Client::ModifyLoadBalancerAttributes(const ModifyLoadBalancerAttributesRequest& request) const
@@ -711,14 +711,14 @@ ModifyLoadBalancerAttributesOutcomeCallable ElasticLoadBalancingv2Client::Modify
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::ModifyLoadBalancerAttributesAsync(const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientModifyLoadBalancerAttributesAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyLoadBalancerAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyLoadBalancerAttributes(request), context);
 }
 
-void ElasticLoadBalancingv2Client::ModifyLoadBalancerAttributesAsyncHelper(const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::ModifyLoadBalancerAttributesAsync(const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyLoadBalancerAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientModifyLoadBalancerAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyRuleOutcome ElasticLoadBalancingv2Client::ModifyRule(const ModifyRuleRequest& request) const
@@ -735,14 +735,14 @@ ModifyRuleOutcomeCallable ElasticLoadBalancingv2Client::ModifyRuleCallable(const
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::ModifyRuleAsync(const ModifyRuleRequest& request, const ModifyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientModifyRuleAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const ModifyRuleRequest& request, const ModifyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyRule(request), context);
 }
 
-void ElasticLoadBalancingv2Client::ModifyRuleAsyncHelper(const ModifyRuleRequest& request, const ModifyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::ModifyRuleAsync(const ModifyRuleRequest& request, const ModifyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientModifyRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyTargetGroupOutcome ElasticLoadBalancingv2Client::ModifyTargetGroup(const ModifyTargetGroupRequest& request) const
@@ -759,14 +759,14 @@ ModifyTargetGroupOutcomeCallable ElasticLoadBalancingv2Client::ModifyTargetGroup
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::ModifyTargetGroupAsync(const ModifyTargetGroupRequest& request, const ModifyTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientModifyTargetGroupAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const ModifyTargetGroupRequest& request, const ModifyTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyTargetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyTargetGroup(request), context);
 }
 
-void ElasticLoadBalancingv2Client::ModifyTargetGroupAsyncHelper(const ModifyTargetGroupRequest& request, const ModifyTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::ModifyTargetGroupAsync(const ModifyTargetGroupRequest& request, const ModifyTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyTargetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientModifyTargetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyTargetGroupAttributesOutcome ElasticLoadBalancingv2Client::ModifyTargetGroupAttributes(const ModifyTargetGroupAttributesRequest& request) const
@@ -783,14 +783,14 @@ ModifyTargetGroupAttributesOutcomeCallable ElasticLoadBalancingv2Client::ModifyT
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::ModifyTargetGroupAttributesAsync(const ModifyTargetGroupAttributesRequest& request, const ModifyTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientModifyTargetGroupAttributesAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const ModifyTargetGroupAttributesRequest& request, const ModifyTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyTargetGroupAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyTargetGroupAttributes(request), context);
 }
 
-void ElasticLoadBalancingv2Client::ModifyTargetGroupAttributesAsyncHelper(const ModifyTargetGroupAttributesRequest& request, const ModifyTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::ModifyTargetGroupAttributesAsync(const ModifyTargetGroupAttributesRequest& request, const ModifyTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyTargetGroupAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientModifyTargetGroupAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterTargetsOutcome ElasticLoadBalancingv2Client::RegisterTargets(const RegisterTargetsRequest& request) const
@@ -807,14 +807,14 @@ RegisterTargetsOutcomeCallable ElasticLoadBalancingv2Client::RegisterTargetsCall
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::RegisterTargetsAsync(const RegisterTargetsRequest& request, const RegisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientRegisterTargetsAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const RegisterTargetsRequest& request, const RegisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterTargetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterTargets(request), context);
 }
 
-void ElasticLoadBalancingv2Client::RegisterTargetsAsyncHelper(const RegisterTargetsRequest& request, const RegisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::RegisterTargetsAsync(const RegisterTargetsRequest& request, const RegisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterTargets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientRegisterTargetsAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveListenerCertificatesOutcome ElasticLoadBalancingv2Client::RemoveListenerCertificates(const RemoveListenerCertificatesRequest& request) const
@@ -831,14 +831,14 @@ RemoveListenerCertificatesOutcomeCallable ElasticLoadBalancingv2Client::RemoveLi
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::RemoveListenerCertificatesAsync(const RemoveListenerCertificatesRequest& request, const RemoveListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientRemoveListenerCertificatesAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const RemoveListenerCertificatesRequest& request, const RemoveListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveListenerCertificatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveListenerCertificates(request), context);
 }
 
-void ElasticLoadBalancingv2Client::RemoveListenerCertificatesAsyncHelper(const RemoveListenerCertificatesRequest& request, const RemoveListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::RemoveListenerCertificatesAsync(const RemoveListenerCertificatesRequest& request, const RemoveListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveListenerCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientRemoveListenerCertificatesAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveTagsOutcome ElasticLoadBalancingv2Client::RemoveTags(const RemoveTagsRequest& request) const
@@ -855,14 +855,14 @@ RemoveTagsOutcomeCallable ElasticLoadBalancingv2Client::RemoveTagsCallable(const
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientRemoveTagsAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveTags(request), context);
 }
 
-void ElasticLoadBalancingv2Client::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientRemoveTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 SetIpAddressTypeOutcome ElasticLoadBalancingv2Client::SetIpAddressType(const SetIpAddressTypeRequest& request) const
@@ -879,14 +879,14 @@ SetIpAddressTypeOutcomeCallable ElasticLoadBalancingv2Client::SetIpAddressTypeCa
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::SetIpAddressTypeAsync(const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientSetIpAddressTypeAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetIpAddressTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetIpAddressType(request), context);
 }
 
-void ElasticLoadBalancingv2Client::SetIpAddressTypeAsyncHelper(const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::SetIpAddressTypeAsync(const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetIpAddressType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientSetIpAddressTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 SetRulePrioritiesOutcome ElasticLoadBalancingv2Client::SetRulePriorities(const SetRulePrioritiesRequest& request) const
@@ -903,14 +903,14 @@ SetRulePrioritiesOutcomeCallable ElasticLoadBalancingv2Client::SetRulePriorities
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::SetRulePrioritiesAsync(const SetRulePrioritiesRequest& request, const SetRulePrioritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientSetRulePrioritiesAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const SetRulePrioritiesRequest& request, const SetRulePrioritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetRulePrioritiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetRulePriorities(request), context);
 }
 
-void ElasticLoadBalancingv2Client::SetRulePrioritiesAsyncHelper(const SetRulePrioritiesRequest& request, const SetRulePrioritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::SetRulePrioritiesAsync(const SetRulePrioritiesRequest& request, const SetRulePrioritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetRulePriorities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientSetRulePrioritiesAsyncHelper( this, request, handler, context ); } );
 }
 
 SetSecurityGroupsOutcome ElasticLoadBalancingv2Client::SetSecurityGroups(const SetSecurityGroupsRequest& request) const
@@ -927,14 +927,14 @@ SetSecurityGroupsOutcomeCallable ElasticLoadBalancingv2Client::SetSecurityGroups
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::SetSecurityGroupsAsync(const SetSecurityGroupsRequest& request, const SetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientSetSecurityGroupsAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const SetSecurityGroupsRequest& request, const SetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetSecurityGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetSecurityGroups(request), context);
 }
 
-void ElasticLoadBalancingv2Client::SetSecurityGroupsAsyncHelper(const SetSecurityGroupsRequest& request, const SetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::SetSecurityGroupsAsync(const SetSecurityGroupsRequest& request, const SetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetSecurityGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientSetSecurityGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 SetSubnetsOutcome ElasticLoadBalancingv2Client::SetSubnets(const SetSubnetsRequest& request) const
@@ -951,13 +951,13 @@ SetSubnetsOutcomeCallable ElasticLoadBalancingv2Client::SetSubnetsCallable(const
   return task->get_future();
 }
 
-void ElasticLoadBalancingv2Client::SetSubnetsAsync(const SetSubnetsRequest& request, const SetSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2ClientSetSubnetsAsyncHelper(ElasticLoadBalancingv2Client const * const clientThis, const SetSubnetsRequest& request, const SetSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetSubnetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetSubnets(request), context);
 }
 
-void ElasticLoadBalancingv2Client::SetSubnetsAsyncHelper(const SetSubnetsRequest& request, const SetSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticLoadBalancingv2Client::SetSubnetsAsync(const SetSubnetsRequest& request, const SetSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetSubnets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ElasticLoadBalancingv2ClientSetSubnetsAsyncHelper( this, request, handler, context ); } );
 }
 

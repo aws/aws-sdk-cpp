@@ -153,14 +153,14 @@ CreateCallAnalyticsCategoryOutcomeCallable TranscribeServiceClient::CreateCallAn
   return task->get_future();
 }
 
-void TranscribeServiceClient::CreateCallAnalyticsCategoryAsync(const CreateCallAnalyticsCategoryRequest& request, const CreateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientCreateCallAnalyticsCategoryAsyncHelper(TranscribeServiceClient const * const clientThis, const CreateCallAnalyticsCategoryRequest& request, const CreateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCallAnalyticsCategoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCallAnalyticsCategory(request), context);
 }
 
-void TranscribeServiceClient::CreateCallAnalyticsCategoryAsyncHelper(const CreateCallAnalyticsCategoryRequest& request, const CreateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::CreateCallAnalyticsCategoryAsync(const CreateCallAnalyticsCategoryRequest& request, const CreateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCallAnalyticsCategory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientCreateCallAnalyticsCategoryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLanguageModelOutcome TranscribeServiceClient::CreateLanguageModel(const CreateLanguageModelRequest& request) const
@@ -177,14 +177,14 @@ CreateLanguageModelOutcomeCallable TranscribeServiceClient::CreateLanguageModelC
   return task->get_future();
 }
 
-void TranscribeServiceClient::CreateLanguageModelAsync(const CreateLanguageModelRequest& request, const CreateLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientCreateLanguageModelAsyncHelper(TranscribeServiceClient const * const clientThis, const CreateLanguageModelRequest& request, const CreateLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLanguageModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLanguageModel(request), context);
 }
 
-void TranscribeServiceClient::CreateLanguageModelAsyncHelper(const CreateLanguageModelRequest& request, const CreateLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::CreateLanguageModelAsync(const CreateLanguageModelRequest& request, const CreateLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLanguageModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientCreateLanguageModelAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMedicalVocabularyOutcome TranscribeServiceClient::CreateMedicalVocabulary(const CreateMedicalVocabularyRequest& request) const
@@ -201,14 +201,14 @@ CreateMedicalVocabularyOutcomeCallable TranscribeServiceClient::CreateMedicalVoc
   return task->get_future();
 }
 
-void TranscribeServiceClient::CreateMedicalVocabularyAsync(const CreateMedicalVocabularyRequest& request, const CreateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientCreateMedicalVocabularyAsyncHelper(TranscribeServiceClient const * const clientThis, const CreateMedicalVocabularyRequest& request, const CreateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMedicalVocabularyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMedicalVocabulary(request), context);
 }
 
-void TranscribeServiceClient::CreateMedicalVocabularyAsyncHelper(const CreateMedicalVocabularyRequest& request, const CreateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::CreateMedicalVocabularyAsync(const CreateMedicalVocabularyRequest& request, const CreateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMedicalVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientCreateMedicalVocabularyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVocabularyOutcome TranscribeServiceClient::CreateVocabulary(const CreateVocabularyRequest& request) const
@@ -225,14 +225,14 @@ CreateVocabularyOutcomeCallable TranscribeServiceClient::CreateVocabularyCallabl
   return task->get_future();
 }
 
-void TranscribeServiceClient::CreateVocabularyAsync(const CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientCreateVocabularyAsyncHelper(TranscribeServiceClient const * const clientThis, const CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVocabularyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVocabulary(request), context);
 }
 
-void TranscribeServiceClient::CreateVocabularyAsyncHelper(const CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::CreateVocabularyAsync(const CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientCreateVocabularyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVocabularyFilterOutcome TranscribeServiceClient::CreateVocabularyFilter(const CreateVocabularyFilterRequest& request) const
@@ -249,14 +249,14 @@ CreateVocabularyFilterOutcomeCallable TranscribeServiceClient::CreateVocabularyF
   return task->get_future();
 }
 
-void TranscribeServiceClient::CreateVocabularyFilterAsync(const CreateVocabularyFilterRequest& request, const CreateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientCreateVocabularyFilterAsyncHelper(TranscribeServiceClient const * const clientThis, const CreateVocabularyFilterRequest& request, const CreateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVocabularyFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVocabularyFilter(request), context);
 }
 
-void TranscribeServiceClient::CreateVocabularyFilterAsyncHelper(const CreateVocabularyFilterRequest& request, const CreateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::CreateVocabularyFilterAsync(const CreateVocabularyFilterRequest& request, const CreateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVocabularyFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientCreateVocabularyFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCallAnalyticsCategoryOutcome TranscribeServiceClient::DeleteCallAnalyticsCategory(const DeleteCallAnalyticsCategoryRequest& request) const
@@ -273,14 +273,14 @@ DeleteCallAnalyticsCategoryOutcomeCallable TranscribeServiceClient::DeleteCallAn
   return task->get_future();
 }
 
-void TranscribeServiceClient::DeleteCallAnalyticsCategoryAsync(const DeleteCallAnalyticsCategoryRequest& request, const DeleteCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientDeleteCallAnalyticsCategoryAsyncHelper(TranscribeServiceClient const * const clientThis, const DeleteCallAnalyticsCategoryRequest& request, const DeleteCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCallAnalyticsCategoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCallAnalyticsCategory(request), context);
 }
 
-void TranscribeServiceClient::DeleteCallAnalyticsCategoryAsyncHelper(const DeleteCallAnalyticsCategoryRequest& request, const DeleteCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::DeleteCallAnalyticsCategoryAsync(const DeleteCallAnalyticsCategoryRequest& request, const DeleteCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCallAnalyticsCategory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientDeleteCallAnalyticsCategoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCallAnalyticsJobOutcome TranscribeServiceClient::DeleteCallAnalyticsJob(const DeleteCallAnalyticsJobRequest& request) const
@@ -297,14 +297,14 @@ DeleteCallAnalyticsJobOutcomeCallable TranscribeServiceClient::DeleteCallAnalyti
   return task->get_future();
 }
 
-void TranscribeServiceClient::DeleteCallAnalyticsJobAsync(const DeleteCallAnalyticsJobRequest& request, const DeleteCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientDeleteCallAnalyticsJobAsyncHelper(TranscribeServiceClient const * const clientThis, const DeleteCallAnalyticsJobRequest& request, const DeleteCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCallAnalyticsJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCallAnalyticsJob(request), context);
 }
 
-void TranscribeServiceClient::DeleteCallAnalyticsJobAsyncHelper(const DeleteCallAnalyticsJobRequest& request, const DeleteCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::DeleteCallAnalyticsJobAsync(const DeleteCallAnalyticsJobRequest& request, const DeleteCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCallAnalyticsJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientDeleteCallAnalyticsJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLanguageModelOutcome TranscribeServiceClient::DeleteLanguageModel(const DeleteLanguageModelRequest& request) const
@@ -321,14 +321,14 @@ DeleteLanguageModelOutcomeCallable TranscribeServiceClient::DeleteLanguageModelC
   return task->get_future();
 }
 
-void TranscribeServiceClient::DeleteLanguageModelAsync(const DeleteLanguageModelRequest& request, const DeleteLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientDeleteLanguageModelAsyncHelper(TranscribeServiceClient const * const clientThis, const DeleteLanguageModelRequest& request, const DeleteLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLanguageModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLanguageModel(request), context);
 }
 
-void TranscribeServiceClient::DeleteLanguageModelAsyncHelper(const DeleteLanguageModelRequest& request, const DeleteLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::DeleteLanguageModelAsync(const DeleteLanguageModelRequest& request, const DeleteLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLanguageModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientDeleteLanguageModelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMedicalTranscriptionJobOutcome TranscribeServiceClient::DeleteMedicalTranscriptionJob(const DeleteMedicalTranscriptionJobRequest& request) const
@@ -345,14 +345,14 @@ DeleteMedicalTranscriptionJobOutcomeCallable TranscribeServiceClient::DeleteMedi
   return task->get_future();
 }
 
-void TranscribeServiceClient::DeleteMedicalTranscriptionJobAsync(const DeleteMedicalTranscriptionJobRequest& request, const DeleteMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientDeleteMedicalTranscriptionJobAsyncHelper(TranscribeServiceClient const * const clientThis, const DeleteMedicalTranscriptionJobRequest& request, const DeleteMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMedicalTranscriptionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMedicalTranscriptionJob(request), context);
 }
 
-void TranscribeServiceClient::DeleteMedicalTranscriptionJobAsyncHelper(const DeleteMedicalTranscriptionJobRequest& request, const DeleteMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::DeleteMedicalTranscriptionJobAsync(const DeleteMedicalTranscriptionJobRequest& request, const DeleteMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMedicalTranscriptionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientDeleteMedicalTranscriptionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMedicalVocabularyOutcome TranscribeServiceClient::DeleteMedicalVocabulary(const DeleteMedicalVocabularyRequest& request) const
@@ -369,14 +369,14 @@ DeleteMedicalVocabularyOutcomeCallable TranscribeServiceClient::DeleteMedicalVoc
   return task->get_future();
 }
 
-void TranscribeServiceClient::DeleteMedicalVocabularyAsync(const DeleteMedicalVocabularyRequest& request, const DeleteMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientDeleteMedicalVocabularyAsyncHelper(TranscribeServiceClient const * const clientThis, const DeleteMedicalVocabularyRequest& request, const DeleteMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMedicalVocabularyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMedicalVocabulary(request), context);
 }
 
-void TranscribeServiceClient::DeleteMedicalVocabularyAsyncHelper(const DeleteMedicalVocabularyRequest& request, const DeleteMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::DeleteMedicalVocabularyAsync(const DeleteMedicalVocabularyRequest& request, const DeleteMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMedicalVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientDeleteMedicalVocabularyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTranscriptionJobOutcome TranscribeServiceClient::DeleteTranscriptionJob(const DeleteTranscriptionJobRequest& request) const
@@ -393,14 +393,14 @@ DeleteTranscriptionJobOutcomeCallable TranscribeServiceClient::DeleteTranscripti
   return task->get_future();
 }
 
-void TranscribeServiceClient::DeleteTranscriptionJobAsync(const DeleteTranscriptionJobRequest& request, const DeleteTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientDeleteTranscriptionJobAsyncHelper(TranscribeServiceClient const * const clientThis, const DeleteTranscriptionJobRequest& request, const DeleteTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTranscriptionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTranscriptionJob(request), context);
 }
 
-void TranscribeServiceClient::DeleteTranscriptionJobAsyncHelper(const DeleteTranscriptionJobRequest& request, const DeleteTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::DeleteTranscriptionJobAsync(const DeleteTranscriptionJobRequest& request, const DeleteTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTranscriptionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientDeleteTranscriptionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVocabularyOutcome TranscribeServiceClient::DeleteVocabulary(const DeleteVocabularyRequest& request) const
@@ -417,14 +417,14 @@ DeleteVocabularyOutcomeCallable TranscribeServiceClient::DeleteVocabularyCallabl
   return task->get_future();
 }
 
-void TranscribeServiceClient::DeleteVocabularyAsync(const DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientDeleteVocabularyAsyncHelper(TranscribeServiceClient const * const clientThis, const DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVocabularyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVocabulary(request), context);
 }
 
-void TranscribeServiceClient::DeleteVocabularyAsyncHelper(const DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::DeleteVocabularyAsync(const DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientDeleteVocabularyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVocabularyFilterOutcome TranscribeServiceClient::DeleteVocabularyFilter(const DeleteVocabularyFilterRequest& request) const
@@ -441,14 +441,14 @@ DeleteVocabularyFilterOutcomeCallable TranscribeServiceClient::DeleteVocabularyF
   return task->get_future();
 }
 
-void TranscribeServiceClient::DeleteVocabularyFilterAsync(const DeleteVocabularyFilterRequest& request, const DeleteVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientDeleteVocabularyFilterAsyncHelper(TranscribeServiceClient const * const clientThis, const DeleteVocabularyFilterRequest& request, const DeleteVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVocabularyFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVocabularyFilter(request), context);
 }
 
-void TranscribeServiceClient::DeleteVocabularyFilterAsyncHelper(const DeleteVocabularyFilterRequest& request, const DeleteVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::DeleteVocabularyFilterAsync(const DeleteVocabularyFilterRequest& request, const DeleteVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVocabularyFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientDeleteVocabularyFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLanguageModelOutcome TranscribeServiceClient::DescribeLanguageModel(const DescribeLanguageModelRequest& request) const
@@ -465,14 +465,14 @@ DescribeLanguageModelOutcomeCallable TranscribeServiceClient::DescribeLanguageMo
   return task->get_future();
 }
 
-void TranscribeServiceClient::DescribeLanguageModelAsync(const DescribeLanguageModelRequest& request, const DescribeLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientDescribeLanguageModelAsyncHelper(TranscribeServiceClient const * const clientThis, const DescribeLanguageModelRequest& request, const DescribeLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLanguageModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLanguageModel(request), context);
 }
 
-void TranscribeServiceClient::DescribeLanguageModelAsyncHelper(const DescribeLanguageModelRequest& request, const DescribeLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::DescribeLanguageModelAsync(const DescribeLanguageModelRequest& request, const DescribeLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLanguageModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientDescribeLanguageModelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCallAnalyticsCategoryOutcome TranscribeServiceClient::GetCallAnalyticsCategory(const GetCallAnalyticsCategoryRequest& request) const
@@ -489,14 +489,14 @@ GetCallAnalyticsCategoryOutcomeCallable TranscribeServiceClient::GetCallAnalytic
   return task->get_future();
 }
 
-void TranscribeServiceClient::GetCallAnalyticsCategoryAsync(const GetCallAnalyticsCategoryRequest& request, const GetCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientGetCallAnalyticsCategoryAsyncHelper(TranscribeServiceClient const * const clientThis, const GetCallAnalyticsCategoryRequest& request, const GetCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCallAnalyticsCategoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCallAnalyticsCategory(request), context);
 }
 
-void TranscribeServiceClient::GetCallAnalyticsCategoryAsyncHelper(const GetCallAnalyticsCategoryRequest& request, const GetCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::GetCallAnalyticsCategoryAsync(const GetCallAnalyticsCategoryRequest& request, const GetCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCallAnalyticsCategory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientGetCallAnalyticsCategoryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCallAnalyticsJobOutcome TranscribeServiceClient::GetCallAnalyticsJob(const GetCallAnalyticsJobRequest& request) const
@@ -513,14 +513,14 @@ GetCallAnalyticsJobOutcomeCallable TranscribeServiceClient::GetCallAnalyticsJobC
   return task->get_future();
 }
 
-void TranscribeServiceClient::GetCallAnalyticsJobAsync(const GetCallAnalyticsJobRequest& request, const GetCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientGetCallAnalyticsJobAsyncHelper(TranscribeServiceClient const * const clientThis, const GetCallAnalyticsJobRequest& request, const GetCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCallAnalyticsJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCallAnalyticsJob(request), context);
 }
 
-void TranscribeServiceClient::GetCallAnalyticsJobAsyncHelper(const GetCallAnalyticsJobRequest& request, const GetCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::GetCallAnalyticsJobAsync(const GetCallAnalyticsJobRequest& request, const GetCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCallAnalyticsJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientGetCallAnalyticsJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMedicalTranscriptionJobOutcome TranscribeServiceClient::GetMedicalTranscriptionJob(const GetMedicalTranscriptionJobRequest& request) const
@@ -537,14 +537,14 @@ GetMedicalTranscriptionJobOutcomeCallable TranscribeServiceClient::GetMedicalTra
   return task->get_future();
 }
 
-void TranscribeServiceClient::GetMedicalTranscriptionJobAsync(const GetMedicalTranscriptionJobRequest& request, const GetMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientGetMedicalTranscriptionJobAsyncHelper(TranscribeServiceClient const * const clientThis, const GetMedicalTranscriptionJobRequest& request, const GetMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMedicalTranscriptionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMedicalTranscriptionJob(request), context);
 }
 
-void TranscribeServiceClient::GetMedicalTranscriptionJobAsyncHelper(const GetMedicalTranscriptionJobRequest& request, const GetMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::GetMedicalTranscriptionJobAsync(const GetMedicalTranscriptionJobRequest& request, const GetMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMedicalTranscriptionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientGetMedicalTranscriptionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMedicalVocabularyOutcome TranscribeServiceClient::GetMedicalVocabulary(const GetMedicalVocabularyRequest& request) const
@@ -561,14 +561,14 @@ GetMedicalVocabularyOutcomeCallable TranscribeServiceClient::GetMedicalVocabular
   return task->get_future();
 }
 
-void TranscribeServiceClient::GetMedicalVocabularyAsync(const GetMedicalVocabularyRequest& request, const GetMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientGetMedicalVocabularyAsyncHelper(TranscribeServiceClient const * const clientThis, const GetMedicalVocabularyRequest& request, const GetMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMedicalVocabularyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMedicalVocabulary(request), context);
 }
 
-void TranscribeServiceClient::GetMedicalVocabularyAsyncHelper(const GetMedicalVocabularyRequest& request, const GetMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::GetMedicalVocabularyAsync(const GetMedicalVocabularyRequest& request, const GetMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMedicalVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientGetMedicalVocabularyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTranscriptionJobOutcome TranscribeServiceClient::GetTranscriptionJob(const GetTranscriptionJobRequest& request) const
@@ -585,14 +585,14 @@ GetTranscriptionJobOutcomeCallable TranscribeServiceClient::GetTranscriptionJobC
   return task->get_future();
 }
 
-void TranscribeServiceClient::GetTranscriptionJobAsync(const GetTranscriptionJobRequest& request, const GetTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientGetTranscriptionJobAsyncHelper(TranscribeServiceClient const * const clientThis, const GetTranscriptionJobRequest& request, const GetTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTranscriptionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTranscriptionJob(request), context);
 }
 
-void TranscribeServiceClient::GetTranscriptionJobAsyncHelper(const GetTranscriptionJobRequest& request, const GetTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::GetTranscriptionJobAsync(const GetTranscriptionJobRequest& request, const GetTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTranscriptionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientGetTranscriptionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetVocabularyOutcome TranscribeServiceClient::GetVocabulary(const GetVocabularyRequest& request) const
@@ -609,14 +609,14 @@ GetVocabularyOutcomeCallable TranscribeServiceClient::GetVocabularyCallable(cons
   return task->get_future();
 }
 
-void TranscribeServiceClient::GetVocabularyAsync(const GetVocabularyRequest& request, const GetVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientGetVocabularyAsyncHelper(TranscribeServiceClient const * const clientThis, const GetVocabularyRequest& request, const GetVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVocabularyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetVocabulary(request), context);
 }
 
-void TranscribeServiceClient::GetVocabularyAsyncHelper(const GetVocabularyRequest& request, const GetVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::GetVocabularyAsync(const GetVocabularyRequest& request, const GetVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientGetVocabularyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetVocabularyFilterOutcome TranscribeServiceClient::GetVocabularyFilter(const GetVocabularyFilterRequest& request) const
@@ -633,14 +633,14 @@ GetVocabularyFilterOutcomeCallable TranscribeServiceClient::GetVocabularyFilterC
   return task->get_future();
 }
 
-void TranscribeServiceClient::GetVocabularyFilterAsync(const GetVocabularyFilterRequest& request, const GetVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientGetVocabularyFilterAsyncHelper(TranscribeServiceClient const * const clientThis, const GetVocabularyFilterRequest& request, const GetVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVocabularyFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetVocabularyFilter(request), context);
 }
 
-void TranscribeServiceClient::GetVocabularyFilterAsyncHelper(const GetVocabularyFilterRequest& request, const GetVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::GetVocabularyFilterAsync(const GetVocabularyFilterRequest& request, const GetVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetVocabularyFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientGetVocabularyFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCallAnalyticsCategoriesOutcome TranscribeServiceClient::ListCallAnalyticsCategories(const ListCallAnalyticsCategoriesRequest& request) const
@@ -657,14 +657,14 @@ ListCallAnalyticsCategoriesOutcomeCallable TranscribeServiceClient::ListCallAnal
   return task->get_future();
 }
 
-void TranscribeServiceClient::ListCallAnalyticsCategoriesAsync(const ListCallAnalyticsCategoriesRequest& request, const ListCallAnalyticsCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientListCallAnalyticsCategoriesAsyncHelper(TranscribeServiceClient const * const clientThis, const ListCallAnalyticsCategoriesRequest& request, const ListCallAnalyticsCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCallAnalyticsCategoriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCallAnalyticsCategories(request), context);
 }
 
-void TranscribeServiceClient::ListCallAnalyticsCategoriesAsyncHelper(const ListCallAnalyticsCategoriesRequest& request, const ListCallAnalyticsCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::ListCallAnalyticsCategoriesAsync(const ListCallAnalyticsCategoriesRequest& request, const ListCallAnalyticsCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCallAnalyticsCategories(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientListCallAnalyticsCategoriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCallAnalyticsJobsOutcome TranscribeServiceClient::ListCallAnalyticsJobs(const ListCallAnalyticsJobsRequest& request) const
@@ -681,14 +681,14 @@ ListCallAnalyticsJobsOutcomeCallable TranscribeServiceClient::ListCallAnalyticsJ
   return task->get_future();
 }
 
-void TranscribeServiceClient::ListCallAnalyticsJobsAsync(const ListCallAnalyticsJobsRequest& request, const ListCallAnalyticsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientListCallAnalyticsJobsAsyncHelper(TranscribeServiceClient const * const clientThis, const ListCallAnalyticsJobsRequest& request, const ListCallAnalyticsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCallAnalyticsJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCallAnalyticsJobs(request), context);
 }
 
-void TranscribeServiceClient::ListCallAnalyticsJobsAsyncHelper(const ListCallAnalyticsJobsRequest& request, const ListCallAnalyticsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::ListCallAnalyticsJobsAsync(const ListCallAnalyticsJobsRequest& request, const ListCallAnalyticsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCallAnalyticsJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientListCallAnalyticsJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLanguageModelsOutcome TranscribeServiceClient::ListLanguageModels(const ListLanguageModelsRequest& request) const
@@ -705,14 +705,14 @@ ListLanguageModelsOutcomeCallable TranscribeServiceClient::ListLanguageModelsCal
   return task->get_future();
 }
 
-void TranscribeServiceClient::ListLanguageModelsAsync(const ListLanguageModelsRequest& request, const ListLanguageModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientListLanguageModelsAsyncHelper(TranscribeServiceClient const * const clientThis, const ListLanguageModelsRequest& request, const ListLanguageModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLanguageModelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLanguageModels(request), context);
 }
 
-void TranscribeServiceClient::ListLanguageModelsAsyncHelper(const ListLanguageModelsRequest& request, const ListLanguageModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::ListLanguageModelsAsync(const ListLanguageModelsRequest& request, const ListLanguageModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLanguageModels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientListLanguageModelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMedicalTranscriptionJobsOutcome TranscribeServiceClient::ListMedicalTranscriptionJobs(const ListMedicalTranscriptionJobsRequest& request) const
@@ -729,14 +729,14 @@ ListMedicalTranscriptionJobsOutcomeCallable TranscribeServiceClient::ListMedical
   return task->get_future();
 }
 
-void TranscribeServiceClient::ListMedicalTranscriptionJobsAsync(const ListMedicalTranscriptionJobsRequest& request, const ListMedicalTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientListMedicalTranscriptionJobsAsyncHelper(TranscribeServiceClient const * const clientThis, const ListMedicalTranscriptionJobsRequest& request, const ListMedicalTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMedicalTranscriptionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMedicalTranscriptionJobs(request), context);
 }
 
-void TranscribeServiceClient::ListMedicalTranscriptionJobsAsyncHelper(const ListMedicalTranscriptionJobsRequest& request, const ListMedicalTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::ListMedicalTranscriptionJobsAsync(const ListMedicalTranscriptionJobsRequest& request, const ListMedicalTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMedicalTranscriptionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientListMedicalTranscriptionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMedicalVocabulariesOutcome TranscribeServiceClient::ListMedicalVocabularies(const ListMedicalVocabulariesRequest& request) const
@@ -753,14 +753,14 @@ ListMedicalVocabulariesOutcomeCallable TranscribeServiceClient::ListMedicalVocab
   return task->get_future();
 }
 
-void TranscribeServiceClient::ListMedicalVocabulariesAsync(const ListMedicalVocabulariesRequest& request, const ListMedicalVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientListMedicalVocabulariesAsyncHelper(TranscribeServiceClient const * const clientThis, const ListMedicalVocabulariesRequest& request, const ListMedicalVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMedicalVocabulariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMedicalVocabularies(request), context);
 }
 
-void TranscribeServiceClient::ListMedicalVocabulariesAsyncHelper(const ListMedicalVocabulariesRequest& request, const ListMedicalVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::ListMedicalVocabulariesAsync(const ListMedicalVocabulariesRequest& request, const ListMedicalVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMedicalVocabularies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientListMedicalVocabulariesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome TranscribeServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -777,14 +777,14 @@ ListTagsForResourceOutcomeCallable TranscribeServiceClient::ListTagsForResourceC
   return task->get_future();
 }
 
-void TranscribeServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientListTagsForResourceAsyncHelper(TranscribeServiceClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void TranscribeServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTranscriptionJobsOutcome TranscribeServiceClient::ListTranscriptionJobs(const ListTranscriptionJobsRequest& request) const
@@ -801,14 +801,14 @@ ListTranscriptionJobsOutcomeCallable TranscribeServiceClient::ListTranscriptionJ
   return task->get_future();
 }
 
-void TranscribeServiceClient::ListTranscriptionJobsAsync(const ListTranscriptionJobsRequest& request, const ListTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientListTranscriptionJobsAsyncHelper(TranscribeServiceClient const * const clientThis, const ListTranscriptionJobsRequest& request, const ListTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTranscriptionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTranscriptionJobs(request), context);
 }
 
-void TranscribeServiceClient::ListTranscriptionJobsAsyncHelper(const ListTranscriptionJobsRequest& request, const ListTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::ListTranscriptionJobsAsync(const ListTranscriptionJobsRequest& request, const ListTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTranscriptionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientListTranscriptionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVocabulariesOutcome TranscribeServiceClient::ListVocabularies(const ListVocabulariesRequest& request) const
@@ -825,14 +825,14 @@ ListVocabulariesOutcomeCallable TranscribeServiceClient::ListVocabulariesCallabl
   return task->get_future();
 }
 
-void TranscribeServiceClient::ListVocabulariesAsync(const ListVocabulariesRequest& request, const ListVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientListVocabulariesAsyncHelper(TranscribeServiceClient const * const clientThis, const ListVocabulariesRequest& request, const ListVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVocabulariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVocabularies(request), context);
 }
 
-void TranscribeServiceClient::ListVocabulariesAsyncHelper(const ListVocabulariesRequest& request, const ListVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::ListVocabulariesAsync(const ListVocabulariesRequest& request, const ListVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVocabularies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientListVocabulariesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVocabularyFiltersOutcome TranscribeServiceClient::ListVocabularyFilters(const ListVocabularyFiltersRequest& request) const
@@ -849,14 +849,14 @@ ListVocabularyFiltersOutcomeCallable TranscribeServiceClient::ListVocabularyFilt
   return task->get_future();
 }
 
-void TranscribeServiceClient::ListVocabularyFiltersAsync(const ListVocabularyFiltersRequest& request, const ListVocabularyFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientListVocabularyFiltersAsyncHelper(TranscribeServiceClient const * const clientThis, const ListVocabularyFiltersRequest& request, const ListVocabularyFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVocabularyFiltersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVocabularyFilters(request), context);
 }
 
-void TranscribeServiceClient::ListVocabularyFiltersAsyncHelper(const ListVocabularyFiltersRequest& request, const ListVocabularyFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::ListVocabularyFiltersAsync(const ListVocabularyFiltersRequest& request, const ListVocabularyFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVocabularyFilters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientListVocabularyFiltersAsyncHelper( this, request, handler, context ); } );
 }
 
 StartCallAnalyticsJobOutcome TranscribeServiceClient::StartCallAnalyticsJob(const StartCallAnalyticsJobRequest& request) const
@@ -873,14 +873,14 @@ StartCallAnalyticsJobOutcomeCallable TranscribeServiceClient::StartCallAnalytics
   return task->get_future();
 }
 
-void TranscribeServiceClient::StartCallAnalyticsJobAsync(const StartCallAnalyticsJobRequest& request, const StartCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientStartCallAnalyticsJobAsyncHelper(TranscribeServiceClient const * const clientThis, const StartCallAnalyticsJobRequest& request, const StartCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartCallAnalyticsJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartCallAnalyticsJob(request), context);
 }
 
-void TranscribeServiceClient::StartCallAnalyticsJobAsyncHelper(const StartCallAnalyticsJobRequest& request, const StartCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::StartCallAnalyticsJobAsync(const StartCallAnalyticsJobRequest& request, const StartCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartCallAnalyticsJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientStartCallAnalyticsJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMedicalTranscriptionJobOutcome TranscribeServiceClient::StartMedicalTranscriptionJob(const StartMedicalTranscriptionJobRequest& request) const
@@ -897,14 +897,14 @@ StartMedicalTranscriptionJobOutcomeCallable TranscribeServiceClient::StartMedica
   return task->get_future();
 }
 
-void TranscribeServiceClient::StartMedicalTranscriptionJobAsync(const StartMedicalTranscriptionJobRequest& request, const StartMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientStartMedicalTranscriptionJobAsyncHelper(TranscribeServiceClient const * const clientThis, const StartMedicalTranscriptionJobRequest& request, const StartMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMedicalTranscriptionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMedicalTranscriptionJob(request), context);
 }
 
-void TranscribeServiceClient::StartMedicalTranscriptionJobAsyncHelper(const StartMedicalTranscriptionJobRequest& request, const StartMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::StartMedicalTranscriptionJobAsync(const StartMedicalTranscriptionJobRequest& request, const StartMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMedicalTranscriptionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientStartMedicalTranscriptionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartTranscriptionJobOutcome TranscribeServiceClient::StartTranscriptionJob(const StartTranscriptionJobRequest& request) const
@@ -921,14 +921,14 @@ StartTranscriptionJobOutcomeCallable TranscribeServiceClient::StartTranscription
   return task->get_future();
 }
 
-void TranscribeServiceClient::StartTranscriptionJobAsync(const StartTranscriptionJobRequest& request, const StartTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientStartTranscriptionJobAsyncHelper(TranscribeServiceClient const * const clientThis, const StartTranscriptionJobRequest& request, const StartTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTranscriptionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartTranscriptionJob(request), context);
 }
 
-void TranscribeServiceClient::StartTranscriptionJobAsyncHelper(const StartTranscriptionJobRequest& request, const StartTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::StartTranscriptionJobAsync(const StartTranscriptionJobRequest& request, const StartTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartTranscriptionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientStartTranscriptionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome TranscribeServiceClient::TagResource(const TagResourceRequest& request) const
@@ -945,14 +945,14 @@ TagResourceOutcomeCallable TranscribeServiceClient::TagResourceCallable(const Ta
   return task->get_future();
 }
 
-void TranscribeServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientTagResourceAsyncHelper(TranscribeServiceClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void TranscribeServiceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome TranscribeServiceClient::UntagResource(const UntagResourceRequest& request) const
@@ -969,14 +969,14 @@ UntagResourceOutcomeCallable TranscribeServiceClient::UntagResourceCallable(cons
   return task->get_future();
 }
 
-void TranscribeServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientUntagResourceAsyncHelper(TranscribeServiceClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void TranscribeServiceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCallAnalyticsCategoryOutcome TranscribeServiceClient::UpdateCallAnalyticsCategory(const UpdateCallAnalyticsCategoryRequest& request) const
@@ -993,14 +993,14 @@ UpdateCallAnalyticsCategoryOutcomeCallable TranscribeServiceClient::UpdateCallAn
   return task->get_future();
 }
 
-void TranscribeServiceClient::UpdateCallAnalyticsCategoryAsync(const UpdateCallAnalyticsCategoryRequest& request, const UpdateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientUpdateCallAnalyticsCategoryAsyncHelper(TranscribeServiceClient const * const clientThis, const UpdateCallAnalyticsCategoryRequest& request, const UpdateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCallAnalyticsCategoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCallAnalyticsCategory(request), context);
 }
 
-void TranscribeServiceClient::UpdateCallAnalyticsCategoryAsyncHelper(const UpdateCallAnalyticsCategoryRequest& request, const UpdateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::UpdateCallAnalyticsCategoryAsync(const UpdateCallAnalyticsCategoryRequest& request, const UpdateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCallAnalyticsCategory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientUpdateCallAnalyticsCategoryAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMedicalVocabularyOutcome TranscribeServiceClient::UpdateMedicalVocabulary(const UpdateMedicalVocabularyRequest& request) const
@@ -1017,14 +1017,14 @@ UpdateMedicalVocabularyOutcomeCallable TranscribeServiceClient::UpdateMedicalVoc
   return task->get_future();
 }
 
-void TranscribeServiceClient::UpdateMedicalVocabularyAsync(const UpdateMedicalVocabularyRequest& request, const UpdateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientUpdateMedicalVocabularyAsyncHelper(TranscribeServiceClient const * const clientThis, const UpdateMedicalVocabularyRequest& request, const UpdateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMedicalVocabularyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMedicalVocabulary(request), context);
 }
 
-void TranscribeServiceClient::UpdateMedicalVocabularyAsyncHelper(const UpdateMedicalVocabularyRequest& request, const UpdateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::UpdateMedicalVocabularyAsync(const UpdateMedicalVocabularyRequest& request, const UpdateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMedicalVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientUpdateMedicalVocabularyAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateVocabularyOutcome TranscribeServiceClient::UpdateVocabulary(const UpdateVocabularyRequest& request) const
@@ -1041,14 +1041,14 @@ UpdateVocabularyOutcomeCallable TranscribeServiceClient::UpdateVocabularyCallabl
   return task->get_future();
 }
 
-void TranscribeServiceClient::UpdateVocabularyAsync(const UpdateVocabularyRequest& request, const UpdateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientUpdateVocabularyAsyncHelper(TranscribeServiceClient const * const clientThis, const UpdateVocabularyRequest& request, const UpdateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVocabularyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateVocabulary(request), context);
 }
 
-void TranscribeServiceClient::UpdateVocabularyAsyncHelper(const UpdateVocabularyRequest& request, const UpdateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::UpdateVocabularyAsync(const UpdateVocabularyRequest& request, const UpdateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientUpdateVocabularyAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateVocabularyFilterOutcome TranscribeServiceClient::UpdateVocabularyFilter(const UpdateVocabularyFilterRequest& request) const
@@ -1065,13 +1065,13 @@ UpdateVocabularyFilterOutcomeCallable TranscribeServiceClient::UpdateVocabularyF
   return task->get_future();
 }
 
-void TranscribeServiceClient::UpdateVocabularyFilterAsync(const UpdateVocabularyFilterRequest& request, const UpdateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClientUpdateVocabularyFilterAsyncHelper(TranscribeServiceClient const * const clientThis, const UpdateVocabularyFilterRequest& request, const UpdateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVocabularyFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateVocabularyFilter(request), context);
 }
 
-void TranscribeServiceClient::UpdateVocabularyFilterAsyncHelper(const UpdateVocabularyFilterRequest& request, const UpdateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TranscribeServiceClient::UpdateVocabularyFilterAsync(const UpdateVocabularyFilterRequest& request, const UpdateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateVocabularyFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TranscribeServiceClientUpdateVocabularyFilterAsyncHelper( this, request, handler, context ); } );
 }
 

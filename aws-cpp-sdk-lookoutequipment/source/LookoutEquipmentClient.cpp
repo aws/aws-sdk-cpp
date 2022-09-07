@@ -147,14 +147,14 @@ CreateDatasetOutcomeCallable LookoutEquipmentClient::CreateDatasetCallable(const
   return task->get_future();
 }
 
-void LookoutEquipmentClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientCreateDatasetAsyncHelper(LookoutEquipmentClient const * const clientThis, const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataset(request), context);
 }
 
-void LookoutEquipmentClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientCreateDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInferenceSchedulerOutcome LookoutEquipmentClient::CreateInferenceScheduler(const CreateInferenceSchedulerRequest& request) const
@@ -171,14 +171,14 @@ CreateInferenceSchedulerOutcomeCallable LookoutEquipmentClient::CreateInferenceS
   return task->get_future();
 }
 
-void LookoutEquipmentClient::CreateInferenceSchedulerAsync(const CreateInferenceSchedulerRequest& request, const CreateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientCreateInferenceSchedulerAsyncHelper(LookoutEquipmentClient const * const clientThis, const CreateInferenceSchedulerRequest& request, const CreateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInferenceSchedulerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInferenceScheduler(request), context);
 }
 
-void LookoutEquipmentClient::CreateInferenceSchedulerAsyncHelper(const CreateInferenceSchedulerRequest& request, const CreateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::CreateInferenceSchedulerAsync(const CreateInferenceSchedulerRequest& request, const CreateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInferenceScheduler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientCreateInferenceSchedulerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLabelOutcome LookoutEquipmentClient::CreateLabel(const CreateLabelRequest& request) const
@@ -195,14 +195,14 @@ CreateLabelOutcomeCallable LookoutEquipmentClient::CreateLabelCallable(const Cre
   return task->get_future();
 }
 
-void LookoutEquipmentClient::CreateLabelAsync(const CreateLabelRequest& request, const CreateLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientCreateLabelAsyncHelper(LookoutEquipmentClient const * const clientThis, const CreateLabelRequest& request, const CreateLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLabelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLabel(request), context);
 }
 
-void LookoutEquipmentClient::CreateLabelAsyncHelper(const CreateLabelRequest& request, const CreateLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::CreateLabelAsync(const CreateLabelRequest& request, const CreateLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLabel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientCreateLabelAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLabelGroupOutcome LookoutEquipmentClient::CreateLabelGroup(const CreateLabelGroupRequest& request) const
@@ -219,14 +219,14 @@ CreateLabelGroupOutcomeCallable LookoutEquipmentClient::CreateLabelGroupCallable
   return task->get_future();
 }
 
-void LookoutEquipmentClient::CreateLabelGroupAsync(const CreateLabelGroupRequest& request, const CreateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientCreateLabelGroupAsyncHelper(LookoutEquipmentClient const * const clientThis, const CreateLabelGroupRequest& request, const CreateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLabelGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLabelGroup(request), context);
 }
 
-void LookoutEquipmentClient::CreateLabelGroupAsyncHelper(const CreateLabelGroupRequest& request, const CreateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::CreateLabelGroupAsync(const CreateLabelGroupRequest& request, const CreateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLabelGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientCreateLabelGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateModelOutcome LookoutEquipmentClient::CreateModel(const CreateModelRequest& request) const
@@ -243,14 +243,14 @@ CreateModelOutcomeCallable LookoutEquipmentClient::CreateModelCallable(const Cre
   return task->get_future();
 }
 
-void LookoutEquipmentClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientCreateModelAsyncHelper(LookoutEquipmentClient const * const clientThis, const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateModel(request), context);
 }
 
-void LookoutEquipmentClient::CreateModelAsyncHelper(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientCreateModelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatasetOutcome LookoutEquipmentClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -267,14 +267,14 @@ DeleteDatasetOutcomeCallable LookoutEquipmentClient::DeleteDatasetCallable(const
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDeleteDatasetAsyncHelper(LookoutEquipmentClient const * const clientThis, const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataset(request), context);
 }
 
-void LookoutEquipmentClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDeleteDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInferenceSchedulerOutcome LookoutEquipmentClient::DeleteInferenceScheduler(const DeleteInferenceSchedulerRequest& request) const
@@ -291,14 +291,14 @@ DeleteInferenceSchedulerOutcomeCallable LookoutEquipmentClient::DeleteInferenceS
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DeleteInferenceSchedulerAsync(const DeleteInferenceSchedulerRequest& request, const DeleteInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDeleteInferenceSchedulerAsyncHelper(LookoutEquipmentClient const * const clientThis, const DeleteInferenceSchedulerRequest& request, const DeleteInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInferenceSchedulerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInferenceScheduler(request), context);
 }
 
-void LookoutEquipmentClient::DeleteInferenceSchedulerAsyncHelper(const DeleteInferenceSchedulerRequest& request, const DeleteInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DeleteInferenceSchedulerAsync(const DeleteInferenceSchedulerRequest& request, const DeleteInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInferenceScheduler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDeleteInferenceSchedulerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLabelOutcome LookoutEquipmentClient::DeleteLabel(const DeleteLabelRequest& request) const
@@ -315,14 +315,14 @@ DeleteLabelOutcomeCallable LookoutEquipmentClient::DeleteLabelCallable(const Del
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DeleteLabelAsync(const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDeleteLabelAsyncHelper(LookoutEquipmentClient const * const clientThis, const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLabelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLabel(request), context);
 }
 
-void LookoutEquipmentClient::DeleteLabelAsyncHelper(const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DeleteLabelAsync(const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLabel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDeleteLabelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLabelGroupOutcome LookoutEquipmentClient::DeleteLabelGroup(const DeleteLabelGroupRequest& request) const
@@ -339,14 +339,14 @@ DeleteLabelGroupOutcomeCallable LookoutEquipmentClient::DeleteLabelGroupCallable
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DeleteLabelGroupAsync(const DeleteLabelGroupRequest& request, const DeleteLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDeleteLabelGroupAsyncHelper(LookoutEquipmentClient const * const clientThis, const DeleteLabelGroupRequest& request, const DeleteLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLabelGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLabelGroup(request), context);
 }
 
-void LookoutEquipmentClient::DeleteLabelGroupAsyncHelper(const DeleteLabelGroupRequest& request, const DeleteLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DeleteLabelGroupAsync(const DeleteLabelGroupRequest& request, const DeleteLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLabelGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDeleteLabelGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelOutcome LookoutEquipmentClient::DeleteModel(const DeleteModelRequest& request) const
@@ -363,14 +363,14 @@ DeleteModelOutcomeCallable LookoutEquipmentClient::DeleteModelCallable(const Del
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDeleteModelAsyncHelper(LookoutEquipmentClient const * const clientThis, const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModel(request), context);
 }
 
-void LookoutEquipmentClient::DeleteModelAsyncHelper(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDeleteModelAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDataIngestionJobOutcome LookoutEquipmentClient::DescribeDataIngestionJob(const DescribeDataIngestionJobRequest& request) const
@@ -387,14 +387,14 @@ DescribeDataIngestionJobOutcomeCallable LookoutEquipmentClient::DescribeDataInge
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DescribeDataIngestionJobAsync(const DescribeDataIngestionJobRequest& request, const DescribeDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDescribeDataIngestionJobAsyncHelper(LookoutEquipmentClient const * const clientThis, const DescribeDataIngestionJobRequest& request, const DescribeDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataIngestionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataIngestionJob(request), context);
 }
 
-void LookoutEquipmentClient::DescribeDataIngestionJobAsyncHelper(const DescribeDataIngestionJobRequest& request, const DescribeDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DescribeDataIngestionJobAsync(const DescribeDataIngestionJobRequest& request, const DescribeDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataIngestionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDescribeDataIngestionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatasetOutcome LookoutEquipmentClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -411,14 +411,14 @@ DescribeDatasetOutcomeCallable LookoutEquipmentClient::DescribeDatasetCallable(c
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDescribeDatasetAsyncHelper(LookoutEquipmentClient const * const clientThis, const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataset(request), context);
 }
 
-void LookoutEquipmentClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDescribeDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInferenceSchedulerOutcome LookoutEquipmentClient::DescribeInferenceScheduler(const DescribeInferenceSchedulerRequest& request) const
@@ -435,14 +435,14 @@ DescribeInferenceSchedulerOutcomeCallable LookoutEquipmentClient::DescribeInfere
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DescribeInferenceSchedulerAsync(const DescribeInferenceSchedulerRequest& request, const DescribeInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDescribeInferenceSchedulerAsyncHelper(LookoutEquipmentClient const * const clientThis, const DescribeInferenceSchedulerRequest& request, const DescribeInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInferenceSchedulerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInferenceScheduler(request), context);
 }
 
-void LookoutEquipmentClient::DescribeInferenceSchedulerAsyncHelper(const DescribeInferenceSchedulerRequest& request, const DescribeInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DescribeInferenceSchedulerAsync(const DescribeInferenceSchedulerRequest& request, const DescribeInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInferenceScheduler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDescribeInferenceSchedulerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLabelOutcome LookoutEquipmentClient::DescribeLabel(const DescribeLabelRequest& request) const
@@ -459,14 +459,14 @@ DescribeLabelOutcomeCallable LookoutEquipmentClient::DescribeLabelCallable(const
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DescribeLabelAsync(const DescribeLabelRequest& request, const DescribeLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDescribeLabelAsyncHelper(LookoutEquipmentClient const * const clientThis, const DescribeLabelRequest& request, const DescribeLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLabelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLabel(request), context);
 }
 
-void LookoutEquipmentClient::DescribeLabelAsyncHelper(const DescribeLabelRequest& request, const DescribeLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DescribeLabelAsync(const DescribeLabelRequest& request, const DescribeLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLabel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDescribeLabelAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLabelGroupOutcome LookoutEquipmentClient::DescribeLabelGroup(const DescribeLabelGroupRequest& request) const
@@ -483,14 +483,14 @@ DescribeLabelGroupOutcomeCallable LookoutEquipmentClient::DescribeLabelGroupCall
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DescribeLabelGroupAsync(const DescribeLabelGroupRequest& request, const DescribeLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDescribeLabelGroupAsyncHelper(LookoutEquipmentClient const * const clientThis, const DescribeLabelGroupRequest& request, const DescribeLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLabelGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLabelGroup(request), context);
 }
 
-void LookoutEquipmentClient::DescribeLabelGroupAsyncHelper(const DescribeLabelGroupRequest& request, const DescribeLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DescribeLabelGroupAsync(const DescribeLabelGroupRequest& request, const DescribeLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLabelGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDescribeLabelGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeModelOutcome LookoutEquipmentClient::DescribeModel(const DescribeModelRequest& request) const
@@ -507,14 +507,14 @@ DescribeModelOutcomeCallable LookoutEquipmentClient::DescribeModelCallable(const
   return task->get_future();
 }
 
-void LookoutEquipmentClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientDescribeModelAsyncHelper(LookoutEquipmentClient const * const clientThis, const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeModel(request), context);
 }
 
-void LookoutEquipmentClient::DescribeModelAsyncHelper(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientDescribeModelAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDataIngestionJobsOutcome LookoutEquipmentClient::ListDataIngestionJobs(const ListDataIngestionJobsRequest& request) const
@@ -531,14 +531,14 @@ ListDataIngestionJobsOutcomeCallable LookoutEquipmentClient::ListDataIngestionJo
   return task->get_future();
 }
 
-void LookoutEquipmentClient::ListDataIngestionJobsAsync(const ListDataIngestionJobsRequest& request, const ListDataIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientListDataIngestionJobsAsyncHelper(LookoutEquipmentClient const * const clientThis, const ListDataIngestionJobsRequest& request, const ListDataIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataIngestionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDataIngestionJobs(request), context);
 }
 
-void LookoutEquipmentClient::ListDataIngestionJobsAsyncHelper(const ListDataIngestionJobsRequest& request, const ListDataIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::ListDataIngestionJobsAsync(const ListDataIngestionJobsRequest& request, const ListDataIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDataIngestionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientListDataIngestionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetsOutcome LookoutEquipmentClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -555,14 +555,14 @@ ListDatasetsOutcomeCallable LookoutEquipmentClient::ListDatasetsCallable(const L
   return task->get_future();
 }
 
-void LookoutEquipmentClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientListDatasetsAsyncHelper(LookoutEquipmentClient const * const clientThis, const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasets(request), context);
 }
 
-void LookoutEquipmentClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientListDatasetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInferenceEventsOutcome LookoutEquipmentClient::ListInferenceEvents(const ListInferenceEventsRequest& request) const
@@ -579,14 +579,14 @@ ListInferenceEventsOutcomeCallable LookoutEquipmentClient::ListInferenceEventsCa
   return task->get_future();
 }
 
-void LookoutEquipmentClient::ListInferenceEventsAsync(const ListInferenceEventsRequest& request, const ListInferenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientListInferenceEventsAsyncHelper(LookoutEquipmentClient const * const clientThis, const ListInferenceEventsRequest& request, const ListInferenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInferenceEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInferenceEvents(request), context);
 }
 
-void LookoutEquipmentClient::ListInferenceEventsAsyncHelper(const ListInferenceEventsRequest& request, const ListInferenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::ListInferenceEventsAsync(const ListInferenceEventsRequest& request, const ListInferenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInferenceEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientListInferenceEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInferenceExecutionsOutcome LookoutEquipmentClient::ListInferenceExecutions(const ListInferenceExecutionsRequest& request) const
@@ -603,14 +603,14 @@ ListInferenceExecutionsOutcomeCallable LookoutEquipmentClient::ListInferenceExec
   return task->get_future();
 }
 
-void LookoutEquipmentClient::ListInferenceExecutionsAsync(const ListInferenceExecutionsRequest& request, const ListInferenceExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientListInferenceExecutionsAsyncHelper(LookoutEquipmentClient const * const clientThis, const ListInferenceExecutionsRequest& request, const ListInferenceExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInferenceExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInferenceExecutions(request), context);
 }
 
-void LookoutEquipmentClient::ListInferenceExecutionsAsyncHelper(const ListInferenceExecutionsRequest& request, const ListInferenceExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::ListInferenceExecutionsAsync(const ListInferenceExecutionsRequest& request, const ListInferenceExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInferenceExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientListInferenceExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInferenceSchedulersOutcome LookoutEquipmentClient::ListInferenceSchedulers(const ListInferenceSchedulersRequest& request) const
@@ -627,14 +627,14 @@ ListInferenceSchedulersOutcomeCallable LookoutEquipmentClient::ListInferenceSche
   return task->get_future();
 }
 
-void LookoutEquipmentClient::ListInferenceSchedulersAsync(const ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientListInferenceSchedulersAsyncHelper(LookoutEquipmentClient const * const clientThis, const ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInferenceSchedulersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInferenceSchedulers(request), context);
 }
 
-void LookoutEquipmentClient::ListInferenceSchedulersAsyncHelper(const ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::ListInferenceSchedulersAsync(const ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInferenceSchedulers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientListInferenceSchedulersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLabelGroupsOutcome LookoutEquipmentClient::ListLabelGroups(const ListLabelGroupsRequest& request) const
@@ -651,14 +651,14 @@ ListLabelGroupsOutcomeCallable LookoutEquipmentClient::ListLabelGroupsCallable(c
   return task->get_future();
 }
 
-void LookoutEquipmentClient::ListLabelGroupsAsync(const ListLabelGroupsRequest& request, const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientListLabelGroupsAsyncHelper(LookoutEquipmentClient const * const clientThis, const ListLabelGroupsRequest& request, const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLabelGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLabelGroups(request), context);
 }
 
-void LookoutEquipmentClient::ListLabelGroupsAsyncHelper(const ListLabelGroupsRequest& request, const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::ListLabelGroupsAsync(const ListLabelGroupsRequest& request, const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLabelGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientListLabelGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLabelsOutcome LookoutEquipmentClient::ListLabels(const ListLabelsRequest& request) const
@@ -675,14 +675,14 @@ ListLabelsOutcomeCallable LookoutEquipmentClient::ListLabelsCallable(const ListL
   return task->get_future();
 }
 
-void LookoutEquipmentClient::ListLabelsAsync(const ListLabelsRequest& request, const ListLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientListLabelsAsyncHelper(LookoutEquipmentClient const * const clientThis, const ListLabelsRequest& request, const ListLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLabelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLabels(request), context);
 }
 
-void LookoutEquipmentClient::ListLabelsAsyncHelper(const ListLabelsRequest& request, const ListLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::ListLabelsAsync(const ListLabelsRequest& request, const ListLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLabels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientListLabelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListModelsOutcome LookoutEquipmentClient::ListModels(const ListModelsRequest& request) const
@@ -699,14 +699,14 @@ ListModelsOutcomeCallable LookoutEquipmentClient::ListModelsCallable(const ListM
   return task->get_future();
 }
 
-void LookoutEquipmentClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientListModelsAsyncHelper(LookoutEquipmentClient const * const clientThis, const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListModelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListModels(request), context);
 }
 
-void LookoutEquipmentClient::ListModelsAsyncHelper(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListModels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientListModelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSensorStatisticsOutcome LookoutEquipmentClient::ListSensorStatistics(const ListSensorStatisticsRequest& request) const
@@ -723,14 +723,14 @@ ListSensorStatisticsOutcomeCallable LookoutEquipmentClient::ListSensorStatistics
   return task->get_future();
 }
 
-void LookoutEquipmentClient::ListSensorStatisticsAsync(const ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientListSensorStatisticsAsyncHelper(LookoutEquipmentClient const * const clientThis, const ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSensorStatisticsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSensorStatistics(request), context);
 }
 
-void LookoutEquipmentClient::ListSensorStatisticsAsyncHelper(const ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::ListSensorStatisticsAsync(const ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSensorStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientListSensorStatisticsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome LookoutEquipmentClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -747,14 +747,14 @@ ListTagsForResourceOutcomeCallable LookoutEquipmentClient::ListTagsForResourceCa
   return task->get_future();
 }
 
-void LookoutEquipmentClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientListTagsForResourceAsyncHelper(LookoutEquipmentClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void LookoutEquipmentClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDataIngestionJobOutcome LookoutEquipmentClient::StartDataIngestionJob(const StartDataIngestionJobRequest& request) const
@@ -771,14 +771,14 @@ StartDataIngestionJobOutcomeCallable LookoutEquipmentClient::StartDataIngestionJ
   return task->get_future();
 }
 
-void LookoutEquipmentClient::StartDataIngestionJobAsync(const StartDataIngestionJobRequest& request, const StartDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientStartDataIngestionJobAsyncHelper(LookoutEquipmentClient const * const clientThis, const StartDataIngestionJobRequest& request, const StartDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDataIngestionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDataIngestionJob(request), context);
 }
 
-void LookoutEquipmentClient::StartDataIngestionJobAsyncHelper(const StartDataIngestionJobRequest& request, const StartDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::StartDataIngestionJobAsync(const StartDataIngestionJobRequest& request, const StartDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDataIngestionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientStartDataIngestionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartInferenceSchedulerOutcome LookoutEquipmentClient::StartInferenceScheduler(const StartInferenceSchedulerRequest& request) const
@@ -795,14 +795,14 @@ StartInferenceSchedulerOutcomeCallable LookoutEquipmentClient::StartInferenceSch
   return task->get_future();
 }
 
-void LookoutEquipmentClient::StartInferenceSchedulerAsync(const StartInferenceSchedulerRequest& request, const StartInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientStartInferenceSchedulerAsyncHelper(LookoutEquipmentClient const * const clientThis, const StartInferenceSchedulerRequest& request, const StartInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartInferenceSchedulerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartInferenceScheduler(request), context);
 }
 
-void LookoutEquipmentClient::StartInferenceSchedulerAsyncHelper(const StartInferenceSchedulerRequest& request, const StartInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::StartInferenceSchedulerAsync(const StartInferenceSchedulerRequest& request, const StartInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartInferenceScheduler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientStartInferenceSchedulerAsyncHelper( this, request, handler, context ); } );
 }
 
 StopInferenceSchedulerOutcome LookoutEquipmentClient::StopInferenceScheduler(const StopInferenceSchedulerRequest& request) const
@@ -819,14 +819,14 @@ StopInferenceSchedulerOutcomeCallable LookoutEquipmentClient::StopInferenceSched
   return task->get_future();
 }
 
-void LookoutEquipmentClient::StopInferenceSchedulerAsync(const StopInferenceSchedulerRequest& request, const StopInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientStopInferenceSchedulerAsyncHelper(LookoutEquipmentClient const * const clientThis, const StopInferenceSchedulerRequest& request, const StopInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopInferenceSchedulerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopInferenceScheduler(request), context);
 }
 
-void LookoutEquipmentClient::StopInferenceSchedulerAsyncHelper(const StopInferenceSchedulerRequest& request, const StopInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::StopInferenceSchedulerAsync(const StopInferenceSchedulerRequest& request, const StopInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopInferenceScheduler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientStopInferenceSchedulerAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome LookoutEquipmentClient::TagResource(const TagResourceRequest& request) const
@@ -843,14 +843,14 @@ TagResourceOutcomeCallable LookoutEquipmentClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void LookoutEquipmentClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientTagResourceAsyncHelper(LookoutEquipmentClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void LookoutEquipmentClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome LookoutEquipmentClient::UntagResource(const UntagResourceRequest& request) const
@@ -867,14 +867,14 @@ UntagResourceOutcomeCallable LookoutEquipmentClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void LookoutEquipmentClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientUntagResourceAsyncHelper(LookoutEquipmentClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void LookoutEquipmentClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateInferenceSchedulerOutcome LookoutEquipmentClient::UpdateInferenceScheduler(const UpdateInferenceSchedulerRequest& request) const
@@ -891,14 +891,14 @@ UpdateInferenceSchedulerOutcomeCallable LookoutEquipmentClient::UpdateInferenceS
   return task->get_future();
 }
 
-void LookoutEquipmentClient::UpdateInferenceSchedulerAsync(const UpdateInferenceSchedulerRequest& request, const UpdateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientUpdateInferenceSchedulerAsyncHelper(LookoutEquipmentClient const * const clientThis, const UpdateInferenceSchedulerRequest& request, const UpdateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInferenceSchedulerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateInferenceScheduler(request), context);
 }
 
-void LookoutEquipmentClient::UpdateInferenceSchedulerAsyncHelper(const UpdateInferenceSchedulerRequest& request, const UpdateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::UpdateInferenceSchedulerAsync(const UpdateInferenceSchedulerRequest& request, const UpdateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateInferenceScheduler(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientUpdateInferenceSchedulerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLabelGroupOutcome LookoutEquipmentClient::UpdateLabelGroup(const UpdateLabelGroupRequest& request) const
@@ -915,13 +915,13 @@ UpdateLabelGroupOutcomeCallable LookoutEquipmentClient::UpdateLabelGroupCallable
   return task->get_future();
 }
 
-void LookoutEquipmentClient::UpdateLabelGroupAsync(const UpdateLabelGroupRequest& request, const UpdateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClientUpdateLabelGroupAsyncHelper(LookoutEquipmentClient const * const clientThis, const UpdateLabelGroupRequest& request, const UpdateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLabelGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLabelGroup(request), context);
 }
 
-void LookoutEquipmentClient::UpdateLabelGroupAsyncHelper(const UpdateLabelGroupRequest& request, const UpdateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutEquipmentClient::UpdateLabelGroupAsync(const UpdateLabelGroupRequest& request, const UpdateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLabelGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutEquipmentClientUpdateLabelGroupAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -160,14 +160,14 @@ CloneBackendOutcomeCallable AmplifyBackendClient::CloneBackendCallable(const Clo
   return task->get_future();
 }
 
-void AmplifyBackendClient::CloneBackendAsync(const CloneBackendRequest& request, const CloneBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientCloneBackendAsyncHelper(AmplifyBackendClient const * const clientThis, const CloneBackendRequest& request, const CloneBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CloneBackendAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CloneBackend(request), context);
 }
 
-void AmplifyBackendClient::CloneBackendAsyncHelper(const CloneBackendRequest& request, const CloneBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::CloneBackendAsync(const CloneBackendRequest& request, const CloneBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CloneBackend(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientCloneBackendAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackendOutcome AmplifyBackendClient::CreateBackend(const CreateBackendRequest& request) const
@@ -185,14 +185,14 @@ CreateBackendOutcomeCallable AmplifyBackendClient::CreateBackendCallable(const C
   return task->get_future();
 }
 
-void AmplifyBackendClient::CreateBackendAsync(const CreateBackendRequest& request, const CreateBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientCreateBackendAsyncHelper(AmplifyBackendClient const * const clientThis, const CreateBackendRequest& request, const CreateBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackend(request), context);
 }
 
-void AmplifyBackendClient::CreateBackendAsyncHelper(const CreateBackendRequest& request, const CreateBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::CreateBackendAsync(const CreateBackendRequest& request, const CreateBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackend(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientCreateBackendAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackendAPIOutcome AmplifyBackendClient::CreateBackendAPI(const CreateBackendAPIRequest& request) const
@@ -217,14 +217,14 @@ CreateBackendAPIOutcomeCallable AmplifyBackendClient::CreateBackendAPICallable(c
   return task->get_future();
 }
 
-void AmplifyBackendClient::CreateBackendAPIAsync(const CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientCreateBackendAPIAsyncHelper(AmplifyBackendClient const * const clientThis, const CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendAPIAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackendAPI(request), context);
 }
 
-void AmplifyBackendClient::CreateBackendAPIAsyncHelper(const CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::CreateBackendAPIAsync(const CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientCreateBackendAPIAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackendAuthOutcome AmplifyBackendClient::CreateBackendAuth(const CreateBackendAuthRequest& request) const
@@ -249,14 +249,14 @@ CreateBackendAuthOutcomeCallable AmplifyBackendClient::CreateBackendAuthCallable
   return task->get_future();
 }
 
-void AmplifyBackendClient::CreateBackendAuthAsync(const CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientCreateBackendAuthAsyncHelper(AmplifyBackendClient const * const clientThis, const CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendAuthAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackendAuth(request), context);
 }
 
-void AmplifyBackendClient::CreateBackendAuthAsyncHelper(const CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::CreateBackendAuthAsync(const CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientCreateBackendAuthAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackendConfigOutcome AmplifyBackendClient::CreateBackendConfig(const CreateBackendConfigRequest& request) const
@@ -281,14 +281,14 @@ CreateBackendConfigOutcomeCallable AmplifyBackendClient::CreateBackendConfigCall
   return task->get_future();
 }
 
-void AmplifyBackendClient::CreateBackendConfigAsync(const CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientCreateBackendConfigAsyncHelper(AmplifyBackendClient const * const clientThis, const CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackendConfig(request), context);
 }
 
-void AmplifyBackendClient::CreateBackendConfigAsyncHelper(const CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::CreateBackendConfigAsync(const CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackendConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientCreateBackendConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const CreateBackendStorageRequest& request) const
@@ -313,14 +313,14 @@ CreateBackendStorageOutcomeCallable AmplifyBackendClient::CreateBackendStorageCa
   return task->get_future();
 }
 
-void AmplifyBackendClient::CreateBackendStorageAsync(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientCreateBackendStorageAsyncHelper(AmplifyBackendClient const * const clientThis, const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackendStorage(request), context);
 }
 
-void AmplifyBackendClient::CreateBackendStorageAsyncHelper(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::CreateBackendStorageAsync(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientCreateBackendStorageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& request) const
@@ -345,14 +345,14 @@ CreateTokenOutcomeCallable AmplifyBackendClient::CreateTokenCallable(const Creat
   return task->get_future();
 }
 
-void AmplifyBackendClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientCreateTokenAsyncHelper(AmplifyBackendClient const * const clientThis, const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateToken(request), context);
 }
 
-void AmplifyBackendClient::CreateTokenAsyncHelper(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientCreateTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequest& request) const
@@ -384,14 +384,14 @@ DeleteBackendOutcomeCallable AmplifyBackendClient::DeleteBackendCallable(const D
   return task->get_future();
 }
 
-void AmplifyBackendClient::DeleteBackendAsync(const DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientDeleteBackendAsyncHelper(AmplifyBackendClient const * const clientThis, const DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackend(request), context);
 }
 
-void AmplifyBackendClient::DeleteBackendAsyncHelper(const DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::DeleteBackendAsync(const DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackend(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientDeleteBackendAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBackendAPIRequest& request) const
@@ -423,14 +423,14 @@ DeleteBackendAPIOutcomeCallable AmplifyBackendClient::DeleteBackendAPICallable(c
   return task->get_future();
 }
 
-void AmplifyBackendClient::DeleteBackendAPIAsync(const DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientDeleteBackendAPIAsyncHelper(AmplifyBackendClient const * const clientThis, const DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendAPIAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackendAPI(request), context);
 }
 
-void AmplifyBackendClient::DeleteBackendAPIAsyncHelper(const DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::DeleteBackendAPIAsync(const DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientDeleteBackendAPIAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBackendAuthRequest& request) const
@@ -462,14 +462,14 @@ DeleteBackendAuthOutcomeCallable AmplifyBackendClient::DeleteBackendAuthCallable
   return task->get_future();
 }
 
-void AmplifyBackendClient::DeleteBackendAuthAsync(const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientDeleteBackendAuthAsyncHelper(AmplifyBackendClient const * const clientThis, const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendAuthAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackendAuth(request), context);
 }
 
-void AmplifyBackendClient::DeleteBackendAuthAsyncHelper(const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::DeleteBackendAuthAsync(const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientDeleteBackendAuthAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const DeleteBackendStorageRequest& request) const
@@ -501,14 +501,14 @@ DeleteBackendStorageOutcomeCallable AmplifyBackendClient::DeleteBackendStorageCa
   return task->get_future();
 }
 
-void AmplifyBackendClient::DeleteBackendStorageAsync(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientDeleteBackendStorageAsyncHelper(AmplifyBackendClient const * const clientThis, const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackendStorage(request), context);
 }
 
-void AmplifyBackendClient::DeleteBackendStorageAsyncHelper(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::DeleteBackendStorageAsync(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientDeleteBackendStorageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& request) const
@@ -540,14 +540,14 @@ DeleteTokenOutcomeCallable AmplifyBackendClient::DeleteTokenCallable(const Delet
   return task->get_future();
 }
 
-void AmplifyBackendClient::DeleteTokenAsync(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientDeleteTokenAsyncHelper(AmplifyBackendClient const * const clientThis, const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteToken(request), context);
 }
 
-void AmplifyBackendClient::DeleteTokenAsyncHelper(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::DeleteTokenAsync(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientDeleteTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(const GenerateBackendAPIModelsRequest& request) const
@@ -579,14 +579,14 @@ GenerateBackendAPIModelsOutcomeCallable AmplifyBackendClient::GenerateBackendAPI
   return task->get_future();
 }
 
-void AmplifyBackendClient::GenerateBackendAPIModelsAsync(const GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientGenerateBackendAPIModelsAsyncHelper(AmplifyBackendClient const * const clientThis, const GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateBackendAPIModelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateBackendAPIModels(request), context);
 }
 
-void AmplifyBackendClient::GenerateBackendAPIModelsAsyncHelper(const GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::GenerateBackendAPIModelsAsync(const GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateBackendAPIModels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientGenerateBackendAPIModelsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackendOutcome AmplifyBackendClient::GetBackend(const GetBackendRequest& request) const
@@ -611,14 +611,14 @@ GetBackendOutcomeCallable AmplifyBackendClient::GetBackendCallable(const GetBack
   return task->get_future();
 }
 
-void AmplifyBackendClient::GetBackendAsync(const GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientGetBackendAsyncHelper(AmplifyBackendClient const * const clientThis, const GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackend(request), context);
 }
 
-void AmplifyBackendClient::GetBackendAsyncHelper(const GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::GetBackendAsync(const GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackend(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientGetBackendAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequest& request) const
@@ -650,14 +650,14 @@ GetBackendAPIOutcomeCallable AmplifyBackendClient::GetBackendAPICallable(const G
   return task->get_future();
 }
 
-void AmplifyBackendClient::GetBackendAPIAsync(const GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientGetBackendAPIAsyncHelper(AmplifyBackendClient const * const clientThis, const GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAPIAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackendAPI(request), context);
 }
 
-void AmplifyBackendClient::GetBackendAPIAsyncHelper(const GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::GetBackendAPIAsync(const GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientGetBackendAPIAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBackendAPIModelsRequest& request) const
@@ -689,14 +689,14 @@ GetBackendAPIModelsOutcomeCallable AmplifyBackendClient::GetBackendAPIModelsCall
   return task->get_future();
 }
 
-void AmplifyBackendClient::GetBackendAPIModelsAsync(const GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientGetBackendAPIModelsAsyncHelper(AmplifyBackendClient const * const clientThis, const GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAPIModelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackendAPIModels(request), context);
 }
 
-void AmplifyBackendClient::GetBackendAPIModelsAsyncHelper(const GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::GetBackendAPIModelsAsync(const GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackendAPIModels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientGetBackendAPIModelsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthRequest& request) const
@@ -728,14 +728,14 @@ GetBackendAuthOutcomeCallable AmplifyBackendClient::GetBackendAuthCallable(const
   return task->get_future();
 }
 
-void AmplifyBackendClient::GetBackendAuthAsync(const GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientGetBackendAuthAsyncHelper(AmplifyBackendClient const * const clientThis, const GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAuthAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackendAuth(request), context);
 }
 
-void AmplifyBackendClient::GetBackendAuthAsyncHelper(const GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::GetBackendAuthAsync(const GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientGetBackendAuthAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequest& request) const
@@ -772,14 +772,14 @@ GetBackendJobOutcomeCallable AmplifyBackendClient::GetBackendJobCallable(const G
   return task->get_future();
 }
 
-void AmplifyBackendClient::GetBackendJobAsync(const GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientGetBackendJobAsyncHelper(AmplifyBackendClient const * const clientThis, const GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackendJob(request), context);
 }
 
-void AmplifyBackendClient::GetBackendJobAsyncHelper(const GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::GetBackendJobAsync(const GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackendJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientGetBackendJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBackendStorageRequest& request) const
@@ -811,14 +811,14 @@ GetBackendStorageOutcomeCallable AmplifyBackendClient::GetBackendStorageCallable
   return task->get_future();
 }
 
-void AmplifyBackendClient::GetBackendStorageAsync(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientGetBackendStorageAsyncHelper(AmplifyBackendClient const * const clientThis, const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackendStorage(request), context);
 }
 
-void AmplifyBackendClient::GetBackendStorageAsyncHelper(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::GetBackendStorageAsync(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientGetBackendStorageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) const
@@ -849,14 +849,14 @@ GetTokenOutcomeCallable AmplifyBackendClient::GetTokenCallable(const GetTokenReq
   return task->get_future();
 }
 
-void AmplifyBackendClient::GetTokenAsync(const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientGetTokenAsyncHelper(AmplifyBackendClient const * const clientThis, const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetToken(request), context);
 }
 
-void AmplifyBackendClient::GetTokenAsyncHelper(const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::GetTokenAsync(const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientGetTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBackendAuthRequest& request) const
@@ -888,14 +888,14 @@ ImportBackendAuthOutcomeCallable AmplifyBackendClient::ImportBackendAuthCallable
   return task->get_future();
 }
 
-void AmplifyBackendClient::ImportBackendAuthAsync(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientImportBackendAuthAsyncHelper(AmplifyBackendClient const * const clientThis, const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportBackendAuthAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportBackendAuth(request), context);
 }
 
-void AmplifyBackendClient::ImportBackendAuthAsyncHelper(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::ImportBackendAuthAsync(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientImportBackendAuthAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const ImportBackendStorageRequest& request) const
@@ -927,14 +927,14 @@ ImportBackendStorageOutcomeCallable AmplifyBackendClient::ImportBackendStorageCa
   return task->get_future();
 }
 
-void AmplifyBackendClient::ImportBackendStorageAsync(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientImportBackendStorageAsyncHelper(AmplifyBackendClient const * const clientThis, const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportBackendStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportBackendStorage(request), context);
 }
 
-void AmplifyBackendClient::ImportBackendStorageAsyncHelper(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::ImportBackendStorageAsync(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientImportBackendStorageAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJobsRequest& request) const
@@ -965,14 +965,14 @@ ListBackendJobsOutcomeCallable AmplifyBackendClient::ListBackendJobsCallable(con
   return task->get_future();
 }
 
-void AmplifyBackendClient::ListBackendJobsAsync(const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientListBackendJobsAsyncHelper(AmplifyBackendClient const * const clientThis, const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackendJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBackendJobs(request), context);
 }
 
-void AmplifyBackendClient::ListBackendJobsAsyncHelper(const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::ListBackendJobsAsync(const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBackendJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientListBackendJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequest& request) const
@@ -990,14 +990,14 @@ ListS3BucketsOutcomeCallable AmplifyBackendClient::ListS3BucketsCallable(const L
   return task->get_future();
 }
 
-void AmplifyBackendClient::ListS3BucketsAsync(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientListS3BucketsAsyncHelper(AmplifyBackendClient const * const clientThis, const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListS3BucketsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListS3Buckets(request), context);
 }
 
-void AmplifyBackendClient::ListS3BucketsAsyncHelper(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::ListS3BucketsAsync(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListS3Buckets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientListS3BucketsAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAllBackendsRequest& request) const
@@ -1022,14 +1022,14 @@ RemoveAllBackendsOutcomeCallable AmplifyBackendClient::RemoveAllBackendsCallable
   return task->get_future();
 }
 
-void AmplifyBackendClient::RemoveAllBackendsAsync(const RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientRemoveAllBackendsAsyncHelper(AmplifyBackendClient const * const clientThis, const RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveAllBackendsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveAllBackends(request), context);
 }
 
-void AmplifyBackendClient::RemoveAllBackendsAsyncHelper(const RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::RemoveAllBackendsAsync(const RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveAllBackends(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientRemoveAllBackendsAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveBackendConfigOutcome AmplifyBackendClient::RemoveBackendConfig(const RemoveBackendConfigRequest& request) const
@@ -1054,14 +1054,14 @@ RemoveBackendConfigOutcomeCallable AmplifyBackendClient::RemoveBackendConfigCall
   return task->get_future();
 }
 
-void AmplifyBackendClient::RemoveBackendConfigAsync(const RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientRemoveBackendConfigAsyncHelper(AmplifyBackendClient const * const clientThis, const RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveBackendConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveBackendConfig(request), context);
 }
 
-void AmplifyBackendClient::RemoveBackendConfigAsyncHelper(const RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::RemoveBackendConfigAsync(const RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveBackendConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientRemoveBackendConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBackendAPIRequest& request) const
@@ -1092,14 +1092,14 @@ UpdateBackendAPIOutcomeCallable AmplifyBackendClient::UpdateBackendAPICallable(c
   return task->get_future();
 }
 
-void AmplifyBackendClient::UpdateBackendAPIAsync(const UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientUpdateBackendAPIAsyncHelper(AmplifyBackendClient const * const clientThis, const UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendAPIAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBackendAPI(request), context);
 }
 
-void AmplifyBackendClient::UpdateBackendAPIAsyncHelper(const UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::UpdateBackendAPIAsync(const UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientUpdateBackendAPIAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBackendAuthRequest& request) const
@@ -1130,14 +1130,14 @@ UpdateBackendAuthOutcomeCallable AmplifyBackendClient::UpdateBackendAuthCallable
   return task->get_future();
 }
 
-void AmplifyBackendClient::UpdateBackendAuthAsync(const UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientUpdateBackendAuthAsyncHelper(AmplifyBackendClient const * const clientThis, const UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendAuthAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBackendAuth(request), context);
 }
 
-void AmplifyBackendClient::UpdateBackendAuthAsyncHelper(const UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::UpdateBackendAuthAsync(const UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientUpdateBackendAuthAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBackendConfigOutcome AmplifyBackendClient::UpdateBackendConfig(const UpdateBackendConfigRequest& request) const
@@ -1162,14 +1162,14 @@ UpdateBackendConfigOutcomeCallable AmplifyBackendClient::UpdateBackendConfigCall
   return task->get_future();
 }
 
-void AmplifyBackendClient::UpdateBackendConfigAsync(const UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientUpdateBackendConfigAsyncHelper(AmplifyBackendClient const * const clientThis, const UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBackendConfig(request), context);
 }
 
-void AmplifyBackendClient::UpdateBackendConfigAsyncHelper(const UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::UpdateBackendConfigAsync(const UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBackendConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientUpdateBackendConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBackendJobRequest& request) const
@@ -1206,14 +1206,14 @@ UpdateBackendJobOutcomeCallable AmplifyBackendClient::UpdateBackendJobCallable(c
   return task->get_future();
 }
 
-void AmplifyBackendClient::UpdateBackendJobAsync(const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientUpdateBackendJobAsyncHelper(AmplifyBackendClient const * const clientThis, const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBackendJob(request), context);
 }
 
-void AmplifyBackendClient::UpdateBackendJobAsyncHelper(const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::UpdateBackendJobAsync(const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBackendJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientUpdateBackendJobAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const UpdateBackendStorageRequest& request) const
@@ -1244,13 +1244,13 @@ UpdateBackendStorageOutcomeCallable AmplifyBackendClient::UpdateBackendStorageCa
   return task->get_future();
 }
 
-void AmplifyBackendClient::UpdateBackendStorageAsync(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClientUpdateBackendStorageAsyncHelper(AmplifyBackendClient const * const clientThis, const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBackendStorage(request), context);
 }
 
-void AmplifyBackendClient::UpdateBackendStorageAsyncHelper(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AmplifyBackendClient::UpdateBackendStorageAsync(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AmplifyBackendClientUpdateBackendStorageAsyncHelper( this, request, handler, context ); } );
 }
 

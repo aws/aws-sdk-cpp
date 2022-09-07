@@ -148,14 +148,14 @@ CreateApplicationInstanceOutcomeCallable PanoramaClient::CreateApplicationInstan
   return task->get_future();
 }
 
-void PanoramaClient::CreateApplicationInstanceAsync(const CreateApplicationInstanceRequest& request, const CreateApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientCreateApplicationInstanceAsyncHelper(PanoramaClient const * const clientThis, const CreateApplicationInstanceRequest& request, const CreateApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplicationInstance(request), context);
 }
 
-void PanoramaClient::CreateApplicationInstanceAsyncHelper(const CreateApplicationInstanceRequest& request, const CreateApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::CreateApplicationInstanceAsync(const CreateApplicationInstanceRequest& request, const CreateApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplicationInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientCreateApplicationInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateJobForDevicesOutcome PanoramaClient::CreateJobForDevices(const CreateJobForDevicesRequest& request) const
@@ -173,14 +173,14 @@ CreateJobForDevicesOutcomeCallable PanoramaClient::CreateJobForDevicesCallable(c
   return task->get_future();
 }
 
-void PanoramaClient::CreateJobForDevicesAsync(const CreateJobForDevicesRequest& request, const CreateJobForDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientCreateJobForDevicesAsyncHelper(PanoramaClient const * const clientThis, const CreateJobForDevicesRequest& request, const CreateJobForDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobForDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateJobForDevices(request), context);
 }
 
-void PanoramaClient::CreateJobForDevicesAsyncHelper(const CreateJobForDevicesRequest& request, const CreateJobForDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::CreateJobForDevicesAsync(const CreateJobForDevicesRequest& request, const CreateJobForDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateJobForDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientCreateJobForDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNodeFromTemplateJobOutcome PanoramaClient::CreateNodeFromTemplateJob(const CreateNodeFromTemplateJobRequest& request) const
@@ -198,14 +198,14 @@ CreateNodeFromTemplateJobOutcomeCallable PanoramaClient::CreateNodeFromTemplateJ
   return task->get_future();
 }
 
-void PanoramaClient::CreateNodeFromTemplateJobAsync(const CreateNodeFromTemplateJobRequest& request, const CreateNodeFromTemplateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientCreateNodeFromTemplateJobAsyncHelper(PanoramaClient const * const clientThis, const CreateNodeFromTemplateJobRequest& request, const CreateNodeFromTemplateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNodeFromTemplateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNodeFromTemplateJob(request), context);
 }
 
-void PanoramaClient::CreateNodeFromTemplateJobAsyncHelper(const CreateNodeFromTemplateJobRequest& request, const CreateNodeFromTemplateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::CreateNodeFromTemplateJobAsync(const CreateNodeFromTemplateJobRequest& request, const CreateNodeFromTemplateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNodeFromTemplateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientCreateNodeFromTemplateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePackageOutcome PanoramaClient::CreatePackage(const CreatePackageRequest& request) const
@@ -223,14 +223,14 @@ CreatePackageOutcomeCallable PanoramaClient::CreatePackageCallable(const CreateP
   return task->get_future();
 }
 
-void PanoramaClient::CreatePackageAsync(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientCreatePackageAsyncHelper(PanoramaClient const * const clientThis, const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePackage(request), context);
 }
 
-void PanoramaClient::CreatePackageAsyncHelper(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::CreatePackageAsync(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientCreatePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePackageImportJobOutcome PanoramaClient::CreatePackageImportJob(const CreatePackageImportJobRequest& request) const
@@ -248,14 +248,14 @@ CreatePackageImportJobOutcomeCallable PanoramaClient::CreatePackageImportJobCall
   return task->get_future();
 }
 
-void PanoramaClient::CreatePackageImportJobAsync(const CreatePackageImportJobRequest& request, const CreatePackageImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientCreatePackageImportJobAsyncHelper(PanoramaClient const * const clientThis, const CreatePackageImportJobRequest& request, const CreatePackageImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePackageImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePackageImportJob(request), context);
 }
 
-void PanoramaClient::CreatePackageImportJobAsyncHelper(const CreatePackageImportJobRequest& request, const CreatePackageImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::CreatePackageImportJobAsync(const CreatePackageImportJobRequest& request, const CreatePackageImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePackageImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientCreatePackageImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDeviceOutcome PanoramaClient::DeleteDevice(const DeleteDeviceRequest& request) const
@@ -279,14 +279,14 @@ DeleteDeviceOutcomeCallable PanoramaClient::DeleteDeviceCallable(const DeleteDev
   return task->get_future();
 }
 
-void PanoramaClient::DeleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDeleteDeviceAsyncHelper(PanoramaClient const * const clientThis, const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDevice(request), context);
 }
 
-void PanoramaClient::DeleteDeviceAsyncHelper(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DeleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDeleteDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePackageOutcome PanoramaClient::DeletePackage(const DeletePackageRequest& request) const
@@ -310,14 +310,14 @@ DeletePackageOutcomeCallable PanoramaClient::DeletePackageCallable(const DeleteP
   return task->get_future();
 }
 
-void PanoramaClient::DeletePackageAsync(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDeletePackageAsyncHelper(PanoramaClient const * const clientThis, const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePackage(request), context);
 }
 
-void PanoramaClient::DeletePackageAsyncHelper(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DeletePackageAsync(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDeletePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterPackageVersionOutcome PanoramaClient::DeregisterPackageVersion(const DeregisterPackageVersionRequest& request) const
@@ -355,14 +355,14 @@ DeregisterPackageVersionOutcomeCallable PanoramaClient::DeregisterPackageVersion
   return task->get_future();
 }
 
-void PanoramaClient::DeregisterPackageVersionAsync(const DeregisterPackageVersionRequest& request, const DeregisterPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDeregisterPackageVersionAsyncHelper(PanoramaClient const * const clientThis, const DeregisterPackageVersionRequest& request, const DeregisterPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterPackageVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterPackageVersion(request), context);
 }
 
-void PanoramaClient::DeregisterPackageVersionAsyncHelper(const DeregisterPackageVersionRequest& request, const DeregisterPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DeregisterPackageVersionAsync(const DeregisterPackageVersionRequest& request, const DeregisterPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterPackageVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDeregisterPackageVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeApplicationInstanceOutcome PanoramaClient::DescribeApplicationInstance(const DescribeApplicationInstanceRequest& request) const
@@ -386,14 +386,14 @@ DescribeApplicationInstanceOutcomeCallable PanoramaClient::DescribeApplicationIn
   return task->get_future();
 }
 
-void PanoramaClient::DescribeApplicationInstanceAsync(const DescribeApplicationInstanceRequest& request, const DescribeApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDescribeApplicationInstanceAsyncHelper(PanoramaClient const * const clientThis, const DescribeApplicationInstanceRequest& request, const DescribeApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApplicationInstance(request), context);
 }
 
-void PanoramaClient::DescribeApplicationInstanceAsyncHelper(const DescribeApplicationInstanceRequest& request, const DescribeApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DescribeApplicationInstanceAsync(const DescribeApplicationInstanceRequest& request, const DescribeApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApplicationInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDescribeApplicationInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeApplicationInstanceDetailsOutcome PanoramaClient::DescribeApplicationInstanceDetails(const DescribeApplicationInstanceDetailsRequest& request) const
@@ -418,14 +418,14 @@ DescribeApplicationInstanceDetailsOutcomeCallable PanoramaClient::DescribeApplic
   return task->get_future();
 }
 
-void PanoramaClient::DescribeApplicationInstanceDetailsAsync(const DescribeApplicationInstanceDetailsRequest& request, const DescribeApplicationInstanceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDescribeApplicationInstanceDetailsAsyncHelper(PanoramaClient const * const clientThis, const DescribeApplicationInstanceDetailsRequest& request, const DescribeApplicationInstanceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationInstanceDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApplicationInstanceDetails(request), context);
 }
 
-void PanoramaClient::DescribeApplicationInstanceDetailsAsyncHelper(const DescribeApplicationInstanceDetailsRequest& request, const DescribeApplicationInstanceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DescribeApplicationInstanceDetailsAsync(const DescribeApplicationInstanceDetailsRequest& request, const DescribeApplicationInstanceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApplicationInstanceDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDescribeApplicationInstanceDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDeviceOutcome PanoramaClient::DescribeDevice(const DescribeDeviceRequest& request) const
@@ -449,14 +449,14 @@ DescribeDeviceOutcomeCallable PanoramaClient::DescribeDeviceCallable(const Descr
   return task->get_future();
 }
 
-void PanoramaClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDescribeDeviceAsyncHelper(PanoramaClient const * const clientThis, const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDevice(request), context);
 }
 
-void PanoramaClient::DescribeDeviceAsyncHelper(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDescribeDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDeviceJobOutcome PanoramaClient::DescribeDeviceJob(const DescribeDeviceJobRequest& request) const
@@ -480,14 +480,14 @@ DescribeDeviceJobOutcomeCallable PanoramaClient::DescribeDeviceJobCallable(const
   return task->get_future();
 }
 
-void PanoramaClient::DescribeDeviceJobAsync(const DescribeDeviceJobRequest& request, const DescribeDeviceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDescribeDeviceJobAsyncHelper(PanoramaClient const * const clientThis, const DescribeDeviceJobRequest& request, const DescribeDeviceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeviceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDeviceJob(request), context);
 }
 
-void PanoramaClient::DescribeDeviceJobAsyncHelper(const DescribeDeviceJobRequest& request, const DescribeDeviceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DescribeDeviceJobAsync(const DescribeDeviceJobRequest& request, const DescribeDeviceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDeviceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDescribeDeviceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNodeOutcome PanoramaClient::DescribeNode(const DescribeNodeRequest& request) const
@@ -511,14 +511,14 @@ DescribeNodeOutcomeCallable PanoramaClient::DescribeNodeCallable(const DescribeN
   return task->get_future();
 }
 
-void PanoramaClient::DescribeNodeAsync(const DescribeNodeRequest& request, const DescribeNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDescribeNodeAsyncHelper(PanoramaClient const * const clientThis, const DescribeNodeRequest& request, const DescribeNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNodeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNode(request), context);
 }
 
-void PanoramaClient::DescribeNodeAsyncHelper(const DescribeNodeRequest& request, const DescribeNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DescribeNodeAsync(const DescribeNodeRequest& request, const DescribeNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDescribeNodeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNodeFromTemplateJobOutcome PanoramaClient::DescribeNodeFromTemplateJob(const DescribeNodeFromTemplateJobRequest& request) const
@@ -542,14 +542,14 @@ DescribeNodeFromTemplateJobOutcomeCallable PanoramaClient::DescribeNodeFromTempl
   return task->get_future();
 }
 
-void PanoramaClient::DescribeNodeFromTemplateJobAsync(const DescribeNodeFromTemplateJobRequest& request, const DescribeNodeFromTemplateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDescribeNodeFromTemplateJobAsyncHelper(PanoramaClient const * const clientThis, const DescribeNodeFromTemplateJobRequest& request, const DescribeNodeFromTemplateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNodeFromTemplateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNodeFromTemplateJob(request), context);
 }
 
-void PanoramaClient::DescribeNodeFromTemplateJobAsyncHelper(const DescribeNodeFromTemplateJobRequest& request, const DescribeNodeFromTemplateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DescribeNodeFromTemplateJobAsync(const DescribeNodeFromTemplateJobRequest& request, const DescribeNodeFromTemplateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNodeFromTemplateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDescribeNodeFromTemplateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePackageOutcome PanoramaClient::DescribePackage(const DescribePackageRequest& request) const
@@ -573,14 +573,14 @@ DescribePackageOutcomeCallable PanoramaClient::DescribePackageCallable(const Des
   return task->get_future();
 }
 
-void PanoramaClient::DescribePackageAsync(const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDescribePackageAsyncHelper(PanoramaClient const * const clientThis, const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePackage(request), context);
 }
 
-void PanoramaClient::DescribePackageAsyncHelper(const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DescribePackageAsync(const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDescribePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePackageImportJobOutcome PanoramaClient::DescribePackageImportJob(const DescribePackageImportJobRequest& request) const
@@ -604,14 +604,14 @@ DescribePackageImportJobOutcomeCallable PanoramaClient::DescribePackageImportJob
   return task->get_future();
 }
 
-void PanoramaClient::DescribePackageImportJobAsync(const DescribePackageImportJobRequest& request, const DescribePackageImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDescribePackageImportJobAsyncHelper(PanoramaClient const * const clientThis, const DescribePackageImportJobRequest& request, const DescribePackageImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePackageImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePackageImportJob(request), context);
 }
 
-void PanoramaClient::DescribePackageImportJobAsyncHelper(const DescribePackageImportJobRequest& request, const DescribePackageImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DescribePackageImportJobAsync(const DescribePackageImportJobRequest& request, const DescribePackageImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePackageImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDescribePackageImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePackageVersionOutcome PanoramaClient::DescribePackageVersion(const DescribePackageVersionRequest& request) const
@@ -642,14 +642,14 @@ DescribePackageVersionOutcomeCallable PanoramaClient::DescribePackageVersionCall
   return task->get_future();
 }
 
-void PanoramaClient::DescribePackageVersionAsync(const DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientDescribePackageVersionAsyncHelper(PanoramaClient const * const clientThis, const DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePackageVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePackageVersion(request), context);
 }
 
-void PanoramaClient::DescribePackageVersionAsyncHelper(const DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::DescribePackageVersionAsync(const DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePackageVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientDescribePackageVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationInstanceDependenciesOutcome PanoramaClient::ListApplicationInstanceDependencies(const ListApplicationInstanceDependenciesRequest& request) const
@@ -674,14 +674,14 @@ ListApplicationInstanceDependenciesOutcomeCallable PanoramaClient::ListApplicati
   return task->get_future();
 }
 
-void PanoramaClient::ListApplicationInstanceDependenciesAsync(const ListApplicationInstanceDependenciesRequest& request, const ListApplicationInstanceDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientListApplicationInstanceDependenciesAsyncHelper(PanoramaClient const * const clientThis, const ListApplicationInstanceDependenciesRequest& request, const ListApplicationInstanceDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationInstanceDependenciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplicationInstanceDependencies(request), context);
 }
 
-void PanoramaClient::ListApplicationInstanceDependenciesAsyncHelper(const ListApplicationInstanceDependenciesRequest& request, const ListApplicationInstanceDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ListApplicationInstanceDependenciesAsync(const ListApplicationInstanceDependenciesRequest& request, const ListApplicationInstanceDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplicationInstanceDependencies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientListApplicationInstanceDependenciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationInstanceNodeInstancesOutcome PanoramaClient::ListApplicationInstanceNodeInstances(const ListApplicationInstanceNodeInstancesRequest& request) const
@@ -706,14 +706,14 @@ ListApplicationInstanceNodeInstancesOutcomeCallable PanoramaClient::ListApplicat
   return task->get_future();
 }
 
-void PanoramaClient::ListApplicationInstanceNodeInstancesAsync(const ListApplicationInstanceNodeInstancesRequest& request, const ListApplicationInstanceNodeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientListApplicationInstanceNodeInstancesAsyncHelper(PanoramaClient const * const clientThis, const ListApplicationInstanceNodeInstancesRequest& request, const ListApplicationInstanceNodeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationInstanceNodeInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplicationInstanceNodeInstances(request), context);
 }
 
-void PanoramaClient::ListApplicationInstanceNodeInstancesAsyncHelper(const ListApplicationInstanceNodeInstancesRequest& request, const ListApplicationInstanceNodeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ListApplicationInstanceNodeInstancesAsync(const ListApplicationInstanceNodeInstancesRequest& request, const ListApplicationInstanceNodeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplicationInstanceNodeInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientListApplicationInstanceNodeInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationInstancesOutcome PanoramaClient::ListApplicationInstances(const ListApplicationInstancesRequest& request) const
@@ -731,14 +731,14 @@ ListApplicationInstancesOutcomeCallable PanoramaClient::ListApplicationInstances
   return task->get_future();
 }
 
-void PanoramaClient::ListApplicationInstancesAsync(const ListApplicationInstancesRequest& request, const ListApplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientListApplicationInstancesAsyncHelper(PanoramaClient const * const clientThis, const ListApplicationInstancesRequest& request, const ListApplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplicationInstances(request), context);
 }
 
-void PanoramaClient::ListApplicationInstancesAsyncHelper(const ListApplicationInstancesRequest& request, const ListApplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ListApplicationInstancesAsync(const ListApplicationInstancesRequest& request, const ListApplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplicationInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientListApplicationInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDevicesOutcome PanoramaClient::ListDevices(const ListDevicesRequest& request) const
@@ -756,14 +756,14 @@ ListDevicesOutcomeCallable PanoramaClient::ListDevicesCallable(const ListDevices
   return task->get_future();
 }
 
-void PanoramaClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientListDevicesAsyncHelper(PanoramaClient const * const clientThis, const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDevices(request), context);
 }
 
-void PanoramaClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientListDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDevicesJobsOutcome PanoramaClient::ListDevicesJobs(const ListDevicesJobsRequest& request) const
@@ -781,14 +781,14 @@ ListDevicesJobsOutcomeCallable PanoramaClient::ListDevicesJobsCallable(const Lis
   return task->get_future();
 }
 
-void PanoramaClient::ListDevicesJobsAsync(const ListDevicesJobsRequest& request, const ListDevicesJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientListDevicesJobsAsyncHelper(PanoramaClient const * const clientThis, const ListDevicesJobsRequest& request, const ListDevicesJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevicesJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDevicesJobs(request), context);
 }
 
-void PanoramaClient::ListDevicesJobsAsyncHelper(const ListDevicesJobsRequest& request, const ListDevicesJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ListDevicesJobsAsync(const ListDevicesJobsRequest& request, const ListDevicesJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDevicesJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientListDevicesJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNodeFromTemplateJobsOutcome PanoramaClient::ListNodeFromTemplateJobs(const ListNodeFromTemplateJobsRequest& request) const
@@ -806,14 +806,14 @@ ListNodeFromTemplateJobsOutcomeCallable PanoramaClient::ListNodeFromTemplateJobs
   return task->get_future();
 }
 
-void PanoramaClient::ListNodeFromTemplateJobsAsync(const ListNodeFromTemplateJobsRequest& request, const ListNodeFromTemplateJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientListNodeFromTemplateJobsAsyncHelper(PanoramaClient const * const clientThis, const ListNodeFromTemplateJobsRequest& request, const ListNodeFromTemplateJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNodeFromTemplateJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNodeFromTemplateJobs(request), context);
 }
 
-void PanoramaClient::ListNodeFromTemplateJobsAsyncHelper(const ListNodeFromTemplateJobsRequest& request, const ListNodeFromTemplateJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ListNodeFromTemplateJobsAsync(const ListNodeFromTemplateJobsRequest& request, const ListNodeFromTemplateJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNodeFromTemplateJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientListNodeFromTemplateJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNodesOutcome PanoramaClient::ListNodes(const ListNodesRequest& request) const
@@ -831,14 +831,14 @@ ListNodesOutcomeCallable PanoramaClient::ListNodesCallable(const ListNodesReques
   return task->get_future();
 }
 
-void PanoramaClient::ListNodesAsync(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientListNodesAsyncHelper(PanoramaClient const * const clientThis, const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNodesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNodes(request), context);
 }
 
-void PanoramaClient::ListNodesAsyncHelper(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ListNodesAsync(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNodes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientListNodesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPackageImportJobsOutcome PanoramaClient::ListPackageImportJobs(const ListPackageImportJobsRequest& request) const
@@ -856,14 +856,14 @@ ListPackageImportJobsOutcomeCallable PanoramaClient::ListPackageImportJobsCallab
   return task->get_future();
 }
 
-void PanoramaClient::ListPackageImportJobsAsync(const ListPackageImportJobsRequest& request, const ListPackageImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientListPackageImportJobsAsyncHelper(PanoramaClient const * const clientThis, const ListPackageImportJobsRequest& request, const ListPackageImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPackageImportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPackageImportJobs(request), context);
 }
 
-void PanoramaClient::ListPackageImportJobsAsyncHelper(const ListPackageImportJobsRequest& request, const ListPackageImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ListPackageImportJobsAsync(const ListPackageImportJobsRequest& request, const ListPackageImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPackageImportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientListPackageImportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPackagesOutcome PanoramaClient::ListPackages(const ListPackagesRequest& request) const
@@ -881,14 +881,14 @@ ListPackagesOutcomeCallable PanoramaClient::ListPackagesCallable(const ListPacka
   return task->get_future();
 }
 
-void PanoramaClient::ListPackagesAsync(const ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientListPackagesAsyncHelper(PanoramaClient const * const clientThis, const ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPackagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPackages(request), context);
 }
 
-void PanoramaClient::ListPackagesAsyncHelper(const ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ListPackagesAsync(const ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPackages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientListPackagesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome PanoramaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -912,14 +912,14 @@ ListTagsForResourceOutcomeCallable PanoramaClient::ListTagsForResourceCallable(c
   return task->get_future();
 }
 
-void PanoramaClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientListTagsForResourceAsyncHelper(PanoramaClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void PanoramaClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ProvisionDeviceOutcome PanoramaClient::ProvisionDevice(const ProvisionDeviceRequest& request) const
@@ -937,14 +937,14 @@ ProvisionDeviceOutcomeCallable PanoramaClient::ProvisionDeviceCallable(const Pro
   return task->get_future();
 }
 
-void PanoramaClient::ProvisionDeviceAsync(const ProvisionDeviceRequest& request, const ProvisionDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientProvisionDeviceAsyncHelper(PanoramaClient const * const clientThis, const ProvisionDeviceRequest& request, const ProvisionDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ProvisionDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ProvisionDevice(request), context);
 }
 
-void PanoramaClient::ProvisionDeviceAsyncHelper(const ProvisionDeviceRequest& request, const ProvisionDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::ProvisionDeviceAsync(const ProvisionDeviceRequest& request, const ProvisionDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ProvisionDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientProvisionDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterPackageVersionOutcome PanoramaClient::RegisterPackageVersion(const RegisterPackageVersionRequest& request) const
@@ -982,14 +982,14 @@ RegisterPackageVersionOutcomeCallable PanoramaClient::RegisterPackageVersionCall
   return task->get_future();
 }
 
-void PanoramaClient::RegisterPackageVersionAsync(const RegisterPackageVersionRequest& request, const RegisterPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientRegisterPackageVersionAsyncHelper(PanoramaClient const * const clientThis, const RegisterPackageVersionRequest& request, const RegisterPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterPackageVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterPackageVersion(request), context);
 }
 
-void PanoramaClient::RegisterPackageVersionAsyncHelper(const RegisterPackageVersionRequest& request, const RegisterPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::RegisterPackageVersionAsync(const RegisterPackageVersionRequest& request, const RegisterPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterPackageVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientRegisterPackageVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveApplicationInstanceOutcome PanoramaClient::RemoveApplicationInstance(const RemoveApplicationInstanceRequest& request) const
@@ -1013,14 +1013,14 @@ RemoveApplicationInstanceOutcomeCallable PanoramaClient::RemoveApplicationInstan
   return task->get_future();
 }
 
-void PanoramaClient::RemoveApplicationInstanceAsync(const RemoveApplicationInstanceRequest& request, const RemoveApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientRemoveApplicationInstanceAsyncHelper(PanoramaClient const * const clientThis, const RemoveApplicationInstanceRequest& request, const RemoveApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveApplicationInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveApplicationInstance(request), context);
 }
 
-void PanoramaClient::RemoveApplicationInstanceAsyncHelper(const RemoveApplicationInstanceRequest& request, const RemoveApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::RemoveApplicationInstanceAsync(const RemoveApplicationInstanceRequest& request, const RemoveApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveApplicationInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientRemoveApplicationInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome PanoramaClient::TagResource(const TagResourceRequest& request) const
@@ -1044,14 +1044,14 @@ TagResourceOutcomeCallable PanoramaClient::TagResourceCallable(const TagResource
   return task->get_future();
 }
 
-void PanoramaClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientTagResourceAsyncHelper(PanoramaClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void PanoramaClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome PanoramaClient::UntagResource(const UntagResourceRequest& request) const
@@ -1080,14 +1080,14 @@ UntagResourceOutcomeCallable PanoramaClient::UntagResourceCallable(const UntagRe
   return task->get_future();
 }
 
-void PanoramaClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientUntagResourceAsyncHelper(PanoramaClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void PanoramaClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDeviceMetadataOutcome PanoramaClient::UpdateDeviceMetadata(const UpdateDeviceMetadataRequest& request) const
@@ -1111,13 +1111,13 @@ UpdateDeviceMetadataOutcomeCallable PanoramaClient::UpdateDeviceMetadataCallable
   return task->get_future();
 }
 
-void PanoramaClient::UpdateDeviceMetadataAsync(const UpdateDeviceMetadataRequest& request, const UpdateDeviceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClientUpdateDeviceMetadataAsyncHelper(PanoramaClient const * const clientThis, const UpdateDeviceMetadataRequest& request, const UpdateDeviceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeviceMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDeviceMetadata(request), context);
 }
 
-void PanoramaClient::UpdateDeviceMetadataAsyncHelper(const UpdateDeviceMetadataRequest& request, const UpdateDeviceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PanoramaClient::UpdateDeviceMetadataAsync(const UpdateDeviceMetadataRequest& request, const UpdateDeviceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDeviceMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PanoramaClientUpdateDeviceMetadataAsyncHelper( this, request, handler, context ); } );
 }
 

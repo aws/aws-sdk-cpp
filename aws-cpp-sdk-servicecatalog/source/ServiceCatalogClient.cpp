@@ -201,14 +201,14 @@ AcceptPortfolioShareOutcomeCallable ServiceCatalogClient::AcceptPortfolioShareCa
   return task->get_future();
 }
 
-void ServiceCatalogClient::AcceptPortfolioShareAsync(const AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientAcceptPortfolioShareAsyncHelper(ServiceCatalogClient const * const clientThis, const AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptPortfolioShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptPortfolioShare(request), context);
 }
 
-void ServiceCatalogClient::AcceptPortfolioShareAsyncHelper(const AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::AcceptPortfolioShareAsync(const AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptPortfolioShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientAcceptPortfolioShareAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateBudgetWithResourceOutcome ServiceCatalogClient::AssociateBudgetWithResource(const AssociateBudgetWithResourceRequest& request) const
@@ -225,14 +225,14 @@ AssociateBudgetWithResourceOutcomeCallable ServiceCatalogClient::AssociateBudget
   return task->get_future();
 }
 
-void ServiceCatalogClient::AssociateBudgetWithResourceAsync(const AssociateBudgetWithResourceRequest& request, const AssociateBudgetWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientAssociateBudgetWithResourceAsyncHelper(ServiceCatalogClient const * const clientThis, const AssociateBudgetWithResourceRequest& request, const AssociateBudgetWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateBudgetWithResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateBudgetWithResource(request), context);
 }
 
-void ServiceCatalogClient::AssociateBudgetWithResourceAsyncHelper(const AssociateBudgetWithResourceRequest& request, const AssociateBudgetWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::AssociateBudgetWithResourceAsync(const AssociateBudgetWithResourceRequest& request, const AssociateBudgetWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateBudgetWithResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientAssociateBudgetWithResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociatePrincipalWithPortfolioOutcome ServiceCatalogClient::AssociatePrincipalWithPortfolio(const AssociatePrincipalWithPortfolioRequest& request) const
@@ -249,14 +249,14 @@ AssociatePrincipalWithPortfolioOutcomeCallable ServiceCatalogClient::AssociatePr
   return task->get_future();
 }
 
-void ServiceCatalogClient::AssociatePrincipalWithPortfolioAsync(const AssociatePrincipalWithPortfolioRequest& request, const AssociatePrincipalWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientAssociatePrincipalWithPortfolioAsyncHelper(ServiceCatalogClient const * const clientThis, const AssociatePrincipalWithPortfolioRequest& request, const AssociatePrincipalWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociatePrincipalWithPortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociatePrincipalWithPortfolio(request), context);
 }
 
-void ServiceCatalogClient::AssociatePrincipalWithPortfolioAsyncHelper(const AssociatePrincipalWithPortfolioRequest& request, const AssociatePrincipalWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::AssociatePrincipalWithPortfolioAsync(const AssociatePrincipalWithPortfolioRequest& request, const AssociatePrincipalWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociatePrincipalWithPortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientAssociatePrincipalWithPortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateProductWithPortfolioOutcome ServiceCatalogClient::AssociateProductWithPortfolio(const AssociateProductWithPortfolioRequest& request) const
@@ -273,14 +273,14 @@ AssociateProductWithPortfolioOutcomeCallable ServiceCatalogClient::AssociateProd
   return task->get_future();
 }
 
-void ServiceCatalogClient::AssociateProductWithPortfolioAsync(const AssociateProductWithPortfolioRequest& request, const AssociateProductWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientAssociateProductWithPortfolioAsyncHelper(ServiceCatalogClient const * const clientThis, const AssociateProductWithPortfolioRequest& request, const AssociateProductWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateProductWithPortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateProductWithPortfolio(request), context);
 }
 
-void ServiceCatalogClient::AssociateProductWithPortfolioAsyncHelper(const AssociateProductWithPortfolioRequest& request, const AssociateProductWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::AssociateProductWithPortfolioAsync(const AssociateProductWithPortfolioRequest& request, const AssociateProductWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateProductWithPortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientAssociateProductWithPortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateServiceActionWithProvisioningArtifactOutcome ServiceCatalogClient::AssociateServiceActionWithProvisioningArtifact(const AssociateServiceActionWithProvisioningArtifactRequest& request) const
@@ -297,14 +297,14 @@ AssociateServiceActionWithProvisioningArtifactOutcomeCallable ServiceCatalogClie
   return task->get_future();
 }
 
-void ServiceCatalogClient::AssociateServiceActionWithProvisioningArtifactAsync(const AssociateServiceActionWithProvisioningArtifactRequest& request, const AssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientAssociateServiceActionWithProvisioningArtifactAsyncHelper(ServiceCatalogClient const * const clientThis, const AssociateServiceActionWithProvisioningArtifactRequest& request, const AssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateServiceActionWithProvisioningArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateServiceActionWithProvisioningArtifact(request), context);
 }
 
-void ServiceCatalogClient::AssociateServiceActionWithProvisioningArtifactAsyncHelper(const AssociateServiceActionWithProvisioningArtifactRequest& request, const AssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::AssociateServiceActionWithProvisioningArtifactAsync(const AssociateServiceActionWithProvisioningArtifactRequest& request, const AssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateServiceActionWithProvisioningArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientAssociateServiceActionWithProvisioningArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateTagOptionWithResourceOutcome ServiceCatalogClient::AssociateTagOptionWithResource(const AssociateTagOptionWithResourceRequest& request) const
@@ -321,14 +321,14 @@ AssociateTagOptionWithResourceOutcomeCallable ServiceCatalogClient::AssociateTag
   return task->get_future();
 }
 
-void ServiceCatalogClient::AssociateTagOptionWithResourceAsync(const AssociateTagOptionWithResourceRequest& request, const AssociateTagOptionWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientAssociateTagOptionWithResourceAsyncHelper(ServiceCatalogClient const * const clientThis, const AssociateTagOptionWithResourceRequest& request, const AssociateTagOptionWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTagOptionWithResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateTagOptionWithResource(request), context);
 }
 
-void ServiceCatalogClient::AssociateTagOptionWithResourceAsyncHelper(const AssociateTagOptionWithResourceRequest& request, const AssociateTagOptionWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::AssociateTagOptionWithResourceAsync(const AssociateTagOptionWithResourceRequest& request, const AssociateTagOptionWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateTagOptionWithResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientAssociateTagOptionWithResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchAssociateServiceActionWithProvisioningArtifactOutcome ServiceCatalogClient::BatchAssociateServiceActionWithProvisioningArtifact(const BatchAssociateServiceActionWithProvisioningArtifactRequest& request) const
@@ -345,14 +345,14 @@ BatchAssociateServiceActionWithProvisioningArtifactOutcomeCallable ServiceCatalo
   return task->get_future();
 }
 
-void ServiceCatalogClient::BatchAssociateServiceActionWithProvisioningArtifactAsync(const BatchAssociateServiceActionWithProvisioningArtifactRequest& request, const BatchAssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientBatchAssociateServiceActionWithProvisioningArtifactAsyncHelper(ServiceCatalogClient const * const clientThis, const BatchAssociateServiceActionWithProvisioningArtifactRequest& request, const BatchAssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateServiceActionWithProvisioningArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchAssociateServiceActionWithProvisioningArtifact(request), context);
 }
 
-void ServiceCatalogClient::BatchAssociateServiceActionWithProvisioningArtifactAsyncHelper(const BatchAssociateServiceActionWithProvisioningArtifactRequest& request, const BatchAssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::BatchAssociateServiceActionWithProvisioningArtifactAsync(const BatchAssociateServiceActionWithProvisioningArtifactRequest& request, const BatchAssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchAssociateServiceActionWithProvisioningArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientBatchAssociateServiceActionWithProvisioningArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDisassociateServiceActionFromProvisioningArtifactOutcome ServiceCatalogClient::BatchDisassociateServiceActionFromProvisioningArtifact(const BatchDisassociateServiceActionFromProvisioningArtifactRequest& request) const
@@ -369,14 +369,14 @@ BatchDisassociateServiceActionFromProvisioningArtifactOutcomeCallable ServiceCat
   return task->get_future();
 }
 
-void ServiceCatalogClient::BatchDisassociateServiceActionFromProvisioningArtifactAsync(const BatchDisassociateServiceActionFromProvisioningArtifactRequest& request, const BatchDisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientBatchDisassociateServiceActionFromProvisioningArtifactAsyncHelper(ServiceCatalogClient const * const clientThis, const BatchDisassociateServiceActionFromProvisioningArtifactRequest& request, const BatchDisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateServiceActionFromProvisioningArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDisassociateServiceActionFromProvisioningArtifact(request), context);
 }
 
-void ServiceCatalogClient::BatchDisassociateServiceActionFromProvisioningArtifactAsyncHelper(const BatchDisassociateServiceActionFromProvisioningArtifactRequest& request, const BatchDisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::BatchDisassociateServiceActionFromProvisioningArtifactAsync(const BatchDisassociateServiceActionFromProvisioningArtifactRequest& request, const BatchDisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDisassociateServiceActionFromProvisioningArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientBatchDisassociateServiceActionFromProvisioningArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 CopyProductOutcome ServiceCatalogClient::CopyProduct(const CopyProductRequest& request) const
@@ -393,14 +393,14 @@ CopyProductOutcomeCallable ServiceCatalogClient::CopyProductCallable(const CopyP
   return task->get_future();
 }
 
-void ServiceCatalogClient::CopyProductAsync(const CopyProductRequest& request, const CopyProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientCopyProductAsyncHelper(ServiceCatalogClient const * const clientThis, const CopyProductRequest& request, const CopyProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopyProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CopyProduct(request), context);
 }
 
-void ServiceCatalogClient::CopyProductAsyncHelper(const CopyProductRequest& request, const CopyProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::CopyProductAsync(const CopyProductRequest& request, const CopyProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CopyProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientCopyProductAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConstraintOutcome ServiceCatalogClient::CreateConstraint(const CreateConstraintRequest& request) const
@@ -417,14 +417,14 @@ CreateConstraintOutcomeCallable ServiceCatalogClient::CreateConstraintCallable(c
   return task->get_future();
 }
 
-void ServiceCatalogClient::CreateConstraintAsync(const CreateConstraintRequest& request, const CreateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientCreateConstraintAsyncHelper(ServiceCatalogClient const * const clientThis, const CreateConstraintRequest& request, const CreateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConstraintAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConstraint(request), context);
 }
 
-void ServiceCatalogClient::CreateConstraintAsyncHelper(const CreateConstraintRequest& request, const CreateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::CreateConstraintAsync(const CreateConstraintRequest& request, const CreateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConstraint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientCreateConstraintAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePortfolioOutcome ServiceCatalogClient::CreatePortfolio(const CreatePortfolioRequest& request) const
@@ -441,14 +441,14 @@ CreatePortfolioOutcomeCallable ServiceCatalogClient::CreatePortfolioCallable(con
   return task->get_future();
 }
 
-void ServiceCatalogClient::CreatePortfolioAsync(const CreatePortfolioRequest& request, const CreatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientCreatePortfolioAsyncHelper(ServiceCatalogClient const * const clientThis, const CreatePortfolioRequest& request, const CreatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePortfolio(request), context);
 }
 
-void ServiceCatalogClient::CreatePortfolioAsyncHelper(const CreatePortfolioRequest& request, const CreatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::CreatePortfolioAsync(const CreatePortfolioRequest& request, const CreatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientCreatePortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePortfolioShareOutcome ServiceCatalogClient::CreatePortfolioShare(const CreatePortfolioShareRequest& request) const
@@ -465,14 +465,14 @@ CreatePortfolioShareOutcomeCallable ServiceCatalogClient::CreatePortfolioShareCa
   return task->get_future();
 }
 
-void ServiceCatalogClient::CreatePortfolioShareAsync(const CreatePortfolioShareRequest& request, const CreatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientCreatePortfolioShareAsyncHelper(ServiceCatalogClient const * const clientThis, const CreatePortfolioShareRequest& request, const CreatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePortfolioShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePortfolioShare(request), context);
 }
 
-void ServiceCatalogClient::CreatePortfolioShareAsyncHelper(const CreatePortfolioShareRequest& request, const CreatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::CreatePortfolioShareAsync(const CreatePortfolioShareRequest& request, const CreatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePortfolioShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientCreatePortfolioShareAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProductOutcome ServiceCatalogClient::CreateProduct(const CreateProductRequest& request) const
@@ -489,14 +489,14 @@ CreateProductOutcomeCallable ServiceCatalogClient::CreateProductCallable(const C
   return task->get_future();
 }
 
-void ServiceCatalogClient::CreateProductAsync(const CreateProductRequest& request, const CreateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientCreateProductAsyncHelper(ServiceCatalogClient const * const clientThis, const CreateProductRequest& request, const CreateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProduct(request), context);
 }
 
-void ServiceCatalogClient::CreateProductAsyncHelper(const CreateProductRequest& request, const CreateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::CreateProductAsync(const CreateProductRequest& request, const CreateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientCreateProductAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProvisionedProductPlanOutcome ServiceCatalogClient::CreateProvisionedProductPlan(const CreateProvisionedProductPlanRequest& request) const
@@ -513,14 +513,14 @@ CreateProvisionedProductPlanOutcomeCallable ServiceCatalogClient::CreateProvisio
   return task->get_future();
 }
 
-void ServiceCatalogClient::CreateProvisionedProductPlanAsync(const CreateProvisionedProductPlanRequest& request, const CreateProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientCreateProvisionedProductPlanAsyncHelper(ServiceCatalogClient const * const clientThis, const CreateProvisionedProductPlanRequest& request, const CreateProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProvisionedProductPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProvisionedProductPlan(request), context);
 }
 
-void ServiceCatalogClient::CreateProvisionedProductPlanAsyncHelper(const CreateProvisionedProductPlanRequest& request, const CreateProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::CreateProvisionedProductPlanAsync(const CreateProvisionedProductPlanRequest& request, const CreateProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProvisionedProductPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientCreateProvisionedProductPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProvisioningArtifactOutcome ServiceCatalogClient::CreateProvisioningArtifact(const CreateProvisioningArtifactRequest& request) const
@@ -537,14 +537,14 @@ CreateProvisioningArtifactOutcomeCallable ServiceCatalogClient::CreateProvisioni
   return task->get_future();
 }
 
-void ServiceCatalogClient::CreateProvisioningArtifactAsync(const CreateProvisioningArtifactRequest& request, const CreateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientCreateProvisioningArtifactAsyncHelper(ServiceCatalogClient const * const clientThis, const CreateProvisioningArtifactRequest& request, const CreateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProvisioningArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProvisioningArtifact(request), context);
 }
 
-void ServiceCatalogClient::CreateProvisioningArtifactAsyncHelper(const CreateProvisioningArtifactRequest& request, const CreateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::CreateProvisioningArtifactAsync(const CreateProvisioningArtifactRequest& request, const CreateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProvisioningArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientCreateProvisioningArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateServiceActionOutcome ServiceCatalogClient::CreateServiceAction(const CreateServiceActionRequest& request) const
@@ -561,14 +561,14 @@ CreateServiceActionOutcomeCallable ServiceCatalogClient::CreateServiceActionCall
   return task->get_future();
 }
 
-void ServiceCatalogClient::CreateServiceActionAsync(const CreateServiceActionRequest& request, const CreateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientCreateServiceActionAsyncHelper(ServiceCatalogClient const * const clientThis, const CreateServiceActionRequest& request, const CreateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateServiceActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateServiceAction(request), context);
 }
 
-void ServiceCatalogClient::CreateServiceActionAsyncHelper(const CreateServiceActionRequest& request, const CreateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::CreateServiceActionAsync(const CreateServiceActionRequest& request, const CreateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateServiceAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientCreateServiceActionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTagOptionOutcome ServiceCatalogClient::CreateTagOption(const CreateTagOptionRequest& request) const
@@ -585,14 +585,14 @@ CreateTagOptionOutcomeCallable ServiceCatalogClient::CreateTagOptionCallable(con
   return task->get_future();
 }
 
-void ServiceCatalogClient::CreateTagOptionAsync(const CreateTagOptionRequest& request, const CreateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientCreateTagOptionAsyncHelper(ServiceCatalogClient const * const clientThis, const CreateTagOptionRequest& request, const CreateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTagOptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTagOption(request), context);
 }
 
-void ServiceCatalogClient::CreateTagOptionAsyncHelper(const CreateTagOptionRequest& request, const CreateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::CreateTagOptionAsync(const CreateTagOptionRequest& request, const CreateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTagOption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientCreateTagOptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConstraintOutcome ServiceCatalogClient::DeleteConstraint(const DeleteConstraintRequest& request) const
@@ -609,14 +609,14 @@ DeleteConstraintOutcomeCallable ServiceCatalogClient::DeleteConstraintCallable(c
   return task->get_future();
 }
 
-void ServiceCatalogClient::DeleteConstraintAsync(const DeleteConstraintRequest& request, const DeleteConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDeleteConstraintAsyncHelper(ServiceCatalogClient const * const clientThis, const DeleteConstraintRequest& request, const DeleteConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConstraintAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConstraint(request), context);
 }
 
-void ServiceCatalogClient::DeleteConstraintAsyncHelper(const DeleteConstraintRequest& request, const DeleteConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DeleteConstraintAsync(const DeleteConstraintRequest& request, const DeleteConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConstraint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDeleteConstraintAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePortfolioOutcome ServiceCatalogClient::DeletePortfolio(const DeletePortfolioRequest& request) const
@@ -633,14 +633,14 @@ DeletePortfolioOutcomeCallable ServiceCatalogClient::DeletePortfolioCallable(con
   return task->get_future();
 }
 
-void ServiceCatalogClient::DeletePortfolioAsync(const DeletePortfolioRequest& request, const DeletePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDeletePortfolioAsyncHelper(ServiceCatalogClient const * const clientThis, const DeletePortfolioRequest& request, const DeletePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePortfolio(request), context);
 }
 
-void ServiceCatalogClient::DeletePortfolioAsyncHelper(const DeletePortfolioRequest& request, const DeletePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DeletePortfolioAsync(const DeletePortfolioRequest& request, const DeletePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDeletePortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePortfolioShareOutcome ServiceCatalogClient::DeletePortfolioShare(const DeletePortfolioShareRequest& request) const
@@ -657,14 +657,14 @@ DeletePortfolioShareOutcomeCallable ServiceCatalogClient::DeletePortfolioShareCa
   return task->get_future();
 }
 
-void ServiceCatalogClient::DeletePortfolioShareAsync(const DeletePortfolioShareRequest& request, const DeletePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDeletePortfolioShareAsyncHelper(ServiceCatalogClient const * const clientThis, const DeletePortfolioShareRequest& request, const DeletePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePortfolioShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePortfolioShare(request), context);
 }
 
-void ServiceCatalogClient::DeletePortfolioShareAsyncHelper(const DeletePortfolioShareRequest& request, const DeletePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DeletePortfolioShareAsync(const DeletePortfolioShareRequest& request, const DeletePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePortfolioShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDeletePortfolioShareAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProductOutcome ServiceCatalogClient::DeleteProduct(const DeleteProductRequest& request) const
@@ -681,14 +681,14 @@ DeleteProductOutcomeCallable ServiceCatalogClient::DeleteProductCallable(const D
   return task->get_future();
 }
 
-void ServiceCatalogClient::DeleteProductAsync(const DeleteProductRequest& request, const DeleteProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDeleteProductAsyncHelper(ServiceCatalogClient const * const clientThis, const DeleteProductRequest& request, const DeleteProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProduct(request), context);
 }
 
-void ServiceCatalogClient::DeleteProductAsyncHelper(const DeleteProductRequest& request, const DeleteProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DeleteProductAsync(const DeleteProductRequest& request, const DeleteProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDeleteProductAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProvisionedProductPlanOutcome ServiceCatalogClient::DeleteProvisionedProductPlan(const DeleteProvisionedProductPlanRequest& request) const
@@ -705,14 +705,14 @@ DeleteProvisionedProductPlanOutcomeCallable ServiceCatalogClient::DeleteProvisio
   return task->get_future();
 }
 
-void ServiceCatalogClient::DeleteProvisionedProductPlanAsync(const DeleteProvisionedProductPlanRequest& request, const DeleteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDeleteProvisionedProductPlanAsyncHelper(ServiceCatalogClient const * const clientThis, const DeleteProvisionedProductPlanRequest& request, const DeleteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProvisionedProductPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProvisionedProductPlan(request), context);
 }
 
-void ServiceCatalogClient::DeleteProvisionedProductPlanAsyncHelper(const DeleteProvisionedProductPlanRequest& request, const DeleteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DeleteProvisionedProductPlanAsync(const DeleteProvisionedProductPlanRequest& request, const DeleteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProvisionedProductPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDeleteProvisionedProductPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProvisioningArtifactOutcome ServiceCatalogClient::DeleteProvisioningArtifact(const DeleteProvisioningArtifactRequest& request) const
@@ -729,14 +729,14 @@ DeleteProvisioningArtifactOutcomeCallable ServiceCatalogClient::DeleteProvisioni
   return task->get_future();
 }
 
-void ServiceCatalogClient::DeleteProvisioningArtifactAsync(const DeleteProvisioningArtifactRequest& request, const DeleteProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDeleteProvisioningArtifactAsyncHelper(ServiceCatalogClient const * const clientThis, const DeleteProvisioningArtifactRequest& request, const DeleteProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProvisioningArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProvisioningArtifact(request), context);
 }
 
-void ServiceCatalogClient::DeleteProvisioningArtifactAsyncHelper(const DeleteProvisioningArtifactRequest& request, const DeleteProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DeleteProvisioningArtifactAsync(const DeleteProvisioningArtifactRequest& request, const DeleteProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProvisioningArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDeleteProvisioningArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteServiceActionOutcome ServiceCatalogClient::DeleteServiceAction(const DeleteServiceActionRequest& request) const
@@ -753,14 +753,14 @@ DeleteServiceActionOutcomeCallable ServiceCatalogClient::DeleteServiceActionCall
   return task->get_future();
 }
 
-void ServiceCatalogClient::DeleteServiceActionAsync(const DeleteServiceActionRequest& request, const DeleteServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDeleteServiceActionAsyncHelper(ServiceCatalogClient const * const clientThis, const DeleteServiceActionRequest& request, const DeleteServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteServiceAction(request), context);
 }
 
-void ServiceCatalogClient::DeleteServiceActionAsyncHelper(const DeleteServiceActionRequest& request, const DeleteServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DeleteServiceActionAsync(const DeleteServiceActionRequest& request, const DeleteServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteServiceAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDeleteServiceActionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTagOptionOutcome ServiceCatalogClient::DeleteTagOption(const DeleteTagOptionRequest& request) const
@@ -777,14 +777,14 @@ DeleteTagOptionOutcomeCallable ServiceCatalogClient::DeleteTagOptionCallable(con
   return task->get_future();
 }
 
-void ServiceCatalogClient::DeleteTagOptionAsync(const DeleteTagOptionRequest& request, const DeleteTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDeleteTagOptionAsyncHelper(ServiceCatalogClient const * const clientThis, const DeleteTagOptionRequest& request, const DeleteTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagOptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTagOption(request), context);
 }
 
-void ServiceCatalogClient::DeleteTagOptionAsyncHelper(const DeleteTagOptionRequest& request, const DeleteTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DeleteTagOptionAsync(const DeleteTagOptionRequest& request, const DeleteTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTagOption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDeleteTagOptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeConstraintOutcome ServiceCatalogClient::DescribeConstraint(const DescribeConstraintRequest& request) const
@@ -801,14 +801,14 @@ DescribeConstraintOutcomeCallable ServiceCatalogClient::DescribeConstraintCallab
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeConstraintAsync(const DescribeConstraintRequest& request, const DescribeConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeConstraintAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeConstraintRequest& request, const DescribeConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConstraintAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeConstraint(request), context);
 }
 
-void ServiceCatalogClient::DescribeConstraintAsyncHelper(const DescribeConstraintRequest& request, const DescribeConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeConstraintAsync(const DescribeConstraintRequest& request, const DescribeConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeConstraint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeConstraintAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCopyProductStatusOutcome ServiceCatalogClient::DescribeCopyProductStatus(const DescribeCopyProductStatusRequest& request) const
@@ -825,14 +825,14 @@ DescribeCopyProductStatusOutcomeCallable ServiceCatalogClient::DescribeCopyProdu
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeCopyProductStatusAsync(const DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeCopyProductStatusAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCopyProductStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCopyProductStatus(request), context);
 }
 
-void ServiceCatalogClient::DescribeCopyProductStatusAsyncHelper(const DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeCopyProductStatusAsync(const DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCopyProductStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeCopyProductStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePortfolioOutcome ServiceCatalogClient::DescribePortfolio(const DescribePortfolioRequest& request) const
@@ -849,14 +849,14 @@ DescribePortfolioOutcomeCallable ServiceCatalogClient::DescribePortfolioCallable
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribePortfolioAsync(const DescribePortfolioRequest& request, const DescribePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribePortfolioAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribePortfolioRequest& request, const DescribePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePortfolio(request), context);
 }
 
-void ServiceCatalogClient::DescribePortfolioAsyncHelper(const DescribePortfolioRequest& request, const DescribePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribePortfolioAsync(const DescribePortfolioRequest& request, const DescribePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribePortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePortfolioShareStatusOutcome ServiceCatalogClient::DescribePortfolioShareStatus(const DescribePortfolioShareStatusRequest& request) const
@@ -873,14 +873,14 @@ DescribePortfolioShareStatusOutcomeCallable ServiceCatalogClient::DescribePortfo
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribePortfolioShareStatusAsync(const DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribePortfolioShareStatusAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePortfolioShareStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePortfolioShareStatus(request), context);
 }
 
-void ServiceCatalogClient::DescribePortfolioShareStatusAsyncHelper(const DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribePortfolioShareStatusAsync(const DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePortfolioShareStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribePortfolioShareStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePortfolioSharesOutcome ServiceCatalogClient::DescribePortfolioShares(const DescribePortfolioSharesRequest& request) const
@@ -897,14 +897,14 @@ DescribePortfolioSharesOutcomeCallable ServiceCatalogClient::DescribePortfolioSh
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribePortfolioSharesAsync(const DescribePortfolioSharesRequest& request, const DescribePortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribePortfolioSharesAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribePortfolioSharesRequest& request, const DescribePortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePortfolioSharesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePortfolioShares(request), context);
 }
 
-void ServiceCatalogClient::DescribePortfolioSharesAsyncHelper(const DescribePortfolioSharesRequest& request, const DescribePortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribePortfolioSharesAsync(const DescribePortfolioSharesRequest& request, const DescribePortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePortfolioShares(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribePortfolioSharesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProductOutcome ServiceCatalogClient::DescribeProduct(const DescribeProductRequest& request) const
@@ -921,14 +921,14 @@ DescribeProductOutcomeCallable ServiceCatalogClient::DescribeProductCallable(con
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeProductAsync(const DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeProductAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProduct(request), context);
 }
 
-void ServiceCatalogClient::DescribeProductAsyncHelper(const DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeProductAsync(const DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeProductAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProductAsAdminOutcome ServiceCatalogClient::DescribeProductAsAdmin(const DescribeProductAsAdminRequest& request) const
@@ -945,14 +945,14 @@ DescribeProductAsAdminOutcomeCallable ServiceCatalogClient::DescribeProductAsAdm
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeProductAsAdminAsync(const DescribeProductAsAdminRequest& request, const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeProductAsAdminAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeProductAsAdminRequest& request, const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProductAsAdminAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProductAsAdmin(request), context);
 }
 
-void ServiceCatalogClient::DescribeProductAsAdminAsyncHelper(const DescribeProductAsAdminRequest& request, const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeProductAsAdminAsync(const DescribeProductAsAdminRequest& request, const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProductAsAdmin(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeProductAsAdminAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProductViewOutcome ServiceCatalogClient::DescribeProductView(const DescribeProductViewRequest& request) const
@@ -969,14 +969,14 @@ DescribeProductViewOutcomeCallable ServiceCatalogClient::DescribeProductViewCall
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeProductViewAsync(const DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeProductViewAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProductViewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProductView(request), context);
 }
 
-void ServiceCatalogClient::DescribeProductViewAsyncHelper(const DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeProductViewAsync(const DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProductView(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeProductViewAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProvisionedProductOutcome ServiceCatalogClient::DescribeProvisionedProduct(const DescribeProvisionedProductRequest& request) const
@@ -993,14 +993,14 @@ DescribeProvisionedProductOutcomeCallable ServiceCatalogClient::DescribeProvisio
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeProvisionedProductAsync(const DescribeProvisionedProductRequest& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeProvisionedProductAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeProvisionedProductRequest& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProvisionedProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProvisionedProduct(request), context);
 }
 
-void ServiceCatalogClient::DescribeProvisionedProductAsyncHelper(const DescribeProvisionedProductRequest& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeProvisionedProductAsync(const DescribeProvisionedProductRequest& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProvisionedProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeProvisionedProductAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProvisionedProductPlanOutcome ServiceCatalogClient::DescribeProvisionedProductPlan(const DescribeProvisionedProductPlanRequest& request) const
@@ -1017,14 +1017,14 @@ DescribeProvisionedProductPlanOutcomeCallable ServiceCatalogClient::DescribeProv
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeProvisionedProductPlanAsync(const DescribeProvisionedProductPlanRequest& request, const DescribeProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeProvisionedProductPlanAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeProvisionedProductPlanRequest& request, const DescribeProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProvisionedProductPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProvisionedProductPlan(request), context);
 }
 
-void ServiceCatalogClient::DescribeProvisionedProductPlanAsyncHelper(const DescribeProvisionedProductPlanRequest& request, const DescribeProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeProvisionedProductPlanAsync(const DescribeProvisionedProductPlanRequest& request, const DescribeProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProvisionedProductPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeProvisionedProductPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProvisioningArtifactOutcome ServiceCatalogClient::DescribeProvisioningArtifact(const DescribeProvisioningArtifactRequest& request) const
@@ -1041,14 +1041,14 @@ DescribeProvisioningArtifactOutcomeCallable ServiceCatalogClient::DescribeProvis
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeProvisioningArtifactAsync(const DescribeProvisioningArtifactRequest& request, const DescribeProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeProvisioningArtifactAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeProvisioningArtifactRequest& request, const DescribeProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProvisioningArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProvisioningArtifact(request), context);
 }
 
-void ServiceCatalogClient::DescribeProvisioningArtifactAsyncHelper(const DescribeProvisioningArtifactRequest& request, const DescribeProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeProvisioningArtifactAsync(const DescribeProvisioningArtifactRequest& request, const DescribeProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProvisioningArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeProvisioningArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProvisioningParametersOutcome ServiceCatalogClient::DescribeProvisioningParameters(const DescribeProvisioningParametersRequest& request) const
@@ -1065,14 +1065,14 @@ DescribeProvisioningParametersOutcomeCallable ServiceCatalogClient::DescribeProv
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeProvisioningParametersAsync(const DescribeProvisioningParametersRequest& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeProvisioningParametersAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeProvisioningParametersRequest& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProvisioningParametersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProvisioningParameters(request), context);
 }
 
-void ServiceCatalogClient::DescribeProvisioningParametersAsyncHelper(const DescribeProvisioningParametersRequest& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeProvisioningParametersAsync(const DescribeProvisioningParametersRequest& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProvisioningParameters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeProvisioningParametersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRecordOutcome ServiceCatalogClient::DescribeRecord(const DescribeRecordRequest& request) const
@@ -1089,14 +1089,14 @@ DescribeRecordOutcomeCallable ServiceCatalogClient::DescribeRecordCallable(const
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeRecordAsync(const DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeRecordAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRecord(request), context);
 }
 
-void ServiceCatalogClient::DescribeRecordAsyncHelper(const DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeRecordAsync(const DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRecord(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeRecordAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeServiceActionOutcome ServiceCatalogClient::DescribeServiceAction(const DescribeServiceActionRequest& request) const
@@ -1113,14 +1113,14 @@ DescribeServiceActionOutcomeCallable ServiceCatalogClient::DescribeServiceAction
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeServiceActionAsync(const DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeServiceActionAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServiceActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeServiceAction(request), context);
 }
 
-void ServiceCatalogClient::DescribeServiceActionAsyncHelper(const DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeServiceActionAsync(const DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeServiceAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeServiceActionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeServiceActionExecutionParametersOutcome ServiceCatalogClient::DescribeServiceActionExecutionParameters(const DescribeServiceActionExecutionParametersRequest& request) const
@@ -1137,14 +1137,14 @@ DescribeServiceActionExecutionParametersOutcomeCallable ServiceCatalogClient::De
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeServiceActionExecutionParametersAsync(const DescribeServiceActionExecutionParametersRequest& request, const DescribeServiceActionExecutionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeServiceActionExecutionParametersAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeServiceActionExecutionParametersRequest& request, const DescribeServiceActionExecutionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServiceActionExecutionParametersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeServiceActionExecutionParameters(request), context);
 }
 
-void ServiceCatalogClient::DescribeServiceActionExecutionParametersAsyncHelper(const DescribeServiceActionExecutionParametersRequest& request, const DescribeServiceActionExecutionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeServiceActionExecutionParametersAsync(const DescribeServiceActionExecutionParametersRequest& request, const DescribeServiceActionExecutionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeServiceActionExecutionParameters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeServiceActionExecutionParametersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTagOptionOutcome ServiceCatalogClient::DescribeTagOption(const DescribeTagOptionRequest& request) const
@@ -1161,14 +1161,14 @@ DescribeTagOptionOutcomeCallable ServiceCatalogClient::DescribeTagOptionCallable
   return task->get_future();
 }
 
-void ServiceCatalogClient::DescribeTagOptionAsync(const DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDescribeTagOptionAsyncHelper(ServiceCatalogClient const * const clientThis, const DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTagOptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTagOption(request), context);
 }
 
-void ServiceCatalogClient::DescribeTagOptionAsyncHelper(const DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DescribeTagOptionAsync(const DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTagOption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDescribeTagOptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableAWSOrganizationsAccessOutcome ServiceCatalogClient::DisableAWSOrganizationsAccess(const DisableAWSOrganizationsAccessRequest& request) const
@@ -1185,14 +1185,14 @@ DisableAWSOrganizationsAccessOutcomeCallable ServiceCatalogClient::DisableAWSOrg
   return task->get_future();
 }
 
-void ServiceCatalogClient::DisableAWSOrganizationsAccessAsync(const DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDisableAWSOrganizationsAccessAsyncHelper(ServiceCatalogClient const * const clientThis, const DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableAWSOrganizationsAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableAWSOrganizationsAccess(request), context);
 }
 
-void ServiceCatalogClient::DisableAWSOrganizationsAccessAsyncHelper(const DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DisableAWSOrganizationsAccessAsync(const DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableAWSOrganizationsAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDisableAWSOrganizationsAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateBudgetFromResourceOutcome ServiceCatalogClient::DisassociateBudgetFromResource(const DisassociateBudgetFromResourceRequest& request) const
@@ -1209,14 +1209,14 @@ DisassociateBudgetFromResourceOutcomeCallable ServiceCatalogClient::Disassociate
   return task->get_future();
 }
 
-void ServiceCatalogClient::DisassociateBudgetFromResourceAsync(const DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDisassociateBudgetFromResourceAsyncHelper(ServiceCatalogClient const * const clientThis, const DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateBudgetFromResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateBudgetFromResource(request), context);
 }
 
-void ServiceCatalogClient::DisassociateBudgetFromResourceAsyncHelper(const DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DisassociateBudgetFromResourceAsync(const DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateBudgetFromResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDisassociateBudgetFromResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociatePrincipalFromPortfolioOutcome ServiceCatalogClient::DisassociatePrincipalFromPortfolio(const DisassociatePrincipalFromPortfolioRequest& request) const
@@ -1233,14 +1233,14 @@ DisassociatePrincipalFromPortfolioOutcomeCallable ServiceCatalogClient::Disassoc
   return task->get_future();
 }
 
-void ServiceCatalogClient::DisassociatePrincipalFromPortfolioAsync(const DisassociatePrincipalFromPortfolioRequest& request, const DisassociatePrincipalFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDisassociatePrincipalFromPortfolioAsyncHelper(ServiceCatalogClient const * const clientThis, const DisassociatePrincipalFromPortfolioRequest& request, const DisassociatePrincipalFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociatePrincipalFromPortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociatePrincipalFromPortfolio(request), context);
 }
 
-void ServiceCatalogClient::DisassociatePrincipalFromPortfolioAsyncHelper(const DisassociatePrincipalFromPortfolioRequest& request, const DisassociatePrincipalFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DisassociatePrincipalFromPortfolioAsync(const DisassociatePrincipalFromPortfolioRequest& request, const DisassociatePrincipalFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociatePrincipalFromPortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDisassociatePrincipalFromPortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateProductFromPortfolioOutcome ServiceCatalogClient::DisassociateProductFromPortfolio(const DisassociateProductFromPortfolioRequest& request) const
@@ -1257,14 +1257,14 @@ DisassociateProductFromPortfolioOutcomeCallable ServiceCatalogClient::Disassocia
   return task->get_future();
 }
 
-void ServiceCatalogClient::DisassociateProductFromPortfolioAsync(const DisassociateProductFromPortfolioRequest& request, const DisassociateProductFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDisassociateProductFromPortfolioAsyncHelper(ServiceCatalogClient const * const clientThis, const DisassociateProductFromPortfolioRequest& request, const DisassociateProductFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateProductFromPortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateProductFromPortfolio(request), context);
 }
 
-void ServiceCatalogClient::DisassociateProductFromPortfolioAsyncHelper(const DisassociateProductFromPortfolioRequest& request, const DisassociateProductFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DisassociateProductFromPortfolioAsync(const DisassociateProductFromPortfolioRequest& request, const DisassociateProductFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateProductFromPortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDisassociateProductFromPortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateServiceActionFromProvisioningArtifactOutcome ServiceCatalogClient::DisassociateServiceActionFromProvisioningArtifact(const DisassociateServiceActionFromProvisioningArtifactRequest& request) const
@@ -1281,14 +1281,14 @@ DisassociateServiceActionFromProvisioningArtifactOutcomeCallable ServiceCatalogC
   return task->get_future();
 }
 
-void ServiceCatalogClient::DisassociateServiceActionFromProvisioningArtifactAsync(const DisassociateServiceActionFromProvisioningArtifactRequest& request, const DisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDisassociateServiceActionFromProvisioningArtifactAsyncHelper(ServiceCatalogClient const * const clientThis, const DisassociateServiceActionFromProvisioningArtifactRequest& request, const DisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateServiceActionFromProvisioningArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateServiceActionFromProvisioningArtifact(request), context);
 }
 
-void ServiceCatalogClient::DisassociateServiceActionFromProvisioningArtifactAsyncHelper(const DisassociateServiceActionFromProvisioningArtifactRequest& request, const DisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DisassociateServiceActionFromProvisioningArtifactAsync(const DisassociateServiceActionFromProvisioningArtifactRequest& request, const DisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateServiceActionFromProvisioningArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDisassociateServiceActionFromProvisioningArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateTagOptionFromResourceOutcome ServiceCatalogClient::DisassociateTagOptionFromResource(const DisassociateTagOptionFromResourceRequest& request) const
@@ -1305,14 +1305,14 @@ DisassociateTagOptionFromResourceOutcomeCallable ServiceCatalogClient::Disassoci
   return task->get_future();
 }
 
-void ServiceCatalogClient::DisassociateTagOptionFromResourceAsync(const DisassociateTagOptionFromResourceRequest& request, const DisassociateTagOptionFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientDisassociateTagOptionFromResourceAsyncHelper(ServiceCatalogClient const * const clientThis, const DisassociateTagOptionFromResourceRequest& request, const DisassociateTagOptionFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTagOptionFromResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateTagOptionFromResource(request), context);
 }
 
-void ServiceCatalogClient::DisassociateTagOptionFromResourceAsyncHelper(const DisassociateTagOptionFromResourceRequest& request, const DisassociateTagOptionFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::DisassociateTagOptionFromResourceAsync(const DisassociateTagOptionFromResourceRequest& request, const DisassociateTagOptionFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateTagOptionFromResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientDisassociateTagOptionFromResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableAWSOrganizationsAccessOutcome ServiceCatalogClient::EnableAWSOrganizationsAccess(const EnableAWSOrganizationsAccessRequest& request) const
@@ -1329,14 +1329,14 @@ EnableAWSOrganizationsAccessOutcomeCallable ServiceCatalogClient::EnableAWSOrgan
   return task->get_future();
 }
 
-void ServiceCatalogClient::EnableAWSOrganizationsAccessAsync(const EnableAWSOrganizationsAccessRequest& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientEnableAWSOrganizationsAccessAsyncHelper(ServiceCatalogClient const * const clientThis, const EnableAWSOrganizationsAccessRequest& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableAWSOrganizationsAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableAWSOrganizationsAccess(request), context);
 }
 
-void ServiceCatalogClient::EnableAWSOrganizationsAccessAsyncHelper(const EnableAWSOrganizationsAccessRequest& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::EnableAWSOrganizationsAccessAsync(const EnableAWSOrganizationsAccessRequest& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableAWSOrganizationsAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientEnableAWSOrganizationsAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 ExecuteProvisionedProductPlanOutcome ServiceCatalogClient::ExecuteProvisionedProductPlan(const ExecuteProvisionedProductPlanRequest& request) const
@@ -1353,14 +1353,14 @@ ExecuteProvisionedProductPlanOutcomeCallable ServiceCatalogClient::ExecuteProvis
   return task->get_future();
 }
 
-void ServiceCatalogClient::ExecuteProvisionedProductPlanAsync(const ExecuteProvisionedProductPlanRequest& request, const ExecuteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientExecuteProvisionedProductPlanAsyncHelper(ServiceCatalogClient const * const clientThis, const ExecuteProvisionedProductPlanRequest& request, const ExecuteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteProvisionedProductPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExecuteProvisionedProductPlan(request), context);
 }
 
-void ServiceCatalogClient::ExecuteProvisionedProductPlanAsyncHelper(const ExecuteProvisionedProductPlanRequest& request, const ExecuteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ExecuteProvisionedProductPlanAsync(const ExecuteProvisionedProductPlanRequest& request, const ExecuteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExecuteProvisionedProductPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientExecuteProvisionedProductPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 ExecuteProvisionedProductServiceActionOutcome ServiceCatalogClient::ExecuteProvisionedProductServiceAction(const ExecuteProvisionedProductServiceActionRequest& request) const
@@ -1377,14 +1377,14 @@ ExecuteProvisionedProductServiceActionOutcomeCallable ServiceCatalogClient::Exec
   return task->get_future();
 }
 
-void ServiceCatalogClient::ExecuteProvisionedProductServiceActionAsync(const ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientExecuteProvisionedProductServiceActionAsyncHelper(ServiceCatalogClient const * const clientThis, const ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteProvisionedProductServiceActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExecuteProvisionedProductServiceAction(request), context);
 }
 
-void ServiceCatalogClient::ExecuteProvisionedProductServiceActionAsyncHelper(const ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ExecuteProvisionedProductServiceActionAsync(const ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExecuteProvisionedProductServiceAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientExecuteProvisionedProductServiceActionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAWSOrganizationsAccessStatusOutcome ServiceCatalogClient::GetAWSOrganizationsAccessStatus(const GetAWSOrganizationsAccessStatusRequest& request) const
@@ -1401,14 +1401,14 @@ GetAWSOrganizationsAccessStatusOutcomeCallable ServiceCatalogClient::GetAWSOrgan
   return task->get_future();
 }
 
-void ServiceCatalogClient::GetAWSOrganizationsAccessStatusAsync(const GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientGetAWSOrganizationsAccessStatusAsyncHelper(ServiceCatalogClient const * const clientThis, const GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAWSOrganizationsAccessStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAWSOrganizationsAccessStatus(request), context);
 }
 
-void ServiceCatalogClient::GetAWSOrganizationsAccessStatusAsyncHelper(const GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::GetAWSOrganizationsAccessStatusAsync(const GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAWSOrganizationsAccessStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientGetAWSOrganizationsAccessStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetProvisionedProductOutputsOutcome ServiceCatalogClient::GetProvisionedProductOutputs(const GetProvisionedProductOutputsRequest& request) const
@@ -1425,14 +1425,14 @@ GetProvisionedProductOutputsOutcomeCallable ServiceCatalogClient::GetProvisioned
   return task->get_future();
 }
 
-void ServiceCatalogClient::GetProvisionedProductOutputsAsync(const GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientGetProvisionedProductOutputsAsyncHelper(ServiceCatalogClient const * const clientThis, const GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProvisionedProductOutputsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetProvisionedProductOutputs(request), context);
 }
 
-void ServiceCatalogClient::GetProvisionedProductOutputsAsyncHelper(const GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::GetProvisionedProductOutputsAsync(const GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetProvisionedProductOutputs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientGetProvisionedProductOutputsAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportAsProvisionedProductOutcome ServiceCatalogClient::ImportAsProvisionedProduct(const ImportAsProvisionedProductRequest& request) const
@@ -1449,14 +1449,14 @@ ImportAsProvisionedProductOutcomeCallable ServiceCatalogClient::ImportAsProvisio
   return task->get_future();
 }
 
-void ServiceCatalogClient::ImportAsProvisionedProductAsync(const ImportAsProvisionedProductRequest& request, const ImportAsProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientImportAsProvisionedProductAsyncHelper(ServiceCatalogClient const * const clientThis, const ImportAsProvisionedProductRequest& request, const ImportAsProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportAsProvisionedProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportAsProvisionedProduct(request), context);
 }
 
-void ServiceCatalogClient::ImportAsProvisionedProductAsyncHelper(const ImportAsProvisionedProductRequest& request, const ImportAsProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ImportAsProvisionedProductAsync(const ImportAsProvisionedProductRequest& request, const ImportAsProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportAsProvisionedProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientImportAsProvisionedProductAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAcceptedPortfolioSharesOutcome ServiceCatalogClient::ListAcceptedPortfolioShares(const ListAcceptedPortfolioSharesRequest& request) const
@@ -1473,14 +1473,14 @@ ListAcceptedPortfolioSharesOutcomeCallable ServiceCatalogClient::ListAcceptedPor
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListAcceptedPortfolioSharesAsync(const ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListAcceptedPortfolioSharesAsyncHelper(ServiceCatalogClient const * const clientThis, const ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAcceptedPortfolioSharesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAcceptedPortfolioShares(request), context);
 }
 
-void ServiceCatalogClient::ListAcceptedPortfolioSharesAsyncHelper(const ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListAcceptedPortfolioSharesAsync(const ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAcceptedPortfolioShares(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListAcceptedPortfolioSharesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBudgetsForResourceOutcome ServiceCatalogClient::ListBudgetsForResource(const ListBudgetsForResourceRequest& request) const
@@ -1497,14 +1497,14 @@ ListBudgetsForResourceOutcomeCallable ServiceCatalogClient::ListBudgetsForResour
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListBudgetsForResourceAsync(const ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListBudgetsForResourceAsyncHelper(ServiceCatalogClient const * const clientThis, const ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBudgetsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBudgetsForResource(request), context);
 }
 
-void ServiceCatalogClient::ListBudgetsForResourceAsyncHelper(const ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListBudgetsForResourceAsync(const ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBudgetsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListBudgetsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConstraintsForPortfolioOutcome ServiceCatalogClient::ListConstraintsForPortfolio(const ListConstraintsForPortfolioRequest& request) const
@@ -1521,14 +1521,14 @@ ListConstraintsForPortfolioOutcomeCallable ServiceCatalogClient::ListConstraints
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListConstraintsForPortfolioAsync(const ListConstraintsForPortfolioRequest& request, const ListConstraintsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListConstraintsForPortfolioAsyncHelper(ServiceCatalogClient const * const clientThis, const ListConstraintsForPortfolioRequest& request, const ListConstraintsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConstraintsForPortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConstraintsForPortfolio(request), context);
 }
 
-void ServiceCatalogClient::ListConstraintsForPortfolioAsyncHelper(const ListConstraintsForPortfolioRequest& request, const ListConstraintsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListConstraintsForPortfolioAsync(const ListConstraintsForPortfolioRequest& request, const ListConstraintsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConstraintsForPortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListConstraintsForPortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLaunchPathsOutcome ServiceCatalogClient::ListLaunchPaths(const ListLaunchPathsRequest& request) const
@@ -1545,14 +1545,14 @@ ListLaunchPathsOutcomeCallable ServiceCatalogClient::ListLaunchPathsCallable(con
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListLaunchPathsAsync(const ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListLaunchPathsAsyncHelper(ServiceCatalogClient const * const clientThis, const ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLaunchPathsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLaunchPaths(request), context);
 }
 
-void ServiceCatalogClient::ListLaunchPathsAsyncHelper(const ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListLaunchPathsAsync(const ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLaunchPaths(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListLaunchPathsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOrganizationPortfolioAccessOutcome ServiceCatalogClient::ListOrganizationPortfolioAccess(const ListOrganizationPortfolioAccessRequest& request) const
@@ -1569,14 +1569,14 @@ ListOrganizationPortfolioAccessOutcomeCallable ServiceCatalogClient::ListOrganiz
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListOrganizationPortfolioAccessAsync(const ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListOrganizationPortfolioAccessAsyncHelper(ServiceCatalogClient const * const clientThis, const ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationPortfolioAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOrganizationPortfolioAccess(request), context);
 }
 
-void ServiceCatalogClient::ListOrganizationPortfolioAccessAsyncHelper(const ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListOrganizationPortfolioAccessAsync(const ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOrganizationPortfolioAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListOrganizationPortfolioAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPortfolioAccessOutcome ServiceCatalogClient::ListPortfolioAccess(const ListPortfolioAccessRequest& request) const
@@ -1593,14 +1593,14 @@ ListPortfolioAccessOutcomeCallable ServiceCatalogClient::ListPortfolioAccessCall
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListPortfolioAccessAsync(const ListPortfolioAccessRequest& request, const ListPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListPortfolioAccessAsyncHelper(ServiceCatalogClient const * const clientThis, const ListPortfolioAccessRequest& request, const ListPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPortfolioAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPortfolioAccess(request), context);
 }
 
-void ServiceCatalogClient::ListPortfolioAccessAsyncHelper(const ListPortfolioAccessRequest& request, const ListPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListPortfolioAccessAsync(const ListPortfolioAccessRequest& request, const ListPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPortfolioAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListPortfolioAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPortfoliosOutcome ServiceCatalogClient::ListPortfolios(const ListPortfoliosRequest& request) const
@@ -1617,14 +1617,14 @@ ListPortfoliosOutcomeCallable ServiceCatalogClient::ListPortfoliosCallable(const
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListPortfoliosAsync(const ListPortfoliosRequest& request, const ListPortfoliosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListPortfoliosAsyncHelper(ServiceCatalogClient const * const clientThis, const ListPortfoliosRequest& request, const ListPortfoliosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPortfoliosAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPortfolios(request), context);
 }
 
-void ServiceCatalogClient::ListPortfoliosAsyncHelper(const ListPortfoliosRequest& request, const ListPortfoliosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListPortfoliosAsync(const ListPortfoliosRequest& request, const ListPortfoliosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPortfolios(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListPortfoliosAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPortfoliosForProductOutcome ServiceCatalogClient::ListPortfoliosForProduct(const ListPortfoliosForProductRequest& request) const
@@ -1641,14 +1641,14 @@ ListPortfoliosForProductOutcomeCallable ServiceCatalogClient::ListPortfoliosForP
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListPortfoliosForProductAsync(const ListPortfoliosForProductRequest& request, const ListPortfoliosForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListPortfoliosForProductAsyncHelper(ServiceCatalogClient const * const clientThis, const ListPortfoliosForProductRequest& request, const ListPortfoliosForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPortfoliosForProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPortfoliosForProduct(request), context);
 }
 
-void ServiceCatalogClient::ListPortfoliosForProductAsyncHelper(const ListPortfoliosForProductRequest& request, const ListPortfoliosForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListPortfoliosForProductAsync(const ListPortfoliosForProductRequest& request, const ListPortfoliosForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPortfoliosForProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListPortfoliosForProductAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPrincipalsForPortfolioOutcome ServiceCatalogClient::ListPrincipalsForPortfolio(const ListPrincipalsForPortfolioRequest& request) const
@@ -1665,14 +1665,14 @@ ListPrincipalsForPortfolioOutcomeCallable ServiceCatalogClient::ListPrincipalsFo
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListPrincipalsForPortfolioAsync(const ListPrincipalsForPortfolioRequest& request, const ListPrincipalsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListPrincipalsForPortfolioAsyncHelper(ServiceCatalogClient const * const clientThis, const ListPrincipalsForPortfolioRequest& request, const ListPrincipalsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPrincipalsForPortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPrincipalsForPortfolio(request), context);
 }
 
-void ServiceCatalogClient::ListPrincipalsForPortfolioAsyncHelper(const ListPrincipalsForPortfolioRequest& request, const ListPrincipalsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListPrincipalsForPortfolioAsync(const ListPrincipalsForPortfolioRequest& request, const ListPrincipalsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPrincipalsForPortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListPrincipalsForPortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProvisionedProductPlansOutcome ServiceCatalogClient::ListProvisionedProductPlans(const ListProvisionedProductPlansRequest& request) const
@@ -1689,14 +1689,14 @@ ListProvisionedProductPlansOutcomeCallable ServiceCatalogClient::ListProvisioned
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListProvisionedProductPlansAsync(const ListProvisionedProductPlansRequest& request, const ListProvisionedProductPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListProvisionedProductPlansAsyncHelper(ServiceCatalogClient const * const clientThis, const ListProvisionedProductPlansRequest& request, const ListProvisionedProductPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProvisionedProductPlansAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProvisionedProductPlans(request), context);
 }
 
-void ServiceCatalogClient::ListProvisionedProductPlansAsyncHelper(const ListProvisionedProductPlansRequest& request, const ListProvisionedProductPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListProvisionedProductPlansAsync(const ListProvisionedProductPlansRequest& request, const ListProvisionedProductPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProvisionedProductPlans(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListProvisionedProductPlansAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProvisioningArtifactsOutcome ServiceCatalogClient::ListProvisioningArtifacts(const ListProvisioningArtifactsRequest& request) const
@@ -1713,14 +1713,14 @@ ListProvisioningArtifactsOutcomeCallable ServiceCatalogClient::ListProvisioningA
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListProvisioningArtifactsAsync(const ListProvisioningArtifactsRequest& request, const ListProvisioningArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListProvisioningArtifactsAsyncHelper(ServiceCatalogClient const * const clientThis, const ListProvisioningArtifactsRequest& request, const ListProvisioningArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProvisioningArtifactsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProvisioningArtifacts(request), context);
 }
 
-void ServiceCatalogClient::ListProvisioningArtifactsAsyncHelper(const ListProvisioningArtifactsRequest& request, const ListProvisioningArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListProvisioningArtifactsAsync(const ListProvisioningArtifactsRequest& request, const ListProvisioningArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProvisioningArtifacts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListProvisioningArtifactsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProvisioningArtifactsForServiceActionOutcome ServiceCatalogClient::ListProvisioningArtifactsForServiceAction(const ListProvisioningArtifactsForServiceActionRequest& request) const
@@ -1737,14 +1737,14 @@ ListProvisioningArtifactsForServiceActionOutcomeCallable ServiceCatalogClient::L
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListProvisioningArtifactsForServiceActionAsync(const ListProvisioningArtifactsForServiceActionRequest& request, const ListProvisioningArtifactsForServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListProvisioningArtifactsForServiceActionAsyncHelper(ServiceCatalogClient const * const clientThis, const ListProvisioningArtifactsForServiceActionRequest& request, const ListProvisioningArtifactsForServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProvisioningArtifactsForServiceActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProvisioningArtifactsForServiceAction(request), context);
 }
 
-void ServiceCatalogClient::ListProvisioningArtifactsForServiceActionAsyncHelper(const ListProvisioningArtifactsForServiceActionRequest& request, const ListProvisioningArtifactsForServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListProvisioningArtifactsForServiceActionAsync(const ListProvisioningArtifactsForServiceActionRequest& request, const ListProvisioningArtifactsForServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProvisioningArtifactsForServiceAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListProvisioningArtifactsForServiceActionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRecordHistoryOutcome ServiceCatalogClient::ListRecordHistory(const ListRecordHistoryRequest& request) const
@@ -1761,14 +1761,14 @@ ListRecordHistoryOutcomeCallable ServiceCatalogClient::ListRecordHistoryCallable
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListRecordHistoryAsync(const ListRecordHistoryRequest& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListRecordHistoryAsyncHelper(ServiceCatalogClient const * const clientThis, const ListRecordHistoryRequest& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecordHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRecordHistory(request), context);
 }
 
-void ServiceCatalogClient::ListRecordHistoryAsyncHelper(const ListRecordHistoryRequest& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListRecordHistoryAsync(const ListRecordHistoryRequest& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRecordHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListRecordHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourcesForTagOptionOutcome ServiceCatalogClient::ListResourcesForTagOption(const ListResourcesForTagOptionRequest& request) const
@@ -1785,14 +1785,14 @@ ListResourcesForTagOptionOutcomeCallable ServiceCatalogClient::ListResourcesForT
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListResourcesForTagOptionAsync(const ListResourcesForTagOptionRequest& request, const ListResourcesForTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListResourcesForTagOptionAsyncHelper(ServiceCatalogClient const * const clientThis, const ListResourcesForTagOptionRequest& request, const ListResourcesForTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesForTagOptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourcesForTagOption(request), context);
 }
 
-void ServiceCatalogClient::ListResourcesForTagOptionAsyncHelper(const ListResourcesForTagOptionRequest& request, const ListResourcesForTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListResourcesForTagOptionAsync(const ListResourcesForTagOptionRequest& request, const ListResourcesForTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourcesForTagOption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListResourcesForTagOptionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServiceActionsOutcome ServiceCatalogClient::ListServiceActions(const ListServiceActionsRequest& request) const
@@ -1809,14 +1809,14 @@ ListServiceActionsOutcomeCallable ServiceCatalogClient::ListServiceActionsCallab
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListServiceActionsAsync(const ListServiceActionsRequest& request, const ListServiceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListServiceActionsAsyncHelper(ServiceCatalogClient const * const clientThis, const ListServiceActionsRequest& request, const ListServiceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServiceActionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServiceActions(request), context);
 }
 
-void ServiceCatalogClient::ListServiceActionsAsyncHelper(const ListServiceActionsRequest& request, const ListServiceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListServiceActionsAsync(const ListServiceActionsRequest& request, const ListServiceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServiceActions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListServiceActionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServiceActionsForProvisioningArtifactOutcome ServiceCatalogClient::ListServiceActionsForProvisioningArtifact(const ListServiceActionsForProvisioningArtifactRequest& request) const
@@ -1833,14 +1833,14 @@ ListServiceActionsForProvisioningArtifactOutcomeCallable ServiceCatalogClient::L
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListServiceActionsForProvisioningArtifactAsync(const ListServiceActionsForProvisioningArtifactRequest& request, const ListServiceActionsForProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListServiceActionsForProvisioningArtifactAsyncHelper(ServiceCatalogClient const * const clientThis, const ListServiceActionsForProvisioningArtifactRequest& request, const ListServiceActionsForProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServiceActionsForProvisioningArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServiceActionsForProvisioningArtifact(request), context);
 }
 
-void ServiceCatalogClient::ListServiceActionsForProvisioningArtifactAsyncHelper(const ListServiceActionsForProvisioningArtifactRequest& request, const ListServiceActionsForProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListServiceActionsForProvisioningArtifactAsync(const ListServiceActionsForProvisioningArtifactRequest& request, const ListServiceActionsForProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServiceActionsForProvisioningArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListServiceActionsForProvisioningArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStackInstancesForProvisionedProductOutcome ServiceCatalogClient::ListStackInstancesForProvisionedProduct(const ListStackInstancesForProvisionedProductRequest& request) const
@@ -1857,14 +1857,14 @@ ListStackInstancesForProvisionedProductOutcomeCallable ServiceCatalogClient::Lis
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListStackInstancesForProvisionedProductAsync(const ListStackInstancesForProvisionedProductRequest& request, const ListStackInstancesForProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListStackInstancesForProvisionedProductAsyncHelper(ServiceCatalogClient const * const clientThis, const ListStackInstancesForProvisionedProductRequest& request, const ListStackInstancesForProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStackInstancesForProvisionedProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStackInstancesForProvisionedProduct(request), context);
 }
 
-void ServiceCatalogClient::ListStackInstancesForProvisionedProductAsyncHelper(const ListStackInstancesForProvisionedProductRequest& request, const ListStackInstancesForProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListStackInstancesForProvisionedProductAsync(const ListStackInstancesForProvisionedProductRequest& request, const ListStackInstancesForProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStackInstancesForProvisionedProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListStackInstancesForProvisionedProductAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagOptionsOutcome ServiceCatalogClient::ListTagOptions(const ListTagOptionsRequest& request) const
@@ -1881,14 +1881,14 @@ ListTagOptionsOutcomeCallable ServiceCatalogClient::ListTagOptionsCallable(const
   return task->get_future();
 }
 
-void ServiceCatalogClient::ListTagOptionsAsync(const ListTagOptionsRequest& request, const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientListTagOptionsAsyncHelper(ServiceCatalogClient const * const clientThis, const ListTagOptionsRequest& request, const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagOptions(request), context);
 }
 
-void ServiceCatalogClient::ListTagOptionsAsyncHelper(const ListTagOptionsRequest& request, const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ListTagOptionsAsync(const ListTagOptionsRequest& request, const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientListTagOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ProvisionProductOutcome ServiceCatalogClient::ProvisionProduct(const ProvisionProductRequest& request) const
@@ -1905,14 +1905,14 @@ ProvisionProductOutcomeCallable ServiceCatalogClient::ProvisionProductCallable(c
   return task->get_future();
 }
 
-void ServiceCatalogClient::ProvisionProductAsync(const ProvisionProductRequest& request, const ProvisionProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientProvisionProductAsyncHelper(ServiceCatalogClient const * const clientThis, const ProvisionProductRequest& request, const ProvisionProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ProvisionProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ProvisionProduct(request), context);
 }
 
-void ServiceCatalogClient::ProvisionProductAsyncHelper(const ProvisionProductRequest& request, const ProvisionProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ProvisionProductAsync(const ProvisionProductRequest& request, const ProvisionProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ProvisionProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientProvisionProductAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectPortfolioShareOutcome ServiceCatalogClient::RejectPortfolioShare(const RejectPortfolioShareRequest& request) const
@@ -1929,14 +1929,14 @@ RejectPortfolioShareOutcomeCallable ServiceCatalogClient::RejectPortfolioShareCa
   return task->get_future();
 }
 
-void ServiceCatalogClient::RejectPortfolioShareAsync(const RejectPortfolioShareRequest& request, const RejectPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientRejectPortfolioShareAsyncHelper(ServiceCatalogClient const * const clientThis, const RejectPortfolioShareRequest& request, const RejectPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectPortfolioShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectPortfolioShare(request), context);
 }
 
-void ServiceCatalogClient::RejectPortfolioShareAsyncHelper(const RejectPortfolioShareRequest& request, const RejectPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::RejectPortfolioShareAsync(const RejectPortfolioShareRequest& request, const RejectPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectPortfolioShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientRejectPortfolioShareAsyncHelper( this, request, handler, context ); } );
 }
 
 ScanProvisionedProductsOutcome ServiceCatalogClient::ScanProvisionedProducts(const ScanProvisionedProductsRequest& request) const
@@ -1953,14 +1953,14 @@ ScanProvisionedProductsOutcomeCallable ServiceCatalogClient::ScanProvisionedProd
   return task->get_future();
 }
 
-void ServiceCatalogClient::ScanProvisionedProductsAsync(const ScanProvisionedProductsRequest& request, const ScanProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientScanProvisionedProductsAsyncHelper(ServiceCatalogClient const * const clientThis, const ScanProvisionedProductsRequest& request, const ScanProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ScanProvisionedProductsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ScanProvisionedProducts(request), context);
 }
 
-void ServiceCatalogClient::ScanProvisionedProductsAsyncHelper(const ScanProvisionedProductsRequest& request, const ScanProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::ScanProvisionedProductsAsync(const ScanProvisionedProductsRequest& request, const ScanProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ScanProvisionedProducts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientScanProvisionedProductsAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchProductsOutcome ServiceCatalogClient::SearchProducts(const SearchProductsRequest& request) const
@@ -1977,14 +1977,14 @@ SearchProductsOutcomeCallable ServiceCatalogClient::SearchProductsCallable(const
   return task->get_future();
 }
 
-void ServiceCatalogClient::SearchProductsAsync(const SearchProductsRequest& request, const SearchProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientSearchProductsAsyncHelper(ServiceCatalogClient const * const clientThis, const SearchProductsRequest& request, const SearchProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchProductsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchProducts(request), context);
 }
 
-void ServiceCatalogClient::SearchProductsAsyncHelper(const SearchProductsRequest& request, const SearchProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::SearchProductsAsync(const SearchProductsRequest& request, const SearchProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchProducts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientSearchProductsAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchProductsAsAdminOutcome ServiceCatalogClient::SearchProductsAsAdmin(const SearchProductsAsAdminRequest& request) const
@@ -2001,14 +2001,14 @@ SearchProductsAsAdminOutcomeCallable ServiceCatalogClient::SearchProductsAsAdmin
   return task->get_future();
 }
 
-void ServiceCatalogClient::SearchProductsAsAdminAsync(const SearchProductsAsAdminRequest& request, const SearchProductsAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientSearchProductsAsAdminAsyncHelper(ServiceCatalogClient const * const clientThis, const SearchProductsAsAdminRequest& request, const SearchProductsAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchProductsAsAdminAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchProductsAsAdmin(request), context);
 }
 
-void ServiceCatalogClient::SearchProductsAsAdminAsyncHelper(const SearchProductsAsAdminRequest& request, const SearchProductsAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::SearchProductsAsAdminAsync(const SearchProductsAsAdminRequest& request, const SearchProductsAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchProductsAsAdmin(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientSearchProductsAsAdminAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchProvisionedProductsOutcome ServiceCatalogClient::SearchProvisionedProducts(const SearchProvisionedProductsRequest& request) const
@@ -2025,14 +2025,14 @@ SearchProvisionedProductsOutcomeCallable ServiceCatalogClient::SearchProvisioned
   return task->get_future();
 }
 
-void ServiceCatalogClient::SearchProvisionedProductsAsync(const SearchProvisionedProductsRequest& request, const SearchProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientSearchProvisionedProductsAsyncHelper(ServiceCatalogClient const * const clientThis, const SearchProvisionedProductsRequest& request, const SearchProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchProvisionedProductsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchProvisionedProducts(request), context);
 }
 
-void ServiceCatalogClient::SearchProvisionedProductsAsyncHelper(const SearchProvisionedProductsRequest& request, const SearchProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::SearchProvisionedProductsAsync(const SearchProvisionedProductsRequest& request, const SearchProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchProvisionedProducts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientSearchProvisionedProductsAsyncHelper( this, request, handler, context ); } );
 }
 
 TerminateProvisionedProductOutcome ServiceCatalogClient::TerminateProvisionedProduct(const TerminateProvisionedProductRequest& request) const
@@ -2049,14 +2049,14 @@ TerminateProvisionedProductOutcomeCallable ServiceCatalogClient::TerminateProvis
   return task->get_future();
 }
 
-void ServiceCatalogClient::TerminateProvisionedProductAsync(const TerminateProvisionedProductRequest& request, const TerminateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientTerminateProvisionedProductAsyncHelper(ServiceCatalogClient const * const clientThis, const TerminateProvisionedProductRequest& request, const TerminateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TerminateProvisionedProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TerminateProvisionedProduct(request), context);
 }
 
-void ServiceCatalogClient::TerminateProvisionedProductAsyncHelper(const TerminateProvisionedProductRequest& request, const TerminateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::TerminateProvisionedProductAsync(const TerminateProvisionedProductRequest& request, const TerminateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TerminateProvisionedProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientTerminateProvisionedProductAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConstraintOutcome ServiceCatalogClient::UpdateConstraint(const UpdateConstraintRequest& request) const
@@ -2073,14 +2073,14 @@ UpdateConstraintOutcomeCallable ServiceCatalogClient::UpdateConstraintCallable(c
   return task->get_future();
 }
 
-void ServiceCatalogClient::UpdateConstraintAsync(const UpdateConstraintRequest& request, const UpdateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientUpdateConstraintAsyncHelper(ServiceCatalogClient const * const clientThis, const UpdateConstraintRequest& request, const UpdateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConstraintAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConstraint(request), context);
 }
 
-void ServiceCatalogClient::UpdateConstraintAsyncHelper(const UpdateConstraintRequest& request, const UpdateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::UpdateConstraintAsync(const UpdateConstraintRequest& request, const UpdateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConstraint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientUpdateConstraintAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePortfolioOutcome ServiceCatalogClient::UpdatePortfolio(const UpdatePortfolioRequest& request) const
@@ -2097,14 +2097,14 @@ UpdatePortfolioOutcomeCallable ServiceCatalogClient::UpdatePortfolioCallable(con
   return task->get_future();
 }
 
-void ServiceCatalogClient::UpdatePortfolioAsync(const UpdatePortfolioRequest& request, const UpdatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientUpdatePortfolioAsyncHelper(ServiceCatalogClient const * const clientThis, const UpdatePortfolioRequest& request, const UpdatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePortfolioAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePortfolio(request), context);
 }
 
-void ServiceCatalogClient::UpdatePortfolioAsyncHelper(const UpdatePortfolioRequest& request, const UpdatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::UpdatePortfolioAsync(const UpdatePortfolioRequest& request, const UpdatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePortfolio(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientUpdatePortfolioAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePortfolioShareOutcome ServiceCatalogClient::UpdatePortfolioShare(const UpdatePortfolioShareRequest& request) const
@@ -2121,14 +2121,14 @@ UpdatePortfolioShareOutcomeCallable ServiceCatalogClient::UpdatePortfolioShareCa
   return task->get_future();
 }
 
-void ServiceCatalogClient::UpdatePortfolioShareAsync(const UpdatePortfolioShareRequest& request, const UpdatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientUpdatePortfolioShareAsyncHelper(ServiceCatalogClient const * const clientThis, const UpdatePortfolioShareRequest& request, const UpdatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePortfolioShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePortfolioShare(request), context);
 }
 
-void ServiceCatalogClient::UpdatePortfolioShareAsyncHelper(const UpdatePortfolioShareRequest& request, const UpdatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::UpdatePortfolioShareAsync(const UpdatePortfolioShareRequest& request, const UpdatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePortfolioShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientUpdatePortfolioShareAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProductOutcome ServiceCatalogClient::UpdateProduct(const UpdateProductRequest& request) const
@@ -2145,14 +2145,14 @@ UpdateProductOutcomeCallable ServiceCatalogClient::UpdateProductCallable(const U
   return task->get_future();
 }
 
-void ServiceCatalogClient::UpdateProductAsync(const UpdateProductRequest& request, const UpdateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientUpdateProductAsyncHelper(ServiceCatalogClient const * const clientThis, const UpdateProductRequest& request, const UpdateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProduct(request), context);
 }
 
-void ServiceCatalogClient::UpdateProductAsyncHelper(const UpdateProductRequest& request, const UpdateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::UpdateProductAsync(const UpdateProductRequest& request, const UpdateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientUpdateProductAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProvisionedProductOutcome ServiceCatalogClient::UpdateProvisionedProduct(const UpdateProvisionedProductRequest& request) const
@@ -2169,14 +2169,14 @@ UpdateProvisionedProductOutcomeCallable ServiceCatalogClient::UpdateProvisionedP
   return task->get_future();
 }
 
-void ServiceCatalogClient::UpdateProvisionedProductAsync(const UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientUpdateProvisionedProductAsyncHelper(ServiceCatalogClient const * const clientThis, const UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProvisionedProductAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProvisionedProduct(request), context);
 }
 
-void ServiceCatalogClient::UpdateProvisionedProductAsyncHelper(const UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::UpdateProvisionedProductAsync(const UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProvisionedProduct(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientUpdateProvisionedProductAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProvisionedProductPropertiesOutcome ServiceCatalogClient::UpdateProvisionedProductProperties(const UpdateProvisionedProductPropertiesRequest& request) const
@@ -2193,14 +2193,14 @@ UpdateProvisionedProductPropertiesOutcomeCallable ServiceCatalogClient::UpdatePr
   return task->get_future();
 }
 
-void ServiceCatalogClient::UpdateProvisionedProductPropertiesAsync(const UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientUpdateProvisionedProductPropertiesAsyncHelper(ServiceCatalogClient const * const clientThis, const UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProvisionedProductPropertiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProvisionedProductProperties(request), context);
 }
 
-void ServiceCatalogClient::UpdateProvisionedProductPropertiesAsyncHelper(const UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::UpdateProvisionedProductPropertiesAsync(const UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProvisionedProductProperties(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientUpdateProvisionedProductPropertiesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProvisioningArtifactOutcome ServiceCatalogClient::UpdateProvisioningArtifact(const UpdateProvisioningArtifactRequest& request) const
@@ -2217,14 +2217,14 @@ UpdateProvisioningArtifactOutcomeCallable ServiceCatalogClient::UpdateProvisioni
   return task->get_future();
 }
 
-void ServiceCatalogClient::UpdateProvisioningArtifactAsync(const UpdateProvisioningArtifactRequest& request, const UpdateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientUpdateProvisioningArtifactAsyncHelper(ServiceCatalogClient const * const clientThis, const UpdateProvisioningArtifactRequest& request, const UpdateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProvisioningArtifactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProvisioningArtifact(request), context);
 }
 
-void ServiceCatalogClient::UpdateProvisioningArtifactAsyncHelper(const UpdateProvisioningArtifactRequest& request, const UpdateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::UpdateProvisioningArtifactAsync(const UpdateProvisioningArtifactRequest& request, const UpdateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProvisioningArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientUpdateProvisioningArtifactAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServiceActionOutcome ServiceCatalogClient::UpdateServiceAction(const UpdateServiceActionRequest& request) const
@@ -2241,14 +2241,14 @@ UpdateServiceActionOutcomeCallable ServiceCatalogClient::UpdateServiceActionCall
   return task->get_future();
 }
 
-void ServiceCatalogClient::UpdateServiceActionAsync(const UpdateServiceActionRequest& request, const UpdateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientUpdateServiceActionAsyncHelper(ServiceCatalogClient const * const clientThis, const UpdateServiceActionRequest& request, const UpdateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceActionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServiceAction(request), context);
 }
 
-void ServiceCatalogClient::UpdateServiceActionAsyncHelper(const UpdateServiceActionRequest& request, const UpdateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::UpdateServiceActionAsync(const UpdateServiceActionRequest& request, const UpdateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServiceAction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientUpdateServiceActionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTagOptionOutcome ServiceCatalogClient::UpdateTagOption(const UpdateTagOptionRequest& request) const
@@ -2265,13 +2265,13 @@ UpdateTagOptionOutcomeCallable ServiceCatalogClient::UpdateTagOptionCallable(con
   return task->get_future();
 }
 
-void ServiceCatalogClient::UpdateTagOptionAsync(const UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClientUpdateTagOptionAsyncHelper(ServiceCatalogClient const * const clientThis, const UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTagOptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTagOption(request), context);
 }
 
-void ServiceCatalogClient::UpdateTagOptionAsyncHelper(const UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceCatalogClient::UpdateTagOptionAsync(const UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTagOption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceCatalogClientUpdateTagOptionAsyncHelper( this, request, handler, context ); } );
 }
 

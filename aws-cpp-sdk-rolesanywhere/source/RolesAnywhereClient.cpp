@@ -141,14 +141,14 @@ CreateProfileOutcomeCallable RolesAnywhereClient::CreateProfileCallable(const Cr
   return task->get_future();
 }
 
-void RolesAnywhereClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientCreateProfileAsyncHelper(RolesAnywhereClient const * const clientThis, const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProfile(request), context);
 }
 
-void RolesAnywhereClient::CreateProfileAsyncHelper(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientCreateProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTrustAnchorOutcome RolesAnywhereClient::CreateTrustAnchor(const CreateTrustAnchorRequest& request) const
@@ -166,14 +166,14 @@ CreateTrustAnchorOutcomeCallable RolesAnywhereClient::CreateTrustAnchorCallable(
   return task->get_future();
 }
 
-void RolesAnywhereClient::CreateTrustAnchorAsync(const CreateTrustAnchorRequest& request, const CreateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientCreateTrustAnchorAsyncHelper(RolesAnywhereClient const * const clientThis, const CreateTrustAnchorRequest& request, const CreateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrustAnchorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTrustAnchor(request), context);
 }
 
-void RolesAnywhereClient::CreateTrustAnchorAsyncHelper(const CreateTrustAnchorRequest& request, const CreateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::CreateTrustAnchorAsync(const CreateTrustAnchorRequest& request, const CreateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTrustAnchor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientCreateTrustAnchorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCrlOutcome RolesAnywhereClient::DeleteCrl(const DeleteCrlRequest& request) const
@@ -197,14 +197,14 @@ DeleteCrlOutcomeCallable RolesAnywhereClient::DeleteCrlCallable(const DeleteCrlR
   return task->get_future();
 }
 
-void RolesAnywhereClient::DeleteCrlAsync(const DeleteCrlRequest& request, const DeleteCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientDeleteCrlAsyncHelper(RolesAnywhereClient const * const clientThis, const DeleteCrlRequest& request, const DeleteCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCrl(request), context);
 }
 
-void RolesAnywhereClient::DeleteCrlAsyncHelper(const DeleteCrlRequest& request, const DeleteCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::DeleteCrlAsync(const DeleteCrlRequest& request, const DeleteCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientDeleteCrlAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProfileOutcome RolesAnywhereClient::DeleteProfile(const DeleteProfileRequest& request) const
@@ -228,14 +228,14 @@ DeleteProfileOutcomeCallable RolesAnywhereClient::DeleteProfileCallable(const De
   return task->get_future();
 }
 
-void RolesAnywhereClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientDeleteProfileAsyncHelper(RolesAnywhereClient const * const clientThis, const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProfile(request), context);
 }
 
-void RolesAnywhereClient::DeleteProfileAsyncHelper(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientDeleteProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTrustAnchorOutcome RolesAnywhereClient::DeleteTrustAnchor(const DeleteTrustAnchorRequest& request) const
@@ -259,14 +259,14 @@ DeleteTrustAnchorOutcomeCallable RolesAnywhereClient::DeleteTrustAnchorCallable(
   return task->get_future();
 }
 
-void RolesAnywhereClient::DeleteTrustAnchorAsync(const DeleteTrustAnchorRequest& request, const DeleteTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientDeleteTrustAnchorAsyncHelper(RolesAnywhereClient const * const clientThis, const DeleteTrustAnchorRequest& request, const DeleteTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrustAnchorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTrustAnchor(request), context);
 }
 
-void RolesAnywhereClient::DeleteTrustAnchorAsyncHelper(const DeleteTrustAnchorRequest& request, const DeleteTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::DeleteTrustAnchorAsync(const DeleteTrustAnchorRequest& request, const DeleteTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTrustAnchor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientDeleteTrustAnchorAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableCrlOutcome RolesAnywhereClient::DisableCrl(const DisableCrlRequest& request) const
@@ -291,14 +291,14 @@ DisableCrlOutcomeCallable RolesAnywhereClient::DisableCrlCallable(const DisableC
   return task->get_future();
 }
 
-void RolesAnywhereClient::DisableCrlAsync(const DisableCrlRequest& request, const DisableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientDisableCrlAsyncHelper(RolesAnywhereClient const * const clientThis, const DisableCrlRequest& request, const DisableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableCrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableCrl(request), context);
 }
 
-void RolesAnywhereClient::DisableCrlAsyncHelper(const DisableCrlRequest& request, const DisableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::DisableCrlAsync(const DisableCrlRequest& request, const DisableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableCrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientDisableCrlAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableProfileOutcome RolesAnywhereClient::DisableProfile(const DisableProfileRequest& request) const
@@ -323,14 +323,14 @@ DisableProfileOutcomeCallable RolesAnywhereClient::DisableProfileCallable(const 
   return task->get_future();
 }
 
-void RolesAnywhereClient::DisableProfileAsync(const DisableProfileRequest& request, const DisableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientDisableProfileAsyncHelper(RolesAnywhereClient const * const clientThis, const DisableProfileRequest& request, const DisableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableProfile(request), context);
 }
 
-void RolesAnywhereClient::DisableProfileAsyncHelper(const DisableProfileRequest& request, const DisableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::DisableProfileAsync(const DisableProfileRequest& request, const DisableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientDisableProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableTrustAnchorOutcome RolesAnywhereClient::DisableTrustAnchor(const DisableTrustAnchorRequest& request) const
@@ -355,14 +355,14 @@ DisableTrustAnchorOutcomeCallable RolesAnywhereClient::DisableTrustAnchorCallabl
   return task->get_future();
 }
 
-void RolesAnywhereClient::DisableTrustAnchorAsync(const DisableTrustAnchorRequest& request, const DisableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientDisableTrustAnchorAsyncHelper(RolesAnywhereClient const * const clientThis, const DisableTrustAnchorRequest& request, const DisableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableTrustAnchorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableTrustAnchor(request), context);
 }
 
-void RolesAnywhereClient::DisableTrustAnchorAsyncHelper(const DisableTrustAnchorRequest& request, const DisableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::DisableTrustAnchorAsync(const DisableTrustAnchorRequest& request, const DisableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableTrustAnchor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientDisableTrustAnchorAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableCrlOutcome RolesAnywhereClient::EnableCrl(const EnableCrlRequest& request) const
@@ -387,14 +387,14 @@ EnableCrlOutcomeCallable RolesAnywhereClient::EnableCrlCallable(const EnableCrlR
   return task->get_future();
 }
 
-void RolesAnywhereClient::EnableCrlAsync(const EnableCrlRequest& request, const EnableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientEnableCrlAsyncHelper(RolesAnywhereClient const * const clientThis, const EnableCrlRequest& request, const EnableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableCrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableCrl(request), context);
 }
 
-void RolesAnywhereClient::EnableCrlAsyncHelper(const EnableCrlRequest& request, const EnableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::EnableCrlAsync(const EnableCrlRequest& request, const EnableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableCrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientEnableCrlAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableProfileOutcome RolesAnywhereClient::EnableProfile(const EnableProfileRequest& request) const
@@ -419,14 +419,14 @@ EnableProfileOutcomeCallable RolesAnywhereClient::EnableProfileCallable(const En
   return task->get_future();
 }
 
-void RolesAnywhereClient::EnableProfileAsync(const EnableProfileRequest& request, const EnableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientEnableProfileAsyncHelper(RolesAnywhereClient const * const clientThis, const EnableProfileRequest& request, const EnableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableProfile(request), context);
 }
 
-void RolesAnywhereClient::EnableProfileAsyncHelper(const EnableProfileRequest& request, const EnableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::EnableProfileAsync(const EnableProfileRequest& request, const EnableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientEnableProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableTrustAnchorOutcome RolesAnywhereClient::EnableTrustAnchor(const EnableTrustAnchorRequest& request) const
@@ -451,14 +451,14 @@ EnableTrustAnchorOutcomeCallable RolesAnywhereClient::EnableTrustAnchorCallable(
   return task->get_future();
 }
 
-void RolesAnywhereClient::EnableTrustAnchorAsync(const EnableTrustAnchorRequest& request, const EnableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientEnableTrustAnchorAsyncHelper(RolesAnywhereClient const * const clientThis, const EnableTrustAnchorRequest& request, const EnableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableTrustAnchorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableTrustAnchor(request), context);
 }
 
-void RolesAnywhereClient::EnableTrustAnchorAsyncHelper(const EnableTrustAnchorRequest& request, const EnableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::EnableTrustAnchorAsync(const EnableTrustAnchorRequest& request, const EnableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableTrustAnchor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientEnableTrustAnchorAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCrlOutcome RolesAnywhereClient::GetCrl(const GetCrlRequest& request) const
@@ -482,14 +482,14 @@ GetCrlOutcomeCallable RolesAnywhereClient::GetCrlCallable(const GetCrlRequest& r
   return task->get_future();
 }
 
-void RolesAnywhereClient::GetCrlAsync(const GetCrlRequest& request, const GetCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientGetCrlAsyncHelper(RolesAnywhereClient const * const clientThis, const GetCrlRequest& request, const GetCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCrl(request), context);
 }
 
-void RolesAnywhereClient::GetCrlAsyncHelper(const GetCrlRequest& request, const GetCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::GetCrlAsync(const GetCrlRequest& request, const GetCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientGetCrlAsyncHelper( this, request, handler, context ); } );
 }
 
 GetProfileOutcome RolesAnywhereClient::GetProfile(const GetProfileRequest& request) const
@@ -513,14 +513,14 @@ GetProfileOutcomeCallable RolesAnywhereClient::GetProfileCallable(const GetProfi
   return task->get_future();
 }
 
-void RolesAnywhereClient::GetProfileAsync(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientGetProfileAsyncHelper(RolesAnywhereClient const * const clientThis, const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetProfile(request), context);
 }
 
-void RolesAnywhereClient::GetProfileAsyncHelper(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::GetProfileAsync(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientGetProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSubjectOutcome RolesAnywhereClient::GetSubject(const GetSubjectRequest& request) const
@@ -544,14 +544,14 @@ GetSubjectOutcomeCallable RolesAnywhereClient::GetSubjectCallable(const GetSubje
   return task->get_future();
 }
 
-void RolesAnywhereClient::GetSubjectAsync(const GetSubjectRequest& request, const GetSubjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientGetSubjectAsyncHelper(RolesAnywhereClient const * const clientThis, const GetSubjectRequest& request, const GetSubjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSubjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSubject(request), context);
 }
 
-void RolesAnywhereClient::GetSubjectAsyncHelper(const GetSubjectRequest& request, const GetSubjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::GetSubjectAsync(const GetSubjectRequest& request, const GetSubjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSubject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientGetSubjectAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTrustAnchorOutcome RolesAnywhereClient::GetTrustAnchor(const GetTrustAnchorRequest& request) const
@@ -575,14 +575,14 @@ GetTrustAnchorOutcomeCallable RolesAnywhereClient::GetTrustAnchorCallable(const 
   return task->get_future();
 }
 
-void RolesAnywhereClient::GetTrustAnchorAsync(const GetTrustAnchorRequest& request, const GetTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientGetTrustAnchorAsyncHelper(RolesAnywhereClient const * const clientThis, const GetTrustAnchorRequest& request, const GetTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTrustAnchorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTrustAnchor(request), context);
 }
 
-void RolesAnywhereClient::GetTrustAnchorAsyncHelper(const GetTrustAnchorRequest& request, const GetTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::GetTrustAnchorAsync(const GetTrustAnchorRequest& request, const GetTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTrustAnchor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientGetTrustAnchorAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportCrlOutcome RolesAnywhereClient::ImportCrl(const ImportCrlRequest& request) const
@@ -600,14 +600,14 @@ ImportCrlOutcomeCallable RolesAnywhereClient::ImportCrlCallable(const ImportCrlR
   return task->get_future();
 }
 
-void RolesAnywhereClient::ImportCrlAsync(const ImportCrlRequest& request, const ImportCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientImportCrlAsyncHelper(RolesAnywhereClient const * const clientThis, const ImportCrlRequest& request, const ImportCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportCrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportCrl(request), context);
 }
 
-void RolesAnywhereClient::ImportCrlAsyncHelper(const ImportCrlRequest& request, const ImportCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::ImportCrlAsync(const ImportCrlRequest& request, const ImportCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportCrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientImportCrlAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCrlsOutcome RolesAnywhereClient::ListCrls(const ListCrlsRequest& request) const
@@ -625,14 +625,14 @@ ListCrlsOutcomeCallable RolesAnywhereClient::ListCrlsCallable(const ListCrlsRequ
   return task->get_future();
 }
 
-void RolesAnywhereClient::ListCrlsAsync(const ListCrlsRequest& request, const ListCrlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientListCrlsAsyncHelper(RolesAnywhereClient const * const clientThis, const ListCrlsRequest& request, const ListCrlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCrlsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCrls(request), context);
 }
 
-void RolesAnywhereClient::ListCrlsAsyncHelper(const ListCrlsRequest& request, const ListCrlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::ListCrlsAsync(const ListCrlsRequest& request, const ListCrlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCrls(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientListCrlsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProfilesOutcome RolesAnywhereClient::ListProfiles(const ListProfilesRequest& request) const
@@ -650,14 +650,14 @@ ListProfilesOutcomeCallable RolesAnywhereClient::ListProfilesCallable(const List
   return task->get_future();
 }
 
-void RolesAnywhereClient::ListProfilesAsync(const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientListProfilesAsyncHelper(RolesAnywhereClient const * const clientThis, const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProfiles(request), context);
 }
 
-void RolesAnywhereClient::ListProfilesAsyncHelper(const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::ListProfilesAsync(const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientListProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSubjectsOutcome RolesAnywhereClient::ListSubjects(const ListSubjectsRequest& request) const
@@ -675,14 +675,14 @@ ListSubjectsOutcomeCallable RolesAnywhereClient::ListSubjectsCallable(const List
   return task->get_future();
 }
 
-void RolesAnywhereClient::ListSubjectsAsync(const ListSubjectsRequest& request, const ListSubjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientListSubjectsAsyncHelper(RolesAnywhereClient const * const clientThis, const ListSubjectsRequest& request, const ListSubjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSubjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSubjects(request), context);
 }
 
-void RolesAnywhereClient::ListSubjectsAsyncHelper(const ListSubjectsRequest& request, const ListSubjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::ListSubjectsAsync(const ListSubjectsRequest& request, const ListSubjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSubjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientListSubjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome RolesAnywhereClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -705,14 +705,14 @@ ListTagsForResourceOutcomeCallable RolesAnywhereClient::ListTagsForResourceCalla
   return task->get_future();
 }
 
-void RolesAnywhereClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientListTagsForResourceAsyncHelper(RolesAnywhereClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void RolesAnywhereClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTrustAnchorsOutcome RolesAnywhereClient::ListTrustAnchors(const ListTrustAnchorsRequest& request) const
@@ -730,14 +730,14 @@ ListTrustAnchorsOutcomeCallable RolesAnywhereClient::ListTrustAnchorsCallable(co
   return task->get_future();
 }
 
-void RolesAnywhereClient::ListTrustAnchorsAsync(const ListTrustAnchorsRequest& request, const ListTrustAnchorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientListTrustAnchorsAsyncHelper(RolesAnywhereClient const * const clientThis, const ListTrustAnchorsRequest& request, const ListTrustAnchorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrustAnchorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTrustAnchors(request), context);
 }
 
-void RolesAnywhereClient::ListTrustAnchorsAsyncHelper(const ListTrustAnchorsRequest& request, const ListTrustAnchorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::ListTrustAnchorsAsync(const ListTrustAnchorsRequest& request, const ListTrustAnchorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTrustAnchors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientListTrustAnchorsAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome RolesAnywhereClient::TagResource(const TagResourceRequest& request) const
@@ -755,14 +755,14 @@ TagResourceOutcomeCallable RolesAnywhereClient::TagResourceCallable(const TagRes
   return task->get_future();
 }
 
-void RolesAnywhereClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientTagResourceAsyncHelper(RolesAnywhereClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void RolesAnywhereClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome RolesAnywhereClient::UntagResource(const UntagResourceRequest& request) const
@@ -780,14 +780,14 @@ UntagResourceOutcomeCallable RolesAnywhereClient::UntagResourceCallable(const Un
   return task->get_future();
 }
 
-void RolesAnywhereClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientUntagResourceAsyncHelper(RolesAnywhereClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void RolesAnywhereClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCrlOutcome RolesAnywhereClient::UpdateCrl(const UpdateCrlRequest& request) const
@@ -811,14 +811,14 @@ UpdateCrlOutcomeCallable RolesAnywhereClient::UpdateCrlCallable(const UpdateCrlR
   return task->get_future();
 }
 
-void RolesAnywhereClient::UpdateCrlAsync(const UpdateCrlRequest& request, const UpdateCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientUpdateCrlAsyncHelper(RolesAnywhereClient const * const clientThis, const UpdateCrlRequest& request, const UpdateCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCrl(request), context);
 }
 
-void RolesAnywhereClient::UpdateCrlAsyncHelper(const UpdateCrlRequest& request, const UpdateCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::UpdateCrlAsync(const UpdateCrlRequest& request, const UpdateCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientUpdateCrlAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProfileOutcome RolesAnywhereClient::UpdateProfile(const UpdateProfileRequest& request) const
@@ -842,14 +842,14 @@ UpdateProfileOutcomeCallable RolesAnywhereClient::UpdateProfileCallable(const Up
   return task->get_future();
 }
 
-void RolesAnywhereClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientUpdateProfileAsyncHelper(RolesAnywhereClient const * const clientThis, const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProfile(request), context);
 }
 
-void RolesAnywhereClient::UpdateProfileAsyncHelper(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientUpdateProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTrustAnchorOutcome RolesAnywhereClient::UpdateTrustAnchor(const UpdateTrustAnchorRequest& request) const
@@ -873,13 +873,13 @@ UpdateTrustAnchorOutcomeCallable RolesAnywhereClient::UpdateTrustAnchorCallable(
   return task->get_future();
 }
 
-void RolesAnywhereClient::UpdateTrustAnchorAsync(const UpdateTrustAnchorRequest& request, const UpdateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClientUpdateTrustAnchorAsyncHelper(RolesAnywhereClient const * const clientThis, const UpdateTrustAnchorRequest& request, const UpdateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrustAnchorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTrustAnchor(request), context);
 }
 
-void RolesAnywhereClient::UpdateTrustAnchorAsyncHelper(const UpdateTrustAnchorRequest& request, const UpdateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RolesAnywhereClient::UpdateTrustAnchorAsync(const UpdateTrustAnchorRequest& request, const UpdateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTrustAnchor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RolesAnywhereClientUpdateTrustAnchorAsyncHelper( this, request, handler, context ); } );
 }
 

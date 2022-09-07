@@ -139,14 +139,14 @@ AddProfilePermissionOutcomeCallable SignerClient::AddProfilePermissionCallable(c
   return task->get_future();
 }
 
-void SignerClient::AddProfilePermissionAsync(const AddProfilePermissionRequest& request, const AddProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientAddProfilePermissionAsyncHelper(SignerClient const * const clientThis, const AddProfilePermissionRequest& request, const AddProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddProfilePermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddProfilePermission(request), context);
 }
 
-void SignerClient::AddProfilePermissionAsyncHelper(const AddProfilePermissionRequest& request, const AddProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::AddProfilePermissionAsync(const AddProfilePermissionRequest& request, const AddProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddProfilePermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientAddProfilePermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigningProfileRequest& request) const
@@ -170,14 +170,14 @@ CancelSigningProfileOutcomeCallable SignerClient::CancelSigningProfileCallable(c
   return task->get_future();
 }
 
-void SignerClient::CancelSigningProfileAsync(const CancelSigningProfileRequest& request, const CancelSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientCancelSigningProfileAsyncHelper(SignerClient const * const clientThis, const CancelSigningProfileRequest& request, const CancelSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelSigningProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelSigningProfile(request), context);
 }
 
-void SignerClient::CancelSigningProfileAsyncHelper(const CancelSigningProfileRequest& request, const CancelSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::CancelSigningProfileAsync(const CancelSigningProfileRequest& request, const CancelSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelSigningProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientCancelSigningProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSigningJobOutcome SignerClient::DescribeSigningJob(const DescribeSigningJobRequest& request) const
@@ -201,14 +201,14 @@ DescribeSigningJobOutcomeCallable SignerClient::DescribeSigningJobCallable(const
   return task->get_future();
 }
 
-void SignerClient::DescribeSigningJobAsync(const DescribeSigningJobRequest& request, const DescribeSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientDescribeSigningJobAsyncHelper(SignerClient const * const clientThis, const DescribeSigningJobRequest& request, const DescribeSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSigningJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSigningJob(request), context);
 }
 
-void SignerClient::DescribeSigningJobAsyncHelper(const DescribeSigningJobRequest& request, const DescribeSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::DescribeSigningJobAsync(const DescribeSigningJobRequest& request, const DescribeSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSigningJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientDescribeSigningJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSigningPlatformOutcome SignerClient::GetSigningPlatform(const GetSigningPlatformRequest& request) const
@@ -232,14 +232,14 @@ GetSigningPlatformOutcomeCallable SignerClient::GetSigningPlatformCallable(const
   return task->get_future();
 }
 
-void SignerClient::GetSigningPlatformAsync(const GetSigningPlatformRequest& request, const GetSigningPlatformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientGetSigningPlatformAsyncHelper(SignerClient const * const clientThis, const GetSigningPlatformRequest& request, const GetSigningPlatformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSigningPlatformAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSigningPlatform(request), context);
 }
 
-void SignerClient::GetSigningPlatformAsyncHelper(const GetSigningPlatformRequest& request, const GetSigningPlatformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::GetSigningPlatformAsync(const GetSigningPlatformRequest& request, const GetSigningPlatformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSigningPlatform(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientGetSigningPlatformAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSigningProfileOutcome SignerClient::GetSigningProfile(const GetSigningProfileRequest& request) const
@@ -263,14 +263,14 @@ GetSigningProfileOutcomeCallable SignerClient::GetSigningProfileCallable(const G
   return task->get_future();
 }
 
-void SignerClient::GetSigningProfileAsync(const GetSigningProfileRequest& request, const GetSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientGetSigningProfileAsyncHelper(SignerClient const * const clientThis, const GetSigningProfileRequest& request, const GetSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSigningProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSigningProfile(request), context);
 }
 
-void SignerClient::GetSigningProfileAsyncHelper(const GetSigningProfileRequest& request, const GetSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::GetSigningProfileAsync(const GetSigningProfileRequest& request, const GetSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSigningProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientGetSigningProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProfilePermissionsOutcome SignerClient::ListProfilePermissions(const ListProfilePermissionsRequest& request) const
@@ -295,14 +295,14 @@ ListProfilePermissionsOutcomeCallable SignerClient::ListProfilePermissionsCallab
   return task->get_future();
 }
 
-void SignerClient::ListProfilePermissionsAsync(const ListProfilePermissionsRequest& request, const ListProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientListProfilePermissionsAsyncHelper(SignerClient const * const clientThis, const ListProfilePermissionsRequest& request, const ListProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProfilePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProfilePermissions(request), context);
 }
 
-void SignerClient::ListProfilePermissionsAsyncHelper(const ListProfilePermissionsRequest& request, const ListProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::ListProfilePermissionsAsync(const ListProfilePermissionsRequest& request, const ListProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProfilePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientListProfilePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSigningJobsOutcome SignerClient::ListSigningJobs(const ListSigningJobsRequest& request) const
@@ -320,14 +320,14 @@ ListSigningJobsOutcomeCallable SignerClient::ListSigningJobsCallable(const ListS
   return task->get_future();
 }
 
-void SignerClient::ListSigningJobsAsync(const ListSigningJobsRequest& request, const ListSigningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientListSigningJobsAsyncHelper(SignerClient const * const clientThis, const ListSigningJobsRequest& request, const ListSigningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSigningJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSigningJobs(request), context);
 }
 
-void SignerClient::ListSigningJobsAsyncHelper(const ListSigningJobsRequest& request, const ListSigningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::ListSigningJobsAsync(const ListSigningJobsRequest& request, const ListSigningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSigningJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientListSigningJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSigningPlatformsOutcome SignerClient::ListSigningPlatforms(const ListSigningPlatformsRequest& request) const
@@ -345,14 +345,14 @@ ListSigningPlatformsOutcomeCallable SignerClient::ListSigningPlatformsCallable(c
   return task->get_future();
 }
 
-void SignerClient::ListSigningPlatformsAsync(const ListSigningPlatformsRequest& request, const ListSigningPlatformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientListSigningPlatformsAsyncHelper(SignerClient const * const clientThis, const ListSigningPlatformsRequest& request, const ListSigningPlatformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSigningPlatformsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSigningPlatforms(request), context);
 }
 
-void SignerClient::ListSigningPlatformsAsyncHelper(const ListSigningPlatformsRequest& request, const ListSigningPlatformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::ListSigningPlatformsAsync(const ListSigningPlatformsRequest& request, const ListSigningPlatformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSigningPlatforms(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientListSigningPlatformsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSigningProfilesOutcome SignerClient::ListSigningProfiles(const ListSigningProfilesRequest& request) const
@@ -370,14 +370,14 @@ ListSigningProfilesOutcomeCallable SignerClient::ListSigningProfilesCallable(con
   return task->get_future();
 }
 
-void SignerClient::ListSigningProfilesAsync(const ListSigningProfilesRequest& request, const ListSigningProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientListSigningProfilesAsyncHelper(SignerClient const * const clientThis, const ListSigningProfilesRequest& request, const ListSigningProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSigningProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSigningProfiles(request), context);
 }
 
-void SignerClient::ListSigningProfilesAsyncHelper(const ListSigningProfilesRequest& request, const ListSigningProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::ListSigningProfilesAsync(const ListSigningProfilesRequest& request, const ListSigningProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSigningProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientListSigningProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome SignerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -401,14 +401,14 @@ ListTagsForResourceOutcomeCallable SignerClient::ListTagsForResourceCallable(con
   return task->get_future();
 }
 
-void SignerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientListTagsForResourceAsyncHelper(SignerClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void SignerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutSigningProfileOutcome SignerClient::PutSigningProfile(const PutSigningProfileRequest& request) const
@@ -432,14 +432,14 @@ PutSigningProfileOutcomeCallable SignerClient::PutSigningProfileCallable(const P
   return task->get_future();
 }
 
-void SignerClient::PutSigningProfileAsync(const PutSigningProfileRequest& request, const PutSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientPutSigningProfileAsyncHelper(SignerClient const * const clientThis, const PutSigningProfileRequest& request, const PutSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSigningProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutSigningProfile(request), context);
 }
 
-void SignerClient::PutSigningProfileAsyncHelper(const PutSigningProfileRequest& request, const PutSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::PutSigningProfileAsync(const PutSigningProfileRequest& request, const PutSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutSigningProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientPutSigningProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveProfilePermissionOutcome SignerClient::RemoveProfilePermission(const RemoveProfilePermissionRequest& request) const
@@ -475,14 +475,14 @@ RemoveProfilePermissionOutcomeCallable SignerClient::RemoveProfilePermissionCall
   return task->get_future();
 }
 
-void SignerClient::RemoveProfilePermissionAsync(const RemoveProfilePermissionRequest& request, const RemoveProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientRemoveProfilePermissionAsyncHelper(SignerClient const * const clientThis, const RemoveProfilePermissionRequest& request, const RemoveProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveProfilePermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveProfilePermission(request), context);
 }
 
-void SignerClient::RemoveProfilePermissionAsyncHelper(const RemoveProfilePermissionRequest& request, const RemoveProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::RemoveProfilePermissionAsync(const RemoveProfilePermissionRequest& request, const RemoveProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveProfilePermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientRemoveProfilePermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 RevokeSignatureOutcome SignerClient::RevokeSignature(const RevokeSignatureRequest& request) const
@@ -507,14 +507,14 @@ RevokeSignatureOutcomeCallable SignerClient::RevokeSignatureCallable(const Revok
   return task->get_future();
 }
 
-void SignerClient::RevokeSignatureAsync(const RevokeSignatureRequest& request, const RevokeSignatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientRevokeSignatureAsyncHelper(SignerClient const * const clientThis, const RevokeSignatureRequest& request, const RevokeSignatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeSignatureAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RevokeSignature(request), context);
 }
 
-void SignerClient::RevokeSignatureAsyncHelper(const RevokeSignatureRequest& request, const RevokeSignatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::RevokeSignatureAsync(const RevokeSignatureRequest& request, const RevokeSignatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RevokeSignature(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientRevokeSignatureAsyncHelper( this, request, handler, context ); } );
 }
 
 RevokeSigningProfileOutcome SignerClient::RevokeSigningProfile(const RevokeSigningProfileRequest& request) const
@@ -539,14 +539,14 @@ RevokeSigningProfileOutcomeCallable SignerClient::RevokeSigningProfileCallable(c
   return task->get_future();
 }
 
-void SignerClient::RevokeSigningProfileAsync(const RevokeSigningProfileRequest& request, const RevokeSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientRevokeSigningProfileAsyncHelper(SignerClient const * const clientThis, const RevokeSigningProfileRequest& request, const RevokeSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeSigningProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RevokeSigningProfile(request), context);
 }
 
-void SignerClient::RevokeSigningProfileAsyncHelper(const RevokeSigningProfileRequest& request, const RevokeSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::RevokeSigningProfileAsync(const RevokeSigningProfileRequest& request, const RevokeSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RevokeSigningProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientRevokeSigningProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 StartSigningJobOutcome SignerClient::StartSigningJob(const StartSigningJobRequest& request) const
@@ -564,14 +564,14 @@ StartSigningJobOutcomeCallable SignerClient::StartSigningJobCallable(const Start
   return task->get_future();
 }
 
-void SignerClient::StartSigningJobAsync(const StartSigningJobRequest& request, const StartSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientStartSigningJobAsyncHelper(SignerClient const * const clientThis, const StartSigningJobRequest& request, const StartSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSigningJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartSigningJob(request), context);
 }
 
-void SignerClient::StartSigningJobAsyncHelper(const StartSigningJobRequest& request, const StartSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::StartSigningJobAsync(const StartSigningJobRequest& request, const StartSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartSigningJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientStartSigningJobAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome SignerClient::TagResource(const TagResourceRequest& request) const
@@ -595,14 +595,14 @@ TagResourceOutcomeCallable SignerClient::TagResourceCallable(const TagResourceRe
   return task->get_future();
 }
 
-void SignerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientTagResourceAsyncHelper(SignerClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void SignerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome SignerClient::UntagResource(const UntagResourceRequest& request) const
@@ -631,13 +631,13 @@ UntagResourceOutcomeCallable SignerClient::UntagResourceCallable(const UntagReso
   return task->get_future();
 }
 
-void SignerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClientUntagResourceAsyncHelper(SignerClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void SignerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SignerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SignerClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -124,14 +124,14 @@ CreateSavingsPlanOutcomeCallable SavingsPlansClient::CreateSavingsPlanCallable(c
   return task->get_future();
 }
 
-void SavingsPlansClient::CreateSavingsPlanAsync(const CreateSavingsPlanRequest& request, const CreateSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClientCreateSavingsPlanAsyncHelper(SavingsPlansClient const * const clientThis, const CreateSavingsPlanRequest& request, const CreateSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSavingsPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSavingsPlan(request), context);
 }
 
-void SavingsPlansClient::CreateSavingsPlanAsyncHelper(const CreateSavingsPlanRequest& request, const CreateSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClient::CreateSavingsPlanAsync(const CreateSavingsPlanRequest& request, const CreateSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSavingsPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SavingsPlansClientCreateSavingsPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteQueuedSavingsPlanOutcome SavingsPlansClient::DeleteQueuedSavingsPlan(const DeleteQueuedSavingsPlanRequest& request) const
@@ -149,14 +149,14 @@ DeleteQueuedSavingsPlanOutcomeCallable SavingsPlansClient::DeleteQueuedSavingsPl
   return task->get_future();
 }
 
-void SavingsPlansClient::DeleteQueuedSavingsPlanAsync(const DeleteQueuedSavingsPlanRequest& request, const DeleteQueuedSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClientDeleteQueuedSavingsPlanAsyncHelper(SavingsPlansClient const * const clientThis, const DeleteQueuedSavingsPlanRequest& request, const DeleteQueuedSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueuedSavingsPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteQueuedSavingsPlan(request), context);
 }
 
-void SavingsPlansClient::DeleteQueuedSavingsPlanAsyncHelper(const DeleteQueuedSavingsPlanRequest& request, const DeleteQueuedSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClient::DeleteQueuedSavingsPlanAsync(const DeleteQueuedSavingsPlanRequest& request, const DeleteQueuedSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteQueuedSavingsPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SavingsPlansClientDeleteQueuedSavingsPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSavingsPlanRatesOutcome SavingsPlansClient::DescribeSavingsPlanRates(const DescribeSavingsPlanRatesRequest& request) const
@@ -174,14 +174,14 @@ DescribeSavingsPlanRatesOutcomeCallable SavingsPlansClient::DescribeSavingsPlanR
   return task->get_future();
 }
 
-void SavingsPlansClient::DescribeSavingsPlanRatesAsync(const DescribeSavingsPlanRatesRequest& request, const DescribeSavingsPlanRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClientDescribeSavingsPlanRatesAsyncHelper(SavingsPlansClient const * const clientThis, const DescribeSavingsPlanRatesRequest& request, const DescribeSavingsPlanRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSavingsPlanRatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSavingsPlanRates(request), context);
 }
 
-void SavingsPlansClient::DescribeSavingsPlanRatesAsyncHelper(const DescribeSavingsPlanRatesRequest& request, const DescribeSavingsPlanRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClient::DescribeSavingsPlanRatesAsync(const DescribeSavingsPlanRatesRequest& request, const DescribeSavingsPlanRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSavingsPlanRates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SavingsPlansClientDescribeSavingsPlanRatesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSavingsPlansOutcome SavingsPlansClient::DescribeSavingsPlans(const DescribeSavingsPlansRequest& request) const
@@ -199,14 +199,14 @@ DescribeSavingsPlansOutcomeCallable SavingsPlansClient::DescribeSavingsPlansCall
   return task->get_future();
 }
 
-void SavingsPlansClient::DescribeSavingsPlansAsync(const DescribeSavingsPlansRequest& request, const DescribeSavingsPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClientDescribeSavingsPlansAsyncHelper(SavingsPlansClient const * const clientThis, const DescribeSavingsPlansRequest& request, const DescribeSavingsPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSavingsPlansAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSavingsPlans(request), context);
 }
 
-void SavingsPlansClient::DescribeSavingsPlansAsyncHelper(const DescribeSavingsPlansRequest& request, const DescribeSavingsPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClient::DescribeSavingsPlansAsync(const DescribeSavingsPlansRequest& request, const DescribeSavingsPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSavingsPlans(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SavingsPlansClientDescribeSavingsPlansAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSavingsPlansOfferingRatesOutcome SavingsPlansClient::DescribeSavingsPlansOfferingRates(const DescribeSavingsPlansOfferingRatesRequest& request) const
@@ -224,14 +224,14 @@ DescribeSavingsPlansOfferingRatesOutcomeCallable SavingsPlansClient::DescribeSav
   return task->get_future();
 }
 
-void SavingsPlansClient::DescribeSavingsPlansOfferingRatesAsync(const DescribeSavingsPlansOfferingRatesRequest& request, const DescribeSavingsPlansOfferingRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClientDescribeSavingsPlansOfferingRatesAsyncHelper(SavingsPlansClient const * const clientThis, const DescribeSavingsPlansOfferingRatesRequest& request, const DescribeSavingsPlansOfferingRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSavingsPlansOfferingRatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSavingsPlansOfferingRates(request), context);
 }
 
-void SavingsPlansClient::DescribeSavingsPlansOfferingRatesAsyncHelper(const DescribeSavingsPlansOfferingRatesRequest& request, const DescribeSavingsPlansOfferingRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClient::DescribeSavingsPlansOfferingRatesAsync(const DescribeSavingsPlansOfferingRatesRequest& request, const DescribeSavingsPlansOfferingRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSavingsPlansOfferingRates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SavingsPlansClientDescribeSavingsPlansOfferingRatesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSavingsPlansOfferingsOutcome SavingsPlansClient::DescribeSavingsPlansOfferings(const DescribeSavingsPlansOfferingsRequest& request) const
@@ -249,14 +249,14 @@ DescribeSavingsPlansOfferingsOutcomeCallable SavingsPlansClient::DescribeSavings
   return task->get_future();
 }
 
-void SavingsPlansClient::DescribeSavingsPlansOfferingsAsync(const DescribeSavingsPlansOfferingsRequest& request, const DescribeSavingsPlansOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClientDescribeSavingsPlansOfferingsAsyncHelper(SavingsPlansClient const * const clientThis, const DescribeSavingsPlansOfferingsRequest& request, const DescribeSavingsPlansOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSavingsPlansOfferingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSavingsPlansOfferings(request), context);
 }
 
-void SavingsPlansClient::DescribeSavingsPlansOfferingsAsyncHelper(const DescribeSavingsPlansOfferingsRequest& request, const DescribeSavingsPlansOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClient::DescribeSavingsPlansOfferingsAsync(const DescribeSavingsPlansOfferingsRequest& request, const DescribeSavingsPlansOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSavingsPlansOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SavingsPlansClientDescribeSavingsPlansOfferingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome SavingsPlansClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -274,14 +274,14 @@ ListTagsForResourceOutcomeCallable SavingsPlansClient::ListTagsForResourceCallab
   return task->get_future();
 }
 
-void SavingsPlansClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClientListTagsForResourceAsyncHelper(SavingsPlansClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void SavingsPlansClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SavingsPlansClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome SavingsPlansClient::TagResource(const TagResourceRequest& request) const
@@ -299,14 +299,14 @@ TagResourceOutcomeCallable SavingsPlansClient::TagResourceCallable(const TagReso
   return task->get_future();
 }
 
-void SavingsPlansClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClientTagResourceAsyncHelper(SavingsPlansClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void SavingsPlansClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SavingsPlansClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome SavingsPlansClient::UntagResource(const UntagResourceRequest& request) const
@@ -324,13 +324,13 @@ UntagResourceOutcomeCallable SavingsPlansClient::UntagResourceCallable(const Unt
   return task->get_future();
 }
 
-void SavingsPlansClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClientUntagResourceAsyncHelper(SavingsPlansClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void SavingsPlansClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SavingsPlansClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SavingsPlansClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 

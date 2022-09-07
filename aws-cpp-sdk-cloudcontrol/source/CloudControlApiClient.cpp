@@ -122,14 +122,14 @@ CancelResourceRequestOutcomeCallable CloudControlApiClient::CancelResourceReques
   return task->get_future();
 }
 
-void CloudControlApiClient::CancelResourceRequestAsync(const CancelResourceRequestRequest& request, const CancelResourceRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClientCancelResourceRequestAsyncHelper(CloudControlApiClient const * const clientThis, const CancelResourceRequestRequest& request, const CancelResourceRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelResourceRequestAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelResourceRequest(request), context);
 }
 
-void CloudControlApiClient::CancelResourceRequestAsyncHelper(const CancelResourceRequestRequest& request, const CancelResourceRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClient::CancelResourceRequestAsync(const CancelResourceRequestRequest& request, const CancelResourceRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelResourceRequest(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudControlApiClientCancelResourceRequestAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResourceOutcome CloudControlApiClient::CreateResource(const CreateResourceRequest& request) const
@@ -146,14 +146,14 @@ CreateResourceOutcomeCallable CloudControlApiClient::CreateResourceCallable(cons
   return task->get_future();
 }
 
-void CloudControlApiClient::CreateResourceAsync(const CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClientCreateResourceAsyncHelper(CloudControlApiClient const * const clientThis, const CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResource(request), context);
 }
 
-void CloudControlApiClient::CreateResourceAsyncHelper(const CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClient::CreateResourceAsync(const CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudControlApiClientCreateResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourceOutcome CloudControlApiClient::DeleteResource(const DeleteResourceRequest& request) const
@@ -170,14 +170,14 @@ DeleteResourceOutcomeCallable CloudControlApiClient::DeleteResourceCallable(cons
   return task->get_future();
 }
 
-void CloudControlApiClient::DeleteResourceAsync(const DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClientDeleteResourceAsyncHelper(CloudControlApiClient const * const clientThis, const DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResource(request), context);
 }
 
-void CloudControlApiClient::DeleteResourceAsyncHelper(const DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClient::DeleteResourceAsync(const DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudControlApiClientDeleteResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourceOutcome CloudControlApiClient::GetResource(const GetResourceRequest& request) const
@@ -194,14 +194,14 @@ GetResourceOutcomeCallable CloudControlApiClient::GetResourceCallable(const GetR
   return task->get_future();
 }
 
-void CloudControlApiClient::GetResourceAsync(const GetResourceRequest& request, const GetResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClientGetResourceAsyncHelper(CloudControlApiClient const * const clientThis, const GetResourceRequest& request, const GetResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResource(request), context);
 }
 
-void CloudControlApiClient::GetResourceAsyncHelper(const GetResourceRequest& request, const GetResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClient::GetResourceAsync(const GetResourceRequest& request, const GetResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudControlApiClientGetResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourceRequestStatusOutcome CloudControlApiClient::GetResourceRequestStatus(const GetResourceRequestStatusRequest& request) const
@@ -218,14 +218,14 @@ GetResourceRequestStatusOutcomeCallable CloudControlApiClient::GetResourceReques
   return task->get_future();
 }
 
-void CloudControlApiClient::GetResourceRequestStatusAsync(const GetResourceRequestStatusRequest& request, const GetResourceRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClientGetResourceRequestStatusAsyncHelper(CloudControlApiClient const * const clientThis, const GetResourceRequestStatusRequest& request, const GetResourceRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceRequestStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourceRequestStatus(request), context);
 }
 
-void CloudControlApiClient::GetResourceRequestStatusAsyncHelper(const GetResourceRequestStatusRequest& request, const GetResourceRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClient::GetResourceRequestStatusAsync(const GetResourceRequestStatusRequest& request, const GetResourceRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourceRequestStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudControlApiClientGetResourceRequestStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourceRequestsOutcome CloudControlApiClient::ListResourceRequests(const ListResourceRequestsRequest& request) const
@@ -242,14 +242,14 @@ ListResourceRequestsOutcomeCallable CloudControlApiClient::ListResourceRequestsC
   return task->get_future();
 }
 
-void CloudControlApiClient::ListResourceRequestsAsync(const ListResourceRequestsRequest& request, const ListResourceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClientListResourceRequestsAsyncHelper(CloudControlApiClient const * const clientThis, const ListResourceRequestsRequest& request, const ListResourceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceRequestsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourceRequests(request), context);
 }
 
-void CloudControlApiClient::ListResourceRequestsAsyncHelper(const ListResourceRequestsRequest& request, const ListResourceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClient::ListResourceRequestsAsync(const ListResourceRequestsRequest& request, const ListResourceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourceRequests(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudControlApiClientListResourceRequestsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourcesOutcome CloudControlApiClient::ListResources(const ListResourcesRequest& request) const
@@ -266,14 +266,14 @@ ListResourcesOutcomeCallable CloudControlApiClient::ListResourcesCallable(const 
   return task->get_future();
 }
 
-void CloudControlApiClient::ListResourcesAsync(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClientListResourcesAsyncHelper(CloudControlApiClient const * const clientThis, const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResources(request), context);
 }
 
-void CloudControlApiClient::ListResourcesAsyncHelper(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClient::ListResourcesAsync(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudControlApiClientListResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateResourceOutcome CloudControlApiClient::UpdateResource(const UpdateResourceRequest& request) const
@@ -290,13 +290,13 @@ UpdateResourceOutcomeCallable CloudControlApiClient::UpdateResourceCallable(cons
   return task->get_future();
 }
 
-void CloudControlApiClient::UpdateResourceAsync(const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClientUpdateResourceAsyncHelper(CloudControlApiClient const * const clientThis, const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateResource(request), context);
 }
 
-void CloudControlApiClient::UpdateResourceAsyncHelper(const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudControlApiClient::UpdateResourceAsync(const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudControlApiClientUpdateResourceAsyncHelper( this, request, handler, context ); } );
 }
 

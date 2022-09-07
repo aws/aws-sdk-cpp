@@ -118,14 +118,14 @@ DeleteReportDefinitionOutcomeCallable CostandUsageReportServiceClient::DeleteRep
   return task->get_future();
 }
 
-void CostandUsageReportServiceClient::DeleteReportDefinitionAsync(const DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostandUsageReportServiceClientDeleteReportDefinitionAsyncHelper(CostandUsageReportServiceClient const * const clientThis, const DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReportDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReportDefinition(request), context);
 }
 
-void CostandUsageReportServiceClient::DeleteReportDefinitionAsyncHelper(const DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostandUsageReportServiceClient::DeleteReportDefinitionAsync(const DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReportDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostandUsageReportServiceClientDeleteReportDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReportDefinitionsOutcome CostandUsageReportServiceClient::DescribeReportDefinitions(const DescribeReportDefinitionsRequest& request) const
@@ -142,14 +142,14 @@ DescribeReportDefinitionsOutcomeCallable CostandUsageReportServiceClient::Descri
   return task->get_future();
 }
 
-void CostandUsageReportServiceClient::DescribeReportDefinitionsAsync(const DescribeReportDefinitionsRequest& request, const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostandUsageReportServiceClientDescribeReportDefinitionsAsyncHelper(CostandUsageReportServiceClient const * const clientThis, const DescribeReportDefinitionsRequest& request, const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReportDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReportDefinitions(request), context);
 }
 
-void CostandUsageReportServiceClient::DescribeReportDefinitionsAsyncHelper(const DescribeReportDefinitionsRequest& request, const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostandUsageReportServiceClient::DescribeReportDefinitionsAsync(const DescribeReportDefinitionsRequest& request, const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReportDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostandUsageReportServiceClientDescribeReportDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyReportDefinitionOutcome CostandUsageReportServiceClient::ModifyReportDefinition(const ModifyReportDefinitionRequest& request) const
@@ -166,14 +166,14 @@ ModifyReportDefinitionOutcomeCallable CostandUsageReportServiceClient::ModifyRep
   return task->get_future();
 }
 
-void CostandUsageReportServiceClient::ModifyReportDefinitionAsync(const ModifyReportDefinitionRequest& request, const ModifyReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostandUsageReportServiceClientModifyReportDefinitionAsyncHelper(CostandUsageReportServiceClient const * const clientThis, const ModifyReportDefinitionRequest& request, const ModifyReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyReportDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyReportDefinition(request), context);
 }
 
-void CostandUsageReportServiceClient::ModifyReportDefinitionAsyncHelper(const ModifyReportDefinitionRequest& request, const ModifyReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostandUsageReportServiceClient::ModifyReportDefinitionAsync(const ModifyReportDefinitionRequest& request, const ModifyReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyReportDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostandUsageReportServiceClientModifyReportDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 PutReportDefinitionOutcome CostandUsageReportServiceClient::PutReportDefinition(const PutReportDefinitionRequest& request) const
@@ -190,13 +190,13 @@ PutReportDefinitionOutcomeCallable CostandUsageReportServiceClient::PutReportDef
   return task->get_future();
 }
 
-void CostandUsageReportServiceClient::PutReportDefinitionAsync(const PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostandUsageReportServiceClientPutReportDefinitionAsyncHelper(CostandUsageReportServiceClient const * const clientThis, const PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutReportDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutReportDefinition(request), context);
 }
 
-void CostandUsageReportServiceClient::PutReportDefinitionAsyncHelper(const PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostandUsageReportServiceClient::PutReportDefinitionAsync(const PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutReportDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostandUsageReportServiceClientPutReportDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 

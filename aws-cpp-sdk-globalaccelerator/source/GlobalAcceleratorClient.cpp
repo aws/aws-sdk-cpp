@@ -161,14 +161,14 @@ AddCustomRoutingEndpointsOutcomeCallable GlobalAcceleratorClient::AddCustomRouti
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::AddCustomRoutingEndpointsAsync(const AddCustomRoutingEndpointsRequest& request, const AddCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientAddCustomRoutingEndpointsAsyncHelper(GlobalAcceleratorClient const * const clientThis, const AddCustomRoutingEndpointsRequest& request, const AddCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddCustomRoutingEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddCustomRoutingEndpoints(request), context);
 }
 
-void GlobalAcceleratorClient::AddCustomRoutingEndpointsAsyncHelper(const AddCustomRoutingEndpointsRequest& request, const AddCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::AddCustomRoutingEndpointsAsync(const AddCustomRoutingEndpointsRequest& request, const AddCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddCustomRoutingEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientAddCustomRoutingEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 AdvertiseByoipCidrOutcome GlobalAcceleratorClient::AdvertiseByoipCidr(const AdvertiseByoipCidrRequest& request) const
@@ -185,14 +185,14 @@ AdvertiseByoipCidrOutcomeCallable GlobalAcceleratorClient::AdvertiseByoipCidrCal
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::AdvertiseByoipCidrAsync(const AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientAdvertiseByoipCidrAsyncHelper(GlobalAcceleratorClient const * const clientThis, const AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdvertiseByoipCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdvertiseByoipCidr(request), context);
 }
 
-void GlobalAcceleratorClient::AdvertiseByoipCidrAsyncHelper(const AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::AdvertiseByoipCidrAsync(const AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdvertiseByoipCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientAdvertiseByoipCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 AllowCustomRoutingTrafficOutcome GlobalAcceleratorClient::AllowCustomRoutingTraffic(const AllowCustomRoutingTrafficRequest& request) const
@@ -209,14 +209,14 @@ AllowCustomRoutingTrafficOutcomeCallable GlobalAcceleratorClient::AllowCustomRou
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::AllowCustomRoutingTrafficAsync(const AllowCustomRoutingTrafficRequest& request, const AllowCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientAllowCustomRoutingTrafficAsyncHelper(GlobalAcceleratorClient const * const clientThis, const AllowCustomRoutingTrafficRequest& request, const AllowCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AllowCustomRoutingTrafficAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AllowCustomRoutingTraffic(request), context);
 }
 
-void GlobalAcceleratorClient::AllowCustomRoutingTrafficAsyncHelper(const AllowCustomRoutingTrafficRequest& request, const AllowCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::AllowCustomRoutingTrafficAsync(const AllowCustomRoutingTrafficRequest& request, const AllowCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AllowCustomRoutingTraffic(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientAllowCustomRoutingTrafficAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAcceleratorOutcome GlobalAcceleratorClient::CreateAccelerator(const CreateAcceleratorRequest& request) const
@@ -233,14 +233,14 @@ CreateAcceleratorOutcomeCallable GlobalAcceleratorClient::CreateAcceleratorCalla
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::CreateAcceleratorAsync(const CreateAcceleratorRequest& request, const CreateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientCreateAcceleratorAsyncHelper(GlobalAcceleratorClient const * const clientThis, const CreateAcceleratorRequest& request, const CreateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAcceleratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAccelerator(request), context);
 }
 
-void GlobalAcceleratorClient::CreateAcceleratorAsyncHelper(const CreateAcceleratorRequest& request, const CreateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::CreateAcceleratorAsync(const CreateAcceleratorRequest& request, const CreateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAccelerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientCreateAcceleratorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomRoutingAcceleratorOutcome GlobalAcceleratorClient::CreateCustomRoutingAccelerator(const CreateCustomRoutingAcceleratorRequest& request) const
@@ -257,14 +257,14 @@ CreateCustomRoutingAcceleratorOutcomeCallable GlobalAcceleratorClient::CreateCus
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::CreateCustomRoutingAcceleratorAsync(const CreateCustomRoutingAcceleratorRequest& request, const CreateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientCreateCustomRoutingAcceleratorAsyncHelper(GlobalAcceleratorClient const * const clientThis, const CreateCustomRoutingAcceleratorRequest& request, const CreateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomRoutingAcceleratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomRoutingAccelerator(request), context);
 }
 
-void GlobalAcceleratorClient::CreateCustomRoutingAcceleratorAsyncHelper(const CreateCustomRoutingAcceleratorRequest& request, const CreateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::CreateCustomRoutingAcceleratorAsync(const CreateCustomRoutingAcceleratorRequest& request, const CreateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomRoutingAccelerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientCreateCustomRoutingAcceleratorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomRoutingEndpointGroupOutcome GlobalAcceleratorClient::CreateCustomRoutingEndpointGroup(const CreateCustomRoutingEndpointGroupRequest& request) const
@@ -281,14 +281,14 @@ CreateCustomRoutingEndpointGroupOutcomeCallable GlobalAcceleratorClient::CreateC
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::CreateCustomRoutingEndpointGroupAsync(const CreateCustomRoutingEndpointGroupRequest& request, const CreateCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientCreateCustomRoutingEndpointGroupAsyncHelper(GlobalAcceleratorClient const * const clientThis, const CreateCustomRoutingEndpointGroupRequest& request, const CreateCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomRoutingEndpointGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomRoutingEndpointGroup(request), context);
 }
 
-void GlobalAcceleratorClient::CreateCustomRoutingEndpointGroupAsyncHelper(const CreateCustomRoutingEndpointGroupRequest& request, const CreateCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::CreateCustomRoutingEndpointGroupAsync(const CreateCustomRoutingEndpointGroupRequest& request, const CreateCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomRoutingEndpointGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientCreateCustomRoutingEndpointGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomRoutingListenerOutcome GlobalAcceleratorClient::CreateCustomRoutingListener(const CreateCustomRoutingListenerRequest& request) const
@@ -305,14 +305,14 @@ CreateCustomRoutingListenerOutcomeCallable GlobalAcceleratorClient::CreateCustom
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::CreateCustomRoutingListenerAsync(const CreateCustomRoutingListenerRequest& request, const CreateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientCreateCustomRoutingListenerAsyncHelper(GlobalAcceleratorClient const * const clientThis, const CreateCustomRoutingListenerRequest& request, const CreateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomRoutingListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomRoutingListener(request), context);
 }
 
-void GlobalAcceleratorClient::CreateCustomRoutingListenerAsyncHelper(const CreateCustomRoutingListenerRequest& request, const CreateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::CreateCustomRoutingListenerAsync(const CreateCustomRoutingListenerRequest& request, const CreateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomRoutingListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientCreateCustomRoutingListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEndpointGroupOutcome GlobalAcceleratorClient::CreateEndpointGroup(const CreateEndpointGroupRequest& request) const
@@ -329,14 +329,14 @@ CreateEndpointGroupOutcomeCallable GlobalAcceleratorClient::CreateEndpointGroupC
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::CreateEndpointGroupAsync(const CreateEndpointGroupRequest& request, const CreateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientCreateEndpointGroupAsyncHelper(GlobalAcceleratorClient const * const clientThis, const CreateEndpointGroupRequest& request, const CreateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEndpointGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEndpointGroup(request), context);
 }
 
-void GlobalAcceleratorClient::CreateEndpointGroupAsyncHelper(const CreateEndpointGroupRequest& request, const CreateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::CreateEndpointGroupAsync(const CreateEndpointGroupRequest& request, const CreateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEndpointGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientCreateEndpointGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateListenerOutcome GlobalAcceleratorClient::CreateListener(const CreateListenerRequest& request) const
@@ -353,14 +353,14 @@ CreateListenerOutcomeCallable GlobalAcceleratorClient::CreateListenerCallable(co
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::CreateListenerAsync(const CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientCreateListenerAsyncHelper(GlobalAcceleratorClient const * const clientThis, const CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateListener(request), context);
 }
 
-void GlobalAcceleratorClient::CreateListenerAsyncHelper(const CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::CreateListenerAsync(const CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientCreateListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAcceleratorOutcome GlobalAcceleratorClient::DeleteAccelerator(const DeleteAcceleratorRequest& request) const
@@ -377,14 +377,14 @@ DeleteAcceleratorOutcomeCallable GlobalAcceleratorClient::DeleteAcceleratorCalla
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DeleteAcceleratorAsync(const DeleteAcceleratorRequest& request, const DeleteAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDeleteAcceleratorAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DeleteAcceleratorRequest& request, const DeleteAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAcceleratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAccelerator(request), context);
 }
 
-void GlobalAcceleratorClient::DeleteAcceleratorAsyncHelper(const DeleteAcceleratorRequest& request, const DeleteAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DeleteAcceleratorAsync(const DeleteAcceleratorRequest& request, const DeleteAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAccelerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDeleteAcceleratorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomRoutingAcceleratorOutcome GlobalAcceleratorClient::DeleteCustomRoutingAccelerator(const DeleteCustomRoutingAcceleratorRequest& request) const
@@ -401,14 +401,14 @@ DeleteCustomRoutingAcceleratorOutcomeCallable GlobalAcceleratorClient::DeleteCus
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DeleteCustomRoutingAcceleratorAsync(const DeleteCustomRoutingAcceleratorRequest& request, const DeleteCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDeleteCustomRoutingAcceleratorAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DeleteCustomRoutingAcceleratorRequest& request, const DeleteCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomRoutingAcceleratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomRoutingAccelerator(request), context);
 }
 
-void GlobalAcceleratorClient::DeleteCustomRoutingAcceleratorAsyncHelper(const DeleteCustomRoutingAcceleratorRequest& request, const DeleteCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DeleteCustomRoutingAcceleratorAsync(const DeleteCustomRoutingAcceleratorRequest& request, const DeleteCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomRoutingAccelerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDeleteCustomRoutingAcceleratorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomRoutingEndpointGroupOutcome GlobalAcceleratorClient::DeleteCustomRoutingEndpointGroup(const DeleteCustomRoutingEndpointGroupRequest& request) const
@@ -425,14 +425,14 @@ DeleteCustomRoutingEndpointGroupOutcomeCallable GlobalAcceleratorClient::DeleteC
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DeleteCustomRoutingEndpointGroupAsync(const DeleteCustomRoutingEndpointGroupRequest& request, const DeleteCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDeleteCustomRoutingEndpointGroupAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DeleteCustomRoutingEndpointGroupRequest& request, const DeleteCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomRoutingEndpointGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomRoutingEndpointGroup(request), context);
 }
 
-void GlobalAcceleratorClient::DeleteCustomRoutingEndpointGroupAsyncHelper(const DeleteCustomRoutingEndpointGroupRequest& request, const DeleteCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DeleteCustomRoutingEndpointGroupAsync(const DeleteCustomRoutingEndpointGroupRequest& request, const DeleteCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomRoutingEndpointGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDeleteCustomRoutingEndpointGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomRoutingListenerOutcome GlobalAcceleratorClient::DeleteCustomRoutingListener(const DeleteCustomRoutingListenerRequest& request) const
@@ -449,14 +449,14 @@ DeleteCustomRoutingListenerOutcomeCallable GlobalAcceleratorClient::DeleteCustom
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DeleteCustomRoutingListenerAsync(const DeleteCustomRoutingListenerRequest& request, const DeleteCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDeleteCustomRoutingListenerAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DeleteCustomRoutingListenerRequest& request, const DeleteCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomRoutingListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomRoutingListener(request), context);
 }
 
-void GlobalAcceleratorClient::DeleteCustomRoutingListenerAsyncHelper(const DeleteCustomRoutingListenerRequest& request, const DeleteCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DeleteCustomRoutingListenerAsync(const DeleteCustomRoutingListenerRequest& request, const DeleteCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomRoutingListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDeleteCustomRoutingListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEndpointGroupOutcome GlobalAcceleratorClient::DeleteEndpointGroup(const DeleteEndpointGroupRequest& request) const
@@ -473,14 +473,14 @@ DeleteEndpointGroupOutcomeCallable GlobalAcceleratorClient::DeleteEndpointGroupC
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DeleteEndpointGroupAsync(const DeleteEndpointGroupRequest& request, const DeleteEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDeleteEndpointGroupAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DeleteEndpointGroupRequest& request, const DeleteEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEndpointGroup(request), context);
 }
 
-void GlobalAcceleratorClient::DeleteEndpointGroupAsyncHelper(const DeleteEndpointGroupRequest& request, const DeleteEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DeleteEndpointGroupAsync(const DeleteEndpointGroupRequest& request, const DeleteEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEndpointGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDeleteEndpointGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteListenerOutcome GlobalAcceleratorClient::DeleteListener(const DeleteListenerRequest& request) const
@@ -497,14 +497,14 @@ DeleteListenerOutcomeCallable GlobalAcceleratorClient::DeleteListenerCallable(co
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DeleteListenerAsync(const DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDeleteListenerAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteListener(request), context);
 }
 
-void GlobalAcceleratorClient::DeleteListenerAsyncHelper(const DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DeleteListenerAsync(const DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDeleteListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 DenyCustomRoutingTrafficOutcome GlobalAcceleratorClient::DenyCustomRoutingTraffic(const DenyCustomRoutingTrafficRequest& request) const
@@ -521,14 +521,14 @@ DenyCustomRoutingTrafficOutcomeCallable GlobalAcceleratorClient::DenyCustomRouti
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DenyCustomRoutingTrafficAsync(const DenyCustomRoutingTrafficRequest& request, const DenyCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDenyCustomRoutingTrafficAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DenyCustomRoutingTrafficRequest& request, const DenyCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DenyCustomRoutingTrafficAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DenyCustomRoutingTraffic(request), context);
 }
 
-void GlobalAcceleratorClient::DenyCustomRoutingTrafficAsyncHelper(const DenyCustomRoutingTrafficRequest& request, const DenyCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DenyCustomRoutingTrafficAsync(const DenyCustomRoutingTrafficRequest& request, const DenyCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DenyCustomRoutingTraffic(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDenyCustomRoutingTrafficAsyncHelper( this, request, handler, context ); } );
 }
 
 DeprovisionByoipCidrOutcome GlobalAcceleratorClient::DeprovisionByoipCidr(const DeprovisionByoipCidrRequest& request) const
@@ -545,14 +545,14 @@ DeprovisionByoipCidrOutcomeCallable GlobalAcceleratorClient::DeprovisionByoipCid
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DeprovisionByoipCidrAsync(const DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDeprovisionByoipCidrAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeprovisionByoipCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeprovisionByoipCidr(request), context);
 }
 
-void GlobalAcceleratorClient::DeprovisionByoipCidrAsyncHelper(const DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DeprovisionByoipCidrAsync(const DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeprovisionByoipCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDeprovisionByoipCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAcceleratorOutcome GlobalAcceleratorClient::DescribeAccelerator(const DescribeAcceleratorRequest& request) const
@@ -569,14 +569,14 @@ DescribeAcceleratorOutcomeCallable GlobalAcceleratorClient::DescribeAcceleratorC
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DescribeAcceleratorAsync(const DescribeAcceleratorRequest& request, const DescribeAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDescribeAcceleratorAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DescribeAcceleratorRequest& request, const DescribeAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccelerator(request), context);
 }
 
-void GlobalAcceleratorClient::DescribeAcceleratorAsyncHelper(const DescribeAcceleratorRequest& request, const DescribeAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DescribeAcceleratorAsync(const DescribeAcceleratorRequest& request, const DescribeAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccelerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDescribeAcceleratorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAcceleratorAttributesOutcome GlobalAcceleratorClient::DescribeAcceleratorAttributes(const DescribeAcceleratorAttributesRequest& request) const
@@ -593,14 +593,14 @@ DescribeAcceleratorAttributesOutcomeCallable GlobalAcceleratorClient::DescribeAc
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DescribeAcceleratorAttributesAsync(const DescribeAcceleratorAttributesRequest& request, const DescribeAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDescribeAcceleratorAttributesAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DescribeAcceleratorAttributesRequest& request, const DescribeAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAcceleratorAttributes(request), context);
 }
 
-void GlobalAcceleratorClient::DescribeAcceleratorAttributesAsyncHelper(const DescribeAcceleratorAttributesRequest& request, const DescribeAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DescribeAcceleratorAttributesAsync(const DescribeAcceleratorAttributesRequest& request, const DescribeAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAcceleratorAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDescribeAcceleratorAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCustomRoutingAcceleratorOutcome GlobalAcceleratorClient::DescribeCustomRoutingAccelerator(const DescribeCustomRoutingAcceleratorRequest& request) const
@@ -617,14 +617,14 @@ DescribeCustomRoutingAcceleratorOutcomeCallable GlobalAcceleratorClient::Describ
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DescribeCustomRoutingAcceleratorAsync(const DescribeCustomRoutingAcceleratorRequest& request, const DescribeCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDescribeCustomRoutingAcceleratorAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DescribeCustomRoutingAcceleratorRequest& request, const DescribeCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCustomRoutingAcceleratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCustomRoutingAccelerator(request), context);
 }
 
-void GlobalAcceleratorClient::DescribeCustomRoutingAcceleratorAsyncHelper(const DescribeCustomRoutingAcceleratorRequest& request, const DescribeCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DescribeCustomRoutingAcceleratorAsync(const DescribeCustomRoutingAcceleratorRequest& request, const DescribeCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCustomRoutingAccelerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDescribeCustomRoutingAcceleratorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCustomRoutingAcceleratorAttributesOutcome GlobalAcceleratorClient::DescribeCustomRoutingAcceleratorAttributes(const DescribeCustomRoutingAcceleratorAttributesRequest& request) const
@@ -641,14 +641,14 @@ DescribeCustomRoutingAcceleratorAttributesOutcomeCallable GlobalAcceleratorClien
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DescribeCustomRoutingAcceleratorAttributesAsync(const DescribeCustomRoutingAcceleratorAttributesRequest& request, const DescribeCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDescribeCustomRoutingAcceleratorAttributesAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DescribeCustomRoutingAcceleratorAttributesRequest& request, const DescribeCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCustomRoutingAcceleratorAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCustomRoutingAcceleratorAttributes(request), context);
 }
 
-void GlobalAcceleratorClient::DescribeCustomRoutingAcceleratorAttributesAsyncHelper(const DescribeCustomRoutingAcceleratorAttributesRequest& request, const DescribeCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DescribeCustomRoutingAcceleratorAttributesAsync(const DescribeCustomRoutingAcceleratorAttributesRequest& request, const DescribeCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCustomRoutingAcceleratorAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDescribeCustomRoutingAcceleratorAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCustomRoutingEndpointGroupOutcome GlobalAcceleratorClient::DescribeCustomRoutingEndpointGroup(const DescribeCustomRoutingEndpointGroupRequest& request) const
@@ -665,14 +665,14 @@ DescribeCustomRoutingEndpointGroupOutcomeCallable GlobalAcceleratorClient::Descr
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DescribeCustomRoutingEndpointGroupAsync(const DescribeCustomRoutingEndpointGroupRequest& request, const DescribeCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDescribeCustomRoutingEndpointGroupAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DescribeCustomRoutingEndpointGroupRequest& request, const DescribeCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCustomRoutingEndpointGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCustomRoutingEndpointGroup(request), context);
 }
 
-void GlobalAcceleratorClient::DescribeCustomRoutingEndpointGroupAsyncHelper(const DescribeCustomRoutingEndpointGroupRequest& request, const DescribeCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DescribeCustomRoutingEndpointGroupAsync(const DescribeCustomRoutingEndpointGroupRequest& request, const DescribeCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCustomRoutingEndpointGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDescribeCustomRoutingEndpointGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCustomRoutingListenerOutcome GlobalAcceleratorClient::DescribeCustomRoutingListener(const DescribeCustomRoutingListenerRequest& request) const
@@ -689,14 +689,14 @@ DescribeCustomRoutingListenerOutcomeCallable GlobalAcceleratorClient::DescribeCu
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DescribeCustomRoutingListenerAsync(const DescribeCustomRoutingListenerRequest& request, const DescribeCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDescribeCustomRoutingListenerAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DescribeCustomRoutingListenerRequest& request, const DescribeCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCustomRoutingListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCustomRoutingListener(request), context);
 }
 
-void GlobalAcceleratorClient::DescribeCustomRoutingListenerAsyncHelper(const DescribeCustomRoutingListenerRequest& request, const DescribeCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DescribeCustomRoutingListenerAsync(const DescribeCustomRoutingListenerRequest& request, const DescribeCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCustomRoutingListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDescribeCustomRoutingListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEndpointGroupOutcome GlobalAcceleratorClient::DescribeEndpointGroup(const DescribeEndpointGroupRequest& request) const
@@ -713,14 +713,14 @@ DescribeEndpointGroupOutcomeCallable GlobalAcceleratorClient::DescribeEndpointGr
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DescribeEndpointGroupAsync(const DescribeEndpointGroupRequest& request, const DescribeEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDescribeEndpointGroupAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DescribeEndpointGroupRequest& request, const DescribeEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEndpointGroup(request), context);
 }
 
-void GlobalAcceleratorClient::DescribeEndpointGroupAsyncHelper(const DescribeEndpointGroupRequest& request, const DescribeEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DescribeEndpointGroupAsync(const DescribeEndpointGroupRequest& request, const DescribeEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEndpointGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDescribeEndpointGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeListenerOutcome GlobalAcceleratorClient::DescribeListener(const DescribeListenerRequest& request) const
@@ -737,14 +737,14 @@ DescribeListenerOutcomeCallable GlobalAcceleratorClient::DescribeListenerCallabl
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::DescribeListenerAsync(const DescribeListenerRequest& request, const DescribeListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientDescribeListenerAsyncHelper(GlobalAcceleratorClient const * const clientThis, const DescribeListenerRequest& request, const DescribeListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeListener(request), context);
 }
 
-void GlobalAcceleratorClient::DescribeListenerAsyncHelper(const DescribeListenerRequest& request, const DescribeListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::DescribeListenerAsync(const DescribeListenerRequest& request, const DescribeListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientDescribeListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAcceleratorsOutcome GlobalAcceleratorClient::ListAccelerators(const ListAcceleratorsRequest& request) const
@@ -761,14 +761,14 @@ ListAcceleratorsOutcomeCallable GlobalAcceleratorClient::ListAcceleratorsCallabl
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ListAcceleratorsAsync(const ListAcceleratorsRequest& request, const ListAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientListAcceleratorsAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ListAcceleratorsRequest& request, const ListAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAcceleratorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccelerators(request), context);
 }
 
-void GlobalAcceleratorClient::ListAcceleratorsAsyncHelper(const ListAcceleratorsRequest& request, const ListAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ListAcceleratorsAsync(const ListAcceleratorsRequest& request, const ListAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccelerators(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientListAcceleratorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListByoipCidrsOutcome GlobalAcceleratorClient::ListByoipCidrs(const ListByoipCidrsRequest& request) const
@@ -785,14 +785,14 @@ ListByoipCidrsOutcomeCallable GlobalAcceleratorClient::ListByoipCidrsCallable(co
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ListByoipCidrsAsync(const ListByoipCidrsRequest& request, const ListByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientListByoipCidrsAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ListByoipCidrsRequest& request, const ListByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListByoipCidrsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListByoipCidrs(request), context);
 }
 
-void GlobalAcceleratorClient::ListByoipCidrsAsyncHelper(const ListByoipCidrsRequest& request, const ListByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ListByoipCidrsAsync(const ListByoipCidrsRequest& request, const ListByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListByoipCidrs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientListByoipCidrsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomRoutingAcceleratorsOutcome GlobalAcceleratorClient::ListCustomRoutingAccelerators(const ListCustomRoutingAcceleratorsRequest& request) const
@@ -809,14 +809,14 @@ ListCustomRoutingAcceleratorsOutcomeCallable GlobalAcceleratorClient::ListCustom
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ListCustomRoutingAcceleratorsAsync(const ListCustomRoutingAcceleratorsRequest& request, const ListCustomRoutingAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientListCustomRoutingAcceleratorsAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ListCustomRoutingAcceleratorsRequest& request, const ListCustomRoutingAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomRoutingAcceleratorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomRoutingAccelerators(request), context);
 }
 
-void GlobalAcceleratorClient::ListCustomRoutingAcceleratorsAsyncHelper(const ListCustomRoutingAcceleratorsRequest& request, const ListCustomRoutingAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ListCustomRoutingAcceleratorsAsync(const ListCustomRoutingAcceleratorsRequest& request, const ListCustomRoutingAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomRoutingAccelerators(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientListCustomRoutingAcceleratorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomRoutingEndpointGroupsOutcome GlobalAcceleratorClient::ListCustomRoutingEndpointGroups(const ListCustomRoutingEndpointGroupsRequest& request) const
@@ -833,14 +833,14 @@ ListCustomRoutingEndpointGroupsOutcomeCallable GlobalAcceleratorClient::ListCust
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ListCustomRoutingEndpointGroupsAsync(const ListCustomRoutingEndpointGroupsRequest& request, const ListCustomRoutingEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientListCustomRoutingEndpointGroupsAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ListCustomRoutingEndpointGroupsRequest& request, const ListCustomRoutingEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomRoutingEndpointGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomRoutingEndpointGroups(request), context);
 }
 
-void GlobalAcceleratorClient::ListCustomRoutingEndpointGroupsAsyncHelper(const ListCustomRoutingEndpointGroupsRequest& request, const ListCustomRoutingEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ListCustomRoutingEndpointGroupsAsync(const ListCustomRoutingEndpointGroupsRequest& request, const ListCustomRoutingEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomRoutingEndpointGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientListCustomRoutingEndpointGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomRoutingListenersOutcome GlobalAcceleratorClient::ListCustomRoutingListeners(const ListCustomRoutingListenersRequest& request) const
@@ -857,14 +857,14 @@ ListCustomRoutingListenersOutcomeCallable GlobalAcceleratorClient::ListCustomRou
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ListCustomRoutingListenersAsync(const ListCustomRoutingListenersRequest& request, const ListCustomRoutingListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientListCustomRoutingListenersAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ListCustomRoutingListenersRequest& request, const ListCustomRoutingListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomRoutingListenersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomRoutingListeners(request), context);
 }
 
-void GlobalAcceleratorClient::ListCustomRoutingListenersAsyncHelper(const ListCustomRoutingListenersRequest& request, const ListCustomRoutingListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ListCustomRoutingListenersAsync(const ListCustomRoutingListenersRequest& request, const ListCustomRoutingListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomRoutingListeners(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientListCustomRoutingListenersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomRoutingPortMappingsOutcome GlobalAcceleratorClient::ListCustomRoutingPortMappings(const ListCustomRoutingPortMappingsRequest& request) const
@@ -881,14 +881,14 @@ ListCustomRoutingPortMappingsOutcomeCallable GlobalAcceleratorClient::ListCustom
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ListCustomRoutingPortMappingsAsync(const ListCustomRoutingPortMappingsRequest& request, const ListCustomRoutingPortMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientListCustomRoutingPortMappingsAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ListCustomRoutingPortMappingsRequest& request, const ListCustomRoutingPortMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomRoutingPortMappingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomRoutingPortMappings(request), context);
 }
 
-void GlobalAcceleratorClient::ListCustomRoutingPortMappingsAsyncHelper(const ListCustomRoutingPortMappingsRequest& request, const ListCustomRoutingPortMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ListCustomRoutingPortMappingsAsync(const ListCustomRoutingPortMappingsRequest& request, const ListCustomRoutingPortMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomRoutingPortMappings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientListCustomRoutingPortMappingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomRoutingPortMappingsByDestinationOutcome GlobalAcceleratorClient::ListCustomRoutingPortMappingsByDestination(const ListCustomRoutingPortMappingsByDestinationRequest& request) const
@@ -905,14 +905,14 @@ ListCustomRoutingPortMappingsByDestinationOutcomeCallable GlobalAcceleratorClien
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ListCustomRoutingPortMappingsByDestinationAsync(const ListCustomRoutingPortMappingsByDestinationRequest& request, const ListCustomRoutingPortMappingsByDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientListCustomRoutingPortMappingsByDestinationAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ListCustomRoutingPortMappingsByDestinationRequest& request, const ListCustomRoutingPortMappingsByDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomRoutingPortMappingsByDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomRoutingPortMappingsByDestination(request), context);
 }
 
-void GlobalAcceleratorClient::ListCustomRoutingPortMappingsByDestinationAsyncHelper(const ListCustomRoutingPortMappingsByDestinationRequest& request, const ListCustomRoutingPortMappingsByDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ListCustomRoutingPortMappingsByDestinationAsync(const ListCustomRoutingPortMappingsByDestinationRequest& request, const ListCustomRoutingPortMappingsByDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomRoutingPortMappingsByDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientListCustomRoutingPortMappingsByDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEndpointGroupsOutcome GlobalAcceleratorClient::ListEndpointGroups(const ListEndpointGroupsRequest& request) const
@@ -929,14 +929,14 @@ ListEndpointGroupsOutcomeCallable GlobalAcceleratorClient::ListEndpointGroupsCal
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ListEndpointGroupsAsync(const ListEndpointGroupsRequest& request, const ListEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientListEndpointGroupsAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ListEndpointGroupsRequest& request, const ListEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEndpointGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEndpointGroups(request), context);
 }
 
-void GlobalAcceleratorClient::ListEndpointGroupsAsyncHelper(const ListEndpointGroupsRequest& request, const ListEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ListEndpointGroupsAsync(const ListEndpointGroupsRequest& request, const ListEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEndpointGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientListEndpointGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListListenersOutcome GlobalAcceleratorClient::ListListeners(const ListListenersRequest& request) const
@@ -953,14 +953,14 @@ ListListenersOutcomeCallable GlobalAcceleratorClient::ListListenersCallable(cons
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ListListenersAsync(const ListListenersRequest& request, const ListListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientListListenersAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ListListenersRequest& request, const ListListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListListenersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListListeners(request), context);
 }
 
-void GlobalAcceleratorClient::ListListenersAsyncHelper(const ListListenersRequest& request, const ListListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ListListenersAsync(const ListListenersRequest& request, const ListListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListListeners(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientListListenersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome GlobalAcceleratorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -977,14 +977,14 @@ ListTagsForResourceOutcomeCallable GlobalAcceleratorClient::ListTagsForResourceC
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientListTagsForResourceAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void GlobalAcceleratorClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ProvisionByoipCidrOutcome GlobalAcceleratorClient::ProvisionByoipCidr(const ProvisionByoipCidrRequest& request) const
@@ -1001,14 +1001,14 @@ ProvisionByoipCidrOutcomeCallable GlobalAcceleratorClient::ProvisionByoipCidrCal
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::ProvisionByoipCidrAsync(const ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientProvisionByoipCidrAsyncHelper(GlobalAcceleratorClient const * const clientThis, const ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ProvisionByoipCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ProvisionByoipCidr(request), context);
 }
 
-void GlobalAcceleratorClient::ProvisionByoipCidrAsyncHelper(const ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::ProvisionByoipCidrAsync(const ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ProvisionByoipCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientProvisionByoipCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveCustomRoutingEndpointsOutcome GlobalAcceleratorClient::RemoveCustomRoutingEndpoints(const RemoveCustomRoutingEndpointsRequest& request) const
@@ -1025,14 +1025,14 @@ RemoveCustomRoutingEndpointsOutcomeCallable GlobalAcceleratorClient::RemoveCusto
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::RemoveCustomRoutingEndpointsAsync(const RemoveCustomRoutingEndpointsRequest& request, const RemoveCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientRemoveCustomRoutingEndpointsAsyncHelper(GlobalAcceleratorClient const * const clientThis, const RemoveCustomRoutingEndpointsRequest& request, const RemoveCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveCustomRoutingEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveCustomRoutingEndpoints(request), context);
 }
 
-void GlobalAcceleratorClient::RemoveCustomRoutingEndpointsAsyncHelper(const RemoveCustomRoutingEndpointsRequest& request, const RemoveCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::RemoveCustomRoutingEndpointsAsync(const RemoveCustomRoutingEndpointsRequest& request, const RemoveCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveCustomRoutingEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientRemoveCustomRoutingEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome GlobalAcceleratorClient::TagResource(const TagResourceRequest& request) const
@@ -1049,14 +1049,14 @@ TagResourceOutcomeCallable GlobalAcceleratorClient::TagResourceCallable(const Ta
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientTagResourceAsyncHelper(GlobalAcceleratorClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void GlobalAcceleratorClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome GlobalAcceleratorClient::UntagResource(const UntagResourceRequest& request) const
@@ -1073,14 +1073,14 @@ UntagResourceOutcomeCallable GlobalAcceleratorClient::UntagResourceCallable(cons
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientUntagResourceAsyncHelper(GlobalAcceleratorClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void GlobalAcceleratorClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAcceleratorOutcome GlobalAcceleratorClient::UpdateAccelerator(const UpdateAcceleratorRequest& request) const
@@ -1097,14 +1097,14 @@ UpdateAcceleratorOutcomeCallable GlobalAcceleratorClient::UpdateAcceleratorCalla
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::UpdateAcceleratorAsync(const UpdateAcceleratorRequest& request, const UpdateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientUpdateAcceleratorAsyncHelper(GlobalAcceleratorClient const * const clientThis, const UpdateAcceleratorRequest& request, const UpdateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAcceleratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAccelerator(request), context);
 }
 
-void GlobalAcceleratorClient::UpdateAcceleratorAsyncHelper(const UpdateAcceleratorRequest& request, const UpdateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::UpdateAcceleratorAsync(const UpdateAcceleratorRequest& request, const UpdateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAccelerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientUpdateAcceleratorAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAcceleratorAttributesOutcome GlobalAcceleratorClient::UpdateAcceleratorAttributes(const UpdateAcceleratorAttributesRequest& request) const
@@ -1121,14 +1121,14 @@ UpdateAcceleratorAttributesOutcomeCallable GlobalAcceleratorClient::UpdateAccele
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::UpdateAcceleratorAttributesAsync(const UpdateAcceleratorAttributesRequest& request, const UpdateAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientUpdateAcceleratorAttributesAsyncHelper(GlobalAcceleratorClient const * const clientThis, const UpdateAcceleratorAttributesRequest& request, const UpdateAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAcceleratorAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAcceleratorAttributes(request), context);
 }
 
-void GlobalAcceleratorClient::UpdateAcceleratorAttributesAsyncHelper(const UpdateAcceleratorAttributesRequest& request, const UpdateAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::UpdateAcceleratorAttributesAsync(const UpdateAcceleratorAttributesRequest& request, const UpdateAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAcceleratorAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientUpdateAcceleratorAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCustomRoutingAcceleratorOutcome GlobalAcceleratorClient::UpdateCustomRoutingAccelerator(const UpdateCustomRoutingAcceleratorRequest& request) const
@@ -1145,14 +1145,14 @@ UpdateCustomRoutingAcceleratorOutcomeCallable GlobalAcceleratorClient::UpdateCus
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::UpdateCustomRoutingAcceleratorAsync(const UpdateCustomRoutingAcceleratorRequest& request, const UpdateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientUpdateCustomRoutingAcceleratorAsyncHelper(GlobalAcceleratorClient const * const clientThis, const UpdateCustomRoutingAcceleratorRequest& request, const UpdateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCustomRoutingAcceleratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCustomRoutingAccelerator(request), context);
 }
 
-void GlobalAcceleratorClient::UpdateCustomRoutingAcceleratorAsyncHelper(const UpdateCustomRoutingAcceleratorRequest& request, const UpdateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::UpdateCustomRoutingAcceleratorAsync(const UpdateCustomRoutingAcceleratorRequest& request, const UpdateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCustomRoutingAccelerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientUpdateCustomRoutingAcceleratorAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCustomRoutingAcceleratorAttributesOutcome GlobalAcceleratorClient::UpdateCustomRoutingAcceleratorAttributes(const UpdateCustomRoutingAcceleratorAttributesRequest& request) const
@@ -1169,14 +1169,14 @@ UpdateCustomRoutingAcceleratorAttributesOutcomeCallable GlobalAcceleratorClient:
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::UpdateCustomRoutingAcceleratorAttributesAsync(const UpdateCustomRoutingAcceleratorAttributesRequest& request, const UpdateCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientUpdateCustomRoutingAcceleratorAttributesAsyncHelper(GlobalAcceleratorClient const * const clientThis, const UpdateCustomRoutingAcceleratorAttributesRequest& request, const UpdateCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCustomRoutingAcceleratorAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCustomRoutingAcceleratorAttributes(request), context);
 }
 
-void GlobalAcceleratorClient::UpdateCustomRoutingAcceleratorAttributesAsyncHelper(const UpdateCustomRoutingAcceleratorAttributesRequest& request, const UpdateCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::UpdateCustomRoutingAcceleratorAttributesAsync(const UpdateCustomRoutingAcceleratorAttributesRequest& request, const UpdateCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCustomRoutingAcceleratorAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientUpdateCustomRoutingAcceleratorAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCustomRoutingListenerOutcome GlobalAcceleratorClient::UpdateCustomRoutingListener(const UpdateCustomRoutingListenerRequest& request) const
@@ -1193,14 +1193,14 @@ UpdateCustomRoutingListenerOutcomeCallable GlobalAcceleratorClient::UpdateCustom
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::UpdateCustomRoutingListenerAsync(const UpdateCustomRoutingListenerRequest& request, const UpdateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientUpdateCustomRoutingListenerAsyncHelper(GlobalAcceleratorClient const * const clientThis, const UpdateCustomRoutingListenerRequest& request, const UpdateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCustomRoutingListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCustomRoutingListener(request), context);
 }
 
-void GlobalAcceleratorClient::UpdateCustomRoutingListenerAsyncHelper(const UpdateCustomRoutingListenerRequest& request, const UpdateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::UpdateCustomRoutingListenerAsync(const UpdateCustomRoutingListenerRequest& request, const UpdateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCustomRoutingListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientUpdateCustomRoutingListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEndpointGroupOutcome GlobalAcceleratorClient::UpdateEndpointGroup(const UpdateEndpointGroupRequest& request) const
@@ -1217,14 +1217,14 @@ UpdateEndpointGroupOutcomeCallable GlobalAcceleratorClient::UpdateEndpointGroupC
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::UpdateEndpointGroupAsync(const UpdateEndpointGroupRequest& request, const UpdateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientUpdateEndpointGroupAsyncHelper(GlobalAcceleratorClient const * const clientThis, const UpdateEndpointGroupRequest& request, const UpdateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEndpointGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEndpointGroup(request), context);
 }
 
-void GlobalAcceleratorClient::UpdateEndpointGroupAsyncHelper(const UpdateEndpointGroupRequest& request, const UpdateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::UpdateEndpointGroupAsync(const UpdateEndpointGroupRequest& request, const UpdateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEndpointGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientUpdateEndpointGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateListenerOutcome GlobalAcceleratorClient::UpdateListener(const UpdateListenerRequest& request) const
@@ -1241,14 +1241,14 @@ UpdateListenerOutcomeCallable GlobalAcceleratorClient::UpdateListenerCallable(co
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::UpdateListenerAsync(const UpdateListenerRequest& request, const UpdateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientUpdateListenerAsyncHelper(GlobalAcceleratorClient const * const clientThis, const UpdateListenerRequest& request, const UpdateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateListenerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateListener(request), context);
 }
 
-void GlobalAcceleratorClient::UpdateListenerAsyncHelper(const UpdateListenerRequest& request, const UpdateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::UpdateListenerAsync(const UpdateListenerRequest& request, const UpdateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateListener(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientUpdateListenerAsyncHelper( this, request, handler, context ); } );
 }
 
 WithdrawByoipCidrOutcome GlobalAcceleratorClient::WithdrawByoipCidr(const WithdrawByoipCidrRequest& request) const
@@ -1265,13 +1265,13 @@ WithdrawByoipCidrOutcomeCallable GlobalAcceleratorClient::WithdrawByoipCidrCalla
   return task->get_future();
 }
 
-void GlobalAcceleratorClient::WithdrawByoipCidrAsync(const WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClientWithdrawByoipCidrAsyncHelper(GlobalAcceleratorClient const * const clientThis, const WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->WithdrawByoipCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->WithdrawByoipCidr(request), context);
 }
 
-void GlobalAcceleratorClient::WithdrawByoipCidrAsyncHelper(const WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GlobalAcceleratorClient::WithdrawByoipCidrAsync(const WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, WithdrawByoipCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GlobalAcceleratorClientWithdrawByoipCidrAsyncHelper( this, request, handler, context ); } );
 }
 

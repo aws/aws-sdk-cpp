@@ -162,14 +162,14 @@ AcceptInboundConnectionOutcomeCallable OpenSearchServiceClient::AcceptInboundCon
   return task->get_future();
 }
 
-void OpenSearchServiceClient::AcceptInboundConnectionAsync(const AcceptInboundConnectionRequest& request, const AcceptInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientAcceptInboundConnectionAsyncHelper(OpenSearchServiceClient const * const clientThis, const AcceptInboundConnectionRequest& request, const AcceptInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptInboundConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptInboundConnection(request), context);
 }
 
-void OpenSearchServiceClient::AcceptInboundConnectionAsyncHelper(const AcceptInboundConnectionRequest& request, const AcceptInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::AcceptInboundConnectionAsync(const AcceptInboundConnectionRequest& request, const AcceptInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptInboundConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientAcceptInboundConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 AddTagsOutcome OpenSearchServiceClient::AddTags(const AddTagsRequest& request) const
@@ -187,14 +187,14 @@ AddTagsOutcomeCallable OpenSearchServiceClient::AddTagsCallable(const AddTagsReq
   return task->get_future();
 }
 
-void OpenSearchServiceClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientAddTagsAsyncHelper(OpenSearchServiceClient const * const clientThis, const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddTags(request), context);
 }
 
-void OpenSearchServiceClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientAddTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociatePackageOutcome OpenSearchServiceClient::AssociatePackage(const AssociatePackageRequest& request) const
@@ -224,14 +224,14 @@ AssociatePackageOutcomeCallable OpenSearchServiceClient::AssociatePackageCallabl
   return task->get_future();
 }
 
-void OpenSearchServiceClient::AssociatePackageAsync(const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientAssociatePackageAsyncHelper(OpenSearchServiceClient const * const clientThis, const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociatePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociatePackage(request), context);
 }
 
-void OpenSearchServiceClient::AssociatePackageAsyncHelper(const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::AssociatePackageAsync(const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociatePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientAssociatePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelServiceSoftwareUpdateOutcome OpenSearchServiceClient::CancelServiceSoftwareUpdate(const CancelServiceSoftwareUpdateRequest& request) const
@@ -249,14 +249,14 @@ CancelServiceSoftwareUpdateOutcomeCallable OpenSearchServiceClient::CancelServic
   return task->get_future();
 }
 
-void OpenSearchServiceClient::CancelServiceSoftwareUpdateAsync(const CancelServiceSoftwareUpdateRequest& request, const CancelServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientCancelServiceSoftwareUpdateAsyncHelper(OpenSearchServiceClient const * const clientThis, const CancelServiceSoftwareUpdateRequest& request, const CancelServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelServiceSoftwareUpdateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelServiceSoftwareUpdate(request), context);
 }
 
-void OpenSearchServiceClient::CancelServiceSoftwareUpdateAsyncHelper(const CancelServiceSoftwareUpdateRequest& request, const CancelServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::CancelServiceSoftwareUpdateAsync(const CancelServiceSoftwareUpdateRequest& request, const CancelServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelServiceSoftwareUpdate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientCancelServiceSoftwareUpdateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDomainOutcome OpenSearchServiceClient::CreateDomain(const CreateDomainRequest& request) const
@@ -274,14 +274,14 @@ CreateDomainOutcomeCallable OpenSearchServiceClient::CreateDomainCallable(const 
   return task->get_future();
 }
 
-void OpenSearchServiceClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientCreateDomainAsyncHelper(OpenSearchServiceClient const * const clientThis, const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDomain(request), context);
 }
 
-void OpenSearchServiceClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientCreateDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateOutboundConnectionOutcome OpenSearchServiceClient::CreateOutboundConnection(const CreateOutboundConnectionRequest& request) const
@@ -299,14 +299,14 @@ CreateOutboundConnectionOutcomeCallable OpenSearchServiceClient::CreateOutboundC
   return task->get_future();
 }
 
-void OpenSearchServiceClient::CreateOutboundConnectionAsync(const CreateOutboundConnectionRequest& request, const CreateOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientCreateOutboundConnectionAsyncHelper(OpenSearchServiceClient const * const clientThis, const CreateOutboundConnectionRequest& request, const CreateOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOutboundConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateOutboundConnection(request), context);
 }
 
-void OpenSearchServiceClient::CreateOutboundConnectionAsyncHelper(const CreateOutboundConnectionRequest& request, const CreateOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::CreateOutboundConnectionAsync(const CreateOutboundConnectionRequest& request, const CreateOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateOutboundConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientCreateOutboundConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePackageOutcome OpenSearchServiceClient::CreatePackage(const CreatePackageRequest& request) const
@@ -324,14 +324,14 @@ CreatePackageOutcomeCallable OpenSearchServiceClient::CreatePackageCallable(cons
   return task->get_future();
 }
 
-void OpenSearchServiceClient::CreatePackageAsync(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientCreatePackageAsyncHelper(OpenSearchServiceClient const * const clientThis, const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePackage(request), context);
 }
 
-void OpenSearchServiceClient::CreatePackageAsyncHelper(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::CreatePackageAsync(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientCreatePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainOutcome OpenSearchServiceClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -355,14 +355,14 @@ DeleteDomainOutcomeCallable OpenSearchServiceClient::DeleteDomainCallable(const 
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDeleteDomainAsyncHelper(OpenSearchServiceClient const * const clientThis, const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomain(request), context);
 }
 
-void OpenSearchServiceClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDeleteDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInboundConnectionOutcome OpenSearchServiceClient::DeleteInboundConnection(const DeleteInboundConnectionRequest& request) const
@@ -386,14 +386,14 @@ DeleteInboundConnectionOutcomeCallable OpenSearchServiceClient::DeleteInboundCon
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DeleteInboundConnectionAsync(const DeleteInboundConnectionRequest& request, const DeleteInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDeleteInboundConnectionAsyncHelper(OpenSearchServiceClient const * const clientThis, const DeleteInboundConnectionRequest& request, const DeleteInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInboundConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInboundConnection(request), context);
 }
 
-void OpenSearchServiceClient::DeleteInboundConnectionAsyncHelper(const DeleteInboundConnectionRequest& request, const DeleteInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DeleteInboundConnectionAsync(const DeleteInboundConnectionRequest& request, const DeleteInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInboundConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDeleteInboundConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteOutboundConnectionOutcome OpenSearchServiceClient::DeleteOutboundConnection(const DeleteOutboundConnectionRequest& request) const
@@ -417,14 +417,14 @@ DeleteOutboundConnectionOutcomeCallable OpenSearchServiceClient::DeleteOutboundC
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DeleteOutboundConnectionAsync(const DeleteOutboundConnectionRequest& request, const DeleteOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDeleteOutboundConnectionAsyncHelper(OpenSearchServiceClient const * const clientThis, const DeleteOutboundConnectionRequest& request, const DeleteOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOutboundConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteOutboundConnection(request), context);
 }
 
-void OpenSearchServiceClient::DeleteOutboundConnectionAsyncHelper(const DeleteOutboundConnectionRequest& request, const DeleteOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DeleteOutboundConnectionAsync(const DeleteOutboundConnectionRequest& request, const DeleteOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteOutboundConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDeleteOutboundConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePackageOutcome OpenSearchServiceClient::DeletePackage(const DeletePackageRequest& request) const
@@ -448,14 +448,14 @@ DeletePackageOutcomeCallable OpenSearchServiceClient::DeletePackageCallable(cons
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DeletePackageAsync(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDeletePackageAsyncHelper(OpenSearchServiceClient const * const clientThis, const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePackage(request), context);
 }
 
-void OpenSearchServiceClient::DeletePackageAsyncHelper(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DeletePackageAsync(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDeletePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDomainRequest& request) const
@@ -479,14 +479,14 @@ DescribeDomainOutcomeCallable OpenSearchServiceClient::DescribeDomainCallable(co
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribeDomainAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomain(request), context);
 }
 
-void OpenSearchServiceClient::DescribeDomainAsyncHelper(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribeDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainAutoTunesOutcome OpenSearchServiceClient::DescribeDomainAutoTunes(const DescribeDomainAutoTunesRequest& request) const
@@ -511,14 +511,14 @@ DescribeDomainAutoTunesOutcomeCallable OpenSearchServiceClient::DescribeDomainAu
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribeDomainAutoTunesAsync(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribeDomainAutoTunesAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainAutoTunesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomainAutoTunes(request), context);
 }
 
-void OpenSearchServiceClient::DescribeDomainAutoTunesAsyncHelper(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribeDomainAutoTunesAsync(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomainAutoTunes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribeDomainAutoTunesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainChangeProgressOutcome OpenSearchServiceClient::DescribeDomainChangeProgress(const DescribeDomainChangeProgressRequest& request) const
@@ -543,14 +543,14 @@ DescribeDomainChangeProgressOutcomeCallable OpenSearchServiceClient::DescribeDom
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribeDomainChangeProgressAsync(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribeDomainChangeProgressAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainChangeProgressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomainChangeProgress(request), context);
 }
 
-void OpenSearchServiceClient::DescribeDomainChangeProgressAsyncHelper(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribeDomainChangeProgressAsync(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomainChangeProgress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribeDomainChangeProgressAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainConfigOutcome OpenSearchServiceClient::DescribeDomainConfig(const DescribeDomainConfigRequest& request) const
@@ -575,14 +575,14 @@ DescribeDomainConfigOutcomeCallable OpenSearchServiceClient::DescribeDomainConfi
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribeDomainConfigAsync(const DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribeDomainConfigAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomainConfig(request), context);
 }
 
-void OpenSearchServiceClient::DescribeDomainConfigAsyncHelper(const DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribeDomainConfigAsync(const DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomainConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribeDomainConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainsOutcome OpenSearchServiceClient::DescribeDomains(const DescribeDomainsRequest& request) const
@@ -600,14 +600,14 @@ DescribeDomainsOutcomeCallable OpenSearchServiceClient::DescribeDomainsCallable(
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribeDomainsAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomains(request), context);
 }
 
-void OpenSearchServiceClient::DescribeDomainsAsyncHelper(const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomains(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribeDomainsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInboundConnectionsOutcome OpenSearchServiceClient::DescribeInboundConnections(const DescribeInboundConnectionsRequest& request) const
@@ -625,14 +625,14 @@ DescribeInboundConnectionsOutcomeCallable OpenSearchServiceClient::DescribeInbou
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribeInboundConnectionsAsync(const DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribeInboundConnectionsAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInboundConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInboundConnections(request), context);
 }
 
-void OpenSearchServiceClient::DescribeInboundConnectionsAsyncHelper(const DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribeInboundConnectionsAsync(const DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInboundConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribeInboundConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstanceTypeLimitsOutcome OpenSearchServiceClient::DescribeInstanceTypeLimits(const DescribeInstanceTypeLimitsRequest& request) const
@@ -662,14 +662,14 @@ DescribeInstanceTypeLimitsOutcomeCallable OpenSearchServiceClient::DescribeInsta
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribeInstanceTypeLimitsAsync(const DescribeInstanceTypeLimitsRequest& request, const DescribeInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribeInstanceTypeLimitsAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribeInstanceTypeLimitsRequest& request, const DescribeInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceTypeLimitsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstanceTypeLimits(request), context);
 }
 
-void OpenSearchServiceClient::DescribeInstanceTypeLimitsAsyncHelper(const DescribeInstanceTypeLimitsRequest& request, const DescribeInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribeInstanceTypeLimitsAsync(const DescribeInstanceTypeLimitsRequest& request, const DescribeInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstanceTypeLimits(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribeInstanceTypeLimitsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeOutboundConnectionsOutcome OpenSearchServiceClient::DescribeOutboundConnections(const DescribeOutboundConnectionsRequest& request) const
@@ -687,14 +687,14 @@ DescribeOutboundConnectionsOutcomeCallable OpenSearchServiceClient::DescribeOutb
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribeOutboundConnectionsAsync(const DescribeOutboundConnectionsRequest& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribeOutboundConnectionsAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribeOutboundConnectionsRequest& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOutboundConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeOutboundConnections(request), context);
 }
 
-void OpenSearchServiceClient::DescribeOutboundConnectionsAsyncHelper(const DescribeOutboundConnectionsRequest& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribeOutboundConnectionsAsync(const DescribeOutboundConnectionsRequest& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeOutboundConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribeOutboundConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePackagesOutcome OpenSearchServiceClient::DescribePackages(const DescribePackagesRequest& request) const
@@ -712,14 +712,14 @@ DescribePackagesOutcomeCallable OpenSearchServiceClient::DescribePackagesCallabl
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribePackagesAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePackagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePackages(request), context);
 }
 
-void OpenSearchServiceClient::DescribePackagesAsyncHelper(const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePackages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribePackagesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReservedInstanceOfferingsOutcome OpenSearchServiceClient::DescribeReservedInstanceOfferings(const DescribeReservedInstanceOfferingsRequest& request) const
@@ -737,14 +737,14 @@ DescribeReservedInstanceOfferingsOutcomeCallable OpenSearchServiceClient::Descri
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribeReservedInstanceOfferingsAsync(const DescribeReservedInstanceOfferingsRequest& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribeReservedInstanceOfferingsAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribeReservedInstanceOfferingsRequest& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedInstanceOfferingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReservedInstanceOfferings(request), context);
 }
 
-void OpenSearchServiceClient::DescribeReservedInstanceOfferingsAsyncHelper(const DescribeReservedInstanceOfferingsRequest& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribeReservedInstanceOfferingsAsync(const DescribeReservedInstanceOfferingsRequest& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReservedInstanceOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribeReservedInstanceOfferingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReservedInstancesOutcome OpenSearchServiceClient::DescribeReservedInstances(const DescribeReservedInstancesRequest& request) const
@@ -762,14 +762,14 @@ DescribeReservedInstancesOutcomeCallable OpenSearchServiceClient::DescribeReserv
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DescribeReservedInstancesAsync(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDescribeReservedInstancesAsyncHelper(OpenSearchServiceClient const * const clientThis, const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReservedInstances(request), context);
 }
 
-void OpenSearchServiceClient::DescribeReservedInstancesAsyncHelper(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DescribeReservedInstancesAsync(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReservedInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDescribeReservedInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DissociatePackageOutcome OpenSearchServiceClient::DissociatePackage(const DissociatePackageRequest& request) const
@@ -799,14 +799,14 @@ DissociatePackageOutcomeCallable OpenSearchServiceClient::DissociatePackageCalla
   return task->get_future();
 }
 
-void OpenSearchServiceClient::DissociatePackageAsync(const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientDissociatePackageAsyncHelper(OpenSearchServiceClient const * const clientThis, const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DissociatePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DissociatePackage(request), context);
 }
 
-void OpenSearchServiceClient::DissociatePackageAsyncHelper(const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::DissociatePackageAsync(const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DissociatePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientDissociatePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(const GetCompatibleVersionsRequest& request) const
@@ -824,14 +824,14 @@ GetCompatibleVersionsOutcomeCallable OpenSearchServiceClient::GetCompatibleVersi
   return task->get_future();
 }
 
-void OpenSearchServiceClient::GetCompatibleVersionsAsync(const GetCompatibleVersionsRequest& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientGetCompatibleVersionsAsyncHelper(OpenSearchServiceClient const * const clientThis, const GetCompatibleVersionsRequest& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCompatibleVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCompatibleVersions(request), context);
 }
 
-void OpenSearchServiceClient::GetCompatibleVersionsAsyncHelper(const GetCompatibleVersionsRequest& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::GetCompatibleVersionsAsync(const GetCompatibleVersionsRequest& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCompatibleVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientGetCompatibleVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const
@@ -856,14 +856,14 @@ GetPackageVersionHistoryOutcomeCallable OpenSearchServiceClient::GetPackageVersi
   return task->get_future();
 }
 
-void OpenSearchServiceClient::GetPackageVersionHistoryAsync(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientGetPackageVersionHistoryAsyncHelper(OpenSearchServiceClient const * const clientThis, const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPackageVersionHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPackageVersionHistory(request), context);
 }
 
-void OpenSearchServiceClient::GetPackageVersionHistoryAsyncHelper(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::GetPackageVersionHistoryAsync(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPackageVersionHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientGetPackageVersionHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUpgradeHistoryOutcome OpenSearchServiceClient::GetUpgradeHistory(const GetUpgradeHistoryRequest& request) const
@@ -888,14 +888,14 @@ GetUpgradeHistoryOutcomeCallable OpenSearchServiceClient::GetUpgradeHistoryCalla
   return task->get_future();
 }
 
-void OpenSearchServiceClient::GetUpgradeHistoryAsync(const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientGetUpgradeHistoryAsyncHelper(OpenSearchServiceClient const * const clientThis, const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUpgradeHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUpgradeHistory(request), context);
 }
 
-void OpenSearchServiceClient::GetUpgradeHistoryAsyncHelper(const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::GetUpgradeHistoryAsync(const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUpgradeHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientGetUpgradeHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgradeStatusRequest& request) const
@@ -920,14 +920,14 @@ GetUpgradeStatusOutcomeCallable OpenSearchServiceClient::GetUpgradeStatusCallabl
   return task->get_future();
 }
 
-void OpenSearchServiceClient::GetUpgradeStatusAsync(const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientGetUpgradeStatusAsyncHelper(OpenSearchServiceClient const * const clientThis, const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUpgradeStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUpgradeStatus(request), context);
 }
 
-void OpenSearchServiceClient::GetUpgradeStatusAsyncHelper(const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::GetUpgradeStatusAsync(const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUpgradeStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientGetUpgradeStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainNamesOutcome OpenSearchServiceClient::ListDomainNames(const ListDomainNamesRequest& request) const
@@ -945,14 +945,14 @@ ListDomainNamesOutcomeCallable OpenSearchServiceClient::ListDomainNamesCallable(
   return task->get_future();
 }
 
-void OpenSearchServiceClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientListDomainNamesAsyncHelper(OpenSearchServiceClient const * const clientThis, const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainNamesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomainNames(request), context);
 }
 
-void OpenSearchServiceClient::ListDomainNamesAsyncHelper(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomainNames(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientListDomainNamesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainsForPackageOutcome OpenSearchServiceClient::ListDomainsForPackage(const ListDomainsForPackageRequest& request) const
@@ -977,14 +977,14 @@ ListDomainsForPackageOutcomeCallable OpenSearchServiceClient::ListDomainsForPack
   return task->get_future();
 }
 
-void OpenSearchServiceClient::ListDomainsForPackageAsync(const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientListDomainsForPackageAsyncHelper(OpenSearchServiceClient const * const clientThis, const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainsForPackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomainsForPackage(request), context);
 }
 
-void OpenSearchServiceClient::ListDomainsForPackageAsyncHelper(const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::ListDomainsForPackageAsync(const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomainsForPackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientListDomainsForPackageAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(const ListInstanceTypeDetailsRequest& request) const
@@ -1008,14 +1008,14 @@ ListInstanceTypeDetailsOutcomeCallable OpenSearchServiceClient::ListInstanceType
   return task->get_future();
 }
 
-void OpenSearchServiceClient::ListInstanceTypeDetailsAsync(const ListInstanceTypeDetailsRequest& request, const ListInstanceTypeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientListInstanceTypeDetailsAsyncHelper(OpenSearchServiceClient const * const clientThis, const ListInstanceTypeDetailsRequest& request, const ListInstanceTypeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstanceTypeDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInstanceTypeDetails(request), context);
 }
 
-void OpenSearchServiceClient::ListInstanceTypeDetailsAsyncHelper(const ListInstanceTypeDetailsRequest& request, const ListInstanceTypeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::ListInstanceTypeDetailsAsync(const ListInstanceTypeDetailsRequest& request, const ListInstanceTypeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInstanceTypeDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientListInstanceTypeDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(const ListPackagesForDomainRequest& request) const
@@ -1040,14 +1040,14 @@ ListPackagesForDomainOutcomeCallable OpenSearchServiceClient::ListPackagesForDom
   return task->get_future();
 }
 
-void OpenSearchServiceClient::ListPackagesForDomainAsync(const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientListPackagesForDomainAsyncHelper(OpenSearchServiceClient const * const clientThis, const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPackagesForDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPackagesForDomain(request), context);
 }
 
-void OpenSearchServiceClient::ListPackagesForDomainAsyncHelper(const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::ListPackagesForDomainAsync(const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPackagesForDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientListPackagesForDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsOutcome OpenSearchServiceClient::ListTags(const ListTagsRequest& request) const
@@ -1070,14 +1070,14 @@ ListTagsOutcomeCallable OpenSearchServiceClient::ListTagsCallable(const ListTags
   return task->get_future();
 }
 
-void OpenSearchServiceClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientListTagsAsyncHelper(OpenSearchServiceClient const * const clientThis, const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTags(request), context);
 }
 
-void OpenSearchServiceClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientListTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVersionsOutcome OpenSearchServiceClient::ListVersions(const ListVersionsRequest& request) const
@@ -1095,14 +1095,14 @@ ListVersionsOutcomeCallable OpenSearchServiceClient::ListVersionsCallable(const 
   return task->get_future();
 }
 
-void OpenSearchServiceClient::ListVersionsAsync(const ListVersionsRequest& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientListVersionsAsyncHelper(OpenSearchServiceClient const * const clientThis, const ListVersionsRequest& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVersions(request), context);
 }
 
-void OpenSearchServiceClient::ListVersionsAsyncHelper(const ListVersionsRequest& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::ListVersionsAsync(const ListVersionsRequest& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientListVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReservedInstanceOffering(const PurchaseReservedInstanceOfferingRequest& request) const
@@ -1120,14 +1120,14 @@ PurchaseReservedInstanceOfferingOutcomeCallable OpenSearchServiceClient::Purchas
   return task->get_future();
 }
 
-void OpenSearchServiceClient::PurchaseReservedInstanceOfferingAsync(const PurchaseReservedInstanceOfferingRequest& request, const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientPurchaseReservedInstanceOfferingAsyncHelper(OpenSearchServiceClient const * const clientThis, const PurchaseReservedInstanceOfferingRequest& request, const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PurchaseReservedInstanceOfferingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PurchaseReservedInstanceOffering(request), context);
 }
 
-void OpenSearchServiceClient::PurchaseReservedInstanceOfferingAsyncHelper(const PurchaseReservedInstanceOfferingRequest& request, const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::PurchaseReservedInstanceOfferingAsync(const PurchaseReservedInstanceOfferingRequest& request, const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PurchaseReservedInstanceOffering(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientPurchaseReservedInstanceOfferingAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectInboundConnectionOutcome OpenSearchServiceClient::RejectInboundConnection(const RejectInboundConnectionRequest& request) const
@@ -1152,14 +1152,14 @@ RejectInboundConnectionOutcomeCallable OpenSearchServiceClient::RejectInboundCon
   return task->get_future();
 }
 
-void OpenSearchServiceClient::RejectInboundConnectionAsync(const RejectInboundConnectionRequest& request, const RejectInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientRejectInboundConnectionAsyncHelper(OpenSearchServiceClient const * const clientThis, const RejectInboundConnectionRequest& request, const RejectInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectInboundConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectInboundConnection(request), context);
 }
 
-void OpenSearchServiceClient::RejectInboundConnectionAsyncHelper(const RejectInboundConnectionRequest& request, const RejectInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::RejectInboundConnectionAsync(const RejectInboundConnectionRequest& request, const RejectInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectInboundConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientRejectInboundConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveTagsOutcome OpenSearchServiceClient::RemoveTags(const RemoveTagsRequest& request) const
@@ -1177,14 +1177,14 @@ RemoveTagsOutcomeCallable OpenSearchServiceClient::RemoveTagsCallable(const Remo
   return task->get_future();
 }
 
-void OpenSearchServiceClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientRemoveTagsAsyncHelper(OpenSearchServiceClient const * const clientThis, const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveTags(request), context);
 }
 
-void OpenSearchServiceClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientRemoveTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareUpdate(const StartServiceSoftwareUpdateRequest& request) const
@@ -1202,14 +1202,14 @@ StartServiceSoftwareUpdateOutcomeCallable OpenSearchServiceClient::StartServiceS
   return task->get_future();
 }
 
-void OpenSearchServiceClient::StartServiceSoftwareUpdateAsync(const StartServiceSoftwareUpdateRequest& request, const StartServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientStartServiceSoftwareUpdateAsyncHelper(OpenSearchServiceClient const * const clientThis, const StartServiceSoftwareUpdateRequest& request, const StartServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartServiceSoftwareUpdateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartServiceSoftwareUpdate(request), context);
 }
 
-void OpenSearchServiceClient::StartServiceSoftwareUpdateAsyncHelper(const StartServiceSoftwareUpdateRequest& request, const StartServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::StartServiceSoftwareUpdateAsync(const StartServiceSoftwareUpdateRequest& request, const StartServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartServiceSoftwareUpdate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientStartServiceSoftwareUpdateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainConfigOutcome OpenSearchServiceClient::UpdateDomainConfig(const UpdateDomainConfigRequest& request) const
@@ -1234,14 +1234,14 @@ UpdateDomainConfigOutcomeCallable OpenSearchServiceClient::UpdateDomainConfigCal
   return task->get_future();
 }
 
-void OpenSearchServiceClient::UpdateDomainConfigAsync(const UpdateDomainConfigRequest& request, const UpdateDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientUpdateDomainConfigAsyncHelper(OpenSearchServiceClient const * const clientThis, const UpdateDomainConfigRequest& request, const UpdateDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomainConfig(request), context);
 }
 
-void OpenSearchServiceClient::UpdateDomainConfigAsyncHelper(const UpdateDomainConfigRequest& request, const UpdateDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::UpdateDomainConfigAsync(const UpdateDomainConfigRequest& request, const UpdateDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomainConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientUpdateDomainConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePackageOutcome OpenSearchServiceClient::UpdatePackage(const UpdatePackageRequest& request) const
@@ -1259,14 +1259,14 @@ UpdatePackageOutcomeCallable OpenSearchServiceClient::UpdatePackageCallable(cons
   return task->get_future();
 }
 
-void OpenSearchServiceClient::UpdatePackageAsync(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientUpdatePackageAsyncHelper(OpenSearchServiceClient const * const clientThis, const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePackage(request), context);
 }
 
-void OpenSearchServiceClient::UpdatePackageAsyncHelper(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::UpdatePackageAsync(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientUpdatePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 UpgradeDomainOutcome OpenSearchServiceClient::UpgradeDomain(const UpgradeDomainRequest& request) const
@@ -1284,13 +1284,13 @@ UpgradeDomainOutcomeCallable OpenSearchServiceClient::UpgradeDomainCallable(cons
   return task->get_future();
 }
 
-void OpenSearchServiceClient::UpgradeDomainAsync(const UpgradeDomainRequest& request, const UpgradeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClientUpgradeDomainAsyncHelper(OpenSearchServiceClient const * const clientThis, const UpgradeDomainRequest& request, const UpgradeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpgradeDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpgradeDomain(request), context);
 }
 
-void OpenSearchServiceClient::UpgradeDomainAsyncHelper(const UpgradeDomainRequest& request, const UpgradeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpenSearchServiceClient::UpgradeDomainAsync(const UpgradeDomainRequest& request, const UpgradeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpgradeDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpenSearchServiceClientUpgradeDomainAsyncHelper( this, request, handler, context ); } );
 }
 

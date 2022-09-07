@@ -145,14 +145,14 @@ AddNotificationChannelsOutcomeCallable CodeGuruProfilerClient::AddNotificationCh
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::AddNotificationChannelsAsync(const AddNotificationChannelsRequest& request, const AddNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientAddNotificationChannelsAsyncHelper(CodeGuruProfilerClient const * const clientThis, const AddNotificationChannelsRequest& request, const AddNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddNotificationChannelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddNotificationChannels(request), context);
 }
 
-void CodeGuruProfilerClient::AddNotificationChannelsAsyncHelper(const AddNotificationChannelsRequest& request, const AddNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::AddNotificationChannelsAsync(const AddNotificationChannelsRequest& request, const AddNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddNotificationChannels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientAddNotificationChannelsAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetFrameMetricDataOutcome CodeGuruProfilerClient::BatchGetFrameMetricData(const BatchGetFrameMetricDataRequest& request) const
@@ -177,14 +177,14 @@ BatchGetFrameMetricDataOutcomeCallable CodeGuruProfilerClient::BatchGetFrameMetr
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::BatchGetFrameMetricDataAsync(const BatchGetFrameMetricDataRequest& request, const BatchGetFrameMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientBatchGetFrameMetricDataAsyncHelper(CodeGuruProfilerClient const * const clientThis, const BatchGetFrameMetricDataRequest& request, const BatchGetFrameMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetFrameMetricDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetFrameMetricData(request), context);
 }
 
-void CodeGuruProfilerClient::BatchGetFrameMetricDataAsyncHelper(const BatchGetFrameMetricDataRequest& request, const BatchGetFrameMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::BatchGetFrameMetricDataAsync(const BatchGetFrameMetricDataRequest& request, const BatchGetFrameMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetFrameMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientBatchGetFrameMetricDataAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfigureAgentOutcome CodeGuruProfilerClient::ConfigureAgent(const ConfigureAgentRequest& request) const
@@ -209,14 +209,14 @@ ConfigureAgentOutcomeCallable CodeGuruProfilerClient::ConfigureAgentCallable(con
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::ConfigureAgentAsync(const ConfigureAgentRequest& request, const ConfigureAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientConfigureAgentAsyncHelper(CodeGuruProfilerClient const * const clientThis, const ConfigureAgentRequest& request, const ConfigureAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfigureAgentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfigureAgent(request), context);
 }
 
-void CodeGuruProfilerClient::ConfigureAgentAsyncHelper(const ConfigureAgentRequest& request, const ConfigureAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::ConfigureAgentAsync(const ConfigureAgentRequest& request, const ConfigureAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfigureAgent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientConfigureAgentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProfilingGroupOutcome CodeGuruProfilerClient::CreateProfilingGroup(const CreateProfilingGroupRequest& request) const
@@ -239,14 +239,14 @@ CreateProfilingGroupOutcomeCallable CodeGuruProfilerClient::CreateProfilingGroup
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::CreateProfilingGroupAsync(const CreateProfilingGroupRequest& request, const CreateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientCreateProfilingGroupAsyncHelper(CodeGuruProfilerClient const * const clientThis, const CreateProfilingGroupRequest& request, const CreateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProfilingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProfilingGroup(request), context);
 }
 
-void CodeGuruProfilerClient::CreateProfilingGroupAsyncHelper(const CreateProfilingGroupRequest& request, const CreateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::CreateProfilingGroupAsync(const CreateProfilingGroupRequest& request, const CreateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProfilingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientCreateProfilingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProfilingGroupOutcome CodeGuruProfilerClient::DeleteProfilingGroup(const DeleteProfilingGroupRequest& request) const
@@ -270,14 +270,14 @@ DeleteProfilingGroupOutcomeCallable CodeGuruProfilerClient::DeleteProfilingGroup
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::DeleteProfilingGroupAsync(const DeleteProfilingGroupRequest& request, const DeleteProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientDeleteProfilingGroupAsyncHelper(CodeGuruProfilerClient const * const clientThis, const DeleteProfilingGroupRequest& request, const DeleteProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProfilingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProfilingGroup(request), context);
 }
 
-void CodeGuruProfilerClient::DeleteProfilingGroupAsyncHelper(const DeleteProfilingGroupRequest& request, const DeleteProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::DeleteProfilingGroupAsync(const DeleteProfilingGroupRequest& request, const DeleteProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProfilingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientDeleteProfilingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProfilingGroupOutcome CodeGuruProfilerClient::DescribeProfilingGroup(const DescribeProfilingGroupRequest& request) const
@@ -301,14 +301,14 @@ DescribeProfilingGroupOutcomeCallable CodeGuruProfilerClient::DescribeProfilingG
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::DescribeProfilingGroupAsync(const DescribeProfilingGroupRequest& request, const DescribeProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientDescribeProfilingGroupAsyncHelper(CodeGuruProfilerClient const * const clientThis, const DescribeProfilingGroupRequest& request, const DescribeProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProfilingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProfilingGroup(request), context);
 }
 
-void CodeGuruProfilerClient::DescribeProfilingGroupAsyncHelper(const DescribeProfilingGroupRequest& request, const DescribeProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::DescribeProfilingGroupAsync(const DescribeProfilingGroupRequest& request, const DescribeProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProfilingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientDescribeProfilingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFindingsReportAccountSummaryOutcome CodeGuruProfilerClient::GetFindingsReportAccountSummary(const GetFindingsReportAccountSummaryRequest& request) const
@@ -326,14 +326,14 @@ GetFindingsReportAccountSummaryOutcomeCallable CodeGuruProfilerClient::GetFindin
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::GetFindingsReportAccountSummaryAsync(const GetFindingsReportAccountSummaryRequest& request, const GetFindingsReportAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientGetFindingsReportAccountSummaryAsyncHelper(CodeGuruProfilerClient const * const clientThis, const GetFindingsReportAccountSummaryRequest& request, const GetFindingsReportAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFindingsReportAccountSummaryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFindingsReportAccountSummary(request), context);
 }
 
-void CodeGuruProfilerClient::GetFindingsReportAccountSummaryAsyncHelper(const GetFindingsReportAccountSummaryRequest& request, const GetFindingsReportAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::GetFindingsReportAccountSummaryAsync(const GetFindingsReportAccountSummaryRequest& request, const GetFindingsReportAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFindingsReportAccountSummary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientGetFindingsReportAccountSummaryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNotificationConfigurationOutcome CodeGuruProfilerClient::GetNotificationConfiguration(const GetNotificationConfigurationRequest& request) const
@@ -358,14 +358,14 @@ GetNotificationConfigurationOutcomeCallable CodeGuruProfilerClient::GetNotificat
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::GetNotificationConfigurationAsync(const GetNotificationConfigurationRequest& request, const GetNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientGetNotificationConfigurationAsyncHelper(CodeGuruProfilerClient const * const clientThis, const GetNotificationConfigurationRequest& request, const GetNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNotificationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNotificationConfiguration(request), context);
 }
 
-void CodeGuruProfilerClient::GetNotificationConfigurationAsyncHelper(const GetNotificationConfigurationRequest& request, const GetNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::GetNotificationConfigurationAsync(const GetNotificationConfigurationRequest& request, const GetNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNotificationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientGetNotificationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPolicyOutcome CodeGuruProfilerClient::GetPolicy(const GetPolicyRequest& request) const
@@ -390,14 +390,14 @@ GetPolicyOutcomeCallable CodeGuruProfilerClient::GetPolicyCallable(const GetPoli
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientGetPolicyAsyncHelper(CodeGuruProfilerClient const * const clientThis, const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPolicy(request), context);
 }
 
-void CodeGuruProfilerClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientGetPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetProfileOutcome CodeGuruProfilerClient::GetProfile(const GetProfileRequest& request) const
@@ -422,14 +422,14 @@ GetProfileOutcomeCallable CodeGuruProfilerClient::GetProfileCallable(const GetPr
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::GetProfileAsync(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientGetProfileAsyncHelper(CodeGuruProfilerClient const * const clientThis, const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetProfile(request), context);
 }
 
-void CodeGuruProfilerClient::GetProfileAsyncHelper(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::GetProfileAsync(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientGetProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecommendationsOutcome CodeGuruProfilerClient::GetRecommendations(const GetRecommendationsRequest& request) const
@@ -464,14 +464,14 @@ GetRecommendationsOutcomeCallable CodeGuruProfilerClient::GetRecommendationsCall
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::GetRecommendationsAsync(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientGetRecommendationsAsyncHelper(CodeGuruProfilerClient const * const clientThis, const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecommendations(request), context);
 }
 
-void CodeGuruProfilerClient::GetRecommendationsAsyncHelper(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::GetRecommendationsAsync(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientGetRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFindingsReportsOutcome CodeGuruProfilerClient::ListFindingsReports(const ListFindingsReportsRequest& request) const
@@ -506,14 +506,14 @@ ListFindingsReportsOutcomeCallable CodeGuruProfilerClient::ListFindingsReportsCa
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::ListFindingsReportsAsync(const ListFindingsReportsRequest& request, const ListFindingsReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientListFindingsReportsAsyncHelper(CodeGuruProfilerClient const * const clientThis, const ListFindingsReportsRequest& request, const ListFindingsReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFindingsReportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFindingsReports(request), context);
 }
 
-void CodeGuruProfilerClient::ListFindingsReportsAsyncHelper(const ListFindingsReportsRequest& request, const ListFindingsReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::ListFindingsReportsAsync(const ListFindingsReportsRequest& request, const ListFindingsReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFindingsReports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientListFindingsReportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProfileTimesOutcome CodeGuruProfilerClient::ListProfileTimes(const ListProfileTimesRequest& request) const
@@ -553,14 +553,14 @@ ListProfileTimesOutcomeCallable CodeGuruProfilerClient::ListProfileTimesCallable
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::ListProfileTimesAsync(const ListProfileTimesRequest& request, const ListProfileTimesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientListProfileTimesAsyncHelper(CodeGuruProfilerClient const * const clientThis, const ListProfileTimesRequest& request, const ListProfileTimesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProfileTimesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProfileTimes(request), context);
 }
 
-void CodeGuruProfilerClient::ListProfileTimesAsyncHelper(const ListProfileTimesRequest& request, const ListProfileTimesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::ListProfileTimesAsync(const ListProfileTimesRequest& request, const ListProfileTimesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProfileTimes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientListProfileTimesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProfilingGroupsOutcome CodeGuruProfilerClient::ListProfilingGroups(const ListProfilingGroupsRequest& request) const
@@ -578,14 +578,14 @@ ListProfilingGroupsOutcomeCallable CodeGuruProfilerClient::ListProfilingGroupsCa
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::ListProfilingGroupsAsync(const ListProfilingGroupsRequest& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientListProfilingGroupsAsyncHelper(CodeGuruProfilerClient const * const clientThis, const ListProfilingGroupsRequest& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProfilingGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProfilingGroups(request), context);
 }
 
-void CodeGuruProfilerClient::ListProfilingGroupsAsyncHelper(const ListProfilingGroupsRequest& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::ListProfilingGroupsAsync(const ListProfilingGroupsRequest& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProfilingGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientListProfilingGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome CodeGuruProfilerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -609,14 +609,14 @@ ListTagsForResourceOutcomeCallable CodeGuruProfilerClient::ListTagsForResourceCa
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientListTagsForResourceAsyncHelper(CodeGuruProfilerClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void CodeGuruProfilerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PostAgentProfileOutcome CodeGuruProfilerClient::PostAgentProfile(const PostAgentProfileRequest& request) const
@@ -641,14 +641,14 @@ PostAgentProfileOutcomeCallable CodeGuruProfilerClient::PostAgentProfileCallable
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::PostAgentProfileAsync(const PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientPostAgentProfileAsyncHelper(CodeGuruProfilerClient const * const clientThis, const PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostAgentProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PostAgentProfile(request), context);
 }
 
-void CodeGuruProfilerClient::PostAgentProfileAsyncHelper(const PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::PostAgentProfileAsync(const PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PostAgentProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientPostAgentProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPermissionOutcome CodeGuruProfilerClient::PutPermission(const PutPermissionRequest& request) const
@@ -679,14 +679,14 @@ PutPermissionOutcomeCallable CodeGuruProfilerClient::PutPermissionCallable(const
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::PutPermissionAsync(const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientPutPermissionAsyncHelper(CodeGuruProfilerClient const * const clientThis, const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPermission(request), context);
 }
 
-void CodeGuruProfilerClient::PutPermissionAsyncHelper(const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::PutPermissionAsync(const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientPutPermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveNotificationChannelOutcome CodeGuruProfilerClient::RemoveNotificationChannel(const RemoveNotificationChannelRequest& request) const
@@ -717,14 +717,14 @@ RemoveNotificationChannelOutcomeCallable CodeGuruProfilerClient::RemoveNotificat
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::RemoveNotificationChannelAsync(const RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientRemoveNotificationChannelAsyncHelper(CodeGuruProfilerClient const * const clientThis, const RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveNotificationChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveNotificationChannel(request), context);
 }
 
-void CodeGuruProfilerClient::RemoveNotificationChannelAsyncHelper(const RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::RemoveNotificationChannelAsync(const RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveNotificationChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientRemoveNotificationChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 RemovePermissionOutcome CodeGuruProfilerClient::RemovePermission(const RemovePermissionRequest& request) const
@@ -760,14 +760,14 @@ RemovePermissionOutcomeCallable CodeGuruProfilerClient::RemovePermissionCallable
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientRemovePermissionAsyncHelper(CodeGuruProfilerClient const * const clientThis, const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemovePermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemovePermission(request), context);
 }
 
-void CodeGuruProfilerClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemovePermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientRemovePermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 SubmitFeedbackOutcome CodeGuruProfilerClient::SubmitFeedback(const SubmitFeedbackRequest& request) const
@@ -799,14 +799,14 @@ SubmitFeedbackOutcomeCallable CodeGuruProfilerClient::SubmitFeedbackCallable(con
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::SubmitFeedbackAsync(const SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientSubmitFeedbackAsyncHelper(CodeGuruProfilerClient const * const clientThis, const SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SubmitFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SubmitFeedback(request), context);
 }
 
-void CodeGuruProfilerClient::SubmitFeedbackAsyncHelper(const SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::SubmitFeedbackAsync(const SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SubmitFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientSubmitFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CodeGuruProfilerClient::TagResource(const TagResourceRequest& request) const
@@ -830,14 +830,14 @@ TagResourceOutcomeCallable CodeGuruProfilerClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientTagResourceAsyncHelper(CodeGuruProfilerClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CodeGuruProfilerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CodeGuruProfilerClient::UntagResource(const UntagResourceRequest& request) const
@@ -866,14 +866,14 @@ UntagResourceOutcomeCallable CodeGuruProfilerClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientUntagResourceAsyncHelper(CodeGuruProfilerClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CodeGuruProfilerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProfilingGroupOutcome CodeGuruProfilerClient::UpdateProfilingGroup(const UpdateProfilingGroupRequest& request) const
@@ -897,13 +897,13 @@ UpdateProfilingGroupOutcomeCallable CodeGuruProfilerClient::UpdateProfilingGroup
   return task->get_future();
 }
 
-void CodeGuruProfilerClient::UpdateProfilingGroupAsync(const UpdateProfilingGroupRequest& request, const UpdateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClientUpdateProfilingGroupAsyncHelper(CodeGuruProfilerClient const * const clientThis, const UpdateProfilingGroupRequest& request, const UpdateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProfilingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProfilingGroup(request), context);
 }
 
-void CodeGuruProfilerClient::UpdateProfilingGroupAsyncHelper(const UpdateProfilingGroupRequest& request, const UpdateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruProfilerClient::UpdateProfilingGroupAsync(const UpdateProfilingGroupRequest& request, const UpdateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProfilingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruProfilerClientUpdateProfilingGroupAsyncHelper( this, request, handler, context ); } );
 }
 

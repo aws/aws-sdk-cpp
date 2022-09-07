@@ -133,14 +133,14 @@ AssumeRoleOutcomeCallable STSClient::AssumeRoleCallable(const AssumeRoleRequest&
   return task->get_future();
 }
 
-void STSClient::AssumeRoleAsync(const AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClientAssumeRoleAsyncHelper(STSClient const * const clientThis, const AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssumeRoleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssumeRole(request), context);
 }
 
-void STSClient::AssumeRoleAsyncHelper(const AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClient::AssumeRoleAsync(const AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssumeRole(request), context);
+  m_executor->Submit( [this, request, handler, context](){ STSClientAssumeRoleAsyncHelper( this, request, handler, context ); } );
 }
 
 AssumeRoleWithSAMLOutcome STSClient::AssumeRoleWithSAML(const AssumeRoleWithSAMLRequest& request) const
@@ -157,14 +157,14 @@ AssumeRoleWithSAMLOutcomeCallable STSClient::AssumeRoleWithSAMLCallable(const As
   return task->get_future();
 }
 
-void STSClient::AssumeRoleWithSAMLAsync(const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClientAssumeRoleWithSAMLAsyncHelper(STSClient const * const clientThis, const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssumeRoleWithSAMLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssumeRoleWithSAML(request), context);
 }
 
-void STSClient::AssumeRoleWithSAMLAsyncHelper(const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClient::AssumeRoleWithSAMLAsync(const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssumeRoleWithSAML(request), context);
+  m_executor->Submit( [this, request, handler, context](){ STSClientAssumeRoleWithSAMLAsyncHelper( this, request, handler, context ); } );
 }
 
 AssumeRoleWithWebIdentityOutcome STSClient::AssumeRoleWithWebIdentity(const AssumeRoleWithWebIdentityRequest& request) const
@@ -181,14 +181,14 @@ AssumeRoleWithWebIdentityOutcomeCallable STSClient::AssumeRoleWithWebIdentityCal
   return task->get_future();
 }
 
-void STSClient::AssumeRoleWithWebIdentityAsync(const AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClientAssumeRoleWithWebIdentityAsyncHelper(STSClient const * const clientThis, const AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssumeRoleWithWebIdentityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssumeRoleWithWebIdentity(request), context);
 }
 
-void STSClient::AssumeRoleWithWebIdentityAsyncHelper(const AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClient::AssumeRoleWithWebIdentityAsync(const AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssumeRoleWithWebIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ STSClientAssumeRoleWithWebIdentityAsyncHelper( this, request, handler, context ); } );
 }
 
 DecodeAuthorizationMessageOutcome STSClient::DecodeAuthorizationMessage(const DecodeAuthorizationMessageRequest& request) const
@@ -205,14 +205,14 @@ DecodeAuthorizationMessageOutcomeCallable STSClient::DecodeAuthorizationMessageC
   return task->get_future();
 }
 
-void STSClient::DecodeAuthorizationMessageAsync(const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClientDecodeAuthorizationMessageAsyncHelper(STSClient const * const clientThis, const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DecodeAuthorizationMessageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DecodeAuthorizationMessage(request), context);
 }
 
-void STSClient::DecodeAuthorizationMessageAsyncHelper(const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClient::DecodeAuthorizationMessageAsync(const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DecodeAuthorizationMessage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ STSClientDecodeAuthorizationMessageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccessKeyInfoOutcome STSClient::GetAccessKeyInfo(const GetAccessKeyInfoRequest& request) const
@@ -229,14 +229,14 @@ GetAccessKeyInfoOutcomeCallable STSClient::GetAccessKeyInfoCallable(const GetAcc
   return task->get_future();
 }
 
-void STSClient::GetAccessKeyInfoAsync(const GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClientGetAccessKeyInfoAsyncHelper(STSClient const * const clientThis, const GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessKeyInfoAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccessKeyInfo(request), context);
 }
 
-void STSClient::GetAccessKeyInfoAsyncHelper(const GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClient::GetAccessKeyInfoAsync(const GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccessKeyInfo(request), context);
+  m_executor->Submit( [this, request, handler, context](){ STSClientGetAccessKeyInfoAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCallerIdentityOutcome STSClient::GetCallerIdentity(const GetCallerIdentityRequest& request) const
@@ -253,14 +253,14 @@ GetCallerIdentityOutcomeCallable STSClient::GetCallerIdentityCallable(const GetC
   return task->get_future();
 }
 
-void STSClient::GetCallerIdentityAsync(const GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClientGetCallerIdentityAsyncHelper(STSClient const * const clientThis, const GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCallerIdentityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCallerIdentity(request), context);
 }
 
-void STSClient::GetCallerIdentityAsyncHelper(const GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClient::GetCallerIdentityAsync(const GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCallerIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ STSClientGetCallerIdentityAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationTokenRequest& request) const
@@ -277,14 +277,14 @@ GetFederationTokenOutcomeCallable STSClient::GetFederationTokenCallable(const Ge
   return task->get_future();
 }
 
-void STSClient::GetFederationTokenAsync(const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClientGetFederationTokenAsyncHelper(STSClient const * const clientThis, const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFederationTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFederationToken(request), context);
 }
 
-void STSClient::GetFederationTokenAsyncHelper(const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClient::GetFederationTokenAsync(const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFederationToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ STSClientGetFederationTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& request) const
@@ -301,13 +301,13 @@ GetSessionTokenOutcomeCallable STSClient::GetSessionTokenCallable(const GetSessi
   return task->get_future();
 }
 
-void STSClient::GetSessionTokenAsync(const GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClientGetSessionTokenAsyncHelper(STSClient const * const clientThis, const GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSessionTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSessionToken(request), context);
 }
 
-void STSClient::GetSessionTokenAsyncHelper(const GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void STSClient::GetSessionTokenAsync(const GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSessionToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ STSClientGetSessionTokenAsyncHelper( this, request, handler, context ); } );
 }
 

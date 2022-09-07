@@ -203,14 +203,14 @@ CancelQueryOutcomeCallable TimestreamQueryClient::CancelQueryCallable(const Canc
   return task->get_future();
 }
 
-void TimestreamQueryClient::CancelQueryAsync(const CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientCancelQueryAsyncHelper(TimestreamQueryClient const * const clientThis, const CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelQuery(request), context);
 }
 
-void TimestreamQueryClient::CancelQueryAsyncHelper(const CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::CancelQueryAsync(const CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientCancelQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const CreateScheduledQueryRequest& request) const
@@ -263,14 +263,14 @@ CreateScheduledQueryOutcomeCallable TimestreamQueryClient::CreateScheduledQueryC
   return task->get_future();
 }
 
-void TimestreamQueryClient::CreateScheduledQueryAsync(const CreateScheduledQueryRequest& request, const CreateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientCreateScheduledQueryAsyncHelper(TimestreamQueryClient const * const clientThis, const CreateScheduledQueryRequest& request, const CreateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateScheduledQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateScheduledQuery(request), context);
 }
 
-void TimestreamQueryClient::CreateScheduledQueryAsyncHelper(const CreateScheduledQueryRequest& request, const CreateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::CreateScheduledQueryAsync(const CreateScheduledQueryRequest& request, const CreateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateScheduledQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientCreateScheduledQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const DeleteScheduledQueryRequest& request) const
@@ -323,14 +323,14 @@ DeleteScheduledQueryOutcomeCallable TimestreamQueryClient::DeleteScheduledQueryC
   return task->get_future();
 }
 
-void TimestreamQueryClient::DeleteScheduledQueryAsync(const DeleteScheduledQueryRequest& request, const DeleteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientDeleteScheduledQueryAsyncHelper(TimestreamQueryClient const * const clientThis, const DeleteScheduledQueryRequest& request, const DeleteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteScheduledQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteScheduledQuery(request), context);
 }
 
-void TimestreamQueryClient::DeleteScheduledQueryAsyncHelper(const DeleteScheduledQueryRequest& request, const DeleteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::DeleteScheduledQueryAsync(const DeleteScheduledQueryRequest& request, const DeleteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteScheduledQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientDeleteScheduledQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEndpointsOutcome TimestreamQueryClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
@@ -347,14 +347,14 @@ DescribeEndpointsOutcomeCallable TimestreamQueryClient::DescribeEndpointsCallabl
   return task->get_future();
 }
 
-void TimestreamQueryClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientDescribeEndpointsAsyncHelper(TimestreamQueryClient const * const clientThis, const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEndpoints(request), context);
 }
 
-void TimestreamQueryClient::DescribeEndpointsAsyncHelper(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientDescribeEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(const DescribeScheduledQueryRequest& request) const
@@ -407,14 +407,14 @@ DescribeScheduledQueryOutcomeCallable TimestreamQueryClient::DescribeScheduledQu
   return task->get_future();
 }
 
-void TimestreamQueryClient::DescribeScheduledQueryAsync(const DescribeScheduledQueryRequest& request, const DescribeScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientDescribeScheduledQueryAsyncHelper(TimestreamQueryClient const * const clientThis, const DescribeScheduledQueryRequest& request, const DescribeScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScheduledQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeScheduledQuery(request), context);
 }
 
-void TimestreamQueryClient::DescribeScheduledQueryAsyncHelper(const DescribeScheduledQueryRequest& request, const DescribeScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::DescribeScheduledQueryAsync(const DescribeScheduledQueryRequest& request, const DescribeScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeScheduledQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientDescribeScheduledQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const ExecuteScheduledQueryRequest& request) const
@@ -467,14 +467,14 @@ ExecuteScheduledQueryOutcomeCallable TimestreamQueryClient::ExecuteScheduledQuer
   return task->get_future();
 }
 
-void TimestreamQueryClient::ExecuteScheduledQueryAsync(const ExecuteScheduledQueryRequest& request, const ExecuteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientExecuteScheduledQueryAsyncHelper(TimestreamQueryClient const * const clientThis, const ExecuteScheduledQueryRequest& request, const ExecuteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteScheduledQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExecuteScheduledQuery(request), context);
 }
 
-void TimestreamQueryClient::ExecuteScheduledQueryAsyncHelper(const ExecuteScheduledQueryRequest& request, const ExecuteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::ExecuteScheduledQueryAsync(const ExecuteScheduledQueryRequest& request, const ExecuteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExecuteScheduledQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientExecuteScheduledQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const ListScheduledQueriesRequest& request) const
@@ -527,14 +527,14 @@ ListScheduledQueriesOutcomeCallable TimestreamQueryClient::ListScheduledQueriesC
   return task->get_future();
 }
 
-void TimestreamQueryClient::ListScheduledQueriesAsync(const ListScheduledQueriesRequest& request, const ListScheduledQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientListScheduledQueriesAsyncHelper(TimestreamQueryClient const * const clientThis, const ListScheduledQueriesRequest& request, const ListScheduledQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListScheduledQueriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListScheduledQueries(request), context);
 }
 
-void TimestreamQueryClient::ListScheduledQueriesAsyncHelper(const ListScheduledQueriesRequest& request, const ListScheduledQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::ListScheduledQueriesAsync(const ListScheduledQueriesRequest& request, const ListScheduledQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListScheduledQueries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientListScheduledQueriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -587,14 +587,14 @@ ListTagsForResourceOutcomeCallable TimestreamQueryClient::ListTagsForResourceCal
   return task->get_future();
 }
 
-void TimestreamQueryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientListTagsForResourceAsyncHelper(TimestreamQueryClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void TimestreamQueryClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryRequest& request) const
@@ -647,14 +647,14 @@ PrepareQueryOutcomeCallable TimestreamQueryClient::PrepareQueryCallable(const Pr
   return task->get_future();
 }
 
-void TimestreamQueryClient::PrepareQueryAsync(const PrepareQueryRequest& request, const PrepareQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientPrepareQueryAsyncHelper(TimestreamQueryClient const * const clientThis, const PrepareQueryRequest& request, const PrepareQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PrepareQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PrepareQuery(request), context);
 }
 
-void TimestreamQueryClient::PrepareQueryAsyncHelper(const PrepareQueryRequest& request, const PrepareQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::PrepareQueryAsync(const PrepareQueryRequest& request, const PrepareQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PrepareQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientPrepareQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
@@ -707,14 +707,14 @@ QueryOutcomeCallable TimestreamQueryClient::QueryCallable(const QueryRequest& re
   return task->get_future();
 }
 
-void TimestreamQueryClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientQueryAsyncHelper(TimestreamQueryClient const * const clientThis, const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->QueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Query(request), context);
 }
 
-void TimestreamQueryClient::QueryAsyncHelper(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Query(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& request) const
@@ -767,14 +767,14 @@ TagResourceOutcomeCallable TimestreamQueryClient::TagResourceCallable(const TagR
   return task->get_future();
 }
 
-void TimestreamQueryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientTagResourceAsyncHelper(TimestreamQueryClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void TimestreamQueryClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceRequest& request) const
@@ -827,14 +827,14 @@ UntagResourceOutcomeCallable TimestreamQueryClient::UntagResourceCallable(const 
   return task->get_future();
 }
 
-void TimestreamQueryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientUntagResourceAsyncHelper(TimestreamQueryClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void TimestreamQueryClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const UpdateScheduledQueryRequest& request) const
@@ -887,13 +887,13 @@ UpdateScheduledQueryOutcomeCallable TimestreamQueryClient::UpdateScheduledQueryC
   return task->get_future();
 }
 
-void TimestreamQueryClient::UpdateScheduledQueryAsync(const UpdateScheduledQueryRequest& request, const UpdateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClientUpdateScheduledQueryAsyncHelper(TimestreamQueryClient const * const clientThis, const UpdateScheduledQueryRequest& request, const UpdateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateScheduledQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateScheduledQuery(request), context);
 }
 
-void TimestreamQueryClient::UpdateScheduledQueryAsyncHelper(const UpdateScheduledQueryRequest& request, const UpdateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void TimestreamQueryClient::UpdateScheduledQueryAsync(const UpdateScheduledQueryRequest& request, const UpdateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateScheduledQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ TimestreamQueryClientUpdateScheduledQueryAsyncHelper( this, request, handler, context ); } );
 }
 

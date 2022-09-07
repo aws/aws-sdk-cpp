@@ -163,14 +163,14 @@ AcceptHandshakeOutcomeCallable OrganizationsClient::AcceptHandshakeCallable(cons
   return task->get_future();
 }
 
-void OrganizationsClient::AcceptHandshakeAsync(const AcceptHandshakeRequest& request, const AcceptHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientAcceptHandshakeAsyncHelper(OrganizationsClient const * const clientThis, const AcceptHandshakeRequest& request, const AcceptHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptHandshakeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptHandshake(request), context);
 }
 
-void OrganizationsClient::AcceptHandshakeAsyncHelper(const AcceptHandshakeRequest& request, const AcceptHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::AcceptHandshakeAsync(const AcceptHandshakeRequest& request, const AcceptHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptHandshake(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientAcceptHandshakeAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachPolicyOutcome OrganizationsClient::AttachPolicy(const AttachPolicyRequest& request) const
@@ -187,14 +187,14 @@ AttachPolicyOutcomeCallable OrganizationsClient::AttachPolicyCallable(const Atta
   return task->get_future();
 }
 
-void OrganizationsClient::AttachPolicyAsync(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientAttachPolicyAsyncHelper(OrganizationsClient const * const clientThis, const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachPolicy(request), context);
 }
 
-void OrganizationsClient::AttachPolicyAsyncHelper(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::AttachPolicyAsync(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientAttachPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelHandshakeOutcome OrganizationsClient::CancelHandshake(const CancelHandshakeRequest& request) const
@@ -211,14 +211,14 @@ CancelHandshakeOutcomeCallable OrganizationsClient::CancelHandshakeCallable(cons
   return task->get_future();
 }
 
-void OrganizationsClient::CancelHandshakeAsync(const CancelHandshakeRequest& request, const CancelHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientCancelHandshakeAsyncHelper(OrganizationsClient const * const clientThis, const CancelHandshakeRequest& request, const CancelHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelHandshakeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelHandshake(request), context);
 }
 
-void OrganizationsClient::CancelHandshakeAsyncHelper(const CancelHandshakeRequest& request, const CancelHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::CancelHandshakeAsync(const CancelHandshakeRequest& request, const CancelHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelHandshake(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientCancelHandshakeAsyncHelper( this, request, handler, context ); } );
 }
 
 CloseAccountOutcome OrganizationsClient::CloseAccount(const CloseAccountRequest& request) const
@@ -235,14 +235,14 @@ CloseAccountOutcomeCallable OrganizationsClient::CloseAccountCallable(const Clos
   return task->get_future();
 }
 
-void OrganizationsClient::CloseAccountAsync(const CloseAccountRequest& request, const CloseAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientCloseAccountAsyncHelper(OrganizationsClient const * const clientThis, const CloseAccountRequest& request, const CloseAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CloseAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CloseAccount(request), context);
 }
 
-void OrganizationsClient::CloseAccountAsyncHelper(const CloseAccountRequest& request, const CloseAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::CloseAccountAsync(const CloseAccountRequest& request, const CloseAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CloseAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientCloseAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAccountOutcome OrganizationsClient::CreateAccount(const CreateAccountRequest& request) const
@@ -259,14 +259,14 @@ CreateAccountOutcomeCallable OrganizationsClient::CreateAccountCallable(const Cr
   return task->get_future();
 }
 
-void OrganizationsClient::CreateAccountAsync(const CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientCreateAccountAsyncHelper(OrganizationsClient const * const clientThis, const CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAccount(request), context);
 }
 
-void OrganizationsClient::CreateAccountAsyncHelper(const CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::CreateAccountAsync(const CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientCreateAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGovCloudAccountOutcome OrganizationsClient::CreateGovCloudAccount(const CreateGovCloudAccountRequest& request) const
@@ -283,14 +283,14 @@ CreateGovCloudAccountOutcomeCallable OrganizationsClient::CreateGovCloudAccountC
   return task->get_future();
 }
 
-void OrganizationsClient::CreateGovCloudAccountAsync(const CreateGovCloudAccountRequest& request, const CreateGovCloudAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientCreateGovCloudAccountAsyncHelper(OrganizationsClient const * const clientThis, const CreateGovCloudAccountRequest& request, const CreateGovCloudAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGovCloudAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGovCloudAccount(request), context);
 }
 
-void OrganizationsClient::CreateGovCloudAccountAsyncHelper(const CreateGovCloudAccountRequest& request, const CreateGovCloudAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::CreateGovCloudAccountAsync(const CreateGovCloudAccountRequest& request, const CreateGovCloudAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGovCloudAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientCreateGovCloudAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateOrganizationOutcome OrganizationsClient::CreateOrganization(const CreateOrganizationRequest& request) const
@@ -307,14 +307,14 @@ CreateOrganizationOutcomeCallable OrganizationsClient::CreateOrganizationCallabl
   return task->get_future();
 }
 
-void OrganizationsClient::CreateOrganizationAsync(const CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientCreateOrganizationAsyncHelper(OrganizationsClient const * const clientThis, const CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateOrganization(request), context);
 }
 
-void OrganizationsClient::CreateOrganizationAsyncHelper(const CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::CreateOrganizationAsync(const CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientCreateOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateOrganizationalUnitOutcome OrganizationsClient::CreateOrganizationalUnit(const CreateOrganizationalUnitRequest& request) const
@@ -331,14 +331,14 @@ CreateOrganizationalUnitOutcomeCallable OrganizationsClient::CreateOrganizationa
   return task->get_future();
 }
 
-void OrganizationsClient::CreateOrganizationalUnitAsync(const CreateOrganizationalUnitRequest& request, const CreateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientCreateOrganizationalUnitAsyncHelper(OrganizationsClient const * const clientThis, const CreateOrganizationalUnitRequest& request, const CreateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOrganizationalUnitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateOrganizationalUnit(request), context);
 }
 
-void OrganizationsClient::CreateOrganizationalUnitAsyncHelper(const CreateOrganizationalUnitRequest& request, const CreateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::CreateOrganizationalUnitAsync(const CreateOrganizationalUnitRequest& request, const CreateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateOrganizationalUnit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientCreateOrganizationalUnitAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePolicyOutcome OrganizationsClient::CreatePolicy(const CreatePolicyRequest& request) const
@@ -355,14 +355,14 @@ CreatePolicyOutcomeCallable OrganizationsClient::CreatePolicyCallable(const Crea
   return task->get_future();
 }
 
-void OrganizationsClient::CreatePolicyAsync(const CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientCreatePolicyAsyncHelper(OrganizationsClient const * const clientThis, const CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePolicy(request), context);
 }
 
-void OrganizationsClient::CreatePolicyAsyncHelper(const CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::CreatePolicyAsync(const CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientCreatePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeclineHandshakeOutcome OrganizationsClient::DeclineHandshake(const DeclineHandshakeRequest& request) const
@@ -379,14 +379,14 @@ DeclineHandshakeOutcomeCallable OrganizationsClient::DeclineHandshakeCallable(co
   return task->get_future();
 }
 
-void OrganizationsClient::DeclineHandshakeAsync(const DeclineHandshakeRequest& request, const DeclineHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDeclineHandshakeAsyncHelper(OrganizationsClient const * const clientThis, const DeclineHandshakeRequest& request, const DeclineHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeclineHandshakeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeclineHandshake(request), context);
 }
 
-void OrganizationsClient::DeclineHandshakeAsyncHelper(const DeclineHandshakeRequest& request, const DeclineHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DeclineHandshakeAsync(const DeclineHandshakeRequest& request, const DeclineHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeclineHandshake(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDeclineHandshakeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteOrganizationOutcome OrganizationsClient::DeleteOrganization() const
@@ -404,14 +404,14 @@ DeleteOrganizationOutcomeCallable OrganizationsClient::DeleteOrganizationCallabl
   return task->get_future();
 }
 
-void OrganizationsClient::DeleteOrganizationAsync(const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDeleteOrganizationAsyncHelper(OrganizationsClient const * const clientThis, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->DeleteOrganizationAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->DeleteOrganization(), context);
 }
 
-void OrganizationsClient::DeleteOrganizationAsyncHelper(const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DeleteOrganizationAsync(const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, DeleteOrganization(), context);
+  m_executor->Submit( [this, handler, context](){ OrganizationsClientDeleteOrganizationAsyncHelper( this, handler, context ); } );
 }
 
 DeleteOrganizationalUnitOutcome OrganizationsClient::DeleteOrganizationalUnit(const DeleteOrganizationalUnitRequest& request) const
@@ -428,14 +428,14 @@ DeleteOrganizationalUnitOutcomeCallable OrganizationsClient::DeleteOrganizationa
   return task->get_future();
 }
 
-void OrganizationsClient::DeleteOrganizationalUnitAsync(const DeleteOrganizationalUnitRequest& request, const DeleteOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDeleteOrganizationalUnitAsyncHelper(OrganizationsClient const * const clientThis, const DeleteOrganizationalUnitRequest& request, const DeleteOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOrganizationalUnitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteOrganizationalUnit(request), context);
 }
 
-void OrganizationsClient::DeleteOrganizationalUnitAsyncHelper(const DeleteOrganizationalUnitRequest& request, const DeleteOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DeleteOrganizationalUnitAsync(const DeleteOrganizationalUnitRequest& request, const DeleteOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteOrganizationalUnit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDeleteOrganizationalUnitAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePolicyOutcome OrganizationsClient::DeletePolicy(const DeletePolicyRequest& request) const
@@ -452,14 +452,14 @@ DeletePolicyOutcomeCallable OrganizationsClient::DeletePolicyCallable(const Dele
   return task->get_future();
 }
 
-void OrganizationsClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDeletePolicyAsyncHelper(OrganizationsClient const * const clientThis, const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePolicy(request), context);
 }
 
-void OrganizationsClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDeletePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterDelegatedAdministratorOutcome OrganizationsClient::DeregisterDelegatedAdministrator(const DeregisterDelegatedAdministratorRequest& request) const
@@ -476,14 +476,14 @@ DeregisterDelegatedAdministratorOutcomeCallable OrganizationsClient::DeregisterD
   return task->get_future();
 }
 
-void OrganizationsClient::DeregisterDelegatedAdministratorAsync(const DeregisterDelegatedAdministratorRequest& request, const DeregisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDeregisterDelegatedAdministratorAsyncHelper(OrganizationsClient const * const clientThis, const DeregisterDelegatedAdministratorRequest& request, const DeregisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterDelegatedAdministratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterDelegatedAdministrator(request), context);
 }
 
-void OrganizationsClient::DeregisterDelegatedAdministratorAsyncHelper(const DeregisterDelegatedAdministratorRequest& request, const DeregisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DeregisterDelegatedAdministratorAsync(const DeregisterDelegatedAdministratorRequest& request, const DeregisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterDelegatedAdministrator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDeregisterDelegatedAdministratorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountOutcome OrganizationsClient::DescribeAccount(const DescribeAccountRequest& request) const
@@ -500,14 +500,14 @@ DescribeAccountOutcomeCallable OrganizationsClient::DescribeAccountCallable(cons
   return task->get_future();
 }
 
-void OrganizationsClient::DescribeAccountAsync(const DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDescribeAccountAsyncHelper(OrganizationsClient const * const clientThis, const DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccount(request), context);
 }
 
-void OrganizationsClient::DescribeAccountAsyncHelper(const DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DescribeAccountAsync(const DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDescribeAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCreateAccountStatusOutcome OrganizationsClient::DescribeCreateAccountStatus(const DescribeCreateAccountStatusRequest& request) const
@@ -524,14 +524,14 @@ DescribeCreateAccountStatusOutcomeCallable OrganizationsClient::DescribeCreateAc
   return task->get_future();
 }
 
-void OrganizationsClient::DescribeCreateAccountStatusAsync(const DescribeCreateAccountStatusRequest& request, const DescribeCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDescribeCreateAccountStatusAsyncHelper(OrganizationsClient const * const clientThis, const DescribeCreateAccountStatusRequest& request, const DescribeCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCreateAccountStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCreateAccountStatus(request), context);
 }
 
-void OrganizationsClient::DescribeCreateAccountStatusAsyncHelper(const DescribeCreateAccountStatusRequest& request, const DescribeCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DescribeCreateAccountStatusAsync(const DescribeCreateAccountStatusRequest& request, const DescribeCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCreateAccountStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDescribeCreateAccountStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEffectivePolicyOutcome OrganizationsClient::DescribeEffectivePolicy(const DescribeEffectivePolicyRequest& request) const
@@ -548,14 +548,14 @@ DescribeEffectivePolicyOutcomeCallable OrganizationsClient::DescribeEffectivePol
   return task->get_future();
 }
 
-void OrganizationsClient::DescribeEffectivePolicyAsync(const DescribeEffectivePolicyRequest& request, const DescribeEffectivePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDescribeEffectivePolicyAsyncHelper(OrganizationsClient const * const clientThis, const DescribeEffectivePolicyRequest& request, const DescribeEffectivePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEffectivePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEffectivePolicy(request), context);
 }
 
-void OrganizationsClient::DescribeEffectivePolicyAsyncHelper(const DescribeEffectivePolicyRequest& request, const DescribeEffectivePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DescribeEffectivePolicyAsync(const DescribeEffectivePolicyRequest& request, const DescribeEffectivePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEffectivePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDescribeEffectivePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeHandshakeOutcome OrganizationsClient::DescribeHandshake(const DescribeHandshakeRequest& request) const
@@ -572,14 +572,14 @@ DescribeHandshakeOutcomeCallable OrganizationsClient::DescribeHandshakeCallable(
   return task->get_future();
 }
 
-void OrganizationsClient::DescribeHandshakeAsync(const DescribeHandshakeRequest& request, const DescribeHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDescribeHandshakeAsyncHelper(OrganizationsClient const * const clientThis, const DescribeHandshakeRequest& request, const DescribeHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHandshakeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeHandshake(request), context);
 }
 
-void OrganizationsClient::DescribeHandshakeAsyncHelper(const DescribeHandshakeRequest& request, const DescribeHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DescribeHandshakeAsync(const DescribeHandshakeRequest& request, const DescribeHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeHandshake(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDescribeHandshakeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeOrganizationOutcome OrganizationsClient::DescribeOrganization() const
@@ -597,14 +597,14 @@ DescribeOrganizationOutcomeCallable OrganizationsClient::DescribeOrganizationCal
   return task->get_future();
 }
 
-void OrganizationsClient::DescribeOrganizationAsync(const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDescribeOrganizationAsyncHelper(OrganizationsClient const * const clientThis, const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->DescribeOrganizationAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->DescribeOrganization(), context);
 }
 
-void OrganizationsClient::DescribeOrganizationAsyncHelper(const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DescribeOrganizationAsync(const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, DescribeOrganization(), context);
+  m_executor->Submit( [this, handler, context](){ OrganizationsClientDescribeOrganizationAsyncHelper( this, handler, context ); } );
 }
 
 DescribeOrganizationalUnitOutcome OrganizationsClient::DescribeOrganizationalUnit(const DescribeOrganizationalUnitRequest& request) const
@@ -621,14 +621,14 @@ DescribeOrganizationalUnitOutcomeCallable OrganizationsClient::DescribeOrganizat
   return task->get_future();
 }
 
-void OrganizationsClient::DescribeOrganizationalUnitAsync(const DescribeOrganizationalUnitRequest& request, const DescribeOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDescribeOrganizationalUnitAsyncHelper(OrganizationsClient const * const clientThis, const DescribeOrganizationalUnitRequest& request, const DescribeOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationalUnitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeOrganizationalUnit(request), context);
 }
 
-void OrganizationsClient::DescribeOrganizationalUnitAsyncHelper(const DescribeOrganizationalUnitRequest& request, const DescribeOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DescribeOrganizationalUnitAsync(const DescribeOrganizationalUnitRequest& request, const DescribeOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeOrganizationalUnit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDescribeOrganizationalUnitAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePolicyOutcome OrganizationsClient::DescribePolicy(const DescribePolicyRequest& request) const
@@ -645,14 +645,14 @@ DescribePolicyOutcomeCallable OrganizationsClient::DescribePolicyCallable(const 
   return task->get_future();
 }
 
-void OrganizationsClient::DescribePolicyAsync(const DescribePolicyRequest& request, const DescribePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDescribePolicyAsyncHelper(OrganizationsClient const * const clientThis, const DescribePolicyRequest& request, const DescribePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePolicy(request), context);
 }
 
-void OrganizationsClient::DescribePolicyAsyncHelper(const DescribePolicyRequest& request, const DescribePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DescribePolicyAsync(const DescribePolicyRequest& request, const DescribePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDescribePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachPolicyOutcome OrganizationsClient::DetachPolicy(const DetachPolicyRequest& request) const
@@ -669,14 +669,14 @@ DetachPolicyOutcomeCallable OrganizationsClient::DetachPolicyCallable(const Deta
   return task->get_future();
 }
 
-void OrganizationsClient::DetachPolicyAsync(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDetachPolicyAsyncHelper(OrganizationsClient const * const clientThis, const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachPolicy(request), context);
 }
 
-void OrganizationsClient::DetachPolicyAsyncHelper(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DetachPolicyAsync(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDetachPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableAWSServiceAccessOutcome OrganizationsClient::DisableAWSServiceAccess(const DisableAWSServiceAccessRequest& request) const
@@ -693,14 +693,14 @@ DisableAWSServiceAccessOutcomeCallable OrganizationsClient::DisableAWSServiceAcc
   return task->get_future();
 }
 
-void OrganizationsClient::DisableAWSServiceAccessAsync(const DisableAWSServiceAccessRequest& request, const DisableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDisableAWSServiceAccessAsyncHelper(OrganizationsClient const * const clientThis, const DisableAWSServiceAccessRequest& request, const DisableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableAWSServiceAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableAWSServiceAccess(request), context);
 }
 
-void OrganizationsClient::DisableAWSServiceAccessAsyncHelper(const DisableAWSServiceAccessRequest& request, const DisableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DisableAWSServiceAccessAsync(const DisableAWSServiceAccessRequest& request, const DisableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableAWSServiceAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDisableAWSServiceAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 DisablePolicyTypeOutcome OrganizationsClient::DisablePolicyType(const DisablePolicyTypeRequest& request) const
@@ -717,14 +717,14 @@ DisablePolicyTypeOutcomeCallable OrganizationsClient::DisablePolicyTypeCallable(
   return task->get_future();
 }
 
-void OrganizationsClient::DisablePolicyTypeAsync(const DisablePolicyTypeRequest& request, const DisablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientDisablePolicyTypeAsyncHelper(OrganizationsClient const * const clientThis, const DisablePolicyTypeRequest& request, const DisablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisablePolicyTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisablePolicyType(request), context);
 }
 
-void OrganizationsClient::DisablePolicyTypeAsyncHelper(const DisablePolicyTypeRequest& request, const DisablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::DisablePolicyTypeAsync(const DisablePolicyTypeRequest& request, const DisablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisablePolicyType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientDisablePolicyTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableAWSServiceAccessOutcome OrganizationsClient::EnableAWSServiceAccess(const EnableAWSServiceAccessRequest& request) const
@@ -741,14 +741,14 @@ EnableAWSServiceAccessOutcomeCallable OrganizationsClient::EnableAWSServiceAcces
   return task->get_future();
 }
 
-void OrganizationsClient::EnableAWSServiceAccessAsync(const EnableAWSServiceAccessRequest& request, const EnableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientEnableAWSServiceAccessAsyncHelper(OrganizationsClient const * const clientThis, const EnableAWSServiceAccessRequest& request, const EnableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableAWSServiceAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableAWSServiceAccess(request), context);
 }
 
-void OrganizationsClient::EnableAWSServiceAccessAsyncHelper(const EnableAWSServiceAccessRequest& request, const EnableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::EnableAWSServiceAccessAsync(const EnableAWSServiceAccessRequest& request, const EnableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableAWSServiceAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientEnableAWSServiceAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableAllFeaturesOutcome OrganizationsClient::EnableAllFeatures(const EnableAllFeaturesRequest& request) const
@@ -765,14 +765,14 @@ EnableAllFeaturesOutcomeCallable OrganizationsClient::EnableAllFeaturesCallable(
   return task->get_future();
 }
 
-void OrganizationsClient::EnableAllFeaturesAsync(const EnableAllFeaturesRequest& request, const EnableAllFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientEnableAllFeaturesAsyncHelper(OrganizationsClient const * const clientThis, const EnableAllFeaturesRequest& request, const EnableAllFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableAllFeaturesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableAllFeatures(request), context);
 }
 
-void OrganizationsClient::EnableAllFeaturesAsyncHelper(const EnableAllFeaturesRequest& request, const EnableAllFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::EnableAllFeaturesAsync(const EnableAllFeaturesRequest& request, const EnableAllFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableAllFeatures(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientEnableAllFeaturesAsyncHelper( this, request, handler, context ); } );
 }
 
 EnablePolicyTypeOutcome OrganizationsClient::EnablePolicyType(const EnablePolicyTypeRequest& request) const
@@ -789,14 +789,14 @@ EnablePolicyTypeOutcomeCallable OrganizationsClient::EnablePolicyTypeCallable(co
   return task->get_future();
 }
 
-void OrganizationsClient::EnablePolicyTypeAsync(const EnablePolicyTypeRequest& request, const EnablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientEnablePolicyTypeAsyncHelper(OrganizationsClient const * const clientThis, const EnablePolicyTypeRequest& request, const EnablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnablePolicyTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnablePolicyType(request), context);
 }
 
-void OrganizationsClient::EnablePolicyTypeAsyncHelper(const EnablePolicyTypeRequest& request, const EnablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::EnablePolicyTypeAsync(const EnablePolicyTypeRequest& request, const EnablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnablePolicyType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientEnablePolicyTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 InviteAccountToOrganizationOutcome OrganizationsClient::InviteAccountToOrganization(const InviteAccountToOrganizationRequest& request) const
@@ -813,14 +813,14 @@ InviteAccountToOrganizationOutcomeCallable OrganizationsClient::InviteAccountToO
   return task->get_future();
 }
 
-void OrganizationsClient::InviteAccountToOrganizationAsync(const InviteAccountToOrganizationRequest& request, const InviteAccountToOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientInviteAccountToOrganizationAsyncHelper(OrganizationsClient const * const clientThis, const InviteAccountToOrganizationRequest& request, const InviteAccountToOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InviteAccountToOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InviteAccountToOrganization(request), context);
 }
 
-void OrganizationsClient::InviteAccountToOrganizationAsyncHelper(const InviteAccountToOrganizationRequest& request, const InviteAccountToOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::InviteAccountToOrganizationAsync(const InviteAccountToOrganizationRequest& request, const InviteAccountToOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InviteAccountToOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientInviteAccountToOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 LeaveOrganizationOutcome OrganizationsClient::LeaveOrganization() const
@@ -838,14 +838,14 @@ LeaveOrganizationOutcomeCallable OrganizationsClient::LeaveOrganizationCallable(
   return task->get_future();
 }
 
-void OrganizationsClient::LeaveOrganizationAsync(const LeaveOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientLeaveOrganizationAsyncHelper(OrganizationsClient const * const clientThis, const LeaveOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->LeaveOrganizationAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->LeaveOrganization(), context);
 }
 
-void OrganizationsClient::LeaveOrganizationAsyncHelper(const LeaveOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::LeaveOrganizationAsync(const LeaveOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, LeaveOrganization(), context);
+  m_executor->Submit( [this, handler, context](){ OrganizationsClientLeaveOrganizationAsyncHelper( this, handler, context ); } );
 }
 
 ListAWSServiceAccessForOrganizationOutcome OrganizationsClient::ListAWSServiceAccessForOrganization(const ListAWSServiceAccessForOrganizationRequest& request) const
@@ -862,14 +862,14 @@ ListAWSServiceAccessForOrganizationOutcomeCallable OrganizationsClient::ListAWSS
   return task->get_future();
 }
 
-void OrganizationsClient::ListAWSServiceAccessForOrganizationAsync(const ListAWSServiceAccessForOrganizationRequest& request, const ListAWSServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListAWSServiceAccessForOrganizationAsyncHelper(OrganizationsClient const * const clientThis, const ListAWSServiceAccessForOrganizationRequest& request, const ListAWSServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAWSServiceAccessForOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAWSServiceAccessForOrganization(request), context);
 }
 
-void OrganizationsClient::ListAWSServiceAccessForOrganizationAsyncHelper(const ListAWSServiceAccessForOrganizationRequest& request, const ListAWSServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListAWSServiceAccessForOrganizationAsync(const ListAWSServiceAccessForOrganizationRequest& request, const ListAWSServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAWSServiceAccessForOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListAWSServiceAccessForOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccountsOutcome OrganizationsClient::ListAccounts(const ListAccountsRequest& request) const
@@ -886,14 +886,14 @@ ListAccountsOutcomeCallable OrganizationsClient::ListAccountsCallable(const List
   return task->get_future();
 }
 
-void OrganizationsClient::ListAccountsAsync(const ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListAccountsAsyncHelper(OrganizationsClient const * const clientThis, const ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccounts(request), context);
 }
 
-void OrganizationsClient::ListAccountsAsyncHelper(const ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListAccountsAsync(const ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListAccountsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccountsForParentOutcome OrganizationsClient::ListAccountsForParent(const ListAccountsForParentRequest& request) const
@@ -910,14 +910,14 @@ ListAccountsForParentOutcomeCallable OrganizationsClient::ListAccountsForParentC
   return task->get_future();
 }
 
-void OrganizationsClient::ListAccountsForParentAsync(const ListAccountsForParentRequest& request, const ListAccountsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListAccountsForParentAsyncHelper(OrganizationsClient const * const clientThis, const ListAccountsForParentRequest& request, const ListAccountsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountsForParentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccountsForParent(request), context);
 }
 
-void OrganizationsClient::ListAccountsForParentAsyncHelper(const ListAccountsForParentRequest& request, const ListAccountsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListAccountsForParentAsync(const ListAccountsForParentRequest& request, const ListAccountsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccountsForParent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListAccountsForParentAsyncHelper( this, request, handler, context ); } );
 }
 
 ListChildrenOutcome OrganizationsClient::ListChildren(const ListChildrenRequest& request) const
@@ -934,14 +934,14 @@ ListChildrenOutcomeCallable OrganizationsClient::ListChildrenCallable(const List
   return task->get_future();
 }
 
-void OrganizationsClient::ListChildrenAsync(const ListChildrenRequest& request, const ListChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListChildrenAsyncHelper(OrganizationsClient const * const clientThis, const ListChildrenRequest& request, const ListChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChildrenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListChildren(request), context);
 }
 
-void OrganizationsClient::ListChildrenAsyncHelper(const ListChildrenRequest& request, const ListChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListChildrenAsync(const ListChildrenRequest& request, const ListChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListChildren(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListChildrenAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCreateAccountStatusOutcome OrganizationsClient::ListCreateAccountStatus(const ListCreateAccountStatusRequest& request) const
@@ -958,14 +958,14 @@ ListCreateAccountStatusOutcomeCallable OrganizationsClient::ListCreateAccountSta
   return task->get_future();
 }
 
-void OrganizationsClient::ListCreateAccountStatusAsync(const ListCreateAccountStatusRequest& request, const ListCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListCreateAccountStatusAsyncHelper(OrganizationsClient const * const clientThis, const ListCreateAccountStatusRequest& request, const ListCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCreateAccountStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCreateAccountStatus(request), context);
 }
 
-void OrganizationsClient::ListCreateAccountStatusAsyncHelper(const ListCreateAccountStatusRequest& request, const ListCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListCreateAccountStatusAsync(const ListCreateAccountStatusRequest& request, const ListCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCreateAccountStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListCreateAccountStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDelegatedAdministratorsOutcome OrganizationsClient::ListDelegatedAdministrators(const ListDelegatedAdministratorsRequest& request) const
@@ -982,14 +982,14 @@ ListDelegatedAdministratorsOutcomeCallable OrganizationsClient::ListDelegatedAdm
   return task->get_future();
 }
 
-void OrganizationsClient::ListDelegatedAdministratorsAsync(const ListDelegatedAdministratorsRequest& request, const ListDelegatedAdministratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListDelegatedAdministratorsAsyncHelper(OrganizationsClient const * const clientThis, const ListDelegatedAdministratorsRequest& request, const ListDelegatedAdministratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDelegatedAdministratorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDelegatedAdministrators(request), context);
 }
 
-void OrganizationsClient::ListDelegatedAdministratorsAsyncHelper(const ListDelegatedAdministratorsRequest& request, const ListDelegatedAdministratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListDelegatedAdministratorsAsync(const ListDelegatedAdministratorsRequest& request, const ListDelegatedAdministratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDelegatedAdministrators(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListDelegatedAdministratorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDelegatedServicesForAccountOutcome OrganizationsClient::ListDelegatedServicesForAccount(const ListDelegatedServicesForAccountRequest& request) const
@@ -1006,14 +1006,14 @@ ListDelegatedServicesForAccountOutcomeCallable OrganizationsClient::ListDelegate
   return task->get_future();
 }
 
-void OrganizationsClient::ListDelegatedServicesForAccountAsync(const ListDelegatedServicesForAccountRequest& request, const ListDelegatedServicesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListDelegatedServicesForAccountAsyncHelper(OrganizationsClient const * const clientThis, const ListDelegatedServicesForAccountRequest& request, const ListDelegatedServicesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDelegatedServicesForAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDelegatedServicesForAccount(request), context);
 }
 
-void OrganizationsClient::ListDelegatedServicesForAccountAsyncHelper(const ListDelegatedServicesForAccountRequest& request, const ListDelegatedServicesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListDelegatedServicesForAccountAsync(const ListDelegatedServicesForAccountRequest& request, const ListDelegatedServicesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDelegatedServicesForAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListDelegatedServicesForAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 ListHandshakesForAccountOutcome OrganizationsClient::ListHandshakesForAccount(const ListHandshakesForAccountRequest& request) const
@@ -1030,14 +1030,14 @@ ListHandshakesForAccountOutcomeCallable OrganizationsClient::ListHandshakesForAc
   return task->get_future();
 }
 
-void OrganizationsClient::ListHandshakesForAccountAsync(const ListHandshakesForAccountRequest& request, const ListHandshakesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListHandshakesForAccountAsyncHelper(OrganizationsClient const * const clientThis, const ListHandshakesForAccountRequest& request, const ListHandshakesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHandshakesForAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListHandshakesForAccount(request), context);
 }
 
-void OrganizationsClient::ListHandshakesForAccountAsyncHelper(const ListHandshakesForAccountRequest& request, const ListHandshakesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListHandshakesForAccountAsync(const ListHandshakesForAccountRequest& request, const ListHandshakesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListHandshakesForAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListHandshakesForAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 ListHandshakesForOrganizationOutcome OrganizationsClient::ListHandshakesForOrganization(const ListHandshakesForOrganizationRequest& request) const
@@ -1054,14 +1054,14 @@ ListHandshakesForOrganizationOutcomeCallable OrganizationsClient::ListHandshakes
   return task->get_future();
 }
 
-void OrganizationsClient::ListHandshakesForOrganizationAsync(const ListHandshakesForOrganizationRequest& request, const ListHandshakesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListHandshakesForOrganizationAsyncHelper(OrganizationsClient const * const clientThis, const ListHandshakesForOrganizationRequest& request, const ListHandshakesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHandshakesForOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListHandshakesForOrganization(request), context);
 }
 
-void OrganizationsClient::ListHandshakesForOrganizationAsyncHelper(const ListHandshakesForOrganizationRequest& request, const ListHandshakesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListHandshakesForOrganizationAsync(const ListHandshakesForOrganizationRequest& request, const ListHandshakesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListHandshakesForOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListHandshakesForOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOrganizationalUnitsForParentOutcome OrganizationsClient::ListOrganizationalUnitsForParent(const ListOrganizationalUnitsForParentRequest& request) const
@@ -1078,14 +1078,14 @@ ListOrganizationalUnitsForParentOutcomeCallable OrganizationsClient::ListOrganiz
   return task->get_future();
 }
 
-void OrganizationsClient::ListOrganizationalUnitsForParentAsync(const ListOrganizationalUnitsForParentRequest& request, const ListOrganizationalUnitsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListOrganizationalUnitsForParentAsyncHelper(OrganizationsClient const * const clientThis, const ListOrganizationalUnitsForParentRequest& request, const ListOrganizationalUnitsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationalUnitsForParentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOrganizationalUnitsForParent(request), context);
 }
 
-void OrganizationsClient::ListOrganizationalUnitsForParentAsyncHelper(const ListOrganizationalUnitsForParentRequest& request, const ListOrganizationalUnitsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListOrganizationalUnitsForParentAsync(const ListOrganizationalUnitsForParentRequest& request, const ListOrganizationalUnitsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOrganizationalUnitsForParent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListOrganizationalUnitsForParentAsyncHelper( this, request, handler, context ); } );
 }
 
 ListParentsOutcome OrganizationsClient::ListParents(const ListParentsRequest& request) const
@@ -1102,14 +1102,14 @@ ListParentsOutcomeCallable OrganizationsClient::ListParentsCallable(const ListPa
   return task->get_future();
 }
 
-void OrganizationsClient::ListParentsAsync(const ListParentsRequest& request, const ListParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListParentsAsyncHelper(OrganizationsClient const * const clientThis, const ListParentsRequest& request, const ListParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListParentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListParents(request), context);
 }
 
-void OrganizationsClient::ListParentsAsyncHelper(const ListParentsRequest& request, const ListParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListParentsAsync(const ListParentsRequest& request, const ListParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListParents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListParentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPoliciesOutcome OrganizationsClient::ListPolicies(const ListPoliciesRequest& request) const
@@ -1126,14 +1126,14 @@ ListPoliciesOutcomeCallable OrganizationsClient::ListPoliciesCallable(const List
   return task->get_future();
 }
 
-void OrganizationsClient::ListPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListPoliciesAsyncHelper(OrganizationsClient const * const clientThis, const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPolicies(request), context);
 }
 
-void OrganizationsClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPoliciesForTargetOutcome OrganizationsClient::ListPoliciesForTarget(const ListPoliciesForTargetRequest& request) const
@@ -1150,14 +1150,14 @@ ListPoliciesForTargetOutcomeCallable OrganizationsClient::ListPoliciesForTargetC
   return task->get_future();
 }
 
-void OrganizationsClient::ListPoliciesForTargetAsync(const ListPoliciesForTargetRequest& request, const ListPoliciesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListPoliciesForTargetAsyncHelper(OrganizationsClient const * const clientThis, const ListPoliciesForTargetRequest& request, const ListPoliciesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPoliciesForTargetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPoliciesForTarget(request), context);
 }
 
-void OrganizationsClient::ListPoliciesForTargetAsyncHelper(const ListPoliciesForTargetRequest& request, const ListPoliciesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListPoliciesForTargetAsync(const ListPoliciesForTargetRequest& request, const ListPoliciesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPoliciesForTarget(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListPoliciesForTargetAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRootsOutcome OrganizationsClient::ListRoots(const ListRootsRequest& request) const
@@ -1174,14 +1174,14 @@ ListRootsOutcomeCallable OrganizationsClient::ListRootsCallable(const ListRootsR
   return task->get_future();
 }
 
-void OrganizationsClient::ListRootsAsync(const ListRootsRequest& request, const ListRootsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListRootsAsyncHelper(OrganizationsClient const * const clientThis, const ListRootsRequest& request, const ListRootsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRootsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRoots(request), context);
 }
 
-void OrganizationsClient::ListRootsAsyncHelper(const ListRootsRequest& request, const ListRootsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListRootsAsync(const ListRootsRequest& request, const ListRootsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRoots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListRootsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome OrganizationsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1198,14 +1198,14 @@ ListTagsForResourceOutcomeCallable OrganizationsClient::ListTagsForResourceCalla
   return task->get_future();
 }
 
-void OrganizationsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListTagsForResourceAsyncHelper(OrganizationsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void OrganizationsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTargetsForPolicyOutcome OrganizationsClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest& request) const
@@ -1222,14 +1222,14 @@ ListTargetsForPolicyOutcomeCallable OrganizationsClient::ListTargetsForPolicyCal
   return task->get_future();
 }
 
-void OrganizationsClient::ListTargetsForPolicyAsync(const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientListTargetsForPolicyAsyncHelper(OrganizationsClient const * const clientThis, const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTargetsForPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTargetsForPolicy(request), context);
 }
 
-void OrganizationsClient::ListTargetsForPolicyAsyncHelper(const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::ListTargetsForPolicyAsync(const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTargetsForPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientListTargetsForPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 MoveAccountOutcome OrganizationsClient::MoveAccount(const MoveAccountRequest& request) const
@@ -1246,14 +1246,14 @@ MoveAccountOutcomeCallable OrganizationsClient::MoveAccountCallable(const MoveAc
   return task->get_future();
 }
 
-void OrganizationsClient::MoveAccountAsync(const MoveAccountRequest& request, const MoveAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientMoveAccountAsyncHelper(OrganizationsClient const * const clientThis, const MoveAccountRequest& request, const MoveAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MoveAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->MoveAccount(request), context);
 }
 
-void OrganizationsClient::MoveAccountAsyncHelper(const MoveAccountRequest& request, const MoveAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::MoveAccountAsync(const MoveAccountRequest& request, const MoveAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, MoveAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientMoveAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterDelegatedAdministratorOutcome OrganizationsClient::RegisterDelegatedAdministrator(const RegisterDelegatedAdministratorRequest& request) const
@@ -1270,14 +1270,14 @@ RegisterDelegatedAdministratorOutcomeCallable OrganizationsClient::RegisterDeleg
   return task->get_future();
 }
 
-void OrganizationsClient::RegisterDelegatedAdministratorAsync(const RegisterDelegatedAdministratorRequest& request, const RegisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientRegisterDelegatedAdministratorAsyncHelper(OrganizationsClient const * const clientThis, const RegisterDelegatedAdministratorRequest& request, const RegisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterDelegatedAdministratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterDelegatedAdministrator(request), context);
 }
 
-void OrganizationsClient::RegisterDelegatedAdministratorAsyncHelper(const RegisterDelegatedAdministratorRequest& request, const RegisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::RegisterDelegatedAdministratorAsync(const RegisterDelegatedAdministratorRequest& request, const RegisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterDelegatedAdministrator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientRegisterDelegatedAdministratorAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveAccountFromOrganizationOutcome OrganizationsClient::RemoveAccountFromOrganization(const RemoveAccountFromOrganizationRequest& request) const
@@ -1294,14 +1294,14 @@ RemoveAccountFromOrganizationOutcomeCallable OrganizationsClient::RemoveAccountF
   return task->get_future();
 }
 
-void OrganizationsClient::RemoveAccountFromOrganizationAsync(const RemoveAccountFromOrganizationRequest& request, const RemoveAccountFromOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientRemoveAccountFromOrganizationAsyncHelper(OrganizationsClient const * const clientThis, const RemoveAccountFromOrganizationRequest& request, const RemoveAccountFromOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveAccountFromOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveAccountFromOrganization(request), context);
 }
 
-void OrganizationsClient::RemoveAccountFromOrganizationAsyncHelper(const RemoveAccountFromOrganizationRequest& request, const RemoveAccountFromOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::RemoveAccountFromOrganizationAsync(const RemoveAccountFromOrganizationRequest& request, const RemoveAccountFromOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveAccountFromOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientRemoveAccountFromOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome OrganizationsClient::TagResource(const TagResourceRequest& request) const
@@ -1318,14 +1318,14 @@ TagResourceOutcomeCallable OrganizationsClient::TagResourceCallable(const TagRes
   return task->get_future();
 }
 
-void OrganizationsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientTagResourceAsyncHelper(OrganizationsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void OrganizationsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome OrganizationsClient::UntagResource(const UntagResourceRequest& request) const
@@ -1342,14 +1342,14 @@ UntagResourceOutcomeCallable OrganizationsClient::UntagResourceCallable(const Un
   return task->get_future();
 }
 
-void OrganizationsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientUntagResourceAsyncHelper(OrganizationsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void OrganizationsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateOrganizationalUnitOutcome OrganizationsClient::UpdateOrganizationalUnit(const UpdateOrganizationalUnitRequest& request) const
@@ -1366,14 +1366,14 @@ UpdateOrganizationalUnitOutcomeCallable OrganizationsClient::UpdateOrganizationa
   return task->get_future();
 }
 
-void OrganizationsClient::UpdateOrganizationalUnitAsync(const UpdateOrganizationalUnitRequest& request, const UpdateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientUpdateOrganizationalUnitAsyncHelper(OrganizationsClient const * const clientThis, const UpdateOrganizationalUnitRequest& request, const UpdateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateOrganizationalUnitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateOrganizationalUnit(request), context);
 }
 
-void OrganizationsClient::UpdateOrganizationalUnitAsyncHelper(const UpdateOrganizationalUnitRequest& request, const UpdateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::UpdateOrganizationalUnitAsync(const UpdateOrganizationalUnitRequest& request, const UpdateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateOrganizationalUnit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientUpdateOrganizationalUnitAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePolicyOutcome OrganizationsClient::UpdatePolicy(const UpdatePolicyRequest& request) const
@@ -1390,13 +1390,13 @@ UpdatePolicyOutcomeCallable OrganizationsClient::UpdatePolicyCallable(const Upda
   return task->get_future();
 }
 
-void OrganizationsClient::UpdatePolicyAsync(const UpdatePolicyRequest& request, const UpdatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClientUpdatePolicyAsyncHelper(OrganizationsClient const * const clientThis, const UpdatePolicyRequest& request, const UpdatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePolicy(request), context);
 }
 
-void OrganizationsClient::UpdatePolicyAsyncHelper(const UpdatePolicyRequest& request, const UpdatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OrganizationsClient::UpdatePolicyAsync(const UpdatePolicyRequest& request, const UpdatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OrganizationsClientUpdatePolicyAsyncHelper( this, request, handler, context ); } );
 }
 

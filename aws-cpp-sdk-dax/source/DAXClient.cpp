@@ -135,14 +135,14 @@ CreateClusterOutcomeCallable DAXClient::CreateClusterCallable(const CreateCluste
   return task->get_future();
 }
 
-void DAXClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientCreateClusterAsyncHelper(DAXClient const * const clientThis, const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCluster(request), context);
 }
 
-void DAXClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientCreateClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateParameterGroupOutcome DAXClient::CreateParameterGroup(const CreateParameterGroupRequest& request) const
@@ -159,14 +159,14 @@ CreateParameterGroupOutcomeCallable DAXClient::CreateParameterGroupCallable(cons
   return task->get_future();
 }
 
-void DAXClient::CreateParameterGroupAsync(const CreateParameterGroupRequest& request, const CreateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientCreateParameterGroupAsyncHelper(DAXClient const * const clientThis, const CreateParameterGroupRequest& request, const CreateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateParameterGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateParameterGroup(request), context);
 }
 
-void DAXClient::CreateParameterGroupAsyncHelper(const CreateParameterGroupRequest& request, const CreateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::CreateParameterGroupAsync(const CreateParameterGroupRequest& request, const CreateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientCreateParameterGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSubnetGroupOutcome DAXClient::CreateSubnetGroup(const CreateSubnetGroupRequest& request) const
@@ -183,14 +183,14 @@ CreateSubnetGroupOutcomeCallable DAXClient::CreateSubnetGroupCallable(const Crea
   return task->get_future();
 }
 
-void DAXClient::CreateSubnetGroupAsync(const CreateSubnetGroupRequest& request, const CreateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientCreateSubnetGroupAsyncHelper(DAXClient const * const clientThis, const CreateSubnetGroupRequest& request, const CreateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSubnetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSubnetGroup(request), context);
 }
 
-void DAXClient::CreateSubnetGroupAsyncHelper(const CreateSubnetGroupRequest& request, const CreateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::CreateSubnetGroupAsync(const CreateSubnetGroupRequest& request, const CreateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSubnetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientCreateSubnetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DecreaseReplicationFactorOutcome DAXClient::DecreaseReplicationFactor(const DecreaseReplicationFactorRequest& request) const
@@ -207,14 +207,14 @@ DecreaseReplicationFactorOutcomeCallable DAXClient::DecreaseReplicationFactorCal
   return task->get_future();
 }
 
-void DAXClient::DecreaseReplicationFactorAsync(const DecreaseReplicationFactorRequest& request, const DecreaseReplicationFactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientDecreaseReplicationFactorAsyncHelper(DAXClient const * const clientThis, const DecreaseReplicationFactorRequest& request, const DecreaseReplicationFactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DecreaseReplicationFactorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DecreaseReplicationFactor(request), context);
 }
 
-void DAXClient::DecreaseReplicationFactorAsyncHelper(const DecreaseReplicationFactorRequest& request, const DecreaseReplicationFactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::DecreaseReplicationFactorAsync(const DecreaseReplicationFactorRequest& request, const DecreaseReplicationFactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DecreaseReplicationFactor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientDecreaseReplicationFactorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteClusterOutcome DAXClient::DeleteCluster(const DeleteClusterRequest& request) const
@@ -231,14 +231,14 @@ DeleteClusterOutcomeCallable DAXClient::DeleteClusterCallable(const DeleteCluste
   return task->get_future();
 }
 
-void DAXClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientDeleteClusterAsyncHelper(DAXClient const * const clientThis, const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCluster(request), context);
 }
 
-void DAXClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientDeleteClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteParameterGroupOutcome DAXClient::DeleteParameterGroup(const DeleteParameterGroupRequest& request) const
@@ -255,14 +255,14 @@ DeleteParameterGroupOutcomeCallable DAXClient::DeleteParameterGroupCallable(cons
   return task->get_future();
 }
 
-void DAXClient::DeleteParameterGroupAsync(const DeleteParameterGroupRequest& request, const DeleteParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientDeleteParameterGroupAsyncHelper(DAXClient const * const clientThis, const DeleteParameterGroupRequest& request, const DeleteParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteParameterGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteParameterGroup(request), context);
 }
 
-void DAXClient::DeleteParameterGroupAsyncHelper(const DeleteParameterGroupRequest& request, const DeleteParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::DeleteParameterGroupAsync(const DeleteParameterGroupRequest& request, const DeleteParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientDeleteParameterGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSubnetGroupOutcome DAXClient::DeleteSubnetGroup(const DeleteSubnetGroupRequest& request) const
@@ -279,14 +279,14 @@ DeleteSubnetGroupOutcomeCallable DAXClient::DeleteSubnetGroupCallable(const Dele
   return task->get_future();
 }
 
-void DAXClient::DeleteSubnetGroupAsync(const DeleteSubnetGroupRequest& request, const DeleteSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientDeleteSubnetGroupAsyncHelper(DAXClient const * const clientThis, const DeleteSubnetGroupRequest& request, const DeleteSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSubnetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSubnetGroup(request), context);
 }
 
-void DAXClient::DeleteSubnetGroupAsyncHelper(const DeleteSubnetGroupRequest& request, const DeleteSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::DeleteSubnetGroupAsync(const DeleteSubnetGroupRequest& request, const DeleteSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSubnetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientDeleteSubnetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClustersOutcome DAXClient::DescribeClusters(const DescribeClustersRequest& request) const
@@ -303,14 +303,14 @@ DescribeClustersOutcomeCallable DAXClient::DescribeClustersCallable(const Descri
   return task->get_future();
 }
 
-void DAXClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientDescribeClustersAsyncHelper(DAXClient const * const clientThis, const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClustersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClusters(request), context);
 }
 
-void DAXClient::DescribeClustersAsyncHelper(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClusters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientDescribeClustersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDefaultParametersOutcome DAXClient::DescribeDefaultParameters(const DescribeDefaultParametersRequest& request) const
@@ -327,14 +327,14 @@ DescribeDefaultParametersOutcomeCallable DAXClient::DescribeDefaultParametersCal
   return task->get_future();
 }
 
-void DAXClient::DescribeDefaultParametersAsync(const DescribeDefaultParametersRequest& request, const DescribeDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientDescribeDefaultParametersAsyncHelper(DAXClient const * const clientThis, const DescribeDefaultParametersRequest& request, const DescribeDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDefaultParametersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDefaultParameters(request), context);
 }
 
-void DAXClient::DescribeDefaultParametersAsyncHelper(const DescribeDefaultParametersRequest& request, const DescribeDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::DescribeDefaultParametersAsync(const DescribeDefaultParametersRequest& request, const DescribeDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDefaultParameters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientDescribeDefaultParametersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventsOutcome DAXClient::DescribeEvents(const DescribeEventsRequest& request) const
@@ -351,14 +351,14 @@ DescribeEventsOutcomeCallable DAXClient::DescribeEventsCallable(const DescribeEv
   return task->get_future();
 }
 
-void DAXClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientDescribeEventsAsyncHelper(DAXClient const * const clientThis, const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEvents(request), context);
 }
 
-void DAXClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientDescribeEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeParameterGroupsOutcome DAXClient::DescribeParameterGroups(const DescribeParameterGroupsRequest& request) const
@@ -375,14 +375,14 @@ DescribeParameterGroupsOutcomeCallable DAXClient::DescribeParameterGroupsCallabl
   return task->get_future();
 }
 
-void DAXClient::DescribeParameterGroupsAsync(const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientDescribeParameterGroupsAsyncHelper(DAXClient const * const clientThis, const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeParameterGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeParameterGroups(request), context);
 }
 
-void DAXClient::DescribeParameterGroupsAsyncHelper(const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::DescribeParameterGroupsAsync(const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeParameterGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientDescribeParameterGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeParametersOutcome DAXClient::DescribeParameters(const DescribeParametersRequest& request) const
@@ -399,14 +399,14 @@ DescribeParametersOutcomeCallable DAXClient::DescribeParametersCallable(const De
   return task->get_future();
 }
 
-void DAXClient::DescribeParametersAsync(const DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientDescribeParametersAsyncHelper(DAXClient const * const clientThis, const DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeParametersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeParameters(request), context);
 }
 
-void DAXClient::DescribeParametersAsyncHelper(const DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::DescribeParametersAsync(const DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeParameters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientDescribeParametersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSubnetGroupsOutcome DAXClient::DescribeSubnetGroups(const DescribeSubnetGroupsRequest& request) const
@@ -423,14 +423,14 @@ DescribeSubnetGroupsOutcomeCallable DAXClient::DescribeSubnetGroupsCallable(cons
   return task->get_future();
 }
 
-void DAXClient::DescribeSubnetGroupsAsync(const DescribeSubnetGroupsRequest& request, const DescribeSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientDescribeSubnetGroupsAsyncHelper(DAXClient const * const clientThis, const DescribeSubnetGroupsRequest& request, const DescribeSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSubnetGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSubnetGroups(request), context);
 }
 
-void DAXClient::DescribeSubnetGroupsAsyncHelper(const DescribeSubnetGroupsRequest& request, const DescribeSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::DescribeSubnetGroupsAsync(const DescribeSubnetGroupsRequest& request, const DescribeSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSubnetGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientDescribeSubnetGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 IncreaseReplicationFactorOutcome DAXClient::IncreaseReplicationFactor(const IncreaseReplicationFactorRequest& request) const
@@ -447,14 +447,14 @@ IncreaseReplicationFactorOutcomeCallable DAXClient::IncreaseReplicationFactorCal
   return task->get_future();
 }
 
-void DAXClient::IncreaseReplicationFactorAsync(const IncreaseReplicationFactorRequest& request, const IncreaseReplicationFactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientIncreaseReplicationFactorAsyncHelper(DAXClient const * const clientThis, const IncreaseReplicationFactorRequest& request, const IncreaseReplicationFactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->IncreaseReplicationFactorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->IncreaseReplicationFactor(request), context);
 }
 
-void DAXClient::IncreaseReplicationFactorAsyncHelper(const IncreaseReplicationFactorRequest& request, const IncreaseReplicationFactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::IncreaseReplicationFactorAsync(const IncreaseReplicationFactorRequest& request, const IncreaseReplicationFactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, IncreaseReplicationFactor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientIncreaseReplicationFactorAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsOutcome DAXClient::ListTags(const ListTagsRequest& request) const
@@ -471,14 +471,14 @@ ListTagsOutcomeCallable DAXClient::ListTagsCallable(const ListTagsRequest& reque
   return task->get_future();
 }
 
-void DAXClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientListTagsAsyncHelper(DAXClient const * const clientThis, const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTags(request), context);
 }
 
-void DAXClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientListTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 RebootNodeOutcome DAXClient::RebootNode(const RebootNodeRequest& request) const
@@ -495,14 +495,14 @@ RebootNodeOutcomeCallable DAXClient::RebootNodeCallable(const RebootNodeRequest&
   return task->get_future();
 }
 
-void DAXClient::RebootNodeAsync(const RebootNodeRequest& request, const RebootNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientRebootNodeAsyncHelper(DAXClient const * const clientThis, const RebootNodeRequest& request, const RebootNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RebootNodeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RebootNode(request), context);
 }
 
-void DAXClient::RebootNodeAsyncHelper(const RebootNodeRequest& request, const RebootNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::RebootNodeAsync(const RebootNodeRequest& request, const RebootNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RebootNode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientRebootNodeAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome DAXClient::TagResource(const TagResourceRequest& request) const
@@ -519,14 +519,14 @@ TagResourceOutcomeCallable DAXClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void DAXClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientTagResourceAsyncHelper(DAXClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void DAXClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome DAXClient::UntagResource(const UntagResourceRequest& request) const
@@ -543,14 +543,14 @@ UntagResourceOutcomeCallable DAXClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void DAXClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientUntagResourceAsyncHelper(DAXClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void DAXClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateClusterOutcome DAXClient::UpdateCluster(const UpdateClusterRequest& request) const
@@ -567,14 +567,14 @@ UpdateClusterOutcomeCallable DAXClient::UpdateClusterCallable(const UpdateCluste
   return task->get_future();
 }
 
-void DAXClient::UpdateClusterAsync(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientUpdateClusterAsyncHelper(DAXClient const * const clientThis, const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCluster(request), context);
 }
 
-void DAXClient::UpdateClusterAsyncHelper(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::UpdateClusterAsync(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientUpdateClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateParameterGroupOutcome DAXClient::UpdateParameterGroup(const UpdateParameterGroupRequest& request) const
@@ -591,14 +591,14 @@ UpdateParameterGroupOutcomeCallable DAXClient::UpdateParameterGroupCallable(cons
   return task->get_future();
 }
 
-void DAXClient::UpdateParameterGroupAsync(const UpdateParameterGroupRequest& request, const UpdateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientUpdateParameterGroupAsyncHelper(DAXClient const * const clientThis, const UpdateParameterGroupRequest& request, const UpdateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateParameterGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateParameterGroup(request), context);
 }
 
-void DAXClient::UpdateParameterGroupAsyncHelper(const UpdateParameterGroupRequest& request, const UpdateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::UpdateParameterGroupAsync(const UpdateParameterGroupRequest& request, const UpdateParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientUpdateParameterGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSubnetGroupOutcome DAXClient::UpdateSubnetGroup(const UpdateSubnetGroupRequest& request) const
@@ -615,13 +615,13 @@ UpdateSubnetGroupOutcomeCallable DAXClient::UpdateSubnetGroupCallable(const Upda
   return task->get_future();
 }
 
-void DAXClient::UpdateSubnetGroupAsync(const UpdateSubnetGroupRequest& request, const UpdateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClientUpdateSubnetGroupAsyncHelper(DAXClient const * const clientThis, const UpdateSubnetGroupRequest& request, const UpdateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSubnetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSubnetGroup(request), context);
 }
 
-void DAXClient::UpdateSubnetGroupAsyncHelper(const UpdateSubnetGroupRequest& request, const UpdateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DAXClient::UpdateSubnetGroupAsync(const UpdateSubnetGroupRequest& request, const UpdateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSubnetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DAXClientUpdateSubnetGroupAsyncHelper( this, request, handler, context ); } );
 }
 

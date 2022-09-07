@@ -143,14 +143,14 @@ CreateAlertManagerDefinitionOutcomeCallable PrometheusServiceClient::CreateAlert
   return task->get_future();
 }
 
-void PrometheusServiceClient::CreateAlertManagerDefinitionAsync(const CreateAlertManagerDefinitionRequest& request, const CreateAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientCreateAlertManagerDefinitionAsyncHelper(PrometheusServiceClient const * const clientThis, const CreateAlertManagerDefinitionRequest& request, const CreateAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAlertManagerDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAlertManagerDefinition(request), context);
 }
 
-void PrometheusServiceClient::CreateAlertManagerDefinitionAsyncHelper(const CreateAlertManagerDefinitionRequest& request, const CreateAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::CreateAlertManagerDefinitionAsync(const CreateAlertManagerDefinitionRequest& request, const CreateAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAlertManagerDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientCreateAlertManagerDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLoggingConfigurationOutcome PrometheusServiceClient::CreateLoggingConfiguration(const CreateLoggingConfigurationRequest& request) const
@@ -175,14 +175,14 @@ CreateLoggingConfigurationOutcomeCallable PrometheusServiceClient::CreateLogging
   return task->get_future();
 }
 
-void PrometheusServiceClient::CreateLoggingConfigurationAsync(const CreateLoggingConfigurationRequest& request, const CreateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientCreateLoggingConfigurationAsyncHelper(PrometheusServiceClient const * const clientThis, const CreateLoggingConfigurationRequest& request, const CreateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLoggingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLoggingConfiguration(request), context);
 }
 
-void PrometheusServiceClient::CreateLoggingConfigurationAsyncHelper(const CreateLoggingConfigurationRequest& request, const CreateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::CreateLoggingConfigurationAsync(const CreateLoggingConfigurationRequest& request, const CreateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientCreateLoggingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRuleGroupsNamespaceOutcome PrometheusServiceClient::CreateRuleGroupsNamespace(const CreateRuleGroupsNamespaceRequest& request) const
@@ -207,14 +207,14 @@ CreateRuleGroupsNamespaceOutcomeCallable PrometheusServiceClient::CreateRuleGrou
   return task->get_future();
 }
 
-void PrometheusServiceClient::CreateRuleGroupsNamespaceAsync(const CreateRuleGroupsNamespaceRequest& request, const CreateRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientCreateRuleGroupsNamespaceAsyncHelper(PrometheusServiceClient const * const clientThis, const CreateRuleGroupsNamespaceRequest& request, const CreateRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRuleGroupsNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRuleGroupsNamespace(request), context);
 }
 
-void PrometheusServiceClient::CreateRuleGroupsNamespaceAsyncHelper(const CreateRuleGroupsNamespaceRequest& request, const CreateRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::CreateRuleGroupsNamespaceAsync(const CreateRuleGroupsNamespaceRequest& request, const CreateRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRuleGroupsNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientCreateRuleGroupsNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorkspaceOutcome PrometheusServiceClient::CreateWorkspace(const CreateWorkspaceRequest& request) const
@@ -232,14 +232,14 @@ CreateWorkspaceOutcomeCallable PrometheusServiceClient::CreateWorkspaceCallable(
   return task->get_future();
 }
 
-void PrometheusServiceClient::CreateWorkspaceAsync(const CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientCreateWorkspaceAsyncHelper(PrometheusServiceClient const * const clientThis, const CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkspaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorkspace(request), context);
 }
 
-void PrometheusServiceClient::CreateWorkspaceAsyncHelper(const CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::CreateWorkspaceAsync(const CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorkspace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientCreateWorkspaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAlertManagerDefinitionOutcome PrometheusServiceClient::DeleteAlertManagerDefinition(const DeleteAlertManagerDefinitionRequest& request) const
@@ -264,14 +264,14 @@ DeleteAlertManagerDefinitionOutcomeCallable PrometheusServiceClient::DeleteAlert
   return task->get_future();
 }
 
-void PrometheusServiceClient::DeleteAlertManagerDefinitionAsync(const DeleteAlertManagerDefinitionRequest& request, const DeleteAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientDeleteAlertManagerDefinitionAsyncHelper(PrometheusServiceClient const * const clientThis, const DeleteAlertManagerDefinitionRequest& request, const DeleteAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAlertManagerDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAlertManagerDefinition(request), context);
 }
 
-void PrometheusServiceClient::DeleteAlertManagerDefinitionAsyncHelper(const DeleteAlertManagerDefinitionRequest& request, const DeleteAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::DeleteAlertManagerDefinitionAsync(const DeleteAlertManagerDefinitionRequest& request, const DeleteAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAlertManagerDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientDeleteAlertManagerDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLoggingConfigurationOutcome PrometheusServiceClient::DeleteLoggingConfiguration(const DeleteLoggingConfigurationRequest& request) const
@@ -296,14 +296,14 @@ DeleteLoggingConfigurationOutcomeCallable PrometheusServiceClient::DeleteLogging
   return task->get_future();
 }
 
-void PrometheusServiceClient::DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientDeleteLoggingConfigurationAsyncHelper(PrometheusServiceClient const * const clientThis, const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLoggingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLoggingConfiguration(request), context);
 }
 
-void PrometheusServiceClient::DeleteLoggingConfigurationAsyncHelper(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientDeleteLoggingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRuleGroupsNamespaceOutcome PrometheusServiceClient::DeleteRuleGroupsNamespace(const DeleteRuleGroupsNamespaceRequest& request) const
@@ -334,14 +334,14 @@ DeleteRuleGroupsNamespaceOutcomeCallable PrometheusServiceClient::DeleteRuleGrou
   return task->get_future();
 }
 
-void PrometheusServiceClient::DeleteRuleGroupsNamespaceAsync(const DeleteRuleGroupsNamespaceRequest& request, const DeleteRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientDeleteRuleGroupsNamespaceAsyncHelper(PrometheusServiceClient const * const clientThis, const DeleteRuleGroupsNamespaceRequest& request, const DeleteRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleGroupsNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRuleGroupsNamespace(request), context);
 }
 
-void PrometheusServiceClient::DeleteRuleGroupsNamespaceAsyncHelper(const DeleteRuleGroupsNamespaceRequest& request, const DeleteRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::DeleteRuleGroupsNamespaceAsync(const DeleteRuleGroupsNamespaceRequest& request, const DeleteRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRuleGroupsNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientDeleteRuleGroupsNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorkspaceOutcome PrometheusServiceClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const
@@ -365,14 +365,14 @@ DeleteWorkspaceOutcomeCallable PrometheusServiceClient::DeleteWorkspaceCallable(
   return task->get_future();
 }
 
-void PrometheusServiceClient::DeleteWorkspaceAsync(const DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientDeleteWorkspaceAsyncHelper(PrometheusServiceClient const * const clientThis, const DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkspaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorkspace(request), context);
 }
 
-void PrometheusServiceClient::DeleteWorkspaceAsyncHelper(const DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::DeleteWorkspaceAsync(const DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorkspace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientDeleteWorkspaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAlertManagerDefinitionOutcome PrometheusServiceClient::DescribeAlertManagerDefinition(const DescribeAlertManagerDefinitionRequest& request) const
@@ -397,14 +397,14 @@ DescribeAlertManagerDefinitionOutcomeCallable PrometheusServiceClient::DescribeA
   return task->get_future();
 }
 
-void PrometheusServiceClient::DescribeAlertManagerDefinitionAsync(const DescribeAlertManagerDefinitionRequest& request, const DescribeAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientDescribeAlertManagerDefinitionAsyncHelper(PrometheusServiceClient const * const clientThis, const DescribeAlertManagerDefinitionRequest& request, const DescribeAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAlertManagerDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAlertManagerDefinition(request), context);
 }
 
-void PrometheusServiceClient::DescribeAlertManagerDefinitionAsyncHelper(const DescribeAlertManagerDefinitionRequest& request, const DescribeAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::DescribeAlertManagerDefinitionAsync(const DescribeAlertManagerDefinitionRequest& request, const DescribeAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAlertManagerDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientDescribeAlertManagerDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLoggingConfigurationOutcome PrometheusServiceClient::DescribeLoggingConfiguration(const DescribeLoggingConfigurationRequest& request) const
@@ -429,14 +429,14 @@ DescribeLoggingConfigurationOutcomeCallable PrometheusServiceClient::DescribeLog
   return task->get_future();
 }
 
-void PrometheusServiceClient::DescribeLoggingConfigurationAsync(const DescribeLoggingConfigurationRequest& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientDescribeLoggingConfigurationAsyncHelper(PrometheusServiceClient const * const clientThis, const DescribeLoggingConfigurationRequest& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoggingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLoggingConfiguration(request), context);
 }
 
-void PrometheusServiceClient::DescribeLoggingConfigurationAsyncHelper(const DescribeLoggingConfigurationRequest& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::DescribeLoggingConfigurationAsync(const DescribeLoggingConfigurationRequest& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientDescribeLoggingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRuleGroupsNamespaceOutcome PrometheusServiceClient::DescribeRuleGroupsNamespace(const DescribeRuleGroupsNamespaceRequest& request) const
@@ -467,14 +467,14 @@ DescribeRuleGroupsNamespaceOutcomeCallable PrometheusServiceClient::DescribeRule
   return task->get_future();
 }
 
-void PrometheusServiceClient::DescribeRuleGroupsNamespaceAsync(const DescribeRuleGroupsNamespaceRequest& request, const DescribeRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientDescribeRuleGroupsNamespaceAsyncHelper(PrometheusServiceClient const * const clientThis, const DescribeRuleGroupsNamespaceRequest& request, const DescribeRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRuleGroupsNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRuleGroupsNamespace(request), context);
 }
 
-void PrometheusServiceClient::DescribeRuleGroupsNamespaceAsyncHelper(const DescribeRuleGroupsNamespaceRequest& request, const DescribeRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::DescribeRuleGroupsNamespaceAsync(const DescribeRuleGroupsNamespaceRequest& request, const DescribeRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRuleGroupsNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientDescribeRuleGroupsNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWorkspaceOutcome PrometheusServiceClient::DescribeWorkspace(const DescribeWorkspaceRequest& request) const
@@ -498,14 +498,14 @@ DescribeWorkspaceOutcomeCallable PrometheusServiceClient::DescribeWorkspaceCalla
   return task->get_future();
 }
 
-void PrometheusServiceClient::DescribeWorkspaceAsync(const DescribeWorkspaceRequest& request, const DescribeWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientDescribeWorkspaceAsyncHelper(PrometheusServiceClient const * const clientThis, const DescribeWorkspaceRequest& request, const DescribeWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWorkspace(request), context);
 }
 
-void PrometheusServiceClient::DescribeWorkspaceAsyncHelper(const DescribeWorkspaceRequest& request, const DescribeWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::DescribeWorkspaceAsync(const DescribeWorkspaceRequest& request, const DescribeWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWorkspace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientDescribeWorkspaceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRuleGroupsNamespacesOutcome PrometheusServiceClient::ListRuleGroupsNamespaces(const ListRuleGroupsNamespacesRequest& request) const
@@ -530,14 +530,14 @@ ListRuleGroupsNamespacesOutcomeCallable PrometheusServiceClient::ListRuleGroupsN
   return task->get_future();
 }
 
-void PrometheusServiceClient::ListRuleGroupsNamespacesAsync(const ListRuleGroupsNamespacesRequest& request, const ListRuleGroupsNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientListRuleGroupsNamespacesAsyncHelper(PrometheusServiceClient const * const clientThis, const ListRuleGroupsNamespacesRequest& request, const ListRuleGroupsNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRuleGroupsNamespacesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRuleGroupsNamespaces(request), context);
 }
 
-void PrometheusServiceClient::ListRuleGroupsNamespacesAsyncHelper(const ListRuleGroupsNamespacesRequest& request, const ListRuleGroupsNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::ListRuleGroupsNamespacesAsync(const ListRuleGroupsNamespacesRequest& request, const ListRuleGroupsNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRuleGroupsNamespaces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientListRuleGroupsNamespacesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome PrometheusServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -561,14 +561,14 @@ ListTagsForResourceOutcomeCallable PrometheusServiceClient::ListTagsForResourceC
   return task->get_future();
 }
 
-void PrometheusServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientListTagsForResourceAsyncHelper(PrometheusServiceClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void PrometheusServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorkspacesOutcome PrometheusServiceClient::ListWorkspaces(const ListWorkspacesRequest& request) const
@@ -586,14 +586,14 @@ ListWorkspacesOutcomeCallable PrometheusServiceClient::ListWorkspacesCallable(co
   return task->get_future();
 }
 
-void PrometheusServiceClient::ListWorkspacesAsync(const ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientListWorkspacesAsyncHelper(PrometheusServiceClient const * const clientThis, const ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkspacesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorkspaces(request), context);
 }
 
-void PrometheusServiceClient::ListWorkspacesAsyncHelper(const ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::ListWorkspacesAsync(const ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorkspaces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientListWorkspacesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAlertManagerDefinitionOutcome PrometheusServiceClient::PutAlertManagerDefinition(const PutAlertManagerDefinitionRequest& request) const
@@ -618,14 +618,14 @@ PutAlertManagerDefinitionOutcomeCallable PrometheusServiceClient::PutAlertManage
   return task->get_future();
 }
 
-void PrometheusServiceClient::PutAlertManagerDefinitionAsync(const PutAlertManagerDefinitionRequest& request, const PutAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientPutAlertManagerDefinitionAsyncHelper(PrometheusServiceClient const * const clientThis, const PutAlertManagerDefinitionRequest& request, const PutAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAlertManagerDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAlertManagerDefinition(request), context);
 }
 
-void PrometheusServiceClient::PutAlertManagerDefinitionAsyncHelper(const PutAlertManagerDefinitionRequest& request, const PutAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::PutAlertManagerDefinitionAsync(const PutAlertManagerDefinitionRequest& request, const PutAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAlertManagerDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientPutAlertManagerDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRuleGroupsNamespaceOutcome PrometheusServiceClient::PutRuleGroupsNamespace(const PutRuleGroupsNamespaceRequest& request) const
@@ -656,14 +656,14 @@ PutRuleGroupsNamespaceOutcomeCallable PrometheusServiceClient::PutRuleGroupsName
   return task->get_future();
 }
 
-void PrometheusServiceClient::PutRuleGroupsNamespaceAsync(const PutRuleGroupsNamespaceRequest& request, const PutRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientPutRuleGroupsNamespaceAsyncHelper(PrometheusServiceClient const * const clientThis, const PutRuleGroupsNamespaceRequest& request, const PutRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRuleGroupsNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRuleGroupsNamespace(request), context);
 }
 
-void PrometheusServiceClient::PutRuleGroupsNamespaceAsyncHelper(const PutRuleGroupsNamespaceRequest& request, const PutRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::PutRuleGroupsNamespaceAsync(const PutRuleGroupsNamespaceRequest& request, const PutRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRuleGroupsNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientPutRuleGroupsNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome PrometheusServiceClient::TagResource(const TagResourceRequest& request) const
@@ -687,14 +687,14 @@ TagResourceOutcomeCallable PrometheusServiceClient::TagResourceCallable(const Ta
   return task->get_future();
 }
 
-void PrometheusServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientTagResourceAsyncHelper(PrometheusServiceClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void PrometheusServiceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome PrometheusServiceClient::UntagResource(const UntagResourceRequest& request) const
@@ -723,14 +723,14 @@ UntagResourceOutcomeCallable PrometheusServiceClient::UntagResourceCallable(cons
   return task->get_future();
 }
 
-void PrometheusServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientUntagResourceAsyncHelper(PrometheusServiceClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void PrometheusServiceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLoggingConfigurationOutcome PrometheusServiceClient::UpdateLoggingConfiguration(const UpdateLoggingConfigurationRequest& request) const
@@ -755,14 +755,14 @@ UpdateLoggingConfigurationOutcomeCallable PrometheusServiceClient::UpdateLogging
   return task->get_future();
 }
 
-void PrometheusServiceClient::UpdateLoggingConfigurationAsync(const UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientUpdateLoggingConfigurationAsyncHelper(PrometheusServiceClient const * const clientThis, const UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLoggingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLoggingConfiguration(request), context);
 }
 
-void PrometheusServiceClient::UpdateLoggingConfigurationAsyncHelper(const UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::UpdateLoggingConfigurationAsync(const UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientUpdateLoggingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWorkspaceAliasOutcome PrometheusServiceClient::UpdateWorkspaceAlias(const UpdateWorkspaceAliasRequest& request) const
@@ -787,13 +787,13 @@ UpdateWorkspaceAliasOutcomeCallable PrometheusServiceClient::UpdateWorkspaceAlia
   return task->get_future();
 }
 
-void PrometheusServiceClient::UpdateWorkspaceAliasAsync(const UpdateWorkspaceAliasRequest& request, const UpdateWorkspaceAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClientUpdateWorkspaceAliasAsyncHelper(PrometheusServiceClient const * const clientThis, const UpdateWorkspaceAliasRequest& request, const UpdateWorkspaceAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkspaceAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWorkspaceAlias(request), context);
 }
 
-void PrometheusServiceClient::UpdateWorkspaceAliasAsyncHelper(const UpdateWorkspaceAliasRequest& request, const UpdateWorkspaceAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PrometheusServiceClient::UpdateWorkspaceAliasAsync(const UpdateWorkspaceAliasRequest& request, const UpdateWorkspaceAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWorkspaceAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PrometheusServiceClientUpdateWorkspaceAliasAsyncHelper( this, request, handler, context ); } );
 }
 

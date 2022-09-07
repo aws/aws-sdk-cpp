@@ -140,14 +140,14 @@ AcceptResourceShareInvitationOutcomeCallable RAMClient::AcceptResourceShareInvit
   return task->get_future();
 }
 
-void RAMClient::AcceptResourceShareInvitationAsync(const AcceptResourceShareInvitationRequest& request, const AcceptResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientAcceptResourceShareInvitationAsyncHelper(RAMClient const * const clientThis, const AcceptResourceShareInvitationRequest& request, const AcceptResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptResourceShareInvitationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptResourceShareInvitation(request), context);
 }
 
-void RAMClient::AcceptResourceShareInvitationAsyncHelper(const AcceptResourceShareInvitationRequest& request, const AcceptResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::AcceptResourceShareInvitationAsync(const AcceptResourceShareInvitationRequest& request, const AcceptResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptResourceShareInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientAcceptResourceShareInvitationAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateResourceShareOutcome RAMClient::AssociateResourceShare(const AssociateResourceShareRequest& request) const
@@ -165,14 +165,14 @@ AssociateResourceShareOutcomeCallable RAMClient::AssociateResourceShareCallable(
   return task->get_future();
 }
 
-void RAMClient::AssociateResourceShareAsync(const AssociateResourceShareRequest& request, const AssociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientAssociateResourceShareAsyncHelper(RAMClient const * const clientThis, const AssociateResourceShareRequest& request, const AssociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateResourceShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateResourceShare(request), context);
 }
 
-void RAMClient::AssociateResourceShareAsyncHelper(const AssociateResourceShareRequest& request, const AssociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::AssociateResourceShareAsync(const AssociateResourceShareRequest& request, const AssociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateResourceShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientAssociateResourceShareAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateResourceSharePermissionOutcome RAMClient::AssociateResourceSharePermission(const AssociateResourceSharePermissionRequest& request) const
@@ -190,14 +190,14 @@ AssociateResourceSharePermissionOutcomeCallable RAMClient::AssociateResourceShar
   return task->get_future();
 }
 
-void RAMClient::AssociateResourceSharePermissionAsync(const AssociateResourceSharePermissionRequest& request, const AssociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientAssociateResourceSharePermissionAsyncHelper(RAMClient const * const clientThis, const AssociateResourceSharePermissionRequest& request, const AssociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateResourceSharePermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateResourceSharePermission(request), context);
 }
 
-void RAMClient::AssociateResourceSharePermissionAsyncHelper(const AssociateResourceSharePermissionRequest& request, const AssociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::AssociateResourceSharePermissionAsync(const AssociateResourceSharePermissionRequest& request, const AssociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateResourceSharePermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientAssociateResourceSharePermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResourceShareOutcome RAMClient::CreateResourceShare(const CreateResourceShareRequest& request) const
@@ -215,14 +215,14 @@ CreateResourceShareOutcomeCallable RAMClient::CreateResourceShareCallable(const 
   return task->get_future();
 }
 
-void RAMClient::CreateResourceShareAsync(const CreateResourceShareRequest& request, const CreateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientCreateResourceShareAsyncHelper(RAMClient const * const clientThis, const CreateResourceShareRequest& request, const CreateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResourceShare(request), context);
 }
 
-void RAMClient::CreateResourceShareAsyncHelper(const CreateResourceShareRequest& request, const CreateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::CreateResourceShareAsync(const CreateResourceShareRequest& request, const CreateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResourceShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientCreateResourceShareAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourceShareOutcome RAMClient::DeleteResourceShare(const DeleteResourceShareRequest& request) const
@@ -245,14 +245,14 @@ DeleteResourceShareOutcomeCallable RAMClient::DeleteResourceShareCallable(const 
   return task->get_future();
 }
 
-void RAMClient::DeleteResourceShareAsync(const DeleteResourceShareRequest& request, const DeleteResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientDeleteResourceShareAsyncHelper(RAMClient const * const clientThis, const DeleteResourceShareRequest& request, const DeleteResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourceShare(request), context);
 }
 
-void RAMClient::DeleteResourceShareAsyncHelper(const DeleteResourceShareRequest& request, const DeleteResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::DeleteResourceShareAsync(const DeleteResourceShareRequest& request, const DeleteResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourceShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientDeleteResourceShareAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateResourceShareOutcome RAMClient::DisassociateResourceShare(const DisassociateResourceShareRequest& request) const
@@ -270,14 +270,14 @@ DisassociateResourceShareOutcomeCallable RAMClient::DisassociateResourceShareCal
   return task->get_future();
 }
 
-void RAMClient::DisassociateResourceShareAsync(const DisassociateResourceShareRequest& request, const DisassociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientDisassociateResourceShareAsyncHelper(RAMClient const * const clientThis, const DisassociateResourceShareRequest& request, const DisassociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateResourceShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateResourceShare(request), context);
 }
 
-void RAMClient::DisassociateResourceShareAsyncHelper(const DisassociateResourceShareRequest& request, const DisassociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::DisassociateResourceShareAsync(const DisassociateResourceShareRequest& request, const DisassociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateResourceShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientDisassociateResourceShareAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateResourceSharePermissionOutcome RAMClient::DisassociateResourceSharePermission(const DisassociateResourceSharePermissionRequest& request) const
@@ -295,14 +295,14 @@ DisassociateResourceSharePermissionOutcomeCallable RAMClient::DisassociateResour
   return task->get_future();
 }
 
-void RAMClient::DisassociateResourceSharePermissionAsync(const DisassociateResourceSharePermissionRequest& request, const DisassociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientDisassociateResourceSharePermissionAsyncHelper(RAMClient const * const clientThis, const DisassociateResourceSharePermissionRequest& request, const DisassociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateResourceSharePermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateResourceSharePermission(request), context);
 }
 
-void RAMClient::DisassociateResourceSharePermissionAsyncHelper(const DisassociateResourceSharePermissionRequest& request, const DisassociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::DisassociateResourceSharePermissionAsync(const DisassociateResourceSharePermissionRequest& request, const DisassociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateResourceSharePermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientDisassociateResourceSharePermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableSharingWithAwsOrganizationOutcome RAMClient::EnableSharingWithAwsOrganization(const EnableSharingWithAwsOrganizationRequest& request) const
@@ -320,14 +320,14 @@ EnableSharingWithAwsOrganizationOutcomeCallable RAMClient::EnableSharingWithAwsO
   return task->get_future();
 }
 
-void RAMClient::EnableSharingWithAwsOrganizationAsync(const EnableSharingWithAwsOrganizationRequest& request, const EnableSharingWithAwsOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientEnableSharingWithAwsOrganizationAsyncHelper(RAMClient const * const clientThis, const EnableSharingWithAwsOrganizationRequest& request, const EnableSharingWithAwsOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableSharingWithAwsOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableSharingWithAwsOrganization(request), context);
 }
 
-void RAMClient::EnableSharingWithAwsOrganizationAsyncHelper(const EnableSharingWithAwsOrganizationRequest& request, const EnableSharingWithAwsOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::EnableSharingWithAwsOrganizationAsync(const EnableSharingWithAwsOrganizationRequest& request, const EnableSharingWithAwsOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableSharingWithAwsOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientEnableSharingWithAwsOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPermissionOutcome RAMClient::GetPermission(const GetPermissionRequest& request) const
@@ -345,14 +345,14 @@ GetPermissionOutcomeCallable RAMClient::GetPermissionCallable(const GetPermissio
   return task->get_future();
 }
 
-void RAMClient::GetPermissionAsync(const GetPermissionRequest& request, const GetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientGetPermissionAsyncHelper(RAMClient const * const clientThis, const GetPermissionRequest& request, const GetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPermission(request), context);
 }
 
-void RAMClient::GetPermissionAsyncHelper(const GetPermissionRequest& request, const GetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::GetPermissionAsync(const GetPermissionRequest& request, const GetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientGetPermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcePoliciesOutcome RAMClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
@@ -370,14 +370,14 @@ GetResourcePoliciesOutcomeCallable RAMClient::GetResourcePoliciesCallable(const 
   return task->get_future();
 }
 
-void RAMClient::GetResourcePoliciesAsync(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientGetResourcePoliciesAsyncHelper(RAMClient const * const clientThis, const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourcePolicies(request), context);
 }
 
-void RAMClient::GetResourcePoliciesAsyncHelper(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::GetResourcePoliciesAsync(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourcePolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientGetResourcePoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourceShareAssociationsOutcome RAMClient::GetResourceShareAssociations(const GetResourceShareAssociationsRequest& request) const
@@ -395,14 +395,14 @@ GetResourceShareAssociationsOutcomeCallable RAMClient::GetResourceShareAssociati
   return task->get_future();
 }
 
-void RAMClient::GetResourceShareAssociationsAsync(const GetResourceShareAssociationsRequest& request, const GetResourceShareAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientGetResourceShareAssociationsAsyncHelper(RAMClient const * const clientThis, const GetResourceShareAssociationsRequest& request, const GetResourceShareAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceShareAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourceShareAssociations(request), context);
 }
 
-void RAMClient::GetResourceShareAssociationsAsyncHelper(const GetResourceShareAssociationsRequest& request, const GetResourceShareAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::GetResourceShareAssociationsAsync(const GetResourceShareAssociationsRequest& request, const GetResourceShareAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourceShareAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientGetResourceShareAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourceShareInvitationsOutcome RAMClient::GetResourceShareInvitations(const GetResourceShareInvitationsRequest& request) const
@@ -420,14 +420,14 @@ GetResourceShareInvitationsOutcomeCallable RAMClient::GetResourceShareInvitation
   return task->get_future();
 }
 
-void RAMClient::GetResourceShareInvitationsAsync(const GetResourceShareInvitationsRequest& request, const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientGetResourceShareInvitationsAsyncHelper(RAMClient const * const clientThis, const GetResourceShareInvitationsRequest& request, const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceShareInvitationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourceShareInvitations(request), context);
 }
 
-void RAMClient::GetResourceShareInvitationsAsyncHelper(const GetResourceShareInvitationsRequest& request, const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::GetResourceShareInvitationsAsync(const GetResourceShareInvitationsRequest& request, const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourceShareInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientGetResourceShareInvitationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourceSharesOutcome RAMClient::GetResourceShares(const GetResourceSharesRequest& request) const
@@ -445,14 +445,14 @@ GetResourceSharesOutcomeCallable RAMClient::GetResourceSharesCallable(const GetR
   return task->get_future();
 }
 
-void RAMClient::GetResourceSharesAsync(const GetResourceSharesRequest& request, const GetResourceSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientGetResourceSharesAsyncHelper(RAMClient const * const clientThis, const GetResourceSharesRequest& request, const GetResourceSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceSharesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourceShares(request), context);
 }
 
-void RAMClient::GetResourceSharesAsyncHelper(const GetResourceSharesRequest& request, const GetResourceSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::GetResourceSharesAsync(const GetResourceSharesRequest& request, const GetResourceSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourceShares(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientGetResourceSharesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPendingInvitationResourcesOutcome RAMClient::ListPendingInvitationResources(const ListPendingInvitationResourcesRequest& request) const
@@ -470,14 +470,14 @@ ListPendingInvitationResourcesOutcomeCallable RAMClient::ListPendingInvitationRe
   return task->get_future();
 }
 
-void RAMClient::ListPendingInvitationResourcesAsync(const ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientListPendingInvitationResourcesAsyncHelper(RAMClient const * const clientThis, const ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPendingInvitationResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPendingInvitationResources(request), context);
 }
 
-void RAMClient::ListPendingInvitationResourcesAsyncHelper(const ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::ListPendingInvitationResourcesAsync(const ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPendingInvitationResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientListPendingInvitationResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPermissionVersionsOutcome RAMClient::ListPermissionVersions(const ListPermissionVersionsRequest& request) const
@@ -495,14 +495,14 @@ ListPermissionVersionsOutcomeCallable RAMClient::ListPermissionVersionsCallable(
   return task->get_future();
 }
 
-void RAMClient::ListPermissionVersionsAsync(const ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientListPermissionVersionsAsyncHelper(RAMClient const * const clientThis, const ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPermissionVersions(request), context);
 }
 
-void RAMClient::ListPermissionVersionsAsyncHelper(const ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::ListPermissionVersionsAsync(const ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPermissionVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientListPermissionVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPermissionsOutcome RAMClient::ListPermissions(const ListPermissionsRequest& request) const
@@ -520,14 +520,14 @@ ListPermissionsOutcomeCallable RAMClient::ListPermissionsCallable(const ListPerm
   return task->get_future();
 }
 
-void RAMClient::ListPermissionsAsync(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientListPermissionsAsyncHelper(RAMClient const * const clientThis, const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPermissions(request), context);
 }
 
-void RAMClient::ListPermissionsAsyncHelper(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::ListPermissionsAsync(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientListPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPrincipalsOutcome RAMClient::ListPrincipals(const ListPrincipalsRequest& request) const
@@ -545,14 +545,14 @@ ListPrincipalsOutcomeCallable RAMClient::ListPrincipalsCallable(const ListPrinci
   return task->get_future();
 }
 
-void RAMClient::ListPrincipalsAsync(const ListPrincipalsRequest& request, const ListPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientListPrincipalsAsyncHelper(RAMClient const * const clientThis, const ListPrincipalsRequest& request, const ListPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPrincipalsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPrincipals(request), context);
 }
 
-void RAMClient::ListPrincipalsAsyncHelper(const ListPrincipalsRequest& request, const ListPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::ListPrincipalsAsync(const ListPrincipalsRequest& request, const ListPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPrincipals(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientListPrincipalsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourceSharePermissionsOutcome RAMClient::ListResourceSharePermissions(const ListResourceSharePermissionsRequest& request) const
@@ -570,14 +570,14 @@ ListResourceSharePermissionsOutcomeCallable RAMClient::ListResourceSharePermissi
   return task->get_future();
 }
 
-void RAMClient::ListResourceSharePermissionsAsync(const ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientListResourceSharePermissionsAsyncHelper(RAMClient const * const clientThis, const ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceSharePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourceSharePermissions(request), context);
 }
 
-void RAMClient::ListResourceSharePermissionsAsyncHelper(const ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::ListResourceSharePermissionsAsync(const ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourceSharePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientListResourceSharePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourceTypesOutcome RAMClient::ListResourceTypes(const ListResourceTypesRequest& request) const
@@ -595,14 +595,14 @@ ListResourceTypesOutcomeCallable RAMClient::ListResourceTypesCallable(const List
   return task->get_future();
 }
 
-void RAMClient::ListResourceTypesAsync(const ListResourceTypesRequest& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientListResourceTypesAsyncHelper(RAMClient const * const clientThis, const ListResourceTypesRequest& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourceTypes(request), context);
 }
 
-void RAMClient::ListResourceTypesAsyncHelper(const ListResourceTypesRequest& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::ListResourceTypesAsync(const ListResourceTypesRequest& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourceTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientListResourceTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourcesOutcome RAMClient::ListResources(const ListResourcesRequest& request) const
@@ -620,14 +620,14 @@ ListResourcesOutcomeCallable RAMClient::ListResourcesCallable(const ListResource
   return task->get_future();
 }
 
-void RAMClient::ListResourcesAsync(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientListResourcesAsyncHelper(RAMClient const * const clientThis, const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResources(request), context);
 }
 
-void RAMClient::ListResourcesAsyncHelper(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::ListResourcesAsync(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientListResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 PromoteResourceShareCreatedFromPolicyOutcome RAMClient::PromoteResourceShareCreatedFromPolicy(const PromoteResourceShareCreatedFromPolicyRequest& request) const
@@ -650,14 +650,14 @@ PromoteResourceShareCreatedFromPolicyOutcomeCallable RAMClient::PromoteResourceS
   return task->get_future();
 }
 
-void RAMClient::PromoteResourceShareCreatedFromPolicyAsync(const PromoteResourceShareCreatedFromPolicyRequest& request, const PromoteResourceShareCreatedFromPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientPromoteResourceShareCreatedFromPolicyAsyncHelper(RAMClient const * const clientThis, const PromoteResourceShareCreatedFromPolicyRequest& request, const PromoteResourceShareCreatedFromPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PromoteResourceShareCreatedFromPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PromoteResourceShareCreatedFromPolicy(request), context);
 }
 
-void RAMClient::PromoteResourceShareCreatedFromPolicyAsyncHelper(const PromoteResourceShareCreatedFromPolicyRequest& request, const PromoteResourceShareCreatedFromPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::PromoteResourceShareCreatedFromPolicyAsync(const PromoteResourceShareCreatedFromPolicyRequest& request, const PromoteResourceShareCreatedFromPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PromoteResourceShareCreatedFromPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientPromoteResourceShareCreatedFromPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectResourceShareInvitationOutcome RAMClient::RejectResourceShareInvitation(const RejectResourceShareInvitationRequest& request) const
@@ -675,14 +675,14 @@ RejectResourceShareInvitationOutcomeCallable RAMClient::RejectResourceShareInvit
   return task->get_future();
 }
 
-void RAMClient::RejectResourceShareInvitationAsync(const RejectResourceShareInvitationRequest& request, const RejectResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientRejectResourceShareInvitationAsyncHelper(RAMClient const * const clientThis, const RejectResourceShareInvitationRequest& request, const RejectResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectResourceShareInvitationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectResourceShareInvitation(request), context);
 }
 
-void RAMClient::RejectResourceShareInvitationAsyncHelper(const RejectResourceShareInvitationRequest& request, const RejectResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::RejectResourceShareInvitationAsync(const RejectResourceShareInvitationRequest& request, const RejectResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectResourceShareInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientRejectResourceShareInvitationAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome RAMClient::TagResource(const TagResourceRequest& request) const
@@ -700,14 +700,14 @@ TagResourceOutcomeCallable RAMClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void RAMClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientTagResourceAsyncHelper(RAMClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void RAMClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome RAMClient::UntagResource(const UntagResourceRequest& request) const
@@ -725,14 +725,14 @@ UntagResourceOutcomeCallable RAMClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void RAMClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientUntagResourceAsyncHelper(RAMClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void RAMClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateResourceShareOutcome RAMClient::UpdateResourceShare(const UpdateResourceShareRequest& request) const
@@ -750,13 +750,13 @@ UpdateResourceShareOutcomeCallable RAMClient::UpdateResourceShareCallable(const 
   return task->get_future();
 }
 
-void RAMClient::UpdateResourceShareAsync(const UpdateResourceShareRequest& request, const UpdateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClientUpdateResourceShareAsyncHelper(RAMClient const * const clientThis, const UpdateResourceShareRequest& request, const UpdateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateResourceShare(request), context);
 }
 
-void RAMClient::UpdateResourceShareAsyncHelper(const UpdateResourceShareRequest& request, const UpdateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RAMClient::UpdateResourceShareAsync(const UpdateResourceShareRequest& request, const UpdateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateResourceShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RAMClientUpdateResourceShareAsyncHelper( this, request, handler, context ); } );
 }
 

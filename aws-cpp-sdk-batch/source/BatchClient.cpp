@@ -139,14 +139,14 @@ CancelJobOutcomeCallable BatchClient::CancelJobCallable(const CancelJobRequest& 
   return task->get_future();
 }
 
-void BatchClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientCancelJobAsyncHelper(BatchClient const * const clientThis, const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelJob(request), context);
 }
 
-void BatchClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientCancelJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateComputeEnvironmentOutcome BatchClient::CreateComputeEnvironment(const CreateComputeEnvironmentRequest& request) const
@@ -164,14 +164,14 @@ CreateComputeEnvironmentOutcomeCallable BatchClient::CreateComputeEnvironmentCal
   return task->get_future();
 }
 
-void BatchClient::CreateComputeEnvironmentAsync(const CreateComputeEnvironmentRequest& request, const CreateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientCreateComputeEnvironmentAsyncHelper(BatchClient const * const clientThis, const CreateComputeEnvironmentRequest& request, const CreateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateComputeEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateComputeEnvironment(request), context);
 }
 
-void BatchClient::CreateComputeEnvironmentAsyncHelper(const CreateComputeEnvironmentRequest& request, const CreateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::CreateComputeEnvironmentAsync(const CreateComputeEnvironmentRequest& request, const CreateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateComputeEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientCreateComputeEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateJobQueueOutcome BatchClient::CreateJobQueue(const CreateJobQueueRequest& request) const
@@ -189,14 +189,14 @@ CreateJobQueueOutcomeCallable BatchClient::CreateJobQueueCallable(const CreateJo
   return task->get_future();
 }
 
-void BatchClient::CreateJobQueueAsync(const CreateJobQueueRequest& request, const CreateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientCreateJobQueueAsyncHelper(BatchClient const * const clientThis, const CreateJobQueueRequest& request, const CreateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobQueueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateJobQueue(request), context);
 }
 
-void BatchClient::CreateJobQueueAsyncHelper(const CreateJobQueueRequest& request, const CreateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::CreateJobQueueAsync(const CreateJobQueueRequest& request, const CreateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateJobQueue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientCreateJobQueueAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSchedulingPolicyOutcome BatchClient::CreateSchedulingPolicy(const CreateSchedulingPolicyRequest& request) const
@@ -214,14 +214,14 @@ CreateSchedulingPolicyOutcomeCallable BatchClient::CreateSchedulingPolicyCallabl
   return task->get_future();
 }
 
-void BatchClient::CreateSchedulingPolicyAsync(const CreateSchedulingPolicyRequest& request, const CreateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientCreateSchedulingPolicyAsyncHelper(BatchClient const * const clientThis, const CreateSchedulingPolicyRequest& request, const CreateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSchedulingPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSchedulingPolicy(request), context);
 }
 
-void BatchClient::CreateSchedulingPolicyAsyncHelper(const CreateSchedulingPolicyRequest& request, const CreateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::CreateSchedulingPolicyAsync(const CreateSchedulingPolicyRequest& request, const CreateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSchedulingPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientCreateSchedulingPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteComputeEnvironmentOutcome BatchClient::DeleteComputeEnvironment(const DeleteComputeEnvironmentRequest& request) const
@@ -239,14 +239,14 @@ DeleteComputeEnvironmentOutcomeCallable BatchClient::DeleteComputeEnvironmentCal
   return task->get_future();
 }
 
-void BatchClient::DeleteComputeEnvironmentAsync(const DeleteComputeEnvironmentRequest& request, const DeleteComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientDeleteComputeEnvironmentAsyncHelper(BatchClient const * const clientThis, const DeleteComputeEnvironmentRequest& request, const DeleteComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteComputeEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteComputeEnvironment(request), context);
 }
 
-void BatchClient::DeleteComputeEnvironmentAsyncHelper(const DeleteComputeEnvironmentRequest& request, const DeleteComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::DeleteComputeEnvironmentAsync(const DeleteComputeEnvironmentRequest& request, const DeleteComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteComputeEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientDeleteComputeEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteJobQueueOutcome BatchClient::DeleteJobQueue(const DeleteJobQueueRequest& request) const
@@ -264,14 +264,14 @@ DeleteJobQueueOutcomeCallable BatchClient::DeleteJobQueueCallable(const DeleteJo
   return task->get_future();
 }
 
-void BatchClient::DeleteJobQueueAsync(const DeleteJobQueueRequest& request, const DeleteJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientDeleteJobQueueAsyncHelper(BatchClient const * const clientThis, const DeleteJobQueueRequest& request, const DeleteJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobQueueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteJobQueue(request), context);
 }
 
-void BatchClient::DeleteJobQueueAsyncHelper(const DeleteJobQueueRequest& request, const DeleteJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::DeleteJobQueueAsync(const DeleteJobQueueRequest& request, const DeleteJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteJobQueue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientDeleteJobQueueAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSchedulingPolicyOutcome BatchClient::DeleteSchedulingPolicy(const DeleteSchedulingPolicyRequest& request) const
@@ -289,14 +289,14 @@ DeleteSchedulingPolicyOutcomeCallable BatchClient::DeleteSchedulingPolicyCallabl
   return task->get_future();
 }
 
-void BatchClient::DeleteSchedulingPolicyAsync(const DeleteSchedulingPolicyRequest& request, const DeleteSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientDeleteSchedulingPolicyAsyncHelper(BatchClient const * const clientThis, const DeleteSchedulingPolicyRequest& request, const DeleteSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSchedulingPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSchedulingPolicy(request), context);
 }
 
-void BatchClient::DeleteSchedulingPolicyAsyncHelper(const DeleteSchedulingPolicyRequest& request, const DeleteSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::DeleteSchedulingPolicyAsync(const DeleteSchedulingPolicyRequest& request, const DeleteSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSchedulingPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientDeleteSchedulingPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterJobDefinitionOutcome BatchClient::DeregisterJobDefinition(const DeregisterJobDefinitionRequest& request) const
@@ -314,14 +314,14 @@ DeregisterJobDefinitionOutcomeCallable BatchClient::DeregisterJobDefinitionCalla
   return task->get_future();
 }
 
-void BatchClient::DeregisterJobDefinitionAsync(const DeregisterJobDefinitionRequest& request, const DeregisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientDeregisterJobDefinitionAsyncHelper(BatchClient const * const clientThis, const DeregisterJobDefinitionRequest& request, const DeregisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterJobDefinition(request), context);
 }
 
-void BatchClient::DeregisterJobDefinitionAsyncHelper(const DeregisterJobDefinitionRequest& request, const DeregisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::DeregisterJobDefinitionAsync(const DeregisterJobDefinitionRequest& request, const DeregisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientDeregisterJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeComputeEnvironmentsOutcome BatchClient::DescribeComputeEnvironments(const DescribeComputeEnvironmentsRequest& request) const
@@ -339,14 +339,14 @@ DescribeComputeEnvironmentsOutcomeCallable BatchClient::DescribeComputeEnvironme
   return task->get_future();
 }
 
-void BatchClient::DescribeComputeEnvironmentsAsync(const DescribeComputeEnvironmentsRequest& request, const DescribeComputeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientDescribeComputeEnvironmentsAsyncHelper(BatchClient const * const clientThis, const DescribeComputeEnvironmentsRequest& request, const DescribeComputeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeComputeEnvironmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeComputeEnvironments(request), context);
 }
 
-void BatchClient::DescribeComputeEnvironmentsAsyncHelper(const DescribeComputeEnvironmentsRequest& request, const DescribeComputeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::DescribeComputeEnvironmentsAsync(const DescribeComputeEnvironmentsRequest& request, const DescribeComputeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeComputeEnvironments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientDescribeComputeEnvironmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJobDefinitionsOutcome BatchClient::DescribeJobDefinitions(const DescribeJobDefinitionsRequest& request) const
@@ -364,14 +364,14 @@ DescribeJobDefinitionsOutcomeCallable BatchClient::DescribeJobDefinitionsCallabl
   return task->get_future();
 }
 
-void BatchClient::DescribeJobDefinitionsAsync(const DescribeJobDefinitionsRequest& request, const DescribeJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientDescribeJobDefinitionsAsyncHelper(BatchClient const * const clientThis, const DescribeJobDefinitionsRequest& request, const DescribeJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJobDefinitions(request), context);
 }
 
-void BatchClient::DescribeJobDefinitionsAsyncHelper(const DescribeJobDefinitionsRequest& request, const DescribeJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::DescribeJobDefinitionsAsync(const DescribeJobDefinitionsRequest& request, const DescribeJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJobDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientDescribeJobDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJobQueuesOutcome BatchClient::DescribeJobQueues(const DescribeJobQueuesRequest& request) const
@@ -389,14 +389,14 @@ DescribeJobQueuesOutcomeCallable BatchClient::DescribeJobQueuesCallable(const De
   return task->get_future();
 }
 
-void BatchClient::DescribeJobQueuesAsync(const DescribeJobQueuesRequest& request, const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientDescribeJobQueuesAsyncHelper(BatchClient const * const clientThis, const DescribeJobQueuesRequest& request, const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobQueuesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJobQueues(request), context);
 }
 
-void BatchClient::DescribeJobQueuesAsyncHelper(const DescribeJobQueuesRequest& request, const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::DescribeJobQueuesAsync(const DescribeJobQueuesRequest& request, const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJobQueues(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientDescribeJobQueuesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJobsOutcome BatchClient::DescribeJobs(const DescribeJobsRequest& request) const
@@ -414,14 +414,14 @@ DescribeJobsOutcomeCallable BatchClient::DescribeJobsCallable(const DescribeJobs
   return task->get_future();
 }
 
-void BatchClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientDescribeJobsAsyncHelper(BatchClient const * const clientThis, const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJobs(request), context);
 }
 
-void BatchClient::DescribeJobsAsyncHelper(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientDescribeJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSchedulingPoliciesOutcome BatchClient::DescribeSchedulingPolicies(const DescribeSchedulingPoliciesRequest& request) const
@@ -439,14 +439,14 @@ DescribeSchedulingPoliciesOutcomeCallable BatchClient::DescribeSchedulingPolicie
   return task->get_future();
 }
 
-void BatchClient::DescribeSchedulingPoliciesAsync(const DescribeSchedulingPoliciesRequest& request, const DescribeSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientDescribeSchedulingPoliciesAsyncHelper(BatchClient const * const clientThis, const DescribeSchedulingPoliciesRequest& request, const DescribeSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSchedulingPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSchedulingPolicies(request), context);
 }
 
-void BatchClient::DescribeSchedulingPoliciesAsyncHelper(const DescribeSchedulingPoliciesRequest& request, const DescribeSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::DescribeSchedulingPoliciesAsync(const DescribeSchedulingPoliciesRequest& request, const DescribeSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSchedulingPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientDescribeSchedulingPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobsOutcome BatchClient::ListJobs(const ListJobsRequest& request) const
@@ -464,14 +464,14 @@ ListJobsOutcomeCallable BatchClient::ListJobsCallable(const ListJobsRequest& req
   return task->get_future();
 }
 
-void BatchClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientListJobsAsyncHelper(BatchClient const * const clientThis, const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobs(request), context);
 }
 
-void BatchClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientListJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSchedulingPoliciesOutcome BatchClient::ListSchedulingPolicies(const ListSchedulingPoliciesRequest& request) const
@@ -489,14 +489,14 @@ ListSchedulingPoliciesOutcomeCallable BatchClient::ListSchedulingPoliciesCallabl
   return task->get_future();
 }
 
-void BatchClient::ListSchedulingPoliciesAsync(const ListSchedulingPoliciesRequest& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientListSchedulingPoliciesAsyncHelper(BatchClient const * const clientThis, const ListSchedulingPoliciesRequest& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSchedulingPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSchedulingPolicies(request), context);
 }
 
-void BatchClient::ListSchedulingPoliciesAsyncHelper(const ListSchedulingPoliciesRequest& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::ListSchedulingPoliciesAsync(const ListSchedulingPoliciesRequest& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSchedulingPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientListSchedulingPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome BatchClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -520,14 +520,14 @@ ListTagsForResourceOutcomeCallable BatchClient::ListTagsForResourceCallable(cons
   return task->get_future();
 }
 
-void BatchClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientListTagsForResourceAsyncHelper(BatchClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void BatchClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterJobDefinitionOutcome BatchClient::RegisterJobDefinition(const RegisterJobDefinitionRequest& request) const
@@ -545,14 +545,14 @@ RegisterJobDefinitionOutcomeCallable BatchClient::RegisterJobDefinitionCallable(
   return task->get_future();
 }
 
-void BatchClient::RegisterJobDefinitionAsync(const RegisterJobDefinitionRequest& request, const RegisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientRegisterJobDefinitionAsyncHelper(BatchClient const * const clientThis, const RegisterJobDefinitionRequest& request, const RegisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterJobDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterJobDefinition(request), context);
 }
 
-void BatchClient::RegisterJobDefinitionAsyncHelper(const RegisterJobDefinitionRequest& request, const RegisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::RegisterJobDefinitionAsync(const RegisterJobDefinitionRequest& request, const RegisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterJobDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientRegisterJobDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 SubmitJobOutcome BatchClient::SubmitJob(const SubmitJobRequest& request) const
@@ -570,14 +570,14 @@ SubmitJobOutcomeCallable BatchClient::SubmitJobCallable(const SubmitJobRequest& 
   return task->get_future();
 }
 
-void BatchClient::SubmitJobAsync(const SubmitJobRequest& request, const SubmitJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientSubmitJobAsyncHelper(BatchClient const * const clientThis, const SubmitJobRequest& request, const SubmitJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SubmitJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SubmitJob(request), context);
 }
 
-void BatchClient::SubmitJobAsyncHelper(const SubmitJobRequest& request, const SubmitJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::SubmitJobAsync(const SubmitJobRequest& request, const SubmitJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SubmitJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientSubmitJobAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome BatchClient::TagResource(const TagResourceRequest& request) const
@@ -601,14 +601,14 @@ TagResourceOutcomeCallable BatchClient::TagResourceCallable(const TagResourceReq
   return task->get_future();
 }
 
-void BatchClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientTagResourceAsyncHelper(BatchClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void BatchClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TerminateJobOutcome BatchClient::TerminateJob(const TerminateJobRequest& request) const
@@ -626,14 +626,14 @@ TerminateJobOutcomeCallable BatchClient::TerminateJobCallable(const TerminateJob
   return task->get_future();
 }
 
-void BatchClient::TerminateJobAsync(const TerminateJobRequest& request, const TerminateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientTerminateJobAsyncHelper(BatchClient const * const clientThis, const TerminateJobRequest& request, const TerminateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TerminateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TerminateJob(request), context);
 }
 
-void BatchClient::TerminateJobAsyncHelper(const TerminateJobRequest& request, const TerminateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::TerminateJobAsync(const TerminateJobRequest& request, const TerminateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TerminateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientTerminateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome BatchClient::UntagResource(const UntagResourceRequest& request) const
@@ -662,14 +662,14 @@ UntagResourceOutcomeCallable BatchClient::UntagResourceCallable(const UntagResou
   return task->get_future();
 }
 
-void BatchClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientUntagResourceAsyncHelper(BatchClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void BatchClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateComputeEnvironmentOutcome BatchClient::UpdateComputeEnvironment(const UpdateComputeEnvironmentRequest& request) const
@@ -687,14 +687,14 @@ UpdateComputeEnvironmentOutcomeCallable BatchClient::UpdateComputeEnvironmentCal
   return task->get_future();
 }
 
-void BatchClient::UpdateComputeEnvironmentAsync(const UpdateComputeEnvironmentRequest& request, const UpdateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientUpdateComputeEnvironmentAsyncHelper(BatchClient const * const clientThis, const UpdateComputeEnvironmentRequest& request, const UpdateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateComputeEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateComputeEnvironment(request), context);
 }
 
-void BatchClient::UpdateComputeEnvironmentAsyncHelper(const UpdateComputeEnvironmentRequest& request, const UpdateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::UpdateComputeEnvironmentAsync(const UpdateComputeEnvironmentRequest& request, const UpdateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateComputeEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientUpdateComputeEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateJobQueueOutcome BatchClient::UpdateJobQueue(const UpdateJobQueueRequest& request) const
@@ -712,14 +712,14 @@ UpdateJobQueueOutcomeCallable BatchClient::UpdateJobQueueCallable(const UpdateJo
   return task->get_future();
 }
 
-void BatchClient::UpdateJobQueueAsync(const UpdateJobQueueRequest& request, const UpdateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientUpdateJobQueueAsyncHelper(BatchClient const * const clientThis, const UpdateJobQueueRequest& request, const UpdateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobQueueAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateJobQueue(request), context);
 }
 
-void BatchClient::UpdateJobQueueAsyncHelper(const UpdateJobQueueRequest& request, const UpdateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::UpdateJobQueueAsync(const UpdateJobQueueRequest& request, const UpdateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateJobQueue(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientUpdateJobQueueAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSchedulingPolicyOutcome BatchClient::UpdateSchedulingPolicy(const UpdateSchedulingPolicyRequest& request) const
@@ -737,13 +737,13 @@ UpdateSchedulingPolicyOutcomeCallable BatchClient::UpdateSchedulingPolicyCallabl
   return task->get_future();
 }
 
-void BatchClient::UpdateSchedulingPolicyAsync(const UpdateSchedulingPolicyRequest& request, const UpdateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClientUpdateSchedulingPolicyAsyncHelper(BatchClient const * const clientThis, const UpdateSchedulingPolicyRequest& request, const UpdateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSchedulingPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSchedulingPolicy(request), context);
 }
 
-void BatchClient::UpdateSchedulingPolicyAsyncHelper(const UpdateSchedulingPolicyRequest& request, const UpdateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BatchClient::UpdateSchedulingPolicyAsync(const UpdateSchedulingPolicyRequest& request, const UpdateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSchedulingPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BatchClientUpdateSchedulingPolicyAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -148,14 +148,14 @@ CancelJournalKinesisStreamOutcomeCallable QLDBClient::CancelJournalKinesisStream
   return task->get_future();
 }
 
-void QLDBClient::CancelJournalKinesisStreamAsync(const CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientCancelJournalKinesisStreamAsyncHelper(QLDBClient const * const clientThis, const CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJournalKinesisStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelJournalKinesisStream(request), context);
 }
 
-void QLDBClient::CancelJournalKinesisStreamAsyncHelper(const CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::CancelJournalKinesisStreamAsync(const CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelJournalKinesisStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientCancelJournalKinesisStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLedgerOutcome QLDBClient::CreateLedger(const CreateLedgerRequest& request) const
@@ -173,14 +173,14 @@ CreateLedgerOutcomeCallable QLDBClient::CreateLedgerCallable(const CreateLedgerR
   return task->get_future();
 }
 
-void QLDBClient::CreateLedgerAsync(const CreateLedgerRequest& request, const CreateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientCreateLedgerAsyncHelper(QLDBClient const * const clientThis, const CreateLedgerRequest& request, const CreateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLedgerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLedger(request), context);
 }
 
-void QLDBClient::CreateLedgerAsyncHelper(const CreateLedgerRequest& request, const CreateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::CreateLedgerAsync(const CreateLedgerRequest& request, const CreateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLedger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientCreateLedgerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLedgerOutcome QLDBClient::DeleteLedger(const DeleteLedgerRequest& request) const
@@ -204,14 +204,14 @@ DeleteLedgerOutcomeCallable QLDBClient::DeleteLedgerCallable(const DeleteLedgerR
   return task->get_future();
 }
 
-void QLDBClient::DeleteLedgerAsync(const DeleteLedgerRequest& request, const DeleteLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientDeleteLedgerAsyncHelper(QLDBClient const * const clientThis, const DeleteLedgerRequest& request, const DeleteLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLedgerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLedger(request), context);
 }
 
-void QLDBClient::DeleteLedgerAsyncHelper(const DeleteLedgerRequest& request, const DeleteLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::DeleteLedgerAsync(const DeleteLedgerRequest& request, const DeleteLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLedger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientDeleteLedgerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJournalKinesisStreamOutcome QLDBClient::DescribeJournalKinesisStream(const DescribeJournalKinesisStreamRequest& request) const
@@ -242,14 +242,14 @@ DescribeJournalKinesisStreamOutcomeCallable QLDBClient::DescribeJournalKinesisSt
   return task->get_future();
 }
 
-void QLDBClient::DescribeJournalKinesisStreamAsync(const DescribeJournalKinesisStreamRequest& request, const DescribeJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientDescribeJournalKinesisStreamAsyncHelper(QLDBClient const * const clientThis, const DescribeJournalKinesisStreamRequest& request, const DescribeJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJournalKinesisStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJournalKinesisStream(request), context);
 }
 
-void QLDBClient::DescribeJournalKinesisStreamAsyncHelper(const DescribeJournalKinesisStreamRequest& request, const DescribeJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::DescribeJournalKinesisStreamAsync(const DescribeJournalKinesisStreamRequest& request, const DescribeJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJournalKinesisStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientDescribeJournalKinesisStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeJournalS3ExportOutcome QLDBClient::DescribeJournalS3Export(const DescribeJournalS3ExportRequest& request) const
@@ -280,14 +280,14 @@ DescribeJournalS3ExportOutcomeCallable QLDBClient::DescribeJournalS3ExportCallab
   return task->get_future();
 }
 
-void QLDBClient::DescribeJournalS3ExportAsync(const DescribeJournalS3ExportRequest& request, const DescribeJournalS3ExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientDescribeJournalS3ExportAsyncHelper(QLDBClient const * const clientThis, const DescribeJournalS3ExportRequest& request, const DescribeJournalS3ExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJournalS3ExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeJournalS3Export(request), context);
 }
 
-void QLDBClient::DescribeJournalS3ExportAsyncHelper(const DescribeJournalS3ExportRequest& request, const DescribeJournalS3ExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::DescribeJournalS3ExportAsync(const DescribeJournalS3ExportRequest& request, const DescribeJournalS3ExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeJournalS3Export(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientDescribeJournalS3ExportAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLedgerOutcome QLDBClient::DescribeLedger(const DescribeLedgerRequest& request) const
@@ -311,14 +311,14 @@ DescribeLedgerOutcomeCallable QLDBClient::DescribeLedgerCallable(const DescribeL
   return task->get_future();
 }
 
-void QLDBClient::DescribeLedgerAsync(const DescribeLedgerRequest& request, const DescribeLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientDescribeLedgerAsyncHelper(QLDBClient const * const clientThis, const DescribeLedgerRequest& request, const DescribeLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLedgerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLedger(request), context);
 }
 
-void QLDBClient::DescribeLedgerAsyncHelper(const DescribeLedgerRequest& request, const DescribeLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::DescribeLedgerAsync(const DescribeLedgerRequest& request, const DescribeLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLedger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientDescribeLedgerAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportJournalToS3Outcome QLDBClient::ExportJournalToS3(const ExportJournalToS3Request& request) const
@@ -343,14 +343,14 @@ ExportJournalToS3OutcomeCallable QLDBClient::ExportJournalToS3Callable(const Exp
   return task->get_future();
 }
 
-void QLDBClient::ExportJournalToS3Async(const ExportJournalToS3Request& request, const ExportJournalToS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientExportJournalToS3AsyncHelper(QLDBClient const * const clientThis, const ExportJournalToS3Request& request, const ExportJournalToS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportJournalToS3AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportJournalToS3(request), context);
 }
 
-void QLDBClient::ExportJournalToS3AsyncHelper(const ExportJournalToS3Request& request, const ExportJournalToS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::ExportJournalToS3Async(const ExportJournalToS3Request& request, const ExportJournalToS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportJournalToS3(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientExportJournalToS3AsyncHelper( this, request, handler, context ); } );
 }
 
 GetBlockOutcome QLDBClient::GetBlock(const GetBlockRequest& request) const
@@ -375,14 +375,14 @@ GetBlockOutcomeCallable QLDBClient::GetBlockCallable(const GetBlockRequest& requ
   return task->get_future();
 }
 
-void QLDBClient::GetBlockAsync(const GetBlockRequest& request, const GetBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientGetBlockAsyncHelper(QLDBClient const * const clientThis, const GetBlockRequest& request, const GetBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBlockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBlock(request), context);
 }
 
-void QLDBClient::GetBlockAsyncHelper(const GetBlockRequest& request, const GetBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::GetBlockAsync(const GetBlockRequest& request, const GetBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBlock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientGetBlockAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDigestOutcome QLDBClient::GetDigest(const GetDigestRequest& request) const
@@ -407,14 +407,14 @@ GetDigestOutcomeCallable QLDBClient::GetDigestCallable(const GetDigestRequest& r
   return task->get_future();
 }
 
-void QLDBClient::GetDigestAsync(const GetDigestRequest& request, const GetDigestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientGetDigestAsyncHelper(QLDBClient const * const clientThis, const GetDigestRequest& request, const GetDigestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDigestAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDigest(request), context);
 }
 
-void QLDBClient::GetDigestAsyncHelper(const GetDigestRequest& request, const GetDigestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::GetDigestAsync(const GetDigestRequest& request, const GetDigestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDigest(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientGetDigestAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRevisionOutcome QLDBClient::GetRevision(const GetRevisionRequest& request) const
@@ -439,14 +439,14 @@ GetRevisionOutcomeCallable QLDBClient::GetRevisionCallable(const GetRevisionRequ
   return task->get_future();
 }
 
-void QLDBClient::GetRevisionAsync(const GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientGetRevisionAsyncHelper(QLDBClient const * const clientThis, const GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRevisionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRevision(request), context);
 }
 
-void QLDBClient::GetRevisionAsyncHelper(const GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::GetRevisionAsync(const GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRevision(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientGetRevisionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJournalKinesisStreamsForLedgerOutcome QLDBClient::ListJournalKinesisStreamsForLedger(const ListJournalKinesisStreamsForLedgerRequest& request) const
@@ -471,14 +471,14 @@ ListJournalKinesisStreamsForLedgerOutcomeCallable QLDBClient::ListJournalKinesis
   return task->get_future();
 }
 
-void QLDBClient::ListJournalKinesisStreamsForLedgerAsync(const ListJournalKinesisStreamsForLedgerRequest& request, const ListJournalKinesisStreamsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientListJournalKinesisStreamsForLedgerAsyncHelper(QLDBClient const * const clientThis, const ListJournalKinesisStreamsForLedgerRequest& request, const ListJournalKinesisStreamsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJournalKinesisStreamsForLedgerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJournalKinesisStreamsForLedger(request), context);
 }
 
-void QLDBClient::ListJournalKinesisStreamsForLedgerAsyncHelper(const ListJournalKinesisStreamsForLedgerRequest& request, const ListJournalKinesisStreamsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::ListJournalKinesisStreamsForLedgerAsync(const ListJournalKinesisStreamsForLedgerRequest& request, const ListJournalKinesisStreamsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJournalKinesisStreamsForLedger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientListJournalKinesisStreamsForLedgerAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJournalS3ExportsOutcome QLDBClient::ListJournalS3Exports(const ListJournalS3ExportsRequest& request) const
@@ -496,14 +496,14 @@ ListJournalS3ExportsOutcomeCallable QLDBClient::ListJournalS3ExportsCallable(con
   return task->get_future();
 }
 
-void QLDBClient::ListJournalS3ExportsAsync(const ListJournalS3ExportsRequest& request, const ListJournalS3ExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientListJournalS3ExportsAsyncHelper(QLDBClient const * const clientThis, const ListJournalS3ExportsRequest& request, const ListJournalS3ExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJournalS3ExportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJournalS3Exports(request), context);
 }
 
-void QLDBClient::ListJournalS3ExportsAsyncHelper(const ListJournalS3ExportsRequest& request, const ListJournalS3ExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::ListJournalS3ExportsAsync(const ListJournalS3ExportsRequest& request, const ListJournalS3ExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJournalS3Exports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientListJournalS3ExportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJournalS3ExportsForLedgerOutcome QLDBClient::ListJournalS3ExportsForLedger(const ListJournalS3ExportsForLedgerRequest& request) const
@@ -528,14 +528,14 @@ ListJournalS3ExportsForLedgerOutcomeCallable QLDBClient::ListJournalS3ExportsFor
   return task->get_future();
 }
 
-void QLDBClient::ListJournalS3ExportsForLedgerAsync(const ListJournalS3ExportsForLedgerRequest& request, const ListJournalS3ExportsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientListJournalS3ExportsForLedgerAsyncHelper(QLDBClient const * const clientThis, const ListJournalS3ExportsForLedgerRequest& request, const ListJournalS3ExportsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJournalS3ExportsForLedgerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJournalS3ExportsForLedger(request), context);
 }
 
-void QLDBClient::ListJournalS3ExportsForLedgerAsyncHelper(const ListJournalS3ExportsForLedgerRequest& request, const ListJournalS3ExportsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::ListJournalS3ExportsForLedgerAsync(const ListJournalS3ExportsForLedgerRequest& request, const ListJournalS3ExportsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJournalS3ExportsForLedger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientListJournalS3ExportsForLedgerAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLedgersOutcome QLDBClient::ListLedgers(const ListLedgersRequest& request) const
@@ -553,14 +553,14 @@ ListLedgersOutcomeCallable QLDBClient::ListLedgersCallable(const ListLedgersRequ
   return task->get_future();
 }
 
-void QLDBClient::ListLedgersAsync(const ListLedgersRequest& request, const ListLedgersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientListLedgersAsyncHelper(QLDBClient const * const clientThis, const ListLedgersRequest& request, const ListLedgersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLedgersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLedgers(request), context);
 }
 
-void QLDBClient::ListLedgersAsyncHelper(const ListLedgersRequest& request, const ListLedgersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::ListLedgersAsync(const ListLedgersRequest& request, const ListLedgersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLedgers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientListLedgersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome QLDBClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -584,14 +584,14 @@ ListTagsForResourceOutcomeCallable QLDBClient::ListTagsForResourceCallable(const
   return task->get_future();
 }
 
-void QLDBClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientListTagsForResourceAsyncHelper(QLDBClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void QLDBClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StreamJournalToKinesisOutcome QLDBClient::StreamJournalToKinesis(const StreamJournalToKinesisRequest& request) const
@@ -616,14 +616,14 @@ StreamJournalToKinesisOutcomeCallable QLDBClient::StreamJournalToKinesisCallable
   return task->get_future();
 }
 
-void QLDBClient::StreamJournalToKinesisAsync(const StreamJournalToKinesisRequest& request, const StreamJournalToKinesisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientStreamJournalToKinesisAsyncHelper(QLDBClient const * const clientThis, const StreamJournalToKinesisRequest& request, const StreamJournalToKinesisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StreamJournalToKinesisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StreamJournalToKinesis(request), context);
 }
 
-void QLDBClient::StreamJournalToKinesisAsyncHelper(const StreamJournalToKinesisRequest& request, const StreamJournalToKinesisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::StreamJournalToKinesisAsync(const StreamJournalToKinesisRequest& request, const StreamJournalToKinesisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StreamJournalToKinesis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientStreamJournalToKinesisAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome QLDBClient::TagResource(const TagResourceRequest& request) const
@@ -647,14 +647,14 @@ TagResourceOutcomeCallable QLDBClient::TagResourceCallable(const TagResourceRequ
   return task->get_future();
 }
 
-void QLDBClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientTagResourceAsyncHelper(QLDBClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void QLDBClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome QLDBClient::UntagResource(const UntagResourceRequest& request) const
@@ -683,14 +683,14 @@ UntagResourceOutcomeCallable QLDBClient::UntagResourceCallable(const UntagResour
   return task->get_future();
 }
 
-void QLDBClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientUntagResourceAsyncHelper(QLDBClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void QLDBClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLedgerOutcome QLDBClient::UpdateLedger(const UpdateLedgerRequest& request) const
@@ -714,14 +714,14 @@ UpdateLedgerOutcomeCallable QLDBClient::UpdateLedgerCallable(const UpdateLedgerR
   return task->get_future();
 }
 
-void QLDBClient::UpdateLedgerAsync(const UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientUpdateLedgerAsyncHelper(QLDBClient const * const clientThis, const UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLedgerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLedger(request), context);
 }
 
-void QLDBClient::UpdateLedgerAsyncHelper(const UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::UpdateLedgerAsync(const UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLedger(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientUpdateLedgerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLedgerPermissionsModeOutcome QLDBClient::UpdateLedgerPermissionsMode(const UpdateLedgerPermissionsModeRequest& request) const
@@ -746,13 +746,13 @@ UpdateLedgerPermissionsModeOutcomeCallable QLDBClient::UpdateLedgerPermissionsMo
   return task->get_future();
 }
 
-void QLDBClient::UpdateLedgerPermissionsModeAsync(const UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClientUpdateLedgerPermissionsModeAsyncHelper(QLDBClient const * const clientThis, const UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLedgerPermissionsModeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLedgerPermissionsMode(request), context);
 }
 
-void QLDBClient::UpdateLedgerPermissionsModeAsyncHelper(const UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBClient::UpdateLedgerPermissionsModeAsync(const UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLedgerPermissionsMode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBClientUpdateLedgerPermissionsModeAsyncHelper( this, request, handler, context ); } );
 }
 

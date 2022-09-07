@@ -145,14 +145,14 @@ ActivateAnomalyDetectorOutcomeCallable LookoutMetricsClient::ActivateAnomalyDete
   return task->get_future();
 }
 
-void LookoutMetricsClient::ActivateAnomalyDetectorAsync(const ActivateAnomalyDetectorRequest& request, const ActivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientActivateAnomalyDetectorAsyncHelper(LookoutMetricsClient const * const clientThis, const ActivateAnomalyDetectorRequest& request, const ActivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ActivateAnomalyDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ActivateAnomalyDetector(request), context);
 }
 
-void LookoutMetricsClient::ActivateAnomalyDetectorAsyncHelper(const ActivateAnomalyDetectorRequest& request, const ActivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::ActivateAnomalyDetectorAsync(const ActivateAnomalyDetectorRequest& request, const ActivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ActivateAnomalyDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientActivateAnomalyDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 BackTestAnomalyDetectorOutcome LookoutMetricsClient::BackTestAnomalyDetector(const BackTestAnomalyDetectorRequest& request) const
@@ -170,14 +170,14 @@ BackTestAnomalyDetectorOutcomeCallable LookoutMetricsClient::BackTestAnomalyDete
   return task->get_future();
 }
 
-void LookoutMetricsClient::BackTestAnomalyDetectorAsync(const BackTestAnomalyDetectorRequest& request, const BackTestAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientBackTestAnomalyDetectorAsyncHelper(LookoutMetricsClient const * const clientThis, const BackTestAnomalyDetectorRequest& request, const BackTestAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BackTestAnomalyDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BackTestAnomalyDetector(request), context);
 }
 
-void LookoutMetricsClient::BackTestAnomalyDetectorAsyncHelper(const BackTestAnomalyDetectorRequest& request, const BackTestAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::BackTestAnomalyDetectorAsync(const BackTestAnomalyDetectorRequest& request, const BackTestAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BackTestAnomalyDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientBackTestAnomalyDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAlertOutcome LookoutMetricsClient::CreateAlert(const CreateAlertRequest& request) const
@@ -195,14 +195,14 @@ CreateAlertOutcomeCallable LookoutMetricsClient::CreateAlertCallable(const Creat
   return task->get_future();
 }
 
-void LookoutMetricsClient::CreateAlertAsync(const CreateAlertRequest& request, const CreateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientCreateAlertAsyncHelper(LookoutMetricsClient const * const clientThis, const CreateAlertRequest& request, const CreateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAlertAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAlert(request), context);
 }
 
-void LookoutMetricsClient::CreateAlertAsyncHelper(const CreateAlertRequest& request, const CreateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::CreateAlertAsync(const CreateAlertRequest& request, const CreateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAlert(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientCreateAlertAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAnomalyDetectorOutcome LookoutMetricsClient::CreateAnomalyDetector(const CreateAnomalyDetectorRequest& request) const
@@ -220,14 +220,14 @@ CreateAnomalyDetectorOutcomeCallable LookoutMetricsClient::CreateAnomalyDetector
   return task->get_future();
 }
 
-void LookoutMetricsClient::CreateAnomalyDetectorAsync(const CreateAnomalyDetectorRequest& request, const CreateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientCreateAnomalyDetectorAsyncHelper(LookoutMetricsClient const * const clientThis, const CreateAnomalyDetectorRequest& request, const CreateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAnomalyDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAnomalyDetector(request), context);
 }
 
-void LookoutMetricsClient::CreateAnomalyDetectorAsyncHelper(const CreateAnomalyDetectorRequest& request, const CreateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::CreateAnomalyDetectorAsync(const CreateAnomalyDetectorRequest& request, const CreateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAnomalyDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientCreateAnomalyDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMetricSetOutcome LookoutMetricsClient::CreateMetricSet(const CreateMetricSetRequest& request) const
@@ -245,14 +245,14 @@ CreateMetricSetOutcomeCallable LookoutMetricsClient::CreateMetricSetCallable(con
   return task->get_future();
 }
 
-void LookoutMetricsClient::CreateMetricSetAsync(const CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientCreateMetricSetAsyncHelper(LookoutMetricsClient const * const clientThis, const CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMetricSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMetricSet(request), context);
 }
 
-void LookoutMetricsClient::CreateMetricSetAsyncHelper(const CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::CreateMetricSetAsync(const CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMetricSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientCreateMetricSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeactivateAnomalyDetectorOutcome LookoutMetricsClient::DeactivateAnomalyDetector(const DeactivateAnomalyDetectorRequest& request) const
@@ -270,14 +270,14 @@ DeactivateAnomalyDetectorOutcomeCallable LookoutMetricsClient::DeactivateAnomaly
   return task->get_future();
 }
 
-void LookoutMetricsClient::DeactivateAnomalyDetectorAsync(const DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientDeactivateAnomalyDetectorAsyncHelper(LookoutMetricsClient const * const clientThis, const DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeactivateAnomalyDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeactivateAnomalyDetector(request), context);
 }
 
-void LookoutMetricsClient::DeactivateAnomalyDetectorAsyncHelper(const DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::DeactivateAnomalyDetectorAsync(const DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeactivateAnomalyDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientDeactivateAnomalyDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAlertOutcome LookoutMetricsClient::DeleteAlert(const DeleteAlertRequest& request) const
@@ -295,14 +295,14 @@ DeleteAlertOutcomeCallable LookoutMetricsClient::DeleteAlertCallable(const Delet
   return task->get_future();
 }
 
-void LookoutMetricsClient::DeleteAlertAsync(const DeleteAlertRequest& request, const DeleteAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientDeleteAlertAsyncHelper(LookoutMetricsClient const * const clientThis, const DeleteAlertRequest& request, const DeleteAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAlertAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAlert(request), context);
 }
 
-void LookoutMetricsClient::DeleteAlertAsyncHelper(const DeleteAlertRequest& request, const DeleteAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::DeleteAlertAsync(const DeleteAlertRequest& request, const DeleteAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAlert(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientDeleteAlertAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAnomalyDetectorOutcome LookoutMetricsClient::DeleteAnomalyDetector(const DeleteAnomalyDetectorRequest& request) const
@@ -320,14 +320,14 @@ DeleteAnomalyDetectorOutcomeCallable LookoutMetricsClient::DeleteAnomalyDetector
   return task->get_future();
 }
 
-void LookoutMetricsClient::DeleteAnomalyDetectorAsync(const DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientDeleteAnomalyDetectorAsyncHelper(LookoutMetricsClient const * const clientThis, const DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnomalyDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAnomalyDetector(request), context);
 }
 
-void LookoutMetricsClient::DeleteAnomalyDetectorAsyncHelper(const DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::DeleteAnomalyDetectorAsync(const DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAnomalyDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientDeleteAnomalyDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAlertOutcome LookoutMetricsClient::DescribeAlert(const DescribeAlertRequest& request) const
@@ -345,14 +345,14 @@ DescribeAlertOutcomeCallable LookoutMetricsClient::DescribeAlertCallable(const D
   return task->get_future();
 }
 
-void LookoutMetricsClient::DescribeAlertAsync(const DescribeAlertRequest& request, const DescribeAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientDescribeAlertAsyncHelper(LookoutMetricsClient const * const clientThis, const DescribeAlertRequest& request, const DescribeAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAlertAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAlert(request), context);
 }
 
-void LookoutMetricsClient::DescribeAlertAsyncHelper(const DescribeAlertRequest& request, const DescribeAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::DescribeAlertAsync(const DescribeAlertRequest& request, const DescribeAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAlert(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientDescribeAlertAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAnomalyDetectionExecutionsOutcome LookoutMetricsClient::DescribeAnomalyDetectionExecutions(const DescribeAnomalyDetectionExecutionsRequest& request) const
@@ -370,14 +370,14 @@ DescribeAnomalyDetectionExecutionsOutcomeCallable LookoutMetricsClient::Describe
   return task->get_future();
 }
 
-void LookoutMetricsClient::DescribeAnomalyDetectionExecutionsAsync(const DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientDescribeAnomalyDetectionExecutionsAsyncHelper(LookoutMetricsClient const * const clientThis, const DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnomalyDetectionExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAnomalyDetectionExecutions(request), context);
 }
 
-void LookoutMetricsClient::DescribeAnomalyDetectionExecutionsAsyncHelper(const DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::DescribeAnomalyDetectionExecutionsAsync(const DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAnomalyDetectionExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientDescribeAnomalyDetectionExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAnomalyDetectorOutcome LookoutMetricsClient::DescribeAnomalyDetector(const DescribeAnomalyDetectorRequest& request) const
@@ -395,14 +395,14 @@ DescribeAnomalyDetectorOutcomeCallable LookoutMetricsClient::DescribeAnomalyDete
   return task->get_future();
 }
 
-void LookoutMetricsClient::DescribeAnomalyDetectorAsync(const DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientDescribeAnomalyDetectorAsyncHelper(LookoutMetricsClient const * const clientThis, const DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnomalyDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAnomalyDetector(request), context);
 }
 
-void LookoutMetricsClient::DescribeAnomalyDetectorAsyncHelper(const DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::DescribeAnomalyDetectorAsync(const DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAnomalyDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientDescribeAnomalyDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMetricSetOutcome LookoutMetricsClient::DescribeMetricSet(const DescribeMetricSetRequest& request) const
@@ -420,14 +420,14 @@ DescribeMetricSetOutcomeCallable LookoutMetricsClient::DescribeMetricSetCallable
   return task->get_future();
 }
 
-void LookoutMetricsClient::DescribeMetricSetAsync(const DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientDescribeMetricSetAsyncHelper(LookoutMetricsClient const * const clientThis, const DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMetricSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMetricSet(request), context);
 }
 
-void LookoutMetricsClient::DescribeMetricSetAsyncHelper(const DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::DescribeMetricSetAsync(const DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMetricSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientDescribeMetricSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DetectMetricSetConfigOutcome LookoutMetricsClient::DetectMetricSetConfig(const DetectMetricSetConfigRequest& request) const
@@ -445,14 +445,14 @@ DetectMetricSetConfigOutcomeCallable LookoutMetricsClient::DetectMetricSetConfig
   return task->get_future();
 }
 
-void LookoutMetricsClient::DetectMetricSetConfigAsync(const DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientDetectMetricSetConfigAsyncHelper(LookoutMetricsClient const * const clientThis, const DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectMetricSetConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectMetricSetConfig(request), context);
 }
 
-void LookoutMetricsClient::DetectMetricSetConfigAsyncHelper(const DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::DetectMetricSetConfigAsync(const DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectMetricSetConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientDetectMetricSetConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAnomalyGroupOutcome LookoutMetricsClient::GetAnomalyGroup(const GetAnomalyGroupRequest& request) const
@@ -470,14 +470,14 @@ GetAnomalyGroupOutcomeCallable LookoutMetricsClient::GetAnomalyGroupCallable(con
   return task->get_future();
 }
 
-void LookoutMetricsClient::GetAnomalyGroupAsync(const GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientGetAnomalyGroupAsyncHelper(LookoutMetricsClient const * const clientThis, const GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAnomalyGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAnomalyGroup(request), context);
 }
 
-void LookoutMetricsClient::GetAnomalyGroupAsyncHelper(const GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::GetAnomalyGroupAsync(const GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAnomalyGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientGetAnomalyGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDataQualityMetricsOutcome LookoutMetricsClient::GetDataQualityMetrics(const GetDataQualityMetricsRequest& request) const
@@ -495,14 +495,14 @@ GetDataQualityMetricsOutcomeCallable LookoutMetricsClient::GetDataQualityMetrics
   return task->get_future();
 }
 
-void LookoutMetricsClient::GetDataQualityMetricsAsync(const GetDataQualityMetricsRequest& request, const GetDataQualityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientGetDataQualityMetricsAsyncHelper(LookoutMetricsClient const * const clientThis, const GetDataQualityMetricsRequest& request, const GetDataQualityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataQualityMetricsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDataQualityMetrics(request), context);
 }
 
-void LookoutMetricsClient::GetDataQualityMetricsAsyncHelper(const GetDataQualityMetricsRequest& request, const GetDataQualityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::GetDataQualityMetricsAsync(const GetDataQualityMetricsRequest& request, const GetDataQualityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDataQualityMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientGetDataQualityMetricsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFeedbackOutcome LookoutMetricsClient::GetFeedback(const GetFeedbackRequest& request) const
@@ -520,14 +520,14 @@ GetFeedbackOutcomeCallable LookoutMetricsClient::GetFeedbackCallable(const GetFe
   return task->get_future();
 }
 
-void LookoutMetricsClient::GetFeedbackAsync(const GetFeedbackRequest& request, const GetFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientGetFeedbackAsyncHelper(LookoutMetricsClient const * const clientThis, const GetFeedbackRequest& request, const GetFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFeedback(request), context);
 }
 
-void LookoutMetricsClient::GetFeedbackAsyncHelper(const GetFeedbackRequest& request, const GetFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::GetFeedbackAsync(const GetFeedbackRequest& request, const GetFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientGetFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSampleDataOutcome LookoutMetricsClient::GetSampleData(const GetSampleDataRequest& request) const
@@ -545,14 +545,14 @@ GetSampleDataOutcomeCallable LookoutMetricsClient::GetSampleDataCallable(const G
   return task->get_future();
 }
 
-void LookoutMetricsClient::GetSampleDataAsync(const GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientGetSampleDataAsyncHelper(LookoutMetricsClient const * const clientThis, const GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSampleDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSampleData(request), context);
 }
 
-void LookoutMetricsClient::GetSampleDataAsyncHelper(const GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::GetSampleDataAsync(const GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSampleData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientGetSampleDataAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAlertsOutcome LookoutMetricsClient::ListAlerts(const ListAlertsRequest& request) const
@@ -570,14 +570,14 @@ ListAlertsOutcomeCallable LookoutMetricsClient::ListAlertsCallable(const ListAle
   return task->get_future();
 }
 
-void LookoutMetricsClient::ListAlertsAsync(const ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientListAlertsAsyncHelper(LookoutMetricsClient const * const clientThis, const ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAlertsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAlerts(request), context);
 }
 
-void LookoutMetricsClient::ListAlertsAsyncHelper(const ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::ListAlertsAsync(const ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAlerts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientListAlertsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAnomalyDetectorsOutcome LookoutMetricsClient::ListAnomalyDetectors(const ListAnomalyDetectorsRequest& request) const
@@ -595,14 +595,14 @@ ListAnomalyDetectorsOutcomeCallable LookoutMetricsClient::ListAnomalyDetectorsCa
   return task->get_future();
 }
 
-void LookoutMetricsClient::ListAnomalyDetectorsAsync(const ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientListAnomalyDetectorsAsyncHelper(LookoutMetricsClient const * const clientThis, const ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAnomalyDetectorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAnomalyDetectors(request), context);
 }
 
-void LookoutMetricsClient::ListAnomalyDetectorsAsyncHelper(const ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::ListAnomalyDetectorsAsync(const ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAnomalyDetectors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientListAnomalyDetectorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAnomalyGroupRelatedMetricsOutcome LookoutMetricsClient::ListAnomalyGroupRelatedMetrics(const ListAnomalyGroupRelatedMetricsRequest& request) const
@@ -620,14 +620,14 @@ ListAnomalyGroupRelatedMetricsOutcomeCallable LookoutMetricsClient::ListAnomalyG
   return task->get_future();
 }
 
-void LookoutMetricsClient::ListAnomalyGroupRelatedMetricsAsync(const ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientListAnomalyGroupRelatedMetricsAsyncHelper(LookoutMetricsClient const * const clientThis, const ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAnomalyGroupRelatedMetricsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAnomalyGroupRelatedMetrics(request), context);
 }
 
-void LookoutMetricsClient::ListAnomalyGroupRelatedMetricsAsyncHelper(const ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::ListAnomalyGroupRelatedMetricsAsync(const ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAnomalyGroupRelatedMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientListAnomalyGroupRelatedMetricsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAnomalyGroupSummariesOutcome LookoutMetricsClient::ListAnomalyGroupSummaries(const ListAnomalyGroupSummariesRequest& request) const
@@ -645,14 +645,14 @@ ListAnomalyGroupSummariesOutcomeCallable LookoutMetricsClient::ListAnomalyGroupS
   return task->get_future();
 }
 
-void LookoutMetricsClient::ListAnomalyGroupSummariesAsync(const ListAnomalyGroupSummariesRequest& request, const ListAnomalyGroupSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientListAnomalyGroupSummariesAsyncHelper(LookoutMetricsClient const * const clientThis, const ListAnomalyGroupSummariesRequest& request, const ListAnomalyGroupSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAnomalyGroupSummariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAnomalyGroupSummaries(request), context);
 }
 
-void LookoutMetricsClient::ListAnomalyGroupSummariesAsyncHelper(const ListAnomalyGroupSummariesRequest& request, const ListAnomalyGroupSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::ListAnomalyGroupSummariesAsync(const ListAnomalyGroupSummariesRequest& request, const ListAnomalyGroupSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAnomalyGroupSummaries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientListAnomalyGroupSummariesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAnomalyGroupTimeSeriesOutcome LookoutMetricsClient::ListAnomalyGroupTimeSeries(const ListAnomalyGroupTimeSeriesRequest& request) const
@@ -670,14 +670,14 @@ ListAnomalyGroupTimeSeriesOutcomeCallable LookoutMetricsClient::ListAnomalyGroup
   return task->get_future();
 }
 
-void LookoutMetricsClient::ListAnomalyGroupTimeSeriesAsync(const ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientListAnomalyGroupTimeSeriesAsyncHelper(LookoutMetricsClient const * const clientThis, const ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAnomalyGroupTimeSeriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAnomalyGroupTimeSeries(request), context);
 }
 
-void LookoutMetricsClient::ListAnomalyGroupTimeSeriesAsyncHelper(const ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::ListAnomalyGroupTimeSeriesAsync(const ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAnomalyGroupTimeSeries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientListAnomalyGroupTimeSeriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMetricSetsOutcome LookoutMetricsClient::ListMetricSets(const ListMetricSetsRequest& request) const
@@ -695,14 +695,14 @@ ListMetricSetsOutcomeCallable LookoutMetricsClient::ListMetricSetsCallable(const
   return task->get_future();
 }
 
-void LookoutMetricsClient::ListMetricSetsAsync(const ListMetricSetsRequest& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientListMetricSetsAsyncHelper(LookoutMetricsClient const * const clientThis, const ListMetricSetsRequest& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMetricSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMetricSets(request), context);
 }
 
-void LookoutMetricsClient::ListMetricSetsAsyncHelper(const ListMetricSetsRequest& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::ListMetricSetsAsync(const ListMetricSetsRequest& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMetricSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientListMetricSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome LookoutMetricsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -726,14 +726,14 @@ ListTagsForResourceOutcomeCallable LookoutMetricsClient::ListTagsForResourceCall
   return task->get_future();
 }
 
-void LookoutMetricsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientListTagsForResourceAsyncHelper(LookoutMetricsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void LookoutMetricsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutFeedbackOutcome LookoutMetricsClient::PutFeedback(const PutFeedbackRequest& request) const
@@ -751,14 +751,14 @@ PutFeedbackOutcomeCallable LookoutMetricsClient::PutFeedbackCallable(const PutFe
   return task->get_future();
 }
 
-void LookoutMetricsClient::PutFeedbackAsync(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientPutFeedbackAsyncHelper(LookoutMetricsClient const * const clientThis, const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutFeedback(request), context);
 }
 
-void LookoutMetricsClient::PutFeedbackAsyncHelper(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::PutFeedbackAsync(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientPutFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome LookoutMetricsClient::TagResource(const TagResourceRequest& request) const
@@ -782,14 +782,14 @@ TagResourceOutcomeCallable LookoutMetricsClient::TagResourceCallable(const TagRe
   return task->get_future();
 }
 
-void LookoutMetricsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientTagResourceAsyncHelper(LookoutMetricsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void LookoutMetricsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome LookoutMetricsClient::UntagResource(const UntagResourceRequest& request) const
@@ -818,14 +818,14 @@ UntagResourceOutcomeCallable LookoutMetricsClient::UntagResourceCallable(const U
   return task->get_future();
 }
 
-void LookoutMetricsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientUntagResourceAsyncHelper(LookoutMetricsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void LookoutMetricsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAlertOutcome LookoutMetricsClient::UpdateAlert(const UpdateAlertRequest& request) const
@@ -843,14 +843,14 @@ UpdateAlertOutcomeCallable LookoutMetricsClient::UpdateAlertCallable(const Updat
   return task->get_future();
 }
 
-void LookoutMetricsClient::UpdateAlertAsync(const UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientUpdateAlertAsyncHelper(LookoutMetricsClient const * const clientThis, const UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAlertAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAlert(request), context);
 }
 
-void LookoutMetricsClient::UpdateAlertAsyncHelper(const UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::UpdateAlertAsync(const UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAlert(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientUpdateAlertAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAnomalyDetectorOutcome LookoutMetricsClient::UpdateAnomalyDetector(const UpdateAnomalyDetectorRequest& request) const
@@ -868,14 +868,14 @@ UpdateAnomalyDetectorOutcomeCallable LookoutMetricsClient::UpdateAnomalyDetector
   return task->get_future();
 }
 
-void LookoutMetricsClient::UpdateAnomalyDetectorAsync(const UpdateAnomalyDetectorRequest& request, const UpdateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientUpdateAnomalyDetectorAsyncHelper(LookoutMetricsClient const * const clientThis, const UpdateAnomalyDetectorRequest& request, const UpdateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAnomalyDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAnomalyDetector(request), context);
 }
 
-void LookoutMetricsClient::UpdateAnomalyDetectorAsyncHelper(const UpdateAnomalyDetectorRequest& request, const UpdateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::UpdateAnomalyDetectorAsync(const UpdateAnomalyDetectorRequest& request, const UpdateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAnomalyDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientUpdateAnomalyDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMetricSetOutcome LookoutMetricsClient::UpdateMetricSet(const UpdateMetricSetRequest& request) const
@@ -893,13 +893,13 @@ UpdateMetricSetOutcomeCallable LookoutMetricsClient::UpdateMetricSetCallable(con
   return task->get_future();
 }
 
-void LookoutMetricsClient::UpdateMetricSetAsync(const UpdateMetricSetRequest& request, const UpdateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClientUpdateMetricSetAsyncHelper(LookoutMetricsClient const * const clientThis, const UpdateMetricSetRequest& request, const UpdateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMetricSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMetricSet(request), context);
 }
 
-void LookoutMetricsClient::UpdateMetricSetAsyncHelper(const UpdateMetricSetRequest& request, const UpdateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutMetricsClient::UpdateMetricSetAsync(const UpdateMetricSetRequest& request, const UpdateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMetricSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutMetricsClientUpdateMetricSetAsyncHelper( this, request, handler, context ); } );
 }
 

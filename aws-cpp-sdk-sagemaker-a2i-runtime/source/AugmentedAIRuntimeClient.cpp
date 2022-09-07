@@ -126,14 +126,14 @@ DeleteHumanLoopOutcomeCallable AugmentedAIRuntimeClient::DeleteHumanLoopCallable
   return task->get_future();
 }
 
-void AugmentedAIRuntimeClient::DeleteHumanLoopAsync(const DeleteHumanLoopRequest& request, const DeleteHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AugmentedAIRuntimeClientDeleteHumanLoopAsyncHelper(AugmentedAIRuntimeClient const * const clientThis, const DeleteHumanLoopRequest& request, const DeleteHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHumanLoopAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteHumanLoop(request), context);
 }
 
-void AugmentedAIRuntimeClient::DeleteHumanLoopAsyncHelper(const DeleteHumanLoopRequest& request, const DeleteHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AugmentedAIRuntimeClient::DeleteHumanLoopAsync(const DeleteHumanLoopRequest& request, const DeleteHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteHumanLoop(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AugmentedAIRuntimeClientDeleteHumanLoopAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeHumanLoopOutcome AugmentedAIRuntimeClient::DescribeHumanLoop(const DescribeHumanLoopRequest& request) const
@@ -157,14 +157,14 @@ DescribeHumanLoopOutcomeCallable AugmentedAIRuntimeClient::DescribeHumanLoopCall
   return task->get_future();
 }
 
-void AugmentedAIRuntimeClient::DescribeHumanLoopAsync(const DescribeHumanLoopRequest& request, const DescribeHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AugmentedAIRuntimeClientDescribeHumanLoopAsyncHelper(AugmentedAIRuntimeClient const * const clientThis, const DescribeHumanLoopRequest& request, const DescribeHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHumanLoopAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeHumanLoop(request), context);
 }
 
-void AugmentedAIRuntimeClient::DescribeHumanLoopAsyncHelper(const DescribeHumanLoopRequest& request, const DescribeHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AugmentedAIRuntimeClient::DescribeHumanLoopAsync(const DescribeHumanLoopRequest& request, const DescribeHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeHumanLoop(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AugmentedAIRuntimeClientDescribeHumanLoopAsyncHelper( this, request, handler, context ); } );
 }
 
 ListHumanLoopsOutcome AugmentedAIRuntimeClient::ListHumanLoops(const ListHumanLoopsRequest& request) const
@@ -187,14 +187,14 @@ ListHumanLoopsOutcomeCallable AugmentedAIRuntimeClient::ListHumanLoopsCallable(c
   return task->get_future();
 }
 
-void AugmentedAIRuntimeClient::ListHumanLoopsAsync(const ListHumanLoopsRequest& request, const ListHumanLoopsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AugmentedAIRuntimeClientListHumanLoopsAsyncHelper(AugmentedAIRuntimeClient const * const clientThis, const ListHumanLoopsRequest& request, const ListHumanLoopsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHumanLoopsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListHumanLoops(request), context);
 }
 
-void AugmentedAIRuntimeClient::ListHumanLoopsAsyncHelper(const ListHumanLoopsRequest& request, const ListHumanLoopsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AugmentedAIRuntimeClient::ListHumanLoopsAsync(const ListHumanLoopsRequest& request, const ListHumanLoopsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListHumanLoops(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AugmentedAIRuntimeClientListHumanLoopsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartHumanLoopOutcome AugmentedAIRuntimeClient::StartHumanLoop(const StartHumanLoopRequest& request) const
@@ -212,14 +212,14 @@ StartHumanLoopOutcomeCallable AugmentedAIRuntimeClient::StartHumanLoopCallable(c
   return task->get_future();
 }
 
-void AugmentedAIRuntimeClient::StartHumanLoopAsync(const StartHumanLoopRequest& request, const StartHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AugmentedAIRuntimeClientStartHumanLoopAsyncHelper(AugmentedAIRuntimeClient const * const clientThis, const StartHumanLoopRequest& request, const StartHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartHumanLoopAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartHumanLoop(request), context);
 }
 
-void AugmentedAIRuntimeClient::StartHumanLoopAsyncHelper(const StartHumanLoopRequest& request, const StartHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AugmentedAIRuntimeClient::StartHumanLoopAsync(const StartHumanLoopRequest& request, const StartHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartHumanLoop(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AugmentedAIRuntimeClientStartHumanLoopAsyncHelper( this, request, handler, context ); } );
 }
 
 StopHumanLoopOutcome AugmentedAIRuntimeClient::StopHumanLoop(const StopHumanLoopRequest& request) const
@@ -237,13 +237,13 @@ StopHumanLoopOutcomeCallable AugmentedAIRuntimeClient::StopHumanLoopCallable(con
   return task->get_future();
 }
 
-void AugmentedAIRuntimeClient::StopHumanLoopAsync(const StopHumanLoopRequest& request, const StopHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AugmentedAIRuntimeClientStopHumanLoopAsyncHelper(AugmentedAIRuntimeClient const * const clientThis, const StopHumanLoopRequest& request, const StopHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopHumanLoopAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopHumanLoop(request), context);
 }
 
-void AugmentedAIRuntimeClient::StopHumanLoopAsyncHelper(const StopHumanLoopRequest& request, const StopHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AugmentedAIRuntimeClient::StopHumanLoopAsync(const StopHumanLoopRequest& request, const StopHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopHumanLoop(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AugmentedAIRuntimeClientStopHumanLoopAsyncHelper( this, request, handler, context ); } );
 }
 

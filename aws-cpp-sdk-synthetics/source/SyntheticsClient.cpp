@@ -143,14 +143,14 @@ AssociateResourceOutcomeCallable SyntheticsClient::AssociateResourceCallable(con
   return task->get_future();
 }
 
-void SyntheticsClient::AssociateResourceAsync(const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientAssociateResourceAsyncHelper(SyntheticsClient const * const clientThis, const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateResource(request), context);
 }
 
-void SyntheticsClient::AssociateResourceAsyncHelper(const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::AssociateResourceAsync(const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientAssociateResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCanaryOutcome SyntheticsClient::CreateCanary(const CreateCanaryRequest& request) const
@@ -168,14 +168,14 @@ CreateCanaryOutcomeCallable SyntheticsClient::CreateCanaryCallable(const CreateC
   return task->get_future();
 }
 
-void SyntheticsClient::CreateCanaryAsync(const CreateCanaryRequest& request, const CreateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientCreateCanaryAsyncHelper(SyntheticsClient const * const clientThis, const CreateCanaryRequest& request, const CreateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCanaryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCanary(request), context);
 }
 
-void SyntheticsClient::CreateCanaryAsyncHelper(const CreateCanaryRequest& request, const CreateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::CreateCanaryAsync(const CreateCanaryRequest& request, const CreateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCanary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientCreateCanaryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGroupOutcome SyntheticsClient::CreateGroup(const CreateGroupRequest& request) const
@@ -193,14 +193,14 @@ CreateGroupOutcomeCallable SyntheticsClient::CreateGroupCallable(const CreateGro
   return task->get_future();
 }
 
-void SyntheticsClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientCreateGroupAsyncHelper(SyntheticsClient const * const clientThis, const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGroup(request), context);
 }
 
-void SyntheticsClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientCreateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCanaryOutcome SyntheticsClient::DeleteCanary(const DeleteCanaryRequest& request) const
@@ -224,14 +224,14 @@ DeleteCanaryOutcomeCallable SyntheticsClient::DeleteCanaryCallable(const DeleteC
   return task->get_future();
 }
 
-void SyntheticsClient::DeleteCanaryAsync(const DeleteCanaryRequest& request, const DeleteCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientDeleteCanaryAsyncHelper(SyntheticsClient const * const clientThis, const DeleteCanaryRequest& request, const DeleteCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCanaryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCanary(request), context);
 }
 
-void SyntheticsClient::DeleteCanaryAsyncHelper(const DeleteCanaryRequest& request, const DeleteCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::DeleteCanaryAsync(const DeleteCanaryRequest& request, const DeleteCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCanary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientDeleteCanaryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGroupOutcome SyntheticsClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -255,14 +255,14 @@ DeleteGroupOutcomeCallable SyntheticsClient::DeleteGroupCallable(const DeleteGro
   return task->get_future();
 }
 
-void SyntheticsClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientDeleteGroupAsyncHelper(SyntheticsClient const * const clientThis, const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGroup(request), context);
 }
 
-void SyntheticsClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientDeleteGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCanariesOutcome SyntheticsClient::DescribeCanaries(const DescribeCanariesRequest& request) const
@@ -280,14 +280,14 @@ DescribeCanariesOutcomeCallable SyntheticsClient::DescribeCanariesCallable(const
   return task->get_future();
 }
 
-void SyntheticsClient::DescribeCanariesAsync(const DescribeCanariesRequest& request, const DescribeCanariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientDescribeCanariesAsyncHelper(SyntheticsClient const * const clientThis, const DescribeCanariesRequest& request, const DescribeCanariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCanariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCanaries(request), context);
 }
 
-void SyntheticsClient::DescribeCanariesAsyncHelper(const DescribeCanariesRequest& request, const DescribeCanariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::DescribeCanariesAsync(const DescribeCanariesRequest& request, const DescribeCanariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCanaries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientDescribeCanariesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCanariesLastRunOutcome SyntheticsClient::DescribeCanariesLastRun(const DescribeCanariesLastRunRequest& request) const
@@ -305,14 +305,14 @@ DescribeCanariesLastRunOutcomeCallable SyntheticsClient::DescribeCanariesLastRun
   return task->get_future();
 }
 
-void SyntheticsClient::DescribeCanariesLastRunAsync(const DescribeCanariesLastRunRequest& request, const DescribeCanariesLastRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientDescribeCanariesLastRunAsyncHelper(SyntheticsClient const * const clientThis, const DescribeCanariesLastRunRequest& request, const DescribeCanariesLastRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCanariesLastRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCanariesLastRun(request), context);
 }
 
-void SyntheticsClient::DescribeCanariesLastRunAsyncHelper(const DescribeCanariesLastRunRequest& request, const DescribeCanariesLastRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::DescribeCanariesLastRunAsync(const DescribeCanariesLastRunRequest& request, const DescribeCanariesLastRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCanariesLastRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientDescribeCanariesLastRunAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRuntimeVersionsOutcome SyntheticsClient::DescribeRuntimeVersions(const DescribeRuntimeVersionsRequest& request) const
@@ -330,14 +330,14 @@ DescribeRuntimeVersionsOutcomeCallable SyntheticsClient::DescribeRuntimeVersions
   return task->get_future();
 }
 
-void SyntheticsClient::DescribeRuntimeVersionsAsync(const DescribeRuntimeVersionsRequest& request, const DescribeRuntimeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientDescribeRuntimeVersionsAsyncHelper(SyntheticsClient const * const clientThis, const DescribeRuntimeVersionsRequest& request, const DescribeRuntimeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRuntimeVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRuntimeVersions(request), context);
 }
 
-void SyntheticsClient::DescribeRuntimeVersionsAsyncHelper(const DescribeRuntimeVersionsRequest& request, const DescribeRuntimeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::DescribeRuntimeVersionsAsync(const DescribeRuntimeVersionsRequest& request, const DescribeRuntimeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRuntimeVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientDescribeRuntimeVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateResourceOutcome SyntheticsClient::DisassociateResource(const DisassociateResourceRequest& request) const
@@ -362,14 +362,14 @@ DisassociateResourceOutcomeCallable SyntheticsClient::DisassociateResourceCallab
   return task->get_future();
 }
 
-void SyntheticsClient::DisassociateResourceAsync(const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientDisassociateResourceAsyncHelper(SyntheticsClient const * const clientThis, const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateResource(request), context);
 }
 
-void SyntheticsClient::DisassociateResourceAsyncHelper(const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::DisassociateResourceAsync(const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientDisassociateResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCanaryOutcome SyntheticsClient::GetCanary(const GetCanaryRequest& request) const
@@ -393,14 +393,14 @@ GetCanaryOutcomeCallable SyntheticsClient::GetCanaryCallable(const GetCanaryRequ
   return task->get_future();
 }
 
-void SyntheticsClient::GetCanaryAsync(const GetCanaryRequest& request, const GetCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientGetCanaryAsyncHelper(SyntheticsClient const * const clientThis, const GetCanaryRequest& request, const GetCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCanaryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCanary(request), context);
 }
 
-void SyntheticsClient::GetCanaryAsyncHelper(const GetCanaryRequest& request, const GetCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::GetCanaryAsync(const GetCanaryRequest& request, const GetCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCanary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientGetCanaryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCanaryRunsOutcome SyntheticsClient::GetCanaryRuns(const GetCanaryRunsRequest& request) const
@@ -425,14 +425,14 @@ GetCanaryRunsOutcomeCallable SyntheticsClient::GetCanaryRunsCallable(const GetCa
   return task->get_future();
 }
 
-void SyntheticsClient::GetCanaryRunsAsync(const GetCanaryRunsRequest& request, const GetCanaryRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientGetCanaryRunsAsyncHelper(SyntheticsClient const * const clientThis, const GetCanaryRunsRequest& request, const GetCanaryRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCanaryRunsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCanaryRuns(request), context);
 }
 
-void SyntheticsClient::GetCanaryRunsAsyncHelper(const GetCanaryRunsRequest& request, const GetCanaryRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::GetCanaryRunsAsync(const GetCanaryRunsRequest& request, const GetCanaryRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCanaryRuns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientGetCanaryRunsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupOutcome SyntheticsClient::GetGroup(const GetGroupRequest& request) const
@@ -456,14 +456,14 @@ GetGroupOutcomeCallable SyntheticsClient::GetGroupCallable(const GetGroupRequest
   return task->get_future();
 }
 
-void SyntheticsClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientGetGroupAsyncHelper(SyntheticsClient const * const clientThis, const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroup(request), context);
 }
 
-void SyntheticsClient::GetGroupAsyncHelper(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientGetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssociatedGroupsOutcome SyntheticsClient::ListAssociatedGroups(const ListAssociatedGroupsRequest& request) const
@@ -488,14 +488,14 @@ ListAssociatedGroupsOutcomeCallable SyntheticsClient::ListAssociatedGroupsCallab
   return task->get_future();
 }
 
-void SyntheticsClient::ListAssociatedGroupsAsync(const ListAssociatedGroupsRequest& request, const ListAssociatedGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientListAssociatedGroupsAsyncHelper(SyntheticsClient const * const clientThis, const ListAssociatedGroupsRequest& request, const ListAssociatedGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssociatedGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssociatedGroups(request), context);
 }
 
-void SyntheticsClient::ListAssociatedGroupsAsyncHelper(const ListAssociatedGroupsRequest& request, const ListAssociatedGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::ListAssociatedGroupsAsync(const ListAssociatedGroupsRequest& request, const ListAssociatedGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssociatedGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientListAssociatedGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupResourcesOutcome SyntheticsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
@@ -520,14 +520,14 @@ ListGroupResourcesOutcomeCallable SyntheticsClient::ListGroupResourcesCallable(c
   return task->get_future();
 }
 
-void SyntheticsClient::ListGroupResourcesAsync(const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientListGroupResourcesAsyncHelper(SyntheticsClient const * const clientThis, const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroupResources(request), context);
 }
 
-void SyntheticsClient::ListGroupResourcesAsyncHelper(const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::ListGroupResourcesAsync(const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroupResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientListGroupResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupsOutcome SyntheticsClient::ListGroups(const ListGroupsRequest& request) const
@@ -545,14 +545,14 @@ ListGroupsOutcomeCallable SyntheticsClient::ListGroupsCallable(const ListGroupsR
   return task->get_future();
 }
 
-void SyntheticsClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientListGroupsAsyncHelper(SyntheticsClient const * const clientThis, const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroups(request), context);
 }
 
-void SyntheticsClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientListGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome SyntheticsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -576,14 +576,14 @@ ListTagsForResourceOutcomeCallable SyntheticsClient::ListTagsForResourceCallable
   return task->get_future();
 }
 
-void SyntheticsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientListTagsForResourceAsyncHelper(SyntheticsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void SyntheticsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartCanaryOutcome SyntheticsClient::StartCanary(const StartCanaryRequest& request) const
@@ -608,14 +608,14 @@ StartCanaryOutcomeCallable SyntheticsClient::StartCanaryCallable(const StartCana
   return task->get_future();
 }
 
-void SyntheticsClient::StartCanaryAsync(const StartCanaryRequest& request, const StartCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientStartCanaryAsyncHelper(SyntheticsClient const * const clientThis, const StartCanaryRequest& request, const StartCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartCanaryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartCanary(request), context);
 }
 
-void SyntheticsClient::StartCanaryAsyncHelper(const StartCanaryRequest& request, const StartCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::StartCanaryAsync(const StartCanaryRequest& request, const StartCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartCanary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientStartCanaryAsyncHelper( this, request, handler, context ); } );
 }
 
 StopCanaryOutcome SyntheticsClient::StopCanary(const StopCanaryRequest& request) const
@@ -640,14 +640,14 @@ StopCanaryOutcomeCallable SyntheticsClient::StopCanaryCallable(const StopCanaryR
   return task->get_future();
 }
 
-void SyntheticsClient::StopCanaryAsync(const StopCanaryRequest& request, const StopCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientStopCanaryAsyncHelper(SyntheticsClient const * const clientThis, const StopCanaryRequest& request, const StopCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopCanaryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopCanary(request), context);
 }
 
-void SyntheticsClient::StopCanaryAsyncHelper(const StopCanaryRequest& request, const StopCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::StopCanaryAsync(const StopCanaryRequest& request, const StopCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopCanary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientStopCanaryAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome SyntheticsClient::TagResource(const TagResourceRequest& request) const
@@ -671,14 +671,14 @@ TagResourceOutcomeCallable SyntheticsClient::TagResourceCallable(const TagResour
   return task->get_future();
 }
 
-void SyntheticsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientTagResourceAsyncHelper(SyntheticsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void SyntheticsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome SyntheticsClient::UntagResource(const UntagResourceRequest& request) const
@@ -707,14 +707,14 @@ UntagResourceOutcomeCallable SyntheticsClient::UntagResourceCallable(const Untag
   return task->get_future();
 }
 
-void SyntheticsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientUntagResourceAsyncHelper(SyntheticsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void SyntheticsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCanaryOutcome SyntheticsClient::UpdateCanary(const UpdateCanaryRequest& request) const
@@ -738,13 +738,13 @@ UpdateCanaryOutcomeCallable SyntheticsClient::UpdateCanaryCallable(const UpdateC
   return task->get_future();
 }
 
-void SyntheticsClient::UpdateCanaryAsync(const UpdateCanaryRequest& request, const UpdateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClientUpdateCanaryAsyncHelper(SyntheticsClient const * const clientThis, const UpdateCanaryRequest& request, const UpdateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCanaryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCanary(request), context);
 }
 
-void SyntheticsClient::UpdateCanaryAsyncHelper(const UpdateCanaryRequest& request, const UpdateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SyntheticsClient::UpdateCanaryAsync(const UpdateCanaryRequest& request, const UpdateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCanary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SyntheticsClientUpdateCanaryAsyncHelper( this, request, handler, context ); } );
 }
 

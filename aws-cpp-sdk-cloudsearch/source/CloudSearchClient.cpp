@@ -151,14 +151,14 @@ BuildSuggestersOutcomeCallable CloudSearchClient::BuildSuggestersCallable(const 
   return task->get_future();
 }
 
-void CloudSearchClient::BuildSuggestersAsync(const BuildSuggestersRequest& request, const BuildSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientBuildSuggestersAsyncHelper(CloudSearchClient const * const clientThis, const BuildSuggestersRequest& request, const BuildSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BuildSuggestersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BuildSuggesters(request), context);
 }
 
-void CloudSearchClient::BuildSuggestersAsyncHelper(const BuildSuggestersRequest& request, const BuildSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::BuildSuggestersAsync(const BuildSuggestersRequest& request, const BuildSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BuildSuggesters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientBuildSuggestersAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDomainOutcome CloudSearchClient::CreateDomain(const CreateDomainRequest& request) const
@@ -175,14 +175,14 @@ CreateDomainOutcomeCallable CloudSearchClient::CreateDomainCallable(const Create
   return task->get_future();
 }
 
-void CloudSearchClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientCreateDomainAsyncHelper(CloudSearchClient const * const clientThis, const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDomain(request), context);
 }
 
-void CloudSearchClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientCreateDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DefineAnalysisSchemeOutcome CloudSearchClient::DefineAnalysisScheme(const DefineAnalysisSchemeRequest& request) const
@@ -199,14 +199,14 @@ DefineAnalysisSchemeOutcomeCallable CloudSearchClient::DefineAnalysisSchemeCalla
   return task->get_future();
 }
 
-void CloudSearchClient::DefineAnalysisSchemeAsync(const DefineAnalysisSchemeRequest& request, const DefineAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDefineAnalysisSchemeAsyncHelper(CloudSearchClient const * const clientThis, const DefineAnalysisSchemeRequest& request, const DefineAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DefineAnalysisSchemeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DefineAnalysisScheme(request), context);
 }
 
-void CloudSearchClient::DefineAnalysisSchemeAsyncHelper(const DefineAnalysisSchemeRequest& request, const DefineAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DefineAnalysisSchemeAsync(const DefineAnalysisSchemeRequest& request, const DefineAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DefineAnalysisScheme(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDefineAnalysisSchemeAsyncHelper( this, request, handler, context ); } );
 }
 
 DefineExpressionOutcome CloudSearchClient::DefineExpression(const DefineExpressionRequest& request) const
@@ -223,14 +223,14 @@ DefineExpressionOutcomeCallable CloudSearchClient::DefineExpressionCallable(cons
   return task->get_future();
 }
 
-void CloudSearchClient::DefineExpressionAsync(const DefineExpressionRequest& request, const DefineExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDefineExpressionAsyncHelper(CloudSearchClient const * const clientThis, const DefineExpressionRequest& request, const DefineExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DefineExpressionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DefineExpression(request), context);
 }
 
-void CloudSearchClient::DefineExpressionAsyncHelper(const DefineExpressionRequest& request, const DefineExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DefineExpressionAsync(const DefineExpressionRequest& request, const DefineExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DefineExpression(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDefineExpressionAsyncHelper( this, request, handler, context ); } );
 }
 
 DefineIndexFieldOutcome CloudSearchClient::DefineIndexField(const DefineIndexFieldRequest& request) const
@@ -247,14 +247,14 @@ DefineIndexFieldOutcomeCallable CloudSearchClient::DefineIndexFieldCallable(cons
   return task->get_future();
 }
 
-void CloudSearchClient::DefineIndexFieldAsync(const DefineIndexFieldRequest& request, const DefineIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDefineIndexFieldAsyncHelper(CloudSearchClient const * const clientThis, const DefineIndexFieldRequest& request, const DefineIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DefineIndexFieldAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DefineIndexField(request), context);
 }
 
-void CloudSearchClient::DefineIndexFieldAsyncHelper(const DefineIndexFieldRequest& request, const DefineIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DefineIndexFieldAsync(const DefineIndexFieldRequest& request, const DefineIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DefineIndexField(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDefineIndexFieldAsyncHelper( this, request, handler, context ); } );
 }
 
 DefineSuggesterOutcome CloudSearchClient::DefineSuggester(const DefineSuggesterRequest& request) const
@@ -271,14 +271,14 @@ DefineSuggesterOutcomeCallable CloudSearchClient::DefineSuggesterCallable(const 
   return task->get_future();
 }
 
-void CloudSearchClient::DefineSuggesterAsync(const DefineSuggesterRequest& request, const DefineSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDefineSuggesterAsyncHelper(CloudSearchClient const * const clientThis, const DefineSuggesterRequest& request, const DefineSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DefineSuggesterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DefineSuggester(request), context);
 }
 
-void CloudSearchClient::DefineSuggesterAsyncHelper(const DefineSuggesterRequest& request, const DefineSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DefineSuggesterAsync(const DefineSuggesterRequest& request, const DefineSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DefineSuggester(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDefineSuggesterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAnalysisSchemeOutcome CloudSearchClient::DeleteAnalysisScheme(const DeleteAnalysisSchemeRequest& request) const
@@ -295,14 +295,14 @@ DeleteAnalysisSchemeOutcomeCallable CloudSearchClient::DeleteAnalysisSchemeCalla
   return task->get_future();
 }
 
-void CloudSearchClient::DeleteAnalysisSchemeAsync(const DeleteAnalysisSchemeRequest& request, const DeleteAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDeleteAnalysisSchemeAsyncHelper(CloudSearchClient const * const clientThis, const DeleteAnalysisSchemeRequest& request, const DeleteAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnalysisSchemeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAnalysisScheme(request), context);
 }
 
-void CloudSearchClient::DeleteAnalysisSchemeAsyncHelper(const DeleteAnalysisSchemeRequest& request, const DeleteAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DeleteAnalysisSchemeAsync(const DeleteAnalysisSchemeRequest& request, const DeleteAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAnalysisScheme(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDeleteAnalysisSchemeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainOutcome CloudSearchClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -319,14 +319,14 @@ DeleteDomainOutcomeCallable CloudSearchClient::DeleteDomainCallable(const Delete
   return task->get_future();
 }
 
-void CloudSearchClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDeleteDomainAsyncHelper(CloudSearchClient const * const clientThis, const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomain(request), context);
 }
 
-void CloudSearchClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDeleteDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteExpressionOutcome CloudSearchClient::DeleteExpression(const DeleteExpressionRequest& request) const
@@ -343,14 +343,14 @@ DeleteExpressionOutcomeCallable CloudSearchClient::DeleteExpressionCallable(cons
   return task->get_future();
 }
 
-void CloudSearchClient::DeleteExpressionAsync(const DeleteExpressionRequest& request, const DeleteExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDeleteExpressionAsyncHelper(CloudSearchClient const * const clientThis, const DeleteExpressionRequest& request, const DeleteExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExpressionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteExpression(request), context);
 }
 
-void CloudSearchClient::DeleteExpressionAsyncHelper(const DeleteExpressionRequest& request, const DeleteExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DeleteExpressionAsync(const DeleteExpressionRequest& request, const DeleteExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteExpression(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDeleteExpressionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIndexFieldOutcome CloudSearchClient::DeleteIndexField(const DeleteIndexFieldRequest& request) const
@@ -367,14 +367,14 @@ DeleteIndexFieldOutcomeCallable CloudSearchClient::DeleteIndexFieldCallable(cons
   return task->get_future();
 }
 
-void CloudSearchClient::DeleteIndexFieldAsync(const DeleteIndexFieldRequest& request, const DeleteIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDeleteIndexFieldAsyncHelper(CloudSearchClient const * const clientThis, const DeleteIndexFieldRequest& request, const DeleteIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIndexFieldAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIndexField(request), context);
 }
 
-void CloudSearchClient::DeleteIndexFieldAsyncHelper(const DeleteIndexFieldRequest& request, const DeleteIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DeleteIndexFieldAsync(const DeleteIndexFieldRequest& request, const DeleteIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIndexField(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDeleteIndexFieldAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSuggesterOutcome CloudSearchClient::DeleteSuggester(const DeleteSuggesterRequest& request) const
@@ -391,14 +391,14 @@ DeleteSuggesterOutcomeCallable CloudSearchClient::DeleteSuggesterCallable(const 
   return task->get_future();
 }
 
-void CloudSearchClient::DeleteSuggesterAsync(const DeleteSuggesterRequest& request, const DeleteSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDeleteSuggesterAsyncHelper(CloudSearchClient const * const clientThis, const DeleteSuggesterRequest& request, const DeleteSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSuggesterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSuggester(request), context);
 }
 
-void CloudSearchClient::DeleteSuggesterAsyncHelper(const DeleteSuggesterRequest& request, const DeleteSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DeleteSuggesterAsync(const DeleteSuggesterRequest& request, const DeleteSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSuggester(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDeleteSuggesterAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAnalysisSchemesOutcome CloudSearchClient::DescribeAnalysisSchemes(const DescribeAnalysisSchemesRequest& request) const
@@ -415,14 +415,14 @@ DescribeAnalysisSchemesOutcomeCallable CloudSearchClient::DescribeAnalysisScheme
   return task->get_future();
 }
 
-void CloudSearchClient::DescribeAnalysisSchemesAsync(const DescribeAnalysisSchemesRequest& request, const DescribeAnalysisSchemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDescribeAnalysisSchemesAsyncHelper(CloudSearchClient const * const clientThis, const DescribeAnalysisSchemesRequest& request, const DescribeAnalysisSchemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnalysisSchemesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAnalysisSchemes(request), context);
 }
 
-void CloudSearchClient::DescribeAnalysisSchemesAsyncHelper(const DescribeAnalysisSchemesRequest& request, const DescribeAnalysisSchemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DescribeAnalysisSchemesAsync(const DescribeAnalysisSchemesRequest& request, const DescribeAnalysisSchemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAnalysisSchemes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDescribeAnalysisSchemesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAvailabilityOptionsOutcome CloudSearchClient::DescribeAvailabilityOptions(const DescribeAvailabilityOptionsRequest& request) const
@@ -439,14 +439,14 @@ DescribeAvailabilityOptionsOutcomeCallable CloudSearchClient::DescribeAvailabili
   return task->get_future();
 }
 
-void CloudSearchClient::DescribeAvailabilityOptionsAsync(const DescribeAvailabilityOptionsRequest& request, const DescribeAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDescribeAvailabilityOptionsAsyncHelper(CloudSearchClient const * const clientThis, const DescribeAvailabilityOptionsRequest& request, const DescribeAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAvailabilityOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAvailabilityOptions(request), context);
 }
 
-void CloudSearchClient::DescribeAvailabilityOptionsAsyncHelper(const DescribeAvailabilityOptionsRequest& request, const DescribeAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DescribeAvailabilityOptionsAsync(const DescribeAvailabilityOptionsRequest& request, const DescribeAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAvailabilityOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDescribeAvailabilityOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainEndpointOptionsOutcome CloudSearchClient::DescribeDomainEndpointOptions(const DescribeDomainEndpointOptionsRequest& request) const
@@ -463,14 +463,14 @@ DescribeDomainEndpointOptionsOutcomeCallable CloudSearchClient::DescribeDomainEn
   return task->get_future();
 }
 
-void CloudSearchClient::DescribeDomainEndpointOptionsAsync(const DescribeDomainEndpointOptionsRequest& request, const DescribeDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDescribeDomainEndpointOptionsAsyncHelper(CloudSearchClient const * const clientThis, const DescribeDomainEndpointOptionsRequest& request, const DescribeDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainEndpointOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomainEndpointOptions(request), context);
 }
 
-void CloudSearchClient::DescribeDomainEndpointOptionsAsyncHelper(const DescribeDomainEndpointOptionsRequest& request, const DescribeDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DescribeDomainEndpointOptionsAsync(const DescribeDomainEndpointOptionsRequest& request, const DescribeDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomainEndpointOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDescribeDomainEndpointOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainsOutcome CloudSearchClient::DescribeDomains(const DescribeDomainsRequest& request) const
@@ -487,14 +487,14 @@ DescribeDomainsOutcomeCallable CloudSearchClient::DescribeDomainsCallable(const 
   return task->get_future();
 }
 
-void CloudSearchClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDescribeDomainsAsyncHelper(CloudSearchClient const * const clientThis, const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomains(request), context);
 }
 
-void CloudSearchClient::DescribeDomainsAsyncHelper(const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomains(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDescribeDomainsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExpressionsOutcome CloudSearchClient::DescribeExpressions(const DescribeExpressionsRequest& request) const
@@ -511,14 +511,14 @@ DescribeExpressionsOutcomeCallable CloudSearchClient::DescribeExpressionsCallabl
   return task->get_future();
 }
 
-void CloudSearchClient::DescribeExpressionsAsync(const DescribeExpressionsRequest& request, const DescribeExpressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDescribeExpressionsAsyncHelper(CloudSearchClient const * const clientThis, const DescribeExpressionsRequest& request, const DescribeExpressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExpressionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExpressions(request), context);
 }
 
-void CloudSearchClient::DescribeExpressionsAsyncHelper(const DescribeExpressionsRequest& request, const DescribeExpressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DescribeExpressionsAsync(const DescribeExpressionsRequest& request, const DescribeExpressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExpressions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDescribeExpressionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIndexFieldsOutcome CloudSearchClient::DescribeIndexFields(const DescribeIndexFieldsRequest& request) const
@@ -535,14 +535,14 @@ DescribeIndexFieldsOutcomeCallable CloudSearchClient::DescribeIndexFieldsCallabl
   return task->get_future();
 }
 
-void CloudSearchClient::DescribeIndexFieldsAsync(const DescribeIndexFieldsRequest& request, const DescribeIndexFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDescribeIndexFieldsAsyncHelper(CloudSearchClient const * const clientThis, const DescribeIndexFieldsRequest& request, const DescribeIndexFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIndexFieldsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIndexFields(request), context);
 }
 
-void CloudSearchClient::DescribeIndexFieldsAsyncHelper(const DescribeIndexFieldsRequest& request, const DescribeIndexFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DescribeIndexFieldsAsync(const DescribeIndexFieldsRequest& request, const DescribeIndexFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIndexFields(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDescribeIndexFieldsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeScalingParametersOutcome CloudSearchClient::DescribeScalingParameters(const DescribeScalingParametersRequest& request) const
@@ -559,14 +559,14 @@ DescribeScalingParametersOutcomeCallable CloudSearchClient::DescribeScalingParam
   return task->get_future();
 }
 
-void CloudSearchClient::DescribeScalingParametersAsync(const DescribeScalingParametersRequest& request, const DescribeScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDescribeScalingParametersAsyncHelper(CloudSearchClient const * const clientThis, const DescribeScalingParametersRequest& request, const DescribeScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScalingParametersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeScalingParameters(request), context);
 }
 
-void CloudSearchClient::DescribeScalingParametersAsyncHelper(const DescribeScalingParametersRequest& request, const DescribeScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DescribeScalingParametersAsync(const DescribeScalingParametersRequest& request, const DescribeScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeScalingParameters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDescribeScalingParametersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeServiceAccessPoliciesOutcome CloudSearchClient::DescribeServiceAccessPolicies(const DescribeServiceAccessPoliciesRequest& request) const
@@ -583,14 +583,14 @@ DescribeServiceAccessPoliciesOutcomeCallable CloudSearchClient::DescribeServiceA
   return task->get_future();
 }
 
-void CloudSearchClient::DescribeServiceAccessPoliciesAsync(const DescribeServiceAccessPoliciesRequest& request, const DescribeServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDescribeServiceAccessPoliciesAsyncHelper(CloudSearchClient const * const clientThis, const DescribeServiceAccessPoliciesRequest& request, const DescribeServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServiceAccessPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeServiceAccessPolicies(request), context);
 }
 
-void CloudSearchClient::DescribeServiceAccessPoliciesAsyncHelper(const DescribeServiceAccessPoliciesRequest& request, const DescribeServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DescribeServiceAccessPoliciesAsync(const DescribeServiceAccessPoliciesRequest& request, const DescribeServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeServiceAccessPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDescribeServiceAccessPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSuggestersOutcome CloudSearchClient::DescribeSuggesters(const DescribeSuggestersRequest& request) const
@@ -607,14 +607,14 @@ DescribeSuggestersOutcomeCallable CloudSearchClient::DescribeSuggestersCallable(
   return task->get_future();
 }
 
-void CloudSearchClient::DescribeSuggestersAsync(const DescribeSuggestersRequest& request, const DescribeSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientDescribeSuggestersAsyncHelper(CloudSearchClient const * const clientThis, const DescribeSuggestersRequest& request, const DescribeSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSuggestersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSuggesters(request), context);
 }
 
-void CloudSearchClient::DescribeSuggestersAsyncHelper(const DescribeSuggestersRequest& request, const DescribeSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::DescribeSuggestersAsync(const DescribeSuggestersRequest& request, const DescribeSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSuggesters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientDescribeSuggestersAsyncHelper( this, request, handler, context ); } );
 }
 
 IndexDocumentsOutcome CloudSearchClient::IndexDocuments(const IndexDocumentsRequest& request) const
@@ -631,14 +631,14 @@ IndexDocumentsOutcomeCallable CloudSearchClient::IndexDocumentsCallable(const In
   return task->get_future();
 }
 
-void CloudSearchClient::IndexDocumentsAsync(const IndexDocumentsRequest& request, const IndexDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientIndexDocumentsAsyncHelper(CloudSearchClient const * const clientThis, const IndexDocumentsRequest& request, const IndexDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->IndexDocumentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->IndexDocuments(request), context);
 }
 
-void CloudSearchClient::IndexDocumentsAsyncHelper(const IndexDocumentsRequest& request, const IndexDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::IndexDocumentsAsync(const IndexDocumentsRequest& request, const IndexDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, IndexDocuments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientIndexDocumentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainNamesOutcome CloudSearchClient::ListDomainNames(const ListDomainNamesRequest& request) const
@@ -655,14 +655,14 @@ ListDomainNamesOutcomeCallable CloudSearchClient::ListDomainNamesCallable(const 
   return task->get_future();
 }
 
-void CloudSearchClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientListDomainNamesAsyncHelper(CloudSearchClient const * const clientThis, const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainNamesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomainNames(request), context);
 }
 
-void CloudSearchClient::ListDomainNamesAsyncHelper(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomainNames(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientListDomainNamesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAvailabilityOptionsOutcome CloudSearchClient::UpdateAvailabilityOptions(const UpdateAvailabilityOptionsRequest& request) const
@@ -679,14 +679,14 @@ UpdateAvailabilityOptionsOutcomeCallable CloudSearchClient::UpdateAvailabilityOp
   return task->get_future();
 }
 
-void CloudSearchClient::UpdateAvailabilityOptionsAsync(const UpdateAvailabilityOptionsRequest& request, const UpdateAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientUpdateAvailabilityOptionsAsyncHelper(CloudSearchClient const * const clientThis, const UpdateAvailabilityOptionsRequest& request, const UpdateAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAvailabilityOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAvailabilityOptions(request), context);
 }
 
-void CloudSearchClient::UpdateAvailabilityOptionsAsyncHelper(const UpdateAvailabilityOptionsRequest& request, const UpdateAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::UpdateAvailabilityOptionsAsync(const UpdateAvailabilityOptionsRequest& request, const UpdateAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAvailabilityOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientUpdateAvailabilityOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainEndpointOptionsOutcome CloudSearchClient::UpdateDomainEndpointOptions(const UpdateDomainEndpointOptionsRequest& request) const
@@ -703,14 +703,14 @@ UpdateDomainEndpointOptionsOutcomeCallable CloudSearchClient::UpdateDomainEndpoi
   return task->get_future();
 }
 
-void CloudSearchClient::UpdateDomainEndpointOptionsAsync(const UpdateDomainEndpointOptionsRequest& request, const UpdateDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientUpdateDomainEndpointOptionsAsyncHelper(CloudSearchClient const * const clientThis, const UpdateDomainEndpointOptionsRequest& request, const UpdateDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainEndpointOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomainEndpointOptions(request), context);
 }
 
-void CloudSearchClient::UpdateDomainEndpointOptionsAsyncHelper(const UpdateDomainEndpointOptionsRequest& request, const UpdateDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::UpdateDomainEndpointOptionsAsync(const UpdateDomainEndpointOptionsRequest& request, const UpdateDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomainEndpointOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientUpdateDomainEndpointOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateScalingParametersOutcome CloudSearchClient::UpdateScalingParameters(const UpdateScalingParametersRequest& request) const
@@ -727,14 +727,14 @@ UpdateScalingParametersOutcomeCallable CloudSearchClient::UpdateScalingParameter
   return task->get_future();
 }
 
-void CloudSearchClient::UpdateScalingParametersAsync(const UpdateScalingParametersRequest& request, const UpdateScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientUpdateScalingParametersAsyncHelper(CloudSearchClient const * const clientThis, const UpdateScalingParametersRequest& request, const UpdateScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateScalingParametersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateScalingParameters(request), context);
 }
 
-void CloudSearchClient::UpdateScalingParametersAsyncHelper(const UpdateScalingParametersRequest& request, const UpdateScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::UpdateScalingParametersAsync(const UpdateScalingParametersRequest& request, const UpdateScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateScalingParameters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientUpdateScalingParametersAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServiceAccessPoliciesOutcome CloudSearchClient::UpdateServiceAccessPolicies(const UpdateServiceAccessPoliciesRequest& request) const
@@ -751,13 +751,13 @@ UpdateServiceAccessPoliciesOutcomeCallable CloudSearchClient::UpdateServiceAcces
   return task->get_future();
 }
 
-void CloudSearchClient::UpdateServiceAccessPoliciesAsync(const UpdateServiceAccessPoliciesRequest& request, const UpdateServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClientUpdateServiceAccessPoliciesAsyncHelper(CloudSearchClient const * const clientThis, const UpdateServiceAccessPoliciesRequest& request, const UpdateServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceAccessPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServiceAccessPolicies(request), context);
 }
 
-void CloudSearchClient::UpdateServiceAccessPoliciesAsyncHelper(const UpdateServiceAccessPoliciesRequest& request, const UpdateServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudSearchClient::UpdateServiceAccessPoliciesAsync(const UpdateServiceAccessPoliciesRequest& request, const UpdateServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServiceAccessPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudSearchClientUpdateServiceAccessPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 

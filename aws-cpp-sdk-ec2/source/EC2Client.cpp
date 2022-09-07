@@ -648,14 +648,14 @@ AcceptReservedInstancesExchangeQuoteOutcomeCallable EC2Client::AcceptReservedIns
   return task->get_future();
 }
 
-void EC2Client::AcceptReservedInstancesExchangeQuoteAsync(const AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAcceptReservedInstancesExchangeQuoteAsyncHelper(EC2Client const * const clientThis, const AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptReservedInstancesExchangeQuoteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptReservedInstancesExchangeQuote(request), context);
 }
 
-void EC2Client::AcceptReservedInstancesExchangeQuoteAsyncHelper(const AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AcceptReservedInstancesExchangeQuoteAsync(const AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptReservedInstancesExchangeQuote(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAcceptReservedInstancesExchangeQuoteAsyncHelper( this, request, handler, context ); } );
 }
 
 AcceptTransitGatewayMulticastDomainAssociationsOutcome EC2Client::AcceptTransitGatewayMulticastDomainAssociations(const AcceptTransitGatewayMulticastDomainAssociationsRequest& request) const
@@ -672,14 +672,14 @@ AcceptTransitGatewayMulticastDomainAssociationsOutcomeCallable EC2Client::Accept
   return task->get_future();
 }
 
-void EC2Client::AcceptTransitGatewayMulticastDomainAssociationsAsync(const AcceptTransitGatewayMulticastDomainAssociationsRequest& request, const AcceptTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAcceptTransitGatewayMulticastDomainAssociationsAsyncHelper(EC2Client const * const clientThis, const AcceptTransitGatewayMulticastDomainAssociationsRequest& request, const AcceptTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptTransitGatewayMulticastDomainAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptTransitGatewayMulticastDomainAssociations(request), context);
 }
 
-void EC2Client::AcceptTransitGatewayMulticastDomainAssociationsAsyncHelper(const AcceptTransitGatewayMulticastDomainAssociationsRequest& request, const AcceptTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AcceptTransitGatewayMulticastDomainAssociationsAsync(const AcceptTransitGatewayMulticastDomainAssociationsRequest& request, const AcceptTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptTransitGatewayMulticastDomainAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAcceptTransitGatewayMulticastDomainAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 AcceptTransitGatewayPeeringAttachmentOutcome EC2Client::AcceptTransitGatewayPeeringAttachment(const AcceptTransitGatewayPeeringAttachmentRequest& request) const
@@ -696,14 +696,14 @@ AcceptTransitGatewayPeeringAttachmentOutcomeCallable EC2Client::AcceptTransitGat
   return task->get_future();
 }
 
-void EC2Client::AcceptTransitGatewayPeeringAttachmentAsync(const AcceptTransitGatewayPeeringAttachmentRequest& request, const AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAcceptTransitGatewayPeeringAttachmentAsyncHelper(EC2Client const * const clientThis, const AcceptTransitGatewayPeeringAttachmentRequest& request, const AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptTransitGatewayPeeringAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptTransitGatewayPeeringAttachment(request), context);
 }
 
-void EC2Client::AcceptTransitGatewayPeeringAttachmentAsyncHelper(const AcceptTransitGatewayPeeringAttachmentRequest& request, const AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AcceptTransitGatewayPeeringAttachmentAsync(const AcceptTransitGatewayPeeringAttachmentRequest& request, const AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptTransitGatewayPeeringAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAcceptTransitGatewayPeeringAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 AcceptTransitGatewayVpcAttachmentOutcome EC2Client::AcceptTransitGatewayVpcAttachment(const AcceptTransitGatewayVpcAttachmentRequest& request) const
@@ -720,14 +720,14 @@ AcceptTransitGatewayVpcAttachmentOutcomeCallable EC2Client::AcceptTransitGateway
   return task->get_future();
 }
 
-void EC2Client::AcceptTransitGatewayVpcAttachmentAsync(const AcceptTransitGatewayVpcAttachmentRequest& request, const AcceptTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAcceptTransitGatewayVpcAttachmentAsyncHelper(EC2Client const * const clientThis, const AcceptTransitGatewayVpcAttachmentRequest& request, const AcceptTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptTransitGatewayVpcAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptTransitGatewayVpcAttachment(request), context);
 }
 
-void EC2Client::AcceptTransitGatewayVpcAttachmentAsyncHelper(const AcceptTransitGatewayVpcAttachmentRequest& request, const AcceptTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AcceptTransitGatewayVpcAttachmentAsync(const AcceptTransitGatewayVpcAttachmentRequest& request, const AcceptTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptTransitGatewayVpcAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAcceptTransitGatewayVpcAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 AcceptVpcEndpointConnectionsOutcome EC2Client::AcceptVpcEndpointConnections(const AcceptVpcEndpointConnectionsRequest& request) const
@@ -744,14 +744,14 @@ AcceptVpcEndpointConnectionsOutcomeCallable EC2Client::AcceptVpcEndpointConnecti
   return task->get_future();
 }
 
-void EC2Client::AcceptVpcEndpointConnectionsAsync(const AcceptVpcEndpointConnectionsRequest& request, const AcceptVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAcceptVpcEndpointConnectionsAsyncHelper(EC2Client const * const clientThis, const AcceptVpcEndpointConnectionsRequest& request, const AcceptVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptVpcEndpointConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptVpcEndpointConnections(request), context);
 }
 
-void EC2Client::AcceptVpcEndpointConnectionsAsyncHelper(const AcceptVpcEndpointConnectionsRequest& request, const AcceptVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AcceptVpcEndpointConnectionsAsync(const AcceptVpcEndpointConnectionsRequest& request, const AcceptVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptVpcEndpointConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAcceptVpcEndpointConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 AcceptVpcPeeringConnectionOutcome EC2Client::AcceptVpcPeeringConnection(const AcceptVpcPeeringConnectionRequest& request) const
@@ -768,14 +768,14 @@ AcceptVpcPeeringConnectionOutcomeCallable EC2Client::AcceptVpcPeeringConnectionC
   return task->get_future();
 }
 
-void EC2Client::AcceptVpcPeeringConnectionAsync(const AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAcceptVpcPeeringConnectionAsyncHelper(EC2Client const * const clientThis, const AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptVpcPeeringConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptVpcPeeringConnection(request), context);
 }
 
-void EC2Client::AcceptVpcPeeringConnectionAsyncHelper(const AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AcceptVpcPeeringConnectionAsync(const AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptVpcPeeringConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAcceptVpcPeeringConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 AdvertiseByoipCidrOutcome EC2Client::AdvertiseByoipCidr(const AdvertiseByoipCidrRequest& request) const
@@ -792,14 +792,14 @@ AdvertiseByoipCidrOutcomeCallable EC2Client::AdvertiseByoipCidrCallable(const Ad
   return task->get_future();
 }
 
-void EC2Client::AdvertiseByoipCidrAsync(const AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAdvertiseByoipCidrAsyncHelper(EC2Client const * const clientThis, const AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdvertiseByoipCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdvertiseByoipCidr(request), context);
 }
 
-void EC2Client::AdvertiseByoipCidrAsyncHelper(const AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AdvertiseByoipCidrAsync(const AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdvertiseByoipCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAdvertiseByoipCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 AllocateAddressOutcome EC2Client::AllocateAddress(const AllocateAddressRequest& request) const
@@ -816,14 +816,14 @@ AllocateAddressOutcomeCallable EC2Client::AllocateAddressCallable(const Allocate
   return task->get_future();
 }
 
-void EC2Client::AllocateAddressAsync(const AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAllocateAddressAsyncHelper(EC2Client const * const clientThis, const AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AllocateAddressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AllocateAddress(request), context);
 }
 
-void EC2Client::AllocateAddressAsyncHelper(const AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AllocateAddressAsync(const AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AllocateAddress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAllocateAddressAsyncHelper( this, request, handler, context ); } );
 }
 
 AllocateHostsOutcome EC2Client::AllocateHosts(const AllocateHostsRequest& request) const
@@ -840,14 +840,14 @@ AllocateHostsOutcomeCallable EC2Client::AllocateHostsCallable(const AllocateHost
   return task->get_future();
 }
 
-void EC2Client::AllocateHostsAsync(const AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAllocateHostsAsyncHelper(EC2Client const * const clientThis, const AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AllocateHostsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AllocateHosts(request), context);
 }
 
-void EC2Client::AllocateHostsAsyncHelper(const AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AllocateHostsAsync(const AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AllocateHosts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAllocateHostsAsyncHelper( this, request, handler, context ); } );
 }
 
 AllocateIpamPoolCidrOutcome EC2Client::AllocateIpamPoolCidr(const AllocateIpamPoolCidrRequest& request) const
@@ -864,14 +864,14 @@ AllocateIpamPoolCidrOutcomeCallable EC2Client::AllocateIpamPoolCidrCallable(cons
   return task->get_future();
 }
 
-void EC2Client::AllocateIpamPoolCidrAsync(const AllocateIpamPoolCidrRequest& request, const AllocateIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAllocateIpamPoolCidrAsyncHelper(EC2Client const * const clientThis, const AllocateIpamPoolCidrRequest& request, const AllocateIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AllocateIpamPoolCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AllocateIpamPoolCidr(request), context);
 }
 
-void EC2Client::AllocateIpamPoolCidrAsyncHelper(const AllocateIpamPoolCidrRequest& request, const AllocateIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AllocateIpamPoolCidrAsync(const AllocateIpamPoolCidrRequest& request, const AllocateIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AllocateIpamPoolCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAllocateIpamPoolCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 ApplySecurityGroupsToClientVpnTargetNetworkOutcome EC2Client::ApplySecurityGroupsToClientVpnTargetNetwork(const ApplySecurityGroupsToClientVpnTargetNetworkRequest& request) const
@@ -888,14 +888,14 @@ ApplySecurityGroupsToClientVpnTargetNetworkOutcomeCallable EC2Client::ApplySecur
   return task->get_future();
 }
 
-void EC2Client::ApplySecurityGroupsToClientVpnTargetNetworkAsync(const ApplySecurityGroupsToClientVpnTargetNetworkRequest& request, const ApplySecurityGroupsToClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientApplySecurityGroupsToClientVpnTargetNetworkAsyncHelper(EC2Client const * const clientThis, const ApplySecurityGroupsToClientVpnTargetNetworkRequest& request, const ApplySecurityGroupsToClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ApplySecurityGroupsToClientVpnTargetNetworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ApplySecurityGroupsToClientVpnTargetNetwork(request), context);
 }
 
-void EC2Client::ApplySecurityGroupsToClientVpnTargetNetworkAsyncHelper(const ApplySecurityGroupsToClientVpnTargetNetworkRequest& request, const ApplySecurityGroupsToClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ApplySecurityGroupsToClientVpnTargetNetworkAsync(const ApplySecurityGroupsToClientVpnTargetNetworkRequest& request, const ApplySecurityGroupsToClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ApplySecurityGroupsToClientVpnTargetNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientApplySecurityGroupsToClientVpnTargetNetworkAsyncHelper( this, request, handler, context ); } );
 }
 
 AssignIpv6AddressesOutcome EC2Client::AssignIpv6Addresses(const AssignIpv6AddressesRequest& request) const
@@ -912,14 +912,14 @@ AssignIpv6AddressesOutcomeCallable EC2Client::AssignIpv6AddressesCallable(const 
   return task->get_future();
 }
 
-void EC2Client::AssignIpv6AddressesAsync(const AssignIpv6AddressesRequest& request, const AssignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssignIpv6AddressesAsyncHelper(EC2Client const * const clientThis, const AssignIpv6AddressesRequest& request, const AssignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssignIpv6AddressesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssignIpv6Addresses(request), context);
 }
 
-void EC2Client::AssignIpv6AddressesAsyncHelper(const AssignIpv6AddressesRequest& request, const AssignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssignIpv6AddressesAsync(const AssignIpv6AddressesRequest& request, const AssignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssignIpv6Addresses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssignIpv6AddressesAsyncHelper( this, request, handler, context ); } );
 }
 
 AssignPrivateIpAddressesOutcome EC2Client::AssignPrivateIpAddresses(const AssignPrivateIpAddressesRequest& request) const
@@ -936,14 +936,14 @@ AssignPrivateIpAddressesOutcomeCallable EC2Client::AssignPrivateIpAddressesCalla
   return task->get_future();
 }
 
-void EC2Client::AssignPrivateIpAddressesAsync(const AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssignPrivateIpAddressesAsyncHelper(EC2Client const * const clientThis, const AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssignPrivateIpAddressesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssignPrivateIpAddresses(request), context);
 }
 
-void EC2Client::AssignPrivateIpAddressesAsyncHelper(const AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssignPrivateIpAddressesAsync(const AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssignPrivateIpAddresses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssignPrivateIpAddressesAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateAddressOutcome EC2Client::AssociateAddress(const AssociateAddressRequest& request) const
@@ -960,14 +960,14 @@ AssociateAddressOutcomeCallable EC2Client::AssociateAddressCallable(const Associ
   return task->get_future();
 }
 
-void EC2Client::AssociateAddressAsync(const AssociateAddressRequest& request, const AssociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateAddressAsyncHelper(EC2Client const * const clientThis, const AssociateAddressRequest& request, const AssociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateAddressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateAddress(request), context);
 }
 
-void EC2Client::AssociateAddressAsyncHelper(const AssociateAddressRequest& request, const AssociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateAddressAsync(const AssociateAddressRequest& request, const AssociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateAddress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateAddressAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateClientVpnTargetNetworkOutcome EC2Client::AssociateClientVpnTargetNetwork(const AssociateClientVpnTargetNetworkRequest& request) const
@@ -984,14 +984,14 @@ AssociateClientVpnTargetNetworkOutcomeCallable EC2Client::AssociateClientVpnTarg
   return task->get_future();
 }
 
-void EC2Client::AssociateClientVpnTargetNetworkAsync(const AssociateClientVpnTargetNetworkRequest& request, const AssociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateClientVpnTargetNetworkAsyncHelper(EC2Client const * const clientThis, const AssociateClientVpnTargetNetworkRequest& request, const AssociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateClientVpnTargetNetworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateClientVpnTargetNetwork(request), context);
 }
 
-void EC2Client::AssociateClientVpnTargetNetworkAsyncHelper(const AssociateClientVpnTargetNetworkRequest& request, const AssociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateClientVpnTargetNetworkAsync(const AssociateClientVpnTargetNetworkRequest& request, const AssociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateClientVpnTargetNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateClientVpnTargetNetworkAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateDhcpOptionsOutcome EC2Client::AssociateDhcpOptions(const AssociateDhcpOptionsRequest& request) const
@@ -1008,14 +1008,14 @@ AssociateDhcpOptionsOutcomeCallable EC2Client::AssociateDhcpOptionsCallable(cons
   return task->get_future();
 }
 
-void EC2Client::AssociateDhcpOptionsAsync(const AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateDhcpOptionsAsyncHelper(EC2Client const * const clientThis, const AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateDhcpOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateDhcpOptions(request), context);
 }
 
-void EC2Client::AssociateDhcpOptionsAsyncHelper(const AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateDhcpOptionsAsync(const AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateDhcpOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateDhcpOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateEnclaveCertificateIamRoleOutcome EC2Client::AssociateEnclaveCertificateIamRole(const AssociateEnclaveCertificateIamRoleRequest& request) const
@@ -1032,14 +1032,14 @@ AssociateEnclaveCertificateIamRoleOutcomeCallable EC2Client::AssociateEnclaveCer
   return task->get_future();
 }
 
-void EC2Client::AssociateEnclaveCertificateIamRoleAsync(const AssociateEnclaveCertificateIamRoleRequest& request, const AssociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateEnclaveCertificateIamRoleAsyncHelper(EC2Client const * const clientThis, const AssociateEnclaveCertificateIamRoleRequest& request, const AssociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateEnclaveCertificateIamRoleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateEnclaveCertificateIamRole(request), context);
 }
 
-void EC2Client::AssociateEnclaveCertificateIamRoleAsyncHelper(const AssociateEnclaveCertificateIamRoleRequest& request, const AssociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateEnclaveCertificateIamRoleAsync(const AssociateEnclaveCertificateIamRoleRequest& request, const AssociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateEnclaveCertificateIamRole(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateEnclaveCertificateIamRoleAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateIamInstanceProfileOutcome EC2Client::AssociateIamInstanceProfile(const AssociateIamInstanceProfileRequest& request) const
@@ -1056,14 +1056,14 @@ AssociateIamInstanceProfileOutcomeCallable EC2Client::AssociateIamInstanceProfil
   return task->get_future();
 }
 
-void EC2Client::AssociateIamInstanceProfileAsync(const AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateIamInstanceProfileAsyncHelper(EC2Client const * const clientThis, const AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateIamInstanceProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateIamInstanceProfile(request), context);
 }
 
-void EC2Client::AssociateIamInstanceProfileAsyncHelper(const AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateIamInstanceProfileAsync(const AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateIamInstanceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateIamInstanceProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateInstanceEventWindowOutcome EC2Client::AssociateInstanceEventWindow(const AssociateInstanceEventWindowRequest& request) const
@@ -1080,14 +1080,14 @@ AssociateInstanceEventWindowOutcomeCallable EC2Client::AssociateInstanceEventWin
   return task->get_future();
 }
 
-void EC2Client::AssociateInstanceEventWindowAsync(const AssociateInstanceEventWindowRequest& request, const AssociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateInstanceEventWindowAsyncHelper(EC2Client const * const clientThis, const AssociateInstanceEventWindowRequest& request, const AssociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateInstanceEventWindowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateInstanceEventWindow(request), context);
 }
 
-void EC2Client::AssociateInstanceEventWindowAsyncHelper(const AssociateInstanceEventWindowRequest& request, const AssociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateInstanceEventWindowAsync(const AssociateInstanceEventWindowRequest& request, const AssociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateInstanceEventWindow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateInstanceEventWindowAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateRouteTableOutcome EC2Client::AssociateRouteTable(const AssociateRouteTableRequest& request) const
@@ -1104,14 +1104,14 @@ AssociateRouteTableOutcomeCallable EC2Client::AssociateRouteTableCallable(const 
   return task->get_future();
 }
 
-void EC2Client::AssociateRouteTableAsync(const AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateRouteTableAsyncHelper(EC2Client const * const clientThis, const AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateRouteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateRouteTable(request), context);
 }
 
-void EC2Client::AssociateRouteTableAsyncHelper(const AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateRouteTableAsync(const AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateRouteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateRouteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateSubnetCidrBlockOutcome EC2Client::AssociateSubnetCidrBlock(const AssociateSubnetCidrBlockRequest& request) const
@@ -1128,14 +1128,14 @@ AssociateSubnetCidrBlockOutcomeCallable EC2Client::AssociateSubnetCidrBlockCalla
   return task->get_future();
 }
 
-void EC2Client::AssociateSubnetCidrBlockAsync(const AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateSubnetCidrBlockAsyncHelper(EC2Client const * const clientThis, const AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateSubnetCidrBlockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateSubnetCidrBlock(request), context);
 }
 
-void EC2Client::AssociateSubnetCidrBlockAsyncHelper(const AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateSubnetCidrBlockAsync(const AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateSubnetCidrBlock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateSubnetCidrBlockAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateTransitGatewayMulticastDomainOutcome EC2Client::AssociateTransitGatewayMulticastDomain(const AssociateTransitGatewayMulticastDomainRequest& request) const
@@ -1152,14 +1152,14 @@ AssociateTransitGatewayMulticastDomainOutcomeCallable EC2Client::AssociateTransi
   return task->get_future();
 }
 
-void EC2Client::AssociateTransitGatewayMulticastDomainAsync(const AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateTransitGatewayMulticastDomainAsyncHelper(EC2Client const * const clientThis, const AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTransitGatewayMulticastDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateTransitGatewayMulticastDomain(request), context);
 }
 
-void EC2Client::AssociateTransitGatewayMulticastDomainAsyncHelper(const AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateTransitGatewayMulticastDomainAsync(const AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateTransitGatewayMulticastDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateTransitGatewayMulticastDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateTransitGatewayPolicyTableOutcome EC2Client::AssociateTransitGatewayPolicyTable(const AssociateTransitGatewayPolicyTableRequest& request) const
@@ -1176,14 +1176,14 @@ AssociateTransitGatewayPolicyTableOutcomeCallable EC2Client::AssociateTransitGat
   return task->get_future();
 }
 
-void EC2Client::AssociateTransitGatewayPolicyTableAsync(const AssociateTransitGatewayPolicyTableRequest& request, const AssociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateTransitGatewayPolicyTableAsyncHelper(EC2Client const * const clientThis, const AssociateTransitGatewayPolicyTableRequest& request, const AssociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTransitGatewayPolicyTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateTransitGatewayPolicyTable(request), context);
 }
 
-void EC2Client::AssociateTransitGatewayPolicyTableAsyncHelper(const AssociateTransitGatewayPolicyTableRequest& request, const AssociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateTransitGatewayPolicyTableAsync(const AssociateTransitGatewayPolicyTableRequest& request, const AssociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateTransitGatewayPolicyTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateTransitGatewayPolicyTableAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateTransitGatewayRouteTableOutcome EC2Client::AssociateTransitGatewayRouteTable(const AssociateTransitGatewayRouteTableRequest& request) const
@@ -1200,14 +1200,14 @@ AssociateTransitGatewayRouteTableOutcomeCallable EC2Client::AssociateTransitGate
   return task->get_future();
 }
 
-void EC2Client::AssociateTransitGatewayRouteTableAsync(const AssociateTransitGatewayRouteTableRequest& request, const AssociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateTransitGatewayRouteTableAsyncHelper(EC2Client const * const clientThis, const AssociateTransitGatewayRouteTableRequest& request, const AssociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTransitGatewayRouteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateTransitGatewayRouteTable(request), context);
 }
 
-void EC2Client::AssociateTransitGatewayRouteTableAsyncHelper(const AssociateTransitGatewayRouteTableRequest& request, const AssociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateTransitGatewayRouteTableAsync(const AssociateTransitGatewayRouteTableRequest& request, const AssociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateTransitGatewayRouteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateTransitGatewayRouteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateTrunkInterfaceOutcome EC2Client::AssociateTrunkInterface(const AssociateTrunkInterfaceRequest& request) const
@@ -1224,14 +1224,14 @@ AssociateTrunkInterfaceOutcomeCallable EC2Client::AssociateTrunkInterfaceCallabl
   return task->get_future();
 }
 
-void EC2Client::AssociateTrunkInterfaceAsync(const AssociateTrunkInterfaceRequest& request, const AssociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateTrunkInterfaceAsyncHelper(EC2Client const * const clientThis, const AssociateTrunkInterfaceRequest& request, const AssociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTrunkInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateTrunkInterface(request), context);
 }
 
-void EC2Client::AssociateTrunkInterfaceAsyncHelper(const AssociateTrunkInterfaceRequest& request, const AssociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateTrunkInterfaceAsync(const AssociateTrunkInterfaceRequest& request, const AssociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateTrunkInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateTrunkInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateVpcCidrBlockOutcome EC2Client::AssociateVpcCidrBlock(const AssociateVpcCidrBlockRequest& request) const
@@ -1248,14 +1248,14 @@ AssociateVpcCidrBlockOutcomeCallable EC2Client::AssociateVpcCidrBlockCallable(co
   return task->get_future();
 }
 
-void EC2Client::AssociateVpcCidrBlockAsync(const AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAssociateVpcCidrBlockAsyncHelper(EC2Client const * const clientThis, const AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateVpcCidrBlockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateVpcCidrBlock(request), context);
 }
 
-void EC2Client::AssociateVpcCidrBlockAsyncHelper(const AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AssociateVpcCidrBlockAsync(const AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateVpcCidrBlock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAssociateVpcCidrBlockAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachClassicLinkVpcOutcome EC2Client::AttachClassicLinkVpc(const AttachClassicLinkVpcRequest& request) const
@@ -1272,14 +1272,14 @@ AttachClassicLinkVpcOutcomeCallable EC2Client::AttachClassicLinkVpcCallable(cons
   return task->get_future();
 }
 
-void EC2Client::AttachClassicLinkVpcAsync(const AttachClassicLinkVpcRequest& request, const AttachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAttachClassicLinkVpcAsyncHelper(EC2Client const * const clientThis, const AttachClassicLinkVpcRequest& request, const AttachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachClassicLinkVpcAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachClassicLinkVpc(request), context);
 }
 
-void EC2Client::AttachClassicLinkVpcAsyncHelper(const AttachClassicLinkVpcRequest& request, const AttachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AttachClassicLinkVpcAsync(const AttachClassicLinkVpcRequest& request, const AttachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachClassicLinkVpc(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAttachClassicLinkVpcAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachInternetGatewayOutcome EC2Client::AttachInternetGateway(const AttachInternetGatewayRequest& request) const
@@ -1296,14 +1296,14 @@ AttachInternetGatewayOutcomeCallable EC2Client::AttachInternetGatewayCallable(co
   return task->get_future();
 }
 
-void EC2Client::AttachInternetGatewayAsync(const AttachInternetGatewayRequest& request, const AttachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAttachInternetGatewayAsyncHelper(EC2Client const * const clientThis, const AttachInternetGatewayRequest& request, const AttachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachInternetGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachInternetGateway(request), context);
 }
 
-void EC2Client::AttachInternetGatewayAsyncHelper(const AttachInternetGatewayRequest& request, const AttachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AttachInternetGatewayAsync(const AttachInternetGatewayRequest& request, const AttachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachInternetGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAttachInternetGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachNetworkInterfaceOutcome EC2Client::AttachNetworkInterface(const AttachNetworkInterfaceRequest& request) const
@@ -1320,14 +1320,14 @@ AttachNetworkInterfaceOutcomeCallable EC2Client::AttachNetworkInterfaceCallable(
   return task->get_future();
 }
 
-void EC2Client::AttachNetworkInterfaceAsync(const AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAttachNetworkInterfaceAsyncHelper(EC2Client const * const clientThis, const AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachNetworkInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachNetworkInterface(request), context);
 }
 
-void EC2Client::AttachNetworkInterfaceAsyncHelper(const AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AttachNetworkInterfaceAsync(const AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachNetworkInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAttachNetworkInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachVolumeOutcome EC2Client::AttachVolume(const AttachVolumeRequest& request) const
@@ -1344,14 +1344,14 @@ AttachVolumeOutcomeCallable EC2Client::AttachVolumeCallable(const AttachVolumeRe
   return task->get_future();
 }
 
-void EC2Client::AttachVolumeAsync(const AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAttachVolumeAsyncHelper(EC2Client const * const clientThis, const AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachVolume(request), context);
 }
 
-void EC2Client::AttachVolumeAsyncHelper(const AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AttachVolumeAsync(const AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAttachVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachVpnGatewayOutcome EC2Client::AttachVpnGateway(const AttachVpnGatewayRequest& request) const
@@ -1368,14 +1368,14 @@ AttachVpnGatewayOutcomeCallable EC2Client::AttachVpnGatewayCallable(const Attach
   return task->get_future();
 }
 
-void EC2Client::AttachVpnGatewayAsync(const AttachVpnGatewayRequest& request, const AttachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAttachVpnGatewayAsyncHelper(EC2Client const * const clientThis, const AttachVpnGatewayRequest& request, const AttachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachVpnGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachVpnGateway(request), context);
 }
 
-void EC2Client::AttachVpnGatewayAsyncHelper(const AttachVpnGatewayRequest& request, const AttachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AttachVpnGatewayAsync(const AttachVpnGatewayRequest& request, const AttachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachVpnGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAttachVpnGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 AuthorizeClientVpnIngressOutcome EC2Client::AuthorizeClientVpnIngress(const AuthorizeClientVpnIngressRequest& request) const
@@ -1392,14 +1392,14 @@ AuthorizeClientVpnIngressOutcomeCallable EC2Client::AuthorizeClientVpnIngressCal
   return task->get_future();
 }
 
-void EC2Client::AuthorizeClientVpnIngressAsync(const AuthorizeClientVpnIngressRequest& request, const AuthorizeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAuthorizeClientVpnIngressAsyncHelper(EC2Client const * const clientThis, const AuthorizeClientVpnIngressRequest& request, const AuthorizeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeClientVpnIngressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AuthorizeClientVpnIngress(request), context);
 }
 
-void EC2Client::AuthorizeClientVpnIngressAsyncHelper(const AuthorizeClientVpnIngressRequest& request, const AuthorizeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AuthorizeClientVpnIngressAsync(const AuthorizeClientVpnIngressRequest& request, const AuthorizeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AuthorizeClientVpnIngress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAuthorizeClientVpnIngressAsyncHelper( this, request, handler, context ); } );
 }
 
 AuthorizeSecurityGroupEgressOutcome EC2Client::AuthorizeSecurityGroupEgress(const AuthorizeSecurityGroupEgressRequest& request) const
@@ -1416,14 +1416,14 @@ AuthorizeSecurityGroupEgressOutcomeCallable EC2Client::AuthorizeSecurityGroupEgr
   return task->get_future();
 }
 
-void EC2Client::AuthorizeSecurityGroupEgressAsync(const AuthorizeSecurityGroupEgressRequest& request, const AuthorizeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAuthorizeSecurityGroupEgressAsyncHelper(EC2Client const * const clientThis, const AuthorizeSecurityGroupEgressRequest& request, const AuthorizeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeSecurityGroupEgressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AuthorizeSecurityGroupEgress(request), context);
 }
 
-void EC2Client::AuthorizeSecurityGroupEgressAsyncHelper(const AuthorizeSecurityGroupEgressRequest& request, const AuthorizeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AuthorizeSecurityGroupEgressAsync(const AuthorizeSecurityGroupEgressRequest& request, const AuthorizeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AuthorizeSecurityGroupEgress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAuthorizeSecurityGroupEgressAsyncHelper( this, request, handler, context ); } );
 }
 
 AuthorizeSecurityGroupIngressOutcome EC2Client::AuthorizeSecurityGroupIngress(const AuthorizeSecurityGroupIngressRequest& request) const
@@ -1440,14 +1440,14 @@ AuthorizeSecurityGroupIngressOutcomeCallable EC2Client::AuthorizeSecurityGroupIn
   return task->get_future();
 }
 
-void EC2Client::AuthorizeSecurityGroupIngressAsync(const AuthorizeSecurityGroupIngressRequest& request, const AuthorizeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientAuthorizeSecurityGroupIngressAsyncHelper(EC2Client const * const clientThis, const AuthorizeSecurityGroupIngressRequest& request, const AuthorizeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeSecurityGroupIngressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AuthorizeSecurityGroupIngress(request), context);
 }
 
-void EC2Client::AuthorizeSecurityGroupIngressAsyncHelper(const AuthorizeSecurityGroupIngressRequest& request, const AuthorizeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::AuthorizeSecurityGroupIngressAsync(const AuthorizeSecurityGroupIngressRequest& request, const AuthorizeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AuthorizeSecurityGroupIngress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientAuthorizeSecurityGroupIngressAsyncHelper( this, request, handler, context ); } );
 }
 
 BundleInstanceOutcome EC2Client::BundleInstance(const BundleInstanceRequest& request) const
@@ -1464,14 +1464,14 @@ BundleInstanceOutcomeCallable EC2Client::BundleInstanceCallable(const BundleInst
   return task->get_future();
 }
 
-void EC2Client::BundleInstanceAsync(const BundleInstanceRequest& request, const BundleInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientBundleInstanceAsyncHelper(EC2Client const * const clientThis, const BundleInstanceRequest& request, const BundleInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BundleInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BundleInstance(request), context);
 }
 
-void EC2Client::BundleInstanceAsyncHelper(const BundleInstanceRequest& request, const BundleInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::BundleInstanceAsync(const BundleInstanceRequest& request, const BundleInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BundleInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientBundleInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelBundleTaskOutcome EC2Client::CancelBundleTask(const CancelBundleTaskRequest& request) const
@@ -1488,14 +1488,14 @@ CancelBundleTaskOutcomeCallable EC2Client::CancelBundleTaskCallable(const Cancel
   return task->get_future();
 }
 
-void EC2Client::CancelBundleTaskAsync(const CancelBundleTaskRequest& request, const CancelBundleTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCancelBundleTaskAsyncHelper(EC2Client const * const clientThis, const CancelBundleTaskRequest& request, const CancelBundleTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelBundleTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelBundleTask(request), context);
 }
 
-void EC2Client::CancelBundleTaskAsyncHelper(const CancelBundleTaskRequest& request, const CancelBundleTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CancelBundleTaskAsync(const CancelBundleTaskRequest& request, const CancelBundleTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelBundleTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCancelBundleTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelCapacityReservationOutcome EC2Client::CancelCapacityReservation(const CancelCapacityReservationRequest& request) const
@@ -1512,14 +1512,14 @@ CancelCapacityReservationOutcomeCallable EC2Client::CancelCapacityReservationCal
   return task->get_future();
 }
 
-void EC2Client::CancelCapacityReservationAsync(const CancelCapacityReservationRequest& request, const CancelCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCancelCapacityReservationAsyncHelper(EC2Client const * const clientThis, const CancelCapacityReservationRequest& request, const CancelCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelCapacityReservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelCapacityReservation(request), context);
 }
 
-void EC2Client::CancelCapacityReservationAsyncHelper(const CancelCapacityReservationRequest& request, const CancelCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CancelCapacityReservationAsync(const CancelCapacityReservationRequest& request, const CancelCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelCapacityReservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCancelCapacityReservationAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelCapacityReservationFleetsOutcome EC2Client::CancelCapacityReservationFleets(const CancelCapacityReservationFleetsRequest& request) const
@@ -1536,14 +1536,14 @@ CancelCapacityReservationFleetsOutcomeCallable EC2Client::CancelCapacityReservat
   return task->get_future();
 }
 
-void EC2Client::CancelCapacityReservationFleetsAsync(const CancelCapacityReservationFleetsRequest& request, const CancelCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCancelCapacityReservationFleetsAsyncHelper(EC2Client const * const clientThis, const CancelCapacityReservationFleetsRequest& request, const CancelCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelCapacityReservationFleetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelCapacityReservationFleets(request), context);
 }
 
-void EC2Client::CancelCapacityReservationFleetsAsyncHelper(const CancelCapacityReservationFleetsRequest& request, const CancelCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CancelCapacityReservationFleetsAsync(const CancelCapacityReservationFleetsRequest& request, const CancelCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelCapacityReservationFleets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCancelCapacityReservationFleetsAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelConversionTaskOutcome EC2Client::CancelConversionTask(const CancelConversionTaskRequest& request) const
@@ -1560,14 +1560,14 @@ CancelConversionTaskOutcomeCallable EC2Client::CancelConversionTaskCallable(cons
   return task->get_future();
 }
 
-void EC2Client::CancelConversionTaskAsync(const CancelConversionTaskRequest& request, const CancelConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCancelConversionTaskAsyncHelper(EC2Client const * const clientThis, const CancelConversionTaskRequest& request, const CancelConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelConversionTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelConversionTask(request), context);
 }
 
-void EC2Client::CancelConversionTaskAsyncHelper(const CancelConversionTaskRequest& request, const CancelConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CancelConversionTaskAsync(const CancelConversionTaskRequest& request, const CancelConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelConversionTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCancelConversionTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelExportTaskOutcome EC2Client::CancelExportTask(const CancelExportTaskRequest& request) const
@@ -1584,14 +1584,14 @@ CancelExportTaskOutcomeCallable EC2Client::CancelExportTaskCallable(const Cancel
   return task->get_future();
 }
 
-void EC2Client::CancelExportTaskAsync(const CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCancelExportTaskAsyncHelper(EC2Client const * const clientThis, const CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelExportTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelExportTask(request), context);
 }
 
-void EC2Client::CancelExportTaskAsyncHelper(const CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CancelExportTaskAsync(const CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelExportTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCancelExportTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelImportTaskOutcome EC2Client::CancelImportTask(const CancelImportTaskRequest& request) const
@@ -1608,14 +1608,14 @@ CancelImportTaskOutcomeCallable EC2Client::CancelImportTaskCallable(const Cancel
   return task->get_future();
 }
 
-void EC2Client::CancelImportTaskAsync(const CancelImportTaskRequest& request, const CancelImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCancelImportTaskAsyncHelper(EC2Client const * const clientThis, const CancelImportTaskRequest& request, const CancelImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelImportTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelImportTask(request), context);
 }
 
-void EC2Client::CancelImportTaskAsyncHelper(const CancelImportTaskRequest& request, const CancelImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CancelImportTaskAsync(const CancelImportTaskRequest& request, const CancelImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelImportTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCancelImportTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelReservedInstancesListingOutcome EC2Client::CancelReservedInstancesListing(const CancelReservedInstancesListingRequest& request) const
@@ -1632,14 +1632,14 @@ CancelReservedInstancesListingOutcomeCallable EC2Client::CancelReservedInstances
   return task->get_future();
 }
 
-void EC2Client::CancelReservedInstancesListingAsync(const CancelReservedInstancesListingRequest& request, const CancelReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCancelReservedInstancesListingAsyncHelper(EC2Client const * const clientThis, const CancelReservedInstancesListingRequest& request, const CancelReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelReservedInstancesListingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelReservedInstancesListing(request), context);
 }
 
-void EC2Client::CancelReservedInstancesListingAsyncHelper(const CancelReservedInstancesListingRequest& request, const CancelReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CancelReservedInstancesListingAsync(const CancelReservedInstancesListingRequest& request, const CancelReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelReservedInstancesListing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCancelReservedInstancesListingAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelSpotFleetRequestsOutcome EC2Client::CancelSpotFleetRequests(const CancelSpotFleetRequestsRequest& request) const
@@ -1656,14 +1656,14 @@ CancelSpotFleetRequestsOutcomeCallable EC2Client::CancelSpotFleetRequestsCallabl
   return task->get_future();
 }
 
-void EC2Client::CancelSpotFleetRequestsAsync(const CancelSpotFleetRequestsRequest& request, const CancelSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCancelSpotFleetRequestsAsyncHelper(EC2Client const * const clientThis, const CancelSpotFleetRequestsRequest& request, const CancelSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelSpotFleetRequestsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelSpotFleetRequests(request), context);
 }
 
-void EC2Client::CancelSpotFleetRequestsAsyncHelper(const CancelSpotFleetRequestsRequest& request, const CancelSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CancelSpotFleetRequestsAsync(const CancelSpotFleetRequestsRequest& request, const CancelSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelSpotFleetRequests(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCancelSpotFleetRequestsAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelSpotInstanceRequestsOutcome EC2Client::CancelSpotInstanceRequests(const CancelSpotInstanceRequestsRequest& request) const
@@ -1680,14 +1680,14 @@ CancelSpotInstanceRequestsOutcomeCallable EC2Client::CancelSpotInstanceRequestsC
   return task->get_future();
 }
 
-void EC2Client::CancelSpotInstanceRequestsAsync(const CancelSpotInstanceRequestsRequest& request, const CancelSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCancelSpotInstanceRequestsAsyncHelper(EC2Client const * const clientThis, const CancelSpotInstanceRequestsRequest& request, const CancelSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelSpotInstanceRequestsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelSpotInstanceRequests(request), context);
 }
 
-void EC2Client::CancelSpotInstanceRequestsAsyncHelper(const CancelSpotInstanceRequestsRequest& request, const CancelSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CancelSpotInstanceRequestsAsync(const CancelSpotInstanceRequestsRequest& request, const CancelSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelSpotInstanceRequests(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCancelSpotInstanceRequestsAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfirmProductInstanceOutcome EC2Client::ConfirmProductInstance(const ConfirmProductInstanceRequest& request) const
@@ -1704,14 +1704,14 @@ ConfirmProductInstanceOutcomeCallable EC2Client::ConfirmProductInstanceCallable(
   return task->get_future();
 }
 
-void EC2Client::ConfirmProductInstanceAsync(const ConfirmProductInstanceRequest& request, const ConfirmProductInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientConfirmProductInstanceAsyncHelper(EC2Client const * const clientThis, const ConfirmProductInstanceRequest& request, const ConfirmProductInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfirmProductInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfirmProductInstance(request), context);
 }
 
-void EC2Client::ConfirmProductInstanceAsyncHelper(const ConfirmProductInstanceRequest& request, const ConfirmProductInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ConfirmProductInstanceAsync(const ConfirmProductInstanceRequest& request, const ConfirmProductInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfirmProductInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientConfirmProductInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 CopyFpgaImageOutcome EC2Client::CopyFpgaImage(const CopyFpgaImageRequest& request) const
@@ -1728,14 +1728,14 @@ CopyFpgaImageOutcomeCallable EC2Client::CopyFpgaImageCallable(const CopyFpgaImag
   return task->get_future();
 }
 
-void EC2Client::CopyFpgaImageAsync(const CopyFpgaImageRequest& request, const CopyFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCopyFpgaImageAsyncHelper(EC2Client const * const clientThis, const CopyFpgaImageRequest& request, const CopyFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopyFpgaImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CopyFpgaImage(request), context);
 }
 
-void EC2Client::CopyFpgaImageAsyncHelper(const CopyFpgaImageRequest& request, const CopyFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CopyFpgaImageAsync(const CopyFpgaImageRequest& request, const CopyFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CopyFpgaImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCopyFpgaImageAsyncHelper( this, request, handler, context ); } );
 }
 
 CopyImageOutcome EC2Client::CopyImage(const CopyImageRequest& request) const
@@ -1752,14 +1752,14 @@ CopyImageOutcomeCallable EC2Client::CopyImageCallable(const CopyImageRequest& re
   return task->get_future();
 }
 
-void EC2Client::CopyImageAsync(const CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCopyImageAsyncHelper(EC2Client const * const clientThis, const CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopyImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CopyImage(request), context);
 }
 
-void EC2Client::CopyImageAsyncHelper(const CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CopyImageAsync(const CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CopyImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCopyImageAsyncHelper( this, request, handler, context ); } );
 }
 
 CopySnapshotOutcome EC2Client::CopySnapshot(const CopySnapshotRequest& request) const
@@ -1776,14 +1776,14 @@ CopySnapshotOutcomeCallable EC2Client::CopySnapshotCallable(const CopySnapshotRe
   return task->get_future();
 }
 
-void EC2Client::CopySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCopySnapshotAsyncHelper(EC2Client const * const clientThis, const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopySnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CopySnapshot(request), context);
 }
 
-void EC2Client::CopySnapshotAsyncHelper(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CopySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CopySnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCopySnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCapacityReservationOutcome EC2Client::CreateCapacityReservation(const CreateCapacityReservationRequest& request) const
@@ -1800,14 +1800,14 @@ CreateCapacityReservationOutcomeCallable EC2Client::CreateCapacityReservationCal
   return task->get_future();
 }
 
-void EC2Client::CreateCapacityReservationAsync(const CreateCapacityReservationRequest& request, const CreateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateCapacityReservationAsyncHelper(EC2Client const * const clientThis, const CreateCapacityReservationRequest& request, const CreateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCapacityReservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCapacityReservation(request), context);
 }
 
-void EC2Client::CreateCapacityReservationAsyncHelper(const CreateCapacityReservationRequest& request, const CreateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateCapacityReservationAsync(const CreateCapacityReservationRequest& request, const CreateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCapacityReservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateCapacityReservationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCapacityReservationFleetOutcome EC2Client::CreateCapacityReservationFleet(const CreateCapacityReservationFleetRequest& request) const
@@ -1824,14 +1824,14 @@ CreateCapacityReservationFleetOutcomeCallable EC2Client::CreateCapacityReservati
   return task->get_future();
 }
 
-void EC2Client::CreateCapacityReservationFleetAsync(const CreateCapacityReservationFleetRequest& request, const CreateCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateCapacityReservationFleetAsyncHelper(EC2Client const * const clientThis, const CreateCapacityReservationFleetRequest& request, const CreateCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCapacityReservationFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCapacityReservationFleet(request), context);
 }
 
-void EC2Client::CreateCapacityReservationFleetAsyncHelper(const CreateCapacityReservationFleetRequest& request, const CreateCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateCapacityReservationFleetAsync(const CreateCapacityReservationFleetRequest& request, const CreateCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCapacityReservationFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateCapacityReservationFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCarrierGatewayOutcome EC2Client::CreateCarrierGateway(const CreateCarrierGatewayRequest& request) const
@@ -1848,14 +1848,14 @@ CreateCarrierGatewayOutcomeCallable EC2Client::CreateCarrierGatewayCallable(cons
   return task->get_future();
 }
 
-void EC2Client::CreateCarrierGatewayAsync(const CreateCarrierGatewayRequest& request, const CreateCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateCarrierGatewayAsyncHelper(EC2Client const * const clientThis, const CreateCarrierGatewayRequest& request, const CreateCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCarrierGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCarrierGateway(request), context);
 }
 
-void EC2Client::CreateCarrierGatewayAsyncHelper(const CreateCarrierGatewayRequest& request, const CreateCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateCarrierGatewayAsync(const CreateCarrierGatewayRequest& request, const CreateCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCarrierGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateCarrierGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateClientVpnEndpointOutcome EC2Client::CreateClientVpnEndpoint(const CreateClientVpnEndpointRequest& request) const
@@ -1872,14 +1872,14 @@ CreateClientVpnEndpointOutcomeCallable EC2Client::CreateClientVpnEndpointCallabl
   return task->get_future();
 }
 
-void EC2Client::CreateClientVpnEndpointAsync(const CreateClientVpnEndpointRequest& request, const CreateClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateClientVpnEndpointAsyncHelper(EC2Client const * const clientThis, const CreateClientVpnEndpointRequest& request, const CreateClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClientVpnEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateClientVpnEndpoint(request), context);
 }
 
-void EC2Client::CreateClientVpnEndpointAsyncHelper(const CreateClientVpnEndpointRequest& request, const CreateClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateClientVpnEndpointAsync(const CreateClientVpnEndpointRequest& request, const CreateClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateClientVpnEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateClientVpnEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateClientVpnRouteOutcome EC2Client::CreateClientVpnRoute(const CreateClientVpnRouteRequest& request) const
@@ -1896,14 +1896,14 @@ CreateClientVpnRouteOutcomeCallable EC2Client::CreateClientVpnRouteCallable(cons
   return task->get_future();
 }
 
-void EC2Client::CreateClientVpnRouteAsync(const CreateClientVpnRouteRequest& request, const CreateClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateClientVpnRouteAsyncHelper(EC2Client const * const clientThis, const CreateClientVpnRouteRequest& request, const CreateClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClientVpnRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateClientVpnRoute(request), context);
 }
 
-void EC2Client::CreateClientVpnRouteAsyncHelper(const CreateClientVpnRouteRequest& request, const CreateClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateClientVpnRouteAsync(const CreateClientVpnRouteRequest& request, const CreateClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateClientVpnRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateClientVpnRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomerGatewayOutcome EC2Client::CreateCustomerGateway(const CreateCustomerGatewayRequest& request) const
@@ -1920,14 +1920,14 @@ CreateCustomerGatewayOutcomeCallable EC2Client::CreateCustomerGatewayCallable(co
   return task->get_future();
 }
 
-void EC2Client::CreateCustomerGatewayAsync(const CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateCustomerGatewayAsyncHelper(EC2Client const * const clientThis, const CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomerGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomerGateway(request), context);
 }
 
-void EC2Client::CreateCustomerGatewayAsyncHelper(const CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateCustomerGatewayAsync(const CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomerGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateCustomerGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDefaultSubnetOutcome EC2Client::CreateDefaultSubnet(const CreateDefaultSubnetRequest& request) const
@@ -1944,14 +1944,14 @@ CreateDefaultSubnetOutcomeCallable EC2Client::CreateDefaultSubnetCallable(const 
   return task->get_future();
 }
 
-void EC2Client::CreateDefaultSubnetAsync(const CreateDefaultSubnetRequest& request, const CreateDefaultSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateDefaultSubnetAsyncHelper(EC2Client const * const clientThis, const CreateDefaultSubnetRequest& request, const CreateDefaultSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDefaultSubnetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDefaultSubnet(request), context);
 }
 
-void EC2Client::CreateDefaultSubnetAsyncHelper(const CreateDefaultSubnetRequest& request, const CreateDefaultSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateDefaultSubnetAsync(const CreateDefaultSubnetRequest& request, const CreateDefaultSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDefaultSubnet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateDefaultSubnetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDefaultVpcOutcome EC2Client::CreateDefaultVpc(const CreateDefaultVpcRequest& request) const
@@ -1968,14 +1968,14 @@ CreateDefaultVpcOutcomeCallable EC2Client::CreateDefaultVpcCallable(const Create
   return task->get_future();
 }
 
-void EC2Client::CreateDefaultVpcAsync(const CreateDefaultVpcRequest& request, const CreateDefaultVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateDefaultVpcAsyncHelper(EC2Client const * const clientThis, const CreateDefaultVpcRequest& request, const CreateDefaultVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDefaultVpcAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDefaultVpc(request), context);
 }
 
-void EC2Client::CreateDefaultVpcAsyncHelper(const CreateDefaultVpcRequest& request, const CreateDefaultVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateDefaultVpcAsync(const CreateDefaultVpcRequest& request, const CreateDefaultVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDefaultVpc(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateDefaultVpcAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDhcpOptionsOutcome EC2Client::CreateDhcpOptions(const CreateDhcpOptionsRequest& request) const
@@ -1992,14 +1992,14 @@ CreateDhcpOptionsOutcomeCallable EC2Client::CreateDhcpOptionsCallable(const Crea
   return task->get_future();
 }
 
-void EC2Client::CreateDhcpOptionsAsync(const CreateDhcpOptionsRequest& request, const CreateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateDhcpOptionsAsyncHelper(EC2Client const * const clientThis, const CreateDhcpOptionsRequest& request, const CreateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDhcpOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDhcpOptions(request), context);
 }
 
-void EC2Client::CreateDhcpOptionsAsyncHelper(const CreateDhcpOptionsRequest& request, const CreateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateDhcpOptionsAsync(const CreateDhcpOptionsRequest& request, const CreateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDhcpOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateDhcpOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEgressOnlyInternetGatewayOutcome EC2Client::CreateEgressOnlyInternetGateway(const CreateEgressOnlyInternetGatewayRequest& request) const
@@ -2016,14 +2016,14 @@ CreateEgressOnlyInternetGatewayOutcomeCallable EC2Client::CreateEgressOnlyIntern
   return task->get_future();
 }
 
-void EC2Client::CreateEgressOnlyInternetGatewayAsync(const CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateEgressOnlyInternetGatewayAsyncHelper(EC2Client const * const clientThis, const CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEgressOnlyInternetGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEgressOnlyInternetGateway(request), context);
 }
 
-void EC2Client::CreateEgressOnlyInternetGatewayAsyncHelper(const CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateEgressOnlyInternetGatewayAsync(const CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEgressOnlyInternetGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateEgressOnlyInternetGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFleetOutcome EC2Client::CreateFleet(const CreateFleetRequest& request) const
@@ -2040,14 +2040,14 @@ CreateFleetOutcomeCallable EC2Client::CreateFleetCallable(const CreateFleetReque
   return task->get_future();
 }
 
-void EC2Client::CreateFleetAsync(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateFleetAsyncHelper(EC2Client const * const clientThis, const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFleet(request), context);
 }
 
-void EC2Client::CreateFleetAsyncHelper(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateFleetAsync(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFlowLogsOutcome EC2Client::CreateFlowLogs(const CreateFlowLogsRequest& request) const
@@ -2064,14 +2064,14 @@ CreateFlowLogsOutcomeCallable EC2Client::CreateFlowLogsCallable(const CreateFlow
   return task->get_future();
 }
 
-void EC2Client::CreateFlowLogsAsync(const CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateFlowLogsAsyncHelper(EC2Client const * const clientThis, const CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFlowLogsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFlowLogs(request), context);
 }
 
-void EC2Client::CreateFlowLogsAsyncHelper(const CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateFlowLogsAsync(const CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFlowLogs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateFlowLogsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFpgaImageOutcome EC2Client::CreateFpgaImage(const CreateFpgaImageRequest& request) const
@@ -2088,14 +2088,14 @@ CreateFpgaImageOutcomeCallable EC2Client::CreateFpgaImageCallable(const CreateFp
   return task->get_future();
 }
 
-void EC2Client::CreateFpgaImageAsync(const CreateFpgaImageRequest& request, const CreateFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateFpgaImageAsyncHelper(EC2Client const * const clientThis, const CreateFpgaImageRequest& request, const CreateFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFpgaImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFpgaImage(request), context);
 }
 
-void EC2Client::CreateFpgaImageAsyncHelper(const CreateFpgaImageRequest& request, const CreateFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateFpgaImageAsync(const CreateFpgaImageRequest& request, const CreateFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFpgaImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateFpgaImageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateImageOutcome EC2Client::CreateImage(const CreateImageRequest& request) const
@@ -2112,14 +2112,14 @@ CreateImageOutcomeCallable EC2Client::CreateImageCallable(const CreateImageReque
   return task->get_future();
 }
 
-void EC2Client::CreateImageAsync(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateImageAsyncHelper(EC2Client const * const clientThis, const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateImage(request), context);
 }
 
-void EC2Client::CreateImageAsyncHelper(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateImageAsync(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateImageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInstanceEventWindowOutcome EC2Client::CreateInstanceEventWindow(const CreateInstanceEventWindowRequest& request) const
@@ -2136,14 +2136,14 @@ CreateInstanceEventWindowOutcomeCallable EC2Client::CreateInstanceEventWindowCal
   return task->get_future();
 }
 
-void EC2Client::CreateInstanceEventWindowAsync(const CreateInstanceEventWindowRequest& request, const CreateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateInstanceEventWindowAsyncHelper(EC2Client const * const clientThis, const CreateInstanceEventWindowRequest& request, const CreateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInstanceEventWindowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInstanceEventWindow(request), context);
 }
 
-void EC2Client::CreateInstanceEventWindowAsyncHelper(const CreateInstanceEventWindowRequest& request, const CreateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateInstanceEventWindowAsync(const CreateInstanceEventWindowRequest& request, const CreateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInstanceEventWindow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateInstanceEventWindowAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInstanceExportTaskOutcome EC2Client::CreateInstanceExportTask(const CreateInstanceExportTaskRequest& request) const
@@ -2160,14 +2160,14 @@ CreateInstanceExportTaskOutcomeCallable EC2Client::CreateInstanceExportTaskCalla
   return task->get_future();
 }
 
-void EC2Client::CreateInstanceExportTaskAsync(const CreateInstanceExportTaskRequest& request, const CreateInstanceExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateInstanceExportTaskAsyncHelper(EC2Client const * const clientThis, const CreateInstanceExportTaskRequest& request, const CreateInstanceExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInstanceExportTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInstanceExportTask(request), context);
 }
 
-void EC2Client::CreateInstanceExportTaskAsyncHelper(const CreateInstanceExportTaskRequest& request, const CreateInstanceExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateInstanceExportTaskAsync(const CreateInstanceExportTaskRequest& request, const CreateInstanceExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInstanceExportTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateInstanceExportTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInternetGatewayOutcome EC2Client::CreateInternetGateway(const CreateInternetGatewayRequest& request) const
@@ -2184,14 +2184,14 @@ CreateInternetGatewayOutcomeCallable EC2Client::CreateInternetGatewayCallable(co
   return task->get_future();
 }
 
-void EC2Client::CreateInternetGatewayAsync(const CreateInternetGatewayRequest& request, const CreateInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateInternetGatewayAsyncHelper(EC2Client const * const clientThis, const CreateInternetGatewayRequest& request, const CreateInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInternetGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInternetGateway(request), context);
 }
 
-void EC2Client::CreateInternetGatewayAsyncHelper(const CreateInternetGatewayRequest& request, const CreateInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateInternetGatewayAsync(const CreateInternetGatewayRequest& request, const CreateInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInternetGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateInternetGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIpamOutcome EC2Client::CreateIpam(const CreateIpamRequest& request) const
@@ -2208,14 +2208,14 @@ CreateIpamOutcomeCallable EC2Client::CreateIpamCallable(const CreateIpamRequest&
   return task->get_future();
 }
 
-void EC2Client::CreateIpamAsync(const CreateIpamRequest& request, const CreateIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateIpamAsyncHelper(EC2Client const * const clientThis, const CreateIpamRequest& request, const CreateIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIpamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIpam(request), context);
 }
 
-void EC2Client::CreateIpamAsyncHelper(const CreateIpamRequest& request, const CreateIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateIpamAsync(const CreateIpamRequest& request, const CreateIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIpam(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateIpamAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIpamPoolOutcome EC2Client::CreateIpamPool(const CreateIpamPoolRequest& request) const
@@ -2232,14 +2232,14 @@ CreateIpamPoolOutcomeCallable EC2Client::CreateIpamPoolCallable(const CreateIpam
   return task->get_future();
 }
 
-void EC2Client::CreateIpamPoolAsync(const CreateIpamPoolRequest& request, const CreateIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateIpamPoolAsyncHelper(EC2Client const * const clientThis, const CreateIpamPoolRequest& request, const CreateIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIpamPoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIpamPool(request), context);
 }
 
-void EC2Client::CreateIpamPoolAsyncHelper(const CreateIpamPoolRequest& request, const CreateIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateIpamPoolAsync(const CreateIpamPoolRequest& request, const CreateIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIpamPool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateIpamPoolAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIpamScopeOutcome EC2Client::CreateIpamScope(const CreateIpamScopeRequest& request) const
@@ -2256,14 +2256,14 @@ CreateIpamScopeOutcomeCallable EC2Client::CreateIpamScopeCallable(const CreateIp
   return task->get_future();
 }
 
-void EC2Client::CreateIpamScopeAsync(const CreateIpamScopeRequest& request, const CreateIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateIpamScopeAsyncHelper(EC2Client const * const clientThis, const CreateIpamScopeRequest& request, const CreateIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIpamScopeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIpamScope(request), context);
 }
 
-void EC2Client::CreateIpamScopeAsyncHelper(const CreateIpamScopeRequest& request, const CreateIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateIpamScopeAsync(const CreateIpamScopeRequest& request, const CreateIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIpamScope(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateIpamScopeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateKeyPairOutcome EC2Client::CreateKeyPair(const CreateKeyPairRequest& request) const
@@ -2280,14 +2280,14 @@ CreateKeyPairOutcomeCallable EC2Client::CreateKeyPairCallable(const CreateKeyPai
   return task->get_future();
 }
 
-void EC2Client::CreateKeyPairAsync(const CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateKeyPairAsyncHelper(EC2Client const * const clientThis, const CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateKeyPair(request), context);
 }
 
-void EC2Client::CreateKeyPairAsyncHelper(const CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateKeyPairAsync(const CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLaunchTemplateOutcome EC2Client::CreateLaunchTemplate(const CreateLaunchTemplateRequest& request) const
@@ -2304,14 +2304,14 @@ CreateLaunchTemplateOutcomeCallable EC2Client::CreateLaunchTemplateCallable(cons
   return task->get_future();
 }
 
-void EC2Client::CreateLaunchTemplateAsync(const CreateLaunchTemplateRequest& request, const CreateLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateLaunchTemplateAsyncHelper(EC2Client const * const clientThis, const CreateLaunchTemplateRequest& request, const CreateLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLaunchTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLaunchTemplate(request), context);
 }
 
-void EC2Client::CreateLaunchTemplateAsyncHelper(const CreateLaunchTemplateRequest& request, const CreateLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateLaunchTemplateAsync(const CreateLaunchTemplateRequest& request, const CreateLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLaunchTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateLaunchTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLaunchTemplateVersionOutcome EC2Client::CreateLaunchTemplateVersion(const CreateLaunchTemplateVersionRequest& request) const
@@ -2328,14 +2328,14 @@ CreateLaunchTemplateVersionOutcomeCallable EC2Client::CreateLaunchTemplateVersio
   return task->get_future();
 }
 
-void EC2Client::CreateLaunchTemplateVersionAsync(const CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateLaunchTemplateVersionAsyncHelper(EC2Client const * const clientThis, const CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLaunchTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLaunchTemplateVersion(request), context);
 }
 
-void EC2Client::CreateLaunchTemplateVersionAsyncHelper(const CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateLaunchTemplateVersionAsync(const CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLaunchTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateLaunchTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocalGatewayRouteOutcome EC2Client::CreateLocalGatewayRoute(const CreateLocalGatewayRouteRequest& request) const
@@ -2352,14 +2352,14 @@ CreateLocalGatewayRouteOutcomeCallable EC2Client::CreateLocalGatewayRouteCallabl
   return task->get_future();
 }
 
-void EC2Client::CreateLocalGatewayRouteAsync(const CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateLocalGatewayRouteAsyncHelper(EC2Client const * const clientThis, const CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocalGatewayRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocalGatewayRoute(request), context);
 }
 
-void EC2Client::CreateLocalGatewayRouteAsyncHelper(const CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateLocalGatewayRouteAsync(const CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocalGatewayRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateLocalGatewayRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocalGatewayRouteTableVpcAssociationOutcome EC2Client::CreateLocalGatewayRouteTableVpcAssociation(const CreateLocalGatewayRouteTableVpcAssociationRequest& request) const
@@ -2376,14 +2376,14 @@ CreateLocalGatewayRouteTableVpcAssociationOutcomeCallable EC2Client::CreateLocal
   return task->get_future();
 }
 
-void EC2Client::CreateLocalGatewayRouteTableVpcAssociationAsync(const CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateLocalGatewayRouteTableVpcAssociationAsyncHelper(EC2Client const * const clientThis, const CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocalGatewayRouteTableVpcAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocalGatewayRouteTableVpcAssociation(request), context);
 }
 
-void EC2Client::CreateLocalGatewayRouteTableVpcAssociationAsyncHelper(const CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateLocalGatewayRouteTableVpcAssociationAsync(const CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocalGatewayRouteTableVpcAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateLocalGatewayRouteTableVpcAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateManagedPrefixListOutcome EC2Client::CreateManagedPrefixList(const CreateManagedPrefixListRequest& request) const
@@ -2400,14 +2400,14 @@ CreateManagedPrefixListOutcomeCallable EC2Client::CreateManagedPrefixListCallabl
   return task->get_future();
 }
 
-void EC2Client::CreateManagedPrefixListAsync(const CreateManagedPrefixListRequest& request, const CreateManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateManagedPrefixListAsyncHelper(EC2Client const * const clientThis, const CreateManagedPrefixListRequest& request, const CreateManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateManagedPrefixListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateManagedPrefixList(request), context);
 }
 
-void EC2Client::CreateManagedPrefixListAsyncHelper(const CreateManagedPrefixListRequest& request, const CreateManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateManagedPrefixListAsync(const CreateManagedPrefixListRequest& request, const CreateManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateManagedPrefixList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateManagedPrefixListAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNatGatewayOutcome EC2Client::CreateNatGateway(const CreateNatGatewayRequest& request) const
@@ -2424,14 +2424,14 @@ CreateNatGatewayOutcomeCallable EC2Client::CreateNatGatewayCallable(const Create
   return task->get_future();
 }
 
-void EC2Client::CreateNatGatewayAsync(const CreateNatGatewayRequest& request, const CreateNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateNatGatewayAsyncHelper(EC2Client const * const clientThis, const CreateNatGatewayRequest& request, const CreateNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNatGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNatGateway(request), context);
 }
 
-void EC2Client::CreateNatGatewayAsyncHelper(const CreateNatGatewayRequest& request, const CreateNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateNatGatewayAsync(const CreateNatGatewayRequest& request, const CreateNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNatGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateNatGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNetworkAclOutcome EC2Client::CreateNetworkAcl(const CreateNetworkAclRequest& request) const
@@ -2448,14 +2448,14 @@ CreateNetworkAclOutcomeCallable EC2Client::CreateNetworkAclCallable(const Create
   return task->get_future();
 }
 
-void EC2Client::CreateNetworkAclAsync(const CreateNetworkAclRequest& request, const CreateNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateNetworkAclAsyncHelper(EC2Client const * const clientThis, const CreateNetworkAclRequest& request, const CreateNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkAclAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNetworkAcl(request), context);
 }
 
-void EC2Client::CreateNetworkAclAsyncHelper(const CreateNetworkAclRequest& request, const CreateNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateNetworkAclAsync(const CreateNetworkAclRequest& request, const CreateNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNetworkAcl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateNetworkAclAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNetworkAclEntryOutcome EC2Client::CreateNetworkAclEntry(const CreateNetworkAclEntryRequest& request) const
@@ -2472,14 +2472,14 @@ CreateNetworkAclEntryOutcomeCallable EC2Client::CreateNetworkAclEntryCallable(co
   return task->get_future();
 }
 
-void EC2Client::CreateNetworkAclEntryAsync(const CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateNetworkAclEntryAsyncHelper(EC2Client const * const clientThis, const CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkAclEntryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNetworkAclEntry(request), context);
 }
 
-void EC2Client::CreateNetworkAclEntryAsyncHelper(const CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateNetworkAclEntryAsync(const CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNetworkAclEntry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateNetworkAclEntryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNetworkInsightsAccessScopeOutcome EC2Client::CreateNetworkInsightsAccessScope(const CreateNetworkInsightsAccessScopeRequest& request) const
@@ -2496,14 +2496,14 @@ CreateNetworkInsightsAccessScopeOutcomeCallable EC2Client::CreateNetworkInsights
   return task->get_future();
 }
 
-void EC2Client::CreateNetworkInsightsAccessScopeAsync(const CreateNetworkInsightsAccessScopeRequest& request, const CreateNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateNetworkInsightsAccessScopeAsyncHelper(EC2Client const * const clientThis, const CreateNetworkInsightsAccessScopeRequest& request, const CreateNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkInsightsAccessScopeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNetworkInsightsAccessScope(request), context);
 }
 
-void EC2Client::CreateNetworkInsightsAccessScopeAsyncHelper(const CreateNetworkInsightsAccessScopeRequest& request, const CreateNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateNetworkInsightsAccessScopeAsync(const CreateNetworkInsightsAccessScopeRequest& request, const CreateNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNetworkInsightsAccessScope(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateNetworkInsightsAccessScopeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNetworkInsightsPathOutcome EC2Client::CreateNetworkInsightsPath(const CreateNetworkInsightsPathRequest& request) const
@@ -2520,14 +2520,14 @@ CreateNetworkInsightsPathOutcomeCallable EC2Client::CreateNetworkInsightsPathCal
   return task->get_future();
 }
 
-void EC2Client::CreateNetworkInsightsPathAsync(const CreateNetworkInsightsPathRequest& request, const CreateNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateNetworkInsightsPathAsyncHelper(EC2Client const * const clientThis, const CreateNetworkInsightsPathRequest& request, const CreateNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkInsightsPathAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNetworkInsightsPath(request), context);
 }
 
-void EC2Client::CreateNetworkInsightsPathAsyncHelper(const CreateNetworkInsightsPathRequest& request, const CreateNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateNetworkInsightsPathAsync(const CreateNetworkInsightsPathRequest& request, const CreateNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNetworkInsightsPath(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateNetworkInsightsPathAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNetworkInterfaceOutcome EC2Client::CreateNetworkInterface(const CreateNetworkInterfaceRequest& request) const
@@ -2544,14 +2544,14 @@ CreateNetworkInterfaceOutcomeCallable EC2Client::CreateNetworkInterfaceCallable(
   return task->get_future();
 }
 
-void EC2Client::CreateNetworkInterfaceAsync(const CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateNetworkInterfaceAsyncHelper(EC2Client const * const clientThis, const CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNetworkInterface(request), context);
 }
 
-void EC2Client::CreateNetworkInterfaceAsyncHelper(const CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateNetworkInterfaceAsync(const CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNetworkInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateNetworkInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNetworkInterfacePermissionOutcome EC2Client::CreateNetworkInterfacePermission(const CreateNetworkInterfacePermissionRequest& request) const
@@ -2568,14 +2568,14 @@ CreateNetworkInterfacePermissionOutcomeCallable EC2Client::CreateNetworkInterfac
   return task->get_future();
 }
 
-void EC2Client::CreateNetworkInterfacePermissionAsync(const CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateNetworkInterfacePermissionAsyncHelper(EC2Client const * const clientThis, const CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkInterfacePermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNetworkInterfacePermission(request), context);
 }
 
-void EC2Client::CreateNetworkInterfacePermissionAsyncHelper(const CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateNetworkInterfacePermissionAsync(const CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNetworkInterfacePermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateNetworkInterfacePermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePlacementGroupOutcome EC2Client::CreatePlacementGroup(const CreatePlacementGroupRequest& request) const
@@ -2592,14 +2592,14 @@ CreatePlacementGroupOutcomeCallable EC2Client::CreatePlacementGroupCallable(cons
   return task->get_future();
 }
 
-void EC2Client::CreatePlacementGroupAsync(const CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreatePlacementGroupAsyncHelper(EC2Client const * const clientThis, const CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePlacementGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePlacementGroup(request), context);
 }
 
-void EC2Client::CreatePlacementGroupAsyncHelper(const CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreatePlacementGroupAsync(const CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePlacementGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreatePlacementGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePublicIpv4PoolOutcome EC2Client::CreatePublicIpv4Pool(const CreatePublicIpv4PoolRequest& request) const
@@ -2616,14 +2616,14 @@ CreatePublicIpv4PoolOutcomeCallable EC2Client::CreatePublicIpv4PoolCallable(cons
   return task->get_future();
 }
 
-void EC2Client::CreatePublicIpv4PoolAsync(const CreatePublicIpv4PoolRequest& request, const CreatePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreatePublicIpv4PoolAsyncHelper(EC2Client const * const clientThis, const CreatePublicIpv4PoolRequest& request, const CreatePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePublicIpv4PoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePublicIpv4Pool(request), context);
 }
 
-void EC2Client::CreatePublicIpv4PoolAsyncHelper(const CreatePublicIpv4PoolRequest& request, const CreatePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreatePublicIpv4PoolAsync(const CreatePublicIpv4PoolRequest& request, const CreatePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePublicIpv4Pool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreatePublicIpv4PoolAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateReplaceRootVolumeTaskOutcome EC2Client::CreateReplaceRootVolumeTask(const CreateReplaceRootVolumeTaskRequest& request) const
@@ -2640,14 +2640,14 @@ CreateReplaceRootVolumeTaskOutcomeCallable EC2Client::CreateReplaceRootVolumeTas
   return task->get_future();
 }
 
-void EC2Client::CreateReplaceRootVolumeTaskAsync(const CreateReplaceRootVolumeTaskRequest& request, const CreateReplaceRootVolumeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateReplaceRootVolumeTaskAsyncHelper(EC2Client const * const clientThis, const CreateReplaceRootVolumeTaskRequest& request, const CreateReplaceRootVolumeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReplaceRootVolumeTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateReplaceRootVolumeTask(request), context);
 }
 
-void EC2Client::CreateReplaceRootVolumeTaskAsyncHelper(const CreateReplaceRootVolumeTaskRequest& request, const CreateReplaceRootVolumeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateReplaceRootVolumeTaskAsync(const CreateReplaceRootVolumeTaskRequest& request, const CreateReplaceRootVolumeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateReplaceRootVolumeTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateReplaceRootVolumeTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateReservedInstancesListingOutcome EC2Client::CreateReservedInstancesListing(const CreateReservedInstancesListingRequest& request) const
@@ -2664,14 +2664,14 @@ CreateReservedInstancesListingOutcomeCallable EC2Client::CreateReservedInstances
   return task->get_future();
 }
 
-void EC2Client::CreateReservedInstancesListingAsync(const CreateReservedInstancesListingRequest& request, const CreateReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateReservedInstancesListingAsyncHelper(EC2Client const * const clientThis, const CreateReservedInstancesListingRequest& request, const CreateReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReservedInstancesListingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateReservedInstancesListing(request), context);
 }
 
-void EC2Client::CreateReservedInstancesListingAsyncHelper(const CreateReservedInstancesListingRequest& request, const CreateReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateReservedInstancesListingAsync(const CreateReservedInstancesListingRequest& request, const CreateReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateReservedInstancesListing(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateReservedInstancesListingAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRestoreImageTaskOutcome EC2Client::CreateRestoreImageTask(const CreateRestoreImageTaskRequest& request) const
@@ -2688,14 +2688,14 @@ CreateRestoreImageTaskOutcomeCallable EC2Client::CreateRestoreImageTaskCallable(
   return task->get_future();
 }
 
-void EC2Client::CreateRestoreImageTaskAsync(const CreateRestoreImageTaskRequest& request, const CreateRestoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateRestoreImageTaskAsyncHelper(EC2Client const * const clientThis, const CreateRestoreImageTaskRequest& request, const CreateRestoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRestoreImageTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRestoreImageTask(request), context);
 }
 
-void EC2Client::CreateRestoreImageTaskAsyncHelper(const CreateRestoreImageTaskRequest& request, const CreateRestoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateRestoreImageTaskAsync(const CreateRestoreImageTaskRequest& request, const CreateRestoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRestoreImageTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateRestoreImageTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRouteOutcome EC2Client::CreateRoute(const CreateRouteRequest& request) const
@@ -2712,14 +2712,14 @@ CreateRouteOutcomeCallable EC2Client::CreateRouteCallable(const CreateRouteReque
   return task->get_future();
 }
 
-void EC2Client::CreateRouteAsync(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateRouteAsyncHelper(EC2Client const * const clientThis, const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRoute(request), context);
 }
 
-void EC2Client::CreateRouteAsyncHelper(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateRouteAsync(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRouteTableOutcome EC2Client::CreateRouteTable(const CreateRouteTableRequest& request) const
@@ -2736,14 +2736,14 @@ CreateRouteTableOutcomeCallable EC2Client::CreateRouteTableCallable(const Create
   return task->get_future();
 }
 
-void EC2Client::CreateRouteTableAsync(const CreateRouteTableRequest& request, const CreateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateRouteTableAsyncHelper(EC2Client const * const clientThis, const CreateRouteTableRequest& request, const CreateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRouteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRouteTable(request), context);
 }
 
-void EC2Client::CreateRouteTableAsyncHelper(const CreateRouteTableRequest& request, const CreateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateRouteTableAsync(const CreateRouteTableRequest& request, const CreateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRouteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateRouteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSecurityGroupOutcome EC2Client::CreateSecurityGroup(const CreateSecurityGroupRequest& request) const
@@ -2760,14 +2760,14 @@ CreateSecurityGroupOutcomeCallable EC2Client::CreateSecurityGroupCallable(const 
   return task->get_future();
 }
 
-void EC2Client::CreateSecurityGroupAsync(const CreateSecurityGroupRequest& request, const CreateSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateSecurityGroupAsyncHelper(EC2Client const * const clientThis, const CreateSecurityGroupRequest& request, const CreateSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSecurityGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSecurityGroup(request), context);
 }
 
-void EC2Client::CreateSecurityGroupAsyncHelper(const CreateSecurityGroupRequest& request, const CreateSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateSecurityGroupAsync(const CreateSecurityGroupRequest& request, const CreateSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSecurityGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateSecurityGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSnapshotOutcome EC2Client::CreateSnapshot(const CreateSnapshotRequest& request) const
@@ -2784,14 +2784,14 @@ CreateSnapshotOutcomeCallable EC2Client::CreateSnapshotCallable(const CreateSnap
   return task->get_future();
 }
 
-void EC2Client::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateSnapshotAsyncHelper(EC2Client const * const clientThis, const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSnapshot(request), context);
 }
 
-void EC2Client::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSnapshotsOutcome EC2Client::CreateSnapshots(const CreateSnapshotsRequest& request) const
@@ -2808,14 +2808,14 @@ CreateSnapshotsOutcomeCallable EC2Client::CreateSnapshotsCallable(const CreateSn
   return task->get_future();
 }
 
-void EC2Client::CreateSnapshotsAsync(const CreateSnapshotsRequest& request, const CreateSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateSnapshotsAsyncHelper(EC2Client const * const clientThis, const CreateSnapshotsRequest& request, const CreateSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSnapshots(request), context);
 }
 
-void EC2Client::CreateSnapshotsAsyncHelper(const CreateSnapshotsRequest& request, const CreateSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateSnapshotsAsync(const CreateSnapshotsRequest& request, const CreateSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSpotDatafeedSubscriptionOutcome EC2Client::CreateSpotDatafeedSubscription(const CreateSpotDatafeedSubscriptionRequest& request) const
@@ -2832,14 +2832,14 @@ CreateSpotDatafeedSubscriptionOutcomeCallable EC2Client::CreateSpotDatafeedSubsc
   return task->get_future();
 }
 
-void EC2Client::CreateSpotDatafeedSubscriptionAsync(const CreateSpotDatafeedSubscriptionRequest& request, const CreateSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateSpotDatafeedSubscriptionAsyncHelper(EC2Client const * const clientThis, const CreateSpotDatafeedSubscriptionRequest& request, const CreateSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSpotDatafeedSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSpotDatafeedSubscription(request), context);
 }
 
-void EC2Client::CreateSpotDatafeedSubscriptionAsyncHelper(const CreateSpotDatafeedSubscriptionRequest& request, const CreateSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateSpotDatafeedSubscriptionAsync(const CreateSpotDatafeedSubscriptionRequest& request, const CreateSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSpotDatafeedSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateSpotDatafeedSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStoreImageTaskOutcome EC2Client::CreateStoreImageTask(const CreateStoreImageTaskRequest& request) const
@@ -2856,14 +2856,14 @@ CreateStoreImageTaskOutcomeCallable EC2Client::CreateStoreImageTaskCallable(cons
   return task->get_future();
 }
 
-void EC2Client::CreateStoreImageTaskAsync(const CreateStoreImageTaskRequest& request, const CreateStoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateStoreImageTaskAsyncHelper(EC2Client const * const clientThis, const CreateStoreImageTaskRequest& request, const CreateStoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStoreImageTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStoreImageTask(request), context);
 }
 
-void EC2Client::CreateStoreImageTaskAsyncHelper(const CreateStoreImageTaskRequest& request, const CreateStoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateStoreImageTaskAsync(const CreateStoreImageTaskRequest& request, const CreateStoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStoreImageTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateStoreImageTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSubnetOutcome EC2Client::CreateSubnet(const CreateSubnetRequest& request) const
@@ -2880,14 +2880,14 @@ CreateSubnetOutcomeCallable EC2Client::CreateSubnetCallable(const CreateSubnetRe
   return task->get_future();
 }
 
-void EC2Client::CreateSubnetAsync(const CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateSubnetAsyncHelper(EC2Client const * const clientThis, const CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSubnetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSubnet(request), context);
 }
 
-void EC2Client::CreateSubnetAsyncHelper(const CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateSubnetAsync(const CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSubnet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateSubnetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSubnetCidrReservationOutcome EC2Client::CreateSubnetCidrReservation(const CreateSubnetCidrReservationRequest& request) const
@@ -2904,14 +2904,14 @@ CreateSubnetCidrReservationOutcomeCallable EC2Client::CreateSubnetCidrReservatio
   return task->get_future();
 }
 
-void EC2Client::CreateSubnetCidrReservationAsync(const CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateSubnetCidrReservationAsyncHelper(EC2Client const * const clientThis, const CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSubnetCidrReservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSubnetCidrReservation(request), context);
 }
 
-void EC2Client::CreateSubnetCidrReservationAsyncHelper(const CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateSubnetCidrReservationAsync(const CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSubnetCidrReservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateSubnetCidrReservationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTagsOutcome EC2Client::CreateTags(const CreateTagsRequest& request) const
@@ -2928,14 +2928,14 @@ CreateTagsOutcomeCallable EC2Client::CreateTagsCallable(const CreateTagsRequest&
   return task->get_future();
 }
 
-void EC2Client::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTagsAsyncHelper(EC2Client const * const clientThis, const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTags(request), context);
 }
 
-void EC2Client::CreateTagsAsyncHelper(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTrafficMirrorFilterOutcome EC2Client::CreateTrafficMirrorFilter(const CreateTrafficMirrorFilterRequest& request) const
@@ -2952,14 +2952,14 @@ CreateTrafficMirrorFilterOutcomeCallable EC2Client::CreateTrafficMirrorFilterCal
   return task->get_future();
 }
 
-void EC2Client::CreateTrafficMirrorFilterAsync(const CreateTrafficMirrorFilterRequest& request, const CreateTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTrafficMirrorFilterAsyncHelper(EC2Client const * const clientThis, const CreateTrafficMirrorFilterRequest& request, const CreateTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrafficMirrorFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTrafficMirrorFilter(request), context);
 }
 
-void EC2Client::CreateTrafficMirrorFilterAsyncHelper(const CreateTrafficMirrorFilterRequest& request, const CreateTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTrafficMirrorFilterAsync(const CreateTrafficMirrorFilterRequest& request, const CreateTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTrafficMirrorFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTrafficMirrorFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTrafficMirrorFilterRuleOutcome EC2Client::CreateTrafficMirrorFilterRule(const CreateTrafficMirrorFilterRuleRequest& request) const
@@ -2976,14 +2976,14 @@ CreateTrafficMirrorFilterRuleOutcomeCallable EC2Client::CreateTrafficMirrorFilte
   return task->get_future();
 }
 
-void EC2Client::CreateTrafficMirrorFilterRuleAsync(const CreateTrafficMirrorFilterRuleRequest& request, const CreateTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTrafficMirrorFilterRuleAsyncHelper(EC2Client const * const clientThis, const CreateTrafficMirrorFilterRuleRequest& request, const CreateTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrafficMirrorFilterRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTrafficMirrorFilterRule(request), context);
 }
 
-void EC2Client::CreateTrafficMirrorFilterRuleAsyncHelper(const CreateTrafficMirrorFilterRuleRequest& request, const CreateTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTrafficMirrorFilterRuleAsync(const CreateTrafficMirrorFilterRuleRequest& request, const CreateTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTrafficMirrorFilterRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTrafficMirrorFilterRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTrafficMirrorSessionOutcome EC2Client::CreateTrafficMirrorSession(const CreateTrafficMirrorSessionRequest& request) const
@@ -3000,14 +3000,14 @@ CreateTrafficMirrorSessionOutcomeCallable EC2Client::CreateTrafficMirrorSessionC
   return task->get_future();
 }
 
-void EC2Client::CreateTrafficMirrorSessionAsync(const CreateTrafficMirrorSessionRequest& request, const CreateTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTrafficMirrorSessionAsyncHelper(EC2Client const * const clientThis, const CreateTrafficMirrorSessionRequest& request, const CreateTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrafficMirrorSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTrafficMirrorSession(request), context);
 }
 
-void EC2Client::CreateTrafficMirrorSessionAsyncHelper(const CreateTrafficMirrorSessionRequest& request, const CreateTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTrafficMirrorSessionAsync(const CreateTrafficMirrorSessionRequest& request, const CreateTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTrafficMirrorSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTrafficMirrorSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTrafficMirrorTargetOutcome EC2Client::CreateTrafficMirrorTarget(const CreateTrafficMirrorTargetRequest& request) const
@@ -3024,14 +3024,14 @@ CreateTrafficMirrorTargetOutcomeCallable EC2Client::CreateTrafficMirrorTargetCal
   return task->get_future();
 }
 
-void EC2Client::CreateTrafficMirrorTargetAsync(const CreateTrafficMirrorTargetRequest& request, const CreateTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTrafficMirrorTargetAsyncHelper(EC2Client const * const clientThis, const CreateTrafficMirrorTargetRequest& request, const CreateTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrafficMirrorTargetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTrafficMirrorTarget(request), context);
 }
 
-void EC2Client::CreateTrafficMirrorTargetAsyncHelper(const CreateTrafficMirrorTargetRequest& request, const CreateTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTrafficMirrorTargetAsync(const CreateTrafficMirrorTargetRequest& request, const CreateTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTrafficMirrorTarget(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTrafficMirrorTargetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayOutcome EC2Client::CreateTransitGateway(const CreateTransitGatewayRequest& request) const
@@ -3048,14 +3048,14 @@ CreateTransitGatewayOutcomeCallable EC2Client::CreateTransitGatewayCallable(cons
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayAsync(const CreateTransitGatewayRequest& request, const CreateTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayRequest& request, const CreateTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGateway(request), context);
 }
 
-void EC2Client::CreateTransitGatewayAsyncHelper(const CreateTransitGatewayRequest& request, const CreateTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayAsync(const CreateTransitGatewayRequest& request, const CreateTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayConnectOutcome EC2Client::CreateTransitGatewayConnect(const CreateTransitGatewayConnectRequest& request) const
@@ -3072,14 +3072,14 @@ CreateTransitGatewayConnectOutcomeCallable EC2Client::CreateTransitGatewayConnec
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayConnectAsync(const CreateTransitGatewayConnectRequest& request, const CreateTransitGatewayConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayConnectAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayConnectRequest& request, const CreateTransitGatewayConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayConnectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayConnect(request), context);
 }
 
-void EC2Client::CreateTransitGatewayConnectAsyncHelper(const CreateTransitGatewayConnectRequest& request, const CreateTransitGatewayConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayConnectAsync(const CreateTransitGatewayConnectRequest& request, const CreateTransitGatewayConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayConnect(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayConnectAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayConnectPeerOutcome EC2Client::CreateTransitGatewayConnectPeer(const CreateTransitGatewayConnectPeerRequest& request) const
@@ -3096,14 +3096,14 @@ CreateTransitGatewayConnectPeerOutcomeCallable EC2Client::CreateTransitGatewayCo
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayConnectPeerAsync(const CreateTransitGatewayConnectPeerRequest& request, const CreateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayConnectPeerAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayConnectPeerRequest& request, const CreateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayConnectPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayConnectPeer(request), context);
 }
 
-void EC2Client::CreateTransitGatewayConnectPeerAsyncHelper(const CreateTransitGatewayConnectPeerRequest& request, const CreateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayConnectPeerAsync(const CreateTransitGatewayConnectPeerRequest& request, const CreateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayConnectPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayConnectPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayMulticastDomainOutcome EC2Client::CreateTransitGatewayMulticastDomain(const CreateTransitGatewayMulticastDomainRequest& request) const
@@ -3120,14 +3120,14 @@ CreateTransitGatewayMulticastDomainOutcomeCallable EC2Client::CreateTransitGatew
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayMulticastDomainAsync(const CreateTransitGatewayMulticastDomainRequest& request, const CreateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayMulticastDomainAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayMulticastDomainRequest& request, const CreateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayMulticastDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayMulticastDomain(request), context);
 }
 
-void EC2Client::CreateTransitGatewayMulticastDomainAsyncHelper(const CreateTransitGatewayMulticastDomainRequest& request, const CreateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayMulticastDomainAsync(const CreateTransitGatewayMulticastDomainRequest& request, const CreateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayMulticastDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayMulticastDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayPeeringAttachmentOutcome EC2Client::CreateTransitGatewayPeeringAttachment(const CreateTransitGatewayPeeringAttachmentRequest& request) const
@@ -3144,14 +3144,14 @@ CreateTransitGatewayPeeringAttachmentOutcomeCallable EC2Client::CreateTransitGat
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayPeeringAttachmentAsync(const CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayPeeringAttachmentAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayPeeringAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayPeeringAttachment(request), context);
 }
 
-void EC2Client::CreateTransitGatewayPeeringAttachmentAsyncHelper(const CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayPeeringAttachmentAsync(const CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayPeeringAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayPeeringAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayPolicyTableOutcome EC2Client::CreateTransitGatewayPolicyTable(const CreateTransitGatewayPolicyTableRequest& request) const
@@ -3168,14 +3168,14 @@ CreateTransitGatewayPolicyTableOutcomeCallable EC2Client::CreateTransitGatewayPo
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayPolicyTableAsync(const CreateTransitGatewayPolicyTableRequest& request, const CreateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayPolicyTableAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayPolicyTableRequest& request, const CreateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayPolicyTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayPolicyTable(request), context);
 }
 
-void EC2Client::CreateTransitGatewayPolicyTableAsyncHelper(const CreateTransitGatewayPolicyTableRequest& request, const CreateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayPolicyTableAsync(const CreateTransitGatewayPolicyTableRequest& request, const CreateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayPolicyTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayPolicyTableAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayPrefixListReferenceOutcome EC2Client::CreateTransitGatewayPrefixListReference(const CreateTransitGatewayPrefixListReferenceRequest& request) const
@@ -3192,14 +3192,14 @@ CreateTransitGatewayPrefixListReferenceOutcomeCallable EC2Client::CreateTransitG
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayPrefixListReferenceAsync(const CreateTransitGatewayPrefixListReferenceRequest& request, const CreateTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayPrefixListReferenceAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayPrefixListReferenceRequest& request, const CreateTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayPrefixListReferenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayPrefixListReference(request), context);
 }
 
-void EC2Client::CreateTransitGatewayPrefixListReferenceAsyncHelper(const CreateTransitGatewayPrefixListReferenceRequest& request, const CreateTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayPrefixListReferenceAsync(const CreateTransitGatewayPrefixListReferenceRequest& request, const CreateTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayPrefixListReference(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayPrefixListReferenceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayRouteOutcome EC2Client::CreateTransitGatewayRoute(const CreateTransitGatewayRouteRequest& request) const
@@ -3216,14 +3216,14 @@ CreateTransitGatewayRouteOutcomeCallable EC2Client::CreateTransitGatewayRouteCal
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayRouteAsync(const CreateTransitGatewayRouteRequest& request, const CreateTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayRouteAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayRouteRequest& request, const CreateTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayRoute(request), context);
 }
 
-void EC2Client::CreateTransitGatewayRouteAsyncHelper(const CreateTransitGatewayRouteRequest& request, const CreateTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayRouteAsync(const CreateTransitGatewayRouteRequest& request, const CreateTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayRouteTableOutcome EC2Client::CreateTransitGatewayRouteTable(const CreateTransitGatewayRouteTableRequest& request) const
@@ -3240,14 +3240,14 @@ CreateTransitGatewayRouteTableOutcomeCallable EC2Client::CreateTransitGatewayRou
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayRouteTableAsync(const CreateTransitGatewayRouteTableRequest& request, const CreateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayRouteTableAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayRouteTableRequest& request, const CreateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayRouteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayRouteTable(request), context);
 }
 
-void EC2Client::CreateTransitGatewayRouteTableAsyncHelper(const CreateTransitGatewayRouteTableRequest& request, const CreateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayRouteTableAsync(const CreateTransitGatewayRouteTableRequest& request, const CreateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayRouteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayRouteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayRouteTableAnnouncementOutcome EC2Client::CreateTransitGatewayRouteTableAnnouncement(const CreateTransitGatewayRouteTableAnnouncementRequest& request) const
@@ -3264,14 +3264,14 @@ CreateTransitGatewayRouteTableAnnouncementOutcomeCallable EC2Client::CreateTrans
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayRouteTableAnnouncementAsync(const CreateTransitGatewayRouteTableAnnouncementRequest& request, const CreateTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayRouteTableAnnouncementAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayRouteTableAnnouncementRequest& request, const CreateTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayRouteTableAnnouncementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayRouteTableAnnouncement(request), context);
 }
 
-void EC2Client::CreateTransitGatewayRouteTableAnnouncementAsyncHelper(const CreateTransitGatewayRouteTableAnnouncementRequest& request, const CreateTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayRouteTableAnnouncementAsync(const CreateTransitGatewayRouteTableAnnouncementRequest& request, const CreateTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayRouteTableAnnouncement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayRouteTableAnnouncementAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitGatewayVpcAttachmentOutcome EC2Client::CreateTransitGatewayVpcAttachment(const CreateTransitGatewayVpcAttachmentRequest& request) const
@@ -3288,14 +3288,14 @@ CreateTransitGatewayVpcAttachmentOutcomeCallable EC2Client::CreateTransitGateway
   return task->get_future();
 }
 
-void EC2Client::CreateTransitGatewayVpcAttachmentAsync(const CreateTransitGatewayVpcAttachmentRequest& request, const CreateTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateTransitGatewayVpcAttachmentAsyncHelper(EC2Client const * const clientThis, const CreateTransitGatewayVpcAttachmentRequest& request, const CreateTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayVpcAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitGatewayVpcAttachment(request), context);
 }
 
-void EC2Client::CreateTransitGatewayVpcAttachmentAsyncHelper(const CreateTransitGatewayVpcAttachmentRequest& request, const CreateTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateTransitGatewayVpcAttachmentAsync(const CreateTransitGatewayVpcAttachmentRequest& request, const CreateTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitGatewayVpcAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateTransitGatewayVpcAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVolumeOutcome EC2Client::CreateVolume(const CreateVolumeRequest& request) const
@@ -3312,14 +3312,14 @@ CreateVolumeOutcomeCallable EC2Client::CreateVolumeCallable(const CreateVolumeRe
   return task->get_future();
 }
 
-void EC2Client::CreateVolumeAsync(const CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateVolumeAsyncHelper(EC2Client const * const clientThis, const CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVolume(request), context);
 }
 
-void EC2Client::CreateVolumeAsyncHelper(const CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateVolumeAsync(const CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpcOutcome EC2Client::CreateVpc(const CreateVpcRequest& request) const
@@ -3336,14 +3336,14 @@ CreateVpcOutcomeCallable EC2Client::CreateVpcCallable(const CreateVpcRequest& re
   return task->get_future();
 }
 
-void EC2Client::CreateVpcAsync(const CreateVpcRequest& request, const CreateVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateVpcAsyncHelper(EC2Client const * const clientThis, const CreateVpcRequest& request, const CreateVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpc(request), context);
 }
 
-void EC2Client::CreateVpcAsyncHelper(const CreateVpcRequest& request, const CreateVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateVpcAsync(const CreateVpcRequest& request, const CreateVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpc(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateVpcAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpcEndpointOutcome EC2Client::CreateVpcEndpoint(const CreateVpcEndpointRequest& request) const
@@ -3360,14 +3360,14 @@ CreateVpcEndpointOutcomeCallable EC2Client::CreateVpcEndpointCallable(const Crea
   return task->get_future();
 }
 
-void EC2Client::CreateVpcEndpointAsync(const CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateVpcEndpointAsyncHelper(EC2Client const * const clientThis, const CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpcEndpoint(request), context);
 }
 
-void EC2Client::CreateVpcEndpointAsyncHelper(const CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateVpcEndpointAsync(const CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpcEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateVpcEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpcEndpointConnectionNotificationOutcome EC2Client::CreateVpcEndpointConnectionNotification(const CreateVpcEndpointConnectionNotificationRequest& request) const
@@ -3384,14 +3384,14 @@ CreateVpcEndpointConnectionNotificationOutcomeCallable EC2Client::CreateVpcEndpo
   return task->get_future();
 }
 
-void EC2Client::CreateVpcEndpointConnectionNotificationAsync(const CreateVpcEndpointConnectionNotificationRequest& request, const CreateVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateVpcEndpointConnectionNotificationAsyncHelper(EC2Client const * const clientThis, const CreateVpcEndpointConnectionNotificationRequest& request, const CreateVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcEndpointConnectionNotificationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpcEndpointConnectionNotification(request), context);
 }
 
-void EC2Client::CreateVpcEndpointConnectionNotificationAsyncHelper(const CreateVpcEndpointConnectionNotificationRequest& request, const CreateVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateVpcEndpointConnectionNotificationAsync(const CreateVpcEndpointConnectionNotificationRequest& request, const CreateVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpcEndpointConnectionNotification(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateVpcEndpointConnectionNotificationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpcEndpointServiceConfigurationOutcome EC2Client::CreateVpcEndpointServiceConfiguration(const CreateVpcEndpointServiceConfigurationRequest& request) const
@@ -3408,14 +3408,14 @@ CreateVpcEndpointServiceConfigurationOutcomeCallable EC2Client::CreateVpcEndpoin
   return task->get_future();
 }
 
-void EC2Client::CreateVpcEndpointServiceConfigurationAsync(const CreateVpcEndpointServiceConfigurationRequest& request, const CreateVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateVpcEndpointServiceConfigurationAsyncHelper(EC2Client const * const clientThis, const CreateVpcEndpointServiceConfigurationRequest& request, const CreateVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcEndpointServiceConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpcEndpointServiceConfiguration(request), context);
 }
 
-void EC2Client::CreateVpcEndpointServiceConfigurationAsyncHelper(const CreateVpcEndpointServiceConfigurationRequest& request, const CreateVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateVpcEndpointServiceConfigurationAsync(const CreateVpcEndpointServiceConfigurationRequest& request, const CreateVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpcEndpointServiceConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateVpcEndpointServiceConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpcPeeringConnectionOutcome EC2Client::CreateVpcPeeringConnection(const CreateVpcPeeringConnectionRequest& request) const
@@ -3432,14 +3432,14 @@ CreateVpcPeeringConnectionOutcomeCallable EC2Client::CreateVpcPeeringConnectionC
   return task->get_future();
 }
 
-void EC2Client::CreateVpcPeeringConnectionAsync(const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateVpcPeeringConnectionAsyncHelper(EC2Client const * const clientThis, const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcPeeringConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpcPeeringConnection(request), context);
 }
 
-void EC2Client::CreateVpcPeeringConnectionAsyncHelper(const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateVpcPeeringConnectionAsync(const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpcPeeringConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateVpcPeeringConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpnConnectionOutcome EC2Client::CreateVpnConnection(const CreateVpnConnectionRequest& request) const
@@ -3456,14 +3456,14 @@ CreateVpnConnectionOutcomeCallable EC2Client::CreateVpnConnectionCallable(const 
   return task->get_future();
 }
 
-void EC2Client::CreateVpnConnectionAsync(const CreateVpnConnectionRequest& request, const CreateVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateVpnConnectionAsyncHelper(EC2Client const * const clientThis, const CreateVpnConnectionRequest& request, const CreateVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpnConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpnConnection(request), context);
 }
 
-void EC2Client::CreateVpnConnectionAsyncHelper(const CreateVpnConnectionRequest& request, const CreateVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateVpnConnectionAsync(const CreateVpnConnectionRequest& request, const CreateVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpnConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateVpnConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpnConnectionRouteOutcome EC2Client::CreateVpnConnectionRoute(const CreateVpnConnectionRouteRequest& request) const
@@ -3480,14 +3480,14 @@ CreateVpnConnectionRouteOutcomeCallable EC2Client::CreateVpnConnectionRouteCalla
   return task->get_future();
 }
 
-void EC2Client::CreateVpnConnectionRouteAsync(const CreateVpnConnectionRouteRequest& request, const CreateVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateVpnConnectionRouteAsyncHelper(EC2Client const * const clientThis, const CreateVpnConnectionRouteRequest& request, const CreateVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpnConnectionRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpnConnectionRoute(request), context);
 }
 
-void EC2Client::CreateVpnConnectionRouteAsyncHelper(const CreateVpnConnectionRouteRequest& request, const CreateVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateVpnConnectionRouteAsync(const CreateVpnConnectionRouteRequest& request, const CreateVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpnConnectionRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateVpnConnectionRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVpnGatewayOutcome EC2Client::CreateVpnGateway(const CreateVpnGatewayRequest& request) const
@@ -3504,14 +3504,14 @@ CreateVpnGatewayOutcomeCallable EC2Client::CreateVpnGatewayCallable(const Create
   return task->get_future();
 }
 
-void EC2Client::CreateVpnGatewayAsync(const CreateVpnGatewayRequest& request, const CreateVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientCreateVpnGatewayAsyncHelper(EC2Client const * const clientThis, const CreateVpnGatewayRequest& request, const CreateVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpnGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVpnGateway(request), context);
 }
 
-void EC2Client::CreateVpnGatewayAsyncHelper(const CreateVpnGatewayRequest& request, const CreateVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::CreateVpnGatewayAsync(const CreateVpnGatewayRequest& request, const CreateVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVpnGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientCreateVpnGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCarrierGatewayOutcome EC2Client::DeleteCarrierGateway(const DeleteCarrierGatewayRequest& request) const
@@ -3528,14 +3528,14 @@ DeleteCarrierGatewayOutcomeCallable EC2Client::DeleteCarrierGatewayCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DeleteCarrierGatewayAsync(const DeleteCarrierGatewayRequest& request, const DeleteCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteCarrierGatewayAsyncHelper(EC2Client const * const clientThis, const DeleteCarrierGatewayRequest& request, const DeleteCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCarrierGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCarrierGateway(request), context);
 }
 
-void EC2Client::DeleteCarrierGatewayAsyncHelper(const DeleteCarrierGatewayRequest& request, const DeleteCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteCarrierGatewayAsync(const DeleteCarrierGatewayRequest& request, const DeleteCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCarrierGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteCarrierGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteClientVpnEndpointOutcome EC2Client::DeleteClientVpnEndpoint(const DeleteClientVpnEndpointRequest& request) const
@@ -3552,14 +3552,14 @@ DeleteClientVpnEndpointOutcomeCallable EC2Client::DeleteClientVpnEndpointCallabl
   return task->get_future();
 }
 
-void EC2Client::DeleteClientVpnEndpointAsync(const DeleteClientVpnEndpointRequest& request, const DeleteClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteClientVpnEndpointAsyncHelper(EC2Client const * const clientThis, const DeleteClientVpnEndpointRequest& request, const DeleteClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteClientVpnEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteClientVpnEndpoint(request), context);
 }
 
-void EC2Client::DeleteClientVpnEndpointAsyncHelper(const DeleteClientVpnEndpointRequest& request, const DeleteClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteClientVpnEndpointAsync(const DeleteClientVpnEndpointRequest& request, const DeleteClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteClientVpnEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteClientVpnEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteClientVpnRouteOutcome EC2Client::DeleteClientVpnRoute(const DeleteClientVpnRouteRequest& request) const
@@ -3576,14 +3576,14 @@ DeleteClientVpnRouteOutcomeCallable EC2Client::DeleteClientVpnRouteCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DeleteClientVpnRouteAsync(const DeleteClientVpnRouteRequest& request, const DeleteClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteClientVpnRouteAsyncHelper(EC2Client const * const clientThis, const DeleteClientVpnRouteRequest& request, const DeleteClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteClientVpnRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteClientVpnRoute(request), context);
 }
 
-void EC2Client::DeleteClientVpnRouteAsyncHelper(const DeleteClientVpnRouteRequest& request, const DeleteClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteClientVpnRouteAsync(const DeleteClientVpnRouteRequest& request, const DeleteClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteClientVpnRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteClientVpnRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomerGatewayOutcome EC2Client::DeleteCustomerGateway(const DeleteCustomerGatewayRequest& request) const
@@ -3600,14 +3600,14 @@ DeleteCustomerGatewayOutcomeCallable EC2Client::DeleteCustomerGatewayCallable(co
   return task->get_future();
 }
 
-void EC2Client::DeleteCustomerGatewayAsync(const DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteCustomerGatewayAsyncHelper(EC2Client const * const clientThis, const DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomerGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomerGateway(request), context);
 }
 
-void EC2Client::DeleteCustomerGatewayAsyncHelper(const DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteCustomerGatewayAsync(const DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomerGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteCustomerGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDhcpOptionsOutcome EC2Client::DeleteDhcpOptions(const DeleteDhcpOptionsRequest& request) const
@@ -3624,14 +3624,14 @@ DeleteDhcpOptionsOutcomeCallable EC2Client::DeleteDhcpOptionsCallable(const Dele
   return task->get_future();
 }
 
-void EC2Client::DeleteDhcpOptionsAsync(const DeleteDhcpOptionsRequest& request, const DeleteDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteDhcpOptionsAsyncHelper(EC2Client const * const clientThis, const DeleteDhcpOptionsRequest& request, const DeleteDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDhcpOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDhcpOptions(request), context);
 }
 
-void EC2Client::DeleteDhcpOptionsAsyncHelper(const DeleteDhcpOptionsRequest& request, const DeleteDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteDhcpOptionsAsync(const DeleteDhcpOptionsRequest& request, const DeleteDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDhcpOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteDhcpOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEgressOnlyInternetGatewayOutcome EC2Client::DeleteEgressOnlyInternetGateway(const DeleteEgressOnlyInternetGatewayRequest& request) const
@@ -3648,14 +3648,14 @@ DeleteEgressOnlyInternetGatewayOutcomeCallable EC2Client::DeleteEgressOnlyIntern
   return task->get_future();
 }
 
-void EC2Client::DeleteEgressOnlyInternetGatewayAsync(const DeleteEgressOnlyInternetGatewayRequest& request, const DeleteEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteEgressOnlyInternetGatewayAsyncHelper(EC2Client const * const clientThis, const DeleteEgressOnlyInternetGatewayRequest& request, const DeleteEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEgressOnlyInternetGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEgressOnlyInternetGateway(request), context);
 }
 
-void EC2Client::DeleteEgressOnlyInternetGatewayAsyncHelper(const DeleteEgressOnlyInternetGatewayRequest& request, const DeleteEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteEgressOnlyInternetGatewayAsync(const DeleteEgressOnlyInternetGatewayRequest& request, const DeleteEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEgressOnlyInternetGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteEgressOnlyInternetGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFleetsOutcome EC2Client::DeleteFleets(const DeleteFleetsRequest& request) const
@@ -3672,14 +3672,14 @@ DeleteFleetsOutcomeCallable EC2Client::DeleteFleetsCallable(const DeleteFleetsRe
   return task->get_future();
 }
 
-void EC2Client::DeleteFleetsAsync(const DeleteFleetsRequest& request, const DeleteFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteFleetsAsyncHelper(EC2Client const * const clientThis, const DeleteFleetsRequest& request, const DeleteFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFleetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFleets(request), context);
 }
 
-void EC2Client::DeleteFleetsAsyncHelper(const DeleteFleetsRequest& request, const DeleteFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteFleetsAsync(const DeleteFleetsRequest& request, const DeleteFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFleets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteFleetsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFlowLogsOutcome EC2Client::DeleteFlowLogs(const DeleteFlowLogsRequest& request) const
@@ -3696,14 +3696,14 @@ DeleteFlowLogsOutcomeCallable EC2Client::DeleteFlowLogsCallable(const DeleteFlow
   return task->get_future();
 }
 
-void EC2Client::DeleteFlowLogsAsync(const DeleteFlowLogsRequest& request, const DeleteFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteFlowLogsAsyncHelper(EC2Client const * const clientThis, const DeleteFlowLogsRequest& request, const DeleteFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFlowLogsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFlowLogs(request), context);
 }
 
-void EC2Client::DeleteFlowLogsAsyncHelper(const DeleteFlowLogsRequest& request, const DeleteFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteFlowLogsAsync(const DeleteFlowLogsRequest& request, const DeleteFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFlowLogs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteFlowLogsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFpgaImageOutcome EC2Client::DeleteFpgaImage(const DeleteFpgaImageRequest& request) const
@@ -3720,14 +3720,14 @@ DeleteFpgaImageOutcomeCallable EC2Client::DeleteFpgaImageCallable(const DeleteFp
   return task->get_future();
 }
 
-void EC2Client::DeleteFpgaImageAsync(const DeleteFpgaImageRequest& request, const DeleteFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteFpgaImageAsyncHelper(EC2Client const * const clientThis, const DeleteFpgaImageRequest& request, const DeleteFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFpgaImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFpgaImage(request), context);
 }
 
-void EC2Client::DeleteFpgaImageAsyncHelper(const DeleteFpgaImageRequest& request, const DeleteFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteFpgaImageAsync(const DeleteFpgaImageRequest& request, const DeleteFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFpgaImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteFpgaImageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInstanceEventWindowOutcome EC2Client::DeleteInstanceEventWindow(const DeleteInstanceEventWindowRequest& request) const
@@ -3744,14 +3744,14 @@ DeleteInstanceEventWindowOutcomeCallable EC2Client::DeleteInstanceEventWindowCal
   return task->get_future();
 }
 
-void EC2Client::DeleteInstanceEventWindowAsync(const DeleteInstanceEventWindowRequest& request, const DeleteInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteInstanceEventWindowAsyncHelper(EC2Client const * const clientThis, const DeleteInstanceEventWindowRequest& request, const DeleteInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceEventWindowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInstanceEventWindow(request), context);
 }
 
-void EC2Client::DeleteInstanceEventWindowAsyncHelper(const DeleteInstanceEventWindowRequest& request, const DeleteInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteInstanceEventWindowAsync(const DeleteInstanceEventWindowRequest& request, const DeleteInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInstanceEventWindow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteInstanceEventWindowAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInternetGatewayOutcome EC2Client::DeleteInternetGateway(const DeleteInternetGatewayRequest& request) const
@@ -3768,14 +3768,14 @@ DeleteInternetGatewayOutcomeCallable EC2Client::DeleteInternetGatewayCallable(co
   return task->get_future();
 }
 
-void EC2Client::DeleteInternetGatewayAsync(const DeleteInternetGatewayRequest& request, const DeleteInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteInternetGatewayAsyncHelper(EC2Client const * const clientThis, const DeleteInternetGatewayRequest& request, const DeleteInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInternetGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInternetGateway(request), context);
 }
 
-void EC2Client::DeleteInternetGatewayAsyncHelper(const DeleteInternetGatewayRequest& request, const DeleteInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteInternetGatewayAsync(const DeleteInternetGatewayRequest& request, const DeleteInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInternetGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteInternetGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIpamOutcome EC2Client::DeleteIpam(const DeleteIpamRequest& request) const
@@ -3792,14 +3792,14 @@ DeleteIpamOutcomeCallable EC2Client::DeleteIpamCallable(const DeleteIpamRequest&
   return task->get_future();
 }
 
-void EC2Client::DeleteIpamAsync(const DeleteIpamRequest& request, const DeleteIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteIpamAsyncHelper(EC2Client const * const clientThis, const DeleteIpamRequest& request, const DeleteIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIpamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIpam(request), context);
 }
 
-void EC2Client::DeleteIpamAsyncHelper(const DeleteIpamRequest& request, const DeleteIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteIpamAsync(const DeleteIpamRequest& request, const DeleteIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIpam(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteIpamAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIpamPoolOutcome EC2Client::DeleteIpamPool(const DeleteIpamPoolRequest& request) const
@@ -3816,14 +3816,14 @@ DeleteIpamPoolOutcomeCallable EC2Client::DeleteIpamPoolCallable(const DeleteIpam
   return task->get_future();
 }
 
-void EC2Client::DeleteIpamPoolAsync(const DeleteIpamPoolRequest& request, const DeleteIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteIpamPoolAsyncHelper(EC2Client const * const clientThis, const DeleteIpamPoolRequest& request, const DeleteIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIpamPoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIpamPool(request), context);
 }
 
-void EC2Client::DeleteIpamPoolAsyncHelper(const DeleteIpamPoolRequest& request, const DeleteIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteIpamPoolAsync(const DeleteIpamPoolRequest& request, const DeleteIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIpamPool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteIpamPoolAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIpamScopeOutcome EC2Client::DeleteIpamScope(const DeleteIpamScopeRequest& request) const
@@ -3840,14 +3840,14 @@ DeleteIpamScopeOutcomeCallable EC2Client::DeleteIpamScopeCallable(const DeleteIp
   return task->get_future();
 }
 
-void EC2Client::DeleteIpamScopeAsync(const DeleteIpamScopeRequest& request, const DeleteIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteIpamScopeAsyncHelper(EC2Client const * const clientThis, const DeleteIpamScopeRequest& request, const DeleteIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIpamScopeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIpamScope(request), context);
 }
 
-void EC2Client::DeleteIpamScopeAsyncHelper(const DeleteIpamScopeRequest& request, const DeleteIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteIpamScopeAsync(const DeleteIpamScopeRequest& request, const DeleteIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIpamScope(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteIpamScopeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteKeyPairOutcome EC2Client::DeleteKeyPair(const DeleteKeyPairRequest& request) const
@@ -3864,14 +3864,14 @@ DeleteKeyPairOutcomeCallable EC2Client::DeleteKeyPairCallable(const DeleteKeyPai
   return task->get_future();
 }
 
-void EC2Client::DeleteKeyPairAsync(const DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteKeyPairAsyncHelper(EC2Client const * const clientThis, const DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteKeyPair(request), context);
 }
 
-void EC2Client::DeleteKeyPairAsyncHelper(const DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteKeyPairAsync(const DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLaunchTemplateOutcome EC2Client::DeleteLaunchTemplate(const DeleteLaunchTemplateRequest& request) const
@@ -3888,14 +3888,14 @@ DeleteLaunchTemplateOutcomeCallable EC2Client::DeleteLaunchTemplateCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DeleteLaunchTemplateAsync(const DeleteLaunchTemplateRequest& request, const DeleteLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteLaunchTemplateAsyncHelper(EC2Client const * const clientThis, const DeleteLaunchTemplateRequest& request, const DeleteLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLaunchTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLaunchTemplate(request), context);
 }
 
-void EC2Client::DeleteLaunchTemplateAsyncHelper(const DeleteLaunchTemplateRequest& request, const DeleteLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteLaunchTemplateAsync(const DeleteLaunchTemplateRequest& request, const DeleteLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLaunchTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteLaunchTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLaunchTemplateVersionsOutcome EC2Client::DeleteLaunchTemplateVersions(const DeleteLaunchTemplateVersionsRequest& request) const
@@ -3912,14 +3912,14 @@ DeleteLaunchTemplateVersionsOutcomeCallable EC2Client::DeleteLaunchTemplateVersi
   return task->get_future();
 }
 
-void EC2Client::DeleteLaunchTemplateVersionsAsync(const DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteLaunchTemplateVersionsAsyncHelper(EC2Client const * const clientThis, const DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLaunchTemplateVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLaunchTemplateVersions(request), context);
 }
 
-void EC2Client::DeleteLaunchTemplateVersionsAsyncHelper(const DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteLaunchTemplateVersionsAsync(const DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLaunchTemplateVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteLaunchTemplateVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLocalGatewayRouteOutcome EC2Client::DeleteLocalGatewayRoute(const DeleteLocalGatewayRouteRequest& request) const
@@ -3936,14 +3936,14 @@ DeleteLocalGatewayRouteOutcomeCallable EC2Client::DeleteLocalGatewayRouteCallabl
   return task->get_future();
 }
 
-void EC2Client::DeleteLocalGatewayRouteAsync(const DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteLocalGatewayRouteAsyncHelper(EC2Client const * const clientThis, const DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLocalGatewayRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLocalGatewayRoute(request), context);
 }
 
-void EC2Client::DeleteLocalGatewayRouteAsyncHelper(const DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteLocalGatewayRouteAsync(const DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLocalGatewayRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteLocalGatewayRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLocalGatewayRouteTableVpcAssociationOutcome EC2Client::DeleteLocalGatewayRouteTableVpcAssociation(const DeleteLocalGatewayRouteTableVpcAssociationRequest& request) const
@@ -3960,14 +3960,14 @@ DeleteLocalGatewayRouteTableVpcAssociationOutcomeCallable EC2Client::DeleteLocal
   return task->get_future();
 }
 
-void EC2Client::DeleteLocalGatewayRouteTableVpcAssociationAsync(const DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteLocalGatewayRouteTableVpcAssociationAsyncHelper(EC2Client const * const clientThis, const DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLocalGatewayRouteTableVpcAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLocalGatewayRouteTableVpcAssociation(request), context);
 }
 
-void EC2Client::DeleteLocalGatewayRouteTableVpcAssociationAsyncHelper(const DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteLocalGatewayRouteTableVpcAssociationAsync(const DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLocalGatewayRouteTableVpcAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteLocalGatewayRouteTableVpcAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteManagedPrefixListOutcome EC2Client::DeleteManagedPrefixList(const DeleteManagedPrefixListRequest& request) const
@@ -3984,14 +3984,14 @@ DeleteManagedPrefixListOutcomeCallable EC2Client::DeleteManagedPrefixListCallabl
   return task->get_future();
 }
 
-void EC2Client::DeleteManagedPrefixListAsync(const DeleteManagedPrefixListRequest& request, const DeleteManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteManagedPrefixListAsyncHelper(EC2Client const * const clientThis, const DeleteManagedPrefixListRequest& request, const DeleteManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteManagedPrefixListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteManagedPrefixList(request), context);
 }
 
-void EC2Client::DeleteManagedPrefixListAsyncHelper(const DeleteManagedPrefixListRequest& request, const DeleteManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteManagedPrefixListAsync(const DeleteManagedPrefixListRequest& request, const DeleteManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteManagedPrefixList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteManagedPrefixListAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNatGatewayOutcome EC2Client::DeleteNatGateway(const DeleteNatGatewayRequest& request) const
@@ -4008,14 +4008,14 @@ DeleteNatGatewayOutcomeCallable EC2Client::DeleteNatGatewayCallable(const Delete
   return task->get_future();
 }
 
-void EC2Client::DeleteNatGatewayAsync(const DeleteNatGatewayRequest& request, const DeleteNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteNatGatewayAsyncHelper(EC2Client const * const clientThis, const DeleteNatGatewayRequest& request, const DeleteNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNatGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNatGateway(request), context);
 }
 
-void EC2Client::DeleteNatGatewayAsyncHelper(const DeleteNatGatewayRequest& request, const DeleteNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteNatGatewayAsync(const DeleteNatGatewayRequest& request, const DeleteNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNatGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteNatGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNetworkAclOutcome EC2Client::DeleteNetworkAcl(const DeleteNetworkAclRequest& request) const
@@ -4032,14 +4032,14 @@ DeleteNetworkAclOutcomeCallable EC2Client::DeleteNetworkAclCallable(const Delete
   return task->get_future();
 }
 
-void EC2Client::DeleteNetworkAclAsync(const DeleteNetworkAclRequest& request, const DeleteNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteNetworkAclAsyncHelper(EC2Client const * const clientThis, const DeleteNetworkAclRequest& request, const DeleteNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkAclAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNetworkAcl(request), context);
 }
 
-void EC2Client::DeleteNetworkAclAsyncHelper(const DeleteNetworkAclRequest& request, const DeleteNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteNetworkAclAsync(const DeleteNetworkAclRequest& request, const DeleteNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNetworkAcl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteNetworkAclAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNetworkAclEntryOutcome EC2Client::DeleteNetworkAclEntry(const DeleteNetworkAclEntryRequest& request) const
@@ -4056,14 +4056,14 @@ DeleteNetworkAclEntryOutcomeCallable EC2Client::DeleteNetworkAclEntryCallable(co
   return task->get_future();
 }
 
-void EC2Client::DeleteNetworkAclEntryAsync(const DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteNetworkAclEntryAsyncHelper(EC2Client const * const clientThis, const DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkAclEntryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNetworkAclEntry(request), context);
 }
 
-void EC2Client::DeleteNetworkAclEntryAsyncHelper(const DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteNetworkAclEntryAsync(const DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNetworkAclEntry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteNetworkAclEntryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNetworkInsightsAccessScopeOutcome EC2Client::DeleteNetworkInsightsAccessScope(const DeleteNetworkInsightsAccessScopeRequest& request) const
@@ -4080,14 +4080,14 @@ DeleteNetworkInsightsAccessScopeOutcomeCallable EC2Client::DeleteNetworkInsights
   return task->get_future();
 }
 
-void EC2Client::DeleteNetworkInsightsAccessScopeAsync(const DeleteNetworkInsightsAccessScopeRequest& request, const DeleteNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteNetworkInsightsAccessScopeAsyncHelper(EC2Client const * const clientThis, const DeleteNetworkInsightsAccessScopeRequest& request, const DeleteNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkInsightsAccessScopeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNetworkInsightsAccessScope(request), context);
 }
 
-void EC2Client::DeleteNetworkInsightsAccessScopeAsyncHelper(const DeleteNetworkInsightsAccessScopeRequest& request, const DeleteNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteNetworkInsightsAccessScopeAsync(const DeleteNetworkInsightsAccessScopeRequest& request, const DeleteNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNetworkInsightsAccessScope(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteNetworkInsightsAccessScopeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNetworkInsightsAccessScopeAnalysisOutcome EC2Client::DeleteNetworkInsightsAccessScopeAnalysis(const DeleteNetworkInsightsAccessScopeAnalysisRequest& request) const
@@ -4104,14 +4104,14 @@ DeleteNetworkInsightsAccessScopeAnalysisOutcomeCallable EC2Client::DeleteNetwork
   return task->get_future();
 }
 
-void EC2Client::DeleteNetworkInsightsAccessScopeAnalysisAsync(const DeleteNetworkInsightsAccessScopeAnalysisRequest& request, const DeleteNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteNetworkInsightsAccessScopeAnalysisAsyncHelper(EC2Client const * const clientThis, const DeleteNetworkInsightsAccessScopeAnalysisRequest& request, const DeleteNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkInsightsAccessScopeAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNetworkInsightsAccessScopeAnalysis(request), context);
 }
 
-void EC2Client::DeleteNetworkInsightsAccessScopeAnalysisAsyncHelper(const DeleteNetworkInsightsAccessScopeAnalysisRequest& request, const DeleteNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteNetworkInsightsAccessScopeAnalysisAsync(const DeleteNetworkInsightsAccessScopeAnalysisRequest& request, const DeleteNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNetworkInsightsAccessScopeAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteNetworkInsightsAccessScopeAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNetworkInsightsAnalysisOutcome EC2Client::DeleteNetworkInsightsAnalysis(const DeleteNetworkInsightsAnalysisRequest& request) const
@@ -4128,14 +4128,14 @@ DeleteNetworkInsightsAnalysisOutcomeCallable EC2Client::DeleteNetworkInsightsAna
   return task->get_future();
 }
 
-void EC2Client::DeleteNetworkInsightsAnalysisAsync(const DeleteNetworkInsightsAnalysisRequest& request, const DeleteNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteNetworkInsightsAnalysisAsyncHelper(EC2Client const * const clientThis, const DeleteNetworkInsightsAnalysisRequest& request, const DeleteNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkInsightsAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNetworkInsightsAnalysis(request), context);
 }
 
-void EC2Client::DeleteNetworkInsightsAnalysisAsyncHelper(const DeleteNetworkInsightsAnalysisRequest& request, const DeleteNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteNetworkInsightsAnalysisAsync(const DeleteNetworkInsightsAnalysisRequest& request, const DeleteNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNetworkInsightsAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteNetworkInsightsAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNetworkInsightsPathOutcome EC2Client::DeleteNetworkInsightsPath(const DeleteNetworkInsightsPathRequest& request) const
@@ -4152,14 +4152,14 @@ DeleteNetworkInsightsPathOutcomeCallable EC2Client::DeleteNetworkInsightsPathCal
   return task->get_future();
 }
 
-void EC2Client::DeleteNetworkInsightsPathAsync(const DeleteNetworkInsightsPathRequest& request, const DeleteNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteNetworkInsightsPathAsyncHelper(EC2Client const * const clientThis, const DeleteNetworkInsightsPathRequest& request, const DeleteNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkInsightsPathAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNetworkInsightsPath(request), context);
 }
 
-void EC2Client::DeleteNetworkInsightsPathAsyncHelper(const DeleteNetworkInsightsPathRequest& request, const DeleteNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteNetworkInsightsPathAsync(const DeleteNetworkInsightsPathRequest& request, const DeleteNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNetworkInsightsPath(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteNetworkInsightsPathAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNetworkInterfaceOutcome EC2Client::DeleteNetworkInterface(const DeleteNetworkInterfaceRequest& request) const
@@ -4176,14 +4176,14 @@ DeleteNetworkInterfaceOutcomeCallable EC2Client::DeleteNetworkInterfaceCallable(
   return task->get_future();
 }
 
-void EC2Client::DeleteNetworkInterfaceAsync(const DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteNetworkInterfaceAsyncHelper(EC2Client const * const clientThis, const DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNetworkInterface(request), context);
 }
 
-void EC2Client::DeleteNetworkInterfaceAsyncHelper(const DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteNetworkInterfaceAsync(const DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNetworkInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteNetworkInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNetworkInterfacePermissionOutcome EC2Client::DeleteNetworkInterfacePermission(const DeleteNetworkInterfacePermissionRequest& request) const
@@ -4200,14 +4200,14 @@ DeleteNetworkInterfacePermissionOutcomeCallable EC2Client::DeleteNetworkInterfac
   return task->get_future();
 }
 
-void EC2Client::DeleteNetworkInterfacePermissionAsync(const DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteNetworkInterfacePermissionAsyncHelper(EC2Client const * const clientThis, const DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkInterfacePermissionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNetworkInterfacePermission(request), context);
 }
 
-void EC2Client::DeleteNetworkInterfacePermissionAsyncHelper(const DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteNetworkInterfacePermissionAsync(const DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNetworkInterfacePermission(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteNetworkInterfacePermissionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePlacementGroupOutcome EC2Client::DeletePlacementGroup(const DeletePlacementGroupRequest& request) const
@@ -4224,14 +4224,14 @@ DeletePlacementGroupOutcomeCallable EC2Client::DeletePlacementGroupCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DeletePlacementGroupAsync(const DeletePlacementGroupRequest& request, const DeletePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeletePlacementGroupAsyncHelper(EC2Client const * const clientThis, const DeletePlacementGroupRequest& request, const DeletePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePlacementGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePlacementGroup(request), context);
 }
 
-void EC2Client::DeletePlacementGroupAsyncHelper(const DeletePlacementGroupRequest& request, const DeletePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeletePlacementGroupAsync(const DeletePlacementGroupRequest& request, const DeletePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePlacementGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeletePlacementGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePublicIpv4PoolOutcome EC2Client::DeletePublicIpv4Pool(const DeletePublicIpv4PoolRequest& request) const
@@ -4248,14 +4248,14 @@ DeletePublicIpv4PoolOutcomeCallable EC2Client::DeletePublicIpv4PoolCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DeletePublicIpv4PoolAsync(const DeletePublicIpv4PoolRequest& request, const DeletePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeletePublicIpv4PoolAsyncHelper(EC2Client const * const clientThis, const DeletePublicIpv4PoolRequest& request, const DeletePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePublicIpv4PoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePublicIpv4Pool(request), context);
 }
 
-void EC2Client::DeletePublicIpv4PoolAsyncHelper(const DeletePublicIpv4PoolRequest& request, const DeletePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeletePublicIpv4PoolAsync(const DeletePublicIpv4PoolRequest& request, const DeletePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePublicIpv4Pool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeletePublicIpv4PoolAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteQueuedReservedInstancesOutcome EC2Client::DeleteQueuedReservedInstances(const DeleteQueuedReservedInstancesRequest& request) const
@@ -4272,14 +4272,14 @@ DeleteQueuedReservedInstancesOutcomeCallable EC2Client::DeleteQueuedReservedInst
   return task->get_future();
 }
 
-void EC2Client::DeleteQueuedReservedInstancesAsync(const DeleteQueuedReservedInstancesRequest& request, const DeleteQueuedReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteQueuedReservedInstancesAsyncHelper(EC2Client const * const clientThis, const DeleteQueuedReservedInstancesRequest& request, const DeleteQueuedReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueuedReservedInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteQueuedReservedInstances(request), context);
 }
 
-void EC2Client::DeleteQueuedReservedInstancesAsyncHelper(const DeleteQueuedReservedInstancesRequest& request, const DeleteQueuedReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteQueuedReservedInstancesAsync(const DeleteQueuedReservedInstancesRequest& request, const DeleteQueuedReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteQueuedReservedInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteQueuedReservedInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRouteOutcome EC2Client::DeleteRoute(const DeleteRouteRequest& request) const
@@ -4296,14 +4296,14 @@ DeleteRouteOutcomeCallable EC2Client::DeleteRouteCallable(const DeleteRouteReque
   return task->get_future();
 }
 
-void EC2Client::DeleteRouteAsync(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteRouteAsyncHelper(EC2Client const * const clientThis, const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRoute(request), context);
 }
 
-void EC2Client::DeleteRouteAsyncHelper(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteRouteAsync(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRouteTableOutcome EC2Client::DeleteRouteTable(const DeleteRouteTableRequest& request) const
@@ -4320,14 +4320,14 @@ DeleteRouteTableOutcomeCallable EC2Client::DeleteRouteTableCallable(const Delete
   return task->get_future();
 }
 
-void EC2Client::DeleteRouteTableAsync(const DeleteRouteTableRequest& request, const DeleteRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteRouteTableAsyncHelper(EC2Client const * const clientThis, const DeleteRouteTableRequest& request, const DeleteRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRouteTable(request), context);
 }
 
-void EC2Client::DeleteRouteTableAsyncHelper(const DeleteRouteTableRequest& request, const DeleteRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteRouteTableAsync(const DeleteRouteTableRequest& request, const DeleteRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRouteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteRouteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSecurityGroupOutcome EC2Client::DeleteSecurityGroup(const DeleteSecurityGroupRequest& request) const
@@ -4344,14 +4344,14 @@ DeleteSecurityGroupOutcomeCallable EC2Client::DeleteSecurityGroupCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DeleteSecurityGroupAsync(const DeleteSecurityGroupRequest& request, const DeleteSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteSecurityGroupAsyncHelper(EC2Client const * const clientThis, const DeleteSecurityGroupRequest& request, const DeleteSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSecurityGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSecurityGroup(request), context);
 }
 
-void EC2Client::DeleteSecurityGroupAsyncHelper(const DeleteSecurityGroupRequest& request, const DeleteSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteSecurityGroupAsync(const DeleteSecurityGroupRequest& request, const DeleteSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSecurityGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteSecurityGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSnapshotOutcome EC2Client::DeleteSnapshot(const DeleteSnapshotRequest& request) const
@@ -4368,14 +4368,14 @@ DeleteSnapshotOutcomeCallable EC2Client::DeleteSnapshotCallable(const DeleteSnap
   return task->get_future();
 }
 
-void EC2Client::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteSnapshotAsyncHelper(EC2Client const * const clientThis, const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSnapshot(request), context);
 }
 
-void EC2Client::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSpotDatafeedSubscriptionOutcome EC2Client::DeleteSpotDatafeedSubscription(const DeleteSpotDatafeedSubscriptionRequest& request) const
@@ -4392,14 +4392,14 @@ DeleteSpotDatafeedSubscriptionOutcomeCallable EC2Client::DeleteSpotDatafeedSubsc
   return task->get_future();
 }
 
-void EC2Client::DeleteSpotDatafeedSubscriptionAsync(const DeleteSpotDatafeedSubscriptionRequest& request, const DeleteSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteSpotDatafeedSubscriptionAsyncHelper(EC2Client const * const clientThis, const DeleteSpotDatafeedSubscriptionRequest& request, const DeleteSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSpotDatafeedSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSpotDatafeedSubscription(request), context);
 }
 
-void EC2Client::DeleteSpotDatafeedSubscriptionAsyncHelper(const DeleteSpotDatafeedSubscriptionRequest& request, const DeleteSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteSpotDatafeedSubscriptionAsync(const DeleteSpotDatafeedSubscriptionRequest& request, const DeleteSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSpotDatafeedSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteSpotDatafeedSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSubnetOutcome EC2Client::DeleteSubnet(const DeleteSubnetRequest& request) const
@@ -4416,14 +4416,14 @@ DeleteSubnetOutcomeCallable EC2Client::DeleteSubnetCallable(const DeleteSubnetRe
   return task->get_future();
 }
 
-void EC2Client::DeleteSubnetAsync(const DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteSubnetAsyncHelper(EC2Client const * const clientThis, const DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSubnetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSubnet(request), context);
 }
 
-void EC2Client::DeleteSubnetAsyncHelper(const DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteSubnetAsync(const DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSubnet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteSubnetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSubnetCidrReservationOutcome EC2Client::DeleteSubnetCidrReservation(const DeleteSubnetCidrReservationRequest& request) const
@@ -4440,14 +4440,14 @@ DeleteSubnetCidrReservationOutcomeCallable EC2Client::DeleteSubnetCidrReservatio
   return task->get_future();
 }
 
-void EC2Client::DeleteSubnetCidrReservationAsync(const DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteSubnetCidrReservationAsyncHelper(EC2Client const * const clientThis, const DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSubnetCidrReservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSubnetCidrReservation(request), context);
 }
 
-void EC2Client::DeleteSubnetCidrReservationAsyncHelper(const DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteSubnetCidrReservationAsync(const DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSubnetCidrReservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteSubnetCidrReservationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTagsOutcome EC2Client::DeleteTags(const DeleteTagsRequest& request) const
@@ -4464,14 +4464,14 @@ DeleteTagsOutcomeCallable EC2Client::DeleteTagsCallable(const DeleteTagsRequest&
   return task->get_future();
 }
 
-void EC2Client::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTagsAsyncHelper(EC2Client const * const clientThis, const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTags(request), context);
 }
 
-void EC2Client::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTrafficMirrorFilterOutcome EC2Client::DeleteTrafficMirrorFilter(const DeleteTrafficMirrorFilterRequest& request) const
@@ -4488,14 +4488,14 @@ DeleteTrafficMirrorFilterOutcomeCallable EC2Client::DeleteTrafficMirrorFilterCal
   return task->get_future();
 }
 
-void EC2Client::DeleteTrafficMirrorFilterAsync(const DeleteTrafficMirrorFilterRequest& request, const DeleteTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTrafficMirrorFilterAsyncHelper(EC2Client const * const clientThis, const DeleteTrafficMirrorFilterRequest& request, const DeleteTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrafficMirrorFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTrafficMirrorFilter(request), context);
 }
 
-void EC2Client::DeleteTrafficMirrorFilterAsyncHelper(const DeleteTrafficMirrorFilterRequest& request, const DeleteTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTrafficMirrorFilterAsync(const DeleteTrafficMirrorFilterRequest& request, const DeleteTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTrafficMirrorFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTrafficMirrorFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTrafficMirrorFilterRuleOutcome EC2Client::DeleteTrafficMirrorFilterRule(const DeleteTrafficMirrorFilterRuleRequest& request) const
@@ -4512,14 +4512,14 @@ DeleteTrafficMirrorFilterRuleOutcomeCallable EC2Client::DeleteTrafficMirrorFilte
   return task->get_future();
 }
 
-void EC2Client::DeleteTrafficMirrorFilterRuleAsync(const DeleteTrafficMirrorFilterRuleRequest& request, const DeleteTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTrafficMirrorFilterRuleAsyncHelper(EC2Client const * const clientThis, const DeleteTrafficMirrorFilterRuleRequest& request, const DeleteTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrafficMirrorFilterRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTrafficMirrorFilterRule(request), context);
 }
 
-void EC2Client::DeleteTrafficMirrorFilterRuleAsyncHelper(const DeleteTrafficMirrorFilterRuleRequest& request, const DeleteTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTrafficMirrorFilterRuleAsync(const DeleteTrafficMirrorFilterRuleRequest& request, const DeleteTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTrafficMirrorFilterRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTrafficMirrorFilterRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTrafficMirrorSessionOutcome EC2Client::DeleteTrafficMirrorSession(const DeleteTrafficMirrorSessionRequest& request) const
@@ -4536,14 +4536,14 @@ DeleteTrafficMirrorSessionOutcomeCallable EC2Client::DeleteTrafficMirrorSessionC
   return task->get_future();
 }
 
-void EC2Client::DeleteTrafficMirrorSessionAsync(const DeleteTrafficMirrorSessionRequest& request, const DeleteTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTrafficMirrorSessionAsyncHelper(EC2Client const * const clientThis, const DeleteTrafficMirrorSessionRequest& request, const DeleteTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrafficMirrorSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTrafficMirrorSession(request), context);
 }
 
-void EC2Client::DeleteTrafficMirrorSessionAsyncHelper(const DeleteTrafficMirrorSessionRequest& request, const DeleteTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTrafficMirrorSessionAsync(const DeleteTrafficMirrorSessionRequest& request, const DeleteTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTrafficMirrorSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTrafficMirrorSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTrafficMirrorTargetOutcome EC2Client::DeleteTrafficMirrorTarget(const DeleteTrafficMirrorTargetRequest& request) const
@@ -4560,14 +4560,14 @@ DeleteTrafficMirrorTargetOutcomeCallable EC2Client::DeleteTrafficMirrorTargetCal
   return task->get_future();
 }
 
-void EC2Client::DeleteTrafficMirrorTargetAsync(const DeleteTrafficMirrorTargetRequest& request, const DeleteTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTrafficMirrorTargetAsyncHelper(EC2Client const * const clientThis, const DeleteTrafficMirrorTargetRequest& request, const DeleteTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrafficMirrorTargetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTrafficMirrorTarget(request), context);
 }
 
-void EC2Client::DeleteTrafficMirrorTargetAsyncHelper(const DeleteTrafficMirrorTargetRequest& request, const DeleteTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTrafficMirrorTargetAsync(const DeleteTrafficMirrorTargetRequest& request, const DeleteTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTrafficMirrorTarget(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTrafficMirrorTargetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayOutcome EC2Client::DeleteTransitGateway(const DeleteTransitGatewayRequest& request) const
@@ -4584,14 +4584,14 @@ DeleteTransitGatewayOutcomeCallable EC2Client::DeleteTransitGatewayCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayAsync(const DeleteTransitGatewayRequest& request, const DeleteTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayRequest& request, const DeleteTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGateway(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayAsyncHelper(const DeleteTransitGatewayRequest& request, const DeleteTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayAsync(const DeleteTransitGatewayRequest& request, const DeleteTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayConnectOutcome EC2Client::DeleteTransitGatewayConnect(const DeleteTransitGatewayConnectRequest& request) const
@@ -4608,14 +4608,14 @@ DeleteTransitGatewayConnectOutcomeCallable EC2Client::DeleteTransitGatewayConnec
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayConnectAsync(const DeleteTransitGatewayConnectRequest& request, const DeleteTransitGatewayConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayConnectAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayConnectRequest& request, const DeleteTransitGatewayConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayConnectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGatewayConnect(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayConnectAsyncHelper(const DeleteTransitGatewayConnectRequest& request, const DeleteTransitGatewayConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayConnectAsync(const DeleteTransitGatewayConnectRequest& request, const DeleteTransitGatewayConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGatewayConnect(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayConnectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayConnectPeerOutcome EC2Client::DeleteTransitGatewayConnectPeer(const DeleteTransitGatewayConnectPeerRequest& request) const
@@ -4632,14 +4632,14 @@ DeleteTransitGatewayConnectPeerOutcomeCallable EC2Client::DeleteTransitGatewayCo
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayConnectPeerAsync(const DeleteTransitGatewayConnectPeerRequest& request, const DeleteTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayConnectPeerAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayConnectPeerRequest& request, const DeleteTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayConnectPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGatewayConnectPeer(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayConnectPeerAsyncHelper(const DeleteTransitGatewayConnectPeerRequest& request, const DeleteTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayConnectPeerAsync(const DeleteTransitGatewayConnectPeerRequest& request, const DeleteTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGatewayConnectPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayConnectPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayMulticastDomainOutcome EC2Client::DeleteTransitGatewayMulticastDomain(const DeleteTransitGatewayMulticastDomainRequest& request) const
@@ -4656,14 +4656,14 @@ DeleteTransitGatewayMulticastDomainOutcomeCallable EC2Client::DeleteTransitGatew
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayMulticastDomainAsync(const DeleteTransitGatewayMulticastDomainRequest& request, const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayMulticastDomainAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayMulticastDomainRequest& request, const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayMulticastDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGatewayMulticastDomain(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayMulticastDomainAsyncHelper(const DeleteTransitGatewayMulticastDomainRequest& request, const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayMulticastDomainAsync(const DeleteTransitGatewayMulticastDomainRequest& request, const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGatewayMulticastDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayMulticastDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayPeeringAttachmentOutcome EC2Client::DeleteTransitGatewayPeeringAttachment(const DeleteTransitGatewayPeeringAttachmentRequest& request) const
@@ -4680,14 +4680,14 @@ DeleteTransitGatewayPeeringAttachmentOutcomeCallable EC2Client::DeleteTransitGat
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayPeeringAttachmentAsync(const DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayPeeringAttachmentAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayPeeringAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGatewayPeeringAttachment(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayPeeringAttachmentAsyncHelper(const DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayPeeringAttachmentAsync(const DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGatewayPeeringAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayPeeringAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayPolicyTableOutcome EC2Client::DeleteTransitGatewayPolicyTable(const DeleteTransitGatewayPolicyTableRequest& request) const
@@ -4704,14 +4704,14 @@ DeleteTransitGatewayPolicyTableOutcomeCallable EC2Client::DeleteTransitGatewayPo
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayPolicyTableAsync(const DeleteTransitGatewayPolicyTableRequest& request, const DeleteTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayPolicyTableAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayPolicyTableRequest& request, const DeleteTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayPolicyTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGatewayPolicyTable(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayPolicyTableAsyncHelper(const DeleteTransitGatewayPolicyTableRequest& request, const DeleteTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayPolicyTableAsync(const DeleteTransitGatewayPolicyTableRequest& request, const DeleteTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGatewayPolicyTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayPolicyTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayPrefixListReferenceOutcome EC2Client::DeleteTransitGatewayPrefixListReference(const DeleteTransitGatewayPrefixListReferenceRequest& request) const
@@ -4728,14 +4728,14 @@ DeleteTransitGatewayPrefixListReferenceOutcomeCallable EC2Client::DeleteTransitG
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayPrefixListReferenceAsync(const DeleteTransitGatewayPrefixListReferenceRequest& request, const DeleteTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayPrefixListReferenceAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayPrefixListReferenceRequest& request, const DeleteTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayPrefixListReferenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGatewayPrefixListReference(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayPrefixListReferenceAsyncHelper(const DeleteTransitGatewayPrefixListReferenceRequest& request, const DeleteTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayPrefixListReferenceAsync(const DeleteTransitGatewayPrefixListReferenceRequest& request, const DeleteTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGatewayPrefixListReference(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayPrefixListReferenceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayRouteOutcome EC2Client::DeleteTransitGatewayRoute(const DeleteTransitGatewayRouteRequest& request) const
@@ -4752,14 +4752,14 @@ DeleteTransitGatewayRouteOutcomeCallable EC2Client::DeleteTransitGatewayRouteCal
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayRouteAsync(const DeleteTransitGatewayRouteRequest& request, const DeleteTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayRouteAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayRouteRequest& request, const DeleteTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGatewayRoute(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayRouteAsyncHelper(const DeleteTransitGatewayRouteRequest& request, const DeleteTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayRouteAsync(const DeleteTransitGatewayRouteRequest& request, const DeleteTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGatewayRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayRouteTableOutcome EC2Client::DeleteTransitGatewayRouteTable(const DeleteTransitGatewayRouteTableRequest& request) const
@@ -4776,14 +4776,14 @@ DeleteTransitGatewayRouteTableOutcomeCallable EC2Client::DeleteTransitGatewayRou
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayRouteTableAsync(const DeleteTransitGatewayRouteTableRequest& request, const DeleteTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayRouteTableAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayRouteTableRequest& request, const DeleteTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayRouteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGatewayRouteTable(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayRouteTableAsyncHelper(const DeleteTransitGatewayRouteTableRequest& request, const DeleteTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayRouteTableAsync(const DeleteTransitGatewayRouteTableRequest& request, const DeleteTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGatewayRouteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayRouteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayRouteTableAnnouncementOutcome EC2Client::DeleteTransitGatewayRouteTableAnnouncement(const DeleteTransitGatewayRouteTableAnnouncementRequest& request) const
@@ -4800,14 +4800,14 @@ DeleteTransitGatewayRouteTableAnnouncementOutcomeCallable EC2Client::DeleteTrans
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayRouteTableAnnouncementAsync(const DeleteTransitGatewayRouteTableAnnouncementRequest& request, const DeleteTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayRouteTableAnnouncementAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayRouteTableAnnouncementRequest& request, const DeleteTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayRouteTableAnnouncementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGatewayRouteTableAnnouncement(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayRouteTableAnnouncementAsyncHelper(const DeleteTransitGatewayRouteTableAnnouncementRequest& request, const DeleteTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayRouteTableAnnouncementAsync(const DeleteTransitGatewayRouteTableAnnouncementRequest& request, const DeleteTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGatewayRouteTableAnnouncement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayRouteTableAnnouncementAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTransitGatewayVpcAttachmentOutcome EC2Client::DeleteTransitGatewayVpcAttachment(const DeleteTransitGatewayVpcAttachmentRequest& request) const
@@ -4824,14 +4824,14 @@ DeleteTransitGatewayVpcAttachmentOutcomeCallable EC2Client::DeleteTransitGateway
   return task->get_future();
 }
 
-void EC2Client::DeleteTransitGatewayVpcAttachmentAsync(const DeleteTransitGatewayVpcAttachmentRequest& request, const DeleteTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteTransitGatewayVpcAttachmentAsyncHelper(EC2Client const * const clientThis, const DeleteTransitGatewayVpcAttachmentRequest& request, const DeleteTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayVpcAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTransitGatewayVpcAttachment(request), context);
 }
 
-void EC2Client::DeleteTransitGatewayVpcAttachmentAsyncHelper(const DeleteTransitGatewayVpcAttachmentRequest& request, const DeleteTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteTransitGatewayVpcAttachmentAsync(const DeleteTransitGatewayVpcAttachmentRequest& request, const DeleteTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTransitGatewayVpcAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteTransitGatewayVpcAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVolumeOutcome EC2Client::DeleteVolume(const DeleteVolumeRequest& request) const
@@ -4848,14 +4848,14 @@ DeleteVolumeOutcomeCallable EC2Client::DeleteVolumeCallable(const DeleteVolumeRe
   return task->get_future();
 }
 
-void EC2Client::DeleteVolumeAsync(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteVolumeAsyncHelper(EC2Client const * const clientThis, const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVolume(request), context);
 }
 
-void EC2Client::DeleteVolumeAsyncHelper(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteVolumeAsync(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVpcOutcome EC2Client::DeleteVpc(const DeleteVpcRequest& request) const
@@ -4872,14 +4872,14 @@ DeleteVpcOutcomeCallable EC2Client::DeleteVpcCallable(const DeleteVpcRequest& re
   return task->get_future();
 }
 
-void EC2Client::DeleteVpcAsync(const DeleteVpcRequest& request, const DeleteVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteVpcAsyncHelper(EC2Client const * const clientThis, const DeleteVpcRequest& request, const DeleteVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVpc(request), context);
 }
 
-void EC2Client::DeleteVpcAsyncHelper(const DeleteVpcRequest& request, const DeleteVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteVpcAsync(const DeleteVpcRequest& request, const DeleteVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVpc(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteVpcAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVpcEndpointConnectionNotificationsOutcome EC2Client::DeleteVpcEndpointConnectionNotifications(const DeleteVpcEndpointConnectionNotificationsRequest& request) const
@@ -4896,14 +4896,14 @@ DeleteVpcEndpointConnectionNotificationsOutcomeCallable EC2Client::DeleteVpcEndp
   return task->get_future();
 }
 
-void EC2Client::DeleteVpcEndpointConnectionNotificationsAsync(const DeleteVpcEndpointConnectionNotificationsRequest& request, const DeleteVpcEndpointConnectionNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteVpcEndpointConnectionNotificationsAsyncHelper(EC2Client const * const clientThis, const DeleteVpcEndpointConnectionNotificationsRequest& request, const DeleteVpcEndpointConnectionNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcEndpointConnectionNotificationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVpcEndpointConnectionNotifications(request), context);
 }
 
-void EC2Client::DeleteVpcEndpointConnectionNotificationsAsyncHelper(const DeleteVpcEndpointConnectionNotificationsRequest& request, const DeleteVpcEndpointConnectionNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteVpcEndpointConnectionNotificationsAsync(const DeleteVpcEndpointConnectionNotificationsRequest& request, const DeleteVpcEndpointConnectionNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVpcEndpointConnectionNotifications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteVpcEndpointConnectionNotificationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVpcEndpointServiceConfigurationsOutcome EC2Client::DeleteVpcEndpointServiceConfigurations(const DeleteVpcEndpointServiceConfigurationsRequest& request) const
@@ -4920,14 +4920,14 @@ DeleteVpcEndpointServiceConfigurationsOutcomeCallable EC2Client::DeleteVpcEndpoi
   return task->get_future();
 }
 
-void EC2Client::DeleteVpcEndpointServiceConfigurationsAsync(const DeleteVpcEndpointServiceConfigurationsRequest& request, const DeleteVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteVpcEndpointServiceConfigurationsAsyncHelper(EC2Client const * const clientThis, const DeleteVpcEndpointServiceConfigurationsRequest& request, const DeleteVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcEndpointServiceConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVpcEndpointServiceConfigurations(request), context);
 }
 
-void EC2Client::DeleteVpcEndpointServiceConfigurationsAsyncHelper(const DeleteVpcEndpointServiceConfigurationsRequest& request, const DeleteVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteVpcEndpointServiceConfigurationsAsync(const DeleteVpcEndpointServiceConfigurationsRequest& request, const DeleteVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVpcEndpointServiceConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteVpcEndpointServiceConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVpcEndpointsOutcome EC2Client::DeleteVpcEndpoints(const DeleteVpcEndpointsRequest& request) const
@@ -4944,14 +4944,14 @@ DeleteVpcEndpointsOutcomeCallable EC2Client::DeleteVpcEndpointsCallable(const De
   return task->get_future();
 }
 
-void EC2Client::DeleteVpcEndpointsAsync(const DeleteVpcEndpointsRequest& request, const DeleteVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteVpcEndpointsAsyncHelper(EC2Client const * const clientThis, const DeleteVpcEndpointsRequest& request, const DeleteVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVpcEndpoints(request), context);
 }
 
-void EC2Client::DeleteVpcEndpointsAsyncHelper(const DeleteVpcEndpointsRequest& request, const DeleteVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteVpcEndpointsAsync(const DeleteVpcEndpointsRequest& request, const DeleteVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVpcEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteVpcEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVpcPeeringConnectionOutcome EC2Client::DeleteVpcPeeringConnection(const DeleteVpcPeeringConnectionRequest& request) const
@@ -4968,14 +4968,14 @@ DeleteVpcPeeringConnectionOutcomeCallable EC2Client::DeleteVpcPeeringConnectionC
   return task->get_future();
 }
 
-void EC2Client::DeleteVpcPeeringConnectionAsync(const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteVpcPeeringConnectionAsyncHelper(EC2Client const * const clientThis, const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcPeeringConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVpcPeeringConnection(request), context);
 }
 
-void EC2Client::DeleteVpcPeeringConnectionAsyncHelper(const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteVpcPeeringConnectionAsync(const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVpcPeeringConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteVpcPeeringConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVpnConnectionOutcome EC2Client::DeleteVpnConnection(const DeleteVpnConnectionRequest& request) const
@@ -4992,14 +4992,14 @@ DeleteVpnConnectionOutcomeCallable EC2Client::DeleteVpnConnectionCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DeleteVpnConnectionAsync(const DeleteVpnConnectionRequest& request, const DeleteVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteVpnConnectionAsyncHelper(EC2Client const * const clientThis, const DeleteVpnConnectionRequest& request, const DeleteVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpnConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVpnConnection(request), context);
 }
 
-void EC2Client::DeleteVpnConnectionAsyncHelper(const DeleteVpnConnectionRequest& request, const DeleteVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteVpnConnectionAsync(const DeleteVpnConnectionRequest& request, const DeleteVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVpnConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteVpnConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVpnConnectionRouteOutcome EC2Client::DeleteVpnConnectionRoute(const DeleteVpnConnectionRouteRequest& request) const
@@ -5016,14 +5016,14 @@ DeleteVpnConnectionRouteOutcomeCallable EC2Client::DeleteVpnConnectionRouteCalla
   return task->get_future();
 }
 
-void EC2Client::DeleteVpnConnectionRouteAsync(const DeleteVpnConnectionRouteRequest& request, const DeleteVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteVpnConnectionRouteAsyncHelper(EC2Client const * const clientThis, const DeleteVpnConnectionRouteRequest& request, const DeleteVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpnConnectionRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVpnConnectionRoute(request), context);
 }
 
-void EC2Client::DeleteVpnConnectionRouteAsyncHelper(const DeleteVpnConnectionRouteRequest& request, const DeleteVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteVpnConnectionRouteAsync(const DeleteVpnConnectionRouteRequest& request, const DeleteVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVpnConnectionRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteVpnConnectionRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVpnGatewayOutcome EC2Client::DeleteVpnGateway(const DeleteVpnGatewayRequest& request) const
@@ -5040,14 +5040,14 @@ DeleteVpnGatewayOutcomeCallable EC2Client::DeleteVpnGatewayCallable(const Delete
   return task->get_future();
 }
 
-void EC2Client::DeleteVpnGatewayAsync(const DeleteVpnGatewayRequest& request, const DeleteVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeleteVpnGatewayAsyncHelper(EC2Client const * const clientThis, const DeleteVpnGatewayRequest& request, const DeleteVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpnGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVpnGateway(request), context);
 }
 
-void EC2Client::DeleteVpnGatewayAsyncHelper(const DeleteVpnGatewayRequest& request, const DeleteVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeleteVpnGatewayAsync(const DeleteVpnGatewayRequest& request, const DeleteVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVpnGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeleteVpnGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeprovisionByoipCidrOutcome EC2Client::DeprovisionByoipCidr(const DeprovisionByoipCidrRequest& request) const
@@ -5064,14 +5064,14 @@ DeprovisionByoipCidrOutcomeCallable EC2Client::DeprovisionByoipCidrCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DeprovisionByoipCidrAsync(const DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeprovisionByoipCidrAsyncHelper(EC2Client const * const clientThis, const DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeprovisionByoipCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeprovisionByoipCidr(request), context);
 }
 
-void EC2Client::DeprovisionByoipCidrAsyncHelper(const DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeprovisionByoipCidrAsync(const DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeprovisionByoipCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeprovisionByoipCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 DeprovisionIpamPoolCidrOutcome EC2Client::DeprovisionIpamPoolCidr(const DeprovisionIpamPoolCidrRequest& request) const
@@ -5088,14 +5088,14 @@ DeprovisionIpamPoolCidrOutcomeCallable EC2Client::DeprovisionIpamPoolCidrCallabl
   return task->get_future();
 }
 
-void EC2Client::DeprovisionIpamPoolCidrAsync(const DeprovisionIpamPoolCidrRequest& request, const DeprovisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeprovisionIpamPoolCidrAsyncHelper(EC2Client const * const clientThis, const DeprovisionIpamPoolCidrRequest& request, const DeprovisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeprovisionIpamPoolCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeprovisionIpamPoolCidr(request), context);
 }
 
-void EC2Client::DeprovisionIpamPoolCidrAsyncHelper(const DeprovisionIpamPoolCidrRequest& request, const DeprovisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeprovisionIpamPoolCidrAsync(const DeprovisionIpamPoolCidrRequest& request, const DeprovisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeprovisionIpamPoolCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeprovisionIpamPoolCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 DeprovisionPublicIpv4PoolCidrOutcome EC2Client::DeprovisionPublicIpv4PoolCidr(const DeprovisionPublicIpv4PoolCidrRequest& request) const
@@ -5112,14 +5112,14 @@ DeprovisionPublicIpv4PoolCidrOutcomeCallable EC2Client::DeprovisionPublicIpv4Poo
   return task->get_future();
 }
 
-void EC2Client::DeprovisionPublicIpv4PoolCidrAsync(const DeprovisionPublicIpv4PoolCidrRequest& request, const DeprovisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeprovisionPublicIpv4PoolCidrAsyncHelper(EC2Client const * const clientThis, const DeprovisionPublicIpv4PoolCidrRequest& request, const DeprovisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeprovisionPublicIpv4PoolCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeprovisionPublicIpv4PoolCidr(request), context);
 }
 
-void EC2Client::DeprovisionPublicIpv4PoolCidrAsyncHelper(const DeprovisionPublicIpv4PoolCidrRequest& request, const DeprovisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeprovisionPublicIpv4PoolCidrAsync(const DeprovisionPublicIpv4PoolCidrRequest& request, const DeprovisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeprovisionPublicIpv4PoolCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeprovisionPublicIpv4PoolCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterImageOutcome EC2Client::DeregisterImage(const DeregisterImageRequest& request) const
@@ -5136,14 +5136,14 @@ DeregisterImageOutcomeCallable EC2Client::DeregisterImageCallable(const Deregist
   return task->get_future();
 }
 
-void EC2Client::DeregisterImageAsync(const DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeregisterImageAsyncHelper(EC2Client const * const clientThis, const DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterImage(request), context);
 }
 
-void EC2Client::DeregisterImageAsyncHelper(const DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeregisterImageAsync(const DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeregisterImageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterInstanceEventNotificationAttributesOutcome EC2Client::DeregisterInstanceEventNotificationAttributes(const DeregisterInstanceEventNotificationAttributesRequest& request) const
@@ -5160,14 +5160,14 @@ DeregisterInstanceEventNotificationAttributesOutcomeCallable EC2Client::Deregist
   return task->get_future();
 }
 
-void EC2Client::DeregisterInstanceEventNotificationAttributesAsync(const DeregisterInstanceEventNotificationAttributesRequest& request, const DeregisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeregisterInstanceEventNotificationAttributesAsyncHelper(EC2Client const * const clientThis, const DeregisterInstanceEventNotificationAttributesRequest& request, const DeregisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterInstanceEventNotificationAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterInstanceEventNotificationAttributes(request), context);
 }
 
-void EC2Client::DeregisterInstanceEventNotificationAttributesAsyncHelper(const DeregisterInstanceEventNotificationAttributesRequest& request, const DeregisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeregisterInstanceEventNotificationAttributesAsync(const DeregisterInstanceEventNotificationAttributesRequest& request, const DeregisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterInstanceEventNotificationAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeregisterInstanceEventNotificationAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterTransitGatewayMulticastGroupMembersOutcome EC2Client::DeregisterTransitGatewayMulticastGroupMembers(const DeregisterTransitGatewayMulticastGroupMembersRequest& request) const
@@ -5184,14 +5184,14 @@ DeregisterTransitGatewayMulticastGroupMembersOutcomeCallable EC2Client::Deregist
   return task->get_future();
 }
 
-void EC2Client::DeregisterTransitGatewayMulticastGroupMembersAsync(const DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeregisterTransitGatewayMulticastGroupMembersAsyncHelper(EC2Client const * const clientThis, const DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterTransitGatewayMulticastGroupMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterTransitGatewayMulticastGroupMembers(request), context);
 }
 
-void EC2Client::DeregisterTransitGatewayMulticastGroupMembersAsyncHelper(const DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeregisterTransitGatewayMulticastGroupMembersAsync(const DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterTransitGatewayMulticastGroupMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeregisterTransitGatewayMulticastGroupMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterTransitGatewayMulticastGroupSourcesOutcome EC2Client::DeregisterTransitGatewayMulticastGroupSources(const DeregisterTransitGatewayMulticastGroupSourcesRequest& request) const
@@ -5208,14 +5208,14 @@ DeregisterTransitGatewayMulticastGroupSourcesOutcomeCallable EC2Client::Deregist
   return task->get_future();
 }
 
-void EC2Client::DeregisterTransitGatewayMulticastGroupSourcesAsync(const DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDeregisterTransitGatewayMulticastGroupSourcesAsyncHelper(EC2Client const * const clientThis, const DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterTransitGatewayMulticastGroupSourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterTransitGatewayMulticastGroupSources(request), context);
 }
 
-void EC2Client::DeregisterTransitGatewayMulticastGroupSourcesAsyncHelper(const DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DeregisterTransitGatewayMulticastGroupSourcesAsync(const DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterTransitGatewayMulticastGroupSources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDeregisterTransitGatewayMulticastGroupSourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountAttributesOutcome EC2Client::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
@@ -5232,14 +5232,14 @@ DescribeAccountAttributesOutcomeCallable EC2Client::DescribeAccountAttributesCal
   return task->get_future();
 }
 
-void EC2Client::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeAccountAttributesAsyncHelper(EC2Client const * const clientThis, const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccountAttributes(request), context);
 }
 
-void EC2Client::DescribeAccountAttributesAsyncHelper(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccountAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeAccountAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAddressesOutcome EC2Client::DescribeAddresses(const DescribeAddressesRequest& request) const
@@ -5256,14 +5256,14 @@ DescribeAddressesOutcomeCallable EC2Client::DescribeAddressesCallable(const Desc
   return task->get_future();
 }
 
-void EC2Client::DescribeAddressesAsync(const DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeAddressesAsyncHelper(EC2Client const * const clientThis, const DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAddressesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAddresses(request), context);
 }
 
-void EC2Client::DescribeAddressesAsyncHelper(const DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeAddressesAsync(const DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAddresses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeAddressesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAddressesAttributeOutcome EC2Client::DescribeAddressesAttribute(const DescribeAddressesAttributeRequest& request) const
@@ -5280,14 +5280,14 @@ DescribeAddressesAttributeOutcomeCallable EC2Client::DescribeAddressesAttributeC
   return task->get_future();
 }
 
-void EC2Client::DescribeAddressesAttributeAsync(const DescribeAddressesAttributeRequest& request, const DescribeAddressesAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeAddressesAttributeAsyncHelper(EC2Client const * const clientThis, const DescribeAddressesAttributeRequest& request, const DescribeAddressesAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAddressesAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAddressesAttribute(request), context);
 }
 
-void EC2Client::DescribeAddressesAttributeAsyncHelper(const DescribeAddressesAttributeRequest& request, const DescribeAddressesAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeAddressesAttributeAsync(const DescribeAddressesAttributeRequest& request, const DescribeAddressesAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAddressesAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeAddressesAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAggregateIdFormatOutcome EC2Client::DescribeAggregateIdFormat(const DescribeAggregateIdFormatRequest& request) const
@@ -5304,14 +5304,14 @@ DescribeAggregateIdFormatOutcomeCallable EC2Client::DescribeAggregateIdFormatCal
   return task->get_future();
 }
 
-void EC2Client::DescribeAggregateIdFormatAsync(const DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeAggregateIdFormatAsyncHelper(EC2Client const * const clientThis, const DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAggregateIdFormatAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAggregateIdFormat(request), context);
 }
 
-void EC2Client::DescribeAggregateIdFormatAsyncHelper(const DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeAggregateIdFormatAsync(const DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAggregateIdFormat(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeAggregateIdFormatAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAvailabilityZonesOutcome EC2Client::DescribeAvailabilityZones(const DescribeAvailabilityZonesRequest& request) const
@@ -5328,14 +5328,14 @@ DescribeAvailabilityZonesOutcomeCallable EC2Client::DescribeAvailabilityZonesCal
   return task->get_future();
 }
 
-void EC2Client::DescribeAvailabilityZonesAsync(const DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeAvailabilityZonesAsyncHelper(EC2Client const * const clientThis, const DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAvailabilityZonesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAvailabilityZones(request), context);
 }
 
-void EC2Client::DescribeAvailabilityZonesAsyncHelper(const DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeAvailabilityZonesAsync(const DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAvailabilityZones(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeAvailabilityZonesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBundleTasksOutcome EC2Client::DescribeBundleTasks(const DescribeBundleTasksRequest& request) const
@@ -5352,14 +5352,14 @@ DescribeBundleTasksOutcomeCallable EC2Client::DescribeBundleTasksCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DescribeBundleTasksAsync(const DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeBundleTasksAsyncHelper(EC2Client const * const clientThis, const DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBundleTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBundleTasks(request), context);
 }
 
-void EC2Client::DescribeBundleTasksAsyncHelper(const DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeBundleTasksAsync(const DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBundleTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeBundleTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeByoipCidrsOutcome EC2Client::DescribeByoipCidrs(const DescribeByoipCidrsRequest& request) const
@@ -5376,14 +5376,14 @@ DescribeByoipCidrsOutcomeCallable EC2Client::DescribeByoipCidrsCallable(const De
   return task->get_future();
 }
 
-void EC2Client::DescribeByoipCidrsAsync(const DescribeByoipCidrsRequest& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeByoipCidrsAsyncHelper(EC2Client const * const clientThis, const DescribeByoipCidrsRequest& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeByoipCidrsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeByoipCidrs(request), context);
 }
 
-void EC2Client::DescribeByoipCidrsAsyncHelper(const DescribeByoipCidrsRequest& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeByoipCidrsAsync(const DescribeByoipCidrsRequest& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeByoipCidrs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeByoipCidrsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCapacityReservationFleetsOutcome EC2Client::DescribeCapacityReservationFleets(const DescribeCapacityReservationFleetsRequest& request) const
@@ -5400,14 +5400,14 @@ DescribeCapacityReservationFleetsOutcomeCallable EC2Client::DescribeCapacityRese
   return task->get_future();
 }
 
-void EC2Client::DescribeCapacityReservationFleetsAsync(const DescribeCapacityReservationFleetsRequest& request, const DescribeCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeCapacityReservationFleetsAsyncHelper(EC2Client const * const clientThis, const DescribeCapacityReservationFleetsRequest& request, const DescribeCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCapacityReservationFleetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCapacityReservationFleets(request), context);
 }
 
-void EC2Client::DescribeCapacityReservationFleetsAsyncHelper(const DescribeCapacityReservationFleetsRequest& request, const DescribeCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeCapacityReservationFleetsAsync(const DescribeCapacityReservationFleetsRequest& request, const DescribeCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCapacityReservationFleets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeCapacityReservationFleetsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCapacityReservationsOutcome EC2Client::DescribeCapacityReservations(const DescribeCapacityReservationsRequest& request) const
@@ -5424,14 +5424,14 @@ DescribeCapacityReservationsOutcomeCallable EC2Client::DescribeCapacityReservati
   return task->get_future();
 }
 
-void EC2Client::DescribeCapacityReservationsAsync(const DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeCapacityReservationsAsyncHelper(EC2Client const * const clientThis, const DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCapacityReservationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCapacityReservations(request), context);
 }
 
-void EC2Client::DescribeCapacityReservationsAsyncHelper(const DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeCapacityReservationsAsync(const DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCapacityReservations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeCapacityReservationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCarrierGatewaysOutcome EC2Client::DescribeCarrierGateways(const DescribeCarrierGatewaysRequest& request) const
@@ -5448,14 +5448,14 @@ DescribeCarrierGatewaysOutcomeCallable EC2Client::DescribeCarrierGatewaysCallabl
   return task->get_future();
 }
 
-void EC2Client::DescribeCarrierGatewaysAsync(const DescribeCarrierGatewaysRequest& request, const DescribeCarrierGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeCarrierGatewaysAsyncHelper(EC2Client const * const clientThis, const DescribeCarrierGatewaysRequest& request, const DescribeCarrierGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCarrierGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCarrierGateways(request), context);
 }
 
-void EC2Client::DescribeCarrierGatewaysAsyncHelper(const DescribeCarrierGatewaysRequest& request, const DescribeCarrierGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeCarrierGatewaysAsync(const DescribeCarrierGatewaysRequest& request, const DescribeCarrierGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCarrierGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeCarrierGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClassicLinkInstancesOutcome EC2Client::DescribeClassicLinkInstances(const DescribeClassicLinkInstancesRequest& request) const
@@ -5472,14 +5472,14 @@ DescribeClassicLinkInstancesOutcomeCallable EC2Client::DescribeClassicLinkInstan
   return task->get_future();
 }
 
-void EC2Client::DescribeClassicLinkInstancesAsync(const DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeClassicLinkInstancesAsyncHelper(EC2Client const * const clientThis, const DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClassicLinkInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClassicLinkInstances(request), context);
 }
 
-void EC2Client::DescribeClassicLinkInstancesAsyncHelper(const DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeClassicLinkInstancesAsync(const DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClassicLinkInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeClassicLinkInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClientVpnAuthorizationRulesOutcome EC2Client::DescribeClientVpnAuthorizationRules(const DescribeClientVpnAuthorizationRulesRequest& request) const
@@ -5496,14 +5496,14 @@ DescribeClientVpnAuthorizationRulesOutcomeCallable EC2Client::DescribeClientVpnA
   return task->get_future();
 }
 
-void EC2Client::DescribeClientVpnAuthorizationRulesAsync(const DescribeClientVpnAuthorizationRulesRequest& request, const DescribeClientVpnAuthorizationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeClientVpnAuthorizationRulesAsyncHelper(EC2Client const * const clientThis, const DescribeClientVpnAuthorizationRulesRequest& request, const DescribeClientVpnAuthorizationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientVpnAuthorizationRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClientVpnAuthorizationRules(request), context);
 }
 
-void EC2Client::DescribeClientVpnAuthorizationRulesAsyncHelper(const DescribeClientVpnAuthorizationRulesRequest& request, const DescribeClientVpnAuthorizationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeClientVpnAuthorizationRulesAsync(const DescribeClientVpnAuthorizationRulesRequest& request, const DescribeClientVpnAuthorizationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClientVpnAuthorizationRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeClientVpnAuthorizationRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClientVpnConnectionsOutcome EC2Client::DescribeClientVpnConnections(const DescribeClientVpnConnectionsRequest& request) const
@@ -5520,14 +5520,14 @@ DescribeClientVpnConnectionsOutcomeCallable EC2Client::DescribeClientVpnConnecti
   return task->get_future();
 }
 
-void EC2Client::DescribeClientVpnConnectionsAsync(const DescribeClientVpnConnectionsRequest& request, const DescribeClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeClientVpnConnectionsAsyncHelper(EC2Client const * const clientThis, const DescribeClientVpnConnectionsRequest& request, const DescribeClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientVpnConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClientVpnConnections(request), context);
 }
 
-void EC2Client::DescribeClientVpnConnectionsAsyncHelper(const DescribeClientVpnConnectionsRequest& request, const DescribeClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeClientVpnConnectionsAsync(const DescribeClientVpnConnectionsRequest& request, const DescribeClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClientVpnConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeClientVpnConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClientVpnEndpointsOutcome EC2Client::DescribeClientVpnEndpoints(const DescribeClientVpnEndpointsRequest& request) const
@@ -5544,14 +5544,14 @@ DescribeClientVpnEndpointsOutcomeCallable EC2Client::DescribeClientVpnEndpointsC
   return task->get_future();
 }
 
-void EC2Client::DescribeClientVpnEndpointsAsync(const DescribeClientVpnEndpointsRequest& request, const DescribeClientVpnEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeClientVpnEndpointsAsyncHelper(EC2Client const * const clientThis, const DescribeClientVpnEndpointsRequest& request, const DescribeClientVpnEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientVpnEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClientVpnEndpoints(request), context);
 }
 
-void EC2Client::DescribeClientVpnEndpointsAsyncHelper(const DescribeClientVpnEndpointsRequest& request, const DescribeClientVpnEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeClientVpnEndpointsAsync(const DescribeClientVpnEndpointsRequest& request, const DescribeClientVpnEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClientVpnEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeClientVpnEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClientVpnRoutesOutcome EC2Client::DescribeClientVpnRoutes(const DescribeClientVpnRoutesRequest& request) const
@@ -5568,14 +5568,14 @@ DescribeClientVpnRoutesOutcomeCallable EC2Client::DescribeClientVpnRoutesCallabl
   return task->get_future();
 }
 
-void EC2Client::DescribeClientVpnRoutesAsync(const DescribeClientVpnRoutesRequest& request, const DescribeClientVpnRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeClientVpnRoutesAsyncHelper(EC2Client const * const clientThis, const DescribeClientVpnRoutesRequest& request, const DescribeClientVpnRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientVpnRoutesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClientVpnRoutes(request), context);
 }
 
-void EC2Client::DescribeClientVpnRoutesAsyncHelper(const DescribeClientVpnRoutesRequest& request, const DescribeClientVpnRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeClientVpnRoutesAsync(const DescribeClientVpnRoutesRequest& request, const DescribeClientVpnRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClientVpnRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeClientVpnRoutesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClientVpnTargetNetworksOutcome EC2Client::DescribeClientVpnTargetNetworks(const DescribeClientVpnTargetNetworksRequest& request) const
@@ -5592,14 +5592,14 @@ DescribeClientVpnTargetNetworksOutcomeCallable EC2Client::DescribeClientVpnTarge
   return task->get_future();
 }
 
-void EC2Client::DescribeClientVpnTargetNetworksAsync(const DescribeClientVpnTargetNetworksRequest& request, const DescribeClientVpnTargetNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeClientVpnTargetNetworksAsyncHelper(EC2Client const * const clientThis, const DescribeClientVpnTargetNetworksRequest& request, const DescribeClientVpnTargetNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientVpnTargetNetworksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClientVpnTargetNetworks(request), context);
 }
 
-void EC2Client::DescribeClientVpnTargetNetworksAsyncHelper(const DescribeClientVpnTargetNetworksRequest& request, const DescribeClientVpnTargetNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeClientVpnTargetNetworksAsync(const DescribeClientVpnTargetNetworksRequest& request, const DescribeClientVpnTargetNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClientVpnTargetNetworks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeClientVpnTargetNetworksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCoipPoolsOutcome EC2Client::DescribeCoipPools(const DescribeCoipPoolsRequest& request) const
@@ -5616,14 +5616,14 @@ DescribeCoipPoolsOutcomeCallable EC2Client::DescribeCoipPoolsCallable(const Desc
   return task->get_future();
 }
 
-void EC2Client::DescribeCoipPoolsAsync(const DescribeCoipPoolsRequest& request, const DescribeCoipPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeCoipPoolsAsyncHelper(EC2Client const * const clientThis, const DescribeCoipPoolsRequest& request, const DescribeCoipPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCoipPoolsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCoipPools(request), context);
 }
 
-void EC2Client::DescribeCoipPoolsAsyncHelper(const DescribeCoipPoolsRequest& request, const DescribeCoipPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeCoipPoolsAsync(const DescribeCoipPoolsRequest& request, const DescribeCoipPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCoipPools(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeCoipPoolsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeConversionTasksOutcome EC2Client::DescribeConversionTasks(const DescribeConversionTasksRequest& request) const
@@ -5640,14 +5640,14 @@ DescribeConversionTasksOutcomeCallable EC2Client::DescribeConversionTasksCallabl
   return task->get_future();
 }
 
-void EC2Client::DescribeConversionTasksAsync(const DescribeConversionTasksRequest& request, const DescribeConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeConversionTasksAsyncHelper(EC2Client const * const clientThis, const DescribeConversionTasksRequest& request, const DescribeConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConversionTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeConversionTasks(request), context);
 }
 
-void EC2Client::DescribeConversionTasksAsyncHelper(const DescribeConversionTasksRequest& request, const DescribeConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeConversionTasksAsync(const DescribeConversionTasksRequest& request, const DescribeConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeConversionTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeConversionTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCustomerGatewaysOutcome EC2Client::DescribeCustomerGateways(const DescribeCustomerGatewaysRequest& request) const
@@ -5664,14 +5664,14 @@ DescribeCustomerGatewaysOutcomeCallable EC2Client::DescribeCustomerGatewaysCalla
   return task->get_future();
 }
 
-void EC2Client::DescribeCustomerGatewaysAsync(const DescribeCustomerGatewaysRequest& request, const DescribeCustomerGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeCustomerGatewaysAsyncHelper(EC2Client const * const clientThis, const DescribeCustomerGatewaysRequest& request, const DescribeCustomerGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCustomerGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCustomerGateways(request), context);
 }
 
-void EC2Client::DescribeCustomerGatewaysAsyncHelper(const DescribeCustomerGatewaysRequest& request, const DescribeCustomerGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeCustomerGatewaysAsync(const DescribeCustomerGatewaysRequest& request, const DescribeCustomerGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCustomerGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeCustomerGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDhcpOptionsOutcome EC2Client::DescribeDhcpOptions(const DescribeDhcpOptionsRequest& request) const
@@ -5688,14 +5688,14 @@ DescribeDhcpOptionsOutcomeCallable EC2Client::DescribeDhcpOptionsCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DescribeDhcpOptionsAsync(const DescribeDhcpOptionsRequest& request, const DescribeDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeDhcpOptionsAsyncHelper(EC2Client const * const clientThis, const DescribeDhcpOptionsRequest& request, const DescribeDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDhcpOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDhcpOptions(request), context);
 }
 
-void EC2Client::DescribeDhcpOptionsAsyncHelper(const DescribeDhcpOptionsRequest& request, const DescribeDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeDhcpOptionsAsync(const DescribeDhcpOptionsRequest& request, const DescribeDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDhcpOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeDhcpOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEgressOnlyInternetGatewaysOutcome EC2Client::DescribeEgressOnlyInternetGateways(const DescribeEgressOnlyInternetGatewaysRequest& request) const
@@ -5712,14 +5712,14 @@ DescribeEgressOnlyInternetGatewaysOutcomeCallable EC2Client::DescribeEgressOnlyI
   return task->get_future();
 }
 
-void EC2Client::DescribeEgressOnlyInternetGatewaysAsync(const DescribeEgressOnlyInternetGatewaysRequest& request, const DescribeEgressOnlyInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeEgressOnlyInternetGatewaysAsyncHelper(EC2Client const * const clientThis, const DescribeEgressOnlyInternetGatewaysRequest& request, const DescribeEgressOnlyInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEgressOnlyInternetGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEgressOnlyInternetGateways(request), context);
 }
 
-void EC2Client::DescribeEgressOnlyInternetGatewaysAsyncHelper(const DescribeEgressOnlyInternetGatewaysRequest& request, const DescribeEgressOnlyInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeEgressOnlyInternetGatewaysAsync(const DescribeEgressOnlyInternetGatewaysRequest& request, const DescribeEgressOnlyInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEgressOnlyInternetGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeEgressOnlyInternetGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeElasticGpusOutcome EC2Client::DescribeElasticGpus(const DescribeElasticGpusRequest& request) const
@@ -5736,14 +5736,14 @@ DescribeElasticGpusOutcomeCallable EC2Client::DescribeElasticGpusCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DescribeElasticGpusAsync(const DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeElasticGpusAsyncHelper(EC2Client const * const clientThis, const DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeElasticGpusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeElasticGpus(request), context);
 }
 
-void EC2Client::DescribeElasticGpusAsyncHelper(const DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeElasticGpusAsync(const DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeElasticGpus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeElasticGpusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExportImageTasksOutcome EC2Client::DescribeExportImageTasks(const DescribeExportImageTasksRequest& request) const
@@ -5760,14 +5760,14 @@ DescribeExportImageTasksOutcomeCallable EC2Client::DescribeExportImageTasksCalla
   return task->get_future();
 }
 
-void EC2Client::DescribeExportImageTasksAsync(const DescribeExportImageTasksRequest& request, const DescribeExportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeExportImageTasksAsyncHelper(EC2Client const * const clientThis, const DescribeExportImageTasksRequest& request, const DescribeExportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExportImageTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExportImageTasks(request), context);
 }
 
-void EC2Client::DescribeExportImageTasksAsyncHelper(const DescribeExportImageTasksRequest& request, const DescribeExportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeExportImageTasksAsync(const DescribeExportImageTasksRequest& request, const DescribeExportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExportImageTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeExportImageTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExportTasksOutcome EC2Client::DescribeExportTasks(const DescribeExportTasksRequest& request) const
@@ -5784,14 +5784,14 @@ DescribeExportTasksOutcomeCallable EC2Client::DescribeExportTasksCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DescribeExportTasksAsync(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeExportTasksAsyncHelper(EC2Client const * const clientThis, const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExportTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExportTasks(request), context);
 }
 
-void EC2Client::DescribeExportTasksAsyncHelper(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeExportTasksAsync(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExportTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeExportTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFastLaunchImagesOutcome EC2Client::DescribeFastLaunchImages(const DescribeFastLaunchImagesRequest& request) const
@@ -5808,14 +5808,14 @@ DescribeFastLaunchImagesOutcomeCallable EC2Client::DescribeFastLaunchImagesCalla
   return task->get_future();
 }
 
-void EC2Client::DescribeFastLaunchImagesAsync(const DescribeFastLaunchImagesRequest& request, const DescribeFastLaunchImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeFastLaunchImagesAsyncHelper(EC2Client const * const clientThis, const DescribeFastLaunchImagesRequest& request, const DescribeFastLaunchImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFastLaunchImagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFastLaunchImages(request), context);
 }
 
-void EC2Client::DescribeFastLaunchImagesAsyncHelper(const DescribeFastLaunchImagesRequest& request, const DescribeFastLaunchImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeFastLaunchImagesAsync(const DescribeFastLaunchImagesRequest& request, const DescribeFastLaunchImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFastLaunchImages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeFastLaunchImagesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFastSnapshotRestoresOutcome EC2Client::DescribeFastSnapshotRestores(const DescribeFastSnapshotRestoresRequest& request) const
@@ -5832,14 +5832,14 @@ DescribeFastSnapshotRestoresOutcomeCallable EC2Client::DescribeFastSnapshotResto
   return task->get_future();
 }
 
-void EC2Client::DescribeFastSnapshotRestoresAsync(const DescribeFastSnapshotRestoresRequest& request, const DescribeFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeFastSnapshotRestoresAsyncHelper(EC2Client const * const clientThis, const DescribeFastSnapshotRestoresRequest& request, const DescribeFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFastSnapshotRestoresAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFastSnapshotRestores(request), context);
 }
 
-void EC2Client::DescribeFastSnapshotRestoresAsyncHelper(const DescribeFastSnapshotRestoresRequest& request, const DescribeFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeFastSnapshotRestoresAsync(const DescribeFastSnapshotRestoresRequest& request, const DescribeFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFastSnapshotRestores(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeFastSnapshotRestoresAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetHistoryOutcome EC2Client::DescribeFleetHistory(const DescribeFleetHistoryRequest& request) const
@@ -5856,14 +5856,14 @@ DescribeFleetHistoryOutcomeCallable EC2Client::DescribeFleetHistoryCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DescribeFleetHistoryAsync(const DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeFleetHistoryAsyncHelper(EC2Client const * const clientThis, const DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetHistory(request), context);
 }
 
-void EC2Client::DescribeFleetHistoryAsyncHelper(const DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeFleetHistoryAsync(const DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeFleetHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetInstancesOutcome EC2Client::DescribeFleetInstances(const DescribeFleetInstancesRequest& request) const
@@ -5880,14 +5880,14 @@ DescribeFleetInstancesOutcomeCallable EC2Client::DescribeFleetInstancesCallable(
   return task->get_future();
 }
 
-void EC2Client::DescribeFleetInstancesAsync(const DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeFleetInstancesAsyncHelper(EC2Client const * const clientThis, const DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleetInstances(request), context);
 }
 
-void EC2Client::DescribeFleetInstancesAsyncHelper(const DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeFleetInstancesAsync(const DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleetInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeFleetInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFleetsOutcome EC2Client::DescribeFleets(const DescribeFleetsRequest& request) const
@@ -5904,14 +5904,14 @@ DescribeFleetsOutcomeCallable EC2Client::DescribeFleetsCallable(const DescribeFl
   return task->get_future();
 }
 
-void EC2Client::DescribeFleetsAsync(const DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeFleetsAsyncHelper(EC2Client const * const clientThis, const DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFleets(request), context);
 }
 
-void EC2Client::DescribeFleetsAsyncHelper(const DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeFleetsAsync(const DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFleets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeFleetsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFlowLogsOutcome EC2Client::DescribeFlowLogs(const DescribeFlowLogsRequest& request) const
@@ -5928,14 +5928,14 @@ DescribeFlowLogsOutcomeCallable EC2Client::DescribeFlowLogsCallable(const Descri
   return task->get_future();
 }
 
-void EC2Client::DescribeFlowLogsAsync(const DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeFlowLogsAsyncHelper(EC2Client const * const clientThis, const DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFlowLogsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFlowLogs(request), context);
 }
 
-void EC2Client::DescribeFlowLogsAsyncHelper(const DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeFlowLogsAsync(const DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFlowLogs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeFlowLogsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFpgaImageAttributeOutcome EC2Client::DescribeFpgaImageAttribute(const DescribeFpgaImageAttributeRequest& request) const
@@ -5952,14 +5952,14 @@ DescribeFpgaImageAttributeOutcomeCallable EC2Client::DescribeFpgaImageAttributeC
   return task->get_future();
 }
 
-void EC2Client::DescribeFpgaImageAttributeAsync(const DescribeFpgaImageAttributeRequest& request, const DescribeFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeFpgaImageAttributeAsyncHelper(EC2Client const * const clientThis, const DescribeFpgaImageAttributeRequest& request, const DescribeFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFpgaImageAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFpgaImageAttribute(request), context);
 }
 
-void EC2Client::DescribeFpgaImageAttributeAsyncHelper(const DescribeFpgaImageAttributeRequest& request, const DescribeFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeFpgaImageAttributeAsync(const DescribeFpgaImageAttributeRequest& request, const DescribeFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFpgaImageAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeFpgaImageAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFpgaImagesOutcome EC2Client::DescribeFpgaImages(const DescribeFpgaImagesRequest& request) const
@@ -5976,14 +5976,14 @@ DescribeFpgaImagesOutcomeCallable EC2Client::DescribeFpgaImagesCallable(const De
   return task->get_future();
 }
 
-void EC2Client::DescribeFpgaImagesAsync(const DescribeFpgaImagesRequest& request, const DescribeFpgaImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeFpgaImagesAsyncHelper(EC2Client const * const clientThis, const DescribeFpgaImagesRequest& request, const DescribeFpgaImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFpgaImagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFpgaImages(request), context);
 }
 
-void EC2Client::DescribeFpgaImagesAsyncHelper(const DescribeFpgaImagesRequest& request, const DescribeFpgaImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeFpgaImagesAsync(const DescribeFpgaImagesRequest& request, const DescribeFpgaImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFpgaImages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeFpgaImagesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeHostReservationOfferingsOutcome EC2Client::DescribeHostReservationOfferings(const DescribeHostReservationOfferingsRequest& request) const
@@ -6000,14 +6000,14 @@ DescribeHostReservationOfferingsOutcomeCallable EC2Client::DescribeHostReservati
   return task->get_future();
 }
 
-void EC2Client::DescribeHostReservationOfferingsAsync(const DescribeHostReservationOfferingsRequest& request, const DescribeHostReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeHostReservationOfferingsAsyncHelper(EC2Client const * const clientThis, const DescribeHostReservationOfferingsRequest& request, const DescribeHostReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHostReservationOfferingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeHostReservationOfferings(request), context);
 }
 
-void EC2Client::DescribeHostReservationOfferingsAsyncHelper(const DescribeHostReservationOfferingsRequest& request, const DescribeHostReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeHostReservationOfferingsAsync(const DescribeHostReservationOfferingsRequest& request, const DescribeHostReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeHostReservationOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeHostReservationOfferingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeHostReservationsOutcome EC2Client::DescribeHostReservations(const DescribeHostReservationsRequest& request) const
@@ -6024,14 +6024,14 @@ DescribeHostReservationsOutcomeCallable EC2Client::DescribeHostReservationsCalla
   return task->get_future();
 }
 
-void EC2Client::DescribeHostReservationsAsync(const DescribeHostReservationsRequest& request, const DescribeHostReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeHostReservationsAsyncHelper(EC2Client const * const clientThis, const DescribeHostReservationsRequest& request, const DescribeHostReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHostReservationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeHostReservations(request), context);
 }
 
-void EC2Client::DescribeHostReservationsAsyncHelper(const DescribeHostReservationsRequest& request, const DescribeHostReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeHostReservationsAsync(const DescribeHostReservationsRequest& request, const DescribeHostReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeHostReservations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeHostReservationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeHostsOutcome EC2Client::DescribeHosts(const DescribeHostsRequest& request) const
@@ -6048,14 +6048,14 @@ DescribeHostsOutcomeCallable EC2Client::DescribeHostsCallable(const DescribeHost
   return task->get_future();
 }
 
-void EC2Client::DescribeHostsAsync(const DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeHostsAsyncHelper(EC2Client const * const clientThis, const DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHostsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeHosts(request), context);
 }
 
-void EC2Client::DescribeHostsAsyncHelper(const DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeHostsAsync(const DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeHosts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeHostsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIamInstanceProfileAssociationsOutcome EC2Client::DescribeIamInstanceProfileAssociations(const DescribeIamInstanceProfileAssociationsRequest& request) const
@@ -6072,14 +6072,14 @@ DescribeIamInstanceProfileAssociationsOutcomeCallable EC2Client::DescribeIamInst
   return task->get_future();
 }
 
-void EC2Client::DescribeIamInstanceProfileAssociationsAsync(const DescribeIamInstanceProfileAssociationsRequest& request, const DescribeIamInstanceProfileAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeIamInstanceProfileAssociationsAsyncHelper(EC2Client const * const clientThis, const DescribeIamInstanceProfileAssociationsRequest& request, const DescribeIamInstanceProfileAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIamInstanceProfileAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIamInstanceProfileAssociations(request), context);
 }
 
-void EC2Client::DescribeIamInstanceProfileAssociationsAsyncHelper(const DescribeIamInstanceProfileAssociationsRequest& request, const DescribeIamInstanceProfileAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeIamInstanceProfileAssociationsAsync(const DescribeIamInstanceProfileAssociationsRequest& request, const DescribeIamInstanceProfileAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIamInstanceProfileAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeIamInstanceProfileAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIdFormatOutcome EC2Client::DescribeIdFormat(const DescribeIdFormatRequest& request) const
@@ -6096,14 +6096,14 @@ DescribeIdFormatOutcomeCallable EC2Client::DescribeIdFormatCallable(const Descri
   return task->get_future();
 }
 
-void EC2Client::DescribeIdFormatAsync(const DescribeIdFormatRequest& request, const DescribeIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeIdFormatAsyncHelper(EC2Client const * const clientThis, const DescribeIdFormatRequest& request, const DescribeIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIdFormatAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIdFormat(request), context);
 }
 
-void EC2Client::DescribeIdFormatAsyncHelper(const DescribeIdFormatRequest& request, const DescribeIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeIdFormatAsync(const DescribeIdFormatRequest& request, const DescribeIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIdFormat(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeIdFormatAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIdentityIdFormatOutcome EC2Client::DescribeIdentityIdFormat(const DescribeIdentityIdFormatRequest& request) const
@@ -6120,14 +6120,14 @@ DescribeIdentityIdFormatOutcomeCallable EC2Client::DescribeIdentityIdFormatCalla
   return task->get_future();
 }
 
-void EC2Client::DescribeIdentityIdFormatAsync(const DescribeIdentityIdFormatRequest& request, const DescribeIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeIdentityIdFormatAsyncHelper(EC2Client const * const clientThis, const DescribeIdentityIdFormatRequest& request, const DescribeIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIdentityIdFormatAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIdentityIdFormat(request), context);
 }
 
-void EC2Client::DescribeIdentityIdFormatAsyncHelper(const DescribeIdentityIdFormatRequest& request, const DescribeIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeIdentityIdFormatAsync(const DescribeIdentityIdFormatRequest& request, const DescribeIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIdentityIdFormat(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeIdentityIdFormatAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImageAttributeOutcome EC2Client::DescribeImageAttribute(const DescribeImageAttributeRequest& request) const
@@ -6144,14 +6144,14 @@ DescribeImageAttributeOutcomeCallable EC2Client::DescribeImageAttributeCallable(
   return task->get_future();
 }
 
-void EC2Client::DescribeImageAttributeAsync(const DescribeImageAttributeRequest& request, const DescribeImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeImageAttributeAsyncHelper(EC2Client const * const clientThis, const DescribeImageAttributeRequest& request, const DescribeImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImageAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImageAttribute(request), context);
 }
 
-void EC2Client::DescribeImageAttributeAsyncHelper(const DescribeImageAttributeRequest& request, const DescribeImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeImageAttributeAsync(const DescribeImageAttributeRequest& request, const DescribeImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImageAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeImageAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImagesOutcome EC2Client::DescribeImages(const DescribeImagesRequest& request) const
@@ -6168,14 +6168,14 @@ DescribeImagesOutcomeCallable EC2Client::DescribeImagesCallable(const DescribeIm
   return task->get_future();
 }
 
-void EC2Client::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeImagesAsyncHelper(EC2Client const * const clientThis, const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImages(request), context);
 }
 
-void EC2Client::DescribeImagesAsyncHelper(const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeImagesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImportImageTasksOutcome EC2Client::DescribeImportImageTasks(const DescribeImportImageTasksRequest& request) const
@@ -6192,14 +6192,14 @@ DescribeImportImageTasksOutcomeCallable EC2Client::DescribeImportImageTasksCalla
   return task->get_future();
 }
 
-void EC2Client::DescribeImportImageTasksAsync(const DescribeImportImageTasksRequest& request, const DescribeImportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeImportImageTasksAsyncHelper(EC2Client const * const clientThis, const DescribeImportImageTasksRequest& request, const DescribeImportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImportImageTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImportImageTasks(request), context);
 }
 
-void EC2Client::DescribeImportImageTasksAsyncHelper(const DescribeImportImageTasksRequest& request, const DescribeImportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeImportImageTasksAsync(const DescribeImportImageTasksRequest& request, const DescribeImportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImportImageTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeImportImageTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImportSnapshotTasksOutcome EC2Client::DescribeImportSnapshotTasks(const DescribeImportSnapshotTasksRequest& request) const
@@ -6216,14 +6216,14 @@ DescribeImportSnapshotTasksOutcomeCallable EC2Client::DescribeImportSnapshotTask
   return task->get_future();
 }
 
-void EC2Client::DescribeImportSnapshotTasksAsync(const DescribeImportSnapshotTasksRequest& request, const DescribeImportSnapshotTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeImportSnapshotTasksAsyncHelper(EC2Client const * const clientThis, const DescribeImportSnapshotTasksRequest& request, const DescribeImportSnapshotTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImportSnapshotTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImportSnapshotTasks(request), context);
 }
 
-void EC2Client::DescribeImportSnapshotTasksAsyncHelper(const DescribeImportSnapshotTasksRequest& request, const DescribeImportSnapshotTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeImportSnapshotTasksAsync(const DescribeImportSnapshotTasksRequest& request, const DescribeImportSnapshotTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImportSnapshotTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeImportSnapshotTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstanceAttributeOutcome EC2Client::DescribeInstanceAttribute(const DescribeInstanceAttributeRequest& request) const
@@ -6240,14 +6240,14 @@ DescribeInstanceAttributeOutcomeCallable EC2Client::DescribeInstanceAttributeCal
   return task->get_future();
 }
 
-void EC2Client::DescribeInstanceAttributeAsync(const DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeInstanceAttributeAsyncHelper(EC2Client const * const clientThis, const DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstanceAttribute(request), context);
 }
 
-void EC2Client::DescribeInstanceAttributeAsyncHelper(const DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeInstanceAttributeAsync(const DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstanceAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeInstanceAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstanceCreditSpecificationsOutcome EC2Client::DescribeInstanceCreditSpecifications(const DescribeInstanceCreditSpecificationsRequest& request) const
@@ -6264,14 +6264,14 @@ DescribeInstanceCreditSpecificationsOutcomeCallable EC2Client::DescribeInstanceC
   return task->get_future();
 }
 
-void EC2Client::DescribeInstanceCreditSpecificationsAsync(const DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeInstanceCreditSpecificationsAsyncHelper(EC2Client const * const clientThis, const DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceCreditSpecificationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstanceCreditSpecifications(request), context);
 }
 
-void EC2Client::DescribeInstanceCreditSpecificationsAsyncHelper(const DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeInstanceCreditSpecificationsAsync(const DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstanceCreditSpecifications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeInstanceCreditSpecificationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstanceEventNotificationAttributesOutcome EC2Client::DescribeInstanceEventNotificationAttributes(const DescribeInstanceEventNotificationAttributesRequest& request) const
@@ -6288,14 +6288,14 @@ DescribeInstanceEventNotificationAttributesOutcomeCallable EC2Client::DescribeIn
   return task->get_future();
 }
 
-void EC2Client::DescribeInstanceEventNotificationAttributesAsync(const DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeInstanceEventNotificationAttributesAsyncHelper(EC2Client const * const clientThis, const DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceEventNotificationAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstanceEventNotificationAttributes(request), context);
 }
 
-void EC2Client::DescribeInstanceEventNotificationAttributesAsyncHelper(const DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeInstanceEventNotificationAttributesAsync(const DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstanceEventNotificationAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeInstanceEventNotificationAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstanceEventWindowsOutcome EC2Client::DescribeInstanceEventWindows(const DescribeInstanceEventWindowsRequest& request) const
@@ -6312,14 +6312,14 @@ DescribeInstanceEventWindowsOutcomeCallable EC2Client::DescribeInstanceEventWind
   return task->get_future();
 }
 
-void EC2Client::DescribeInstanceEventWindowsAsync(const DescribeInstanceEventWindowsRequest& request, const DescribeInstanceEventWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeInstanceEventWindowsAsyncHelper(EC2Client const * const clientThis, const DescribeInstanceEventWindowsRequest& request, const DescribeInstanceEventWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceEventWindowsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstanceEventWindows(request), context);
 }
 
-void EC2Client::DescribeInstanceEventWindowsAsyncHelper(const DescribeInstanceEventWindowsRequest& request, const DescribeInstanceEventWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeInstanceEventWindowsAsync(const DescribeInstanceEventWindowsRequest& request, const DescribeInstanceEventWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstanceEventWindows(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeInstanceEventWindowsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstanceStatusOutcome EC2Client::DescribeInstanceStatus(const DescribeInstanceStatusRequest& request) const
@@ -6336,14 +6336,14 @@ DescribeInstanceStatusOutcomeCallable EC2Client::DescribeInstanceStatusCallable(
   return task->get_future();
 }
 
-void EC2Client::DescribeInstanceStatusAsync(const DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeInstanceStatusAsyncHelper(EC2Client const * const clientThis, const DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstanceStatus(request), context);
 }
 
-void EC2Client::DescribeInstanceStatusAsyncHelper(const DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeInstanceStatusAsync(const DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstanceStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeInstanceStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstanceTypeOfferingsOutcome EC2Client::DescribeInstanceTypeOfferings(const DescribeInstanceTypeOfferingsRequest& request) const
@@ -6360,14 +6360,14 @@ DescribeInstanceTypeOfferingsOutcomeCallable EC2Client::DescribeInstanceTypeOffe
   return task->get_future();
 }
 
-void EC2Client::DescribeInstanceTypeOfferingsAsync(const DescribeInstanceTypeOfferingsRequest& request, const DescribeInstanceTypeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeInstanceTypeOfferingsAsyncHelper(EC2Client const * const clientThis, const DescribeInstanceTypeOfferingsRequest& request, const DescribeInstanceTypeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceTypeOfferingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstanceTypeOfferings(request), context);
 }
 
-void EC2Client::DescribeInstanceTypeOfferingsAsyncHelper(const DescribeInstanceTypeOfferingsRequest& request, const DescribeInstanceTypeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeInstanceTypeOfferingsAsync(const DescribeInstanceTypeOfferingsRequest& request, const DescribeInstanceTypeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstanceTypeOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeInstanceTypeOfferingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstanceTypesOutcome EC2Client::DescribeInstanceTypes(const DescribeInstanceTypesRequest& request) const
@@ -6384,14 +6384,14 @@ DescribeInstanceTypesOutcomeCallable EC2Client::DescribeInstanceTypesCallable(co
   return task->get_future();
 }
 
-void EC2Client::DescribeInstanceTypesAsync(const DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeInstanceTypesAsyncHelper(EC2Client const * const clientThis, const DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstanceTypes(request), context);
 }
 
-void EC2Client::DescribeInstanceTypesAsyncHelper(const DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeInstanceTypesAsync(const DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstanceTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeInstanceTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstancesOutcome EC2Client::DescribeInstances(const DescribeInstancesRequest& request) const
@@ -6408,14 +6408,14 @@ DescribeInstancesOutcomeCallable EC2Client::DescribeInstancesCallable(const Desc
   return task->get_future();
 }
 
-void EC2Client::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeInstancesAsyncHelper(EC2Client const * const clientThis, const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstances(request), context);
 }
 
-void EC2Client::DescribeInstancesAsyncHelper(const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInternetGatewaysOutcome EC2Client::DescribeInternetGateways(const DescribeInternetGatewaysRequest& request) const
@@ -6432,14 +6432,14 @@ DescribeInternetGatewaysOutcomeCallable EC2Client::DescribeInternetGatewaysCalla
   return task->get_future();
 }
 
-void EC2Client::DescribeInternetGatewaysAsync(const DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeInternetGatewaysAsyncHelper(EC2Client const * const clientThis, const DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInternetGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInternetGateways(request), context);
 }
 
-void EC2Client::DescribeInternetGatewaysAsyncHelper(const DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeInternetGatewaysAsync(const DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInternetGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeInternetGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIpamPoolsOutcome EC2Client::DescribeIpamPools(const DescribeIpamPoolsRequest& request) const
@@ -6456,14 +6456,14 @@ DescribeIpamPoolsOutcomeCallable EC2Client::DescribeIpamPoolsCallable(const Desc
   return task->get_future();
 }
 
-void EC2Client::DescribeIpamPoolsAsync(const DescribeIpamPoolsRequest& request, const DescribeIpamPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeIpamPoolsAsyncHelper(EC2Client const * const clientThis, const DescribeIpamPoolsRequest& request, const DescribeIpamPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIpamPoolsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIpamPools(request), context);
 }
 
-void EC2Client::DescribeIpamPoolsAsyncHelper(const DescribeIpamPoolsRequest& request, const DescribeIpamPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeIpamPoolsAsync(const DescribeIpamPoolsRequest& request, const DescribeIpamPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIpamPools(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeIpamPoolsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIpamScopesOutcome EC2Client::DescribeIpamScopes(const DescribeIpamScopesRequest& request) const
@@ -6480,14 +6480,14 @@ DescribeIpamScopesOutcomeCallable EC2Client::DescribeIpamScopesCallable(const De
   return task->get_future();
 }
 
-void EC2Client::DescribeIpamScopesAsync(const DescribeIpamScopesRequest& request, const DescribeIpamScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeIpamScopesAsyncHelper(EC2Client const * const clientThis, const DescribeIpamScopesRequest& request, const DescribeIpamScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIpamScopesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIpamScopes(request), context);
 }
 
-void EC2Client::DescribeIpamScopesAsyncHelper(const DescribeIpamScopesRequest& request, const DescribeIpamScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeIpamScopesAsync(const DescribeIpamScopesRequest& request, const DescribeIpamScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIpamScopes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeIpamScopesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIpamsOutcome EC2Client::DescribeIpams(const DescribeIpamsRequest& request) const
@@ -6504,14 +6504,14 @@ DescribeIpamsOutcomeCallable EC2Client::DescribeIpamsCallable(const DescribeIpam
   return task->get_future();
 }
 
-void EC2Client::DescribeIpamsAsync(const DescribeIpamsRequest& request, const DescribeIpamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeIpamsAsyncHelper(EC2Client const * const clientThis, const DescribeIpamsRequest& request, const DescribeIpamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIpamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIpams(request), context);
 }
 
-void EC2Client::DescribeIpamsAsyncHelper(const DescribeIpamsRequest& request, const DescribeIpamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeIpamsAsync(const DescribeIpamsRequest& request, const DescribeIpamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIpams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeIpamsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIpv6PoolsOutcome EC2Client::DescribeIpv6Pools(const DescribeIpv6PoolsRequest& request) const
@@ -6528,14 +6528,14 @@ DescribeIpv6PoolsOutcomeCallable EC2Client::DescribeIpv6PoolsCallable(const Desc
   return task->get_future();
 }
 
-void EC2Client::DescribeIpv6PoolsAsync(const DescribeIpv6PoolsRequest& request, const DescribeIpv6PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeIpv6PoolsAsyncHelper(EC2Client const * const clientThis, const DescribeIpv6PoolsRequest& request, const DescribeIpv6PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIpv6PoolsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIpv6Pools(request), context);
 }
 
-void EC2Client::DescribeIpv6PoolsAsyncHelper(const DescribeIpv6PoolsRequest& request, const DescribeIpv6PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeIpv6PoolsAsync(const DescribeIpv6PoolsRequest& request, const DescribeIpv6PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIpv6Pools(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeIpv6PoolsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeKeyPairsOutcome EC2Client::DescribeKeyPairs(const DescribeKeyPairsRequest& request) const
@@ -6552,14 +6552,14 @@ DescribeKeyPairsOutcomeCallable EC2Client::DescribeKeyPairsCallable(const Descri
   return task->get_future();
 }
 
-void EC2Client::DescribeKeyPairsAsync(const DescribeKeyPairsRequest& request, const DescribeKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeKeyPairsAsyncHelper(EC2Client const * const clientThis, const DescribeKeyPairsRequest& request, const DescribeKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeKeyPairsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeKeyPairs(request), context);
 }
 
-void EC2Client::DescribeKeyPairsAsyncHelper(const DescribeKeyPairsRequest& request, const DescribeKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeKeyPairsAsync(const DescribeKeyPairsRequest& request, const DescribeKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeKeyPairs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeKeyPairsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLaunchTemplateVersionsOutcome EC2Client::DescribeLaunchTemplateVersions(const DescribeLaunchTemplateVersionsRequest& request) const
@@ -6576,14 +6576,14 @@ DescribeLaunchTemplateVersionsOutcomeCallable EC2Client::DescribeLaunchTemplateV
   return task->get_future();
 }
 
-void EC2Client::DescribeLaunchTemplateVersionsAsync(const DescribeLaunchTemplateVersionsRequest& request, const DescribeLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeLaunchTemplateVersionsAsyncHelper(EC2Client const * const clientThis, const DescribeLaunchTemplateVersionsRequest& request, const DescribeLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLaunchTemplateVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLaunchTemplateVersions(request), context);
 }
 
-void EC2Client::DescribeLaunchTemplateVersionsAsyncHelper(const DescribeLaunchTemplateVersionsRequest& request, const DescribeLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeLaunchTemplateVersionsAsync(const DescribeLaunchTemplateVersionsRequest& request, const DescribeLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLaunchTemplateVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeLaunchTemplateVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLaunchTemplatesOutcome EC2Client::DescribeLaunchTemplates(const DescribeLaunchTemplatesRequest& request) const
@@ -6600,14 +6600,14 @@ DescribeLaunchTemplatesOutcomeCallable EC2Client::DescribeLaunchTemplatesCallabl
   return task->get_future();
 }
 
-void EC2Client::DescribeLaunchTemplatesAsync(const DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeLaunchTemplatesAsyncHelper(EC2Client const * const clientThis, const DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLaunchTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLaunchTemplates(request), context);
 }
 
-void EC2Client::DescribeLaunchTemplatesAsyncHelper(const DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeLaunchTemplatesAsync(const DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLaunchTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeLaunchTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcome EC2Client::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request) const
@@ -6624,14 +6624,14 @@ DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcomeCallable E
   return task->get_future();
 }
 
-void EC2Client::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsync(const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request, const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsyncHelper(EC2Client const * const clientThis, const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request, const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(request), context);
 }
 
-void EC2Client::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsyncHelper(const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request, const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsync(const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request, const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocalGatewayRouteTableVpcAssociationsOutcome EC2Client::DescribeLocalGatewayRouteTableVpcAssociations(const DescribeLocalGatewayRouteTableVpcAssociationsRequest& request) const
@@ -6648,14 +6648,14 @@ DescribeLocalGatewayRouteTableVpcAssociationsOutcomeCallable EC2Client::Describe
   return task->get_future();
 }
 
-void EC2Client::DescribeLocalGatewayRouteTableVpcAssociationsAsync(const DescribeLocalGatewayRouteTableVpcAssociationsRequest& request, const DescribeLocalGatewayRouteTableVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeLocalGatewayRouteTableVpcAssociationsAsyncHelper(EC2Client const * const clientThis, const DescribeLocalGatewayRouteTableVpcAssociationsRequest& request, const DescribeLocalGatewayRouteTableVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewayRouteTableVpcAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocalGatewayRouteTableVpcAssociations(request), context);
 }
 
-void EC2Client::DescribeLocalGatewayRouteTableVpcAssociationsAsyncHelper(const DescribeLocalGatewayRouteTableVpcAssociationsRequest& request, const DescribeLocalGatewayRouteTableVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeLocalGatewayRouteTableVpcAssociationsAsync(const DescribeLocalGatewayRouteTableVpcAssociationsRequest& request, const DescribeLocalGatewayRouteTableVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocalGatewayRouteTableVpcAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeLocalGatewayRouteTableVpcAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocalGatewayRouteTablesOutcome EC2Client::DescribeLocalGatewayRouteTables(const DescribeLocalGatewayRouteTablesRequest& request) const
@@ -6672,14 +6672,14 @@ DescribeLocalGatewayRouteTablesOutcomeCallable EC2Client::DescribeLocalGatewayRo
   return task->get_future();
 }
 
-void EC2Client::DescribeLocalGatewayRouteTablesAsync(const DescribeLocalGatewayRouteTablesRequest& request, const DescribeLocalGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeLocalGatewayRouteTablesAsyncHelper(EC2Client const * const clientThis, const DescribeLocalGatewayRouteTablesRequest& request, const DescribeLocalGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewayRouteTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocalGatewayRouteTables(request), context);
 }
 
-void EC2Client::DescribeLocalGatewayRouteTablesAsyncHelper(const DescribeLocalGatewayRouteTablesRequest& request, const DescribeLocalGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeLocalGatewayRouteTablesAsync(const DescribeLocalGatewayRouteTablesRequest& request, const DescribeLocalGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocalGatewayRouteTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeLocalGatewayRouteTablesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocalGatewayVirtualInterfaceGroupsOutcome EC2Client::DescribeLocalGatewayVirtualInterfaceGroups(const DescribeLocalGatewayVirtualInterfaceGroupsRequest& request) const
@@ -6696,14 +6696,14 @@ DescribeLocalGatewayVirtualInterfaceGroupsOutcomeCallable EC2Client::DescribeLoc
   return task->get_future();
 }
 
-void EC2Client::DescribeLocalGatewayVirtualInterfaceGroupsAsync(const DescribeLocalGatewayVirtualInterfaceGroupsRequest& request, const DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeLocalGatewayVirtualInterfaceGroupsAsyncHelper(EC2Client const * const clientThis, const DescribeLocalGatewayVirtualInterfaceGroupsRequest& request, const DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewayVirtualInterfaceGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocalGatewayVirtualInterfaceGroups(request), context);
 }
 
-void EC2Client::DescribeLocalGatewayVirtualInterfaceGroupsAsyncHelper(const DescribeLocalGatewayVirtualInterfaceGroupsRequest& request, const DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeLocalGatewayVirtualInterfaceGroupsAsync(const DescribeLocalGatewayVirtualInterfaceGroupsRequest& request, const DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocalGatewayVirtualInterfaceGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeLocalGatewayVirtualInterfaceGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocalGatewayVirtualInterfacesOutcome EC2Client::DescribeLocalGatewayVirtualInterfaces(const DescribeLocalGatewayVirtualInterfacesRequest& request) const
@@ -6720,14 +6720,14 @@ DescribeLocalGatewayVirtualInterfacesOutcomeCallable EC2Client::DescribeLocalGat
   return task->get_future();
 }
 
-void EC2Client::DescribeLocalGatewayVirtualInterfacesAsync(const DescribeLocalGatewayVirtualInterfacesRequest& request, const DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeLocalGatewayVirtualInterfacesAsyncHelper(EC2Client const * const clientThis, const DescribeLocalGatewayVirtualInterfacesRequest& request, const DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewayVirtualInterfacesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocalGatewayVirtualInterfaces(request), context);
 }
 
-void EC2Client::DescribeLocalGatewayVirtualInterfacesAsyncHelper(const DescribeLocalGatewayVirtualInterfacesRequest& request, const DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeLocalGatewayVirtualInterfacesAsync(const DescribeLocalGatewayVirtualInterfacesRequest& request, const DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocalGatewayVirtualInterfaces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeLocalGatewayVirtualInterfacesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocalGatewaysOutcome EC2Client::DescribeLocalGateways(const DescribeLocalGatewaysRequest& request) const
@@ -6744,14 +6744,14 @@ DescribeLocalGatewaysOutcomeCallable EC2Client::DescribeLocalGatewaysCallable(co
   return task->get_future();
 }
 
-void EC2Client::DescribeLocalGatewaysAsync(const DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeLocalGatewaysAsyncHelper(EC2Client const * const clientThis, const DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocalGateways(request), context);
 }
 
-void EC2Client::DescribeLocalGatewaysAsyncHelper(const DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeLocalGatewaysAsync(const DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocalGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeLocalGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeManagedPrefixListsOutcome EC2Client::DescribeManagedPrefixLists(const DescribeManagedPrefixListsRequest& request) const
@@ -6768,14 +6768,14 @@ DescribeManagedPrefixListsOutcomeCallable EC2Client::DescribeManagedPrefixListsC
   return task->get_future();
 }
 
-void EC2Client::DescribeManagedPrefixListsAsync(const DescribeManagedPrefixListsRequest& request, const DescribeManagedPrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeManagedPrefixListsAsyncHelper(EC2Client const * const clientThis, const DescribeManagedPrefixListsRequest& request, const DescribeManagedPrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeManagedPrefixListsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeManagedPrefixLists(request), context);
 }
 
-void EC2Client::DescribeManagedPrefixListsAsyncHelper(const DescribeManagedPrefixListsRequest& request, const DescribeManagedPrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeManagedPrefixListsAsync(const DescribeManagedPrefixListsRequest& request, const DescribeManagedPrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeManagedPrefixLists(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeManagedPrefixListsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMovingAddressesOutcome EC2Client::DescribeMovingAddresses(const DescribeMovingAddressesRequest& request) const
@@ -6792,14 +6792,14 @@ DescribeMovingAddressesOutcomeCallable EC2Client::DescribeMovingAddressesCallabl
   return task->get_future();
 }
 
-void EC2Client::DescribeMovingAddressesAsync(const DescribeMovingAddressesRequest& request, const DescribeMovingAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeMovingAddressesAsyncHelper(EC2Client const * const clientThis, const DescribeMovingAddressesRequest& request, const DescribeMovingAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMovingAddressesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMovingAddresses(request), context);
 }
 
-void EC2Client::DescribeMovingAddressesAsyncHelper(const DescribeMovingAddressesRequest& request, const DescribeMovingAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeMovingAddressesAsync(const DescribeMovingAddressesRequest& request, const DescribeMovingAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMovingAddresses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeMovingAddressesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNatGatewaysOutcome EC2Client::DescribeNatGateways(const DescribeNatGatewaysRequest& request) const
@@ -6816,14 +6816,14 @@ DescribeNatGatewaysOutcomeCallable EC2Client::DescribeNatGatewaysCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DescribeNatGatewaysAsync(const DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeNatGatewaysAsyncHelper(EC2Client const * const clientThis, const DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNatGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNatGateways(request), context);
 }
 
-void EC2Client::DescribeNatGatewaysAsyncHelper(const DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeNatGatewaysAsync(const DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNatGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeNatGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNetworkAclsOutcome EC2Client::DescribeNetworkAcls(const DescribeNetworkAclsRequest& request) const
@@ -6840,14 +6840,14 @@ DescribeNetworkAclsOutcomeCallable EC2Client::DescribeNetworkAclsCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DescribeNetworkAclsAsync(const DescribeNetworkAclsRequest& request, const DescribeNetworkAclsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeNetworkAclsAsyncHelper(EC2Client const * const clientThis, const DescribeNetworkAclsRequest& request, const DescribeNetworkAclsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNetworkAclsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNetworkAcls(request), context);
 }
 
-void EC2Client::DescribeNetworkAclsAsyncHelper(const DescribeNetworkAclsRequest& request, const DescribeNetworkAclsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeNetworkAclsAsync(const DescribeNetworkAclsRequest& request, const DescribeNetworkAclsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNetworkAcls(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeNetworkAclsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNetworkInsightsAccessScopeAnalysesOutcome EC2Client::DescribeNetworkInsightsAccessScopeAnalyses(const DescribeNetworkInsightsAccessScopeAnalysesRequest& request) const
@@ -6864,14 +6864,14 @@ DescribeNetworkInsightsAccessScopeAnalysesOutcomeCallable EC2Client::DescribeNet
   return task->get_future();
 }
 
-void EC2Client::DescribeNetworkInsightsAccessScopeAnalysesAsync(const DescribeNetworkInsightsAccessScopeAnalysesRequest& request, const DescribeNetworkInsightsAccessScopeAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeNetworkInsightsAccessScopeAnalysesAsyncHelper(EC2Client const * const clientThis, const DescribeNetworkInsightsAccessScopeAnalysesRequest& request, const DescribeNetworkInsightsAccessScopeAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNetworkInsightsAccessScopeAnalysesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNetworkInsightsAccessScopeAnalyses(request), context);
 }
 
-void EC2Client::DescribeNetworkInsightsAccessScopeAnalysesAsyncHelper(const DescribeNetworkInsightsAccessScopeAnalysesRequest& request, const DescribeNetworkInsightsAccessScopeAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeNetworkInsightsAccessScopeAnalysesAsync(const DescribeNetworkInsightsAccessScopeAnalysesRequest& request, const DescribeNetworkInsightsAccessScopeAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNetworkInsightsAccessScopeAnalyses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeNetworkInsightsAccessScopeAnalysesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNetworkInsightsAccessScopesOutcome EC2Client::DescribeNetworkInsightsAccessScopes(const DescribeNetworkInsightsAccessScopesRequest& request) const
@@ -6888,14 +6888,14 @@ DescribeNetworkInsightsAccessScopesOutcomeCallable EC2Client::DescribeNetworkIns
   return task->get_future();
 }
 
-void EC2Client::DescribeNetworkInsightsAccessScopesAsync(const DescribeNetworkInsightsAccessScopesRequest& request, const DescribeNetworkInsightsAccessScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeNetworkInsightsAccessScopesAsyncHelper(EC2Client const * const clientThis, const DescribeNetworkInsightsAccessScopesRequest& request, const DescribeNetworkInsightsAccessScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNetworkInsightsAccessScopesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNetworkInsightsAccessScopes(request), context);
 }
 
-void EC2Client::DescribeNetworkInsightsAccessScopesAsyncHelper(const DescribeNetworkInsightsAccessScopesRequest& request, const DescribeNetworkInsightsAccessScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeNetworkInsightsAccessScopesAsync(const DescribeNetworkInsightsAccessScopesRequest& request, const DescribeNetworkInsightsAccessScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNetworkInsightsAccessScopes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeNetworkInsightsAccessScopesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNetworkInsightsAnalysesOutcome EC2Client::DescribeNetworkInsightsAnalyses(const DescribeNetworkInsightsAnalysesRequest& request) const
@@ -6912,14 +6912,14 @@ DescribeNetworkInsightsAnalysesOutcomeCallable EC2Client::DescribeNetworkInsight
   return task->get_future();
 }
 
-void EC2Client::DescribeNetworkInsightsAnalysesAsync(const DescribeNetworkInsightsAnalysesRequest& request, const DescribeNetworkInsightsAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeNetworkInsightsAnalysesAsyncHelper(EC2Client const * const clientThis, const DescribeNetworkInsightsAnalysesRequest& request, const DescribeNetworkInsightsAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNetworkInsightsAnalysesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNetworkInsightsAnalyses(request), context);
 }
 
-void EC2Client::DescribeNetworkInsightsAnalysesAsyncHelper(const DescribeNetworkInsightsAnalysesRequest& request, const DescribeNetworkInsightsAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeNetworkInsightsAnalysesAsync(const DescribeNetworkInsightsAnalysesRequest& request, const DescribeNetworkInsightsAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNetworkInsightsAnalyses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeNetworkInsightsAnalysesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNetworkInsightsPathsOutcome EC2Client::DescribeNetworkInsightsPaths(const DescribeNetworkInsightsPathsRequest& request) const
@@ -6936,14 +6936,14 @@ DescribeNetworkInsightsPathsOutcomeCallable EC2Client::DescribeNetworkInsightsPa
   return task->get_future();
 }
 
-void EC2Client::DescribeNetworkInsightsPathsAsync(const DescribeNetworkInsightsPathsRequest& request, const DescribeNetworkInsightsPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeNetworkInsightsPathsAsyncHelper(EC2Client const * const clientThis, const DescribeNetworkInsightsPathsRequest& request, const DescribeNetworkInsightsPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNetworkInsightsPathsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNetworkInsightsPaths(request), context);
 }
 
-void EC2Client::DescribeNetworkInsightsPathsAsyncHelper(const DescribeNetworkInsightsPathsRequest& request, const DescribeNetworkInsightsPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeNetworkInsightsPathsAsync(const DescribeNetworkInsightsPathsRequest& request, const DescribeNetworkInsightsPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNetworkInsightsPaths(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeNetworkInsightsPathsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNetworkInterfaceAttributeOutcome EC2Client::DescribeNetworkInterfaceAttribute(const DescribeNetworkInterfaceAttributeRequest& request) const
@@ -6960,14 +6960,14 @@ DescribeNetworkInterfaceAttributeOutcomeCallable EC2Client::DescribeNetworkInter
   return task->get_future();
 }
 
-void EC2Client::DescribeNetworkInterfaceAttributeAsync(const DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeNetworkInterfaceAttributeAsyncHelper(EC2Client const * const clientThis, const DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNetworkInterfaceAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNetworkInterfaceAttribute(request), context);
 }
 
-void EC2Client::DescribeNetworkInterfaceAttributeAsyncHelper(const DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeNetworkInterfaceAttributeAsync(const DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNetworkInterfaceAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeNetworkInterfaceAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNetworkInterfacePermissionsOutcome EC2Client::DescribeNetworkInterfacePermissions(const DescribeNetworkInterfacePermissionsRequest& request) const
@@ -6984,14 +6984,14 @@ DescribeNetworkInterfacePermissionsOutcomeCallable EC2Client::DescribeNetworkInt
   return task->get_future();
 }
 
-void EC2Client::DescribeNetworkInterfacePermissionsAsync(const DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeNetworkInterfacePermissionsAsyncHelper(EC2Client const * const clientThis, const DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNetworkInterfacePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNetworkInterfacePermissions(request), context);
 }
 
-void EC2Client::DescribeNetworkInterfacePermissionsAsyncHelper(const DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeNetworkInterfacePermissionsAsync(const DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNetworkInterfacePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeNetworkInterfacePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNetworkInterfacesOutcome EC2Client::DescribeNetworkInterfaces(const DescribeNetworkInterfacesRequest& request) const
@@ -7008,14 +7008,14 @@ DescribeNetworkInterfacesOutcomeCallable EC2Client::DescribeNetworkInterfacesCal
   return task->get_future();
 }
 
-void EC2Client::DescribeNetworkInterfacesAsync(const DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeNetworkInterfacesAsyncHelper(EC2Client const * const clientThis, const DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNetworkInterfacesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNetworkInterfaces(request), context);
 }
 
-void EC2Client::DescribeNetworkInterfacesAsyncHelper(const DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeNetworkInterfacesAsync(const DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNetworkInterfaces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeNetworkInterfacesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePlacementGroupsOutcome EC2Client::DescribePlacementGroups(const DescribePlacementGroupsRequest& request) const
@@ -7032,14 +7032,14 @@ DescribePlacementGroupsOutcomeCallable EC2Client::DescribePlacementGroupsCallabl
   return task->get_future();
 }
 
-void EC2Client::DescribePlacementGroupsAsync(const DescribePlacementGroupsRequest& request, const DescribePlacementGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribePlacementGroupsAsyncHelper(EC2Client const * const clientThis, const DescribePlacementGroupsRequest& request, const DescribePlacementGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePlacementGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePlacementGroups(request), context);
 }
 
-void EC2Client::DescribePlacementGroupsAsyncHelper(const DescribePlacementGroupsRequest& request, const DescribePlacementGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribePlacementGroupsAsync(const DescribePlacementGroupsRequest& request, const DescribePlacementGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePlacementGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribePlacementGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePrefixListsOutcome EC2Client::DescribePrefixLists(const DescribePrefixListsRequest& request) const
@@ -7056,14 +7056,14 @@ DescribePrefixListsOutcomeCallable EC2Client::DescribePrefixListsCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DescribePrefixListsAsync(const DescribePrefixListsRequest& request, const DescribePrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribePrefixListsAsyncHelper(EC2Client const * const clientThis, const DescribePrefixListsRequest& request, const DescribePrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePrefixListsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePrefixLists(request), context);
 }
 
-void EC2Client::DescribePrefixListsAsyncHelper(const DescribePrefixListsRequest& request, const DescribePrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribePrefixListsAsync(const DescribePrefixListsRequest& request, const DescribePrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePrefixLists(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribePrefixListsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePrincipalIdFormatOutcome EC2Client::DescribePrincipalIdFormat(const DescribePrincipalIdFormatRequest& request) const
@@ -7080,14 +7080,14 @@ DescribePrincipalIdFormatOutcomeCallable EC2Client::DescribePrincipalIdFormatCal
   return task->get_future();
 }
 
-void EC2Client::DescribePrincipalIdFormatAsync(const DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribePrincipalIdFormatAsyncHelper(EC2Client const * const clientThis, const DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePrincipalIdFormatAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePrincipalIdFormat(request), context);
 }
 
-void EC2Client::DescribePrincipalIdFormatAsyncHelper(const DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribePrincipalIdFormatAsync(const DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePrincipalIdFormat(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribePrincipalIdFormatAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePublicIpv4PoolsOutcome EC2Client::DescribePublicIpv4Pools(const DescribePublicIpv4PoolsRequest& request) const
@@ -7104,14 +7104,14 @@ DescribePublicIpv4PoolsOutcomeCallable EC2Client::DescribePublicIpv4PoolsCallabl
   return task->get_future();
 }
 
-void EC2Client::DescribePublicIpv4PoolsAsync(const DescribePublicIpv4PoolsRequest& request, const DescribePublicIpv4PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribePublicIpv4PoolsAsyncHelper(EC2Client const * const clientThis, const DescribePublicIpv4PoolsRequest& request, const DescribePublicIpv4PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePublicIpv4PoolsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePublicIpv4Pools(request), context);
 }
 
-void EC2Client::DescribePublicIpv4PoolsAsyncHelper(const DescribePublicIpv4PoolsRequest& request, const DescribePublicIpv4PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribePublicIpv4PoolsAsync(const DescribePublicIpv4PoolsRequest& request, const DescribePublicIpv4PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePublicIpv4Pools(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribePublicIpv4PoolsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRegionsOutcome EC2Client::DescribeRegions(const DescribeRegionsRequest& request) const
@@ -7128,14 +7128,14 @@ DescribeRegionsOutcomeCallable EC2Client::DescribeRegionsCallable(const Describe
   return task->get_future();
 }
 
-void EC2Client::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeRegionsAsyncHelper(EC2Client const * const clientThis, const DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRegionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRegions(request), context);
 }
 
-void EC2Client::DescribeRegionsAsyncHelper(const DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRegions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeRegionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReplaceRootVolumeTasksOutcome EC2Client::DescribeReplaceRootVolumeTasks(const DescribeReplaceRootVolumeTasksRequest& request) const
@@ -7152,14 +7152,14 @@ DescribeReplaceRootVolumeTasksOutcomeCallable EC2Client::DescribeReplaceRootVolu
   return task->get_future();
 }
 
-void EC2Client::DescribeReplaceRootVolumeTasksAsync(const DescribeReplaceRootVolumeTasksRequest& request, const DescribeReplaceRootVolumeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeReplaceRootVolumeTasksAsyncHelper(EC2Client const * const clientThis, const DescribeReplaceRootVolumeTasksRequest& request, const DescribeReplaceRootVolumeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplaceRootVolumeTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReplaceRootVolumeTasks(request), context);
 }
 
-void EC2Client::DescribeReplaceRootVolumeTasksAsyncHelper(const DescribeReplaceRootVolumeTasksRequest& request, const DescribeReplaceRootVolumeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeReplaceRootVolumeTasksAsync(const DescribeReplaceRootVolumeTasksRequest& request, const DescribeReplaceRootVolumeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReplaceRootVolumeTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeReplaceRootVolumeTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReservedInstancesOutcome EC2Client::DescribeReservedInstances(const DescribeReservedInstancesRequest& request) const
@@ -7176,14 +7176,14 @@ DescribeReservedInstancesOutcomeCallable EC2Client::DescribeReservedInstancesCal
   return task->get_future();
 }
 
-void EC2Client::DescribeReservedInstancesAsync(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeReservedInstancesAsyncHelper(EC2Client const * const clientThis, const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReservedInstances(request), context);
 }
 
-void EC2Client::DescribeReservedInstancesAsyncHelper(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeReservedInstancesAsync(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReservedInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeReservedInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReservedInstancesListingsOutcome EC2Client::DescribeReservedInstancesListings(const DescribeReservedInstancesListingsRequest& request) const
@@ -7200,14 +7200,14 @@ DescribeReservedInstancesListingsOutcomeCallable EC2Client::DescribeReservedInst
   return task->get_future();
 }
 
-void EC2Client::DescribeReservedInstancesListingsAsync(const DescribeReservedInstancesListingsRequest& request, const DescribeReservedInstancesListingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeReservedInstancesListingsAsyncHelper(EC2Client const * const clientThis, const DescribeReservedInstancesListingsRequest& request, const DescribeReservedInstancesListingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedInstancesListingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReservedInstancesListings(request), context);
 }
 
-void EC2Client::DescribeReservedInstancesListingsAsyncHelper(const DescribeReservedInstancesListingsRequest& request, const DescribeReservedInstancesListingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeReservedInstancesListingsAsync(const DescribeReservedInstancesListingsRequest& request, const DescribeReservedInstancesListingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReservedInstancesListings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeReservedInstancesListingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReservedInstancesModificationsOutcome EC2Client::DescribeReservedInstancesModifications(const DescribeReservedInstancesModificationsRequest& request) const
@@ -7224,14 +7224,14 @@ DescribeReservedInstancesModificationsOutcomeCallable EC2Client::DescribeReserve
   return task->get_future();
 }
 
-void EC2Client::DescribeReservedInstancesModificationsAsync(const DescribeReservedInstancesModificationsRequest& request, const DescribeReservedInstancesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeReservedInstancesModificationsAsyncHelper(EC2Client const * const clientThis, const DescribeReservedInstancesModificationsRequest& request, const DescribeReservedInstancesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedInstancesModificationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReservedInstancesModifications(request), context);
 }
 
-void EC2Client::DescribeReservedInstancesModificationsAsyncHelper(const DescribeReservedInstancesModificationsRequest& request, const DescribeReservedInstancesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeReservedInstancesModificationsAsync(const DescribeReservedInstancesModificationsRequest& request, const DescribeReservedInstancesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReservedInstancesModifications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeReservedInstancesModificationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReservedInstancesOfferingsOutcome EC2Client::DescribeReservedInstancesOfferings(const DescribeReservedInstancesOfferingsRequest& request) const
@@ -7248,14 +7248,14 @@ DescribeReservedInstancesOfferingsOutcomeCallable EC2Client::DescribeReservedIns
   return task->get_future();
 }
 
-void EC2Client::DescribeReservedInstancesOfferingsAsync(const DescribeReservedInstancesOfferingsRequest& request, const DescribeReservedInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeReservedInstancesOfferingsAsyncHelper(EC2Client const * const clientThis, const DescribeReservedInstancesOfferingsRequest& request, const DescribeReservedInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedInstancesOfferingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReservedInstancesOfferings(request), context);
 }
 
-void EC2Client::DescribeReservedInstancesOfferingsAsyncHelper(const DescribeReservedInstancesOfferingsRequest& request, const DescribeReservedInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeReservedInstancesOfferingsAsync(const DescribeReservedInstancesOfferingsRequest& request, const DescribeReservedInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReservedInstancesOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeReservedInstancesOfferingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRouteTablesOutcome EC2Client::DescribeRouteTables(const DescribeRouteTablesRequest& request) const
@@ -7272,14 +7272,14 @@ DescribeRouteTablesOutcomeCallable EC2Client::DescribeRouteTablesCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DescribeRouteTablesAsync(const DescribeRouteTablesRequest& request, const DescribeRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeRouteTablesAsyncHelper(EC2Client const * const clientThis, const DescribeRouteTablesRequest& request, const DescribeRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRouteTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRouteTables(request), context);
 }
 
-void EC2Client::DescribeRouteTablesAsyncHelper(const DescribeRouteTablesRequest& request, const DescribeRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeRouteTablesAsync(const DescribeRouteTablesRequest& request, const DescribeRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRouteTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeRouteTablesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeScheduledInstanceAvailabilityOutcome EC2Client::DescribeScheduledInstanceAvailability(const DescribeScheduledInstanceAvailabilityRequest& request) const
@@ -7296,14 +7296,14 @@ DescribeScheduledInstanceAvailabilityOutcomeCallable EC2Client::DescribeSchedule
   return task->get_future();
 }
 
-void EC2Client::DescribeScheduledInstanceAvailabilityAsync(const DescribeScheduledInstanceAvailabilityRequest& request, const DescribeScheduledInstanceAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeScheduledInstanceAvailabilityAsyncHelper(EC2Client const * const clientThis, const DescribeScheduledInstanceAvailabilityRequest& request, const DescribeScheduledInstanceAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScheduledInstanceAvailabilityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeScheduledInstanceAvailability(request), context);
 }
 
-void EC2Client::DescribeScheduledInstanceAvailabilityAsyncHelper(const DescribeScheduledInstanceAvailabilityRequest& request, const DescribeScheduledInstanceAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeScheduledInstanceAvailabilityAsync(const DescribeScheduledInstanceAvailabilityRequest& request, const DescribeScheduledInstanceAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeScheduledInstanceAvailability(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeScheduledInstanceAvailabilityAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeScheduledInstancesOutcome EC2Client::DescribeScheduledInstances(const DescribeScheduledInstancesRequest& request) const
@@ -7320,14 +7320,14 @@ DescribeScheduledInstancesOutcomeCallable EC2Client::DescribeScheduledInstancesC
   return task->get_future();
 }
 
-void EC2Client::DescribeScheduledInstancesAsync(const DescribeScheduledInstancesRequest& request, const DescribeScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeScheduledInstancesAsyncHelper(EC2Client const * const clientThis, const DescribeScheduledInstancesRequest& request, const DescribeScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScheduledInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeScheduledInstances(request), context);
 }
 
-void EC2Client::DescribeScheduledInstancesAsyncHelper(const DescribeScheduledInstancesRequest& request, const DescribeScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeScheduledInstancesAsync(const DescribeScheduledInstancesRequest& request, const DescribeScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeScheduledInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeScheduledInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSecurityGroupReferencesOutcome EC2Client::DescribeSecurityGroupReferences(const DescribeSecurityGroupReferencesRequest& request) const
@@ -7344,14 +7344,14 @@ DescribeSecurityGroupReferencesOutcomeCallable EC2Client::DescribeSecurityGroupR
   return task->get_future();
 }
 
-void EC2Client::DescribeSecurityGroupReferencesAsync(const DescribeSecurityGroupReferencesRequest& request, const DescribeSecurityGroupReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSecurityGroupReferencesAsyncHelper(EC2Client const * const clientThis, const DescribeSecurityGroupReferencesRequest& request, const DescribeSecurityGroupReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityGroupReferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSecurityGroupReferences(request), context);
 }
 
-void EC2Client::DescribeSecurityGroupReferencesAsyncHelper(const DescribeSecurityGroupReferencesRequest& request, const DescribeSecurityGroupReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSecurityGroupReferencesAsync(const DescribeSecurityGroupReferencesRequest& request, const DescribeSecurityGroupReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSecurityGroupReferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSecurityGroupReferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSecurityGroupRulesOutcome EC2Client::DescribeSecurityGroupRules(const DescribeSecurityGroupRulesRequest& request) const
@@ -7368,14 +7368,14 @@ DescribeSecurityGroupRulesOutcomeCallable EC2Client::DescribeSecurityGroupRulesC
   return task->get_future();
 }
 
-void EC2Client::DescribeSecurityGroupRulesAsync(const DescribeSecurityGroupRulesRequest& request, const DescribeSecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSecurityGroupRulesAsyncHelper(EC2Client const * const clientThis, const DescribeSecurityGroupRulesRequest& request, const DescribeSecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityGroupRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSecurityGroupRules(request), context);
 }
 
-void EC2Client::DescribeSecurityGroupRulesAsyncHelper(const DescribeSecurityGroupRulesRequest& request, const DescribeSecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSecurityGroupRulesAsync(const DescribeSecurityGroupRulesRequest& request, const DescribeSecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSecurityGroupRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSecurityGroupRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSecurityGroupsOutcome EC2Client::DescribeSecurityGroups(const DescribeSecurityGroupsRequest& request) const
@@ -7392,14 +7392,14 @@ DescribeSecurityGroupsOutcomeCallable EC2Client::DescribeSecurityGroupsCallable(
   return task->get_future();
 }
 
-void EC2Client::DescribeSecurityGroupsAsync(const DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSecurityGroupsAsyncHelper(EC2Client const * const clientThis, const DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSecurityGroups(request), context);
 }
 
-void EC2Client::DescribeSecurityGroupsAsyncHelper(const DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSecurityGroupsAsync(const DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSecurityGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSecurityGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSnapshotAttributeOutcome EC2Client::DescribeSnapshotAttribute(const DescribeSnapshotAttributeRequest& request) const
@@ -7416,14 +7416,14 @@ DescribeSnapshotAttributeOutcomeCallable EC2Client::DescribeSnapshotAttributeCal
   return task->get_future();
 }
 
-void EC2Client::DescribeSnapshotAttributeAsync(const DescribeSnapshotAttributeRequest& request, const DescribeSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSnapshotAttributeAsyncHelper(EC2Client const * const clientThis, const DescribeSnapshotAttributeRequest& request, const DescribeSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSnapshotAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSnapshotAttribute(request), context);
 }
 
-void EC2Client::DescribeSnapshotAttributeAsyncHelper(const DescribeSnapshotAttributeRequest& request, const DescribeSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSnapshotAttributeAsync(const DescribeSnapshotAttributeRequest& request, const DescribeSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSnapshotAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSnapshotAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSnapshotTierStatusOutcome EC2Client::DescribeSnapshotTierStatus(const DescribeSnapshotTierStatusRequest& request) const
@@ -7440,14 +7440,14 @@ DescribeSnapshotTierStatusOutcomeCallable EC2Client::DescribeSnapshotTierStatusC
   return task->get_future();
 }
 
-void EC2Client::DescribeSnapshotTierStatusAsync(const DescribeSnapshotTierStatusRequest& request, const DescribeSnapshotTierStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSnapshotTierStatusAsyncHelper(EC2Client const * const clientThis, const DescribeSnapshotTierStatusRequest& request, const DescribeSnapshotTierStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSnapshotTierStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSnapshotTierStatus(request), context);
 }
 
-void EC2Client::DescribeSnapshotTierStatusAsyncHelper(const DescribeSnapshotTierStatusRequest& request, const DescribeSnapshotTierStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSnapshotTierStatusAsync(const DescribeSnapshotTierStatusRequest& request, const DescribeSnapshotTierStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSnapshotTierStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSnapshotTierStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSnapshotsOutcome EC2Client::DescribeSnapshots(const DescribeSnapshotsRequest& request) const
@@ -7464,14 +7464,14 @@ DescribeSnapshotsOutcomeCallable EC2Client::DescribeSnapshotsCallable(const Desc
   return task->get_future();
 }
 
-void EC2Client::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSnapshotsAsyncHelper(EC2Client const * const clientThis, const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSnapshots(request), context);
 }
 
-void EC2Client::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSpotDatafeedSubscriptionOutcome EC2Client::DescribeSpotDatafeedSubscription(const DescribeSpotDatafeedSubscriptionRequest& request) const
@@ -7488,14 +7488,14 @@ DescribeSpotDatafeedSubscriptionOutcomeCallable EC2Client::DescribeSpotDatafeedS
   return task->get_future();
 }
 
-void EC2Client::DescribeSpotDatafeedSubscriptionAsync(const DescribeSpotDatafeedSubscriptionRequest& request, const DescribeSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSpotDatafeedSubscriptionAsyncHelper(EC2Client const * const clientThis, const DescribeSpotDatafeedSubscriptionRequest& request, const DescribeSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSpotDatafeedSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSpotDatafeedSubscription(request), context);
 }
 
-void EC2Client::DescribeSpotDatafeedSubscriptionAsyncHelper(const DescribeSpotDatafeedSubscriptionRequest& request, const DescribeSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSpotDatafeedSubscriptionAsync(const DescribeSpotDatafeedSubscriptionRequest& request, const DescribeSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSpotDatafeedSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSpotDatafeedSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSpotFleetInstancesOutcome EC2Client::DescribeSpotFleetInstances(const DescribeSpotFleetInstancesRequest& request) const
@@ -7512,14 +7512,14 @@ DescribeSpotFleetInstancesOutcomeCallable EC2Client::DescribeSpotFleetInstancesC
   return task->get_future();
 }
 
-void EC2Client::DescribeSpotFleetInstancesAsync(const DescribeSpotFleetInstancesRequest& request, const DescribeSpotFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSpotFleetInstancesAsyncHelper(EC2Client const * const clientThis, const DescribeSpotFleetInstancesRequest& request, const DescribeSpotFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSpotFleetInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSpotFleetInstances(request), context);
 }
 
-void EC2Client::DescribeSpotFleetInstancesAsyncHelper(const DescribeSpotFleetInstancesRequest& request, const DescribeSpotFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSpotFleetInstancesAsync(const DescribeSpotFleetInstancesRequest& request, const DescribeSpotFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSpotFleetInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSpotFleetInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSpotFleetRequestHistoryOutcome EC2Client::DescribeSpotFleetRequestHistory(const DescribeSpotFleetRequestHistoryRequest& request) const
@@ -7536,14 +7536,14 @@ DescribeSpotFleetRequestHistoryOutcomeCallable EC2Client::DescribeSpotFleetReque
   return task->get_future();
 }
 
-void EC2Client::DescribeSpotFleetRequestHistoryAsync(const DescribeSpotFleetRequestHistoryRequest& request, const DescribeSpotFleetRequestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSpotFleetRequestHistoryAsyncHelper(EC2Client const * const clientThis, const DescribeSpotFleetRequestHistoryRequest& request, const DescribeSpotFleetRequestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSpotFleetRequestHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSpotFleetRequestHistory(request), context);
 }
 
-void EC2Client::DescribeSpotFleetRequestHistoryAsyncHelper(const DescribeSpotFleetRequestHistoryRequest& request, const DescribeSpotFleetRequestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSpotFleetRequestHistoryAsync(const DescribeSpotFleetRequestHistoryRequest& request, const DescribeSpotFleetRequestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSpotFleetRequestHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSpotFleetRequestHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSpotFleetRequestsOutcome EC2Client::DescribeSpotFleetRequests(const DescribeSpotFleetRequestsRequest& request) const
@@ -7560,14 +7560,14 @@ DescribeSpotFleetRequestsOutcomeCallable EC2Client::DescribeSpotFleetRequestsCal
   return task->get_future();
 }
 
-void EC2Client::DescribeSpotFleetRequestsAsync(const DescribeSpotFleetRequestsRequest& request, const DescribeSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSpotFleetRequestsAsyncHelper(EC2Client const * const clientThis, const DescribeSpotFleetRequestsRequest& request, const DescribeSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSpotFleetRequestsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSpotFleetRequests(request), context);
 }
 
-void EC2Client::DescribeSpotFleetRequestsAsyncHelper(const DescribeSpotFleetRequestsRequest& request, const DescribeSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSpotFleetRequestsAsync(const DescribeSpotFleetRequestsRequest& request, const DescribeSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSpotFleetRequests(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSpotFleetRequestsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSpotInstanceRequestsOutcome EC2Client::DescribeSpotInstanceRequests(const DescribeSpotInstanceRequestsRequest& request) const
@@ -7584,14 +7584,14 @@ DescribeSpotInstanceRequestsOutcomeCallable EC2Client::DescribeSpotInstanceReque
   return task->get_future();
 }
 
-void EC2Client::DescribeSpotInstanceRequestsAsync(const DescribeSpotInstanceRequestsRequest& request, const DescribeSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSpotInstanceRequestsAsyncHelper(EC2Client const * const clientThis, const DescribeSpotInstanceRequestsRequest& request, const DescribeSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSpotInstanceRequestsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSpotInstanceRequests(request), context);
 }
 
-void EC2Client::DescribeSpotInstanceRequestsAsyncHelper(const DescribeSpotInstanceRequestsRequest& request, const DescribeSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSpotInstanceRequestsAsync(const DescribeSpotInstanceRequestsRequest& request, const DescribeSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSpotInstanceRequests(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSpotInstanceRequestsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSpotPriceHistoryOutcome EC2Client::DescribeSpotPriceHistory(const DescribeSpotPriceHistoryRequest& request) const
@@ -7608,14 +7608,14 @@ DescribeSpotPriceHistoryOutcomeCallable EC2Client::DescribeSpotPriceHistoryCalla
   return task->get_future();
 }
 
-void EC2Client::DescribeSpotPriceHistoryAsync(const DescribeSpotPriceHistoryRequest& request, const DescribeSpotPriceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSpotPriceHistoryAsyncHelper(EC2Client const * const clientThis, const DescribeSpotPriceHistoryRequest& request, const DescribeSpotPriceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSpotPriceHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSpotPriceHistory(request), context);
 }
 
-void EC2Client::DescribeSpotPriceHistoryAsyncHelper(const DescribeSpotPriceHistoryRequest& request, const DescribeSpotPriceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSpotPriceHistoryAsync(const DescribeSpotPriceHistoryRequest& request, const DescribeSpotPriceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSpotPriceHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSpotPriceHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStaleSecurityGroupsOutcome EC2Client::DescribeStaleSecurityGroups(const DescribeStaleSecurityGroupsRequest& request) const
@@ -7632,14 +7632,14 @@ DescribeStaleSecurityGroupsOutcomeCallable EC2Client::DescribeStaleSecurityGroup
   return task->get_future();
 }
 
-void EC2Client::DescribeStaleSecurityGroupsAsync(const DescribeStaleSecurityGroupsRequest& request, const DescribeStaleSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeStaleSecurityGroupsAsyncHelper(EC2Client const * const clientThis, const DescribeStaleSecurityGroupsRequest& request, const DescribeStaleSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStaleSecurityGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStaleSecurityGroups(request), context);
 }
 
-void EC2Client::DescribeStaleSecurityGroupsAsyncHelper(const DescribeStaleSecurityGroupsRequest& request, const DescribeStaleSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeStaleSecurityGroupsAsync(const DescribeStaleSecurityGroupsRequest& request, const DescribeStaleSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStaleSecurityGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeStaleSecurityGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStoreImageTasksOutcome EC2Client::DescribeStoreImageTasks(const DescribeStoreImageTasksRequest& request) const
@@ -7656,14 +7656,14 @@ DescribeStoreImageTasksOutcomeCallable EC2Client::DescribeStoreImageTasksCallabl
   return task->get_future();
 }
 
-void EC2Client::DescribeStoreImageTasksAsync(const DescribeStoreImageTasksRequest& request, const DescribeStoreImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeStoreImageTasksAsyncHelper(EC2Client const * const clientThis, const DescribeStoreImageTasksRequest& request, const DescribeStoreImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStoreImageTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStoreImageTasks(request), context);
 }
 
-void EC2Client::DescribeStoreImageTasksAsyncHelper(const DescribeStoreImageTasksRequest& request, const DescribeStoreImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeStoreImageTasksAsync(const DescribeStoreImageTasksRequest& request, const DescribeStoreImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStoreImageTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeStoreImageTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSubnetsOutcome EC2Client::DescribeSubnets(const DescribeSubnetsRequest& request) const
@@ -7680,14 +7680,14 @@ DescribeSubnetsOutcomeCallable EC2Client::DescribeSubnetsCallable(const Describe
   return task->get_future();
 }
 
-void EC2Client::DescribeSubnetsAsync(const DescribeSubnetsRequest& request, const DescribeSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeSubnetsAsyncHelper(EC2Client const * const clientThis, const DescribeSubnetsRequest& request, const DescribeSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSubnetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSubnets(request), context);
 }
 
-void EC2Client::DescribeSubnetsAsyncHelper(const DescribeSubnetsRequest& request, const DescribeSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeSubnetsAsync(const DescribeSubnetsRequest& request, const DescribeSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSubnets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeSubnetsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTagsOutcome EC2Client::DescribeTags(const DescribeTagsRequest& request) const
@@ -7704,14 +7704,14 @@ DescribeTagsOutcomeCallable EC2Client::DescribeTagsCallable(const DescribeTagsRe
   return task->get_future();
 }
 
-void EC2Client::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTagsAsyncHelper(EC2Client const * const clientThis, const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTags(request), context);
 }
 
-void EC2Client::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrafficMirrorFiltersOutcome EC2Client::DescribeTrafficMirrorFilters(const DescribeTrafficMirrorFiltersRequest& request) const
@@ -7728,14 +7728,14 @@ DescribeTrafficMirrorFiltersOutcomeCallable EC2Client::DescribeTrafficMirrorFilt
   return task->get_future();
 }
 
-void EC2Client::DescribeTrafficMirrorFiltersAsync(const DescribeTrafficMirrorFiltersRequest& request, const DescribeTrafficMirrorFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTrafficMirrorFiltersAsyncHelper(EC2Client const * const clientThis, const DescribeTrafficMirrorFiltersRequest& request, const DescribeTrafficMirrorFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrafficMirrorFiltersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrafficMirrorFilters(request), context);
 }
 
-void EC2Client::DescribeTrafficMirrorFiltersAsyncHelper(const DescribeTrafficMirrorFiltersRequest& request, const DescribeTrafficMirrorFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTrafficMirrorFiltersAsync(const DescribeTrafficMirrorFiltersRequest& request, const DescribeTrafficMirrorFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrafficMirrorFilters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTrafficMirrorFiltersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrafficMirrorSessionsOutcome EC2Client::DescribeTrafficMirrorSessions(const DescribeTrafficMirrorSessionsRequest& request) const
@@ -7752,14 +7752,14 @@ DescribeTrafficMirrorSessionsOutcomeCallable EC2Client::DescribeTrafficMirrorSes
   return task->get_future();
 }
 
-void EC2Client::DescribeTrafficMirrorSessionsAsync(const DescribeTrafficMirrorSessionsRequest& request, const DescribeTrafficMirrorSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTrafficMirrorSessionsAsyncHelper(EC2Client const * const clientThis, const DescribeTrafficMirrorSessionsRequest& request, const DescribeTrafficMirrorSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrafficMirrorSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrafficMirrorSessions(request), context);
 }
 
-void EC2Client::DescribeTrafficMirrorSessionsAsyncHelper(const DescribeTrafficMirrorSessionsRequest& request, const DescribeTrafficMirrorSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTrafficMirrorSessionsAsync(const DescribeTrafficMirrorSessionsRequest& request, const DescribeTrafficMirrorSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrafficMirrorSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTrafficMirrorSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrafficMirrorTargetsOutcome EC2Client::DescribeTrafficMirrorTargets(const DescribeTrafficMirrorTargetsRequest& request) const
@@ -7776,14 +7776,14 @@ DescribeTrafficMirrorTargetsOutcomeCallable EC2Client::DescribeTrafficMirrorTarg
   return task->get_future();
 }
 
-void EC2Client::DescribeTrafficMirrorTargetsAsync(const DescribeTrafficMirrorTargetsRequest& request, const DescribeTrafficMirrorTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTrafficMirrorTargetsAsyncHelper(EC2Client const * const clientThis, const DescribeTrafficMirrorTargetsRequest& request, const DescribeTrafficMirrorTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrafficMirrorTargetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrafficMirrorTargets(request), context);
 }
 
-void EC2Client::DescribeTrafficMirrorTargetsAsyncHelper(const DescribeTrafficMirrorTargetsRequest& request, const DescribeTrafficMirrorTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTrafficMirrorTargetsAsync(const DescribeTrafficMirrorTargetsRequest& request, const DescribeTrafficMirrorTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrafficMirrorTargets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTrafficMirrorTargetsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransitGatewayAttachmentsOutcome EC2Client::DescribeTransitGatewayAttachments(const DescribeTransitGatewayAttachmentsRequest& request) const
@@ -7800,14 +7800,14 @@ DescribeTransitGatewayAttachmentsOutcomeCallable EC2Client::DescribeTransitGatew
   return task->get_future();
 }
 
-void EC2Client::DescribeTransitGatewayAttachmentsAsync(const DescribeTransitGatewayAttachmentsRequest& request, const DescribeTransitGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTransitGatewayAttachmentsAsyncHelper(EC2Client const * const clientThis, const DescribeTransitGatewayAttachmentsRequest& request, const DescribeTransitGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayAttachmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransitGatewayAttachments(request), context);
 }
 
-void EC2Client::DescribeTransitGatewayAttachmentsAsyncHelper(const DescribeTransitGatewayAttachmentsRequest& request, const DescribeTransitGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTransitGatewayAttachmentsAsync(const DescribeTransitGatewayAttachmentsRequest& request, const DescribeTransitGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransitGatewayAttachments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTransitGatewayAttachmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransitGatewayConnectPeersOutcome EC2Client::DescribeTransitGatewayConnectPeers(const DescribeTransitGatewayConnectPeersRequest& request) const
@@ -7824,14 +7824,14 @@ DescribeTransitGatewayConnectPeersOutcomeCallable EC2Client::DescribeTransitGate
   return task->get_future();
 }
 
-void EC2Client::DescribeTransitGatewayConnectPeersAsync(const DescribeTransitGatewayConnectPeersRequest& request, const DescribeTransitGatewayConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTransitGatewayConnectPeersAsyncHelper(EC2Client const * const clientThis, const DescribeTransitGatewayConnectPeersRequest& request, const DescribeTransitGatewayConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayConnectPeersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransitGatewayConnectPeers(request), context);
 }
 
-void EC2Client::DescribeTransitGatewayConnectPeersAsyncHelper(const DescribeTransitGatewayConnectPeersRequest& request, const DescribeTransitGatewayConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTransitGatewayConnectPeersAsync(const DescribeTransitGatewayConnectPeersRequest& request, const DescribeTransitGatewayConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransitGatewayConnectPeers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTransitGatewayConnectPeersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransitGatewayConnectsOutcome EC2Client::DescribeTransitGatewayConnects(const DescribeTransitGatewayConnectsRequest& request) const
@@ -7848,14 +7848,14 @@ DescribeTransitGatewayConnectsOutcomeCallable EC2Client::DescribeTransitGatewayC
   return task->get_future();
 }
 
-void EC2Client::DescribeTransitGatewayConnectsAsync(const DescribeTransitGatewayConnectsRequest& request, const DescribeTransitGatewayConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTransitGatewayConnectsAsyncHelper(EC2Client const * const clientThis, const DescribeTransitGatewayConnectsRequest& request, const DescribeTransitGatewayConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayConnectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransitGatewayConnects(request), context);
 }
 
-void EC2Client::DescribeTransitGatewayConnectsAsyncHelper(const DescribeTransitGatewayConnectsRequest& request, const DescribeTransitGatewayConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTransitGatewayConnectsAsync(const DescribeTransitGatewayConnectsRequest& request, const DescribeTransitGatewayConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransitGatewayConnects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTransitGatewayConnectsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransitGatewayMulticastDomainsOutcome EC2Client::DescribeTransitGatewayMulticastDomains(const DescribeTransitGatewayMulticastDomainsRequest& request) const
@@ -7872,14 +7872,14 @@ DescribeTransitGatewayMulticastDomainsOutcomeCallable EC2Client::DescribeTransit
   return task->get_future();
 }
 
-void EC2Client::DescribeTransitGatewayMulticastDomainsAsync(const DescribeTransitGatewayMulticastDomainsRequest& request, const DescribeTransitGatewayMulticastDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTransitGatewayMulticastDomainsAsyncHelper(EC2Client const * const clientThis, const DescribeTransitGatewayMulticastDomainsRequest& request, const DescribeTransitGatewayMulticastDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayMulticastDomainsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransitGatewayMulticastDomains(request), context);
 }
 
-void EC2Client::DescribeTransitGatewayMulticastDomainsAsyncHelper(const DescribeTransitGatewayMulticastDomainsRequest& request, const DescribeTransitGatewayMulticastDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTransitGatewayMulticastDomainsAsync(const DescribeTransitGatewayMulticastDomainsRequest& request, const DescribeTransitGatewayMulticastDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransitGatewayMulticastDomains(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTransitGatewayMulticastDomainsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransitGatewayPeeringAttachmentsOutcome EC2Client::DescribeTransitGatewayPeeringAttachments(const DescribeTransitGatewayPeeringAttachmentsRequest& request) const
@@ -7896,14 +7896,14 @@ DescribeTransitGatewayPeeringAttachmentsOutcomeCallable EC2Client::DescribeTrans
   return task->get_future();
 }
 
-void EC2Client::DescribeTransitGatewayPeeringAttachmentsAsync(const DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTransitGatewayPeeringAttachmentsAsyncHelper(EC2Client const * const clientThis, const DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayPeeringAttachmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransitGatewayPeeringAttachments(request), context);
 }
 
-void EC2Client::DescribeTransitGatewayPeeringAttachmentsAsyncHelper(const DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTransitGatewayPeeringAttachmentsAsync(const DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransitGatewayPeeringAttachments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTransitGatewayPeeringAttachmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransitGatewayPolicyTablesOutcome EC2Client::DescribeTransitGatewayPolicyTables(const DescribeTransitGatewayPolicyTablesRequest& request) const
@@ -7920,14 +7920,14 @@ DescribeTransitGatewayPolicyTablesOutcomeCallable EC2Client::DescribeTransitGate
   return task->get_future();
 }
 
-void EC2Client::DescribeTransitGatewayPolicyTablesAsync(const DescribeTransitGatewayPolicyTablesRequest& request, const DescribeTransitGatewayPolicyTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTransitGatewayPolicyTablesAsyncHelper(EC2Client const * const clientThis, const DescribeTransitGatewayPolicyTablesRequest& request, const DescribeTransitGatewayPolicyTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayPolicyTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransitGatewayPolicyTables(request), context);
 }
 
-void EC2Client::DescribeTransitGatewayPolicyTablesAsyncHelper(const DescribeTransitGatewayPolicyTablesRequest& request, const DescribeTransitGatewayPolicyTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTransitGatewayPolicyTablesAsync(const DescribeTransitGatewayPolicyTablesRequest& request, const DescribeTransitGatewayPolicyTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransitGatewayPolicyTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTransitGatewayPolicyTablesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransitGatewayRouteTableAnnouncementsOutcome EC2Client::DescribeTransitGatewayRouteTableAnnouncements(const DescribeTransitGatewayRouteTableAnnouncementsRequest& request) const
@@ -7944,14 +7944,14 @@ DescribeTransitGatewayRouteTableAnnouncementsOutcomeCallable EC2Client::Describe
   return task->get_future();
 }
 
-void EC2Client::DescribeTransitGatewayRouteTableAnnouncementsAsync(const DescribeTransitGatewayRouteTableAnnouncementsRequest& request, const DescribeTransitGatewayRouteTableAnnouncementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTransitGatewayRouteTableAnnouncementsAsyncHelper(EC2Client const * const clientThis, const DescribeTransitGatewayRouteTableAnnouncementsRequest& request, const DescribeTransitGatewayRouteTableAnnouncementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayRouteTableAnnouncementsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransitGatewayRouteTableAnnouncements(request), context);
 }
 
-void EC2Client::DescribeTransitGatewayRouteTableAnnouncementsAsyncHelper(const DescribeTransitGatewayRouteTableAnnouncementsRequest& request, const DescribeTransitGatewayRouteTableAnnouncementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTransitGatewayRouteTableAnnouncementsAsync(const DescribeTransitGatewayRouteTableAnnouncementsRequest& request, const DescribeTransitGatewayRouteTableAnnouncementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransitGatewayRouteTableAnnouncements(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTransitGatewayRouteTableAnnouncementsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransitGatewayRouteTablesOutcome EC2Client::DescribeTransitGatewayRouteTables(const DescribeTransitGatewayRouteTablesRequest& request) const
@@ -7968,14 +7968,14 @@ DescribeTransitGatewayRouteTablesOutcomeCallable EC2Client::DescribeTransitGatew
   return task->get_future();
 }
 
-void EC2Client::DescribeTransitGatewayRouteTablesAsync(const DescribeTransitGatewayRouteTablesRequest& request, const DescribeTransitGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTransitGatewayRouteTablesAsyncHelper(EC2Client const * const clientThis, const DescribeTransitGatewayRouteTablesRequest& request, const DescribeTransitGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayRouteTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransitGatewayRouteTables(request), context);
 }
 
-void EC2Client::DescribeTransitGatewayRouteTablesAsyncHelper(const DescribeTransitGatewayRouteTablesRequest& request, const DescribeTransitGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTransitGatewayRouteTablesAsync(const DescribeTransitGatewayRouteTablesRequest& request, const DescribeTransitGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransitGatewayRouteTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTransitGatewayRouteTablesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransitGatewayVpcAttachmentsOutcome EC2Client::DescribeTransitGatewayVpcAttachments(const DescribeTransitGatewayVpcAttachmentsRequest& request) const
@@ -7992,14 +7992,14 @@ DescribeTransitGatewayVpcAttachmentsOutcomeCallable EC2Client::DescribeTransitGa
   return task->get_future();
 }
 
-void EC2Client::DescribeTransitGatewayVpcAttachmentsAsync(const DescribeTransitGatewayVpcAttachmentsRequest& request, const DescribeTransitGatewayVpcAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTransitGatewayVpcAttachmentsAsyncHelper(EC2Client const * const clientThis, const DescribeTransitGatewayVpcAttachmentsRequest& request, const DescribeTransitGatewayVpcAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayVpcAttachmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransitGatewayVpcAttachments(request), context);
 }
 
-void EC2Client::DescribeTransitGatewayVpcAttachmentsAsyncHelper(const DescribeTransitGatewayVpcAttachmentsRequest& request, const DescribeTransitGatewayVpcAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTransitGatewayVpcAttachmentsAsync(const DescribeTransitGatewayVpcAttachmentsRequest& request, const DescribeTransitGatewayVpcAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransitGatewayVpcAttachments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTransitGatewayVpcAttachmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTransitGatewaysOutcome EC2Client::DescribeTransitGateways(const DescribeTransitGatewaysRequest& request) const
@@ -8016,14 +8016,14 @@ DescribeTransitGatewaysOutcomeCallable EC2Client::DescribeTransitGatewaysCallabl
   return task->get_future();
 }
 
-void EC2Client::DescribeTransitGatewaysAsync(const DescribeTransitGatewaysRequest& request, const DescribeTransitGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTransitGatewaysAsyncHelper(EC2Client const * const clientThis, const DescribeTransitGatewaysRequest& request, const DescribeTransitGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTransitGateways(request), context);
 }
 
-void EC2Client::DescribeTransitGatewaysAsyncHelper(const DescribeTransitGatewaysRequest& request, const DescribeTransitGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTransitGatewaysAsync(const DescribeTransitGatewaysRequest& request, const DescribeTransitGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTransitGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTransitGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrunkInterfaceAssociationsOutcome EC2Client::DescribeTrunkInterfaceAssociations(const DescribeTrunkInterfaceAssociationsRequest& request) const
@@ -8040,14 +8040,14 @@ DescribeTrunkInterfaceAssociationsOutcomeCallable EC2Client::DescribeTrunkInterf
   return task->get_future();
 }
 
-void EC2Client::DescribeTrunkInterfaceAssociationsAsync(const DescribeTrunkInterfaceAssociationsRequest& request, const DescribeTrunkInterfaceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeTrunkInterfaceAssociationsAsyncHelper(EC2Client const * const clientThis, const DescribeTrunkInterfaceAssociationsRequest& request, const DescribeTrunkInterfaceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrunkInterfaceAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrunkInterfaceAssociations(request), context);
 }
 
-void EC2Client::DescribeTrunkInterfaceAssociationsAsyncHelper(const DescribeTrunkInterfaceAssociationsRequest& request, const DescribeTrunkInterfaceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeTrunkInterfaceAssociationsAsync(const DescribeTrunkInterfaceAssociationsRequest& request, const DescribeTrunkInterfaceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrunkInterfaceAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeTrunkInterfaceAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVolumeAttributeOutcome EC2Client::DescribeVolumeAttribute(const DescribeVolumeAttributeRequest& request) const
@@ -8064,14 +8064,14 @@ DescribeVolumeAttributeOutcomeCallable EC2Client::DescribeVolumeAttributeCallabl
   return task->get_future();
 }
 
-void EC2Client::DescribeVolumeAttributeAsync(const DescribeVolumeAttributeRequest& request, const DescribeVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVolumeAttributeAsyncHelper(EC2Client const * const clientThis, const DescribeVolumeAttributeRequest& request, const DescribeVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVolumeAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVolumeAttribute(request), context);
 }
 
-void EC2Client::DescribeVolumeAttributeAsyncHelper(const DescribeVolumeAttributeRequest& request, const DescribeVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVolumeAttributeAsync(const DescribeVolumeAttributeRequest& request, const DescribeVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVolumeAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVolumeAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVolumeStatusOutcome EC2Client::DescribeVolumeStatus(const DescribeVolumeStatusRequest& request) const
@@ -8088,14 +8088,14 @@ DescribeVolumeStatusOutcomeCallable EC2Client::DescribeVolumeStatusCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DescribeVolumeStatusAsync(const DescribeVolumeStatusRequest& request, const DescribeVolumeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVolumeStatusAsyncHelper(EC2Client const * const clientThis, const DescribeVolumeStatusRequest& request, const DescribeVolumeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVolumeStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVolumeStatus(request), context);
 }
 
-void EC2Client::DescribeVolumeStatusAsyncHelper(const DescribeVolumeStatusRequest& request, const DescribeVolumeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVolumeStatusAsync(const DescribeVolumeStatusRequest& request, const DescribeVolumeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVolumeStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVolumeStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVolumesOutcome EC2Client::DescribeVolumes(const DescribeVolumesRequest& request) const
@@ -8112,14 +8112,14 @@ DescribeVolumesOutcomeCallable EC2Client::DescribeVolumesCallable(const Describe
   return task->get_future();
 }
 
-void EC2Client::DescribeVolumesAsync(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVolumesAsyncHelper(EC2Client const * const clientThis, const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVolumesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVolumes(request), context);
 }
 
-void EC2Client::DescribeVolumesAsyncHelper(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVolumesAsync(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVolumes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVolumesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVolumesModificationsOutcome EC2Client::DescribeVolumesModifications(const DescribeVolumesModificationsRequest& request) const
@@ -8136,14 +8136,14 @@ DescribeVolumesModificationsOutcomeCallable EC2Client::DescribeVolumesModificati
   return task->get_future();
 }
 
-void EC2Client::DescribeVolumesModificationsAsync(const DescribeVolumesModificationsRequest& request, const DescribeVolumesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVolumesModificationsAsyncHelper(EC2Client const * const clientThis, const DescribeVolumesModificationsRequest& request, const DescribeVolumesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVolumesModificationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVolumesModifications(request), context);
 }
 
-void EC2Client::DescribeVolumesModificationsAsyncHelper(const DescribeVolumesModificationsRequest& request, const DescribeVolumesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVolumesModificationsAsync(const DescribeVolumesModificationsRequest& request, const DescribeVolumesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVolumesModifications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVolumesModificationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcAttributeOutcome EC2Client::DescribeVpcAttribute(const DescribeVpcAttributeRequest& request) const
@@ -8160,14 +8160,14 @@ DescribeVpcAttributeOutcomeCallable EC2Client::DescribeVpcAttributeCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcAttributeAsync(const DescribeVpcAttributeRequest& request, const DescribeVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcAttributeAsyncHelper(EC2Client const * const clientThis, const DescribeVpcAttributeRequest& request, const DescribeVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcAttribute(request), context);
 }
 
-void EC2Client::DescribeVpcAttributeAsyncHelper(const DescribeVpcAttributeRequest& request, const DescribeVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcAttributeAsync(const DescribeVpcAttributeRequest& request, const DescribeVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcClassicLinkOutcome EC2Client::DescribeVpcClassicLink(const DescribeVpcClassicLinkRequest& request) const
@@ -8184,14 +8184,14 @@ DescribeVpcClassicLinkOutcomeCallable EC2Client::DescribeVpcClassicLinkCallable(
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcClassicLinkAsync(const DescribeVpcClassicLinkRequest& request, const DescribeVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcClassicLinkAsyncHelper(EC2Client const * const clientThis, const DescribeVpcClassicLinkRequest& request, const DescribeVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcClassicLinkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcClassicLink(request), context);
 }
 
-void EC2Client::DescribeVpcClassicLinkAsyncHelper(const DescribeVpcClassicLinkRequest& request, const DescribeVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcClassicLinkAsync(const DescribeVpcClassicLinkRequest& request, const DescribeVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcClassicLink(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcClassicLinkAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcClassicLinkDnsSupportOutcome EC2Client::DescribeVpcClassicLinkDnsSupport(const DescribeVpcClassicLinkDnsSupportRequest& request) const
@@ -8208,14 +8208,14 @@ DescribeVpcClassicLinkDnsSupportOutcomeCallable EC2Client::DescribeVpcClassicLin
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcClassicLinkDnsSupportAsync(const DescribeVpcClassicLinkDnsSupportRequest& request, const DescribeVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcClassicLinkDnsSupportAsyncHelper(EC2Client const * const clientThis, const DescribeVpcClassicLinkDnsSupportRequest& request, const DescribeVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcClassicLinkDnsSupportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcClassicLinkDnsSupport(request), context);
 }
 
-void EC2Client::DescribeVpcClassicLinkDnsSupportAsyncHelper(const DescribeVpcClassicLinkDnsSupportRequest& request, const DescribeVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcClassicLinkDnsSupportAsync(const DescribeVpcClassicLinkDnsSupportRequest& request, const DescribeVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcClassicLinkDnsSupport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcClassicLinkDnsSupportAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcEndpointConnectionNotificationsOutcome EC2Client::DescribeVpcEndpointConnectionNotifications(const DescribeVpcEndpointConnectionNotificationsRequest& request) const
@@ -8232,14 +8232,14 @@ DescribeVpcEndpointConnectionNotificationsOutcomeCallable EC2Client::DescribeVpc
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcEndpointConnectionNotificationsAsync(const DescribeVpcEndpointConnectionNotificationsRequest& request, const DescribeVpcEndpointConnectionNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcEndpointConnectionNotificationsAsyncHelper(EC2Client const * const clientThis, const DescribeVpcEndpointConnectionNotificationsRequest& request, const DescribeVpcEndpointConnectionNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcEndpointConnectionNotificationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcEndpointConnectionNotifications(request), context);
 }
 
-void EC2Client::DescribeVpcEndpointConnectionNotificationsAsyncHelper(const DescribeVpcEndpointConnectionNotificationsRequest& request, const DescribeVpcEndpointConnectionNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcEndpointConnectionNotificationsAsync(const DescribeVpcEndpointConnectionNotificationsRequest& request, const DescribeVpcEndpointConnectionNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcEndpointConnectionNotifications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcEndpointConnectionNotificationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcEndpointConnectionsOutcome EC2Client::DescribeVpcEndpointConnections(const DescribeVpcEndpointConnectionsRequest& request) const
@@ -8256,14 +8256,14 @@ DescribeVpcEndpointConnectionsOutcomeCallable EC2Client::DescribeVpcEndpointConn
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcEndpointConnectionsAsync(const DescribeVpcEndpointConnectionsRequest& request, const DescribeVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcEndpointConnectionsAsyncHelper(EC2Client const * const clientThis, const DescribeVpcEndpointConnectionsRequest& request, const DescribeVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcEndpointConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcEndpointConnections(request), context);
 }
 
-void EC2Client::DescribeVpcEndpointConnectionsAsyncHelper(const DescribeVpcEndpointConnectionsRequest& request, const DescribeVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcEndpointConnectionsAsync(const DescribeVpcEndpointConnectionsRequest& request, const DescribeVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcEndpointConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcEndpointConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcEndpointServiceConfigurationsOutcome EC2Client::DescribeVpcEndpointServiceConfigurations(const DescribeVpcEndpointServiceConfigurationsRequest& request) const
@@ -8280,14 +8280,14 @@ DescribeVpcEndpointServiceConfigurationsOutcomeCallable EC2Client::DescribeVpcEn
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcEndpointServiceConfigurationsAsync(const DescribeVpcEndpointServiceConfigurationsRequest& request, const DescribeVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcEndpointServiceConfigurationsAsyncHelper(EC2Client const * const clientThis, const DescribeVpcEndpointServiceConfigurationsRequest& request, const DescribeVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcEndpointServiceConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcEndpointServiceConfigurations(request), context);
 }
 
-void EC2Client::DescribeVpcEndpointServiceConfigurationsAsyncHelper(const DescribeVpcEndpointServiceConfigurationsRequest& request, const DescribeVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcEndpointServiceConfigurationsAsync(const DescribeVpcEndpointServiceConfigurationsRequest& request, const DescribeVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcEndpointServiceConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcEndpointServiceConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcEndpointServicePermissionsOutcome EC2Client::DescribeVpcEndpointServicePermissions(const DescribeVpcEndpointServicePermissionsRequest& request) const
@@ -8304,14 +8304,14 @@ DescribeVpcEndpointServicePermissionsOutcomeCallable EC2Client::DescribeVpcEndpo
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcEndpointServicePermissionsAsync(const DescribeVpcEndpointServicePermissionsRequest& request, const DescribeVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcEndpointServicePermissionsAsyncHelper(EC2Client const * const clientThis, const DescribeVpcEndpointServicePermissionsRequest& request, const DescribeVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcEndpointServicePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcEndpointServicePermissions(request), context);
 }
 
-void EC2Client::DescribeVpcEndpointServicePermissionsAsyncHelper(const DescribeVpcEndpointServicePermissionsRequest& request, const DescribeVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcEndpointServicePermissionsAsync(const DescribeVpcEndpointServicePermissionsRequest& request, const DescribeVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcEndpointServicePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcEndpointServicePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcEndpointServicesOutcome EC2Client::DescribeVpcEndpointServices(const DescribeVpcEndpointServicesRequest& request) const
@@ -8328,14 +8328,14 @@ DescribeVpcEndpointServicesOutcomeCallable EC2Client::DescribeVpcEndpointService
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcEndpointServicesAsync(const DescribeVpcEndpointServicesRequest& request, const DescribeVpcEndpointServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcEndpointServicesAsyncHelper(EC2Client const * const clientThis, const DescribeVpcEndpointServicesRequest& request, const DescribeVpcEndpointServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcEndpointServicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcEndpointServices(request), context);
 }
 
-void EC2Client::DescribeVpcEndpointServicesAsyncHelper(const DescribeVpcEndpointServicesRequest& request, const DescribeVpcEndpointServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcEndpointServicesAsync(const DescribeVpcEndpointServicesRequest& request, const DescribeVpcEndpointServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcEndpointServices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcEndpointServicesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcEndpointsOutcome EC2Client::DescribeVpcEndpoints(const DescribeVpcEndpointsRequest& request) const
@@ -8352,14 +8352,14 @@ DescribeVpcEndpointsOutcomeCallable EC2Client::DescribeVpcEndpointsCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcEndpointsAsync(const DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcEndpointsAsyncHelper(EC2Client const * const clientThis, const DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcEndpoints(request), context);
 }
 
-void EC2Client::DescribeVpcEndpointsAsyncHelper(const DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcEndpointsAsync(const DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcPeeringConnectionsOutcome EC2Client::DescribeVpcPeeringConnections(const DescribeVpcPeeringConnectionsRequest& request) const
@@ -8376,14 +8376,14 @@ DescribeVpcPeeringConnectionsOutcomeCallable EC2Client::DescribeVpcPeeringConnec
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcPeeringConnectionsAsync(const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcPeeringConnectionsAsyncHelper(EC2Client const * const clientThis, const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcPeeringConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcPeeringConnections(request), context);
 }
 
-void EC2Client::DescribeVpcPeeringConnectionsAsyncHelper(const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcPeeringConnectionsAsync(const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcPeeringConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcPeeringConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpcsOutcome EC2Client::DescribeVpcs(const DescribeVpcsRequest& request) const
@@ -8400,14 +8400,14 @@ DescribeVpcsOutcomeCallable EC2Client::DescribeVpcsCallable(const DescribeVpcsRe
   return task->get_future();
 }
 
-void EC2Client::DescribeVpcsAsync(const DescribeVpcsRequest& request, const DescribeVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpcsAsyncHelper(EC2Client const * const clientThis, const DescribeVpcsRequest& request, const DescribeVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpcs(request), context);
 }
 
-void EC2Client::DescribeVpcsAsyncHelper(const DescribeVpcsRequest& request, const DescribeVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpcsAsync(const DescribeVpcsRequest& request, const DescribeVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpcs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpcsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpnConnectionsOutcome EC2Client::DescribeVpnConnections(const DescribeVpnConnectionsRequest& request) const
@@ -8424,14 +8424,14 @@ DescribeVpnConnectionsOutcomeCallable EC2Client::DescribeVpnConnectionsCallable(
   return task->get_future();
 }
 
-void EC2Client::DescribeVpnConnectionsAsync(const DescribeVpnConnectionsRequest& request, const DescribeVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpnConnectionsAsyncHelper(EC2Client const * const clientThis, const DescribeVpnConnectionsRequest& request, const DescribeVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpnConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpnConnections(request), context);
 }
 
-void EC2Client::DescribeVpnConnectionsAsyncHelper(const DescribeVpnConnectionsRequest& request, const DescribeVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpnConnectionsAsync(const DescribeVpnConnectionsRequest& request, const DescribeVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpnConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpnConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVpnGatewaysOutcome EC2Client::DescribeVpnGateways(const DescribeVpnGatewaysRequest& request) const
@@ -8448,14 +8448,14 @@ DescribeVpnGatewaysOutcomeCallable EC2Client::DescribeVpnGatewaysCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DescribeVpnGatewaysAsync(const DescribeVpnGatewaysRequest& request, const DescribeVpnGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDescribeVpnGatewaysAsyncHelper(EC2Client const * const clientThis, const DescribeVpnGatewaysRequest& request, const DescribeVpnGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpnGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVpnGateways(request), context);
 }
 
-void EC2Client::DescribeVpnGatewaysAsyncHelper(const DescribeVpnGatewaysRequest& request, const DescribeVpnGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DescribeVpnGatewaysAsync(const DescribeVpnGatewaysRequest& request, const DescribeVpnGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVpnGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDescribeVpnGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachClassicLinkVpcOutcome EC2Client::DetachClassicLinkVpc(const DetachClassicLinkVpcRequest& request) const
@@ -8472,14 +8472,14 @@ DetachClassicLinkVpcOutcomeCallable EC2Client::DetachClassicLinkVpcCallable(cons
   return task->get_future();
 }
 
-void EC2Client::DetachClassicLinkVpcAsync(const DetachClassicLinkVpcRequest& request, const DetachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDetachClassicLinkVpcAsyncHelper(EC2Client const * const clientThis, const DetachClassicLinkVpcRequest& request, const DetachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachClassicLinkVpcAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachClassicLinkVpc(request), context);
 }
 
-void EC2Client::DetachClassicLinkVpcAsyncHelper(const DetachClassicLinkVpcRequest& request, const DetachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DetachClassicLinkVpcAsync(const DetachClassicLinkVpcRequest& request, const DetachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachClassicLinkVpc(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDetachClassicLinkVpcAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachInternetGatewayOutcome EC2Client::DetachInternetGateway(const DetachInternetGatewayRequest& request) const
@@ -8496,14 +8496,14 @@ DetachInternetGatewayOutcomeCallable EC2Client::DetachInternetGatewayCallable(co
   return task->get_future();
 }
 
-void EC2Client::DetachInternetGatewayAsync(const DetachInternetGatewayRequest& request, const DetachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDetachInternetGatewayAsyncHelper(EC2Client const * const clientThis, const DetachInternetGatewayRequest& request, const DetachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachInternetGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachInternetGateway(request), context);
 }
 
-void EC2Client::DetachInternetGatewayAsyncHelper(const DetachInternetGatewayRequest& request, const DetachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DetachInternetGatewayAsync(const DetachInternetGatewayRequest& request, const DetachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachInternetGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDetachInternetGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachNetworkInterfaceOutcome EC2Client::DetachNetworkInterface(const DetachNetworkInterfaceRequest& request) const
@@ -8520,14 +8520,14 @@ DetachNetworkInterfaceOutcomeCallable EC2Client::DetachNetworkInterfaceCallable(
   return task->get_future();
 }
 
-void EC2Client::DetachNetworkInterfaceAsync(const DetachNetworkInterfaceRequest& request, const DetachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDetachNetworkInterfaceAsyncHelper(EC2Client const * const clientThis, const DetachNetworkInterfaceRequest& request, const DetachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachNetworkInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachNetworkInterface(request), context);
 }
 
-void EC2Client::DetachNetworkInterfaceAsyncHelper(const DetachNetworkInterfaceRequest& request, const DetachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DetachNetworkInterfaceAsync(const DetachNetworkInterfaceRequest& request, const DetachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachNetworkInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDetachNetworkInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachVolumeOutcome EC2Client::DetachVolume(const DetachVolumeRequest& request) const
@@ -8544,14 +8544,14 @@ DetachVolumeOutcomeCallable EC2Client::DetachVolumeCallable(const DetachVolumeRe
   return task->get_future();
 }
 
-void EC2Client::DetachVolumeAsync(const DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDetachVolumeAsyncHelper(EC2Client const * const clientThis, const DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachVolume(request), context);
 }
 
-void EC2Client::DetachVolumeAsyncHelper(const DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DetachVolumeAsync(const DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDetachVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachVpnGatewayOutcome EC2Client::DetachVpnGateway(const DetachVpnGatewayRequest& request) const
@@ -8568,14 +8568,14 @@ DetachVpnGatewayOutcomeCallable EC2Client::DetachVpnGatewayCallable(const Detach
   return task->get_future();
 }
 
-void EC2Client::DetachVpnGatewayAsync(const DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDetachVpnGatewayAsyncHelper(EC2Client const * const clientThis, const DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachVpnGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachVpnGateway(request), context);
 }
 
-void EC2Client::DetachVpnGatewayAsyncHelper(const DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DetachVpnGatewayAsync(const DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachVpnGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDetachVpnGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableEbsEncryptionByDefaultOutcome EC2Client::DisableEbsEncryptionByDefault(const DisableEbsEncryptionByDefaultRequest& request) const
@@ -8592,14 +8592,14 @@ DisableEbsEncryptionByDefaultOutcomeCallable EC2Client::DisableEbsEncryptionByDe
   return task->get_future();
 }
 
-void EC2Client::DisableEbsEncryptionByDefaultAsync(const DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisableEbsEncryptionByDefaultAsyncHelper(EC2Client const * const clientThis, const DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableEbsEncryptionByDefaultAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableEbsEncryptionByDefault(request), context);
 }
 
-void EC2Client::DisableEbsEncryptionByDefaultAsyncHelper(const DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisableEbsEncryptionByDefaultAsync(const DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableEbsEncryptionByDefault(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisableEbsEncryptionByDefaultAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableFastLaunchOutcome EC2Client::DisableFastLaunch(const DisableFastLaunchRequest& request) const
@@ -8616,14 +8616,14 @@ DisableFastLaunchOutcomeCallable EC2Client::DisableFastLaunchCallable(const Disa
   return task->get_future();
 }
 
-void EC2Client::DisableFastLaunchAsync(const DisableFastLaunchRequest& request, const DisableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisableFastLaunchAsyncHelper(EC2Client const * const clientThis, const DisableFastLaunchRequest& request, const DisableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableFastLaunchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableFastLaunch(request), context);
 }
 
-void EC2Client::DisableFastLaunchAsyncHelper(const DisableFastLaunchRequest& request, const DisableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisableFastLaunchAsync(const DisableFastLaunchRequest& request, const DisableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableFastLaunch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisableFastLaunchAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableFastSnapshotRestoresOutcome EC2Client::DisableFastSnapshotRestores(const DisableFastSnapshotRestoresRequest& request) const
@@ -8640,14 +8640,14 @@ DisableFastSnapshotRestoresOutcomeCallable EC2Client::DisableFastSnapshotRestore
   return task->get_future();
 }
 
-void EC2Client::DisableFastSnapshotRestoresAsync(const DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisableFastSnapshotRestoresAsyncHelper(EC2Client const * const clientThis, const DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableFastSnapshotRestoresAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableFastSnapshotRestores(request), context);
 }
 
-void EC2Client::DisableFastSnapshotRestoresAsyncHelper(const DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisableFastSnapshotRestoresAsync(const DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableFastSnapshotRestores(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisableFastSnapshotRestoresAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableImageDeprecationOutcome EC2Client::DisableImageDeprecation(const DisableImageDeprecationRequest& request) const
@@ -8664,14 +8664,14 @@ DisableImageDeprecationOutcomeCallable EC2Client::DisableImageDeprecationCallabl
   return task->get_future();
 }
 
-void EC2Client::DisableImageDeprecationAsync(const DisableImageDeprecationRequest& request, const DisableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisableImageDeprecationAsyncHelper(EC2Client const * const clientThis, const DisableImageDeprecationRequest& request, const DisableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableImageDeprecationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableImageDeprecation(request), context);
 }
 
-void EC2Client::DisableImageDeprecationAsyncHelper(const DisableImageDeprecationRequest& request, const DisableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisableImageDeprecationAsync(const DisableImageDeprecationRequest& request, const DisableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableImageDeprecation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisableImageDeprecationAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableIpamOrganizationAdminAccountOutcome EC2Client::DisableIpamOrganizationAdminAccount(const DisableIpamOrganizationAdminAccountRequest& request) const
@@ -8688,14 +8688,14 @@ DisableIpamOrganizationAdminAccountOutcomeCallable EC2Client::DisableIpamOrganiz
   return task->get_future();
 }
 
-void EC2Client::DisableIpamOrganizationAdminAccountAsync(const DisableIpamOrganizationAdminAccountRequest& request, const DisableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisableIpamOrganizationAdminAccountAsyncHelper(EC2Client const * const clientThis, const DisableIpamOrganizationAdminAccountRequest& request, const DisableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableIpamOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableIpamOrganizationAdminAccount(request), context);
 }
 
-void EC2Client::DisableIpamOrganizationAdminAccountAsyncHelper(const DisableIpamOrganizationAdminAccountRequest& request, const DisableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisableIpamOrganizationAdminAccountAsync(const DisableIpamOrganizationAdminAccountRequest& request, const DisableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableIpamOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisableIpamOrganizationAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableSerialConsoleAccessOutcome EC2Client::DisableSerialConsoleAccess(const DisableSerialConsoleAccessRequest& request) const
@@ -8712,14 +8712,14 @@ DisableSerialConsoleAccessOutcomeCallable EC2Client::DisableSerialConsoleAccessC
   return task->get_future();
 }
 
-void EC2Client::DisableSerialConsoleAccessAsync(const DisableSerialConsoleAccessRequest& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisableSerialConsoleAccessAsyncHelper(EC2Client const * const clientThis, const DisableSerialConsoleAccessRequest& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableSerialConsoleAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableSerialConsoleAccess(request), context);
 }
 
-void EC2Client::DisableSerialConsoleAccessAsyncHelper(const DisableSerialConsoleAccessRequest& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisableSerialConsoleAccessAsync(const DisableSerialConsoleAccessRequest& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableSerialConsoleAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisableSerialConsoleAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableTransitGatewayRouteTablePropagationOutcome EC2Client::DisableTransitGatewayRouteTablePropagation(const DisableTransitGatewayRouteTablePropagationRequest& request) const
@@ -8736,14 +8736,14 @@ DisableTransitGatewayRouteTablePropagationOutcomeCallable EC2Client::DisableTran
   return task->get_future();
 }
 
-void EC2Client::DisableTransitGatewayRouteTablePropagationAsync(const DisableTransitGatewayRouteTablePropagationRequest& request, const DisableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisableTransitGatewayRouteTablePropagationAsyncHelper(EC2Client const * const clientThis, const DisableTransitGatewayRouteTablePropagationRequest& request, const DisableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableTransitGatewayRouteTablePropagationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableTransitGatewayRouteTablePropagation(request), context);
 }
 
-void EC2Client::DisableTransitGatewayRouteTablePropagationAsyncHelper(const DisableTransitGatewayRouteTablePropagationRequest& request, const DisableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisableTransitGatewayRouteTablePropagationAsync(const DisableTransitGatewayRouteTablePropagationRequest& request, const DisableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableTransitGatewayRouteTablePropagation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisableTransitGatewayRouteTablePropagationAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableVgwRoutePropagationOutcome EC2Client::DisableVgwRoutePropagation(const DisableVgwRoutePropagationRequest& request) const
@@ -8760,14 +8760,14 @@ DisableVgwRoutePropagationOutcomeCallable EC2Client::DisableVgwRoutePropagationC
   return task->get_future();
 }
 
-void EC2Client::DisableVgwRoutePropagationAsync(const DisableVgwRoutePropagationRequest& request, const DisableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisableVgwRoutePropagationAsyncHelper(EC2Client const * const clientThis, const DisableVgwRoutePropagationRequest& request, const DisableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableVgwRoutePropagationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableVgwRoutePropagation(request), context);
 }
 
-void EC2Client::DisableVgwRoutePropagationAsyncHelper(const DisableVgwRoutePropagationRequest& request, const DisableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisableVgwRoutePropagationAsync(const DisableVgwRoutePropagationRequest& request, const DisableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableVgwRoutePropagation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisableVgwRoutePropagationAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableVpcClassicLinkOutcome EC2Client::DisableVpcClassicLink(const DisableVpcClassicLinkRequest& request) const
@@ -8784,14 +8784,14 @@ DisableVpcClassicLinkOutcomeCallable EC2Client::DisableVpcClassicLinkCallable(co
   return task->get_future();
 }
 
-void EC2Client::DisableVpcClassicLinkAsync(const DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisableVpcClassicLinkAsyncHelper(EC2Client const * const clientThis, const DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableVpcClassicLinkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableVpcClassicLink(request), context);
 }
 
-void EC2Client::DisableVpcClassicLinkAsyncHelper(const DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisableVpcClassicLinkAsync(const DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableVpcClassicLink(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisableVpcClassicLinkAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableVpcClassicLinkDnsSupportOutcome EC2Client::DisableVpcClassicLinkDnsSupport(const DisableVpcClassicLinkDnsSupportRequest& request) const
@@ -8808,14 +8808,14 @@ DisableVpcClassicLinkDnsSupportOutcomeCallable EC2Client::DisableVpcClassicLinkD
   return task->get_future();
 }
 
-void EC2Client::DisableVpcClassicLinkDnsSupportAsync(const DisableVpcClassicLinkDnsSupportRequest& request, const DisableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisableVpcClassicLinkDnsSupportAsyncHelper(EC2Client const * const clientThis, const DisableVpcClassicLinkDnsSupportRequest& request, const DisableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableVpcClassicLinkDnsSupportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableVpcClassicLinkDnsSupport(request), context);
 }
 
-void EC2Client::DisableVpcClassicLinkDnsSupportAsyncHelper(const DisableVpcClassicLinkDnsSupportRequest& request, const DisableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisableVpcClassicLinkDnsSupportAsync(const DisableVpcClassicLinkDnsSupportRequest& request, const DisableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableVpcClassicLinkDnsSupport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisableVpcClassicLinkDnsSupportAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateAddressOutcome EC2Client::DisassociateAddress(const DisassociateAddressRequest& request) const
@@ -8832,14 +8832,14 @@ DisassociateAddressOutcomeCallable EC2Client::DisassociateAddressCallable(const 
   return task->get_future();
 }
 
-void EC2Client::DisassociateAddressAsync(const DisassociateAddressRequest& request, const DisassociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateAddressAsyncHelper(EC2Client const * const clientThis, const DisassociateAddressRequest& request, const DisassociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateAddressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateAddress(request), context);
 }
 
-void EC2Client::DisassociateAddressAsyncHelper(const DisassociateAddressRequest& request, const DisassociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateAddressAsync(const DisassociateAddressRequest& request, const DisassociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateAddress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateAddressAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateClientVpnTargetNetworkOutcome EC2Client::DisassociateClientVpnTargetNetwork(const DisassociateClientVpnTargetNetworkRequest& request) const
@@ -8856,14 +8856,14 @@ DisassociateClientVpnTargetNetworkOutcomeCallable EC2Client::DisassociateClientV
   return task->get_future();
 }
 
-void EC2Client::DisassociateClientVpnTargetNetworkAsync(const DisassociateClientVpnTargetNetworkRequest& request, const DisassociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateClientVpnTargetNetworkAsyncHelper(EC2Client const * const clientThis, const DisassociateClientVpnTargetNetworkRequest& request, const DisassociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateClientVpnTargetNetworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateClientVpnTargetNetwork(request), context);
 }
 
-void EC2Client::DisassociateClientVpnTargetNetworkAsyncHelper(const DisassociateClientVpnTargetNetworkRequest& request, const DisassociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateClientVpnTargetNetworkAsync(const DisassociateClientVpnTargetNetworkRequest& request, const DisassociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateClientVpnTargetNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateClientVpnTargetNetworkAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateEnclaveCertificateIamRoleOutcome EC2Client::DisassociateEnclaveCertificateIamRole(const DisassociateEnclaveCertificateIamRoleRequest& request) const
@@ -8880,14 +8880,14 @@ DisassociateEnclaveCertificateIamRoleOutcomeCallable EC2Client::DisassociateEncl
   return task->get_future();
 }
 
-void EC2Client::DisassociateEnclaveCertificateIamRoleAsync(const DisassociateEnclaveCertificateIamRoleRequest& request, const DisassociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateEnclaveCertificateIamRoleAsyncHelper(EC2Client const * const clientThis, const DisassociateEnclaveCertificateIamRoleRequest& request, const DisassociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateEnclaveCertificateIamRoleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateEnclaveCertificateIamRole(request), context);
 }
 
-void EC2Client::DisassociateEnclaveCertificateIamRoleAsyncHelper(const DisassociateEnclaveCertificateIamRoleRequest& request, const DisassociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateEnclaveCertificateIamRoleAsync(const DisassociateEnclaveCertificateIamRoleRequest& request, const DisassociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateEnclaveCertificateIamRole(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateEnclaveCertificateIamRoleAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateIamInstanceProfileOutcome EC2Client::DisassociateIamInstanceProfile(const DisassociateIamInstanceProfileRequest& request) const
@@ -8904,14 +8904,14 @@ DisassociateIamInstanceProfileOutcomeCallable EC2Client::DisassociateIamInstance
   return task->get_future();
 }
 
-void EC2Client::DisassociateIamInstanceProfileAsync(const DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateIamInstanceProfileAsyncHelper(EC2Client const * const clientThis, const DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateIamInstanceProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateIamInstanceProfile(request), context);
 }
 
-void EC2Client::DisassociateIamInstanceProfileAsyncHelper(const DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateIamInstanceProfileAsync(const DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateIamInstanceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateIamInstanceProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateInstanceEventWindowOutcome EC2Client::DisassociateInstanceEventWindow(const DisassociateInstanceEventWindowRequest& request) const
@@ -8928,14 +8928,14 @@ DisassociateInstanceEventWindowOutcomeCallable EC2Client::DisassociateInstanceEv
   return task->get_future();
 }
 
-void EC2Client::DisassociateInstanceEventWindowAsync(const DisassociateInstanceEventWindowRequest& request, const DisassociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateInstanceEventWindowAsyncHelper(EC2Client const * const clientThis, const DisassociateInstanceEventWindowRequest& request, const DisassociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateInstanceEventWindowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateInstanceEventWindow(request), context);
 }
 
-void EC2Client::DisassociateInstanceEventWindowAsyncHelper(const DisassociateInstanceEventWindowRequest& request, const DisassociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateInstanceEventWindowAsync(const DisassociateInstanceEventWindowRequest& request, const DisassociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateInstanceEventWindow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateInstanceEventWindowAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateRouteTableOutcome EC2Client::DisassociateRouteTable(const DisassociateRouteTableRequest& request) const
@@ -8952,14 +8952,14 @@ DisassociateRouteTableOutcomeCallable EC2Client::DisassociateRouteTableCallable(
   return task->get_future();
 }
 
-void EC2Client::DisassociateRouteTableAsync(const DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateRouteTableAsyncHelper(EC2Client const * const clientThis, const DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateRouteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateRouteTable(request), context);
 }
 
-void EC2Client::DisassociateRouteTableAsyncHelper(const DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateRouteTableAsync(const DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateRouteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateRouteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateSubnetCidrBlockOutcome EC2Client::DisassociateSubnetCidrBlock(const DisassociateSubnetCidrBlockRequest& request) const
@@ -8976,14 +8976,14 @@ DisassociateSubnetCidrBlockOutcomeCallable EC2Client::DisassociateSubnetCidrBloc
   return task->get_future();
 }
 
-void EC2Client::DisassociateSubnetCidrBlockAsync(const DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateSubnetCidrBlockAsyncHelper(EC2Client const * const clientThis, const DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateSubnetCidrBlockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateSubnetCidrBlock(request), context);
 }
 
-void EC2Client::DisassociateSubnetCidrBlockAsyncHelper(const DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateSubnetCidrBlockAsync(const DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateSubnetCidrBlock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateSubnetCidrBlockAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateTransitGatewayMulticastDomainOutcome EC2Client::DisassociateTransitGatewayMulticastDomain(const DisassociateTransitGatewayMulticastDomainRequest& request) const
@@ -9000,14 +9000,14 @@ DisassociateTransitGatewayMulticastDomainOutcomeCallable EC2Client::Disassociate
   return task->get_future();
 }
 
-void EC2Client::DisassociateTransitGatewayMulticastDomainAsync(const DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateTransitGatewayMulticastDomainAsyncHelper(EC2Client const * const clientThis, const DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTransitGatewayMulticastDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateTransitGatewayMulticastDomain(request), context);
 }
 
-void EC2Client::DisassociateTransitGatewayMulticastDomainAsyncHelper(const DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateTransitGatewayMulticastDomainAsync(const DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateTransitGatewayMulticastDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateTransitGatewayMulticastDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateTransitGatewayPolicyTableOutcome EC2Client::DisassociateTransitGatewayPolicyTable(const DisassociateTransitGatewayPolicyTableRequest& request) const
@@ -9024,14 +9024,14 @@ DisassociateTransitGatewayPolicyTableOutcomeCallable EC2Client::DisassociateTran
   return task->get_future();
 }
 
-void EC2Client::DisassociateTransitGatewayPolicyTableAsync(const DisassociateTransitGatewayPolicyTableRequest& request, const DisassociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateTransitGatewayPolicyTableAsyncHelper(EC2Client const * const clientThis, const DisassociateTransitGatewayPolicyTableRequest& request, const DisassociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTransitGatewayPolicyTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateTransitGatewayPolicyTable(request), context);
 }
 
-void EC2Client::DisassociateTransitGatewayPolicyTableAsyncHelper(const DisassociateTransitGatewayPolicyTableRequest& request, const DisassociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateTransitGatewayPolicyTableAsync(const DisassociateTransitGatewayPolicyTableRequest& request, const DisassociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateTransitGatewayPolicyTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateTransitGatewayPolicyTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateTransitGatewayRouteTableOutcome EC2Client::DisassociateTransitGatewayRouteTable(const DisassociateTransitGatewayRouteTableRequest& request) const
@@ -9048,14 +9048,14 @@ DisassociateTransitGatewayRouteTableOutcomeCallable EC2Client::DisassociateTrans
   return task->get_future();
 }
 
-void EC2Client::DisassociateTransitGatewayRouteTableAsync(const DisassociateTransitGatewayRouteTableRequest& request, const DisassociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateTransitGatewayRouteTableAsyncHelper(EC2Client const * const clientThis, const DisassociateTransitGatewayRouteTableRequest& request, const DisassociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTransitGatewayRouteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateTransitGatewayRouteTable(request), context);
 }
 
-void EC2Client::DisassociateTransitGatewayRouteTableAsyncHelper(const DisassociateTransitGatewayRouteTableRequest& request, const DisassociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateTransitGatewayRouteTableAsync(const DisassociateTransitGatewayRouteTableRequest& request, const DisassociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateTransitGatewayRouteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateTransitGatewayRouteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateTrunkInterfaceOutcome EC2Client::DisassociateTrunkInterface(const DisassociateTrunkInterfaceRequest& request) const
@@ -9072,14 +9072,14 @@ DisassociateTrunkInterfaceOutcomeCallable EC2Client::DisassociateTrunkInterfaceC
   return task->get_future();
 }
 
-void EC2Client::DisassociateTrunkInterfaceAsync(const DisassociateTrunkInterfaceRequest& request, const DisassociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateTrunkInterfaceAsyncHelper(EC2Client const * const clientThis, const DisassociateTrunkInterfaceRequest& request, const DisassociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTrunkInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateTrunkInterface(request), context);
 }
 
-void EC2Client::DisassociateTrunkInterfaceAsyncHelper(const DisassociateTrunkInterfaceRequest& request, const DisassociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateTrunkInterfaceAsync(const DisassociateTrunkInterfaceRequest& request, const DisassociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateTrunkInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateTrunkInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateVpcCidrBlockOutcome EC2Client::DisassociateVpcCidrBlock(const DisassociateVpcCidrBlockRequest& request) const
@@ -9096,14 +9096,14 @@ DisassociateVpcCidrBlockOutcomeCallable EC2Client::DisassociateVpcCidrBlockCalla
   return task->get_future();
 }
 
-void EC2Client::DisassociateVpcCidrBlockAsync(const DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientDisassociateVpcCidrBlockAsyncHelper(EC2Client const * const clientThis, const DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateVpcCidrBlockAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateVpcCidrBlock(request), context);
 }
 
-void EC2Client::DisassociateVpcCidrBlockAsyncHelper(const DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::DisassociateVpcCidrBlockAsync(const DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateVpcCidrBlock(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientDisassociateVpcCidrBlockAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableEbsEncryptionByDefaultOutcome EC2Client::EnableEbsEncryptionByDefault(const EnableEbsEncryptionByDefaultRequest& request) const
@@ -9120,14 +9120,14 @@ EnableEbsEncryptionByDefaultOutcomeCallable EC2Client::EnableEbsEncryptionByDefa
   return task->get_future();
 }
 
-void EC2Client::EnableEbsEncryptionByDefaultAsync(const EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableEbsEncryptionByDefaultAsyncHelper(EC2Client const * const clientThis, const EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableEbsEncryptionByDefaultAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableEbsEncryptionByDefault(request), context);
 }
 
-void EC2Client::EnableEbsEncryptionByDefaultAsyncHelper(const EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableEbsEncryptionByDefaultAsync(const EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableEbsEncryptionByDefault(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableEbsEncryptionByDefaultAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableFastLaunchOutcome EC2Client::EnableFastLaunch(const EnableFastLaunchRequest& request) const
@@ -9144,14 +9144,14 @@ EnableFastLaunchOutcomeCallable EC2Client::EnableFastLaunchCallable(const Enable
   return task->get_future();
 }
 
-void EC2Client::EnableFastLaunchAsync(const EnableFastLaunchRequest& request, const EnableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableFastLaunchAsyncHelper(EC2Client const * const clientThis, const EnableFastLaunchRequest& request, const EnableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableFastLaunchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableFastLaunch(request), context);
 }
 
-void EC2Client::EnableFastLaunchAsyncHelper(const EnableFastLaunchRequest& request, const EnableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableFastLaunchAsync(const EnableFastLaunchRequest& request, const EnableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableFastLaunch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableFastLaunchAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableFastSnapshotRestoresOutcome EC2Client::EnableFastSnapshotRestores(const EnableFastSnapshotRestoresRequest& request) const
@@ -9168,14 +9168,14 @@ EnableFastSnapshotRestoresOutcomeCallable EC2Client::EnableFastSnapshotRestoresC
   return task->get_future();
 }
 
-void EC2Client::EnableFastSnapshotRestoresAsync(const EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableFastSnapshotRestoresAsyncHelper(EC2Client const * const clientThis, const EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableFastSnapshotRestoresAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableFastSnapshotRestores(request), context);
 }
 
-void EC2Client::EnableFastSnapshotRestoresAsyncHelper(const EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableFastSnapshotRestoresAsync(const EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableFastSnapshotRestores(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableFastSnapshotRestoresAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableImageDeprecationOutcome EC2Client::EnableImageDeprecation(const EnableImageDeprecationRequest& request) const
@@ -9192,14 +9192,14 @@ EnableImageDeprecationOutcomeCallable EC2Client::EnableImageDeprecationCallable(
   return task->get_future();
 }
 
-void EC2Client::EnableImageDeprecationAsync(const EnableImageDeprecationRequest& request, const EnableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableImageDeprecationAsyncHelper(EC2Client const * const clientThis, const EnableImageDeprecationRequest& request, const EnableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableImageDeprecationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableImageDeprecation(request), context);
 }
 
-void EC2Client::EnableImageDeprecationAsyncHelper(const EnableImageDeprecationRequest& request, const EnableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableImageDeprecationAsync(const EnableImageDeprecationRequest& request, const EnableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableImageDeprecation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableImageDeprecationAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableIpamOrganizationAdminAccountOutcome EC2Client::EnableIpamOrganizationAdminAccount(const EnableIpamOrganizationAdminAccountRequest& request) const
@@ -9216,14 +9216,14 @@ EnableIpamOrganizationAdminAccountOutcomeCallable EC2Client::EnableIpamOrganizat
   return task->get_future();
 }
 
-void EC2Client::EnableIpamOrganizationAdminAccountAsync(const EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableIpamOrganizationAdminAccountAsyncHelper(EC2Client const * const clientThis, const EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableIpamOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableIpamOrganizationAdminAccount(request), context);
 }
 
-void EC2Client::EnableIpamOrganizationAdminAccountAsyncHelper(const EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableIpamOrganizationAdminAccountAsync(const EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableIpamOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableIpamOrganizationAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableSerialConsoleAccessOutcome EC2Client::EnableSerialConsoleAccess(const EnableSerialConsoleAccessRequest& request) const
@@ -9240,14 +9240,14 @@ EnableSerialConsoleAccessOutcomeCallable EC2Client::EnableSerialConsoleAccessCal
   return task->get_future();
 }
 
-void EC2Client::EnableSerialConsoleAccessAsync(const EnableSerialConsoleAccessRequest& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableSerialConsoleAccessAsyncHelper(EC2Client const * const clientThis, const EnableSerialConsoleAccessRequest& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableSerialConsoleAccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableSerialConsoleAccess(request), context);
 }
 
-void EC2Client::EnableSerialConsoleAccessAsyncHelper(const EnableSerialConsoleAccessRequest& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableSerialConsoleAccessAsync(const EnableSerialConsoleAccessRequest& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableSerialConsoleAccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableSerialConsoleAccessAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableTransitGatewayRouteTablePropagationOutcome EC2Client::EnableTransitGatewayRouteTablePropagation(const EnableTransitGatewayRouteTablePropagationRequest& request) const
@@ -9264,14 +9264,14 @@ EnableTransitGatewayRouteTablePropagationOutcomeCallable EC2Client::EnableTransi
   return task->get_future();
 }
 
-void EC2Client::EnableTransitGatewayRouteTablePropagationAsync(const EnableTransitGatewayRouteTablePropagationRequest& request, const EnableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableTransitGatewayRouteTablePropagationAsyncHelper(EC2Client const * const clientThis, const EnableTransitGatewayRouteTablePropagationRequest& request, const EnableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableTransitGatewayRouteTablePropagationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableTransitGatewayRouteTablePropagation(request), context);
 }
 
-void EC2Client::EnableTransitGatewayRouteTablePropagationAsyncHelper(const EnableTransitGatewayRouteTablePropagationRequest& request, const EnableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableTransitGatewayRouteTablePropagationAsync(const EnableTransitGatewayRouteTablePropagationRequest& request, const EnableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableTransitGatewayRouteTablePropagation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableTransitGatewayRouteTablePropagationAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableVgwRoutePropagationOutcome EC2Client::EnableVgwRoutePropagation(const EnableVgwRoutePropagationRequest& request) const
@@ -9288,14 +9288,14 @@ EnableVgwRoutePropagationOutcomeCallable EC2Client::EnableVgwRoutePropagationCal
   return task->get_future();
 }
 
-void EC2Client::EnableVgwRoutePropagationAsync(const EnableVgwRoutePropagationRequest& request, const EnableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableVgwRoutePropagationAsyncHelper(EC2Client const * const clientThis, const EnableVgwRoutePropagationRequest& request, const EnableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableVgwRoutePropagationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableVgwRoutePropagation(request), context);
 }
 
-void EC2Client::EnableVgwRoutePropagationAsyncHelper(const EnableVgwRoutePropagationRequest& request, const EnableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableVgwRoutePropagationAsync(const EnableVgwRoutePropagationRequest& request, const EnableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableVgwRoutePropagation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableVgwRoutePropagationAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableVolumeIOOutcome EC2Client::EnableVolumeIO(const EnableVolumeIORequest& request) const
@@ -9312,14 +9312,14 @@ EnableVolumeIOOutcomeCallable EC2Client::EnableVolumeIOCallable(const EnableVolu
   return task->get_future();
 }
 
-void EC2Client::EnableVolumeIOAsync(const EnableVolumeIORequest& request, const EnableVolumeIOResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableVolumeIOAsyncHelper(EC2Client const * const clientThis, const EnableVolumeIORequest& request, const EnableVolumeIOResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableVolumeIOAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableVolumeIO(request), context);
 }
 
-void EC2Client::EnableVolumeIOAsyncHelper(const EnableVolumeIORequest& request, const EnableVolumeIOResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableVolumeIOAsync(const EnableVolumeIORequest& request, const EnableVolumeIOResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableVolumeIO(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableVolumeIOAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableVpcClassicLinkOutcome EC2Client::EnableVpcClassicLink(const EnableVpcClassicLinkRequest& request) const
@@ -9336,14 +9336,14 @@ EnableVpcClassicLinkOutcomeCallable EC2Client::EnableVpcClassicLinkCallable(cons
   return task->get_future();
 }
 
-void EC2Client::EnableVpcClassicLinkAsync(const EnableVpcClassicLinkRequest& request, const EnableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableVpcClassicLinkAsyncHelper(EC2Client const * const clientThis, const EnableVpcClassicLinkRequest& request, const EnableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableVpcClassicLinkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableVpcClassicLink(request), context);
 }
 
-void EC2Client::EnableVpcClassicLinkAsyncHelper(const EnableVpcClassicLinkRequest& request, const EnableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableVpcClassicLinkAsync(const EnableVpcClassicLinkRequest& request, const EnableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableVpcClassicLink(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableVpcClassicLinkAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableVpcClassicLinkDnsSupportOutcome EC2Client::EnableVpcClassicLinkDnsSupport(const EnableVpcClassicLinkDnsSupportRequest& request) const
@@ -9360,14 +9360,14 @@ EnableVpcClassicLinkDnsSupportOutcomeCallable EC2Client::EnableVpcClassicLinkDns
   return task->get_future();
 }
 
-void EC2Client::EnableVpcClassicLinkDnsSupportAsync(const EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientEnableVpcClassicLinkDnsSupportAsyncHelper(EC2Client const * const clientThis, const EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableVpcClassicLinkDnsSupportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableVpcClassicLinkDnsSupport(request), context);
 }
 
-void EC2Client::EnableVpcClassicLinkDnsSupportAsyncHelper(const EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::EnableVpcClassicLinkDnsSupportAsync(const EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableVpcClassicLinkDnsSupport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientEnableVpcClassicLinkDnsSupportAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportClientVpnClientCertificateRevocationListOutcome EC2Client::ExportClientVpnClientCertificateRevocationList(const ExportClientVpnClientCertificateRevocationListRequest& request) const
@@ -9384,14 +9384,14 @@ ExportClientVpnClientCertificateRevocationListOutcomeCallable EC2Client::ExportC
   return task->get_future();
 }
 
-void EC2Client::ExportClientVpnClientCertificateRevocationListAsync(const ExportClientVpnClientCertificateRevocationListRequest& request, const ExportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientExportClientVpnClientCertificateRevocationListAsyncHelper(EC2Client const * const clientThis, const ExportClientVpnClientCertificateRevocationListRequest& request, const ExportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportClientVpnClientCertificateRevocationListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportClientVpnClientCertificateRevocationList(request), context);
 }
 
-void EC2Client::ExportClientVpnClientCertificateRevocationListAsyncHelper(const ExportClientVpnClientCertificateRevocationListRequest& request, const ExportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ExportClientVpnClientCertificateRevocationListAsync(const ExportClientVpnClientCertificateRevocationListRequest& request, const ExportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportClientVpnClientCertificateRevocationList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientExportClientVpnClientCertificateRevocationListAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportClientVpnClientConfigurationOutcome EC2Client::ExportClientVpnClientConfiguration(const ExportClientVpnClientConfigurationRequest& request) const
@@ -9408,14 +9408,14 @@ ExportClientVpnClientConfigurationOutcomeCallable EC2Client::ExportClientVpnClie
   return task->get_future();
 }
 
-void EC2Client::ExportClientVpnClientConfigurationAsync(const ExportClientVpnClientConfigurationRequest& request, const ExportClientVpnClientConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientExportClientVpnClientConfigurationAsyncHelper(EC2Client const * const clientThis, const ExportClientVpnClientConfigurationRequest& request, const ExportClientVpnClientConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportClientVpnClientConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportClientVpnClientConfiguration(request), context);
 }
 
-void EC2Client::ExportClientVpnClientConfigurationAsyncHelper(const ExportClientVpnClientConfigurationRequest& request, const ExportClientVpnClientConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ExportClientVpnClientConfigurationAsync(const ExportClientVpnClientConfigurationRequest& request, const ExportClientVpnClientConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportClientVpnClientConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientExportClientVpnClientConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportImageOutcome EC2Client::ExportImage(const ExportImageRequest& request) const
@@ -9432,14 +9432,14 @@ ExportImageOutcomeCallable EC2Client::ExportImageCallable(const ExportImageReque
   return task->get_future();
 }
 
-void EC2Client::ExportImageAsync(const ExportImageRequest& request, const ExportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientExportImageAsyncHelper(EC2Client const * const clientThis, const ExportImageRequest& request, const ExportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportImage(request), context);
 }
 
-void EC2Client::ExportImageAsyncHelper(const ExportImageRequest& request, const ExportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ExportImageAsync(const ExportImageRequest& request, const ExportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientExportImageAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportTransitGatewayRoutesOutcome EC2Client::ExportTransitGatewayRoutes(const ExportTransitGatewayRoutesRequest& request) const
@@ -9456,14 +9456,14 @@ ExportTransitGatewayRoutesOutcomeCallable EC2Client::ExportTransitGatewayRoutesC
   return task->get_future();
 }
 
-void EC2Client::ExportTransitGatewayRoutesAsync(const ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientExportTransitGatewayRoutesAsyncHelper(EC2Client const * const clientThis, const ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportTransitGatewayRoutesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportTransitGatewayRoutes(request), context);
 }
 
-void EC2Client::ExportTransitGatewayRoutesAsyncHelper(const ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ExportTransitGatewayRoutesAsync(const ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportTransitGatewayRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientExportTransitGatewayRoutesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssociatedEnclaveCertificateIamRolesOutcome EC2Client::GetAssociatedEnclaveCertificateIamRoles(const GetAssociatedEnclaveCertificateIamRolesRequest& request) const
@@ -9480,14 +9480,14 @@ GetAssociatedEnclaveCertificateIamRolesOutcomeCallable EC2Client::GetAssociatedE
   return task->get_future();
 }
 
-void EC2Client::GetAssociatedEnclaveCertificateIamRolesAsync(const GetAssociatedEnclaveCertificateIamRolesRequest& request, const GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetAssociatedEnclaveCertificateIamRolesAsyncHelper(EC2Client const * const clientThis, const GetAssociatedEnclaveCertificateIamRolesRequest& request, const GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssociatedEnclaveCertificateIamRolesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssociatedEnclaveCertificateIamRoles(request), context);
 }
 
-void EC2Client::GetAssociatedEnclaveCertificateIamRolesAsyncHelper(const GetAssociatedEnclaveCertificateIamRolesRequest& request, const GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetAssociatedEnclaveCertificateIamRolesAsync(const GetAssociatedEnclaveCertificateIamRolesRequest& request, const GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssociatedEnclaveCertificateIamRoles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetAssociatedEnclaveCertificateIamRolesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssociatedIpv6PoolCidrsOutcome EC2Client::GetAssociatedIpv6PoolCidrs(const GetAssociatedIpv6PoolCidrsRequest& request) const
@@ -9504,14 +9504,14 @@ GetAssociatedIpv6PoolCidrsOutcomeCallable EC2Client::GetAssociatedIpv6PoolCidrsC
   return task->get_future();
 }
 
-void EC2Client::GetAssociatedIpv6PoolCidrsAsync(const GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetAssociatedIpv6PoolCidrsAsyncHelper(EC2Client const * const clientThis, const GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssociatedIpv6PoolCidrsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssociatedIpv6PoolCidrs(request), context);
 }
 
-void EC2Client::GetAssociatedIpv6PoolCidrsAsyncHelper(const GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetAssociatedIpv6PoolCidrsAsync(const GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssociatedIpv6PoolCidrs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetAssociatedIpv6PoolCidrsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCapacityReservationUsageOutcome EC2Client::GetCapacityReservationUsage(const GetCapacityReservationUsageRequest& request) const
@@ -9528,14 +9528,14 @@ GetCapacityReservationUsageOutcomeCallable EC2Client::GetCapacityReservationUsag
   return task->get_future();
 }
 
-void EC2Client::GetCapacityReservationUsageAsync(const GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetCapacityReservationUsageAsyncHelper(EC2Client const * const clientThis, const GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCapacityReservationUsageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCapacityReservationUsage(request), context);
 }
 
-void EC2Client::GetCapacityReservationUsageAsyncHelper(const GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetCapacityReservationUsageAsync(const GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCapacityReservationUsage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetCapacityReservationUsageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCoipPoolUsageOutcome EC2Client::GetCoipPoolUsage(const GetCoipPoolUsageRequest& request) const
@@ -9552,14 +9552,14 @@ GetCoipPoolUsageOutcomeCallable EC2Client::GetCoipPoolUsageCallable(const GetCoi
   return task->get_future();
 }
 
-void EC2Client::GetCoipPoolUsageAsync(const GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetCoipPoolUsageAsyncHelper(EC2Client const * const clientThis, const GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCoipPoolUsageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCoipPoolUsage(request), context);
 }
 
-void EC2Client::GetCoipPoolUsageAsyncHelper(const GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetCoipPoolUsageAsync(const GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCoipPoolUsage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetCoipPoolUsageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConsoleOutputOutcome EC2Client::GetConsoleOutput(const GetConsoleOutputRequest& request) const
@@ -9576,14 +9576,14 @@ GetConsoleOutputOutcomeCallable EC2Client::GetConsoleOutputCallable(const GetCon
   return task->get_future();
 }
 
-void EC2Client::GetConsoleOutputAsync(const GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetConsoleOutputAsyncHelper(EC2Client const * const clientThis, const GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConsoleOutputAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConsoleOutput(request), context);
 }
 
-void EC2Client::GetConsoleOutputAsyncHelper(const GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetConsoleOutputAsync(const GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConsoleOutput(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetConsoleOutputAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConsoleScreenshotOutcome EC2Client::GetConsoleScreenshot(const GetConsoleScreenshotRequest& request) const
@@ -9600,14 +9600,14 @@ GetConsoleScreenshotOutcomeCallable EC2Client::GetConsoleScreenshotCallable(cons
   return task->get_future();
 }
 
-void EC2Client::GetConsoleScreenshotAsync(const GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetConsoleScreenshotAsyncHelper(EC2Client const * const clientThis, const GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConsoleScreenshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConsoleScreenshot(request), context);
 }
 
-void EC2Client::GetConsoleScreenshotAsyncHelper(const GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetConsoleScreenshotAsync(const GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConsoleScreenshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetConsoleScreenshotAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDefaultCreditSpecificationOutcome EC2Client::GetDefaultCreditSpecification(const GetDefaultCreditSpecificationRequest& request) const
@@ -9624,14 +9624,14 @@ GetDefaultCreditSpecificationOutcomeCallable EC2Client::GetDefaultCreditSpecific
   return task->get_future();
 }
 
-void EC2Client::GetDefaultCreditSpecificationAsync(const GetDefaultCreditSpecificationRequest& request, const GetDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetDefaultCreditSpecificationAsyncHelper(EC2Client const * const clientThis, const GetDefaultCreditSpecificationRequest& request, const GetDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDefaultCreditSpecificationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDefaultCreditSpecification(request), context);
 }
 
-void EC2Client::GetDefaultCreditSpecificationAsyncHelper(const GetDefaultCreditSpecificationRequest& request, const GetDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetDefaultCreditSpecificationAsync(const GetDefaultCreditSpecificationRequest& request, const GetDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDefaultCreditSpecification(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetDefaultCreditSpecificationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEbsDefaultKmsKeyIdOutcome EC2Client::GetEbsDefaultKmsKeyId(const GetEbsDefaultKmsKeyIdRequest& request) const
@@ -9648,14 +9648,14 @@ GetEbsDefaultKmsKeyIdOutcomeCallable EC2Client::GetEbsDefaultKmsKeyIdCallable(co
   return task->get_future();
 }
 
-void EC2Client::GetEbsDefaultKmsKeyIdAsync(const GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetEbsDefaultKmsKeyIdAsyncHelper(EC2Client const * const clientThis, const GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEbsDefaultKmsKeyIdAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEbsDefaultKmsKeyId(request), context);
 }
 
-void EC2Client::GetEbsDefaultKmsKeyIdAsyncHelper(const GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetEbsDefaultKmsKeyIdAsync(const GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEbsDefaultKmsKeyId(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetEbsDefaultKmsKeyIdAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEbsEncryptionByDefaultOutcome EC2Client::GetEbsEncryptionByDefault(const GetEbsEncryptionByDefaultRequest& request) const
@@ -9672,14 +9672,14 @@ GetEbsEncryptionByDefaultOutcomeCallable EC2Client::GetEbsEncryptionByDefaultCal
   return task->get_future();
 }
 
-void EC2Client::GetEbsEncryptionByDefaultAsync(const GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetEbsEncryptionByDefaultAsyncHelper(EC2Client const * const clientThis, const GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEbsEncryptionByDefaultAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEbsEncryptionByDefault(request), context);
 }
 
-void EC2Client::GetEbsEncryptionByDefaultAsyncHelper(const GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetEbsEncryptionByDefaultAsync(const GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEbsEncryptionByDefault(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetEbsEncryptionByDefaultAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFlowLogsIntegrationTemplateOutcome EC2Client::GetFlowLogsIntegrationTemplate(const GetFlowLogsIntegrationTemplateRequest& request) const
@@ -9696,14 +9696,14 @@ GetFlowLogsIntegrationTemplateOutcomeCallable EC2Client::GetFlowLogsIntegrationT
   return task->get_future();
 }
 
-void EC2Client::GetFlowLogsIntegrationTemplateAsync(const GetFlowLogsIntegrationTemplateRequest& request, const GetFlowLogsIntegrationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetFlowLogsIntegrationTemplateAsyncHelper(EC2Client const * const clientThis, const GetFlowLogsIntegrationTemplateRequest& request, const GetFlowLogsIntegrationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFlowLogsIntegrationTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFlowLogsIntegrationTemplate(request), context);
 }
 
-void EC2Client::GetFlowLogsIntegrationTemplateAsyncHelper(const GetFlowLogsIntegrationTemplateRequest& request, const GetFlowLogsIntegrationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetFlowLogsIntegrationTemplateAsync(const GetFlowLogsIntegrationTemplateRequest& request, const GetFlowLogsIntegrationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFlowLogsIntegrationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetFlowLogsIntegrationTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupsForCapacityReservationOutcome EC2Client::GetGroupsForCapacityReservation(const GetGroupsForCapacityReservationRequest& request) const
@@ -9720,14 +9720,14 @@ GetGroupsForCapacityReservationOutcomeCallable EC2Client::GetGroupsForCapacityRe
   return task->get_future();
 }
 
-void EC2Client::GetGroupsForCapacityReservationAsync(const GetGroupsForCapacityReservationRequest& request, const GetGroupsForCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetGroupsForCapacityReservationAsyncHelper(EC2Client const * const clientThis, const GetGroupsForCapacityReservationRequest& request, const GetGroupsForCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupsForCapacityReservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroupsForCapacityReservation(request), context);
 }
 
-void EC2Client::GetGroupsForCapacityReservationAsyncHelper(const GetGroupsForCapacityReservationRequest& request, const GetGroupsForCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetGroupsForCapacityReservationAsync(const GetGroupsForCapacityReservationRequest& request, const GetGroupsForCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroupsForCapacityReservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetGroupsForCapacityReservationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetHostReservationPurchasePreviewOutcome EC2Client::GetHostReservationPurchasePreview(const GetHostReservationPurchasePreviewRequest& request) const
@@ -9744,14 +9744,14 @@ GetHostReservationPurchasePreviewOutcomeCallable EC2Client::GetHostReservationPu
   return task->get_future();
 }
 
-void EC2Client::GetHostReservationPurchasePreviewAsync(const GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetHostReservationPurchasePreviewAsyncHelper(EC2Client const * const clientThis, const GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHostReservationPurchasePreviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetHostReservationPurchasePreview(request), context);
 }
 
-void EC2Client::GetHostReservationPurchasePreviewAsyncHelper(const GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetHostReservationPurchasePreviewAsync(const GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetHostReservationPurchasePreview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetHostReservationPurchasePreviewAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceTypesFromInstanceRequirementsOutcome EC2Client::GetInstanceTypesFromInstanceRequirements(const GetInstanceTypesFromInstanceRequirementsRequest& request) const
@@ -9768,14 +9768,14 @@ GetInstanceTypesFromInstanceRequirementsOutcomeCallable EC2Client::GetInstanceTy
   return task->get_future();
 }
 
-void EC2Client::GetInstanceTypesFromInstanceRequirementsAsync(const GetInstanceTypesFromInstanceRequirementsRequest& request, const GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetInstanceTypesFromInstanceRequirementsAsyncHelper(EC2Client const * const clientThis, const GetInstanceTypesFromInstanceRequirementsRequest& request, const GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceTypesFromInstanceRequirementsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstanceTypesFromInstanceRequirements(request), context);
 }
 
-void EC2Client::GetInstanceTypesFromInstanceRequirementsAsyncHelper(const GetInstanceTypesFromInstanceRequirementsRequest& request, const GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetInstanceTypesFromInstanceRequirementsAsync(const GetInstanceTypesFromInstanceRequirementsRequest& request, const GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstanceTypesFromInstanceRequirements(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetInstanceTypesFromInstanceRequirementsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceUefiDataOutcome EC2Client::GetInstanceUefiData(const GetInstanceUefiDataRequest& request) const
@@ -9792,14 +9792,14 @@ GetInstanceUefiDataOutcomeCallable EC2Client::GetInstanceUefiDataCallable(const 
   return task->get_future();
 }
 
-void EC2Client::GetInstanceUefiDataAsync(const GetInstanceUefiDataRequest& request, const GetInstanceUefiDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetInstanceUefiDataAsyncHelper(EC2Client const * const clientThis, const GetInstanceUefiDataRequest& request, const GetInstanceUefiDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceUefiDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstanceUefiData(request), context);
 }
 
-void EC2Client::GetInstanceUefiDataAsyncHelper(const GetInstanceUefiDataRequest& request, const GetInstanceUefiDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetInstanceUefiDataAsync(const GetInstanceUefiDataRequest& request, const GetInstanceUefiDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstanceUefiData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetInstanceUefiDataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIpamAddressHistoryOutcome EC2Client::GetIpamAddressHistory(const GetIpamAddressHistoryRequest& request) const
@@ -9816,14 +9816,14 @@ GetIpamAddressHistoryOutcomeCallable EC2Client::GetIpamAddressHistoryCallable(co
   return task->get_future();
 }
 
-void EC2Client::GetIpamAddressHistoryAsync(const GetIpamAddressHistoryRequest& request, const GetIpamAddressHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetIpamAddressHistoryAsyncHelper(EC2Client const * const clientThis, const GetIpamAddressHistoryRequest& request, const GetIpamAddressHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIpamAddressHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIpamAddressHistory(request), context);
 }
 
-void EC2Client::GetIpamAddressHistoryAsyncHelper(const GetIpamAddressHistoryRequest& request, const GetIpamAddressHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetIpamAddressHistoryAsync(const GetIpamAddressHistoryRequest& request, const GetIpamAddressHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIpamAddressHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetIpamAddressHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIpamPoolAllocationsOutcome EC2Client::GetIpamPoolAllocations(const GetIpamPoolAllocationsRequest& request) const
@@ -9840,14 +9840,14 @@ GetIpamPoolAllocationsOutcomeCallable EC2Client::GetIpamPoolAllocationsCallable(
   return task->get_future();
 }
 
-void EC2Client::GetIpamPoolAllocationsAsync(const GetIpamPoolAllocationsRequest& request, const GetIpamPoolAllocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetIpamPoolAllocationsAsyncHelper(EC2Client const * const clientThis, const GetIpamPoolAllocationsRequest& request, const GetIpamPoolAllocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIpamPoolAllocationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIpamPoolAllocations(request), context);
 }
 
-void EC2Client::GetIpamPoolAllocationsAsyncHelper(const GetIpamPoolAllocationsRequest& request, const GetIpamPoolAllocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetIpamPoolAllocationsAsync(const GetIpamPoolAllocationsRequest& request, const GetIpamPoolAllocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIpamPoolAllocations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetIpamPoolAllocationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIpamPoolCidrsOutcome EC2Client::GetIpamPoolCidrs(const GetIpamPoolCidrsRequest& request) const
@@ -9864,14 +9864,14 @@ GetIpamPoolCidrsOutcomeCallable EC2Client::GetIpamPoolCidrsCallable(const GetIpa
   return task->get_future();
 }
 
-void EC2Client::GetIpamPoolCidrsAsync(const GetIpamPoolCidrsRequest& request, const GetIpamPoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetIpamPoolCidrsAsyncHelper(EC2Client const * const clientThis, const GetIpamPoolCidrsRequest& request, const GetIpamPoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIpamPoolCidrsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIpamPoolCidrs(request), context);
 }
 
-void EC2Client::GetIpamPoolCidrsAsyncHelper(const GetIpamPoolCidrsRequest& request, const GetIpamPoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetIpamPoolCidrsAsync(const GetIpamPoolCidrsRequest& request, const GetIpamPoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIpamPoolCidrs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetIpamPoolCidrsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIpamResourceCidrsOutcome EC2Client::GetIpamResourceCidrs(const GetIpamResourceCidrsRequest& request) const
@@ -9888,14 +9888,14 @@ GetIpamResourceCidrsOutcomeCallable EC2Client::GetIpamResourceCidrsCallable(cons
   return task->get_future();
 }
 
-void EC2Client::GetIpamResourceCidrsAsync(const GetIpamResourceCidrsRequest& request, const GetIpamResourceCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetIpamResourceCidrsAsyncHelper(EC2Client const * const clientThis, const GetIpamResourceCidrsRequest& request, const GetIpamResourceCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIpamResourceCidrsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIpamResourceCidrs(request), context);
 }
 
-void EC2Client::GetIpamResourceCidrsAsyncHelper(const GetIpamResourceCidrsRequest& request, const GetIpamResourceCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetIpamResourceCidrsAsync(const GetIpamResourceCidrsRequest& request, const GetIpamResourceCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIpamResourceCidrs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetIpamResourceCidrsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLaunchTemplateDataOutcome EC2Client::GetLaunchTemplateData(const GetLaunchTemplateDataRequest& request) const
@@ -9912,14 +9912,14 @@ GetLaunchTemplateDataOutcomeCallable EC2Client::GetLaunchTemplateDataCallable(co
   return task->get_future();
 }
 
-void EC2Client::GetLaunchTemplateDataAsync(const GetLaunchTemplateDataRequest& request, const GetLaunchTemplateDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetLaunchTemplateDataAsyncHelper(EC2Client const * const clientThis, const GetLaunchTemplateDataRequest& request, const GetLaunchTemplateDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLaunchTemplateDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLaunchTemplateData(request), context);
 }
 
-void EC2Client::GetLaunchTemplateDataAsyncHelper(const GetLaunchTemplateDataRequest& request, const GetLaunchTemplateDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetLaunchTemplateDataAsync(const GetLaunchTemplateDataRequest& request, const GetLaunchTemplateDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLaunchTemplateData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetLaunchTemplateDataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetManagedPrefixListAssociationsOutcome EC2Client::GetManagedPrefixListAssociations(const GetManagedPrefixListAssociationsRequest& request) const
@@ -9936,14 +9936,14 @@ GetManagedPrefixListAssociationsOutcomeCallable EC2Client::GetManagedPrefixListA
   return task->get_future();
 }
 
-void EC2Client::GetManagedPrefixListAssociationsAsync(const GetManagedPrefixListAssociationsRequest& request, const GetManagedPrefixListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetManagedPrefixListAssociationsAsyncHelper(EC2Client const * const clientThis, const GetManagedPrefixListAssociationsRequest& request, const GetManagedPrefixListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetManagedPrefixListAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetManagedPrefixListAssociations(request), context);
 }
 
-void EC2Client::GetManagedPrefixListAssociationsAsyncHelper(const GetManagedPrefixListAssociationsRequest& request, const GetManagedPrefixListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetManagedPrefixListAssociationsAsync(const GetManagedPrefixListAssociationsRequest& request, const GetManagedPrefixListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetManagedPrefixListAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetManagedPrefixListAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetManagedPrefixListEntriesOutcome EC2Client::GetManagedPrefixListEntries(const GetManagedPrefixListEntriesRequest& request) const
@@ -9960,14 +9960,14 @@ GetManagedPrefixListEntriesOutcomeCallable EC2Client::GetManagedPrefixListEntrie
   return task->get_future();
 }
 
-void EC2Client::GetManagedPrefixListEntriesAsync(const GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetManagedPrefixListEntriesAsyncHelper(EC2Client const * const clientThis, const GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetManagedPrefixListEntriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetManagedPrefixListEntries(request), context);
 }
 
-void EC2Client::GetManagedPrefixListEntriesAsyncHelper(const GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetManagedPrefixListEntriesAsync(const GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetManagedPrefixListEntries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetManagedPrefixListEntriesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNetworkInsightsAccessScopeAnalysisFindingsOutcome EC2Client::GetNetworkInsightsAccessScopeAnalysisFindings(const GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request) const
@@ -9984,14 +9984,14 @@ GetNetworkInsightsAccessScopeAnalysisFindingsOutcomeCallable EC2Client::GetNetwo
   return task->get_future();
 }
 
-void EC2Client::GetNetworkInsightsAccessScopeAnalysisFindingsAsync(const GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request, const GetNetworkInsightsAccessScopeAnalysisFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetNetworkInsightsAccessScopeAnalysisFindingsAsyncHelper(EC2Client const * const clientThis, const GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request, const GetNetworkInsightsAccessScopeAnalysisFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkInsightsAccessScopeAnalysisFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNetworkInsightsAccessScopeAnalysisFindings(request), context);
 }
 
-void EC2Client::GetNetworkInsightsAccessScopeAnalysisFindingsAsyncHelper(const GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request, const GetNetworkInsightsAccessScopeAnalysisFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetNetworkInsightsAccessScopeAnalysisFindingsAsync(const GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request, const GetNetworkInsightsAccessScopeAnalysisFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNetworkInsightsAccessScopeAnalysisFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetNetworkInsightsAccessScopeAnalysisFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNetworkInsightsAccessScopeContentOutcome EC2Client::GetNetworkInsightsAccessScopeContent(const GetNetworkInsightsAccessScopeContentRequest& request) const
@@ -10008,14 +10008,14 @@ GetNetworkInsightsAccessScopeContentOutcomeCallable EC2Client::GetNetworkInsight
   return task->get_future();
 }
 
-void EC2Client::GetNetworkInsightsAccessScopeContentAsync(const GetNetworkInsightsAccessScopeContentRequest& request, const GetNetworkInsightsAccessScopeContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetNetworkInsightsAccessScopeContentAsyncHelper(EC2Client const * const clientThis, const GetNetworkInsightsAccessScopeContentRequest& request, const GetNetworkInsightsAccessScopeContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkInsightsAccessScopeContentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNetworkInsightsAccessScopeContent(request), context);
 }
 
-void EC2Client::GetNetworkInsightsAccessScopeContentAsyncHelper(const GetNetworkInsightsAccessScopeContentRequest& request, const GetNetworkInsightsAccessScopeContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetNetworkInsightsAccessScopeContentAsync(const GetNetworkInsightsAccessScopeContentRequest& request, const GetNetworkInsightsAccessScopeContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNetworkInsightsAccessScopeContent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetNetworkInsightsAccessScopeContentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPasswordDataOutcome EC2Client::GetPasswordData(const GetPasswordDataRequest& request) const
@@ -10032,14 +10032,14 @@ GetPasswordDataOutcomeCallable EC2Client::GetPasswordDataCallable(const GetPassw
   return task->get_future();
 }
 
-void EC2Client::GetPasswordDataAsync(const GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetPasswordDataAsyncHelper(EC2Client const * const clientThis, const GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPasswordDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPasswordData(request), context);
 }
 
-void EC2Client::GetPasswordDataAsyncHelper(const GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetPasswordDataAsync(const GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPasswordData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetPasswordDataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetReservedInstancesExchangeQuoteOutcome EC2Client::GetReservedInstancesExchangeQuote(const GetReservedInstancesExchangeQuoteRequest& request) const
@@ -10056,14 +10056,14 @@ GetReservedInstancesExchangeQuoteOutcomeCallable EC2Client::GetReservedInstances
   return task->get_future();
 }
 
-void EC2Client::GetReservedInstancesExchangeQuoteAsync(const GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetReservedInstancesExchangeQuoteAsyncHelper(EC2Client const * const clientThis, const GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReservedInstancesExchangeQuoteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetReservedInstancesExchangeQuote(request), context);
 }
 
-void EC2Client::GetReservedInstancesExchangeQuoteAsyncHelper(const GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetReservedInstancesExchangeQuoteAsync(const GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetReservedInstancesExchangeQuote(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetReservedInstancesExchangeQuoteAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSerialConsoleAccessStatusOutcome EC2Client::GetSerialConsoleAccessStatus(const GetSerialConsoleAccessStatusRequest& request) const
@@ -10080,14 +10080,14 @@ GetSerialConsoleAccessStatusOutcomeCallable EC2Client::GetSerialConsoleAccessSta
   return task->get_future();
 }
 
-void EC2Client::GetSerialConsoleAccessStatusAsync(const GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetSerialConsoleAccessStatusAsyncHelper(EC2Client const * const clientThis, const GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSerialConsoleAccessStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSerialConsoleAccessStatus(request), context);
 }
 
-void EC2Client::GetSerialConsoleAccessStatusAsyncHelper(const GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetSerialConsoleAccessStatusAsync(const GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSerialConsoleAccessStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetSerialConsoleAccessStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSpotPlacementScoresOutcome EC2Client::GetSpotPlacementScores(const GetSpotPlacementScoresRequest& request) const
@@ -10104,14 +10104,14 @@ GetSpotPlacementScoresOutcomeCallable EC2Client::GetSpotPlacementScoresCallable(
   return task->get_future();
 }
 
-void EC2Client::GetSpotPlacementScoresAsync(const GetSpotPlacementScoresRequest& request, const GetSpotPlacementScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetSpotPlacementScoresAsyncHelper(EC2Client const * const clientThis, const GetSpotPlacementScoresRequest& request, const GetSpotPlacementScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSpotPlacementScoresAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSpotPlacementScores(request), context);
 }
 
-void EC2Client::GetSpotPlacementScoresAsyncHelper(const GetSpotPlacementScoresRequest& request, const GetSpotPlacementScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetSpotPlacementScoresAsync(const GetSpotPlacementScoresRequest& request, const GetSpotPlacementScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSpotPlacementScores(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetSpotPlacementScoresAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSubnetCidrReservationsOutcome EC2Client::GetSubnetCidrReservations(const GetSubnetCidrReservationsRequest& request) const
@@ -10128,14 +10128,14 @@ GetSubnetCidrReservationsOutcomeCallable EC2Client::GetSubnetCidrReservationsCal
   return task->get_future();
 }
 
-void EC2Client::GetSubnetCidrReservationsAsync(const GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetSubnetCidrReservationsAsyncHelper(EC2Client const * const clientThis, const GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSubnetCidrReservationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSubnetCidrReservations(request), context);
 }
 
-void EC2Client::GetSubnetCidrReservationsAsyncHelper(const GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetSubnetCidrReservationsAsync(const GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSubnetCidrReservations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetSubnetCidrReservationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayAttachmentPropagationsOutcome EC2Client::GetTransitGatewayAttachmentPropagations(const GetTransitGatewayAttachmentPropagationsRequest& request) const
@@ -10152,14 +10152,14 @@ GetTransitGatewayAttachmentPropagationsOutcomeCallable EC2Client::GetTransitGate
   return task->get_future();
 }
 
-void EC2Client::GetTransitGatewayAttachmentPropagationsAsync(const GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetTransitGatewayAttachmentPropagationsAsyncHelper(EC2Client const * const clientThis, const GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayAttachmentPropagationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayAttachmentPropagations(request), context);
 }
 
-void EC2Client::GetTransitGatewayAttachmentPropagationsAsyncHelper(const GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetTransitGatewayAttachmentPropagationsAsync(const GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayAttachmentPropagations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetTransitGatewayAttachmentPropagationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayMulticastDomainAssociationsOutcome EC2Client::GetTransitGatewayMulticastDomainAssociations(const GetTransitGatewayMulticastDomainAssociationsRequest& request) const
@@ -10176,14 +10176,14 @@ GetTransitGatewayMulticastDomainAssociationsOutcomeCallable EC2Client::GetTransi
   return task->get_future();
 }
 
-void EC2Client::GetTransitGatewayMulticastDomainAssociationsAsync(const GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetTransitGatewayMulticastDomainAssociationsAsyncHelper(EC2Client const * const clientThis, const GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayMulticastDomainAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayMulticastDomainAssociations(request), context);
 }
 
-void EC2Client::GetTransitGatewayMulticastDomainAssociationsAsyncHelper(const GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetTransitGatewayMulticastDomainAssociationsAsync(const GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayMulticastDomainAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetTransitGatewayMulticastDomainAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayPolicyTableAssociationsOutcome EC2Client::GetTransitGatewayPolicyTableAssociations(const GetTransitGatewayPolicyTableAssociationsRequest& request) const
@@ -10200,14 +10200,14 @@ GetTransitGatewayPolicyTableAssociationsOutcomeCallable EC2Client::GetTransitGat
   return task->get_future();
 }
 
-void EC2Client::GetTransitGatewayPolicyTableAssociationsAsync(const GetTransitGatewayPolicyTableAssociationsRequest& request, const GetTransitGatewayPolicyTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetTransitGatewayPolicyTableAssociationsAsyncHelper(EC2Client const * const clientThis, const GetTransitGatewayPolicyTableAssociationsRequest& request, const GetTransitGatewayPolicyTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayPolicyTableAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayPolicyTableAssociations(request), context);
 }
 
-void EC2Client::GetTransitGatewayPolicyTableAssociationsAsyncHelper(const GetTransitGatewayPolicyTableAssociationsRequest& request, const GetTransitGatewayPolicyTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetTransitGatewayPolicyTableAssociationsAsync(const GetTransitGatewayPolicyTableAssociationsRequest& request, const GetTransitGatewayPolicyTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayPolicyTableAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetTransitGatewayPolicyTableAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayPolicyTableEntriesOutcome EC2Client::GetTransitGatewayPolicyTableEntries(const GetTransitGatewayPolicyTableEntriesRequest& request) const
@@ -10224,14 +10224,14 @@ GetTransitGatewayPolicyTableEntriesOutcomeCallable EC2Client::GetTransitGatewayP
   return task->get_future();
 }
 
-void EC2Client::GetTransitGatewayPolicyTableEntriesAsync(const GetTransitGatewayPolicyTableEntriesRequest& request, const GetTransitGatewayPolicyTableEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetTransitGatewayPolicyTableEntriesAsyncHelper(EC2Client const * const clientThis, const GetTransitGatewayPolicyTableEntriesRequest& request, const GetTransitGatewayPolicyTableEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayPolicyTableEntriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayPolicyTableEntries(request), context);
 }
 
-void EC2Client::GetTransitGatewayPolicyTableEntriesAsyncHelper(const GetTransitGatewayPolicyTableEntriesRequest& request, const GetTransitGatewayPolicyTableEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetTransitGatewayPolicyTableEntriesAsync(const GetTransitGatewayPolicyTableEntriesRequest& request, const GetTransitGatewayPolicyTableEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayPolicyTableEntries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetTransitGatewayPolicyTableEntriesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayPrefixListReferencesOutcome EC2Client::GetTransitGatewayPrefixListReferences(const GetTransitGatewayPrefixListReferencesRequest& request) const
@@ -10248,14 +10248,14 @@ GetTransitGatewayPrefixListReferencesOutcomeCallable EC2Client::GetTransitGatewa
   return task->get_future();
 }
 
-void EC2Client::GetTransitGatewayPrefixListReferencesAsync(const GetTransitGatewayPrefixListReferencesRequest& request, const GetTransitGatewayPrefixListReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetTransitGatewayPrefixListReferencesAsyncHelper(EC2Client const * const clientThis, const GetTransitGatewayPrefixListReferencesRequest& request, const GetTransitGatewayPrefixListReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayPrefixListReferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayPrefixListReferences(request), context);
 }
 
-void EC2Client::GetTransitGatewayPrefixListReferencesAsyncHelper(const GetTransitGatewayPrefixListReferencesRequest& request, const GetTransitGatewayPrefixListReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetTransitGatewayPrefixListReferencesAsync(const GetTransitGatewayPrefixListReferencesRequest& request, const GetTransitGatewayPrefixListReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayPrefixListReferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetTransitGatewayPrefixListReferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayRouteTableAssociationsOutcome EC2Client::GetTransitGatewayRouteTableAssociations(const GetTransitGatewayRouteTableAssociationsRequest& request) const
@@ -10272,14 +10272,14 @@ GetTransitGatewayRouteTableAssociationsOutcomeCallable EC2Client::GetTransitGate
   return task->get_future();
 }
 
-void EC2Client::GetTransitGatewayRouteTableAssociationsAsync(const GetTransitGatewayRouteTableAssociationsRequest& request, const GetTransitGatewayRouteTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetTransitGatewayRouteTableAssociationsAsyncHelper(EC2Client const * const clientThis, const GetTransitGatewayRouteTableAssociationsRequest& request, const GetTransitGatewayRouteTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayRouteTableAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayRouteTableAssociations(request), context);
 }
 
-void EC2Client::GetTransitGatewayRouteTableAssociationsAsyncHelper(const GetTransitGatewayRouteTableAssociationsRequest& request, const GetTransitGatewayRouteTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetTransitGatewayRouteTableAssociationsAsync(const GetTransitGatewayRouteTableAssociationsRequest& request, const GetTransitGatewayRouteTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayRouteTableAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetTransitGatewayRouteTableAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTransitGatewayRouteTablePropagationsOutcome EC2Client::GetTransitGatewayRouteTablePropagations(const GetTransitGatewayRouteTablePropagationsRequest& request) const
@@ -10296,14 +10296,14 @@ GetTransitGatewayRouteTablePropagationsOutcomeCallable EC2Client::GetTransitGate
   return task->get_future();
 }
 
-void EC2Client::GetTransitGatewayRouteTablePropagationsAsync(const GetTransitGatewayRouteTablePropagationsRequest& request, const GetTransitGatewayRouteTablePropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetTransitGatewayRouteTablePropagationsAsyncHelper(EC2Client const * const clientThis, const GetTransitGatewayRouteTablePropagationsRequest& request, const GetTransitGatewayRouteTablePropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayRouteTablePropagationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTransitGatewayRouteTablePropagations(request), context);
 }
 
-void EC2Client::GetTransitGatewayRouteTablePropagationsAsyncHelper(const GetTransitGatewayRouteTablePropagationsRequest& request, const GetTransitGatewayRouteTablePropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetTransitGatewayRouteTablePropagationsAsync(const GetTransitGatewayRouteTablePropagationsRequest& request, const GetTransitGatewayRouteTablePropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTransitGatewayRouteTablePropagations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetTransitGatewayRouteTablePropagationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetVpnConnectionDeviceSampleConfigurationOutcome EC2Client::GetVpnConnectionDeviceSampleConfiguration(const GetVpnConnectionDeviceSampleConfigurationRequest& request) const
@@ -10320,14 +10320,14 @@ GetVpnConnectionDeviceSampleConfigurationOutcomeCallable EC2Client::GetVpnConnec
   return task->get_future();
 }
 
-void EC2Client::GetVpnConnectionDeviceSampleConfigurationAsync(const GetVpnConnectionDeviceSampleConfigurationRequest& request, const GetVpnConnectionDeviceSampleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetVpnConnectionDeviceSampleConfigurationAsyncHelper(EC2Client const * const clientThis, const GetVpnConnectionDeviceSampleConfigurationRequest& request, const GetVpnConnectionDeviceSampleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVpnConnectionDeviceSampleConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetVpnConnectionDeviceSampleConfiguration(request), context);
 }
 
-void EC2Client::GetVpnConnectionDeviceSampleConfigurationAsyncHelper(const GetVpnConnectionDeviceSampleConfigurationRequest& request, const GetVpnConnectionDeviceSampleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetVpnConnectionDeviceSampleConfigurationAsync(const GetVpnConnectionDeviceSampleConfigurationRequest& request, const GetVpnConnectionDeviceSampleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetVpnConnectionDeviceSampleConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetVpnConnectionDeviceSampleConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetVpnConnectionDeviceTypesOutcome EC2Client::GetVpnConnectionDeviceTypes(const GetVpnConnectionDeviceTypesRequest& request) const
@@ -10344,14 +10344,14 @@ GetVpnConnectionDeviceTypesOutcomeCallable EC2Client::GetVpnConnectionDeviceType
   return task->get_future();
 }
 
-void EC2Client::GetVpnConnectionDeviceTypesAsync(const GetVpnConnectionDeviceTypesRequest& request, const GetVpnConnectionDeviceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientGetVpnConnectionDeviceTypesAsyncHelper(EC2Client const * const clientThis, const GetVpnConnectionDeviceTypesRequest& request, const GetVpnConnectionDeviceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVpnConnectionDeviceTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetVpnConnectionDeviceTypes(request), context);
 }
 
-void EC2Client::GetVpnConnectionDeviceTypesAsyncHelper(const GetVpnConnectionDeviceTypesRequest& request, const GetVpnConnectionDeviceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::GetVpnConnectionDeviceTypesAsync(const GetVpnConnectionDeviceTypesRequest& request, const GetVpnConnectionDeviceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetVpnConnectionDeviceTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientGetVpnConnectionDeviceTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportClientVpnClientCertificateRevocationListOutcome EC2Client::ImportClientVpnClientCertificateRevocationList(const ImportClientVpnClientCertificateRevocationListRequest& request) const
@@ -10368,14 +10368,14 @@ ImportClientVpnClientCertificateRevocationListOutcomeCallable EC2Client::ImportC
   return task->get_future();
 }
 
-void EC2Client::ImportClientVpnClientCertificateRevocationListAsync(const ImportClientVpnClientCertificateRevocationListRequest& request, const ImportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientImportClientVpnClientCertificateRevocationListAsyncHelper(EC2Client const * const clientThis, const ImportClientVpnClientCertificateRevocationListRequest& request, const ImportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportClientVpnClientCertificateRevocationListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportClientVpnClientCertificateRevocationList(request), context);
 }
 
-void EC2Client::ImportClientVpnClientCertificateRevocationListAsyncHelper(const ImportClientVpnClientCertificateRevocationListRequest& request, const ImportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ImportClientVpnClientCertificateRevocationListAsync(const ImportClientVpnClientCertificateRevocationListRequest& request, const ImportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportClientVpnClientCertificateRevocationList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientImportClientVpnClientCertificateRevocationListAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportImageOutcome EC2Client::ImportImage(const ImportImageRequest& request) const
@@ -10392,14 +10392,14 @@ ImportImageOutcomeCallable EC2Client::ImportImageCallable(const ImportImageReque
   return task->get_future();
 }
 
-void EC2Client::ImportImageAsync(const ImportImageRequest& request, const ImportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientImportImageAsyncHelper(EC2Client const * const clientThis, const ImportImageRequest& request, const ImportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportImage(request), context);
 }
 
-void EC2Client::ImportImageAsyncHelper(const ImportImageRequest& request, const ImportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ImportImageAsync(const ImportImageRequest& request, const ImportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientImportImageAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportInstanceOutcome EC2Client::ImportInstance(const ImportInstanceRequest& request) const
@@ -10416,14 +10416,14 @@ ImportInstanceOutcomeCallable EC2Client::ImportInstanceCallable(const ImportInst
   return task->get_future();
 }
 
-void EC2Client::ImportInstanceAsync(const ImportInstanceRequest& request, const ImportInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientImportInstanceAsyncHelper(EC2Client const * const clientThis, const ImportInstanceRequest& request, const ImportInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportInstance(request), context);
 }
 
-void EC2Client::ImportInstanceAsyncHelper(const ImportInstanceRequest& request, const ImportInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ImportInstanceAsync(const ImportInstanceRequest& request, const ImportInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientImportInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportKeyPairOutcome EC2Client::ImportKeyPair(const ImportKeyPairRequest& request) const
@@ -10440,14 +10440,14 @@ ImportKeyPairOutcomeCallable EC2Client::ImportKeyPairCallable(const ImportKeyPai
   return task->get_future();
 }
 
-void EC2Client::ImportKeyPairAsync(const ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientImportKeyPairAsyncHelper(EC2Client const * const clientThis, const ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportKeyPair(request), context);
 }
 
-void EC2Client::ImportKeyPairAsyncHelper(const ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ImportKeyPairAsync(const ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientImportKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportSnapshotOutcome EC2Client::ImportSnapshot(const ImportSnapshotRequest& request) const
@@ -10464,14 +10464,14 @@ ImportSnapshotOutcomeCallable EC2Client::ImportSnapshotCallable(const ImportSnap
   return task->get_future();
 }
 
-void EC2Client::ImportSnapshotAsync(const ImportSnapshotRequest& request, const ImportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientImportSnapshotAsyncHelper(EC2Client const * const clientThis, const ImportSnapshotRequest& request, const ImportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportSnapshot(request), context);
 }
 
-void EC2Client::ImportSnapshotAsyncHelper(const ImportSnapshotRequest& request, const ImportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ImportSnapshotAsync(const ImportSnapshotRequest& request, const ImportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientImportSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportVolumeOutcome EC2Client::ImportVolume(const ImportVolumeRequest& request) const
@@ -10488,14 +10488,14 @@ ImportVolumeOutcomeCallable EC2Client::ImportVolumeCallable(const ImportVolumeRe
   return task->get_future();
 }
 
-void EC2Client::ImportVolumeAsync(const ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientImportVolumeAsyncHelper(EC2Client const * const clientThis, const ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportVolume(request), context);
 }
 
-void EC2Client::ImportVolumeAsyncHelper(const ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ImportVolumeAsync(const ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientImportVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImagesInRecycleBinOutcome EC2Client::ListImagesInRecycleBin(const ListImagesInRecycleBinRequest& request) const
@@ -10512,14 +10512,14 @@ ListImagesInRecycleBinOutcomeCallable EC2Client::ListImagesInRecycleBinCallable(
   return task->get_future();
 }
 
-void EC2Client::ListImagesInRecycleBinAsync(const ListImagesInRecycleBinRequest& request, const ListImagesInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientListImagesInRecycleBinAsyncHelper(EC2Client const * const clientThis, const ListImagesInRecycleBinRequest& request, const ListImagesInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImagesInRecycleBinAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImagesInRecycleBin(request), context);
 }
 
-void EC2Client::ListImagesInRecycleBinAsyncHelper(const ListImagesInRecycleBinRequest& request, const ListImagesInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ListImagesInRecycleBinAsync(const ListImagesInRecycleBinRequest& request, const ListImagesInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImagesInRecycleBin(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientListImagesInRecycleBinAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSnapshotsInRecycleBinOutcome EC2Client::ListSnapshotsInRecycleBin(const ListSnapshotsInRecycleBinRequest& request) const
@@ -10536,14 +10536,14 @@ ListSnapshotsInRecycleBinOutcomeCallable EC2Client::ListSnapshotsInRecycleBinCal
   return task->get_future();
 }
 
-void EC2Client::ListSnapshotsInRecycleBinAsync(const ListSnapshotsInRecycleBinRequest& request, const ListSnapshotsInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientListSnapshotsInRecycleBinAsyncHelper(EC2Client const * const clientThis, const ListSnapshotsInRecycleBinRequest& request, const ListSnapshotsInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSnapshotsInRecycleBinAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSnapshotsInRecycleBin(request), context);
 }
 
-void EC2Client::ListSnapshotsInRecycleBinAsyncHelper(const ListSnapshotsInRecycleBinRequest& request, const ListSnapshotsInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ListSnapshotsInRecycleBinAsync(const ListSnapshotsInRecycleBinRequest& request, const ListSnapshotsInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSnapshotsInRecycleBin(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientListSnapshotsInRecycleBinAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyAddressAttributeOutcome EC2Client::ModifyAddressAttribute(const ModifyAddressAttributeRequest& request) const
@@ -10560,14 +10560,14 @@ ModifyAddressAttributeOutcomeCallable EC2Client::ModifyAddressAttributeCallable(
   return task->get_future();
 }
 
-void EC2Client::ModifyAddressAttributeAsync(const ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyAddressAttributeAsyncHelper(EC2Client const * const clientThis, const ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyAddressAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyAddressAttribute(request), context);
 }
 
-void EC2Client::ModifyAddressAttributeAsyncHelper(const ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyAddressAttributeAsync(const ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyAddressAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyAddressAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyAvailabilityZoneGroupOutcome EC2Client::ModifyAvailabilityZoneGroup(const ModifyAvailabilityZoneGroupRequest& request) const
@@ -10584,14 +10584,14 @@ ModifyAvailabilityZoneGroupOutcomeCallable EC2Client::ModifyAvailabilityZoneGrou
   return task->get_future();
 }
 
-void EC2Client::ModifyAvailabilityZoneGroupAsync(const ModifyAvailabilityZoneGroupRequest& request, const ModifyAvailabilityZoneGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyAvailabilityZoneGroupAsyncHelper(EC2Client const * const clientThis, const ModifyAvailabilityZoneGroupRequest& request, const ModifyAvailabilityZoneGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyAvailabilityZoneGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyAvailabilityZoneGroup(request), context);
 }
 
-void EC2Client::ModifyAvailabilityZoneGroupAsyncHelper(const ModifyAvailabilityZoneGroupRequest& request, const ModifyAvailabilityZoneGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyAvailabilityZoneGroupAsync(const ModifyAvailabilityZoneGroupRequest& request, const ModifyAvailabilityZoneGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyAvailabilityZoneGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyAvailabilityZoneGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyCapacityReservationOutcome EC2Client::ModifyCapacityReservation(const ModifyCapacityReservationRequest& request) const
@@ -10608,14 +10608,14 @@ ModifyCapacityReservationOutcomeCallable EC2Client::ModifyCapacityReservationCal
   return task->get_future();
 }
 
-void EC2Client::ModifyCapacityReservationAsync(const ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyCapacityReservationAsyncHelper(EC2Client const * const clientThis, const ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyCapacityReservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyCapacityReservation(request), context);
 }
 
-void EC2Client::ModifyCapacityReservationAsyncHelper(const ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyCapacityReservationAsync(const ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyCapacityReservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyCapacityReservationAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyCapacityReservationFleetOutcome EC2Client::ModifyCapacityReservationFleet(const ModifyCapacityReservationFleetRequest& request) const
@@ -10632,14 +10632,14 @@ ModifyCapacityReservationFleetOutcomeCallable EC2Client::ModifyCapacityReservati
   return task->get_future();
 }
 
-void EC2Client::ModifyCapacityReservationFleetAsync(const ModifyCapacityReservationFleetRequest& request, const ModifyCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyCapacityReservationFleetAsyncHelper(EC2Client const * const clientThis, const ModifyCapacityReservationFleetRequest& request, const ModifyCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyCapacityReservationFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyCapacityReservationFleet(request), context);
 }
 
-void EC2Client::ModifyCapacityReservationFleetAsyncHelper(const ModifyCapacityReservationFleetRequest& request, const ModifyCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyCapacityReservationFleetAsync(const ModifyCapacityReservationFleetRequest& request, const ModifyCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyCapacityReservationFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyCapacityReservationFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyClientVpnEndpointOutcome EC2Client::ModifyClientVpnEndpoint(const ModifyClientVpnEndpointRequest& request) const
@@ -10656,14 +10656,14 @@ ModifyClientVpnEndpointOutcomeCallable EC2Client::ModifyClientVpnEndpointCallabl
   return task->get_future();
 }
 
-void EC2Client::ModifyClientVpnEndpointAsync(const ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyClientVpnEndpointAsyncHelper(EC2Client const * const clientThis, const ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyClientVpnEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyClientVpnEndpoint(request), context);
 }
 
-void EC2Client::ModifyClientVpnEndpointAsyncHelper(const ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyClientVpnEndpointAsync(const ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyClientVpnEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyClientVpnEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyDefaultCreditSpecificationOutcome EC2Client::ModifyDefaultCreditSpecification(const ModifyDefaultCreditSpecificationRequest& request) const
@@ -10680,14 +10680,14 @@ ModifyDefaultCreditSpecificationOutcomeCallable EC2Client::ModifyDefaultCreditSp
   return task->get_future();
 }
 
-void EC2Client::ModifyDefaultCreditSpecificationAsync(const ModifyDefaultCreditSpecificationRequest& request, const ModifyDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyDefaultCreditSpecificationAsyncHelper(EC2Client const * const clientThis, const ModifyDefaultCreditSpecificationRequest& request, const ModifyDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyDefaultCreditSpecificationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyDefaultCreditSpecification(request), context);
 }
 
-void EC2Client::ModifyDefaultCreditSpecificationAsyncHelper(const ModifyDefaultCreditSpecificationRequest& request, const ModifyDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyDefaultCreditSpecificationAsync(const ModifyDefaultCreditSpecificationRequest& request, const ModifyDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyDefaultCreditSpecification(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyDefaultCreditSpecificationAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyEbsDefaultKmsKeyIdOutcome EC2Client::ModifyEbsDefaultKmsKeyId(const ModifyEbsDefaultKmsKeyIdRequest& request) const
@@ -10704,14 +10704,14 @@ ModifyEbsDefaultKmsKeyIdOutcomeCallable EC2Client::ModifyEbsDefaultKmsKeyIdCalla
   return task->get_future();
 }
 
-void EC2Client::ModifyEbsDefaultKmsKeyIdAsync(const ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyEbsDefaultKmsKeyIdAsyncHelper(EC2Client const * const clientThis, const ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyEbsDefaultKmsKeyIdAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyEbsDefaultKmsKeyId(request), context);
 }
 
-void EC2Client::ModifyEbsDefaultKmsKeyIdAsyncHelper(const ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyEbsDefaultKmsKeyIdAsync(const ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyEbsDefaultKmsKeyId(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyEbsDefaultKmsKeyIdAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyFleetOutcome EC2Client::ModifyFleet(const ModifyFleetRequest& request) const
@@ -10728,14 +10728,14 @@ ModifyFleetOutcomeCallable EC2Client::ModifyFleetCallable(const ModifyFleetReque
   return task->get_future();
 }
 
-void EC2Client::ModifyFleetAsync(const ModifyFleetRequest& request, const ModifyFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyFleetAsyncHelper(EC2Client const * const clientThis, const ModifyFleetRequest& request, const ModifyFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyFleet(request), context);
 }
 
-void EC2Client::ModifyFleetAsyncHelper(const ModifyFleetRequest& request, const ModifyFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyFleetAsync(const ModifyFleetRequest& request, const ModifyFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyFpgaImageAttributeOutcome EC2Client::ModifyFpgaImageAttribute(const ModifyFpgaImageAttributeRequest& request) const
@@ -10752,14 +10752,14 @@ ModifyFpgaImageAttributeOutcomeCallable EC2Client::ModifyFpgaImageAttributeCalla
   return task->get_future();
 }
 
-void EC2Client::ModifyFpgaImageAttributeAsync(const ModifyFpgaImageAttributeRequest& request, const ModifyFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyFpgaImageAttributeAsyncHelper(EC2Client const * const clientThis, const ModifyFpgaImageAttributeRequest& request, const ModifyFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyFpgaImageAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyFpgaImageAttribute(request), context);
 }
 
-void EC2Client::ModifyFpgaImageAttributeAsyncHelper(const ModifyFpgaImageAttributeRequest& request, const ModifyFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyFpgaImageAttributeAsync(const ModifyFpgaImageAttributeRequest& request, const ModifyFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyFpgaImageAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyFpgaImageAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyHostsOutcome EC2Client::ModifyHosts(const ModifyHostsRequest& request) const
@@ -10776,14 +10776,14 @@ ModifyHostsOutcomeCallable EC2Client::ModifyHostsCallable(const ModifyHostsReque
   return task->get_future();
 }
 
-void EC2Client::ModifyHostsAsync(const ModifyHostsRequest& request, const ModifyHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyHostsAsyncHelper(EC2Client const * const clientThis, const ModifyHostsRequest& request, const ModifyHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyHostsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyHosts(request), context);
 }
 
-void EC2Client::ModifyHostsAsyncHelper(const ModifyHostsRequest& request, const ModifyHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyHostsAsync(const ModifyHostsRequest& request, const ModifyHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyHosts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyHostsAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyIdFormatOutcome EC2Client::ModifyIdFormat(const ModifyIdFormatRequest& request) const
@@ -10800,14 +10800,14 @@ ModifyIdFormatOutcomeCallable EC2Client::ModifyIdFormatCallable(const ModifyIdFo
   return task->get_future();
 }
 
-void EC2Client::ModifyIdFormatAsync(const ModifyIdFormatRequest& request, const ModifyIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyIdFormatAsyncHelper(EC2Client const * const clientThis, const ModifyIdFormatRequest& request, const ModifyIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyIdFormatAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyIdFormat(request), context);
 }
 
-void EC2Client::ModifyIdFormatAsyncHelper(const ModifyIdFormatRequest& request, const ModifyIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyIdFormatAsync(const ModifyIdFormatRequest& request, const ModifyIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyIdFormat(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyIdFormatAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyIdentityIdFormatOutcome EC2Client::ModifyIdentityIdFormat(const ModifyIdentityIdFormatRequest& request) const
@@ -10824,14 +10824,14 @@ ModifyIdentityIdFormatOutcomeCallable EC2Client::ModifyIdentityIdFormatCallable(
   return task->get_future();
 }
 
-void EC2Client::ModifyIdentityIdFormatAsync(const ModifyIdentityIdFormatRequest& request, const ModifyIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyIdentityIdFormatAsyncHelper(EC2Client const * const clientThis, const ModifyIdentityIdFormatRequest& request, const ModifyIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyIdentityIdFormatAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyIdentityIdFormat(request), context);
 }
 
-void EC2Client::ModifyIdentityIdFormatAsyncHelper(const ModifyIdentityIdFormatRequest& request, const ModifyIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyIdentityIdFormatAsync(const ModifyIdentityIdFormatRequest& request, const ModifyIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyIdentityIdFormat(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyIdentityIdFormatAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyImageAttributeOutcome EC2Client::ModifyImageAttribute(const ModifyImageAttributeRequest& request) const
@@ -10848,14 +10848,14 @@ ModifyImageAttributeOutcomeCallable EC2Client::ModifyImageAttributeCallable(cons
   return task->get_future();
 }
 
-void EC2Client::ModifyImageAttributeAsync(const ModifyImageAttributeRequest& request, const ModifyImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyImageAttributeAsyncHelper(EC2Client const * const clientThis, const ModifyImageAttributeRequest& request, const ModifyImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyImageAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyImageAttribute(request), context);
 }
 
-void EC2Client::ModifyImageAttributeAsyncHelper(const ModifyImageAttributeRequest& request, const ModifyImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyImageAttributeAsync(const ModifyImageAttributeRequest& request, const ModifyImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyImageAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyImageAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyInstanceAttributeOutcome EC2Client::ModifyInstanceAttribute(const ModifyInstanceAttributeRequest& request) const
@@ -10872,14 +10872,14 @@ ModifyInstanceAttributeOutcomeCallable EC2Client::ModifyInstanceAttributeCallabl
   return task->get_future();
 }
 
-void EC2Client::ModifyInstanceAttributeAsync(const ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyInstanceAttributeAsyncHelper(EC2Client const * const clientThis, const ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyInstanceAttribute(request), context);
 }
 
-void EC2Client::ModifyInstanceAttributeAsyncHelper(const ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyInstanceAttributeAsync(const ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyInstanceAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyInstanceAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyInstanceCapacityReservationAttributesOutcome EC2Client::ModifyInstanceCapacityReservationAttributes(const ModifyInstanceCapacityReservationAttributesRequest& request) const
@@ -10896,14 +10896,14 @@ ModifyInstanceCapacityReservationAttributesOutcomeCallable EC2Client::ModifyInst
   return task->get_future();
 }
 
-void EC2Client::ModifyInstanceCapacityReservationAttributesAsync(const ModifyInstanceCapacityReservationAttributesRequest& request, const ModifyInstanceCapacityReservationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyInstanceCapacityReservationAttributesAsyncHelper(EC2Client const * const clientThis, const ModifyInstanceCapacityReservationAttributesRequest& request, const ModifyInstanceCapacityReservationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceCapacityReservationAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyInstanceCapacityReservationAttributes(request), context);
 }
 
-void EC2Client::ModifyInstanceCapacityReservationAttributesAsyncHelper(const ModifyInstanceCapacityReservationAttributesRequest& request, const ModifyInstanceCapacityReservationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyInstanceCapacityReservationAttributesAsync(const ModifyInstanceCapacityReservationAttributesRequest& request, const ModifyInstanceCapacityReservationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyInstanceCapacityReservationAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyInstanceCapacityReservationAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyInstanceCreditSpecificationOutcome EC2Client::ModifyInstanceCreditSpecification(const ModifyInstanceCreditSpecificationRequest& request) const
@@ -10920,14 +10920,14 @@ ModifyInstanceCreditSpecificationOutcomeCallable EC2Client::ModifyInstanceCredit
   return task->get_future();
 }
 
-void EC2Client::ModifyInstanceCreditSpecificationAsync(const ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyInstanceCreditSpecificationAsyncHelper(EC2Client const * const clientThis, const ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceCreditSpecificationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyInstanceCreditSpecification(request), context);
 }
 
-void EC2Client::ModifyInstanceCreditSpecificationAsyncHelper(const ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyInstanceCreditSpecificationAsync(const ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyInstanceCreditSpecification(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyInstanceCreditSpecificationAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyInstanceEventStartTimeOutcome EC2Client::ModifyInstanceEventStartTime(const ModifyInstanceEventStartTimeRequest& request) const
@@ -10944,14 +10944,14 @@ ModifyInstanceEventStartTimeOutcomeCallable EC2Client::ModifyInstanceEventStartT
   return task->get_future();
 }
 
-void EC2Client::ModifyInstanceEventStartTimeAsync(const ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyInstanceEventStartTimeAsyncHelper(EC2Client const * const clientThis, const ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceEventStartTimeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyInstanceEventStartTime(request), context);
 }
 
-void EC2Client::ModifyInstanceEventStartTimeAsyncHelper(const ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyInstanceEventStartTimeAsync(const ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyInstanceEventStartTime(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyInstanceEventStartTimeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyInstanceEventWindowOutcome EC2Client::ModifyInstanceEventWindow(const ModifyInstanceEventWindowRequest& request) const
@@ -10968,14 +10968,14 @@ ModifyInstanceEventWindowOutcomeCallable EC2Client::ModifyInstanceEventWindowCal
   return task->get_future();
 }
 
-void EC2Client::ModifyInstanceEventWindowAsync(const ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyInstanceEventWindowAsyncHelper(EC2Client const * const clientThis, const ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceEventWindowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyInstanceEventWindow(request), context);
 }
 
-void EC2Client::ModifyInstanceEventWindowAsyncHelper(const ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyInstanceEventWindowAsync(const ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyInstanceEventWindow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyInstanceEventWindowAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyInstanceMaintenanceOptionsOutcome EC2Client::ModifyInstanceMaintenanceOptions(const ModifyInstanceMaintenanceOptionsRequest& request) const
@@ -10992,14 +10992,14 @@ ModifyInstanceMaintenanceOptionsOutcomeCallable EC2Client::ModifyInstanceMainten
   return task->get_future();
 }
 
-void EC2Client::ModifyInstanceMaintenanceOptionsAsync(const ModifyInstanceMaintenanceOptionsRequest& request, const ModifyInstanceMaintenanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyInstanceMaintenanceOptionsAsyncHelper(EC2Client const * const clientThis, const ModifyInstanceMaintenanceOptionsRequest& request, const ModifyInstanceMaintenanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceMaintenanceOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyInstanceMaintenanceOptions(request), context);
 }
 
-void EC2Client::ModifyInstanceMaintenanceOptionsAsyncHelper(const ModifyInstanceMaintenanceOptionsRequest& request, const ModifyInstanceMaintenanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyInstanceMaintenanceOptionsAsync(const ModifyInstanceMaintenanceOptionsRequest& request, const ModifyInstanceMaintenanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyInstanceMaintenanceOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyInstanceMaintenanceOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyInstanceMetadataOptionsOutcome EC2Client::ModifyInstanceMetadataOptions(const ModifyInstanceMetadataOptionsRequest& request) const
@@ -11016,14 +11016,14 @@ ModifyInstanceMetadataOptionsOutcomeCallable EC2Client::ModifyInstanceMetadataOp
   return task->get_future();
 }
 
-void EC2Client::ModifyInstanceMetadataOptionsAsync(const ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyInstanceMetadataOptionsAsyncHelper(EC2Client const * const clientThis, const ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceMetadataOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyInstanceMetadataOptions(request), context);
 }
 
-void EC2Client::ModifyInstanceMetadataOptionsAsyncHelper(const ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyInstanceMetadataOptionsAsync(const ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyInstanceMetadataOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyInstanceMetadataOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyInstancePlacementOutcome EC2Client::ModifyInstancePlacement(const ModifyInstancePlacementRequest& request) const
@@ -11040,14 +11040,14 @@ ModifyInstancePlacementOutcomeCallable EC2Client::ModifyInstancePlacementCallabl
   return task->get_future();
 }
 
-void EC2Client::ModifyInstancePlacementAsync(const ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyInstancePlacementAsyncHelper(EC2Client const * const clientThis, const ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstancePlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyInstancePlacement(request), context);
 }
 
-void EC2Client::ModifyInstancePlacementAsyncHelper(const ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyInstancePlacementAsync(const ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyInstancePlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyInstancePlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyIpamOutcome EC2Client::ModifyIpam(const ModifyIpamRequest& request) const
@@ -11064,14 +11064,14 @@ ModifyIpamOutcomeCallable EC2Client::ModifyIpamCallable(const ModifyIpamRequest&
   return task->get_future();
 }
 
-void EC2Client::ModifyIpamAsync(const ModifyIpamRequest& request, const ModifyIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyIpamAsyncHelper(EC2Client const * const clientThis, const ModifyIpamRequest& request, const ModifyIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyIpamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyIpam(request), context);
 }
 
-void EC2Client::ModifyIpamAsyncHelper(const ModifyIpamRequest& request, const ModifyIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyIpamAsync(const ModifyIpamRequest& request, const ModifyIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyIpam(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyIpamAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyIpamPoolOutcome EC2Client::ModifyIpamPool(const ModifyIpamPoolRequest& request) const
@@ -11088,14 +11088,14 @@ ModifyIpamPoolOutcomeCallable EC2Client::ModifyIpamPoolCallable(const ModifyIpam
   return task->get_future();
 }
 
-void EC2Client::ModifyIpamPoolAsync(const ModifyIpamPoolRequest& request, const ModifyIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyIpamPoolAsyncHelper(EC2Client const * const clientThis, const ModifyIpamPoolRequest& request, const ModifyIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyIpamPoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyIpamPool(request), context);
 }
 
-void EC2Client::ModifyIpamPoolAsyncHelper(const ModifyIpamPoolRequest& request, const ModifyIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyIpamPoolAsync(const ModifyIpamPoolRequest& request, const ModifyIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyIpamPool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyIpamPoolAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyIpamResourceCidrOutcome EC2Client::ModifyIpamResourceCidr(const ModifyIpamResourceCidrRequest& request) const
@@ -11112,14 +11112,14 @@ ModifyIpamResourceCidrOutcomeCallable EC2Client::ModifyIpamResourceCidrCallable(
   return task->get_future();
 }
 
-void EC2Client::ModifyIpamResourceCidrAsync(const ModifyIpamResourceCidrRequest& request, const ModifyIpamResourceCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyIpamResourceCidrAsyncHelper(EC2Client const * const clientThis, const ModifyIpamResourceCidrRequest& request, const ModifyIpamResourceCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyIpamResourceCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyIpamResourceCidr(request), context);
 }
 
-void EC2Client::ModifyIpamResourceCidrAsyncHelper(const ModifyIpamResourceCidrRequest& request, const ModifyIpamResourceCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyIpamResourceCidrAsync(const ModifyIpamResourceCidrRequest& request, const ModifyIpamResourceCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyIpamResourceCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyIpamResourceCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyIpamScopeOutcome EC2Client::ModifyIpamScope(const ModifyIpamScopeRequest& request) const
@@ -11136,14 +11136,14 @@ ModifyIpamScopeOutcomeCallable EC2Client::ModifyIpamScopeCallable(const ModifyIp
   return task->get_future();
 }
 
-void EC2Client::ModifyIpamScopeAsync(const ModifyIpamScopeRequest& request, const ModifyIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyIpamScopeAsyncHelper(EC2Client const * const clientThis, const ModifyIpamScopeRequest& request, const ModifyIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyIpamScopeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyIpamScope(request), context);
 }
 
-void EC2Client::ModifyIpamScopeAsyncHelper(const ModifyIpamScopeRequest& request, const ModifyIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyIpamScopeAsync(const ModifyIpamScopeRequest& request, const ModifyIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyIpamScope(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyIpamScopeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyLaunchTemplateOutcome EC2Client::ModifyLaunchTemplate(const ModifyLaunchTemplateRequest& request) const
@@ -11160,14 +11160,14 @@ ModifyLaunchTemplateOutcomeCallable EC2Client::ModifyLaunchTemplateCallable(cons
   return task->get_future();
 }
 
-void EC2Client::ModifyLaunchTemplateAsync(const ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyLaunchTemplateAsyncHelper(EC2Client const * const clientThis, const ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyLaunchTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyLaunchTemplate(request), context);
 }
 
-void EC2Client::ModifyLaunchTemplateAsyncHelper(const ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyLaunchTemplateAsync(const ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyLaunchTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyLaunchTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyManagedPrefixListOutcome EC2Client::ModifyManagedPrefixList(const ModifyManagedPrefixListRequest& request) const
@@ -11184,14 +11184,14 @@ ModifyManagedPrefixListOutcomeCallable EC2Client::ModifyManagedPrefixListCallabl
   return task->get_future();
 }
 
-void EC2Client::ModifyManagedPrefixListAsync(const ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyManagedPrefixListAsyncHelper(EC2Client const * const clientThis, const ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyManagedPrefixListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyManagedPrefixList(request), context);
 }
 
-void EC2Client::ModifyManagedPrefixListAsyncHelper(const ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyManagedPrefixListAsync(const ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyManagedPrefixList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyManagedPrefixListAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyNetworkInterfaceAttributeOutcome EC2Client::ModifyNetworkInterfaceAttribute(const ModifyNetworkInterfaceAttributeRequest& request) const
@@ -11208,14 +11208,14 @@ ModifyNetworkInterfaceAttributeOutcomeCallable EC2Client::ModifyNetworkInterface
   return task->get_future();
 }
 
-void EC2Client::ModifyNetworkInterfaceAttributeAsync(const ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyNetworkInterfaceAttributeAsyncHelper(EC2Client const * const clientThis, const ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyNetworkInterfaceAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyNetworkInterfaceAttribute(request), context);
 }
 
-void EC2Client::ModifyNetworkInterfaceAttributeAsyncHelper(const ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyNetworkInterfaceAttributeAsync(const ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyNetworkInterfaceAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyNetworkInterfaceAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyPrivateDnsNameOptionsOutcome EC2Client::ModifyPrivateDnsNameOptions(const ModifyPrivateDnsNameOptionsRequest& request) const
@@ -11232,14 +11232,14 @@ ModifyPrivateDnsNameOptionsOutcomeCallable EC2Client::ModifyPrivateDnsNameOption
   return task->get_future();
 }
 
-void EC2Client::ModifyPrivateDnsNameOptionsAsync(const ModifyPrivateDnsNameOptionsRequest& request, const ModifyPrivateDnsNameOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyPrivateDnsNameOptionsAsyncHelper(EC2Client const * const clientThis, const ModifyPrivateDnsNameOptionsRequest& request, const ModifyPrivateDnsNameOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyPrivateDnsNameOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyPrivateDnsNameOptions(request), context);
 }
 
-void EC2Client::ModifyPrivateDnsNameOptionsAsyncHelper(const ModifyPrivateDnsNameOptionsRequest& request, const ModifyPrivateDnsNameOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyPrivateDnsNameOptionsAsync(const ModifyPrivateDnsNameOptionsRequest& request, const ModifyPrivateDnsNameOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyPrivateDnsNameOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyPrivateDnsNameOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyReservedInstancesOutcome EC2Client::ModifyReservedInstances(const ModifyReservedInstancesRequest& request) const
@@ -11256,14 +11256,14 @@ ModifyReservedInstancesOutcomeCallable EC2Client::ModifyReservedInstancesCallabl
   return task->get_future();
 }
 
-void EC2Client::ModifyReservedInstancesAsync(const ModifyReservedInstancesRequest& request, const ModifyReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyReservedInstancesAsyncHelper(EC2Client const * const clientThis, const ModifyReservedInstancesRequest& request, const ModifyReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyReservedInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyReservedInstances(request), context);
 }
 
-void EC2Client::ModifyReservedInstancesAsyncHelper(const ModifyReservedInstancesRequest& request, const ModifyReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyReservedInstancesAsync(const ModifyReservedInstancesRequest& request, const ModifyReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyReservedInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyReservedInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifySecurityGroupRulesOutcome EC2Client::ModifySecurityGroupRules(const ModifySecurityGroupRulesRequest& request) const
@@ -11280,14 +11280,14 @@ ModifySecurityGroupRulesOutcomeCallable EC2Client::ModifySecurityGroupRulesCalla
   return task->get_future();
 }
 
-void EC2Client::ModifySecurityGroupRulesAsync(const ModifySecurityGroupRulesRequest& request, const ModifySecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifySecurityGroupRulesAsyncHelper(EC2Client const * const clientThis, const ModifySecurityGroupRulesRequest& request, const ModifySecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifySecurityGroupRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifySecurityGroupRules(request), context);
 }
 
-void EC2Client::ModifySecurityGroupRulesAsyncHelper(const ModifySecurityGroupRulesRequest& request, const ModifySecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifySecurityGroupRulesAsync(const ModifySecurityGroupRulesRequest& request, const ModifySecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifySecurityGroupRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifySecurityGroupRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifySnapshotAttributeOutcome EC2Client::ModifySnapshotAttribute(const ModifySnapshotAttributeRequest& request) const
@@ -11304,14 +11304,14 @@ ModifySnapshotAttributeOutcomeCallable EC2Client::ModifySnapshotAttributeCallabl
   return task->get_future();
 }
 
-void EC2Client::ModifySnapshotAttributeAsync(const ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifySnapshotAttributeAsyncHelper(EC2Client const * const clientThis, const ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifySnapshotAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifySnapshotAttribute(request), context);
 }
 
-void EC2Client::ModifySnapshotAttributeAsyncHelper(const ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifySnapshotAttributeAsync(const ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifySnapshotAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifySnapshotAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifySnapshotTierOutcome EC2Client::ModifySnapshotTier(const ModifySnapshotTierRequest& request) const
@@ -11328,14 +11328,14 @@ ModifySnapshotTierOutcomeCallable EC2Client::ModifySnapshotTierCallable(const Mo
   return task->get_future();
 }
 
-void EC2Client::ModifySnapshotTierAsync(const ModifySnapshotTierRequest& request, const ModifySnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifySnapshotTierAsyncHelper(EC2Client const * const clientThis, const ModifySnapshotTierRequest& request, const ModifySnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifySnapshotTierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifySnapshotTier(request), context);
 }
 
-void EC2Client::ModifySnapshotTierAsyncHelper(const ModifySnapshotTierRequest& request, const ModifySnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifySnapshotTierAsync(const ModifySnapshotTierRequest& request, const ModifySnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifySnapshotTier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifySnapshotTierAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifySpotFleetRequestOutcome EC2Client::ModifySpotFleetRequest(const ModifySpotFleetRequestRequest& request) const
@@ -11352,14 +11352,14 @@ ModifySpotFleetRequestOutcomeCallable EC2Client::ModifySpotFleetRequestCallable(
   return task->get_future();
 }
 
-void EC2Client::ModifySpotFleetRequestAsync(const ModifySpotFleetRequestRequest& request, const ModifySpotFleetRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifySpotFleetRequestAsyncHelper(EC2Client const * const clientThis, const ModifySpotFleetRequestRequest& request, const ModifySpotFleetRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifySpotFleetRequestAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifySpotFleetRequest(request), context);
 }
 
-void EC2Client::ModifySpotFleetRequestAsyncHelper(const ModifySpotFleetRequestRequest& request, const ModifySpotFleetRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifySpotFleetRequestAsync(const ModifySpotFleetRequestRequest& request, const ModifySpotFleetRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifySpotFleetRequest(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifySpotFleetRequestAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifySubnetAttributeOutcome EC2Client::ModifySubnetAttribute(const ModifySubnetAttributeRequest& request) const
@@ -11376,14 +11376,14 @@ ModifySubnetAttributeOutcomeCallable EC2Client::ModifySubnetAttributeCallable(co
   return task->get_future();
 }
 
-void EC2Client::ModifySubnetAttributeAsync(const ModifySubnetAttributeRequest& request, const ModifySubnetAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifySubnetAttributeAsyncHelper(EC2Client const * const clientThis, const ModifySubnetAttributeRequest& request, const ModifySubnetAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifySubnetAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifySubnetAttribute(request), context);
 }
 
-void EC2Client::ModifySubnetAttributeAsyncHelper(const ModifySubnetAttributeRequest& request, const ModifySubnetAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifySubnetAttributeAsync(const ModifySubnetAttributeRequest& request, const ModifySubnetAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifySubnetAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifySubnetAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyTrafficMirrorFilterNetworkServicesOutcome EC2Client::ModifyTrafficMirrorFilterNetworkServices(const ModifyTrafficMirrorFilterNetworkServicesRequest& request) const
@@ -11400,14 +11400,14 @@ ModifyTrafficMirrorFilterNetworkServicesOutcomeCallable EC2Client::ModifyTraffic
   return task->get_future();
 }
 
-void EC2Client::ModifyTrafficMirrorFilterNetworkServicesAsync(const ModifyTrafficMirrorFilterNetworkServicesRequest& request, const ModifyTrafficMirrorFilterNetworkServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyTrafficMirrorFilterNetworkServicesAsyncHelper(EC2Client const * const clientThis, const ModifyTrafficMirrorFilterNetworkServicesRequest& request, const ModifyTrafficMirrorFilterNetworkServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyTrafficMirrorFilterNetworkServicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyTrafficMirrorFilterNetworkServices(request), context);
 }
 
-void EC2Client::ModifyTrafficMirrorFilterNetworkServicesAsyncHelper(const ModifyTrafficMirrorFilterNetworkServicesRequest& request, const ModifyTrafficMirrorFilterNetworkServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyTrafficMirrorFilterNetworkServicesAsync(const ModifyTrafficMirrorFilterNetworkServicesRequest& request, const ModifyTrafficMirrorFilterNetworkServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyTrafficMirrorFilterNetworkServices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyTrafficMirrorFilterNetworkServicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyTrafficMirrorFilterRuleOutcome EC2Client::ModifyTrafficMirrorFilterRule(const ModifyTrafficMirrorFilterRuleRequest& request) const
@@ -11424,14 +11424,14 @@ ModifyTrafficMirrorFilterRuleOutcomeCallable EC2Client::ModifyTrafficMirrorFilte
   return task->get_future();
 }
 
-void EC2Client::ModifyTrafficMirrorFilterRuleAsync(const ModifyTrafficMirrorFilterRuleRequest& request, const ModifyTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyTrafficMirrorFilterRuleAsyncHelper(EC2Client const * const clientThis, const ModifyTrafficMirrorFilterRuleRequest& request, const ModifyTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyTrafficMirrorFilterRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyTrafficMirrorFilterRule(request), context);
 }
 
-void EC2Client::ModifyTrafficMirrorFilterRuleAsyncHelper(const ModifyTrafficMirrorFilterRuleRequest& request, const ModifyTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyTrafficMirrorFilterRuleAsync(const ModifyTrafficMirrorFilterRuleRequest& request, const ModifyTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyTrafficMirrorFilterRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyTrafficMirrorFilterRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyTrafficMirrorSessionOutcome EC2Client::ModifyTrafficMirrorSession(const ModifyTrafficMirrorSessionRequest& request) const
@@ -11448,14 +11448,14 @@ ModifyTrafficMirrorSessionOutcomeCallable EC2Client::ModifyTrafficMirrorSessionC
   return task->get_future();
 }
 
-void EC2Client::ModifyTrafficMirrorSessionAsync(const ModifyTrafficMirrorSessionRequest& request, const ModifyTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyTrafficMirrorSessionAsyncHelper(EC2Client const * const clientThis, const ModifyTrafficMirrorSessionRequest& request, const ModifyTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyTrafficMirrorSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyTrafficMirrorSession(request), context);
 }
 
-void EC2Client::ModifyTrafficMirrorSessionAsyncHelper(const ModifyTrafficMirrorSessionRequest& request, const ModifyTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyTrafficMirrorSessionAsync(const ModifyTrafficMirrorSessionRequest& request, const ModifyTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyTrafficMirrorSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyTrafficMirrorSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyTransitGatewayOutcome EC2Client::ModifyTransitGateway(const ModifyTransitGatewayRequest& request) const
@@ -11472,14 +11472,14 @@ ModifyTransitGatewayOutcomeCallable EC2Client::ModifyTransitGatewayCallable(cons
   return task->get_future();
 }
 
-void EC2Client::ModifyTransitGatewayAsync(const ModifyTransitGatewayRequest& request, const ModifyTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyTransitGatewayAsyncHelper(EC2Client const * const clientThis, const ModifyTransitGatewayRequest& request, const ModifyTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyTransitGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyTransitGateway(request), context);
 }
 
-void EC2Client::ModifyTransitGatewayAsyncHelper(const ModifyTransitGatewayRequest& request, const ModifyTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyTransitGatewayAsync(const ModifyTransitGatewayRequest& request, const ModifyTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyTransitGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyTransitGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyTransitGatewayPrefixListReferenceOutcome EC2Client::ModifyTransitGatewayPrefixListReference(const ModifyTransitGatewayPrefixListReferenceRequest& request) const
@@ -11496,14 +11496,14 @@ ModifyTransitGatewayPrefixListReferenceOutcomeCallable EC2Client::ModifyTransitG
   return task->get_future();
 }
 
-void EC2Client::ModifyTransitGatewayPrefixListReferenceAsync(const ModifyTransitGatewayPrefixListReferenceRequest& request, const ModifyTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyTransitGatewayPrefixListReferenceAsyncHelper(EC2Client const * const clientThis, const ModifyTransitGatewayPrefixListReferenceRequest& request, const ModifyTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyTransitGatewayPrefixListReferenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyTransitGatewayPrefixListReference(request), context);
 }
 
-void EC2Client::ModifyTransitGatewayPrefixListReferenceAsyncHelper(const ModifyTransitGatewayPrefixListReferenceRequest& request, const ModifyTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyTransitGatewayPrefixListReferenceAsync(const ModifyTransitGatewayPrefixListReferenceRequest& request, const ModifyTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyTransitGatewayPrefixListReference(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyTransitGatewayPrefixListReferenceAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyTransitGatewayVpcAttachmentOutcome EC2Client::ModifyTransitGatewayVpcAttachment(const ModifyTransitGatewayVpcAttachmentRequest& request) const
@@ -11520,14 +11520,14 @@ ModifyTransitGatewayVpcAttachmentOutcomeCallable EC2Client::ModifyTransitGateway
   return task->get_future();
 }
 
-void EC2Client::ModifyTransitGatewayVpcAttachmentAsync(const ModifyTransitGatewayVpcAttachmentRequest& request, const ModifyTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyTransitGatewayVpcAttachmentAsyncHelper(EC2Client const * const clientThis, const ModifyTransitGatewayVpcAttachmentRequest& request, const ModifyTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyTransitGatewayVpcAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyTransitGatewayVpcAttachment(request), context);
 }
 
-void EC2Client::ModifyTransitGatewayVpcAttachmentAsyncHelper(const ModifyTransitGatewayVpcAttachmentRequest& request, const ModifyTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyTransitGatewayVpcAttachmentAsync(const ModifyTransitGatewayVpcAttachmentRequest& request, const ModifyTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyTransitGatewayVpcAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyTransitGatewayVpcAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVolumeOutcome EC2Client::ModifyVolume(const ModifyVolumeRequest& request) const
@@ -11544,14 +11544,14 @@ ModifyVolumeOutcomeCallable EC2Client::ModifyVolumeCallable(const ModifyVolumeRe
   return task->get_future();
 }
 
-void EC2Client::ModifyVolumeAsync(const ModifyVolumeRequest& request, const ModifyVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVolumeAsyncHelper(EC2Client const * const clientThis, const ModifyVolumeRequest& request, const ModifyVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVolume(request), context);
 }
 
-void EC2Client::ModifyVolumeAsyncHelper(const ModifyVolumeRequest& request, const ModifyVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVolumeAsync(const ModifyVolumeRequest& request, const ModifyVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVolumeAttributeOutcome EC2Client::ModifyVolumeAttribute(const ModifyVolumeAttributeRequest& request) const
@@ -11568,14 +11568,14 @@ ModifyVolumeAttributeOutcomeCallable EC2Client::ModifyVolumeAttributeCallable(co
   return task->get_future();
 }
 
-void EC2Client::ModifyVolumeAttributeAsync(const ModifyVolumeAttributeRequest& request, const ModifyVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVolumeAttributeAsyncHelper(EC2Client const * const clientThis, const ModifyVolumeAttributeRequest& request, const ModifyVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVolumeAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVolumeAttribute(request), context);
 }
 
-void EC2Client::ModifyVolumeAttributeAsyncHelper(const ModifyVolumeAttributeRequest& request, const ModifyVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVolumeAttributeAsync(const ModifyVolumeAttributeRequest& request, const ModifyVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVolumeAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVolumeAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpcAttributeOutcome EC2Client::ModifyVpcAttribute(const ModifyVpcAttributeRequest& request) const
@@ -11592,14 +11592,14 @@ ModifyVpcAttributeOutcomeCallable EC2Client::ModifyVpcAttributeCallable(const Mo
   return task->get_future();
 }
 
-void EC2Client::ModifyVpcAttributeAsync(const ModifyVpcAttributeRequest& request, const ModifyVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpcAttributeAsyncHelper(EC2Client const * const clientThis, const ModifyVpcAttributeRequest& request, const ModifyVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpcAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpcAttribute(request), context);
 }
 
-void EC2Client::ModifyVpcAttributeAsyncHelper(const ModifyVpcAttributeRequest& request, const ModifyVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpcAttributeAsync(const ModifyVpcAttributeRequest& request, const ModifyVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpcAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpcAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpcEndpointOutcome EC2Client::ModifyVpcEndpoint(const ModifyVpcEndpointRequest& request) const
@@ -11616,14 +11616,14 @@ ModifyVpcEndpointOutcomeCallable EC2Client::ModifyVpcEndpointCallable(const Modi
   return task->get_future();
 }
 
-void EC2Client::ModifyVpcEndpointAsync(const ModifyVpcEndpointRequest& request, const ModifyVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpcEndpointAsyncHelper(EC2Client const * const clientThis, const ModifyVpcEndpointRequest& request, const ModifyVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpcEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpcEndpoint(request), context);
 }
 
-void EC2Client::ModifyVpcEndpointAsyncHelper(const ModifyVpcEndpointRequest& request, const ModifyVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpcEndpointAsync(const ModifyVpcEndpointRequest& request, const ModifyVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpcEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpcEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpcEndpointConnectionNotificationOutcome EC2Client::ModifyVpcEndpointConnectionNotification(const ModifyVpcEndpointConnectionNotificationRequest& request) const
@@ -11640,14 +11640,14 @@ ModifyVpcEndpointConnectionNotificationOutcomeCallable EC2Client::ModifyVpcEndpo
   return task->get_future();
 }
 
-void EC2Client::ModifyVpcEndpointConnectionNotificationAsync(const ModifyVpcEndpointConnectionNotificationRequest& request, const ModifyVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpcEndpointConnectionNotificationAsyncHelper(EC2Client const * const clientThis, const ModifyVpcEndpointConnectionNotificationRequest& request, const ModifyVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpcEndpointConnectionNotificationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpcEndpointConnectionNotification(request), context);
 }
 
-void EC2Client::ModifyVpcEndpointConnectionNotificationAsyncHelper(const ModifyVpcEndpointConnectionNotificationRequest& request, const ModifyVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpcEndpointConnectionNotificationAsync(const ModifyVpcEndpointConnectionNotificationRequest& request, const ModifyVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpcEndpointConnectionNotification(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpcEndpointConnectionNotificationAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpcEndpointServiceConfigurationOutcome EC2Client::ModifyVpcEndpointServiceConfiguration(const ModifyVpcEndpointServiceConfigurationRequest& request) const
@@ -11664,14 +11664,14 @@ ModifyVpcEndpointServiceConfigurationOutcomeCallable EC2Client::ModifyVpcEndpoin
   return task->get_future();
 }
 
-void EC2Client::ModifyVpcEndpointServiceConfigurationAsync(const ModifyVpcEndpointServiceConfigurationRequest& request, const ModifyVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpcEndpointServiceConfigurationAsyncHelper(EC2Client const * const clientThis, const ModifyVpcEndpointServiceConfigurationRequest& request, const ModifyVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpcEndpointServiceConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpcEndpointServiceConfiguration(request), context);
 }
 
-void EC2Client::ModifyVpcEndpointServiceConfigurationAsyncHelper(const ModifyVpcEndpointServiceConfigurationRequest& request, const ModifyVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpcEndpointServiceConfigurationAsync(const ModifyVpcEndpointServiceConfigurationRequest& request, const ModifyVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpcEndpointServiceConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpcEndpointServiceConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpcEndpointServicePayerResponsibilityOutcome EC2Client::ModifyVpcEndpointServicePayerResponsibility(const ModifyVpcEndpointServicePayerResponsibilityRequest& request) const
@@ -11688,14 +11688,14 @@ ModifyVpcEndpointServicePayerResponsibilityOutcomeCallable EC2Client::ModifyVpcE
   return task->get_future();
 }
 
-void EC2Client::ModifyVpcEndpointServicePayerResponsibilityAsync(const ModifyVpcEndpointServicePayerResponsibilityRequest& request, const ModifyVpcEndpointServicePayerResponsibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpcEndpointServicePayerResponsibilityAsyncHelper(EC2Client const * const clientThis, const ModifyVpcEndpointServicePayerResponsibilityRequest& request, const ModifyVpcEndpointServicePayerResponsibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpcEndpointServicePayerResponsibilityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpcEndpointServicePayerResponsibility(request), context);
 }
 
-void EC2Client::ModifyVpcEndpointServicePayerResponsibilityAsyncHelper(const ModifyVpcEndpointServicePayerResponsibilityRequest& request, const ModifyVpcEndpointServicePayerResponsibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpcEndpointServicePayerResponsibilityAsync(const ModifyVpcEndpointServicePayerResponsibilityRequest& request, const ModifyVpcEndpointServicePayerResponsibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpcEndpointServicePayerResponsibility(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpcEndpointServicePayerResponsibilityAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpcEndpointServicePermissionsOutcome EC2Client::ModifyVpcEndpointServicePermissions(const ModifyVpcEndpointServicePermissionsRequest& request) const
@@ -11712,14 +11712,14 @@ ModifyVpcEndpointServicePermissionsOutcomeCallable EC2Client::ModifyVpcEndpointS
   return task->get_future();
 }
 
-void EC2Client::ModifyVpcEndpointServicePermissionsAsync(const ModifyVpcEndpointServicePermissionsRequest& request, const ModifyVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpcEndpointServicePermissionsAsyncHelper(EC2Client const * const clientThis, const ModifyVpcEndpointServicePermissionsRequest& request, const ModifyVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpcEndpointServicePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpcEndpointServicePermissions(request), context);
 }
 
-void EC2Client::ModifyVpcEndpointServicePermissionsAsyncHelper(const ModifyVpcEndpointServicePermissionsRequest& request, const ModifyVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpcEndpointServicePermissionsAsync(const ModifyVpcEndpointServicePermissionsRequest& request, const ModifyVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpcEndpointServicePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpcEndpointServicePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpcPeeringConnectionOptionsOutcome EC2Client::ModifyVpcPeeringConnectionOptions(const ModifyVpcPeeringConnectionOptionsRequest& request) const
@@ -11736,14 +11736,14 @@ ModifyVpcPeeringConnectionOptionsOutcomeCallable EC2Client::ModifyVpcPeeringConn
   return task->get_future();
 }
 
-void EC2Client::ModifyVpcPeeringConnectionOptionsAsync(const ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpcPeeringConnectionOptionsAsyncHelper(EC2Client const * const clientThis, const ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpcPeeringConnectionOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpcPeeringConnectionOptions(request), context);
 }
 
-void EC2Client::ModifyVpcPeeringConnectionOptionsAsyncHelper(const ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpcPeeringConnectionOptionsAsync(const ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpcPeeringConnectionOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpcPeeringConnectionOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpcTenancyOutcome EC2Client::ModifyVpcTenancy(const ModifyVpcTenancyRequest& request) const
@@ -11760,14 +11760,14 @@ ModifyVpcTenancyOutcomeCallable EC2Client::ModifyVpcTenancyCallable(const Modify
   return task->get_future();
 }
 
-void EC2Client::ModifyVpcTenancyAsync(const ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpcTenancyAsyncHelper(EC2Client const * const clientThis, const ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpcTenancyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpcTenancy(request), context);
 }
 
-void EC2Client::ModifyVpcTenancyAsyncHelper(const ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpcTenancyAsync(const ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpcTenancy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpcTenancyAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpnConnectionOutcome EC2Client::ModifyVpnConnection(const ModifyVpnConnectionRequest& request) const
@@ -11784,14 +11784,14 @@ ModifyVpnConnectionOutcomeCallable EC2Client::ModifyVpnConnectionCallable(const 
   return task->get_future();
 }
 
-void EC2Client::ModifyVpnConnectionAsync(const ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpnConnectionAsyncHelper(EC2Client const * const clientThis, const ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpnConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpnConnection(request), context);
 }
 
-void EC2Client::ModifyVpnConnectionAsyncHelper(const ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpnConnectionAsync(const ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpnConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpnConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpnConnectionOptionsOutcome EC2Client::ModifyVpnConnectionOptions(const ModifyVpnConnectionOptionsRequest& request) const
@@ -11808,14 +11808,14 @@ ModifyVpnConnectionOptionsOutcomeCallable EC2Client::ModifyVpnConnectionOptionsC
   return task->get_future();
 }
 
-void EC2Client::ModifyVpnConnectionOptionsAsync(const ModifyVpnConnectionOptionsRequest& request, const ModifyVpnConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpnConnectionOptionsAsyncHelper(EC2Client const * const clientThis, const ModifyVpnConnectionOptionsRequest& request, const ModifyVpnConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpnConnectionOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpnConnectionOptions(request), context);
 }
 
-void EC2Client::ModifyVpnConnectionOptionsAsyncHelper(const ModifyVpnConnectionOptionsRequest& request, const ModifyVpnConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpnConnectionOptionsAsync(const ModifyVpnConnectionOptionsRequest& request, const ModifyVpnConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpnConnectionOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpnConnectionOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpnTunnelCertificateOutcome EC2Client::ModifyVpnTunnelCertificate(const ModifyVpnTunnelCertificateRequest& request) const
@@ -11832,14 +11832,14 @@ ModifyVpnTunnelCertificateOutcomeCallable EC2Client::ModifyVpnTunnelCertificateC
   return task->get_future();
 }
 
-void EC2Client::ModifyVpnTunnelCertificateAsync(const ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpnTunnelCertificateAsyncHelper(EC2Client const * const clientThis, const ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpnTunnelCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpnTunnelCertificate(request), context);
 }
 
-void EC2Client::ModifyVpnTunnelCertificateAsyncHelper(const ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpnTunnelCertificateAsync(const ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpnTunnelCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpnTunnelCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyVpnTunnelOptionsOutcome EC2Client::ModifyVpnTunnelOptions(const ModifyVpnTunnelOptionsRequest& request) const
@@ -11856,14 +11856,14 @@ ModifyVpnTunnelOptionsOutcomeCallable EC2Client::ModifyVpnTunnelOptionsCallable(
   return task->get_future();
 }
 
-void EC2Client::ModifyVpnTunnelOptionsAsync(const ModifyVpnTunnelOptionsRequest& request, const ModifyVpnTunnelOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientModifyVpnTunnelOptionsAsyncHelper(EC2Client const * const clientThis, const ModifyVpnTunnelOptionsRequest& request, const ModifyVpnTunnelOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpnTunnelOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyVpnTunnelOptions(request), context);
 }
 
-void EC2Client::ModifyVpnTunnelOptionsAsyncHelper(const ModifyVpnTunnelOptionsRequest& request, const ModifyVpnTunnelOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ModifyVpnTunnelOptionsAsync(const ModifyVpnTunnelOptionsRequest& request, const ModifyVpnTunnelOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyVpnTunnelOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientModifyVpnTunnelOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 MonitorInstancesOutcome EC2Client::MonitorInstances(const MonitorInstancesRequest& request) const
@@ -11880,14 +11880,14 @@ MonitorInstancesOutcomeCallable EC2Client::MonitorInstancesCallable(const Monito
   return task->get_future();
 }
 
-void EC2Client::MonitorInstancesAsync(const MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientMonitorInstancesAsyncHelper(EC2Client const * const clientThis, const MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MonitorInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->MonitorInstances(request), context);
 }
 
-void EC2Client::MonitorInstancesAsyncHelper(const MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::MonitorInstancesAsync(const MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, MonitorInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientMonitorInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 MoveAddressToVpcOutcome EC2Client::MoveAddressToVpc(const MoveAddressToVpcRequest& request) const
@@ -11904,14 +11904,14 @@ MoveAddressToVpcOutcomeCallable EC2Client::MoveAddressToVpcCallable(const MoveAd
   return task->get_future();
 }
 
-void EC2Client::MoveAddressToVpcAsync(const MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientMoveAddressToVpcAsyncHelper(EC2Client const * const clientThis, const MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MoveAddressToVpcAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->MoveAddressToVpc(request), context);
 }
 
-void EC2Client::MoveAddressToVpcAsyncHelper(const MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::MoveAddressToVpcAsync(const MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, MoveAddressToVpc(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientMoveAddressToVpcAsyncHelper( this, request, handler, context ); } );
 }
 
 MoveByoipCidrToIpamOutcome EC2Client::MoveByoipCidrToIpam(const MoveByoipCidrToIpamRequest& request) const
@@ -11928,14 +11928,14 @@ MoveByoipCidrToIpamOutcomeCallable EC2Client::MoveByoipCidrToIpamCallable(const 
   return task->get_future();
 }
 
-void EC2Client::MoveByoipCidrToIpamAsync(const MoveByoipCidrToIpamRequest& request, const MoveByoipCidrToIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientMoveByoipCidrToIpamAsyncHelper(EC2Client const * const clientThis, const MoveByoipCidrToIpamRequest& request, const MoveByoipCidrToIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MoveByoipCidrToIpamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->MoveByoipCidrToIpam(request), context);
 }
 
-void EC2Client::MoveByoipCidrToIpamAsyncHelper(const MoveByoipCidrToIpamRequest& request, const MoveByoipCidrToIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::MoveByoipCidrToIpamAsync(const MoveByoipCidrToIpamRequest& request, const MoveByoipCidrToIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, MoveByoipCidrToIpam(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientMoveByoipCidrToIpamAsyncHelper( this, request, handler, context ); } );
 }
 
 ProvisionByoipCidrOutcome EC2Client::ProvisionByoipCidr(const ProvisionByoipCidrRequest& request) const
@@ -11952,14 +11952,14 @@ ProvisionByoipCidrOutcomeCallable EC2Client::ProvisionByoipCidrCallable(const Pr
   return task->get_future();
 }
 
-void EC2Client::ProvisionByoipCidrAsync(const ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientProvisionByoipCidrAsyncHelper(EC2Client const * const clientThis, const ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ProvisionByoipCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ProvisionByoipCidr(request), context);
 }
 
-void EC2Client::ProvisionByoipCidrAsyncHelper(const ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ProvisionByoipCidrAsync(const ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ProvisionByoipCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientProvisionByoipCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 ProvisionIpamPoolCidrOutcome EC2Client::ProvisionIpamPoolCidr(const ProvisionIpamPoolCidrRequest& request) const
@@ -11976,14 +11976,14 @@ ProvisionIpamPoolCidrOutcomeCallable EC2Client::ProvisionIpamPoolCidrCallable(co
   return task->get_future();
 }
 
-void EC2Client::ProvisionIpamPoolCidrAsync(const ProvisionIpamPoolCidrRequest& request, const ProvisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientProvisionIpamPoolCidrAsyncHelper(EC2Client const * const clientThis, const ProvisionIpamPoolCidrRequest& request, const ProvisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ProvisionIpamPoolCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ProvisionIpamPoolCidr(request), context);
 }
 
-void EC2Client::ProvisionIpamPoolCidrAsyncHelper(const ProvisionIpamPoolCidrRequest& request, const ProvisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ProvisionIpamPoolCidrAsync(const ProvisionIpamPoolCidrRequest& request, const ProvisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ProvisionIpamPoolCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientProvisionIpamPoolCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 ProvisionPublicIpv4PoolCidrOutcome EC2Client::ProvisionPublicIpv4PoolCidr(const ProvisionPublicIpv4PoolCidrRequest& request) const
@@ -12000,14 +12000,14 @@ ProvisionPublicIpv4PoolCidrOutcomeCallable EC2Client::ProvisionPublicIpv4PoolCid
   return task->get_future();
 }
 
-void EC2Client::ProvisionPublicIpv4PoolCidrAsync(const ProvisionPublicIpv4PoolCidrRequest& request, const ProvisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientProvisionPublicIpv4PoolCidrAsyncHelper(EC2Client const * const clientThis, const ProvisionPublicIpv4PoolCidrRequest& request, const ProvisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ProvisionPublicIpv4PoolCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ProvisionPublicIpv4PoolCidr(request), context);
 }
 
-void EC2Client::ProvisionPublicIpv4PoolCidrAsyncHelper(const ProvisionPublicIpv4PoolCidrRequest& request, const ProvisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ProvisionPublicIpv4PoolCidrAsync(const ProvisionPublicIpv4PoolCidrRequest& request, const ProvisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ProvisionPublicIpv4PoolCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientProvisionPublicIpv4PoolCidrAsyncHelper( this, request, handler, context ); } );
 }
 
 PurchaseHostReservationOutcome EC2Client::PurchaseHostReservation(const PurchaseHostReservationRequest& request) const
@@ -12024,14 +12024,14 @@ PurchaseHostReservationOutcomeCallable EC2Client::PurchaseHostReservationCallabl
   return task->get_future();
 }
 
-void EC2Client::PurchaseHostReservationAsync(const PurchaseHostReservationRequest& request, const PurchaseHostReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientPurchaseHostReservationAsyncHelper(EC2Client const * const clientThis, const PurchaseHostReservationRequest& request, const PurchaseHostReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PurchaseHostReservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PurchaseHostReservation(request), context);
 }
 
-void EC2Client::PurchaseHostReservationAsyncHelper(const PurchaseHostReservationRequest& request, const PurchaseHostReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::PurchaseHostReservationAsync(const PurchaseHostReservationRequest& request, const PurchaseHostReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PurchaseHostReservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientPurchaseHostReservationAsyncHelper( this, request, handler, context ); } );
 }
 
 PurchaseReservedInstancesOfferingOutcome EC2Client::PurchaseReservedInstancesOffering(const PurchaseReservedInstancesOfferingRequest& request) const
@@ -12048,14 +12048,14 @@ PurchaseReservedInstancesOfferingOutcomeCallable EC2Client::PurchaseReservedInst
   return task->get_future();
 }
 
-void EC2Client::PurchaseReservedInstancesOfferingAsync(const PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientPurchaseReservedInstancesOfferingAsyncHelper(EC2Client const * const clientThis, const PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PurchaseReservedInstancesOfferingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PurchaseReservedInstancesOffering(request), context);
 }
 
-void EC2Client::PurchaseReservedInstancesOfferingAsyncHelper(const PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::PurchaseReservedInstancesOfferingAsync(const PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PurchaseReservedInstancesOffering(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientPurchaseReservedInstancesOfferingAsyncHelper( this, request, handler, context ); } );
 }
 
 PurchaseScheduledInstancesOutcome EC2Client::PurchaseScheduledInstances(const PurchaseScheduledInstancesRequest& request) const
@@ -12072,14 +12072,14 @@ PurchaseScheduledInstancesOutcomeCallable EC2Client::PurchaseScheduledInstancesC
   return task->get_future();
 }
 
-void EC2Client::PurchaseScheduledInstancesAsync(const PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientPurchaseScheduledInstancesAsyncHelper(EC2Client const * const clientThis, const PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PurchaseScheduledInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PurchaseScheduledInstances(request), context);
 }
 
-void EC2Client::PurchaseScheduledInstancesAsyncHelper(const PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::PurchaseScheduledInstancesAsync(const PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PurchaseScheduledInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientPurchaseScheduledInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 RebootInstancesOutcome EC2Client::RebootInstances(const RebootInstancesRequest& request) const
@@ -12096,14 +12096,14 @@ RebootInstancesOutcomeCallable EC2Client::RebootInstancesCallable(const RebootIn
   return task->get_future();
 }
 
-void EC2Client::RebootInstancesAsync(const RebootInstancesRequest& request, const RebootInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRebootInstancesAsyncHelper(EC2Client const * const clientThis, const RebootInstancesRequest& request, const RebootInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RebootInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RebootInstances(request), context);
 }
 
-void EC2Client::RebootInstancesAsyncHelper(const RebootInstancesRequest& request, const RebootInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RebootInstancesAsync(const RebootInstancesRequest& request, const RebootInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RebootInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRebootInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterImageOutcome EC2Client::RegisterImage(const RegisterImageRequest& request) const
@@ -12120,14 +12120,14 @@ RegisterImageOutcomeCallable EC2Client::RegisterImageCallable(const RegisterImag
   return task->get_future();
 }
 
-void EC2Client::RegisterImageAsync(const RegisterImageRequest& request, const RegisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRegisterImageAsyncHelper(EC2Client const * const clientThis, const RegisterImageRequest& request, const RegisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterImage(request), context);
 }
 
-void EC2Client::RegisterImageAsyncHelper(const RegisterImageRequest& request, const RegisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RegisterImageAsync(const RegisterImageRequest& request, const RegisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRegisterImageAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterInstanceEventNotificationAttributesOutcome EC2Client::RegisterInstanceEventNotificationAttributes(const RegisterInstanceEventNotificationAttributesRequest& request) const
@@ -12144,14 +12144,14 @@ RegisterInstanceEventNotificationAttributesOutcomeCallable EC2Client::RegisterIn
   return task->get_future();
 }
 
-void EC2Client::RegisterInstanceEventNotificationAttributesAsync(const RegisterInstanceEventNotificationAttributesRequest& request, const RegisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRegisterInstanceEventNotificationAttributesAsyncHelper(EC2Client const * const clientThis, const RegisterInstanceEventNotificationAttributesRequest& request, const RegisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterInstanceEventNotificationAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterInstanceEventNotificationAttributes(request), context);
 }
 
-void EC2Client::RegisterInstanceEventNotificationAttributesAsyncHelper(const RegisterInstanceEventNotificationAttributesRequest& request, const RegisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RegisterInstanceEventNotificationAttributesAsync(const RegisterInstanceEventNotificationAttributesRequest& request, const RegisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterInstanceEventNotificationAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRegisterInstanceEventNotificationAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterTransitGatewayMulticastGroupMembersOutcome EC2Client::RegisterTransitGatewayMulticastGroupMembers(const RegisterTransitGatewayMulticastGroupMembersRequest& request) const
@@ -12168,14 +12168,14 @@ RegisterTransitGatewayMulticastGroupMembersOutcomeCallable EC2Client::RegisterTr
   return task->get_future();
 }
 
-void EC2Client::RegisterTransitGatewayMulticastGroupMembersAsync(const RegisterTransitGatewayMulticastGroupMembersRequest& request, const RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRegisterTransitGatewayMulticastGroupMembersAsyncHelper(EC2Client const * const clientThis, const RegisterTransitGatewayMulticastGroupMembersRequest& request, const RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterTransitGatewayMulticastGroupMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterTransitGatewayMulticastGroupMembers(request), context);
 }
 
-void EC2Client::RegisterTransitGatewayMulticastGroupMembersAsyncHelper(const RegisterTransitGatewayMulticastGroupMembersRequest& request, const RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RegisterTransitGatewayMulticastGroupMembersAsync(const RegisterTransitGatewayMulticastGroupMembersRequest& request, const RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterTransitGatewayMulticastGroupMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRegisterTransitGatewayMulticastGroupMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterTransitGatewayMulticastGroupSourcesOutcome EC2Client::RegisterTransitGatewayMulticastGroupSources(const RegisterTransitGatewayMulticastGroupSourcesRequest& request) const
@@ -12192,14 +12192,14 @@ RegisterTransitGatewayMulticastGroupSourcesOutcomeCallable EC2Client::RegisterTr
   return task->get_future();
 }
 
-void EC2Client::RegisterTransitGatewayMulticastGroupSourcesAsync(const RegisterTransitGatewayMulticastGroupSourcesRequest& request, const RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRegisterTransitGatewayMulticastGroupSourcesAsyncHelper(EC2Client const * const clientThis, const RegisterTransitGatewayMulticastGroupSourcesRequest& request, const RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterTransitGatewayMulticastGroupSourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterTransitGatewayMulticastGroupSources(request), context);
 }
 
-void EC2Client::RegisterTransitGatewayMulticastGroupSourcesAsyncHelper(const RegisterTransitGatewayMulticastGroupSourcesRequest& request, const RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RegisterTransitGatewayMulticastGroupSourcesAsync(const RegisterTransitGatewayMulticastGroupSourcesRequest& request, const RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterTransitGatewayMulticastGroupSources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRegisterTransitGatewayMulticastGroupSourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectTransitGatewayMulticastDomainAssociationsOutcome EC2Client::RejectTransitGatewayMulticastDomainAssociations(const RejectTransitGatewayMulticastDomainAssociationsRequest& request) const
@@ -12216,14 +12216,14 @@ RejectTransitGatewayMulticastDomainAssociationsOutcomeCallable EC2Client::Reject
   return task->get_future();
 }
 
-void EC2Client::RejectTransitGatewayMulticastDomainAssociationsAsync(const RejectTransitGatewayMulticastDomainAssociationsRequest& request, const RejectTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRejectTransitGatewayMulticastDomainAssociationsAsyncHelper(EC2Client const * const clientThis, const RejectTransitGatewayMulticastDomainAssociationsRequest& request, const RejectTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectTransitGatewayMulticastDomainAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectTransitGatewayMulticastDomainAssociations(request), context);
 }
 
-void EC2Client::RejectTransitGatewayMulticastDomainAssociationsAsyncHelper(const RejectTransitGatewayMulticastDomainAssociationsRequest& request, const RejectTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RejectTransitGatewayMulticastDomainAssociationsAsync(const RejectTransitGatewayMulticastDomainAssociationsRequest& request, const RejectTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectTransitGatewayMulticastDomainAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRejectTransitGatewayMulticastDomainAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectTransitGatewayPeeringAttachmentOutcome EC2Client::RejectTransitGatewayPeeringAttachment(const RejectTransitGatewayPeeringAttachmentRequest& request) const
@@ -12240,14 +12240,14 @@ RejectTransitGatewayPeeringAttachmentOutcomeCallable EC2Client::RejectTransitGat
   return task->get_future();
 }
 
-void EC2Client::RejectTransitGatewayPeeringAttachmentAsync(const RejectTransitGatewayPeeringAttachmentRequest& request, const RejectTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRejectTransitGatewayPeeringAttachmentAsyncHelper(EC2Client const * const clientThis, const RejectTransitGatewayPeeringAttachmentRequest& request, const RejectTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectTransitGatewayPeeringAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectTransitGatewayPeeringAttachment(request), context);
 }
 
-void EC2Client::RejectTransitGatewayPeeringAttachmentAsyncHelper(const RejectTransitGatewayPeeringAttachmentRequest& request, const RejectTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RejectTransitGatewayPeeringAttachmentAsync(const RejectTransitGatewayPeeringAttachmentRequest& request, const RejectTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectTransitGatewayPeeringAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRejectTransitGatewayPeeringAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectTransitGatewayVpcAttachmentOutcome EC2Client::RejectTransitGatewayVpcAttachment(const RejectTransitGatewayVpcAttachmentRequest& request) const
@@ -12264,14 +12264,14 @@ RejectTransitGatewayVpcAttachmentOutcomeCallable EC2Client::RejectTransitGateway
   return task->get_future();
 }
 
-void EC2Client::RejectTransitGatewayVpcAttachmentAsync(const RejectTransitGatewayVpcAttachmentRequest& request, const RejectTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRejectTransitGatewayVpcAttachmentAsyncHelper(EC2Client const * const clientThis, const RejectTransitGatewayVpcAttachmentRequest& request, const RejectTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectTransitGatewayVpcAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectTransitGatewayVpcAttachment(request), context);
 }
 
-void EC2Client::RejectTransitGatewayVpcAttachmentAsyncHelper(const RejectTransitGatewayVpcAttachmentRequest& request, const RejectTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RejectTransitGatewayVpcAttachmentAsync(const RejectTransitGatewayVpcAttachmentRequest& request, const RejectTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectTransitGatewayVpcAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRejectTransitGatewayVpcAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectVpcEndpointConnectionsOutcome EC2Client::RejectVpcEndpointConnections(const RejectVpcEndpointConnectionsRequest& request) const
@@ -12288,14 +12288,14 @@ RejectVpcEndpointConnectionsOutcomeCallable EC2Client::RejectVpcEndpointConnecti
   return task->get_future();
 }
 
-void EC2Client::RejectVpcEndpointConnectionsAsync(const RejectVpcEndpointConnectionsRequest& request, const RejectVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRejectVpcEndpointConnectionsAsyncHelper(EC2Client const * const clientThis, const RejectVpcEndpointConnectionsRequest& request, const RejectVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectVpcEndpointConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectVpcEndpointConnections(request), context);
 }
 
-void EC2Client::RejectVpcEndpointConnectionsAsyncHelper(const RejectVpcEndpointConnectionsRequest& request, const RejectVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RejectVpcEndpointConnectionsAsync(const RejectVpcEndpointConnectionsRequest& request, const RejectVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectVpcEndpointConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRejectVpcEndpointConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectVpcPeeringConnectionOutcome EC2Client::RejectVpcPeeringConnection(const RejectVpcPeeringConnectionRequest& request) const
@@ -12312,14 +12312,14 @@ RejectVpcPeeringConnectionOutcomeCallable EC2Client::RejectVpcPeeringConnectionC
   return task->get_future();
 }
 
-void EC2Client::RejectVpcPeeringConnectionAsync(const RejectVpcPeeringConnectionRequest& request, const RejectVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRejectVpcPeeringConnectionAsyncHelper(EC2Client const * const clientThis, const RejectVpcPeeringConnectionRequest& request, const RejectVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectVpcPeeringConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectVpcPeeringConnection(request), context);
 }
 
-void EC2Client::RejectVpcPeeringConnectionAsyncHelper(const RejectVpcPeeringConnectionRequest& request, const RejectVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RejectVpcPeeringConnectionAsync(const RejectVpcPeeringConnectionRequest& request, const RejectVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectVpcPeeringConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRejectVpcPeeringConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 ReleaseAddressOutcome EC2Client::ReleaseAddress(const ReleaseAddressRequest& request) const
@@ -12336,14 +12336,14 @@ ReleaseAddressOutcomeCallable EC2Client::ReleaseAddressCallable(const ReleaseAdd
   return task->get_future();
 }
 
-void EC2Client::ReleaseAddressAsync(const ReleaseAddressRequest& request, const ReleaseAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientReleaseAddressAsyncHelper(EC2Client const * const clientThis, const ReleaseAddressRequest& request, const ReleaseAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReleaseAddressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReleaseAddress(request), context);
 }
 
-void EC2Client::ReleaseAddressAsyncHelper(const ReleaseAddressRequest& request, const ReleaseAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ReleaseAddressAsync(const ReleaseAddressRequest& request, const ReleaseAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReleaseAddress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientReleaseAddressAsyncHelper( this, request, handler, context ); } );
 }
 
 ReleaseHostsOutcome EC2Client::ReleaseHosts(const ReleaseHostsRequest& request) const
@@ -12360,14 +12360,14 @@ ReleaseHostsOutcomeCallable EC2Client::ReleaseHostsCallable(const ReleaseHostsRe
   return task->get_future();
 }
 
-void EC2Client::ReleaseHostsAsync(const ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientReleaseHostsAsyncHelper(EC2Client const * const clientThis, const ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReleaseHostsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReleaseHosts(request), context);
 }
 
-void EC2Client::ReleaseHostsAsyncHelper(const ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ReleaseHostsAsync(const ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReleaseHosts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientReleaseHostsAsyncHelper( this, request, handler, context ); } );
 }
 
 ReleaseIpamPoolAllocationOutcome EC2Client::ReleaseIpamPoolAllocation(const ReleaseIpamPoolAllocationRequest& request) const
@@ -12384,14 +12384,14 @@ ReleaseIpamPoolAllocationOutcomeCallable EC2Client::ReleaseIpamPoolAllocationCal
   return task->get_future();
 }
 
-void EC2Client::ReleaseIpamPoolAllocationAsync(const ReleaseIpamPoolAllocationRequest& request, const ReleaseIpamPoolAllocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientReleaseIpamPoolAllocationAsyncHelper(EC2Client const * const clientThis, const ReleaseIpamPoolAllocationRequest& request, const ReleaseIpamPoolAllocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReleaseIpamPoolAllocationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReleaseIpamPoolAllocation(request), context);
 }
 
-void EC2Client::ReleaseIpamPoolAllocationAsyncHelper(const ReleaseIpamPoolAllocationRequest& request, const ReleaseIpamPoolAllocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ReleaseIpamPoolAllocationAsync(const ReleaseIpamPoolAllocationRequest& request, const ReleaseIpamPoolAllocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReleaseIpamPoolAllocation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientReleaseIpamPoolAllocationAsyncHelper( this, request, handler, context ); } );
 }
 
 ReplaceIamInstanceProfileAssociationOutcome EC2Client::ReplaceIamInstanceProfileAssociation(const ReplaceIamInstanceProfileAssociationRequest& request) const
@@ -12408,14 +12408,14 @@ ReplaceIamInstanceProfileAssociationOutcomeCallable EC2Client::ReplaceIamInstanc
   return task->get_future();
 }
 
-void EC2Client::ReplaceIamInstanceProfileAssociationAsync(const ReplaceIamInstanceProfileAssociationRequest& request, const ReplaceIamInstanceProfileAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientReplaceIamInstanceProfileAssociationAsyncHelper(EC2Client const * const clientThis, const ReplaceIamInstanceProfileAssociationRequest& request, const ReplaceIamInstanceProfileAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReplaceIamInstanceProfileAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReplaceIamInstanceProfileAssociation(request), context);
 }
 
-void EC2Client::ReplaceIamInstanceProfileAssociationAsyncHelper(const ReplaceIamInstanceProfileAssociationRequest& request, const ReplaceIamInstanceProfileAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ReplaceIamInstanceProfileAssociationAsync(const ReplaceIamInstanceProfileAssociationRequest& request, const ReplaceIamInstanceProfileAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReplaceIamInstanceProfileAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientReplaceIamInstanceProfileAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 ReplaceNetworkAclAssociationOutcome EC2Client::ReplaceNetworkAclAssociation(const ReplaceNetworkAclAssociationRequest& request) const
@@ -12432,14 +12432,14 @@ ReplaceNetworkAclAssociationOutcomeCallable EC2Client::ReplaceNetworkAclAssociat
   return task->get_future();
 }
 
-void EC2Client::ReplaceNetworkAclAssociationAsync(const ReplaceNetworkAclAssociationRequest& request, const ReplaceNetworkAclAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientReplaceNetworkAclAssociationAsyncHelper(EC2Client const * const clientThis, const ReplaceNetworkAclAssociationRequest& request, const ReplaceNetworkAclAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReplaceNetworkAclAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReplaceNetworkAclAssociation(request), context);
 }
 
-void EC2Client::ReplaceNetworkAclAssociationAsyncHelper(const ReplaceNetworkAclAssociationRequest& request, const ReplaceNetworkAclAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ReplaceNetworkAclAssociationAsync(const ReplaceNetworkAclAssociationRequest& request, const ReplaceNetworkAclAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReplaceNetworkAclAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientReplaceNetworkAclAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 ReplaceNetworkAclEntryOutcome EC2Client::ReplaceNetworkAclEntry(const ReplaceNetworkAclEntryRequest& request) const
@@ -12456,14 +12456,14 @@ ReplaceNetworkAclEntryOutcomeCallable EC2Client::ReplaceNetworkAclEntryCallable(
   return task->get_future();
 }
 
-void EC2Client::ReplaceNetworkAclEntryAsync(const ReplaceNetworkAclEntryRequest& request, const ReplaceNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientReplaceNetworkAclEntryAsyncHelper(EC2Client const * const clientThis, const ReplaceNetworkAclEntryRequest& request, const ReplaceNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReplaceNetworkAclEntryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReplaceNetworkAclEntry(request), context);
 }
 
-void EC2Client::ReplaceNetworkAclEntryAsyncHelper(const ReplaceNetworkAclEntryRequest& request, const ReplaceNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ReplaceNetworkAclEntryAsync(const ReplaceNetworkAclEntryRequest& request, const ReplaceNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReplaceNetworkAclEntry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientReplaceNetworkAclEntryAsyncHelper( this, request, handler, context ); } );
 }
 
 ReplaceRouteOutcome EC2Client::ReplaceRoute(const ReplaceRouteRequest& request) const
@@ -12480,14 +12480,14 @@ ReplaceRouteOutcomeCallable EC2Client::ReplaceRouteCallable(const ReplaceRouteRe
   return task->get_future();
 }
 
-void EC2Client::ReplaceRouteAsync(const ReplaceRouteRequest& request, const ReplaceRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientReplaceRouteAsyncHelper(EC2Client const * const clientThis, const ReplaceRouteRequest& request, const ReplaceRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReplaceRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReplaceRoute(request), context);
 }
 
-void EC2Client::ReplaceRouteAsyncHelper(const ReplaceRouteRequest& request, const ReplaceRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ReplaceRouteAsync(const ReplaceRouteRequest& request, const ReplaceRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReplaceRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientReplaceRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 ReplaceRouteTableAssociationOutcome EC2Client::ReplaceRouteTableAssociation(const ReplaceRouteTableAssociationRequest& request) const
@@ -12504,14 +12504,14 @@ ReplaceRouteTableAssociationOutcomeCallable EC2Client::ReplaceRouteTableAssociat
   return task->get_future();
 }
 
-void EC2Client::ReplaceRouteTableAssociationAsync(const ReplaceRouteTableAssociationRequest& request, const ReplaceRouteTableAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientReplaceRouteTableAssociationAsyncHelper(EC2Client const * const clientThis, const ReplaceRouteTableAssociationRequest& request, const ReplaceRouteTableAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReplaceRouteTableAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReplaceRouteTableAssociation(request), context);
 }
 
-void EC2Client::ReplaceRouteTableAssociationAsyncHelper(const ReplaceRouteTableAssociationRequest& request, const ReplaceRouteTableAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ReplaceRouteTableAssociationAsync(const ReplaceRouteTableAssociationRequest& request, const ReplaceRouteTableAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReplaceRouteTableAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientReplaceRouteTableAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 ReplaceTransitGatewayRouteOutcome EC2Client::ReplaceTransitGatewayRoute(const ReplaceTransitGatewayRouteRequest& request) const
@@ -12528,14 +12528,14 @@ ReplaceTransitGatewayRouteOutcomeCallable EC2Client::ReplaceTransitGatewayRouteC
   return task->get_future();
 }
 
-void EC2Client::ReplaceTransitGatewayRouteAsync(const ReplaceTransitGatewayRouteRequest& request, const ReplaceTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientReplaceTransitGatewayRouteAsyncHelper(EC2Client const * const clientThis, const ReplaceTransitGatewayRouteRequest& request, const ReplaceTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReplaceTransitGatewayRouteAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReplaceTransitGatewayRoute(request), context);
 }
 
-void EC2Client::ReplaceTransitGatewayRouteAsyncHelper(const ReplaceTransitGatewayRouteRequest& request, const ReplaceTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ReplaceTransitGatewayRouteAsync(const ReplaceTransitGatewayRouteRequest& request, const ReplaceTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReplaceTransitGatewayRoute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientReplaceTransitGatewayRouteAsyncHelper( this, request, handler, context ); } );
 }
 
 ReportInstanceStatusOutcome EC2Client::ReportInstanceStatus(const ReportInstanceStatusRequest& request) const
@@ -12552,14 +12552,14 @@ ReportInstanceStatusOutcomeCallable EC2Client::ReportInstanceStatusCallable(cons
   return task->get_future();
 }
 
-void EC2Client::ReportInstanceStatusAsync(const ReportInstanceStatusRequest& request, const ReportInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientReportInstanceStatusAsyncHelper(EC2Client const * const clientThis, const ReportInstanceStatusRequest& request, const ReportInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReportInstanceStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReportInstanceStatus(request), context);
 }
 
-void EC2Client::ReportInstanceStatusAsyncHelper(const ReportInstanceStatusRequest& request, const ReportInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ReportInstanceStatusAsync(const ReportInstanceStatusRequest& request, const ReportInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReportInstanceStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientReportInstanceStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 RequestSpotFleetOutcome EC2Client::RequestSpotFleet(const RequestSpotFleetRequest& request) const
@@ -12576,14 +12576,14 @@ RequestSpotFleetOutcomeCallable EC2Client::RequestSpotFleetCallable(const Reques
   return task->get_future();
 }
 
-void EC2Client::RequestSpotFleetAsync(const RequestSpotFleetRequest& request, const RequestSpotFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRequestSpotFleetAsyncHelper(EC2Client const * const clientThis, const RequestSpotFleetRequest& request, const RequestSpotFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RequestSpotFleetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RequestSpotFleet(request), context);
 }
 
-void EC2Client::RequestSpotFleetAsyncHelper(const RequestSpotFleetRequest& request, const RequestSpotFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RequestSpotFleetAsync(const RequestSpotFleetRequest& request, const RequestSpotFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RequestSpotFleet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRequestSpotFleetAsyncHelper( this, request, handler, context ); } );
 }
 
 RequestSpotInstancesOutcome EC2Client::RequestSpotInstances(const RequestSpotInstancesRequest& request) const
@@ -12600,14 +12600,14 @@ RequestSpotInstancesOutcomeCallable EC2Client::RequestSpotInstancesCallable(cons
   return task->get_future();
 }
 
-void EC2Client::RequestSpotInstancesAsync(const RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRequestSpotInstancesAsyncHelper(EC2Client const * const clientThis, const RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RequestSpotInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RequestSpotInstances(request), context);
 }
 
-void EC2Client::RequestSpotInstancesAsyncHelper(const RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RequestSpotInstancesAsync(const RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RequestSpotInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRequestSpotInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetAddressAttributeOutcome EC2Client::ResetAddressAttribute(const ResetAddressAttributeRequest& request) const
@@ -12624,14 +12624,14 @@ ResetAddressAttributeOutcomeCallable EC2Client::ResetAddressAttributeCallable(co
   return task->get_future();
 }
 
-void EC2Client::ResetAddressAttributeAsync(const ResetAddressAttributeRequest& request, const ResetAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientResetAddressAttributeAsyncHelper(EC2Client const * const clientThis, const ResetAddressAttributeRequest& request, const ResetAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetAddressAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetAddressAttribute(request), context);
 }
 
-void EC2Client::ResetAddressAttributeAsyncHelper(const ResetAddressAttributeRequest& request, const ResetAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ResetAddressAttributeAsync(const ResetAddressAttributeRequest& request, const ResetAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetAddressAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientResetAddressAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetEbsDefaultKmsKeyIdOutcome EC2Client::ResetEbsDefaultKmsKeyId(const ResetEbsDefaultKmsKeyIdRequest& request) const
@@ -12648,14 +12648,14 @@ ResetEbsDefaultKmsKeyIdOutcomeCallable EC2Client::ResetEbsDefaultKmsKeyIdCallabl
   return task->get_future();
 }
 
-void EC2Client::ResetEbsDefaultKmsKeyIdAsync(const ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientResetEbsDefaultKmsKeyIdAsyncHelper(EC2Client const * const clientThis, const ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetEbsDefaultKmsKeyIdAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetEbsDefaultKmsKeyId(request), context);
 }
 
-void EC2Client::ResetEbsDefaultKmsKeyIdAsyncHelper(const ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ResetEbsDefaultKmsKeyIdAsync(const ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetEbsDefaultKmsKeyId(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientResetEbsDefaultKmsKeyIdAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetFpgaImageAttributeOutcome EC2Client::ResetFpgaImageAttribute(const ResetFpgaImageAttributeRequest& request) const
@@ -12672,14 +12672,14 @@ ResetFpgaImageAttributeOutcomeCallable EC2Client::ResetFpgaImageAttributeCallabl
   return task->get_future();
 }
 
-void EC2Client::ResetFpgaImageAttributeAsync(const ResetFpgaImageAttributeRequest& request, const ResetFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientResetFpgaImageAttributeAsyncHelper(EC2Client const * const clientThis, const ResetFpgaImageAttributeRequest& request, const ResetFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetFpgaImageAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetFpgaImageAttribute(request), context);
 }
 
-void EC2Client::ResetFpgaImageAttributeAsyncHelper(const ResetFpgaImageAttributeRequest& request, const ResetFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ResetFpgaImageAttributeAsync(const ResetFpgaImageAttributeRequest& request, const ResetFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetFpgaImageAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientResetFpgaImageAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetImageAttributeOutcome EC2Client::ResetImageAttribute(const ResetImageAttributeRequest& request) const
@@ -12696,14 +12696,14 @@ ResetImageAttributeOutcomeCallable EC2Client::ResetImageAttributeCallable(const 
   return task->get_future();
 }
 
-void EC2Client::ResetImageAttributeAsync(const ResetImageAttributeRequest& request, const ResetImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientResetImageAttributeAsyncHelper(EC2Client const * const clientThis, const ResetImageAttributeRequest& request, const ResetImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetImageAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetImageAttribute(request), context);
 }
 
-void EC2Client::ResetImageAttributeAsyncHelper(const ResetImageAttributeRequest& request, const ResetImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ResetImageAttributeAsync(const ResetImageAttributeRequest& request, const ResetImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetImageAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientResetImageAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetInstanceAttributeOutcome EC2Client::ResetInstanceAttribute(const ResetInstanceAttributeRequest& request) const
@@ -12720,14 +12720,14 @@ ResetInstanceAttributeOutcomeCallable EC2Client::ResetInstanceAttributeCallable(
   return task->get_future();
 }
 
-void EC2Client::ResetInstanceAttributeAsync(const ResetInstanceAttributeRequest& request, const ResetInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientResetInstanceAttributeAsyncHelper(EC2Client const * const clientThis, const ResetInstanceAttributeRequest& request, const ResetInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetInstanceAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetInstanceAttribute(request), context);
 }
 
-void EC2Client::ResetInstanceAttributeAsyncHelper(const ResetInstanceAttributeRequest& request, const ResetInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ResetInstanceAttributeAsync(const ResetInstanceAttributeRequest& request, const ResetInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetInstanceAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientResetInstanceAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetNetworkInterfaceAttributeOutcome EC2Client::ResetNetworkInterfaceAttribute(const ResetNetworkInterfaceAttributeRequest& request) const
@@ -12744,14 +12744,14 @@ ResetNetworkInterfaceAttributeOutcomeCallable EC2Client::ResetNetworkInterfaceAt
   return task->get_future();
 }
 
-void EC2Client::ResetNetworkInterfaceAttributeAsync(const ResetNetworkInterfaceAttributeRequest& request, const ResetNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientResetNetworkInterfaceAttributeAsyncHelper(EC2Client const * const clientThis, const ResetNetworkInterfaceAttributeRequest& request, const ResetNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetNetworkInterfaceAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetNetworkInterfaceAttribute(request), context);
 }
 
-void EC2Client::ResetNetworkInterfaceAttributeAsyncHelper(const ResetNetworkInterfaceAttributeRequest& request, const ResetNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ResetNetworkInterfaceAttributeAsync(const ResetNetworkInterfaceAttributeRequest& request, const ResetNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetNetworkInterfaceAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientResetNetworkInterfaceAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetSnapshotAttributeOutcome EC2Client::ResetSnapshotAttribute(const ResetSnapshotAttributeRequest& request) const
@@ -12768,14 +12768,14 @@ ResetSnapshotAttributeOutcomeCallable EC2Client::ResetSnapshotAttributeCallable(
   return task->get_future();
 }
 
-void EC2Client::ResetSnapshotAttributeAsync(const ResetSnapshotAttributeRequest& request, const ResetSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientResetSnapshotAttributeAsyncHelper(EC2Client const * const clientThis, const ResetSnapshotAttributeRequest& request, const ResetSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetSnapshotAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetSnapshotAttribute(request), context);
 }
 
-void EC2Client::ResetSnapshotAttributeAsyncHelper(const ResetSnapshotAttributeRequest& request, const ResetSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::ResetSnapshotAttributeAsync(const ResetSnapshotAttributeRequest& request, const ResetSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetSnapshotAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientResetSnapshotAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreAddressToClassicOutcome EC2Client::RestoreAddressToClassic(const RestoreAddressToClassicRequest& request) const
@@ -12792,14 +12792,14 @@ RestoreAddressToClassicOutcomeCallable EC2Client::RestoreAddressToClassicCallabl
   return task->get_future();
 }
 
-void EC2Client::RestoreAddressToClassicAsync(const RestoreAddressToClassicRequest& request, const RestoreAddressToClassicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRestoreAddressToClassicAsyncHelper(EC2Client const * const clientThis, const RestoreAddressToClassicRequest& request, const RestoreAddressToClassicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreAddressToClassicAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreAddressToClassic(request), context);
 }
 
-void EC2Client::RestoreAddressToClassicAsyncHelper(const RestoreAddressToClassicRequest& request, const RestoreAddressToClassicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RestoreAddressToClassicAsync(const RestoreAddressToClassicRequest& request, const RestoreAddressToClassicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreAddressToClassic(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRestoreAddressToClassicAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreImageFromRecycleBinOutcome EC2Client::RestoreImageFromRecycleBin(const RestoreImageFromRecycleBinRequest& request) const
@@ -12816,14 +12816,14 @@ RestoreImageFromRecycleBinOutcomeCallable EC2Client::RestoreImageFromRecycleBinC
   return task->get_future();
 }
 
-void EC2Client::RestoreImageFromRecycleBinAsync(const RestoreImageFromRecycleBinRequest& request, const RestoreImageFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRestoreImageFromRecycleBinAsyncHelper(EC2Client const * const clientThis, const RestoreImageFromRecycleBinRequest& request, const RestoreImageFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreImageFromRecycleBinAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreImageFromRecycleBin(request), context);
 }
 
-void EC2Client::RestoreImageFromRecycleBinAsyncHelper(const RestoreImageFromRecycleBinRequest& request, const RestoreImageFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RestoreImageFromRecycleBinAsync(const RestoreImageFromRecycleBinRequest& request, const RestoreImageFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreImageFromRecycleBin(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRestoreImageFromRecycleBinAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreManagedPrefixListVersionOutcome EC2Client::RestoreManagedPrefixListVersion(const RestoreManagedPrefixListVersionRequest& request) const
@@ -12840,14 +12840,14 @@ RestoreManagedPrefixListVersionOutcomeCallable EC2Client::RestoreManagedPrefixLi
   return task->get_future();
 }
 
-void EC2Client::RestoreManagedPrefixListVersionAsync(const RestoreManagedPrefixListVersionRequest& request, const RestoreManagedPrefixListVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRestoreManagedPrefixListVersionAsyncHelper(EC2Client const * const clientThis, const RestoreManagedPrefixListVersionRequest& request, const RestoreManagedPrefixListVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreManagedPrefixListVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreManagedPrefixListVersion(request), context);
 }
 
-void EC2Client::RestoreManagedPrefixListVersionAsyncHelper(const RestoreManagedPrefixListVersionRequest& request, const RestoreManagedPrefixListVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RestoreManagedPrefixListVersionAsync(const RestoreManagedPrefixListVersionRequest& request, const RestoreManagedPrefixListVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreManagedPrefixListVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRestoreManagedPrefixListVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreSnapshotFromRecycleBinOutcome EC2Client::RestoreSnapshotFromRecycleBin(const RestoreSnapshotFromRecycleBinRequest& request) const
@@ -12864,14 +12864,14 @@ RestoreSnapshotFromRecycleBinOutcomeCallable EC2Client::RestoreSnapshotFromRecyc
   return task->get_future();
 }
 
-void EC2Client::RestoreSnapshotFromRecycleBinAsync(const RestoreSnapshotFromRecycleBinRequest& request, const RestoreSnapshotFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRestoreSnapshotFromRecycleBinAsyncHelper(EC2Client const * const clientThis, const RestoreSnapshotFromRecycleBinRequest& request, const RestoreSnapshotFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreSnapshotFromRecycleBinAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreSnapshotFromRecycleBin(request), context);
 }
 
-void EC2Client::RestoreSnapshotFromRecycleBinAsyncHelper(const RestoreSnapshotFromRecycleBinRequest& request, const RestoreSnapshotFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RestoreSnapshotFromRecycleBinAsync(const RestoreSnapshotFromRecycleBinRequest& request, const RestoreSnapshotFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreSnapshotFromRecycleBin(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRestoreSnapshotFromRecycleBinAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreSnapshotTierOutcome EC2Client::RestoreSnapshotTier(const RestoreSnapshotTierRequest& request) const
@@ -12888,14 +12888,14 @@ RestoreSnapshotTierOutcomeCallable EC2Client::RestoreSnapshotTierCallable(const 
   return task->get_future();
 }
 
-void EC2Client::RestoreSnapshotTierAsync(const RestoreSnapshotTierRequest& request, const RestoreSnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRestoreSnapshotTierAsyncHelper(EC2Client const * const clientThis, const RestoreSnapshotTierRequest& request, const RestoreSnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreSnapshotTierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreSnapshotTier(request), context);
 }
 
-void EC2Client::RestoreSnapshotTierAsyncHelper(const RestoreSnapshotTierRequest& request, const RestoreSnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RestoreSnapshotTierAsync(const RestoreSnapshotTierRequest& request, const RestoreSnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreSnapshotTier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRestoreSnapshotTierAsyncHelper( this, request, handler, context ); } );
 }
 
 RevokeClientVpnIngressOutcome EC2Client::RevokeClientVpnIngress(const RevokeClientVpnIngressRequest& request) const
@@ -12912,14 +12912,14 @@ RevokeClientVpnIngressOutcomeCallable EC2Client::RevokeClientVpnIngressCallable(
   return task->get_future();
 }
 
-void EC2Client::RevokeClientVpnIngressAsync(const RevokeClientVpnIngressRequest& request, const RevokeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRevokeClientVpnIngressAsyncHelper(EC2Client const * const clientThis, const RevokeClientVpnIngressRequest& request, const RevokeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeClientVpnIngressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RevokeClientVpnIngress(request), context);
 }
 
-void EC2Client::RevokeClientVpnIngressAsyncHelper(const RevokeClientVpnIngressRequest& request, const RevokeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RevokeClientVpnIngressAsync(const RevokeClientVpnIngressRequest& request, const RevokeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RevokeClientVpnIngress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRevokeClientVpnIngressAsyncHelper( this, request, handler, context ); } );
 }
 
 RevokeSecurityGroupEgressOutcome EC2Client::RevokeSecurityGroupEgress(const RevokeSecurityGroupEgressRequest& request) const
@@ -12936,14 +12936,14 @@ RevokeSecurityGroupEgressOutcomeCallable EC2Client::RevokeSecurityGroupEgressCal
   return task->get_future();
 }
 
-void EC2Client::RevokeSecurityGroupEgressAsync(const RevokeSecurityGroupEgressRequest& request, const RevokeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRevokeSecurityGroupEgressAsyncHelper(EC2Client const * const clientThis, const RevokeSecurityGroupEgressRequest& request, const RevokeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeSecurityGroupEgressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RevokeSecurityGroupEgress(request), context);
 }
 
-void EC2Client::RevokeSecurityGroupEgressAsyncHelper(const RevokeSecurityGroupEgressRequest& request, const RevokeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RevokeSecurityGroupEgressAsync(const RevokeSecurityGroupEgressRequest& request, const RevokeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RevokeSecurityGroupEgress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRevokeSecurityGroupEgressAsyncHelper( this, request, handler, context ); } );
 }
 
 RevokeSecurityGroupIngressOutcome EC2Client::RevokeSecurityGroupIngress(const RevokeSecurityGroupIngressRequest& request) const
@@ -12960,14 +12960,14 @@ RevokeSecurityGroupIngressOutcomeCallable EC2Client::RevokeSecurityGroupIngressC
   return task->get_future();
 }
 
-void EC2Client::RevokeSecurityGroupIngressAsync(const RevokeSecurityGroupIngressRequest& request, const RevokeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRevokeSecurityGroupIngressAsyncHelper(EC2Client const * const clientThis, const RevokeSecurityGroupIngressRequest& request, const RevokeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeSecurityGroupIngressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RevokeSecurityGroupIngress(request), context);
 }
 
-void EC2Client::RevokeSecurityGroupIngressAsyncHelper(const RevokeSecurityGroupIngressRequest& request, const RevokeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RevokeSecurityGroupIngressAsync(const RevokeSecurityGroupIngressRequest& request, const RevokeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RevokeSecurityGroupIngress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRevokeSecurityGroupIngressAsyncHelper( this, request, handler, context ); } );
 }
 
 RunInstancesOutcome EC2Client::RunInstances(const RunInstancesRequest& request) const
@@ -12984,14 +12984,14 @@ RunInstancesOutcomeCallable EC2Client::RunInstancesCallable(const RunInstancesRe
   return task->get_future();
 }
 
-void EC2Client::RunInstancesAsync(const RunInstancesRequest& request, const RunInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRunInstancesAsyncHelper(EC2Client const * const clientThis, const RunInstancesRequest& request, const RunInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RunInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RunInstances(request), context);
 }
 
-void EC2Client::RunInstancesAsyncHelper(const RunInstancesRequest& request, const RunInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RunInstancesAsync(const RunInstancesRequest& request, const RunInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RunInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRunInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 RunScheduledInstancesOutcome EC2Client::RunScheduledInstances(const RunScheduledInstancesRequest& request) const
@@ -13008,14 +13008,14 @@ RunScheduledInstancesOutcomeCallable EC2Client::RunScheduledInstancesCallable(co
   return task->get_future();
 }
 
-void EC2Client::RunScheduledInstancesAsync(const RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientRunScheduledInstancesAsyncHelper(EC2Client const * const clientThis, const RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RunScheduledInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RunScheduledInstances(request), context);
 }
 
-void EC2Client::RunScheduledInstancesAsyncHelper(const RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::RunScheduledInstancesAsync(const RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RunScheduledInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientRunScheduledInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchLocalGatewayRoutesOutcome EC2Client::SearchLocalGatewayRoutes(const SearchLocalGatewayRoutesRequest& request) const
@@ -13032,14 +13032,14 @@ SearchLocalGatewayRoutesOutcomeCallable EC2Client::SearchLocalGatewayRoutesCalla
   return task->get_future();
 }
 
-void EC2Client::SearchLocalGatewayRoutesAsync(const SearchLocalGatewayRoutesRequest& request, const SearchLocalGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientSearchLocalGatewayRoutesAsyncHelper(EC2Client const * const clientThis, const SearchLocalGatewayRoutesRequest& request, const SearchLocalGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchLocalGatewayRoutesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchLocalGatewayRoutes(request), context);
 }
 
-void EC2Client::SearchLocalGatewayRoutesAsyncHelper(const SearchLocalGatewayRoutesRequest& request, const SearchLocalGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::SearchLocalGatewayRoutesAsync(const SearchLocalGatewayRoutesRequest& request, const SearchLocalGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchLocalGatewayRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientSearchLocalGatewayRoutesAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchTransitGatewayMulticastGroupsOutcome EC2Client::SearchTransitGatewayMulticastGroups(const SearchTransitGatewayMulticastGroupsRequest& request) const
@@ -13056,14 +13056,14 @@ SearchTransitGatewayMulticastGroupsOutcomeCallable EC2Client::SearchTransitGatew
   return task->get_future();
 }
 
-void EC2Client::SearchTransitGatewayMulticastGroupsAsync(const SearchTransitGatewayMulticastGroupsRequest& request, const SearchTransitGatewayMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientSearchTransitGatewayMulticastGroupsAsyncHelper(EC2Client const * const clientThis, const SearchTransitGatewayMulticastGroupsRequest& request, const SearchTransitGatewayMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchTransitGatewayMulticastGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchTransitGatewayMulticastGroups(request), context);
 }
 
-void EC2Client::SearchTransitGatewayMulticastGroupsAsyncHelper(const SearchTransitGatewayMulticastGroupsRequest& request, const SearchTransitGatewayMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::SearchTransitGatewayMulticastGroupsAsync(const SearchTransitGatewayMulticastGroupsRequest& request, const SearchTransitGatewayMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchTransitGatewayMulticastGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientSearchTransitGatewayMulticastGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchTransitGatewayRoutesOutcome EC2Client::SearchTransitGatewayRoutes(const SearchTransitGatewayRoutesRequest& request) const
@@ -13080,14 +13080,14 @@ SearchTransitGatewayRoutesOutcomeCallable EC2Client::SearchTransitGatewayRoutesC
   return task->get_future();
 }
 
-void EC2Client::SearchTransitGatewayRoutesAsync(const SearchTransitGatewayRoutesRequest& request, const SearchTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientSearchTransitGatewayRoutesAsyncHelper(EC2Client const * const clientThis, const SearchTransitGatewayRoutesRequest& request, const SearchTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchTransitGatewayRoutesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchTransitGatewayRoutes(request), context);
 }
 
-void EC2Client::SearchTransitGatewayRoutesAsyncHelper(const SearchTransitGatewayRoutesRequest& request, const SearchTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::SearchTransitGatewayRoutesAsync(const SearchTransitGatewayRoutesRequest& request, const SearchTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchTransitGatewayRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientSearchTransitGatewayRoutesAsyncHelper( this, request, handler, context ); } );
 }
 
 SendDiagnosticInterruptOutcome EC2Client::SendDiagnosticInterrupt(const SendDiagnosticInterruptRequest& request) const
@@ -13104,14 +13104,14 @@ SendDiagnosticInterruptOutcomeCallable EC2Client::SendDiagnosticInterruptCallabl
   return task->get_future();
 }
 
-void EC2Client::SendDiagnosticInterruptAsync(const SendDiagnosticInterruptRequest& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientSendDiagnosticInterruptAsyncHelper(EC2Client const * const clientThis, const SendDiagnosticInterruptRequest& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendDiagnosticInterruptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendDiagnosticInterrupt(request), context);
 }
 
-void EC2Client::SendDiagnosticInterruptAsyncHelper(const SendDiagnosticInterruptRequest& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::SendDiagnosticInterruptAsync(const SendDiagnosticInterruptRequest& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendDiagnosticInterrupt(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientSendDiagnosticInterruptAsyncHelper( this, request, handler, context ); } );
 }
 
 StartInstancesOutcome EC2Client::StartInstances(const StartInstancesRequest& request) const
@@ -13128,14 +13128,14 @@ StartInstancesOutcomeCallable EC2Client::StartInstancesCallable(const StartInsta
   return task->get_future();
 }
 
-void EC2Client::StartInstancesAsync(const StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientStartInstancesAsyncHelper(EC2Client const * const clientThis, const StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartInstances(request), context);
 }
 
-void EC2Client::StartInstancesAsyncHelper(const StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::StartInstancesAsync(const StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientStartInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 StartNetworkInsightsAccessScopeAnalysisOutcome EC2Client::StartNetworkInsightsAccessScopeAnalysis(const StartNetworkInsightsAccessScopeAnalysisRequest& request) const
@@ -13152,14 +13152,14 @@ StartNetworkInsightsAccessScopeAnalysisOutcomeCallable EC2Client::StartNetworkIn
   return task->get_future();
 }
 
-void EC2Client::StartNetworkInsightsAccessScopeAnalysisAsync(const StartNetworkInsightsAccessScopeAnalysisRequest& request, const StartNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientStartNetworkInsightsAccessScopeAnalysisAsyncHelper(EC2Client const * const clientThis, const StartNetworkInsightsAccessScopeAnalysisRequest& request, const StartNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartNetworkInsightsAccessScopeAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartNetworkInsightsAccessScopeAnalysis(request), context);
 }
 
-void EC2Client::StartNetworkInsightsAccessScopeAnalysisAsyncHelper(const StartNetworkInsightsAccessScopeAnalysisRequest& request, const StartNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::StartNetworkInsightsAccessScopeAnalysisAsync(const StartNetworkInsightsAccessScopeAnalysisRequest& request, const StartNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartNetworkInsightsAccessScopeAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientStartNetworkInsightsAccessScopeAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 StartNetworkInsightsAnalysisOutcome EC2Client::StartNetworkInsightsAnalysis(const StartNetworkInsightsAnalysisRequest& request) const
@@ -13176,14 +13176,14 @@ StartNetworkInsightsAnalysisOutcomeCallable EC2Client::StartNetworkInsightsAnaly
   return task->get_future();
 }
 
-void EC2Client::StartNetworkInsightsAnalysisAsync(const StartNetworkInsightsAnalysisRequest& request, const StartNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientStartNetworkInsightsAnalysisAsyncHelper(EC2Client const * const clientThis, const StartNetworkInsightsAnalysisRequest& request, const StartNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartNetworkInsightsAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartNetworkInsightsAnalysis(request), context);
 }
 
-void EC2Client::StartNetworkInsightsAnalysisAsyncHelper(const StartNetworkInsightsAnalysisRequest& request, const StartNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::StartNetworkInsightsAnalysisAsync(const StartNetworkInsightsAnalysisRequest& request, const StartNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartNetworkInsightsAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientStartNetworkInsightsAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 StartVpcEndpointServicePrivateDnsVerificationOutcome EC2Client::StartVpcEndpointServicePrivateDnsVerification(const StartVpcEndpointServicePrivateDnsVerificationRequest& request) const
@@ -13200,14 +13200,14 @@ StartVpcEndpointServicePrivateDnsVerificationOutcomeCallable EC2Client::StartVpc
   return task->get_future();
 }
 
-void EC2Client::StartVpcEndpointServicePrivateDnsVerificationAsync(const StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientStartVpcEndpointServicePrivateDnsVerificationAsyncHelper(EC2Client const * const clientThis, const StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartVpcEndpointServicePrivateDnsVerificationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartVpcEndpointServicePrivateDnsVerification(request), context);
 }
 
-void EC2Client::StartVpcEndpointServicePrivateDnsVerificationAsyncHelper(const StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::StartVpcEndpointServicePrivateDnsVerificationAsync(const StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartVpcEndpointServicePrivateDnsVerification(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientStartVpcEndpointServicePrivateDnsVerificationAsyncHelper( this, request, handler, context ); } );
 }
 
 StopInstancesOutcome EC2Client::StopInstances(const StopInstancesRequest& request) const
@@ -13224,14 +13224,14 @@ StopInstancesOutcomeCallable EC2Client::StopInstancesCallable(const StopInstance
   return task->get_future();
 }
 
-void EC2Client::StopInstancesAsync(const StopInstancesRequest& request, const StopInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientStopInstancesAsyncHelper(EC2Client const * const clientThis, const StopInstancesRequest& request, const StopInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopInstances(request), context);
 }
 
-void EC2Client::StopInstancesAsyncHelper(const StopInstancesRequest& request, const StopInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::StopInstancesAsync(const StopInstancesRequest& request, const StopInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientStopInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 TerminateClientVpnConnectionsOutcome EC2Client::TerminateClientVpnConnections(const TerminateClientVpnConnectionsRequest& request) const
@@ -13248,14 +13248,14 @@ TerminateClientVpnConnectionsOutcomeCallable EC2Client::TerminateClientVpnConnec
   return task->get_future();
 }
 
-void EC2Client::TerminateClientVpnConnectionsAsync(const TerminateClientVpnConnectionsRequest& request, const TerminateClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientTerminateClientVpnConnectionsAsyncHelper(EC2Client const * const clientThis, const TerminateClientVpnConnectionsRequest& request, const TerminateClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TerminateClientVpnConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TerminateClientVpnConnections(request), context);
 }
 
-void EC2Client::TerminateClientVpnConnectionsAsyncHelper(const TerminateClientVpnConnectionsRequest& request, const TerminateClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::TerminateClientVpnConnectionsAsync(const TerminateClientVpnConnectionsRequest& request, const TerminateClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TerminateClientVpnConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientTerminateClientVpnConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 TerminateInstancesOutcome EC2Client::TerminateInstances(const TerminateInstancesRequest& request) const
@@ -13272,14 +13272,14 @@ TerminateInstancesOutcomeCallable EC2Client::TerminateInstancesCallable(const Te
   return task->get_future();
 }
 
-void EC2Client::TerminateInstancesAsync(const TerminateInstancesRequest& request, const TerminateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientTerminateInstancesAsyncHelper(EC2Client const * const clientThis, const TerminateInstancesRequest& request, const TerminateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TerminateInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TerminateInstances(request), context);
 }
 
-void EC2Client::TerminateInstancesAsyncHelper(const TerminateInstancesRequest& request, const TerminateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::TerminateInstancesAsync(const TerminateInstancesRequest& request, const TerminateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TerminateInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientTerminateInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 UnassignIpv6AddressesOutcome EC2Client::UnassignIpv6Addresses(const UnassignIpv6AddressesRequest& request) const
@@ -13296,14 +13296,14 @@ UnassignIpv6AddressesOutcomeCallable EC2Client::UnassignIpv6AddressesCallable(co
   return task->get_future();
 }
 
-void EC2Client::UnassignIpv6AddressesAsync(const UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientUnassignIpv6AddressesAsyncHelper(EC2Client const * const clientThis, const UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnassignIpv6AddressesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UnassignIpv6Addresses(request), context);
 }
 
-void EC2Client::UnassignIpv6AddressesAsyncHelper(const UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::UnassignIpv6AddressesAsync(const UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UnassignIpv6Addresses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientUnassignIpv6AddressesAsyncHelper( this, request, handler, context ); } );
 }
 
 UnassignPrivateIpAddressesOutcome EC2Client::UnassignPrivateIpAddresses(const UnassignPrivateIpAddressesRequest& request) const
@@ -13320,14 +13320,14 @@ UnassignPrivateIpAddressesOutcomeCallable EC2Client::UnassignPrivateIpAddressesC
   return task->get_future();
 }
 
-void EC2Client::UnassignPrivateIpAddressesAsync(const UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientUnassignPrivateIpAddressesAsyncHelper(EC2Client const * const clientThis, const UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnassignPrivateIpAddressesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UnassignPrivateIpAddresses(request), context);
 }
 
-void EC2Client::UnassignPrivateIpAddressesAsyncHelper(const UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::UnassignPrivateIpAddressesAsync(const UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UnassignPrivateIpAddresses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientUnassignPrivateIpAddressesAsyncHelper( this, request, handler, context ); } );
 }
 
 UnmonitorInstancesOutcome EC2Client::UnmonitorInstances(const UnmonitorInstancesRequest& request) const
@@ -13344,14 +13344,14 @@ UnmonitorInstancesOutcomeCallable EC2Client::UnmonitorInstancesCallable(const Un
   return task->get_future();
 }
 
-void EC2Client::UnmonitorInstancesAsync(const UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientUnmonitorInstancesAsyncHelper(EC2Client const * const clientThis, const UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnmonitorInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UnmonitorInstances(request), context);
 }
 
-void EC2Client::UnmonitorInstancesAsyncHelper(const UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::UnmonitorInstancesAsync(const UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UnmonitorInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientUnmonitorInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSecurityGroupRuleDescriptionsEgressOutcome EC2Client::UpdateSecurityGroupRuleDescriptionsEgress(const UpdateSecurityGroupRuleDescriptionsEgressRequest& request) const
@@ -13368,14 +13368,14 @@ UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable EC2Client::UpdateSecuri
   return task->get_future();
 }
 
-void EC2Client::UpdateSecurityGroupRuleDescriptionsEgressAsync(const UpdateSecurityGroupRuleDescriptionsEgressRequest& request, const UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientUpdateSecurityGroupRuleDescriptionsEgressAsyncHelper(EC2Client const * const clientThis, const UpdateSecurityGroupRuleDescriptionsEgressRequest& request, const UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecurityGroupRuleDescriptionsEgressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSecurityGroupRuleDescriptionsEgress(request), context);
 }
 
-void EC2Client::UpdateSecurityGroupRuleDescriptionsEgressAsyncHelper(const UpdateSecurityGroupRuleDescriptionsEgressRequest& request, const UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::UpdateSecurityGroupRuleDescriptionsEgressAsync(const UpdateSecurityGroupRuleDescriptionsEgressRequest& request, const UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSecurityGroupRuleDescriptionsEgress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientUpdateSecurityGroupRuleDescriptionsEgressAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSecurityGroupRuleDescriptionsIngressOutcome EC2Client::UpdateSecurityGroupRuleDescriptionsIngress(const UpdateSecurityGroupRuleDescriptionsIngressRequest& request) const
@@ -13392,14 +13392,14 @@ UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable EC2Client::UpdateSecur
   return task->get_future();
 }
 
-void EC2Client::UpdateSecurityGroupRuleDescriptionsIngressAsync(const UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientUpdateSecurityGroupRuleDescriptionsIngressAsyncHelper(EC2Client const * const clientThis, const UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecurityGroupRuleDescriptionsIngressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSecurityGroupRuleDescriptionsIngress(request), context);
 }
 
-void EC2Client::UpdateSecurityGroupRuleDescriptionsIngressAsyncHelper(const UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::UpdateSecurityGroupRuleDescriptionsIngressAsync(const UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSecurityGroupRuleDescriptionsIngress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientUpdateSecurityGroupRuleDescriptionsIngressAsyncHelper( this, request, handler, context ); } );
 }
 
 WithdrawByoipCidrOutcome EC2Client::WithdrawByoipCidr(const WithdrawByoipCidrRequest& request) const
@@ -13416,13 +13416,13 @@ WithdrawByoipCidrOutcomeCallable EC2Client::WithdrawByoipCidrCallable(const With
   return task->get_future();
 }
 
-void EC2Client::WithdrawByoipCidrAsync(const WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2ClientWithdrawByoipCidrAsyncHelper(EC2Client const * const clientThis, const WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->WithdrawByoipCidrAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->WithdrawByoipCidr(request), context);
 }
 
-void EC2Client::WithdrawByoipCidrAsyncHelper(const WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EC2Client::WithdrawByoipCidrAsync(const WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, WithdrawByoipCidr(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EC2ClientWithdrawByoipCidrAsyncHelper( this, request, handler, context ); } );
 }
 

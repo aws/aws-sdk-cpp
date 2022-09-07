@@ -140,14 +140,14 @@ ConfigureLogsOutcomeCallable MediaPackageClient::ConfigureLogsCallable(const Con
   return task->get_future();
 }
 
-void MediaPackageClient::ConfigureLogsAsync(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientConfigureLogsAsyncHelper(MediaPackageClient const * const clientThis, const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfigureLogsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfigureLogs(request), context);
 }
 
-void MediaPackageClient::ConfigureLogsAsyncHelper(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::ConfigureLogsAsync(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfigureLogs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientConfigureLogsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateChannelOutcome MediaPackageClient::CreateChannel(const CreateChannelRequest& request) const
@@ -165,14 +165,14 @@ CreateChannelOutcomeCallable MediaPackageClient::CreateChannelCallable(const Cre
   return task->get_future();
 }
 
-void MediaPackageClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientCreateChannelAsyncHelper(MediaPackageClient const * const clientThis, const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateChannel(request), context);
 }
 
-void MediaPackageClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientCreateChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateHarvestJobOutcome MediaPackageClient::CreateHarvestJob(const CreateHarvestJobRequest& request) const
@@ -190,14 +190,14 @@ CreateHarvestJobOutcomeCallable MediaPackageClient::CreateHarvestJobCallable(con
   return task->get_future();
 }
 
-void MediaPackageClient::CreateHarvestJobAsync(const CreateHarvestJobRequest& request, const CreateHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientCreateHarvestJobAsyncHelper(MediaPackageClient const * const clientThis, const CreateHarvestJobRequest& request, const CreateHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHarvestJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateHarvestJob(request), context);
 }
 
-void MediaPackageClient::CreateHarvestJobAsyncHelper(const CreateHarvestJobRequest& request, const CreateHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::CreateHarvestJobAsync(const CreateHarvestJobRequest& request, const CreateHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateHarvestJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientCreateHarvestJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateOriginEndpointOutcome MediaPackageClient::CreateOriginEndpoint(const CreateOriginEndpointRequest& request) const
@@ -215,14 +215,14 @@ CreateOriginEndpointOutcomeCallable MediaPackageClient::CreateOriginEndpointCall
   return task->get_future();
 }
 
-void MediaPackageClient::CreateOriginEndpointAsync(const CreateOriginEndpointRequest& request, const CreateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientCreateOriginEndpointAsyncHelper(MediaPackageClient const * const clientThis, const CreateOriginEndpointRequest& request, const CreateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOriginEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateOriginEndpoint(request), context);
 }
 
-void MediaPackageClient::CreateOriginEndpointAsyncHelper(const CreateOriginEndpointRequest& request, const CreateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::CreateOriginEndpointAsync(const CreateOriginEndpointRequest& request, const CreateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateOriginEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientCreateOriginEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteChannelOutcome MediaPackageClient::DeleteChannel(const DeleteChannelRequest& request) const
@@ -246,14 +246,14 @@ DeleteChannelOutcomeCallable MediaPackageClient::DeleteChannelCallable(const Del
   return task->get_future();
 }
 
-void MediaPackageClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientDeleteChannelAsyncHelper(MediaPackageClient const * const clientThis, const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteChannel(request), context);
 }
 
-void MediaPackageClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientDeleteChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteOriginEndpointOutcome MediaPackageClient::DeleteOriginEndpoint(const DeleteOriginEndpointRequest& request) const
@@ -277,14 +277,14 @@ DeleteOriginEndpointOutcomeCallable MediaPackageClient::DeleteOriginEndpointCall
   return task->get_future();
 }
 
-void MediaPackageClient::DeleteOriginEndpointAsync(const DeleteOriginEndpointRequest& request, const DeleteOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientDeleteOriginEndpointAsyncHelper(MediaPackageClient const * const clientThis, const DeleteOriginEndpointRequest& request, const DeleteOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOriginEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteOriginEndpoint(request), context);
 }
 
-void MediaPackageClient::DeleteOriginEndpointAsyncHelper(const DeleteOriginEndpointRequest& request, const DeleteOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::DeleteOriginEndpointAsync(const DeleteOriginEndpointRequest& request, const DeleteOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteOriginEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientDeleteOriginEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeChannelOutcome MediaPackageClient::DescribeChannel(const DescribeChannelRequest& request) const
@@ -308,14 +308,14 @@ DescribeChannelOutcomeCallable MediaPackageClient::DescribeChannelCallable(const
   return task->get_future();
 }
 
-void MediaPackageClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientDescribeChannelAsyncHelper(MediaPackageClient const * const clientThis, const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeChannel(request), context);
 }
 
-void MediaPackageClient::DescribeChannelAsyncHelper(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientDescribeChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeHarvestJobOutcome MediaPackageClient::DescribeHarvestJob(const DescribeHarvestJobRequest& request) const
@@ -339,14 +339,14 @@ DescribeHarvestJobOutcomeCallable MediaPackageClient::DescribeHarvestJobCallable
   return task->get_future();
 }
 
-void MediaPackageClient::DescribeHarvestJobAsync(const DescribeHarvestJobRequest& request, const DescribeHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientDescribeHarvestJobAsyncHelper(MediaPackageClient const * const clientThis, const DescribeHarvestJobRequest& request, const DescribeHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHarvestJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeHarvestJob(request), context);
 }
 
-void MediaPackageClient::DescribeHarvestJobAsyncHelper(const DescribeHarvestJobRequest& request, const DescribeHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::DescribeHarvestJobAsync(const DescribeHarvestJobRequest& request, const DescribeHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeHarvestJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientDescribeHarvestJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeOriginEndpointOutcome MediaPackageClient::DescribeOriginEndpoint(const DescribeOriginEndpointRequest& request) const
@@ -370,14 +370,14 @@ DescribeOriginEndpointOutcomeCallable MediaPackageClient::DescribeOriginEndpoint
   return task->get_future();
 }
 
-void MediaPackageClient::DescribeOriginEndpointAsync(const DescribeOriginEndpointRequest& request, const DescribeOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientDescribeOriginEndpointAsyncHelper(MediaPackageClient const * const clientThis, const DescribeOriginEndpointRequest& request, const DescribeOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOriginEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeOriginEndpoint(request), context);
 }
 
-void MediaPackageClient::DescribeOriginEndpointAsyncHelper(const DescribeOriginEndpointRequest& request, const DescribeOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::DescribeOriginEndpointAsync(const DescribeOriginEndpointRequest& request, const DescribeOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeOriginEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientDescribeOriginEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 ListChannelsOutcome MediaPackageClient::ListChannels(const ListChannelsRequest& request) const
@@ -395,14 +395,14 @@ ListChannelsOutcomeCallable MediaPackageClient::ListChannelsCallable(const ListC
   return task->get_future();
 }
 
-void MediaPackageClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientListChannelsAsyncHelper(MediaPackageClient const * const clientThis, const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListChannels(request), context);
 }
 
-void MediaPackageClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListChannels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientListChannelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListHarvestJobsOutcome MediaPackageClient::ListHarvestJobs(const ListHarvestJobsRequest& request) const
@@ -420,14 +420,14 @@ ListHarvestJobsOutcomeCallable MediaPackageClient::ListHarvestJobsCallable(const
   return task->get_future();
 }
 
-void MediaPackageClient::ListHarvestJobsAsync(const ListHarvestJobsRequest& request, const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientListHarvestJobsAsyncHelper(MediaPackageClient const * const clientThis, const ListHarvestJobsRequest& request, const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHarvestJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListHarvestJobs(request), context);
 }
 
-void MediaPackageClient::ListHarvestJobsAsyncHelper(const ListHarvestJobsRequest& request, const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::ListHarvestJobsAsync(const ListHarvestJobsRequest& request, const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListHarvestJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientListHarvestJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOriginEndpointsOutcome MediaPackageClient::ListOriginEndpoints(const ListOriginEndpointsRequest& request) const
@@ -445,14 +445,14 @@ ListOriginEndpointsOutcomeCallable MediaPackageClient::ListOriginEndpointsCallab
   return task->get_future();
 }
 
-void MediaPackageClient::ListOriginEndpointsAsync(const ListOriginEndpointsRequest& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientListOriginEndpointsAsyncHelper(MediaPackageClient const * const clientThis, const ListOriginEndpointsRequest& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOriginEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOriginEndpoints(request), context);
 }
 
-void MediaPackageClient::ListOriginEndpointsAsyncHelper(const ListOriginEndpointsRequest& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::ListOriginEndpointsAsync(const ListOriginEndpointsRequest& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOriginEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientListOriginEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome MediaPackageClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -476,14 +476,14 @@ ListTagsForResourceOutcomeCallable MediaPackageClient::ListTagsForResourceCallab
   return task->get_future();
 }
 
-void MediaPackageClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientListTagsForResourceAsyncHelper(MediaPackageClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void MediaPackageClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 RotateIngestEndpointCredentialsOutcome MediaPackageClient::RotateIngestEndpointCredentials(const RotateIngestEndpointCredentialsRequest& request) const
@@ -515,14 +515,14 @@ RotateIngestEndpointCredentialsOutcomeCallable MediaPackageClient::RotateIngestE
   return task->get_future();
 }
 
-void MediaPackageClient::RotateIngestEndpointCredentialsAsync(const RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientRotateIngestEndpointCredentialsAsyncHelper(MediaPackageClient const * const clientThis, const RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RotateIngestEndpointCredentialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RotateIngestEndpointCredentials(request), context);
 }
 
-void MediaPackageClient::RotateIngestEndpointCredentialsAsyncHelper(const RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::RotateIngestEndpointCredentialsAsync(const RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RotateIngestEndpointCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientRotateIngestEndpointCredentialsAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome MediaPackageClient::TagResource(const TagResourceRequest& request) const
@@ -546,14 +546,14 @@ TagResourceOutcomeCallable MediaPackageClient::TagResourceCallable(const TagReso
   return task->get_future();
 }
 
-void MediaPackageClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientTagResourceAsyncHelper(MediaPackageClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void MediaPackageClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome MediaPackageClient::UntagResource(const UntagResourceRequest& request) const
@@ -582,14 +582,14 @@ UntagResourceOutcomeCallable MediaPackageClient::UntagResourceCallable(const Unt
   return task->get_future();
 }
 
-void MediaPackageClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientUntagResourceAsyncHelper(MediaPackageClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void MediaPackageClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateChannelOutcome MediaPackageClient::UpdateChannel(const UpdateChannelRequest& request) const
@@ -613,14 +613,14 @@ UpdateChannelOutcomeCallable MediaPackageClient::UpdateChannelCallable(const Upd
   return task->get_future();
 }
 
-void MediaPackageClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientUpdateChannelAsyncHelper(MediaPackageClient const * const clientThis, const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateChannel(request), context);
 }
 
-void MediaPackageClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientUpdateChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateOriginEndpointOutcome MediaPackageClient::UpdateOriginEndpoint(const UpdateOriginEndpointRequest& request) const
@@ -644,13 +644,13 @@ UpdateOriginEndpointOutcomeCallable MediaPackageClient::UpdateOriginEndpointCall
   return task->get_future();
 }
 
-void MediaPackageClient::UpdateOriginEndpointAsync(const UpdateOriginEndpointRequest& request, const UpdateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClientUpdateOriginEndpointAsyncHelper(MediaPackageClient const * const clientThis, const UpdateOriginEndpointRequest& request, const UpdateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateOriginEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateOriginEndpoint(request), context);
 }
 
-void MediaPackageClient::UpdateOriginEndpointAsyncHelper(const UpdateOriginEndpointRequest& request, const UpdateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::UpdateOriginEndpointAsync(const UpdateOriginEndpointRequest& request, const UpdateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateOriginEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MediaPackageClientUpdateOriginEndpointAsyncHelper( this, request, handler, context ); } );
 }
 

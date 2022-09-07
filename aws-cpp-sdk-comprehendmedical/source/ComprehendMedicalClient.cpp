@@ -139,14 +139,14 @@ DescribeEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::DescribeE
   return task->get_future();
 }
 
-void ComprehendMedicalClient::DescribeEntitiesDetectionV2JobAsync(const DescribeEntitiesDetectionV2JobRequest& request, const DescribeEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientDescribeEntitiesDetectionV2JobAsyncHelper(ComprehendMedicalClient const * const clientThis, const DescribeEntitiesDetectionV2JobRequest& request, const DescribeEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEntitiesDetectionV2JobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEntitiesDetectionV2Job(request), context);
 }
 
-void ComprehendMedicalClient::DescribeEntitiesDetectionV2JobAsyncHelper(const DescribeEntitiesDetectionV2JobRequest& request, const DescribeEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::DescribeEntitiesDetectionV2JobAsync(const DescribeEntitiesDetectionV2JobRequest& request, const DescribeEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEntitiesDetectionV2Job(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientDescribeEntitiesDetectionV2JobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeICD10CMInferenceJobOutcome ComprehendMedicalClient::DescribeICD10CMInferenceJob(const DescribeICD10CMInferenceJobRequest& request) const
@@ -163,14 +163,14 @@ DescribeICD10CMInferenceJobOutcomeCallable ComprehendMedicalClient::DescribeICD1
   return task->get_future();
 }
 
-void ComprehendMedicalClient::DescribeICD10CMInferenceJobAsync(const DescribeICD10CMInferenceJobRequest& request, const DescribeICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientDescribeICD10CMInferenceJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const DescribeICD10CMInferenceJobRequest& request, const DescribeICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeICD10CMInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeICD10CMInferenceJob(request), context);
 }
 
-void ComprehendMedicalClient::DescribeICD10CMInferenceJobAsyncHelper(const DescribeICD10CMInferenceJobRequest& request, const DescribeICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::DescribeICD10CMInferenceJobAsync(const DescribeICD10CMInferenceJobRequest& request, const DescribeICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeICD10CMInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientDescribeICD10CMInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePHIDetectionJobOutcome ComprehendMedicalClient::DescribePHIDetectionJob(const DescribePHIDetectionJobRequest& request) const
@@ -187,14 +187,14 @@ DescribePHIDetectionJobOutcomeCallable ComprehendMedicalClient::DescribePHIDetec
   return task->get_future();
 }
 
-void ComprehendMedicalClient::DescribePHIDetectionJobAsync(const DescribePHIDetectionJobRequest& request, const DescribePHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientDescribePHIDetectionJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const DescribePHIDetectionJobRequest& request, const DescribePHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePHIDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePHIDetectionJob(request), context);
 }
 
-void ComprehendMedicalClient::DescribePHIDetectionJobAsyncHelper(const DescribePHIDetectionJobRequest& request, const DescribePHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::DescribePHIDetectionJobAsync(const DescribePHIDetectionJobRequest& request, const DescribePHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePHIDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientDescribePHIDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRxNormInferenceJobOutcome ComprehendMedicalClient::DescribeRxNormInferenceJob(const DescribeRxNormInferenceJobRequest& request) const
@@ -211,14 +211,14 @@ DescribeRxNormInferenceJobOutcomeCallable ComprehendMedicalClient::DescribeRxNor
   return task->get_future();
 }
 
-void ComprehendMedicalClient::DescribeRxNormInferenceJobAsync(const DescribeRxNormInferenceJobRequest& request, const DescribeRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientDescribeRxNormInferenceJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const DescribeRxNormInferenceJobRequest& request, const DescribeRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRxNormInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRxNormInferenceJob(request), context);
 }
 
-void ComprehendMedicalClient::DescribeRxNormInferenceJobAsyncHelper(const DescribeRxNormInferenceJobRequest& request, const DescribeRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::DescribeRxNormInferenceJobAsync(const DescribeRxNormInferenceJobRequest& request, const DescribeRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRxNormInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientDescribeRxNormInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::DescribeSNOMEDCTInferenceJob(const DescribeSNOMEDCTInferenceJobRequest& request) const
@@ -235,14 +235,14 @@ DescribeSNOMEDCTInferenceJobOutcomeCallable ComprehendMedicalClient::DescribeSNO
   return task->get_future();
 }
 
-void ComprehendMedicalClient::DescribeSNOMEDCTInferenceJobAsync(const DescribeSNOMEDCTInferenceJobRequest& request, const DescribeSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientDescribeSNOMEDCTInferenceJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const DescribeSNOMEDCTInferenceJobRequest& request, const DescribeSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSNOMEDCTInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSNOMEDCTInferenceJob(request), context);
 }
 
-void ComprehendMedicalClient::DescribeSNOMEDCTInferenceJobAsyncHelper(const DescribeSNOMEDCTInferenceJobRequest& request, const DescribeSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::DescribeSNOMEDCTInferenceJobAsync(const DescribeSNOMEDCTInferenceJobRequest& request, const DescribeSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSNOMEDCTInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientDescribeSNOMEDCTInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DetectEntitiesV2Outcome ComprehendMedicalClient::DetectEntitiesV2(const DetectEntitiesV2Request& request) const
@@ -259,14 +259,14 @@ DetectEntitiesV2OutcomeCallable ComprehendMedicalClient::DetectEntitiesV2Callabl
   return task->get_future();
 }
 
-void ComprehendMedicalClient::DetectEntitiesV2Async(const DetectEntitiesV2Request& request, const DetectEntitiesV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientDetectEntitiesV2AsyncHelper(ComprehendMedicalClient const * const clientThis, const DetectEntitiesV2Request& request, const DetectEntitiesV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectEntitiesV2AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectEntitiesV2(request), context);
 }
 
-void ComprehendMedicalClient::DetectEntitiesV2AsyncHelper(const DetectEntitiesV2Request& request, const DetectEntitiesV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::DetectEntitiesV2Async(const DetectEntitiesV2Request& request, const DetectEntitiesV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectEntitiesV2(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientDetectEntitiesV2AsyncHelper( this, request, handler, context ); } );
 }
 
 DetectPHIOutcome ComprehendMedicalClient::DetectPHI(const DetectPHIRequest& request) const
@@ -283,14 +283,14 @@ DetectPHIOutcomeCallable ComprehendMedicalClient::DetectPHICallable(const Detect
   return task->get_future();
 }
 
-void ComprehendMedicalClient::DetectPHIAsync(const DetectPHIRequest& request, const DetectPHIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientDetectPHIAsyncHelper(ComprehendMedicalClient const * const clientThis, const DetectPHIRequest& request, const DetectPHIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectPHIAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectPHI(request), context);
 }
 
-void ComprehendMedicalClient::DetectPHIAsyncHelper(const DetectPHIRequest& request, const DetectPHIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::DetectPHIAsync(const DetectPHIRequest& request, const DetectPHIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectPHI(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientDetectPHIAsyncHelper( this, request, handler, context ); } );
 }
 
 InferICD10CMOutcome ComprehendMedicalClient::InferICD10CM(const InferICD10CMRequest& request) const
@@ -307,14 +307,14 @@ InferICD10CMOutcomeCallable ComprehendMedicalClient::InferICD10CMCallable(const 
   return task->get_future();
 }
 
-void ComprehendMedicalClient::InferICD10CMAsync(const InferICD10CMRequest& request, const InferICD10CMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientInferICD10CMAsyncHelper(ComprehendMedicalClient const * const clientThis, const InferICD10CMRequest& request, const InferICD10CMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InferICD10CMAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InferICD10CM(request), context);
 }
 
-void ComprehendMedicalClient::InferICD10CMAsyncHelper(const InferICD10CMRequest& request, const InferICD10CMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::InferICD10CMAsync(const InferICD10CMRequest& request, const InferICD10CMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InferICD10CM(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientInferICD10CMAsyncHelper( this, request, handler, context ); } );
 }
 
 InferRxNormOutcome ComprehendMedicalClient::InferRxNorm(const InferRxNormRequest& request) const
@@ -331,14 +331,14 @@ InferRxNormOutcomeCallable ComprehendMedicalClient::InferRxNormCallable(const In
   return task->get_future();
 }
 
-void ComprehendMedicalClient::InferRxNormAsync(const InferRxNormRequest& request, const InferRxNormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientInferRxNormAsyncHelper(ComprehendMedicalClient const * const clientThis, const InferRxNormRequest& request, const InferRxNormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InferRxNormAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InferRxNorm(request), context);
 }
 
-void ComprehendMedicalClient::InferRxNormAsyncHelper(const InferRxNormRequest& request, const InferRxNormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::InferRxNormAsync(const InferRxNormRequest& request, const InferRxNormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InferRxNorm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientInferRxNormAsyncHelper( this, request, handler, context ); } );
 }
 
 InferSNOMEDCTOutcome ComprehendMedicalClient::InferSNOMEDCT(const InferSNOMEDCTRequest& request) const
@@ -355,14 +355,14 @@ InferSNOMEDCTOutcomeCallable ComprehendMedicalClient::InferSNOMEDCTCallable(cons
   return task->get_future();
 }
 
-void ComprehendMedicalClient::InferSNOMEDCTAsync(const InferSNOMEDCTRequest& request, const InferSNOMEDCTResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientInferSNOMEDCTAsyncHelper(ComprehendMedicalClient const * const clientThis, const InferSNOMEDCTRequest& request, const InferSNOMEDCTResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InferSNOMEDCTAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InferSNOMEDCT(request), context);
 }
 
-void ComprehendMedicalClient::InferSNOMEDCTAsyncHelper(const InferSNOMEDCTRequest& request, const InferSNOMEDCTResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::InferSNOMEDCTAsync(const InferSNOMEDCTRequest& request, const InferSNOMEDCTResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InferSNOMEDCT(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientInferSNOMEDCTAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEntitiesDetectionV2JobsOutcome ComprehendMedicalClient::ListEntitiesDetectionV2Jobs(const ListEntitiesDetectionV2JobsRequest& request) const
@@ -379,14 +379,14 @@ ListEntitiesDetectionV2JobsOutcomeCallable ComprehendMedicalClient::ListEntities
   return task->get_future();
 }
 
-void ComprehendMedicalClient::ListEntitiesDetectionV2JobsAsync(const ListEntitiesDetectionV2JobsRequest& request, const ListEntitiesDetectionV2JobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientListEntitiesDetectionV2JobsAsyncHelper(ComprehendMedicalClient const * const clientThis, const ListEntitiesDetectionV2JobsRequest& request, const ListEntitiesDetectionV2JobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEntitiesDetectionV2JobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEntitiesDetectionV2Jobs(request), context);
 }
 
-void ComprehendMedicalClient::ListEntitiesDetectionV2JobsAsyncHelper(const ListEntitiesDetectionV2JobsRequest& request, const ListEntitiesDetectionV2JobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::ListEntitiesDetectionV2JobsAsync(const ListEntitiesDetectionV2JobsRequest& request, const ListEntitiesDetectionV2JobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEntitiesDetectionV2Jobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientListEntitiesDetectionV2JobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListICD10CMInferenceJobsOutcome ComprehendMedicalClient::ListICD10CMInferenceJobs(const ListICD10CMInferenceJobsRequest& request) const
@@ -403,14 +403,14 @@ ListICD10CMInferenceJobsOutcomeCallable ComprehendMedicalClient::ListICD10CMInfe
   return task->get_future();
 }
 
-void ComprehendMedicalClient::ListICD10CMInferenceJobsAsync(const ListICD10CMInferenceJobsRequest& request, const ListICD10CMInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientListICD10CMInferenceJobsAsyncHelper(ComprehendMedicalClient const * const clientThis, const ListICD10CMInferenceJobsRequest& request, const ListICD10CMInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListICD10CMInferenceJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListICD10CMInferenceJobs(request), context);
 }
 
-void ComprehendMedicalClient::ListICD10CMInferenceJobsAsyncHelper(const ListICD10CMInferenceJobsRequest& request, const ListICD10CMInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::ListICD10CMInferenceJobsAsync(const ListICD10CMInferenceJobsRequest& request, const ListICD10CMInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListICD10CMInferenceJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientListICD10CMInferenceJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPHIDetectionJobsOutcome ComprehendMedicalClient::ListPHIDetectionJobs(const ListPHIDetectionJobsRequest& request) const
@@ -427,14 +427,14 @@ ListPHIDetectionJobsOutcomeCallable ComprehendMedicalClient::ListPHIDetectionJob
   return task->get_future();
 }
 
-void ComprehendMedicalClient::ListPHIDetectionJobsAsync(const ListPHIDetectionJobsRequest& request, const ListPHIDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientListPHIDetectionJobsAsyncHelper(ComprehendMedicalClient const * const clientThis, const ListPHIDetectionJobsRequest& request, const ListPHIDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPHIDetectionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPHIDetectionJobs(request), context);
 }
 
-void ComprehendMedicalClient::ListPHIDetectionJobsAsyncHelper(const ListPHIDetectionJobsRequest& request, const ListPHIDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::ListPHIDetectionJobsAsync(const ListPHIDetectionJobsRequest& request, const ListPHIDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPHIDetectionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientListPHIDetectionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRxNormInferenceJobsOutcome ComprehendMedicalClient::ListRxNormInferenceJobs(const ListRxNormInferenceJobsRequest& request) const
@@ -451,14 +451,14 @@ ListRxNormInferenceJobsOutcomeCallable ComprehendMedicalClient::ListRxNormInfere
   return task->get_future();
 }
 
-void ComprehendMedicalClient::ListRxNormInferenceJobsAsync(const ListRxNormInferenceJobsRequest& request, const ListRxNormInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientListRxNormInferenceJobsAsyncHelper(ComprehendMedicalClient const * const clientThis, const ListRxNormInferenceJobsRequest& request, const ListRxNormInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRxNormInferenceJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRxNormInferenceJobs(request), context);
 }
 
-void ComprehendMedicalClient::ListRxNormInferenceJobsAsyncHelper(const ListRxNormInferenceJobsRequest& request, const ListRxNormInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::ListRxNormInferenceJobsAsync(const ListRxNormInferenceJobsRequest& request, const ListRxNormInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRxNormInferenceJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientListRxNormInferenceJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSNOMEDCTInferenceJobsOutcome ComprehendMedicalClient::ListSNOMEDCTInferenceJobs(const ListSNOMEDCTInferenceJobsRequest& request) const
@@ -475,14 +475,14 @@ ListSNOMEDCTInferenceJobsOutcomeCallable ComprehendMedicalClient::ListSNOMEDCTIn
   return task->get_future();
 }
 
-void ComprehendMedicalClient::ListSNOMEDCTInferenceJobsAsync(const ListSNOMEDCTInferenceJobsRequest& request, const ListSNOMEDCTInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientListSNOMEDCTInferenceJobsAsyncHelper(ComprehendMedicalClient const * const clientThis, const ListSNOMEDCTInferenceJobsRequest& request, const ListSNOMEDCTInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSNOMEDCTInferenceJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSNOMEDCTInferenceJobs(request), context);
 }
 
-void ComprehendMedicalClient::ListSNOMEDCTInferenceJobsAsyncHelper(const ListSNOMEDCTInferenceJobsRequest& request, const ListSNOMEDCTInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::ListSNOMEDCTInferenceJobsAsync(const ListSNOMEDCTInferenceJobsRequest& request, const ListSNOMEDCTInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSNOMEDCTInferenceJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientListSNOMEDCTInferenceJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StartEntitiesDetectionV2Job(const StartEntitiesDetectionV2JobRequest& request) const
@@ -499,14 +499,14 @@ StartEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::StartEntitie
   return task->get_future();
 }
 
-void ComprehendMedicalClient::StartEntitiesDetectionV2JobAsync(const StartEntitiesDetectionV2JobRequest& request, const StartEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientStartEntitiesDetectionV2JobAsyncHelper(ComprehendMedicalClient const * const clientThis, const StartEntitiesDetectionV2JobRequest& request, const StartEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartEntitiesDetectionV2JobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartEntitiesDetectionV2Job(request), context);
 }
 
-void ComprehendMedicalClient::StartEntitiesDetectionV2JobAsyncHelper(const StartEntitiesDetectionV2JobRequest& request, const StartEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::StartEntitiesDetectionV2JobAsync(const StartEntitiesDetectionV2JobRequest& request, const StartEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartEntitiesDetectionV2Job(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientStartEntitiesDetectionV2JobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartICD10CMInferenceJobOutcome ComprehendMedicalClient::StartICD10CMInferenceJob(const StartICD10CMInferenceJobRequest& request) const
@@ -523,14 +523,14 @@ StartICD10CMInferenceJobOutcomeCallable ComprehendMedicalClient::StartICD10CMInf
   return task->get_future();
 }
 
-void ComprehendMedicalClient::StartICD10CMInferenceJobAsync(const StartICD10CMInferenceJobRequest& request, const StartICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientStartICD10CMInferenceJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const StartICD10CMInferenceJobRequest& request, const StartICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartICD10CMInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartICD10CMInferenceJob(request), context);
 }
 
-void ComprehendMedicalClient::StartICD10CMInferenceJobAsyncHelper(const StartICD10CMInferenceJobRequest& request, const StartICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::StartICD10CMInferenceJobAsync(const StartICD10CMInferenceJobRequest& request, const StartICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartICD10CMInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientStartICD10CMInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartPHIDetectionJobOutcome ComprehendMedicalClient::StartPHIDetectionJob(const StartPHIDetectionJobRequest& request) const
@@ -547,14 +547,14 @@ StartPHIDetectionJobOutcomeCallable ComprehendMedicalClient::StartPHIDetectionJo
   return task->get_future();
 }
 
-void ComprehendMedicalClient::StartPHIDetectionJobAsync(const StartPHIDetectionJobRequest& request, const StartPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientStartPHIDetectionJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const StartPHIDetectionJobRequest& request, const StartPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartPHIDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartPHIDetectionJob(request), context);
 }
 
-void ComprehendMedicalClient::StartPHIDetectionJobAsyncHelper(const StartPHIDetectionJobRequest& request, const StartPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::StartPHIDetectionJobAsync(const StartPHIDetectionJobRequest& request, const StartPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartPHIDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientStartPHIDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartRxNormInferenceJobOutcome ComprehendMedicalClient::StartRxNormInferenceJob(const StartRxNormInferenceJobRequest& request) const
@@ -571,14 +571,14 @@ StartRxNormInferenceJobOutcomeCallable ComprehendMedicalClient::StartRxNormInfer
   return task->get_future();
 }
 
-void ComprehendMedicalClient::StartRxNormInferenceJobAsync(const StartRxNormInferenceJobRequest& request, const StartRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientStartRxNormInferenceJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const StartRxNormInferenceJobRequest& request, const StartRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartRxNormInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartRxNormInferenceJob(request), context);
 }
 
-void ComprehendMedicalClient::StartRxNormInferenceJobAsyncHelper(const StartRxNormInferenceJobRequest& request, const StartRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::StartRxNormInferenceJobAsync(const StartRxNormInferenceJobRequest& request, const StartRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartRxNormInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientStartRxNormInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::StartSNOMEDCTInferenceJob(const StartSNOMEDCTInferenceJobRequest& request) const
@@ -595,14 +595,14 @@ StartSNOMEDCTInferenceJobOutcomeCallable ComprehendMedicalClient::StartSNOMEDCTI
   return task->get_future();
 }
 
-void ComprehendMedicalClient::StartSNOMEDCTInferenceJobAsync(const StartSNOMEDCTInferenceJobRequest& request, const StartSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientStartSNOMEDCTInferenceJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const StartSNOMEDCTInferenceJobRequest& request, const StartSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSNOMEDCTInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartSNOMEDCTInferenceJob(request), context);
 }
 
-void ComprehendMedicalClient::StartSNOMEDCTInferenceJobAsyncHelper(const StartSNOMEDCTInferenceJobRequest& request, const StartSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::StartSNOMEDCTInferenceJobAsync(const StartSNOMEDCTInferenceJobRequest& request, const StartSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartSNOMEDCTInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientStartSNOMEDCTInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StopEntitiesDetectionV2Job(const StopEntitiesDetectionV2JobRequest& request) const
@@ -619,14 +619,14 @@ StopEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::StopEntitiesD
   return task->get_future();
 }
 
-void ComprehendMedicalClient::StopEntitiesDetectionV2JobAsync(const StopEntitiesDetectionV2JobRequest& request, const StopEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientStopEntitiesDetectionV2JobAsyncHelper(ComprehendMedicalClient const * const clientThis, const StopEntitiesDetectionV2JobRequest& request, const StopEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopEntitiesDetectionV2JobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopEntitiesDetectionV2Job(request), context);
 }
 
-void ComprehendMedicalClient::StopEntitiesDetectionV2JobAsyncHelper(const StopEntitiesDetectionV2JobRequest& request, const StopEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::StopEntitiesDetectionV2JobAsync(const StopEntitiesDetectionV2JobRequest& request, const StopEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopEntitiesDetectionV2Job(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientStopEntitiesDetectionV2JobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopICD10CMInferenceJobOutcome ComprehendMedicalClient::StopICD10CMInferenceJob(const StopICD10CMInferenceJobRequest& request) const
@@ -643,14 +643,14 @@ StopICD10CMInferenceJobOutcomeCallable ComprehendMedicalClient::StopICD10CMInfer
   return task->get_future();
 }
 
-void ComprehendMedicalClient::StopICD10CMInferenceJobAsync(const StopICD10CMInferenceJobRequest& request, const StopICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientStopICD10CMInferenceJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const StopICD10CMInferenceJobRequest& request, const StopICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopICD10CMInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopICD10CMInferenceJob(request), context);
 }
 
-void ComprehendMedicalClient::StopICD10CMInferenceJobAsyncHelper(const StopICD10CMInferenceJobRequest& request, const StopICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::StopICD10CMInferenceJobAsync(const StopICD10CMInferenceJobRequest& request, const StopICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopICD10CMInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientStopICD10CMInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopPHIDetectionJobOutcome ComprehendMedicalClient::StopPHIDetectionJob(const StopPHIDetectionJobRequest& request) const
@@ -667,14 +667,14 @@ StopPHIDetectionJobOutcomeCallable ComprehendMedicalClient::StopPHIDetectionJobC
   return task->get_future();
 }
 
-void ComprehendMedicalClient::StopPHIDetectionJobAsync(const StopPHIDetectionJobRequest& request, const StopPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientStopPHIDetectionJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const StopPHIDetectionJobRequest& request, const StopPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopPHIDetectionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopPHIDetectionJob(request), context);
 }
 
-void ComprehendMedicalClient::StopPHIDetectionJobAsyncHelper(const StopPHIDetectionJobRequest& request, const StopPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::StopPHIDetectionJobAsync(const StopPHIDetectionJobRequest& request, const StopPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopPHIDetectionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientStopPHIDetectionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopRxNormInferenceJobOutcome ComprehendMedicalClient::StopRxNormInferenceJob(const StopRxNormInferenceJobRequest& request) const
@@ -691,14 +691,14 @@ StopRxNormInferenceJobOutcomeCallable ComprehendMedicalClient::StopRxNormInferen
   return task->get_future();
 }
 
-void ComprehendMedicalClient::StopRxNormInferenceJobAsync(const StopRxNormInferenceJobRequest& request, const StopRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientStopRxNormInferenceJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const StopRxNormInferenceJobRequest& request, const StopRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopRxNormInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopRxNormInferenceJob(request), context);
 }
 
-void ComprehendMedicalClient::StopRxNormInferenceJobAsyncHelper(const StopRxNormInferenceJobRequest& request, const StopRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::StopRxNormInferenceJobAsync(const StopRxNormInferenceJobRequest& request, const StopRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopRxNormInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientStopRxNormInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::StopSNOMEDCTInferenceJob(const StopSNOMEDCTInferenceJobRequest& request) const
@@ -715,13 +715,13 @@ StopSNOMEDCTInferenceJobOutcomeCallable ComprehendMedicalClient::StopSNOMEDCTInf
   return task->get_future();
 }
 
-void ComprehendMedicalClient::StopSNOMEDCTInferenceJobAsync(const StopSNOMEDCTInferenceJobRequest& request, const StopSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClientStopSNOMEDCTInferenceJobAsyncHelper(ComprehendMedicalClient const * const clientThis, const StopSNOMEDCTInferenceJobRequest& request, const StopSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopSNOMEDCTInferenceJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopSNOMEDCTInferenceJob(request), context);
 }
 
-void ComprehendMedicalClient::StopSNOMEDCTInferenceJobAsyncHelper(const StopSNOMEDCTInferenceJobRequest& request, const StopSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::StopSNOMEDCTInferenceJobAsync(const StopSNOMEDCTInferenceJobRequest& request, const StopSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopSNOMEDCTInferenceJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ComprehendMedicalClientStopSNOMEDCTInferenceJobAsyncHelper( this, request, handler, context ); } );
 }
 

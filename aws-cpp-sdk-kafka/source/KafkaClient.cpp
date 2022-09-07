@@ -157,14 +157,14 @@ BatchAssociateScramSecretOutcomeCallable KafkaClient::BatchAssociateScramSecretC
   return task->get_future();
 }
 
-void KafkaClient::BatchAssociateScramSecretAsync(const BatchAssociateScramSecretRequest& request, const BatchAssociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientBatchAssociateScramSecretAsyncHelper(KafkaClient const * const clientThis, const BatchAssociateScramSecretRequest& request, const BatchAssociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateScramSecretAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchAssociateScramSecret(request), context);
 }
 
-void KafkaClient::BatchAssociateScramSecretAsyncHelper(const BatchAssociateScramSecretRequest& request, const BatchAssociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::BatchAssociateScramSecretAsync(const BatchAssociateScramSecretRequest& request, const BatchAssociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchAssociateScramSecret(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientBatchAssociateScramSecretAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateClusterOutcome KafkaClient::CreateCluster(const CreateClusterRequest& request) const
@@ -182,14 +182,14 @@ CreateClusterOutcomeCallable KafkaClient::CreateClusterCallable(const CreateClus
   return task->get_future();
 }
 
-void KafkaClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientCreateClusterAsyncHelper(KafkaClient const * const clientThis, const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCluster(request), context);
 }
 
-void KafkaClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientCreateClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateClusterV2Outcome KafkaClient::CreateClusterV2(const CreateClusterV2Request& request) const
@@ -207,14 +207,14 @@ CreateClusterV2OutcomeCallable KafkaClient::CreateClusterV2Callable(const Create
   return task->get_future();
 }
 
-void KafkaClient::CreateClusterV2Async(const CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientCreateClusterV2AsyncHelper(KafkaClient const * const clientThis, const CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterV2AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateClusterV2(request), context);
 }
 
-void KafkaClient::CreateClusterV2AsyncHelper(const CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::CreateClusterV2Async(const CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateClusterV2(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientCreateClusterV2AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConfigurationOutcome KafkaClient::CreateConfiguration(const CreateConfigurationRequest& request) const
@@ -232,14 +232,14 @@ CreateConfigurationOutcomeCallable KafkaClient::CreateConfigurationCallable(cons
   return task->get_future();
 }
 
-void KafkaClient::CreateConfigurationAsync(const CreateConfigurationRequest& request, const CreateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientCreateConfigurationAsyncHelper(KafkaClient const * const clientThis, const CreateConfigurationRequest& request, const CreateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConfiguration(request), context);
 }
 
-void KafkaClient::CreateConfigurationAsyncHelper(const CreateConfigurationRequest& request, const CreateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::CreateConfigurationAsync(const CreateConfigurationRequest& request, const CreateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientCreateConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& request) const
@@ -263,14 +263,14 @@ DeleteClusterOutcomeCallable KafkaClient::DeleteClusterCallable(const DeleteClus
   return task->get_future();
 }
 
-void KafkaClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientDeleteClusterAsyncHelper(KafkaClient const * const clientThis, const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCluster(request), context);
 }
 
-void KafkaClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientDeleteClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConfigurationOutcome KafkaClient::DeleteConfiguration(const DeleteConfigurationRequest& request) const
@@ -294,14 +294,14 @@ DeleteConfigurationOutcomeCallable KafkaClient::DeleteConfigurationCallable(cons
   return task->get_future();
 }
 
-void KafkaClient::DeleteConfigurationAsync(const DeleteConfigurationRequest& request, const DeleteConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientDeleteConfigurationAsyncHelper(KafkaClient const * const clientThis, const DeleteConfigurationRequest& request, const DeleteConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConfiguration(request), context);
 }
 
-void KafkaClient::DeleteConfigurationAsyncHelper(const DeleteConfigurationRequest& request, const DeleteConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::DeleteConfigurationAsync(const DeleteConfigurationRequest& request, const DeleteConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientDeleteConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest& request) const
@@ -325,14 +325,14 @@ DescribeClusterOutcomeCallable KafkaClient::DescribeClusterCallable(const Descri
   return task->get_future();
 }
 
-void KafkaClient::DescribeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientDescribeClusterAsyncHelper(KafkaClient const * const clientThis, const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCluster(request), context);
 }
 
-void KafkaClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::DescribeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientDescribeClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClusterV2Outcome KafkaClient::DescribeClusterV2(const DescribeClusterV2Request& request) const
@@ -356,14 +356,14 @@ DescribeClusterV2OutcomeCallable KafkaClient::DescribeClusterV2Callable(const De
   return task->get_future();
 }
 
-void KafkaClient::DescribeClusterV2Async(const DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientDescribeClusterV2AsyncHelper(KafkaClient const * const clientThis, const DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterV2AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClusterV2(request), context);
 }
 
-void KafkaClient::DescribeClusterV2AsyncHelper(const DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::DescribeClusterV2Async(const DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClusterV2(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientDescribeClusterV2AsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClusterOperationOutcome KafkaClient::DescribeClusterOperation(const DescribeClusterOperationRequest& request) const
@@ -387,14 +387,14 @@ DescribeClusterOperationOutcomeCallable KafkaClient::DescribeClusterOperationCal
   return task->get_future();
 }
 
-void KafkaClient::DescribeClusterOperationAsync(const DescribeClusterOperationRequest& request, const DescribeClusterOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientDescribeClusterOperationAsyncHelper(KafkaClient const * const clientThis, const DescribeClusterOperationRequest& request, const DescribeClusterOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterOperationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClusterOperation(request), context);
 }
 
-void KafkaClient::DescribeClusterOperationAsyncHelper(const DescribeClusterOperationRequest& request, const DescribeClusterOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::DescribeClusterOperationAsync(const DescribeClusterOperationRequest& request, const DescribeClusterOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClusterOperation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientDescribeClusterOperationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeConfigurationOutcome KafkaClient::DescribeConfiguration(const DescribeConfigurationRequest& request) const
@@ -418,14 +418,14 @@ DescribeConfigurationOutcomeCallable KafkaClient::DescribeConfigurationCallable(
   return task->get_future();
 }
 
-void KafkaClient::DescribeConfigurationAsync(const DescribeConfigurationRequest& request, const DescribeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientDescribeConfigurationAsyncHelper(KafkaClient const * const clientThis, const DescribeConfigurationRequest& request, const DescribeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeConfiguration(request), context);
 }
 
-void KafkaClient::DescribeConfigurationAsyncHelper(const DescribeConfigurationRequest& request, const DescribeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::DescribeConfigurationAsync(const DescribeConfigurationRequest& request, const DescribeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientDescribeConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeConfigurationRevisionOutcome KafkaClient::DescribeConfigurationRevision(const DescribeConfigurationRevisionRequest& request) const
@@ -456,14 +456,14 @@ DescribeConfigurationRevisionOutcomeCallable KafkaClient::DescribeConfigurationR
   return task->get_future();
 }
 
-void KafkaClient::DescribeConfigurationRevisionAsync(const DescribeConfigurationRevisionRequest& request, const DescribeConfigurationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientDescribeConfigurationRevisionAsyncHelper(KafkaClient const * const clientThis, const DescribeConfigurationRevisionRequest& request, const DescribeConfigurationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationRevisionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeConfigurationRevision(request), context);
 }
 
-void KafkaClient::DescribeConfigurationRevisionAsyncHelper(const DescribeConfigurationRevisionRequest& request, const DescribeConfigurationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::DescribeConfigurationRevisionAsync(const DescribeConfigurationRevisionRequest& request, const DescribeConfigurationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeConfigurationRevision(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientDescribeConfigurationRevisionAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDisassociateScramSecretOutcome KafkaClient::BatchDisassociateScramSecret(const BatchDisassociateScramSecretRequest& request) const
@@ -488,14 +488,14 @@ BatchDisassociateScramSecretOutcomeCallable KafkaClient::BatchDisassociateScramS
   return task->get_future();
 }
 
-void KafkaClient::BatchDisassociateScramSecretAsync(const BatchDisassociateScramSecretRequest& request, const BatchDisassociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientBatchDisassociateScramSecretAsyncHelper(KafkaClient const * const clientThis, const BatchDisassociateScramSecretRequest& request, const BatchDisassociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateScramSecretAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDisassociateScramSecret(request), context);
 }
 
-void KafkaClient::BatchDisassociateScramSecretAsyncHelper(const BatchDisassociateScramSecretRequest& request, const BatchDisassociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::BatchDisassociateScramSecretAsync(const BatchDisassociateScramSecretRequest& request, const BatchDisassociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDisassociateScramSecret(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientBatchDisassociateScramSecretAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBootstrapBrokersOutcome KafkaClient::GetBootstrapBrokers(const GetBootstrapBrokersRequest& request) const
@@ -520,14 +520,14 @@ GetBootstrapBrokersOutcomeCallable KafkaClient::GetBootstrapBrokersCallable(cons
   return task->get_future();
 }
 
-void KafkaClient::GetBootstrapBrokersAsync(const GetBootstrapBrokersRequest& request, const GetBootstrapBrokersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientGetBootstrapBrokersAsyncHelper(KafkaClient const * const clientThis, const GetBootstrapBrokersRequest& request, const GetBootstrapBrokersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBootstrapBrokersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBootstrapBrokers(request), context);
 }
 
-void KafkaClient::GetBootstrapBrokersAsyncHelper(const GetBootstrapBrokersRequest& request, const GetBootstrapBrokersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::GetBootstrapBrokersAsync(const GetBootstrapBrokersRequest& request, const GetBootstrapBrokersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBootstrapBrokers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientGetBootstrapBrokersAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const GetCompatibleKafkaVersionsRequest& request) const
@@ -545,14 +545,14 @@ GetCompatibleKafkaVersionsOutcomeCallable KafkaClient::GetCompatibleKafkaVersion
   return task->get_future();
 }
 
-void KafkaClient::GetCompatibleKafkaVersionsAsync(const GetCompatibleKafkaVersionsRequest& request, const GetCompatibleKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientGetCompatibleKafkaVersionsAsyncHelper(KafkaClient const * const clientThis, const GetCompatibleKafkaVersionsRequest& request, const GetCompatibleKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCompatibleKafkaVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCompatibleKafkaVersions(request), context);
 }
 
-void KafkaClient::GetCompatibleKafkaVersionsAsyncHelper(const GetCompatibleKafkaVersionsRequest& request, const GetCompatibleKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::GetCompatibleKafkaVersionsAsync(const GetCompatibleKafkaVersionsRequest& request, const GetCompatibleKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCompatibleKafkaVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientGetCompatibleKafkaVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListClusterOperationsOutcome KafkaClient::ListClusterOperations(const ListClusterOperationsRequest& request) const
@@ -577,14 +577,14 @@ ListClusterOperationsOutcomeCallable KafkaClient::ListClusterOperationsCallable(
   return task->get_future();
 }
 
-void KafkaClient::ListClusterOperationsAsync(const ListClusterOperationsRequest& request, const ListClusterOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientListClusterOperationsAsyncHelper(KafkaClient const * const clientThis, const ListClusterOperationsRequest& request, const ListClusterOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClusterOperationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListClusterOperations(request), context);
 }
 
-void KafkaClient::ListClusterOperationsAsyncHelper(const ListClusterOperationsRequest& request, const ListClusterOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::ListClusterOperationsAsync(const ListClusterOperationsRequest& request, const ListClusterOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListClusterOperations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientListClusterOperationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListClustersOutcome KafkaClient::ListClusters(const ListClustersRequest& request) const
@@ -602,14 +602,14 @@ ListClustersOutcomeCallable KafkaClient::ListClustersCallable(const ListClusters
   return task->get_future();
 }
 
-void KafkaClient::ListClustersAsync(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientListClustersAsyncHelper(KafkaClient const * const clientThis, const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClustersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListClusters(request), context);
 }
 
-void KafkaClient::ListClustersAsyncHelper(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::ListClustersAsync(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListClusters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientListClustersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListClustersV2Outcome KafkaClient::ListClustersV2(const ListClustersV2Request& request) const
@@ -627,14 +627,14 @@ ListClustersV2OutcomeCallable KafkaClient::ListClustersV2Callable(const ListClus
   return task->get_future();
 }
 
-void KafkaClient::ListClustersV2Async(const ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientListClustersV2AsyncHelper(KafkaClient const * const clientThis, const ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClustersV2AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListClustersV2(request), context);
 }
 
-void KafkaClient::ListClustersV2AsyncHelper(const ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::ListClustersV2Async(const ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListClustersV2(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientListClustersV2AsyncHelper( this, request, handler, context ); } );
 }
 
 ListConfigurationRevisionsOutcome KafkaClient::ListConfigurationRevisions(const ListConfigurationRevisionsRequest& request) const
@@ -659,14 +659,14 @@ ListConfigurationRevisionsOutcomeCallable KafkaClient::ListConfigurationRevision
   return task->get_future();
 }
 
-void KafkaClient::ListConfigurationRevisionsAsync(const ListConfigurationRevisionsRequest& request, const ListConfigurationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientListConfigurationRevisionsAsyncHelper(KafkaClient const * const clientThis, const ListConfigurationRevisionsRequest& request, const ListConfigurationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationRevisionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConfigurationRevisions(request), context);
 }
 
-void KafkaClient::ListConfigurationRevisionsAsyncHelper(const ListConfigurationRevisionsRequest& request, const ListConfigurationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::ListConfigurationRevisionsAsync(const ListConfigurationRevisionsRequest& request, const ListConfigurationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConfigurationRevisions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientListConfigurationRevisionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConfigurationsOutcome KafkaClient::ListConfigurations(const ListConfigurationsRequest& request) const
@@ -684,14 +684,14 @@ ListConfigurationsOutcomeCallable KafkaClient::ListConfigurationsCallable(const 
   return task->get_future();
 }
 
-void KafkaClient::ListConfigurationsAsync(const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientListConfigurationsAsyncHelper(KafkaClient const * const clientThis, const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConfigurations(request), context);
 }
 
-void KafkaClient::ListConfigurationsAsyncHelper(const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::ListConfigurationsAsync(const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientListConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListKafkaVersionsOutcome KafkaClient::ListKafkaVersions(const ListKafkaVersionsRequest& request) const
@@ -709,14 +709,14 @@ ListKafkaVersionsOutcomeCallable KafkaClient::ListKafkaVersionsCallable(const Li
   return task->get_future();
 }
 
-void KafkaClient::ListKafkaVersionsAsync(const ListKafkaVersionsRequest& request, const ListKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientListKafkaVersionsAsyncHelper(KafkaClient const * const clientThis, const ListKafkaVersionsRequest& request, const ListKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListKafkaVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListKafkaVersions(request), context);
 }
 
-void KafkaClient::ListKafkaVersionsAsyncHelper(const ListKafkaVersionsRequest& request, const ListKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::ListKafkaVersionsAsync(const ListKafkaVersionsRequest& request, const ListKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListKafkaVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientListKafkaVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const
@@ -741,14 +741,14 @@ ListNodesOutcomeCallable KafkaClient::ListNodesCallable(const ListNodesRequest& 
   return task->get_future();
 }
 
-void KafkaClient::ListNodesAsync(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientListNodesAsyncHelper(KafkaClient const * const clientThis, const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNodesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNodes(request), context);
 }
 
-void KafkaClient::ListNodesAsyncHelper(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::ListNodesAsync(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNodes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientListNodesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListScramSecretsOutcome KafkaClient::ListScramSecrets(const ListScramSecretsRequest& request) const
@@ -773,14 +773,14 @@ ListScramSecretsOutcomeCallable KafkaClient::ListScramSecretsCallable(const List
   return task->get_future();
 }
 
-void KafkaClient::ListScramSecretsAsync(const ListScramSecretsRequest& request, const ListScramSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientListScramSecretsAsyncHelper(KafkaClient const * const clientThis, const ListScramSecretsRequest& request, const ListScramSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListScramSecretsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListScramSecrets(request), context);
 }
 
-void KafkaClient::ListScramSecretsAsyncHelper(const ListScramSecretsRequest& request, const ListScramSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::ListScramSecretsAsync(const ListScramSecretsRequest& request, const ListScramSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListScramSecrets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientListScramSecretsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome KafkaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -804,14 +804,14 @@ ListTagsForResourceOutcomeCallable KafkaClient::ListTagsForResourceCallable(cons
   return task->get_future();
 }
 
-void KafkaClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientListTagsForResourceAsyncHelper(KafkaClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void KafkaClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 RebootBrokerOutcome KafkaClient::RebootBroker(const RebootBrokerRequest& request) const
@@ -836,14 +836,14 @@ RebootBrokerOutcomeCallable KafkaClient::RebootBrokerCallable(const RebootBroker
   return task->get_future();
 }
 
-void KafkaClient::RebootBrokerAsync(const RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientRebootBrokerAsyncHelper(KafkaClient const * const clientThis, const RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RebootBrokerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RebootBroker(request), context);
 }
 
-void KafkaClient::RebootBrokerAsyncHelper(const RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::RebootBrokerAsync(const RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RebootBroker(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientRebootBrokerAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome KafkaClient::TagResource(const TagResourceRequest& request) const
@@ -867,14 +867,14 @@ TagResourceOutcomeCallable KafkaClient::TagResourceCallable(const TagResourceReq
   return task->get_future();
 }
 
-void KafkaClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientTagResourceAsyncHelper(KafkaClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void KafkaClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome KafkaClient::UntagResource(const UntagResourceRequest& request) const
@@ -903,14 +903,14 @@ UntagResourceOutcomeCallable KafkaClient::UntagResourceCallable(const UntagResou
   return task->get_future();
 }
 
-void KafkaClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientUntagResourceAsyncHelper(KafkaClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void KafkaClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBrokerCountOutcome KafkaClient::UpdateBrokerCount(const UpdateBrokerCountRequest& request) const
@@ -935,14 +935,14 @@ UpdateBrokerCountOutcomeCallable KafkaClient::UpdateBrokerCountCallable(const Up
   return task->get_future();
 }
 
-void KafkaClient::UpdateBrokerCountAsync(const UpdateBrokerCountRequest& request, const UpdateBrokerCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientUpdateBrokerCountAsyncHelper(KafkaClient const * const clientThis, const UpdateBrokerCountRequest& request, const UpdateBrokerCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBrokerCountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBrokerCount(request), context);
 }
 
-void KafkaClient::UpdateBrokerCountAsyncHelper(const UpdateBrokerCountRequest& request, const UpdateBrokerCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::UpdateBrokerCountAsync(const UpdateBrokerCountRequest& request, const UpdateBrokerCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBrokerCount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientUpdateBrokerCountAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBrokerTypeOutcome KafkaClient::UpdateBrokerType(const UpdateBrokerTypeRequest& request) const
@@ -967,14 +967,14 @@ UpdateBrokerTypeOutcomeCallable KafkaClient::UpdateBrokerTypeCallable(const Upda
   return task->get_future();
 }
 
-void KafkaClient::UpdateBrokerTypeAsync(const UpdateBrokerTypeRequest& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientUpdateBrokerTypeAsyncHelper(KafkaClient const * const clientThis, const UpdateBrokerTypeRequest& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBrokerTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBrokerType(request), context);
 }
 
-void KafkaClient::UpdateBrokerTypeAsyncHelper(const UpdateBrokerTypeRequest& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::UpdateBrokerTypeAsync(const UpdateBrokerTypeRequest& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBrokerType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientUpdateBrokerTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBrokerStorageOutcome KafkaClient::UpdateBrokerStorage(const UpdateBrokerStorageRequest& request) const
@@ -999,14 +999,14 @@ UpdateBrokerStorageOutcomeCallable KafkaClient::UpdateBrokerStorageCallable(cons
   return task->get_future();
 }
 
-void KafkaClient::UpdateBrokerStorageAsync(const UpdateBrokerStorageRequest& request, const UpdateBrokerStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientUpdateBrokerStorageAsyncHelper(KafkaClient const * const clientThis, const UpdateBrokerStorageRequest& request, const UpdateBrokerStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBrokerStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBrokerStorage(request), context);
 }
 
-void KafkaClient::UpdateBrokerStorageAsyncHelper(const UpdateBrokerStorageRequest& request, const UpdateBrokerStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::UpdateBrokerStorageAsync(const UpdateBrokerStorageRequest& request, const UpdateBrokerStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBrokerStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientUpdateBrokerStorageAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConfigurationOutcome KafkaClient::UpdateConfiguration(const UpdateConfigurationRequest& request) const
@@ -1030,14 +1030,14 @@ UpdateConfigurationOutcomeCallable KafkaClient::UpdateConfigurationCallable(cons
   return task->get_future();
 }
 
-void KafkaClient::UpdateConfigurationAsync(const UpdateConfigurationRequest& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientUpdateConfigurationAsyncHelper(KafkaClient const * const clientThis, const UpdateConfigurationRequest& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConfiguration(request), context);
 }
 
-void KafkaClient::UpdateConfigurationAsyncHelper(const UpdateConfigurationRequest& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::UpdateConfigurationAsync(const UpdateConfigurationRequest& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientUpdateConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConnectivityOutcome KafkaClient::UpdateConnectivity(const UpdateConnectivityRequest& request) const
@@ -1062,14 +1062,14 @@ UpdateConnectivityOutcomeCallable KafkaClient::UpdateConnectivityCallable(const 
   return task->get_future();
 }
 
-void KafkaClient::UpdateConnectivityAsync(const UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientUpdateConnectivityAsyncHelper(KafkaClient const * const clientThis, const UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectivityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConnectivity(request), context);
 }
 
-void KafkaClient::UpdateConnectivityAsyncHelper(const UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::UpdateConnectivityAsync(const UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConnectivity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientUpdateConnectivityAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const UpdateClusterConfigurationRequest& request) const
@@ -1094,14 +1094,14 @@ UpdateClusterConfigurationOutcomeCallable KafkaClient::UpdateClusterConfiguratio
   return task->get_future();
 }
 
-void KafkaClient::UpdateClusterConfigurationAsync(const UpdateClusterConfigurationRequest& request, const UpdateClusterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientUpdateClusterConfigurationAsyncHelper(KafkaClient const * const clientThis, const UpdateClusterConfigurationRequest& request, const UpdateClusterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateClusterConfiguration(request), context);
 }
 
-void KafkaClient::UpdateClusterConfigurationAsyncHelper(const UpdateClusterConfigurationRequest& request, const UpdateClusterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::UpdateClusterConfigurationAsync(const UpdateClusterConfigurationRequest& request, const UpdateClusterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateClusterConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientUpdateClusterConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateClusterKafkaVersionOutcome KafkaClient::UpdateClusterKafkaVersion(const UpdateClusterKafkaVersionRequest& request) const
@@ -1126,14 +1126,14 @@ UpdateClusterKafkaVersionOutcomeCallable KafkaClient::UpdateClusterKafkaVersionC
   return task->get_future();
 }
 
-void KafkaClient::UpdateClusterKafkaVersionAsync(const UpdateClusterKafkaVersionRequest& request, const UpdateClusterKafkaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientUpdateClusterKafkaVersionAsyncHelper(KafkaClient const * const clientThis, const UpdateClusterKafkaVersionRequest& request, const UpdateClusterKafkaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterKafkaVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateClusterKafkaVersion(request), context);
 }
 
-void KafkaClient::UpdateClusterKafkaVersionAsyncHelper(const UpdateClusterKafkaVersionRequest& request, const UpdateClusterKafkaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::UpdateClusterKafkaVersionAsync(const UpdateClusterKafkaVersionRequest& request, const UpdateClusterKafkaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateClusterKafkaVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientUpdateClusterKafkaVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMonitoringOutcome KafkaClient::UpdateMonitoring(const UpdateMonitoringRequest& request) const
@@ -1158,14 +1158,14 @@ UpdateMonitoringOutcomeCallable KafkaClient::UpdateMonitoringCallable(const Upda
   return task->get_future();
 }
 
-void KafkaClient::UpdateMonitoringAsync(const UpdateMonitoringRequest& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientUpdateMonitoringAsyncHelper(KafkaClient const * const clientThis, const UpdateMonitoringRequest& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMonitoringAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMonitoring(request), context);
 }
 
-void KafkaClient::UpdateMonitoringAsyncHelper(const UpdateMonitoringRequest& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::UpdateMonitoringAsync(const UpdateMonitoringRequest& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMonitoring(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientUpdateMonitoringAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSecurityOutcome KafkaClient::UpdateSecurity(const UpdateSecurityRequest& request) const
@@ -1190,13 +1190,13 @@ UpdateSecurityOutcomeCallable KafkaClient::UpdateSecurityCallable(const UpdateSe
   return task->get_future();
 }
 
-void KafkaClient::UpdateSecurityAsync(const UpdateSecurityRequest& request, const UpdateSecurityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClientUpdateSecurityAsyncHelper(KafkaClient const * const clientThis, const UpdateSecurityRequest& request, const UpdateSecurityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecurityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSecurity(request), context);
 }
 
-void KafkaClient::UpdateSecurityAsyncHelper(const UpdateSecurityRequest& request, const UpdateSecurityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KafkaClient::UpdateSecurityAsync(const UpdateSecurityRequest& request, const UpdateSecurityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSecurity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KafkaClientUpdateSecurityAsyncHelper( this, request, handler, context ); } );
 }
 

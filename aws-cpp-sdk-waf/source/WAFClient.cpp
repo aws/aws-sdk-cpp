@@ -191,14 +191,14 @@ CreateByteMatchSetOutcomeCallable WAFClient::CreateByteMatchSetCallable(const Cr
   return task->get_future();
 }
 
-void WAFClient::CreateByteMatchSetAsync(const CreateByteMatchSetRequest& request, const CreateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateByteMatchSetAsyncHelper(WAFClient const * const clientThis, const CreateByteMatchSetRequest& request, const CreateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateByteMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateByteMatchSet(request), context);
 }
 
-void WAFClient::CreateByteMatchSetAsyncHelper(const CreateByteMatchSetRequest& request, const CreateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateByteMatchSetAsync(const CreateByteMatchSetRequest& request, const CreateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateByteMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateByteMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGeoMatchSetOutcome WAFClient::CreateGeoMatchSet(const CreateGeoMatchSetRequest& request) const
@@ -215,14 +215,14 @@ CreateGeoMatchSetOutcomeCallable WAFClient::CreateGeoMatchSetCallable(const Crea
   return task->get_future();
 }
 
-void WAFClient::CreateGeoMatchSetAsync(const CreateGeoMatchSetRequest& request, const CreateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateGeoMatchSetAsyncHelper(WAFClient const * const clientThis, const CreateGeoMatchSetRequest& request, const CreateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGeoMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGeoMatchSet(request), context);
 }
 
-void WAFClient::CreateGeoMatchSetAsyncHelper(const CreateGeoMatchSetRequest& request, const CreateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateGeoMatchSetAsync(const CreateGeoMatchSetRequest& request, const CreateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGeoMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateGeoMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIPSetOutcome WAFClient::CreateIPSet(const CreateIPSetRequest& request) const
@@ -239,14 +239,14 @@ CreateIPSetOutcomeCallable WAFClient::CreateIPSetCallable(const CreateIPSetReque
   return task->get_future();
 }
 
-void WAFClient::CreateIPSetAsync(const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateIPSetAsyncHelper(WAFClient const * const clientThis, const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIPSet(request), context);
 }
 
-void WAFClient::CreateIPSetAsyncHelper(const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateIPSetAsync(const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRateBasedRuleOutcome WAFClient::CreateRateBasedRule(const CreateRateBasedRuleRequest& request) const
@@ -263,14 +263,14 @@ CreateRateBasedRuleOutcomeCallable WAFClient::CreateRateBasedRuleCallable(const 
   return task->get_future();
 }
 
-void WAFClient::CreateRateBasedRuleAsync(const CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateRateBasedRuleAsyncHelper(WAFClient const * const clientThis, const CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRateBasedRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRateBasedRule(request), context);
 }
 
-void WAFClient::CreateRateBasedRuleAsyncHelper(const CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateRateBasedRuleAsync(const CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRateBasedRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateRateBasedRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRegexMatchSetOutcome WAFClient::CreateRegexMatchSet(const CreateRegexMatchSetRequest& request) const
@@ -287,14 +287,14 @@ CreateRegexMatchSetOutcomeCallable WAFClient::CreateRegexMatchSetCallable(const 
   return task->get_future();
 }
 
-void WAFClient::CreateRegexMatchSetAsync(const CreateRegexMatchSetRequest& request, const CreateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateRegexMatchSetAsyncHelper(WAFClient const * const clientThis, const CreateRegexMatchSetRequest& request, const CreateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRegexMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRegexMatchSet(request), context);
 }
 
-void WAFClient::CreateRegexMatchSetAsyncHelper(const CreateRegexMatchSetRequest& request, const CreateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateRegexMatchSetAsync(const CreateRegexMatchSetRequest& request, const CreateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRegexMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateRegexMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRegexPatternSetOutcome WAFClient::CreateRegexPatternSet(const CreateRegexPatternSetRequest& request) const
@@ -311,14 +311,14 @@ CreateRegexPatternSetOutcomeCallable WAFClient::CreateRegexPatternSetCallable(co
   return task->get_future();
 }
 
-void WAFClient::CreateRegexPatternSetAsync(const CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateRegexPatternSetAsyncHelper(WAFClient const * const clientThis, const CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRegexPatternSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRegexPatternSet(request), context);
 }
 
-void WAFClient::CreateRegexPatternSetAsyncHelper(const CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateRegexPatternSetAsync(const CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRegexPatternSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateRegexPatternSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRuleOutcome WAFClient::CreateRule(const CreateRuleRequest& request) const
@@ -335,14 +335,14 @@ CreateRuleOutcomeCallable WAFClient::CreateRuleCallable(const CreateRuleRequest&
   return task->get_future();
 }
 
-void WAFClient::CreateRuleAsync(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateRuleAsyncHelper(WAFClient const * const clientThis, const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRule(request), context);
 }
 
-void WAFClient::CreateRuleAsyncHelper(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateRuleAsync(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRuleGroupOutcome WAFClient::CreateRuleGroup(const CreateRuleGroupRequest& request) const
@@ -359,14 +359,14 @@ CreateRuleGroupOutcomeCallable WAFClient::CreateRuleGroupCallable(const CreateRu
   return task->get_future();
 }
 
-void WAFClient::CreateRuleGroupAsync(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateRuleGroupAsyncHelper(WAFClient const * const clientThis, const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRuleGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRuleGroup(request), context);
 }
 
-void WAFClient::CreateRuleGroupAsyncHelper(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateRuleGroupAsync(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateRuleGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSizeConstraintSetOutcome WAFClient::CreateSizeConstraintSet(const CreateSizeConstraintSetRequest& request) const
@@ -383,14 +383,14 @@ CreateSizeConstraintSetOutcomeCallable WAFClient::CreateSizeConstraintSetCallabl
   return task->get_future();
 }
 
-void WAFClient::CreateSizeConstraintSetAsync(const CreateSizeConstraintSetRequest& request, const CreateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateSizeConstraintSetAsyncHelper(WAFClient const * const clientThis, const CreateSizeConstraintSetRequest& request, const CreateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSizeConstraintSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSizeConstraintSet(request), context);
 }
 
-void WAFClient::CreateSizeConstraintSetAsyncHelper(const CreateSizeConstraintSetRequest& request, const CreateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateSizeConstraintSetAsync(const CreateSizeConstraintSetRequest& request, const CreateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSizeConstraintSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateSizeConstraintSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSqlInjectionMatchSetOutcome WAFClient::CreateSqlInjectionMatchSet(const CreateSqlInjectionMatchSetRequest& request) const
@@ -407,14 +407,14 @@ CreateSqlInjectionMatchSetOutcomeCallable WAFClient::CreateSqlInjectionMatchSetC
   return task->get_future();
 }
 
-void WAFClient::CreateSqlInjectionMatchSetAsync(const CreateSqlInjectionMatchSetRequest& request, const CreateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateSqlInjectionMatchSetAsyncHelper(WAFClient const * const clientThis, const CreateSqlInjectionMatchSetRequest& request, const CreateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSqlInjectionMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSqlInjectionMatchSet(request), context);
 }
 
-void WAFClient::CreateSqlInjectionMatchSetAsyncHelper(const CreateSqlInjectionMatchSetRequest& request, const CreateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateSqlInjectionMatchSetAsync(const CreateSqlInjectionMatchSetRequest& request, const CreateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSqlInjectionMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateSqlInjectionMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWebACLOutcome WAFClient::CreateWebACL(const CreateWebACLRequest& request) const
@@ -431,14 +431,14 @@ CreateWebACLOutcomeCallable WAFClient::CreateWebACLCallable(const CreateWebACLRe
   return task->get_future();
 }
 
-void WAFClient::CreateWebACLAsync(const CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateWebACLAsyncHelper(WAFClient const * const clientThis, const CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWebACL(request), context);
 }
 
-void WAFClient::CreateWebACLAsyncHelper(const CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateWebACLAsync(const CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateWebACLAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWebACLMigrationStackOutcome WAFClient::CreateWebACLMigrationStack(const CreateWebACLMigrationStackRequest& request) const
@@ -455,14 +455,14 @@ CreateWebACLMigrationStackOutcomeCallable WAFClient::CreateWebACLMigrationStackC
   return task->get_future();
 }
 
-void WAFClient::CreateWebACLMigrationStackAsync(const CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateWebACLMigrationStackAsyncHelper(WAFClient const * const clientThis, const CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWebACLMigrationStackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWebACLMigrationStack(request), context);
 }
 
-void WAFClient::CreateWebACLMigrationStackAsyncHelper(const CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateWebACLMigrationStackAsync(const CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWebACLMigrationStack(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateWebACLMigrationStackAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateXssMatchSetOutcome WAFClient::CreateXssMatchSet(const CreateXssMatchSetRequest& request) const
@@ -479,14 +479,14 @@ CreateXssMatchSetOutcomeCallable WAFClient::CreateXssMatchSetCallable(const Crea
   return task->get_future();
 }
 
-void WAFClient::CreateXssMatchSetAsync(const CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientCreateXssMatchSetAsyncHelper(WAFClient const * const clientThis, const CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateXssMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateXssMatchSet(request), context);
 }
 
-void WAFClient::CreateXssMatchSetAsyncHelper(const CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::CreateXssMatchSetAsync(const CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateXssMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientCreateXssMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteByteMatchSetOutcome WAFClient::DeleteByteMatchSet(const DeleteByteMatchSetRequest& request) const
@@ -503,14 +503,14 @@ DeleteByteMatchSetOutcomeCallable WAFClient::DeleteByteMatchSetCallable(const De
   return task->get_future();
 }
 
-void WAFClient::DeleteByteMatchSetAsync(const DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteByteMatchSetAsyncHelper(WAFClient const * const clientThis, const DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteByteMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteByteMatchSet(request), context);
 }
 
-void WAFClient::DeleteByteMatchSetAsyncHelper(const DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteByteMatchSetAsync(const DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteByteMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteByteMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGeoMatchSetOutcome WAFClient::DeleteGeoMatchSet(const DeleteGeoMatchSetRequest& request) const
@@ -527,14 +527,14 @@ DeleteGeoMatchSetOutcomeCallable WAFClient::DeleteGeoMatchSetCallable(const Dele
   return task->get_future();
 }
 
-void WAFClient::DeleteGeoMatchSetAsync(const DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteGeoMatchSetAsyncHelper(WAFClient const * const clientThis, const DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGeoMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGeoMatchSet(request), context);
 }
 
-void WAFClient::DeleteGeoMatchSetAsyncHelper(const DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteGeoMatchSetAsync(const DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGeoMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteGeoMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIPSetOutcome WAFClient::DeleteIPSet(const DeleteIPSetRequest& request) const
@@ -551,14 +551,14 @@ DeleteIPSetOutcomeCallable WAFClient::DeleteIPSetCallable(const DeleteIPSetReque
   return task->get_future();
 }
 
-void WAFClient::DeleteIPSetAsync(const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteIPSetAsyncHelper(WAFClient const * const clientThis, const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIPSet(request), context);
 }
 
-void WAFClient::DeleteIPSetAsyncHelper(const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteIPSetAsync(const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLoggingConfigurationOutcome WAFClient::DeleteLoggingConfiguration(const DeleteLoggingConfigurationRequest& request) const
@@ -575,14 +575,14 @@ DeleteLoggingConfigurationOutcomeCallable WAFClient::DeleteLoggingConfigurationC
   return task->get_future();
 }
 
-void WAFClient::DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteLoggingConfigurationAsyncHelper(WAFClient const * const clientThis, const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLoggingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLoggingConfiguration(request), context);
 }
 
-void WAFClient::DeleteLoggingConfigurationAsyncHelper(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteLoggingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePermissionPolicyOutcome WAFClient::DeletePermissionPolicy(const DeletePermissionPolicyRequest& request) const
@@ -599,14 +599,14 @@ DeletePermissionPolicyOutcomeCallable WAFClient::DeletePermissionPolicyCallable(
   return task->get_future();
 }
 
-void WAFClient::DeletePermissionPolicyAsync(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeletePermissionPolicyAsyncHelper(WAFClient const * const clientThis, const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePermissionPolicy(request), context);
 }
 
-void WAFClient::DeletePermissionPolicyAsyncHelper(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeletePermissionPolicyAsync(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePermissionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeletePermissionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRateBasedRuleOutcome WAFClient::DeleteRateBasedRule(const DeleteRateBasedRuleRequest& request) const
@@ -623,14 +623,14 @@ DeleteRateBasedRuleOutcomeCallable WAFClient::DeleteRateBasedRuleCallable(const 
   return task->get_future();
 }
 
-void WAFClient::DeleteRateBasedRuleAsync(const DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteRateBasedRuleAsyncHelper(WAFClient const * const clientThis, const DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRateBasedRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRateBasedRule(request), context);
 }
 
-void WAFClient::DeleteRateBasedRuleAsyncHelper(const DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteRateBasedRuleAsync(const DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRateBasedRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteRateBasedRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRegexMatchSetOutcome WAFClient::DeleteRegexMatchSet(const DeleteRegexMatchSetRequest& request) const
@@ -647,14 +647,14 @@ DeleteRegexMatchSetOutcomeCallable WAFClient::DeleteRegexMatchSetCallable(const 
   return task->get_future();
 }
 
-void WAFClient::DeleteRegexMatchSetAsync(const DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteRegexMatchSetAsyncHelper(WAFClient const * const clientThis, const DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRegexMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRegexMatchSet(request), context);
 }
 
-void WAFClient::DeleteRegexMatchSetAsyncHelper(const DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteRegexMatchSetAsync(const DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRegexMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteRegexMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRegexPatternSetOutcome WAFClient::DeleteRegexPatternSet(const DeleteRegexPatternSetRequest& request) const
@@ -671,14 +671,14 @@ DeleteRegexPatternSetOutcomeCallable WAFClient::DeleteRegexPatternSetCallable(co
   return task->get_future();
 }
 
-void WAFClient::DeleteRegexPatternSetAsync(const DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteRegexPatternSetAsyncHelper(WAFClient const * const clientThis, const DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRegexPatternSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRegexPatternSet(request), context);
 }
 
-void WAFClient::DeleteRegexPatternSetAsyncHelper(const DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteRegexPatternSetAsync(const DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRegexPatternSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteRegexPatternSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRuleOutcome WAFClient::DeleteRule(const DeleteRuleRequest& request) const
@@ -695,14 +695,14 @@ DeleteRuleOutcomeCallable WAFClient::DeleteRuleCallable(const DeleteRuleRequest&
   return task->get_future();
 }
 
-void WAFClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteRuleAsyncHelper(WAFClient const * const clientThis, const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRule(request), context);
 }
 
-void WAFClient::DeleteRuleAsyncHelper(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRuleGroupOutcome WAFClient::DeleteRuleGroup(const DeleteRuleGroupRequest& request) const
@@ -719,14 +719,14 @@ DeleteRuleGroupOutcomeCallable WAFClient::DeleteRuleGroupCallable(const DeleteRu
   return task->get_future();
 }
 
-void WAFClient::DeleteRuleGroupAsync(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteRuleGroupAsyncHelper(WAFClient const * const clientThis, const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRuleGroup(request), context);
 }
 
-void WAFClient::DeleteRuleGroupAsyncHelper(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteRuleGroupAsync(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteRuleGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSizeConstraintSetOutcome WAFClient::DeleteSizeConstraintSet(const DeleteSizeConstraintSetRequest& request) const
@@ -743,14 +743,14 @@ DeleteSizeConstraintSetOutcomeCallable WAFClient::DeleteSizeConstraintSetCallabl
   return task->get_future();
 }
 
-void WAFClient::DeleteSizeConstraintSetAsync(const DeleteSizeConstraintSetRequest& request, const DeleteSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteSizeConstraintSetAsyncHelper(WAFClient const * const clientThis, const DeleteSizeConstraintSetRequest& request, const DeleteSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSizeConstraintSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSizeConstraintSet(request), context);
 }
 
-void WAFClient::DeleteSizeConstraintSetAsyncHelper(const DeleteSizeConstraintSetRequest& request, const DeleteSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteSizeConstraintSetAsync(const DeleteSizeConstraintSetRequest& request, const DeleteSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSizeConstraintSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteSizeConstraintSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSqlInjectionMatchSetOutcome WAFClient::DeleteSqlInjectionMatchSet(const DeleteSqlInjectionMatchSetRequest& request) const
@@ -767,14 +767,14 @@ DeleteSqlInjectionMatchSetOutcomeCallable WAFClient::DeleteSqlInjectionMatchSetC
   return task->get_future();
 }
 
-void WAFClient::DeleteSqlInjectionMatchSetAsync(const DeleteSqlInjectionMatchSetRequest& request, const DeleteSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteSqlInjectionMatchSetAsyncHelper(WAFClient const * const clientThis, const DeleteSqlInjectionMatchSetRequest& request, const DeleteSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSqlInjectionMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSqlInjectionMatchSet(request), context);
 }
 
-void WAFClient::DeleteSqlInjectionMatchSetAsyncHelper(const DeleteSqlInjectionMatchSetRequest& request, const DeleteSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteSqlInjectionMatchSetAsync(const DeleteSqlInjectionMatchSetRequest& request, const DeleteSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSqlInjectionMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteSqlInjectionMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWebACLOutcome WAFClient::DeleteWebACL(const DeleteWebACLRequest& request) const
@@ -791,14 +791,14 @@ DeleteWebACLOutcomeCallable WAFClient::DeleteWebACLCallable(const DeleteWebACLRe
   return task->get_future();
 }
 
-void WAFClient::DeleteWebACLAsync(const DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteWebACLAsyncHelper(WAFClient const * const clientThis, const DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWebACL(request), context);
 }
 
-void WAFClient::DeleteWebACLAsyncHelper(const DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteWebACLAsync(const DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteWebACLAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteXssMatchSetOutcome WAFClient::DeleteXssMatchSet(const DeleteXssMatchSetRequest& request) const
@@ -815,14 +815,14 @@ DeleteXssMatchSetOutcomeCallable WAFClient::DeleteXssMatchSetCallable(const Dele
   return task->get_future();
 }
 
-void WAFClient::DeleteXssMatchSetAsync(const DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientDeleteXssMatchSetAsyncHelper(WAFClient const * const clientThis, const DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteXssMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteXssMatchSet(request), context);
 }
 
-void WAFClient::DeleteXssMatchSetAsyncHelper(const DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::DeleteXssMatchSetAsync(const DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteXssMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientDeleteXssMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetByteMatchSetOutcome WAFClient::GetByteMatchSet(const GetByteMatchSetRequest& request) const
@@ -839,14 +839,14 @@ GetByteMatchSetOutcomeCallable WAFClient::GetByteMatchSetCallable(const GetByteM
   return task->get_future();
 }
 
-void WAFClient::GetByteMatchSetAsync(const GetByteMatchSetRequest& request, const GetByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetByteMatchSetAsyncHelper(WAFClient const * const clientThis, const GetByteMatchSetRequest& request, const GetByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetByteMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetByteMatchSet(request), context);
 }
 
-void WAFClient::GetByteMatchSetAsyncHelper(const GetByteMatchSetRequest& request, const GetByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetByteMatchSetAsync(const GetByteMatchSetRequest& request, const GetByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetByteMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetByteMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetChangeTokenOutcome WAFClient::GetChangeToken(const GetChangeTokenRequest& request) const
@@ -863,14 +863,14 @@ GetChangeTokenOutcomeCallable WAFClient::GetChangeTokenCallable(const GetChangeT
   return task->get_future();
 }
 
-void WAFClient::GetChangeTokenAsync(const GetChangeTokenRequest& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetChangeTokenAsyncHelper(WAFClient const * const clientThis, const GetChangeTokenRequest& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChangeTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetChangeToken(request), context);
 }
 
-void WAFClient::GetChangeTokenAsyncHelper(const GetChangeTokenRequest& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetChangeTokenAsync(const GetChangeTokenRequest& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetChangeToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetChangeTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 GetChangeTokenStatusOutcome WAFClient::GetChangeTokenStatus(const GetChangeTokenStatusRequest& request) const
@@ -887,14 +887,14 @@ GetChangeTokenStatusOutcomeCallable WAFClient::GetChangeTokenStatusCallable(cons
   return task->get_future();
 }
 
-void WAFClient::GetChangeTokenStatusAsync(const GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetChangeTokenStatusAsyncHelper(WAFClient const * const clientThis, const GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChangeTokenStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetChangeTokenStatus(request), context);
 }
 
-void WAFClient::GetChangeTokenStatusAsyncHelper(const GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetChangeTokenStatusAsync(const GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetChangeTokenStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetChangeTokenStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGeoMatchSetOutcome WAFClient::GetGeoMatchSet(const GetGeoMatchSetRequest& request) const
@@ -911,14 +911,14 @@ GetGeoMatchSetOutcomeCallable WAFClient::GetGeoMatchSetCallable(const GetGeoMatc
   return task->get_future();
 }
 
-void WAFClient::GetGeoMatchSetAsync(const GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetGeoMatchSetAsyncHelper(WAFClient const * const clientThis, const GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGeoMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGeoMatchSet(request), context);
 }
 
-void WAFClient::GetGeoMatchSetAsyncHelper(const GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetGeoMatchSetAsync(const GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGeoMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetGeoMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIPSetOutcome WAFClient::GetIPSet(const GetIPSetRequest& request) const
@@ -935,14 +935,14 @@ GetIPSetOutcomeCallable WAFClient::GetIPSetCallable(const GetIPSetRequest& reque
   return task->get_future();
 }
 
-void WAFClient::GetIPSetAsync(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetIPSetAsyncHelper(WAFClient const * const clientThis, const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIPSet(request), context);
 }
 
-void WAFClient::GetIPSetAsyncHelper(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetIPSetAsync(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLoggingConfigurationOutcome WAFClient::GetLoggingConfiguration(const GetLoggingConfigurationRequest& request) const
@@ -959,14 +959,14 @@ GetLoggingConfigurationOutcomeCallable WAFClient::GetLoggingConfigurationCallabl
   return task->get_future();
 }
 
-void WAFClient::GetLoggingConfigurationAsync(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetLoggingConfigurationAsyncHelper(WAFClient const * const clientThis, const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLoggingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLoggingConfiguration(request), context);
 }
 
-void WAFClient::GetLoggingConfigurationAsyncHelper(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetLoggingConfigurationAsync(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetLoggingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPermissionPolicyOutcome WAFClient::GetPermissionPolicy(const GetPermissionPolicyRequest& request) const
@@ -983,14 +983,14 @@ GetPermissionPolicyOutcomeCallable WAFClient::GetPermissionPolicyCallable(const 
   return task->get_future();
 }
 
-void WAFClient::GetPermissionPolicyAsync(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetPermissionPolicyAsyncHelper(WAFClient const * const clientThis, const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPermissionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPermissionPolicy(request), context);
 }
 
-void WAFClient::GetPermissionPolicyAsyncHelper(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetPermissionPolicyAsync(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPermissionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetPermissionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRateBasedRuleOutcome WAFClient::GetRateBasedRule(const GetRateBasedRuleRequest& request) const
@@ -1007,14 +1007,14 @@ GetRateBasedRuleOutcomeCallable WAFClient::GetRateBasedRuleCallable(const GetRat
   return task->get_future();
 }
 
-void WAFClient::GetRateBasedRuleAsync(const GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetRateBasedRuleAsyncHelper(WAFClient const * const clientThis, const GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRateBasedRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRateBasedRule(request), context);
 }
 
-void WAFClient::GetRateBasedRuleAsyncHelper(const GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetRateBasedRuleAsync(const GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRateBasedRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetRateBasedRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRateBasedRuleManagedKeysOutcome WAFClient::GetRateBasedRuleManagedKeys(const GetRateBasedRuleManagedKeysRequest& request) const
@@ -1031,14 +1031,14 @@ GetRateBasedRuleManagedKeysOutcomeCallable WAFClient::GetRateBasedRuleManagedKey
   return task->get_future();
 }
 
-void WAFClient::GetRateBasedRuleManagedKeysAsync(const GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetRateBasedRuleManagedKeysAsyncHelper(WAFClient const * const clientThis, const GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRateBasedRuleManagedKeysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRateBasedRuleManagedKeys(request), context);
 }
 
-void WAFClient::GetRateBasedRuleManagedKeysAsyncHelper(const GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetRateBasedRuleManagedKeysAsync(const GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRateBasedRuleManagedKeys(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetRateBasedRuleManagedKeysAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRegexMatchSetOutcome WAFClient::GetRegexMatchSet(const GetRegexMatchSetRequest& request) const
@@ -1055,14 +1055,14 @@ GetRegexMatchSetOutcomeCallable WAFClient::GetRegexMatchSetCallable(const GetReg
   return task->get_future();
 }
 
-void WAFClient::GetRegexMatchSetAsync(const GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetRegexMatchSetAsyncHelper(WAFClient const * const clientThis, const GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRegexMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRegexMatchSet(request), context);
 }
 
-void WAFClient::GetRegexMatchSetAsyncHelper(const GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetRegexMatchSetAsync(const GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRegexMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetRegexMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRegexPatternSetOutcome WAFClient::GetRegexPatternSet(const GetRegexPatternSetRequest& request) const
@@ -1079,14 +1079,14 @@ GetRegexPatternSetOutcomeCallable WAFClient::GetRegexPatternSetCallable(const Ge
   return task->get_future();
 }
 
-void WAFClient::GetRegexPatternSetAsync(const GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetRegexPatternSetAsyncHelper(WAFClient const * const clientThis, const GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRegexPatternSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRegexPatternSet(request), context);
 }
 
-void WAFClient::GetRegexPatternSetAsyncHelper(const GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetRegexPatternSetAsync(const GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRegexPatternSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetRegexPatternSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRuleOutcome WAFClient::GetRule(const GetRuleRequest& request) const
@@ -1103,14 +1103,14 @@ GetRuleOutcomeCallable WAFClient::GetRuleCallable(const GetRuleRequest& request)
   return task->get_future();
 }
 
-void WAFClient::GetRuleAsync(const GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetRuleAsyncHelper(WAFClient const * const clientThis, const GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRule(request), context);
 }
 
-void WAFClient::GetRuleAsyncHelper(const GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetRuleAsync(const GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRuleGroupOutcome WAFClient::GetRuleGroup(const GetRuleGroupRequest& request) const
@@ -1127,14 +1127,14 @@ GetRuleGroupOutcomeCallable WAFClient::GetRuleGroupCallable(const GetRuleGroupRe
   return task->get_future();
 }
 
-void WAFClient::GetRuleGroupAsync(const GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetRuleGroupAsyncHelper(WAFClient const * const clientThis, const GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRuleGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRuleGroup(request), context);
 }
 
-void WAFClient::GetRuleGroupAsyncHelper(const GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetRuleGroupAsync(const GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetRuleGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSampledRequestsOutcome WAFClient::GetSampledRequests(const GetSampledRequestsRequest& request) const
@@ -1151,14 +1151,14 @@ GetSampledRequestsOutcomeCallable WAFClient::GetSampledRequestsCallable(const Ge
   return task->get_future();
 }
 
-void WAFClient::GetSampledRequestsAsync(const GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetSampledRequestsAsyncHelper(WAFClient const * const clientThis, const GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSampledRequestsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSampledRequests(request), context);
 }
 
-void WAFClient::GetSampledRequestsAsyncHelper(const GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetSampledRequestsAsync(const GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSampledRequests(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetSampledRequestsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSizeConstraintSetOutcome WAFClient::GetSizeConstraintSet(const GetSizeConstraintSetRequest& request) const
@@ -1175,14 +1175,14 @@ GetSizeConstraintSetOutcomeCallable WAFClient::GetSizeConstraintSetCallable(cons
   return task->get_future();
 }
 
-void WAFClient::GetSizeConstraintSetAsync(const GetSizeConstraintSetRequest& request, const GetSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetSizeConstraintSetAsyncHelper(WAFClient const * const clientThis, const GetSizeConstraintSetRequest& request, const GetSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSizeConstraintSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSizeConstraintSet(request), context);
 }
 
-void WAFClient::GetSizeConstraintSetAsyncHelper(const GetSizeConstraintSetRequest& request, const GetSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetSizeConstraintSetAsync(const GetSizeConstraintSetRequest& request, const GetSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSizeConstraintSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetSizeConstraintSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSqlInjectionMatchSetOutcome WAFClient::GetSqlInjectionMatchSet(const GetSqlInjectionMatchSetRequest& request) const
@@ -1199,14 +1199,14 @@ GetSqlInjectionMatchSetOutcomeCallable WAFClient::GetSqlInjectionMatchSetCallabl
   return task->get_future();
 }
 
-void WAFClient::GetSqlInjectionMatchSetAsync(const GetSqlInjectionMatchSetRequest& request, const GetSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetSqlInjectionMatchSetAsyncHelper(WAFClient const * const clientThis, const GetSqlInjectionMatchSetRequest& request, const GetSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSqlInjectionMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSqlInjectionMatchSet(request), context);
 }
 
-void WAFClient::GetSqlInjectionMatchSetAsyncHelper(const GetSqlInjectionMatchSetRequest& request, const GetSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetSqlInjectionMatchSetAsync(const GetSqlInjectionMatchSetRequest& request, const GetSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSqlInjectionMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetSqlInjectionMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWebACLOutcome WAFClient::GetWebACL(const GetWebACLRequest& request) const
@@ -1223,14 +1223,14 @@ GetWebACLOutcomeCallable WAFClient::GetWebACLCallable(const GetWebACLRequest& re
   return task->get_future();
 }
 
-void WAFClient::GetWebACLAsync(const GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetWebACLAsyncHelper(WAFClient const * const clientThis, const GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWebACL(request), context);
 }
 
-void WAFClient::GetWebACLAsyncHelper(const GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetWebACLAsync(const GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetWebACLAsyncHelper( this, request, handler, context ); } );
 }
 
 GetXssMatchSetOutcome WAFClient::GetXssMatchSet(const GetXssMatchSetRequest& request) const
@@ -1247,14 +1247,14 @@ GetXssMatchSetOutcomeCallable WAFClient::GetXssMatchSetCallable(const GetXssMatc
   return task->get_future();
 }
 
-void WAFClient::GetXssMatchSetAsync(const GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientGetXssMatchSetAsyncHelper(WAFClient const * const clientThis, const GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetXssMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetXssMatchSet(request), context);
 }
 
-void WAFClient::GetXssMatchSetAsyncHelper(const GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::GetXssMatchSetAsync(const GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetXssMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientGetXssMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 ListActivatedRulesInRuleGroupOutcome WAFClient::ListActivatedRulesInRuleGroup(const ListActivatedRulesInRuleGroupRequest& request) const
@@ -1271,14 +1271,14 @@ ListActivatedRulesInRuleGroupOutcomeCallable WAFClient::ListActivatedRulesInRule
   return task->get_future();
 }
 
-void WAFClient::ListActivatedRulesInRuleGroupAsync(const ListActivatedRulesInRuleGroupRequest& request, const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListActivatedRulesInRuleGroupAsyncHelper(WAFClient const * const clientThis, const ListActivatedRulesInRuleGroupRequest& request, const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListActivatedRulesInRuleGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListActivatedRulesInRuleGroup(request), context);
 }
 
-void WAFClient::ListActivatedRulesInRuleGroupAsyncHelper(const ListActivatedRulesInRuleGroupRequest& request, const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListActivatedRulesInRuleGroupAsync(const ListActivatedRulesInRuleGroupRequest& request, const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListActivatedRulesInRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListActivatedRulesInRuleGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ListByteMatchSetsOutcome WAFClient::ListByteMatchSets(const ListByteMatchSetsRequest& request) const
@@ -1295,14 +1295,14 @@ ListByteMatchSetsOutcomeCallable WAFClient::ListByteMatchSetsCallable(const List
   return task->get_future();
 }
 
-void WAFClient::ListByteMatchSetsAsync(const ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListByteMatchSetsAsyncHelper(WAFClient const * const clientThis, const ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListByteMatchSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListByteMatchSets(request), context);
 }
 
-void WAFClient::ListByteMatchSetsAsyncHelper(const ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListByteMatchSetsAsync(const ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListByteMatchSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListByteMatchSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGeoMatchSetsOutcome WAFClient::ListGeoMatchSets(const ListGeoMatchSetsRequest& request) const
@@ -1319,14 +1319,14 @@ ListGeoMatchSetsOutcomeCallable WAFClient::ListGeoMatchSetsCallable(const ListGe
   return task->get_future();
 }
 
-void WAFClient::ListGeoMatchSetsAsync(const ListGeoMatchSetsRequest& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListGeoMatchSetsAsyncHelper(WAFClient const * const clientThis, const ListGeoMatchSetsRequest& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGeoMatchSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGeoMatchSets(request), context);
 }
 
-void WAFClient::ListGeoMatchSetsAsyncHelper(const ListGeoMatchSetsRequest& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListGeoMatchSetsAsync(const ListGeoMatchSetsRequest& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGeoMatchSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListGeoMatchSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIPSetsOutcome WAFClient::ListIPSets(const ListIPSetsRequest& request) const
@@ -1343,14 +1343,14 @@ ListIPSetsOutcomeCallable WAFClient::ListIPSetsCallable(const ListIPSetsRequest&
   return task->get_future();
 }
 
-void WAFClient::ListIPSetsAsync(const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListIPSetsAsyncHelper(WAFClient const * const clientThis, const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIPSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIPSets(request), context);
 }
 
-void WAFClient::ListIPSetsAsyncHelper(const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListIPSetsAsync(const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIPSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListIPSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLoggingConfigurationsOutcome WAFClient::ListLoggingConfigurations(const ListLoggingConfigurationsRequest& request) const
@@ -1367,14 +1367,14 @@ ListLoggingConfigurationsOutcomeCallable WAFClient::ListLoggingConfigurationsCal
   return task->get_future();
 }
 
-void WAFClient::ListLoggingConfigurationsAsync(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListLoggingConfigurationsAsyncHelper(WAFClient const * const clientThis, const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLoggingConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLoggingConfigurations(request), context);
 }
 
-void WAFClient::ListLoggingConfigurationsAsyncHelper(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListLoggingConfigurationsAsync(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLoggingConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListLoggingConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRateBasedRulesOutcome WAFClient::ListRateBasedRules(const ListRateBasedRulesRequest& request) const
@@ -1391,14 +1391,14 @@ ListRateBasedRulesOutcomeCallable WAFClient::ListRateBasedRulesCallable(const Li
   return task->get_future();
 }
 
-void WAFClient::ListRateBasedRulesAsync(const ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListRateBasedRulesAsyncHelper(WAFClient const * const clientThis, const ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRateBasedRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRateBasedRules(request), context);
 }
 
-void WAFClient::ListRateBasedRulesAsyncHelper(const ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListRateBasedRulesAsync(const ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRateBasedRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListRateBasedRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRegexMatchSetsOutcome WAFClient::ListRegexMatchSets(const ListRegexMatchSetsRequest& request) const
@@ -1415,14 +1415,14 @@ ListRegexMatchSetsOutcomeCallable WAFClient::ListRegexMatchSetsCallable(const Li
   return task->get_future();
 }
 
-void WAFClient::ListRegexMatchSetsAsync(const ListRegexMatchSetsRequest& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListRegexMatchSetsAsyncHelper(WAFClient const * const clientThis, const ListRegexMatchSetsRequest& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRegexMatchSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRegexMatchSets(request), context);
 }
 
-void WAFClient::ListRegexMatchSetsAsyncHelper(const ListRegexMatchSetsRequest& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListRegexMatchSetsAsync(const ListRegexMatchSetsRequest& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRegexMatchSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListRegexMatchSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRegexPatternSetsOutcome WAFClient::ListRegexPatternSets(const ListRegexPatternSetsRequest& request) const
@@ -1439,14 +1439,14 @@ ListRegexPatternSetsOutcomeCallable WAFClient::ListRegexPatternSetsCallable(cons
   return task->get_future();
 }
 
-void WAFClient::ListRegexPatternSetsAsync(const ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListRegexPatternSetsAsyncHelper(WAFClient const * const clientThis, const ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRegexPatternSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRegexPatternSets(request), context);
 }
 
-void WAFClient::ListRegexPatternSetsAsyncHelper(const ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListRegexPatternSetsAsync(const ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRegexPatternSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListRegexPatternSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRuleGroupsOutcome WAFClient::ListRuleGroups(const ListRuleGroupsRequest& request) const
@@ -1463,14 +1463,14 @@ ListRuleGroupsOutcomeCallable WAFClient::ListRuleGroupsCallable(const ListRuleGr
   return task->get_future();
 }
 
-void WAFClient::ListRuleGroupsAsync(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListRuleGroupsAsyncHelper(WAFClient const * const clientThis, const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRuleGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRuleGroups(request), context);
 }
 
-void WAFClient::ListRuleGroupsAsyncHelper(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListRuleGroupsAsync(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRuleGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListRuleGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRulesOutcome WAFClient::ListRules(const ListRulesRequest& request) const
@@ -1487,14 +1487,14 @@ ListRulesOutcomeCallable WAFClient::ListRulesCallable(const ListRulesRequest& re
   return task->get_future();
 }
 
-void WAFClient::ListRulesAsync(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListRulesAsyncHelper(WAFClient const * const clientThis, const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRules(request), context);
 }
 
-void WAFClient::ListRulesAsyncHelper(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListRulesAsync(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSizeConstraintSetsOutcome WAFClient::ListSizeConstraintSets(const ListSizeConstraintSetsRequest& request) const
@@ -1511,14 +1511,14 @@ ListSizeConstraintSetsOutcomeCallable WAFClient::ListSizeConstraintSetsCallable(
   return task->get_future();
 }
 
-void WAFClient::ListSizeConstraintSetsAsync(const ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListSizeConstraintSetsAsyncHelper(WAFClient const * const clientThis, const ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSizeConstraintSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSizeConstraintSets(request), context);
 }
 
-void WAFClient::ListSizeConstraintSetsAsyncHelper(const ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListSizeConstraintSetsAsync(const ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSizeConstraintSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListSizeConstraintSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSqlInjectionMatchSetsOutcome WAFClient::ListSqlInjectionMatchSets(const ListSqlInjectionMatchSetsRequest& request) const
@@ -1535,14 +1535,14 @@ ListSqlInjectionMatchSetsOutcomeCallable WAFClient::ListSqlInjectionMatchSetsCal
   return task->get_future();
 }
 
-void WAFClient::ListSqlInjectionMatchSetsAsync(const ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListSqlInjectionMatchSetsAsyncHelper(WAFClient const * const clientThis, const ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSqlInjectionMatchSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSqlInjectionMatchSets(request), context);
 }
 
-void WAFClient::ListSqlInjectionMatchSetsAsyncHelper(const ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListSqlInjectionMatchSetsAsync(const ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSqlInjectionMatchSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListSqlInjectionMatchSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSubscribedRuleGroupsOutcome WAFClient::ListSubscribedRuleGroups(const ListSubscribedRuleGroupsRequest& request) const
@@ -1559,14 +1559,14 @@ ListSubscribedRuleGroupsOutcomeCallable WAFClient::ListSubscribedRuleGroupsCalla
   return task->get_future();
 }
 
-void WAFClient::ListSubscribedRuleGroupsAsync(const ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListSubscribedRuleGroupsAsyncHelper(WAFClient const * const clientThis, const ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSubscribedRuleGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSubscribedRuleGroups(request), context);
 }
 
-void WAFClient::ListSubscribedRuleGroupsAsyncHelper(const ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListSubscribedRuleGroupsAsync(const ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSubscribedRuleGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListSubscribedRuleGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome WAFClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1583,14 +1583,14 @@ ListTagsForResourceOutcomeCallable WAFClient::ListTagsForResourceCallable(const 
   return task->get_future();
 }
 
-void WAFClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListTagsForResourceAsyncHelper(WAFClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void WAFClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWebACLsOutcome WAFClient::ListWebACLs(const ListWebACLsRequest& request) const
@@ -1607,14 +1607,14 @@ ListWebACLsOutcomeCallable WAFClient::ListWebACLsCallable(const ListWebACLsReque
   return task->get_future();
 }
 
-void WAFClient::ListWebACLsAsync(const ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListWebACLsAsyncHelper(WAFClient const * const clientThis, const ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWebACLsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWebACLs(request), context);
 }
 
-void WAFClient::ListWebACLsAsyncHelper(const ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListWebACLsAsync(const ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWebACLs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListWebACLsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListXssMatchSetsOutcome WAFClient::ListXssMatchSets(const ListXssMatchSetsRequest& request) const
@@ -1631,14 +1631,14 @@ ListXssMatchSetsOutcomeCallable WAFClient::ListXssMatchSetsCallable(const ListXs
   return task->get_future();
 }
 
-void WAFClient::ListXssMatchSetsAsync(const ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientListXssMatchSetsAsyncHelper(WAFClient const * const clientThis, const ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListXssMatchSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListXssMatchSets(request), context);
 }
 
-void WAFClient::ListXssMatchSetsAsyncHelper(const ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::ListXssMatchSetsAsync(const ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListXssMatchSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientListXssMatchSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutLoggingConfigurationOutcome WAFClient::PutLoggingConfiguration(const PutLoggingConfigurationRequest& request) const
@@ -1655,14 +1655,14 @@ PutLoggingConfigurationOutcomeCallable WAFClient::PutLoggingConfigurationCallabl
   return task->get_future();
 }
 
-void WAFClient::PutLoggingConfigurationAsync(const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientPutLoggingConfigurationAsyncHelper(WAFClient const * const clientThis, const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLoggingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutLoggingConfiguration(request), context);
 }
 
-void WAFClient::PutLoggingConfigurationAsyncHelper(const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::PutLoggingConfigurationAsync(const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientPutLoggingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPermissionPolicyOutcome WAFClient::PutPermissionPolicy(const PutPermissionPolicyRequest& request) const
@@ -1679,14 +1679,14 @@ PutPermissionPolicyOutcomeCallable WAFClient::PutPermissionPolicyCallable(const 
   return task->get_future();
 }
 
-void WAFClient::PutPermissionPolicyAsync(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientPutPermissionPolicyAsyncHelper(WAFClient const * const clientThis, const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPermissionPolicy(request), context);
 }
 
-void WAFClient::PutPermissionPolicyAsyncHelper(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::PutPermissionPolicyAsync(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPermissionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientPutPermissionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome WAFClient::TagResource(const TagResourceRequest& request) const
@@ -1703,14 +1703,14 @@ TagResourceOutcomeCallable WAFClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void WAFClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientTagResourceAsyncHelper(WAFClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void WAFClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome WAFClient::UntagResource(const UntagResourceRequest& request) const
@@ -1727,14 +1727,14 @@ UntagResourceOutcomeCallable WAFClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void WAFClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUntagResourceAsyncHelper(WAFClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void WAFClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateByteMatchSetOutcome WAFClient::UpdateByteMatchSet(const UpdateByteMatchSetRequest& request) const
@@ -1751,14 +1751,14 @@ UpdateByteMatchSetOutcomeCallable WAFClient::UpdateByteMatchSetCallable(const Up
   return task->get_future();
 }
 
-void WAFClient::UpdateByteMatchSetAsync(const UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateByteMatchSetAsyncHelper(WAFClient const * const clientThis, const UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateByteMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateByteMatchSet(request), context);
 }
 
-void WAFClient::UpdateByteMatchSetAsyncHelper(const UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateByteMatchSetAsync(const UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateByteMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateByteMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGeoMatchSetOutcome WAFClient::UpdateGeoMatchSet(const UpdateGeoMatchSetRequest& request) const
@@ -1775,14 +1775,14 @@ UpdateGeoMatchSetOutcomeCallable WAFClient::UpdateGeoMatchSetCallable(const Upda
   return task->get_future();
 }
 
-void WAFClient::UpdateGeoMatchSetAsync(const UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateGeoMatchSetAsyncHelper(WAFClient const * const clientThis, const UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGeoMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGeoMatchSet(request), context);
 }
 
-void WAFClient::UpdateGeoMatchSetAsyncHelper(const UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateGeoMatchSetAsync(const UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGeoMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateGeoMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateIPSetOutcome WAFClient::UpdateIPSet(const UpdateIPSetRequest& request) const
@@ -1799,14 +1799,14 @@ UpdateIPSetOutcomeCallable WAFClient::UpdateIPSetCallable(const UpdateIPSetReque
   return task->get_future();
 }
 
-void WAFClient::UpdateIPSetAsync(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateIPSetAsyncHelper(WAFClient const * const clientThis, const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateIPSet(request), context);
 }
 
-void WAFClient::UpdateIPSetAsyncHelper(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateIPSetAsync(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRateBasedRuleOutcome WAFClient::UpdateRateBasedRule(const UpdateRateBasedRuleRequest& request) const
@@ -1823,14 +1823,14 @@ UpdateRateBasedRuleOutcomeCallable WAFClient::UpdateRateBasedRuleCallable(const 
   return task->get_future();
 }
 
-void WAFClient::UpdateRateBasedRuleAsync(const UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateRateBasedRuleAsyncHelper(WAFClient const * const clientThis, const UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRateBasedRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRateBasedRule(request), context);
 }
 
-void WAFClient::UpdateRateBasedRuleAsyncHelper(const UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateRateBasedRuleAsync(const UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRateBasedRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateRateBasedRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRegexMatchSetOutcome WAFClient::UpdateRegexMatchSet(const UpdateRegexMatchSetRequest& request) const
@@ -1847,14 +1847,14 @@ UpdateRegexMatchSetOutcomeCallable WAFClient::UpdateRegexMatchSetCallable(const 
   return task->get_future();
 }
 
-void WAFClient::UpdateRegexMatchSetAsync(const UpdateRegexMatchSetRequest& request, const UpdateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateRegexMatchSetAsyncHelper(WAFClient const * const clientThis, const UpdateRegexMatchSetRequest& request, const UpdateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRegexMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRegexMatchSet(request), context);
 }
 
-void WAFClient::UpdateRegexMatchSetAsyncHelper(const UpdateRegexMatchSetRequest& request, const UpdateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateRegexMatchSetAsync(const UpdateRegexMatchSetRequest& request, const UpdateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRegexMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateRegexMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRegexPatternSetOutcome WAFClient::UpdateRegexPatternSet(const UpdateRegexPatternSetRequest& request) const
@@ -1871,14 +1871,14 @@ UpdateRegexPatternSetOutcomeCallable WAFClient::UpdateRegexPatternSetCallable(co
   return task->get_future();
 }
 
-void WAFClient::UpdateRegexPatternSetAsync(const UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateRegexPatternSetAsyncHelper(WAFClient const * const clientThis, const UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRegexPatternSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRegexPatternSet(request), context);
 }
 
-void WAFClient::UpdateRegexPatternSetAsyncHelper(const UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateRegexPatternSetAsync(const UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRegexPatternSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateRegexPatternSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRuleOutcome WAFClient::UpdateRule(const UpdateRuleRequest& request) const
@@ -1895,14 +1895,14 @@ UpdateRuleOutcomeCallable WAFClient::UpdateRuleCallable(const UpdateRuleRequest&
   return task->get_future();
 }
 
-void WAFClient::UpdateRuleAsync(const UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateRuleAsyncHelper(WAFClient const * const clientThis, const UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRule(request), context);
 }
 
-void WAFClient::UpdateRuleAsyncHelper(const UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateRuleAsync(const UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRuleGroupOutcome WAFClient::UpdateRuleGroup(const UpdateRuleGroupRequest& request) const
@@ -1919,14 +1919,14 @@ UpdateRuleGroupOutcomeCallable WAFClient::UpdateRuleGroupCallable(const UpdateRu
   return task->get_future();
 }
 
-void WAFClient::UpdateRuleGroupAsync(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateRuleGroupAsyncHelper(WAFClient const * const clientThis, const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRuleGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRuleGroup(request), context);
 }
 
-void WAFClient::UpdateRuleGroupAsyncHelper(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateRuleGroupAsync(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateRuleGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSizeConstraintSetOutcome WAFClient::UpdateSizeConstraintSet(const UpdateSizeConstraintSetRequest& request) const
@@ -1943,14 +1943,14 @@ UpdateSizeConstraintSetOutcomeCallable WAFClient::UpdateSizeConstraintSetCallabl
   return task->get_future();
 }
 
-void WAFClient::UpdateSizeConstraintSetAsync(const UpdateSizeConstraintSetRequest& request, const UpdateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateSizeConstraintSetAsyncHelper(WAFClient const * const clientThis, const UpdateSizeConstraintSetRequest& request, const UpdateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSizeConstraintSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSizeConstraintSet(request), context);
 }
 
-void WAFClient::UpdateSizeConstraintSetAsyncHelper(const UpdateSizeConstraintSetRequest& request, const UpdateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateSizeConstraintSetAsync(const UpdateSizeConstraintSetRequest& request, const UpdateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSizeConstraintSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateSizeConstraintSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSqlInjectionMatchSetOutcome WAFClient::UpdateSqlInjectionMatchSet(const UpdateSqlInjectionMatchSetRequest& request) const
@@ -1967,14 +1967,14 @@ UpdateSqlInjectionMatchSetOutcomeCallable WAFClient::UpdateSqlInjectionMatchSetC
   return task->get_future();
 }
 
-void WAFClient::UpdateSqlInjectionMatchSetAsync(const UpdateSqlInjectionMatchSetRequest& request, const UpdateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateSqlInjectionMatchSetAsyncHelper(WAFClient const * const clientThis, const UpdateSqlInjectionMatchSetRequest& request, const UpdateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSqlInjectionMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSqlInjectionMatchSet(request), context);
 }
 
-void WAFClient::UpdateSqlInjectionMatchSetAsyncHelper(const UpdateSqlInjectionMatchSetRequest& request, const UpdateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateSqlInjectionMatchSetAsync(const UpdateSqlInjectionMatchSetRequest& request, const UpdateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSqlInjectionMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateSqlInjectionMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWebACLOutcome WAFClient::UpdateWebACL(const UpdateWebACLRequest& request) const
@@ -1991,14 +1991,14 @@ UpdateWebACLOutcomeCallable WAFClient::UpdateWebACLCallable(const UpdateWebACLRe
   return task->get_future();
 }
 
-void WAFClient::UpdateWebACLAsync(const UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateWebACLAsyncHelper(WAFClient const * const clientThis, const UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWebACL(request), context);
 }
 
-void WAFClient::UpdateWebACLAsyncHelper(const UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateWebACLAsync(const UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateWebACLAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateXssMatchSetOutcome WAFClient::UpdateXssMatchSet(const UpdateXssMatchSetRequest& request) const
@@ -2015,13 +2015,13 @@ UpdateXssMatchSetOutcomeCallable WAFClient::UpdateXssMatchSetCallable(const Upda
   return task->get_future();
 }
 
-void WAFClient::UpdateXssMatchSetAsync(const UpdateXssMatchSetRequest& request, const UpdateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClientUpdateXssMatchSetAsyncHelper(WAFClient const * const clientThis, const UpdateXssMatchSetRequest& request, const UpdateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateXssMatchSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateXssMatchSet(request), context);
 }
 
-void WAFClient::UpdateXssMatchSetAsyncHelper(const UpdateXssMatchSetRequest& request, const UpdateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFClient::UpdateXssMatchSetAsync(const UpdateXssMatchSetRequest& request, const UpdateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateXssMatchSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFClientUpdateXssMatchSetAsyncHelper( this, request, handler, context ); } );
 }
 

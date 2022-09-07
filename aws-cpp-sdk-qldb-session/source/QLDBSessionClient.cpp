@@ -115,13 +115,13 @@ SendCommandOutcomeCallable QLDBSessionClient::SendCommandCallable(const SendComm
   return task->get_future();
 }
 
-void QLDBSessionClient::SendCommandAsync(const SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBSessionClientSendCommandAsyncHelper(QLDBSessionClient const * const clientThis, const SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendCommandAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendCommand(request), context);
 }
 
-void QLDBSessionClient::SendCommandAsyncHelper(const SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QLDBSessionClient::SendCommandAsync(const SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendCommand(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QLDBSessionClientSendCommandAsyncHelper( this, request, handler, context ); } );
 }
 

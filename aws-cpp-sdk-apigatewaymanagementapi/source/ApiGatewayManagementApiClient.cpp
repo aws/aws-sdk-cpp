@@ -124,14 +124,14 @@ DeleteConnectionOutcomeCallable ApiGatewayManagementApiClient::DeleteConnectionC
   return task->get_future();
 }
 
-void ApiGatewayManagementApiClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApiGatewayManagementApiClientDeleteConnectionAsyncHelper(ApiGatewayManagementApiClient const * const clientThis, const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConnection(request), context);
 }
 
-void ApiGatewayManagementApiClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApiGatewayManagementApiClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApiGatewayManagementApiClientDeleteConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectionOutcome ApiGatewayManagementApiClient::GetConnection(const GetConnectionRequest& request) const
@@ -155,14 +155,14 @@ GetConnectionOutcomeCallable ApiGatewayManagementApiClient::GetConnectionCallabl
   return task->get_future();
 }
 
-void ApiGatewayManagementApiClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApiGatewayManagementApiClientGetConnectionAsyncHelper(ApiGatewayManagementApiClient const * const clientThis, const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnection(request), context);
 }
 
-void ApiGatewayManagementApiClient::GetConnectionAsyncHelper(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApiGatewayManagementApiClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApiGatewayManagementApiClientGetConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const PostToConnectionRequest& request) const
@@ -186,13 +186,13 @@ PostToConnectionOutcomeCallable ApiGatewayManagementApiClient::PostToConnectionC
   return task->get_future();
 }
 
-void ApiGatewayManagementApiClient::PostToConnectionAsync(const PostToConnectionRequest& request, const PostToConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApiGatewayManagementApiClientPostToConnectionAsyncHelper(ApiGatewayManagementApiClient const * const clientThis, const PostToConnectionRequest& request, const PostToConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostToConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PostToConnection(request), context);
 }
 
-void ApiGatewayManagementApiClient::PostToConnectionAsyncHelper(const PostToConnectionRequest& request, const PostToConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApiGatewayManagementApiClient::PostToConnectionAsync(const PostToConnectionRequest& request, const PostToConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PostToConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApiGatewayManagementApiClientPostToConnectionAsyncHelper( this, request, handler, context ); } );
 }
 

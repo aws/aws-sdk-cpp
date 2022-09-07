@@ -137,14 +137,14 @@ CreateCampaignOutcomeCallable ConnectCampaignsClient::CreateCampaignCallable(con
   return task->get_future();
 }
 
-void ConnectCampaignsClient::CreateCampaignAsync(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientCreateCampaignAsyncHelper(ConnectCampaignsClient const * const clientThis, const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCampaign(request), context);
 }
 
-void ConnectCampaignsClient::CreateCampaignAsyncHelper(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::CreateCampaignAsync(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientCreateCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCampaignOutcome ConnectCampaignsClient::DeleteCampaign(const DeleteCampaignRequest& request) const
@@ -168,14 +168,14 @@ DeleteCampaignOutcomeCallable ConnectCampaignsClient::DeleteCampaignCallable(con
   return task->get_future();
 }
 
-void ConnectCampaignsClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientDeleteCampaignAsyncHelper(ConnectCampaignsClient const * const clientThis, const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCampaign(request), context);
 }
 
-void ConnectCampaignsClient::DeleteCampaignAsyncHelper(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientDeleteCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConnectInstanceConfigOutcome ConnectCampaignsClient::DeleteConnectInstanceConfig(const DeleteConnectInstanceConfigRequest& request) const
@@ -200,14 +200,14 @@ DeleteConnectInstanceConfigOutcomeCallable ConnectCampaignsClient::DeleteConnect
   return task->get_future();
 }
 
-void ConnectCampaignsClient::DeleteConnectInstanceConfigAsync(const DeleteConnectInstanceConfigRequest& request, const DeleteConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientDeleteConnectInstanceConfigAsyncHelper(ConnectCampaignsClient const * const clientThis, const DeleteConnectInstanceConfigRequest& request, const DeleteConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectInstanceConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConnectInstanceConfig(request), context);
 }
 
-void ConnectCampaignsClient::DeleteConnectInstanceConfigAsyncHelper(const DeleteConnectInstanceConfigRequest& request, const DeleteConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::DeleteConnectInstanceConfigAsync(const DeleteConnectInstanceConfigRequest& request, const DeleteConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConnectInstanceConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientDeleteConnectInstanceConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInstanceOnboardingJobOutcome ConnectCampaignsClient::DeleteInstanceOnboardingJob(const DeleteInstanceOnboardingJobRequest& request) const
@@ -232,14 +232,14 @@ DeleteInstanceOnboardingJobOutcomeCallable ConnectCampaignsClient::DeleteInstanc
   return task->get_future();
 }
 
-void ConnectCampaignsClient::DeleteInstanceOnboardingJobAsync(const DeleteInstanceOnboardingJobRequest& request, const DeleteInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientDeleteInstanceOnboardingJobAsyncHelper(ConnectCampaignsClient const * const clientThis, const DeleteInstanceOnboardingJobRequest& request, const DeleteInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceOnboardingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInstanceOnboardingJob(request), context);
 }
 
-void ConnectCampaignsClient::DeleteInstanceOnboardingJobAsyncHelper(const DeleteInstanceOnboardingJobRequest& request, const DeleteInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::DeleteInstanceOnboardingJobAsync(const DeleteInstanceOnboardingJobRequest& request, const DeleteInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInstanceOnboardingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientDeleteInstanceOnboardingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCampaignOutcome ConnectCampaignsClient::DescribeCampaign(const DescribeCampaignRequest& request) const
@@ -263,14 +263,14 @@ DescribeCampaignOutcomeCallable ConnectCampaignsClient::DescribeCampaignCallable
   return task->get_future();
 }
 
-void ConnectCampaignsClient::DescribeCampaignAsync(const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientDescribeCampaignAsyncHelper(ConnectCampaignsClient const * const clientThis, const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCampaign(request), context);
 }
 
-void ConnectCampaignsClient::DescribeCampaignAsyncHelper(const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::DescribeCampaignAsync(const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientDescribeCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCampaignStateOutcome ConnectCampaignsClient::GetCampaignState(const GetCampaignStateRequest& request) const
@@ -295,14 +295,14 @@ GetCampaignStateOutcomeCallable ConnectCampaignsClient::GetCampaignStateCallable
   return task->get_future();
 }
 
-void ConnectCampaignsClient::GetCampaignStateAsync(const GetCampaignStateRequest& request, const GetCampaignStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientGetCampaignStateAsyncHelper(ConnectCampaignsClient const * const clientThis, const GetCampaignStateRequest& request, const GetCampaignStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCampaignStateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCampaignState(request), context);
 }
 
-void ConnectCampaignsClient::GetCampaignStateAsyncHelper(const GetCampaignStateRequest& request, const GetCampaignStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::GetCampaignStateAsync(const GetCampaignStateRequest& request, const GetCampaignStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCampaignState(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientGetCampaignStateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCampaignStateBatchOutcome ConnectCampaignsClient::GetCampaignStateBatch(const GetCampaignStateBatchRequest& request) const
@@ -320,14 +320,14 @@ GetCampaignStateBatchOutcomeCallable ConnectCampaignsClient::GetCampaignStateBat
   return task->get_future();
 }
 
-void ConnectCampaignsClient::GetCampaignStateBatchAsync(const GetCampaignStateBatchRequest& request, const GetCampaignStateBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientGetCampaignStateBatchAsyncHelper(ConnectCampaignsClient const * const clientThis, const GetCampaignStateBatchRequest& request, const GetCampaignStateBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCampaignStateBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCampaignStateBatch(request), context);
 }
 
-void ConnectCampaignsClient::GetCampaignStateBatchAsyncHelper(const GetCampaignStateBatchRequest& request, const GetCampaignStateBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::GetCampaignStateBatchAsync(const GetCampaignStateBatchRequest& request, const GetCampaignStateBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCampaignStateBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientGetCampaignStateBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectInstanceConfigOutcome ConnectCampaignsClient::GetConnectInstanceConfig(const GetConnectInstanceConfigRequest& request) const
@@ -352,14 +352,14 @@ GetConnectInstanceConfigOutcomeCallable ConnectCampaignsClient::GetConnectInstan
   return task->get_future();
 }
 
-void ConnectCampaignsClient::GetConnectInstanceConfigAsync(const GetConnectInstanceConfigRequest& request, const GetConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientGetConnectInstanceConfigAsyncHelper(ConnectCampaignsClient const * const clientThis, const GetConnectInstanceConfigRequest& request, const GetConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectInstanceConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnectInstanceConfig(request), context);
 }
 
-void ConnectCampaignsClient::GetConnectInstanceConfigAsyncHelper(const GetConnectInstanceConfigRequest& request, const GetConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::GetConnectInstanceConfigAsync(const GetConnectInstanceConfigRequest& request, const GetConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnectInstanceConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientGetConnectInstanceConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceOnboardingJobStatusOutcome ConnectCampaignsClient::GetInstanceOnboardingJobStatus(const GetInstanceOnboardingJobStatusRequest& request) const
@@ -384,14 +384,14 @@ GetInstanceOnboardingJobStatusOutcomeCallable ConnectCampaignsClient::GetInstanc
   return task->get_future();
 }
 
-void ConnectCampaignsClient::GetInstanceOnboardingJobStatusAsync(const GetInstanceOnboardingJobStatusRequest& request, const GetInstanceOnboardingJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientGetInstanceOnboardingJobStatusAsyncHelper(ConnectCampaignsClient const * const clientThis, const GetInstanceOnboardingJobStatusRequest& request, const GetInstanceOnboardingJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceOnboardingJobStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstanceOnboardingJobStatus(request), context);
 }
 
-void ConnectCampaignsClient::GetInstanceOnboardingJobStatusAsyncHelper(const GetInstanceOnboardingJobStatusRequest& request, const GetInstanceOnboardingJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::GetInstanceOnboardingJobStatusAsync(const GetInstanceOnboardingJobStatusRequest& request, const GetInstanceOnboardingJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstanceOnboardingJobStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientGetInstanceOnboardingJobStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCampaignsOutcome ConnectCampaignsClient::ListCampaigns(const ListCampaignsRequest& request) const
@@ -409,14 +409,14 @@ ListCampaignsOutcomeCallable ConnectCampaignsClient::ListCampaignsCallable(const
   return task->get_future();
 }
 
-void ConnectCampaignsClient::ListCampaignsAsync(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientListCampaignsAsyncHelper(ConnectCampaignsClient const * const clientThis, const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCampaignsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCampaigns(request), context);
 }
 
-void ConnectCampaignsClient::ListCampaignsAsyncHelper(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::ListCampaignsAsync(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCampaigns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientListCampaignsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ConnectCampaignsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -440,14 +440,14 @@ ListTagsForResourceOutcomeCallable ConnectCampaignsClient::ListTagsForResourceCa
   return task->get_future();
 }
 
-void ConnectCampaignsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientListTagsForResourceAsyncHelper(ConnectCampaignsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ConnectCampaignsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PauseCampaignOutcome ConnectCampaignsClient::PauseCampaign(const PauseCampaignRequest& request) const
@@ -472,14 +472,14 @@ PauseCampaignOutcomeCallable ConnectCampaignsClient::PauseCampaignCallable(const
   return task->get_future();
 }
 
-void ConnectCampaignsClient::PauseCampaignAsync(const PauseCampaignRequest& request, const PauseCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientPauseCampaignAsyncHelper(ConnectCampaignsClient const * const clientThis, const PauseCampaignRequest& request, const PauseCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PauseCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PauseCampaign(request), context);
 }
 
-void ConnectCampaignsClient::PauseCampaignAsyncHelper(const PauseCampaignRequest& request, const PauseCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::PauseCampaignAsync(const PauseCampaignRequest& request, const PauseCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PauseCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientPauseCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 PutDialRequestBatchOutcome ConnectCampaignsClient::PutDialRequestBatch(const PutDialRequestBatchRequest& request) const
@@ -504,14 +504,14 @@ PutDialRequestBatchOutcomeCallable ConnectCampaignsClient::PutDialRequestBatchCa
   return task->get_future();
 }
 
-void ConnectCampaignsClient::PutDialRequestBatchAsync(const PutDialRequestBatchRequest& request, const PutDialRequestBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientPutDialRequestBatchAsyncHelper(ConnectCampaignsClient const * const clientThis, const PutDialRequestBatchRequest& request, const PutDialRequestBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDialRequestBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutDialRequestBatch(request), context);
 }
 
-void ConnectCampaignsClient::PutDialRequestBatchAsyncHelper(const PutDialRequestBatchRequest& request, const PutDialRequestBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::PutDialRequestBatchAsync(const PutDialRequestBatchRequest& request, const PutDialRequestBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutDialRequestBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientPutDialRequestBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 ResumeCampaignOutcome ConnectCampaignsClient::ResumeCampaign(const ResumeCampaignRequest& request) const
@@ -536,14 +536,14 @@ ResumeCampaignOutcomeCallable ConnectCampaignsClient::ResumeCampaignCallable(con
   return task->get_future();
 }
 
-void ConnectCampaignsClient::ResumeCampaignAsync(const ResumeCampaignRequest& request, const ResumeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientResumeCampaignAsyncHelper(ConnectCampaignsClient const * const clientThis, const ResumeCampaignRequest& request, const ResumeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResumeCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResumeCampaign(request), context);
 }
 
-void ConnectCampaignsClient::ResumeCampaignAsyncHelper(const ResumeCampaignRequest& request, const ResumeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::ResumeCampaignAsync(const ResumeCampaignRequest& request, const ResumeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResumeCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientResumeCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 StartCampaignOutcome ConnectCampaignsClient::StartCampaign(const StartCampaignRequest& request) const
@@ -568,14 +568,14 @@ StartCampaignOutcomeCallable ConnectCampaignsClient::StartCampaignCallable(const
   return task->get_future();
 }
 
-void ConnectCampaignsClient::StartCampaignAsync(const StartCampaignRequest& request, const StartCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientStartCampaignAsyncHelper(ConnectCampaignsClient const * const clientThis, const StartCampaignRequest& request, const StartCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartCampaign(request), context);
 }
 
-void ConnectCampaignsClient::StartCampaignAsyncHelper(const StartCampaignRequest& request, const StartCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::StartCampaignAsync(const StartCampaignRequest& request, const StartCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientStartCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 StartInstanceOnboardingJobOutcome ConnectCampaignsClient::StartInstanceOnboardingJob(const StartInstanceOnboardingJobRequest& request) const
@@ -600,14 +600,14 @@ StartInstanceOnboardingJobOutcomeCallable ConnectCampaignsClient::StartInstanceO
   return task->get_future();
 }
 
-void ConnectCampaignsClient::StartInstanceOnboardingJobAsync(const StartInstanceOnboardingJobRequest& request, const StartInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientStartInstanceOnboardingJobAsyncHelper(ConnectCampaignsClient const * const clientThis, const StartInstanceOnboardingJobRequest& request, const StartInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartInstanceOnboardingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartInstanceOnboardingJob(request), context);
 }
 
-void ConnectCampaignsClient::StartInstanceOnboardingJobAsyncHelper(const StartInstanceOnboardingJobRequest& request, const StartInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::StartInstanceOnboardingJobAsync(const StartInstanceOnboardingJobRequest& request, const StartInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartInstanceOnboardingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientStartInstanceOnboardingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopCampaignOutcome ConnectCampaignsClient::StopCampaign(const StopCampaignRequest& request) const
@@ -632,14 +632,14 @@ StopCampaignOutcomeCallable ConnectCampaignsClient::StopCampaignCallable(const S
   return task->get_future();
 }
 
-void ConnectCampaignsClient::StopCampaignAsync(const StopCampaignRequest& request, const StopCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientStopCampaignAsyncHelper(ConnectCampaignsClient const * const clientThis, const StopCampaignRequest& request, const StopCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopCampaign(request), context);
 }
 
-void ConnectCampaignsClient::StopCampaignAsyncHelper(const StopCampaignRequest& request, const StopCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::StopCampaignAsync(const StopCampaignRequest& request, const StopCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientStopCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ConnectCampaignsClient::TagResource(const TagResourceRequest& request) const
@@ -663,14 +663,14 @@ TagResourceOutcomeCallable ConnectCampaignsClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void ConnectCampaignsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientTagResourceAsyncHelper(ConnectCampaignsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ConnectCampaignsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRequest& request) const
@@ -699,14 +699,14 @@ UntagResourceOutcomeCallable ConnectCampaignsClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void ConnectCampaignsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientUntagResourceAsyncHelper(ConnectCampaignsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ConnectCampaignsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCampaignDialerConfigOutcome ConnectCampaignsClient::UpdateCampaignDialerConfig(const UpdateCampaignDialerConfigRequest& request) const
@@ -731,14 +731,14 @@ UpdateCampaignDialerConfigOutcomeCallable ConnectCampaignsClient::UpdateCampaign
   return task->get_future();
 }
 
-void ConnectCampaignsClient::UpdateCampaignDialerConfigAsync(const UpdateCampaignDialerConfigRequest& request, const UpdateCampaignDialerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientUpdateCampaignDialerConfigAsyncHelper(ConnectCampaignsClient const * const clientThis, const UpdateCampaignDialerConfigRequest& request, const UpdateCampaignDialerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCampaignDialerConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCampaignDialerConfig(request), context);
 }
 
-void ConnectCampaignsClient::UpdateCampaignDialerConfigAsyncHelper(const UpdateCampaignDialerConfigRequest& request, const UpdateCampaignDialerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::UpdateCampaignDialerConfigAsync(const UpdateCampaignDialerConfigRequest& request, const UpdateCampaignDialerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCampaignDialerConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientUpdateCampaignDialerConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCampaignNameOutcome ConnectCampaignsClient::UpdateCampaignName(const UpdateCampaignNameRequest& request) const
@@ -763,14 +763,14 @@ UpdateCampaignNameOutcomeCallable ConnectCampaignsClient::UpdateCampaignNameCall
   return task->get_future();
 }
 
-void ConnectCampaignsClient::UpdateCampaignNameAsync(const UpdateCampaignNameRequest& request, const UpdateCampaignNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientUpdateCampaignNameAsyncHelper(ConnectCampaignsClient const * const clientThis, const UpdateCampaignNameRequest& request, const UpdateCampaignNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCampaignNameAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCampaignName(request), context);
 }
 
-void ConnectCampaignsClient::UpdateCampaignNameAsyncHelper(const UpdateCampaignNameRequest& request, const UpdateCampaignNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::UpdateCampaignNameAsync(const UpdateCampaignNameRequest& request, const UpdateCampaignNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCampaignName(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientUpdateCampaignNameAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCampaignOutboundCallConfigOutcome ConnectCampaignsClient::UpdateCampaignOutboundCallConfig(const UpdateCampaignOutboundCallConfigRequest& request) const
@@ -795,13 +795,13 @@ UpdateCampaignOutboundCallConfigOutcomeCallable ConnectCampaignsClient::UpdateCa
   return task->get_future();
 }
 
-void ConnectCampaignsClient::UpdateCampaignOutboundCallConfigAsync(const UpdateCampaignOutboundCallConfigRequest& request, const UpdateCampaignOutboundCallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClientUpdateCampaignOutboundCallConfigAsyncHelper(ConnectCampaignsClient const * const clientThis, const UpdateCampaignOutboundCallConfigRequest& request, const UpdateCampaignOutboundCallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCampaignOutboundCallConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCampaignOutboundCallConfig(request), context);
 }
 
-void ConnectCampaignsClient::UpdateCampaignOutboundCallConfigAsyncHelper(const UpdateCampaignOutboundCallConfigRequest& request, const UpdateCampaignOutboundCallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectCampaignsClient::UpdateCampaignOutboundCallConfigAsync(const UpdateCampaignOutboundCallConfigRequest& request, const UpdateCampaignOutboundCallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCampaignOutboundCallConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectCampaignsClientUpdateCampaignOutboundCallConfigAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -144,14 +144,14 @@ CreateDatasetOutcomeCallable LookoutforVisionClient::CreateDatasetCallable(const
   return task->get_future();
 }
 
-void LookoutforVisionClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientCreateDatasetAsyncHelper(LookoutforVisionClient const * const clientThis, const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataset(request), context);
 }
 
-void LookoutforVisionClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientCreateDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateModelOutcome LookoutforVisionClient::CreateModel(const CreateModelRequest& request) const
@@ -176,14 +176,14 @@ CreateModelOutcomeCallable LookoutforVisionClient::CreateModelCallable(const Cre
   return task->get_future();
 }
 
-void LookoutforVisionClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientCreateModelAsyncHelper(LookoutforVisionClient const * const clientThis, const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateModel(request), context);
 }
 
-void LookoutforVisionClient::CreateModelAsyncHelper(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientCreateModelAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProjectOutcome LookoutforVisionClient::CreateProject(const CreateProjectRequest& request) const
@@ -201,14 +201,14 @@ CreateProjectOutcomeCallable LookoutforVisionClient::CreateProjectCallable(const
   return task->get_future();
 }
 
-void LookoutforVisionClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientCreateProjectAsyncHelper(LookoutforVisionClient const * const clientThis, const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProject(request), context);
 }
 
-void LookoutforVisionClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientCreateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatasetOutcome LookoutforVisionClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -239,14 +239,14 @@ DeleteDatasetOutcomeCallable LookoutforVisionClient::DeleteDatasetCallable(const
   return task->get_future();
 }
 
-void LookoutforVisionClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientDeleteDatasetAsyncHelper(LookoutforVisionClient const * const clientThis, const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataset(request), context);
 }
 
-void LookoutforVisionClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientDeleteDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelOutcome LookoutforVisionClient::DeleteModel(const DeleteModelRequest& request) const
@@ -277,14 +277,14 @@ DeleteModelOutcomeCallable LookoutforVisionClient::DeleteModelCallable(const Del
   return task->get_future();
 }
 
-void LookoutforVisionClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientDeleteModelAsyncHelper(LookoutforVisionClient const * const clientThis, const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModel(request), context);
 }
 
-void LookoutforVisionClient::DeleteModelAsyncHelper(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientDeleteModelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProjectOutcome LookoutforVisionClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -308,14 +308,14 @@ DeleteProjectOutcomeCallable LookoutforVisionClient::DeleteProjectCallable(const
   return task->get_future();
 }
 
-void LookoutforVisionClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientDeleteProjectAsyncHelper(LookoutforVisionClient const * const clientThis, const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProject(request), context);
 }
 
-void LookoutforVisionClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientDeleteProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatasetOutcome LookoutforVisionClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -346,14 +346,14 @@ DescribeDatasetOutcomeCallable LookoutforVisionClient::DescribeDatasetCallable(c
   return task->get_future();
 }
 
-void LookoutforVisionClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientDescribeDatasetAsyncHelper(LookoutforVisionClient const * const clientThis, const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataset(request), context);
 }
 
-void LookoutforVisionClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientDescribeDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeModelOutcome LookoutforVisionClient::DescribeModel(const DescribeModelRequest& request) const
@@ -384,14 +384,14 @@ DescribeModelOutcomeCallable LookoutforVisionClient::DescribeModelCallable(const
   return task->get_future();
 }
 
-void LookoutforVisionClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientDescribeModelAsyncHelper(LookoutforVisionClient const * const clientThis, const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeModel(request), context);
 }
 
-void LookoutforVisionClient::DescribeModelAsyncHelper(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientDescribeModelAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeModelPackagingJobOutcome LookoutforVisionClient::DescribeModelPackagingJob(const DescribeModelPackagingJobRequest& request) const
@@ -422,14 +422,14 @@ DescribeModelPackagingJobOutcomeCallable LookoutforVisionClient::DescribeModelPa
   return task->get_future();
 }
 
-void LookoutforVisionClient::DescribeModelPackagingJobAsync(const DescribeModelPackagingJobRequest& request, const DescribeModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientDescribeModelPackagingJobAsyncHelper(LookoutforVisionClient const * const clientThis, const DescribeModelPackagingJobRequest& request, const DescribeModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelPackagingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeModelPackagingJob(request), context);
 }
 
-void LookoutforVisionClient::DescribeModelPackagingJobAsyncHelper(const DescribeModelPackagingJobRequest& request, const DescribeModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::DescribeModelPackagingJobAsync(const DescribeModelPackagingJobRequest& request, const DescribeModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeModelPackagingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientDescribeModelPackagingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProjectOutcome LookoutforVisionClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -453,14 +453,14 @@ DescribeProjectOutcomeCallable LookoutforVisionClient::DescribeProjectCallable(c
   return task->get_future();
 }
 
-void LookoutforVisionClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientDescribeProjectAsyncHelper(LookoutforVisionClient const * const clientThis, const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProject(request), context);
 }
 
-void LookoutforVisionClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientDescribeProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DetectAnomaliesOutcome LookoutforVisionClient::DetectAnomalies(const DetectAnomaliesRequest& request) const
@@ -492,14 +492,14 @@ DetectAnomaliesOutcomeCallable LookoutforVisionClient::DetectAnomaliesCallable(c
   return task->get_future();
 }
 
-void LookoutforVisionClient::DetectAnomaliesAsync(const DetectAnomaliesRequest& request, const DetectAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientDetectAnomaliesAsyncHelper(LookoutforVisionClient const * const clientThis, const DetectAnomaliesRequest& request, const DetectAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectAnomaliesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetectAnomalies(request), context);
 }
 
-void LookoutforVisionClient::DetectAnomaliesAsyncHelper(const DetectAnomaliesRequest& request, const DetectAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::DetectAnomaliesAsync(const DetectAnomaliesRequest& request, const DetectAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectAnomalies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientDetectAnomaliesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetEntriesOutcome LookoutforVisionClient::ListDatasetEntries(const ListDatasetEntriesRequest& request) const
@@ -531,14 +531,14 @@ ListDatasetEntriesOutcomeCallable LookoutforVisionClient::ListDatasetEntriesCall
   return task->get_future();
 }
 
-void LookoutforVisionClient::ListDatasetEntriesAsync(const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientListDatasetEntriesAsyncHelper(LookoutforVisionClient const * const clientThis, const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetEntriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasetEntries(request), context);
 }
 
-void LookoutforVisionClient::ListDatasetEntriesAsyncHelper(const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::ListDatasetEntriesAsync(const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasetEntries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientListDatasetEntriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListModelPackagingJobsOutcome LookoutforVisionClient::ListModelPackagingJobs(const ListModelPackagingJobsRequest& request) const
@@ -563,14 +563,14 @@ ListModelPackagingJobsOutcomeCallable LookoutforVisionClient::ListModelPackaging
   return task->get_future();
 }
 
-void LookoutforVisionClient::ListModelPackagingJobsAsync(const ListModelPackagingJobsRequest& request, const ListModelPackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientListModelPackagingJobsAsyncHelper(LookoutforVisionClient const * const clientThis, const ListModelPackagingJobsRequest& request, const ListModelPackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListModelPackagingJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListModelPackagingJobs(request), context);
 }
 
-void LookoutforVisionClient::ListModelPackagingJobsAsyncHelper(const ListModelPackagingJobsRequest& request, const ListModelPackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::ListModelPackagingJobsAsync(const ListModelPackagingJobsRequest& request, const ListModelPackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListModelPackagingJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientListModelPackagingJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListModelsOutcome LookoutforVisionClient::ListModels(const ListModelsRequest& request) const
@@ -595,14 +595,14 @@ ListModelsOutcomeCallable LookoutforVisionClient::ListModelsCallable(const ListM
   return task->get_future();
 }
 
-void LookoutforVisionClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientListModelsAsyncHelper(LookoutforVisionClient const * const clientThis, const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListModelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListModels(request), context);
 }
 
-void LookoutforVisionClient::ListModelsAsyncHelper(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListModels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientListModelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProjectsOutcome LookoutforVisionClient::ListProjects(const ListProjectsRequest& request) const
@@ -620,14 +620,14 @@ ListProjectsOutcomeCallable LookoutforVisionClient::ListProjectsCallable(const L
   return task->get_future();
 }
 
-void LookoutforVisionClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientListProjectsAsyncHelper(LookoutforVisionClient const * const clientThis, const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProjects(request), context);
 }
 
-void LookoutforVisionClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientListProjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome LookoutforVisionClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -651,14 +651,14 @@ ListTagsForResourceOutcomeCallable LookoutforVisionClient::ListTagsForResourceCa
   return task->get_future();
 }
 
-void LookoutforVisionClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientListTagsForResourceAsyncHelper(LookoutforVisionClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void LookoutforVisionClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartModelOutcome LookoutforVisionClient::StartModel(const StartModelRequest& request) const
@@ -690,14 +690,14 @@ StartModelOutcomeCallable LookoutforVisionClient::StartModelCallable(const Start
   return task->get_future();
 }
 
-void LookoutforVisionClient::StartModelAsync(const StartModelRequest& request, const StartModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientStartModelAsyncHelper(LookoutforVisionClient const * const clientThis, const StartModelRequest& request, const StartModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartModel(request), context);
 }
 
-void LookoutforVisionClient::StartModelAsyncHelper(const StartModelRequest& request, const StartModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::StartModelAsync(const StartModelRequest& request, const StartModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientStartModelAsyncHelper( this, request, handler, context ); } );
 }
 
 StartModelPackagingJobOutcome LookoutforVisionClient::StartModelPackagingJob(const StartModelPackagingJobRequest& request) const
@@ -722,14 +722,14 @@ StartModelPackagingJobOutcomeCallable LookoutforVisionClient::StartModelPackagin
   return task->get_future();
 }
 
-void LookoutforVisionClient::StartModelPackagingJobAsync(const StartModelPackagingJobRequest& request, const StartModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientStartModelPackagingJobAsyncHelper(LookoutforVisionClient const * const clientThis, const StartModelPackagingJobRequest& request, const StartModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartModelPackagingJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartModelPackagingJob(request), context);
 }
 
-void LookoutforVisionClient::StartModelPackagingJobAsyncHelper(const StartModelPackagingJobRequest& request, const StartModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::StartModelPackagingJobAsync(const StartModelPackagingJobRequest& request, const StartModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartModelPackagingJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientStartModelPackagingJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopModelOutcome LookoutforVisionClient::StopModel(const StopModelRequest& request) const
@@ -761,14 +761,14 @@ StopModelOutcomeCallable LookoutforVisionClient::StopModelCallable(const StopMod
   return task->get_future();
 }
 
-void LookoutforVisionClient::StopModelAsync(const StopModelRequest& request, const StopModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientStopModelAsyncHelper(LookoutforVisionClient const * const clientThis, const StopModelRequest& request, const StopModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopModel(request), context);
 }
 
-void LookoutforVisionClient::StopModelAsyncHelper(const StopModelRequest& request, const StopModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::StopModelAsync(const StopModelRequest& request, const StopModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientStopModelAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome LookoutforVisionClient::TagResource(const TagResourceRequest& request) const
@@ -792,14 +792,14 @@ TagResourceOutcomeCallable LookoutforVisionClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void LookoutforVisionClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientTagResourceAsyncHelper(LookoutforVisionClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void LookoutforVisionClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome LookoutforVisionClient::UntagResource(const UntagResourceRequest& request) const
@@ -828,14 +828,14 @@ UntagResourceOutcomeCallable LookoutforVisionClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void LookoutforVisionClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientUntagResourceAsyncHelper(LookoutforVisionClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void LookoutforVisionClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDatasetEntriesOutcome LookoutforVisionClient::UpdateDatasetEntries(const UpdateDatasetEntriesRequest& request) const
@@ -867,13 +867,13 @@ UpdateDatasetEntriesOutcomeCallable LookoutforVisionClient::UpdateDatasetEntries
   return task->get_future();
 }
 
-void LookoutforVisionClient::UpdateDatasetEntriesAsync(const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClientUpdateDatasetEntriesAsyncHelper(LookoutforVisionClient const * const clientThis, const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatasetEntriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDatasetEntries(request), context);
 }
 
-void LookoutforVisionClient::UpdateDatasetEntriesAsyncHelper(const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LookoutforVisionClient::UpdateDatasetEntriesAsync(const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDatasetEntries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LookoutforVisionClientUpdateDatasetEntriesAsyncHelper( this, request, handler, context ); } );
 }
 

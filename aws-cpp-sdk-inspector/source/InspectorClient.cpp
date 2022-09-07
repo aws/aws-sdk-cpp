@@ -150,14 +150,14 @@ AddAttributesToFindingsOutcomeCallable InspectorClient::AddAttributesToFindingsC
   return task->get_future();
 }
 
-void InspectorClient::AddAttributesToFindingsAsync(const AddAttributesToFindingsRequest& request, const AddAttributesToFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientAddAttributesToFindingsAsyncHelper(InspectorClient const * const clientThis, const AddAttributesToFindingsRequest& request, const AddAttributesToFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddAttributesToFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddAttributesToFindings(request), context);
 }
 
-void InspectorClient::AddAttributesToFindingsAsyncHelper(const AddAttributesToFindingsRequest& request, const AddAttributesToFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::AddAttributesToFindingsAsync(const AddAttributesToFindingsRequest& request, const AddAttributesToFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddAttributesToFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientAddAttributesToFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAssessmentTargetOutcome InspectorClient::CreateAssessmentTarget(const CreateAssessmentTargetRequest& request) const
@@ -174,14 +174,14 @@ CreateAssessmentTargetOutcomeCallable InspectorClient::CreateAssessmentTargetCal
   return task->get_future();
 }
 
-void InspectorClient::CreateAssessmentTargetAsync(const CreateAssessmentTargetRequest& request, const CreateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientCreateAssessmentTargetAsyncHelper(InspectorClient const * const clientThis, const CreateAssessmentTargetRequest& request, const CreateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssessmentTargetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAssessmentTarget(request), context);
 }
 
-void InspectorClient::CreateAssessmentTargetAsyncHelper(const CreateAssessmentTargetRequest& request, const CreateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::CreateAssessmentTargetAsync(const CreateAssessmentTargetRequest& request, const CreateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAssessmentTarget(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientCreateAssessmentTargetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAssessmentTemplateOutcome InspectorClient::CreateAssessmentTemplate(const CreateAssessmentTemplateRequest& request) const
@@ -198,14 +198,14 @@ CreateAssessmentTemplateOutcomeCallable InspectorClient::CreateAssessmentTemplat
   return task->get_future();
 }
 
-void InspectorClient::CreateAssessmentTemplateAsync(const CreateAssessmentTemplateRequest& request, const CreateAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientCreateAssessmentTemplateAsyncHelper(InspectorClient const * const clientThis, const CreateAssessmentTemplateRequest& request, const CreateAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssessmentTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAssessmentTemplate(request), context);
 }
 
-void InspectorClient::CreateAssessmentTemplateAsyncHelper(const CreateAssessmentTemplateRequest& request, const CreateAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::CreateAssessmentTemplateAsync(const CreateAssessmentTemplateRequest& request, const CreateAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAssessmentTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientCreateAssessmentTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExclusionsPreviewOutcome InspectorClient::CreateExclusionsPreview(const CreateExclusionsPreviewRequest& request) const
@@ -222,14 +222,14 @@ CreateExclusionsPreviewOutcomeCallable InspectorClient::CreateExclusionsPreviewC
   return task->get_future();
 }
 
-void InspectorClient::CreateExclusionsPreviewAsync(const CreateExclusionsPreviewRequest& request, const CreateExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientCreateExclusionsPreviewAsyncHelper(InspectorClient const * const clientThis, const CreateExclusionsPreviewRequest& request, const CreateExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExclusionsPreviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExclusionsPreview(request), context);
 }
 
-void InspectorClient::CreateExclusionsPreviewAsyncHelper(const CreateExclusionsPreviewRequest& request, const CreateExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::CreateExclusionsPreviewAsync(const CreateExclusionsPreviewRequest& request, const CreateExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExclusionsPreview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientCreateExclusionsPreviewAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResourceGroupOutcome InspectorClient::CreateResourceGroup(const CreateResourceGroupRequest& request) const
@@ -246,14 +246,14 @@ CreateResourceGroupOutcomeCallable InspectorClient::CreateResourceGroupCallable(
   return task->get_future();
 }
 
-void InspectorClient::CreateResourceGroupAsync(const CreateResourceGroupRequest& request, const CreateResourceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientCreateResourceGroupAsyncHelper(InspectorClient const * const clientThis, const CreateResourceGroupRequest& request, const CreateResourceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResourceGroup(request), context);
 }
 
-void InspectorClient::CreateResourceGroupAsyncHelper(const CreateResourceGroupRequest& request, const CreateResourceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::CreateResourceGroupAsync(const CreateResourceGroupRequest& request, const CreateResourceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResourceGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientCreateResourceGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAssessmentRunOutcome InspectorClient::DeleteAssessmentRun(const DeleteAssessmentRunRequest& request) const
@@ -270,14 +270,14 @@ DeleteAssessmentRunOutcomeCallable InspectorClient::DeleteAssessmentRunCallable(
   return task->get_future();
 }
 
-void InspectorClient::DeleteAssessmentRunAsync(const DeleteAssessmentRunRequest& request, const DeleteAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDeleteAssessmentRunAsyncHelper(InspectorClient const * const clientThis, const DeleteAssessmentRunRequest& request, const DeleteAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAssessmentRun(request), context);
 }
 
-void InspectorClient::DeleteAssessmentRunAsyncHelper(const DeleteAssessmentRunRequest& request, const DeleteAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DeleteAssessmentRunAsync(const DeleteAssessmentRunRequest& request, const DeleteAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssessmentRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientDeleteAssessmentRunAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAssessmentTargetOutcome InspectorClient::DeleteAssessmentTarget(const DeleteAssessmentTargetRequest& request) const
@@ -294,14 +294,14 @@ DeleteAssessmentTargetOutcomeCallable InspectorClient::DeleteAssessmentTargetCal
   return task->get_future();
 }
 
-void InspectorClient::DeleteAssessmentTargetAsync(const DeleteAssessmentTargetRequest& request, const DeleteAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDeleteAssessmentTargetAsyncHelper(InspectorClient const * const clientThis, const DeleteAssessmentTargetRequest& request, const DeleteAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentTargetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAssessmentTarget(request), context);
 }
 
-void InspectorClient::DeleteAssessmentTargetAsyncHelper(const DeleteAssessmentTargetRequest& request, const DeleteAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DeleteAssessmentTargetAsync(const DeleteAssessmentTargetRequest& request, const DeleteAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssessmentTarget(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientDeleteAssessmentTargetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAssessmentTemplateOutcome InspectorClient::DeleteAssessmentTemplate(const DeleteAssessmentTemplateRequest& request) const
@@ -318,14 +318,14 @@ DeleteAssessmentTemplateOutcomeCallable InspectorClient::DeleteAssessmentTemplat
   return task->get_future();
 }
 
-void InspectorClient::DeleteAssessmentTemplateAsync(const DeleteAssessmentTemplateRequest& request, const DeleteAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDeleteAssessmentTemplateAsyncHelper(InspectorClient const * const clientThis, const DeleteAssessmentTemplateRequest& request, const DeleteAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAssessmentTemplate(request), context);
 }
 
-void InspectorClient::DeleteAssessmentTemplateAsyncHelper(const DeleteAssessmentTemplateRequest& request, const DeleteAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DeleteAssessmentTemplateAsync(const DeleteAssessmentTemplateRequest& request, const DeleteAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssessmentTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientDeleteAssessmentTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAssessmentRunsOutcome InspectorClient::DescribeAssessmentRuns(const DescribeAssessmentRunsRequest& request) const
@@ -342,14 +342,14 @@ DescribeAssessmentRunsOutcomeCallable InspectorClient::DescribeAssessmentRunsCal
   return task->get_future();
 }
 
-void InspectorClient::DescribeAssessmentRunsAsync(const DescribeAssessmentRunsRequest& request, const DescribeAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDescribeAssessmentRunsAsyncHelper(InspectorClient const * const clientThis, const DescribeAssessmentRunsRequest& request, const DescribeAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssessmentRunsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAssessmentRuns(request), context);
 }
 
-void InspectorClient::DescribeAssessmentRunsAsyncHelper(const DescribeAssessmentRunsRequest& request, const DescribeAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeAssessmentRunsAsync(const DescribeAssessmentRunsRequest& request, const DescribeAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAssessmentRuns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientDescribeAssessmentRunsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAssessmentTargetsOutcome InspectorClient::DescribeAssessmentTargets(const DescribeAssessmentTargetsRequest& request) const
@@ -366,14 +366,14 @@ DescribeAssessmentTargetsOutcomeCallable InspectorClient::DescribeAssessmentTarg
   return task->get_future();
 }
 
-void InspectorClient::DescribeAssessmentTargetsAsync(const DescribeAssessmentTargetsRequest& request, const DescribeAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDescribeAssessmentTargetsAsyncHelper(InspectorClient const * const clientThis, const DescribeAssessmentTargetsRequest& request, const DescribeAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssessmentTargetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAssessmentTargets(request), context);
 }
 
-void InspectorClient::DescribeAssessmentTargetsAsyncHelper(const DescribeAssessmentTargetsRequest& request, const DescribeAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeAssessmentTargetsAsync(const DescribeAssessmentTargetsRequest& request, const DescribeAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAssessmentTargets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientDescribeAssessmentTargetsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAssessmentTemplatesOutcome InspectorClient::DescribeAssessmentTemplates(const DescribeAssessmentTemplatesRequest& request) const
@@ -390,14 +390,14 @@ DescribeAssessmentTemplatesOutcomeCallable InspectorClient::DescribeAssessmentTe
   return task->get_future();
 }
 
-void InspectorClient::DescribeAssessmentTemplatesAsync(const DescribeAssessmentTemplatesRequest& request, const DescribeAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDescribeAssessmentTemplatesAsyncHelper(InspectorClient const * const clientThis, const DescribeAssessmentTemplatesRequest& request, const DescribeAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssessmentTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAssessmentTemplates(request), context);
 }
 
-void InspectorClient::DescribeAssessmentTemplatesAsyncHelper(const DescribeAssessmentTemplatesRequest& request, const DescribeAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeAssessmentTemplatesAsync(const DescribeAssessmentTemplatesRequest& request, const DescribeAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAssessmentTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientDescribeAssessmentTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCrossAccountAccessRoleOutcome InspectorClient::DescribeCrossAccountAccessRole() const
@@ -415,14 +415,14 @@ DescribeCrossAccountAccessRoleOutcomeCallable InspectorClient::DescribeCrossAcco
   return task->get_future();
 }
 
-void InspectorClient::DescribeCrossAccountAccessRoleAsync(const DescribeCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDescribeCrossAccountAccessRoleAsyncHelper(InspectorClient const * const clientThis, const DescribeCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->DescribeCrossAccountAccessRoleAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->DescribeCrossAccountAccessRole(), context);
 }
 
-void InspectorClient::DescribeCrossAccountAccessRoleAsyncHelper(const DescribeCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeCrossAccountAccessRoleAsync(const DescribeCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, DescribeCrossAccountAccessRole(), context);
+  m_executor->Submit( [this, handler, context](){ InspectorClientDescribeCrossAccountAccessRoleAsyncHelper( this, handler, context ); } );
 }
 
 DescribeExclusionsOutcome InspectorClient::DescribeExclusions(const DescribeExclusionsRequest& request) const
@@ -439,14 +439,14 @@ DescribeExclusionsOutcomeCallable InspectorClient::DescribeExclusionsCallable(co
   return task->get_future();
 }
 
-void InspectorClient::DescribeExclusionsAsync(const DescribeExclusionsRequest& request, const DescribeExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDescribeExclusionsAsyncHelper(InspectorClient const * const clientThis, const DescribeExclusionsRequest& request, const DescribeExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExclusionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExclusions(request), context);
 }
 
-void InspectorClient::DescribeExclusionsAsyncHelper(const DescribeExclusionsRequest& request, const DescribeExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeExclusionsAsync(const DescribeExclusionsRequest& request, const DescribeExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExclusions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientDescribeExclusionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFindingsOutcome InspectorClient::DescribeFindings(const DescribeFindingsRequest& request) const
@@ -463,14 +463,14 @@ DescribeFindingsOutcomeCallable InspectorClient::DescribeFindingsCallable(const 
   return task->get_future();
 }
 
-void InspectorClient::DescribeFindingsAsync(const DescribeFindingsRequest& request, const DescribeFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDescribeFindingsAsyncHelper(InspectorClient const * const clientThis, const DescribeFindingsRequest& request, const DescribeFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFindings(request), context);
 }
 
-void InspectorClient::DescribeFindingsAsyncHelper(const DescribeFindingsRequest& request, const DescribeFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeFindingsAsync(const DescribeFindingsRequest& request, const DescribeFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientDescribeFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeResourceGroupsOutcome InspectorClient::DescribeResourceGroups(const DescribeResourceGroupsRequest& request) const
@@ -487,14 +487,14 @@ DescribeResourceGroupsOutcomeCallable InspectorClient::DescribeResourceGroupsCal
   return task->get_future();
 }
 
-void InspectorClient::DescribeResourceGroupsAsync(const DescribeResourceGroupsRequest& request, const DescribeResourceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDescribeResourceGroupsAsyncHelper(InspectorClient const * const clientThis, const DescribeResourceGroupsRequest& request, const DescribeResourceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourceGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeResourceGroups(request), context);
 }
 
-void InspectorClient::DescribeResourceGroupsAsyncHelper(const DescribeResourceGroupsRequest& request, const DescribeResourceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeResourceGroupsAsync(const DescribeResourceGroupsRequest& request, const DescribeResourceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeResourceGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientDescribeResourceGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRulesPackagesOutcome InspectorClient::DescribeRulesPackages(const DescribeRulesPackagesRequest& request) const
@@ -511,14 +511,14 @@ DescribeRulesPackagesOutcomeCallable InspectorClient::DescribeRulesPackagesCalla
   return task->get_future();
 }
 
-void InspectorClient::DescribeRulesPackagesAsync(const DescribeRulesPackagesRequest& request, const DescribeRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientDescribeRulesPackagesAsyncHelper(InspectorClient const * const clientThis, const DescribeRulesPackagesRequest& request, const DescribeRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRulesPackagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRulesPackages(request), context);
 }
 
-void InspectorClient::DescribeRulesPackagesAsyncHelper(const DescribeRulesPackagesRequest& request, const DescribeRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeRulesPackagesAsync(const DescribeRulesPackagesRequest& request, const DescribeRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRulesPackages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientDescribeRulesPackagesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssessmentReportOutcome InspectorClient::GetAssessmentReport(const GetAssessmentReportRequest& request) const
@@ -535,14 +535,14 @@ GetAssessmentReportOutcomeCallable InspectorClient::GetAssessmentReportCallable(
   return task->get_future();
 }
 
-void InspectorClient::GetAssessmentReportAsync(const GetAssessmentReportRequest& request, const GetAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientGetAssessmentReportAsyncHelper(InspectorClient const * const clientThis, const GetAssessmentReportRequest& request, const GetAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssessmentReportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssessmentReport(request), context);
 }
 
-void InspectorClient::GetAssessmentReportAsyncHelper(const GetAssessmentReportRequest& request, const GetAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::GetAssessmentReportAsync(const GetAssessmentReportRequest& request, const GetAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssessmentReport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientGetAssessmentReportAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExclusionsPreviewOutcome InspectorClient::GetExclusionsPreview(const GetExclusionsPreviewRequest& request) const
@@ -559,14 +559,14 @@ GetExclusionsPreviewOutcomeCallable InspectorClient::GetExclusionsPreviewCallabl
   return task->get_future();
 }
 
-void InspectorClient::GetExclusionsPreviewAsync(const GetExclusionsPreviewRequest& request, const GetExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientGetExclusionsPreviewAsyncHelper(InspectorClient const * const clientThis, const GetExclusionsPreviewRequest& request, const GetExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExclusionsPreviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExclusionsPreview(request), context);
 }
 
-void InspectorClient::GetExclusionsPreviewAsyncHelper(const GetExclusionsPreviewRequest& request, const GetExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::GetExclusionsPreviewAsync(const GetExclusionsPreviewRequest& request, const GetExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExclusionsPreview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientGetExclusionsPreviewAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTelemetryMetadataOutcome InspectorClient::GetTelemetryMetadata(const GetTelemetryMetadataRequest& request) const
@@ -583,14 +583,14 @@ GetTelemetryMetadataOutcomeCallable InspectorClient::GetTelemetryMetadataCallabl
   return task->get_future();
 }
 
-void InspectorClient::GetTelemetryMetadataAsync(const GetTelemetryMetadataRequest& request, const GetTelemetryMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientGetTelemetryMetadataAsyncHelper(InspectorClient const * const clientThis, const GetTelemetryMetadataRequest& request, const GetTelemetryMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTelemetryMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTelemetryMetadata(request), context);
 }
 
-void InspectorClient::GetTelemetryMetadataAsyncHelper(const GetTelemetryMetadataRequest& request, const GetTelemetryMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::GetTelemetryMetadataAsync(const GetTelemetryMetadataRequest& request, const GetTelemetryMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTelemetryMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientGetTelemetryMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssessmentRunAgentsOutcome InspectorClient::ListAssessmentRunAgents(const ListAssessmentRunAgentsRequest& request) const
@@ -607,14 +607,14 @@ ListAssessmentRunAgentsOutcomeCallable InspectorClient::ListAssessmentRunAgentsC
   return task->get_future();
 }
 
-void InspectorClient::ListAssessmentRunAgentsAsync(const ListAssessmentRunAgentsRequest& request, const ListAssessmentRunAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientListAssessmentRunAgentsAsyncHelper(InspectorClient const * const clientThis, const ListAssessmentRunAgentsRequest& request, const ListAssessmentRunAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentRunAgentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssessmentRunAgents(request), context);
 }
 
-void InspectorClient::ListAssessmentRunAgentsAsyncHelper(const ListAssessmentRunAgentsRequest& request, const ListAssessmentRunAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentRunAgentsAsync(const ListAssessmentRunAgentsRequest& request, const ListAssessmentRunAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessmentRunAgents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientListAssessmentRunAgentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssessmentRunsOutcome InspectorClient::ListAssessmentRuns(const ListAssessmentRunsRequest& request) const
@@ -631,14 +631,14 @@ ListAssessmentRunsOutcomeCallable InspectorClient::ListAssessmentRunsCallable(co
   return task->get_future();
 }
 
-void InspectorClient::ListAssessmentRunsAsync(const ListAssessmentRunsRequest& request, const ListAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientListAssessmentRunsAsyncHelper(InspectorClient const * const clientThis, const ListAssessmentRunsRequest& request, const ListAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentRunsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssessmentRuns(request), context);
 }
 
-void InspectorClient::ListAssessmentRunsAsyncHelper(const ListAssessmentRunsRequest& request, const ListAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentRunsAsync(const ListAssessmentRunsRequest& request, const ListAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessmentRuns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientListAssessmentRunsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssessmentTargetsOutcome InspectorClient::ListAssessmentTargets(const ListAssessmentTargetsRequest& request) const
@@ -655,14 +655,14 @@ ListAssessmentTargetsOutcomeCallable InspectorClient::ListAssessmentTargetsCalla
   return task->get_future();
 }
 
-void InspectorClient::ListAssessmentTargetsAsync(const ListAssessmentTargetsRequest& request, const ListAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientListAssessmentTargetsAsyncHelper(InspectorClient const * const clientThis, const ListAssessmentTargetsRequest& request, const ListAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentTargetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssessmentTargets(request), context);
 }
 
-void InspectorClient::ListAssessmentTargetsAsyncHelper(const ListAssessmentTargetsRequest& request, const ListAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentTargetsAsync(const ListAssessmentTargetsRequest& request, const ListAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessmentTargets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientListAssessmentTargetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssessmentTemplatesOutcome InspectorClient::ListAssessmentTemplates(const ListAssessmentTemplatesRequest& request) const
@@ -679,14 +679,14 @@ ListAssessmentTemplatesOutcomeCallable InspectorClient::ListAssessmentTemplatesC
   return task->get_future();
 }
 
-void InspectorClient::ListAssessmentTemplatesAsync(const ListAssessmentTemplatesRequest& request, const ListAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientListAssessmentTemplatesAsyncHelper(InspectorClient const * const clientThis, const ListAssessmentTemplatesRequest& request, const ListAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssessmentTemplates(request), context);
 }
 
-void InspectorClient::ListAssessmentTemplatesAsyncHelper(const ListAssessmentTemplatesRequest& request, const ListAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentTemplatesAsync(const ListAssessmentTemplatesRequest& request, const ListAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessmentTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientListAssessmentTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEventSubscriptionsOutcome InspectorClient::ListEventSubscriptions(const ListEventSubscriptionsRequest& request) const
@@ -703,14 +703,14 @@ ListEventSubscriptionsOutcomeCallable InspectorClient::ListEventSubscriptionsCal
   return task->get_future();
 }
 
-void InspectorClient::ListEventSubscriptionsAsync(const ListEventSubscriptionsRequest& request, const ListEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientListEventSubscriptionsAsyncHelper(InspectorClient const * const clientThis, const ListEventSubscriptionsRequest& request, const ListEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventSubscriptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEventSubscriptions(request), context);
 }
 
-void InspectorClient::ListEventSubscriptionsAsyncHelper(const ListEventSubscriptionsRequest& request, const ListEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListEventSubscriptionsAsync(const ListEventSubscriptionsRequest& request, const ListEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEventSubscriptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientListEventSubscriptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExclusionsOutcome InspectorClient::ListExclusions(const ListExclusionsRequest& request) const
@@ -727,14 +727,14 @@ ListExclusionsOutcomeCallable InspectorClient::ListExclusionsCallable(const List
   return task->get_future();
 }
 
-void InspectorClient::ListExclusionsAsync(const ListExclusionsRequest& request, const ListExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientListExclusionsAsyncHelper(InspectorClient const * const clientThis, const ListExclusionsRequest& request, const ListExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExclusionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExclusions(request), context);
 }
 
-void InspectorClient::ListExclusionsAsyncHelper(const ListExclusionsRequest& request, const ListExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListExclusionsAsync(const ListExclusionsRequest& request, const ListExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExclusions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientListExclusionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFindingsOutcome InspectorClient::ListFindings(const ListFindingsRequest& request) const
@@ -751,14 +751,14 @@ ListFindingsOutcomeCallable InspectorClient::ListFindingsCallable(const ListFind
   return task->get_future();
 }
 
-void InspectorClient::ListFindingsAsync(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientListFindingsAsyncHelper(InspectorClient const * const clientThis, const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFindings(request), context);
 }
 
-void InspectorClient::ListFindingsAsyncHelper(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListFindingsAsync(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientListFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRulesPackagesOutcome InspectorClient::ListRulesPackages(const ListRulesPackagesRequest& request) const
@@ -775,14 +775,14 @@ ListRulesPackagesOutcomeCallable InspectorClient::ListRulesPackagesCallable(cons
   return task->get_future();
 }
 
-void InspectorClient::ListRulesPackagesAsync(const ListRulesPackagesRequest& request, const ListRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientListRulesPackagesAsyncHelper(InspectorClient const * const clientThis, const ListRulesPackagesRequest& request, const ListRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRulesPackagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRulesPackages(request), context);
 }
 
-void InspectorClient::ListRulesPackagesAsyncHelper(const ListRulesPackagesRequest& request, const ListRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListRulesPackagesAsync(const ListRulesPackagesRequest& request, const ListRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRulesPackages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientListRulesPackagesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome InspectorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -799,14 +799,14 @@ ListTagsForResourceOutcomeCallable InspectorClient::ListTagsForResourceCallable(
   return task->get_future();
 }
 
-void InspectorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientListTagsForResourceAsyncHelper(InspectorClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void InspectorClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PreviewAgentsOutcome InspectorClient::PreviewAgents(const PreviewAgentsRequest& request) const
@@ -823,14 +823,14 @@ PreviewAgentsOutcomeCallable InspectorClient::PreviewAgentsCallable(const Previe
   return task->get_future();
 }
 
-void InspectorClient::PreviewAgentsAsync(const PreviewAgentsRequest& request, const PreviewAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientPreviewAgentsAsyncHelper(InspectorClient const * const clientThis, const PreviewAgentsRequest& request, const PreviewAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PreviewAgentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PreviewAgents(request), context);
 }
 
-void InspectorClient::PreviewAgentsAsyncHelper(const PreviewAgentsRequest& request, const PreviewAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::PreviewAgentsAsync(const PreviewAgentsRequest& request, const PreviewAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PreviewAgents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientPreviewAgentsAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterCrossAccountAccessRoleOutcome InspectorClient::RegisterCrossAccountAccessRole(const RegisterCrossAccountAccessRoleRequest& request) const
@@ -847,14 +847,14 @@ RegisterCrossAccountAccessRoleOutcomeCallable InspectorClient::RegisterCrossAcco
   return task->get_future();
 }
 
-void InspectorClient::RegisterCrossAccountAccessRoleAsync(const RegisterCrossAccountAccessRoleRequest& request, const RegisterCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientRegisterCrossAccountAccessRoleAsyncHelper(InspectorClient const * const clientThis, const RegisterCrossAccountAccessRoleRequest& request, const RegisterCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterCrossAccountAccessRoleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterCrossAccountAccessRole(request), context);
 }
 
-void InspectorClient::RegisterCrossAccountAccessRoleAsyncHelper(const RegisterCrossAccountAccessRoleRequest& request, const RegisterCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::RegisterCrossAccountAccessRoleAsync(const RegisterCrossAccountAccessRoleRequest& request, const RegisterCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterCrossAccountAccessRole(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientRegisterCrossAccountAccessRoleAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveAttributesFromFindingsOutcome InspectorClient::RemoveAttributesFromFindings(const RemoveAttributesFromFindingsRequest& request) const
@@ -871,14 +871,14 @@ RemoveAttributesFromFindingsOutcomeCallable InspectorClient::RemoveAttributesFro
   return task->get_future();
 }
 
-void InspectorClient::RemoveAttributesFromFindingsAsync(const RemoveAttributesFromFindingsRequest& request, const RemoveAttributesFromFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientRemoveAttributesFromFindingsAsyncHelper(InspectorClient const * const clientThis, const RemoveAttributesFromFindingsRequest& request, const RemoveAttributesFromFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveAttributesFromFindingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveAttributesFromFindings(request), context);
 }
 
-void InspectorClient::RemoveAttributesFromFindingsAsyncHelper(const RemoveAttributesFromFindingsRequest& request, const RemoveAttributesFromFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::RemoveAttributesFromFindingsAsync(const RemoveAttributesFromFindingsRequest& request, const RemoveAttributesFromFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveAttributesFromFindings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientRemoveAttributesFromFindingsAsyncHelper( this, request, handler, context ); } );
 }
 
 SetTagsForResourceOutcome InspectorClient::SetTagsForResource(const SetTagsForResourceRequest& request) const
@@ -895,14 +895,14 @@ SetTagsForResourceOutcomeCallable InspectorClient::SetTagsForResourceCallable(co
   return task->get_future();
 }
 
-void InspectorClient::SetTagsForResourceAsync(const SetTagsForResourceRequest& request, const SetTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientSetTagsForResourceAsyncHelper(InspectorClient const * const clientThis, const SetTagsForResourceRequest& request, const SetTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetTagsForResource(request), context);
 }
 
-void InspectorClient::SetTagsForResourceAsyncHelper(const SetTagsForResourceRequest& request, const SetTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::SetTagsForResourceAsync(const SetTagsForResourceRequest& request, const SetTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientSetTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartAssessmentRunOutcome InspectorClient::StartAssessmentRun(const StartAssessmentRunRequest& request) const
@@ -919,14 +919,14 @@ StartAssessmentRunOutcomeCallable InspectorClient::StartAssessmentRunCallable(co
   return task->get_future();
 }
 
-void InspectorClient::StartAssessmentRunAsync(const StartAssessmentRunRequest& request, const StartAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientStartAssessmentRunAsyncHelper(InspectorClient const * const clientThis, const StartAssessmentRunRequest& request, const StartAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartAssessmentRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartAssessmentRun(request), context);
 }
 
-void InspectorClient::StartAssessmentRunAsyncHelper(const StartAssessmentRunRequest& request, const StartAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::StartAssessmentRunAsync(const StartAssessmentRunRequest& request, const StartAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartAssessmentRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientStartAssessmentRunAsyncHelper( this, request, handler, context ); } );
 }
 
 StopAssessmentRunOutcome InspectorClient::StopAssessmentRun(const StopAssessmentRunRequest& request) const
@@ -943,14 +943,14 @@ StopAssessmentRunOutcomeCallable InspectorClient::StopAssessmentRunCallable(cons
   return task->get_future();
 }
 
-void InspectorClient::StopAssessmentRunAsync(const StopAssessmentRunRequest& request, const StopAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientStopAssessmentRunAsyncHelper(InspectorClient const * const clientThis, const StopAssessmentRunRequest& request, const StopAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopAssessmentRunAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopAssessmentRun(request), context);
 }
 
-void InspectorClient::StopAssessmentRunAsyncHelper(const StopAssessmentRunRequest& request, const StopAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::StopAssessmentRunAsync(const StopAssessmentRunRequest& request, const StopAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopAssessmentRun(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientStopAssessmentRunAsyncHelper( this, request, handler, context ); } );
 }
 
 SubscribeToEventOutcome InspectorClient::SubscribeToEvent(const SubscribeToEventRequest& request) const
@@ -967,14 +967,14 @@ SubscribeToEventOutcomeCallable InspectorClient::SubscribeToEventCallable(const 
   return task->get_future();
 }
 
-void InspectorClient::SubscribeToEventAsync(const SubscribeToEventRequest& request, const SubscribeToEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientSubscribeToEventAsyncHelper(InspectorClient const * const clientThis, const SubscribeToEventRequest& request, const SubscribeToEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SubscribeToEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SubscribeToEvent(request), context);
 }
 
-void InspectorClient::SubscribeToEventAsyncHelper(const SubscribeToEventRequest& request, const SubscribeToEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::SubscribeToEventAsync(const SubscribeToEventRequest& request, const SubscribeToEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SubscribeToEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientSubscribeToEventAsyncHelper( this, request, handler, context ); } );
 }
 
 UnsubscribeFromEventOutcome InspectorClient::UnsubscribeFromEvent(const UnsubscribeFromEventRequest& request) const
@@ -991,14 +991,14 @@ UnsubscribeFromEventOutcomeCallable InspectorClient::UnsubscribeFromEventCallabl
   return task->get_future();
 }
 
-void InspectorClient::UnsubscribeFromEventAsync(const UnsubscribeFromEventRequest& request, const UnsubscribeFromEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientUnsubscribeFromEventAsyncHelper(InspectorClient const * const clientThis, const UnsubscribeFromEventRequest& request, const UnsubscribeFromEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnsubscribeFromEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UnsubscribeFromEvent(request), context);
 }
 
-void InspectorClient::UnsubscribeFromEventAsyncHelper(const UnsubscribeFromEventRequest& request, const UnsubscribeFromEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::UnsubscribeFromEventAsync(const UnsubscribeFromEventRequest& request, const UnsubscribeFromEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UnsubscribeFromEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientUnsubscribeFromEventAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAssessmentTargetOutcome InspectorClient::UpdateAssessmentTarget(const UpdateAssessmentTargetRequest& request) const
@@ -1015,13 +1015,13 @@ UpdateAssessmentTargetOutcomeCallable InspectorClient::UpdateAssessmentTargetCal
   return task->get_future();
 }
 
-void InspectorClient::UpdateAssessmentTargetAsync(const UpdateAssessmentTargetRequest& request, const UpdateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClientUpdateAssessmentTargetAsyncHelper(InspectorClient const * const clientThis, const UpdateAssessmentTargetRequest& request, const UpdateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssessmentTargetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAssessmentTarget(request), context);
 }
 
-void InspectorClient::UpdateAssessmentTargetAsyncHelper(const UpdateAssessmentTargetRequest& request, const UpdateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::UpdateAssessmentTargetAsync(const UpdateAssessmentTargetRequest& request, const UpdateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAssessmentTarget(request), context);
+  m_executor->Submit( [this, request, handler, context](){ InspectorClientUpdateAssessmentTargetAsyncHelper( this, request, handler, context ); } );
 }
 

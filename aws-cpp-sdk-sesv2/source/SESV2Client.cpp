@@ -196,14 +196,14 @@ CreateConfigurationSetOutcomeCallable SESV2Client::CreateConfigurationSetCallabl
   return task->get_future();
 }
 
-void SESV2Client::CreateConfigurationSetAsync(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateConfigurationSetAsyncHelper(SESV2Client const * const clientThis, const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConfigurationSet(request), context);
 }
 
-void SESV2Client::CreateConfigurationSetAsyncHelper(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateConfigurationSetAsync(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateConfigurationSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConfigurationSetEventDestinationOutcome SESV2Client::CreateConfigurationSetEventDestination(const CreateConfigurationSetEventDestinationRequest& request) const
@@ -228,14 +228,14 @@ CreateConfigurationSetEventDestinationOutcomeCallable SESV2Client::CreateConfigu
   return task->get_future();
 }
 
-void SESV2Client::CreateConfigurationSetEventDestinationAsync(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateConfigurationSetEventDestinationAsyncHelper(SESV2Client const * const clientThis, const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConfigurationSetEventDestination(request), context);
 }
 
-void SESV2Client::CreateConfigurationSetEventDestinationAsyncHelper(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateConfigurationSetEventDestinationAsync(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConfigurationSetEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateConfigurationSetEventDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateContactOutcome SESV2Client::CreateContact(const CreateContactRequest& request) const
@@ -260,14 +260,14 @@ CreateContactOutcomeCallable SESV2Client::CreateContactCallable(const CreateCont
   return task->get_future();
 }
 
-void SESV2Client::CreateContactAsync(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateContactAsyncHelper(SESV2Client const * const clientThis, const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateContact(request), context);
 }
 
-void SESV2Client::CreateContactAsyncHelper(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateContactAsync(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateContactAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateContactListOutcome SESV2Client::CreateContactList(const CreateContactListRequest& request) const
@@ -285,14 +285,14 @@ CreateContactListOutcomeCallable SESV2Client::CreateContactListCallable(const Cr
   return task->get_future();
 }
 
-void SESV2Client::CreateContactListAsync(const CreateContactListRequest& request, const CreateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateContactListAsyncHelper(SESV2Client const * const clientThis, const CreateContactListRequest& request, const CreateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContactListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateContactList(request), context);
 }
 
-void SESV2Client::CreateContactListAsyncHelper(const CreateContactListRequest& request, const CreateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateContactListAsync(const CreateContactListRequest& request, const CreateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateContactList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateContactListAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomVerificationEmailTemplateOutcome SESV2Client::CreateCustomVerificationEmailTemplate(const CreateCustomVerificationEmailTemplateRequest& request) const
@@ -310,14 +310,14 @@ CreateCustomVerificationEmailTemplateOutcomeCallable SESV2Client::CreateCustomVe
   return task->get_future();
 }
 
-void SESV2Client::CreateCustomVerificationEmailTemplateAsync(const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateCustomVerificationEmailTemplateAsyncHelper(SESV2Client const * const clientThis, const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomVerificationEmailTemplate(request), context);
 }
 
-void SESV2Client::CreateCustomVerificationEmailTemplateAsyncHelper(const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateCustomVerificationEmailTemplateAsync(const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomVerificationEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateCustomVerificationEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDedicatedIpPoolOutcome SESV2Client::CreateDedicatedIpPool(const CreateDedicatedIpPoolRequest& request) const
@@ -335,14 +335,14 @@ CreateDedicatedIpPoolOutcomeCallable SESV2Client::CreateDedicatedIpPoolCallable(
   return task->get_future();
 }
 
-void SESV2Client::CreateDedicatedIpPoolAsync(const CreateDedicatedIpPoolRequest& request, const CreateDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateDedicatedIpPoolAsyncHelper(SESV2Client const * const clientThis, const CreateDedicatedIpPoolRequest& request, const CreateDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDedicatedIpPoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDedicatedIpPool(request), context);
 }
 
-void SESV2Client::CreateDedicatedIpPoolAsyncHelper(const CreateDedicatedIpPoolRequest& request, const CreateDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateDedicatedIpPoolAsync(const CreateDedicatedIpPoolRequest& request, const CreateDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDedicatedIpPool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateDedicatedIpPoolAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDeliverabilityTestReportOutcome SESV2Client::CreateDeliverabilityTestReport(const CreateDeliverabilityTestReportRequest& request) const
@@ -360,14 +360,14 @@ CreateDeliverabilityTestReportOutcomeCallable SESV2Client::CreateDeliverabilityT
   return task->get_future();
 }
 
-void SESV2Client::CreateDeliverabilityTestReportAsync(const CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateDeliverabilityTestReportAsyncHelper(SESV2Client const * const clientThis, const CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeliverabilityTestReportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDeliverabilityTestReport(request), context);
 }
 
-void SESV2Client::CreateDeliverabilityTestReportAsyncHelper(const CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateDeliverabilityTestReportAsync(const CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDeliverabilityTestReport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateDeliverabilityTestReportAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEmailIdentityOutcome SESV2Client::CreateEmailIdentity(const CreateEmailIdentityRequest& request) const
@@ -385,14 +385,14 @@ CreateEmailIdentityOutcomeCallable SESV2Client::CreateEmailIdentityCallable(cons
   return task->get_future();
 }
 
-void SESV2Client::CreateEmailIdentityAsync(const CreateEmailIdentityRequest& request, const CreateEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateEmailIdentityAsyncHelper(SESV2Client const * const clientThis, const CreateEmailIdentityRequest& request, const CreateEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEmailIdentityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEmailIdentity(request), context);
 }
 
-void SESV2Client::CreateEmailIdentityAsyncHelper(const CreateEmailIdentityRequest& request, const CreateEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateEmailIdentityAsync(const CreateEmailIdentityRequest& request, const CreateEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEmailIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateEmailIdentityAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEmailIdentityPolicyOutcome SESV2Client::CreateEmailIdentityPolicy(const CreateEmailIdentityPolicyRequest& request) const
@@ -423,14 +423,14 @@ CreateEmailIdentityPolicyOutcomeCallable SESV2Client::CreateEmailIdentityPolicyC
   return task->get_future();
 }
 
-void SESV2Client::CreateEmailIdentityPolicyAsync(const CreateEmailIdentityPolicyRequest& request, const CreateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateEmailIdentityPolicyAsyncHelper(SESV2Client const * const clientThis, const CreateEmailIdentityPolicyRequest& request, const CreateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEmailIdentityPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEmailIdentityPolicy(request), context);
 }
 
-void SESV2Client::CreateEmailIdentityPolicyAsyncHelper(const CreateEmailIdentityPolicyRequest& request, const CreateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateEmailIdentityPolicyAsync(const CreateEmailIdentityPolicyRequest& request, const CreateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEmailIdentityPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateEmailIdentityPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEmailTemplateOutcome SESV2Client::CreateEmailTemplate(const CreateEmailTemplateRequest& request) const
@@ -448,14 +448,14 @@ CreateEmailTemplateOutcomeCallable SESV2Client::CreateEmailTemplateCallable(cons
   return task->get_future();
 }
 
-void SESV2Client::CreateEmailTemplateAsync(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateEmailTemplateAsyncHelper(SESV2Client const * const clientThis, const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEmailTemplate(request), context);
 }
 
-void SESV2Client::CreateEmailTemplateAsyncHelper(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateEmailTemplateAsync(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateImportJobOutcome SESV2Client::CreateImportJob(const CreateImportJobRequest& request) const
@@ -473,14 +473,14 @@ CreateImportJobOutcomeCallable SESV2Client::CreateImportJobCallable(const Create
   return task->get_future();
 }
 
-void SESV2Client::CreateImportJobAsync(const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientCreateImportJobAsyncHelper(SESV2Client const * const clientThis, const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateImportJob(request), context);
 }
 
-void SESV2Client::CreateImportJobAsyncHelper(const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::CreateImportJobAsync(const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientCreateImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConfigurationSetOutcome SESV2Client::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
@@ -504,14 +504,14 @@ DeleteConfigurationSetOutcomeCallable SESV2Client::DeleteConfigurationSetCallabl
   return task->get_future();
 }
 
-void SESV2Client::DeleteConfigurationSetAsync(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientDeleteConfigurationSetAsyncHelper(SESV2Client const * const clientThis, const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConfigurationSet(request), context);
 }
 
-void SESV2Client::DeleteConfigurationSetAsyncHelper(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::DeleteConfigurationSetAsync(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientDeleteConfigurationSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConfigurationSetEventDestinationOutcome SESV2Client::DeleteConfigurationSetEventDestination(const DeleteConfigurationSetEventDestinationRequest& request) const
@@ -542,14 +542,14 @@ DeleteConfigurationSetEventDestinationOutcomeCallable SESV2Client::DeleteConfigu
   return task->get_future();
 }
 
-void SESV2Client::DeleteConfigurationSetEventDestinationAsync(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientDeleteConfigurationSetEventDestinationAsyncHelper(SESV2Client const * const clientThis, const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConfigurationSetEventDestination(request), context);
 }
 
-void SESV2Client::DeleteConfigurationSetEventDestinationAsyncHelper(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::DeleteConfigurationSetEventDestinationAsync(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConfigurationSetEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientDeleteConfigurationSetEventDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteContactOutcome SESV2Client::DeleteContact(const DeleteContactRequest& request) const
@@ -580,14 +580,14 @@ DeleteContactOutcomeCallable SESV2Client::DeleteContactCallable(const DeleteCont
   return task->get_future();
 }
 
-void SESV2Client::DeleteContactAsync(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientDeleteContactAsyncHelper(SESV2Client const * const clientThis, const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteContact(request), context);
 }
 
-void SESV2Client::DeleteContactAsyncHelper(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::DeleteContactAsync(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientDeleteContactAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteContactListOutcome SESV2Client::DeleteContactList(const DeleteContactListRequest& request) const
@@ -611,14 +611,14 @@ DeleteContactListOutcomeCallable SESV2Client::DeleteContactListCallable(const De
   return task->get_future();
 }
 
-void SESV2Client::DeleteContactListAsync(const DeleteContactListRequest& request, const DeleteContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientDeleteContactListAsyncHelper(SESV2Client const * const clientThis, const DeleteContactListRequest& request, const DeleteContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteContactList(request), context);
 }
 
-void SESV2Client::DeleteContactListAsyncHelper(const DeleteContactListRequest& request, const DeleteContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::DeleteContactListAsync(const DeleteContactListRequest& request, const DeleteContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteContactList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientDeleteContactListAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomVerificationEmailTemplateOutcome SESV2Client::DeleteCustomVerificationEmailTemplate(const DeleteCustomVerificationEmailTemplateRequest& request) const
@@ -642,14 +642,14 @@ DeleteCustomVerificationEmailTemplateOutcomeCallable SESV2Client::DeleteCustomVe
   return task->get_future();
 }
 
-void SESV2Client::DeleteCustomVerificationEmailTemplateAsync(const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientDeleteCustomVerificationEmailTemplateAsyncHelper(SESV2Client const * const clientThis, const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomVerificationEmailTemplate(request), context);
 }
 
-void SESV2Client::DeleteCustomVerificationEmailTemplateAsyncHelper(const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::DeleteCustomVerificationEmailTemplateAsync(const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomVerificationEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientDeleteCustomVerificationEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDedicatedIpPoolOutcome SESV2Client::DeleteDedicatedIpPool(const DeleteDedicatedIpPoolRequest& request) const
@@ -673,14 +673,14 @@ DeleteDedicatedIpPoolOutcomeCallable SESV2Client::DeleteDedicatedIpPoolCallable(
   return task->get_future();
 }
 
-void SESV2Client::DeleteDedicatedIpPoolAsync(const DeleteDedicatedIpPoolRequest& request, const DeleteDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientDeleteDedicatedIpPoolAsyncHelper(SESV2Client const * const clientThis, const DeleteDedicatedIpPoolRequest& request, const DeleteDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDedicatedIpPoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDedicatedIpPool(request), context);
 }
 
-void SESV2Client::DeleteDedicatedIpPoolAsyncHelper(const DeleteDedicatedIpPoolRequest& request, const DeleteDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::DeleteDedicatedIpPoolAsync(const DeleteDedicatedIpPoolRequest& request, const DeleteDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDedicatedIpPool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientDeleteDedicatedIpPoolAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEmailIdentityOutcome SESV2Client::DeleteEmailIdentity(const DeleteEmailIdentityRequest& request) const
@@ -704,14 +704,14 @@ DeleteEmailIdentityOutcomeCallable SESV2Client::DeleteEmailIdentityCallable(cons
   return task->get_future();
 }
 
-void SESV2Client::DeleteEmailIdentityAsync(const DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientDeleteEmailIdentityAsyncHelper(SESV2Client const * const clientThis, const DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailIdentityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEmailIdentity(request), context);
 }
 
-void SESV2Client::DeleteEmailIdentityAsyncHelper(const DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::DeleteEmailIdentityAsync(const DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEmailIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientDeleteEmailIdentityAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEmailIdentityPolicyOutcome SESV2Client::DeleteEmailIdentityPolicy(const DeleteEmailIdentityPolicyRequest& request) const
@@ -742,14 +742,14 @@ DeleteEmailIdentityPolicyOutcomeCallable SESV2Client::DeleteEmailIdentityPolicyC
   return task->get_future();
 }
 
-void SESV2Client::DeleteEmailIdentityPolicyAsync(const DeleteEmailIdentityPolicyRequest& request, const DeleteEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientDeleteEmailIdentityPolicyAsyncHelper(SESV2Client const * const clientThis, const DeleteEmailIdentityPolicyRequest& request, const DeleteEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailIdentityPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEmailIdentityPolicy(request), context);
 }
 
-void SESV2Client::DeleteEmailIdentityPolicyAsyncHelper(const DeleteEmailIdentityPolicyRequest& request, const DeleteEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::DeleteEmailIdentityPolicyAsync(const DeleteEmailIdentityPolicyRequest& request, const DeleteEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEmailIdentityPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientDeleteEmailIdentityPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEmailTemplateOutcome SESV2Client::DeleteEmailTemplate(const DeleteEmailTemplateRequest& request) const
@@ -773,14 +773,14 @@ DeleteEmailTemplateOutcomeCallable SESV2Client::DeleteEmailTemplateCallable(cons
   return task->get_future();
 }
 
-void SESV2Client::DeleteEmailTemplateAsync(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientDeleteEmailTemplateAsyncHelper(SESV2Client const * const clientThis, const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEmailTemplate(request), context);
 }
 
-void SESV2Client::DeleteEmailTemplateAsyncHelper(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::DeleteEmailTemplateAsync(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientDeleteEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSuppressedDestinationOutcome SESV2Client::DeleteSuppressedDestination(const DeleteSuppressedDestinationRequest& request) const
@@ -804,14 +804,14 @@ DeleteSuppressedDestinationOutcomeCallable SESV2Client::DeleteSuppressedDestinat
   return task->get_future();
 }
 
-void SESV2Client::DeleteSuppressedDestinationAsync(const DeleteSuppressedDestinationRequest& request, const DeleteSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientDeleteSuppressedDestinationAsyncHelper(SESV2Client const * const clientThis, const DeleteSuppressedDestinationRequest& request, const DeleteSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSuppressedDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSuppressedDestination(request), context);
 }
 
-void SESV2Client::DeleteSuppressedDestinationAsyncHelper(const DeleteSuppressedDestinationRequest& request, const DeleteSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::DeleteSuppressedDestinationAsync(const DeleteSuppressedDestinationRequest& request, const DeleteSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSuppressedDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientDeleteSuppressedDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccountOutcome SESV2Client::GetAccount(const GetAccountRequest& request) const
@@ -829,14 +829,14 @@ GetAccountOutcomeCallable SESV2Client::GetAccountCallable(const GetAccountReques
   return task->get_future();
 }
 
-void SESV2Client::GetAccountAsync(const GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetAccountAsyncHelper(SESV2Client const * const clientThis, const GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccount(request), context);
 }
 
-void SESV2Client::GetAccountAsyncHelper(const GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetAccountAsync(const GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBlacklistReportsOutcome SESV2Client::GetBlacklistReports(const GetBlacklistReportsRequest& request) const
@@ -859,14 +859,14 @@ GetBlacklistReportsOutcomeCallable SESV2Client::GetBlacklistReportsCallable(cons
   return task->get_future();
 }
 
-void SESV2Client::GetBlacklistReportsAsync(const GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetBlacklistReportsAsyncHelper(SESV2Client const * const clientThis, const GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBlacklistReportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBlacklistReports(request), context);
 }
 
-void SESV2Client::GetBlacklistReportsAsyncHelper(const GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetBlacklistReportsAsync(const GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBlacklistReports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetBlacklistReportsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConfigurationSetOutcome SESV2Client::GetConfigurationSet(const GetConfigurationSetRequest& request) const
@@ -890,14 +890,14 @@ GetConfigurationSetOutcomeCallable SESV2Client::GetConfigurationSetCallable(cons
   return task->get_future();
 }
 
-void SESV2Client::GetConfigurationSetAsync(const GetConfigurationSetRequest& request, const GetConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetConfigurationSetAsyncHelper(SESV2Client const * const clientThis, const GetConfigurationSetRequest& request, const GetConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConfigurationSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConfigurationSet(request), context);
 }
 
-void SESV2Client::GetConfigurationSetAsyncHelper(const GetConfigurationSetRequest& request, const GetConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetConfigurationSetAsync(const GetConfigurationSetRequest& request, const GetConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetConfigurationSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConfigurationSetEventDestinationsOutcome SESV2Client::GetConfigurationSetEventDestinations(const GetConfigurationSetEventDestinationsRequest& request) const
@@ -922,14 +922,14 @@ GetConfigurationSetEventDestinationsOutcomeCallable SESV2Client::GetConfiguratio
   return task->get_future();
 }
 
-void SESV2Client::GetConfigurationSetEventDestinationsAsync(const GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetConfigurationSetEventDestinationsAsyncHelper(SESV2Client const * const clientThis, const GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConfigurationSetEventDestinationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConfigurationSetEventDestinations(request), context);
 }
 
-void SESV2Client::GetConfigurationSetEventDestinationsAsyncHelper(const GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetConfigurationSetEventDestinationsAsync(const GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConfigurationSetEventDestinations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetConfigurationSetEventDestinationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContactOutcome SESV2Client::GetContact(const GetContactRequest& request) const
@@ -960,14 +960,14 @@ GetContactOutcomeCallable SESV2Client::GetContactCallable(const GetContactReques
   return task->get_future();
 }
 
-void SESV2Client::GetContactAsync(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetContactAsyncHelper(SESV2Client const * const clientThis, const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContact(request), context);
 }
 
-void SESV2Client::GetContactAsyncHelper(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetContactAsync(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetContactAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContactListOutcome SESV2Client::GetContactList(const GetContactListRequest& request) const
@@ -991,14 +991,14 @@ GetContactListOutcomeCallable SESV2Client::GetContactListCallable(const GetConta
   return task->get_future();
 }
 
-void SESV2Client::GetContactListAsync(const GetContactListRequest& request, const GetContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetContactListAsyncHelper(SESV2Client const * const clientThis, const GetContactListRequest& request, const GetContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContactList(request), context);
 }
 
-void SESV2Client::GetContactListAsyncHelper(const GetContactListRequest& request, const GetContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetContactListAsync(const GetContactListRequest& request, const GetContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContactList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetContactListAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCustomVerificationEmailTemplateOutcome SESV2Client::GetCustomVerificationEmailTemplate(const GetCustomVerificationEmailTemplateRequest& request) const
@@ -1022,14 +1022,14 @@ GetCustomVerificationEmailTemplateOutcomeCallable SESV2Client::GetCustomVerifica
   return task->get_future();
 }
 
-void SESV2Client::GetCustomVerificationEmailTemplateAsync(const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetCustomVerificationEmailTemplateAsyncHelper(SESV2Client const * const clientThis, const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCustomVerificationEmailTemplate(request), context);
 }
 
-void SESV2Client::GetCustomVerificationEmailTemplateAsyncHelper(const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetCustomVerificationEmailTemplateAsync(const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCustomVerificationEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetCustomVerificationEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDedicatedIpOutcome SESV2Client::GetDedicatedIp(const GetDedicatedIpRequest& request) const
@@ -1053,14 +1053,14 @@ GetDedicatedIpOutcomeCallable SESV2Client::GetDedicatedIpCallable(const GetDedic
   return task->get_future();
 }
 
-void SESV2Client::GetDedicatedIpAsync(const GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetDedicatedIpAsyncHelper(SESV2Client const * const clientThis, const GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDedicatedIpAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDedicatedIp(request), context);
 }
 
-void SESV2Client::GetDedicatedIpAsyncHelper(const GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetDedicatedIpAsync(const GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDedicatedIp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetDedicatedIpAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDedicatedIpsOutcome SESV2Client::GetDedicatedIps(const GetDedicatedIpsRequest& request) const
@@ -1078,14 +1078,14 @@ GetDedicatedIpsOutcomeCallable SESV2Client::GetDedicatedIpsCallable(const GetDed
   return task->get_future();
 }
 
-void SESV2Client::GetDedicatedIpsAsync(const GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetDedicatedIpsAsyncHelper(SESV2Client const * const clientThis, const GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDedicatedIpsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDedicatedIps(request), context);
 }
 
-void SESV2Client::GetDedicatedIpsAsyncHelper(const GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetDedicatedIpsAsync(const GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDedicatedIps(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetDedicatedIpsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeliverabilityDashboardOptionsOutcome SESV2Client::GetDeliverabilityDashboardOptions(const GetDeliverabilityDashboardOptionsRequest& request) const
@@ -1103,14 +1103,14 @@ GetDeliverabilityDashboardOptionsOutcomeCallable SESV2Client::GetDeliverabilityD
   return task->get_future();
 }
 
-void SESV2Client::GetDeliverabilityDashboardOptionsAsync(const GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetDeliverabilityDashboardOptionsAsyncHelper(SESV2Client const * const clientThis, const GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeliverabilityDashboardOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeliverabilityDashboardOptions(request), context);
 }
 
-void SESV2Client::GetDeliverabilityDashboardOptionsAsyncHelper(const GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetDeliverabilityDashboardOptionsAsync(const GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeliverabilityDashboardOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetDeliverabilityDashboardOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeliverabilityTestReportOutcome SESV2Client::GetDeliverabilityTestReport(const GetDeliverabilityTestReportRequest& request) const
@@ -1134,14 +1134,14 @@ GetDeliverabilityTestReportOutcomeCallable SESV2Client::GetDeliverabilityTestRep
   return task->get_future();
 }
 
-void SESV2Client::GetDeliverabilityTestReportAsync(const GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetDeliverabilityTestReportAsyncHelper(SESV2Client const * const clientThis, const GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeliverabilityTestReportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeliverabilityTestReport(request), context);
 }
 
-void SESV2Client::GetDeliverabilityTestReportAsyncHelper(const GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetDeliverabilityTestReportAsync(const GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeliverabilityTestReport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetDeliverabilityTestReportAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDomainDeliverabilityCampaignOutcome SESV2Client::GetDomainDeliverabilityCampaign(const GetDomainDeliverabilityCampaignRequest& request) const
@@ -1165,14 +1165,14 @@ GetDomainDeliverabilityCampaignOutcomeCallable SESV2Client::GetDomainDeliverabil
   return task->get_future();
 }
 
-void SESV2Client::GetDomainDeliverabilityCampaignAsync(const GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetDomainDeliverabilityCampaignAsyncHelper(SESV2Client const * const clientThis, const GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainDeliverabilityCampaignAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDomainDeliverabilityCampaign(request), context);
 }
 
-void SESV2Client::GetDomainDeliverabilityCampaignAsyncHelper(const GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetDomainDeliverabilityCampaignAsync(const GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDomainDeliverabilityCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetDomainDeliverabilityCampaignAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDomainStatisticsReportOutcome SESV2Client::GetDomainStatisticsReport(const GetDomainStatisticsReportRequest& request) const
@@ -1206,14 +1206,14 @@ GetDomainStatisticsReportOutcomeCallable SESV2Client::GetDomainStatisticsReportC
   return task->get_future();
 }
 
-void SESV2Client::GetDomainStatisticsReportAsync(const GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetDomainStatisticsReportAsyncHelper(SESV2Client const * const clientThis, const GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainStatisticsReportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDomainStatisticsReport(request), context);
 }
 
-void SESV2Client::GetDomainStatisticsReportAsyncHelper(const GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetDomainStatisticsReportAsync(const GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDomainStatisticsReport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetDomainStatisticsReportAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEmailIdentityOutcome SESV2Client::GetEmailIdentity(const GetEmailIdentityRequest& request) const
@@ -1237,14 +1237,14 @@ GetEmailIdentityOutcomeCallable SESV2Client::GetEmailIdentityCallable(const GetE
   return task->get_future();
 }
 
-void SESV2Client::GetEmailIdentityAsync(const GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetEmailIdentityAsyncHelper(SESV2Client const * const clientThis, const GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEmailIdentityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEmailIdentity(request), context);
 }
 
-void SESV2Client::GetEmailIdentityAsyncHelper(const GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetEmailIdentityAsync(const GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEmailIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetEmailIdentityAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEmailIdentityPoliciesOutcome SESV2Client::GetEmailIdentityPolicies(const GetEmailIdentityPoliciesRequest& request) const
@@ -1269,14 +1269,14 @@ GetEmailIdentityPoliciesOutcomeCallable SESV2Client::GetEmailIdentityPoliciesCal
   return task->get_future();
 }
 
-void SESV2Client::GetEmailIdentityPoliciesAsync(const GetEmailIdentityPoliciesRequest& request, const GetEmailIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetEmailIdentityPoliciesAsyncHelper(SESV2Client const * const clientThis, const GetEmailIdentityPoliciesRequest& request, const GetEmailIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEmailIdentityPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEmailIdentityPolicies(request), context);
 }
 
-void SESV2Client::GetEmailIdentityPoliciesAsyncHelper(const GetEmailIdentityPoliciesRequest& request, const GetEmailIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetEmailIdentityPoliciesAsync(const GetEmailIdentityPoliciesRequest& request, const GetEmailIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEmailIdentityPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetEmailIdentityPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEmailTemplateOutcome SESV2Client::GetEmailTemplate(const GetEmailTemplateRequest& request) const
@@ -1300,14 +1300,14 @@ GetEmailTemplateOutcomeCallable SESV2Client::GetEmailTemplateCallable(const GetE
   return task->get_future();
 }
 
-void SESV2Client::GetEmailTemplateAsync(const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetEmailTemplateAsyncHelper(SESV2Client const * const clientThis, const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEmailTemplate(request), context);
 }
 
-void SESV2Client::GetEmailTemplateAsyncHelper(const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetEmailTemplateAsync(const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetImportJobOutcome SESV2Client::GetImportJob(const GetImportJobRequest& request) const
@@ -1331,14 +1331,14 @@ GetImportJobOutcomeCallable SESV2Client::GetImportJobCallable(const GetImportJob
   return task->get_future();
 }
 
-void SESV2Client::GetImportJobAsync(const GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetImportJobAsyncHelper(SESV2Client const * const clientThis, const GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetImportJob(request), context);
 }
 
-void SESV2Client::GetImportJobAsyncHelper(const GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetImportJobAsync(const GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetSuppressedDestinationRequest& request) const
@@ -1362,14 +1362,14 @@ GetSuppressedDestinationOutcomeCallable SESV2Client::GetSuppressedDestinationCal
   return task->get_future();
 }
 
-void SESV2Client::GetSuppressedDestinationAsync(const GetSuppressedDestinationRequest& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientGetSuppressedDestinationAsyncHelper(SESV2Client const * const clientThis, const GetSuppressedDestinationRequest& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSuppressedDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSuppressedDestination(request), context);
 }
 
-void SESV2Client::GetSuppressedDestinationAsyncHelper(const GetSuppressedDestinationRequest& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::GetSuppressedDestinationAsync(const GetSuppressedDestinationRequest& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSuppressedDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientGetSuppressedDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConfigurationSetsOutcome SESV2Client::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
@@ -1387,14 +1387,14 @@ ListConfigurationSetsOutcomeCallable SESV2Client::ListConfigurationSetsCallable(
   return task->get_future();
 }
 
-void SESV2Client::ListConfigurationSetsAsync(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListConfigurationSetsAsyncHelper(SESV2Client const * const clientThis, const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConfigurationSets(request), context);
 }
 
-void SESV2Client::ListConfigurationSetsAsyncHelper(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListConfigurationSetsAsync(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConfigurationSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListConfigurationSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListContactListsOutcome SESV2Client::ListContactLists(const ListContactListsRequest& request) const
@@ -1412,14 +1412,14 @@ ListContactListsOutcomeCallable SESV2Client::ListContactListsCallable(const List
   return task->get_future();
 }
 
-void SESV2Client::ListContactListsAsync(const ListContactListsRequest& request, const ListContactListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListContactListsAsyncHelper(SESV2Client const * const clientThis, const ListContactListsRequest& request, const ListContactListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContactListsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListContactLists(request), context);
 }
 
-void SESV2Client::ListContactListsAsyncHelper(const ListContactListsRequest& request, const ListContactListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListContactListsAsync(const ListContactListsRequest& request, const ListContactListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListContactLists(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListContactListsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListContactsOutcome SESV2Client::ListContacts(const ListContactsRequest& request) const
@@ -1444,14 +1444,14 @@ ListContactsOutcomeCallable SESV2Client::ListContactsCallable(const ListContacts
   return task->get_future();
 }
 
-void SESV2Client::ListContactsAsync(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListContactsAsyncHelper(SESV2Client const * const clientThis, const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContactsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListContacts(request), context);
 }
 
-void SESV2Client::ListContactsAsyncHelper(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListContactsAsync(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListContacts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListContactsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomVerificationEmailTemplatesOutcome SESV2Client::ListCustomVerificationEmailTemplates(const ListCustomVerificationEmailTemplatesRequest& request) const
@@ -1469,14 +1469,14 @@ ListCustomVerificationEmailTemplatesOutcomeCallable SESV2Client::ListCustomVerif
   return task->get_future();
 }
 
-void SESV2Client::ListCustomVerificationEmailTemplatesAsync(const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListCustomVerificationEmailTemplatesAsyncHelper(SESV2Client const * const clientThis, const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomVerificationEmailTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomVerificationEmailTemplates(request), context);
 }
 
-void SESV2Client::ListCustomVerificationEmailTemplatesAsyncHelper(const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListCustomVerificationEmailTemplatesAsync(const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomVerificationEmailTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListCustomVerificationEmailTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDedicatedIpPoolsOutcome SESV2Client::ListDedicatedIpPools(const ListDedicatedIpPoolsRequest& request) const
@@ -1494,14 +1494,14 @@ ListDedicatedIpPoolsOutcomeCallable SESV2Client::ListDedicatedIpPoolsCallable(co
   return task->get_future();
 }
 
-void SESV2Client::ListDedicatedIpPoolsAsync(const ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListDedicatedIpPoolsAsyncHelper(SESV2Client const * const clientThis, const ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDedicatedIpPoolsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDedicatedIpPools(request), context);
 }
 
-void SESV2Client::ListDedicatedIpPoolsAsyncHelper(const ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListDedicatedIpPoolsAsync(const ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDedicatedIpPools(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListDedicatedIpPoolsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeliverabilityTestReportsOutcome SESV2Client::ListDeliverabilityTestReports(const ListDeliverabilityTestReportsRequest& request) const
@@ -1519,14 +1519,14 @@ ListDeliverabilityTestReportsOutcomeCallable SESV2Client::ListDeliverabilityTest
   return task->get_future();
 }
 
-void SESV2Client::ListDeliverabilityTestReportsAsync(const ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListDeliverabilityTestReportsAsyncHelper(SESV2Client const * const clientThis, const ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeliverabilityTestReportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeliverabilityTestReports(request), context);
 }
 
-void SESV2Client::ListDeliverabilityTestReportsAsyncHelper(const ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListDeliverabilityTestReportsAsync(const ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeliverabilityTestReports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListDeliverabilityTestReportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainDeliverabilityCampaignsOutcome SESV2Client::ListDomainDeliverabilityCampaigns(const ListDomainDeliverabilityCampaignsRequest& request) const
@@ -1561,14 +1561,14 @@ ListDomainDeliverabilityCampaignsOutcomeCallable SESV2Client::ListDomainDelivera
   return task->get_future();
 }
 
-void SESV2Client::ListDomainDeliverabilityCampaignsAsync(const ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListDomainDeliverabilityCampaignsAsyncHelper(SESV2Client const * const clientThis, const ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainDeliverabilityCampaignsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomainDeliverabilityCampaigns(request), context);
 }
 
-void SESV2Client::ListDomainDeliverabilityCampaignsAsyncHelper(const ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListDomainDeliverabilityCampaignsAsync(const ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomainDeliverabilityCampaigns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListDomainDeliverabilityCampaignsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEmailIdentitiesOutcome SESV2Client::ListEmailIdentities(const ListEmailIdentitiesRequest& request) const
@@ -1586,14 +1586,14 @@ ListEmailIdentitiesOutcomeCallable SESV2Client::ListEmailIdentitiesCallable(cons
   return task->get_future();
 }
 
-void SESV2Client::ListEmailIdentitiesAsync(const ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListEmailIdentitiesAsyncHelper(SESV2Client const * const clientThis, const ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEmailIdentitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEmailIdentities(request), context);
 }
 
-void SESV2Client::ListEmailIdentitiesAsyncHelper(const ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListEmailIdentitiesAsync(const ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEmailIdentities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListEmailIdentitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEmailTemplatesOutcome SESV2Client::ListEmailTemplates(const ListEmailTemplatesRequest& request) const
@@ -1611,14 +1611,14 @@ ListEmailTemplatesOutcomeCallable SESV2Client::ListEmailTemplatesCallable(const 
   return task->get_future();
 }
 
-void SESV2Client::ListEmailTemplatesAsync(const ListEmailTemplatesRequest& request, const ListEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListEmailTemplatesAsyncHelper(SESV2Client const * const clientThis, const ListEmailTemplatesRequest& request, const ListEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEmailTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEmailTemplates(request), context);
 }
 
-void SESV2Client::ListEmailTemplatesAsyncHelper(const ListEmailTemplatesRequest& request, const ListEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListEmailTemplatesAsync(const ListEmailTemplatesRequest& request, const ListEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEmailTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListEmailTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImportJobsOutcome SESV2Client::ListImportJobs(const ListImportJobsRequest& request) const
@@ -1636,14 +1636,14 @@ ListImportJobsOutcomeCallable SESV2Client::ListImportJobsCallable(const ListImpo
   return task->get_future();
 }
 
-void SESV2Client::ListImportJobsAsync(const ListImportJobsRequest& request, const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListImportJobsAsyncHelper(SESV2Client const * const clientThis, const ListImportJobsRequest& request, const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImportJobs(request), context);
 }
 
-void SESV2Client::ListImportJobsAsyncHelper(const ListImportJobsRequest& request, const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListImportJobsAsync(const ListImportJobsRequest& request, const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListImportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const ListSuppressedDestinationsRequest& request) const
@@ -1661,14 +1661,14 @@ ListSuppressedDestinationsOutcomeCallable SESV2Client::ListSuppressedDestination
   return task->get_future();
 }
 
-void SESV2Client::ListSuppressedDestinationsAsync(const ListSuppressedDestinationsRequest& request, const ListSuppressedDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListSuppressedDestinationsAsyncHelper(SESV2Client const * const clientThis, const ListSuppressedDestinationsRequest& request, const ListSuppressedDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSuppressedDestinationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSuppressedDestinations(request), context);
 }
 
-void SESV2Client::ListSuppressedDestinationsAsyncHelper(const ListSuppressedDestinationsRequest& request, const ListSuppressedDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListSuppressedDestinationsAsync(const ListSuppressedDestinationsRequest& request, const ListSuppressedDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSuppressedDestinations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListSuppressedDestinationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome SESV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1691,14 +1691,14 @@ ListTagsForResourceOutcomeCallable SESV2Client::ListTagsForResourceCallable(cons
   return task->get_future();
 }
 
-void SESV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientListTagsForResourceAsyncHelper(SESV2Client const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void SESV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAccountDedicatedIpWarmupAttributesOutcome SESV2Client::PutAccountDedicatedIpWarmupAttributes(const PutAccountDedicatedIpWarmupAttributesRequest& request) const
@@ -1716,14 +1716,14 @@ PutAccountDedicatedIpWarmupAttributesOutcomeCallable SESV2Client::PutAccountDedi
   return task->get_future();
 }
 
-void SESV2Client::PutAccountDedicatedIpWarmupAttributesAsync(const PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutAccountDedicatedIpWarmupAttributesAsyncHelper(SESV2Client const * const clientThis, const PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccountDedicatedIpWarmupAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAccountDedicatedIpWarmupAttributes(request), context);
 }
 
-void SESV2Client::PutAccountDedicatedIpWarmupAttributesAsyncHelper(const PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutAccountDedicatedIpWarmupAttributesAsync(const PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAccountDedicatedIpWarmupAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutAccountDedicatedIpWarmupAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAccountDetailsOutcome SESV2Client::PutAccountDetails(const PutAccountDetailsRequest& request) const
@@ -1741,14 +1741,14 @@ PutAccountDetailsOutcomeCallable SESV2Client::PutAccountDetailsCallable(const Pu
   return task->get_future();
 }
 
-void SESV2Client::PutAccountDetailsAsync(const PutAccountDetailsRequest& request, const PutAccountDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutAccountDetailsAsyncHelper(SESV2Client const * const clientThis, const PutAccountDetailsRequest& request, const PutAccountDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccountDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAccountDetails(request), context);
 }
 
-void SESV2Client::PutAccountDetailsAsyncHelper(const PutAccountDetailsRequest& request, const PutAccountDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutAccountDetailsAsync(const PutAccountDetailsRequest& request, const PutAccountDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAccountDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutAccountDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAccountSendingAttributesOutcome SESV2Client::PutAccountSendingAttributes(const PutAccountSendingAttributesRequest& request) const
@@ -1766,14 +1766,14 @@ PutAccountSendingAttributesOutcomeCallable SESV2Client::PutAccountSendingAttribu
   return task->get_future();
 }
 
-void SESV2Client::PutAccountSendingAttributesAsync(const PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutAccountSendingAttributesAsyncHelper(SESV2Client const * const clientThis, const PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccountSendingAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAccountSendingAttributes(request), context);
 }
 
-void SESV2Client::PutAccountSendingAttributesAsyncHelper(const PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutAccountSendingAttributesAsync(const PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAccountSendingAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutAccountSendingAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAccountSuppressionAttributesOutcome SESV2Client::PutAccountSuppressionAttributes(const PutAccountSuppressionAttributesRequest& request) const
@@ -1791,14 +1791,14 @@ PutAccountSuppressionAttributesOutcomeCallable SESV2Client::PutAccountSuppressio
   return task->get_future();
 }
 
-void SESV2Client::PutAccountSuppressionAttributesAsync(const PutAccountSuppressionAttributesRequest& request, const PutAccountSuppressionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutAccountSuppressionAttributesAsyncHelper(SESV2Client const * const clientThis, const PutAccountSuppressionAttributesRequest& request, const PutAccountSuppressionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccountSuppressionAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAccountSuppressionAttributes(request), context);
 }
 
-void SESV2Client::PutAccountSuppressionAttributesAsyncHelper(const PutAccountSuppressionAttributesRequest& request, const PutAccountSuppressionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutAccountSuppressionAttributesAsync(const PutAccountSuppressionAttributesRequest& request, const PutAccountSuppressionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAccountSuppressionAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutAccountSuppressionAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutConfigurationSetDeliveryOptionsOutcome SESV2Client::PutConfigurationSetDeliveryOptions(const PutConfigurationSetDeliveryOptionsRequest& request) const
@@ -1823,14 +1823,14 @@ PutConfigurationSetDeliveryOptionsOutcomeCallable SESV2Client::PutConfigurationS
   return task->get_future();
 }
 
-void SESV2Client::PutConfigurationSetDeliveryOptionsAsync(const PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutConfigurationSetDeliveryOptionsAsyncHelper(SESV2Client const * const clientThis, const PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetDeliveryOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutConfigurationSetDeliveryOptions(request), context);
 }
 
-void SESV2Client::PutConfigurationSetDeliveryOptionsAsyncHelper(const PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutConfigurationSetDeliveryOptionsAsync(const PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutConfigurationSetDeliveryOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutConfigurationSetDeliveryOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutConfigurationSetReputationOptionsOutcome SESV2Client::PutConfigurationSetReputationOptions(const PutConfigurationSetReputationOptionsRequest& request) const
@@ -1855,14 +1855,14 @@ PutConfigurationSetReputationOptionsOutcomeCallable SESV2Client::PutConfiguratio
   return task->get_future();
 }
 
-void SESV2Client::PutConfigurationSetReputationOptionsAsync(const PutConfigurationSetReputationOptionsRequest& request, const PutConfigurationSetReputationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutConfigurationSetReputationOptionsAsyncHelper(SESV2Client const * const clientThis, const PutConfigurationSetReputationOptionsRequest& request, const PutConfigurationSetReputationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetReputationOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutConfigurationSetReputationOptions(request), context);
 }
 
-void SESV2Client::PutConfigurationSetReputationOptionsAsyncHelper(const PutConfigurationSetReputationOptionsRequest& request, const PutConfigurationSetReputationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutConfigurationSetReputationOptionsAsync(const PutConfigurationSetReputationOptionsRequest& request, const PutConfigurationSetReputationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutConfigurationSetReputationOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutConfigurationSetReputationOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutConfigurationSetSendingOptionsOutcome SESV2Client::PutConfigurationSetSendingOptions(const PutConfigurationSetSendingOptionsRequest& request) const
@@ -1887,14 +1887,14 @@ PutConfigurationSetSendingOptionsOutcomeCallable SESV2Client::PutConfigurationSe
   return task->get_future();
 }
 
-void SESV2Client::PutConfigurationSetSendingOptionsAsync(const PutConfigurationSetSendingOptionsRequest& request, const PutConfigurationSetSendingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutConfigurationSetSendingOptionsAsyncHelper(SESV2Client const * const clientThis, const PutConfigurationSetSendingOptionsRequest& request, const PutConfigurationSetSendingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetSendingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutConfigurationSetSendingOptions(request), context);
 }
 
-void SESV2Client::PutConfigurationSetSendingOptionsAsyncHelper(const PutConfigurationSetSendingOptionsRequest& request, const PutConfigurationSetSendingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutConfigurationSetSendingOptionsAsync(const PutConfigurationSetSendingOptionsRequest& request, const PutConfigurationSetSendingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutConfigurationSetSendingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutConfigurationSetSendingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutConfigurationSetSuppressionOptionsOutcome SESV2Client::PutConfigurationSetSuppressionOptions(const PutConfigurationSetSuppressionOptionsRequest& request) const
@@ -1919,14 +1919,14 @@ PutConfigurationSetSuppressionOptionsOutcomeCallable SESV2Client::PutConfigurati
   return task->get_future();
 }
 
-void SESV2Client::PutConfigurationSetSuppressionOptionsAsync(const PutConfigurationSetSuppressionOptionsRequest& request, const PutConfigurationSetSuppressionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutConfigurationSetSuppressionOptionsAsyncHelper(SESV2Client const * const clientThis, const PutConfigurationSetSuppressionOptionsRequest& request, const PutConfigurationSetSuppressionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetSuppressionOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutConfigurationSetSuppressionOptions(request), context);
 }
 
-void SESV2Client::PutConfigurationSetSuppressionOptionsAsyncHelper(const PutConfigurationSetSuppressionOptionsRequest& request, const PutConfigurationSetSuppressionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutConfigurationSetSuppressionOptionsAsync(const PutConfigurationSetSuppressionOptionsRequest& request, const PutConfigurationSetSuppressionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutConfigurationSetSuppressionOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutConfigurationSetSuppressionOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutConfigurationSetTrackingOptionsOutcome SESV2Client::PutConfigurationSetTrackingOptions(const PutConfigurationSetTrackingOptionsRequest& request) const
@@ -1951,14 +1951,14 @@ PutConfigurationSetTrackingOptionsOutcomeCallable SESV2Client::PutConfigurationS
   return task->get_future();
 }
 
-void SESV2Client::PutConfigurationSetTrackingOptionsAsync(const PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutConfigurationSetTrackingOptionsAsyncHelper(SESV2Client const * const clientThis, const PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetTrackingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutConfigurationSetTrackingOptions(request), context);
 }
 
-void SESV2Client::PutConfigurationSetTrackingOptionsAsyncHelper(const PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutConfigurationSetTrackingOptionsAsync(const PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutConfigurationSetTrackingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutConfigurationSetTrackingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutDedicatedIpInPoolOutcome SESV2Client::PutDedicatedIpInPool(const PutDedicatedIpInPoolRequest& request) const
@@ -1983,14 +1983,14 @@ PutDedicatedIpInPoolOutcomeCallable SESV2Client::PutDedicatedIpInPoolCallable(co
   return task->get_future();
 }
 
-void SESV2Client::PutDedicatedIpInPoolAsync(const PutDedicatedIpInPoolRequest& request, const PutDedicatedIpInPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutDedicatedIpInPoolAsyncHelper(SESV2Client const * const clientThis, const PutDedicatedIpInPoolRequest& request, const PutDedicatedIpInPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDedicatedIpInPoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutDedicatedIpInPool(request), context);
 }
 
-void SESV2Client::PutDedicatedIpInPoolAsyncHelper(const PutDedicatedIpInPoolRequest& request, const PutDedicatedIpInPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutDedicatedIpInPoolAsync(const PutDedicatedIpInPoolRequest& request, const PutDedicatedIpInPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutDedicatedIpInPool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutDedicatedIpInPoolAsyncHelper( this, request, handler, context ); } );
 }
 
 PutDedicatedIpWarmupAttributesOutcome SESV2Client::PutDedicatedIpWarmupAttributes(const PutDedicatedIpWarmupAttributesRequest& request) const
@@ -2015,14 +2015,14 @@ PutDedicatedIpWarmupAttributesOutcomeCallable SESV2Client::PutDedicatedIpWarmupA
   return task->get_future();
 }
 
-void SESV2Client::PutDedicatedIpWarmupAttributesAsync(const PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutDedicatedIpWarmupAttributesAsyncHelper(SESV2Client const * const clientThis, const PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDedicatedIpWarmupAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutDedicatedIpWarmupAttributes(request), context);
 }
 
-void SESV2Client::PutDedicatedIpWarmupAttributesAsyncHelper(const PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutDedicatedIpWarmupAttributesAsync(const PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutDedicatedIpWarmupAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutDedicatedIpWarmupAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutDeliverabilityDashboardOptionOutcome SESV2Client::PutDeliverabilityDashboardOption(const PutDeliverabilityDashboardOptionRequest& request) const
@@ -2040,14 +2040,14 @@ PutDeliverabilityDashboardOptionOutcomeCallable SESV2Client::PutDeliverabilityDa
   return task->get_future();
 }
 
-void SESV2Client::PutDeliverabilityDashboardOptionAsync(const PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutDeliverabilityDashboardOptionAsyncHelper(SESV2Client const * const clientThis, const PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDeliverabilityDashboardOptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutDeliverabilityDashboardOption(request), context);
 }
 
-void SESV2Client::PutDeliverabilityDashboardOptionAsyncHelper(const PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutDeliverabilityDashboardOptionAsync(const PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutDeliverabilityDashboardOption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutDeliverabilityDashboardOptionAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEmailIdentityConfigurationSetAttributesOutcome SESV2Client::PutEmailIdentityConfigurationSetAttributes(const PutEmailIdentityConfigurationSetAttributesRequest& request) const
@@ -2072,14 +2072,14 @@ PutEmailIdentityConfigurationSetAttributesOutcomeCallable SESV2Client::PutEmailI
   return task->get_future();
 }
 
-void SESV2Client::PutEmailIdentityConfigurationSetAttributesAsync(const PutEmailIdentityConfigurationSetAttributesRequest& request, const PutEmailIdentityConfigurationSetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutEmailIdentityConfigurationSetAttributesAsyncHelper(SESV2Client const * const clientThis, const PutEmailIdentityConfigurationSetAttributesRequest& request, const PutEmailIdentityConfigurationSetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEmailIdentityConfigurationSetAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEmailIdentityConfigurationSetAttributes(request), context);
 }
 
-void SESV2Client::PutEmailIdentityConfigurationSetAttributesAsyncHelper(const PutEmailIdentityConfigurationSetAttributesRequest& request, const PutEmailIdentityConfigurationSetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutEmailIdentityConfigurationSetAttributesAsync(const PutEmailIdentityConfigurationSetAttributesRequest& request, const PutEmailIdentityConfigurationSetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEmailIdentityConfigurationSetAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutEmailIdentityConfigurationSetAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEmailIdentityDkimAttributesOutcome SESV2Client::PutEmailIdentityDkimAttributes(const PutEmailIdentityDkimAttributesRequest& request) const
@@ -2104,14 +2104,14 @@ PutEmailIdentityDkimAttributesOutcomeCallable SESV2Client::PutEmailIdentityDkimA
   return task->get_future();
 }
 
-void SESV2Client::PutEmailIdentityDkimAttributesAsync(const PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutEmailIdentityDkimAttributesAsyncHelper(SESV2Client const * const clientThis, const PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEmailIdentityDkimAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEmailIdentityDkimAttributes(request), context);
 }
 
-void SESV2Client::PutEmailIdentityDkimAttributesAsyncHelper(const PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutEmailIdentityDkimAttributesAsync(const PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEmailIdentityDkimAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutEmailIdentityDkimAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEmailIdentityDkimSigningAttributesOutcome SESV2Client::PutEmailIdentityDkimSigningAttributes(const PutEmailIdentityDkimSigningAttributesRequest& request) const
@@ -2136,14 +2136,14 @@ PutEmailIdentityDkimSigningAttributesOutcomeCallable SESV2Client::PutEmailIdenti
   return task->get_future();
 }
 
-void SESV2Client::PutEmailIdentityDkimSigningAttributesAsync(const PutEmailIdentityDkimSigningAttributesRequest& request, const PutEmailIdentityDkimSigningAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutEmailIdentityDkimSigningAttributesAsyncHelper(SESV2Client const * const clientThis, const PutEmailIdentityDkimSigningAttributesRequest& request, const PutEmailIdentityDkimSigningAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEmailIdentityDkimSigningAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEmailIdentityDkimSigningAttributes(request), context);
 }
 
-void SESV2Client::PutEmailIdentityDkimSigningAttributesAsyncHelper(const PutEmailIdentityDkimSigningAttributesRequest& request, const PutEmailIdentityDkimSigningAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutEmailIdentityDkimSigningAttributesAsync(const PutEmailIdentityDkimSigningAttributesRequest& request, const PutEmailIdentityDkimSigningAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEmailIdentityDkimSigningAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutEmailIdentityDkimSigningAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEmailIdentityFeedbackAttributesOutcome SESV2Client::PutEmailIdentityFeedbackAttributes(const PutEmailIdentityFeedbackAttributesRequest& request) const
@@ -2168,14 +2168,14 @@ PutEmailIdentityFeedbackAttributesOutcomeCallable SESV2Client::PutEmailIdentityF
   return task->get_future();
 }
 
-void SESV2Client::PutEmailIdentityFeedbackAttributesAsync(const PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutEmailIdentityFeedbackAttributesAsyncHelper(SESV2Client const * const clientThis, const PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEmailIdentityFeedbackAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEmailIdentityFeedbackAttributes(request), context);
 }
 
-void SESV2Client::PutEmailIdentityFeedbackAttributesAsyncHelper(const PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutEmailIdentityFeedbackAttributesAsync(const PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEmailIdentityFeedbackAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutEmailIdentityFeedbackAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEmailIdentityMailFromAttributesOutcome SESV2Client::PutEmailIdentityMailFromAttributes(const PutEmailIdentityMailFromAttributesRequest& request) const
@@ -2200,14 +2200,14 @@ PutEmailIdentityMailFromAttributesOutcomeCallable SESV2Client::PutEmailIdentityM
   return task->get_future();
 }
 
-void SESV2Client::PutEmailIdentityMailFromAttributesAsync(const PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutEmailIdentityMailFromAttributesAsyncHelper(SESV2Client const * const clientThis, const PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEmailIdentityMailFromAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEmailIdentityMailFromAttributes(request), context);
 }
 
-void SESV2Client::PutEmailIdentityMailFromAttributesAsyncHelper(const PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutEmailIdentityMailFromAttributesAsync(const PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEmailIdentityMailFromAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutEmailIdentityMailFromAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutSuppressedDestinationOutcome SESV2Client::PutSuppressedDestination(const PutSuppressedDestinationRequest& request) const
@@ -2225,14 +2225,14 @@ PutSuppressedDestinationOutcomeCallable SESV2Client::PutSuppressedDestinationCal
   return task->get_future();
 }
 
-void SESV2Client::PutSuppressedDestinationAsync(const PutSuppressedDestinationRequest& request, const PutSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientPutSuppressedDestinationAsyncHelper(SESV2Client const * const clientThis, const PutSuppressedDestinationRequest& request, const PutSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSuppressedDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutSuppressedDestination(request), context);
 }
 
-void SESV2Client::PutSuppressedDestinationAsyncHelper(const PutSuppressedDestinationRequest& request, const PutSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::PutSuppressedDestinationAsync(const PutSuppressedDestinationRequest& request, const PutSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutSuppressedDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientPutSuppressedDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 SendBulkEmailOutcome SESV2Client::SendBulkEmail(const SendBulkEmailRequest& request) const
@@ -2250,14 +2250,14 @@ SendBulkEmailOutcomeCallable SESV2Client::SendBulkEmailCallable(const SendBulkEm
   return task->get_future();
 }
 
-void SESV2Client::SendBulkEmailAsync(const SendBulkEmailRequest& request, const SendBulkEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientSendBulkEmailAsyncHelper(SESV2Client const * const clientThis, const SendBulkEmailRequest& request, const SendBulkEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendBulkEmailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendBulkEmail(request), context);
 }
 
-void SESV2Client::SendBulkEmailAsyncHelper(const SendBulkEmailRequest& request, const SendBulkEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::SendBulkEmailAsync(const SendBulkEmailRequest& request, const SendBulkEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendBulkEmail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientSendBulkEmailAsyncHelper( this, request, handler, context ); } );
 }
 
 SendCustomVerificationEmailOutcome SESV2Client::SendCustomVerificationEmail(const SendCustomVerificationEmailRequest& request) const
@@ -2275,14 +2275,14 @@ SendCustomVerificationEmailOutcomeCallable SESV2Client::SendCustomVerificationEm
   return task->get_future();
 }
 
-void SESV2Client::SendCustomVerificationEmailAsync(const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientSendCustomVerificationEmailAsyncHelper(SESV2Client const * const clientThis, const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendCustomVerificationEmailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendCustomVerificationEmail(request), context);
 }
 
-void SESV2Client::SendCustomVerificationEmailAsyncHelper(const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::SendCustomVerificationEmailAsync(const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendCustomVerificationEmail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientSendCustomVerificationEmailAsyncHelper( this, request, handler, context ); } );
 }
 
 SendEmailOutcome SESV2Client::SendEmail(const SendEmailRequest& request) const
@@ -2300,14 +2300,14 @@ SendEmailOutcomeCallable SESV2Client::SendEmailCallable(const SendEmailRequest& 
   return task->get_future();
 }
 
-void SESV2Client::SendEmailAsync(const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientSendEmailAsyncHelper(SESV2Client const * const clientThis, const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendEmailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendEmail(request), context);
 }
 
-void SESV2Client::SendEmailAsyncHelper(const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::SendEmailAsync(const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendEmail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientSendEmailAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome SESV2Client::TagResource(const TagResourceRequest& request) const
@@ -2325,14 +2325,14 @@ TagResourceOutcomeCallable SESV2Client::TagResourceCallable(const TagResourceReq
   return task->get_future();
 }
 
-void SESV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientTagResourceAsyncHelper(SESV2Client const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void SESV2Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TestRenderEmailTemplateOutcome SESV2Client::TestRenderEmailTemplate(const TestRenderEmailTemplateRequest& request) const
@@ -2357,14 +2357,14 @@ TestRenderEmailTemplateOutcomeCallable SESV2Client::TestRenderEmailTemplateCalla
   return task->get_future();
 }
 
-void SESV2Client::TestRenderEmailTemplateAsync(const TestRenderEmailTemplateRequest& request, const TestRenderEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientTestRenderEmailTemplateAsyncHelper(SESV2Client const * const clientThis, const TestRenderEmailTemplateRequest& request, const TestRenderEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestRenderEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestRenderEmailTemplate(request), context);
 }
 
-void SESV2Client::TestRenderEmailTemplateAsyncHelper(const TestRenderEmailTemplateRequest& request, const TestRenderEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::TestRenderEmailTemplateAsync(const TestRenderEmailTemplateRequest& request, const TestRenderEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestRenderEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientTestRenderEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome SESV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -2392,14 +2392,14 @@ UntagResourceOutcomeCallable SESV2Client::UntagResourceCallable(const UntagResou
   return task->get_future();
 }
 
-void SESV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientUntagResourceAsyncHelper(SESV2Client const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void SESV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConfigurationSetEventDestinationOutcome SESV2Client::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
@@ -2430,14 +2430,14 @@ UpdateConfigurationSetEventDestinationOutcomeCallable SESV2Client::UpdateConfigu
   return task->get_future();
 }
 
-void SESV2Client::UpdateConfigurationSetEventDestinationAsync(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientUpdateConfigurationSetEventDestinationAsyncHelper(SESV2Client const * const clientThis, const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConfigurationSetEventDestination(request), context);
 }
 
-void SESV2Client::UpdateConfigurationSetEventDestinationAsyncHelper(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::UpdateConfigurationSetEventDestinationAsync(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConfigurationSetEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientUpdateConfigurationSetEventDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateContactOutcome SESV2Client::UpdateContact(const UpdateContactRequest& request) const
@@ -2468,14 +2468,14 @@ UpdateContactOutcomeCallable SESV2Client::UpdateContactCallable(const UpdateCont
   return task->get_future();
 }
 
-void SESV2Client::UpdateContactAsync(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientUpdateContactAsyncHelper(SESV2Client const * const clientThis, const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateContact(request), context);
 }
 
-void SESV2Client::UpdateContactAsyncHelper(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::UpdateContactAsync(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientUpdateContactAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateContactListOutcome SESV2Client::UpdateContactList(const UpdateContactListRequest& request) const
@@ -2499,14 +2499,14 @@ UpdateContactListOutcomeCallable SESV2Client::UpdateContactListCallable(const Up
   return task->get_future();
 }
 
-void SESV2Client::UpdateContactListAsync(const UpdateContactListRequest& request, const UpdateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientUpdateContactListAsyncHelper(SESV2Client const * const clientThis, const UpdateContactListRequest& request, const UpdateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateContactList(request), context);
 }
 
-void SESV2Client::UpdateContactListAsyncHelper(const UpdateContactListRequest& request, const UpdateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::UpdateContactListAsync(const UpdateContactListRequest& request, const UpdateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateContactList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientUpdateContactListAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCustomVerificationEmailTemplateOutcome SESV2Client::UpdateCustomVerificationEmailTemplate(const UpdateCustomVerificationEmailTemplateRequest& request) const
@@ -2530,14 +2530,14 @@ UpdateCustomVerificationEmailTemplateOutcomeCallable SESV2Client::UpdateCustomVe
   return task->get_future();
 }
 
-void SESV2Client::UpdateCustomVerificationEmailTemplateAsync(const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientUpdateCustomVerificationEmailTemplateAsyncHelper(SESV2Client const * const clientThis, const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCustomVerificationEmailTemplate(request), context);
 }
 
-void SESV2Client::UpdateCustomVerificationEmailTemplateAsyncHelper(const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::UpdateCustomVerificationEmailTemplateAsync(const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCustomVerificationEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientUpdateCustomVerificationEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEmailIdentityPolicyOutcome SESV2Client::UpdateEmailIdentityPolicy(const UpdateEmailIdentityPolicyRequest& request) const
@@ -2568,14 +2568,14 @@ UpdateEmailIdentityPolicyOutcomeCallable SESV2Client::UpdateEmailIdentityPolicyC
   return task->get_future();
 }
 
-void SESV2Client::UpdateEmailIdentityPolicyAsync(const UpdateEmailIdentityPolicyRequest& request, const UpdateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientUpdateEmailIdentityPolicyAsyncHelper(SESV2Client const * const clientThis, const UpdateEmailIdentityPolicyRequest& request, const UpdateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEmailIdentityPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEmailIdentityPolicy(request), context);
 }
 
-void SESV2Client::UpdateEmailIdentityPolicyAsyncHelper(const UpdateEmailIdentityPolicyRequest& request, const UpdateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::UpdateEmailIdentityPolicyAsync(const UpdateEmailIdentityPolicyRequest& request, const UpdateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEmailIdentityPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientUpdateEmailIdentityPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEmailTemplateOutcome SESV2Client::UpdateEmailTemplate(const UpdateEmailTemplateRequest& request) const
@@ -2599,13 +2599,13 @@ UpdateEmailTemplateOutcomeCallable SESV2Client::UpdateEmailTemplateCallable(cons
   return task->get_future();
 }
 
-void SESV2Client::UpdateEmailTemplateAsync(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2ClientUpdateEmailTemplateAsyncHelper(SESV2Client const * const clientThis, const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEmailTemplate(request), context);
 }
 
-void SESV2Client::UpdateEmailTemplateAsyncHelper(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESV2Client::UpdateEmailTemplateAsync(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESV2ClientUpdateEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -116,13 +116,13 @@ ListRealtimeContactAnalysisSegmentsOutcomeCallable ConnectContactLensClient::Lis
   return task->get_future();
 }
 
-void ConnectContactLensClient::ListRealtimeContactAnalysisSegmentsAsync(const ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectContactLensClientListRealtimeContactAnalysisSegmentsAsyncHelper(ConnectContactLensClient const * const clientThis, const ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRealtimeContactAnalysisSegmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRealtimeContactAnalysisSegments(request), context);
 }
 
-void ConnectContactLensClient::ListRealtimeContactAnalysisSegmentsAsyncHelper(const ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectContactLensClient::ListRealtimeContactAnalysisSegmentsAsync(const ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRealtimeContactAnalysisSegments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectContactLensClientListRealtimeContactAnalysisSegmentsAsyncHelper( this, request, handler, context ); } );
 }
 

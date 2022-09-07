@@ -131,14 +131,14 @@ CancelChangeSetOutcomeCallable MarketplaceCatalogClient::CancelChangeSetCallable
   return task->get_future();
 }
 
-void MarketplaceCatalogClient::CancelChangeSetAsync(const CancelChangeSetRequest& request, const CancelChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClientCancelChangeSetAsyncHelper(MarketplaceCatalogClient const * const clientThis, const CancelChangeSetRequest& request, const CancelChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelChangeSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelChangeSet(request), context);
 }
 
-void MarketplaceCatalogClient::CancelChangeSetAsyncHelper(const CancelChangeSetRequest& request, const CancelChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClient::CancelChangeSetAsync(const CancelChangeSetRequest& request, const CancelChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceCatalogClientCancelChangeSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const DescribeChangeSetRequest& request) const
@@ -166,14 +166,14 @@ DescribeChangeSetOutcomeCallable MarketplaceCatalogClient::DescribeChangeSetCall
   return task->get_future();
 }
 
-void MarketplaceCatalogClient::DescribeChangeSetAsync(const DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClientDescribeChangeSetAsyncHelper(MarketplaceCatalogClient const * const clientThis, const DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChangeSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeChangeSet(request), context);
 }
 
-void MarketplaceCatalogClient::DescribeChangeSetAsyncHelper(const DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClient::DescribeChangeSetAsync(const DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceCatalogClientDescribeChangeSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEntityRequest& request) const
@@ -201,14 +201,14 @@ DescribeEntityOutcomeCallable MarketplaceCatalogClient::DescribeEntityCallable(c
   return task->get_future();
 }
 
-void MarketplaceCatalogClient::DescribeEntityAsync(const DescribeEntityRequest& request, const DescribeEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClientDescribeEntityAsyncHelper(MarketplaceCatalogClient const * const clientThis, const DescribeEntityRequest& request, const DescribeEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEntityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEntity(request), context);
 }
 
-void MarketplaceCatalogClient::DescribeEntityAsyncHelper(const DescribeEntityRequest& request, const DescribeEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClient::DescribeEntityAsync(const DescribeEntityRequest& request, const DescribeEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEntity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceCatalogClientDescribeEntityAsyncHelper( this, request, handler, context ); } );
 }
 
 ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeSetsRequest& request) const
@@ -226,14 +226,14 @@ ListChangeSetsOutcomeCallable MarketplaceCatalogClient::ListChangeSetsCallable(c
   return task->get_future();
 }
 
-void MarketplaceCatalogClient::ListChangeSetsAsync(const ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClientListChangeSetsAsyncHelper(MarketplaceCatalogClient const * const clientThis, const ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChangeSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListChangeSets(request), context);
 }
 
-void MarketplaceCatalogClient::ListChangeSetsAsyncHelper(const ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClient::ListChangeSetsAsync(const ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListChangeSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceCatalogClientListChangeSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesRequest& request) const
@@ -251,14 +251,14 @@ ListEntitiesOutcomeCallable MarketplaceCatalogClient::ListEntitiesCallable(const
   return task->get_future();
 }
 
-void MarketplaceCatalogClient::ListEntitiesAsync(const ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClientListEntitiesAsyncHelper(MarketplaceCatalogClient const * const clientThis, const ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEntitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEntities(request), context);
 }
 
-void MarketplaceCatalogClient::ListEntitiesAsyncHelper(const ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClient::ListEntitiesAsync(const ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEntities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceCatalogClientListEntitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChangeSetRequest& request) const
@@ -276,13 +276,13 @@ StartChangeSetOutcomeCallable MarketplaceCatalogClient::StartChangeSetCallable(c
   return task->get_future();
 }
 
-void MarketplaceCatalogClient::StartChangeSetAsync(const StartChangeSetRequest& request, const StartChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClientStartChangeSetAsyncHelper(MarketplaceCatalogClient const * const clientThis, const StartChangeSetRequest& request, const StartChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartChangeSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartChangeSet(request), context);
 }
 
-void MarketplaceCatalogClient::StartChangeSetAsyncHelper(const StartChangeSetRequest& request, const StartChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCatalogClient::StartChangeSetAsync(const StartChangeSetRequest& request, const StartChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceCatalogClientStartChangeSetAsyncHelper( this, request, handler, context ); } );
 }
 

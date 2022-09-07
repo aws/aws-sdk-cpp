@@ -181,14 +181,14 @@ BatchCreateVariableOutcomeCallable FraudDetectorClient::BatchCreateVariableCalla
   return task->get_future();
 }
 
-void FraudDetectorClient::BatchCreateVariableAsync(const BatchCreateVariableRequest& request, const BatchCreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientBatchCreateVariableAsyncHelper(FraudDetectorClient const * const clientThis, const BatchCreateVariableRequest& request, const BatchCreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchCreateVariableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchCreateVariable(request), context);
 }
 
-void FraudDetectorClient::BatchCreateVariableAsyncHelper(const BatchCreateVariableRequest& request, const BatchCreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::BatchCreateVariableAsync(const BatchCreateVariableRequest& request, const BatchCreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchCreateVariable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientBatchCreateVariableAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetVariableOutcome FraudDetectorClient::BatchGetVariable(const BatchGetVariableRequest& request) const
@@ -205,14 +205,14 @@ BatchGetVariableOutcomeCallable FraudDetectorClient::BatchGetVariableCallable(co
   return task->get_future();
 }
 
-void FraudDetectorClient::BatchGetVariableAsync(const BatchGetVariableRequest& request, const BatchGetVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientBatchGetVariableAsyncHelper(FraudDetectorClient const * const clientThis, const BatchGetVariableRequest& request, const BatchGetVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetVariableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetVariable(request), context);
 }
 
-void FraudDetectorClient::BatchGetVariableAsyncHelper(const BatchGetVariableRequest& request, const BatchGetVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::BatchGetVariableAsync(const BatchGetVariableRequest& request, const BatchGetVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetVariable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientBatchGetVariableAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelBatchImportJobOutcome FraudDetectorClient::CancelBatchImportJob(const CancelBatchImportJobRequest& request) const
@@ -229,14 +229,14 @@ CancelBatchImportJobOutcomeCallable FraudDetectorClient::CancelBatchImportJobCal
   return task->get_future();
 }
 
-void FraudDetectorClient::CancelBatchImportJobAsync(const CancelBatchImportJobRequest& request, const CancelBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientCancelBatchImportJobAsyncHelper(FraudDetectorClient const * const clientThis, const CancelBatchImportJobRequest& request, const CancelBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelBatchImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelBatchImportJob(request), context);
 }
 
-void FraudDetectorClient::CancelBatchImportJobAsyncHelper(const CancelBatchImportJobRequest& request, const CancelBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::CancelBatchImportJobAsync(const CancelBatchImportJobRequest& request, const CancelBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelBatchImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientCancelBatchImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelBatchPredictionJobOutcome FraudDetectorClient::CancelBatchPredictionJob(const CancelBatchPredictionJobRequest& request) const
@@ -253,14 +253,14 @@ CancelBatchPredictionJobOutcomeCallable FraudDetectorClient::CancelBatchPredicti
   return task->get_future();
 }
 
-void FraudDetectorClient::CancelBatchPredictionJobAsync(const CancelBatchPredictionJobRequest& request, const CancelBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientCancelBatchPredictionJobAsyncHelper(FraudDetectorClient const * const clientThis, const CancelBatchPredictionJobRequest& request, const CancelBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelBatchPredictionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelBatchPredictionJob(request), context);
 }
 
-void FraudDetectorClient::CancelBatchPredictionJobAsyncHelper(const CancelBatchPredictionJobRequest& request, const CancelBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::CancelBatchPredictionJobAsync(const CancelBatchPredictionJobRequest& request, const CancelBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelBatchPredictionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientCancelBatchPredictionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBatchImportJobOutcome FraudDetectorClient::CreateBatchImportJob(const CreateBatchImportJobRequest& request) const
@@ -277,14 +277,14 @@ CreateBatchImportJobOutcomeCallable FraudDetectorClient::CreateBatchImportJobCal
   return task->get_future();
 }
 
-void FraudDetectorClient::CreateBatchImportJobAsync(const CreateBatchImportJobRequest& request, const CreateBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientCreateBatchImportJobAsyncHelper(FraudDetectorClient const * const clientThis, const CreateBatchImportJobRequest& request, const CreateBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBatchImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBatchImportJob(request), context);
 }
 
-void FraudDetectorClient::CreateBatchImportJobAsyncHelper(const CreateBatchImportJobRequest& request, const CreateBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::CreateBatchImportJobAsync(const CreateBatchImportJobRequest& request, const CreateBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBatchImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientCreateBatchImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBatchPredictionJobOutcome FraudDetectorClient::CreateBatchPredictionJob(const CreateBatchPredictionJobRequest& request) const
@@ -301,14 +301,14 @@ CreateBatchPredictionJobOutcomeCallable FraudDetectorClient::CreateBatchPredicti
   return task->get_future();
 }
 
-void FraudDetectorClient::CreateBatchPredictionJobAsync(const CreateBatchPredictionJobRequest& request, const CreateBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientCreateBatchPredictionJobAsyncHelper(FraudDetectorClient const * const clientThis, const CreateBatchPredictionJobRequest& request, const CreateBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBatchPredictionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBatchPredictionJob(request), context);
 }
 
-void FraudDetectorClient::CreateBatchPredictionJobAsyncHelper(const CreateBatchPredictionJobRequest& request, const CreateBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::CreateBatchPredictionJobAsync(const CreateBatchPredictionJobRequest& request, const CreateBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBatchPredictionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientCreateBatchPredictionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDetectorVersionOutcome FraudDetectorClient::CreateDetectorVersion(const CreateDetectorVersionRequest& request) const
@@ -325,14 +325,14 @@ CreateDetectorVersionOutcomeCallable FraudDetectorClient::CreateDetectorVersionC
   return task->get_future();
 }
 
-void FraudDetectorClient::CreateDetectorVersionAsync(const CreateDetectorVersionRequest& request, const CreateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientCreateDetectorVersionAsyncHelper(FraudDetectorClient const * const clientThis, const CreateDetectorVersionRequest& request, const CreateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDetectorVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDetectorVersion(request), context);
 }
 
-void FraudDetectorClient::CreateDetectorVersionAsyncHelper(const CreateDetectorVersionRequest& request, const CreateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::CreateDetectorVersionAsync(const CreateDetectorVersionRequest& request, const CreateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDetectorVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientCreateDetectorVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateModelOutcome FraudDetectorClient::CreateModel(const CreateModelRequest& request) const
@@ -349,14 +349,14 @@ CreateModelOutcomeCallable FraudDetectorClient::CreateModelCallable(const Create
   return task->get_future();
 }
 
-void FraudDetectorClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientCreateModelAsyncHelper(FraudDetectorClient const * const clientThis, const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateModel(request), context);
 }
 
-void FraudDetectorClient::CreateModelAsyncHelper(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientCreateModelAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateModelVersionOutcome FraudDetectorClient::CreateModelVersion(const CreateModelVersionRequest& request) const
@@ -373,14 +373,14 @@ CreateModelVersionOutcomeCallable FraudDetectorClient::CreateModelVersionCallabl
   return task->get_future();
 }
 
-void FraudDetectorClient::CreateModelVersionAsync(const CreateModelVersionRequest& request, const CreateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientCreateModelVersionAsyncHelper(FraudDetectorClient const * const clientThis, const CreateModelVersionRequest& request, const CreateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateModelVersion(request), context);
 }
 
-void FraudDetectorClient::CreateModelVersionAsyncHelper(const CreateModelVersionRequest& request, const CreateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::CreateModelVersionAsync(const CreateModelVersionRequest& request, const CreateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateModelVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientCreateModelVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRuleOutcome FraudDetectorClient::CreateRule(const CreateRuleRequest& request) const
@@ -397,14 +397,14 @@ CreateRuleOutcomeCallable FraudDetectorClient::CreateRuleCallable(const CreateRu
   return task->get_future();
 }
 
-void FraudDetectorClient::CreateRuleAsync(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientCreateRuleAsyncHelper(FraudDetectorClient const * const clientThis, const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRule(request), context);
 }
 
-void FraudDetectorClient::CreateRuleAsyncHelper(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::CreateRuleAsync(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientCreateRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVariableOutcome FraudDetectorClient::CreateVariable(const CreateVariableRequest& request) const
@@ -421,14 +421,14 @@ CreateVariableOutcomeCallable FraudDetectorClient::CreateVariableCallable(const 
   return task->get_future();
 }
 
-void FraudDetectorClient::CreateVariableAsync(const CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientCreateVariableAsyncHelper(FraudDetectorClient const * const clientThis, const CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVariableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVariable(request), context);
 }
 
-void FraudDetectorClient::CreateVariableAsyncHelper(const CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::CreateVariableAsync(const CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVariable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientCreateVariableAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBatchImportJobOutcome FraudDetectorClient::DeleteBatchImportJob(const DeleteBatchImportJobRequest& request) const
@@ -445,14 +445,14 @@ DeleteBatchImportJobOutcomeCallable FraudDetectorClient::DeleteBatchImportJobCal
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteBatchImportJobAsync(const DeleteBatchImportJobRequest& request, const DeleteBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteBatchImportJobAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteBatchImportJobRequest& request, const DeleteBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBatchImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBatchImportJob(request), context);
 }
 
-void FraudDetectorClient::DeleteBatchImportJobAsyncHelper(const DeleteBatchImportJobRequest& request, const DeleteBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteBatchImportJobAsync(const DeleteBatchImportJobRequest& request, const DeleteBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBatchImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteBatchImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBatchPredictionJobOutcome FraudDetectorClient::DeleteBatchPredictionJob(const DeleteBatchPredictionJobRequest& request) const
@@ -469,14 +469,14 @@ DeleteBatchPredictionJobOutcomeCallable FraudDetectorClient::DeleteBatchPredicti
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteBatchPredictionJobAsync(const DeleteBatchPredictionJobRequest& request, const DeleteBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteBatchPredictionJobAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteBatchPredictionJobRequest& request, const DeleteBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBatchPredictionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBatchPredictionJob(request), context);
 }
 
-void FraudDetectorClient::DeleteBatchPredictionJobAsyncHelper(const DeleteBatchPredictionJobRequest& request, const DeleteBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteBatchPredictionJobAsync(const DeleteBatchPredictionJobRequest& request, const DeleteBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBatchPredictionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteBatchPredictionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDetectorOutcome FraudDetectorClient::DeleteDetector(const DeleteDetectorRequest& request) const
@@ -493,14 +493,14 @@ DeleteDetectorOutcomeCallable FraudDetectorClient::DeleteDetectorCallable(const 
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteDetectorAsync(const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteDetectorAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDetector(request), context);
 }
 
-void FraudDetectorClient::DeleteDetectorAsyncHelper(const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteDetectorAsync(const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDetectorVersionOutcome FraudDetectorClient::DeleteDetectorVersion(const DeleteDetectorVersionRequest& request) const
@@ -517,14 +517,14 @@ DeleteDetectorVersionOutcomeCallable FraudDetectorClient::DeleteDetectorVersionC
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteDetectorVersionAsync(const DeleteDetectorVersionRequest& request, const DeleteDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteDetectorVersionAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteDetectorVersionRequest& request, const DeleteDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDetectorVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDetectorVersion(request), context);
 }
 
-void FraudDetectorClient::DeleteDetectorVersionAsyncHelper(const DeleteDetectorVersionRequest& request, const DeleteDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteDetectorVersionAsync(const DeleteDetectorVersionRequest& request, const DeleteDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDetectorVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteDetectorVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEntityTypeOutcome FraudDetectorClient::DeleteEntityType(const DeleteEntityTypeRequest& request) const
@@ -541,14 +541,14 @@ DeleteEntityTypeOutcomeCallable FraudDetectorClient::DeleteEntityTypeCallable(co
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteEntityTypeAsync(const DeleteEntityTypeRequest& request, const DeleteEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteEntityTypeAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteEntityTypeRequest& request, const DeleteEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEntityTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEntityType(request), context);
 }
 
-void FraudDetectorClient::DeleteEntityTypeAsyncHelper(const DeleteEntityTypeRequest& request, const DeleteEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteEntityTypeAsync(const DeleteEntityTypeRequest& request, const DeleteEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEntityType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteEntityTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEventOutcome FraudDetectorClient::DeleteEvent(const DeleteEventRequest& request) const
@@ -565,14 +565,14 @@ DeleteEventOutcomeCallable FraudDetectorClient::DeleteEventCallable(const Delete
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteEventAsync(const DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteEventAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEvent(request), context);
 }
 
-void FraudDetectorClient::DeleteEventAsyncHelper(const DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteEventAsync(const DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteEventAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEventTypeOutcome FraudDetectorClient::DeleteEventType(const DeleteEventTypeRequest& request) const
@@ -589,14 +589,14 @@ DeleteEventTypeOutcomeCallable FraudDetectorClient::DeleteEventTypeCallable(cons
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteEventTypeAsync(const DeleteEventTypeRequest& request, const DeleteEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteEventTypeAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteEventTypeRequest& request, const DeleteEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEventType(request), context);
 }
 
-void FraudDetectorClient::DeleteEventTypeAsyncHelper(const DeleteEventTypeRequest& request, const DeleteEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteEventTypeAsync(const DeleteEventTypeRequest& request, const DeleteEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEventType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteEventTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEventsByEventTypeOutcome FraudDetectorClient::DeleteEventsByEventType(const DeleteEventsByEventTypeRequest& request) const
@@ -613,14 +613,14 @@ DeleteEventsByEventTypeOutcomeCallable FraudDetectorClient::DeleteEventsByEventT
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteEventsByEventTypeAsync(const DeleteEventsByEventTypeRequest& request, const DeleteEventsByEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteEventsByEventTypeAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteEventsByEventTypeRequest& request, const DeleteEventsByEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventsByEventTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEventsByEventType(request), context);
 }
 
-void FraudDetectorClient::DeleteEventsByEventTypeAsyncHelper(const DeleteEventsByEventTypeRequest& request, const DeleteEventsByEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteEventsByEventTypeAsync(const DeleteEventsByEventTypeRequest& request, const DeleteEventsByEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEventsByEventType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteEventsByEventTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteExternalModelOutcome FraudDetectorClient::DeleteExternalModel(const DeleteExternalModelRequest& request) const
@@ -637,14 +637,14 @@ DeleteExternalModelOutcomeCallable FraudDetectorClient::DeleteExternalModelCalla
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteExternalModelAsync(const DeleteExternalModelRequest& request, const DeleteExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteExternalModelAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteExternalModelRequest& request, const DeleteExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExternalModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteExternalModel(request), context);
 }
 
-void FraudDetectorClient::DeleteExternalModelAsyncHelper(const DeleteExternalModelRequest& request, const DeleteExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteExternalModelAsync(const DeleteExternalModelRequest& request, const DeleteExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteExternalModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteExternalModelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLabelOutcome FraudDetectorClient::DeleteLabel(const DeleteLabelRequest& request) const
@@ -661,14 +661,14 @@ DeleteLabelOutcomeCallable FraudDetectorClient::DeleteLabelCallable(const Delete
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteLabelAsync(const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteLabelAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLabelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLabel(request), context);
 }
 
-void FraudDetectorClient::DeleteLabelAsyncHelper(const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteLabelAsync(const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLabel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteLabelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelOutcome FraudDetectorClient::DeleteModel(const DeleteModelRequest& request) const
@@ -685,14 +685,14 @@ DeleteModelOutcomeCallable FraudDetectorClient::DeleteModelCallable(const Delete
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteModelAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModel(request), context);
 }
 
-void FraudDetectorClient::DeleteModelAsyncHelper(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteModelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteModelVersionOutcome FraudDetectorClient::DeleteModelVersion(const DeleteModelVersionRequest& request) const
@@ -709,14 +709,14 @@ DeleteModelVersionOutcomeCallable FraudDetectorClient::DeleteModelVersionCallabl
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteModelVersionAsync(const DeleteModelVersionRequest& request, const DeleteModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteModelVersionAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteModelVersionRequest& request, const DeleteModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteModelVersion(request), context);
 }
 
-void FraudDetectorClient::DeleteModelVersionAsyncHelper(const DeleteModelVersionRequest& request, const DeleteModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteModelVersionAsync(const DeleteModelVersionRequest& request, const DeleteModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteModelVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteModelVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteOutcomeOutcome FraudDetectorClient::DeleteOutcome(const DeleteOutcomeRequest& request) const
@@ -733,14 +733,14 @@ DeleteOutcomeOutcomeCallable FraudDetectorClient::DeleteOutcomeCallable(const De
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteOutcomeAsync(const DeleteOutcomeRequest& request, const DeleteOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteOutcomeAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteOutcomeRequest& request, const DeleteOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOutcomeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteOutcome(request), context);
 }
 
-void FraudDetectorClient::DeleteOutcomeAsyncHelper(const DeleteOutcomeRequest& request, const DeleteOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteOutcomeAsync(const DeleteOutcomeRequest& request, const DeleteOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteOutcome(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteOutcomeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRuleOutcome FraudDetectorClient::DeleteRule(const DeleteRuleRequest& request) const
@@ -757,14 +757,14 @@ DeleteRuleOutcomeCallable FraudDetectorClient::DeleteRuleCallable(const DeleteRu
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteRuleAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRule(request), context);
 }
 
-void FraudDetectorClient::DeleteRuleAsyncHelper(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVariableOutcome FraudDetectorClient::DeleteVariable(const DeleteVariableRequest& request) const
@@ -781,14 +781,14 @@ DeleteVariableOutcomeCallable FraudDetectorClient::DeleteVariableCallable(const 
   return task->get_future();
 }
 
-void FraudDetectorClient::DeleteVariableAsync(const DeleteVariableRequest& request, const DeleteVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDeleteVariableAsyncHelper(FraudDetectorClient const * const clientThis, const DeleteVariableRequest& request, const DeleteVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVariableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVariable(request), context);
 }
 
-void FraudDetectorClient::DeleteVariableAsyncHelper(const DeleteVariableRequest& request, const DeleteVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DeleteVariableAsync(const DeleteVariableRequest& request, const DeleteVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVariable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDeleteVariableAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDetectorOutcome FraudDetectorClient::DescribeDetector(const DescribeDetectorRequest& request) const
@@ -805,14 +805,14 @@ DescribeDetectorOutcomeCallable FraudDetectorClient::DescribeDetectorCallable(co
   return task->get_future();
 }
 
-void FraudDetectorClient::DescribeDetectorAsync(const DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDescribeDetectorAsyncHelper(FraudDetectorClient const * const clientThis, const DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDetector(request), context);
 }
 
-void FraudDetectorClient::DescribeDetectorAsyncHelper(const DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DescribeDetectorAsync(const DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDescribeDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeModelVersionsOutcome FraudDetectorClient::DescribeModelVersions(const DescribeModelVersionsRequest& request) const
@@ -829,14 +829,14 @@ DescribeModelVersionsOutcomeCallable FraudDetectorClient::DescribeModelVersionsC
   return task->get_future();
 }
 
-void FraudDetectorClient::DescribeModelVersionsAsync(const DescribeModelVersionsRequest& request, const DescribeModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientDescribeModelVersionsAsyncHelper(FraudDetectorClient const * const clientThis, const DescribeModelVersionsRequest& request, const DescribeModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeModelVersions(request), context);
 }
 
-void FraudDetectorClient::DescribeModelVersionsAsyncHelper(const DescribeModelVersionsRequest& request, const DescribeModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::DescribeModelVersionsAsync(const DescribeModelVersionsRequest& request, const DescribeModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeModelVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientDescribeModelVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBatchImportJobsOutcome FraudDetectorClient::GetBatchImportJobs(const GetBatchImportJobsRequest& request) const
@@ -853,14 +853,14 @@ GetBatchImportJobsOutcomeCallable FraudDetectorClient::GetBatchImportJobsCallabl
   return task->get_future();
 }
 
-void FraudDetectorClient::GetBatchImportJobsAsync(const GetBatchImportJobsRequest& request, const GetBatchImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetBatchImportJobsAsyncHelper(FraudDetectorClient const * const clientThis, const GetBatchImportJobsRequest& request, const GetBatchImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBatchImportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBatchImportJobs(request), context);
 }
 
-void FraudDetectorClient::GetBatchImportJobsAsyncHelper(const GetBatchImportJobsRequest& request, const GetBatchImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetBatchImportJobsAsync(const GetBatchImportJobsRequest& request, const GetBatchImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBatchImportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetBatchImportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBatchPredictionJobsOutcome FraudDetectorClient::GetBatchPredictionJobs(const GetBatchPredictionJobsRequest& request) const
@@ -877,14 +877,14 @@ GetBatchPredictionJobsOutcomeCallable FraudDetectorClient::GetBatchPredictionJob
   return task->get_future();
 }
 
-void FraudDetectorClient::GetBatchPredictionJobsAsync(const GetBatchPredictionJobsRequest& request, const GetBatchPredictionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetBatchPredictionJobsAsyncHelper(FraudDetectorClient const * const clientThis, const GetBatchPredictionJobsRequest& request, const GetBatchPredictionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBatchPredictionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBatchPredictionJobs(request), context);
 }
 
-void FraudDetectorClient::GetBatchPredictionJobsAsyncHelper(const GetBatchPredictionJobsRequest& request, const GetBatchPredictionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetBatchPredictionJobsAsync(const GetBatchPredictionJobsRequest& request, const GetBatchPredictionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBatchPredictionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetBatchPredictionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeleteEventsByEventTypeStatusOutcome FraudDetectorClient::GetDeleteEventsByEventTypeStatus(const GetDeleteEventsByEventTypeStatusRequest& request) const
@@ -901,14 +901,14 @@ GetDeleteEventsByEventTypeStatusOutcomeCallable FraudDetectorClient::GetDeleteEv
   return task->get_future();
 }
 
-void FraudDetectorClient::GetDeleteEventsByEventTypeStatusAsync(const GetDeleteEventsByEventTypeStatusRequest& request, const GetDeleteEventsByEventTypeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetDeleteEventsByEventTypeStatusAsyncHelper(FraudDetectorClient const * const clientThis, const GetDeleteEventsByEventTypeStatusRequest& request, const GetDeleteEventsByEventTypeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeleteEventsByEventTypeStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeleteEventsByEventTypeStatus(request), context);
 }
 
-void FraudDetectorClient::GetDeleteEventsByEventTypeStatusAsyncHelper(const GetDeleteEventsByEventTypeStatusRequest& request, const GetDeleteEventsByEventTypeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetDeleteEventsByEventTypeStatusAsync(const GetDeleteEventsByEventTypeStatusRequest& request, const GetDeleteEventsByEventTypeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeleteEventsByEventTypeStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetDeleteEventsByEventTypeStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDetectorVersionOutcome FraudDetectorClient::GetDetectorVersion(const GetDetectorVersionRequest& request) const
@@ -925,14 +925,14 @@ GetDetectorVersionOutcomeCallable FraudDetectorClient::GetDetectorVersionCallabl
   return task->get_future();
 }
 
-void FraudDetectorClient::GetDetectorVersionAsync(const GetDetectorVersionRequest& request, const GetDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetDetectorVersionAsyncHelper(FraudDetectorClient const * const clientThis, const GetDetectorVersionRequest& request, const GetDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDetectorVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDetectorVersion(request), context);
 }
 
-void FraudDetectorClient::GetDetectorVersionAsyncHelper(const GetDetectorVersionRequest& request, const GetDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetDetectorVersionAsync(const GetDetectorVersionRequest& request, const GetDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDetectorVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetDetectorVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDetectorsOutcome FraudDetectorClient::GetDetectors(const GetDetectorsRequest& request) const
@@ -949,14 +949,14 @@ GetDetectorsOutcomeCallable FraudDetectorClient::GetDetectorsCallable(const GetD
   return task->get_future();
 }
 
-void FraudDetectorClient::GetDetectorsAsync(const GetDetectorsRequest& request, const GetDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetDetectorsAsyncHelper(FraudDetectorClient const * const clientThis, const GetDetectorsRequest& request, const GetDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDetectorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDetectors(request), context);
 }
 
-void FraudDetectorClient::GetDetectorsAsyncHelper(const GetDetectorsRequest& request, const GetDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetDetectorsAsync(const GetDetectorsRequest& request, const GetDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDetectors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetDetectorsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEntityTypesOutcome FraudDetectorClient::GetEntityTypes(const GetEntityTypesRequest& request) const
@@ -973,14 +973,14 @@ GetEntityTypesOutcomeCallable FraudDetectorClient::GetEntityTypesCallable(const 
   return task->get_future();
 }
 
-void FraudDetectorClient::GetEntityTypesAsync(const GetEntityTypesRequest& request, const GetEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetEntityTypesAsyncHelper(FraudDetectorClient const * const clientThis, const GetEntityTypesRequest& request, const GetEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEntityTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEntityTypes(request), context);
 }
 
-void FraudDetectorClient::GetEntityTypesAsyncHelper(const GetEntityTypesRequest& request, const GetEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetEntityTypesAsync(const GetEntityTypesRequest& request, const GetEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEntityTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetEntityTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEventOutcome FraudDetectorClient::GetEvent(const GetEventRequest& request) const
@@ -997,14 +997,14 @@ GetEventOutcomeCallable FraudDetectorClient::GetEventCallable(const GetEventRequ
   return task->get_future();
 }
 
-void FraudDetectorClient::GetEventAsync(const GetEventRequest& request, const GetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetEventAsyncHelper(FraudDetectorClient const * const clientThis, const GetEventRequest& request, const GetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEvent(request), context);
 }
 
-void FraudDetectorClient::GetEventAsyncHelper(const GetEventRequest& request, const GetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetEventAsync(const GetEventRequest& request, const GetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetEventAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEventPredictionOutcome FraudDetectorClient::GetEventPrediction(const GetEventPredictionRequest& request) const
@@ -1021,14 +1021,14 @@ GetEventPredictionOutcomeCallable FraudDetectorClient::GetEventPredictionCallabl
   return task->get_future();
 }
 
-void FraudDetectorClient::GetEventPredictionAsync(const GetEventPredictionRequest& request, const GetEventPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetEventPredictionAsyncHelper(FraudDetectorClient const * const clientThis, const GetEventPredictionRequest& request, const GetEventPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEventPredictionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEventPrediction(request), context);
 }
 
-void FraudDetectorClient::GetEventPredictionAsyncHelper(const GetEventPredictionRequest& request, const GetEventPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetEventPredictionAsync(const GetEventPredictionRequest& request, const GetEventPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEventPrediction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetEventPredictionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEventPredictionMetadataOutcome FraudDetectorClient::GetEventPredictionMetadata(const GetEventPredictionMetadataRequest& request) const
@@ -1045,14 +1045,14 @@ GetEventPredictionMetadataOutcomeCallable FraudDetectorClient::GetEventPredictio
   return task->get_future();
 }
 
-void FraudDetectorClient::GetEventPredictionMetadataAsync(const GetEventPredictionMetadataRequest& request, const GetEventPredictionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetEventPredictionMetadataAsyncHelper(FraudDetectorClient const * const clientThis, const GetEventPredictionMetadataRequest& request, const GetEventPredictionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEventPredictionMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEventPredictionMetadata(request), context);
 }
 
-void FraudDetectorClient::GetEventPredictionMetadataAsyncHelper(const GetEventPredictionMetadataRequest& request, const GetEventPredictionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetEventPredictionMetadataAsync(const GetEventPredictionMetadataRequest& request, const GetEventPredictionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEventPredictionMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetEventPredictionMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEventTypesOutcome FraudDetectorClient::GetEventTypes(const GetEventTypesRequest& request) const
@@ -1069,14 +1069,14 @@ GetEventTypesOutcomeCallable FraudDetectorClient::GetEventTypesCallable(const Ge
   return task->get_future();
 }
 
-void FraudDetectorClient::GetEventTypesAsync(const GetEventTypesRequest& request, const GetEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetEventTypesAsyncHelper(FraudDetectorClient const * const clientThis, const GetEventTypesRequest& request, const GetEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEventTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEventTypes(request), context);
 }
 
-void FraudDetectorClient::GetEventTypesAsyncHelper(const GetEventTypesRequest& request, const GetEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetEventTypesAsync(const GetEventTypesRequest& request, const GetEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEventTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetEventTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExternalModelsOutcome FraudDetectorClient::GetExternalModels(const GetExternalModelsRequest& request) const
@@ -1093,14 +1093,14 @@ GetExternalModelsOutcomeCallable FraudDetectorClient::GetExternalModelsCallable(
   return task->get_future();
 }
 
-void FraudDetectorClient::GetExternalModelsAsync(const GetExternalModelsRequest& request, const GetExternalModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetExternalModelsAsyncHelper(FraudDetectorClient const * const clientThis, const GetExternalModelsRequest& request, const GetExternalModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExternalModelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExternalModels(request), context);
 }
 
-void FraudDetectorClient::GetExternalModelsAsyncHelper(const GetExternalModelsRequest& request, const GetExternalModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetExternalModelsAsync(const GetExternalModelsRequest& request, const GetExternalModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExternalModels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetExternalModelsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetKMSEncryptionKeyOutcome FraudDetectorClient::GetKMSEncryptionKey() const
@@ -1118,14 +1118,14 @@ GetKMSEncryptionKeyOutcomeCallable FraudDetectorClient::GetKMSEncryptionKeyCalla
   return task->get_future();
 }
 
-void FraudDetectorClient::GetKMSEncryptionKeyAsync(const GetKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetKMSEncryptionKeyAsyncHelper(FraudDetectorClient const * const clientThis, const GetKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->GetKMSEncryptionKeyAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->GetKMSEncryptionKey(), context);
 }
 
-void FraudDetectorClient::GetKMSEncryptionKeyAsyncHelper(const GetKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetKMSEncryptionKeyAsync(const GetKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, GetKMSEncryptionKey(), context);
+  m_executor->Submit( [this, handler, context](){ FraudDetectorClientGetKMSEncryptionKeyAsyncHelper( this, handler, context ); } );
 }
 
 GetLabelsOutcome FraudDetectorClient::GetLabels(const GetLabelsRequest& request) const
@@ -1142,14 +1142,14 @@ GetLabelsOutcomeCallable FraudDetectorClient::GetLabelsCallable(const GetLabelsR
   return task->get_future();
 }
 
-void FraudDetectorClient::GetLabelsAsync(const GetLabelsRequest& request, const GetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetLabelsAsyncHelper(FraudDetectorClient const * const clientThis, const GetLabelsRequest& request, const GetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLabelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLabels(request), context);
 }
 
-void FraudDetectorClient::GetLabelsAsyncHelper(const GetLabelsRequest& request, const GetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetLabelsAsync(const GetLabelsRequest& request, const GetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLabels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetLabelsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetModelVersionOutcome FraudDetectorClient::GetModelVersion(const GetModelVersionRequest& request) const
@@ -1166,14 +1166,14 @@ GetModelVersionOutcomeCallable FraudDetectorClient::GetModelVersionCallable(cons
   return task->get_future();
 }
 
-void FraudDetectorClient::GetModelVersionAsync(const GetModelVersionRequest& request, const GetModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetModelVersionAsyncHelper(FraudDetectorClient const * const clientThis, const GetModelVersionRequest& request, const GetModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetModelVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetModelVersion(request), context);
 }
 
-void FraudDetectorClient::GetModelVersionAsyncHelper(const GetModelVersionRequest& request, const GetModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetModelVersionAsync(const GetModelVersionRequest& request, const GetModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetModelVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetModelVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetModelsOutcome FraudDetectorClient::GetModels(const GetModelsRequest& request) const
@@ -1190,14 +1190,14 @@ GetModelsOutcomeCallable FraudDetectorClient::GetModelsCallable(const GetModelsR
   return task->get_future();
 }
 
-void FraudDetectorClient::GetModelsAsync(const GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetModelsAsyncHelper(FraudDetectorClient const * const clientThis, const GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetModelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetModels(request), context);
 }
 
-void FraudDetectorClient::GetModelsAsyncHelper(const GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetModelsAsync(const GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetModels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetModelsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetOutcomesOutcome FraudDetectorClient::GetOutcomes(const GetOutcomesRequest& request) const
@@ -1214,14 +1214,14 @@ GetOutcomesOutcomeCallable FraudDetectorClient::GetOutcomesCallable(const GetOut
   return task->get_future();
 }
 
-void FraudDetectorClient::GetOutcomesAsync(const GetOutcomesRequest& request, const GetOutcomesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetOutcomesAsyncHelper(FraudDetectorClient const * const clientThis, const GetOutcomesRequest& request, const GetOutcomesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOutcomesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOutcomes(request), context);
 }
 
-void FraudDetectorClient::GetOutcomesAsyncHelper(const GetOutcomesRequest& request, const GetOutcomesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetOutcomesAsync(const GetOutcomesRequest& request, const GetOutcomesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOutcomes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetOutcomesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRulesOutcome FraudDetectorClient::GetRules(const GetRulesRequest& request) const
@@ -1238,14 +1238,14 @@ GetRulesOutcomeCallable FraudDetectorClient::GetRulesCallable(const GetRulesRequ
   return task->get_future();
 }
 
-void FraudDetectorClient::GetRulesAsync(const GetRulesRequest& request, const GetRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetRulesAsyncHelper(FraudDetectorClient const * const clientThis, const GetRulesRequest& request, const GetRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRules(request), context);
 }
 
-void FraudDetectorClient::GetRulesAsyncHelper(const GetRulesRequest& request, const GetRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetRulesAsync(const GetRulesRequest& request, const GetRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetVariablesOutcome FraudDetectorClient::GetVariables(const GetVariablesRequest& request) const
@@ -1262,14 +1262,14 @@ GetVariablesOutcomeCallable FraudDetectorClient::GetVariablesCallable(const GetV
   return task->get_future();
 }
 
-void FraudDetectorClient::GetVariablesAsync(const GetVariablesRequest& request, const GetVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientGetVariablesAsyncHelper(FraudDetectorClient const * const clientThis, const GetVariablesRequest& request, const GetVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVariablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetVariables(request), context);
 }
 
-void FraudDetectorClient::GetVariablesAsyncHelper(const GetVariablesRequest& request, const GetVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::GetVariablesAsync(const GetVariablesRequest& request, const GetVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetVariables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientGetVariablesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEventPredictionsOutcome FraudDetectorClient::ListEventPredictions(const ListEventPredictionsRequest& request) const
@@ -1286,14 +1286,14 @@ ListEventPredictionsOutcomeCallable FraudDetectorClient::ListEventPredictionsCal
   return task->get_future();
 }
 
-void FraudDetectorClient::ListEventPredictionsAsync(const ListEventPredictionsRequest& request, const ListEventPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientListEventPredictionsAsyncHelper(FraudDetectorClient const * const clientThis, const ListEventPredictionsRequest& request, const ListEventPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventPredictionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEventPredictions(request), context);
 }
 
-void FraudDetectorClient::ListEventPredictionsAsyncHelper(const ListEventPredictionsRequest& request, const ListEventPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::ListEventPredictionsAsync(const ListEventPredictionsRequest& request, const ListEventPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEventPredictions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientListEventPredictionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome FraudDetectorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1310,14 +1310,14 @@ ListTagsForResourceOutcomeCallable FraudDetectorClient::ListTagsForResourceCalla
   return task->get_future();
 }
 
-void FraudDetectorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientListTagsForResourceAsyncHelper(FraudDetectorClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void FraudDetectorClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutDetectorOutcome FraudDetectorClient::PutDetector(const PutDetectorRequest& request) const
@@ -1334,14 +1334,14 @@ PutDetectorOutcomeCallable FraudDetectorClient::PutDetectorCallable(const PutDet
   return task->get_future();
 }
 
-void FraudDetectorClient::PutDetectorAsync(const PutDetectorRequest& request, const PutDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientPutDetectorAsyncHelper(FraudDetectorClient const * const clientThis, const PutDetectorRequest& request, const PutDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDetectorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutDetector(request), context);
 }
 
-void FraudDetectorClient::PutDetectorAsyncHelper(const PutDetectorRequest& request, const PutDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::PutDetectorAsync(const PutDetectorRequest& request, const PutDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutDetector(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientPutDetectorAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEntityTypeOutcome FraudDetectorClient::PutEntityType(const PutEntityTypeRequest& request) const
@@ -1358,14 +1358,14 @@ PutEntityTypeOutcomeCallable FraudDetectorClient::PutEntityTypeCallable(const Pu
   return task->get_future();
 }
 
-void FraudDetectorClient::PutEntityTypeAsync(const PutEntityTypeRequest& request, const PutEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientPutEntityTypeAsyncHelper(FraudDetectorClient const * const clientThis, const PutEntityTypeRequest& request, const PutEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEntityTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEntityType(request), context);
 }
 
-void FraudDetectorClient::PutEntityTypeAsyncHelper(const PutEntityTypeRequest& request, const PutEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::PutEntityTypeAsync(const PutEntityTypeRequest& request, const PutEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEntityType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientPutEntityTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEventTypeOutcome FraudDetectorClient::PutEventType(const PutEventTypeRequest& request) const
@@ -1382,14 +1382,14 @@ PutEventTypeOutcomeCallable FraudDetectorClient::PutEventTypeCallable(const PutE
   return task->get_future();
 }
 
-void FraudDetectorClient::PutEventTypeAsync(const PutEventTypeRequest& request, const PutEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientPutEventTypeAsyncHelper(FraudDetectorClient const * const clientThis, const PutEventTypeRequest& request, const PutEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEventTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEventType(request), context);
 }
 
-void FraudDetectorClient::PutEventTypeAsyncHelper(const PutEventTypeRequest& request, const PutEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::PutEventTypeAsync(const PutEventTypeRequest& request, const PutEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEventType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientPutEventTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 PutExternalModelOutcome FraudDetectorClient::PutExternalModel(const PutExternalModelRequest& request) const
@@ -1406,14 +1406,14 @@ PutExternalModelOutcomeCallable FraudDetectorClient::PutExternalModelCallable(co
   return task->get_future();
 }
 
-void FraudDetectorClient::PutExternalModelAsync(const PutExternalModelRequest& request, const PutExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientPutExternalModelAsyncHelper(FraudDetectorClient const * const clientThis, const PutExternalModelRequest& request, const PutExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutExternalModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutExternalModel(request), context);
 }
 
-void FraudDetectorClient::PutExternalModelAsyncHelper(const PutExternalModelRequest& request, const PutExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::PutExternalModelAsync(const PutExternalModelRequest& request, const PutExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutExternalModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientPutExternalModelAsyncHelper( this, request, handler, context ); } );
 }
 
 PutKMSEncryptionKeyOutcome FraudDetectorClient::PutKMSEncryptionKey(const PutKMSEncryptionKeyRequest& request) const
@@ -1430,14 +1430,14 @@ PutKMSEncryptionKeyOutcomeCallable FraudDetectorClient::PutKMSEncryptionKeyCalla
   return task->get_future();
 }
 
-void FraudDetectorClient::PutKMSEncryptionKeyAsync(const PutKMSEncryptionKeyRequest& request, const PutKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientPutKMSEncryptionKeyAsyncHelper(FraudDetectorClient const * const clientThis, const PutKMSEncryptionKeyRequest& request, const PutKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutKMSEncryptionKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutKMSEncryptionKey(request), context);
 }
 
-void FraudDetectorClient::PutKMSEncryptionKeyAsyncHelper(const PutKMSEncryptionKeyRequest& request, const PutKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::PutKMSEncryptionKeyAsync(const PutKMSEncryptionKeyRequest& request, const PutKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutKMSEncryptionKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientPutKMSEncryptionKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutLabelOutcome FraudDetectorClient::PutLabel(const PutLabelRequest& request) const
@@ -1454,14 +1454,14 @@ PutLabelOutcomeCallable FraudDetectorClient::PutLabelCallable(const PutLabelRequ
   return task->get_future();
 }
 
-void FraudDetectorClient::PutLabelAsync(const PutLabelRequest& request, const PutLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientPutLabelAsyncHelper(FraudDetectorClient const * const clientThis, const PutLabelRequest& request, const PutLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLabelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutLabel(request), context);
 }
 
-void FraudDetectorClient::PutLabelAsyncHelper(const PutLabelRequest& request, const PutLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::PutLabelAsync(const PutLabelRequest& request, const PutLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutLabel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientPutLabelAsyncHelper( this, request, handler, context ); } );
 }
 
 PutOutcomeOutcome FraudDetectorClient::PutOutcome(const PutOutcomeRequest& request) const
@@ -1478,14 +1478,14 @@ PutOutcomeOutcomeCallable FraudDetectorClient::PutOutcomeCallable(const PutOutco
   return task->get_future();
 }
 
-void FraudDetectorClient::PutOutcomeAsync(const PutOutcomeRequest& request, const PutOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientPutOutcomeAsyncHelper(FraudDetectorClient const * const clientThis, const PutOutcomeRequest& request, const PutOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutOutcomeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutOutcome(request), context);
 }
 
-void FraudDetectorClient::PutOutcomeAsyncHelper(const PutOutcomeRequest& request, const PutOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::PutOutcomeAsync(const PutOutcomeRequest& request, const PutOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutOutcome(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientPutOutcomeAsyncHelper( this, request, handler, context ); } );
 }
 
 SendEventOutcome FraudDetectorClient::SendEvent(const SendEventRequest& request) const
@@ -1502,14 +1502,14 @@ SendEventOutcomeCallable FraudDetectorClient::SendEventCallable(const SendEventR
   return task->get_future();
 }
 
-void FraudDetectorClient::SendEventAsync(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientSendEventAsyncHelper(FraudDetectorClient const * const clientThis, const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendEvent(request), context);
 }
 
-void FraudDetectorClient::SendEventAsyncHelper(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::SendEventAsync(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientSendEventAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome FraudDetectorClient::TagResource(const TagResourceRequest& request) const
@@ -1526,14 +1526,14 @@ TagResourceOutcomeCallable FraudDetectorClient::TagResourceCallable(const TagRes
   return task->get_future();
 }
 
-void FraudDetectorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientTagResourceAsyncHelper(FraudDetectorClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void FraudDetectorClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome FraudDetectorClient::UntagResource(const UntagResourceRequest& request) const
@@ -1550,14 +1550,14 @@ UntagResourceOutcomeCallable FraudDetectorClient::UntagResourceCallable(const Un
   return task->get_future();
 }
 
-void FraudDetectorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUntagResourceAsyncHelper(FraudDetectorClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void FraudDetectorClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDetectorVersionOutcome FraudDetectorClient::UpdateDetectorVersion(const UpdateDetectorVersionRequest& request) const
@@ -1574,14 +1574,14 @@ UpdateDetectorVersionOutcomeCallable FraudDetectorClient::UpdateDetectorVersionC
   return task->get_future();
 }
 
-void FraudDetectorClient::UpdateDetectorVersionAsync(const UpdateDetectorVersionRequest& request, const UpdateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUpdateDetectorVersionAsyncHelper(FraudDetectorClient const * const clientThis, const UpdateDetectorVersionRequest& request, const UpdateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDetectorVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDetectorVersion(request), context);
 }
 
-void FraudDetectorClient::UpdateDetectorVersionAsyncHelper(const UpdateDetectorVersionRequest& request, const UpdateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UpdateDetectorVersionAsync(const UpdateDetectorVersionRequest& request, const UpdateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDetectorVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUpdateDetectorVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDetectorVersionMetadataOutcome FraudDetectorClient::UpdateDetectorVersionMetadata(const UpdateDetectorVersionMetadataRequest& request) const
@@ -1598,14 +1598,14 @@ UpdateDetectorVersionMetadataOutcomeCallable FraudDetectorClient::UpdateDetector
   return task->get_future();
 }
 
-void FraudDetectorClient::UpdateDetectorVersionMetadataAsync(const UpdateDetectorVersionMetadataRequest& request, const UpdateDetectorVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUpdateDetectorVersionMetadataAsyncHelper(FraudDetectorClient const * const clientThis, const UpdateDetectorVersionMetadataRequest& request, const UpdateDetectorVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDetectorVersionMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDetectorVersionMetadata(request), context);
 }
 
-void FraudDetectorClient::UpdateDetectorVersionMetadataAsyncHelper(const UpdateDetectorVersionMetadataRequest& request, const UpdateDetectorVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UpdateDetectorVersionMetadataAsync(const UpdateDetectorVersionMetadataRequest& request, const UpdateDetectorVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDetectorVersionMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUpdateDetectorVersionMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDetectorVersionStatusOutcome FraudDetectorClient::UpdateDetectorVersionStatus(const UpdateDetectorVersionStatusRequest& request) const
@@ -1622,14 +1622,14 @@ UpdateDetectorVersionStatusOutcomeCallable FraudDetectorClient::UpdateDetectorVe
   return task->get_future();
 }
 
-void FraudDetectorClient::UpdateDetectorVersionStatusAsync(const UpdateDetectorVersionStatusRequest& request, const UpdateDetectorVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUpdateDetectorVersionStatusAsyncHelper(FraudDetectorClient const * const clientThis, const UpdateDetectorVersionStatusRequest& request, const UpdateDetectorVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDetectorVersionStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDetectorVersionStatus(request), context);
 }
 
-void FraudDetectorClient::UpdateDetectorVersionStatusAsyncHelper(const UpdateDetectorVersionStatusRequest& request, const UpdateDetectorVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UpdateDetectorVersionStatusAsync(const UpdateDetectorVersionStatusRequest& request, const UpdateDetectorVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDetectorVersionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUpdateDetectorVersionStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEventLabelOutcome FraudDetectorClient::UpdateEventLabel(const UpdateEventLabelRequest& request) const
@@ -1646,14 +1646,14 @@ UpdateEventLabelOutcomeCallable FraudDetectorClient::UpdateEventLabelCallable(co
   return task->get_future();
 }
 
-void FraudDetectorClient::UpdateEventLabelAsync(const UpdateEventLabelRequest& request, const UpdateEventLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUpdateEventLabelAsyncHelper(FraudDetectorClient const * const clientThis, const UpdateEventLabelRequest& request, const UpdateEventLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventLabelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEventLabel(request), context);
 }
 
-void FraudDetectorClient::UpdateEventLabelAsyncHelper(const UpdateEventLabelRequest& request, const UpdateEventLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UpdateEventLabelAsync(const UpdateEventLabelRequest& request, const UpdateEventLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEventLabel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUpdateEventLabelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateModelOutcome FraudDetectorClient::UpdateModel(const UpdateModelRequest& request) const
@@ -1670,14 +1670,14 @@ UpdateModelOutcomeCallable FraudDetectorClient::UpdateModelCallable(const Update
   return task->get_future();
 }
 
-void FraudDetectorClient::UpdateModelAsync(const UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUpdateModelAsyncHelper(FraudDetectorClient const * const clientThis, const UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateModelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateModel(request), context);
 }
 
-void FraudDetectorClient::UpdateModelAsyncHelper(const UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UpdateModelAsync(const UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateModel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUpdateModelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateModelVersionOutcome FraudDetectorClient::UpdateModelVersion(const UpdateModelVersionRequest& request) const
@@ -1694,14 +1694,14 @@ UpdateModelVersionOutcomeCallable FraudDetectorClient::UpdateModelVersionCallabl
   return task->get_future();
 }
 
-void FraudDetectorClient::UpdateModelVersionAsync(const UpdateModelVersionRequest& request, const UpdateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUpdateModelVersionAsyncHelper(FraudDetectorClient const * const clientThis, const UpdateModelVersionRequest& request, const UpdateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateModelVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateModelVersion(request), context);
 }
 
-void FraudDetectorClient::UpdateModelVersionAsyncHelper(const UpdateModelVersionRequest& request, const UpdateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UpdateModelVersionAsync(const UpdateModelVersionRequest& request, const UpdateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateModelVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUpdateModelVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateModelVersionStatusOutcome FraudDetectorClient::UpdateModelVersionStatus(const UpdateModelVersionStatusRequest& request) const
@@ -1718,14 +1718,14 @@ UpdateModelVersionStatusOutcomeCallable FraudDetectorClient::UpdateModelVersionS
   return task->get_future();
 }
 
-void FraudDetectorClient::UpdateModelVersionStatusAsync(const UpdateModelVersionStatusRequest& request, const UpdateModelVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUpdateModelVersionStatusAsyncHelper(FraudDetectorClient const * const clientThis, const UpdateModelVersionStatusRequest& request, const UpdateModelVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateModelVersionStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateModelVersionStatus(request), context);
 }
 
-void FraudDetectorClient::UpdateModelVersionStatusAsyncHelper(const UpdateModelVersionStatusRequest& request, const UpdateModelVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UpdateModelVersionStatusAsync(const UpdateModelVersionStatusRequest& request, const UpdateModelVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateModelVersionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUpdateModelVersionStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRuleMetadataOutcome FraudDetectorClient::UpdateRuleMetadata(const UpdateRuleMetadataRequest& request) const
@@ -1742,14 +1742,14 @@ UpdateRuleMetadataOutcomeCallable FraudDetectorClient::UpdateRuleMetadataCallabl
   return task->get_future();
 }
 
-void FraudDetectorClient::UpdateRuleMetadataAsync(const UpdateRuleMetadataRequest& request, const UpdateRuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUpdateRuleMetadataAsyncHelper(FraudDetectorClient const * const clientThis, const UpdateRuleMetadataRequest& request, const UpdateRuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRuleMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRuleMetadata(request), context);
 }
 
-void FraudDetectorClient::UpdateRuleMetadataAsyncHelper(const UpdateRuleMetadataRequest& request, const UpdateRuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UpdateRuleMetadataAsync(const UpdateRuleMetadataRequest& request, const UpdateRuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRuleMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUpdateRuleMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRuleVersionOutcome FraudDetectorClient::UpdateRuleVersion(const UpdateRuleVersionRequest& request) const
@@ -1766,14 +1766,14 @@ UpdateRuleVersionOutcomeCallable FraudDetectorClient::UpdateRuleVersionCallable(
   return task->get_future();
 }
 
-void FraudDetectorClient::UpdateRuleVersionAsync(const UpdateRuleVersionRequest& request, const UpdateRuleVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUpdateRuleVersionAsyncHelper(FraudDetectorClient const * const clientThis, const UpdateRuleVersionRequest& request, const UpdateRuleVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRuleVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRuleVersion(request), context);
 }
 
-void FraudDetectorClient::UpdateRuleVersionAsyncHelper(const UpdateRuleVersionRequest& request, const UpdateRuleVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UpdateRuleVersionAsync(const UpdateRuleVersionRequest& request, const UpdateRuleVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRuleVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUpdateRuleVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateVariableOutcome FraudDetectorClient::UpdateVariable(const UpdateVariableRequest& request) const
@@ -1790,13 +1790,13 @@ UpdateVariableOutcomeCallable FraudDetectorClient::UpdateVariableCallable(const 
   return task->get_future();
 }
 
-void FraudDetectorClient::UpdateVariableAsync(const UpdateVariableRequest& request, const UpdateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClientUpdateVariableAsyncHelper(FraudDetectorClient const * const clientThis, const UpdateVariableRequest& request, const UpdateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVariableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateVariable(request), context);
 }
 
-void FraudDetectorClient::UpdateVariableAsyncHelper(const UpdateVariableRequest& request, const UpdateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FraudDetectorClient::UpdateVariableAsync(const UpdateVariableRequest& request, const UpdateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateVariable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FraudDetectorClientUpdateVariableAsyncHelper( this, request, handler, context ); } );
 }
 

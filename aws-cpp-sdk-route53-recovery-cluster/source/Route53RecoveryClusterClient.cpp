@@ -118,14 +118,14 @@ GetRoutingControlStateOutcomeCallable Route53RecoveryClusterClient::GetRoutingCo
   return task->get_future();
 }
 
-void Route53RecoveryClusterClient::GetRoutingControlStateAsync(const GetRoutingControlStateRequest& request, const GetRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53RecoveryClusterClientGetRoutingControlStateAsyncHelper(Route53RecoveryClusterClient const * const clientThis, const GetRoutingControlStateRequest& request, const GetRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRoutingControlStateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRoutingControlState(request), context);
 }
 
-void Route53RecoveryClusterClient::GetRoutingControlStateAsyncHelper(const GetRoutingControlStateRequest& request, const GetRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53RecoveryClusterClient::GetRoutingControlStateAsync(const GetRoutingControlStateRequest& request, const GetRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRoutingControlState(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53RecoveryClusterClientGetRoutingControlStateAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRoutingControlsOutcome Route53RecoveryClusterClient::ListRoutingControls(const ListRoutingControlsRequest& request) const
@@ -142,14 +142,14 @@ ListRoutingControlsOutcomeCallable Route53RecoveryClusterClient::ListRoutingCont
   return task->get_future();
 }
 
-void Route53RecoveryClusterClient::ListRoutingControlsAsync(const ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53RecoveryClusterClientListRoutingControlsAsyncHelper(Route53RecoveryClusterClient const * const clientThis, const ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRoutingControlsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRoutingControls(request), context);
 }
 
-void Route53RecoveryClusterClient::ListRoutingControlsAsyncHelper(const ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53RecoveryClusterClient::ListRoutingControlsAsync(const ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRoutingControls(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53RecoveryClusterClientListRoutingControlsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRoutingControlStateOutcome Route53RecoveryClusterClient::UpdateRoutingControlState(const UpdateRoutingControlStateRequest& request) const
@@ -166,14 +166,14 @@ UpdateRoutingControlStateOutcomeCallable Route53RecoveryClusterClient::UpdateRou
   return task->get_future();
 }
 
-void Route53RecoveryClusterClient::UpdateRoutingControlStateAsync(const UpdateRoutingControlStateRequest& request, const UpdateRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53RecoveryClusterClientUpdateRoutingControlStateAsyncHelper(Route53RecoveryClusterClient const * const clientThis, const UpdateRoutingControlStateRequest& request, const UpdateRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoutingControlStateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRoutingControlState(request), context);
 }
 
-void Route53RecoveryClusterClient::UpdateRoutingControlStateAsyncHelper(const UpdateRoutingControlStateRequest& request, const UpdateRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53RecoveryClusterClient::UpdateRoutingControlStateAsync(const UpdateRoutingControlStateRequest& request, const UpdateRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRoutingControlState(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53RecoveryClusterClientUpdateRoutingControlStateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRoutingControlStatesOutcome Route53RecoveryClusterClient::UpdateRoutingControlStates(const UpdateRoutingControlStatesRequest& request) const
@@ -190,13 +190,13 @@ UpdateRoutingControlStatesOutcomeCallable Route53RecoveryClusterClient::UpdateRo
   return task->get_future();
 }
 
-void Route53RecoveryClusterClient::UpdateRoutingControlStatesAsync(const UpdateRoutingControlStatesRequest& request, const UpdateRoutingControlStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53RecoveryClusterClientUpdateRoutingControlStatesAsyncHelper(Route53RecoveryClusterClient const * const clientThis, const UpdateRoutingControlStatesRequest& request, const UpdateRoutingControlStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoutingControlStatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRoutingControlStates(request), context);
 }
 
-void Route53RecoveryClusterClient::UpdateRoutingControlStatesAsyncHelper(const UpdateRoutingControlStatesRequest& request, const UpdateRoutingControlStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void Route53RecoveryClusterClient::UpdateRoutingControlStatesAsync(const UpdateRoutingControlStatesRequest& request, const UpdateRoutingControlStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRoutingControlStates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ Route53RecoveryClusterClientUpdateRoutingControlStatesAsyncHelper( this, request, handler, context ); } );
 }
 

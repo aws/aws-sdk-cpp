@@ -115,13 +115,13 @@ GetEntitlementsOutcomeCallable MarketplaceEntitlementServiceClient::GetEntitleme
   return task->get_future();
 }
 
-void MarketplaceEntitlementServiceClient::GetEntitlementsAsync(const GetEntitlementsRequest& request, const GetEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceEntitlementServiceClientGetEntitlementsAsyncHelper(MarketplaceEntitlementServiceClient const * const clientThis, const GetEntitlementsRequest& request, const GetEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEntitlementsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEntitlements(request), context);
 }
 
-void MarketplaceEntitlementServiceClient::GetEntitlementsAsyncHelper(const GetEntitlementsRequest& request, const GetEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceEntitlementServiceClient::GetEntitlementsAsync(const GetEntitlementsRequest& request, const GetEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEntitlements(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceEntitlementServiceClientGetEntitlementsAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -141,14 +141,14 @@ CreateApplicationOutcomeCallable ApplicationInsightsClient::CreateApplicationCal
   return task->get_future();
 }
 
-void ApplicationInsightsClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientCreateApplicationAsyncHelper(ApplicationInsightsClient const * const clientThis, const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplication(request), context);
 }
 
-void ApplicationInsightsClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientCreateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateComponentOutcome ApplicationInsightsClient::CreateComponent(const CreateComponentRequest& request) const
@@ -165,14 +165,14 @@ CreateComponentOutcomeCallable ApplicationInsightsClient::CreateComponentCallabl
   return task->get_future();
 }
 
-void ApplicationInsightsClient::CreateComponentAsync(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientCreateComponentAsyncHelper(ApplicationInsightsClient const * const clientThis, const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateComponent(request), context);
 }
 
-void ApplicationInsightsClient::CreateComponentAsyncHelper(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::CreateComponentAsync(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientCreateComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLogPatternOutcome ApplicationInsightsClient::CreateLogPattern(const CreateLogPatternRequest& request) const
@@ -189,14 +189,14 @@ CreateLogPatternOutcomeCallable ApplicationInsightsClient::CreateLogPatternCalla
   return task->get_future();
 }
 
-void ApplicationInsightsClient::CreateLogPatternAsync(const CreateLogPatternRequest& request, const CreateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientCreateLogPatternAsyncHelper(ApplicationInsightsClient const * const clientThis, const CreateLogPatternRequest& request, const CreateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLogPatternAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLogPattern(request), context);
 }
 
-void ApplicationInsightsClient::CreateLogPatternAsyncHelper(const CreateLogPatternRequest& request, const CreateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::CreateLogPatternAsync(const CreateLogPatternRequest& request, const CreateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLogPattern(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientCreateLogPatternAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationOutcome ApplicationInsightsClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -213,14 +213,14 @@ DeleteApplicationOutcomeCallable ApplicationInsightsClient::DeleteApplicationCal
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDeleteApplicationAsyncHelper(ApplicationInsightsClient const * const clientThis, const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplication(request), context);
 }
 
-void ApplicationInsightsClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDeleteApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteComponentOutcome ApplicationInsightsClient::DeleteComponent(const DeleteComponentRequest& request) const
@@ -237,14 +237,14 @@ DeleteComponentOutcomeCallable ApplicationInsightsClient::DeleteComponentCallabl
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDeleteComponentAsyncHelper(ApplicationInsightsClient const * const clientThis, const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteComponent(request), context);
 }
 
-void ApplicationInsightsClient::DeleteComponentAsyncHelper(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDeleteComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLogPatternOutcome ApplicationInsightsClient::DeleteLogPattern(const DeleteLogPatternRequest& request) const
@@ -261,14 +261,14 @@ DeleteLogPatternOutcomeCallable ApplicationInsightsClient::DeleteLogPatternCalla
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DeleteLogPatternAsync(const DeleteLogPatternRequest& request, const DeleteLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDeleteLogPatternAsyncHelper(ApplicationInsightsClient const * const clientThis, const DeleteLogPatternRequest& request, const DeleteLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLogPatternAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLogPattern(request), context);
 }
 
-void ApplicationInsightsClient::DeleteLogPatternAsyncHelper(const DeleteLogPatternRequest& request, const DeleteLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DeleteLogPatternAsync(const DeleteLogPatternRequest& request, const DeleteLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLogPattern(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDeleteLogPatternAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeApplicationOutcome ApplicationInsightsClient::DescribeApplication(const DescribeApplicationRequest& request) const
@@ -285,14 +285,14 @@ DescribeApplicationOutcomeCallable ApplicationInsightsClient::DescribeApplicatio
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DescribeApplicationAsync(const DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDescribeApplicationAsyncHelper(ApplicationInsightsClient const * const clientThis, const DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeApplication(request), context);
 }
 
-void ApplicationInsightsClient::DescribeApplicationAsyncHelper(const DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DescribeApplicationAsync(const DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDescribeApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeComponentOutcome ApplicationInsightsClient::DescribeComponent(const DescribeComponentRequest& request) const
@@ -309,14 +309,14 @@ DescribeComponentOutcomeCallable ApplicationInsightsClient::DescribeComponentCal
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DescribeComponentAsync(const DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDescribeComponentAsyncHelper(ApplicationInsightsClient const * const clientThis, const DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeComponent(request), context);
 }
 
-void ApplicationInsightsClient::DescribeComponentAsyncHelper(const DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DescribeComponentAsync(const DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDescribeComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeComponentConfigurationOutcome ApplicationInsightsClient::DescribeComponentConfiguration(const DescribeComponentConfigurationRequest& request) const
@@ -333,14 +333,14 @@ DescribeComponentConfigurationOutcomeCallable ApplicationInsightsClient::Describ
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DescribeComponentConfigurationAsync(const DescribeComponentConfigurationRequest& request, const DescribeComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDescribeComponentConfigurationAsyncHelper(ApplicationInsightsClient const * const clientThis, const DescribeComponentConfigurationRequest& request, const DescribeComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeComponentConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeComponentConfiguration(request), context);
 }
 
-void ApplicationInsightsClient::DescribeComponentConfigurationAsyncHelper(const DescribeComponentConfigurationRequest& request, const DescribeComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DescribeComponentConfigurationAsync(const DescribeComponentConfigurationRequest& request, const DescribeComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeComponentConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDescribeComponentConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeComponentConfigurationRecommendationOutcome ApplicationInsightsClient::DescribeComponentConfigurationRecommendation(const DescribeComponentConfigurationRecommendationRequest& request) const
@@ -357,14 +357,14 @@ DescribeComponentConfigurationRecommendationOutcomeCallable ApplicationInsightsC
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DescribeComponentConfigurationRecommendationAsync(const DescribeComponentConfigurationRecommendationRequest& request, const DescribeComponentConfigurationRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDescribeComponentConfigurationRecommendationAsyncHelper(ApplicationInsightsClient const * const clientThis, const DescribeComponentConfigurationRecommendationRequest& request, const DescribeComponentConfigurationRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeComponentConfigurationRecommendationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeComponentConfigurationRecommendation(request), context);
 }
 
-void ApplicationInsightsClient::DescribeComponentConfigurationRecommendationAsyncHelper(const DescribeComponentConfigurationRecommendationRequest& request, const DescribeComponentConfigurationRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DescribeComponentConfigurationRecommendationAsync(const DescribeComponentConfigurationRecommendationRequest& request, const DescribeComponentConfigurationRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeComponentConfigurationRecommendation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDescribeComponentConfigurationRecommendationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLogPatternOutcome ApplicationInsightsClient::DescribeLogPattern(const DescribeLogPatternRequest& request) const
@@ -381,14 +381,14 @@ DescribeLogPatternOutcomeCallable ApplicationInsightsClient::DescribeLogPatternC
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DescribeLogPatternAsync(const DescribeLogPatternRequest& request, const DescribeLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDescribeLogPatternAsyncHelper(ApplicationInsightsClient const * const clientThis, const DescribeLogPatternRequest& request, const DescribeLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLogPatternAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLogPattern(request), context);
 }
 
-void ApplicationInsightsClient::DescribeLogPatternAsyncHelper(const DescribeLogPatternRequest& request, const DescribeLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DescribeLogPatternAsync(const DescribeLogPatternRequest& request, const DescribeLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLogPattern(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDescribeLogPatternAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeObservationOutcome ApplicationInsightsClient::DescribeObservation(const DescribeObservationRequest& request) const
@@ -405,14 +405,14 @@ DescribeObservationOutcomeCallable ApplicationInsightsClient::DescribeObservatio
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DescribeObservationAsync(const DescribeObservationRequest& request, const DescribeObservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDescribeObservationAsyncHelper(ApplicationInsightsClient const * const clientThis, const DescribeObservationRequest& request, const DescribeObservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeObservationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeObservation(request), context);
 }
 
-void ApplicationInsightsClient::DescribeObservationAsyncHelper(const DescribeObservationRequest& request, const DescribeObservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DescribeObservationAsync(const DescribeObservationRequest& request, const DescribeObservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeObservation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDescribeObservationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProblemOutcome ApplicationInsightsClient::DescribeProblem(const DescribeProblemRequest& request) const
@@ -429,14 +429,14 @@ DescribeProblemOutcomeCallable ApplicationInsightsClient::DescribeProblemCallabl
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DescribeProblemAsync(const DescribeProblemRequest& request, const DescribeProblemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDescribeProblemAsyncHelper(ApplicationInsightsClient const * const clientThis, const DescribeProblemRequest& request, const DescribeProblemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProblemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProblem(request), context);
 }
 
-void ApplicationInsightsClient::DescribeProblemAsyncHelper(const DescribeProblemRequest& request, const DescribeProblemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DescribeProblemAsync(const DescribeProblemRequest& request, const DescribeProblemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProblem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDescribeProblemAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProblemObservationsOutcome ApplicationInsightsClient::DescribeProblemObservations(const DescribeProblemObservationsRequest& request) const
@@ -453,14 +453,14 @@ DescribeProblemObservationsOutcomeCallable ApplicationInsightsClient::DescribePr
   return task->get_future();
 }
 
-void ApplicationInsightsClient::DescribeProblemObservationsAsync(const DescribeProblemObservationsRequest& request, const DescribeProblemObservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientDescribeProblemObservationsAsyncHelper(ApplicationInsightsClient const * const clientThis, const DescribeProblemObservationsRequest& request, const DescribeProblemObservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProblemObservationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProblemObservations(request), context);
 }
 
-void ApplicationInsightsClient::DescribeProblemObservationsAsyncHelper(const DescribeProblemObservationsRequest& request, const DescribeProblemObservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::DescribeProblemObservationsAsync(const DescribeProblemObservationsRequest& request, const DescribeProblemObservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProblemObservations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientDescribeProblemObservationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationsOutcome ApplicationInsightsClient::ListApplications(const ListApplicationsRequest& request) const
@@ -477,14 +477,14 @@ ListApplicationsOutcomeCallable ApplicationInsightsClient::ListApplicationsCalla
   return task->get_future();
 }
 
-void ApplicationInsightsClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientListApplicationsAsyncHelper(ApplicationInsightsClient const * const clientThis, const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplications(request), context);
 }
 
-void ApplicationInsightsClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientListApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListComponentsOutcome ApplicationInsightsClient::ListComponents(const ListComponentsRequest& request) const
@@ -501,14 +501,14 @@ ListComponentsOutcomeCallable ApplicationInsightsClient::ListComponentsCallable(
   return task->get_future();
 }
 
-void ApplicationInsightsClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientListComponentsAsyncHelper(ApplicationInsightsClient const * const clientThis, const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListComponents(request), context);
 }
 
-void ApplicationInsightsClient::ListComponentsAsyncHelper(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListComponents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientListComponentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConfigurationHistoryOutcome ApplicationInsightsClient::ListConfigurationHistory(const ListConfigurationHistoryRequest& request) const
@@ -525,14 +525,14 @@ ListConfigurationHistoryOutcomeCallable ApplicationInsightsClient::ListConfigura
   return task->get_future();
 }
 
-void ApplicationInsightsClient::ListConfigurationHistoryAsync(const ListConfigurationHistoryRequest& request, const ListConfigurationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientListConfigurationHistoryAsyncHelper(ApplicationInsightsClient const * const clientThis, const ListConfigurationHistoryRequest& request, const ListConfigurationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConfigurationHistory(request), context);
 }
 
-void ApplicationInsightsClient::ListConfigurationHistoryAsyncHelper(const ListConfigurationHistoryRequest& request, const ListConfigurationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::ListConfigurationHistoryAsync(const ListConfigurationHistoryRequest& request, const ListConfigurationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConfigurationHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientListConfigurationHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLogPatternSetsOutcome ApplicationInsightsClient::ListLogPatternSets(const ListLogPatternSetsRequest& request) const
@@ -549,14 +549,14 @@ ListLogPatternSetsOutcomeCallable ApplicationInsightsClient::ListLogPatternSetsC
   return task->get_future();
 }
 
-void ApplicationInsightsClient::ListLogPatternSetsAsync(const ListLogPatternSetsRequest& request, const ListLogPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientListLogPatternSetsAsyncHelper(ApplicationInsightsClient const * const clientThis, const ListLogPatternSetsRequest& request, const ListLogPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLogPatternSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLogPatternSets(request), context);
 }
 
-void ApplicationInsightsClient::ListLogPatternSetsAsyncHelper(const ListLogPatternSetsRequest& request, const ListLogPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::ListLogPatternSetsAsync(const ListLogPatternSetsRequest& request, const ListLogPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLogPatternSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientListLogPatternSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLogPatternsOutcome ApplicationInsightsClient::ListLogPatterns(const ListLogPatternsRequest& request) const
@@ -573,14 +573,14 @@ ListLogPatternsOutcomeCallable ApplicationInsightsClient::ListLogPatternsCallabl
   return task->get_future();
 }
 
-void ApplicationInsightsClient::ListLogPatternsAsync(const ListLogPatternsRequest& request, const ListLogPatternsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientListLogPatternsAsyncHelper(ApplicationInsightsClient const * const clientThis, const ListLogPatternsRequest& request, const ListLogPatternsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLogPatternsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLogPatterns(request), context);
 }
 
-void ApplicationInsightsClient::ListLogPatternsAsyncHelper(const ListLogPatternsRequest& request, const ListLogPatternsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::ListLogPatternsAsync(const ListLogPatternsRequest& request, const ListLogPatternsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLogPatterns(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientListLogPatternsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProblemsOutcome ApplicationInsightsClient::ListProblems(const ListProblemsRequest& request) const
@@ -597,14 +597,14 @@ ListProblemsOutcomeCallable ApplicationInsightsClient::ListProblemsCallable(cons
   return task->get_future();
 }
 
-void ApplicationInsightsClient::ListProblemsAsync(const ListProblemsRequest& request, const ListProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientListProblemsAsyncHelper(ApplicationInsightsClient const * const clientThis, const ListProblemsRequest& request, const ListProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProblemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProblems(request), context);
 }
 
-void ApplicationInsightsClient::ListProblemsAsyncHelper(const ListProblemsRequest& request, const ListProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::ListProblemsAsync(const ListProblemsRequest& request, const ListProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProblems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientListProblemsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ApplicationInsightsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -621,14 +621,14 @@ ListTagsForResourceOutcomeCallable ApplicationInsightsClient::ListTagsForResourc
   return task->get_future();
 }
 
-void ApplicationInsightsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientListTagsForResourceAsyncHelper(ApplicationInsightsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ApplicationInsightsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ApplicationInsightsClient::TagResource(const TagResourceRequest& request) const
@@ -645,14 +645,14 @@ TagResourceOutcomeCallable ApplicationInsightsClient::TagResourceCallable(const 
   return task->get_future();
 }
 
-void ApplicationInsightsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientTagResourceAsyncHelper(ApplicationInsightsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ApplicationInsightsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ApplicationInsightsClient::UntagResource(const UntagResourceRequest& request) const
@@ -669,14 +669,14 @@ UntagResourceOutcomeCallable ApplicationInsightsClient::UntagResourceCallable(co
   return task->get_future();
 }
 
-void ApplicationInsightsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientUntagResourceAsyncHelper(ApplicationInsightsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ApplicationInsightsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationOutcome ApplicationInsightsClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -693,14 +693,14 @@ UpdateApplicationOutcomeCallable ApplicationInsightsClient::UpdateApplicationCal
   return task->get_future();
 }
 
-void ApplicationInsightsClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientUpdateApplicationAsyncHelper(ApplicationInsightsClient const * const clientThis, const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplication(request), context);
 }
 
-void ApplicationInsightsClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientUpdateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateComponentOutcome ApplicationInsightsClient::UpdateComponent(const UpdateComponentRequest& request) const
@@ -717,14 +717,14 @@ UpdateComponentOutcomeCallable ApplicationInsightsClient::UpdateComponentCallabl
   return task->get_future();
 }
 
-void ApplicationInsightsClient::UpdateComponentAsync(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientUpdateComponentAsyncHelper(ApplicationInsightsClient const * const clientThis, const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateComponent(request), context);
 }
 
-void ApplicationInsightsClient::UpdateComponentAsyncHelper(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::UpdateComponentAsync(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientUpdateComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateComponentConfigurationOutcome ApplicationInsightsClient::UpdateComponentConfiguration(const UpdateComponentConfigurationRequest& request) const
@@ -741,14 +741,14 @@ UpdateComponentConfigurationOutcomeCallable ApplicationInsightsClient::UpdateCom
   return task->get_future();
 }
 
-void ApplicationInsightsClient::UpdateComponentConfigurationAsync(const UpdateComponentConfigurationRequest& request, const UpdateComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientUpdateComponentConfigurationAsyncHelper(ApplicationInsightsClient const * const clientThis, const UpdateComponentConfigurationRequest& request, const UpdateComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateComponentConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateComponentConfiguration(request), context);
 }
 
-void ApplicationInsightsClient::UpdateComponentConfigurationAsyncHelper(const UpdateComponentConfigurationRequest& request, const UpdateComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::UpdateComponentConfigurationAsync(const UpdateComponentConfigurationRequest& request, const UpdateComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateComponentConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientUpdateComponentConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLogPatternOutcome ApplicationInsightsClient::UpdateLogPattern(const UpdateLogPatternRequest& request) const
@@ -765,13 +765,13 @@ UpdateLogPatternOutcomeCallable ApplicationInsightsClient::UpdateLogPatternCalla
   return task->get_future();
 }
 
-void ApplicationInsightsClient::UpdateLogPatternAsync(const UpdateLogPatternRequest& request, const UpdateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClientUpdateLogPatternAsyncHelper(ApplicationInsightsClient const * const clientThis, const UpdateLogPatternRequest& request, const UpdateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLogPatternAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLogPattern(request), context);
 }
 
-void ApplicationInsightsClient::UpdateLogPatternAsyncHelper(const UpdateLogPatternRequest& request, const UpdateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationInsightsClient::UpdateLogPatternAsync(const UpdateLogPatternRequest& request, const UpdateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLogPattern(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationInsightsClientUpdateLogPatternAsyncHelper( this, request, handler, context ); } );
 }
 

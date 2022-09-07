@@ -127,14 +127,14 @@ CreateFHIRDatastoreOutcomeCallable HealthLakeClient::CreateFHIRDatastoreCallable
   return task->get_future();
 }
 
-void HealthLakeClient::CreateFHIRDatastoreAsync(const CreateFHIRDatastoreRequest& request, const CreateFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientCreateFHIRDatastoreAsyncHelper(HealthLakeClient const * const clientThis, const CreateFHIRDatastoreRequest& request, const CreateFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFHIRDatastoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFHIRDatastore(request), context);
 }
 
-void HealthLakeClient::CreateFHIRDatastoreAsyncHelper(const CreateFHIRDatastoreRequest& request, const CreateFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::CreateFHIRDatastoreAsync(const CreateFHIRDatastoreRequest& request, const CreateFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFHIRDatastore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientCreateFHIRDatastoreAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFHIRDatastoreOutcome HealthLakeClient::DeleteFHIRDatastore(const DeleteFHIRDatastoreRequest& request) const
@@ -151,14 +151,14 @@ DeleteFHIRDatastoreOutcomeCallable HealthLakeClient::DeleteFHIRDatastoreCallable
   return task->get_future();
 }
 
-void HealthLakeClient::DeleteFHIRDatastoreAsync(const DeleteFHIRDatastoreRequest& request, const DeleteFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientDeleteFHIRDatastoreAsyncHelper(HealthLakeClient const * const clientThis, const DeleteFHIRDatastoreRequest& request, const DeleteFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFHIRDatastoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFHIRDatastore(request), context);
 }
 
-void HealthLakeClient::DeleteFHIRDatastoreAsyncHelper(const DeleteFHIRDatastoreRequest& request, const DeleteFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::DeleteFHIRDatastoreAsync(const DeleteFHIRDatastoreRequest& request, const DeleteFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFHIRDatastore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientDeleteFHIRDatastoreAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFHIRDatastoreOutcome HealthLakeClient::DescribeFHIRDatastore(const DescribeFHIRDatastoreRequest& request) const
@@ -175,14 +175,14 @@ DescribeFHIRDatastoreOutcomeCallable HealthLakeClient::DescribeFHIRDatastoreCall
   return task->get_future();
 }
 
-void HealthLakeClient::DescribeFHIRDatastoreAsync(const DescribeFHIRDatastoreRequest& request, const DescribeFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientDescribeFHIRDatastoreAsyncHelper(HealthLakeClient const * const clientThis, const DescribeFHIRDatastoreRequest& request, const DescribeFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFHIRDatastoreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFHIRDatastore(request), context);
 }
 
-void HealthLakeClient::DescribeFHIRDatastoreAsyncHelper(const DescribeFHIRDatastoreRequest& request, const DescribeFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::DescribeFHIRDatastoreAsync(const DescribeFHIRDatastoreRequest& request, const DescribeFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFHIRDatastore(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientDescribeFHIRDatastoreAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFHIRExportJobOutcome HealthLakeClient::DescribeFHIRExportJob(const DescribeFHIRExportJobRequest& request) const
@@ -199,14 +199,14 @@ DescribeFHIRExportJobOutcomeCallable HealthLakeClient::DescribeFHIRExportJobCall
   return task->get_future();
 }
 
-void HealthLakeClient::DescribeFHIRExportJobAsync(const DescribeFHIRExportJobRequest& request, const DescribeFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientDescribeFHIRExportJobAsyncHelper(HealthLakeClient const * const clientThis, const DescribeFHIRExportJobRequest& request, const DescribeFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFHIRExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFHIRExportJob(request), context);
 }
 
-void HealthLakeClient::DescribeFHIRExportJobAsyncHelper(const DescribeFHIRExportJobRequest& request, const DescribeFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::DescribeFHIRExportJobAsync(const DescribeFHIRExportJobRequest& request, const DescribeFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFHIRExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientDescribeFHIRExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFHIRImportJobOutcome HealthLakeClient::DescribeFHIRImportJob(const DescribeFHIRImportJobRequest& request) const
@@ -223,14 +223,14 @@ DescribeFHIRImportJobOutcomeCallable HealthLakeClient::DescribeFHIRImportJobCall
   return task->get_future();
 }
 
-void HealthLakeClient::DescribeFHIRImportJobAsync(const DescribeFHIRImportJobRequest& request, const DescribeFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientDescribeFHIRImportJobAsyncHelper(HealthLakeClient const * const clientThis, const DescribeFHIRImportJobRequest& request, const DescribeFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFHIRImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFHIRImportJob(request), context);
 }
 
-void HealthLakeClient::DescribeFHIRImportJobAsyncHelper(const DescribeFHIRImportJobRequest& request, const DescribeFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::DescribeFHIRImportJobAsync(const DescribeFHIRImportJobRequest& request, const DescribeFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFHIRImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientDescribeFHIRImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFHIRDatastoresOutcome HealthLakeClient::ListFHIRDatastores(const ListFHIRDatastoresRequest& request) const
@@ -247,14 +247,14 @@ ListFHIRDatastoresOutcomeCallable HealthLakeClient::ListFHIRDatastoresCallable(c
   return task->get_future();
 }
 
-void HealthLakeClient::ListFHIRDatastoresAsync(const ListFHIRDatastoresRequest& request, const ListFHIRDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientListFHIRDatastoresAsyncHelper(HealthLakeClient const * const clientThis, const ListFHIRDatastoresRequest& request, const ListFHIRDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFHIRDatastoresAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFHIRDatastores(request), context);
 }
 
-void HealthLakeClient::ListFHIRDatastoresAsyncHelper(const ListFHIRDatastoresRequest& request, const ListFHIRDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::ListFHIRDatastoresAsync(const ListFHIRDatastoresRequest& request, const ListFHIRDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFHIRDatastores(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientListFHIRDatastoresAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFHIRExportJobsOutcome HealthLakeClient::ListFHIRExportJobs(const ListFHIRExportJobsRequest& request) const
@@ -271,14 +271,14 @@ ListFHIRExportJobsOutcomeCallable HealthLakeClient::ListFHIRExportJobsCallable(c
   return task->get_future();
 }
 
-void HealthLakeClient::ListFHIRExportJobsAsync(const ListFHIRExportJobsRequest& request, const ListFHIRExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientListFHIRExportJobsAsyncHelper(HealthLakeClient const * const clientThis, const ListFHIRExportJobsRequest& request, const ListFHIRExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFHIRExportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFHIRExportJobs(request), context);
 }
 
-void HealthLakeClient::ListFHIRExportJobsAsyncHelper(const ListFHIRExportJobsRequest& request, const ListFHIRExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::ListFHIRExportJobsAsync(const ListFHIRExportJobsRequest& request, const ListFHIRExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFHIRExportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientListFHIRExportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFHIRImportJobsOutcome HealthLakeClient::ListFHIRImportJobs(const ListFHIRImportJobsRequest& request) const
@@ -295,14 +295,14 @@ ListFHIRImportJobsOutcomeCallable HealthLakeClient::ListFHIRImportJobsCallable(c
   return task->get_future();
 }
 
-void HealthLakeClient::ListFHIRImportJobsAsync(const ListFHIRImportJobsRequest& request, const ListFHIRImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientListFHIRImportJobsAsyncHelper(HealthLakeClient const * const clientThis, const ListFHIRImportJobsRequest& request, const ListFHIRImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFHIRImportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFHIRImportJobs(request), context);
 }
 
-void HealthLakeClient::ListFHIRImportJobsAsyncHelper(const ListFHIRImportJobsRequest& request, const ListFHIRImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::ListFHIRImportJobsAsync(const ListFHIRImportJobsRequest& request, const ListFHIRImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFHIRImportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientListFHIRImportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome HealthLakeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -319,14 +319,14 @@ ListTagsForResourceOutcomeCallable HealthLakeClient::ListTagsForResourceCallable
   return task->get_future();
 }
 
-void HealthLakeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientListTagsForResourceAsyncHelper(HealthLakeClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void HealthLakeClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartFHIRExportJobOutcome HealthLakeClient::StartFHIRExportJob(const StartFHIRExportJobRequest& request) const
@@ -343,14 +343,14 @@ StartFHIRExportJobOutcomeCallable HealthLakeClient::StartFHIRExportJobCallable(c
   return task->get_future();
 }
 
-void HealthLakeClient::StartFHIRExportJobAsync(const StartFHIRExportJobRequest& request, const StartFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientStartFHIRExportJobAsyncHelper(HealthLakeClient const * const clientThis, const StartFHIRExportJobRequest& request, const StartFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFHIRExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartFHIRExportJob(request), context);
 }
 
-void HealthLakeClient::StartFHIRExportJobAsyncHelper(const StartFHIRExportJobRequest& request, const StartFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::StartFHIRExportJobAsync(const StartFHIRExportJobRequest& request, const StartFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartFHIRExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientStartFHIRExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartFHIRImportJobOutcome HealthLakeClient::StartFHIRImportJob(const StartFHIRImportJobRequest& request) const
@@ -367,14 +367,14 @@ StartFHIRImportJobOutcomeCallable HealthLakeClient::StartFHIRImportJobCallable(c
   return task->get_future();
 }
 
-void HealthLakeClient::StartFHIRImportJobAsync(const StartFHIRImportJobRequest& request, const StartFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientStartFHIRImportJobAsyncHelper(HealthLakeClient const * const clientThis, const StartFHIRImportJobRequest& request, const StartFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFHIRImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartFHIRImportJob(request), context);
 }
 
-void HealthLakeClient::StartFHIRImportJobAsyncHelper(const StartFHIRImportJobRequest& request, const StartFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::StartFHIRImportJobAsync(const StartFHIRImportJobRequest& request, const StartFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartFHIRImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientStartFHIRImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome HealthLakeClient::TagResource(const TagResourceRequest& request) const
@@ -391,14 +391,14 @@ TagResourceOutcomeCallable HealthLakeClient::TagResourceCallable(const TagResour
   return task->get_future();
 }
 
-void HealthLakeClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientTagResourceAsyncHelper(HealthLakeClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void HealthLakeClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome HealthLakeClient::UntagResource(const UntagResourceRequest& request) const
@@ -415,13 +415,13 @@ UntagResourceOutcomeCallable HealthLakeClient::UntagResourceCallable(const Untag
   return task->get_future();
 }
 
-void HealthLakeClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClientUntagResourceAsyncHelper(HealthLakeClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void HealthLakeClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void HealthLakeClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ HealthLakeClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 

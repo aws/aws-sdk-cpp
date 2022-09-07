@@ -143,14 +143,14 @@ BatchGetChannelOutcomeCallable IVSClient::BatchGetChannelCallable(const BatchGet
   return task->get_future();
 }
 
-void IVSClient::BatchGetChannelAsync(const BatchGetChannelRequest& request, const BatchGetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientBatchGetChannelAsyncHelper(IVSClient const * const clientThis, const BatchGetChannelRequest& request, const BatchGetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetChannel(request), context);
 }
 
-void IVSClient::BatchGetChannelAsyncHelper(const BatchGetChannelRequest& request, const BatchGetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::BatchGetChannelAsync(const BatchGetChannelRequest& request, const BatchGetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientBatchGetChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetStreamKeyOutcome IVSClient::BatchGetStreamKey(const BatchGetStreamKeyRequest& request) const
@@ -168,14 +168,14 @@ BatchGetStreamKeyOutcomeCallable IVSClient::BatchGetStreamKeyCallable(const Batc
   return task->get_future();
 }
 
-void IVSClient::BatchGetStreamKeyAsync(const BatchGetStreamKeyRequest& request, const BatchGetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientBatchGetStreamKeyAsyncHelper(IVSClient const * const clientThis, const BatchGetStreamKeyRequest& request, const BatchGetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetStreamKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetStreamKey(request), context);
 }
 
-void IVSClient::BatchGetStreamKeyAsyncHelper(const BatchGetStreamKeyRequest& request, const BatchGetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::BatchGetStreamKeyAsync(const BatchGetStreamKeyRequest& request, const BatchGetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetStreamKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientBatchGetStreamKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateChannelOutcome IVSClient::CreateChannel(const CreateChannelRequest& request) const
@@ -193,14 +193,14 @@ CreateChannelOutcomeCallable IVSClient::CreateChannelCallable(const CreateChanne
   return task->get_future();
 }
 
-void IVSClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientCreateChannelAsyncHelper(IVSClient const * const clientThis, const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateChannel(request), context);
 }
 
-void IVSClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientCreateChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRecordingConfigurationOutcome IVSClient::CreateRecordingConfiguration(const CreateRecordingConfigurationRequest& request) const
@@ -218,14 +218,14 @@ CreateRecordingConfigurationOutcomeCallable IVSClient::CreateRecordingConfigurat
   return task->get_future();
 }
 
-void IVSClient::CreateRecordingConfigurationAsync(const CreateRecordingConfigurationRequest& request, const CreateRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientCreateRecordingConfigurationAsyncHelper(IVSClient const * const clientThis, const CreateRecordingConfigurationRequest& request, const CreateRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRecordingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRecordingConfiguration(request), context);
 }
 
-void IVSClient::CreateRecordingConfigurationAsyncHelper(const CreateRecordingConfigurationRequest& request, const CreateRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::CreateRecordingConfigurationAsync(const CreateRecordingConfigurationRequest& request, const CreateRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRecordingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientCreateRecordingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStreamKeyOutcome IVSClient::CreateStreamKey(const CreateStreamKeyRequest& request) const
@@ -243,14 +243,14 @@ CreateStreamKeyOutcomeCallable IVSClient::CreateStreamKeyCallable(const CreateSt
   return task->get_future();
 }
 
-void IVSClient::CreateStreamKeyAsync(const CreateStreamKeyRequest& request, const CreateStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientCreateStreamKeyAsyncHelper(IVSClient const * const clientThis, const CreateStreamKeyRequest& request, const CreateStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStreamKey(request), context);
 }
 
-void IVSClient::CreateStreamKeyAsyncHelper(const CreateStreamKeyRequest& request, const CreateStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::CreateStreamKeyAsync(const CreateStreamKeyRequest& request, const CreateStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStreamKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientCreateStreamKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteChannelOutcome IVSClient::DeleteChannel(const DeleteChannelRequest& request) const
@@ -268,14 +268,14 @@ DeleteChannelOutcomeCallable IVSClient::DeleteChannelCallable(const DeleteChanne
   return task->get_future();
 }
 
-void IVSClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientDeleteChannelAsyncHelper(IVSClient const * const clientThis, const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteChannel(request), context);
 }
 
-void IVSClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientDeleteChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePlaybackKeyPairOutcome IVSClient::DeletePlaybackKeyPair(const DeletePlaybackKeyPairRequest& request) const
@@ -293,14 +293,14 @@ DeletePlaybackKeyPairOutcomeCallable IVSClient::DeletePlaybackKeyPairCallable(co
   return task->get_future();
 }
 
-void IVSClient::DeletePlaybackKeyPairAsync(const DeletePlaybackKeyPairRequest& request, const DeletePlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientDeletePlaybackKeyPairAsyncHelper(IVSClient const * const clientThis, const DeletePlaybackKeyPairRequest& request, const DeletePlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePlaybackKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePlaybackKeyPair(request), context);
 }
 
-void IVSClient::DeletePlaybackKeyPairAsyncHelper(const DeletePlaybackKeyPairRequest& request, const DeletePlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::DeletePlaybackKeyPairAsync(const DeletePlaybackKeyPairRequest& request, const DeletePlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePlaybackKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientDeletePlaybackKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRecordingConfigurationOutcome IVSClient::DeleteRecordingConfiguration(const DeleteRecordingConfigurationRequest& request) const
@@ -318,14 +318,14 @@ DeleteRecordingConfigurationOutcomeCallable IVSClient::DeleteRecordingConfigurat
   return task->get_future();
 }
 
-void IVSClient::DeleteRecordingConfigurationAsync(const DeleteRecordingConfigurationRequest& request, const DeleteRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientDeleteRecordingConfigurationAsyncHelper(IVSClient const * const clientThis, const DeleteRecordingConfigurationRequest& request, const DeleteRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecordingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRecordingConfiguration(request), context);
 }
 
-void IVSClient::DeleteRecordingConfigurationAsyncHelper(const DeleteRecordingConfigurationRequest& request, const DeleteRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::DeleteRecordingConfigurationAsync(const DeleteRecordingConfigurationRequest& request, const DeleteRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRecordingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientDeleteRecordingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteStreamKeyOutcome IVSClient::DeleteStreamKey(const DeleteStreamKeyRequest& request) const
@@ -343,14 +343,14 @@ DeleteStreamKeyOutcomeCallable IVSClient::DeleteStreamKeyCallable(const DeleteSt
   return task->get_future();
 }
 
-void IVSClient::DeleteStreamKeyAsync(const DeleteStreamKeyRequest& request, const DeleteStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientDeleteStreamKeyAsyncHelper(IVSClient const * const clientThis, const DeleteStreamKeyRequest& request, const DeleteStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStreamKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteStreamKey(request), context);
 }
 
-void IVSClient::DeleteStreamKeyAsyncHelper(const DeleteStreamKeyRequest& request, const DeleteStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::DeleteStreamKeyAsync(const DeleteStreamKeyRequest& request, const DeleteStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteStreamKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientDeleteStreamKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetChannelOutcome IVSClient::GetChannel(const GetChannelRequest& request) const
@@ -368,14 +368,14 @@ GetChannelOutcomeCallable IVSClient::GetChannelCallable(const GetChannelRequest&
   return task->get_future();
 }
 
-void IVSClient::GetChannelAsync(const GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientGetChannelAsyncHelper(IVSClient const * const clientThis, const GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetChannel(request), context);
 }
 
-void IVSClient::GetChannelAsyncHelper(const GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::GetChannelAsync(const GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientGetChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPlaybackKeyPairOutcome IVSClient::GetPlaybackKeyPair(const GetPlaybackKeyPairRequest& request) const
@@ -393,14 +393,14 @@ GetPlaybackKeyPairOutcomeCallable IVSClient::GetPlaybackKeyPairCallable(const Ge
   return task->get_future();
 }
 
-void IVSClient::GetPlaybackKeyPairAsync(const GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientGetPlaybackKeyPairAsyncHelper(IVSClient const * const clientThis, const GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPlaybackKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPlaybackKeyPair(request), context);
 }
 
-void IVSClient::GetPlaybackKeyPairAsyncHelper(const GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::GetPlaybackKeyPairAsync(const GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPlaybackKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientGetPlaybackKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecordingConfigurationOutcome IVSClient::GetRecordingConfiguration(const GetRecordingConfigurationRequest& request) const
@@ -418,14 +418,14 @@ GetRecordingConfigurationOutcomeCallable IVSClient::GetRecordingConfigurationCal
   return task->get_future();
 }
 
-void IVSClient::GetRecordingConfigurationAsync(const GetRecordingConfigurationRequest& request, const GetRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientGetRecordingConfigurationAsyncHelper(IVSClient const * const clientThis, const GetRecordingConfigurationRequest& request, const GetRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecordingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecordingConfiguration(request), context);
 }
 
-void IVSClient::GetRecordingConfigurationAsyncHelper(const GetRecordingConfigurationRequest& request, const GetRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::GetRecordingConfigurationAsync(const GetRecordingConfigurationRequest& request, const GetRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecordingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientGetRecordingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetStreamOutcome IVSClient::GetStream(const GetStreamRequest& request) const
@@ -443,14 +443,14 @@ GetStreamOutcomeCallable IVSClient::GetStreamCallable(const GetStreamRequest& re
   return task->get_future();
 }
 
-void IVSClient::GetStreamAsync(const GetStreamRequest& request, const GetStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientGetStreamAsyncHelper(IVSClient const * const clientThis, const GetStreamRequest& request, const GetStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStream(request), context);
 }
 
-void IVSClient::GetStreamAsyncHelper(const GetStreamRequest& request, const GetStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::GetStreamAsync(const GetStreamRequest& request, const GetStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientGetStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 GetStreamKeyOutcome IVSClient::GetStreamKey(const GetStreamKeyRequest& request) const
@@ -468,14 +468,14 @@ GetStreamKeyOutcomeCallable IVSClient::GetStreamKeyCallable(const GetStreamKeyRe
   return task->get_future();
 }
 
-void IVSClient::GetStreamKeyAsync(const GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientGetStreamKeyAsyncHelper(IVSClient const * const clientThis, const GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStreamKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStreamKey(request), context);
 }
 
-void IVSClient::GetStreamKeyAsyncHelper(const GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::GetStreamKeyAsync(const GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStreamKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientGetStreamKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetStreamSessionOutcome IVSClient::GetStreamSession(const GetStreamSessionRequest& request) const
@@ -493,14 +493,14 @@ GetStreamSessionOutcomeCallable IVSClient::GetStreamSessionCallable(const GetStr
   return task->get_future();
 }
 
-void IVSClient::GetStreamSessionAsync(const GetStreamSessionRequest& request, const GetStreamSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientGetStreamSessionAsyncHelper(IVSClient const * const clientThis, const GetStreamSessionRequest& request, const GetStreamSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStreamSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStreamSession(request), context);
 }
 
-void IVSClient::GetStreamSessionAsyncHelper(const GetStreamSessionRequest& request, const GetStreamSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::GetStreamSessionAsync(const GetStreamSessionRequest& request, const GetStreamSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStreamSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientGetStreamSessionAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportPlaybackKeyPairOutcome IVSClient::ImportPlaybackKeyPair(const ImportPlaybackKeyPairRequest& request) const
@@ -518,14 +518,14 @@ ImportPlaybackKeyPairOutcomeCallable IVSClient::ImportPlaybackKeyPairCallable(co
   return task->get_future();
 }
 
-void IVSClient::ImportPlaybackKeyPairAsync(const ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientImportPlaybackKeyPairAsyncHelper(IVSClient const * const clientThis, const ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportPlaybackKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportPlaybackKeyPair(request), context);
 }
 
-void IVSClient::ImportPlaybackKeyPairAsyncHelper(const ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::ImportPlaybackKeyPairAsync(const ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportPlaybackKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientImportPlaybackKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 ListChannelsOutcome IVSClient::ListChannels(const ListChannelsRequest& request) const
@@ -543,14 +543,14 @@ ListChannelsOutcomeCallable IVSClient::ListChannelsCallable(const ListChannelsRe
   return task->get_future();
 }
 
-void IVSClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientListChannelsAsyncHelper(IVSClient const * const clientThis, const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListChannels(request), context);
 }
 
-void IVSClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListChannels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientListChannelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPlaybackKeyPairsOutcome IVSClient::ListPlaybackKeyPairs(const ListPlaybackKeyPairsRequest& request) const
@@ -568,14 +568,14 @@ ListPlaybackKeyPairsOutcomeCallable IVSClient::ListPlaybackKeyPairsCallable(cons
   return task->get_future();
 }
 
-void IVSClient::ListPlaybackKeyPairsAsync(const ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientListPlaybackKeyPairsAsyncHelper(IVSClient const * const clientThis, const ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPlaybackKeyPairsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPlaybackKeyPairs(request), context);
 }
 
-void IVSClient::ListPlaybackKeyPairsAsyncHelper(const ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::ListPlaybackKeyPairsAsync(const ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPlaybackKeyPairs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientListPlaybackKeyPairsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRecordingConfigurationsOutcome IVSClient::ListRecordingConfigurations(const ListRecordingConfigurationsRequest& request) const
@@ -593,14 +593,14 @@ ListRecordingConfigurationsOutcomeCallable IVSClient::ListRecordingConfiguration
   return task->get_future();
 }
 
-void IVSClient::ListRecordingConfigurationsAsync(const ListRecordingConfigurationsRequest& request, const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientListRecordingConfigurationsAsyncHelper(IVSClient const * const clientThis, const ListRecordingConfigurationsRequest& request, const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecordingConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRecordingConfigurations(request), context);
 }
 
-void IVSClient::ListRecordingConfigurationsAsyncHelper(const ListRecordingConfigurationsRequest& request, const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::ListRecordingConfigurationsAsync(const ListRecordingConfigurationsRequest& request, const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRecordingConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientListRecordingConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStreamKeysOutcome IVSClient::ListStreamKeys(const ListStreamKeysRequest& request) const
@@ -618,14 +618,14 @@ ListStreamKeysOutcomeCallable IVSClient::ListStreamKeysCallable(const ListStream
   return task->get_future();
 }
 
-void IVSClient::ListStreamKeysAsync(const ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientListStreamKeysAsyncHelper(IVSClient const * const clientThis, const ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamKeysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStreamKeys(request), context);
 }
 
-void IVSClient::ListStreamKeysAsyncHelper(const ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::ListStreamKeysAsync(const ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStreamKeys(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientListStreamKeysAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStreamSessionsOutcome IVSClient::ListStreamSessions(const ListStreamSessionsRequest& request) const
@@ -643,14 +643,14 @@ ListStreamSessionsOutcomeCallable IVSClient::ListStreamSessionsCallable(const Li
   return task->get_future();
 }
 
-void IVSClient::ListStreamSessionsAsync(const ListStreamSessionsRequest& request, const ListStreamSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientListStreamSessionsAsyncHelper(IVSClient const * const clientThis, const ListStreamSessionsRequest& request, const ListStreamSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamSessionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStreamSessions(request), context);
 }
 
-void IVSClient::ListStreamSessionsAsyncHelper(const ListStreamSessionsRequest& request, const ListStreamSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::ListStreamSessionsAsync(const ListStreamSessionsRequest& request, const ListStreamSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStreamSessions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientListStreamSessionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStreamsOutcome IVSClient::ListStreams(const ListStreamsRequest& request) const
@@ -668,14 +668,14 @@ ListStreamsOutcomeCallable IVSClient::ListStreamsCallable(const ListStreamsReque
   return task->get_future();
 }
 
-void IVSClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientListStreamsAsyncHelper(IVSClient const * const clientThis, const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStreams(request), context);
 }
 
-void IVSClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStreams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientListStreamsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome IVSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -699,14 +699,14 @@ ListTagsForResourceOutcomeCallable IVSClient::ListTagsForResourceCallable(const 
   return task->get_future();
 }
 
-void IVSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientListTagsForResourceAsyncHelper(IVSClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void IVSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutMetadataOutcome IVSClient::PutMetadata(const PutMetadataRequest& request) const
@@ -724,14 +724,14 @@ PutMetadataOutcomeCallable IVSClient::PutMetadataCallable(const PutMetadataReque
   return task->get_future();
 }
 
-void IVSClient::PutMetadataAsync(const PutMetadataRequest& request, const PutMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientPutMetadataAsyncHelper(IVSClient const * const clientThis, const PutMetadataRequest& request, const PutMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutMetadata(request), context);
 }
 
-void IVSClient::PutMetadataAsyncHelper(const PutMetadataRequest& request, const PutMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::PutMetadataAsync(const PutMetadataRequest& request, const PutMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientPutMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 StopStreamOutcome IVSClient::StopStream(const StopStreamRequest& request) const
@@ -749,14 +749,14 @@ StopStreamOutcomeCallable IVSClient::StopStreamCallable(const StopStreamRequest&
   return task->get_future();
 }
 
-void IVSClient::StopStreamAsync(const StopStreamRequest& request, const StopStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientStopStreamAsyncHelper(IVSClient const * const clientThis, const StopStreamRequest& request, const StopStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopStream(request), context);
 }
 
-void IVSClient::StopStreamAsyncHelper(const StopStreamRequest& request, const StopStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::StopStreamAsync(const StopStreamRequest& request, const StopStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientStopStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome IVSClient::TagResource(const TagResourceRequest& request) const
@@ -780,14 +780,14 @@ TagResourceOutcomeCallable IVSClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void IVSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientTagResourceAsyncHelper(IVSClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void IVSClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome IVSClient::UntagResource(const UntagResourceRequest& request) const
@@ -816,14 +816,14 @@ UntagResourceOutcomeCallable IVSClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void IVSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientUntagResourceAsyncHelper(IVSClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void IVSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateChannelOutcome IVSClient::UpdateChannel(const UpdateChannelRequest& request) const
@@ -841,13 +841,13 @@ UpdateChannelOutcomeCallable IVSClient::UpdateChannelCallable(const UpdateChanne
   return task->get_future();
 }
 
-void IVSClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClientUpdateChannelAsyncHelper(IVSClient const * const clientThis, const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateChannel(request), context);
 }
 
-void IVSClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IVSClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IVSClientUpdateChannelAsyncHelper( this, request, handler, context ); } );
 }
 

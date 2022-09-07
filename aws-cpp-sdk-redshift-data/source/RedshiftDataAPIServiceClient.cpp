@@ -124,14 +124,14 @@ BatchExecuteStatementOutcomeCallable RedshiftDataAPIServiceClient::BatchExecuteS
   return task->get_future();
 }
 
-void RedshiftDataAPIServiceClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClientBatchExecuteStatementAsyncHelper(RedshiftDataAPIServiceClient const * const clientThis, const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchExecuteStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchExecuteStatement(request), context);
 }
 
-void RedshiftDataAPIServiceClient::BatchExecuteStatementAsyncHelper(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchExecuteStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftDataAPIServiceClientBatchExecuteStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelStatementOutcome RedshiftDataAPIServiceClient::CancelStatement(const CancelStatementRequest& request) const
@@ -148,14 +148,14 @@ CancelStatementOutcomeCallable RedshiftDataAPIServiceClient::CancelStatementCall
   return task->get_future();
 }
 
-void RedshiftDataAPIServiceClient::CancelStatementAsync(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClientCancelStatementAsyncHelper(RedshiftDataAPIServiceClient const * const clientThis, const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelStatement(request), context);
 }
 
-void RedshiftDataAPIServiceClient::CancelStatementAsyncHelper(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClient::CancelStatementAsync(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftDataAPIServiceClientCancelStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStatementOutcome RedshiftDataAPIServiceClient::DescribeStatement(const DescribeStatementRequest& request) const
@@ -172,14 +172,14 @@ DescribeStatementOutcomeCallable RedshiftDataAPIServiceClient::DescribeStatement
   return task->get_future();
 }
 
-void RedshiftDataAPIServiceClient::DescribeStatementAsync(const DescribeStatementRequest& request, const DescribeStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClientDescribeStatementAsyncHelper(RedshiftDataAPIServiceClient const * const clientThis, const DescribeStatementRequest& request, const DescribeStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStatement(request), context);
 }
 
-void RedshiftDataAPIServiceClient::DescribeStatementAsyncHelper(const DescribeStatementRequest& request, const DescribeStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClient::DescribeStatementAsync(const DescribeStatementRequest& request, const DescribeStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftDataAPIServiceClientDescribeStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTableOutcome RedshiftDataAPIServiceClient::DescribeTable(const DescribeTableRequest& request) const
@@ -196,14 +196,14 @@ DescribeTableOutcomeCallable RedshiftDataAPIServiceClient::DescribeTableCallable
   return task->get_future();
 }
 
-void RedshiftDataAPIServiceClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClientDescribeTableAsyncHelper(RedshiftDataAPIServiceClient const * const clientThis, const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTable(request), context);
 }
 
-void RedshiftDataAPIServiceClient::DescribeTableAsyncHelper(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftDataAPIServiceClientDescribeTableAsyncHelper( this, request, handler, context ); } );
 }
 
 ExecuteStatementOutcome RedshiftDataAPIServiceClient::ExecuteStatement(const ExecuteStatementRequest& request) const
@@ -220,14 +220,14 @@ ExecuteStatementOutcomeCallable RedshiftDataAPIServiceClient::ExecuteStatementCa
   return task->get_future();
 }
 
-void RedshiftDataAPIServiceClient::ExecuteStatementAsync(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClientExecuteStatementAsyncHelper(RedshiftDataAPIServiceClient const * const clientThis, const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExecuteStatement(request), context);
 }
 
-void RedshiftDataAPIServiceClient::ExecuteStatementAsyncHelper(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClient::ExecuteStatementAsync(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExecuteStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftDataAPIServiceClientExecuteStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 GetStatementResultOutcome RedshiftDataAPIServiceClient::GetStatementResult(const GetStatementResultRequest& request) const
@@ -244,14 +244,14 @@ GetStatementResultOutcomeCallable RedshiftDataAPIServiceClient::GetStatementResu
   return task->get_future();
 }
 
-void RedshiftDataAPIServiceClient::GetStatementResultAsync(const GetStatementResultRequest& request, const GetStatementResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClientGetStatementResultAsyncHelper(RedshiftDataAPIServiceClient const * const clientThis, const GetStatementResultRequest& request, const GetStatementResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStatementResultAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStatementResult(request), context);
 }
 
-void RedshiftDataAPIServiceClient::GetStatementResultAsyncHelper(const GetStatementResultRequest& request, const GetStatementResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClient::GetStatementResultAsync(const GetStatementResultRequest& request, const GetStatementResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStatementResult(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftDataAPIServiceClientGetStatementResultAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatabasesOutcome RedshiftDataAPIServiceClient::ListDatabases(const ListDatabasesRequest& request) const
@@ -268,14 +268,14 @@ ListDatabasesOutcomeCallable RedshiftDataAPIServiceClient::ListDatabasesCallable
   return task->get_future();
 }
 
-void RedshiftDataAPIServiceClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClientListDatabasesAsyncHelper(RedshiftDataAPIServiceClient const * const clientThis, const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatabasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatabases(request), context);
 }
 
-void RedshiftDataAPIServiceClient::ListDatabasesAsyncHelper(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatabases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftDataAPIServiceClientListDatabasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSchemasOutcome RedshiftDataAPIServiceClient::ListSchemas(const ListSchemasRequest& request) const
@@ -292,14 +292,14 @@ ListSchemasOutcomeCallable RedshiftDataAPIServiceClient::ListSchemasCallable(con
   return task->get_future();
 }
 
-void RedshiftDataAPIServiceClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClientListSchemasAsyncHelper(RedshiftDataAPIServiceClient const * const clientThis, const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSchemasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSchemas(request), context);
 }
 
-void RedshiftDataAPIServiceClient::ListSchemasAsyncHelper(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSchemas(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftDataAPIServiceClientListSchemasAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStatementsOutcome RedshiftDataAPIServiceClient::ListStatements(const ListStatementsRequest& request) const
@@ -316,14 +316,14 @@ ListStatementsOutcomeCallable RedshiftDataAPIServiceClient::ListStatementsCallab
   return task->get_future();
 }
 
-void RedshiftDataAPIServiceClient::ListStatementsAsync(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClientListStatementsAsyncHelper(RedshiftDataAPIServiceClient const * const clientThis, const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStatementsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStatements(request), context);
 }
 
-void RedshiftDataAPIServiceClient::ListStatementsAsyncHelper(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClient::ListStatementsAsync(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStatements(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftDataAPIServiceClientListStatementsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTablesOutcome RedshiftDataAPIServiceClient::ListTables(const ListTablesRequest& request) const
@@ -340,13 +340,13 @@ ListTablesOutcomeCallable RedshiftDataAPIServiceClient::ListTablesCallable(const
   return task->get_future();
 }
 
-void RedshiftDataAPIServiceClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClientListTablesAsyncHelper(RedshiftDataAPIServiceClient const * const clientThis, const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTables(request), context);
 }
 
-void RedshiftDataAPIServiceClient::ListTablesAsyncHelper(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RedshiftDataAPIServiceClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RedshiftDataAPIServiceClientListTablesAsyncHelper( this, request, handler, context ); } );
 }
 

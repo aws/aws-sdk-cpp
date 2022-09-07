@@ -120,14 +120,14 @@ CreateScalingPlanOutcomeCallable AutoScalingPlansClient::CreateScalingPlanCallab
   return task->get_future();
 }
 
-void AutoScalingPlansClient::CreateScalingPlanAsync(const CreateScalingPlanRequest& request, const CreateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClientCreateScalingPlanAsyncHelper(AutoScalingPlansClient const * const clientThis, const CreateScalingPlanRequest& request, const CreateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateScalingPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateScalingPlan(request), context);
 }
 
-void AutoScalingPlansClient::CreateScalingPlanAsyncHelper(const CreateScalingPlanRequest& request, const CreateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClient::CreateScalingPlanAsync(const CreateScalingPlanRequest& request, const CreateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateScalingPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AutoScalingPlansClientCreateScalingPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteScalingPlanOutcome AutoScalingPlansClient::DeleteScalingPlan(const DeleteScalingPlanRequest& request) const
@@ -144,14 +144,14 @@ DeleteScalingPlanOutcomeCallable AutoScalingPlansClient::DeleteScalingPlanCallab
   return task->get_future();
 }
 
-void AutoScalingPlansClient::DeleteScalingPlanAsync(const DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClientDeleteScalingPlanAsyncHelper(AutoScalingPlansClient const * const clientThis, const DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteScalingPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteScalingPlan(request), context);
 }
 
-void AutoScalingPlansClient::DeleteScalingPlanAsyncHelper(const DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClient::DeleteScalingPlanAsync(const DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteScalingPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AutoScalingPlansClientDeleteScalingPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeScalingPlanResourcesOutcome AutoScalingPlansClient::DescribeScalingPlanResources(const DescribeScalingPlanResourcesRequest& request) const
@@ -168,14 +168,14 @@ DescribeScalingPlanResourcesOutcomeCallable AutoScalingPlansClient::DescribeScal
   return task->get_future();
 }
 
-void AutoScalingPlansClient::DescribeScalingPlanResourcesAsync(const DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClientDescribeScalingPlanResourcesAsyncHelper(AutoScalingPlansClient const * const clientThis, const DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScalingPlanResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeScalingPlanResources(request), context);
 }
 
-void AutoScalingPlansClient::DescribeScalingPlanResourcesAsyncHelper(const DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClient::DescribeScalingPlanResourcesAsync(const DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeScalingPlanResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AutoScalingPlansClientDescribeScalingPlanResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeScalingPlansOutcome AutoScalingPlansClient::DescribeScalingPlans(const DescribeScalingPlansRequest& request) const
@@ -192,14 +192,14 @@ DescribeScalingPlansOutcomeCallable AutoScalingPlansClient::DescribeScalingPlans
   return task->get_future();
 }
 
-void AutoScalingPlansClient::DescribeScalingPlansAsync(const DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClientDescribeScalingPlansAsyncHelper(AutoScalingPlansClient const * const clientThis, const DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScalingPlansAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeScalingPlans(request), context);
 }
 
-void AutoScalingPlansClient::DescribeScalingPlansAsyncHelper(const DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClient::DescribeScalingPlansAsync(const DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeScalingPlans(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AutoScalingPlansClientDescribeScalingPlansAsyncHelper( this, request, handler, context ); } );
 }
 
 GetScalingPlanResourceForecastDataOutcome AutoScalingPlansClient::GetScalingPlanResourceForecastData(const GetScalingPlanResourceForecastDataRequest& request) const
@@ -216,14 +216,14 @@ GetScalingPlanResourceForecastDataOutcomeCallable AutoScalingPlansClient::GetSca
   return task->get_future();
 }
 
-void AutoScalingPlansClient::GetScalingPlanResourceForecastDataAsync(const GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClientGetScalingPlanResourceForecastDataAsyncHelper(AutoScalingPlansClient const * const clientThis, const GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetScalingPlanResourceForecastDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetScalingPlanResourceForecastData(request), context);
 }
 
-void AutoScalingPlansClient::GetScalingPlanResourceForecastDataAsyncHelper(const GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClient::GetScalingPlanResourceForecastDataAsync(const GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetScalingPlanResourceForecastData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AutoScalingPlansClientGetScalingPlanResourceForecastDataAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateScalingPlanOutcome AutoScalingPlansClient::UpdateScalingPlan(const UpdateScalingPlanRequest& request) const
@@ -240,13 +240,13 @@ UpdateScalingPlanOutcomeCallable AutoScalingPlansClient::UpdateScalingPlanCallab
   return task->get_future();
 }
 
-void AutoScalingPlansClient::UpdateScalingPlanAsync(const UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClientUpdateScalingPlanAsyncHelper(AutoScalingPlansClient const * const clientThis, const UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateScalingPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateScalingPlan(request), context);
 }
 
-void AutoScalingPlansClient::UpdateScalingPlanAsyncHelper(const UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AutoScalingPlansClient::UpdateScalingPlanAsync(const UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateScalingPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AutoScalingPlansClientUpdateScalingPlanAsyncHelper( this, request, handler, context ); } );
 }
 

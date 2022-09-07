@@ -165,14 +165,14 @@ CancelImageCreationOutcomeCallable ImagebuilderClient::CancelImageCreationCallab
   return task->get_future();
 }
 
-void ImagebuilderClient::CancelImageCreationAsync(const CancelImageCreationRequest& request, const CancelImageCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientCancelImageCreationAsyncHelper(ImagebuilderClient const * const clientThis, const CancelImageCreationRequest& request, const CancelImageCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelImageCreationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelImageCreation(request), context);
 }
 
-void ImagebuilderClient::CancelImageCreationAsyncHelper(const CancelImageCreationRequest& request, const CancelImageCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::CancelImageCreationAsync(const CancelImageCreationRequest& request, const CancelImageCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelImageCreation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientCancelImageCreationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateComponentOutcome ImagebuilderClient::CreateComponent(const CreateComponentRequest& request) const
@@ -190,14 +190,14 @@ CreateComponentOutcomeCallable ImagebuilderClient::CreateComponentCallable(const
   return task->get_future();
 }
 
-void ImagebuilderClient::CreateComponentAsync(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientCreateComponentAsyncHelper(ImagebuilderClient const * const clientThis, const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateComponent(request), context);
 }
 
-void ImagebuilderClient::CreateComponentAsyncHelper(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::CreateComponentAsync(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientCreateComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateContainerRecipeOutcome ImagebuilderClient::CreateContainerRecipe(const CreateContainerRecipeRequest& request) const
@@ -215,14 +215,14 @@ CreateContainerRecipeOutcomeCallable ImagebuilderClient::CreateContainerRecipeCa
   return task->get_future();
 }
 
-void ImagebuilderClient::CreateContainerRecipeAsync(const CreateContainerRecipeRequest& request, const CreateContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientCreateContainerRecipeAsyncHelper(ImagebuilderClient const * const clientThis, const CreateContainerRecipeRequest& request, const CreateContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContainerRecipeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateContainerRecipe(request), context);
 }
 
-void ImagebuilderClient::CreateContainerRecipeAsyncHelper(const CreateContainerRecipeRequest& request, const CreateContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::CreateContainerRecipeAsync(const CreateContainerRecipeRequest& request, const CreateContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateContainerRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientCreateContainerRecipeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDistributionConfigurationOutcome ImagebuilderClient::CreateDistributionConfiguration(const CreateDistributionConfigurationRequest& request) const
@@ -240,14 +240,14 @@ CreateDistributionConfigurationOutcomeCallable ImagebuilderClient::CreateDistrib
   return task->get_future();
 }
 
-void ImagebuilderClient::CreateDistributionConfigurationAsync(const CreateDistributionConfigurationRequest& request, const CreateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientCreateDistributionConfigurationAsyncHelper(ImagebuilderClient const * const clientThis, const CreateDistributionConfigurationRequest& request, const CreateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDistributionConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDistributionConfiguration(request), context);
 }
 
-void ImagebuilderClient::CreateDistributionConfigurationAsyncHelper(const CreateDistributionConfigurationRequest& request, const CreateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::CreateDistributionConfigurationAsync(const CreateDistributionConfigurationRequest& request, const CreateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDistributionConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientCreateDistributionConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateImageOutcome ImagebuilderClient::CreateImage(const CreateImageRequest& request) const
@@ -265,14 +265,14 @@ CreateImageOutcomeCallable ImagebuilderClient::CreateImageCallable(const CreateI
   return task->get_future();
 }
 
-void ImagebuilderClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientCreateImageAsyncHelper(ImagebuilderClient const * const clientThis, const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateImage(request), context);
 }
 
-void ImagebuilderClient::CreateImageAsyncHelper(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientCreateImageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateImagePipelineOutcome ImagebuilderClient::CreateImagePipeline(const CreateImagePipelineRequest& request) const
@@ -290,14 +290,14 @@ CreateImagePipelineOutcomeCallable ImagebuilderClient::CreateImagePipelineCallab
   return task->get_future();
 }
 
-void ImagebuilderClient::CreateImagePipelineAsync(const CreateImagePipelineRequest& request, const CreateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientCreateImagePipelineAsyncHelper(ImagebuilderClient const * const clientThis, const CreateImagePipelineRequest& request, const CreateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateImagePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateImagePipeline(request), context);
 }
 
-void ImagebuilderClient::CreateImagePipelineAsyncHelper(const CreateImagePipelineRequest& request, const CreateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::CreateImagePipelineAsync(const CreateImagePipelineRequest& request, const CreateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateImagePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientCreateImagePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateImageRecipeOutcome ImagebuilderClient::CreateImageRecipe(const CreateImageRecipeRequest& request) const
@@ -315,14 +315,14 @@ CreateImageRecipeOutcomeCallable ImagebuilderClient::CreateImageRecipeCallable(c
   return task->get_future();
 }
 
-void ImagebuilderClient::CreateImageRecipeAsync(const CreateImageRecipeRequest& request, const CreateImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientCreateImageRecipeAsyncHelper(ImagebuilderClient const * const clientThis, const CreateImageRecipeRequest& request, const CreateImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateImageRecipeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateImageRecipe(request), context);
 }
 
-void ImagebuilderClient::CreateImageRecipeAsyncHelper(const CreateImageRecipeRequest& request, const CreateImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::CreateImageRecipeAsync(const CreateImageRecipeRequest& request, const CreateImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateImageRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientCreateImageRecipeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInfrastructureConfigurationOutcome ImagebuilderClient::CreateInfrastructureConfiguration(const CreateInfrastructureConfigurationRequest& request) const
@@ -340,14 +340,14 @@ CreateInfrastructureConfigurationOutcomeCallable ImagebuilderClient::CreateInfra
   return task->get_future();
 }
 
-void ImagebuilderClient::CreateInfrastructureConfigurationAsync(const CreateInfrastructureConfigurationRequest& request, const CreateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientCreateInfrastructureConfigurationAsyncHelper(ImagebuilderClient const * const clientThis, const CreateInfrastructureConfigurationRequest& request, const CreateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInfrastructureConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInfrastructureConfiguration(request), context);
 }
 
-void ImagebuilderClient::CreateInfrastructureConfigurationAsyncHelper(const CreateInfrastructureConfigurationRequest& request, const CreateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::CreateInfrastructureConfigurationAsync(const CreateInfrastructureConfigurationRequest& request, const CreateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInfrastructureConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientCreateInfrastructureConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteComponentOutcome ImagebuilderClient::DeleteComponent(const DeleteComponentRequest& request) const
@@ -370,14 +370,14 @@ DeleteComponentOutcomeCallable ImagebuilderClient::DeleteComponentCallable(const
   return task->get_future();
 }
 
-void ImagebuilderClient::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientDeleteComponentAsyncHelper(ImagebuilderClient const * const clientThis, const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteComponent(request), context);
 }
 
-void ImagebuilderClient::DeleteComponentAsyncHelper(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientDeleteComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteContainerRecipeOutcome ImagebuilderClient::DeleteContainerRecipe(const DeleteContainerRecipeRequest& request) const
@@ -400,14 +400,14 @@ DeleteContainerRecipeOutcomeCallable ImagebuilderClient::DeleteContainerRecipeCa
   return task->get_future();
 }
 
-void ImagebuilderClient::DeleteContainerRecipeAsync(const DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientDeleteContainerRecipeAsyncHelper(ImagebuilderClient const * const clientThis, const DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContainerRecipeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteContainerRecipe(request), context);
 }
 
-void ImagebuilderClient::DeleteContainerRecipeAsyncHelper(const DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::DeleteContainerRecipeAsync(const DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteContainerRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientDeleteContainerRecipeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDistributionConfigurationOutcome ImagebuilderClient::DeleteDistributionConfiguration(const DeleteDistributionConfigurationRequest& request) const
@@ -430,14 +430,14 @@ DeleteDistributionConfigurationOutcomeCallable ImagebuilderClient::DeleteDistrib
   return task->get_future();
 }
 
-void ImagebuilderClient::DeleteDistributionConfigurationAsync(const DeleteDistributionConfigurationRequest& request, const DeleteDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientDeleteDistributionConfigurationAsyncHelper(ImagebuilderClient const * const clientThis, const DeleteDistributionConfigurationRequest& request, const DeleteDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDistributionConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDistributionConfiguration(request), context);
 }
 
-void ImagebuilderClient::DeleteDistributionConfigurationAsyncHelper(const DeleteDistributionConfigurationRequest& request, const DeleteDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::DeleteDistributionConfigurationAsync(const DeleteDistributionConfigurationRequest& request, const DeleteDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDistributionConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientDeleteDistributionConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteImageOutcome ImagebuilderClient::DeleteImage(const DeleteImageRequest& request) const
@@ -460,14 +460,14 @@ DeleteImageOutcomeCallable ImagebuilderClient::DeleteImageCallable(const DeleteI
   return task->get_future();
 }
 
-void ImagebuilderClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientDeleteImageAsyncHelper(ImagebuilderClient const * const clientThis, const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteImage(request), context);
 }
 
-void ImagebuilderClient::DeleteImageAsyncHelper(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientDeleteImageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteImagePipelineOutcome ImagebuilderClient::DeleteImagePipeline(const DeleteImagePipelineRequest& request) const
@@ -490,14 +490,14 @@ DeleteImagePipelineOutcomeCallable ImagebuilderClient::DeleteImagePipelineCallab
   return task->get_future();
 }
 
-void ImagebuilderClient::DeleteImagePipelineAsync(const DeleteImagePipelineRequest& request, const DeleteImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientDeleteImagePipelineAsyncHelper(ImagebuilderClient const * const clientThis, const DeleteImagePipelineRequest& request, const DeleteImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteImagePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteImagePipeline(request), context);
 }
 
-void ImagebuilderClient::DeleteImagePipelineAsyncHelper(const DeleteImagePipelineRequest& request, const DeleteImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::DeleteImagePipelineAsync(const DeleteImagePipelineRequest& request, const DeleteImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteImagePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientDeleteImagePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteImageRecipeOutcome ImagebuilderClient::DeleteImageRecipe(const DeleteImageRecipeRequest& request) const
@@ -520,14 +520,14 @@ DeleteImageRecipeOutcomeCallable ImagebuilderClient::DeleteImageRecipeCallable(c
   return task->get_future();
 }
 
-void ImagebuilderClient::DeleteImageRecipeAsync(const DeleteImageRecipeRequest& request, const DeleteImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientDeleteImageRecipeAsyncHelper(ImagebuilderClient const * const clientThis, const DeleteImageRecipeRequest& request, const DeleteImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteImageRecipeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteImageRecipe(request), context);
 }
 
-void ImagebuilderClient::DeleteImageRecipeAsyncHelper(const DeleteImageRecipeRequest& request, const DeleteImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::DeleteImageRecipeAsync(const DeleteImageRecipeRequest& request, const DeleteImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteImageRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientDeleteImageRecipeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInfrastructureConfigurationOutcome ImagebuilderClient::DeleteInfrastructureConfiguration(const DeleteInfrastructureConfigurationRequest& request) const
@@ -550,14 +550,14 @@ DeleteInfrastructureConfigurationOutcomeCallable ImagebuilderClient::DeleteInfra
   return task->get_future();
 }
 
-void ImagebuilderClient::DeleteInfrastructureConfigurationAsync(const DeleteInfrastructureConfigurationRequest& request, const DeleteInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientDeleteInfrastructureConfigurationAsyncHelper(ImagebuilderClient const * const clientThis, const DeleteInfrastructureConfigurationRequest& request, const DeleteInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInfrastructureConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInfrastructureConfiguration(request), context);
 }
 
-void ImagebuilderClient::DeleteInfrastructureConfigurationAsyncHelper(const DeleteInfrastructureConfigurationRequest& request, const DeleteInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::DeleteInfrastructureConfigurationAsync(const DeleteInfrastructureConfigurationRequest& request, const DeleteInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInfrastructureConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientDeleteInfrastructureConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetComponentOutcome ImagebuilderClient::GetComponent(const GetComponentRequest& request) const
@@ -580,14 +580,14 @@ GetComponentOutcomeCallable ImagebuilderClient::GetComponentCallable(const GetCo
   return task->get_future();
 }
 
-void ImagebuilderClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetComponentAsyncHelper(ImagebuilderClient const * const clientThis, const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetComponent(request), context);
 }
 
-void ImagebuilderClient::GetComponentAsyncHelper(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetComponentPolicyOutcome ImagebuilderClient::GetComponentPolicy(const GetComponentPolicyRequest& request) const
@@ -610,14 +610,14 @@ GetComponentPolicyOutcomeCallable ImagebuilderClient::GetComponentPolicyCallable
   return task->get_future();
 }
 
-void ImagebuilderClient::GetComponentPolicyAsync(const GetComponentPolicyRequest& request, const GetComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetComponentPolicyAsyncHelper(ImagebuilderClient const * const clientThis, const GetComponentPolicyRequest& request, const GetComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComponentPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetComponentPolicy(request), context);
 }
 
-void ImagebuilderClient::GetComponentPolicyAsyncHelper(const GetComponentPolicyRequest& request, const GetComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetComponentPolicyAsync(const GetComponentPolicyRequest& request, const GetComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetComponentPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetComponentPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContainerRecipeOutcome ImagebuilderClient::GetContainerRecipe(const GetContainerRecipeRequest& request) const
@@ -640,14 +640,14 @@ GetContainerRecipeOutcomeCallable ImagebuilderClient::GetContainerRecipeCallable
   return task->get_future();
 }
 
-void ImagebuilderClient::GetContainerRecipeAsync(const GetContainerRecipeRequest& request, const GetContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetContainerRecipeAsyncHelper(ImagebuilderClient const * const clientThis, const GetContainerRecipeRequest& request, const GetContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContainerRecipeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContainerRecipe(request), context);
 }
 
-void ImagebuilderClient::GetContainerRecipeAsyncHelper(const GetContainerRecipeRequest& request, const GetContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetContainerRecipeAsync(const GetContainerRecipeRequest& request, const GetContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContainerRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetContainerRecipeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContainerRecipePolicyOutcome ImagebuilderClient::GetContainerRecipePolicy(const GetContainerRecipePolicyRequest& request) const
@@ -670,14 +670,14 @@ GetContainerRecipePolicyOutcomeCallable ImagebuilderClient::GetContainerRecipePo
   return task->get_future();
 }
 
-void ImagebuilderClient::GetContainerRecipePolicyAsync(const GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetContainerRecipePolicyAsyncHelper(ImagebuilderClient const * const clientThis, const GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContainerRecipePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContainerRecipePolicy(request), context);
 }
 
-void ImagebuilderClient::GetContainerRecipePolicyAsyncHelper(const GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetContainerRecipePolicyAsync(const GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContainerRecipePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetContainerRecipePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDistributionConfigurationOutcome ImagebuilderClient::GetDistributionConfiguration(const GetDistributionConfigurationRequest& request) const
@@ -700,14 +700,14 @@ GetDistributionConfigurationOutcomeCallable ImagebuilderClient::GetDistributionC
   return task->get_future();
 }
 
-void ImagebuilderClient::GetDistributionConfigurationAsync(const GetDistributionConfigurationRequest& request, const GetDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetDistributionConfigurationAsyncHelper(ImagebuilderClient const * const clientThis, const GetDistributionConfigurationRequest& request, const GetDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDistributionConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDistributionConfiguration(request), context);
 }
 
-void ImagebuilderClient::GetDistributionConfigurationAsyncHelper(const GetDistributionConfigurationRequest& request, const GetDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetDistributionConfigurationAsync(const GetDistributionConfigurationRequest& request, const GetDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDistributionConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetDistributionConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetImageOutcome ImagebuilderClient::GetImage(const GetImageRequest& request) const
@@ -730,14 +730,14 @@ GetImageOutcomeCallable ImagebuilderClient::GetImageCallable(const GetImageReque
   return task->get_future();
 }
 
-void ImagebuilderClient::GetImageAsync(const GetImageRequest& request, const GetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetImageAsyncHelper(ImagebuilderClient const * const clientThis, const GetImageRequest& request, const GetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetImage(request), context);
 }
 
-void ImagebuilderClient::GetImageAsyncHelper(const GetImageRequest& request, const GetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetImageAsync(const GetImageRequest& request, const GetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetImageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetImagePipelineOutcome ImagebuilderClient::GetImagePipeline(const GetImagePipelineRequest& request) const
@@ -760,14 +760,14 @@ GetImagePipelineOutcomeCallable ImagebuilderClient::GetImagePipelineCallable(con
   return task->get_future();
 }
 
-void ImagebuilderClient::GetImagePipelineAsync(const GetImagePipelineRequest& request, const GetImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetImagePipelineAsyncHelper(ImagebuilderClient const * const clientThis, const GetImagePipelineRequest& request, const GetImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetImagePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetImagePipeline(request), context);
 }
 
-void ImagebuilderClient::GetImagePipelineAsyncHelper(const GetImagePipelineRequest& request, const GetImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetImagePipelineAsync(const GetImagePipelineRequest& request, const GetImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetImagePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetImagePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 GetImagePolicyOutcome ImagebuilderClient::GetImagePolicy(const GetImagePolicyRequest& request) const
@@ -790,14 +790,14 @@ GetImagePolicyOutcomeCallable ImagebuilderClient::GetImagePolicyCallable(const G
   return task->get_future();
 }
 
-void ImagebuilderClient::GetImagePolicyAsync(const GetImagePolicyRequest& request, const GetImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetImagePolicyAsyncHelper(ImagebuilderClient const * const clientThis, const GetImagePolicyRequest& request, const GetImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetImagePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetImagePolicy(request), context);
 }
 
-void ImagebuilderClient::GetImagePolicyAsyncHelper(const GetImagePolicyRequest& request, const GetImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetImagePolicyAsync(const GetImagePolicyRequest& request, const GetImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetImagePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetImagePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetImageRecipeOutcome ImagebuilderClient::GetImageRecipe(const GetImageRecipeRequest& request) const
@@ -820,14 +820,14 @@ GetImageRecipeOutcomeCallable ImagebuilderClient::GetImageRecipeCallable(const G
   return task->get_future();
 }
 
-void ImagebuilderClient::GetImageRecipeAsync(const GetImageRecipeRequest& request, const GetImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetImageRecipeAsyncHelper(ImagebuilderClient const * const clientThis, const GetImageRecipeRequest& request, const GetImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetImageRecipeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetImageRecipe(request), context);
 }
 
-void ImagebuilderClient::GetImageRecipeAsyncHelper(const GetImageRecipeRequest& request, const GetImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetImageRecipeAsync(const GetImageRecipeRequest& request, const GetImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetImageRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetImageRecipeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetImageRecipePolicyOutcome ImagebuilderClient::GetImageRecipePolicy(const GetImageRecipePolicyRequest& request) const
@@ -850,14 +850,14 @@ GetImageRecipePolicyOutcomeCallable ImagebuilderClient::GetImageRecipePolicyCall
   return task->get_future();
 }
 
-void ImagebuilderClient::GetImageRecipePolicyAsync(const GetImageRecipePolicyRequest& request, const GetImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetImageRecipePolicyAsyncHelper(ImagebuilderClient const * const clientThis, const GetImageRecipePolicyRequest& request, const GetImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetImageRecipePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetImageRecipePolicy(request), context);
 }
 
-void ImagebuilderClient::GetImageRecipePolicyAsyncHelper(const GetImageRecipePolicyRequest& request, const GetImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetImageRecipePolicyAsync(const GetImageRecipePolicyRequest& request, const GetImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetImageRecipePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetImageRecipePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInfrastructureConfigurationOutcome ImagebuilderClient::GetInfrastructureConfiguration(const GetInfrastructureConfigurationRequest& request) const
@@ -880,14 +880,14 @@ GetInfrastructureConfigurationOutcomeCallable ImagebuilderClient::GetInfrastruct
   return task->get_future();
 }
 
-void ImagebuilderClient::GetInfrastructureConfigurationAsync(const GetInfrastructureConfigurationRequest& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientGetInfrastructureConfigurationAsyncHelper(ImagebuilderClient const * const clientThis, const GetInfrastructureConfigurationRequest& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInfrastructureConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInfrastructureConfiguration(request), context);
 }
 
-void ImagebuilderClient::GetInfrastructureConfigurationAsyncHelper(const GetInfrastructureConfigurationRequest& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::GetInfrastructureConfigurationAsync(const GetInfrastructureConfigurationRequest& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInfrastructureConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientGetInfrastructureConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportComponentOutcome ImagebuilderClient::ImportComponent(const ImportComponentRequest& request) const
@@ -905,14 +905,14 @@ ImportComponentOutcomeCallable ImagebuilderClient::ImportComponentCallable(const
   return task->get_future();
 }
 
-void ImagebuilderClient::ImportComponentAsync(const ImportComponentRequest& request, const ImportComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientImportComponentAsyncHelper(ImagebuilderClient const * const clientThis, const ImportComponentRequest& request, const ImportComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportComponent(request), context);
 }
 
-void ImagebuilderClient::ImportComponentAsyncHelper(const ImportComponentRequest& request, const ImportComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ImportComponentAsync(const ImportComponentRequest& request, const ImportComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientImportComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportVmImageOutcome ImagebuilderClient::ImportVmImage(const ImportVmImageRequest& request) const
@@ -930,14 +930,14 @@ ImportVmImageOutcomeCallable ImagebuilderClient::ImportVmImageCallable(const Imp
   return task->get_future();
 }
 
-void ImagebuilderClient::ImportVmImageAsync(const ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientImportVmImageAsyncHelper(ImagebuilderClient const * const clientThis, const ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportVmImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportVmImage(request), context);
 }
 
-void ImagebuilderClient::ImportVmImageAsyncHelper(const ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ImportVmImageAsync(const ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportVmImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientImportVmImageAsyncHelper( this, request, handler, context ); } );
 }
 
 ListComponentBuildVersionsOutcome ImagebuilderClient::ListComponentBuildVersions(const ListComponentBuildVersionsRequest& request) const
@@ -955,14 +955,14 @@ ListComponentBuildVersionsOutcomeCallable ImagebuilderClient::ListComponentBuild
   return task->get_future();
 }
 
-void ImagebuilderClient::ListComponentBuildVersionsAsync(const ListComponentBuildVersionsRequest& request, const ListComponentBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListComponentBuildVersionsAsyncHelper(ImagebuilderClient const * const clientThis, const ListComponentBuildVersionsRequest& request, const ListComponentBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentBuildVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListComponentBuildVersions(request), context);
 }
 
-void ImagebuilderClient::ListComponentBuildVersionsAsyncHelper(const ListComponentBuildVersionsRequest& request, const ListComponentBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListComponentBuildVersionsAsync(const ListComponentBuildVersionsRequest& request, const ListComponentBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListComponentBuildVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListComponentBuildVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListComponentsOutcome ImagebuilderClient::ListComponents(const ListComponentsRequest& request) const
@@ -980,14 +980,14 @@ ListComponentsOutcomeCallable ImagebuilderClient::ListComponentsCallable(const L
   return task->get_future();
 }
 
-void ImagebuilderClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListComponentsAsyncHelper(ImagebuilderClient const * const clientThis, const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListComponents(request), context);
 }
 
-void ImagebuilderClient::ListComponentsAsyncHelper(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListComponents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListComponentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListContainerRecipesOutcome ImagebuilderClient::ListContainerRecipes(const ListContainerRecipesRequest& request) const
@@ -1005,14 +1005,14 @@ ListContainerRecipesOutcomeCallable ImagebuilderClient::ListContainerRecipesCall
   return task->get_future();
 }
 
-void ImagebuilderClient::ListContainerRecipesAsync(const ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListContainerRecipesAsyncHelper(ImagebuilderClient const * const clientThis, const ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContainerRecipesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListContainerRecipes(request), context);
 }
 
-void ImagebuilderClient::ListContainerRecipesAsyncHelper(const ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListContainerRecipesAsync(const ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListContainerRecipes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListContainerRecipesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDistributionConfigurationsOutcome ImagebuilderClient::ListDistributionConfigurations(const ListDistributionConfigurationsRequest& request) const
@@ -1030,14 +1030,14 @@ ListDistributionConfigurationsOutcomeCallable ImagebuilderClient::ListDistributi
   return task->get_future();
 }
 
-void ImagebuilderClient::ListDistributionConfigurationsAsync(const ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListDistributionConfigurationsAsyncHelper(ImagebuilderClient const * const clientThis, const ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDistributionConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDistributionConfigurations(request), context);
 }
 
-void ImagebuilderClient::ListDistributionConfigurationsAsyncHelper(const ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListDistributionConfigurationsAsync(const ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDistributionConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListDistributionConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImageBuildVersionsOutcome ImagebuilderClient::ListImageBuildVersions(const ListImageBuildVersionsRequest& request) const
@@ -1055,14 +1055,14 @@ ListImageBuildVersionsOutcomeCallable ImagebuilderClient::ListImageBuildVersions
   return task->get_future();
 }
 
-void ImagebuilderClient::ListImageBuildVersionsAsync(const ListImageBuildVersionsRequest& request, const ListImageBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListImageBuildVersionsAsyncHelper(ImagebuilderClient const * const clientThis, const ListImageBuildVersionsRequest& request, const ListImageBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImageBuildVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImageBuildVersions(request), context);
 }
 
-void ImagebuilderClient::ListImageBuildVersionsAsyncHelper(const ListImageBuildVersionsRequest& request, const ListImageBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListImageBuildVersionsAsync(const ListImageBuildVersionsRequest& request, const ListImageBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImageBuildVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListImageBuildVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImagePackagesOutcome ImagebuilderClient::ListImagePackages(const ListImagePackagesRequest& request) const
@@ -1080,14 +1080,14 @@ ListImagePackagesOutcomeCallable ImagebuilderClient::ListImagePackagesCallable(c
   return task->get_future();
 }
 
-void ImagebuilderClient::ListImagePackagesAsync(const ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListImagePackagesAsyncHelper(ImagebuilderClient const * const clientThis, const ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImagePackagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImagePackages(request), context);
 }
 
-void ImagebuilderClient::ListImagePackagesAsyncHelper(const ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListImagePackagesAsync(const ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImagePackages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListImagePackagesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImagePipelineImagesOutcome ImagebuilderClient::ListImagePipelineImages(const ListImagePipelineImagesRequest& request) const
@@ -1105,14 +1105,14 @@ ListImagePipelineImagesOutcomeCallable ImagebuilderClient::ListImagePipelineImag
   return task->get_future();
 }
 
-void ImagebuilderClient::ListImagePipelineImagesAsync(const ListImagePipelineImagesRequest& request, const ListImagePipelineImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListImagePipelineImagesAsyncHelper(ImagebuilderClient const * const clientThis, const ListImagePipelineImagesRequest& request, const ListImagePipelineImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImagePipelineImagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImagePipelineImages(request), context);
 }
 
-void ImagebuilderClient::ListImagePipelineImagesAsyncHelper(const ListImagePipelineImagesRequest& request, const ListImagePipelineImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListImagePipelineImagesAsync(const ListImagePipelineImagesRequest& request, const ListImagePipelineImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImagePipelineImages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListImagePipelineImagesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImagePipelinesOutcome ImagebuilderClient::ListImagePipelines(const ListImagePipelinesRequest& request) const
@@ -1130,14 +1130,14 @@ ListImagePipelinesOutcomeCallable ImagebuilderClient::ListImagePipelinesCallable
   return task->get_future();
 }
 
-void ImagebuilderClient::ListImagePipelinesAsync(const ListImagePipelinesRequest& request, const ListImagePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListImagePipelinesAsyncHelper(ImagebuilderClient const * const clientThis, const ListImagePipelinesRequest& request, const ListImagePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImagePipelinesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImagePipelines(request), context);
 }
 
-void ImagebuilderClient::ListImagePipelinesAsyncHelper(const ListImagePipelinesRequest& request, const ListImagePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListImagePipelinesAsync(const ListImagePipelinesRequest& request, const ListImagePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImagePipelines(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListImagePipelinesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImageRecipesOutcome ImagebuilderClient::ListImageRecipes(const ListImageRecipesRequest& request) const
@@ -1155,14 +1155,14 @@ ListImageRecipesOutcomeCallable ImagebuilderClient::ListImageRecipesCallable(con
   return task->get_future();
 }
 
-void ImagebuilderClient::ListImageRecipesAsync(const ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListImageRecipesAsyncHelper(ImagebuilderClient const * const clientThis, const ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImageRecipesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImageRecipes(request), context);
 }
 
-void ImagebuilderClient::ListImageRecipesAsyncHelper(const ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListImageRecipesAsync(const ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImageRecipes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListImageRecipesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImagesOutcome ImagebuilderClient::ListImages(const ListImagesRequest& request) const
@@ -1180,14 +1180,14 @@ ListImagesOutcomeCallable ImagebuilderClient::ListImagesCallable(const ListImage
   return task->get_future();
 }
 
-void ImagebuilderClient::ListImagesAsync(const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListImagesAsyncHelper(ImagebuilderClient const * const clientThis, const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImages(request), context);
 }
 
-void ImagebuilderClient::ListImagesAsyncHelper(const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListImagesAsync(const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListImagesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInfrastructureConfigurationsOutcome ImagebuilderClient::ListInfrastructureConfigurations(const ListInfrastructureConfigurationsRequest& request) const
@@ -1205,14 +1205,14 @@ ListInfrastructureConfigurationsOutcomeCallable ImagebuilderClient::ListInfrastr
   return task->get_future();
 }
 
-void ImagebuilderClient::ListInfrastructureConfigurationsAsync(const ListInfrastructureConfigurationsRequest& request, const ListInfrastructureConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListInfrastructureConfigurationsAsyncHelper(ImagebuilderClient const * const clientThis, const ListInfrastructureConfigurationsRequest& request, const ListInfrastructureConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInfrastructureConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInfrastructureConfigurations(request), context);
 }
 
-void ImagebuilderClient::ListInfrastructureConfigurationsAsyncHelper(const ListInfrastructureConfigurationsRequest& request, const ListInfrastructureConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListInfrastructureConfigurationsAsync(const ListInfrastructureConfigurationsRequest& request, const ListInfrastructureConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInfrastructureConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListInfrastructureConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ImagebuilderClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1236,14 +1236,14 @@ ListTagsForResourceOutcomeCallable ImagebuilderClient::ListTagsForResourceCallab
   return task->get_future();
 }
 
-void ImagebuilderClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientListTagsForResourceAsyncHelper(ImagebuilderClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ImagebuilderClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutComponentPolicyOutcome ImagebuilderClient::PutComponentPolicy(const PutComponentPolicyRequest& request) const
@@ -1261,14 +1261,14 @@ PutComponentPolicyOutcomeCallable ImagebuilderClient::PutComponentPolicyCallable
   return task->get_future();
 }
 
-void ImagebuilderClient::PutComponentPolicyAsync(const PutComponentPolicyRequest& request, const PutComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientPutComponentPolicyAsyncHelper(ImagebuilderClient const * const clientThis, const PutComponentPolicyRequest& request, const PutComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutComponentPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutComponentPolicy(request), context);
 }
 
-void ImagebuilderClient::PutComponentPolicyAsyncHelper(const PutComponentPolicyRequest& request, const PutComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::PutComponentPolicyAsync(const PutComponentPolicyRequest& request, const PutComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutComponentPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientPutComponentPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutContainerRecipePolicyOutcome ImagebuilderClient::PutContainerRecipePolicy(const PutContainerRecipePolicyRequest& request) const
@@ -1286,14 +1286,14 @@ PutContainerRecipePolicyOutcomeCallable ImagebuilderClient::PutContainerRecipePo
   return task->get_future();
 }
 
-void ImagebuilderClient::PutContainerRecipePolicyAsync(const PutContainerRecipePolicyRequest& request, const PutContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientPutContainerRecipePolicyAsyncHelper(ImagebuilderClient const * const clientThis, const PutContainerRecipePolicyRequest& request, const PutContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutContainerRecipePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutContainerRecipePolicy(request), context);
 }
 
-void ImagebuilderClient::PutContainerRecipePolicyAsyncHelper(const PutContainerRecipePolicyRequest& request, const PutContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::PutContainerRecipePolicyAsync(const PutContainerRecipePolicyRequest& request, const PutContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutContainerRecipePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientPutContainerRecipePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutImagePolicyOutcome ImagebuilderClient::PutImagePolicy(const PutImagePolicyRequest& request) const
@@ -1311,14 +1311,14 @@ PutImagePolicyOutcomeCallable ImagebuilderClient::PutImagePolicyCallable(const P
   return task->get_future();
 }
 
-void ImagebuilderClient::PutImagePolicyAsync(const PutImagePolicyRequest& request, const PutImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientPutImagePolicyAsyncHelper(ImagebuilderClient const * const clientThis, const PutImagePolicyRequest& request, const PutImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutImagePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutImagePolicy(request), context);
 }
 
-void ImagebuilderClient::PutImagePolicyAsyncHelper(const PutImagePolicyRequest& request, const PutImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::PutImagePolicyAsync(const PutImagePolicyRequest& request, const PutImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutImagePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientPutImagePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutImageRecipePolicyOutcome ImagebuilderClient::PutImageRecipePolicy(const PutImageRecipePolicyRequest& request) const
@@ -1336,14 +1336,14 @@ PutImageRecipePolicyOutcomeCallable ImagebuilderClient::PutImageRecipePolicyCall
   return task->get_future();
 }
 
-void ImagebuilderClient::PutImageRecipePolicyAsync(const PutImageRecipePolicyRequest& request, const PutImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientPutImageRecipePolicyAsyncHelper(ImagebuilderClient const * const clientThis, const PutImageRecipePolicyRequest& request, const PutImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutImageRecipePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutImageRecipePolicy(request), context);
 }
 
-void ImagebuilderClient::PutImageRecipePolicyAsyncHelper(const PutImageRecipePolicyRequest& request, const PutImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::PutImageRecipePolicyAsync(const PutImageRecipePolicyRequest& request, const PutImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutImageRecipePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientPutImageRecipePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 StartImagePipelineExecutionOutcome ImagebuilderClient::StartImagePipelineExecution(const StartImagePipelineExecutionRequest& request) const
@@ -1361,14 +1361,14 @@ StartImagePipelineExecutionOutcomeCallable ImagebuilderClient::StartImagePipelin
   return task->get_future();
 }
 
-void ImagebuilderClient::StartImagePipelineExecutionAsync(const StartImagePipelineExecutionRequest& request, const StartImagePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientStartImagePipelineExecutionAsyncHelper(ImagebuilderClient const * const clientThis, const StartImagePipelineExecutionRequest& request, const StartImagePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartImagePipelineExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartImagePipelineExecution(request), context);
 }
 
-void ImagebuilderClient::StartImagePipelineExecutionAsyncHelper(const StartImagePipelineExecutionRequest& request, const StartImagePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::StartImagePipelineExecutionAsync(const StartImagePipelineExecutionRequest& request, const StartImagePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartImagePipelineExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientStartImagePipelineExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ImagebuilderClient::TagResource(const TagResourceRequest& request) const
@@ -1392,14 +1392,14 @@ TagResourceOutcomeCallable ImagebuilderClient::TagResourceCallable(const TagReso
   return task->get_future();
 }
 
-void ImagebuilderClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientTagResourceAsyncHelper(ImagebuilderClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ImagebuilderClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ImagebuilderClient::UntagResource(const UntagResourceRequest& request) const
@@ -1428,14 +1428,14 @@ UntagResourceOutcomeCallable ImagebuilderClient::UntagResourceCallable(const Unt
   return task->get_future();
 }
 
-void ImagebuilderClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientUntagResourceAsyncHelper(ImagebuilderClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ImagebuilderClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDistributionConfigurationOutcome ImagebuilderClient::UpdateDistributionConfiguration(const UpdateDistributionConfigurationRequest& request) const
@@ -1453,14 +1453,14 @@ UpdateDistributionConfigurationOutcomeCallable ImagebuilderClient::UpdateDistrib
   return task->get_future();
 }
 
-void ImagebuilderClient::UpdateDistributionConfigurationAsync(const UpdateDistributionConfigurationRequest& request, const UpdateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientUpdateDistributionConfigurationAsyncHelper(ImagebuilderClient const * const clientThis, const UpdateDistributionConfigurationRequest& request, const UpdateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDistributionConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDistributionConfiguration(request), context);
 }
 
-void ImagebuilderClient::UpdateDistributionConfigurationAsyncHelper(const UpdateDistributionConfigurationRequest& request, const UpdateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::UpdateDistributionConfigurationAsync(const UpdateDistributionConfigurationRequest& request, const UpdateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDistributionConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientUpdateDistributionConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateImagePipelineOutcome ImagebuilderClient::UpdateImagePipeline(const UpdateImagePipelineRequest& request) const
@@ -1478,14 +1478,14 @@ UpdateImagePipelineOutcomeCallable ImagebuilderClient::UpdateImagePipelineCallab
   return task->get_future();
 }
 
-void ImagebuilderClient::UpdateImagePipelineAsync(const UpdateImagePipelineRequest& request, const UpdateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientUpdateImagePipelineAsyncHelper(ImagebuilderClient const * const clientThis, const UpdateImagePipelineRequest& request, const UpdateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateImagePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateImagePipeline(request), context);
 }
 
-void ImagebuilderClient::UpdateImagePipelineAsyncHelper(const UpdateImagePipelineRequest& request, const UpdateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::UpdateImagePipelineAsync(const UpdateImagePipelineRequest& request, const UpdateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateImagePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientUpdateImagePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateInfrastructureConfigurationOutcome ImagebuilderClient::UpdateInfrastructureConfiguration(const UpdateInfrastructureConfigurationRequest& request) const
@@ -1503,13 +1503,13 @@ UpdateInfrastructureConfigurationOutcomeCallable ImagebuilderClient::UpdateInfra
   return task->get_future();
 }
 
-void ImagebuilderClient::UpdateInfrastructureConfigurationAsync(const UpdateInfrastructureConfigurationRequest& request, const UpdateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClientUpdateInfrastructureConfigurationAsyncHelper(ImagebuilderClient const * const clientThis, const UpdateInfrastructureConfigurationRequest& request, const UpdateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInfrastructureConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateInfrastructureConfiguration(request), context);
 }
 
-void ImagebuilderClient::UpdateInfrastructureConfigurationAsyncHelper(const UpdateInfrastructureConfigurationRequest& request, const UpdateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImagebuilderClient::UpdateInfrastructureConfigurationAsync(const UpdateInfrastructureConfigurationRequest& request, const UpdateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateInfrastructureConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImagebuilderClientUpdateInfrastructureConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 

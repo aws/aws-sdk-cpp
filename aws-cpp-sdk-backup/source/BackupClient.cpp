@@ -180,14 +180,14 @@ CreateBackupPlanOutcomeCallable BackupClient::CreateBackupPlanCallable(const Cre
   return task->get_future();
 }
 
-void BackupClient::CreateBackupPlanAsync(const CreateBackupPlanRequest& request, const CreateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientCreateBackupPlanAsyncHelper(BackupClient const * const clientThis, const CreateBackupPlanRequest& request, const CreateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackupPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackupPlan(request), context);
 }
 
-void BackupClient::CreateBackupPlanAsyncHelper(const CreateBackupPlanRequest& request, const CreateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::CreateBackupPlanAsync(const CreateBackupPlanRequest& request, const CreateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackupPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientCreateBackupPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackupSelectionOutcome BackupClient::CreateBackupSelection(const CreateBackupSelectionRequest& request) const
@@ -212,14 +212,14 @@ CreateBackupSelectionOutcomeCallable BackupClient::CreateBackupSelectionCallable
   return task->get_future();
 }
 
-void BackupClient::CreateBackupSelectionAsync(const CreateBackupSelectionRequest& request, const CreateBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientCreateBackupSelectionAsyncHelper(BackupClient const * const clientThis, const CreateBackupSelectionRequest& request, const CreateBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackupSelectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackupSelection(request), context);
 }
 
-void BackupClient::CreateBackupSelectionAsyncHelper(const CreateBackupSelectionRequest& request, const CreateBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::CreateBackupSelectionAsync(const CreateBackupSelectionRequest& request, const CreateBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackupSelection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientCreateBackupSelectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackupVaultOutcome BackupClient::CreateBackupVault(const CreateBackupVaultRequest& request) const
@@ -243,14 +243,14 @@ CreateBackupVaultOutcomeCallable BackupClient::CreateBackupVaultCallable(const C
   return task->get_future();
 }
 
-void BackupClient::CreateBackupVaultAsync(const CreateBackupVaultRequest& request, const CreateBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientCreateBackupVaultAsyncHelper(BackupClient const * const clientThis, const CreateBackupVaultRequest& request, const CreateBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackupVaultAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackupVault(request), context);
 }
 
-void BackupClient::CreateBackupVaultAsyncHelper(const CreateBackupVaultRequest& request, const CreateBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::CreateBackupVaultAsync(const CreateBackupVaultRequest& request, const CreateBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackupVault(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientCreateBackupVaultAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFrameworkOutcome BackupClient::CreateFramework(const CreateFrameworkRequest& request) const
@@ -268,14 +268,14 @@ CreateFrameworkOutcomeCallable BackupClient::CreateFrameworkCallable(const Creat
   return task->get_future();
 }
 
-void BackupClient::CreateFrameworkAsync(const CreateFrameworkRequest& request, const CreateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientCreateFrameworkAsyncHelper(BackupClient const * const clientThis, const CreateFrameworkRequest& request, const CreateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFrameworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFramework(request), context);
 }
 
-void BackupClient::CreateFrameworkAsyncHelper(const CreateFrameworkRequest& request, const CreateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::CreateFrameworkAsync(const CreateFrameworkRequest& request, const CreateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFramework(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientCreateFrameworkAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateReportPlanOutcome BackupClient::CreateReportPlan(const CreateReportPlanRequest& request) const
@@ -293,14 +293,14 @@ CreateReportPlanOutcomeCallable BackupClient::CreateReportPlanCallable(const Cre
   return task->get_future();
 }
 
-void BackupClient::CreateReportPlanAsync(const CreateReportPlanRequest& request, const CreateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientCreateReportPlanAsyncHelper(BackupClient const * const clientThis, const CreateReportPlanRequest& request, const CreateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReportPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateReportPlan(request), context);
 }
 
-void BackupClient::CreateReportPlanAsyncHelper(const CreateReportPlanRequest& request, const CreateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::CreateReportPlanAsync(const CreateReportPlanRequest& request, const CreateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateReportPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientCreateReportPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanRequest& request) const
@@ -324,14 +324,14 @@ DeleteBackupPlanOutcomeCallable BackupClient::DeleteBackupPlanCallable(const Del
   return task->get_future();
 }
 
-void BackupClient::DeleteBackupPlanAsync(const DeleteBackupPlanRequest& request, const DeleteBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDeleteBackupPlanAsyncHelper(BackupClient const * const clientThis, const DeleteBackupPlanRequest& request, const DeleteBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackupPlan(request), context);
 }
 
-void BackupClient::DeleteBackupPlanAsyncHelper(const DeleteBackupPlanRequest& request, const DeleteBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DeleteBackupPlanAsync(const DeleteBackupPlanRequest& request, const DeleteBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackupPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDeleteBackupPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackupSelectionOutcome BackupClient::DeleteBackupSelection(const DeleteBackupSelectionRequest& request) const
@@ -362,14 +362,14 @@ DeleteBackupSelectionOutcomeCallable BackupClient::DeleteBackupSelectionCallable
   return task->get_future();
 }
 
-void BackupClient::DeleteBackupSelectionAsync(const DeleteBackupSelectionRequest& request, const DeleteBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDeleteBackupSelectionAsyncHelper(BackupClient const * const clientThis, const DeleteBackupSelectionRequest& request, const DeleteBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupSelectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackupSelection(request), context);
 }
 
-void BackupClient::DeleteBackupSelectionAsyncHelper(const DeleteBackupSelectionRequest& request, const DeleteBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DeleteBackupSelectionAsync(const DeleteBackupSelectionRequest& request, const DeleteBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackupSelection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDeleteBackupSelectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackupVaultOutcome BackupClient::DeleteBackupVault(const DeleteBackupVaultRequest& request) const
@@ -393,14 +393,14 @@ DeleteBackupVaultOutcomeCallable BackupClient::DeleteBackupVaultCallable(const D
   return task->get_future();
 }
 
-void BackupClient::DeleteBackupVaultAsync(const DeleteBackupVaultRequest& request, const DeleteBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDeleteBackupVaultAsyncHelper(BackupClient const * const clientThis, const DeleteBackupVaultRequest& request, const DeleteBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupVaultAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackupVault(request), context);
 }
 
-void BackupClient::DeleteBackupVaultAsyncHelper(const DeleteBackupVaultRequest& request, const DeleteBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DeleteBackupVaultAsync(const DeleteBackupVaultRequest& request, const DeleteBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackupVault(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDeleteBackupVaultAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackupVaultAccessPolicyOutcome BackupClient::DeleteBackupVaultAccessPolicy(const DeleteBackupVaultAccessPolicyRequest& request) const
@@ -425,14 +425,14 @@ DeleteBackupVaultAccessPolicyOutcomeCallable BackupClient::DeleteBackupVaultAcce
   return task->get_future();
 }
 
-void BackupClient::DeleteBackupVaultAccessPolicyAsync(const DeleteBackupVaultAccessPolicyRequest& request, const DeleteBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDeleteBackupVaultAccessPolicyAsyncHelper(BackupClient const * const clientThis, const DeleteBackupVaultAccessPolicyRequest& request, const DeleteBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupVaultAccessPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackupVaultAccessPolicy(request), context);
 }
 
-void BackupClient::DeleteBackupVaultAccessPolicyAsyncHelper(const DeleteBackupVaultAccessPolicyRequest& request, const DeleteBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DeleteBackupVaultAccessPolicyAsync(const DeleteBackupVaultAccessPolicyRequest& request, const DeleteBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackupVaultAccessPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDeleteBackupVaultAccessPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackupVaultLockConfigurationOutcome BackupClient::DeleteBackupVaultLockConfiguration(const DeleteBackupVaultLockConfigurationRequest& request) const
@@ -457,14 +457,14 @@ DeleteBackupVaultLockConfigurationOutcomeCallable BackupClient::DeleteBackupVaul
   return task->get_future();
 }
 
-void BackupClient::DeleteBackupVaultLockConfigurationAsync(const DeleteBackupVaultLockConfigurationRequest& request, const DeleteBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDeleteBackupVaultLockConfigurationAsyncHelper(BackupClient const * const clientThis, const DeleteBackupVaultLockConfigurationRequest& request, const DeleteBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupVaultLockConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackupVaultLockConfiguration(request), context);
 }
 
-void BackupClient::DeleteBackupVaultLockConfigurationAsyncHelper(const DeleteBackupVaultLockConfigurationRequest& request, const DeleteBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DeleteBackupVaultLockConfigurationAsync(const DeleteBackupVaultLockConfigurationRequest& request, const DeleteBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackupVaultLockConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDeleteBackupVaultLockConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackupVaultNotificationsOutcome BackupClient::DeleteBackupVaultNotifications(const DeleteBackupVaultNotificationsRequest& request) const
@@ -489,14 +489,14 @@ DeleteBackupVaultNotificationsOutcomeCallable BackupClient::DeleteBackupVaultNot
   return task->get_future();
 }
 
-void BackupClient::DeleteBackupVaultNotificationsAsync(const DeleteBackupVaultNotificationsRequest& request, const DeleteBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDeleteBackupVaultNotificationsAsyncHelper(BackupClient const * const clientThis, const DeleteBackupVaultNotificationsRequest& request, const DeleteBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupVaultNotificationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackupVaultNotifications(request), context);
 }
 
-void BackupClient::DeleteBackupVaultNotificationsAsyncHelper(const DeleteBackupVaultNotificationsRequest& request, const DeleteBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DeleteBackupVaultNotificationsAsync(const DeleteBackupVaultNotificationsRequest& request, const DeleteBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackupVaultNotifications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDeleteBackupVaultNotificationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFrameworkOutcome BackupClient::DeleteFramework(const DeleteFrameworkRequest& request) const
@@ -520,14 +520,14 @@ DeleteFrameworkOutcomeCallable BackupClient::DeleteFrameworkCallable(const Delet
   return task->get_future();
 }
 
-void BackupClient::DeleteFrameworkAsync(const DeleteFrameworkRequest& request, const DeleteFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDeleteFrameworkAsyncHelper(BackupClient const * const clientThis, const DeleteFrameworkRequest& request, const DeleteFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFrameworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFramework(request), context);
 }
 
-void BackupClient::DeleteFrameworkAsyncHelper(const DeleteFrameworkRequest& request, const DeleteFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DeleteFrameworkAsync(const DeleteFrameworkRequest& request, const DeleteFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFramework(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDeleteFrameworkAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRecoveryPointOutcome BackupClient::DeleteRecoveryPoint(const DeleteRecoveryPointRequest& request) const
@@ -558,14 +558,14 @@ DeleteRecoveryPointOutcomeCallable BackupClient::DeleteRecoveryPointCallable(con
   return task->get_future();
 }
 
-void BackupClient::DeleteRecoveryPointAsync(const DeleteRecoveryPointRequest& request, const DeleteRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDeleteRecoveryPointAsyncHelper(BackupClient const * const clientThis, const DeleteRecoveryPointRequest& request, const DeleteRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecoveryPointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRecoveryPoint(request), context);
 }
 
-void BackupClient::DeleteRecoveryPointAsyncHelper(const DeleteRecoveryPointRequest& request, const DeleteRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DeleteRecoveryPointAsync(const DeleteRecoveryPointRequest& request, const DeleteRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRecoveryPoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDeleteRecoveryPointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteReportPlanOutcome BackupClient::DeleteReportPlan(const DeleteReportPlanRequest& request) const
@@ -589,14 +589,14 @@ DeleteReportPlanOutcomeCallable BackupClient::DeleteReportPlanCallable(const Del
   return task->get_future();
 }
 
-void BackupClient::DeleteReportPlanAsync(const DeleteReportPlanRequest& request, const DeleteReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDeleteReportPlanAsyncHelper(BackupClient const * const clientThis, const DeleteReportPlanRequest& request, const DeleteReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReportPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReportPlan(request), context);
 }
 
-void BackupClient::DeleteReportPlanAsyncHelper(const DeleteReportPlanRequest& request, const DeleteReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DeleteReportPlanAsync(const DeleteReportPlanRequest& request, const DeleteReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReportPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDeleteReportPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBackupJobOutcome BackupClient::DescribeBackupJob(const DescribeBackupJobRequest& request) const
@@ -620,14 +620,14 @@ DescribeBackupJobOutcomeCallable BackupClient::DescribeBackupJobCallable(const D
   return task->get_future();
 }
 
-void BackupClient::DescribeBackupJobAsync(const DescribeBackupJobRequest& request, const DescribeBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeBackupJobAsyncHelper(BackupClient const * const clientThis, const DescribeBackupJobRequest& request, const DescribeBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBackupJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBackupJob(request), context);
 }
 
-void BackupClient::DescribeBackupJobAsyncHelper(const DescribeBackupJobRequest& request, const DescribeBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeBackupJobAsync(const DescribeBackupJobRequest& request, const DescribeBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBackupJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeBackupJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBackupVaultOutcome BackupClient::DescribeBackupVault(const DescribeBackupVaultRequest& request) const
@@ -651,14 +651,14 @@ DescribeBackupVaultOutcomeCallable BackupClient::DescribeBackupVaultCallable(con
   return task->get_future();
 }
 
-void BackupClient::DescribeBackupVaultAsync(const DescribeBackupVaultRequest& request, const DescribeBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeBackupVaultAsyncHelper(BackupClient const * const clientThis, const DescribeBackupVaultRequest& request, const DescribeBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBackupVaultAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBackupVault(request), context);
 }
 
-void BackupClient::DescribeBackupVaultAsyncHelper(const DescribeBackupVaultRequest& request, const DescribeBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeBackupVaultAsync(const DescribeBackupVaultRequest& request, const DescribeBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBackupVault(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeBackupVaultAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCopyJobOutcome BackupClient::DescribeCopyJob(const DescribeCopyJobRequest& request) const
@@ -682,14 +682,14 @@ DescribeCopyJobOutcomeCallable BackupClient::DescribeCopyJobCallable(const Descr
   return task->get_future();
 }
 
-void BackupClient::DescribeCopyJobAsync(const DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeCopyJobAsyncHelper(BackupClient const * const clientThis, const DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCopyJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCopyJob(request), context);
 }
 
-void BackupClient::DescribeCopyJobAsyncHelper(const DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeCopyJobAsync(const DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCopyJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeCopyJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFrameworkOutcome BackupClient::DescribeFramework(const DescribeFrameworkRequest& request) const
@@ -713,14 +713,14 @@ DescribeFrameworkOutcomeCallable BackupClient::DescribeFrameworkCallable(const D
   return task->get_future();
 }
 
-void BackupClient::DescribeFrameworkAsync(const DescribeFrameworkRequest& request, const DescribeFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeFrameworkAsyncHelper(BackupClient const * const clientThis, const DescribeFrameworkRequest& request, const DescribeFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFrameworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFramework(request), context);
 }
 
-void BackupClient::DescribeFrameworkAsyncHelper(const DescribeFrameworkRequest& request, const DescribeFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeFrameworkAsync(const DescribeFrameworkRequest& request, const DescribeFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFramework(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeFrameworkAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGlobalSettingsOutcome BackupClient::DescribeGlobalSettings(const DescribeGlobalSettingsRequest& request) const
@@ -738,14 +738,14 @@ DescribeGlobalSettingsOutcomeCallable BackupClient::DescribeGlobalSettingsCallab
   return task->get_future();
 }
 
-void BackupClient::DescribeGlobalSettingsAsync(const DescribeGlobalSettingsRequest& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeGlobalSettingsAsyncHelper(BackupClient const * const clientThis, const DescribeGlobalSettingsRequest& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGlobalSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGlobalSettings(request), context);
 }
 
-void BackupClient::DescribeGlobalSettingsAsyncHelper(const DescribeGlobalSettingsRequest& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeGlobalSettingsAsync(const DescribeGlobalSettingsRequest& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGlobalSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeGlobalSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const DescribeProtectedResourceRequest& request) const
@@ -769,14 +769,14 @@ DescribeProtectedResourceOutcomeCallable BackupClient::DescribeProtectedResource
   return task->get_future();
 }
 
-void BackupClient::DescribeProtectedResourceAsync(const DescribeProtectedResourceRequest& request, const DescribeProtectedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeProtectedResourceAsyncHelper(BackupClient const * const clientThis, const DescribeProtectedResourceRequest& request, const DescribeProtectedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProtectedResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProtectedResource(request), context);
 }
 
-void BackupClient::DescribeProtectedResourceAsyncHelper(const DescribeProtectedResourceRequest& request, const DescribeProtectedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeProtectedResourceAsync(const DescribeProtectedResourceRequest& request, const DescribeProtectedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProtectedResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeProtectedResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRecoveryPointOutcome BackupClient::DescribeRecoveryPoint(const DescribeRecoveryPointRequest& request) const
@@ -807,14 +807,14 @@ DescribeRecoveryPointOutcomeCallable BackupClient::DescribeRecoveryPointCallable
   return task->get_future();
 }
 
-void BackupClient::DescribeRecoveryPointAsync(const DescribeRecoveryPointRequest& request, const DescribeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeRecoveryPointAsyncHelper(BackupClient const * const clientThis, const DescribeRecoveryPointRequest& request, const DescribeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecoveryPointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRecoveryPoint(request), context);
 }
 
-void BackupClient::DescribeRecoveryPointAsyncHelper(const DescribeRecoveryPointRequest& request, const DescribeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeRecoveryPointAsync(const DescribeRecoveryPointRequest& request, const DescribeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRecoveryPoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeRecoveryPointAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRegionSettingsOutcome BackupClient::DescribeRegionSettings(const DescribeRegionSettingsRequest& request) const
@@ -832,14 +832,14 @@ DescribeRegionSettingsOutcomeCallable BackupClient::DescribeRegionSettingsCallab
   return task->get_future();
 }
 
-void BackupClient::DescribeRegionSettingsAsync(const DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeRegionSettingsAsyncHelper(BackupClient const * const clientThis, const DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRegionSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRegionSettings(request), context);
 }
 
-void BackupClient::DescribeRegionSettingsAsyncHelper(const DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeRegionSettingsAsync(const DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRegionSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeRegionSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReportJobOutcome BackupClient::DescribeReportJob(const DescribeReportJobRequest& request) const
@@ -863,14 +863,14 @@ DescribeReportJobOutcomeCallable BackupClient::DescribeReportJobCallable(const D
   return task->get_future();
 }
 
-void BackupClient::DescribeReportJobAsync(const DescribeReportJobRequest& request, const DescribeReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeReportJobAsyncHelper(BackupClient const * const clientThis, const DescribeReportJobRequest& request, const DescribeReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReportJob(request), context);
 }
 
-void BackupClient::DescribeReportJobAsyncHelper(const DescribeReportJobRequest& request, const DescribeReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeReportJobAsync(const DescribeReportJobRequest& request, const DescribeReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeReportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReportPlanOutcome BackupClient::DescribeReportPlan(const DescribeReportPlanRequest& request) const
@@ -894,14 +894,14 @@ DescribeReportPlanOutcomeCallable BackupClient::DescribeReportPlanCallable(const
   return task->get_future();
 }
 
-void BackupClient::DescribeReportPlanAsync(const DescribeReportPlanRequest& request, const DescribeReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeReportPlanAsyncHelper(BackupClient const * const clientThis, const DescribeReportPlanRequest& request, const DescribeReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReportPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReportPlan(request), context);
 }
 
-void BackupClient::DescribeReportPlanAsyncHelper(const DescribeReportPlanRequest& request, const DescribeReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeReportPlanAsync(const DescribeReportPlanRequest& request, const DescribeReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReportPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeReportPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestoreJobRequest& request) const
@@ -925,14 +925,14 @@ DescribeRestoreJobOutcomeCallable BackupClient::DescribeRestoreJobCallable(const
   return task->get_future();
 }
 
-void BackupClient::DescribeRestoreJobAsync(const DescribeRestoreJobRequest& request, const DescribeRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDescribeRestoreJobAsyncHelper(BackupClient const * const clientThis, const DescribeRestoreJobRequest& request, const DescribeRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRestoreJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRestoreJob(request), context);
 }
 
-void BackupClient::DescribeRestoreJobAsyncHelper(const DescribeRestoreJobRequest& request, const DescribeRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DescribeRestoreJobAsync(const DescribeRestoreJobRequest& request, const DescribeRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRestoreJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDescribeRestoreJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateRecoveryPointOutcome BackupClient::DisassociateRecoveryPoint(const DisassociateRecoveryPointRequest& request) const
@@ -964,14 +964,14 @@ DisassociateRecoveryPointOutcomeCallable BackupClient::DisassociateRecoveryPoint
   return task->get_future();
 }
 
-void BackupClient::DisassociateRecoveryPointAsync(const DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientDisassociateRecoveryPointAsyncHelper(BackupClient const * const clientThis, const DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateRecoveryPointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateRecoveryPoint(request), context);
 }
 
-void BackupClient::DisassociateRecoveryPointAsyncHelper(const DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::DisassociateRecoveryPointAsync(const DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateRecoveryPoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientDisassociateRecoveryPointAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const ExportBackupPlanTemplateRequest& request) const
@@ -996,14 +996,14 @@ ExportBackupPlanTemplateOutcomeCallable BackupClient::ExportBackupPlanTemplateCa
   return task->get_future();
 }
 
-void BackupClient::ExportBackupPlanTemplateAsync(const ExportBackupPlanTemplateRequest& request, const ExportBackupPlanTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientExportBackupPlanTemplateAsyncHelper(BackupClient const * const clientThis, const ExportBackupPlanTemplateRequest& request, const ExportBackupPlanTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportBackupPlanTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportBackupPlanTemplate(request), context);
 }
 
-void BackupClient::ExportBackupPlanTemplateAsyncHelper(const ExportBackupPlanTemplateRequest& request, const ExportBackupPlanTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ExportBackupPlanTemplateAsync(const ExportBackupPlanTemplateRequest& request, const ExportBackupPlanTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportBackupPlanTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientExportBackupPlanTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackupPlanOutcome BackupClient::GetBackupPlan(const GetBackupPlanRequest& request) const
@@ -1027,14 +1027,14 @@ GetBackupPlanOutcomeCallable BackupClient::GetBackupPlanCallable(const GetBackup
   return task->get_future();
 }
 
-void BackupClient::GetBackupPlanAsync(const GetBackupPlanRequest& request, const GetBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientGetBackupPlanAsyncHelper(BackupClient const * const clientThis, const GetBackupPlanRequest& request, const GetBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackupPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackupPlan(request), context);
 }
 
-void BackupClient::GetBackupPlanAsyncHelper(const GetBackupPlanRequest& request, const GetBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::GetBackupPlanAsync(const GetBackupPlanRequest& request, const GetBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackupPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientGetBackupPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackupPlanFromJSONOutcome BackupClient::GetBackupPlanFromJSON(const GetBackupPlanFromJSONRequest& request) const
@@ -1052,14 +1052,14 @@ GetBackupPlanFromJSONOutcomeCallable BackupClient::GetBackupPlanFromJSONCallable
   return task->get_future();
 }
 
-void BackupClient::GetBackupPlanFromJSONAsync(const GetBackupPlanFromJSONRequest& request, const GetBackupPlanFromJSONResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientGetBackupPlanFromJSONAsyncHelper(BackupClient const * const clientThis, const GetBackupPlanFromJSONRequest& request, const GetBackupPlanFromJSONResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackupPlanFromJSONAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackupPlanFromJSON(request), context);
 }
 
-void BackupClient::GetBackupPlanFromJSONAsyncHelper(const GetBackupPlanFromJSONRequest& request, const GetBackupPlanFromJSONResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::GetBackupPlanFromJSONAsync(const GetBackupPlanFromJSONRequest& request, const GetBackupPlanFromJSONResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackupPlanFromJSON(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientGetBackupPlanFromJSONAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackupPlanFromTemplateOutcome BackupClient::GetBackupPlanFromTemplate(const GetBackupPlanFromTemplateRequest& request) const
@@ -1084,14 +1084,14 @@ GetBackupPlanFromTemplateOutcomeCallable BackupClient::GetBackupPlanFromTemplate
   return task->get_future();
 }
 
-void BackupClient::GetBackupPlanFromTemplateAsync(const GetBackupPlanFromTemplateRequest& request, const GetBackupPlanFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientGetBackupPlanFromTemplateAsyncHelper(BackupClient const * const clientThis, const GetBackupPlanFromTemplateRequest& request, const GetBackupPlanFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackupPlanFromTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackupPlanFromTemplate(request), context);
 }
 
-void BackupClient::GetBackupPlanFromTemplateAsyncHelper(const GetBackupPlanFromTemplateRequest& request, const GetBackupPlanFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::GetBackupPlanFromTemplateAsync(const GetBackupPlanFromTemplateRequest& request, const GetBackupPlanFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackupPlanFromTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientGetBackupPlanFromTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackupSelectionOutcome BackupClient::GetBackupSelection(const GetBackupSelectionRequest& request) const
@@ -1122,14 +1122,14 @@ GetBackupSelectionOutcomeCallable BackupClient::GetBackupSelectionCallable(const
   return task->get_future();
 }
 
-void BackupClient::GetBackupSelectionAsync(const GetBackupSelectionRequest& request, const GetBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientGetBackupSelectionAsyncHelper(BackupClient const * const clientThis, const GetBackupSelectionRequest& request, const GetBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackupSelectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackupSelection(request), context);
 }
 
-void BackupClient::GetBackupSelectionAsyncHelper(const GetBackupSelectionRequest& request, const GetBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::GetBackupSelectionAsync(const GetBackupSelectionRequest& request, const GetBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackupSelection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientGetBackupSelectionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackupVaultAccessPolicyOutcome BackupClient::GetBackupVaultAccessPolicy(const GetBackupVaultAccessPolicyRequest& request) const
@@ -1154,14 +1154,14 @@ GetBackupVaultAccessPolicyOutcomeCallable BackupClient::GetBackupVaultAccessPoli
   return task->get_future();
 }
 
-void BackupClient::GetBackupVaultAccessPolicyAsync(const GetBackupVaultAccessPolicyRequest& request, const GetBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientGetBackupVaultAccessPolicyAsyncHelper(BackupClient const * const clientThis, const GetBackupVaultAccessPolicyRequest& request, const GetBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackupVaultAccessPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackupVaultAccessPolicy(request), context);
 }
 
-void BackupClient::GetBackupVaultAccessPolicyAsyncHelper(const GetBackupVaultAccessPolicyRequest& request, const GetBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::GetBackupVaultAccessPolicyAsync(const GetBackupVaultAccessPolicyRequest& request, const GetBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackupVaultAccessPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientGetBackupVaultAccessPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBackupVaultNotificationsOutcome BackupClient::GetBackupVaultNotifications(const GetBackupVaultNotificationsRequest& request) const
@@ -1186,14 +1186,14 @@ GetBackupVaultNotificationsOutcomeCallable BackupClient::GetBackupVaultNotificat
   return task->get_future();
 }
 
-void BackupClient::GetBackupVaultNotificationsAsync(const GetBackupVaultNotificationsRequest& request, const GetBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientGetBackupVaultNotificationsAsyncHelper(BackupClient const * const clientThis, const GetBackupVaultNotificationsRequest& request, const GetBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackupVaultNotificationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBackupVaultNotifications(request), context);
 }
 
-void BackupClient::GetBackupVaultNotificationsAsyncHelper(const GetBackupVaultNotificationsRequest& request, const GetBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::GetBackupVaultNotificationsAsync(const GetBackupVaultNotificationsRequest& request, const GetBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBackupVaultNotifications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientGetBackupVaultNotificationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRecoveryPointRestoreMetadataOutcome BackupClient::GetRecoveryPointRestoreMetadata(const GetRecoveryPointRestoreMetadataRequest& request) const
@@ -1225,14 +1225,14 @@ GetRecoveryPointRestoreMetadataOutcomeCallable BackupClient::GetRecoveryPointRes
   return task->get_future();
 }
 
-void BackupClient::GetRecoveryPointRestoreMetadataAsync(const GetRecoveryPointRestoreMetadataRequest& request, const GetRecoveryPointRestoreMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientGetRecoveryPointRestoreMetadataAsyncHelper(BackupClient const * const clientThis, const GetRecoveryPointRestoreMetadataRequest& request, const GetRecoveryPointRestoreMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecoveryPointRestoreMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRecoveryPointRestoreMetadata(request), context);
 }
 
-void BackupClient::GetRecoveryPointRestoreMetadataAsyncHelper(const GetRecoveryPointRestoreMetadataRequest& request, const GetRecoveryPointRestoreMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::GetRecoveryPointRestoreMetadataAsync(const GetRecoveryPointRestoreMetadataRequest& request, const GetRecoveryPointRestoreMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRecoveryPointRestoreMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientGetRecoveryPointRestoreMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSupportedResourceTypesOutcome BackupClient::GetSupportedResourceTypes() const
@@ -1250,14 +1250,14 @@ GetSupportedResourceTypesOutcomeCallable BackupClient::GetSupportedResourceTypes
   return task->get_future();
 }
 
-void BackupClient::GetSupportedResourceTypesAsync(const GetSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientGetSupportedResourceTypesAsyncHelper(BackupClient const * const clientThis, const GetSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->GetSupportedResourceTypesAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->GetSupportedResourceTypes(), context);
 }
 
-void BackupClient::GetSupportedResourceTypesAsyncHelper(const GetSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::GetSupportedResourceTypesAsync(const GetSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, GetSupportedResourceTypes(), context);
+  m_executor->Submit( [this, handler, context](){ BackupClientGetSupportedResourceTypesAsyncHelper( this, handler, context ); } );
 }
 
 ListBackupJobsOutcome BackupClient::ListBackupJobs(const ListBackupJobsRequest& request) const
@@ -1275,14 +1275,14 @@ ListBackupJobsOutcomeCallable BackupClient::ListBackupJobsCallable(const ListBac
   return task->get_future();
 }
 
-void BackupClient::ListBackupJobsAsync(const ListBackupJobsRequest& request, const ListBackupJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListBackupJobsAsyncHelper(BackupClient const * const clientThis, const ListBackupJobsRequest& request, const ListBackupJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackupJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBackupJobs(request), context);
 }
 
-void BackupClient::ListBackupJobsAsyncHelper(const ListBackupJobsRequest& request, const ListBackupJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListBackupJobsAsync(const ListBackupJobsRequest& request, const ListBackupJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBackupJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListBackupJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBackupPlanTemplatesOutcome BackupClient::ListBackupPlanTemplates(const ListBackupPlanTemplatesRequest& request) const
@@ -1300,14 +1300,14 @@ ListBackupPlanTemplatesOutcomeCallable BackupClient::ListBackupPlanTemplatesCall
   return task->get_future();
 }
 
-void BackupClient::ListBackupPlanTemplatesAsync(const ListBackupPlanTemplatesRequest& request, const ListBackupPlanTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListBackupPlanTemplatesAsyncHelper(BackupClient const * const clientThis, const ListBackupPlanTemplatesRequest& request, const ListBackupPlanTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackupPlanTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBackupPlanTemplates(request), context);
 }
 
-void BackupClient::ListBackupPlanTemplatesAsyncHelper(const ListBackupPlanTemplatesRequest& request, const ListBackupPlanTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListBackupPlanTemplatesAsync(const ListBackupPlanTemplatesRequest& request, const ListBackupPlanTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBackupPlanTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListBackupPlanTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBackupPlanVersionsOutcome BackupClient::ListBackupPlanVersions(const ListBackupPlanVersionsRequest& request) const
@@ -1332,14 +1332,14 @@ ListBackupPlanVersionsOutcomeCallable BackupClient::ListBackupPlanVersionsCallab
   return task->get_future();
 }
 
-void BackupClient::ListBackupPlanVersionsAsync(const ListBackupPlanVersionsRequest& request, const ListBackupPlanVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListBackupPlanVersionsAsyncHelper(BackupClient const * const clientThis, const ListBackupPlanVersionsRequest& request, const ListBackupPlanVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackupPlanVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBackupPlanVersions(request), context);
 }
 
-void BackupClient::ListBackupPlanVersionsAsyncHelper(const ListBackupPlanVersionsRequest& request, const ListBackupPlanVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListBackupPlanVersionsAsync(const ListBackupPlanVersionsRequest& request, const ListBackupPlanVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBackupPlanVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListBackupPlanVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBackupPlansOutcome BackupClient::ListBackupPlans(const ListBackupPlansRequest& request) const
@@ -1357,14 +1357,14 @@ ListBackupPlansOutcomeCallable BackupClient::ListBackupPlansCallable(const ListB
   return task->get_future();
 }
 
-void BackupClient::ListBackupPlansAsync(const ListBackupPlansRequest& request, const ListBackupPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListBackupPlansAsyncHelper(BackupClient const * const clientThis, const ListBackupPlansRequest& request, const ListBackupPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackupPlansAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBackupPlans(request), context);
 }
 
-void BackupClient::ListBackupPlansAsyncHelper(const ListBackupPlansRequest& request, const ListBackupPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListBackupPlansAsync(const ListBackupPlansRequest& request, const ListBackupPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBackupPlans(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListBackupPlansAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBackupSelectionsOutcome BackupClient::ListBackupSelections(const ListBackupSelectionsRequest& request) const
@@ -1389,14 +1389,14 @@ ListBackupSelectionsOutcomeCallable BackupClient::ListBackupSelectionsCallable(c
   return task->get_future();
 }
 
-void BackupClient::ListBackupSelectionsAsync(const ListBackupSelectionsRequest& request, const ListBackupSelectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListBackupSelectionsAsyncHelper(BackupClient const * const clientThis, const ListBackupSelectionsRequest& request, const ListBackupSelectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackupSelectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBackupSelections(request), context);
 }
 
-void BackupClient::ListBackupSelectionsAsyncHelper(const ListBackupSelectionsRequest& request, const ListBackupSelectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListBackupSelectionsAsync(const ListBackupSelectionsRequest& request, const ListBackupSelectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBackupSelections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListBackupSelectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBackupVaultsOutcome BackupClient::ListBackupVaults(const ListBackupVaultsRequest& request) const
@@ -1414,14 +1414,14 @@ ListBackupVaultsOutcomeCallable BackupClient::ListBackupVaultsCallable(const Lis
   return task->get_future();
 }
 
-void BackupClient::ListBackupVaultsAsync(const ListBackupVaultsRequest& request, const ListBackupVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListBackupVaultsAsyncHelper(BackupClient const * const clientThis, const ListBackupVaultsRequest& request, const ListBackupVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackupVaultsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBackupVaults(request), context);
 }
 
-void BackupClient::ListBackupVaultsAsyncHelper(const ListBackupVaultsRequest& request, const ListBackupVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListBackupVaultsAsync(const ListBackupVaultsRequest& request, const ListBackupVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBackupVaults(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListBackupVaultsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCopyJobsOutcome BackupClient::ListCopyJobs(const ListCopyJobsRequest& request) const
@@ -1439,14 +1439,14 @@ ListCopyJobsOutcomeCallable BackupClient::ListCopyJobsCallable(const ListCopyJob
   return task->get_future();
 }
 
-void BackupClient::ListCopyJobsAsync(const ListCopyJobsRequest& request, const ListCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListCopyJobsAsyncHelper(BackupClient const * const clientThis, const ListCopyJobsRequest& request, const ListCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCopyJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCopyJobs(request), context);
 }
 
-void BackupClient::ListCopyJobsAsyncHelper(const ListCopyJobsRequest& request, const ListCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListCopyJobsAsync(const ListCopyJobsRequest& request, const ListCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCopyJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListCopyJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFrameworksOutcome BackupClient::ListFrameworks(const ListFrameworksRequest& request) const
@@ -1464,14 +1464,14 @@ ListFrameworksOutcomeCallable BackupClient::ListFrameworksCallable(const ListFra
   return task->get_future();
 }
 
-void BackupClient::ListFrameworksAsync(const ListFrameworksRequest& request, const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListFrameworksAsyncHelper(BackupClient const * const clientThis, const ListFrameworksRequest& request, const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFrameworksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFrameworks(request), context);
 }
 
-void BackupClient::ListFrameworksAsyncHelper(const ListFrameworksRequest& request, const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListFrameworksAsync(const ListFrameworksRequest& request, const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFrameworks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListFrameworksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListProtectedResourcesRequest& request) const
@@ -1489,14 +1489,14 @@ ListProtectedResourcesOutcomeCallable BackupClient::ListProtectedResourcesCallab
   return task->get_future();
 }
 
-void BackupClient::ListProtectedResourcesAsync(const ListProtectedResourcesRequest& request, const ListProtectedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListProtectedResourcesAsyncHelper(BackupClient const * const clientThis, const ListProtectedResourcesRequest& request, const ListProtectedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProtectedResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProtectedResources(request), context);
 }
 
-void BackupClient::ListProtectedResourcesAsyncHelper(const ListProtectedResourcesRequest& request, const ListProtectedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListProtectedResourcesAsync(const ListProtectedResourcesRequest& request, const ListProtectedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProtectedResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListProtectedResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRecoveryPointsByBackupVaultOutcome BackupClient::ListRecoveryPointsByBackupVault(const ListRecoveryPointsByBackupVaultRequest& request) const
@@ -1521,14 +1521,14 @@ ListRecoveryPointsByBackupVaultOutcomeCallable BackupClient::ListRecoveryPointsB
   return task->get_future();
 }
 
-void BackupClient::ListRecoveryPointsByBackupVaultAsync(const ListRecoveryPointsByBackupVaultRequest& request, const ListRecoveryPointsByBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListRecoveryPointsByBackupVaultAsyncHelper(BackupClient const * const clientThis, const ListRecoveryPointsByBackupVaultRequest& request, const ListRecoveryPointsByBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecoveryPointsByBackupVaultAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRecoveryPointsByBackupVault(request), context);
 }
 
-void BackupClient::ListRecoveryPointsByBackupVaultAsyncHelper(const ListRecoveryPointsByBackupVaultRequest& request, const ListRecoveryPointsByBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListRecoveryPointsByBackupVaultAsync(const ListRecoveryPointsByBackupVaultRequest& request, const ListRecoveryPointsByBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRecoveryPointsByBackupVault(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListRecoveryPointsByBackupVaultAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRecoveryPointsByResourceOutcome BackupClient::ListRecoveryPointsByResource(const ListRecoveryPointsByResourceRequest& request) const
@@ -1553,14 +1553,14 @@ ListRecoveryPointsByResourceOutcomeCallable BackupClient::ListRecoveryPointsByRe
   return task->get_future();
 }
 
-void BackupClient::ListRecoveryPointsByResourceAsync(const ListRecoveryPointsByResourceRequest& request, const ListRecoveryPointsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListRecoveryPointsByResourceAsyncHelper(BackupClient const * const clientThis, const ListRecoveryPointsByResourceRequest& request, const ListRecoveryPointsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecoveryPointsByResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRecoveryPointsByResource(request), context);
 }
 
-void BackupClient::ListRecoveryPointsByResourceAsyncHelper(const ListRecoveryPointsByResourceRequest& request, const ListRecoveryPointsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListRecoveryPointsByResourceAsync(const ListRecoveryPointsByResourceRequest& request, const ListRecoveryPointsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRecoveryPointsByResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListRecoveryPointsByResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReportJobsOutcome BackupClient::ListReportJobs(const ListReportJobsRequest& request) const
@@ -1578,14 +1578,14 @@ ListReportJobsOutcomeCallable BackupClient::ListReportJobsCallable(const ListRep
   return task->get_future();
 }
 
-void BackupClient::ListReportJobsAsync(const ListReportJobsRequest& request, const ListReportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListReportJobsAsyncHelper(BackupClient const * const clientThis, const ListReportJobsRequest& request, const ListReportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReportJobs(request), context);
 }
 
-void BackupClient::ListReportJobsAsyncHelper(const ListReportJobsRequest& request, const ListReportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListReportJobsAsync(const ListReportJobsRequest& request, const ListReportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListReportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReportPlansOutcome BackupClient::ListReportPlans(const ListReportPlansRequest& request) const
@@ -1603,14 +1603,14 @@ ListReportPlansOutcomeCallable BackupClient::ListReportPlansCallable(const ListR
   return task->get_future();
 }
 
-void BackupClient::ListReportPlansAsync(const ListReportPlansRequest& request, const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListReportPlansAsyncHelper(BackupClient const * const clientThis, const ListReportPlansRequest& request, const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReportPlansAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReportPlans(request), context);
 }
 
-void BackupClient::ListReportPlansAsyncHelper(const ListReportPlansRequest& request, const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListReportPlansAsync(const ListReportPlansRequest& request, const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReportPlans(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListReportPlansAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRestoreJobsOutcome BackupClient::ListRestoreJobs(const ListRestoreJobsRequest& request) const
@@ -1628,14 +1628,14 @@ ListRestoreJobsOutcomeCallable BackupClient::ListRestoreJobsCallable(const ListR
   return task->get_future();
 }
 
-void BackupClient::ListRestoreJobsAsync(const ListRestoreJobsRequest& request, const ListRestoreJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListRestoreJobsAsyncHelper(BackupClient const * const clientThis, const ListRestoreJobsRequest& request, const ListRestoreJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRestoreJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRestoreJobs(request), context);
 }
 
-void BackupClient::ListRestoreJobsAsyncHelper(const ListRestoreJobsRequest& request, const ListRestoreJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListRestoreJobsAsync(const ListRestoreJobsRequest& request, const ListRestoreJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRestoreJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListRestoreJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsOutcome BackupClient::ListTags(const ListTagsRequest& request) const
@@ -1659,14 +1659,14 @@ ListTagsOutcomeCallable BackupClient::ListTagsCallable(const ListTagsRequest& re
   return task->get_future();
 }
 
-void BackupClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientListTagsAsyncHelper(BackupClient const * const clientThis, const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTags(request), context);
 }
 
-void BackupClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientListTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutBackupVaultAccessPolicyOutcome BackupClient::PutBackupVaultAccessPolicy(const PutBackupVaultAccessPolicyRequest& request) const
@@ -1691,14 +1691,14 @@ PutBackupVaultAccessPolicyOutcomeCallable BackupClient::PutBackupVaultAccessPoli
   return task->get_future();
 }
 
-void BackupClient::PutBackupVaultAccessPolicyAsync(const PutBackupVaultAccessPolicyRequest& request, const PutBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientPutBackupVaultAccessPolicyAsyncHelper(BackupClient const * const clientThis, const PutBackupVaultAccessPolicyRequest& request, const PutBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutBackupVaultAccessPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutBackupVaultAccessPolicy(request), context);
 }
 
-void BackupClient::PutBackupVaultAccessPolicyAsyncHelper(const PutBackupVaultAccessPolicyRequest& request, const PutBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::PutBackupVaultAccessPolicyAsync(const PutBackupVaultAccessPolicyRequest& request, const PutBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutBackupVaultAccessPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientPutBackupVaultAccessPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutBackupVaultLockConfigurationOutcome BackupClient::PutBackupVaultLockConfiguration(const PutBackupVaultLockConfigurationRequest& request) const
@@ -1723,14 +1723,14 @@ PutBackupVaultLockConfigurationOutcomeCallable BackupClient::PutBackupVaultLockC
   return task->get_future();
 }
 
-void BackupClient::PutBackupVaultLockConfigurationAsync(const PutBackupVaultLockConfigurationRequest& request, const PutBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientPutBackupVaultLockConfigurationAsyncHelper(BackupClient const * const clientThis, const PutBackupVaultLockConfigurationRequest& request, const PutBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutBackupVaultLockConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutBackupVaultLockConfiguration(request), context);
 }
 
-void BackupClient::PutBackupVaultLockConfigurationAsyncHelper(const PutBackupVaultLockConfigurationRequest& request, const PutBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::PutBackupVaultLockConfigurationAsync(const PutBackupVaultLockConfigurationRequest& request, const PutBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutBackupVaultLockConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientPutBackupVaultLockConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(const PutBackupVaultNotificationsRequest& request) const
@@ -1755,14 +1755,14 @@ PutBackupVaultNotificationsOutcomeCallable BackupClient::PutBackupVaultNotificat
   return task->get_future();
 }
 
-void BackupClient::PutBackupVaultNotificationsAsync(const PutBackupVaultNotificationsRequest& request, const PutBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientPutBackupVaultNotificationsAsyncHelper(BackupClient const * const clientThis, const PutBackupVaultNotificationsRequest& request, const PutBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutBackupVaultNotificationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutBackupVaultNotifications(request), context);
 }
 
-void BackupClient::PutBackupVaultNotificationsAsyncHelper(const PutBackupVaultNotificationsRequest& request, const PutBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::PutBackupVaultNotificationsAsync(const PutBackupVaultNotificationsRequest& request, const PutBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutBackupVaultNotifications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientPutBackupVaultNotificationsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartBackupJobOutcome BackupClient::StartBackupJob(const StartBackupJobRequest& request) const
@@ -1780,14 +1780,14 @@ StartBackupJobOutcomeCallable BackupClient::StartBackupJobCallable(const StartBa
   return task->get_future();
 }
 
-void BackupClient::StartBackupJobAsync(const StartBackupJobRequest& request, const StartBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientStartBackupJobAsyncHelper(BackupClient const * const clientThis, const StartBackupJobRequest& request, const StartBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartBackupJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartBackupJob(request), context);
 }
 
-void BackupClient::StartBackupJobAsyncHelper(const StartBackupJobRequest& request, const StartBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::StartBackupJobAsync(const StartBackupJobRequest& request, const StartBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartBackupJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientStartBackupJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartCopyJobOutcome BackupClient::StartCopyJob(const StartCopyJobRequest& request) const
@@ -1805,14 +1805,14 @@ StartCopyJobOutcomeCallable BackupClient::StartCopyJobCallable(const StartCopyJo
   return task->get_future();
 }
 
-void BackupClient::StartCopyJobAsync(const StartCopyJobRequest& request, const StartCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientStartCopyJobAsyncHelper(BackupClient const * const clientThis, const StartCopyJobRequest& request, const StartCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartCopyJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartCopyJob(request), context);
 }
 
-void BackupClient::StartCopyJobAsyncHelper(const StartCopyJobRequest& request, const StartCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::StartCopyJobAsync(const StartCopyJobRequest& request, const StartCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartCopyJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientStartCopyJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartReportJobOutcome BackupClient::StartReportJob(const StartReportJobRequest& request) const
@@ -1836,14 +1836,14 @@ StartReportJobOutcomeCallable BackupClient::StartReportJobCallable(const StartRe
   return task->get_future();
 }
 
-void BackupClient::StartReportJobAsync(const StartReportJobRequest& request, const StartReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientStartReportJobAsyncHelper(BackupClient const * const clientThis, const StartReportJobRequest& request, const StartReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartReportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartReportJob(request), context);
 }
 
-void BackupClient::StartReportJobAsyncHelper(const StartReportJobRequest& request, const StartReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::StartReportJobAsync(const StartReportJobRequest& request, const StartReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartReportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientStartReportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StartRestoreJobOutcome BackupClient::StartRestoreJob(const StartRestoreJobRequest& request) const
@@ -1861,14 +1861,14 @@ StartRestoreJobOutcomeCallable BackupClient::StartRestoreJobCallable(const Start
   return task->get_future();
 }
 
-void BackupClient::StartRestoreJobAsync(const StartRestoreJobRequest& request, const StartRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientStartRestoreJobAsyncHelper(BackupClient const * const clientThis, const StartRestoreJobRequest& request, const StartRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartRestoreJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartRestoreJob(request), context);
 }
 
-void BackupClient::StartRestoreJobAsyncHelper(const StartRestoreJobRequest& request, const StartRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::StartRestoreJobAsync(const StartRestoreJobRequest& request, const StartRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartRestoreJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientStartRestoreJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopBackupJobOutcome BackupClient::StopBackupJob(const StopBackupJobRequest& request) const
@@ -1892,14 +1892,14 @@ StopBackupJobOutcomeCallable BackupClient::StopBackupJobCallable(const StopBacku
   return task->get_future();
 }
 
-void BackupClient::StopBackupJobAsync(const StopBackupJobRequest& request, const StopBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientStopBackupJobAsyncHelper(BackupClient const * const clientThis, const StopBackupJobRequest& request, const StopBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopBackupJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopBackupJob(request), context);
 }
 
-void BackupClient::StopBackupJobAsyncHelper(const StopBackupJobRequest& request, const StopBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::StopBackupJobAsync(const StopBackupJobRequest& request, const StopBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopBackupJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientStopBackupJobAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome BackupClient::TagResource(const TagResourceRequest& request) const
@@ -1923,14 +1923,14 @@ TagResourceOutcomeCallable BackupClient::TagResourceCallable(const TagResourceRe
   return task->get_future();
 }
 
-void BackupClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientTagResourceAsyncHelper(BackupClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void BackupClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome BackupClient::UntagResource(const UntagResourceRequest& request) const
@@ -1954,14 +1954,14 @@ UntagResourceOutcomeCallable BackupClient::UntagResourceCallable(const UntagReso
   return task->get_future();
 }
 
-void BackupClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientUntagResourceAsyncHelper(BackupClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void BackupClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBackupPlanOutcome BackupClient::UpdateBackupPlan(const UpdateBackupPlanRequest& request) const
@@ -1985,14 +1985,14 @@ UpdateBackupPlanOutcomeCallable BackupClient::UpdateBackupPlanCallable(const Upd
   return task->get_future();
 }
 
-void BackupClient::UpdateBackupPlanAsync(const UpdateBackupPlanRequest& request, const UpdateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientUpdateBackupPlanAsyncHelper(BackupClient const * const clientThis, const UpdateBackupPlanRequest& request, const UpdateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackupPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBackupPlan(request), context);
 }
 
-void BackupClient::UpdateBackupPlanAsyncHelper(const UpdateBackupPlanRequest& request, const UpdateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::UpdateBackupPlanAsync(const UpdateBackupPlanRequest& request, const UpdateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBackupPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientUpdateBackupPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFrameworkOutcome BackupClient::UpdateFramework(const UpdateFrameworkRequest& request) const
@@ -2016,14 +2016,14 @@ UpdateFrameworkOutcomeCallable BackupClient::UpdateFrameworkCallable(const Updat
   return task->get_future();
 }
 
-void BackupClient::UpdateFrameworkAsync(const UpdateFrameworkRequest& request, const UpdateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientUpdateFrameworkAsyncHelper(BackupClient const * const clientThis, const UpdateFrameworkRequest& request, const UpdateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFrameworkAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFramework(request), context);
 }
 
-void BackupClient::UpdateFrameworkAsyncHelper(const UpdateFrameworkRequest& request, const UpdateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::UpdateFrameworkAsync(const UpdateFrameworkRequest& request, const UpdateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFramework(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientUpdateFrameworkAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGlobalSettingsOutcome BackupClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
@@ -2041,14 +2041,14 @@ UpdateGlobalSettingsOutcomeCallable BackupClient::UpdateGlobalSettingsCallable(c
   return task->get_future();
 }
 
-void BackupClient::UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientUpdateGlobalSettingsAsyncHelper(BackupClient const * const clientThis, const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGlobalSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGlobalSettings(request), context);
 }
 
-void BackupClient::UpdateGlobalSettingsAsyncHelper(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGlobalSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientUpdateGlobalSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRecoveryPointLifecycleOutcome BackupClient::UpdateRecoveryPointLifecycle(const UpdateRecoveryPointLifecycleRequest& request) const
@@ -2079,14 +2079,14 @@ UpdateRecoveryPointLifecycleOutcomeCallable BackupClient::UpdateRecoveryPointLif
   return task->get_future();
 }
 
-void BackupClient::UpdateRecoveryPointLifecycleAsync(const UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientUpdateRecoveryPointLifecycleAsyncHelper(BackupClient const * const clientThis, const UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRecoveryPointLifecycleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRecoveryPointLifecycle(request), context);
 }
 
-void BackupClient::UpdateRecoveryPointLifecycleAsyncHelper(const UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::UpdateRecoveryPointLifecycleAsync(const UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRecoveryPointLifecycle(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientUpdateRecoveryPointLifecycleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRegionSettingsOutcome BackupClient::UpdateRegionSettings(const UpdateRegionSettingsRequest& request) const
@@ -2104,14 +2104,14 @@ UpdateRegionSettingsOutcomeCallable BackupClient::UpdateRegionSettingsCallable(c
   return task->get_future();
 }
 
-void BackupClient::UpdateRegionSettingsAsync(const UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientUpdateRegionSettingsAsyncHelper(BackupClient const * const clientThis, const UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRegionSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRegionSettings(request), context);
 }
 
-void BackupClient::UpdateRegionSettingsAsyncHelper(const UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::UpdateRegionSettingsAsync(const UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRegionSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientUpdateRegionSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateReportPlanOutcome BackupClient::UpdateReportPlan(const UpdateReportPlanRequest& request) const
@@ -2135,13 +2135,13 @@ UpdateReportPlanOutcomeCallable BackupClient::UpdateReportPlanCallable(const Upd
   return task->get_future();
 }
 
-void BackupClient::UpdateReportPlanAsync(const UpdateReportPlanRequest& request, const UpdateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClientUpdateReportPlanAsyncHelper(BackupClient const * const clientThis, const UpdateReportPlanRequest& request, const UpdateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReportPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateReportPlan(request), context);
 }
 
-void BackupClient::UpdateReportPlanAsyncHelper(const UpdateReportPlanRequest& request, const UpdateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupClient::UpdateReportPlanAsync(const UpdateReportPlanRequest& request, const UpdateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateReportPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupClientUpdateReportPlanAsyncHelper( this, request, handler, context ); } );
 }
 

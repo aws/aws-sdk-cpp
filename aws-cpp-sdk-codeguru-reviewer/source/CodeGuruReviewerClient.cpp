@@ -129,14 +129,14 @@ AssociateRepositoryOutcomeCallable CodeGuruReviewerClient::AssociateRepositoryCa
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::AssociateRepositoryAsync(const AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientAssociateRepositoryAsyncHelper(CodeGuruReviewerClient const * const clientThis, const AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateRepository(request), context);
 }
 
-void CodeGuruReviewerClient::AssociateRepositoryAsyncHelper(const AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::AssociateRepositoryAsync(const AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientAssociateRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCodeReviewOutcome CodeGuruReviewerClient::CreateCodeReview(const CreateCodeReviewRequest& request) const
@@ -154,14 +154,14 @@ CreateCodeReviewOutcomeCallable CodeGuruReviewerClient::CreateCodeReviewCallable
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::CreateCodeReviewAsync(const CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientCreateCodeReviewAsyncHelper(CodeGuruReviewerClient const * const clientThis, const CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCodeReviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCodeReview(request), context);
 }
 
-void CodeGuruReviewerClient::CreateCodeReviewAsyncHelper(const CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::CreateCodeReviewAsync(const CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCodeReview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientCreateCodeReviewAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const DescribeCodeReviewRequest& request) const
@@ -185,14 +185,14 @@ DescribeCodeReviewOutcomeCallable CodeGuruReviewerClient::DescribeCodeReviewCall
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::DescribeCodeReviewAsync(const DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientDescribeCodeReviewAsyncHelper(CodeGuruReviewerClient const * const clientThis, const DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCodeReviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCodeReview(request), context);
 }
 
-void CodeGuruReviewerClient::DescribeCodeReviewAsyncHelper(const DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::DescribeCodeReviewAsync(const DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCodeReview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientDescribeCodeReviewAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRecommendationFeedbackOutcome CodeGuruReviewerClient::DescribeRecommendationFeedback(const DescribeRecommendationFeedbackRequest& request) const
@@ -221,14 +221,14 @@ DescribeRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::DescribeRe
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::DescribeRecommendationFeedbackAsync(const DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientDescribeRecommendationFeedbackAsyncHelper(CodeGuruReviewerClient const * const clientThis, const DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecommendationFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRecommendationFeedback(request), context);
 }
 
-void CodeGuruReviewerClient::DescribeRecommendationFeedbackAsyncHelper(const DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::DescribeRecommendationFeedbackAsync(const DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRecommendationFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientDescribeRecommendationFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRepositoryAssociationOutcome CodeGuruReviewerClient::DescribeRepositoryAssociation(const DescribeRepositoryAssociationRequest& request) const
@@ -252,14 +252,14 @@ DescribeRepositoryAssociationOutcomeCallable CodeGuruReviewerClient::DescribeRep
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::DescribeRepositoryAssociationAsync(const DescribeRepositoryAssociationRequest& request, const DescribeRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientDescribeRepositoryAssociationAsyncHelper(CodeGuruReviewerClient const * const clientThis, const DescribeRepositoryAssociationRequest& request, const DescribeRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRepositoryAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRepositoryAssociation(request), context);
 }
 
-void CodeGuruReviewerClient::DescribeRepositoryAssociationAsyncHelper(const DescribeRepositoryAssociationRequest& request, const DescribeRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::DescribeRepositoryAssociationAsync(const DescribeRepositoryAssociationRequest& request, const DescribeRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRepositoryAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientDescribeRepositoryAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateRepositoryOutcome CodeGuruReviewerClient::DisassociateRepository(const DisassociateRepositoryRequest& request) const
@@ -283,14 +283,14 @@ DisassociateRepositoryOutcomeCallable CodeGuruReviewerClient::DisassociateReposi
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::DisassociateRepositoryAsync(const DisassociateRepositoryRequest& request, const DisassociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientDisassociateRepositoryAsyncHelper(CodeGuruReviewerClient const * const clientThis, const DisassociateRepositoryRequest& request, const DisassociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateRepository(request), context);
 }
 
-void CodeGuruReviewerClient::DisassociateRepositoryAsyncHelper(const DisassociateRepositoryRequest& request, const DisassociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::DisassociateRepositoryAsync(const DisassociateRepositoryRequest& request, const DisassociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientDisassociateRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCodeReviewsOutcome CodeGuruReviewerClient::ListCodeReviews(const ListCodeReviewsRequest& request) const
@@ -313,14 +313,14 @@ ListCodeReviewsOutcomeCallable CodeGuruReviewerClient::ListCodeReviewsCallable(c
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::ListCodeReviewsAsync(const ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientListCodeReviewsAsyncHelper(CodeGuruReviewerClient const * const clientThis, const ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCodeReviewsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCodeReviews(request), context);
 }
 
-void CodeGuruReviewerClient::ListCodeReviewsAsyncHelper(const ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::ListCodeReviewsAsync(const ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCodeReviews(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientListCodeReviewsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRecommendationFeedbackOutcome CodeGuruReviewerClient::ListRecommendationFeedback(const ListRecommendationFeedbackRequest& request) const
@@ -345,14 +345,14 @@ ListRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::ListRecommenda
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::ListRecommendationFeedbackAsync(const ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientListRecommendationFeedbackAsyncHelper(CodeGuruReviewerClient const * const clientThis, const ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecommendationFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRecommendationFeedback(request), context);
 }
 
-void CodeGuruReviewerClient::ListRecommendationFeedbackAsyncHelper(const ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::ListRecommendationFeedbackAsync(const ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRecommendationFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientListRecommendationFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRecommendationsOutcome CodeGuruReviewerClient::ListRecommendations(const ListRecommendationsRequest& request) const
@@ -377,14 +377,14 @@ ListRecommendationsOutcomeCallable CodeGuruReviewerClient::ListRecommendationsCa
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::ListRecommendationsAsync(const ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientListRecommendationsAsyncHelper(CodeGuruReviewerClient const * const clientThis, const ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecommendationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRecommendations(request), context);
 }
 
-void CodeGuruReviewerClient::ListRecommendationsAsyncHelper(const ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::ListRecommendationsAsync(const ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientListRecommendationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRepositoryAssociationsOutcome CodeGuruReviewerClient::ListRepositoryAssociations(const ListRepositoryAssociationsRequest& request) const
@@ -402,14 +402,14 @@ ListRepositoryAssociationsOutcomeCallable CodeGuruReviewerClient::ListRepository
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::ListRepositoryAssociationsAsync(const ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientListRepositoryAssociationsAsyncHelper(CodeGuruReviewerClient const * const clientThis, const ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRepositoryAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRepositoryAssociations(request), context);
 }
 
-void CodeGuruReviewerClient::ListRepositoryAssociationsAsyncHelper(const ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::ListRepositoryAssociationsAsync(const ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRepositoryAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientListRepositoryAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome CodeGuruReviewerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -433,14 +433,14 @@ ListTagsForResourceOutcomeCallable CodeGuruReviewerClient::ListTagsForResourceCa
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientListTagsForResourceAsyncHelper(CodeGuruReviewerClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void CodeGuruReviewerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRecommendationFeedbackOutcome CodeGuruReviewerClient::PutRecommendationFeedback(const PutRecommendationFeedbackRequest& request) const
@@ -458,14 +458,14 @@ PutRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::PutRecommendati
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::PutRecommendationFeedbackAsync(const PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientPutRecommendationFeedbackAsyncHelper(CodeGuruReviewerClient const * const clientThis, const PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRecommendationFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRecommendationFeedback(request), context);
 }
 
-void CodeGuruReviewerClient::PutRecommendationFeedbackAsyncHelper(const PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::PutRecommendationFeedbackAsync(const PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRecommendationFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientPutRecommendationFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CodeGuruReviewerClient::TagResource(const TagResourceRequest& request) const
@@ -489,14 +489,14 @@ TagResourceOutcomeCallable CodeGuruReviewerClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientTagResourceAsyncHelper(CodeGuruReviewerClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CodeGuruReviewerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CodeGuruReviewerClient::UntagResource(const UntagResourceRequest& request) const
@@ -525,13 +525,13 @@ UntagResourceOutcomeCallable CodeGuruReviewerClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void CodeGuruReviewerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClientUntagResourceAsyncHelper(CodeGuruReviewerClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CodeGuruReviewerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeGuruReviewerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeGuruReviewerClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 

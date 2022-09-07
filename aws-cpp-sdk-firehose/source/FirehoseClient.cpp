@@ -126,14 +126,14 @@ CreateDeliveryStreamOutcomeCallable FirehoseClient::CreateDeliveryStreamCallable
   return task->get_future();
 }
 
-void FirehoseClient::CreateDeliveryStreamAsync(const CreateDeliveryStreamRequest& request, const CreateDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientCreateDeliveryStreamAsyncHelper(FirehoseClient const * const clientThis, const CreateDeliveryStreamRequest& request, const CreateDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeliveryStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDeliveryStream(request), context);
 }
 
-void FirehoseClient::CreateDeliveryStreamAsyncHelper(const CreateDeliveryStreamRequest& request, const CreateDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::CreateDeliveryStreamAsync(const CreateDeliveryStreamRequest& request, const CreateDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDeliveryStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientCreateDeliveryStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDeliveryStreamOutcome FirehoseClient::DeleteDeliveryStream(const DeleteDeliveryStreamRequest& request) const
@@ -150,14 +150,14 @@ DeleteDeliveryStreamOutcomeCallable FirehoseClient::DeleteDeliveryStreamCallable
   return task->get_future();
 }
 
-void FirehoseClient::DeleteDeliveryStreamAsync(const DeleteDeliveryStreamRequest& request, const DeleteDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientDeleteDeliveryStreamAsyncHelper(FirehoseClient const * const clientThis, const DeleteDeliveryStreamRequest& request, const DeleteDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeliveryStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDeliveryStream(request), context);
 }
 
-void FirehoseClient::DeleteDeliveryStreamAsyncHelper(const DeleteDeliveryStreamRequest& request, const DeleteDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::DeleteDeliveryStreamAsync(const DeleteDeliveryStreamRequest& request, const DeleteDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDeliveryStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientDeleteDeliveryStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDeliveryStreamOutcome FirehoseClient::DescribeDeliveryStream(const DescribeDeliveryStreamRequest& request) const
@@ -174,14 +174,14 @@ DescribeDeliveryStreamOutcomeCallable FirehoseClient::DescribeDeliveryStreamCall
   return task->get_future();
 }
 
-void FirehoseClient::DescribeDeliveryStreamAsync(const DescribeDeliveryStreamRequest& request, const DescribeDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientDescribeDeliveryStreamAsyncHelper(FirehoseClient const * const clientThis, const DescribeDeliveryStreamRequest& request, const DescribeDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeliveryStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDeliveryStream(request), context);
 }
 
-void FirehoseClient::DescribeDeliveryStreamAsyncHelper(const DescribeDeliveryStreamRequest& request, const DescribeDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::DescribeDeliveryStreamAsync(const DescribeDeliveryStreamRequest& request, const DescribeDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDeliveryStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientDescribeDeliveryStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeliveryStreamsOutcome FirehoseClient::ListDeliveryStreams(const ListDeliveryStreamsRequest& request) const
@@ -198,14 +198,14 @@ ListDeliveryStreamsOutcomeCallable FirehoseClient::ListDeliveryStreamsCallable(c
   return task->get_future();
 }
 
-void FirehoseClient::ListDeliveryStreamsAsync(const ListDeliveryStreamsRequest& request, const ListDeliveryStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientListDeliveryStreamsAsyncHelper(FirehoseClient const * const clientThis, const ListDeliveryStreamsRequest& request, const ListDeliveryStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeliveryStreamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeliveryStreams(request), context);
 }
 
-void FirehoseClient::ListDeliveryStreamsAsyncHelper(const ListDeliveryStreamsRequest& request, const ListDeliveryStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::ListDeliveryStreamsAsync(const ListDeliveryStreamsRequest& request, const ListDeliveryStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeliveryStreams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientListDeliveryStreamsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForDeliveryStreamOutcome FirehoseClient::ListTagsForDeliveryStream(const ListTagsForDeliveryStreamRequest& request) const
@@ -222,14 +222,14 @@ ListTagsForDeliveryStreamOutcomeCallable FirehoseClient::ListTagsForDeliveryStre
   return task->get_future();
 }
 
-void FirehoseClient::ListTagsForDeliveryStreamAsync(const ListTagsForDeliveryStreamRequest& request, const ListTagsForDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientListTagsForDeliveryStreamAsyncHelper(FirehoseClient const * const clientThis, const ListTagsForDeliveryStreamRequest& request, const ListTagsForDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForDeliveryStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForDeliveryStream(request), context);
 }
 
-void FirehoseClient::ListTagsForDeliveryStreamAsyncHelper(const ListTagsForDeliveryStreamRequest& request, const ListTagsForDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::ListTagsForDeliveryStreamAsync(const ListTagsForDeliveryStreamRequest& request, const ListTagsForDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForDeliveryStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientListTagsForDeliveryStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRecordOutcome FirehoseClient::PutRecord(const PutRecordRequest& request) const
@@ -246,14 +246,14 @@ PutRecordOutcomeCallable FirehoseClient::PutRecordCallable(const PutRecordReques
   return task->get_future();
 }
 
-void FirehoseClient::PutRecordAsync(const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientPutRecordAsyncHelper(FirehoseClient const * const clientThis, const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRecordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRecord(request), context);
 }
 
-void FirehoseClient::PutRecordAsyncHelper(const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::PutRecordAsync(const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRecord(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientPutRecordAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRecordBatchOutcome FirehoseClient::PutRecordBatch(const PutRecordBatchRequest& request) const
@@ -270,14 +270,14 @@ PutRecordBatchOutcomeCallable FirehoseClient::PutRecordBatchCallable(const PutRe
   return task->get_future();
 }
 
-void FirehoseClient::PutRecordBatchAsync(const PutRecordBatchRequest& request, const PutRecordBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientPutRecordBatchAsyncHelper(FirehoseClient const * const clientThis, const PutRecordBatchRequest& request, const PutRecordBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRecordBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRecordBatch(request), context);
 }
 
-void FirehoseClient::PutRecordBatchAsyncHelper(const PutRecordBatchRequest& request, const PutRecordBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::PutRecordBatchAsync(const PutRecordBatchRequest& request, const PutRecordBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRecordBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientPutRecordBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDeliveryStreamEncryptionOutcome FirehoseClient::StartDeliveryStreamEncryption(const StartDeliveryStreamEncryptionRequest& request) const
@@ -294,14 +294,14 @@ StartDeliveryStreamEncryptionOutcomeCallable FirehoseClient::StartDeliveryStream
   return task->get_future();
 }
 
-void FirehoseClient::StartDeliveryStreamEncryptionAsync(const StartDeliveryStreamEncryptionRequest& request, const StartDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientStartDeliveryStreamEncryptionAsyncHelper(FirehoseClient const * const clientThis, const StartDeliveryStreamEncryptionRequest& request, const StartDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDeliveryStreamEncryptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDeliveryStreamEncryption(request), context);
 }
 
-void FirehoseClient::StartDeliveryStreamEncryptionAsyncHelper(const StartDeliveryStreamEncryptionRequest& request, const StartDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::StartDeliveryStreamEncryptionAsync(const StartDeliveryStreamEncryptionRequest& request, const StartDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDeliveryStreamEncryption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientStartDeliveryStreamEncryptionAsyncHelper( this, request, handler, context ); } );
 }
 
 StopDeliveryStreamEncryptionOutcome FirehoseClient::StopDeliveryStreamEncryption(const StopDeliveryStreamEncryptionRequest& request) const
@@ -318,14 +318,14 @@ StopDeliveryStreamEncryptionOutcomeCallable FirehoseClient::StopDeliveryStreamEn
   return task->get_future();
 }
 
-void FirehoseClient::StopDeliveryStreamEncryptionAsync(const StopDeliveryStreamEncryptionRequest& request, const StopDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientStopDeliveryStreamEncryptionAsyncHelper(FirehoseClient const * const clientThis, const StopDeliveryStreamEncryptionRequest& request, const StopDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopDeliveryStreamEncryptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopDeliveryStreamEncryption(request), context);
 }
 
-void FirehoseClient::StopDeliveryStreamEncryptionAsyncHelper(const StopDeliveryStreamEncryptionRequest& request, const StopDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::StopDeliveryStreamEncryptionAsync(const StopDeliveryStreamEncryptionRequest& request, const StopDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopDeliveryStreamEncryption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientStopDeliveryStreamEncryptionAsyncHelper( this, request, handler, context ); } );
 }
 
 TagDeliveryStreamOutcome FirehoseClient::TagDeliveryStream(const TagDeliveryStreamRequest& request) const
@@ -342,14 +342,14 @@ TagDeliveryStreamOutcomeCallable FirehoseClient::TagDeliveryStreamCallable(const
   return task->get_future();
 }
 
-void FirehoseClient::TagDeliveryStreamAsync(const TagDeliveryStreamRequest& request, const TagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientTagDeliveryStreamAsyncHelper(FirehoseClient const * const clientThis, const TagDeliveryStreamRequest& request, const TagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagDeliveryStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagDeliveryStream(request), context);
 }
 
-void FirehoseClient::TagDeliveryStreamAsyncHelper(const TagDeliveryStreamRequest& request, const TagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::TagDeliveryStreamAsync(const TagDeliveryStreamRequest& request, const TagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagDeliveryStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientTagDeliveryStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagDeliveryStreamOutcome FirehoseClient::UntagDeliveryStream(const UntagDeliveryStreamRequest& request) const
@@ -366,14 +366,14 @@ UntagDeliveryStreamOutcomeCallable FirehoseClient::UntagDeliveryStreamCallable(c
   return task->get_future();
 }
 
-void FirehoseClient::UntagDeliveryStreamAsync(const UntagDeliveryStreamRequest& request, const UntagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientUntagDeliveryStreamAsyncHelper(FirehoseClient const * const clientThis, const UntagDeliveryStreamRequest& request, const UntagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagDeliveryStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagDeliveryStream(request), context);
 }
 
-void FirehoseClient::UntagDeliveryStreamAsyncHelper(const UntagDeliveryStreamRequest& request, const UntagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::UntagDeliveryStreamAsync(const UntagDeliveryStreamRequest& request, const UntagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagDeliveryStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientUntagDeliveryStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDestinationOutcome FirehoseClient::UpdateDestination(const UpdateDestinationRequest& request) const
@@ -390,13 +390,13 @@ UpdateDestinationOutcomeCallable FirehoseClient::UpdateDestinationCallable(const
   return task->get_future();
 }
 
-void FirehoseClient::UpdateDestinationAsync(const UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClientUpdateDestinationAsyncHelper(FirehoseClient const * const clientThis, const UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDestination(request), context);
 }
 
-void FirehoseClient::UpdateDestinationAsyncHelper(const UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FirehoseClient::UpdateDestinationAsync(const UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FirehoseClientUpdateDestinationAsyncHelper( this, request, handler, context ); } );
 }
 

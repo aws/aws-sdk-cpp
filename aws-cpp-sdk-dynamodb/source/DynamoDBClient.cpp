@@ -207,14 +207,14 @@ BatchExecuteStatementOutcomeCallable DynamoDBClient::BatchExecuteStatementCallab
   return task->get_future();
 }
 
-void DynamoDBClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientBatchExecuteStatementAsyncHelper(DynamoDBClient const * const clientThis, const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchExecuteStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchExecuteStatement(request), context);
 }
 
-void DynamoDBClient::BatchExecuteStatementAsyncHelper(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchExecuteStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientBatchExecuteStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& request) const
@@ -258,14 +258,14 @@ BatchGetItemOutcomeCallable DynamoDBClient::BatchGetItemCallable(const BatchGetI
   return task->get_future();
 }
 
-void DynamoDBClient::BatchGetItemAsync(const BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientBatchGetItemAsyncHelper(DynamoDBClient const * const clientThis, const BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetItem(request), context);
 }
 
-void DynamoDBClient::BatchGetItemAsyncHelper(const BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::BatchGetItemAsync(const BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientBatchGetItemAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest& request) const
@@ -309,14 +309,14 @@ BatchWriteItemOutcomeCallable DynamoDBClient::BatchWriteItemCallable(const Batch
   return task->get_future();
 }
 
-void DynamoDBClient::BatchWriteItemAsync(const BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientBatchWriteItemAsyncHelper(DynamoDBClient const * const clientThis, const BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchWriteItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchWriteItem(request), context);
 }
 
-void DynamoDBClient::BatchWriteItemAsyncHelper(const BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::BatchWriteItemAsync(const BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchWriteItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientBatchWriteItemAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& request) const
@@ -360,14 +360,14 @@ CreateBackupOutcomeCallable DynamoDBClient::CreateBackupCallable(const CreateBac
   return task->get_future();
 }
 
-void DynamoDBClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientCreateBackupAsyncHelper(DynamoDBClient const * const clientThis, const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackup(request), context);
 }
 
-void DynamoDBClient::CreateBackupAsyncHelper(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientCreateBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTableRequest& request) const
@@ -411,14 +411,14 @@ CreateGlobalTableOutcomeCallable DynamoDBClient::CreateGlobalTableCallable(const
   return task->get_future();
 }
 
-void DynamoDBClient::CreateGlobalTableAsync(const CreateGlobalTableRequest& request, const CreateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientCreateGlobalTableAsyncHelper(DynamoDBClient const * const clientThis, const CreateGlobalTableRequest& request, const CreateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGlobalTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGlobalTable(request), context);
 }
 
-void DynamoDBClient::CreateGlobalTableAsyncHelper(const CreateGlobalTableRequest& request, const CreateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::CreateGlobalTableAsync(const CreateGlobalTableRequest& request, const CreateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGlobalTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientCreateGlobalTableAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request) const
@@ -462,14 +462,14 @@ CreateTableOutcomeCallable DynamoDBClient::CreateTableCallable(const CreateTable
   return task->get_future();
 }
 
-void DynamoDBClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientCreateTableAsyncHelper(DynamoDBClient const * const clientThis, const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTable(request), context);
 }
 
-void DynamoDBClient::CreateTableAsyncHelper(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientCreateTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& request) const
@@ -513,14 +513,14 @@ DeleteBackupOutcomeCallable DynamoDBClient::DeleteBackupCallable(const DeleteBac
   return task->get_future();
 }
 
-void DynamoDBClient::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDeleteBackupAsyncHelper(DynamoDBClient const * const clientThis, const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackup(request), context);
 }
 
-void DynamoDBClient::DeleteBackupAsyncHelper(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDeleteBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) const
@@ -564,14 +564,14 @@ DeleteItemOutcomeCallable DynamoDBClient::DeleteItemCallable(const DeleteItemReq
   return task->get_future();
 }
 
-void DynamoDBClient::DeleteItemAsync(const DeleteItemRequest& request, const DeleteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDeleteItemAsyncHelper(DynamoDBClient const * const clientThis, const DeleteItemRequest& request, const DeleteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteItem(request), context);
 }
 
-void DynamoDBClient::DeleteItemAsyncHelper(const DeleteItemRequest& request, const DeleteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DeleteItemAsync(const DeleteItemRequest& request, const DeleteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDeleteItemAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request) const
@@ -615,14 +615,14 @@ DeleteTableOutcomeCallable DynamoDBClient::DeleteTableCallable(const DeleteTable
   return task->get_future();
 }
 
-void DynamoDBClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDeleteTableAsyncHelper(DynamoDBClient const * const clientThis, const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTable(request), context);
 }
 
-void DynamoDBClient::DeleteTableAsyncHelper(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDeleteTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest& request) const
@@ -666,14 +666,14 @@ DescribeBackupOutcomeCallable DynamoDBClient::DescribeBackupCallable(const Descr
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeBackupAsync(const DescribeBackupRequest& request, const DescribeBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeBackupAsyncHelper(DynamoDBClient const * const clientThis, const DescribeBackupRequest& request, const DescribeBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBackup(request), context);
 }
 
-void DynamoDBClient::DescribeBackupAsyncHelper(const DescribeBackupRequest& request, const DescribeBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeBackupAsync(const DescribeBackupRequest& request, const DescribeBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const DescribeContinuousBackupsRequest& request) const
@@ -717,14 +717,14 @@ DescribeContinuousBackupsOutcomeCallable DynamoDBClient::DescribeContinuousBacku
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeContinuousBackupsAsync(const DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeContinuousBackupsAsyncHelper(DynamoDBClient const * const clientThis, const DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeContinuousBackupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeContinuousBackups(request), context);
 }
 
-void DynamoDBClient::DescribeContinuousBackupsAsyncHelper(const DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeContinuousBackupsAsync(const DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeContinuousBackups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeContinuousBackupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeContributorInsightsOutcome DynamoDBClient::DescribeContributorInsights(const DescribeContributorInsightsRequest& request) const
@@ -741,14 +741,14 @@ DescribeContributorInsightsOutcomeCallable DynamoDBClient::DescribeContributorIn
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeContributorInsightsAsync(const DescribeContributorInsightsRequest& request, const DescribeContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeContributorInsightsAsyncHelper(DynamoDBClient const * const clientThis, const DescribeContributorInsightsRequest& request, const DescribeContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeContributorInsightsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeContributorInsights(request), context);
 }
 
-void DynamoDBClient::DescribeContributorInsightsAsyncHelper(const DescribeContributorInsightsRequest& request, const DescribeContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeContributorInsightsAsync(const DescribeContributorInsightsRequest& request, const DescribeContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeContributorInsights(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeContributorInsightsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEndpointsOutcome DynamoDBClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
@@ -765,14 +765,14 @@ DescribeEndpointsOutcomeCallable DynamoDBClient::DescribeEndpointsCallable(const
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeEndpointsAsyncHelper(DynamoDBClient const * const clientThis, const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEndpoints(request), context);
 }
 
-void DynamoDBClient::DescribeEndpointsAsyncHelper(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExportOutcome DynamoDBClient::DescribeExport(const DescribeExportRequest& request) const
@@ -789,14 +789,14 @@ DescribeExportOutcomeCallable DynamoDBClient::DescribeExportCallable(const Descr
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeExportAsync(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeExportAsyncHelper(DynamoDBClient const * const clientThis, const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExport(request), context);
 }
 
-void DynamoDBClient::DescribeExportAsyncHelper(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeExportAsync(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeExportAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlobalTableRequest& request) const
@@ -840,14 +840,14 @@ DescribeGlobalTableOutcomeCallable DynamoDBClient::DescribeGlobalTableCallable(c
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeGlobalTableAsync(const DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeGlobalTableAsyncHelper(DynamoDBClient const * const clientThis, const DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGlobalTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGlobalTable(request), context);
 }
 
-void DynamoDBClient::DescribeGlobalTableAsyncHelper(const DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeGlobalTableAsync(const DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGlobalTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeGlobalTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(const DescribeGlobalTableSettingsRequest& request) const
@@ -891,14 +891,14 @@ DescribeGlobalTableSettingsOutcomeCallable DynamoDBClient::DescribeGlobalTableSe
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeGlobalTableSettingsAsync(const DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeGlobalTableSettingsAsyncHelper(DynamoDBClient const * const clientThis, const DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGlobalTableSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGlobalTableSettings(request), context);
 }
 
-void DynamoDBClient::DescribeGlobalTableSettingsAsyncHelper(const DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeGlobalTableSettingsAsync(const DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGlobalTableSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeGlobalTableSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImportOutcome DynamoDBClient::DescribeImport(const DescribeImportRequest& request) const
@@ -915,14 +915,14 @@ DescribeImportOutcomeCallable DynamoDBClient::DescribeImportCallable(const Descr
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeImportAsync(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeImportAsyncHelper(DynamoDBClient const * const clientThis, const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImport(request), context);
 }
 
-void DynamoDBClient::DescribeImportAsyncHelper(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeImportAsync(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeImportAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStreamingDestination(const DescribeKinesisStreamingDestinationRequest& request) const
@@ -966,14 +966,14 @@ DescribeKinesisStreamingDestinationOutcomeCallable DynamoDBClient::DescribeKines
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeKinesisStreamingDestinationAsync(const DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeKinesisStreamingDestinationAsyncHelper(DynamoDBClient const * const clientThis, const DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeKinesisStreamingDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeKinesisStreamingDestination(request), context);
 }
 
-void DynamoDBClient::DescribeKinesisStreamingDestinationAsyncHelper(const DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeKinesisStreamingDestinationAsync(const DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeKinesisStreamingDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeKinesisStreamingDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest& request) const
@@ -1017,14 +1017,14 @@ DescribeLimitsOutcomeCallable DynamoDBClient::DescribeLimitsCallable(const Descr
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeLimitsAsync(const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeLimitsAsyncHelper(DynamoDBClient const * const clientThis, const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLimitsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLimits(request), context);
 }
 
-void DynamoDBClient::DescribeLimitsAsyncHelper(const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeLimitsAsync(const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLimits(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeLimitsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& request) const
@@ -1068,14 +1068,14 @@ DescribeTableOutcomeCallable DynamoDBClient::DescribeTableCallable(const Describ
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeTableAsyncHelper(DynamoDBClient const * const clientThis, const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTable(request), context);
 }
 
-void DynamoDBClient::DescribeTableAsyncHelper(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeTableAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTableReplicaAutoScalingOutcome DynamoDBClient::DescribeTableReplicaAutoScaling(const DescribeTableReplicaAutoScalingRequest& request) const
@@ -1092,14 +1092,14 @@ DescribeTableReplicaAutoScalingOutcomeCallable DynamoDBClient::DescribeTableRepl
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeTableReplicaAutoScalingAsync(const DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeTableReplicaAutoScalingAsyncHelper(DynamoDBClient const * const clientThis, const DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTableReplicaAutoScalingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTableReplicaAutoScaling(request), context);
 }
 
-void DynamoDBClient::DescribeTableReplicaAutoScalingAsyncHelper(const DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeTableReplicaAutoScalingAsync(const DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTableReplicaAutoScaling(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeTableReplicaAutoScalingAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeToLiveRequest& request) const
@@ -1143,14 +1143,14 @@ DescribeTimeToLiveOutcomeCallable DynamoDBClient::DescribeTimeToLiveCallable(con
   return task->get_future();
 }
 
-void DynamoDBClient::DescribeTimeToLiveAsync(const DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDescribeTimeToLiveAsyncHelper(DynamoDBClient const * const clientThis, const DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTimeToLiveAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTimeToLive(request), context);
 }
 
-void DynamoDBClient::DescribeTimeToLiveAsyncHelper(const DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DescribeTimeToLiveAsync(const DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTimeToLive(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDescribeTimeToLiveAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamingDestination(const DisableKinesisStreamingDestinationRequest& request) const
@@ -1194,14 +1194,14 @@ DisableKinesisStreamingDestinationOutcomeCallable DynamoDBClient::DisableKinesis
   return task->get_future();
 }
 
-void DynamoDBClient::DisableKinesisStreamingDestinationAsync(const DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientDisableKinesisStreamingDestinationAsyncHelper(DynamoDBClient const * const clientThis, const DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableKinesisStreamingDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableKinesisStreamingDestination(request), context);
 }
 
-void DynamoDBClient::DisableKinesisStreamingDestinationAsyncHelper(const DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::DisableKinesisStreamingDestinationAsync(const DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableKinesisStreamingDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientDisableKinesisStreamingDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingDestination(const EnableKinesisStreamingDestinationRequest& request) const
@@ -1245,14 +1245,14 @@ EnableKinesisStreamingDestinationOutcomeCallable DynamoDBClient::EnableKinesisSt
   return task->get_future();
 }
 
-void DynamoDBClient::EnableKinesisStreamingDestinationAsync(const EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientEnableKinesisStreamingDestinationAsyncHelper(DynamoDBClient const * const clientThis, const EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableKinesisStreamingDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableKinesisStreamingDestination(request), context);
 }
 
-void DynamoDBClient::EnableKinesisStreamingDestinationAsyncHelper(const EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::EnableKinesisStreamingDestinationAsync(const EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableKinesisStreamingDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientEnableKinesisStreamingDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 ExecuteStatementOutcome DynamoDBClient::ExecuteStatement(const ExecuteStatementRequest& request) const
@@ -1269,14 +1269,14 @@ ExecuteStatementOutcomeCallable DynamoDBClient::ExecuteStatementCallable(const E
   return task->get_future();
 }
 
-void DynamoDBClient::ExecuteStatementAsync(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientExecuteStatementAsyncHelper(DynamoDBClient const * const clientThis, const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExecuteStatement(request), context);
 }
 
-void DynamoDBClient::ExecuteStatementAsyncHelper(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ExecuteStatementAsync(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExecuteStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientExecuteStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 ExecuteTransactionOutcome DynamoDBClient::ExecuteTransaction(const ExecuteTransactionRequest& request) const
@@ -1293,14 +1293,14 @@ ExecuteTransactionOutcomeCallable DynamoDBClient::ExecuteTransactionCallable(con
   return task->get_future();
 }
 
-void DynamoDBClient::ExecuteTransactionAsync(const ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientExecuteTransactionAsyncHelper(DynamoDBClient const * const clientThis, const ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteTransactionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExecuteTransaction(request), context);
 }
 
-void DynamoDBClient::ExecuteTransactionAsyncHelper(const ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ExecuteTransactionAsync(const ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExecuteTransaction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientExecuteTransactionAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportTableToPointInTimeOutcome DynamoDBClient::ExportTableToPointInTime(const ExportTableToPointInTimeRequest& request) const
@@ -1317,14 +1317,14 @@ ExportTableToPointInTimeOutcomeCallable DynamoDBClient::ExportTableToPointInTime
   return task->get_future();
 }
 
-void DynamoDBClient::ExportTableToPointInTimeAsync(const ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientExportTableToPointInTimeAsyncHelper(DynamoDBClient const * const clientThis, const ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportTableToPointInTimeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportTableToPointInTime(request), context);
 }
 
-void DynamoDBClient::ExportTableToPointInTimeAsyncHelper(const ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ExportTableToPointInTimeAsync(const ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportTableToPointInTime(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientExportTableToPointInTimeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
@@ -1368,14 +1368,14 @@ GetItemOutcomeCallable DynamoDBClient::GetItemCallable(const GetItemRequest& req
   return task->get_future();
 }
 
-void DynamoDBClient::GetItemAsync(const GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientGetItemAsyncHelper(DynamoDBClient const * const clientThis, const GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetItem(request), context);
 }
 
-void DynamoDBClient::GetItemAsyncHelper(const GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::GetItemAsync(const GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientGetItemAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportTableOutcome DynamoDBClient::ImportTable(const ImportTableRequest& request) const
@@ -1392,14 +1392,14 @@ ImportTableOutcomeCallable DynamoDBClient::ImportTableCallable(const ImportTable
   return task->get_future();
 }
 
-void DynamoDBClient::ImportTableAsync(const ImportTableRequest& request, const ImportTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientImportTableAsyncHelper(DynamoDBClient const * const clientThis, const ImportTableRequest& request, const ImportTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportTable(request), context);
 }
 
-void DynamoDBClient::ImportTableAsyncHelper(const ImportTableRequest& request, const ImportTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ImportTableAsync(const ImportTableRequest& request, const ImportTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientImportTableAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request) const
@@ -1443,14 +1443,14 @@ ListBackupsOutcomeCallable DynamoDBClient::ListBackupsCallable(const ListBackups
   return task->get_future();
 }
 
-void DynamoDBClient::ListBackupsAsync(const ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientListBackupsAsyncHelper(DynamoDBClient const * const clientThis, const ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBackups(request), context);
 }
 
-void DynamoDBClient::ListBackupsAsyncHelper(const ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ListBackupsAsync(const ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBackups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientListBackupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListContributorInsightsOutcome DynamoDBClient::ListContributorInsights(const ListContributorInsightsRequest& request) const
@@ -1467,14 +1467,14 @@ ListContributorInsightsOutcomeCallable DynamoDBClient::ListContributorInsightsCa
   return task->get_future();
 }
 
-void DynamoDBClient::ListContributorInsightsAsync(const ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientListContributorInsightsAsyncHelper(DynamoDBClient const * const clientThis, const ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContributorInsightsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListContributorInsights(request), context);
 }
 
-void DynamoDBClient::ListContributorInsightsAsyncHelper(const ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ListContributorInsightsAsync(const ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListContributorInsights(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientListContributorInsightsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExportsOutcome DynamoDBClient::ListExports(const ListExportsRequest& request) const
@@ -1491,14 +1491,14 @@ ListExportsOutcomeCallable DynamoDBClient::ListExportsCallable(const ListExports
   return task->get_future();
 }
 
-void DynamoDBClient::ListExportsAsync(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientListExportsAsyncHelper(DynamoDBClient const * const clientThis, const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExports(request), context);
 }
 
-void DynamoDBClient::ListExportsAsyncHelper(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ListExportsAsync(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientListExportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesRequest& request) const
@@ -1542,14 +1542,14 @@ ListGlobalTablesOutcomeCallable DynamoDBClient::ListGlobalTablesCallable(const L
   return task->get_future();
 }
 
-void DynamoDBClient::ListGlobalTablesAsync(const ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientListGlobalTablesAsyncHelper(DynamoDBClient const * const clientThis, const ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGlobalTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGlobalTables(request), context);
 }
 
-void DynamoDBClient::ListGlobalTablesAsyncHelper(const ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ListGlobalTablesAsync(const ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGlobalTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientListGlobalTablesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListImportsOutcome DynamoDBClient::ListImports(const ListImportsRequest& request) const
@@ -1566,14 +1566,14 @@ ListImportsOutcomeCallable DynamoDBClient::ListImportsCallable(const ListImports
   return task->get_future();
 }
 
-void DynamoDBClient::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientListImportsAsyncHelper(DynamoDBClient const * const clientThis, const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListImports(request), context);
 }
 
-void DynamoDBClient::ListImportsAsyncHelper(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListImports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientListImportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) const
@@ -1617,14 +1617,14 @@ ListTablesOutcomeCallable DynamoDBClient::ListTablesCallable(const ListTablesReq
   return task->get_future();
 }
 
-void DynamoDBClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientListTablesAsyncHelper(DynamoDBClient const * const clientThis, const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTablesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTables(request), context);
 }
 
-void DynamoDBClient::ListTablesAsyncHelper(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTables(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientListTablesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfResourceRequest& request) const
@@ -1668,14 +1668,14 @@ ListTagsOfResourceOutcomeCallable DynamoDBClient::ListTagsOfResourceCallable(con
   return task->get_future();
 }
 
-void DynamoDBClient::ListTagsOfResourceAsync(const ListTagsOfResourceRequest& request, const ListTagsOfResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientListTagsOfResourceAsyncHelper(DynamoDBClient const * const clientThis, const ListTagsOfResourceRequest& request, const ListTagsOfResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsOfResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsOfResource(request), context);
 }
 
-void DynamoDBClient::ListTagsOfResourceAsyncHelper(const ListTagsOfResourceRequest& request, const ListTagsOfResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ListTagsOfResourceAsync(const ListTagsOfResourceRequest& request, const ListTagsOfResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsOfResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientListTagsOfResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
@@ -1719,14 +1719,14 @@ PutItemOutcomeCallable DynamoDBClient::PutItemCallable(const PutItemRequest& req
   return task->get_future();
 }
 
-void DynamoDBClient::PutItemAsync(const PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientPutItemAsyncHelper(DynamoDBClient const * const clientThis, const PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutItem(request), context);
 }
 
-void DynamoDBClient::PutItemAsyncHelper(const PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::PutItemAsync(const PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientPutItemAsyncHelper( this, request, handler, context ); } );
 }
 
 QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const
@@ -1770,14 +1770,14 @@ QueryOutcomeCallable DynamoDBClient::QueryCallable(const QueryRequest& request) 
   return task->get_future();
 }
 
-void DynamoDBClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientQueryAsyncHelper(DynamoDBClient const * const clientThis, const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->QueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Query(request), context);
 }
 
-void DynamoDBClient::QueryAsyncHelper(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Query(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const RestoreTableFromBackupRequest& request) const
@@ -1821,14 +1821,14 @@ RestoreTableFromBackupOutcomeCallable DynamoDBClient::RestoreTableFromBackupCall
   return task->get_future();
 }
 
-void DynamoDBClient::RestoreTableFromBackupAsync(const RestoreTableFromBackupRequest& request, const RestoreTableFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientRestoreTableFromBackupAsyncHelper(DynamoDBClient const * const clientThis, const RestoreTableFromBackupRequest& request, const RestoreTableFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreTableFromBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreTableFromBackup(request), context);
 }
 
-void DynamoDBClient::RestoreTableFromBackupAsyncHelper(const RestoreTableFromBackupRequest& request, const RestoreTableFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::RestoreTableFromBackupAsync(const RestoreTableFromBackupRequest& request, const RestoreTableFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreTableFromBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientRestoreTableFromBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const RestoreTableToPointInTimeRequest& request) const
@@ -1872,14 +1872,14 @@ RestoreTableToPointInTimeOutcomeCallable DynamoDBClient::RestoreTableToPointInTi
   return task->get_future();
 }
 
-void DynamoDBClient::RestoreTableToPointInTimeAsync(const RestoreTableToPointInTimeRequest& request, const RestoreTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientRestoreTableToPointInTimeAsyncHelper(DynamoDBClient const * const clientThis, const RestoreTableToPointInTimeRequest& request, const RestoreTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreTableToPointInTimeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreTableToPointInTime(request), context);
 }
 
-void DynamoDBClient::RestoreTableToPointInTimeAsyncHelper(const RestoreTableToPointInTimeRequest& request, const RestoreTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::RestoreTableToPointInTimeAsync(const RestoreTableToPointInTimeRequest& request, const RestoreTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreTableToPointInTime(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientRestoreTableToPointInTimeAsyncHelper( this, request, handler, context ); } );
 }
 
 ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const
@@ -1923,14 +1923,14 @@ ScanOutcomeCallable DynamoDBClient::ScanCallable(const ScanRequest& request) con
   return task->get_future();
 }
 
-void DynamoDBClient::ScanAsync(const ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientScanAsyncHelper(DynamoDBClient const * const clientThis, const ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ScanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Scan(request), context);
 }
 
-void DynamoDBClient::ScanAsyncHelper(const ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::ScanAsync(const ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Scan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientScanAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request) const
@@ -1974,14 +1974,14 @@ TagResourceOutcomeCallable DynamoDBClient::TagResourceCallable(const TagResource
   return task->get_future();
 }
 
-void DynamoDBClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientTagResourceAsyncHelper(DynamoDBClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void DynamoDBClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsRequest& request) const
@@ -2025,14 +2025,14 @@ TransactGetItemsOutcomeCallable DynamoDBClient::TransactGetItemsCallable(const T
   return task->get_future();
 }
 
-void DynamoDBClient::TransactGetItemsAsync(const TransactGetItemsRequest& request, const TransactGetItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientTransactGetItemsAsyncHelper(DynamoDBClient const * const clientThis, const TransactGetItemsRequest& request, const TransactGetItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TransactGetItemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TransactGetItems(request), context);
 }
 
-void DynamoDBClient::TransactGetItemsAsyncHelper(const TransactGetItemsRequest& request, const TransactGetItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::TransactGetItemsAsync(const TransactGetItemsRequest& request, const TransactGetItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TransactGetItems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientTransactGetItemsAsyncHelper( this, request, handler, context ); } );
 }
 
 TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWriteItemsRequest& request) const
@@ -2076,14 +2076,14 @@ TransactWriteItemsOutcomeCallable DynamoDBClient::TransactWriteItemsCallable(con
   return task->get_future();
 }
 
-void DynamoDBClient::TransactWriteItemsAsync(const TransactWriteItemsRequest& request, const TransactWriteItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientTransactWriteItemsAsyncHelper(DynamoDBClient const * const clientThis, const TransactWriteItemsRequest& request, const TransactWriteItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TransactWriteItemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TransactWriteItems(request), context);
 }
 
-void DynamoDBClient::TransactWriteItemsAsyncHelper(const TransactWriteItemsRequest& request, const TransactWriteItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::TransactWriteItemsAsync(const TransactWriteItemsRequest& request, const TransactWriteItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TransactWriteItems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientTransactWriteItemsAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& request) const
@@ -2127,14 +2127,14 @@ UntagResourceOutcomeCallable DynamoDBClient::UntagResourceCallable(const UntagRe
   return task->get_future();
 }
 
-void DynamoDBClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientUntagResourceAsyncHelper(DynamoDBClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void DynamoDBClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const UpdateContinuousBackupsRequest& request) const
@@ -2178,14 +2178,14 @@ UpdateContinuousBackupsOutcomeCallable DynamoDBClient::UpdateContinuousBackupsCa
   return task->get_future();
 }
 
-void DynamoDBClient::UpdateContinuousBackupsAsync(const UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientUpdateContinuousBackupsAsyncHelper(DynamoDBClient const * const clientThis, const UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContinuousBackupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateContinuousBackups(request), context);
 }
 
-void DynamoDBClient::UpdateContinuousBackupsAsyncHelper(const UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::UpdateContinuousBackupsAsync(const UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateContinuousBackups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientUpdateContinuousBackupsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateContributorInsightsOutcome DynamoDBClient::UpdateContributorInsights(const UpdateContributorInsightsRequest& request) const
@@ -2202,14 +2202,14 @@ UpdateContributorInsightsOutcomeCallable DynamoDBClient::UpdateContributorInsigh
   return task->get_future();
 }
 
-void DynamoDBClient::UpdateContributorInsightsAsync(const UpdateContributorInsightsRequest& request, const UpdateContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientUpdateContributorInsightsAsyncHelper(DynamoDBClient const * const clientThis, const UpdateContributorInsightsRequest& request, const UpdateContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContributorInsightsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateContributorInsights(request), context);
 }
 
-void DynamoDBClient::UpdateContributorInsightsAsyncHelper(const UpdateContributorInsightsRequest& request, const UpdateContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::UpdateContributorInsightsAsync(const UpdateContributorInsightsRequest& request, const UpdateContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateContributorInsights(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientUpdateContributorInsightsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTableRequest& request) const
@@ -2253,14 +2253,14 @@ UpdateGlobalTableOutcomeCallable DynamoDBClient::UpdateGlobalTableCallable(const
   return task->get_future();
 }
 
-void DynamoDBClient::UpdateGlobalTableAsync(const UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientUpdateGlobalTableAsyncHelper(DynamoDBClient const * const clientThis, const UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGlobalTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGlobalTable(request), context);
 }
 
-void DynamoDBClient::UpdateGlobalTableAsyncHelper(const UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::UpdateGlobalTableAsync(const UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGlobalTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientUpdateGlobalTableAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const UpdateGlobalTableSettingsRequest& request) const
@@ -2304,14 +2304,14 @@ UpdateGlobalTableSettingsOutcomeCallable DynamoDBClient::UpdateGlobalTableSettin
   return task->get_future();
 }
 
-void DynamoDBClient::UpdateGlobalTableSettingsAsync(const UpdateGlobalTableSettingsRequest& request, const UpdateGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientUpdateGlobalTableSettingsAsyncHelper(DynamoDBClient const * const clientThis, const UpdateGlobalTableSettingsRequest& request, const UpdateGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGlobalTableSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGlobalTableSettings(request), context);
 }
 
-void DynamoDBClient::UpdateGlobalTableSettingsAsyncHelper(const UpdateGlobalTableSettingsRequest& request, const UpdateGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::UpdateGlobalTableSettingsAsync(const UpdateGlobalTableSettingsRequest& request, const UpdateGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGlobalTableSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientUpdateGlobalTableSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) const
@@ -2355,14 +2355,14 @@ UpdateItemOutcomeCallable DynamoDBClient::UpdateItemCallable(const UpdateItemReq
   return task->get_future();
 }
 
-void DynamoDBClient::UpdateItemAsync(const UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientUpdateItemAsyncHelper(DynamoDBClient const * const clientThis, const UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateItem(request), context);
 }
 
-void DynamoDBClient::UpdateItemAsyncHelper(const UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::UpdateItemAsync(const UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientUpdateItemAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request) const
@@ -2406,14 +2406,14 @@ UpdateTableOutcomeCallable DynamoDBClient::UpdateTableCallable(const UpdateTable
   return task->get_future();
 }
 
-void DynamoDBClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientUpdateTableAsyncHelper(DynamoDBClient const * const clientThis, const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTableAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTable(request), context);
 }
 
-void DynamoDBClient::UpdateTableAsyncHelper(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTable(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientUpdateTableAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTableReplicaAutoScalingOutcome DynamoDBClient::UpdateTableReplicaAutoScaling(const UpdateTableReplicaAutoScalingRequest& request) const
@@ -2430,14 +2430,14 @@ UpdateTableReplicaAutoScalingOutcomeCallable DynamoDBClient::UpdateTableReplicaA
   return task->get_future();
 }
 
-void DynamoDBClient::UpdateTableReplicaAutoScalingAsync(const UpdateTableReplicaAutoScalingRequest& request, const UpdateTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientUpdateTableReplicaAutoScalingAsyncHelper(DynamoDBClient const * const clientThis, const UpdateTableReplicaAutoScalingRequest& request, const UpdateTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTableReplicaAutoScalingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTableReplicaAutoScaling(request), context);
 }
 
-void DynamoDBClient::UpdateTableReplicaAutoScalingAsyncHelper(const UpdateTableReplicaAutoScalingRequest& request, const UpdateTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::UpdateTableReplicaAutoScalingAsync(const UpdateTableReplicaAutoScalingRequest& request, const UpdateTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTableReplicaAutoScaling(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientUpdateTableReplicaAutoScalingAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveRequest& request) const
@@ -2481,13 +2481,13 @@ UpdateTimeToLiveOutcomeCallable DynamoDBClient::UpdateTimeToLiveCallable(const U
   return task->get_future();
 }
 
-void DynamoDBClient::UpdateTimeToLiveAsync(const UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClientUpdateTimeToLiveAsyncHelper(DynamoDBClient const * const clientThis, const UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTimeToLiveAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTimeToLive(request), context);
 }
 
-void DynamoDBClient::UpdateTimeToLiveAsyncHelper(const UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DynamoDBClient::UpdateTimeToLiveAsync(const UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTimeToLive(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DynamoDBClientUpdateTimeToLiveAsyncHelper( this, request, handler, context ); } );
 }
 

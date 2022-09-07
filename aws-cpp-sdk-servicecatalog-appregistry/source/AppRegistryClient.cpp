@@ -150,14 +150,14 @@ AssociateAttributeGroupOutcomeCallable AppRegistryClient::AssociateAttributeGrou
   return task->get_future();
 }
 
-void AppRegistryClient::AssociateAttributeGroupAsync(const AssociateAttributeGroupRequest& request, const AssociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientAssociateAttributeGroupAsyncHelper(AppRegistryClient const * const clientThis, const AssociateAttributeGroupRequest& request, const AssociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateAttributeGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateAttributeGroup(request), context);
 }
 
-void AppRegistryClient::AssociateAttributeGroupAsyncHelper(const AssociateAttributeGroupRequest& request, const AssociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::AssociateAttributeGroupAsync(const AssociateAttributeGroupRequest& request, const AssociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateAttributeGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientAssociateAttributeGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateResourceOutcome AppRegistryClient::AssociateResource(const AssociateResourceRequest& request) const
@@ -194,14 +194,14 @@ AssociateResourceOutcomeCallable AppRegistryClient::AssociateResourceCallable(co
   return task->get_future();
 }
 
-void AppRegistryClient::AssociateResourceAsync(const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientAssociateResourceAsyncHelper(AppRegistryClient const * const clientThis, const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateResource(request), context);
 }
 
-void AppRegistryClient::AssociateResourceAsyncHelper(const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::AssociateResourceAsync(const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientAssociateResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateApplicationOutcome AppRegistryClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -219,14 +219,14 @@ CreateApplicationOutcomeCallable AppRegistryClient::CreateApplicationCallable(co
   return task->get_future();
 }
 
-void AppRegistryClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientCreateApplicationAsyncHelper(AppRegistryClient const * const clientThis, const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplication(request), context);
 }
 
-void AppRegistryClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientCreateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAttributeGroupOutcome AppRegistryClient::CreateAttributeGroup(const CreateAttributeGroupRequest& request) const
@@ -244,14 +244,14 @@ CreateAttributeGroupOutcomeCallable AppRegistryClient::CreateAttributeGroupCalla
   return task->get_future();
 }
 
-void AppRegistryClient::CreateAttributeGroupAsync(const CreateAttributeGroupRequest& request, const CreateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientCreateAttributeGroupAsyncHelper(AppRegistryClient const * const clientThis, const CreateAttributeGroupRequest& request, const CreateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAttributeGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAttributeGroup(request), context);
 }
 
-void AppRegistryClient::CreateAttributeGroupAsyncHelper(const CreateAttributeGroupRequest& request, const CreateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::CreateAttributeGroupAsync(const CreateAttributeGroupRequest& request, const CreateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAttributeGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientCreateAttributeGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationOutcome AppRegistryClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -275,14 +275,14 @@ DeleteApplicationOutcomeCallable AppRegistryClient::DeleteApplicationCallable(co
   return task->get_future();
 }
 
-void AppRegistryClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientDeleteApplicationAsyncHelper(AppRegistryClient const * const clientThis, const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplication(request), context);
 }
 
-void AppRegistryClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientDeleteApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAttributeGroupOutcome AppRegistryClient::DeleteAttributeGroup(const DeleteAttributeGroupRequest& request) const
@@ -306,14 +306,14 @@ DeleteAttributeGroupOutcomeCallable AppRegistryClient::DeleteAttributeGroupCalla
   return task->get_future();
 }
 
-void AppRegistryClient::DeleteAttributeGroupAsync(const DeleteAttributeGroupRequest& request, const DeleteAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientDeleteAttributeGroupAsyncHelper(AppRegistryClient const * const clientThis, const DeleteAttributeGroupRequest& request, const DeleteAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAttributeGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAttributeGroup(request), context);
 }
 
-void AppRegistryClient::DeleteAttributeGroupAsyncHelper(const DeleteAttributeGroupRequest& request, const DeleteAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::DeleteAttributeGroupAsync(const DeleteAttributeGroupRequest& request, const DeleteAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAttributeGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientDeleteAttributeGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateAttributeGroupOutcome AppRegistryClient::DisassociateAttributeGroup(const DisassociateAttributeGroupRequest& request) const
@@ -344,14 +344,14 @@ DisassociateAttributeGroupOutcomeCallable AppRegistryClient::DisassociateAttribu
   return task->get_future();
 }
 
-void AppRegistryClient::DisassociateAttributeGroupAsync(const DisassociateAttributeGroupRequest& request, const DisassociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientDisassociateAttributeGroupAsyncHelper(AppRegistryClient const * const clientThis, const DisassociateAttributeGroupRequest& request, const DisassociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateAttributeGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateAttributeGroup(request), context);
 }
 
-void AppRegistryClient::DisassociateAttributeGroupAsyncHelper(const DisassociateAttributeGroupRequest& request, const DisassociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::DisassociateAttributeGroupAsync(const DisassociateAttributeGroupRequest& request, const DisassociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateAttributeGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientDisassociateAttributeGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateResourceOutcome AppRegistryClient::DisassociateResource(const DisassociateResourceRequest& request) const
@@ -388,14 +388,14 @@ DisassociateResourceOutcomeCallable AppRegistryClient::DisassociateResourceCalla
   return task->get_future();
 }
 
-void AppRegistryClient::DisassociateResourceAsync(const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientDisassociateResourceAsyncHelper(AppRegistryClient const * const clientThis, const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateResource(request), context);
 }
 
-void AppRegistryClient::DisassociateResourceAsyncHelper(const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::DisassociateResourceAsync(const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientDisassociateResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApplicationOutcome AppRegistryClient::GetApplication(const GetApplicationRequest& request) const
@@ -419,14 +419,14 @@ GetApplicationOutcomeCallable AppRegistryClient::GetApplicationCallable(const Ge
   return task->get_future();
 }
 
-void AppRegistryClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientGetApplicationAsyncHelper(AppRegistryClient const * const clientThis, const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApplication(request), context);
 }
 
-void AppRegistryClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientGetApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssociatedResourceOutcome AppRegistryClient::GetAssociatedResource(const GetAssociatedResourceRequest& request) const
@@ -463,14 +463,14 @@ GetAssociatedResourceOutcomeCallable AppRegistryClient::GetAssociatedResourceCal
   return task->get_future();
 }
 
-void AppRegistryClient::GetAssociatedResourceAsync(const GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientGetAssociatedResourceAsyncHelper(AppRegistryClient const * const clientThis, const GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssociatedResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssociatedResource(request), context);
 }
 
-void AppRegistryClient::GetAssociatedResourceAsyncHelper(const GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::GetAssociatedResourceAsync(const GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssociatedResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientGetAssociatedResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAttributeGroupOutcome AppRegistryClient::GetAttributeGroup(const GetAttributeGroupRequest& request) const
@@ -494,14 +494,14 @@ GetAttributeGroupOutcomeCallable AppRegistryClient::GetAttributeGroupCallable(co
   return task->get_future();
 }
 
-void AppRegistryClient::GetAttributeGroupAsync(const GetAttributeGroupRequest& request, const GetAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientGetAttributeGroupAsyncHelper(AppRegistryClient const * const clientThis, const GetAttributeGroupRequest& request, const GetAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAttributeGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAttributeGroup(request), context);
 }
 
-void AppRegistryClient::GetAttributeGroupAsyncHelper(const GetAttributeGroupRequest& request, const GetAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::GetAttributeGroupAsync(const GetAttributeGroupRequest& request, const GetAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAttributeGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientGetAttributeGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationsOutcome AppRegistryClient::ListApplications(const ListApplicationsRequest& request) const
@@ -519,14 +519,14 @@ ListApplicationsOutcomeCallable AppRegistryClient::ListApplicationsCallable(cons
   return task->get_future();
 }
 
-void AppRegistryClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientListApplicationsAsyncHelper(AppRegistryClient const * const clientThis, const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplications(request), context);
 }
 
-void AppRegistryClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientListApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssociatedAttributeGroupsOutcome AppRegistryClient::ListAssociatedAttributeGroups(const ListAssociatedAttributeGroupsRequest& request) const
@@ -551,14 +551,14 @@ ListAssociatedAttributeGroupsOutcomeCallable AppRegistryClient::ListAssociatedAt
   return task->get_future();
 }
 
-void AppRegistryClient::ListAssociatedAttributeGroupsAsync(const ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientListAssociatedAttributeGroupsAsyncHelper(AppRegistryClient const * const clientThis, const ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssociatedAttributeGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssociatedAttributeGroups(request), context);
 }
 
-void AppRegistryClient::ListAssociatedAttributeGroupsAsyncHelper(const ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::ListAssociatedAttributeGroupsAsync(const ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssociatedAttributeGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientListAssociatedAttributeGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssociatedResourcesOutcome AppRegistryClient::ListAssociatedResources(const ListAssociatedResourcesRequest& request) const
@@ -583,14 +583,14 @@ ListAssociatedResourcesOutcomeCallable AppRegistryClient::ListAssociatedResource
   return task->get_future();
 }
 
-void AppRegistryClient::ListAssociatedResourcesAsync(const ListAssociatedResourcesRequest& request, const ListAssociatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientListAssociatedResourcesAsyncHelper(AppRegistryClient const * const clientThis, const ListAssociatedResourcesRequest& request, const ListAssociatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssociatedResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssociatedResources(request), context);
 }
 
-void AppRegistryClient::ListAssociatedResourcesAsyncHelper(const ListAssociatedResourcesRequest& request, const ListAssociatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::ListAssociatedResourcesAsync(const ListAssociatedResourcesRequest& request, const ListAssociatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssociatedResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientListAssociatedResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAttributeGroupsOutcome AppRegistryClient::ListAttributeGroups(const ListAttributeGroupsRequest& request) const
@@ -608,14 +608,14 @@ ListAttributeGroupsOutcomeCallable AppRegistryClient::ListAttributeGroupsCallabl
   return task->get_future();
 }
 
-void AppRegistryClient::ListAttributeGroupsAsync(const ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientListAttributeGroupsAsyncHelper(AppRegistryClient const * const clientThis, const ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAttributeGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAttributeGroups(request), context);
 }
 
-void AppRegistryClient::ListAttributeGroupsAsyncHelper(const ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::ListAttributeGroupsAsync(const ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAttributeGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientListAttributeGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAttributeGroupsForApplicationOutcome AppRegistryClient::ListAttributeGroupsForApplication(const ListAttributeGroupsForApplicationRequest& request) const
@@ -640,14 +640,14 @@ ListAttributeGroupsForApplicationOutcomeCallable AppRegistryClient::ListAttribut
   return task->get_future();
 }
 
-void AppRegistryClient::ListAttributeGroupsForApplicationAsync(const ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientListAttributeGroupsForApplicationAsyncHelper(AppRegistryClient const * const clientThis, const ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAttributeGroupsForApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAttributeGroupsForApplication(request), context);
 }
 
-void AppRegistryClient::ListAttributeGroupsForApplicationAsyncHelper(const ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::ListAttributeGroupsForApplicationAsync(const ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAttributeGroupsForApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientListAttributeGroupsForApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome AppRegistryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -671,14 +671,14 @@ ListTagsForResourceOutcomeCallable AppRegistryClient::ListTagsForResourceCallabl
   return task->get_future();
 }
 
-void AppRegistryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientListTagsForResourceAsyncHelper(AppRegistryClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void AppRegistryClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 SyncResourceOutcome AppRegistryClient::SyncResource(const SyncResourceRequest& request) const
@@ -708,14 +708,14 @@ SyncResourceOutcomeCallable AppRegistryClient::SyncResourceCallable(const SyncRe
   return task->get_future();
 }
 
-void AppRegistryClient::SyncResourceAsync(const SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientSyncResourceAsyncHelper(AppRegistryClient const * const clientThis, const SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SyncResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SyncResource(request), context);
 }
 
-void AppRegistryClient::SyncResourceAsyncHelper(const SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::SyncResourceAsync(const SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SyncResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientSyncResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome AppRegistryClient::TagResource(const TagResourceRequest& request) const
@@ -739,14 +739,14 @@ TagResourceOutcomeCallable AppRegistryClient::TagResourceCallable(const TagResou
   return task->get_future();
 }
 
-void AppRegistryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientTagResourceAsyncHelper(AppRegistryClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void AppRegistryClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome AppRegistryClient::UntagResource(const UntagResourceRequest& request) const
@@ -775,14 +775,14 @@ UntagResourceOutcomeCallable AppRegistryClient::UntagResourceCallable(const Unta
   return task->get_future();
 }
 
-void AppRegistryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientUntagResourceAsyncHelper(AppRegistryClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void AppRegistryClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationOutcome AppRegistryClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -806,14 +806,14 @@ UpdateApplicationOutcomeCallable AppRegistryClient::UpdateApplicationCallable(co
   return task->get_future();
 }
 
-void AppRegistryClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientUpdateApplicationAsyncHelper(AppRegistryClient const * const clientThis, const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplication(request), context);
 }
 
-void AppRegistryClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientUpdateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAttributeGroupOutcome AppRegistryClient::UpdateAttributeGroup(const UpdateAttributeGroupRequest& request) const
@@ -837,13 +837,13 @@ UpdateAttributeGroupOutcomeCallable AppRegistryClient::UpdateAttributeGroupCalla
   return task->get_future();
 }
 
-void AppRegistryClient::UpdateAttributeGroupAsync(const UpdateAttributeGroupRequest& request, const UpdateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClientUpdateAttributeGroupAsyncHelper(AppRegistryClient const * const clientThis, const UpdateAttributeGroupRequest& request, const UpdateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAttributeGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAttributeGroup(request), context);
 }
 
-void AppRegistryClient::UpdateAttributeGroupAsyncHelper(const UpdateAttributeGroupRequest& request, const UpdateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppRegistryClient::UpdateAttributeGroupAsync(const UpdateAttributeGroupRequest& request, const UpdateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAttributeGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppRegistryClientUpdateAttributeGroupAsyncHelper( this, request, handler, context ); } );
 }
 

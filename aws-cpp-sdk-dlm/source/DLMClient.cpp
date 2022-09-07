@@ -123,14 +123,14 @@ CreateLifecyclePolicyOutcomeCallable DLMClient::CreateLifecyclePolicyCallable(co
   return task->get_future();
 }
 
-void DLMClient::CreateLifecyclePolicyAsync(const CreateLifecyclePolicyRequest& request, const CreateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClientCreateLifecyclePolicyAsyncHelper(DLMClient const * const clientThis, const CreateLifecyclePolicyRequest& request, const CreateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLifecyclePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLifecyclePolicy(request), context);
 }
 
-void DLMClient::CreateLifecyclePolicyAsyncHelper(const CreateLifecyclePolicyRequest& request, const CreateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClient::CreateLifecyclePolicyAsync(const CreateLifecyclePolicyRequest& request, const CreateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLifecyclePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DLMClientCreateLifecyclePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLifecyclePolicyOutcome DLMClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest& request) const
@@ -154,14 +154,14 @@ DeleteLifecyclePolicyOutcomeCallable DLMClient::DeleteLifecyclePolicyCallable(co
   return task->get_future();
 }
 
-void DLMClient::DeleteLifecyclePolicyAsync(const DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClientDeleteLifecyclePolicyAsyncHelper(DLMClient const * const clientThis, const DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLifecyclePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLifecyclePolicy(request), context);
 }
 
-void DLMClient::DeleteLifecyclePolicyAsyncHelper(const DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClient::DeleteLifecyclePolicyAsync(const DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLifecyclePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DLMClientDeleteLifecyclePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLifecyclePoliciesOutcome DLMClient::GetLifecyclePolicies(const GetLifecyclePoliciesRequest& request) const
@@ -179,14 +179,14 @@ GetLifecyclePoliciesOutcomeCallable DLMClient::GetLifecyclePoliciesCallable(cons
   return task->get_future();
 }
 
-void DLMClient::GetLifecyclePoliciesAsync(const GetLifecyclePoliciesRequest& request, const GetLifecyclePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClientGetLifecyclePoliciesAsyncHelper(DLMClient const * const clientThis, const GetLifecyclePoliciesRequest& request, const GetLifecyclePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLifecyclePoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLifecyclePolicies(request), context);
 }
 
-void DLMClient::GetLifecyclePoliciesAsyncHelper(const GetLifecyclePoliciesRequest& request, const GetLifecyclePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClient::GetLifecyclePoliciesAsync(const GetLifecyclePoliciesRequest& request, const GetLifecyclePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLifecyclePolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DLMClientGetLifecyclePoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLifecyclePolicyOutcome DLMClient::GetLifecyclePolicy(const GetLifecyclePolicyRequest& request) const
@@ -210,14 +210,14 @@ GetLifecyclePolicyOutcomeCallable DLMClient::GetLifecyclePolicyCallable(const Ge
   return task->get_future();
 }
 
-void DLMClient::GetLifecyclePolicyAsync(const GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClientGetLifecyclePolicyAsyncHelper(DLMClient const * const clientThis, const GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLifecyclePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLifecyclePolicy(request), context);
 }
 
-void DLMClient::GetLifecyclePolicyAsyncHelper(const GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClient::GetLifecyclePolicyAsync(const GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLifecyclePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DLMClientGetLifecyclePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome DLMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -241,14 +241,14 @@ ListTagsForResourceOutcomeCallable DLMClient::ListTagsForResourceCallable(const 
   return task->get_future();
 }
 
-void DLMClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClientListTagsForResourceAsyncHelper(DLMClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void DLMClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DLMClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome DLMClient::TagResource(const TagResourceRequest& request) const
@@ -272,14 +272,14 @@ TagResourceOutcomeCallable DLMClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void DLMClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClientTagResourceAsyncHelper(DLMClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void DLMClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DLMClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome DLMClient::UntagResource(const UntagResourceRequest& request) const
@@ -308,14 +308,14 @@ UntagResourceOutcomeCallable DLMClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void DLMClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClientUntagResourceAsyncHelper(DLMClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void DLMClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DLMClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLifecyclePolicyOutcome DLMClient::UpdateLifecyclePolicy(const UpdateLifecyclePolicyRequest& request) const
@@ -339,13 +339,13 @@ UpdateLifecyclePolicyOutcomeCallable DLMClient::UpdateLifecyclePolicyCallable(co
   return task->get_future();
 }
 
-void DLMClient::UpdateLifecyclePolicyAsync(const UpdateLifecyclePolicyRequest& request, const UpdateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClientUpdateLifecyclePolicyAsyncHelper(DLMClient const * const clientThis, const UpdateLifecyclePolicyRequest& request, const UpdateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLifecyclePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLifecyclePolicy(request), context);
 }
 
-void DLMClient::UpdateLifecyclePolicyAsyncHelper(const UpdateLifecyclePolicyRequest& request, const UpdateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DLMClient::UpdateLifecyclePolicyAsync(const UpdateLifecyclePolicyRequest& request, const UpdateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLifecyclePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DLMClientUpdateLifecyclePolicyAsyncHelper( this, request, handler, context ); } );
 }
 

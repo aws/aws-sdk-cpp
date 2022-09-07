@@ -134,14 +134,14 @@ CreateAppMonitorOutcomeCallable CloudWatchRUMClient::CreateAppMonitorCallable(co
   return task->get_future();
 }
 
-void CloudWatchRUMClient::CreateAppMonitorAsync(const CreateAppMonitorRequest& request, const CreateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClientCreateAppMonitorAsyncHelper(CloudWatchRUMClient const * const clientThis, const CreateAppMonitorRequest& request, const CreateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppMonitorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAppMonitor(request), context);
 }
 
-void CloudWatchRUMClient::CreateAppMonitorAsyncHelper(const CreateAppMonitorRequest& request, const CreateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClient::CreateAppMonitorAsync(const CreateAppMonitorRequest& request, const CreateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAppMonitor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchRUMClientCreateAppMonitorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAppMonitorOutcome CloudWatchRUMClient::DeleteAppMonitor(const DeleteAppMonitorRequest& request) const
@@ -165,14 +165,14 @@ DeleteAppMonitorOutcomeCallable CloudWatchRUMClient::DeleteAppMonitorCallable(co
   return task->get_future();
 }
 
-void CloudWatchRUMClient::DeleteAppMonitorAsync(const DeleteAppMonitorRequest& request, const DeleteAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClientDeleteAppMonitorAsyncHelper(CloudWatchRUMClient const * const clientThis, const DeleteAppMonitorRequest& request, const DeleteAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppMonitorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAppMonitor(request), context);
 }
 
-void CloudWatchRUMClient::DeleteAppMonitorAsyncHelper(const DeleteAppMonitorRequest& request, const DeleteAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClient::DeleteAppMonitorAsync(const DeleteAppMonitorRequest& request, const DeleteAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAppMonitor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchRUMClientDeleteAppMonitorAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAppMonitorOutcome CloudWatchRUMClient::GetAppMonitor(const GetAppMonitorRequest& request) const
@@ -196,14 +196,14 @@ GetAppMonitorOutcomeCallable CloudWatchRUMClient::GetAppMonitorCallable(const Ge
   return task->get_future();
 }
 
-void CloudWatchRUMClient::GetAppMonitorAsync(const GetAppMonitorRequest& request, const GetAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClientGetAppMonitorAsyncHelper(CloudWatchRUMClient const * const clientThis, const GetAppMonitorRequest& request, const GetAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppMonitorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAppMonitor(request), context);
 }
 
-void CloudWatchRUMClient::GetAppMonitorAsyncHelper(const GetAppMonitorRequest& request, const GetAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClient::GetAppMonitorAsync(const GetAppMonitorRequest& request, const GetAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAppMonitor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchRUMClientGetAppMonitorAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAppMonitorDataOutcome CloudWatchRUMClient::GetAppMonitorData(const GetAppMonitorDataRequest& request) const
@@ -228,14 +228,14 @@ GetAppMonitorDataOutcomeCallable CloudWatchRUMClient::GetAppMonitorDataCallable(
   return task->get_future();
 }
 
-void CloudWatchRUMClient::GetAppMonitorDataAsync(const GetAppMonitorDataRequest& request, const GetAppMonitorDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClientGetAppMonitorDataAsyncHelper(CloudWatchRUMClient const * const clientThis, const GetAppMonitorDataRequest& request, const GetAppMonitorDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppMonitorDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAppMonitorData(request), context);
 }
 
-void CloudWatchRUMClient::GetAppMonitorDataAsyncHelper(const GetAppMonitorDataRequest& request, const GetAppMonitorDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClient::GetAppMonitorDataAsync(const GetAppMonitorDataRequest& request, const GetAppMonitorDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAppMonitorData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchRUMClientGetAppMonitorDataAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAppMonitorsOutcome CloudWatchRUMClient::ListAppMonitors(const ListAppMonitorsRequest& request) const
@@ -253,14 +253,14 @@ ListAppMonitorsOutcomeCallable CloudWatchRUMClient::ListAppMonitorsCallable(cons
   return task->get_future();
 }
 
-void CloudWatchRUMClient::ListAppMonitorsAsync(const ListAppMonitorsRequest& request, const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClientListAppMonitorsAsyncHelper(CloudWatchRUMClient const * const clientThis, const ListAppMonitorsRequest& request, const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppMonitorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAppMonitors(request), context);
 }
 
-void CloudWatchRUMClient::ListAppMonitorsAsyncHelper(const ListAppMonitorsRequest& request, const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClient::ListAppMonitorsAsync(const ListAppMonitorsRequest& request, const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAppMonitors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchRUMClientListAppMonitorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome CloudWatchRUMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -284,14 +284,14 @@ ListTagsForResourceOutcomeCallable CloudWatchRUMClient::ListTagsForResourceCalla
   return task->get_future();
 }
 
-void CloudWatchRUMClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClientListTagsForResourceAsyncHelper(CloudWatchRUMClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void CloudWatchRUMClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchRUMClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRumEventsOutcome CloudWatchRUMClient::PutRumEvents(const PutRumEventsRequest& request) const
@@ -324,14 +324,14 @@ PutRumEventsOutcomeCallable CloudWatchRUMClient::PutRumEventsCallable(const PutR
   return task->get_future();
 }
 
-void CloudWatchRUMClient::PutRumEventsAsync(const PutRumEventsRequest& request, const PutRumEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClientPutRumEventsAsyncHelper(CloudWatchRUMClient const * const clientThis, const PutRumEventsRequest& request, const PutRumEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRumEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRumEvents(request), context);
 }
 
-void CloudWatchRUMClient::PutRumEventsAsyncHelper(const PutRumEventsRequest& request, const PutRumEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClient::PutRumEventsAsync(const PutRumEventsRequest& request, const PutRumEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRumEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchRUMClientPutRumEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CloudWatchRUMClient::TagResource(const TagResourceRequest& request) const
@@ -355,14 +355,14 @@ TagResourceOutcomeCallable CloudWatchRUMClient::TagResourceCallable(const TagRes
   return task->get_future();
 }
 
-void CloudWatchRUMClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClientTagResourceAsyncHelper(CloudWatchRUMClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CloudWatchRUMClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchRUMClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CloudWatchRUMClient::UntagResource(const UntagResourceRequest& request) const
@@ -391,14 +391,14 @@ UntagResourceOutcomeCallable CloudWatchRUMClient::UntagResourceCallable(const Un
   return task->get_future();
 }
 
-void CloudWatchRUMClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClientUntagResourceAsyncHelper(CloudWatchRUMClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CloudWatchRUMClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchRUMClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAppMonitorOutcome CloudWatchRUMClient::UpdateAppMonitor(const UpdateAppMonitorRequest& request) const
@@ -422,13 +422,13 @@ UpdateAppMonitorOutcomeCallable CloudWatchRUMClient::UpdateAppMonitorCallable(co
   return task->get_future();
 }
 
-void CloudWatchRUMClient::UpdateAppMonitorAsync(const UpdateAppMonitorRequest& request, const UpdateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClientUpdateAppMonitorAsyncHelper(CloudWatchRUMClient const * const clientThis, const UpdateAppMonitorRequest& request, const UpdateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppMonitorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAppMonitor(request), context);
 }
 
-void CloudWatchRUMClient::UpdateAppMonitorAsyncHelper(const UpdateAppMonitorRequest& request, const UpdateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudWatchRUMClient::UpdateAppMonitorAsync(const UpdateAppMonitorRequest& request, const UpdateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAppMonitor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudWatchRUMClientUpdateAppMonitorAsyncHelper( this, request, handler, context ); } );
 }
 

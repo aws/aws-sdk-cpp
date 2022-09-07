@@ -146,14 +146,14 @@ CreateDiscovererOutcomeCallable SchemasClient::CreateDiscovererCallable(const Cr
   return task->get_future();
 }
 
-void SchemasClient::CreateDiscovererAsync(const CreateDiscovererRequest& request, const CreateDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientCreateDiscovererAsyncHelper(SchemasClient const * const clientThis, const CreateDiscovererRequest& request, const CreateDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDiscovererAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDiscoverer(request), context);
 }
 
-void SchemasClient::CreateDiscovererAsyncHelper(const CreateDiscovererRequest& request, const CreateDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::CreateDiscovererAsync(const CreateDiscovererRequest& request, const CreateDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDiscoverer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientCreateDiscovererAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRegistryOutcome SchemasClient::CreateRegistry(const CreateRegistryRequest& request) const
@@ -177,14 +177,14 @@ CreateRegistryOutcomeCallable SchemasClient::CreateRegistryCallable(const Create
   return task->get_future();
 }
 
-void SchemasClient::CreateRegistryAsync(const CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientCreateRegistryAsyncHelper(SchemasClient const * const clientThis, const CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRegistryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRegistry(request), context);
 }
 
-void SchemasClient::CreateRegistryAsyncHelper(const CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::CreateRegistryAsync(const CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRegistry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientCreateRegistryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSchemaOutcome SchemasClient::CreateSchema(const CreateSchemaRequest& request) const
@@ -215,14 +215,14 @@ CreateSchemaOutcomeCallable SchemasClient::CreateSchemaCallable(const CreateSche
   return task->get_future();
 }
 
-void SchemasClient::CreateSchemaAsync(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientCreateSchemaAsyncHelper(SchemasClient const * const clientThis, const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSchema(request), context);
 }
 
-void SchemasClient::CreateSchemaAsyncHelper(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::CreateSchemaAsync(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientCreateSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDiscovererOutcome SchemasClient::DeleteDiscoverer(const DeleteDiscovererRequest& request) const
@@ -246,14 +246,14 @@ DeleteDiscovererOutcomeCallable SchemasClient::DeleteDiscovererCallable(const De
   return task->get_future();
 }
 
-void SchemasClient::DeleteDiscovererAsync(const DeleteDiscovererRequest& request, const DeleteDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientDeleteDiscovererAsyncHelper(SchemasClient const * const clientThis, const DeleteDiscovererRequest& request, const DeleteDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDiscovererAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDiscoverer(request), context);
 }
 
-void SchemasClient::DeleteDiscovererAsyncHelper(const DeleteDiscovererRequest& request, const DeleteDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::DeleteDiscovererAsync(const DeleteDiscovererRequest& request, const DeleteDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDiscoverer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientDeleteDiscovererAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRegistryOutcome SchemasClient::DeleteRegistry(const DeleteRegistryRequest& request) const
@@ -277,14 +277,14 @@ DeleteRegistryOutcomeCallable SchemasClient::DeleteRegistryCallable(const Delete
   return task->get_future();
 }
 
-void SchemasClient::DeleteRegistryAsync(const DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientDeleteRegistryAsyncHelper(SchemasClient const * const clientThis, const DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRegistryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRegistry(request), context);
 }
 
-void SchemasClient::DeleteRegistryAsyncHelper(const DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::DeleteRegistryAsync(const DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRegistry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientDeleteRegistryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome SchemasClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -302,14 +302,14 @@ DeleteResourcePolicyOutcomeCallable SchemasClient::DeleteResourcePolicyCallable(
   return task->get_future();
 }
 
-void SchemasClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientDeleteResourcePolicyAsyncHelper(SchemasClient const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void SchemasClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSchemaOutcome SchemasClient::DeleteSchema(const DeleteSchemaRequest& request) const
@@ -340,14 +340,14 @@ DeleteSchemaOutcomeCallable SchemasClient::DeleteSchemaCallable(const DeleteSche
   return task->get_future();
 }
 
-void SchemasClient::DeleteSchemaAsync(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientDeleteSchemaAsyncHelper(SchemasClient const * const clientThis, const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSchema(request), context);
 }
 
-void SchemasClient::DeleteSchemaAsyncHelper(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::DeleteSchemaAsync(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientDeleteSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSchemaVersionOutcome SchemasClient::DeleteSchemaVersion(const DeleteSchemaVersionRequest& request) const
@@ -385,14 +385,14 @@ DeleteSchemaVersionOutcomeCallable SchemasClient::DeleteSchemaVersionCallable(co
   return task->get_future();
 }
 
-void SchemasClient::DeleteSchemaVersionAsync(const DeleteSchemaVersionRequest& request, const DeleteSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientDeleteSchemaVersionAsyncHelper(SchemasClient const * const clientThis, const DeleteSchemaVersionRequest& request, const DeleteSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSchemaVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSchemaVersion(request), context);
 }
 
-void SchemasClient::DeleteSchemaVersionAsyncHelper(const DeleteSchemaVersionRequest& request, const DeleteSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::DeleteSchemaVersionAsync(const DeleteSchemaVersionRequest& request, const DeleteSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSchemaVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientDeleteSchemaVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCodeBindingOutcome SchemasClient::DescribeCodeBinding(const DescribeCodeBindingRequest& request) const
@@ -430,14 +430,14 @@ DescribeCodeBindingOutcomeCallable SchemasClient::DescribeCodeBindingCallable(co
   return task->get_future();
 }
 
-void SchemasClient::DescribeCodeBindingAsync(const DescribeCodeBindingRequest& request, const DescribeCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientDescribeCodeBindingAsyncHelper(SchemasClient const * const clientThis, const DescribeCodeBindingRequest& request, const DescribeCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCodeBindingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCodeBinding(request), context);
 }
 
-void SchemasClient::DescribeCodeBindingAsyncHelper(const DescribeCodeBindingRequest& request, const DescribeCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::DescribeCodeBindingAsync(const DescribeCodeBindingRequest& request, const DescribeCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCodeBinding(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientDescribeCodeBindingAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDiscovererOutcome SchemasClient::DescribeDiscoverer(const DescribeDiscovererRequest& request) const
@@ -461,14 +461,14 @@ DescribeDiscovererOutcomeCallable SchemasClient::DescribeDiscovererCallable(cons
   return task->get_future();
 }
 
-void SchemasClient::DescribeDiscovererAsync(const DescribeDiscovererRequest& request, const DescribeDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientDescribeDiscovererAsyncHelper(SchemasClient const * const clientThis, const DescribeDiscovererRequest& request, const DescribeDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDiscovererAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDiscoverer(request), context);
 }
 
-void SchemasClient::DescribeDiscovererAsyncHelper(const DescribeDiscovererRequest& request, const DescribeDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::DescribeDiscovererAsync(const DescribeDiscovererRequest& request, const DescribeDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDiscoverer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientDescribeDiscovererAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRegistryOutcome SchemasClient::DescribeRegistry(const DescribeRegistryRequest& request) const
@@ -492,14 +492,14 @@ DescribeRegistryOutcomeCallable SchemasClient::DescribeRegistryCallable(const De
   return task->get_future();
 }
 
-void SchemasClient::DescribeRegistryAsync(const DescribeRegistryRequest& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientDescribeRegistryAsyncHelper(SchemasClient const * const clientThis, const DescribeRegistryRequest& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRegistryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRegistry(request), context);
 }
 
-void SchemasClient::DescribeRegistryAsyncHelper(const DescribeRegistryRequest& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::DescribeRegistryAsync(const DescribeRegistryRequest& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRegistry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientDescribeRegistryAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSchemaOutcome SchemasClient::DescribeSchema(const DescribeSchemaRequest& request) const
@@ -530,14 +530,14 @@ DescribeSchemaOutcomeCallable SchemasClient::DescribeSchemaCallable(const Descri
   return task->get_future();
 }
 
-void SchemasClient::DescribeSchemaAsync(const DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientDescribeSchemaAsyncHelper(SchemasClient const * const clientThis, const DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSchema(request), context);
 }
 
-void SchemasClient::DescribeSchemaAsyncHelper(const DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::DescribeSchemaAsync(const DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientDescribeSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportSchemaOutcome SchemasClient::ExportSchema(const ExportSchemaRequest& request) const
@@ -574,14 +574,14 @@ ExportSchemaOutcomeCallable SchemasClient::ExportSchemaCallable(const ExportSche
   return task->get_future();
 }
 
-void SchemasClient::ExportSchemaAsync(const ExportSchemaRequest& request, const ExportSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientExportSchemaAsyncHelper(SchemasClient const * const clientThis, const ExportSchemaRequest& request, const ExportSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportSchema(request), context);
 }
 
-void SchemasClient::ExportSchemaAsyncHelper(const ExportSchemaRequest& request, const ExportSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::ExportSchemaAsync(const ExportSchemaRequest& request, const ExportSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientExportSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCodeBindingSourceOutcome SchemasClient::GetCodeBindingSource(const GetCodeBindingSourceRequest& request) const
@@ -620,14 +620,14 @@ GetCodeBindingSourceOutcomeCallable SchemasClient::GetCodeBindingSourceCallable(
   return task->get_future();
 }
 
-void SchemasClient::GetCodeBindingSourceAsync(const GetCodeBindingSourceRequest& request, const GetCodeBindingSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientGetCodeBindingSourceAsyncHelper(SchemasClient const * const clientThis, const GetCodeBindingSourceRequest& request, const GetCodeBindingSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCodeBindingSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCodeBindingSource(request), context);
 }
 
-void SchemasClient::GetCodeBindingSourceAsyncHelper(const GetCodeBindingSourceRequest& request, const GetCodeBindingSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::GetCodeBindingSourceAsync(const GetCodeBindingSourceRequest& request, const GetCodeBindingSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCodeBindingSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientGetCodeBindingSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDiscoveredSchemaOutcome SchemasClient::GetDiscoveredSchema(const GetDiscoveredSchemaRequest& request) const
@@ -645,14 +645,14 @@ GetDiscoveredSchemaOutcomeCallable SchemasClient::GetDiscoveredSchemaCallable(co
   return task->get_future();
 }
 
-void SchemasClient::GetDiscoveredSchemaAsync(const GetDiscoveredSchemaRequest& request, const GetDiscoveredSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientGetDiscoveredSchemaAsyncHelper(SchemasClient const * const clientThis, const GetDiscoveredSchemaRequest& request, const GetDiscoveredSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDiscoveredSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDiscoveredSchema(request), context);
 }
 
-void SchemasClient::GetDiscoveredSchemaAsyncHelper(const GetDiscoveredSchemaRequest& request, const GetDiscoveredSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::GetDiscoveredSchemaAsync(const GetDiscoveredSchemaRequest& request, const GetDiscoveredSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDiscoveredSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientGetDiscoveredSchemaAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcePolicyOutcome SchemasClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
@@ -670,14 +670,14 @@ GetResourcePolicyOutcomeCallable SchemasClient::GetResourcePolicyCallable(const 
   return task->get_future();
 }
 
-void SchemasClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientGetResourcePolicyAsyncHelper(SchemasClient const * const clientThis, const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourcePolicy(request), context);
 }
 
-void SchemasClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientGetResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDiscoverersOutcome SchemasClient::ListDiscoverers(const ListDiscoverersRequest& request) const
@@ -695,14 +695,14 @@ ListDiscoverersOutcomeCallable SchemasClient::ListDiscoverersCallable(const List
   return task->get_future();
 }
 
-void SchemasClient::ListDiscoverersAsync(const ListDiscoverersRequest& request, const ListDiscoverersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientListDiscoverersAsyncHelper(SchemasClient const * const clientThis, const ListDiscoverersRequest& request, const ListDiscoverersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDiscoverersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDiscoverers(request), context);
 }
 
-void SchemasClient::ListDiscoverersAsyncHelper(const ListDiscoverersRequest& request, const ListDiscoverersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::ListDiscoverersAsync(const ListDiscoverersRequest& request, const ListDiscoverersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDiscoverers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientListDiscoverersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRegistriesOutcome SchemasClient::ListRegistries(const ListRegistriesRequest& request) const
@@ -720,14 +720,14 @@ ListRegistriesOutcomeCallable SchemasClient::ListRegistriesCallable(const ListRe
   return task->get_future();
 }
 
-void SchemasClient::ListRegistriesAsync(const ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientListRegistriesAsyncHelper(SchemasClient const * const clientThis, const ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRegistriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRegistries(request), context);
 }
 
-void SchemasClient::ListRegistriesAsyncHelper(const ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::ListRegistriesAsync(const ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRegistries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientListRegistriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSchemaVersionsOutcome SchemasClient::ListSchemaVersions(const ListSchemaVersionsRequest& request) const
@@ -759,14 +759,14 @@ ListSchemaVersionsOutcomeCallable SchemasClient::ListSchemaVersionsCallable(cons
   return task->get_future();
 }
 
-void SchemasClient::ListSchemaVersionsAsync(const ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientListSchemaVersionsAsyncHelper(SchemasClient const * const clientThis, const ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSchemaVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSchemaVersions(request), context);
 }
 
-void SchemasClient::ListSchemaVersionsAsyncHelper(const ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::ListSchemaVersionsAsync(const ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSchemaVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientListSchemaVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSchemasOutcome SchemasClient::ListSchemas(const ListSchemasRequest& request) const
@@ -791,14 +791,14 @@ ListSchemasOutcomeCallable SchemasClient::ListSchemasCallable(const ListSchemasR
   return task->get_future();
 }
 
-void SchemasClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientListSchemasAsyncHelper(SchemasClient const * const clientThis, const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSchemasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSchemas(request), context);
 }
 
-void SchemasClient::ListSchemasAsyncHelper(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSchemas(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientListSchemasAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome SchemasClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -822,14 +822,14 @@ ListTagsForResourceOutcomeCallable SchemasClient::ListTagsForResourceCallable(co
   return task->get_future();
 }
 
-void SchemasClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientListTagsForResourceAsyncHelper(SchemasClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void SchemasClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutCodeBindingOutcome SchemasClient::PutCodeBinding(const PutCodeBindingRequest& request) const
@@ -867,14 +867,14 @@ PutCodeBindingOutcomeCallable SchemasClient::PutCodeBindingCallable(const PutCod
   return task->get_future();
 }
 
-void SchemasClient::PutCodeBindingAsync(const PutCodeBindingRequest& request, const PutCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientPutCodeBindingAsyncHelper(SchemasClient const * const clientThis, const PutCodeBindingRequest& request, const PutCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutCodeBindingAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutCodeBinding(request), context);
 }
 
-void SchemasClient::PutCodeBindingAsyncHelper(const PutCodeBindingRequest& request, const PutCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::PutCodeBindingAsync(const PutCodeBindingRequest& request, const PutCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutCodeBinding(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientPutCodeBindingAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourcePolicyOutcome SchemasClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -892,14 +892,14 @@ PutResourcePolicyOutcomeCallable SchemasClient::PutResourcePolicyCallable(const 
   return task->get_future();
 }
 
-void SchemasClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientPutResourcePolicyAsyncHelper(SchemasClient const * const clientThis, const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourcePolicy(request), context);
 }
 
-void SchemasClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientPutResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchSchemasOutcome SchemasClient::SearchSchemas(const SearchSchemasRequest& request) const
@@ -929,14 +929,14 @@ SearchSchemasOutcomeCallable SchemasClient::SearchSchemasCallable(const SearchSc
   return task->get_future();
 }
 
-void SchemasClient::SearchSchemasAsync(const SearchSchemasRequest& request, const SearchSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientSearchSchemasAsyncHelper(SchemasClient const * const clientThis, const SearchSchemasRequest& request, const SearchSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchSchemasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchSchemas(request), context);
 }
 
-void SchemasClient::SearchSchemasAsyncHelper(const SearchSchemasRequest& request, const SearchSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::SearchSchemasAsync(const SearchSchemasRequest& request, const SearchSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchSchemas(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientSearchSchemasAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDiscovererOutcome SchemasClient::StartDiscoverer(const StartDiscovererRequest& request) const
@@ -961,14 +961,14 @@ StartDiscovererOutcomeCallable SchemasClient::StartDiscovererCallable(const Star
   return task->get_future();
 }
 
-void SchemasClient::StartDiscovererAsync(const StartDiscovererRequest& request, const StartDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientStartDiscovererAsyncHelper(SchemasClient const * const clientThis, const StartDiscovererRequest& request, const StartDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDiscovererAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDiscoverer(request), context);
 }
 
-void SchemasClient::StartDiscovererAsyncHelper(const StartDiscovererRequest& request, const StartDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::StartDiscovererAsync(const StartDiscovererRequest& request, const StartDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDiscoverer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientStartDiscovererAsyncHelper( this, request, handler, context ); } );
 }
 
 StopDiscovererOutcome SchemasClient::StopDiscoverer(const StopDiscovererRequest& request) const
@@ -993,14 +993,14 @@ StopDiscovererOutcomeCallable SchemasClient::StopDiscovererCallable(const StopDi
   return task->get_future();
 }
 
-void SchemasClient::StopDiscovererAsync(const StopDiscovererRequest& request, const StopDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientStopDiscovererAsyncHelper(SchemasClient const * const clientThis, const StopDiscovererRequest& request, const StopDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopDiscovererAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopDiscoverer(request), context);
 }
 
-void SchemasClient::StopDiscovererAsyncHelper(const StopDiscovererRequest& request, const StopDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::StopDiscovererAsync(const StopDiscovererRequest& request, const StopDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopDiscoverer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientStopDiscovererAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome SchemasClient::TagResource(const TagResourceRequest& request) const
@@ -1024,14 +1024,14 @@ TagResourceOutcomeCallable SchemasClient::TagResourceCallable(const TagResourceR
   return task->get_future();
 }
 
-void SchemasClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientTagResourceAsyncHelper(SchemasClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void SchemasClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome SchemasClient::UntagResource(const UntagResourceRequest& request) const
@@ -1060,14 +1060,14 @@ UntagResourceOutcomeCallable SchemasClient::UntagResourceCallable(const UntagRes
   return task->get_future();
 }
 
-void SchemasClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientUntagResourceAsyncHelper(SchemasClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void SchemasClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDiscovererOutcome SchemasClient::UpdateDiscoverer(const UpdateDiscovererRequest& request) const
@@ -1091,14 +1091,14 @@ UpdateDiscovererOutcomeCallable SchemasClient::UpdateDiscovererCallable(const Up
   return task->get_future();
 }
 
-void SchemasClient::UpdateDiscovererAsync(const UpdateDiscovererRequest& request, const UpdateDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientUpdateDiscovererAsyncHelper(SchemasClient const * const clientThis, const UpdateDiscovererRequest& request, const UpdateDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDiscovererAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDiscoverer(request), context);
 }
 
-void SchemasClient::UpdateDiscovererAsyncHelper(const UpdateDiscovererRequest& request, const UpdateDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::UpdateDiscovererAsync(const UpdateDiscovererRequest& request, const UpdateDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDiscoverer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientUpdateDiscovererAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRegistryOutcome SchemasClient::UpdateRegistry(const UpdateRegistryRequest& request) const
@@ -1122,14 +1122,14 @@ UpdateRegistryOutcomeCallable SchemasClient::UpdateRegistryCallable(const Update
   return task->get_future();
 }
 
-void SchemasClient::UpdateRegistryAsync(const UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientUpdateRegistryAsyncHelper(SchemasClient const * const clientThis, const UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRegistryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRegistry(request), context);
 }
 
-void SchemasClient::UpdateRegistryAsyncHelper(const UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::UpdateRegistryAsync(const UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRegistry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientUpdateRegistryAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSchemaOutcome SchemasClient::UpdateSchema(const UpdateSchemaRequest& request) const
@@ -1160,13 +1160,13 @@ UpdateSchemaOutcomeCallable SchemasClient::UpdateSchemaCallable(const UpdateSche
   return task->get_future();
 }
 
-void SchemasClient::UpdateSchemaAsync(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClientUpdateSchemaAsyncHelper(SchemasClient const * const clientThis, const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSchemaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSchema(request), context);
 }
 
-void SchemasClient::UpdateSchemaAsyncHelper(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SchemasClient::UpdateSchemaAsync(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSchema(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SchemasClientUpdateSchemaAsyncHelper( this, request, handler, context ); } );
 }
 

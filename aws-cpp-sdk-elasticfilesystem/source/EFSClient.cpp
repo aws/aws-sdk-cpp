@@ -142,14 +142,14 @@ CreateAccessPointOutcomeCallable EFSClient::CreateAccessPointCallable(const Crea
   return task->get_future();
 }
 
-void EFSClient::CreateAccessPointAsync(const CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientCreateAccessPointAsyncHelper(EFSClient const * const clientThis, const CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessPointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAccessPoint(request), context);
 }
 
-void EFSClient::CreateAccessPointAsyncHelper(const CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::CreateAccessPointAsync(const CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAccessPoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientCreateAccessPointAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemRequest& request) const
@@ -167,14 +167,14 @@ CreateFileSystemOutcomeCallable EFSClient::CreateFileSystemCallable(const Create
   return task->get_future();
 }
 
-void EFSClient::CreateFileSystemAsync(const CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientCreateFileSystemAsyncHelper(EFSClient const * const clientThis, const CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFileSystemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFileSystem(request), context);
 }
 
-void EFSClient::CreateFileSystemAsyncHelper(const CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::CreateFileSystemAsync(const CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFileSystem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientCreateFileSystemAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetRequest& request) const
@@ -192,14 +192,14 @@ CreateMountTargetOutcomeCallable EFSClient::CreateMountTargetCallable(const Crea
   return task->get_future();
 }
 
-void EFSClient::CreateMountTargetAsync(const CreateMountTargetRequest& request, const CreateMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientCreateMountTargetAsyncHelper(EFSClient const * const clientThis, const CreateMountTargetRequest& request, const CreateMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMountTargetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMountTarget(request), context);
 }
 
-void EFSClient::CreateMountTargetAsyncHelper(const CreateMountTargetRequest& request, const CreateMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::CreateMountTargetAsync(const CreateMountTargetRequest& request, const CreateMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMountTarget(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientCreateMountTargetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateReplicationConfigurationOutcome EFSClient::CreateReplicationConfiguration(const CreateReplicationConfigurationRequest& request) const
@@ -224,14 +224,14 @@ CreateReplicationConfigurationOutcomeCallable EFSClient::CreateReplicationConfig
   return task->get_future();
 }
 
-void EFSClient::CreateReplicationConfigurationAsync(const CreateReplicationConfigurationRequest& request, const CreateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientCreateReplicationConfigurationAsyncHelper(EFSClient const * const clientThis, const CreateReplicationConfigurationRequest& request, const CreateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReplicationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateReplicationConfiguration(request), context);
 }
 
-void EFSClient::CreateReplicationConfigurationAsyncHelper(const CreateReplicationConfigurationRequest& request, const CreateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::CreateReplicationConfigurationAsync(const CreateReplicationConfigurationRequest& request, const CreateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientCreateReplicationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAccessPointOutcome EFSClient::DeleteAccessPoint(const DeleteAccessPointRequest& request) const
@@ -255,14 +255,14 @@ DeleteAccessPointOutcomeCallable EFSClient::DeleteAccessPointCallable(const Dele
   return task->get_future();
 }
 
-void EFSClient::DeleteAccessPointAsync(const DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDeleteAccessPointAsyncHelper(EFSClient const * const clientThis, const DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessPointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAccessPoint(request), context);
 }
 
-void EFSClient::DeleteAccessPointAsyncHelper(const DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DeleteAccessPointAsync(const DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAccessPoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDeleteAccessPointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemRequest& request) const
@@ -286,14 +286,14 @@ DeleteFileSystemOutcomeCallable EFSClient::DeleteFileSystemCallable(const Delete
   return task->get_future();
 }
 
-void EFSClient::DeleteFileSystemAsync(const DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDeleteFileSystemAsyncHelper(EFSClient const * const clientThis, const DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFileSystemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFileSystem(request), context);
 }
 
-void EFSClient::DeleteFileSystemAsyncHelper(const DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DeleteFileSystemAsync(const DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFileSystem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDeleteFileSystemAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFileSystemPolicyOutcome EFSClient::DeleteFileSystemPolicy(const DeleteFileSystemPolicyRequest& request) const
@@ -318,14 +318,14 @@ DeleteFileSystemPolicyOutcomeCallable EFSClient::DeleteFileSystemPolicyCallable(
   return task->get_future();
 }
 
-void EFSClient::DeleteFileSystemPolicyAsync(const DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDeleteFileSystemPolicyAsyncHelper(EFSClient const * const clientThis, const DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFileSystemPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFileSystemPolicy(request), context);
 }
 
-void EFSClient::DeleteFileSystemPolicyAsyncHelper(const DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DeleteFileSystemPolicyAsync(const DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFileSystemPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDeleteFileSystemPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetRequest& request) const
@@ -349,14 +349,14 @@ DeleteMountTargetOutcomeCallable EFSClient::DeleteMountTargetCallable(const Dele
   return task->get_future();
 }
 
-void EFSClient::DeleteMountTargetAsync(const DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDeleteMountTargetAsyncHelper(EFSClient const * const clientThis, const DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMountTargetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMountTarget(request), context);
 }
 
-void EFSClient::DeleteMountTargetAsyncHelper(const DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DeleteMountTargetAsync(const DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMountTarget(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDeleteMountTargetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteReplicationConfigurationOutcome EFSClient::DeleteReplicationConfiguration(const DeleteReplicationConfigurationRequest& request) const
@@ -381,14 +381,14 @@ DeleteReplicationConfigurationOutcomeCallable EFSClient::DeleteReplicationConfig
   return task->get_future();
 }
 
-void EFSClient::DeleteReplicationConfigurationAsync(const DeleteReplicationConfigurationRequest& request, const DeleteReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDeleteReplicationConfigurationAsyncHelper(EFSClient const * const clientThis, const DeleteReplicationConfigurationRequest& request, const DeleteReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReplicationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReplicationConfiguration(request), context);
 }
 
-void EFSClient::DeleteReplicationConfigurationAsyncHelper(const DeleteReplicationConfigurationRequest& request, const DeleteReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DeleteReplicationConfigurationAsync(const DeleteReplicationConfigurationRequest& request, const DeleteReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDeleteReplicationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccessPointsOutcome EFSClient::DescribeAccessPoints(const DescribeAccessPointsRequest& request) const
@@ -406,14 +406,14 @@ DescribeAccessPointsOutcomeCallable EFSClient::DescribeAccessPointsCallable(cons
   return task->get_future();
 }
 
-void EFSClient::DescribeAccessPointsAsync(const DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDescribeAccessPointsAsyncHelper(EFSClient const * const clientThis, const DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccessPointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccessPoints(request), context);
 }
 
-void EFSClient::DescribeAccessPointsAsyncHelper(const DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DescribeAccessPointsAsync(const DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccessPoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDescribeAccessPointsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountPreferencesOutcome EFSClient::DescribeAccountPreferences(const DescribeAccountPreferencesRequest& request) const
@@ -431,14 +431,14 @@ DescribeAccountPreferencesOutcomeCallable EFSClient::DescribeAccountPreferencesC
   return task->get_future();
 }
 
-void EFSClient::DescribeAccountPreferencesAsync(const DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDescribeAccountPreferencesAsyncHelper(EFSClient const * const clientThis, const DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountPreferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccountPreferences(request), context);
 }
 
-void EFSClient::DescribeAccountPreferencesAsyncHelper(const DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DescribeAccountPreferencesAsync(const DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccountPreferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDescribeAccountPreferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBackupPolicyOutcome EFSClient::DescribeBackupPolicy(const DescribeBackupPolicyRequest& request) const
@@ -463,14 +463,14 @@ DescribeBackupPolicyOutcomeCallable EFSClient::DescribeBackupPolicyCallable(cons
   return task->get_future();
 }
 
-void EFSClient::DescribeBackupPolicyAsync(const DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDescribeBackupPolicyAsyncHelper(EFSClient const * const clientThis, const DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBackupPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBackupPolicy(request), context);
 }
 
-void EFSClient::DescribeBackupPolicyAsyncHelper(const DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DescribeBackupPolicyAsync(const DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBackupPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDescribeBackupPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFileSystemPolicyOutcome EFSClient::DescribeFileSystemPolicy(const DescribeFileSystemPolicyRequest& request) const
@@ -495,14 +495,14 @@ DescribeFileSystemPolicyOutcomeCallable EFSClient::DescribeFileSystemPolicyCalla
   return task->get_future();
 }
 
-void EFSClient::DescribeFileSystemPolicyAsync(const DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDescribeFileSystemPolicyAsyncHelper(EFSClient const * const clientThis, const DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFileSystemPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFileSystemPolicy(request), context);
 }
 
-void EFSClient::DescribeFileSystemPolicyAsyncHelper(const DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DescribeFileSystemPolicyAsync(const DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFileSystemPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDescribeFileSystemPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSystemsRequest& request) const
@@ -520,14 +520,14 @@ DescribeFileSystemsOutcomeCallable EFSClient::DescribeFileSystemsCallable(const 
   return task->get_future();
 }
 
-void EFSClient::DescribeFileSystemsAsync(const DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDescribeFileSystemsAsyncHelper(EFSClient const * const clientThis, const DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFileSystemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFileSystems(request), context);
 }
 
-void EFSClient::DescribeFileSystemsAsyncHelper(const DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DescribeFileSystemsAsync(const DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFileSystems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDescribeFileSystemsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(const DescribeLifecycleConfigurationRequest& request) const
@@ -552,14 +552,14 @@ DescribeLifecycleConfigurationOutcomeCallable EFSClient::DescribeLifecycleConfig
   return task->get_future();
 }
 
-void EFSClient::DescribeLifecycleConfigurationAsync(const DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDescribeLifecycleConfigurationAsyncHelper(EFSClient const * const clientThis, const DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLifecycleConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLifecycleConfiguration(request), context);
 }
 
-void EFSClient::DescribeLifecycleConfigurationAsyncHelper(const DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DescribeLifecycleConfigurationAsync(const DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLifecycleConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDescribeLifecycleConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityGroups(const DescribeMountTargetSecurityGroupsRequest& request) const
@@ -584,14 +584,14 @@ DescribeMountTargetSecurityGroupsOutcomeCallable EFSClient::DescribeMountTargetS
   return task->get_future();
 }
 
-void EFSClient::DescribeMountTargetSecurityGroupsAsync(const DescribeMountTargetSecurityGroupsRequest& request, const DescribeMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDescribeMountTargetSecurityGroupsAsyncHelper(EFSClient const * const clientThis, const DescribeMountTargetSecurityGroupsRequest& request, const DescribeMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMountTargetSecurityGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMountTargetSecurityGroups(request), context);
 }
 
-void EFSClient::DescribeMountTargetSecurityGroupsAsyncHelper(const DescribeMountTargetSecurityGroupsRequest& request, const DescribeMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DescribeMountTargetSecurityGroupsAsync(const DescribeMountTargetSecurityGroupsRequest& request, const DescribeMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMountTargetSecurityGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDescribeMountTargetSecurityGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountTargetsRequest& request) const
@@ -609,14 +609,14 @@ DescribeMountTargetsOutcomeCallable EFSClient::DescribeMountTargetsCallable(cons
   return task->get_future();
 }
 
-void EFSClient::DescribeMountTargetsAsync(const DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDescribeMountTargetsAsyncHelper(EFSClient const * const clientThis, const DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMountTargetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMountTargets(request), context);
 }
 
-void EFSClient::DescribeMountTargetsAsyncHelper(const DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DescribeMountTargetsAsync(const DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMountTargets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDescribeMountTargetsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReplicationConfigurationsOutcome EFSClient::DescribeReplicationConfigurations(const DescribeReplicationConfigurationsRequest& request) const
@@ -634,14 +634,14 @@ DescribeReplicationConfigurationsOutcomeCallable EFSClient::DescribeReplicationC
   return task->get_future();
 }
 
-void EFSClient::DescribeReplicationConfigurationsAsync(const DescribeReplicationConfigurationsRequest& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientDescribeReplicationConfigurationsAsyncHelper(EFSClient const * const clientThis, const DescribeReplicationConfigurationsRequest& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplicationConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReplicationConfigurations(request), context);
 }
 
-void EFSClient::DescribeReplicationConfigurationsAsyncHelper(const DescribeReplicationConfigurationsRequest& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::DescribeReplicationConfigurationsAsync(const DescribeReplicationConfigurationsRequest& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReplicationConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientDescribeReplicationConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome EFSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -665,14 +665,14 @@ ListTagsForResourceOutcomeCallable EFSClient::ListTagsForResourceCallable(const 
   return task->get_future();
 }
 
-void EFSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientListTagsForResourceAsyncHelper(EFSClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void EFSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroups(const ModifyMountTargetSecurityGroupsRequest& request) const
@@ -697,14 +697,14 @@ ModifyMountTargetSecurityGroupsOutcomeCallable EFSClient::ModifyMountTargetSecur
   return task->get_future();
 }
 
-void EFSClient::ModifyMountTargetSecurityGroupsAsync(const ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientModifyMountTargetSecurityGroupsAsyncHelper(EFSClient const * const clientThis, const ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyMountTargetSecurityGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyMountTargetSecurityGroups(request), context);
 }
 
-void EFSClient::ModifyMountTargetSecurityGroupsAsyncHelper(const ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::ModifyMountTargetSecurityGroupsAsync(const ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyMountTargetSecurityGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientModifyMountTargetSecurityGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAccountPreferencesOutcome EFSClient::PutAccountPreferences(const PutAccountPreferencesRequest& request) const
@@ -722,14 +722,14 @@ PutAccountPreferencesOutcomeCallable EFSClient::PutAccountPreferencesCallable(co
   return task->get_future();
 }
 
-void EFSClient::PutAccountPreferencesAsync(const PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientPutAccountPreferencesAsyncHelper(EFSClient const * const clientThis, const PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccountPreferencesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAccountPreferences(request), context);
 }
 
-void EFSClient::PutAccountPreferencesAsyncHelper(const PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::PutAccountPreferencesAsync(const PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAccountPreferences(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientPutAccountPreferencesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutBackupPolicyOutcome EFSClient::PutBackupPolicy(const PutBackupPolicyRequest& request) const
@@ -754,14 +754,14 @@ PutBackupPolicyOutcomeCallable EFSClient::PutBackupPolicyCallable(const PutBacku
   return task->get_future();
 }
 
-void EFSClient::PutBackupPolicyAsync(const PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientPutBackupPolicyAsyncHelper(EFSClient const * const clientThis, const PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutBackupPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutBackupPolicy(request), context);
 }
 
-void EFSClient::PutBackupPolicyAsyncHelper(const PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::PutBackupPolicyAsync(const PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutBackupPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientPutBackupPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutFileSystemPolicyOutcome EFSClient::PutFileSystemPolicy(const PutFileSystemPolicyRequest& request) const
@@ -786,14 +786,14 @@ PutFileSystemPolicyOutcomeCallable EFSClient::PutFileSystemPolicyCallable(const 
   return task->get_future();
 }
 
-void EFSClient::PutFileSystemPolicyAsync(const PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientPutFileSystemPolicyAsyncHelper(EFSClient const * const clientThis, const PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutFileSystemPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutFileSystemPolicy(request), context);
 }
 
-void EFSClient::PutFileSystemPolicyAsyncHelper(const PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::PutFileSystemPolicyAsync(const PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutFileSystemPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientPutFileSystemPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutLifecycleConfigurationRequest& request) const
@@ -818,14 +818,14 @@ PutLifecycleConfigurationOutcomeCallable EFSClient::PutLifecycleConfigurationCal
   return task->get_future();
 }
 
-void EFSClient::PutLifecycleConfigurationAsync(const PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientPutLifecycleConfigurationAsyncHelper(EFSClient const * const clientThis, const PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLifecycleConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutLifecycleConfiguration(request), context);
 }
 
-void EFSClient::PutLifecycleConfigurationAsyncHelper(const PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::PutLifecycleConfigurationAsync(const PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutLifecycleConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientPutLifecycleConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome EFSClient::TagResource(const TagResourceRequest& request) const
@@ -849,14 +849,14 @@ TagResourceOutcomeCallable EFSClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void EFSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientTagResourceAsyncHelper(EFSClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void EFSClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome EFSClient::UntagResource(const UntagResourceRequest& request) const
@@ -885,14 +885,14 @@ UntagResourceOutcomeCallable EFSClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void EFSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientUntagResourceAsyncHelper(EFSClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void EFSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const
@@ -916,13 +916,13 @@ UpdateFileSystemOutcomeCallable EFSClient::UpdateFileSystemCallable(const Update
   return task->get_future();
 }
 
-void EFSClient::UpdateFileSystemAsync(const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClientUpdateFileSystemAsyncHelper(EFSClient const * const clientThis, const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFileSystemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFileSystem(request), context);
 }
 
-void EFSClient::UpdateFileSystemAsyncHelper(const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void EFSClient::UpdateFileSystemAsync(const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFileSystem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ EFSClientUpdateFileSystemAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -214,14 +214,14 @@ AssociateRoleToGroupOutcomeCallable GreengrassClient::AssociateRoleToGroupCallab
   return task->get_future();
 }
 
-void GreengrassClient::AssociateRoleToGroupAsync(const AssociateRoleToGroupRequest& request, const AssociateRoleToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientAssociateRoleToGroupAsyncHelper(GreengrassClient const * const clientThis, const AssociateRoleToGroupRequest& request, const AssociateRoleToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateRoleToGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateRoleToGroup(request), context);
 }
 
-void GreengrassClient::AssociateRoleToGroupAsyncHelper(const AssociateRoleToGroupRequest& request, const AssociateRoleToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::AssociateRoleToGroupAsync(const AssociateRoleToGroupRequest& request, const AssociateRoleToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateRoleToGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientAssociateRoleToGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateServiceRoleToAccountOutcome GreengrassClient::AssociateServiceRoleToAccount(const AssociateServiceRoleToAccountRequest& request) const
@@ -239,14 +239,14 @@ AssociateServiceRoleToAccountOutcomeCallable GreengrassClient::AssociateServiceR
   return task->get_future();
 }
 
-void GreengrassClient::AssociateServiceRoleToAccountAsync(const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientAssociateServiceRoleToAccountAsyncHelper(GreengrassClient const * const clientThis, const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateServiceRoleToAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateServiceRoleToAccount(request), context);
 }
 
-void GreengrassClient::AssociateServiceRoleToAccountAsyncHelper(const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::AssociateServiceRoleToAccountAsync(const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateServiceRoleToAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientAssociateServiceRoleToAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConnectorDefinitionOutcome GreengrassClient::CreateConnectorDefinition(const CreateConnectorDefinitionRequest& request) const
@@ -264,14 +264,14 @@ CreateConnectorDefinitionOutcomeCallable GreengrassClient::CreateConnectorDefini
   return task->get_future();
 }
 
-void GreengrassClient::CreateConnectorDefinitionAsync(const CreateConnectorDefinitionRequest& request, const CreateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateConnectorDefinitionAsyncHelper(GreengrassClient const * const clientThis, const CreateConnectorDefinitionRequest& request, const CreateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectorDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConnectorDefinition(request), context);
 }
 
-void GreengrassClient::CreateConnectorDefinitionAsyncHelper(const CreateConnectorDefinitionRequest& request, const CreateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateConnectorDefinitionAsync(const CreateConnectorDefinitionRequest& request, const CreateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConnectorDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateConnectorDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConnectorDefinitionVersionOutcome GreengrassClient::CreateConnectorDefinitionVersion(const CreateConnectorDefinitionVersionRequest& request) const
@@ -296,14 +296,14 @@ CreateConnectorDefinitionVersionOutcomeCallable GreengrassClient::CreateConnecto
   return task->get_future();
 }
 
-void GreengrassClient::CreateConnectorDefinitionVersionAsync(const CreateConnectorDefinitionVersionRequest& request, const CreateConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateConnectorDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const CreateConnectorDefinitionVersionRequest& request, const CreateConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectorDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConnectorDefinitionVersion(request), context);
 }
 
-void GreengrassClient::CreateConnectorDefinitionVersionAsyncHelper(const CreateConnectorDefinitionVersionRequest& request, const CreateConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateConnectorDefinitionVersionAsync(const CreateConnectorDefinitionVersionRequest& request, const CreateConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConnectorDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateConnectorDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCoreDefinitionOutcome GreengrassClient::CreateCoreDefinition(const CreateCoreDefinitionRequest& request) const
@@ -321,14 +321,14 @@ CreateCoreDefinitionOutcomeCallable GreengrassClient::CreateCoreDefinitionCallab
   return task->get_future();
 }
 
-void GreengrassClient::CreateCoreDefinitionAsync(const CreateCoreDefinitionRequest& request, const CreateCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateCoreDefinitionAsyncHelper(GreengrassClient const * const clientThis, const CreateCoreDefinitionRequest& request, const CreateCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCoreDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCoreDefinition(request), context);
 }
 
-void GreengrassClient::CreateCoreDefinitionAsyncHelper(const CreateCoreDefinitionRequest& request, const CreateCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateCoreDefinitionAsync(const CreateCoreDefinitionRequest& request, const CreateCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCoreDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateCoreDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCoreDefinitionVersionOutcome GreengrassClient::CreateCoreDefinitionVersion(const CreateCoreDefinitionVersionRequest& request) const
@@ -353,14 +353,14 @@ CreateCoreDefinitionVersionOutcomeCallable GreengrassClient::CreateCoreDefinitio
   return task->get_future();
 }
 
-void GreengrassClient::CreateCoreDefinitionVersionAsync(const CreateCoreDefinitionVersionRequest& request, const CreateCoreDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateCoreDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const CreateCoreDefinitionVersionRequest& request, const CreateCoreDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCoreDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCoreDefinitionVersion(request), context);
 }
 
-void GreengrassClient::CreateCoreDefinitionVersionAsyncHelper(const CreateCoreDefinitionVersionRequest& request, const CreateCoreDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateCoreDefinitionVersionAsync(const CreateCoreDefinitionVersionRequest& request, const CreateCoreDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCoreDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateCoreDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDeploymentOutcome GreengrassClient::CreateDeployment(const CreateDeploymentRequest& request) const
@@ -385,14 +385,14 @@ CreateDeploymentOutcomeCallable GreengrassClient::CreateDeploymentCallable(const
   return task->get_future();
 }
 
-void GreengrassClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateDeploymentAsyncHelper(GreengrassClient const * const clientThis, const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDeployment(request), context);
 }
 
-void GreengrassClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDeviceDefinitionOutcome GreengrassClient::CreateDeviceDefinition(const CreateDeviceDefinitionRequest& request) const
@@ -410,14 +410,14 @@ CreateDeviceDefinitionOutcomeCallable GreengrassClient::CreateDeviceDefinitionCa
   return task->get_future();
 }
 
-void GreengrassClient::CreateDeviceDefinitionAsync(const CreateDeviceDefinitionRequest& request, const CreateDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateDeviceDefinitionAsyncHelper(GreengrassClient const * const clientThis, const CreateDeviceDefinitionRequest& request, const CreateDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeviceDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDeviceDefinition(request), context);
 }
 
-void GreengrassClient::CreateDeviceDefinitionAsyncHelper(const CreateDeviceDefinitionRequest& request, const CreateDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateDeviceDefinitionAsync(const CreateDeviceDefinitionRequest& request, const CreateDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDeviceDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateDeviceDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDeviceDefinitionVersionOutcome GreengrassClient::CreateDeviceDefinitionVersion(const CreateDeviceDefinitionVersionRequest& request) const
@@ -442,14 +442,14 @@ CreateDeviceDefinitionVersionOutcomeCallable GreengrassClient::CreateDeviceDefin
   return task->get_future();
 }
 
-void GreengrassClient::CreateDeviceDefinitionVersionAsync(const CreateDeviceDefinitionVersionRequest& request, const CreateDeviceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateDeviceDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const CreateDeviceDefinitionVersionRequest& request, const CreateDeviceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeviceDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDeviceDefinitionVersion(request), context);
 }
 
-void GreengrassClient::CreateDeviceDefinitionVersionAsyncHelper(const CreateDeviceDefinitionVersionRequest& request, const CreateDeviceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateDeviceDefinitionVersionAsync(const CreateDeviceDefinitionVersionRequest& request, const CreateDeviceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDeviceDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateDeviceDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFunctionDefinitionOutcome GreengrassClient::CreateFunctionDefinition(const CreateFunctionDefinitionRequest& request) const
@@ -467,14 +467,14 @@ CreateFunctionDefinitionOutcomeCallable GreengrassClient::CreateFunctionDefiniti
   return task->get_future();
 }
 
-void GreengrassClient::CreateFunctionDefinitionAsync(const CreateFunctionDefinitionRequest& request, const CreateFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateFunctionDefinitionAsyncHelper(GreengrassClient const * const clientThis, const CreateFunctionDefinitionRequest& request, const CreateFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFunctionDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFunctionDefinition(request), context);
 }
 
-void GreengrassClient::CreateFunctionDefinitionAsyncHelper(const CreateFunctionDefinitionRequest& request, const CreateFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateFunctionDefinitionAsync(const CreateFunctionDefinitionRequest& request, const CreateFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFunctionDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateFunctionDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFunctionDefinitionVersionOutcome GreengrassClient::CreateFunctionDefinitionVersion(const CreateFunctionDefinitionVersionRequest& request) const
@@ -499,14 +499,14 @@ CreateFunctionDefinitionVersionOutcomeCallable GreengrassClient::CreateFunctionD
   return task->get_future();
 }
 
-void GreengrassClient::CreateFunctionDefinitionVersionAsync(const CreateFunctionDefinitionVersionRequest& request, const CreateFunctionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateFunctionDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const CreateFunctionDefinitionVersionRequest& request, const CreateFunctionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFunctionDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFunctionDefinitionVersion(request), context);
 }
 
-void GreengrassClient::CreateFunctionDefinitionVersionAsyncHelper(const CreateFunctionDefinitionVersionRequest& request, const CreateFunctionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateFunctionDefinitionVersionAsync(const CreateFunctionDefinitionVersionRequest& request, const CreateFunctionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFunctionDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateFunctionDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGroupOutcome GreengrassClient::CreateGroup(const CreateGroupRequest& request) const
@@ -524,14 +524,14 @@ CreateGroupOutcomeCallable GreengrassClient::CreateGroupCallable(const CreateGro
   return task->get_future();
 }
 
-void GreengrassClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateGroupAsyncHelper(GreengrassClient const * const clientThis, const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGroup(request), context);
 }
 
-void GreengrassClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGroupCertificateAuthorityOutcome GreengrassClient::CreateGroupCertificateAuthority(const CreateGroupCertificateAuthorityRequest& request) const
@@ -556,14 +556,14 @@ CreateGroupCertificateAuthorityOutcomeCallable GreengrassClient::CreateGroupCert
   return task->get_future();
 }
 
-void GreengrassClient::CreateGroupCertificateAuthorityAsync(const CreateGroupCertificateAuthorityRequest& request, const CreateGroupCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateGroupCertificateAuthorityAsyncHelper(GreengrassClient const * const clientThis, const CreateGroupCertificateAuthorityRequest& request, const CreateGroupCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupCertificateAuthorityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGroupCertificateAuthority(request), context);
 }
 
-void GreengrassClient::CreateGroupCertificateAuthorityAsyncHelper(const CreateGroupCertificateAuthorityRequest& request, const CreateGroupCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateGroupCertificateAuthorityAsync(const CreateGroupCertificateAuthorityRequest& request, const CreateGroupCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGroupCertificateAuthority(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateGroupCertificateAuthorityAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGroupVersionOutcome GreengrassClient::CreateGroupVersion(const CreateGroupVersionRequest& request) const
@@ -588,14 +588,14 @@ CreateGroupVersionOutcomeCallable GreengrassClient::CreateGroupVersionCallable(c
   return task->get_future();
 }
 
-void GreengrassClient::CreateGroupVersionAsync(const CreateGroupVersionRequest& request, const CreateGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateGroupVersionAsyncHelper(GreengrassClient const * const clientThis, const CreateGroupVersionRequest& request, const CreateGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGroupVersion(request), context);
 }
 
-void GreengrassClient::CreateGroupVersionAsyncHelper(const CreateGroupVersionRequest& request, const CreateGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateGroupVersionAsync(const CreateGroupVersionRequest& request, const CreateGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGroupVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateGroupVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLoggerDefinitionOutcome GreengrassClient::CreateLoggerDefinition(const CreateLoggerDefinitionRequest& request) const
@@ -613,14 +613,14 @@ CreateLoggerDefinitionOutcomeCallable GreengrassClient::CreateLoggerDefinitionCa
   return task->get_future();
 }
 
-void GreengrassClient::CreateLoggerDefinitionAsync(const CreateLoggerDefinitionRequest& request, const CreateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateLoggerDefinitionAsyncHelper(GreengrassClient const * const clientThis, const CreateLoggerDefinitionRequest& request, const CreateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLoggerDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLoggerDefinition(request), context);
 }
 
-void GreengrassClient::CreateLoggerDefinitionAsyncHelper(const CreateLoggerDefinitionRequest& request, const CreateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateLoggerDefinitionAsync(const CreateLoggerDefinitionRequest& request, const CreateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLoggerDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateLoggerDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLoggerDefinitionVersionOutcome GreengrassClient::CreateLoggerDefinitionVersion(const CreateLoggerDefinitionVersionRequest& request) const
@@ -645,14 +645,14 @@ CreateLoggerDefinitionVersionOutcomeCallable GreengrassClient::CreateLoggerDefin
   return task->get_future();
 }
 
-void GreengrassClient::CreateLoggerDefinitionVersionAsync(const CreateLoggerDefinitionVersionRequest& request, const CreateLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateLoggerDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const CreateLoggerDefinitionVersionRequest& request, const CreateLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLoggerDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLoggerDefinitionVersion(request), context);
 }
 
-void GreengrassClient::CreateLoggerDefinitionVersionAsyncHelper(const CreateLoggerDefinitionVersionRequest& request, const CreateLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateLoggerDefinitionVersionAsync(const CreateLoggerDefinitionVersionRequest& request, const CreateLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLoggerDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateLoggerDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResourceDefinitionOutcome GreengrassClient::CreateResourceDefinition(const CreateResourceDefinitionRequest& request) const
@@ -670,14 +670,14 @@ CreateResourceDefinitionOutcomeCallable GreengrassClient::CreateResourceDefiniti
   return task->get_future();
 }
 
-void GreengrassClient::CreateResourceDefinitionAsync(const CreateResourceDefinitionRequest& request, const CreateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateResourceDefinitionAsyncHelper(GreengrassClient const * const clientThis, const CreateResourceDefinitionRequest& request, const CreateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResourceDefinition(request), context);
 }
 
-void GreengrassClient::CreateResourceDefinitionAsyncHelper(const CreateResourceDefinitionRequest& request, const CreateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateResourceDefinitionAsync(const CreateResourceDefinitionRequest& request, const CreateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResourceDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateResourceDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResourceDefinitionVersionOutcome GreengrassClient::CreateResourceDefinitionVersion(const CreateResourceDefinitionVersionRequest& request) const
@@ -702,14 +702,14 @@ CreateResourceDefinitionVersionOutcomeCallable GreengrassClient::CreateResourceD
   return task->get_future();
 }
 
-void GreengrassClient::CreateResourceDefinitionVersionAsync(const CreateResourceDefinitionVersionRequest& request, const CreateResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateResourceDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const CreateResourceDefinitionVersionRequest& request, const CreateResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResourceDefinitionVersion(request), context);
 }
 
-void GreengrassClient::CreateResourceDefinitionVersionAsyncHelper(const CreateResourceDefinitionVersionRequest& request, const CreateResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateResourceDefinitionVersionAsync(const CreateResourceDefinitionVersionRequest& request, const CreateResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResourceDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateResourceDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSoftwareUpdateJobOutcome GreengrassClient::CreateSoftwareUpdateJob(const CreateSoftwareUpdateJobRequest& request) const
@@ -727,14 +727,14 @@ CreateSoftwareUpdateJobOutcomeCallable GreengrassClient::CreateSoftwareUpdateJob
   return task->get_future();
 }
 
-void GreengrassClient::CreateSoftwareUpdateJobAsync(const CreateSoftwareUpdateJobRequest& request, const CreateSoftwareUpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateSoftwareUpdateJobAsyncHelper(GreengrassClient const * const clientThis, const CreateSoftwareUpdateJobRequest& request, const CreateSoftwareUpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSoftwareUpdateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSoftwareUpdateJob(request), context);
 }
 
-void GreengrassClient::CreateSoftwareUpdateJobAsyncHelper(const CreateSoftwareUpdateJobRequest& request, const CreateSoftwareUpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateSoftwareUpdateJobAsync(const CreateSoftwareUpdateJobRequest& request, const CreateSoftwareUpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSoftwareUpdateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateSoftwareUpdateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSubscriptionDefinitionOutcome GreengrassClient::CreateSubscriptionDefinition(const CreateSubscriptionDefinitionRequest& request) const
@@ -752,14 +752,14 @@ CreateSubscriptionDefinitionOutcomeCallable GreengrassClient::CreateSubscription
   return task->get_future();
 }
 
-void GreengrassClient::CreateSubscriptionDefinitionAsync(const CreateSubscriptionDefinitionRequest& request, const CreateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateSubscriptionDefinitionAsyncHelper(GreengrassClient const * const clientThis, const CreateSubscriptionDefinitionRequest& request, const CreateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSubscriptionDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSubscriptionDefinition(request), context);
 }
 
-void GreengrassClient::CreateSubscriptionDefinitionAsyncHelper(const CreateSubscriptionDefinitionRequest& request, const CreateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateSubscriptionDefinitionAsync(const CreateSubscriptionDefinitionRequest& request, const CreateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSubscriptionDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateSubscriptionDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSubscriptionDefinitionVersionOutcome GreengrassClient::CreateSubscriptionDefinitionVersion(const CreateSubscriptionDefinitionVersionRequest& request) const
@@ -784,14 +784,14 @@ CreateSubscriptionDefinitionVersionOutcomeCallable GreengrassClient::CreateSubsc
   return task->get_future();
 }
 
-void GreengrassClient::CreateSubscriptionDefinitionVersionAsync(const CreateSubscriptionDefinitionVersionRequest& request, const CreateSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientCreateSubscriptionDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const CreateSubscriptionDefinitionVersionRequest& request, const CreateSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSubscriptionDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSubscriptionDefinitionVersion(request), context);
 }
 
-void GreengrassClient::CreateSubscriptionDefinitionVersionAsyncHelper(const CreateSubscriptionDefinitionVersionRequest& request, const CreateSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::CreateSubscriptionDefinitionVersionAsync(const CreateSubscriptionDefinitionVersionRequest& request, const CreateSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSubscriptionDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientCreateSubscriptionDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConnectorDefinitionOutcome GreengrassClient::DeleteConnectorDefinition(const DeleteConnectorDefinitionRequest& request) const
@@ -815,14 +815,14 @@ DeleteConnectorDefinitionOutcomeCallable GreengrassClient::DeleteConnectorDefini
   return task->get_future();
 }
 
-void GreengrassClient::DeleteConnectorDefinitionAsync(const DeleteConnectorDefinitionRequest& request, const DeleteConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientDeleteConnectorDefinitionAsyncHelper(GreengrassClient const * const clientThis, const DeleteConnectorDefinitionRequest& request, const DeleteConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectorDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConnectorDefinition(request), context);
 }
 
-void GreengrassClient::DeleteConnectorDefinitionAsyncHelper(const DeleteConnectorDefinitionRequest& request, const DeleteConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::DeleteConnectorDefinitionAsync(const DeleteConnectorDefinitionRequest& request, const DeleteConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConnectorDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientDeleteConnectorDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCoreDefinitionOutcome GreengrassClient::DeleteCoreDefinition(const DeleteCoreDefinitionRequest& request) const
@@ -846,14 +846,14 @@ DeleteCoreDefinitionOutcomeCallable GreengrassClient::DeleteCoreDefinitionCallab
   return task->get_future();
 }
 
-void GreengrassClient::DeleteCoreDefinitionAsync(const DeleteCoreDefinitionRequest& request, const DeleteCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientDeleteCoreDefinitionAsyncHelper(GreengrassClient const * const clientThis, const DeleteCoreDefinitionRequest& request, const DeleteCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCoreDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCoreDefinition(request), context);
 }
 
-void GreengrassClient::DeleteCoreDefinitionAsyncHelper(const DeleteCoreDefinitionRequest& request, const DeleteCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::DeleteCoreDefinitionAsync(const DeleteCoreDefinitionRequest& request, const DeleteCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCoreDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientDeleteCoreDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDeviceDefinitionOutcome GreengrassClient::DeleteDeviceDefinition(const DeleteDeviceDefinitionRequest& request) const
@@ -877,14 +877,14 @@ DeleteDeviceDefinitionOutcomeCallable GreengrassClient::DeleteDeviceDefinitionCa
   return task->get_future();
 }
 
-void GreengrassClient::DeleteDeviceDefinitionAsync(const DeleteDeviceDefinitionRequest& request, const DeleteDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientDeleteDeviceDefinitionAsyncHelper(GreengrassClient const * const clientThis, const DeleteDeviceDefinitionRequest& request, const DeleteDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeviceDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDeviceDefinition(request), context);
 }
 
-void GreengrassClient::DeleteDeviceDefinitionAsyncHelper(const DeleteDeviceDefinitionRequest& request, const DeleteDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::DeleteDeviceDefinitionAsync(const DeleteDeviceDefinitionRequest& request, const DeleteDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDeviceDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientDeleteDeviceDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFunctionDefinitionOutcome GreengrassClient::DeleteFunctionDefinition(const DeleteFunctionDefinitionRequest& request) const
@@ -908,14 +908,14 @@ DeleteFunctionDefinitionOutcomeCallable GreengrassClient::DeleteFunctionDefiniti
   return task->get_future();
 }
 
-void GreengrassClient::DeleteFunctionDefinitionAsync(const DeleteFunctionDefinitionRequest& request, const DeleteFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientDeleteFunctionDefinitionAsyncHelper(GreengrassClient const * const clientThis, const DeleteFunctionDefinitionRequest& request, const DeleteFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFunctionDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFunctionDefinition(request), context);
 }
 
-void GreengrassClient::DeleteFunctionDefinitionAsyncHelper(const DeleteFunctionDefinitionRequest& request, const DeleteFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::DeleteFunctionDefinitionAsync(const DeleteFunctionDefinitionRequest& request, const DeleteFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFunctionDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientDeleteFunctionDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGroupOutcome GreengrassClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -939,14 +939,14 @@ DeleteGroupOutcomeCallable GreengrassClient::DeleteGroupCallable(const DeleteGro
   return task->get_future();
 }
 
-void GreengrassClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientDeleteGroupAsyncHelper(GreengrassClient const * const clientThis, const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGroup(request), context);
 }
 
-void GreengrassClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientDeleteGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLoggerDefinitionOutcome GreengrassClient::DeleteLoggerDefinition(const DeleteLoggerDefinitionRequest& request) const
@@ -970,14 +970,14 @@ DeleteLoggerDefinitionOutcomeCallable GreengrassClient::DeleteLoggerDefinitionCa
   return task->get_future();
 }
 
-void GreengrassClient::DeleteLoggerDefinitionAsync(const DeleteLoggerDefinitionRequest& request, const DeleteLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientDeleteLoggerDefinitionAsyncHelper(GreengrassClient const * const clientThis, const DeleteLoggerDefinitionRequest& request, const DeleteLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLoggerDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLoggerDefinition(request), context);
 }
 
-void GreengrassClient::DeleteLoggerDefinitionAsyncHelper(const DeleteLoggerDefinitionRequest& request, const DeleteLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::DeleteLoggerDefinitionAsync(const DeleteLoggerDefinitionRequest& request, const DeleteLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLoggerDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientDeleteLoggerDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourceDefinitionOutcome GreengrassClient::DeleteResourceDefinition(const DeleteResourceDefinitionRequest& request) const
@@ -1001,14 +1001,14 @@ DeleteResourceDefinitionOutcomeCallable GreengrassClient::DeleteResourceDefiniti
   return task->get_future();
 }
 
-void GreengrassClient::DeleteResourceDefinitionAsync(const DeleteResourceDefinitionRequest& request, const DeleteResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientDeleteResourceDefinitionAsyncHelper(GreengrassClient const * const clientThis, const DeleteResourceDefinitionRequest& request, const DeleteResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourceDefinition(request), context);
 }
 
-void GreengrassClient::DeleteResourceDefinitionAsyncHelper(const DeleteResourceDefinitionRequest& request, const DeleteResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::DeleteResourceDefinitionAsync(const DeleteResourceDefinitionRequest& request, const DeleteResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourceDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientDeleteResourceDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSubscriptionDefinitionOutcome GreengrassClient::DeleteSubscriptionDefinition(const DeleteSubscriptionDefinitionRequest& request) const
@@ -1032,14 +1032,14 @@ DeleteSubscriptionDefinitionOutcomeCallable GreengrassClient::DeleteSubscription
   return task->get_future();
 }
 
-void GreengrassClient::DeleteSubscriptionDefinitionAsync(const DeleteSubscriptionDefinitionRequest& request, const DeleteSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientDeleteSubscriptionDefinitionAsyncHelper(GreengrassClient const * const clientThis, const DeleteSubscriptionDefinitionRequest& request, const DeleteSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSubscriptionDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSubscriptionDefinition(request), context);
 }
 
-void GreengrassClient::DeleteSubscriptionDefinitionAsyncHelper(const DeleteSubscriptionDefinitionRequest& request, const DeleteSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::DeleteSubscriptionDefinitionAsync(const DeleteSubscriptionDefinitionRequest& request, const DeleteSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSubscriptionDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientDeleteSubscriptionDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateRoleFromGroupOutcome GreengrassClient::DisassociateRoleFromGroup(const DisassociateRoleFromGroupRequest& request) const
@@ -1064,14 +1064,14 @@ DisassociateRoleFromGroupOutcomeCallable GreengrassClient::DisassociateRoleFromG
   return task->get_future();
 }
 
-void GreengrassClient::DisassociateRoleFromGroupAsync(const DisassociateRoleFromGroupRequest& request, const DisassociateRoleFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientDisassociateRoleFromGroupAsyncHelper(GreengrassClient const * const clientThis, const DisassociateRoleFromGroupRequest& request, const DisassociateRoleFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateRoleFromGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateRoleFromGroup(request), context);
 }
 
-void GreengrassClient::DisassociateRoleFromGroupAsyncHelper(const DisassociateRoleFromGroupRequest& request, const DisassociateRoleFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::DisassociateRoleFromGroupAsync(const DisassociateRoleFromGroupRequest& request, const DisassociateRoleFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateRoleFromGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientDisassociateRoleFromGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateServiceRoleFromAccountOutcome GreengrassClient::DisassociateServiceRoleFromAccount(const DisassociateServiceRoleFromAccountRequest& request) const
@@ -1089,14 +1089,14 @@ DisassociateServiceRoleFromAccountOutcomeCallable GreengrassClient::Disassociate
   return task->get_future();
 }
 
-void GreengrassClient::DisassociateServiceRoleFromAccountAsync(const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientDisassociateServiceRoleFromAccountAsyncHelper(GreengrassClient const * const clientThis, const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateServiceRoleFromAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateServiceRoleFromAccount(request), context);
 }
 
-void GreengrassClient::DisassociateServiceRoleFromAccountAsyncHelper(const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::DisassociateServiceRoleFromAccountAsync(const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateServiceRoleFromAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientDisassociateServiceRoleFromAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAssociatedRoleOutcome GreengrassClient::GetAssociatedRole(const GetAssociatedRoleRequest& request) const
@@ -1121,14 +1121,14 @@ GetAssociatedRoleOutcomeCallable GreengrassClient::GetAssociatedRoleCallable(con
   return task->get_future();
 }
 
-void GreengrassClient::GetAssociatedRoleAsync(const GetAssociatedRoleRequest& request, const GetAssociatedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetAssociatedRoleAsyncHelper(GreengrassClient const * const clientThis, const GetAssociatedRoleRequest& request, const GetAssociatedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssociatedRoleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAssociatedRole(request), context);
 }
 
-void GreengrassClient::GetAssociatedRoleAsyncHelper(const GetAssociatedRoleRequest& request, const GetAssociatedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetAssociatedRoleAsync(const GetAssociatedRoleRequest& request, const GetAssociatedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssociatedRole(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetAssociatedRoleAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBulkDeploymentStatusOutcome GreengrassClient::GetBulkDeploymentStatus(const GetBulkDeploymentStatusRequest& request) const
@@ -1153,14 +1153,14 @@ GetBulkDeploymentStatusOutcomeCallable GreengrassClient::GetBulkDeploymentStatus
   return task->get_future();
 }
 
-void GreengrassClient::GetBulkDeploymentStatusAsync(const GetBulkDeploymentStatusRequest& request, const GetBulkDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetBulkDeploymentStatusAsyncHelper(GreengrassClient const * const clientThis, const GetBulkDeploymentStatusRequest& request, const GetBulkDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBulkDeploymentStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBulkDeploymentStatus(request), context);
 }
 
-void GreengrassClient::GetBulkDeploymentStatusAsyncHelper(const GetBulkDeploymentStatusRequest& request, const GetBulkDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetBulkDeploymentStatusAsync(const GetBulkDeploymentStatusRequest& request, const GetBulkDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBulkDeploymentStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetBulkDeploymentStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectivityInfoOutcome GreengrassClient::GetConnectivityInfo(const GetConnectivityInfoRequest& request) const
@@ -1185,14 +1185,14 @@ GetConnectivityInfoOutcomeCallable GreengrassClient::GetConnectivityInfoCallable
   return task->get_future();
 }
 
-void GreengrassClient::GetConnectivityInfoAsync(const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetConnectivityInfoAsyncHelper(GreengrassClient const * const clientThis, const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectivityInfoAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnectivityInfo(request), context);
 }
 
-void GreengrassClient::GetConnectivityInfoAsyncHelper(const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetConnectivityInfoAsync(const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnectivityInfo(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetConnectivityInfoAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectorDefinitionOutcome GreengrassClient::GetConnectorDefinition(const GetConnectorDefinitionRequest& request) const
@@ -1216,14 +1216,14 @@ GetConnectorDefinitionOutcomeCallable GreengrassClient::GetConnectorDefinitionCa
   return task->get_future();
 }
 
-void GreengrassClient::GetConnectorDefinitionAsync(const GetConnectorDefinitionRequest& request, const GetConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetConnectorDefinitionAsyncHelper(GreengrassClient const * const clientThis, const GetConnectorDefinitionRequest& request, const GetConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectorDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnectorDefinition(request), context);
 }
 
-void GreengrassClient::GetConnectorDefinitionAsyncHelper(const GetConnectorDefinitionRequest& request, const GetConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetConnectorDefinitionAsync(const GetConnectorDefinitionRequest& request, const GetConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnectorDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetConnectorDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConnectorDefinitionVersionOutcome GreengrassClient::GetConnectorDefinitionVersion(const GetConnectorDefinitionVersionRequest& request) const
@@ -1254,14 +1254,14 @@ GetConnectorDefinitionVersionOutcomeCallable GreengrassClient::GetConnectorDefin
   return task->get_future();
 }
 
-void GreengrassClient::GetConnectorDefinitionVersionAsync(const GetConnectorDefinitionVersionRequest& request, const GetConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetConnectorDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const GetConnectorDefinitionVersionRequest& request, const GetConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectorDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConnectorDefinitionVersion(request), context);
 }
 
-void GreengrassClient::GetConnectorDefinitionVersionAsyncHelper(const GetConnectorDefinitionVersionRequest& request, const GetConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetConnectorDefinitionVersionAsync(const GetConnectorDefinitionVersionRequest& request, const GetConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConnectorDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetConnectorDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCoreDefinitionOutcome GreengrassClient::GetCoreDefinition(const GetCoreDefinitionRequest& request) const
@@ -1285,14 +1285,14 @@ GetCoreDefinitionOutcomeCallable GreengrassClient::GetCoreDefinitionCallable(con
   return task->get_future();
 }
 
-void GreengrassClient::GetCoreDefinitionAsync(const GetCoreDefinitionRequest& request, const GetCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetCoreDefinitionAsyncHelper(GreengrassClient const * const clientThis, const GetCoreDefinitionRequest& request, const GetCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCoreDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCoreDefinition(request), context);
 }
 
-void GreengrassClient::GetCoreDefinitionAsyncHelper(const GetCoreDefinitionRequest& request, const GetCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetCoreDefinitionAsync(const GetCoreDefinitionRequest& request, const GetCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCoreDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetCoreDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCoreDefinitionVersionOutcome GreengrassClient::GetCoreDefinitionVersion(const GetCoreDefinitionVersionRequest& request) const
@@ -1323,14 +1323,14 @@ GetCoreDefinitionVersionOutcomeCallable GreengrassClient::GetCoreDefinitionVersi
   return task->get_future();
 }
 
-void GreengrassClient::GetCoreDefinitionVersionAsync(const GetCoreDefinitionVersionRequest& request, const GetCoreDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetCoreDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const GetCoreDefinitionVersionRequest& request, const GetCoreDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCoreDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCoreDefinitionVersion(request), context);
 }
 
-void GreengrassClient::GetCoreDefinitionVersionAsyncHelper(const GetCoreDefinitionVersionRequest& request, const GetCoreDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetCoreDefinitionVersionAsync(const GetCoreDefinitionVersionRequest& request, const GetCoreDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCoreDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetCoreDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeploymentStatusOutcome GreengrassClient::GetDeploymentStatus(const GetDeploymentStatusRequest& request) const
@@ -1362,14 +1362,14 @@ GetDeploymentStatusOutcomeCallable GreengrassClient::GetDeploymentStatusCallable
   return task->get_future();
 }
 
-void GreengrassClient::GetDeploymentStatusAsync(const GetDeploymentStatusRequest& request, const GetDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetDeploymentStatusAsyncHelper(GreengrassClient const * const clientThis, const GetDeploymentStatusRequest& request, const GetDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeploymentStatus(request), context);
 }
 
-void GreengrassClient::GetDeploymentStatusAsyncHelper(const GetDeploymentStatusRequest& request, const GetDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetDeploymentStatusAsync(const GetDeploymentStatusRequest& request, const GetDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeploymentStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetDeploymentStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeviceDefinitionOutcome GreengrassClient::GetDeviceDefinition(const GetDeviceDefinitionRequest& request) const
@@ -1393,14 +1393,14 @@ GetDeviceDefinitionOutcomeCallable GreengrassClient::GetDeviceDefinitionCallable
   return task->get_future();
 }
 
-void GreengrassClient::GetDeviceDefinitionAsync(const GetDeviceDefinitionRequest& request, const GetDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetDeviceDefinitionAsyncHelper(GreengrassClient const * const clientThis, const GetDeviceDefinitionRequest& request, const GetDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeviceDefinition(request), context);
 }
 
-void GreengrassClient::GetDeviceDefinitionAsyncHelper(const GetDeviceDefinitionRequest& request, const GetDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetDeviceDefinitionAsync(const GetDeviceDefinitionRequest& request, const GetDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeviceDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetDeviceDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeviceDefinitionVersionOutcome GreengrassClient::GetDeviceDefinitionVersion(const GetDeviceDefinitionVersionRequest& request) const
@@ -1431,14 +1431,14 @@ GetDeviceDefinitionVersionOutcomeCallable GreengrassClient::GetDeviceDefinitionV
   return task->get_future();
 }
 
-void GreengrassClient::GetDeviceDefinitionVersionAsync(const GetDeviceDefinitionVersionRequest& request, const GetDeviceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetDeviceDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const GetDeviceDefinitionVersionRequest& request, const GetDeviceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeviceDefinitionVersion(request), context);
 }
 
-void GreengrassClient::GetDeviceDefinitionVersionAsyncHelper(const GetDeviceDefinitionVersionRequest& request, const GetDeviceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetDeviceDefinitionVersionAsync(const GetDeviceDefinitionVersionRequest& request, const GetDeviceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeviceDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetDeviceDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFunctionDefinitionOutcome GreengrassClient::GetFunctionDefinition(const GetFunctionDefinitionRequest& request) const
@@ -1462,14 +1462,14 @@ GetFunctionDefinitionOutcomeCallable GreengrassClient::GetFunctionDefinitionCall
   return task->get_future();
 }
 
-void GreengrassClient::GetFunctionDefinitionAsync(const GetFunctionDefinitionRequest& request, const GetFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetFunctionDefinitionAsyncHelper(GreengrassClient const * const clientThis, const GetFunctionDefinitionRequest& request, const GetFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFunctionDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFunctionDefinition(request), context);
 }
 
-void GreengrassClient::GetFunctionDefinitionAsyncHelper(const GetFunctionDefinitionRequest& request, const GetFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetFunctionDefinitionAsync(const GetFunctionDefinitionRequest& request, const GetFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFunctionDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetFunctionDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetFunctionDefinitionVersionOutcome GreengrassClient::GetFunctionDefinitionVersion(const GetFunctionDefinitionVersionRequest& request) const
@@ -1500,14 +1500,14 @@ GetFunctionDefinitionVersionOutcomeCallable GreengrassClient::GetFunctionDefinit
   return task->get_future();
 }
 
-void GreengrassClient::GetFunctionDefinitionVersionAsync(const GetFunctionDefinitionVersionRequest& request, const GetFunctionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetFunctionDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const GetFunctionDefinitionVersionRequest& request, const GetFunctionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFunctionDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetFunctionDefinitionVersion(request), context);
 }
 
-void GreengrassClient::GetFunctionDefinitionVersionAsyncHelper(const GetFunctionDefinitionVersionRequest& request, const GetFunctionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetFunctionDefinitionVersionAsync(const GetFunctionDefinitionVersionRequest& request, const GetFunctionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetFunctionDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetFunctionDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupOutcome GreengrassClient::GetGroup(const GetGroupRequest& request) const
@@ -1531,14 +1531,14 @@ GetGroupOutcomeCallable GreengrassClient::GetGroupCallable(const GetGroupRequest
   return task->get_future();
 }
 
-void GreengrassClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetGroupAsyncHelper(GreengrassClient const * const clientThis, const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroup(request), context);
 }
 
-void GreengrassClient::GetGroupAsyncHelper(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupCertificateAuthorityOutcome GreengrassClient::GetGroupCertificateAuthority(const GetGroupCertificateAuthorityRequest& request) const
@@ -1569,14 +1569,14 @@ GetGroupCertificateAuthorityOutcomeCallable GreengrassClient::GetGroupCertificat
   return task->get_future();
 }
 
-void GreengrassClient::GetGroupCertificateAuthorityAsync(const GetGroupCertificateAuthorityRequest& request, const GetGroupCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetGroupCertificateAuthorityAsyncHelper(GreengrassClient const * const clientThis, const GetGroupCertificateAuthorityRequest& request, const GetGroupCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupCertificateAuthorityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroupCertificateAuthority(request), context);
 }
 
-void GreengrassClient::GetGroupCertificateAuthorityAsyncHelper(const GetGroupCertificateAuthorityRequest& request, const GetGroupCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetGroupCertificateAuthorityAsync(const GetGroupCertificateAuthorityRequest& request, const GetGroupCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroupCertificateAuthority(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetGroupCertificateAuthorityAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupCertificateConfigurationOutcome GreengrassClient::GetGroupCertificateConfiguration(const GetGroupCertificateConfigurationRequest& request) const
@@ -1601,14 +1601,14 @@ GetGroupCertificateConfigurationOutcomeCallable GreengrassClient::GetGroupCertif
   return task->get_future();
 }
 
-void GreengrassClient::GetGroupCertificateConfigurationAsync(const GetGroupCertificateConfigurationRequest& request, const GetGroupCertificateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetGroupCertificateConfigurationAsyncHelper(GreengrassClient const * const clientThis, const GetGroupCertificateConfigurationRequest& request, const GetGroupCertificateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupCertificateConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroupCertificateConfiguration(request), context);
 }
 
-void GreengrassClient::GetGroupCertificateConfigurationAsyncHelper(const GetGroupCertificateConfigurationRequest& request, const GetGroupCertificateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetGroupCertificateConfigurationAsync(const GetGroupCertificateConfigurationRequest& request, const GetGroupCertificateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroupCertificateConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetGroupCertificateConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupVersionOutcome GreengrassClient::GetGroupVersion(const GetGroupVersionRequest& request) const
@@ -1639,14 +1639,14 @@ GetGroupVersionOutcomeCallable GreengrassClient::GetGroupVersionCallable(const G
   return task->get_future();
 }
 
-void GreengrassClient::GetGroupVersionAsync(const GetGroupVersionRequest& request, const GetGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetGroupVersionAsyncHelper(GreengrassClient const * const clientThis, const GetGroupVersionRequest& request, const GetGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroupVersion(request), context);
 }
 
-void GreengrassClient::GetGroupVersionAsyncHelper(const GetGroupVersionRequest& request, const GetGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetGroupVersionAsync(const GetGroupVersionRequest& request, const GetGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroupVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetGroupVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLoggerDefinitionOutcome GreengrassClient::GetLoggerDefinition(const GetLoggerDefinitionRequest& request) const
@@ -1670,14 +1670,14 @@ GetLoggerDefinitionOutcomeCallable GreengrassClient::GetLoggerDefinitionCallable
   return task->get_future();
 }
 
-void GreengrassClient::GetLoggerDefinitionAsync(const GetLoggerDefinitionRequest& request, const GetLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetLoggerDefinitionAsyncHelper(GreengrassClient const * const clientThis, const GetLoggerDefinitionRequest& request, const GetLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLoggerDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLoggerDefinition(request), context);
 }
 
-void GreengrassClient::GetLoggerDefinitionAsyncHelper(const GetLoggerDefinitionRequest& request, const GetLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetLoggerDefinitionAsync(const GetLoggerDefinitionRequest& request, const GetLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLoggerDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetLoggerDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLoggerDefinitionVersionOutcome GreengrassClient::GetLoggerDefinitionVersion(const GetLoggerDefinitionVersionRequest& request) const
@@ -1708,14 +1708,14 @@ GetLoggerDefinitionVersionOutcomeCallable GreengrassClient::GetLoggerDefinitionV
   return task->get_future();
 }
 
-void GreengrassClient::GetLoggerDefinitionVersionAsync(const GetLoggerDefinitionVersionRequest& request, const GetLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetLoggerDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const GetLoggerDefinitionVersionRequest& request, const GetLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLoggerDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLoggerDefinitionVersion(request), context);
 }
 
-void GreengrassClient::GetLoggerDefinitionVersionAsyncHelper(const GetLoggerDefinitionVersionRequest& request, const GetLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetLoggerDefinitionVersionAsync(const GetLoggerDefinitionVersionRequest& request, const GetLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLoggerDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetLoggerDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourceDefinitionOutcome GreengrassClient::GetResourceDefinition(const GetResourceDefinitionRequest& request) const
@@ -1739,14 +1739,14 @@ GetResourceDefinitionOutcomeCallable GreengrassClient::GetResourceDefinitionCall
   return task->get_future();
 }
 
-void GreengrassClient::GetResourceDefinitionAsync(const GetResourceDefinitionRequest& request, const GetResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetResourceDefinitionAsyncHelper(GreengrassClient const * const clientThis, const GetResourceDefinitionRequest& request, const GetResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourceDefinition(request), context);
 }
 
-void GreengrassClient::GetResourceDefinitionAsyncHelper(const GetResourceDefinitionRequest& request, const GetResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetResourceDefinitionAsync(const GetResourceDefinitionRequest& request, const GetResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourceDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetResourceDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourceDefinitionVersionOutcome GreengrassClient::GetResourceDefinitionVersion(const GetResourceDefinitionVersionRequest& request) const
@@ -1777,14 +1777,14 @@ GetResourceDefinitionVersionOutcomeCallable GreengrassClient::GetResourceDefinit
   return task->get_future();
 }
 
-void GreengrassClient::GetResourceDefinitionVersionAsync(const GetResourceDefinitionVersionRequest& request, const GetResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetResourceDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const GetResourceDefinitionVersionRequest& request, const GetResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourceDefinitionVersion(request), context);
 }
 
-void GreengrassClient::GetResourceDefinitionVersionAsyncHelper(const GetResourceDefinitionVersionRequest& request, const GetResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetResourceDefinitionVersionAsync(const GetResourceDefinitionVersionRequest& request, const GetResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourceDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetResourceDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceRoleForAccountOutcome GreengrassClient::GetServiceRoleForAccount(const GetServiceRoleForAccountRequest& request) const
@@ -1802,14 +1802,14 @@ GetServiceRoleForAccountOutcomeCallable GreengrassClient::GetServiceRoleForAccou
   return task->get_future();
 }
 
-void GreengrassClient::GetServiceRoleForAccountAsync(const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetServiceRoleForAccountAsyncHelper(GreengrassClient const * const clientThis, const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceRoleForAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServiceRoleForAccount(request), context);
 }
 
-void GreengrassClient::GetServiceRoleForAccountAsyncHelper(const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetServiceRoleForAccountAsync(const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServiceRoleForAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetServiceRoleForAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSubscriptionDefinitionOutcome GreengrassClient::GetSubscriptionDefinition(const GetSubscriptionDefinitionRequest& request) const
@@ -1833,14 +1833,14 @@ GetSubscriptionDefinitionOutcomeCallable GreengrassClient::GetSubscriptionDefini
   return task->get_future();
 }
 
-void GreengrassClient::GetSubscriptionDefinitionAsync(const GetSubscriptionDefinitionRequest& request, const GetSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetSubscriptionDefinitionAsyncHelper(GreengrassClient const * const clientThis, const GetSubscriptionDefinitionRequest& request, const GetSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSubscriptionDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSubscriptionDefinition(request), context);
 }
 
-void GreengrassClient::GetSubscriptionDefinitionAsyncHelper(const GetSubscriptionDefinitionRequest& request, const GetSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetSubscriptionDefinitionAsync(const GetSubscriptionDefinitionRequest& request, const GetSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSubscriptionDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetSubscriptionDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSubscriptionDefinitionVersionOutcome GreengrassClient::GetSubscriptionDefinitionVersion(const GetSubscriptionDefinitionVersionRequest& request) const
@@ -1871,14 +1871,14 @@ GetSubscriptionDefinitionVersionOutcomeCallable GreengrassClient::GetSubscriptio
   return task->get_future();
 }
 
-void GreengrassClient::GetSubscriptionDefinitionVersionAsync(const GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetSubscriptionDefinitionVersionAsyncHelper(GreengrassClient const * const clientThis, const GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSubscriptionDefinitionVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSubscriptionDefinitionVersion(request), context);
 }
 
-void GreengrassClient::GetSubscriptionDefinitionVersionAsyncHelper(const GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetSubscriptionDefinitionVersionAsync(const GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSubscriptionDefinitionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetSubscriptionDefinitionVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetThingRuntimeConfigurationOutcome GreengrassClient::GetThingRuntimeConfiguration(const GetThingRuntimeConfigurationRequest& request) const
@@ -1903,14 +1903,14 @@ GetThingRuntimeConfigurationOutcomeCallable GreengrassClient::GetThingRuntimeCon
   return task->get_future();
 }
 
-void GreengrassClient::GetThingRuntimeConfigurationAsync(const GetThingRuntimeConfigurationRequest& request, const GetThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientGetThingRuntimeConfigurationAsyncHelper(GreengrassClient const * const clientThis, const GetThingRuntimeConfigurationRequest& request, const GetThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetThingRuntimeConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetThingRuntimeConfiguration(request), context);
 }
 
-void GreengrassClient::GetThingRuntimeConfigurationAsyncHelper(const GetThingRuntimeConfigurationRequest& request, const GetThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::GetThingRuntimeConfigurationAsync(const GetThingRuntimeConfigurationRequest& request, const GetThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetThingRuntimeConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientGetThingRuntimeConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBulkDeploymentDetailedReportsOutcome GreengrassClient::ListBulkDeploymentDetailedReports(const ListBulkDeploymentDetailedReportsRequest& request) const
@@ -1935,14 +1935,14 @@ ListBulkDeploymentDetailedReportsOutcomeCallable GreengrassClient::ListBulkDeplo
   return task->get_future();
 }
 
-void GreengrassClient::ListBulkDeploymentDetailedReportsAsync(const ListBulkDeploymentDetailedReportsRequest& request, const ListBulkDeploymentDetailedReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListBulkDeploymentDetailedReportsAsyncHelper(GreengrassClient const * const clientThis, const ListBulkDeploymentDetailedReportsRequest& request, const ListBulkDeploymentDetailedReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBulkDeploymentDetailedReportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBulkDeploymentDetailedReports(request), context);
 }
 
-void GreengrassClient::ListBulkDeploymentDetailedReportsAsyncHelper(const ListBulkDeploymentDetailedReportsRequest& request, const ListBulkDeploymentDetailedReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListBulkDeploymentDetailedReportsAsync(const ListBulkDeploymentDetailedReportsRequest& request, const ListBulkDeploymentDetailedReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBulkDeploymentDetailedReports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListBulkDeploymentDetailedReportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBulkDeploymentsOutcome GreengrassClient::ListBulkDeployments(const ListBulkDeploymentsRequest& request) const
@@ -1960,14 +1960,14 @@ ListBulkDeploymentsOutcomeCallable GreengrassClient::ListBulkDeploymentsCallable
   return task->get_future();
 }
 
-void GreengrassClient::ListBulkDeploymentsAsync(const ListBulkDeploymentsRequest& request, const ListBulkDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListBulkDeploymentsAsyncHelper(GreengrassClient const * const clientThis, const ListBulkDeploymentsRequest& request, const ListBulkDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBulkDeploymentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBulkDeployments(request), context);
 }
 
-void GreengrassClient::ListBulkDeploymentsAsyncHelper(const ListBulkDeploymentsRequest& request, const ListBulkDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListBulkDeploymentsAsync(const ListBulkDeploymentsRequest& request, const ListBulkDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBulkDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListBulkDeploymentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConnectorDefinitionVersionsOutcome GreengrassClient::ListConnectorDefinitionVersions(const ListConnectorDefinitionVersionsRequest& request) const
@@ -1992,14 +1992,14 @@ ListConnectorDefinitionVersionsOutcomeCallable GreengrassClient::ListConnectorDe
   return task->get_future();
 }
 
-void GreengrassClient::ListConnectorDefinitionVersionsAsync(const ListConnectorDefinitionVersionsRequest& request, const ListConnectorDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListConnectorDefinitionVersionsAsyncHelper(GreengrassClient const * const clientThis, const ListConnectorDefinitionVersionsRequest& request, const ListConnectorDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConnectorDefinitionVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConnectorDefinitionVersions(request), context);
 }
 
-void GreengrassClient::ListConnectorDefinitionVersionsAsyncHelper(const ListConnectorDefinitionVersionsRequest& request, const ListConnectorDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListConnectorDefinitionVersionsAsync(const ListConnectorDefinitionVersionsRequest& request, const ListConnectorDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConnectorDefinitionVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListConnectorDefinitionVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConnectorDefinitionsOutcome GreengrassClient::ListConnectorDefinitions(const ListConnectorDefinitionsRequest& request) const
@@ -2017,14 +2017,14 @@ ListConnectorDefinitionsOutcomeCallable GreengrassClient::ListConnectorDefinitio
   return task->get_future();
 }
 
-void GreengrassClient::ListConnectorDefinitionsAsync(const ListConnectorDefinitionsRequest& request, const ListConnectorDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListConnectorDefinitionsAsyncHelper(GreengrassClient const * const clientThis, const ListConnectorDefinitionsRequest& request, const ListConnectorDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConnectorDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConnectorDefinitions(request), context);
 }
 
-void GreengrassClient::ListConnectorDefinitionsAsyncHelper(const ListConnectorDefinitionsRequest& request, const ListConnectorDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListConnectorDefinitionsAsync(const ListConnectorDefinitionsRequest& request, const ListConnectorDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConnectorDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListConnectorDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCoreDefinitionVersionsOutcome GreengrassClient::ListCoreDefinitionVersions(const ListCoreDefinitionVersionsRequest& request) const
@@ -2049,14 +2049,14 @@ ListCoreDefinitionVersionsOutcomeCallable GreengrassClient::ListCoreDefinitionVe
   return task->get_future();
 }
 
-void GreengrassClient::ListCoreDefinitionVersionsAsync(const ListCoreDefinitionVersionsRequest& request, const ListCoreDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListCoreDefinitionVersionsAsyncHelper(GreengrassClient const * const clientThis, const ListCoreDefinitionVersionsRequest& request, const ListCoreDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCoreDefinitionVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCoreDefinitionVersions(request), context);
 }
 
-void GreengrassClient::ListCoreDefinitionVersionsAsyncHelper(const ListCoreDefinitionVersionsRequest& request, const ListCoreDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListCoreDefinitionVersionsAsync(const ListCoreDefinitionVersionsRequest& request, const ListCoreDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCoreDefinitionVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListCoreDefinitionVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCoreDefinitionsOutcome GreengrassClient::ListCoreDefinitions(const ListCoreDefinitionsRequest& request) const
@@ -2074,14 +2074,14 @@ ListCoreDefinitionsOutcomeCallable GreengrassClient::ListCoreDefinitionsCallable
   return task->get_future();
 }
 
-void GreengrassClient::ListCoreDefinitionsAsync(const ListCoreDefinitionsRequest& request, const ListCoreDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListCoreDefinitionsAsyncHelper(GreengrassClient const * const clientThis, const ListCoreDefinitionsRequest& request, const ListCoreDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCoreDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCoreDefinitions(request), context);
 }
 
-void GreengrassClient::ListCoreDefinitionsAsyncHelper(const ListCoreDefinitionsRequest& request, const ListCoreDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListCoreDefinitionsAsync(const ListCoreDefinitionsRequest& request, const ListCoreDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCoreDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListCoreDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeploymentsOutcome GreengrassClient::ListDeployments(const ListDeploymentsRequest& request) const
@@ -2106,14 +2106,14 @@ ListDeploymentsOutcomeCallable GreengrassClient::ListDeploymentsCallable(const L
   return task->get_future();
 }
 
-void GreengrassClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListDeploymentsAsyncHelper(GreengrassClient const * const clientThis, const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeployments(request), context);
 }
 
-void GreengrassClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListDeploymentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeviceDefinitionVersionsOutcome GreengrassClient::ListDeviceDefinitionVersions(const ListDeviceDefinitionVersionsRequest& request) const
@@ -2138,14 +2138,14 @@ ListDeviceDefinitionVersionsOutcomeCallable GreengrassClient::ListDeviceDefiniti
   return task->get_future();
 }
 
-void GreengrassClient::ListDeviceDefinitionVersionsAsync(const ListDeviceDefinitionVersionsRequest& request, const ListDeviceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListDeviceDefinitionVersionsAsyncHelper(GreengrassClient const * const clientThis, const ListDeviceDefinitionVersionsRequest& request, const ListDeviceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeviceDefinitionVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeviceDefinitionVersions(request), context);
 }
 
-void GreengrassClient::ListDeviceDefinitionVersionsAsyncHelper(const ListDeviceDefinitionVersionsRequest& request, const ListDeviceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListDeviceDefinitionVersionsAsync(const ListDeviceDefinitionVersionsRequest& request, const ListDeviceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeviceDefinitionVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListDeviceDefinitionVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeviceDefinitionsOutcome GreengrassClient::ListDeviceDefinitions(const ListDeviceDefinitionsRequest& request) const
@@ -2163,14 +2163,14 @@ ListDeviceDefinitionsOutcomeCallable GreengrassClient::ListDeviceDefinitionsCall
   return task->get_future();
 }
 
-void GreengrassClient::ListDeviceDefinitionsAsync(const ListDeviceDefinitionsRequest& request, const ListDeviceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListDeviceDefinitionsAsyncHelper(GreengrassClient const * const clientThis, const ListDeviceDefinitionsRequest& request, const ListDeviceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeviceDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeviceDefinitions(request), context);
 }
 
-void GreengrassClient::ListDeviceDefinitionsAsyncHelper(const ListDeviceDefinitionsRequest& request, const ListDeviceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListDeviceDefinitionsAsync(const ListDeviceDefinitionsRequest& request, const ListDeviceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeviceDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListDeviceDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFunctionDefinitionVersionsOutcome GreengrassClient::ListFunctionDefinitionVersions(const ListFunctionDefinitionVersionsRequest& request) const
@@ -2195,14 +2195,14 @@ ListFunctionDefinitionVersionsOutcomeCallable GreengrassClient::ListFunctionDefi
   return task->get_future();
 }
 
-void GreengrassClient::ListFunctionDefinitionVersionsAsync(const ListFunctionDefinitionVersionsRequest& request, const ListFunctionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListFunctionDefinitionVersionsAsyncHelper(GreengrassClient const * const clientThis, const ListFunctionDefinitionVersionsRequest& request, const ListFunctionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFunctionDefinitionVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFunctionDefinitionVersions(request), context);
 }
 
-void GreengrassClient::ListFunctionDefinitionVersionsAsyncHelper(const ListFunctionDefinitionVersionsRequest& request, const ListFunctionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListFunctionDefinitionVersionsAsync(const ListFunctionDefinitionVersionsRequest& request, const ListFunctionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFunctionDefinitionVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListFunctionDefinitionVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFunctionDefinitionsOutcome GreengrassClient::ListFunctionDefinitions(const ListFunctionDefinitionsRequest& request) const
@@ -2220,14 +2220,14 @@ ListFunctionDefinitionsOutcomeCallable GreengrassClient::ListFunctionDefinitions
   return task->get_future();
 }
 
-void GreengrassClient::ListFunctionDefinitionsAsync(const ListFunctionDefinitionsRequest& request, const ListFunctionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListFunctionDefinitionsAsyncHelper(GreengrassClient const * const clientThis, const ListFunctionDefinitionsRequest& request, const ListFunctionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFunctionDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFunctionDefinitions(request), context);
 }
 
-void GreengrassClient::ListFunctionDefinitionsAsyncHelper(const ListFunctionDefinitionsRequest& request, const ListFunctionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListFunctionDefinitionsAsync(const ListFunctionDefinitionsRequest& request, const ListFunctionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFunctionDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListFunctionDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupCertificateAuthoritiesOutcome GreengrassClient::ListGroupCertificateAuthorities(const ListGroupCertificateAuthoritiesRequest& request) const
@@ -2252,14 +2252,14 @@ ListGroupCertificateAuthoritiesOutcomeCallable GreengrassClient::ListGroupCertif
   return task->get_future();
 }
 
-void GreengrassClient::ListGroupCertificateAuthoritiesAsync(const ListGroupCertificateAuthoritiesRequest& request, const ListGroupCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListGroupCertificateAuthoritiesAsyncHelper(GreengrassClient const * const clientThis, const ListGroupCertificateAuthoritiesRequest& request, const ListGroupCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupCertificateAuthoritiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroupCertificateAuthorities(request), context);
 }
 
-void GreengrassClient::ListGroupCertificateAuthoritiesAsyncHelper(const ListGroupCertificateAuthoritiesRequest& request, const ListGroupCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListGroupCertificateAuthoritiesAsync(const ListGroupCertificateAuthoritiesRequest& request, const ListGroupCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroupCertificateAuthorities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListGroupCertificateAuthoritiesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupVersionsOutcome GreengrassClient::ListGroupVersions(const ListGroupVersionsRequest& request) const
@@ -2284,14 +2284,14 @@ ListGroupVersionsOutcomeCallable GreengrassClient::ListGroupVersionsCallable(con
   return task->get_future();
 }
 
-void GreengrassClient::ListGroupVersionsAsync(const ListGroupVersionsRequest& request, const ListGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListGroupVersionsAsyncHelper(GreengrassClient const * const clientThis, const ListGroupVersionsRequest& request, const ListGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroupVersions(request), context);
 }
 
-void GreengrassClient::ListGroupVersionsAsyncHelper(const ListGroupVersionsRequest& request, const ListGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListGroupVersionsAsync(const ListGroupVersionsRequest& request, const ListGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroupVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListGroupVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupsOutcome GreengrassClient::ListGroups(const ListGroupsRequest& request) const
@@ -2309,14 +2309,14 @@ ListGroupsOutcomeCallable GreengrassClient::ListGroupsCallable(const ListGroupsR
   return task->get_future();
 }
 
-void GreengrassClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListGroupsAsyncHelper(GreengrassClient const * const clientThis, const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroups(request), context);
 }
 
-void GreengrassClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLoggerDefinitionVersionsOutcome GreengrassClient::ListLoggerDefinitionVersions(const ListLoggerDefinitionVersionsRequest& request) const
@@ -2341,14 +2341,14 @@ ListLoggerDefinitionVersionsOutcomeCallable GreengrassClient::ListLoggerDefiniti
   return task->get_future();
 }
 
-void GreengrassClient::ListLoggerDefinitionVersionsAsync(const ListLoggerDefinitionVersionsRequest& request, const ListLoggerDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListLoggerDefinitionVersionsAsyncHelper(GreengrassClient const * const clientThis, const ListLoggerDefinitionVersionsRequest& request, const ListLoggerDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLoggerDefinitionVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLoggerDefinitionVersions(request), context);
 }
 
-void GreengrassClient::ListLoggerDefinitionVersionsAsyncHelper(const ListLoggerDefinitionVersionsRequest& request, const ListLoggerDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListLoggerDefinitionVersionsAsync(const ListLoggerDefinitionVersionsRequest& request, const ListLoggerDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLoggerDefinitionVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListLoggerDefinitionVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLoggerDefinitionsOutcome GreengrassClient::ListLoggerDefinitions(const ListLoggerDefinitionsRequest& request) const
@@ -2366,14 +2366,14 @@ ListLoggerDefinitionsOutcomeCallable GreengrassClient::ListLoggerDefinitionsCall
   return task->get_future();
 }
 
-void GreengrassClient::ListLoggerDefinitionsAsync(const ListLoggerDefinitionsRequest& request, const ListLoggerDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListLoggerDefinitionsAsyncHelper(GreengrassClient const * const clientThis, const ListLoggerDefinitionsRequest& request, const ListLoggerDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLoggerDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLoggerDefinitions(request), context);
 }
 
-void GreengrassClient::ListLoggerDefinitionsAsyncHelper(const ListLoggerDefinitionsRequest& request, const ListLoggerDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListLoggerDefinitionsAsync(const ListLoggerDefinitionsRequest& request, const ListLoggerDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLoggerDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListLoggerDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourceDefinitionVersionsOutcome GreengrassClient::ListResourceDefinitionVersions(const ListResourceDefinitionVersionsRequest& request) const
@@ -2398,14 +2398,14 @@ ListResourceDefinitionVersionsOutcomeCallable GreengrassClient::ListResourceDefi
   return task->get_future();
 }
 
-void GreengrassClient::ListResourceDefinitionVersionsAsync(const ListResourceDefinitionVersionsRequest& request, const ListResourceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListResourceDefinitionVersionsAsyncHelper(GreengrassClient const * const clientThis, const ListResourceDefinitionVersionsRequest& request, const ListResourceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceDefinitionVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourceDefinitionVersions(request), context);
 }
 
-void GreengrassClient::ListResourceDefinitionVersionsAsyncHelper(const ListResourceDefinitionVersionsRequest& request, const ListResourceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListResourceDefinitionVersionsAsync(const ListResourceDefinitionVersionsRequest& request, const ListResourceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourceDefinitionVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListResourceDefinitionVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourceDefinitionsOutcome GreengrassClient::ListResourceDefinitions(const ListResourceDefinitionsRequest& request) const
@@ -2423,14 +2423,14 @@ ListResourceDefinitionsOutcomeCallable GreengrassClient::ListResourceDefinitions
   return task->get_future();
 }
 
-void GreengrassClient::ListResourceDefinitionsAsync(const ListResourceDefinitionsRequest& request, const ListResourceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListResourceDefinitionsAsyncHelper(GreengrassClient const * const clientThis, const ListResourceDefinitionsRequest& request, const ListResourceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourceDefinitions(request), context);
 }
 
-void GreengrassClient::ListResourceDefinitionsAsyncHelper(const ListResourceDefinitionsRequest& request, const ListResourceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListResourceDefinitionsAsync(const ListResourceDefinitionsRequest& request, const ListResourceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourceDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListResourceDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSubscriptionDefinitionVersionsOutcome GreengrassClient::ListSubscriptionDefinitionVersions(const ListSubscriptionDefinitionVersionsRequest& request) const
@@ -2455,14 +2455,14 @@ ListSubscriptionDefinitionVersionsOutcomeCallable GreengrassClient::ListSubscrip
   return task->get_future();
 }
 
-void GreengrassClient::ListSubscriptionDefinitionVersionsAsync(const ListSubscriptionDefinitionVersionsRequest& request, const ListSubscriptionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListSubscriptionDefinitionVersionsAsyncHelper(GreengrassClient const * const clientThis, const ListSubscriptionDefinitionVersionsRequest& request, const ListSubscriptionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSubscriptionDefinitionVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSubscriptionDefinitionVersions(request), context);
 }
 
-void GreengrassClient::ListSubscriptionDefinitionVersionsAsyncHelper(const ListSubscriptionDefinitionVersionsRequest& request, const ListSubscriptionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListSubscriptionDefinitionVersionsAsync(const ListSubscriptionDefinitionVersionsRequest& request, const ListSubscriptionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSubscriptionDefinitionVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListSubscriptionDefinitionVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSubscriptionDefinitionsOutcome GreengrassClient::ListSubscriptionDefinitions(const ListSubscriptionDefinitionsRequest& request) const
@@ -2480,14 +2480,14 @@ ListSubscriptionDefinitionsOutcomeCallable GreengrassClient::ListSubscriptionDef
   return task->get_future();
 }
 
-void GreengrassClient::ListSubscriptionDefinitionsAsync(const ListSubscriptionDefinitionsRequest& request, const ListSubscriptionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListSubscriptionDefinitionsAsyncHelper(GreengrassClient const * const clientThis, const ListSubscriptionDefinitionsRequest& request, const ListSubscriptionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSubscriptionDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSubscriptionDefinitions(request), context);
 }
 
-void GreengrassClient::ListSubscriptionDefinitionsAsyncHelper(const ListSubscriptionDefinitionsRequest& request, const ListSubscriptionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListSubscriptionDefinitionsAsync(const ListSubscriptionDefinitionsRequest& request, const ListSubscriptionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSubscriptionDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListSubscriptionDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome GreengrassClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -2511,14 +2511,14 @@ ListTagsForResourceOutcomeCallable GreengrassClient::ListTagsForResourceCallable
   return task->get_future();
 }
 
-void GreengrassClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientListTagsForResourceAsyncHelper(GreengrassClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void GreengrassClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetDeploymentsOutcome GreengrassClient::ResetDeployments(const ResetDeploymentsRequest& request) const
@@ -2543,14 +2543,14 @@ ResetDeploymentsOutcomeCallable GreengrassClient::ResetDeploymentsCallable(const
   return task->get_future();
 }
 
-void GreengrassClient::ResetDeploymentsAsync(const ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientResetDeploymentsAsyncHelper(GreengrassClient const * const clientThis, const ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetDeploymentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetDeployments(request), context);
 }
 
-void GreengrassClient::ResetDeploymentsAsyncHelper(const ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::ResetDeploymentsAsync(const ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientResetDeploymentsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartBulkDeploymentOutcome GreengrassClient::StartBulkDeployment(const StartBulkDeploymentRequest& request) const
@@ -2568,14 +2568,14 @@ StartBulkDeploymentOutcomeCallable GreengrassClient::StartBulkDeploymentCallable
   return task->get_future();
 }
 
-void GreengrassClient::StartBulkDeploymentAsync(const StartBulkDeploymentRequest& request, const StartBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientStartBulkDeploymentAsyncHelper(GreengrassClient const * const clientThis, const StartBulkDeploymentRequest& request, const StartBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartBulkDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartBulkDeployment(request), context);
 }
 
-void GreengrassClient::StartBulkDeploymentAsyncHelper(const StartBulkDeploymentRequest& request, const StartBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::StartBulkDeploymentAsync(const StartBulkDeploymentRequest& request, const StartBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartBulkDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientStartBulkDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 StopBulkDeploymentOutcome GreengrassClient::StopBulkDeployment(const StopBulkDeploymentRequest& request) const
@@ -2600,14 +2600,14 @@ StopBulkDeploymentOutcomeCallable GreengrassClient::StopBulkDeploymentCallable(c
   return task->get_future();
 }
 
-void GreengrassClient::StopBulkDeploymentAsync(const StopBulkDeploymentRequest& request, const StopBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientStopBulkDeploymentAsyncHelper(GreengrassClient const * const clientThis, const StopBulkDeploymentRequest& request, const StopBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopBulkDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopBulkDeployment(request), context);
 }
 
-void GreengrassClient::StopBulkDeploymentAsyncHelper(const StopBulkDeploymentRequest& request, const StopBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::StopBulkDeploymentAsync(const StopBulkDeploymentRequest& request, const StopBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopBulkDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientStopBulkDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome GreengrassClient::TagResource(const TagResourceRequest& request) const
@@ -2631,14 +2631,14 @@ TagResourceOutcomeCallable GreengrassClient::TagResourceCallable(const TagResour
   return task->get_future();
 }
 
-void GreengrassClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientTagResourceAsyncHelper(GreengrassClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void GreengrassClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome GreengrassClient::UntagResource(const UntagResourceRequest& request) const
@@ -2667,14 +2667,14 @@ UntagResourceOutcomeCallable GreengrassClient::UntagResourceCallable(const Untag
   return task->get_future();
 }
 
-void GreengrassClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUntagResourceAsyncHelper(GreengrassClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void GreengrassClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConnectivityInfoOutcome GreengrassClient::UpdateConnectivityInfo(const UpdateConnectivityInfoRequest& request) const
@@ -2699,14 +2699,14 @@ UpdateConnectivityInfoOutcomeCallable GreengrassClient::UpdateConnectivityInfoCa
   return task->get_future();
 }
 
-void GreengrassClient::UpdateConnectivityInfoAsync(const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateConnectivityInfoAsyncHelper(GreengrassClient const * const clientThis, const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectivityInfoAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConnectivityInfo(request), context);
 }
 
-void GreengrassClient::UpdateConnectivityInfoAsyncHelper(const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateConnectivityInfoAsync(const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConnectivityInfo(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateConnectivityInfoAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConnectorDefinitionOutcome GreengrassClient::UpdateConnectorDefinition(const UpdateConnectorDefinitionRequest& request) const
@@ -2730,14 +2730,14 @@ UpdateConnectorDefinitionOutcomeCallable GreengrassClient::UpdateConnectorDefini
   return task->get_future();
 }
 
-void GreengrassClient::UpdateConnectorDefinitionAsync(const UpdateConnectorDefinitionRequest& request, const UpdateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateConnectorDefinitionAsyncHelper(GreengrassClient const * const clientThis, const UpdateConnectorDefinitionRequest& request, const UpdateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectorDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConnectorDefinition(request), context);
 }
 
-void GreengrassClient::UpdateConnectorDefinitionAsyncHelper(const UpdateConnectorDefinitionRequest& request, const UpdateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateConnectorDefinitionAsync(const UpdateConnectorDefinitionRequest& request, const UpdateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConnectorDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateConnectorDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCoreDefinitionOutcome GreengrassClient::UpdateCoreDefinition(const UpdateCoreDefinitionRequest& request) const
@@ -2761,14 +2761,14 @@ UpdateCoreDefinitionOutcomeCallable GreengrassClient::UpdateCoreDefinitionCallab
   return task->get_future();
 }
 
-void GreengrassClient::UpdateCoreDefinitionAsync(const UpdateCoreDefinitionRequest& request, const UpdateCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateCoreDefinitionAsyncHelper(GreengrassClient const * const clientThis, const UpdateCoreDefinitionRequest& request, const UpdateCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCoreDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCoreDefinition(request), context);
 }
 
-void GreengrassClient::UpdateCoreDefinitionAsyncHelper(const UpdateCoreDefinitionRequest& request, const UpdateCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateCoreDefinitionAsync(const UpdateCoreDefinitionRequest& request, const UpdateCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCoreDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateCoreDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDeviceDefinitionOutcome GreengrassClient::UpdateDeviceDefinition(const UpdateDeviceDefinitionRequest& request) const
@@ -2792,14 +2792,14 @@ UpdateDeviceDefinitionOutcomeCallable GreengrassClient::UpdateDeviceDefinitionCa
   return task->get_future();
 }
 
-void GreengrassClient::UpdateDeviceDefinitionAsync(const UpdateDeviceDefinitionRequest& request, const UpdateDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateDeviceDefinitionAsyncHelper(GreengrassClient const * const clientThis, const UpdateDeviceDefinitionRequest& request, const UpdateDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeviceDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDeviceDefinition(request), context);
 }
 
-void GreengrassClient::UpdateDeviceDefinitionAsyncHelper(const UpdateDeviceDefinitionRequest& request, const UpdateDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateDeviceDefinitionAsync(const UpdateDeviceDefinitionRequest& request, const UpdateDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDeviceDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateDeviceDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFunctionDefinitionOutcome GreengrassClient::UpdateFunctionDefinition(const UpdateFunctionDefinitionRequest& request) const
@@ -2823,14 +2823,14 @@ UpdateFunctionDefinitionOutcomeCallable GreengrassClient::UpdateFunctionDefiniti
   return task->get_future();
 }
 
-void GreengrassClient::UpdateFunctionDefinitionAsync(const UpdateFunctionDefinitionRequest& request, const UpdateFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateFunctionDefinitionAsyncHelper(GreengrassClient const * const clientThis, const UpdateFunctionDefinitionRequest& request, const UpdateFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFunctionDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFunctionDefinition(request), context);
 }
 
-void GreengrassClient::UpdateFunctionDefinitionAsyncHelper(const UpdateFunctionDefinitionRequest& request, const UpdateFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateFunctionDefinitionAsync(const UpdateFunctionDefinitionRequest& request, const UpdateFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFunctionDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateFunctionDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGroupOutcome GreengrassClient::UpdateGroup(const UpdateGroupRequest& request) const
@@ -2854,14 +2854,14 @@ UpdateGroupOutcomeCallable GreengrassClient::UpdateGroupCallable(const UpdateGro
   return task->get_future();
 }
 
-void GreengrassClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateGroupAsyncHelper(GreengrassClient const * const clientThis, const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGroup(request), context);
 }
 
-void GreengrassClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGroupCertificateConfigurationOutcome GreengrassClient::UpdateGroupCertificateConfiguration(const UpdateGroupCertificateConfigurationRequest& request) const
@@ -2886,14 +2886,14 @@ UpdateGroupCertificateConfigurationOutcomeCallable GreengrassClient::UpdateGroup
   return task->get_future();
 }
 
-void GreengrassClient::UpdateGroupCertificateConfigurationAsync(const UpdateGroupCertificateConfigurationRequest& request, const UpdateGroupCertificateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateGroupCertificateConfigurationAsyncHelper(GreengrassClient const * const clientThis, const UpdateGroupCertificateConfigurationRequest& request, const UpdateGroupCertificateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGroupCertificateConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGroupCertificateConfiguration(request), context);
 }
 
-void GreengrassClient::UpdateGroupCertificateConfigurationAsyncHelper(const UpdateGroupCertificateConfigurationRequest& request, const UpdateGroupCertificateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateGroupCertificateConfigurationAsync(const UpdateGroupCertificateConfigurationRequest& request, const UpdateGroupCertificateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGroupCertificateConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateGroupCertificateConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLoggerDefinitionOutcome GreengrassClient::UpdateLoggerDefinition(const UpdateLoggerDefinitionRequest& request) const
@@ -2917,14 +2917,14 @@ UpdateLoggerDefinitionOutcomeCallable GreengrassClient::UpdateLoggerDefinitionCa
   return task->get_future();
 }
 
-void GreengrassClient::UpdateLoggerDefinitionAsync(const UpdateLoggerDefinitionRequest& request, const UpdateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateLoggerDefinitionAsyncHelper(GreengrassClient const * const clientThis, const UpdateLoggerDefinitionRequest& request, const UpdateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLoggerDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLoggerDefinition(request), context);
 }
 
-void GreengrassClient::UpdateLoggerDefinitionAsyncHelper(const UpdateLoggerDefinitionRequest& request, const UpdateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateLoggerDefinitionAsync(const UpdateLoggerDefinitionRequest& request, const UpdateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLoggerDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateLoggerDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateResourceDefinitionOutcome GreengrassClient::UpdateResourceDefinition(const UpdateResourceDefinitionRequest& request) const
@@ -2948,14 +2948,14 @@ UpdateResourceDefinitionOutcomeCallable GreengrassClient::UpdateResourceDefiniti
   return task->get_future();
 }
 
-void GreengrassClient::UpdateResourceDefinitionAsync(const UpdateResourceDefinitionRequest& request, const UpdateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateResourceDefinitionAsyncHelper(GreengrassClient const * const clientThis, const UpdateResourceDefinitionRequest& request, const UpdateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateResourceDefinition(request), context);
 }
 
-void GreengrassClient::UpdateResourceDefinitionAsyncHelper(const UpdateResourceDefinitionRequest& request, const UpdateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateResourceDefinitionAsync(const UpdateResourceDefinitionRequest& request, const UpdateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateResourceDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateResourceDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSubscriptionDefinitionOutcome GreengrassClient::UpdateSubscriptionDefinition(const UpdateSubscriptionDefinitionRequest& request) const
@@ -2979,14 +2979,14 @@ UpdateSubscriptionDefinitionOutcomeCallable GreengrassClient::UpdateSubscription
   return task->get_future();
 }
 
-void GreengrassClient::UpdateSubscriptionDefinitionAsync(const UpdateSubscriptionDefinitionRequest& request, const UpdateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateSubscriptionDefinitionAsyncHelper(GreengrassClient const * const clientThis, const UpdateSubscriptionDefinitionRequest& request, const UpdateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSubscriptionDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSubscriptionDefinition(request), context);
 }
 
-void GreengrassClient::UpdateSubscriptionDefinitionAsyncHelper(const UpdateSubscriptionDefinitionRequest& request, const UpdateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateSubscriptionDefinitionAsync(const UpdateSubscriptionDefinitionRequest& request, const UpdateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSubscriptionDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateSubscriptionDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateThingRuntimeConfigurationOutcome GreengrassClient::UpdateThingRuntimeConfiguration(const UpdateThingRuntimeConfigurationRequest& request) const
@@ -3011,13 +3011,13 @@ UpdateThingRuntimeConfigurationOutcomeCallable GreengrassClient::UpdateThingRunt
   return task->get_future();
 }
 
-void GreengrassClient::UpdateThingRuntimeConfigurationAsync(const UpdateThingRuntimeConfigurationRequest& request, const UpdateThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClientUpdateThingRuntimeConfigurationAsyncHelper(GreengrassClient const * const clientThis, const UpdateThingRuntimeConfigurationRequest& request, const UpdateThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThingRuntimeConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateThingRuntimeConfiguration(request), context);
 }
 
-void GreengrassClient::UpdateThingRuntimeConfigurationAsyncHelper(const UpdateThingRuntimeConfigurationRequest& request, const UpdateThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void GreengrassClient::UpdateThingRuntimeConfigurationAsync(const UpdateThingRuntimeConfigurationRequest& request, const UpdateThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateThingRuntimeConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ GreengrassClientUpdateThingRuntimeConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 

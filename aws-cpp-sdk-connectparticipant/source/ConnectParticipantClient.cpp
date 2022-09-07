@@ -128,14 +128,14 @@ CompleteAttachmentUploadOutcomeCallable ConnectParticipantClient::CompleteAttach
   return task->get_future();
 }
 
-void ConnectParticipantClient::CompleteAttachmentUploadAsync(const CompleteAttachmentUploadRequest& request, const CompleteAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClientCompleteAttachmentUploadAsyncHelper(ConnectParticipantClient const * const clientThis, const CompleteAttachmentUploadRequest& request, const CompleteAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CompleteAttachmentUploadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CompleteAttachmentUpload(request), context);
 }
 
-void ConnectParticipantClient::CompleteAttachmentUploadAsyncHelper(const CompleteAttachmentUploadRequest& request, const CompleteAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClient::CompleteAttachmentUploadAsync(const CompleteAttachmentUploadRequest& request, const CompleteAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CompleteAttachmentUpload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectParticipantClientCompleteAttachmentUploadAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantConnection(const CreateParticipantConnectionRequest& request) const
@@ -158,14 +158,14 @@ CreateParticipantConnectionOutcomeCallable ConnectParticipantClient::CreateParti
   return task->get_future();
 }
 
-void ConnectParticipantClient::CreateParticipantConnectionAsync(const CreateParticipantConnectionRequest& request, const CreateParticipantConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClientCreateParticipantConnectionAsyncHelper(ConnectParticipantClient const * const clientThis, const CreateParticipantConnectionRequest& request, const CreateParticipantConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateParticipantConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateParticipantConnection(request), context);
 }
 
-void ConnectParticipantClient::CreateParticipantConnectionAsyncHelper(const CreateParticipantConnectionRequest& request, const CreateParticipantConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClient::CreateParticipantConnectionAsync(const CreateParticipantConnectionRequest& request, const CreateParticipantConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateParticipantConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectParticipantClientCreateParticipantConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DisconnectParticipantOutcome ConnectParticipantClient::DisconnectParticipant(const DisconnectParticipantRequest& request) const
@@ -188,14 +188,14 @@ DisconnectParticipantOutcomeCallable ConnectParticipantClient::DisconnectPartici
   return task->get_future();
 }
 
-void ConnectParticipantClient::DisconnectParticipantAsync(const DisconnectParticipantRequest& request, const DisconnectParticipantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClientDisconnectParticipantAsyncHelper(ConnectParticipantClient const * const clientThis, const DisconnectParticipantRequest& request, const DisconnectParticipantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisconnectParticipantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisconnectParticipant(request), context);
 }
 
-void ConnectParticipantClient::DisconnectParticipantAsyncHelper(const DisconnectParticipantRequest& request, const DisconnectParticipantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClient::DisconnectParticipantAsync(const DisconnectParticipantRequest& request, const DisconnectParticipantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisconnectParticipant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectParticipantClientDisconnectParticipantAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAttachmentOutcome ConnectParticipantClient::GetAttachment(const GetAttachmentRequest& request) const
@@ -218,14 +218,14 @@ GetAttachmentOutcomeCallable ConnectParticipantClient::GetAttachmentCallable(con
   return task->get_future();
 }
 
-void ConnectParticipantClient::GetAttachmentAsync(const GetAttachmentRequest& request, const GetAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClientGetAttachmentAsyncHelper(ConnectParticipantClient const * const clientThis, const GetAttachmentRequest& request, const GetAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAttachment(request), context);
 }
 
-void ConnectParticipantClient::GetAttachmentAsyncHelper(const GetAttachmentRequest& request, const GetAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClient::GetAttachmentAsync(const GetAttachmentRequest& request, const GetAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectParticipantClientGetAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscriptRequest& request) const
@@ -248,14 +248,14 @@ GetTranscriptOutcomeCallable ConnectParticipantClient::GetTranscriptCallable(con
   return task->get_future();
 }
 
-void ConnectParticipantClient::GetTranscriptAsync(const GetTranscriptRequest& request, const GetTranscriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClientGetTranscriptAsyncHelper(ConnectParticipantClient const * const clientThis, const GetTranscriptRequest& request, const GetTranscriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTranscriptAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTranscript(request), context);
 }
 
-void ConnectParticipantClient::GetTranscriptAsyncHelper(const GetTranscriptRequest& request, const GetTranscriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClient::GetTranscriptAsync(const GetTranscriptRequest& request, const GetTranscriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTranscript(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectParticipantClientGetTranscriptAsyncHelper( this, request, handler, context ); } );
 }
 
 SendEventOutcome ConnectParticipantClient::SendEvent(const SendEventRequest& request) const
@@ -278,14 +278,14 @@ SendEventOutcomeCallable ConnectParticipantClient::SendEventCallable(const SendE
   return task->get_future();
 }
 
-void ConnectParticipantClient::SendEventAsync(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClientSendEventAsyncHelper(ConnectParticipantClient const * const clientThis, const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendEvent(request), context);
 }
 
-void ConnectParticipantClient::SendEventAsyncHelper(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClient::SendEventAsync(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectParticipantClientSendEventAsyncHelper( this, request, handler, context ); } );
 }
 
 SendMessageOutcome ConnectParticipantClient::SendMessage(const SendMessageRequest& request) const
@@ -308,14 +308,14 @@ SendMessageOutcomeCallable ConnectParticipantClient::SendMessageCallable(const S
   return task->get_future();
 }
 
-void ConnectParticipantClient::SendMessageAsync(const SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClientSendMessageAsyncHelper(ConnectParticipantClient const * const clientThis, const SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendMessageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendMessage(request), context);
 }
 
-void ConnectParticipantClient::SendMessageAsyncHelper(const SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClient::SendMessageAsync(const SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendMessage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectParticipantClientSendMessageAsyncHelper( this, request, handler, context ); } );
 }
 
 StartAttachmentUploadOutcome ConnectParticipantClient::StartAttachmentUpload(const StartAttachmentUploadRequest& request) const
@@ -338,13 +338,13 @@ StartAttachmentUploadOutcomeCallable ConnectParticipantClient::StartAttachmentUp
   return task->get_future();
 }
 
-void ConnectParticipantClient::StartAttachmentUploadAsync(const StartAttachmentUploadRequest& request, const StartAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClientStartAttachmentUploadAsyncHelper(ConnectParticipantClient const * const clientThis, const StartAttachmentUploadRequest& request, const StartAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartAttachmentUploadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartAttachmentUpload(request), context);
 }
 
-void ConnectParticipantClient::StartAttachmentUploadAsyncHelper(const StartAttachmentUploadRequest& request, const StartAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ConnectParticipantClient::StartAttachmentUploadAsync(const StartAttachmentUploadRequest& request, const StartAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartAttachmentUpload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ConnectParticipantClientStartAttachmentUploadAsyncHelper( this, request, handler, context ); } );
 }
 

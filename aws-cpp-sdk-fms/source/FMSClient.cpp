@@ -144,14 +144,14 @@ AssociateAdminAccountOutcomeCallable FMSClient::AssociateAdminAccountCallable(co
   return task->get_future();
 }
 
-void FMSClient::AssociateAdminAccountAsync(const AssociateAdminAccountRequest& request, const AssociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientAssociateAdminAccountAsyncHelper(FMSClient const * const clientThis, const AssociateAdminAccountRequest& request, const AssociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateAdminAccount(request), context);
 }
 
-void FMSClient::AssociateAdminAccountAsyncHelper(const AssociateAdminAccountRequest& request, const AssociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::AssociateAdminAccountAsync(const AssociateAdminAccountRequest& request, const AssociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientAssociateAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateThirdPartyFirewallOutcome FMSClient::AssociateThirdPartyFirewall(const AssociateThirdPartyFirewallRequest& request) const
@@ -168,14 +168,14 @@ AssociateThirdPartyFirewallOutcomeCallable FMSClient::AssociateThirdPartyFirewal
   return task->get_future();
 }
 
-void FMSClient::AssociateThirdPartyFirewallAsync(const AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientAssociateThirdPartyFirewallAsyncHelper(FMSClient const * const clientThis, const AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateThirdPartyFirewallAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateThirdPartyFirewall(request), context);
 }
 
-void FMSClient::AssociateThirdPartyFirewallAsyncHelper(const AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::AssociateThirdPartyFirewallAsync(const AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateThirdPartyFirewall(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientAssociateThirdPartyFirewallAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAppsListOutcome FMSClient::DeleteAppsList(const DeleteAppsListRequest& request) const
@@ -192,14 +192,14 @@ DeleteAppsListOutcomeCallable FMSClient::DeleteAppsListCallable(const DeleteApps
   return task->get_future();
 }
 
-void FMSClient::DeleteAppsListAsync(const DeleteAppsListRequest& request, const DeleteAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientDeleteAppsListAsyncHelper(FMSClient const * const clientThis, const DeleteAppsListRequest& request, const DeleteAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppsListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAppsList(request), context);
 }
 
-void FMSClient::DeleteAppsListAsyncHelper(const DeleteAppsListRequest& request, const DeleteAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::DeleteAppsListAsync(const DeleteAppsListRequest& request, const DeleteAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAppsList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientDeleteAppsListAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNotificationChannelOutcome FMSClient::DeleteNotificationChannel(const DeleteNotificationChannelRequest& request) const
@@ -216,14 +216,14 @@ DeleteNotificationChannelOutcomeCallable FMSClient::DeleteNotificationChannelCal
   return task->get_future();
 }
 
-void FMSClient::DeleteNotificationChannelAsync(const DeleteNotificationChannelRequest& request, const DeleteNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientDeleteNotificationChannelAsyncHelper(FMSClient const * const clientThis, const DeleteNotificationChannelRequest& request, const DeleteNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNotificationChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNotificationChannel(request), context);
 }
 
-void FMSClient::DeleteNotificationChannelAsyncHelper(const DeleteNotificationChannelRequest& request, const DeleteNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::DeleteNotificationChannelAsync(const DeleteNotificationChannelRequest& request, const DeleteNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNotificationChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientDeleteNotificationChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePolicyOutcome FMSClient::DeletePolicy(const DeletePolicyRequest& request) const
@@ -240,14 +240,14 @@ DeletePolicyOutcomeCallable FMSClient::DeletePolicyCallable(const DeletePolicyRe
   return task->get_future();
 }
 
-void FMSClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientDeletePolicyAsyncHelper(FMSClient const * const clientThis, const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePolicy(request), context);
 }
 
-void FMSClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientDeletePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProtocolsListOutcome FMSClient::DeleteProtocolsList(const DeleteProtocolsListRequest& request) const
@@ -264,14 +264,14 @@ DeleteProtocolsListOutcomeCallable FMSClient::DeleteProtocolsListCallable(const 
   return task->get_future();
 }
 
-void FMSClient::DeleteProtocolsListAsync(const DeleteProtocolsListRequest& request, const DeleteProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientDeleteProtocolsListAsyncHelper(FMSClient const * const clientThis, const DeleteProtocolsListRequest& request, const DeleteProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProtocolsListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProtocolsList(request), context);
 }
 
-void FMSClient::DeleteProtocolsListAsyncHelper(const DeleteProtocolsListRequest& request, const DeleteProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::DeleteProtocolsListAsync(const DeleteProtocolsListRequest& request, const DeleteProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProtocolsList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientDeleteProtocolsListAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateAdminAccountOutcome FMSClient::DisassociateAdminAccount(const DisassociateAdminAccountRequest& request) const
@@ -288,14 +288,14 @@ DisassociateAdminAccountOutcomeCallable FMSClient::DisassociateAdminAccountCalla
   return task->get_future();
 }
 
-void FMSClient::DisassociateAdminAccountAsync(const DisassociateAdminAccountRequest& request, const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientDisassociateAdminAccountAsyncHelper(FMSClient const * const clientThis, const DisassociateAdminAccountRequest& request, const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateAdminAccount(request), context);
 }
 
-void FMSClient::DisassociateAdminAccountAsyncHelper(const DisassociateAdminAccountRequest& request, const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::DisassociateAdminAccountAsync(const DisassociateAdminAccountRequest& request, const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientDisassociateAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateThirdPartyFirewallOutcome FMSClient::DisassociateThirdPartyFirewall(const DisassociateThirdPartyFirewallRequest& request) const
@@ -312,14 +312,14 @@ DisassociateThirdPartyFirewallOutcomeCallable FMSClient::DisassociateThirdPartyF
   return task->get_future();
 }
 
-void FMSClient::DisassociateThirdPartyFirewallAsync(const DisassociateThirdPartyFirewallRequest& request, const DisassociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientDisassociateThirdPartyFirewallAsyncHelper(FMSClient const * const clientThis, const DisassociateThirdPartyFirewallRequest& request, const DisassociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateThirdPartyFirewallAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateThirdPartyFirewall(request), context);
 }
 
-void FMSClient::DisassociateThirdPartyFirewallAsyncHelper(const DisassociateThirdPartyFirewallRequest& request, const DisassociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::DisassociateThirdPartyFirewallAsync(const DisassociateThirdPartyFirewallRequest& request, const DisassociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateThirdPartyFirewall(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientDisassociateThirdPartyFirewallAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAdminAccountOutcome FMSClient::GetAdminAccount(const GetAdminAccountRequest& request) const
@@ -336,14 +336,14 @@ GetAdminAccountOutcomeCallable FMSClient::GetAdminAccountCallable(const GetAdmin
   return task->get_future();
 }
 
-void FMSClient::GetAdminAccountAsync(const GetAdminAccountRequest& request, const GetAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientGetAdminAccountAsyncHelper(FMSClient const * const clientThis, const GetAdminAccountRequest& request, const GetAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAdminAccount(request), context);
 }
 
-void FMSClient::GetAdminAccountAsyncHelper(const GetAdminAccountRequest& request, const GetAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::GetAdminAccountAsync(const GetAdminAccountRequest& request, const GetAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientGetAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAppsListOutcome FMSClient::GetAppsList(const GetAppsListRequest& request) const
@@ -360,14 +360,14 @@ GetAppsListOutcomeCallable FMSClient::GetAppsListCallable(const GetAppsListReque
   return task->get_future();
 }
 
-void FMSClient::GetAppsListAsync(const GetAppsListRequest& request, const GetAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientGetAppsListAsyncHelper(FMSClient const * const clientThis, const GetAppsListRequest& request, const GetAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppsListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAppsList(request), context);
 }
 
-void FMSClient::GetAppsListAsyncHelper(const GetAppsListRequest& request, const GetAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::GetAppsListAsync(const GetAppsListRequest& request, const GetAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAppsList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientGetAppsListAsyncHelper( this, request, handler, context ); } );
 }
 
 GetComplianceDetailOutcome FMSClient::GetComplianceDetail(const GetComplianceDetailRequest& request) const
@@ -384,14 +384,14 @@ GetComplianceDetailOutcomeCallable FMSClient::GetComplianceDetailCallable(const 
   return task->get_future();
 }
 
-void FMSClient::GetComplianceDetailAsync(const GetComplianceDetailRequest& request, const GetComplianceDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientGetComplianceDetailAsyncHelper(FMSClient const * const clientThis, const GetComplianceDetailRequest& request, const GetComplianceDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComplianceDetailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetComplianceDetail(request), context);
 }
 
-void FMSClient::GetComplianceDetailAsyncHelper(const GetComplianceDetailRequest& request, const GetComplianceDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::GetComplianceDetailAsync(const GetComplianceDetailRequest& request, const GetComplianceDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetComplianceDetail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientGetComplianceDetailAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNotificationChannelOutcome FMSClient::GetNotificationChannel(const GetNotificationChannelRequest& request) const
@@ -408,14 +408,14 @@ GetNotificationChannelOutcomeCallable FMSClient::GetNotificationChannelCallable(
   return task->get_future();
 }
 
-void FMSClient::GetNotificationChannelAsync(const GetNotificationChannelRequest& request, const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientGetNotificationChannelAsyncHelper(FMSClient const * const clientThis, const GetNotificationChannelRequest& request, const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNotificationChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNotificationChannel(request), context);
 }
 
-void FMSClient::GetNotificationChannelAsyncHelper(const GetNotificationChannelRequest& request, const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::GetNotificationChannelAsync(const GetNotificationChannelRequest& request, const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNotificationChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientGetNotificationChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPolicyOutcome FMSClient::GetPolicy(const GetPolicyRequest& request) const
@@ -432,14 +432,14 @@ GetPolicyOutcomeCallable FMSClient::GetPolicyCallable(const GetPolicyRequest& re
   return task->get_future();
 }
 
-void FMSClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientGetPolicyAsyncHelper(FMSClient const * const clientThis, const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPolicy(request), context);
 }
 
-void FMSClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientGetPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetProtectionStatusOutcome FMSClient::GetProtectionStatus(const GetProtectionStatusRequest& request) const
@@ -456,14 +456,14 @@ GetProtectionStatusOutcomeCallable FMSClient::GetProtectionStatusCallable(const 
   return task->get_future();
 }
 
-void FMSClient::GetProtectionStatusAsync(const GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientGetProtectionStatusAsyncHelper(FMSClient const * const clientThis, const GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProtectionStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetProtectionStatus(request), context);
 }
 
-void FMSClient::GetProtectionStatusAsyncHelper(const GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::GetProtectionStatusAsync(const GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetProtectionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientGetProtectionStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetProtocolsListOutcome FMSClient::GetProtocolsList(const GetProtocolsListRequest& request) const
@@ -480,14 +480,14 @@ GetProtocolsListOutcomeCallable FMSClient::GetProtocolsListCallable(const GetPro
   return task->get_future();
 }
 
-void FMSClient::GetProtocolsListAsync(const GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientGetProtocolsListAsyncHelper(FMSClient const * const clientThis, const GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProtocolsListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetProtocolsList(request), context);
 }
 
-void FMSClient::GetProtocolsListAsyncHelper(const GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::GetProtocolsListAsync(const GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetProtocolsList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientGetProtocolsListAsyncHelper( this, request, handler, context ); } );
 }
 
 GetThirdPartyFirewallAssociationStatusOutcome FMSClient::GetThirdPartyFirewallAssociationStatus(const GetThirdPartyFirewallAssociationStatusRequest& request) const
@@ -504,14 +504,14 @@ GetThirdPartyFirewallAssociationStatusOutcomeCallable FMSClient::GetThirdPartyFi
   return task->get_future();
 }
 
-void FMSClient::GetThirdPartyFirewallAssociationStatusAsync(const GetThirdPartyFirewallAssociationStatusRequest& request, const GetThirdPartyFirewallAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientGetThirdPartyFirewallAssociationStatusAsyncHelper(FMSClient const * const clientThis, const GetThirdPartyFirewallAssociationStatusRequest& request, const GetThirdPartyFirewallAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetThirdPartyFirewallAssociationStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetThirdPartyFirewallAssociationStatus(request), context);
 }
 
-void FMSClient::GetThirdPartyFirewallAssociationStatusAsyncHelper(const GetThirdPartyFirewallAssociationStatusRequest& request, const GetThirdPartyFirewallAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::GetThirdPartyFirewallAssociationStatusAsync(const GetThirdPartyFirewallAssociationStatusRequest& request, const GetThirdPartyFirewallAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetThirdPartyFirewallAssociationStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientGetThirdPartyFirewallAssociationStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetViolationDetailsOutcome FMSClient::GetViolationDetails(const GetViolationDetailsRequest& request) const
@@ -528,14 +528,14 @@ GetViolationDetailsOutcomeCallable FMSClient::GetViolationDetailsCallable(const 
   return task->get_future();
 }
 
-void FMSClient::GetViolationDetailsAsync(const GetViolationDetailsRequest& request, const GetViolationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientGetViolationDetailsAsyncHelper(FMSClient const * const clientThis, const GetViolationDetailsRequest& request, const GetViolationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetViolationDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetViolationDetails(request), context);
 }
 
-void FMSClient::GetViolationDetailsAsyncHelper(const GetViolationDetailsRequest& request, const GetViolationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::GetViolationDetailsAsync(const GetViolationDetailsRequest& request, const GetViolationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetViolationDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientGetViolationDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAppsListsOutcome FMSClient::ListAppsLists(const ListAppsListsRequest& request) const
@@ -552,14 +552,14 @@ ListAppsListsOutcomeCallable FMSClient::ListAppsListsCallable(const ListAppsList
   return task->get_future();
 }
 
-void FMSClient::ListAppsListsAsync(const ListAppsListsRequest& request, const ListAppsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientListAppsListsAsyncHelper(FMSClient const * const clientThis, const ListAppsListsRequest& request, const ListAppsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppsListsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAppsLists(request), context);
 }
 
-void FMSClient::ListAppsListsAsyncHelper(const ListAppsListsRequest& request, const ListAppsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::ListAppsListsAsync(const ListAppsListsRequest& request, const ListAppsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAppsLists(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientListAppsListsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListComplianceStatusOutcome FMSClient::ListComplianceStatus(const ListComplianceStatusRequest& request) const
@@ -576,14 +576,14 @@ ListComplianceStatusOutcomeCallable FMSClient::ListComplianceStatusCallable(cons
   return task->get_future();
 }
 
-void FMSClient::ListComplianceStatusAsync(const ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientListComplianceStatusAsyncHelper(FMSClient const * const clientThis, const ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComplianceStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListComplianceStatus(request), context);
 }
 
-void FMSClient::ListComplianceStatusAsyncHelper(const ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::ListComplianceStatusAsync(const ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListComplianceStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientListComplianceStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMemberAccountsOutcome FMSClient::ListMemberAccounts(const ListMemberAccountsRequest& request) const
@@ -600,14 +600,14 @@ ListMemberAccountsOutcomeCallable FMSClient::ListMemberAccountsCallable(const Li
   return task->get_future();
 }
 
-void FMSClient::ListMemberAccountsAsync(const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientListMemberAccountsAsyncHelper(FMSClient const * const clientThis, const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMemberAccountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMemberAccounts(request), context);
 }
 
-void FMSClient::ListMemberAccountsAsyncHelper(const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::ListMemberAccountsAsync(const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMemberAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientListMemberAccountsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPoliciesOutcome FMSClient::ListPolicies(const ListPoliciesRequest& request) const
@@ -624,14 +624,14 @@ ListPoliciesOutcomeCallable FMSClient::ListPoliciesCallable(const ListPoliciesRe
   return task->get_future();
 }
 
-void FMSClient::ListPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientListPoliciesAsyncHelper(FMSClient const * const clientThis, const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPolicies(request), context);
 }
 
-void FMSClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::ListPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientListPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProtocolsListsOutcome FMSClient::ListProtocolsLists(const ListProtocolsListsRequest& request) const
@@ -648,14 +648,14 @@ ListProtocolsListsOutcomeCallable FMSClient::ListProtocolsListsCallable(const Li
   return task->get_future();
 }
 
-void FMSClient::ListProtocolsListsAsync(const ListProtocolsListsRequest& request, const ListProtocolsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientListProtocolsListsAsyncHelper(FMSClient const * const clientThis, const ListProtocolsListsRequest& request, const ListProtocolsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProtocolsListsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProtocolsLists(request), context);
 }
 
-void FMSClient::ListProtocolsListsAsyncHelper(const ListProtocolsListsRequest& request, const ListProtocolsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::ListProtocolsListsAsync(const ListProtocolsListsRequest& request, const ListProtocolsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProtocolsLists(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientListProtocolsListsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome FMSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -672,14 +672,14 @@ ListTagsForResourceOutcomeCallable FMSClient::ListTagsForResourceCallable(const 
   return task->get_future();
 }
 
-void FMSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientListTagsForResourceAsyncHelper(FMSClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void FMSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThirdPartyFirewallFirewallPoliciesOutcome FMSClient::ListThirdPartyFirewallFirewallPolicies(const ListThirdPartyFirewallFirewallPoliciesRequest& request) const
@@ -696,14 +696,14 @@ ListThirdPartyFirewallFirewallPoliciesOutcomeCallable FMSClient::ListThirdPartyF
   return task->get_future();
 }
 
-void FMSClient::ListThirdPartyFirewallFirewallPoliciesAsync(const ListThirdPartyFirewallFirewallPoliciesRequest& request, const ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientListThirdPartyFirewallFirewallPoliciesAsyncHelper(FMSClient const * const clientThis, const ListThirdPartyFirewallFirewallPoliciesRequest& request, const ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThirdPartyFirewallFirewallPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThirdPartyFirewallFirewallPolicies(request), context);
 }
 
-void FMSClient::ListThirdPartyFirewallFirewallPoliciesAsyncHelper(const ListThirdPartyFirewallFirewallPoliciesRequest& request, const ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::ListThirdPartyFirewallFirewallPoliciesAsync(const ListThirdPartyFirewallFirewallPoliciesRequest& request, const ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThirdPartyFirewallFirewallPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientListThirdPartyFirewallFirewallPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAppsListOutcome FMSClient::PutAppsList(const PutAppsListRequest& request) const
@@ -720,14 +720,14 @@ PutAppsListOutcomeCallable FMSClient::PutAppsListCallable(const PutAppsListReque
   return task->get_future();
 }
 
-void FMSClient::PutAppsListAsync(const PutAppsListRequest& request, const PutAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientPutAppsListAsyncHelper(FMSClient const * const clientThis, const PutAppsListRequest& request, const PutAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAppsListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAppsList(request), context);
 }
 
-void FMSClient::PutAppsListAsyncHelper(const PutAppsListRequest& request, const PutAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::PutAppsListAsync(const PutAppsListRequest& request, const PutAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAppsList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientPutAppsListAsyncHelper( this, request, handler, context ); } );
 }
 
 PutNotificationChannelOutcome FMSClient::PutNotificationChannel(const PutNotificationChannelRequest& request) const
@@ -744,14 +744,14 @@ PutNotificationChannelOutcomeCallable FMSClient::PutNotificationChannelCallable(
   return task->get_future();
 }
 
-void FMSClient::PutNotificationChannelAsync(const PutNotificationChannelRequest& request, const PutNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientPutNotificationChannelAsyncHelper(FMSClient const * const clientThis, const PutNotificationChannelRequest& request, const PutNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutNotificationChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutNotificationChannel(request), context);
 }
 
-void FMSClient::PutNotificationChannelAsyncHelper(const PutNotificationChannelRequest& request, const PutNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::PutNotificationChannelAsync(const PutNotificationChannelRequest& request, const PutNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutNotificationChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientPutNotificationChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPolicyOutcome FMSClient::PutPolicy(const PutPolicyRequest& request) const
@@ -768,14 +768,14 @@ PutPolicyOutcomeCallable FMSClient::PutPolicyCallable(const PutPolicyRequest& re
   return task->get_future();
 }
 
-void FMSClient::PutPolicyAsync(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientPutPolicyAsyncHelper(FMSClient const * const clientThis, const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPolicy(request), context);
 }
 
-void FMSClient::PutPolicyAsyncHelper(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::PutPolicyAsync(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientPutPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutProtocolsListOutcome FMSClient::PutProtocolsList(const PutProtocolsListRequest& request) const
@@ -792,14 +792,14 @@ PutProtocolsListOutcomeCallable FMSClient::PutProtocolsListCallable(const PutPro
   return task->get_future();
 }
 
-void FMSClient::PutProtocolsListAsync(const PutProtocolsListRequest& request, const PutProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientPutProtocolsListAsyncHelper(FMSClient const * const clientThis, const PutProtocolsListRequest& request, const PutProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutProtocolsListAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutProtocolsList(request), context);
 }
 
-void FMSClient::PutProtocolsListAsyncHelper(const PutProtocolsListRequest& request, const PutProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::PutProtocolsListAsync(const PutProtocolsListRequest& request, const PutProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutProtocolsList(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientPutProtocolsListAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome FMSClient::TagResource(const TagResourceRequest& request) const
@@ -816,14 +816,14 @@ TagResourceOutcomeCallable FMSClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void FMSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientTagResourceAsyncHelper(FMSClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void FMSClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome FMSClient::UntagResource(const UntagResourceRequest& request) const
@@ -840,13 +840,13 @@ UntagResourceOutcomeCallable FMSClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void FMSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClientUntagResourceAsyncHelper(FMSClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void FMSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FMSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FMSClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 

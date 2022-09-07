@@ -116,14 +116,14 @@ GenerateDataSetOutcomeCallable MarketplaceCommerceAnalyticsClient::GenerateDataS
   return task->get_future();
 }
 
-void MarketplaceCommerceAnalyticsClient::GenerateDataSetAsync(const GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCommerceAnalyticsClientGenerateDataSetAsyncHelper(MarketplaceCommerceAnalyticsClient const * const clientThis, const GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateDataSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateDataSet(request), context);
 }
 
-void MarketplaceCommerceAnalyticsClient::GenerateDataSetAsyncHelper(const GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCommerceAnalyticsClient::GenerateDataSetAsync(const GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateDataSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceCommerceAnalyticsClientGenerateDataSetAsyncHelper( this, request, handler, context ); } );
 }
 
 StartSupportDataExportOutcome MarketplaceCommerceAnalyticsClient::StartSupportDataExport(const StartSupportDataExportRequest& request) const
@@ -140,13 +140,13 @@ StartSupportDataExportOutcomeCallable MarketplaceCommerceAnalyticsClient::StartS
   return task->get_future();
 }
 
-void MarketplaceCommerceAnalyticsClient::StartSupportDataExportAsync(const StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCommerceAnalyticsClientStartSupportDataExportAsyncHelper(MarketplaceCommerceAnalyticsClient const * const clientThis, const StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSupportDataExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartSupportDataExport(request), context);
 }
 
-void MarketplaceCommerceAnalyticsClient::StartSupportDataExportAsyncHelper(const StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceCommerceAnalyticsClient::StartSupportDataExportAsync(const StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartSupportDataExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceCommerceAnalyticsClientStartSupportDataExportAsyncHelper( this, request, handler, context ); } );
 }
 

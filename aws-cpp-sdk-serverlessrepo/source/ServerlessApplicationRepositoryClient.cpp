@@ -129,14 +129,14 @@ CreateApplicationOutcomeCallable ServerlessApplicationRepositoryClient::CreateAp
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientCreateApplicationAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplication(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientCreateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateApplicationVersionOutcome ServerlessApplicationRepositoryClient::CreateApplicationVersion(const CreateApplicationVersionRequest& request) const
@@ -167,14 +167,14 @@ CreateApplicationVersionOutcomeCallable ServerlessApplicationRepositoryClient::C
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::CreateApplicationVersionAsync(const CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientCreateApplicationVersionAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplicationVersion(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::CreateApplicationVersionAsyncHelper(const CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::CreateApplicationVersionAsync(const CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplicationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientCreateApplicationVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCloudFormationChangeSetOutcome ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSet(const CreateCloudFormationChangeSetRequest& request) const
@@ -199,14 +199,14 @@ CreateCloudFormationChangeSetOutcomeCallable ServerlessApplicationRepositoryClie
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSetAsync(const CreateCloudFormationChangeSetRequest& request, const CreateCloudFormationChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientCreateCloudFormationChangeSetAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const CreateCloudFormationChangeSetRequest& request, const CreateCloudFormationChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCloudFormationChangeSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCloudFormationChangeSet(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSetAsyncHelper(const CreateCloudFormationChangeSetRequest& request, const CreateCloudFormationChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSetAsync(const CreateCloudFormationChangeSetRequest& request, const CreateCloudFormationChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCloudFormationChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientCreateCloudFormationChangeSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::CreateCloudFormationTemplate(const CreateCloudFormationTemplateRequest& request) const
@@ -231,14 +231,14 @@ CreateCloudFormationTemplateOutcomeCallable ServerlessApplicationRepositoryClien
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::CreateCloudFormationTemplateAsync(const CreateCloudFormationTemplateRequest& request, const CreateCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientCreateCloudFormationTemplateAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const CreateCloudFormationTemplateRequest& request, const CreateCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCloudFormationTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCloudFormationTemplate(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::CreateCloudFormationTemplateAsyncHelper(const CreateCloudFormationTemplateRequest& request, const CreateCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::CreateCloudFormationTemplateAsync(const CreateCloudFormationTemplateRequest& request, const CreateCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCloudFormationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientCreateCloudFormationTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -262,14 +262,14 @@ DeleteApplicationOutcomeCallable ServerlessApplicationRepositoryClient::DeleteAp
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientDeleteApplicationAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplication(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientDeleteApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApplicationOutcome ServerlessApplicationRepositoryClient::GetApplication(const GetApplicationRequest& request) const
@@ -293,14 +293,14 @@ GetApplicationOutcomeCallable ServerlessApplicationRepositoryClient::GetApplicat
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientGetApplicationAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApplication(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientGetApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApplicationPolicyOutcome ServerlessApplicationRepositoryClient::GetApplicationPolicy(const GetApplicationPolicyRequest& request) const
@@ -325,14 +325,14 @@ GetApplicationPolicyOutcomeCallable ServerlessApplicationRepositoryClient::GetAp
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::GetApplicationPolicyAsync(const GetApplicationPolicyRequest& request, const GetApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientGetApplicationPolicyAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const GetApplicationPolicyRequest& request, const GetApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApplicationPolicy(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::GetApplicationPolicyAsyncHelper(const GetApplicationPolicyRequest& request, const GetApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::GetApplicationPolicyAsync(const GetApplicationPolicyRequest& request, const GetApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApplicationPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientGetApplicationPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::GetCloudFormationTemplate(const GetCloudFormationTemplateRequest& request) const
@@ -363,14 +363,14 @@ GetCloudFormationTemplateOutcomeCallable ServerlessApplicationRepositoryClient::
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::GetCloudFormationTemplateAsync(const GetCloudFormationTemplateRequest& request, const GetCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientGetCloudFormationTemplateAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const GetCloudFormationTemplateRequest& request, const GetCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCloudFormationTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCloudFormationTemplate(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::GetCloudFormationTemplateAsyncHelper(const GetCloudFormationTemplateRequest& request, const GetCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::GetCloudFormationTemplateAsync(const GetCloudFormationTemplateRequest& request, const GetCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCloudFormationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientGetCloudFormationTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationDependenciesOutcome ServerlessApplicationRepositoryClient::ListApplicationDependencies(const ListApplicationDependenciesRequest& request) const
@@ -395,14 +395,14 @@ ListApplicationDependenciesOutcomeCallable ServerlessApplicationRepositoryClient
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::ListApplicationDependenciesAsync(const ListApplicationDependenciesRequest& request, const ListApplicationDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientListApplicationDependenciesAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const ListApplicationDependenciesRequest& request, const ListApplicationDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationDependenciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplicationDependencies(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::ListApplicationDependenciesAsyncHelper(const ListApplicationDependenciesRequest& request, const ListApplicationDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::ListApplicationDependenciesAsync(const ListApplicationDependenciesRequest& request, const ListApplicationDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplicationDependencies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientListApplicationDependenciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationVersionsOutcome ServerlessApplicationRepositoryClient::ListApplicationVersions(const ListApplicationVersionsRequest& request) const
@@ -427,14 +427,14 @@ ListApplicationVersionsOutcomeCallable ServerlessApplicationRepositoryClient::Li
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::ListApplicationVersionsAsync(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientListApplicationVersionsAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplicationVersions(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::ListApplicationVersionsAsyncHelper(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::ListApplicationVersionsAsync(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplicationVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientListApplicationVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationsOutcome ServerlessApplicationRepositoryClient::ListApplications(const ListApplicationsRequest& request) const
@@ -452,14 +452,14 @@ ListApplicationsOutcomeCallable ServerlessApplicationRepositoryClient::ListAppli
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientListApplicationsAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplications(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientListApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutApplicationPolicyOutcome ServerlessApplicationRepositoryClient::PutApplicationPolicy(const PutApplicationPolicyRequest& request) const
@@ -484,14 +484,14 @@ PutApplicationPolicyOutcomeCallable ServerlessApplicationRepositoryClient::PutAp
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::PutApplicationPolicyAsync(const PutApplicationPolicyRequest& request, const PutApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientPutApplicationPolicyAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const PutApplicationPolicyRequest& request, const PutApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutApplicationPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutApplicationPolicy(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::PutApplicationPolicyAsyncHelper(const PutApplicationPolicyRequest& request, const PutApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::PutApplicationPolicyAsync(const PutApplicationPolicyRequest& request, const PutApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutApplicationPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientPutApplicationPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 UnshareApplicationOutcome ServerlessApplicationRepositoryClient::UnshareApplication(const UnshareApplicationRequest& request) const
@@ -516,14 +516,14 @@ UnshareApplicationOutcomeCallable ServerlessApplicationRepositoryClient::Unshare
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::UnshareApplicationAsync(const UnshareApplicationRequest& request, const UnshareApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientUnshareApplicationAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const UnshareApplicationRequest& request, const UnshareApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnshareApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UnshareApplication(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::UnshareApplicationAsyncHelper(const UnshareApplicationRequest& request, const UnshareApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::UnshareApplicationAsync(const UnshareApplicationRequest& request, const UnshareApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UnshareApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientUnshareApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationOutcome ServerlessApplicationRepositoryClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -547,13 +547,13 @@ UpdateApplicationOutcomeCallable ServerlessApplicationRepositoryClient::UpdateAp
   return task->get_future();
 }
 
-void ServerlessApplicationRepositoryClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClientUpdateApplicationAsyncHelper(ServerlessApplicationRepositoryClient const * const clientThis, const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplication(request), context);
 }
 
-void ServerlessApplicationRepositoryClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServerlessApplicationRepositoryClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServerlessApplicationRepositoryClientUpdateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -137,14 +137,14 @@ AssociateConfigurationItemsToApplicationOutcomeCallable ApplicationDiscoveryServ
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::AssociateConfigurationItemsToApplicationAsync(const AssociateConfigurationItemsToApplicationRequest& request, const AssociateConfigurationItemsToApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientAssociateConfigurationItemsToApplicationAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const AssociateConfigurationItemsToApplicationRequest& request, const AssociateConfigurationItemsToApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateConfigurationItemsToApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateConfigurationItemsToApplication(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::AssociateConfigurationItemsToApplicationAsyncHelper(const AssociateConfigurationItemsToApplicationRequest& request, const AssociateConfigurationItemsToApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::AssociateConfigurationItemsToApplicationAsync(const AssociateConfigurationItemsToApplicationRequest& request, const AssociateConfigurationItemsToApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateConfigurationItemsToApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientAssociateConfigurationItemsToApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDeleteImportDataOutcome ApplicationDiscoveryServiceClient::BatchDeleteImportData(const BatchDeleteImportDataRequest& request) const
@@ -161,14 +161,14 @@ BatchDeleteImportDataOutcomeCallable ApplicationDiscoveryServiceClient::BatchDel
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::BatchDeleteImportDataAsync(const BatchDeleteImportDataRequest& request, const BatchDeleteImportDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientBatchDeleteImportDataAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const BatchDeleteImportDataRequest& request, const BatchDeleteImportDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteImportDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDeleteImportData(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::BatchDeleteImportDataAsyncHelper(const BatchDeleteImportDataRequest& request, const BatchDeleteImportDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::BatchDeleteImportDataAsync(const BatchDeleteImportDataRequest& request, const BatchDeleteImportDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDeleteImportData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientBatchDeleteImportDataAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateApplicationOutcome ApplicationDiscoveryServiceClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -185,14 +185,14 @@ CreateApplicationOutcomeCallable ApplicationDiscoveryServiceClient::CreateApplic
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientCreateApplicationAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplication(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientCreateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTagsOutcome ApplicationDiscoveryServiceClient::CreateTags(const CreateTagsRequest& request) const
@@ -209,14 +209,14 @@ CreateTagsOutcomeCallable ApplicationDiscoveryServiceClient::CreateTagsCallable(
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientCreateTagsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTags(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::CreateTagsAsyncHelper(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientCreateTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationsOutcome ApplicationDiscoveryServiceClient::DeleteApplications(const DeleteApplicationsRequest& request) const
@@ -233,14 +233,14 @@ DeleteApplicationsOutcomeCallable ApplicationDiscoveryServiceClient::DeleteAppli
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::DeleteApplicationsAsync(const DeleteApplicationsRequest& request, const DeleteApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientDeleteApplicationsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const DeleteApplicationsRequest& request, const DeleteApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplications(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::DeleteApplicationsAsyncHelper(const DeleteApplicationsRequest& request, const DeleteApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::DeleteApplicationsAsync(const DeleteApplicationsRequest& request, const DeleteApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientDeleteApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTagsOutcome ApplicationDiscoveryServiceClient::DeleteTags(const DeleteTagsRequest& request) const
@@ -257,14 +257,14 @@ DeleteTagsOutcomeCallable ApplicationDiscoveryServiceClient::DeleteTagsCallable(
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientDeleteTagsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTags(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientDeleteTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAgentsOutcome ApplicationDiscoveryServiceClient::DescribeAgents(const DescribeAgentsRequest& request) const
@@ -281,14 +281,14 @@ DescribeAgentsOutcomeCallable ApplicationDiscoveryServiceClient::DescribeAgentsC
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::DescribeAgentsAsync(const DescribeAgentsRequest& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientDescribeAgentsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const DescribeAgentsRequest& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAgentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAgents(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::DescribeAgentsAsyncHelper(const DescribeAgentsRequest& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::DescribeAgentsAsync(const DescribeAgentsRequest& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAgents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientDescribeAgentsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeConfigurationsOutcome ApplicationDiscoveryServiceClient::DescribeConfigurations(const DescribeConfigurationsRequest& request) const
@@ -305,14 +305,14 @@ DescribeConfigurationsOutcomeCallable ApplicationDiscoveryServiceClient::Describ
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::DescribeConfigurationsAsync(const DescribeConfigurationsRequest& request, const DescribeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientDescribeConfigurationsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const DescribeConfigurationsRequest& request, const DescribeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeConfigurations(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::DescribeConfigurationsAsyncHelper(const DescribeConfigurationsRequest& request, const DescribeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::DescribeConfigurationsAsync(const DescribeConfigurationsRequest& request, const DescribeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientDescribeConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeContinuousExportsOutcome ApplicationDiscoveryServiceClient::DescribeContinuousExports(const DescribeContinuousExportsRequest& request) const
@@ -329,14 +329,14 @@ DescribeContinuousExportsOutcomeCallable ApplicationDiscoveryServiceClient::Desc
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::DescribeContinuousExportsAsync(const DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientDescribeContinuousExportsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeContinuousExportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeContinuousExports(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::DescribeContinuousExportsAsyncHelper(const DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::DescribeContinuousExportsAsync(const DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeContinuousExports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientDescribeContinuousExportsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExportTasksOutcome ApplicationDiscoveryServiceClient::DescribeExportTasks(const DescribeExportTasksRequest& request) const
@@ -353,14 +353,14 @@ DescribeExportTasksOutcomeCallable ApplicationDiscoveryServiceClient::DescribeEx
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::DescribeExportTasksAsync(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientDescribeExportTasksAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExportTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExportTasks(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::DescribeExportTasksAsyncHelper(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::DescribeExportTasksAsync(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExportTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientDescribeExportTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImportTasksOutcome ApplicationDiscoveryServiceClient::DescribeImportTasks(const DescribeImportTasksRequest& request) const
@@ -377,14 +377,14 @@ DescribeImportTasksOutcomeCallable ApplicationDiscoveryServiceClient::DescribeIm
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::DescribeImportTasksAsync(const DescribeImportTasksRequest& request, const DescribeImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientDescribeImportTasksAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const DescribeImportTasksRequest& request, const DescribeImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImportTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImportTasks(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::DescribeImportTasksAsyncHelper(const DescribeImportTasksRequest& request, const DescribeImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::DescribeImportTasksAsync(const DescribeImportTasksRequest& request, const DescribeImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImportTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientDescribeImportTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTagsOutcome ApplicationDiscoveryServiceClient::DescribeTags(const DescribeTagsRequest& request) const
@@ -401,14 +401,14 @@ DescribeTagsOutcomeCallable ApplicationDiscoveryServiceClient::DescribeTagsCalla
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientDescribeTagsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTags(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientDescribeTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateConfigurationItemsFromApplicationOutcome ApplicationDiscoveryServiceClient::DisassociateConfigurationItemsFromApplication(const DisassociateConfigurationItemsFromApplicationRequest& request) const
@@ -425,14 +425,14 @@ DisassociateConfigurationItemsFromApplicationOutcomeCallable ApplicationDiscover
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::DisassociateConfigurationItemsFromApplicationAsync(const DisassociateConfigurationItemsFromApplicationRequest& request, const DisassociateConfigurationItemsFromApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientDisassociateConfigurationItemsFromApplicationAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const DisassociateConfigurationItemsFromApplicationRequest& request, const DisassociateConfigurationItemsFromApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateConfigurationItemsFromApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateConfigurationItemsFromApplication(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::DisassociateConfigurationItemsFromApplicationAsyncHelper(const DisassociateConfigurationItemsFromApplicationRequest& request, const DisassociateConfigurationItemsFromApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::DisassociateConfigurationItemsFromApplicationAsync(const DisassociateConfigurationItemsFromApplicationRequest& request, const DisassociateConfigurationItemsFromApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateConfigurationItemsFromApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientDisassociateConfigurationItemsFromApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDiscoverySummaryOutcome ApplicationDiscoveryServiceClient::GetDiscoverySummary(const GetDiscoverySummaryRequest& request) const
@@ -449,14 +449,14 @@ GetDiscoverySummaryOutcomeCallable ApplicationDiscoveryServiceClient::GetDiscove
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::GetDiscoverySummaryAsync(const GetDiscoverySummaryRequest& request, const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientGetDiscoverySummaryAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const GetDiscoverySummaryRequest& request, const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDiscoverySummaryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDiscoverySummary(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::GetDiscoverySummaryAsyncHelper(const GetDiscoverySummaryRequest& request, const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::GetDiscoverySummaryAsync(const GetDiscoverySummaryRequest& request, const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDiscoverySummary(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientGetDiscoverySummaryAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConfigurationsOutcome ApplicationDiscoveryServiceClient::ListConfigurations(const ListConfigurationsRequest& request) const
@@ -473,14 +473,14 @@ ListConfigurationsOutcomeCallable ApplicationDiscoveryServiceClient::ListConfigu
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::ListConfigurationsAsync(const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientListConfigurationsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConfigurations(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::ListConfigurationsAsyncHelper(const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::ListConfigurationsAsync(const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientListConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServerNeighborsOutcome ApplicationDiscoveryServiceClient::ListServerNeighbors(const ListServerNeighborsRequest& request) const
@@ -497,14 +497,14 @@ ListServerNeighborsOutcomeCallable ApplicationDiscoveryServiceClient::ListServer
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::ListServerNeighborsAsync(const ListServerNeighborsRequest& request, const ListServerNeighborsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientListServerNeighborsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const ListServerNeighborsRequest& request, const ListServerNeighborsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServerNeighborsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServerNeighbors(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::ListServerNeighborsAsyncHelper(const ListServerNeighborsRequest& request, const ListServerNeighborsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::ListServerNeighborsAsync(const ListServerNeighborsRequest& request, const ListServerNeighborsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServerNeighbors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientListServerNeighborsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartContinuousExportOutcome ApplicationDiscoveryServiceClient::StartContinuousExport(const StartContinuousExportRequest& request) const
@@ -521,14 +521,14 @@ StartContinuousExportOutcomeCallable ApplicationDiscoveryServiceClient::StartCon
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::StartContinuousExportAsync(const StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientStartContinuousExportAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartContinuousExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartContinuousExport(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::StartContinuousExportAsyncHelper(const StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::StartContinuousExportAsync(const StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartContinuousExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientStartContinuousExportAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDataCollectionByAgentIdsOutcome ApplicationDiscoveryServiceClient::StartDataCollectionByAgentIds(const StartDataCollectionByAgentIdsRequest& request) const
@@ -545,14 +545,14 @@ StartDataCollectionByAgentIdsOutcomeCallable ApplicationDiscoveryServiceClient::
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::StartDataCollectionByAgentIdsAsync(const StartDataCollectionByAgentIdsRequest& request, const StartDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientStartDataCollectionByAgentIdsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const StartDataCollectionByAgentIdsRequest& request, const StartDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDataCollectionByAgentIdsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDataCollectionByAgentIds(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::StartDataCollectionByAgentIdsAsyncHelper(const StartDataCollectionByAgentIdsRequest& request, const StartDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::StartDataCollectionByAgentIdsAsync(const StartDataCollectionByAgentIdsRequest& request, const StartDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDataCollectionByAgentIds(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientStartDataCollectionByAgentIdsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartExportTaskOutcome ApplicationDiscoveryServiceClient::StartExportTask(const StartExportTaskRequest& request) const
@@ -569,14 +569,14 @@ StartExportTaskOutcomeCallable ApplicationDiscoveryServiceClient::StartExportTas
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::StartExportTaskAsync(const StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientStartExportTaskAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartExportTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartExportTask(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::StartExportTaskAsyncHelper(const StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::StartExportTaskAsync(const StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartExportTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientStartExportTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 StartImportTaskOutcome ApplicationDiscoveryServiceClient::StartImportTask(const StartImportTaskRequest& request) const
@@ -593,14 +593,14 @@ StartImportTaskOutcomeCallable ApplicationDiscoveryServiceClient::StartImportTas
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::StartImportTaskAsync(const StartImportTaskRequest& request, const StartImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientStartImportTaskAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const StartImportTaskRequest& request, const StartImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartImportTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartImportTask(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::StartImportTaskAsyncHelper(const StartImportTaskRequest& request, const StartImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::StartImportTaskAsync(const StartImportTaskRequest& request, const StartImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartImportTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientStartImportTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 StopContinuousExportOutcome ApplicationDiscoveryServiceClient::StopContinuousExport(const StopContinuousExportRequest& request) const
@@ -617,14 +617,14 @@ StopContinuousExportOutcomeCallable ApplicationDiscoveryServiceClient::StopConti
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::StopContinuousExportAsync(const StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientStopContinuousExportAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopContinuousExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopContinuousExport(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::StopContinuousExportAsyncHelper(const StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::StopContinuousExportAsync(const StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopContinuousExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientStopContinuousExportAsyncHelper( this, request, handler, context ); } );
 }
 
 StopDataCollectionByAgentIdsOutcome ApplicationDiscoveryServiceClient::StopDataCollectionByAgentIds(const StopDataCollectionByAgentIdsRequest& request) const
@@ -641,14 +641,14 @@ StopDataCollectionByAgentIdsOutcomeCallable ApplicationDiscoveryServiceClient::S
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::StopDataCollectionByAgentIdsAsync(const StopDataCollectionByAgentIdsRequest& request, const StopDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientStopDataCollectionByAgentIdsAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const StopDataCollectionByAgentIdsRequest& request, const StopDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopDataCollectionByAgentIdsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopDataCollectionByAgentIds(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::StopDataCollectionByAgentIdsAsyncHelper(const StopDataCollectionByAgentIdsRequest& request, const StopDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::StopDataCollectionByAgentIdsAsync(const StopDataCollectionByAgentIdsRequest& request, const StopDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopDataCollectionByAgentIds(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientStopDataCollectionByAgentIdsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationOutcome ApplicationDiscoveryServiceClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -665,13 +665,13 @@ UpdateApplicationOutcomeCallable ApplicationDiscoveryServiceClient::UpdateApplic
   return task->get_future();
 }
 
-void ApplicationDiscoveryServiceClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClientUpdateApplicationAsyncHelper(ApplicationDiscoveryServiceClient const * const clientThis, const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplication(request), context);
 }
 
-void ApplicationDiscoveryServiceClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ApplicationDiscoveryServiceClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ApplicationDiscoveryServiceClientUpdateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 

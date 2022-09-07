@@ -118,14 +118,14 @@ PutEventsOutcomeCallable PersonalizeEventsClient::PutEventsCallable(const PutEve
   return task->get_future();
 }
 
-void PersonalizeEventsClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeEventsClientPutEventsAsyncHelper(PersonalizeEventsClient const * const clientThis, const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEvents(request), context);
 }
 
-void PersonalizeEventsClient::PutEventsAsyncHelper(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeEventsClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeEventsClientPutEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutItemsOutcome PersonalizeEventsClient::PutItems(const PutItemsRequest& request) const
@@ -143,14 +143,14 @@ PutItemsOutcomeCallable PersonalizeEventsClient::PutItemsCallable(const PutItems
   return task->get_future();
 }
 
-void PersonalizeEventsClient::PutItemsAsync(const PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeEventsClientPutItemsAsyncHelper(PersonalizeEventsClient const * const clientThis, const PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutItemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutItems(request), context);
 }
 
-void PersonalizeEventsClient::PutItemsAsyncHelper(const PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeEventsClient::PutItemsAsync(const PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutItems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeEventsClientPutItemsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutUsersOutcome PersonalizeEventsClient::PutUsers(const PutUsersRequest& request) const
@@ -168,13 +168,13 @@ PutUsersOutcomeCallable PersonalizeEventsClient::PutUsersCallable(const PutUsers
   return task->get_future();
 }
 
-void PersonalizeEventsClient::PutUsersAsync(const PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeEventsClientPutUsersAsyncHelper(PersonalizeEventsClient const * const clientThis, const PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutUsers(request), context);
 }
 
-void PersonalizeEventsClient::PutUsersAsyncHelper(const PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void PersonalizeEventsClient::PutUsersAsync(const PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ PersonalizeEventsClientPutUsersAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -145,14 +145,14 @@ AssociateAccountsOutcomeCallable BillingConductorClient::AssociateAccountsCallab
   return task->get_future();
 }
 
-void BillingConductorClient::AssociateAccountsAsync(const AssociateAccountsRequest& request, const AssociateAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientAssociateAccountsAsyncHelper(BillingConductorClient const * const clientThis, const AssociateAccountsRequest& request, const AssociateAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateAccountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateAccounts(request), context);
 }
 
-void BillingConductorClient::AssociateAccountsAsyncHelper(const AssociateAccountsRequest& request, const AssociateAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::AssociateAccountsAsync(const AssociateAccountsRequest& request, const AssociateAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientAssociateAccountsAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociatePricingRulesOutcome BillingConductorClient::AssociatePricingRules(const AssociatePricingRulesRequest& request) const
@@ -170,14 +170,14 @@ AssociatePricingRulesOutcomeCallable BillingConductorClient::AssociatePricingRul
   return task->get_future();
 }
 
-void BillingConductorClient::AssociatePricingRulesAsync(const AssociatePricingRulesRequest& request, const AssociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientAssociatePricingRulesAsyncHelper(BillingConductorClient const * const clientThis, const AssociatePricingRulesRequest& request, const AssociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociatePricingRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociatePricingRules(request), context);
 }
 
-void BillingConductorClient::AssociatePricingRulesAsyncHelper(const AssociatePricingRulesRequest& request, const AssociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::AssociatePricingRulesAsync(const AssociatePricingRulesRequest& request, const AssociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociatePricingRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientAssociatePricingRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchAssociateResourcesToCustomLineItemOutcome BillingConductorClient::BatchAssociateResourcesToCustomLineItem(const BatchAssociateResourcesToCustomLineItemRequest& request) const
@@ -195,14 +195,14 @@ BatchAssociateResourcesToCustomLineItemOutcomeCallable BillingConductorClient::B
   return task->get_future();
 }
 
-void BillingConductorClient::BatchAssociateResourcesToCustomLineItemAsync(const BatchAssociateResourcesToCustomLineItemRequest& request, const BatchAssociateResourcesToCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientBatchAssociateResourcesToCustomLineItemAsyncHelper(BillingConductorClient const * const clientThis, const BatchAssociateResourcesToCustomLineItemRequest& request, const BatchAssociateResourcesToCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateResourcesToCustomLineItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchAssociateResourcesToCustomLineItem(request), context);
 }
 
-void BillingConductorClient::BatchAssociateResourcesToCustomLineItemAsyncHelper(const BatchAssociateResourcesToCustomLineItemRequest& request, const BatchAssociateResourcesToCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::BatchAssociateResourcesToCustomLineItemAsync(const BatchAssociateResourcesToCustomLineItemRequest& request, const BatchAssociateResourcesToCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchAssociateResourcesToCustomLineItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientBatchAssociateResourcesToCustomLineItemAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchDisassociateResourcesFromCustomLineItemOutcome BillingConductorClient::BatchDisassociateResourcesFromCustomLineItem(const BatchDisassociateResourcesFromCustomLineItemRequest& request) const
@@ -220,14 +220,14 @@ BatchDisassociateResourcesFromCustomLineItemOutcomeCallable BillingConductorClie
   return task->get_future();
 }
 
-void BillingConductorClient::BatchDisassociateResourcesFromCustomLineItemAsync(const BatchDisassociateResourcesFromCustomLineItemRequest& request, const BatchDisassociateResourcesFromCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientBatchDisassociateResourcesFromCustomLineItemAsyncHelper(BillingConductorClient const * const clientThis, const BatchDisassociateResourcesFromCustomLineItemRequest& request, const BatchDisassociateResourcesFromCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateResourcesFromCustomLineItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDisassociateResourcesFromCustomLineItem(request), context);
 }
 
-void BillingConductorClient::BatchDisassociateResourcesFromCustomLineItemAsyncHelper(const BatchDisassociateResourcesFromCustomLineItemRequest& request, const BatchDisassociateResourcesFromCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::BatchDisassociateResourcesFromCustomLineItemAsync(const BatchDisassociateResourcesFromCustomLineItemRequest& request, const BatchDisassociateResourcesFromCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDisassociateResourcesFromCustomLineItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientBatchDisassociateResourcesFromCustomLineItemAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBillingGroupOutcome BillingConductorClient::CreateBillingGroup(const CreateBillingGroupRequest& request) const
@@ -245,14 +245,14 @@ CreateBillingGroupOutcomeCallable BillingConductorClient::CreateBillingGroupCall
   return task->get_future();
 }
 
-void BillingConductorClient::CreateBillingGroupAsync(const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientCreateBillingGroupAsyncHelper(BillingConductorClient const * const clientThis, const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBillingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBillingGroup(request), context);
 }
 
-void BillingConductorClient::CreateBillingGroupAsyncHelper(const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::CreateBillingGroupAsync(const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBillingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientCreateBillingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomLineItemOutcome BillingConductorClient::CreateCustomLineItem(const CreateCustomLineItemRequest& request) const
@@ -270,14 +270,14 @@ CreateCustomLineItemOutcomeCallable BillingConductorClient::CreateCustomLineItem
   return task->get_future();
 }
 
-void BillingConductorClient::CreateCustomLineItemAsync(const CreateCustomLineItemRequest& request, const CreateCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientCreateCustomLineItemAsyncHelper(BillingConductorClient const * const clientThis, const CreateCustomLineItemRequest& request, const CreateCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomLineItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomLineItem(request), context);
 }
 
-void BillingConductorClient::CreateCustomLineItemAsyncHelper(const CreateCustomLineItemRequest& request, const CreateCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::CreateCustomLineItemAsync(const CreateCustomLineItemRequest& request, const CreateCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomLineItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientCreateCustomLineItemAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePricingPlanOutcome BillingConductorClient::CreatePricingPlan(const CreatePricingPlanRequest& request) const
@@ -295,14 +295,14 @@ CreatePricingPlanOutcomeCallable BillingConductorClient::CreatePricingPlanCallab
   return task->get_future();
 }
 
-void BillingConductorClient::CreatePricingPlanAsync(const CreatePricingPlanRequest& request, const CreatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientCreatePricingPlanAsyncHelper(BillingConductorClient const * const clientThis, const CreatePricingPlanRequest& request, const CreatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePricingPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePricingPlan(request), context);
 }
 
-void BillingConductorClient::CreatePricingPlanAsyncHelper(const CreatePricingPlanRequest& request, const CreatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::CreatePricingPlanAsync(const CreatePricingPlanRequest& request, const CreatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePricingPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientCreatePricingPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePricingRuleOutcome BillingConductorClient::CreatePricingRule(const CreatePricingRuleRequest& request) const
@@ -320,14 +320,14 @@ CreatePricingRuleOutcomeCallable BillingConductorClient::CreatePricingRuleCallab
   return task->get_future();
 }
 
-void BillingConductorClient::CreatePricingRuleAsync(const CreatePricingRuleRequest& request, const CreatePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientCreatePricingRuleAsyncHelper(BillingConductorClient const * const clientThis, const CreatePricingRuleRequest& request, const CreatePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePricingRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePricingRule(request), context);
 }
 
-void BillingConductorClient::CreatePricingRuleAsyncHelper(const CreatePricingRuleRequest& request, const CreatePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::CreatePricingRuleAsync(const CreatePricingRuleRequest& request, const CreatePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePricingRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientCreatePricingRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBillingGroupOutcome BillingConductorClient::DeleteBillingGroup(const DeleteBillingGroupRequest& request) const
@@ -345,14 +345,14 @@ DeleteBillingGroupOutcomeCallable BillingConductorClient::DeleteBillingGroupCall
   return task->get_future();
 }
 
-void BillingConductorClient::DeleteBillingGroupAsync(const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientDeleteBillingGroupAsyncHelper(BillingConductorClient const * const clientThis, const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBillingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBillingGroup(request), context);
 }
 
-void BillingConductorClient::DeleteBillingGroupAsyncHelper(const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::DeleteBillingGroupAsync(const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBillingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientDeleteBillingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomLineItemOutcome BillingConductorClient::DeleteCustomLineItem(const DeleteCustomLineItemRequest& request) const
@@ -370,14 +370,14 @@ DeleteCustomLineItemOutcomeCallable BillingConductorClient::DeleteCustomLineItem
   return task->get_future();
 }
 
-void BillingConductorClient::DeleteCustomLineItemAsync(const DeleteCustomLineItemRequest& request, const DeleteCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientDeleteCustomLineItemAsyncHelper(BillingConductorClient const * const clientThis, const DeleteCustomLineItemRequest& request, const DeleteCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomLineItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomLineItem(request), context);
 }
 
-void BillingConductorClient::DeleteCustomLineItemAsyncHelper(const DeleteCustomLineItemRequest& request, const DeleteCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::DeleteCustomLineItemAsync(const DeleteCustomLineItemRequest& request, const DeleteCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomLineItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientDeleteCustomLineItemAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePricingPlanOutcome BillingConductorClient::DeletePricingPlan(const DeletePricingPlanRequest& request) const
@@ -395,14 +395,14 @@ DeletePricingPlanOutcomeCallable BillingConductorClient::DeletePricingPlanCallab
   return task->get_future();
 }
 
-void BillingConductorClient::DeletePricingPlanAsync(const DeletePricingPlanRequest& request, const DeletePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientDeletePricingPlanAsyncHelper(BillingConductorClient const * const clientThis, const DeletePricingPlanRequest& request, const DeletePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePricingPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePricingPlan(request), context);
 }
 
-void BillingConductorClient::DeletePricingPlanAsyncHelper(const DeletePricingPlanRequest& request, const DeletePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::DeletePricingPlanAsync(const DeletePricingPlanRequest& request, const DeletePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePricingPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientDeletePricingPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePricingRuleOutcome BillingConductorClient::DeletePricingRule(const DeletePricingRuleRequest& request) const
@@ -420,14 +420,14 @@ DeletePricingRuleOutcomeCallable BillingConductorClient::DeletePricingRuleCallab
   return task->get_future();
 }
 
-void BillingConductorClient::DeletePricingRuleAsync(const DeletePricingRuleRequest& request, const DeletePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientDeletePricingRuleAsyncHelper(BillingConductorClient const * const clientThis, const DeletePricingRuleRequest& request, const DeletePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePricingRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePricingRule(request), context);
 }
 
-void BillingConductorClient::DeletePricingRuleAsyncHelper(const DeletePricingRuleRequest& request, const DeletePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::DeletePricingRuleAsync(const DeletePricingRuleRequest& request, const DeletePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePricingRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientDeletePricingRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateAccountsOutcome BillingConductorClient::DisassociateAccounts(const DisassociateAccountsRequest& request) const
@@ -445,14 +445,14 @@ DisassociateAccountsOutcomeCallable BillingConductorClient::DisassociateAccounts
   return task->get_future();
 }
 
-void BillingConductorClient::DisassociateAccountsAsync(const DisassociateAccountsRequest& request, const DisassociateAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientDisassociateAccountsAsyncHelper(BillingConductorClient const * const clientThis, const DisassociateAccountsRequest& request, const DisassociateAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateAccountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateAccounts(request), context);
 }
 
-void BillingConductorClient::DisassociateAccountsAsyncHelper(const DisassociateAccountsRequest& request, const DisassociateAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::DisassociateAccountsAsync(const DisassociateAccountsRequest& request, const DisassociateAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientDisassociateAccountsAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociatePricingRulesOutcome BillingConductorClient::DisassociatePricingRules(const DisassociatePricingRulesRequest& request) const
@@ -470,14 +470,14 @@ DisassociatePricingRulesOutcomeCallable BillingConductorClient::DisassociatePric
   return task->get_future();
 }
 
-void BillingConductorClient::DisassociatePricingRulesAsync(const DisassociatePricingRulesRequest& request, const DisassociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientDisassociatePricingRulesAsyncHelper(BillingConductorClient const * const clientThis, const DisassociatePricingRulesRequest& request, const DisassociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociatePricingRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociatePricingRules(request), context);
 }
 
-void BillingConductorClient::DisassociatePricingRulesAsyncHelper(const DisassociatePricingRulesRequest& request, const DisassociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::DisassociatePricingRulesAsync(const DisassociatePricingRulesRequest& request, const DisassociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociatePricingRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientDisassociatePricingRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccountAssociationsOutcome BillingConductorClient::ListAccountAssociations(const ListAccountAssociationsRequest& request) const
@@ -495,14 +495,14 @@ ListAccountAssociationsOutcomeCallable BillingConductorClient::ListAccountAssoci
   return task->get_future();
 }
 
-void BillingConductorClient::ListAccountAssociationsAsync(const ListAccountAssociationsRequest& request, const ListAccountAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientListAccountAssociationsAsyncHelper(BillingConductorClient const * const clientThis, const ListAccountAssociationsRequest& request, const ListAccountAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccountAssociations(request), context);
 }
 
-void BillingConductorClient::ListAccountAssociationsAsyncHelper(const ListAccountAssociationsRequest& request, const ListAccountAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::ListAccountAssociationsAsync(const ListAccountAssociationsRequest& request, const ListAccountAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccountAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientListAccountAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBillingGroupCostReportsOutcome BillingConductorClient::ListBillingGroupCostReports(const ListBillingGroupCostReportsRequest& request) const
@@ -520,14 +520,14 @@ ListBillingGroupCostReportsOutcomeCallable BillingConductorClient::ListBillingGr
   return task->get_future();
 }
 
-void BillingConductorClient::ListBillingGroupCostReportsAsync(const ListBillingGroupCostReportsRequest& request, const ListBillingGroupCostReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientListBillingGroupCostReportsAsyncHelper(BillingConductorClient const * const clientThis, const ListBillingGroupCostReportsRequest& request, const ListBillingGroupCostReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBillingGroupCostReportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBillingGroupCostReports(request), context);
 }
 
-void BillingConductorClient::ListBillingGroupCostReportsAsyncHelper(const ListBillingGroupCostReportsRequest& request, const ListBillingGroupCostReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::ListBillingGroupCostReportsAsync(const ListBillingGroupCostReportsRequest& request, const ListBillingGroupCostReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBillingGroupCostReports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientListBillingGroupCostReportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBillingGroupsOutcome BillingConductorClient::ListBillingGroups(const ListBillingGroupsRequest& request) const
@@ -545,14 +545,14 @@ ListBillingGroupsOutcomeCallable BillingConductorClient::ListBillingGroupsCallab
   return task->get_future();
 }
 
-void BillingConductorClient::ListBillingGroupsAsync(const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientListBillingGroupsAsyncHelper(BillingConductorClient const * const clientThis, const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBillingGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBillingGroups(request), context);
 }
 
-void BillingConductorClient::ListBillingGroupsAsyncHelper(const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::ListBillingGroupsAsync(const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBillingGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientListBillingGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomLineItemsOutcome BillingConductorClient::ListCustomLineItems(const ListCustomLineItemsRequest& request) const
@@ -570,14 +570,14 @@ ListCustomLineItemsOutcomeCallable BillingConductorClient::ListCustomLineItemsCa
   return task->get_future();
 }
 
-void BillingConductorClient::ListCustomLineItemsAsync(const ListCustomLineItemsRequest& request, const ListCustomLineItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientListCustomLineItemsAsyncHelper(BillingConductorClient const * const clientThis, const ListCustomLineItemsRequest& request, const ListCustomLineItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomLineItemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomLineItems(request), context);
 }
 
-void BillingConductorClient::ListCustomLineItemsAsyncHelper(const ListCustomLineItemsRequest& request, const ListCustomLineItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::ListCustomLineItemsAsync(const ListCustomLineItemsRequest& request, const ListCustomLineItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomLineItems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientListCustomLineItemsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPricingPlansOutcome BillingConductorClient::ListPricingPlans(const ListPricingPlansRequest& request) const
@@ -595,14 +595,14 @@ ListPricingPlansOutcomeCallable BillingConductorClient::ListPricingPlansCallable
   return task->get_future();
 }
 
-void BillingConductorClient::ListPricingPlansAsync(const ListPricingPlansRequest& request, const ListPricingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientListPricingPlansAsyncHelper(BillingConductorClient const * const clientThis, const ListPricingPlansRequest& request, const ListPricingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPricingPlansAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPricingPlans(request), context);
 }
 
-void BillingConductorClient::ListPricingPlansAsyncHelper(const ListPricingPlansRequest& request, const ListPricingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::ListPricingPlansAsync(const ListPricingPlansRequest& request, const ListPricingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPricingPlans(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientListPricingPlansAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPricingPlansAssociatedWithPricingRuleOutcome BillingConductorClient::ListPricingPlansAssociatedWithPricingRule(const ListPricingPlansAssociatedWithPricingRuleRequest& request) const
@@ -620,14 +620,14 @@ ListPricingPlansAssociatedWithPricingRuleOutcomeCallable BillingConductorClient:
   return task->get_future();
 }
 
-void BillingConductorClient::ListPricingPlansAssociatedWithPricingRuleAsync(const ListPricingPlansAssociatedWithPricingRuleRequest& request, const ListPricingPlansAssociatedWithPricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientListPricingPlansAssociatedWithPricingRuleAsyncHelper(BillingConductorClient const * const clientThis, const ListPricingPlansAssociatedWithPricingRuleRequest& request, const ListPricingPlansAssociatedWithPricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPricingPlansAssociatedWithPricingRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPricingPlansAssociatedWithPricingRule(request), context);
 }
 
-void BillingConductorClient::ListPricingPlansAssociatedWithPricingRuleAsyncHelper(const ListPricingPlansAssociatedWithPricingRuleRequest& request, const ListPricingPlansAssociatedWithPricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::ListPricingPlansAssociatedWithPricingRuleAsync(const ListPricingPlansAssociatedWithPricingRuleRequest& request, const ListPricingPlansAssociatedWithPricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPricingPlansAssociatedWithPricingRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientListPricingPlansAssociatedWithPricingRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPricingRulesOutcome BillingConductorClient::ListPricingRules(const ListPricingRulesRequest& request) const
@@ -645,14 +645,14 @@ ListPricingRulesOutcomeCallable BillingConductorClient::ListPricingRulesCallable
   return task->get_future();
 }
 
-void BillingConductorClient::ListPricingRulesAsync(const ListPricingRulesRequest& request, const ListPricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientListPricingRulesAsyncHelper(BillingConductorClient const * const clientThis, const ListPricingRulesRequest& request, const ListPricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPricingRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPricingRules(request), context);
 }
 
-void BillingConductorClient::ListPricingRulesAsyncHelper(const ListPricingRulesRequest& request, const ListPricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::ListPricingRulesAsync(const ListPricingRulesRequest& request, const ListPricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPricingRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientListPricingRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPricingRulesAssociatedToPricingPlanOutcome BillingConductorClient::ListPricingRulesAssociatedToPricingPlan(const ListPricingRulesAssociatedToPricingPlanRequest& request) const
@@ -670,14 +670,14 @@ ListPricingRulesAssociatedToPricingPlanOutcomeCallable BillingConductorClient::L
   return task->get_future();
 }
 
-void BillingConductorClient::ListPricingRulesAssociatedToPricingPlanAsync(const ListPricingRulesAssociatedToPricingPlanRequest& request, const ListPricingRulesAssociatedToPricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientListPricingRulesAssociatedToPricingPlanAsyncHelper(BillingConductorClient const * const clientThis, const ListPricingRulesAssociatedToPricingPlanRequest& request, const ListPricingRulesAssociatedToPricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPricingRulesAssociatedToPricingPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPricingRulesAssociatedToPricingPlan(request), context);
 }
 
-void BillingConductorClient::ListPricingRulesAssociatedToPricingPlanAsyncHelper(const ListPricingRulesAssociatedToPricingPlanRequest& request, const ListPricingRulesAssociatedToPricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::ListPricingRulesAssociatedToPricingPlanAsync(const ListPricingRulesAssociatedToPricingPlanRequest& request, const ListPricingRulesAssociatedToPricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPricingRulesAssociatedToPricingPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientListPricingRulesAssociatedToPricingPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourcesAssociatedToCustomLineItemOutcome BillingConductorClient::ListResourcesAssociatedToCustomLineItem(const ListResourcesAssociatedToCustomLineItemRequest& request) const
@@ -695,14 +695,14 @@ ListResourcesAssociatedToCustomLineItemOutcomeCallable BillingConductorClient::L
   return task->get_future();
 }
 
-void BillingConductorClient::ListResourcesAssociatedToCustomLineItemAsync(const ListResourcesAssociatedToCustomLineItemRequest& request, const ListResourcesAssociatedToCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientListResourcesAssociatedToCustomLineItemAsyncHelper(BillingConductorClient const * const clientThis, const ListResourcesAssociatedToCustomLineItemRequest& request, const ListResourcesAssociatedToCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesAssociatedToCustomLineItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourcesAssociatedToCustomLineItem(request), context);
 }
 
-void BillingConductorClient::ListResourcesAssociatedToCustomLineItemAsyncHelper(const ListResourcesAssociatedToCustomLineItemRequest& request, const ListResourcesAssociatedToCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::ListResourcesAssociatedToCustomLineItemAsync(const ListResourcesAssociatedToCustomLineItemRequest& request, const ListResourcesAssociatedToCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourcesAssociatedToCustomLineItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientListResourcesAssociatedToCustomLineItemAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome BillingConductorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -726,14 +726,14 @@ ListTagsForResourceOutcomeCallable BillingConductorClient::ListTagsForResourceCa
   return task->get_future();
 }
 
-void BillingConductorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientListTagsForResourceAsyncHelper(BillingConductorClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void BillingConductorClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome BillingConductorClient::TagResource(const TagResourceRequest& request) const
@@ -757,14 +757,14 @@ TagResourceOutcomeCallable BillingConductorClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void BillingConductorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientTagResourceAsyncHelper(BillingConductorClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void BillingConductorClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome BillingConductorClient::UntagResource(const UntagResourceRequest& request) const
@@ -793,14 +793,14 @@ UntagResourceOutcomeCallable BillingConductorClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void BillingConductorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientUntagResourceAsyncHelper(BillingConductorClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void BillingConductorClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBillingGroupOutcome BillingConductorClient::UpdateBillingGroup(const UpdateBillingGroupRequest& request) const
@@ -818,14 +818,14 @@ UpdateBillingGroupOutcomeCallable BillingConductorClient::UpdateBillingGroupCall
   return task->get_future();
 }
 
-void BillingConductorClient::UpdateBillingGroupAsync(const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientUpdateBillingGroupAsyncHelper(BillingConductorClient const * const clientThis, const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBillingGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBillingGroup(request), context);
 }
 
-void BillingConductorClient::UpdateBillingGroupAsyncHelper(const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::UpdateBillingGroupAsync(const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBillingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientUpdateBillingGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCustomLineItemOutcome BillingConductorClient::UpdateCustomLineItem(const UpdateCustomLineItemRequest& request) const
@@ -843,14 +843,14 @@ UpdateCustomLineItemOutcomeCallable BillingConductorClient::UpdateCustomLineItem
   return task->get_future();
 }
 
-void BillingConductorClient::UpdateCustomLineItemAsync(const UpdateCustomLineItemRequest& request, const UpdateCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientUpdateCustomLineItemAsyncHelper(BillingConductorClient const * const clientThis, const UpdateCustomLineItemRequest& request, const UpdateCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCustomLineItemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCustomLineItem(request), context);
 }
 
-void BillingConductorClient::UpdateCustomLineItemAsyncHelper(const UpdateCustomLineItemRequest& request, const UpdateCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::UpdateCustomLineItemAsync(const UpdateCustomLineItemRequest& request, const UpdateCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCustomLineItem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientUpdateCustomLineItemAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePricingPlanOutcome BillingConductorClient::UpdatePricingPlan(const UpdatePricingPlanRequest& request) const
@@ -868,14 +868,14 @@ UpdatePricingPlanOutcomeCallable BillingConductorClient::UpdatePricingPlanCallab
   return task->get_future();
 }
 
-void BillingConductorClient::UpdatePricingPlanAsync(const UpdatePricingPlanRequest& request, const UpdatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientUpdatePricingPlanAsyncHelper(BillingConductorClient const * const clientThis, const UpdatePricingPlanRequest& request, const UpdatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePricingPlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePricingPlan(request), context);
 }
 
-void BillingConductorClient::UpdatePricingPlanAsyncHelper(const UpdatePricingPlanRequest& request, const UpdatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::UpdatePricingPlanAsync(const UpdatePricingPlanRequest& request, const UpdatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePricingPlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientUpdatePricingPlanAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePricingRuleOutcome BillingConductorClient::UpdatePricingRule(const UpdatePricingRuleRequest& request) const
@@ -893,13 +893,13 @@ UpdatePricingRuleOutcomeCallable BillingConductorClient::UpdatePricingRuleCallab
   return task->get_future();
 }
 
-void BillingConductorClient::UpdatePricingRuleAsync(const UpdatePricingRuleRequest& request, const UpdatePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClientUpdatePricingRuleAsyncHelper(BillingConductorClient const * const clientThis, const UpdatePricingRuleRequest& request, const UpdatePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePricingRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePricingRule(request), context);
 }
 
-void BillingConductorClient::UpdatePricingRuleAsyncHelper(const UpdatePricingRuleRequest& request, const UpdatePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BillingConductorClient::UpdatePricingRuleAsync(const UpdatePricingRuleRequest& request, const UpdatePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePricingRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BillingConductorClientUpdatePricingRuleAsyncHelper( this, request, handler, context ); } );
 }
 

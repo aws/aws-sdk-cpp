@@ -255,14 +255,14 @@ CancelIngestionOutcomeCallable QuickSightClient::CancelIngestionCallable(const C
   return task->get_future();
 }
 
-void QuickSightClient::CancelIngestionAsync(const CancelIngestionRequest& request, const CancelIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCancelIngestionAsyncHelper(QuickSightClient const * const clientThis, const CancelIngestionRequest& request, const CancelIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelIngestionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelIngestion(request), context);
 }
 
-void QuickSightClient::CancelIngestionAsyncHelper(const CancelIngestionRequest& request, const CancelIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CancelIngestionAsync(const CancelIngestionRequest& request, const CancelIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelIngestion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCancelIngestionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAccountCustomizationOutcome QuickSightClient::CreateAccountCustomization(const CreateAccountCustomizationRequest& request) const
@@ -287,14 +287,14 @@ CreateAccountCustomizationOutcomeCallable QuickSightClient::CreateAccountCustomi
   return task->get_future();
 }
 
-void QuickSightClient::CreateAccountCustomizationAsync(const CreateAccountCustomizationRequest& request, const CreateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateAccountCustomizationAsyncHelper(QuickSightClient const * const clientThis, const CreateAccountCustomizationRequest& request, const CreateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccountCustomizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAccountCustomization(request), context);
 }
 
-void QuickSightClient::CreateAccountCustomizationAsyncHelper(const CreateAccountCustomizationRequest& request, const CreateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateAccountCustomizationAsync(const CreateAccountCustomizationRequest& request, const CreateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAccountCustomization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateAccountCustomizationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAccountSubscriptionOutcome QuickSightClient::CreateAccountSubscription(const CreateAccountSubscriptionRequest& request) const
@@ -318,14 +318,14 @@ CreateAccountSubscriptionOutcomeCallable QuickSightClient::CreateAccountSubscrip
   return task->get_future();
 }
 
-void QuickSightClient::CreateAccountSubscriptionAsync(const CreateAccountSubscriptionRequest& request, const CreateAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateAccountSubscriptionAsyncHelper(QuickSightClient const * const clientThis, const CreateAccountSubscriptionRequest& request, const CreateAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccountSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAccountSubscription(request), context);
 }
 
-void QuickSightClient::CreateAccountSubscriptionAsyncHelper(const CreateAccountSubscriptionRequest& request, const CreateAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateAccountSubscriptionAsync(const CreateAccountSubscriptionRequest& request, const CreateAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAccountSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateAccountSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAnalysisOutcome QuickSightClient::CreateAnalysis(const CreateAnalysisRequest& request) const
@@ -356,14 +356,14 @@ CreateAnalysisOutcomeCallable QuickSightClient::CreateAnalysisCallable(const Cre
   return task->get_future();
 }
 
-void QuickSightClient::CreateAnalysisAsync(const CreateAnalysisRequest& request, const CreateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateAnalysisAsyncHelper(QuickSightClient const * const clientThis, const CreateAnalysisRequest& request, const CreateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAnalysis(request), context);
 }
 
-void QuickSightClient::CreateAnalysisAsyncHelper(const CreateAnalysisRequest& request, const CreateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateAnalysisAsync(const CreateAnalysisRequest& request, const CreateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDashboardOutcome QuickSightClient::CreateDashboard(const CreateDashboardRequest& request) const
@@ -394,14 +394,14 @@ CreateDashboardOutcomeCallable QuickSightClient::CreateDashboardCallable(const C
   return task->get_future();
 }
 
-void QuickSightClient::CreateDashboardAsync(const CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateDashboardAsyncHelper(QuickSightClient const * const clientThis, const CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDashboardAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDashboard(request), context);
 }
 
-void QuickSightClient::CreateDashboardAsyncHelper(const CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateDashboardAsync(const CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDashboard(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateDashboardAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDataSetOutcome QuickSightClient::CreateDataSet(const CreateDataSetRequest& request) const
@@ -426,14 +426,14 @@ CreateDataSetOutcomeCallable QuickSightClient::CreateDataSetCallable(const Creat
   return task->get_future();
 }
 
-void QuickSightClient::CreateDataSetAsync(const CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateDataSetAsyncHelper(QuickSightClient const * const clientThis, const CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataSet(request), context);
 }
 
-void QuickSightClient::CreateDataSetAsyncHelper(const CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateDataSetAsync(const CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateDataSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDataSourceOutcome QuickSightClient::CreateDataSource(const CreateDataSourceRequest& request) const
@@ -458,14 +458,14 @@ CreateDataSourceOutcomeCallable QuickSightClient::CreateDataSourceCallable(const
   return task->get_future();
 }
 
-void QuickSightClient::CreateDataSourceAsync(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateDataSourceAsyncHelper(QuickSightClient const * const clientThis, const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataSource(request), context);
 }
 
-void QuickSightClient::CreateDataSourceAsyncHelper(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateDataSourceAsync(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFolderOutcome QuickSightClient::CreateFolder(const CreateFolderRequest& request) const
@@ -496,14 +496,14 @@ CreateFolderOutcomeCallable QuickSightClient::CreateFolderCallable(const CreateF
   return task->get_future();
 }
 
-void QuickSightClient::CreateFolderAsync(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateFolderAsyncHelper(QuickSightClient const * const clientThis, const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFolder(request), context);
 }
 
-void QuickSightClient::CreateFolderAsyncHelper(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateFolderAsync(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFolderMembershipOutcome QuickSightClient::CreateFolderMembership(const CreateFolderMembershipRequest& request) const
@@ -547,14 +547,14 @@ CreateFolderMembershipOutcomeCallable QuickSightClient::CreateFolderMembershipCa
   return task->get_future();
 }
 
-void QuickSightClient::CreateFolderMembershipAsync(const CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateFolderMembershipAsyncHelper(QuickSightClient const * const clientThis, const CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFolderMembershipAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFolderMembership(request), context);
 }
 
-void QuickSightClient::CreateFolderMembershipAsyncHelper(const CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateFolderMembershipAsync(const CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFolderMembership(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateFolderMembershipAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& request) const
@@ -586,14 +586,14 @@ CreateGroupOutcomeCallable QuickSightClient::CreateGroupCallable(const CreateGro
   return task->get_future();
 }
 
-void QuickSightClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateGroupAsyncHelper(QuickSightClient const * const clientThis, const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGroup(request), context);
 }
 
-void QuickSightClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGroupMembershipOutcome QuickSightClient::CreateGroupMembership(const CreateGroupMembershipRequest& request) const
@@ -638,14 +638,14 @@ CreateGroupMembershipOutcomeCallable QuickSightClient::CreateGroupMembershipCall
   return task->get_future();
 }
 
-void QuickSightClient::CreateGroupMembershipAsync(const CreateGroupMembershipRequest& request, const CreateGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateGroupMembershipAsyncHelper(QuickSightClient const * const clientThis, const CreateGroupMembershipRequest& request, const CreateGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupMembershipAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGroupMembership(request), context);
 }
 
-void QuickSightClient::CreateGroupMembershipAsyncHelper(const CreateGroupMembershipRequest& request, const CreateGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateGroupMembershipAsync(const CreateGroupMembershipRequest& request, const CreateGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGroupMembership(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateGroupMembershipAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIAMPolicyAssignmentOutcome QuickSightClient::CreateIAMPolicyAssignment(const CreateIAMPolicyAssignmentRequest& request) const
@@ -677,14 +677,14 @@ CreateIAMPolicyAssignmentOutcomeCallable QuickSightClient::CreateIAMPolicyAssign
   return task->get_future();
 }
 
-void QuickSightClient::CreateIAMPolicyAssignmentAsync(const CreateIAMPolicyAssignmentRequest& request, const CreateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateIAMPolicyAssignmentAsyncHelper(QuickSightClient const * const clientThis, const CreateIAMPolicyAssignmentRequest& request, const CreateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIAMPolicyAssignmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIAMPolicyAssignment(request), context);
 }
 
-void QuickSightClient::CreateIAMPolicyAssignmentAsyncHelper(const CreateIAMPolicyAssignmentRequest& request, const CreateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateIAMPolicyAssignmentAsync(const CreateIAMPolicyAssignmentRequest& request, const CreateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIAMPolicyAssignment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateIAMPolicyAssignmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIngestionOutcome QuickSightClient::CreateIngestion(const CreateIngestionRequest& request) const
@@ -722,14 +722,14 @@ CreateIngestionOutcomeCallable QuickSightClient::CreateIngestionCallable(const C
   return task->get_future();
 }
 
-void QuickSightClient::CreateIngestionAsync(const CreateIngestionRequest& request, const CreateIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateIngestionAsyncHelper(QuickSightClient const * const clientThis, const CreateIngestionRequest& request, const CreateIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIngestionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIngestion(request), context);
 }
 
-void QuickSightClient::CreateIngestionAsyncHelper(const CreateIngestionRequest& request, const CreateIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateIngestionAsync(const CreateIngestionRequest& request, const CreateIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIngestion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateIngestionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNamespaceOutcome QuickSightClient::CreateNamespace(const CreateNamespaceRequest& request) const
@@ -753,14 +753,14 @@ CreateNamespaceOutcomeCallable QuickSightClient::CreateNamespaceCallable(const C
   return task->get_future();
 }
 
-void QuickSightClient::CreateNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateNamespaceAsyncHelper(QuickSightClient const * const clientThis, const CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNamespace(request), context);
 }
 
-void QuickSightClient::CreateNamespaceAsyncHelper(const CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTemplateOutcome QuickSightClient::CreateTemplate(const CreateTemplateRequest& request) const
@@ -791,14 +791,14 @@ CreateTemplateOutcomeCallable QuickSightClient::CreateTemplateCallable(const Cre
   return task->get_future();
 }
 
-void QuickSightClient::CreateTemplateAsync(const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateTemplateAsyncHelper(QuickSightClient const * const clientThis, const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTemplate(request), context);
 }
 
-void QuickSightClient::CreateTemplateAsyncHelper(const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateTemplateAsync(const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTemplateAliasOutcome QuickSightClient::CreateTemplateAlias(const CreateTemplateAliasRequest& request) const
@@ -836,14 +836,14 @@ CreateTemplateAliasOutcomeCallable QuickSightClient::CreateTemplateAliasCallable
   return task->get_future();
 }
 
-void QuickSightClient::CreateTemplateAliasAsync(const CreateTemplateAliasRequest& request, const CreateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateTemplateAliasAsyncHelper(QuickSightClient const * const clientThis, const CreateTemplateAliasRequest& request, const CreateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTemplateAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTemplateAlias(request), context);
 }
 
-void QuickSightClient::CreateTemplateAliasAsyncHelper(const CreateTemplateAliasRequest& request, const CreateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateTemplateAliasAsync(const CreateTemplateAliasRequest& request, const CreateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTemplateAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateTemplateAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateThemeOutcome QuickSightClient::CreateTheme(const CreateThemeRequest& request) const
@@ -874,14 +874,14 @@ CreateThemeOutcomeCallable QuickSightClient::CreateThemeCallable(const CreateThe
   return task->get_future();
 }
 
-void QuickSightClient::CreateThemeAsync(const CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateThemeAsyncHelper(QuickSightClient const * const clientThis, const CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateThemeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTheme(request), context);
 }
 
-void QuickSightClient::CreateThemeAsyncHelper(const CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateThemeAsync(const CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTheme(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateThemeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateThemeAliasOutcome QuickSightClient::CreateThemeAlias(const CreateThemeAliasRequest& request) const
@@ -919,14 +919,14 @@ CreateThemeAliasOutcomeCallable QuickSightClient::CreateThemeAliasCallable(const
   return task->get_future();
 }
 
-void QuickSightClient::CreateThemeAliasAsync(const CreateThemeAliasRequest& request, const CreateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientCreateThemeAliasAsyncHelper(QuickSightClient const * const clientThis, const CreateThemeAliasRequest& request, const CreateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateThemeAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateThemeAlias(request), context);
 }
 
-void QuickSightClient::CreateThemeAliasAsyncHelper(const CreateThemeAliasRequest& request, const CreateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::CreateThemeAliasAsync(const CreateThemeAliasRequest& request, const CreateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateThemeAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientCreateThemeAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAccountCustomizationOutcome QuickSightClient::DeleteAccountCustomization(const DeleteAccountCustomizationRequest& request) const
@@ -951,14 +951,14 @@ DeleteAccountCustomizationOutcomeCallable QuickSightClient::DeleteAccountCustomi
   return task->get_future();
 }
 
-void QuickSightClient::DeleteAccountCustomizationAsync(const DeleteAccountCustomizationRequest& request, const DeleteAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteAccountCustomizationAsyncHelper(QuickSightClient const * const clientThis, const DeleteAccountCustomizationRequest& request, const DeleteAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccountCustomizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAccountCustomization(request), context);
 }
 
-void QuickSightClient::DeleteAccountCustomizationAsyncHelper(const DeleteAccountCustomizationRequest& request, const DeleteAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteAccountCustomizationAsync(const DeleteAccountCustomizationRequest& request, const DeleteAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAccountCustomization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteAccountCustomizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAnalysisOutcome QuickSightClient::DeleteAnalysis(const DeleteAnalysisRequest& request) const
@@ -989,14 +989,14 @@ DeleteAnalysisOutcomeCallable QuickSightClient::DeleteAnalysisCallable(const Del
   return task->get_future();
 }
 
-void QuickSightClient::DeleteAnalysisAsync(const DeleteAnalysisRequest& request, const DeleteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteAnalysisAsyncHelper(QuickSightClient const * const clientThis, const DeleteAnalysisRequest& request, const DeleteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAnalysis(request), context);
 }
 
-void QuickSightClient::DeleteAnalysisAsyncHelper(const DeleteAnalysisRequest& request, const DeleteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteAnalysisAsync(const DeleteAnalysisRequest& request, const DeleteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDashboardOutcome QuickSightClient::DeleteDashboard(const DeleteDashboardRequest& request) const
@@ -1027,14 +1027,14 @@ DeleteDashboardOutcomeCallable QuickSightClient::DeleteDashboardCallable(const D
   return task->get_future();
 }
 
-void QuickSightClient::DeleteDashboardAsync(const DeleteDashboardRequest& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteDashboardAsyncHelper(QuickSightClient const * const clientThis, const DeleteDashboardRequest& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDashboardAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDashboard(request), context);
 }
 
-void QuickSightClient::DeleteDashboardAsyncHelper(const DeleteDashboardRequest& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteDashboardAsync(const DeleteDashboardRequest& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDashboard(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteDashboardAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDataSetOutcome QuickSightClient::DeleteDataSet(const DeleteDataSetRequest& request) const
@@ -1065,14 +1065,14 @@ DeleteDataSetOutcomeCallable QuickSightClient::DeleteDataSetCallable(const Delet
   return task->get_future();
 }
 
-void QuickSightClient::DeleteDataSetAsync(const DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteDataSetAsyncHelper(QuickSightClient const * const clientThis, const DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataSet(request), context);
 }
 
-void QuickSightClient::DeleteDataSetAsyncHelper(const DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteDataSetAsync(const DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteDataSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDataSourceOutcome QuickSightClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
@@ -1103,14 +1103,14 @@ DeleteDataSourceOutcomeCallable QuickSightClient::DeleteDataSourceCallable(const
   return task->get_future();
 }
 
-void QuickSightClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteDataSourceAsyncHelper(QuickSightClient const * const clientThis, const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataSource(request), context);
 }
 
-void QuickSightClient::DeleteDataSourceAsyncHelper(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFolderOutcome QuickSightClient::DeleteFolder(const DeleteFolderRequest& request) const
@@ -1141,14 +1141,14 @@ DeleteFolderOutcomeCallable QuickSightClient::DeleteFolderCallable(const DeleteF
   return task->get_future();
 }
 
-void QuickSightClient::DeleteFolderAsync(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteFolderAsyncHelper(QuickSightClient const * const clientThis, const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFolder(request), context);
 }
 
-void QuickSightClient::DeleteFolderAsyncHelper(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteFolderAsync(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFolderMembershipOutcome QuickSightClient::DeleteFolderMembership(const DeleteFolderMembershipRequest& request) const
@@ -1192,14 +1192,14 @@ DeleteFolderMembershipOutcomeCallable QuickSightClient::DeleteFolderMembershipCa
   return task->get_future();
 }
 
-void QuickSightClient::DeleteFolderMembershipAsync(const DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteFolderMembershipAsyncHelper(QuickSightClient const * const clientThis, const DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFolderMembershipAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFolderMembership(request), context);
 }
 
-void QuickSightClient::DeleteFolderMembershipAsyncHelper(const DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteFolderMembershipAsync(const DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFolderMembership(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteFolderMembershipAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -1237,14 +1237,14 @@ DeleteGroupOutcomeCallable QuickSightClient::DeleteGroupCallable(const DeleteGro
   return task->get_future();
 }
 
-void QuickSightClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteGroupAsyncHelper(QuickSightClient const * const clientThis, const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGroup(request), context);
 }
 
-void QuickSightClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGroupMembershipOutcome QuickSightClient::DeleteGroupMembership(const DeleteGroupMembershipRequest& request) const
@@ -1289,14 +1289,14 @@ DeleteGroupMembershipOutcomeCallable QuickSightClient::DeleteGroupMembershipCall
   return task->get_future();
 }
 
-void QuickSightClient::DeleteGroupMembershipAsync(const DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteGroupMembershipAsyncHelper(QuickSightClient const * const clientThis, const DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupMembershipAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGroupMembership(request), context);
 }
 
-void QuickSightClient::DeleteGroupMembershipAsyncHelper(const DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteGroupMembershipAsync(const DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGroupMembership(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteGroupMembershipAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIAMPolicyAssignmentOutcome QuickSightClient::DeleteIAMPolicyAssignment(const DeleteIAMPolicyAssignmentRequest& request) const
@@ -1334,14 +1334,14 @@ DeleteIAMPolicyAssignmentOutcomeCallable QuickSightClient::DeleteIAMPolicyAssign
   return task->get_future();
 }
 
-void QuickSightClient::DeleteIAMPolicyAssignmentAsync(const DeleteIAMPolicyAssignmentRequest& request, const DeleteIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteIAMPolicyAssignmentAsyncHelper(QuickSightClient const * const clientThis, const DeleteIAMPolicyAssignmentRequest& request, const DeleteIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIAMPolicyAssignmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIAMPolicyAssignment(request), context);
 }
 
-void QuickSightClient::DeleteIAMPolicyAssignmentAsyncHelper(const DeleteIAMPolicyAssignmentRequest& request, const DeleteIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteIAMPolicyAssignmentAsync(const DeleteIAMPolicyAssignmentRequest& request, const DeleteIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIAMPolicyAssignment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteIAMPolicyAssignmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNamespaceOutcome QuickSightClient::DeleteNamespace(const DeleteNamespaceRequest& request) const
@@ -1372,14 +1372,14 @@ DeleteNamespaceOutcomeCallable QuickSightClient::DeleteNamespaceCallable(const D
   return task->get_future();
 }
 
-void QuickSightClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteNamespaceAsyncHelper(QuickSightClient const * const clientThis, const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNamespace(request), context);
 }
 
-void QuickSightClient::DeleteNamespaceAsyncHelper(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTemplateOutcome QuickSightClient::DeleteTemplate(const DeleteTemplateRequest& request) const
@@ -1410,14 +1410,14 @@ DeleteTemplateOutcomeCallable QuickSightClient::DeleteTemplateCallable(const Del
   return task->get_future();
 }
 
-void QuickSightClient::DeleteTemplateAsync(const DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteTemplateAsyncHelper(QuickSightClient const * const clientThis, const DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTemplate(request), context);
 }
 
-void QuickSightClient::DeleteTemplateAsyncHelper(const DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteTemplateAsync(const DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTemplateAliasOutcome QuickSightClient::DeleteTemplateAlias(const DeleteTemplateAliasRequest& request) const
@@ -1455,14 +1455,14 @@ DeleteTemplateAliasOutcomeCallable QuickSightClient::DeleteTemplateAliasCallable
   return task->get_future();
 }
 
-void QuickSightClient::DeleteTemplateAliasAsync(const DeleteTemplateAliasRequest& request, const DeleteTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteTemplateAliasAsyncHelper(QuickSightClient const * const clientThis, const DeleteTemplateAliasRequest& request, const DeleteTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTemplateAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTemplateAlias(request), context);
 }
 
-void QuickSightClient::DeleteTemplateAliasAsyncHelper(const DeleteTemplateAliasRequest& request, const DeleteTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteTemplateAliasAsync(const DeleteTemplateAliasRequest& request, const DeleteTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTemplateAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteTemplateAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteThemeOutcome QuickSightClient::DeleteTheme(const DeleteThemeRequest& request) const
@@ -1493,14 +1493,14 @@ DeleteThemeOutcomeCallable QuickSightClient::DeleteThemeCallable(const DeleteThe
   return task->get_future();
 }
 
-void QuickSightClient::DeleteThemeAsync(const DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteThemeAsyncHelper(QuickSightClient const * const clientThis, const DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteThemeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTheme(request), context);
 }
 
-void QuickSightClient::DeleteThemeAsyncHelper(const DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteThemeAsync(const DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTheme(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteThemeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteThemeAliasOutcome QuickSightClient::DeleteThemeAlias(const DeleteThemeAliasRequest& request) const
@@ -1538,14 +1538,14 @@ DeleteThemeAliasOutcomeCallable QuickSightClient::DeleteThemeAliasCallable(const
   return task->get_future();
 }
 
-void QuickSightClient::DeleteThemeAliasAsync(const DeleteThemeAliasRequest& request, const DeleteThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteThemeAliasAsyncHelper(QuickSightClient const * const clientThis, const DeleteThemeAliasRequest& request, const DeleteThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteThemeAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteThemeAlias(request), context);
 }
 
-void QuickSightClient::DeleteThemeAliasAsyncHelper(const DeleteThemeAliasRequest& request, const DeleteThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteThemeAliasAsync(const DeleteThemeAliasRequest& request, const DeleteThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteThemeAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteThemeAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserOutcome QuickSightClient::DeleteUser(const DeleteUserRequest& request) const
@@ -1583,14 +1583,14 @@ DeleteUserOutcomeCallable QuickSightClient::DeleteUserCallable(const DeleteUserR
   return task->get_future();
 }
 
-void QuickSightClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteUserAsyncHelper(QuickSightClient const * const clientThis, const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUser(request), context);
 }
 
-void QuickSightClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const DeleteUserByPrincipalIdRequest& request) const
@@ -1628,14 +1628,14 @@ DeleteUserByPrincipalIdOutcomeCallable QuickSightClient::DeleteUserByPrincipalId
   return task->get_future();
 }
 
-void QuickSightClient::DeleteUserByPrincipalIdAsync(const DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDeleteUserByPrincipalIdAsyncHelper(QuickSightClient const * const clientThis, const DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserByPrincipalIdAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUserByPrincipalId(request), context);
 }
 
-void QuickSightClient::DeleteUserByPrincipalIdAsyncHelper(const DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DeleteUserByPrincipalIdAsync(const DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUserByPrincipalId(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDeleteUserByPrincipalIdAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountCustomizationOutcome QuickSightClient::DescribeAccountCustomization(const DescribeAccountCustomizationRequest& request) const
@@ -1660,14 +1660,14 @@ DescribeAccountCustomizationOutcomeCallable QuickSightClient::DescribeAccountCus
   return task->get_future();
 }
 
-void QuickSightClient::DescribeAccountCustomizationAsync(const DescribeAccountCustomizationRequest& request, const DescribeAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeAccountCustomizationAsyncHelper(QuickSightClient const * const clientThis, const DescribeAccountCustomizationRequest& request, const DescribeAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountCustomizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccountCustomization(request), context);
 }
 
-void QuickSightClient::DescribeAccountCustomizationAsyncHelper(const DescribeAccountCustomizationRequest& request, const DescribeAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeAccountCustomizationAsync(const DescribeAccountCustomizationRequest& request, const DescribeAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccountCustomization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeAccountCustomizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountSettingsOutcome QuickSightClient::DescribeAccountSettings(const DescribeAccountSettingsRequest& request) const
@@ -1692,14 +1692,14 @@ DescribeAccountSettingsOutcomeCallable QuickSightClient::DescribeAccountSettings
   return task->get_future();
 }
 
-void QuickSightClient::DescribeAccountSettingsAsync(const DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeAccountSettingsAsyncHelper(QuickSightClient const * const clientThis, const DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccountSettings(request), context);
 }
 
-void QuickSightClient::DescribeAccountSettingsAsyncHelper(const DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeAccountSettingsAsync(const DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccountSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeAccountSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountSubscriptionOutcome QuickSightClient::DescribeAccountSubscription(const DescribeAccountSubscriptionRequest& request) const
@@ -1723,14 +1723,14 @@ DescribeAccountSubscriptionOutcomeCallable QuickSightClient::DescribeAccountSubs
   return task->get_future();
 }
 
-void QuickSightClient::DescribeAccountSubscriptionAsync(const DescribeAccountSubscriptionRequest& request, const DescribeAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeAccountSubscriptionAsyncHelper(QuickSightClient const * const clientThis, const DescribeAccountSubscriptionRequest& request, const DescribeAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountSubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccountSubscription(request), context);
 }
 
-void QuickSightClient::DescribeAccountSubscriptionAsyncHelper(const DescribeAccountSubscriptionRequest& request, const DescribeAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeAccountSubscriptionAsync(const DescribeAccountSubscriptionRequest& request, const DescribeAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccountSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeAccountSubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAnalysisOutcome QuickSightClient::DescribeAnalysis(const DescribeAnalysisRequest& request) const
@@ -1761,14 +1761,14 @@ DescribeAnalysisOutcomeCallable QuickSightClient::DescribeAnalysisCallable(const
   return task->get_future();
 }
 
-void QuickSightClient::DescribeAnalysisAsync(const DescribeAnalysisRequest& request, const DescribeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeAnalysisAsyncHelper(QuickSightClient const * const clientThis, const DescribeAnalysisRequest& request, const DescribeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAnalysis(request), context);
 }
 
-void QuickSightClient::DescribeAnalysisAsyncHelper(const DescribeAnalysisRequest& request, const DescribeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeAnalysisAsync(const DescribeAnalysisRequest& request, const DescribeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAnalysisPermissionsOutcome QuickSightClient::DescribeAnalysisPermissions(const DescribeAnalysisPermissionsRequest& request) const
@@ -1800,14 +1800,14 @@ DescribeAnalysisPermissionsOutcomeCallable QuickSightClient::DescribeAnalysisPer
   return task->get_future();
 }
 
-void QuickSightClient::DescribeAnalysisPermissionsAsync(const DescribeAnalysisPermissionsRequest& request, const DescribeAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeAnalysisPermissionsAsyncHelper(QuickSightClient const * const clientThis, const DescribeAnalysisPermissionsRequest& request, const DescribeAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnalysisPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAnalysisPermissions(request), context);
 }
 
-void QuickSightClient::DescribeAnalysisPermissionsAsyncHelper(const DescribeAnalysisPermissionsRequest& request, const DescribeAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeAnalysisPermissionsAsync(const DescribeAnalysisPermissionsRequest& request, const DescribeAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAnalysisPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeAnalysisPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDashboardOutcome QuickSightClient::DescribeDashboard(const DescribeDashboardRequest& request) const
@@ -1838,14 +1838,14 @@ DescribeDashboardOutcomeCallable QuickSightClient::DescribeDashboardCallable(con
   return task->get_future();
 }
 
-void QuickSightClient::DescribeDashboardAsync(const DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeDashboardAsyncHelper(QuickSightClient const * const clientThis, const DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDashboardAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDashboard(request), context);
 }
 
-void QuickSightClient::DescribeDashboardAsyncHelper(const DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeDashboardAsync(const DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDashboard(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeDashboardAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDashboardPermissionsOutcome QuickSightClient::DescribeDashboardPermissions(const DescribeDashboardPermissionsRequest& request) const
@@ -1877,14 +1877,14 @@ DescribeDashboardPermissionsOutcomeCallable QuickSightClient::DescribeDashboardP
   return task->get_future();
 }
 
-void QuickSightClient::DescribeDashboardPermissionsAsync(const DescribeDashboardPermissionsRequest& request, const DescribeDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeDashboardPermissionsAsyncHelper(QuickSightClient const * const clientThis, const DescribeDashboardPermissionsRequest& request, const DescribeDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDashboardPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDashboardPermissions(request), context);
 }
 
-void QuickSightClient::DescribeDashboardPermissionsAsyncHelper(const DescribeDashboardPermissionsRequest& request, const DescribeDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeDashboardPermissionsAsync(const DescribeDashboardPermissionsRequest& request, const DescribeDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDashboardPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeDashboardPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDataSetOutcome QuickSightClient::DescribeDataSet(const DescribeDataSetRequest& request) const
@@ -1915,14 +1915,14 @@ DescribeDataSetOutcomeCallable QuickSightClient::DescribeDataSetCallable(const D
   return task->get_future();
 }
 
-void QuickSightClient::DescribeDataSetAsync(const DescribeDataSetRequest& request, const DescribeDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeDataSetAsyncHelper(QuickSightClient const * const clientThis, const DescribeDataSetRequest& request, const DescribeDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataSet(request), context);
 }
 
-void QuickSightClient::DescribeDataSetAsyncHelper(const DescribeDataSetRequest& request, const DescribeDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeDataSetAsync(const DescribeDataSetRequest& request, const DescribeDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeDataSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDataSetPermissionsOutcome QuickSightClient::DescribeDataSetPermissions(const DescribeDataSetPermissionsRequest& request) const
@@ -1954,14 +1954,14 @@ DescribeDataSetPermissionsOutcomeCallable QuickSightClient::DescribeDataSetPermi
   return task->get_future();
 }
 
-void QuickSightClient::DescribeDataSetPermissionsAsync(const DescribeDataSetPermissionsRequest& request, const DescribeDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeDataSetPermissionsAsyncHelper(QuickSightClient const * const clientThis, const DescribeDataSetPermissionsRequest& request, const DescribeDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataSetPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataSetPermissions(request), context);
 }
 
-void QuickSightClient::DescribeDataSetPermissionsAsyncHelper(const DescribeDataSetPermissionsRequest& request, const DescribeDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeDataSetPermissionsAsync(const DescribeDataSetPermissionsRequest& request, const DescribeDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataSetPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeDataSetPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDataSourceOutcome QuickSightClient::DescribeDataSource(const DescribeDataSourceRequest& request) const
@@ -1992,14 +1992,14 @@ DescribeDataSourceOutcomeCallable QuickSightClient::DescribeDataSourceCallable(c
   return task->get_future();
 }
 
-void QuickSightClient::DescribeDataSourceAsync(const DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeDataSourceAsyncHelper(QuickSightClient const * const clientThis, const DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataSource(request), context);
 }
 
-void QuickSightClient::DescribeDataSourceAsyncHelper(const DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeDataSourceAsync(const DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDataSourcePermissionsOutcome QuickSightClient::DescribeDataSourcePermissions(const DescribeDataSourcePermissionsRequest& request) const
@@ -2031,14 +2031,14 @@ DescribeDataSourcePermissionsOutcomeCallable QuickSightClient::DescribeDataSourc
   return task->get_future();
 }
 
-void QuickSightClient::DescribeDataSourcePermissionsAsync(const DescribeDataSourcePermissionsRequest& request, const DescribeDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeDataSourcePermissionsAsyncHelper(QuickSightClient const * const clientThis, const DescribeDataSourcePermissionsRequest& request, const DescribeDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataSourcePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataSourcePermissions(request), context);
 }
 
-void QuickSightClient::DescribeDataSourcePermissionsAsyncHelper(const DescribeDataSourcePermissionsRequest& request, const DescribeDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeDataSourcePermissionsAsync(const DescribeDataSourcePermissionsRequest& request, const DescribeDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataSourcePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeDataSourcePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFolderOutcome QuickSightClient::DescribeFolder(const DescribeFolderRequest& request) const
@@ -2069,14 +2069,14 @@ DescribeFolderOutcomeCallable QuickSightClient::DescribeFolderCallable(const Des
   return task->get_future();
 }
 
-void QuickSightClient::DescribeFolderAsync(const DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeFolderAsyncHelper(QuickSightClient const * const clientThis, const DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFolder(request), context);
 }
 
-void QuickSightClient::DescribeFolderAsyncHelper(const DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeFolderAsync(const DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFolderPermissionsOutcome QuickSightClient::DescribeFolderPermissions(const DescribeFolderPermissionsRequest& request) const
@@ -2108,14 +2108,14 @@ DescribeFolderPermissionsOutcomeCallable QuickSightClient::DescribeFolderPermiss
   return task->get_future();
 }
 
-void QuickSightClient::DescribeFolderPermissionsAsync(const DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeFolderPermissionsAsyncHelper(QuickSightClient const * const clientThis, const DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFolderPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFolderPermissions(request), context);
 }
 
-void QuickSightClient::DescribeFolderPermissionsAsyncHelper(const DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeFolderPermissionsAsync(const DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFolderPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeFolderPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFolderResolvedPermissionsOutcome QuickSightClient::DescribeFolderResolvedPermissions(const DescribeFolderResolvedPermissionsRequest& request) const
@@ -2147,14 +2147,14 @@ DescribeFolderResolvedPermissionsOutcomeCallable QuickSightClient::DescribeFolde
   return task->get_future();
 }
 
-void QuickSightClient::DescribeFolderResolvedPermissionsAsync(const DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeFolderResolvedPermissionsAsyncHelper(QuickSightClient const * const clientThis, const DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFolderResolvedPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFolderResolvedPermissions(request), context);
 }
 
-void QuickSightClient::DescribeFolderResolvedPermissionsAsyncHelper(const DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeFolderResolvedPermissionsAsync(const DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFolderResolvedPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeFolderResolvedPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest& request) const
@@ -2192,14 +2192,14 @@ DescribeGroupOutcomeCallable QuickSightClient::DescribeGroupCallable(const Descr
   return task->get_future();
 }
 
-void QuickSightClient::DescribeGroupAsync(const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeGroupAsyncHelper(QuickSightClient const * const clientThis, const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGroup(request), context);
 }
 
-void QuickSightClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeGroupAsync(const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGroupMembershipOutcome QuickSightClient::DescribeGroupMembership(const DescribeGroupMembershipRequest& request) const
@@ -2244,14 +2244,14 @@ DescribeGroupMembershipOutcomeCallable QuickSightClient::DescribeGroupMembership
   return task->get_future();
 }
 
-void QuickSightClient::DescribeGroupMembershipAsync(const DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeGroupMembershipAsyncHelper(QuickSightClient const * const clientThis, const DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGroupMembershipAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGroupMembership(request), context);
 }
 
-void QuickSightClient::DescribeGroupMembershipAsyncHelper(const DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeGroupMembershipAsync(const DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGroupMembership(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeGroupMembershipAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIAMPolicyAssignmentOutcome QuickSightClient::DescribeIAMPolicyAssignment(const DescribeIAMPolicyAssignmentRequest& request) const
@@ -2289,14 +2289,14 @@ DescribeIAMPolicyAssignmentOutcomeCallable QuickSightClient::DescribeIAMPolicyAs
   return task->get_future();
 }
 
-void QuickSightClient::DescribeIAMPolicyAssignmentAsync(const DescribeIAMPolicyAssignmentRequest& request, const DescribeIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeIAMPolicyAssignmentAsyncHelper(QuickSightClient const * const clientThis, const DescribeIAMPolicyAssignmentRequest& request, const DescribeIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIAMPolicyAssignmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIAMPolicyAssignment(request), context);
 }
 
-void QuickSightClient::DescribeIAMPolicyAssignmentAsyncHelper(const DescribeIAMPolicyAssignmentRequest& request, const DescribeIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeIAMPolicyAssignmentAsync(const DescribeIAMPolicyAssignmentRequest& request, const DescribeIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIAMPolicyAssignment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeIAMPolicyAssignmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIngestionOutcome QuickSightClient::DescribeIngestion(const DescribeIngestionRequest& request) const
@@ -2334,14 +2334,14 @@ DescribeIngestionOutcomeCallable QuickSightClient::DescribeIngestionCallable(con
   return task->get_future();
 }
 
-void QuickSightClient::DescribeIngestionAsync(const DescribeIngestionRequest& request, const DescribeIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeIngestionAsyncHelper(QuickSightClient const * const clientThis, const DescribeIngestionRequest& request, const DescribeIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIngestionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIngestion(request), context);
 }
 
-void QuickSightClient::DescribeIngestionAsyncHelper(const DescribeIngestionRequest& request, const DescribeIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeIngestionAsync(const DescribeIngestionRequest& request, const DescribeIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIngestion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeIngestionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIpRestrictionOutcome QuickSightClient::DescribeIpRestriction(const DescribeIpRestrictionRequest& request) const
@@ -2366,14 +2366,14 @@ DescribeIpRestrictionOutcomeCallable QuickSightClient::DescribeIpRestrictionCall
   return task->get_future();
 }
 
-void QuickSightClient::DescribeIpRestrictionAsync(const DescribeIpRestrictionRequest& request, const DescribeIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeIpRestrictionAsyncHelper(QuickSightClient const * const clientThis, const DescribeIpRestrictionRequest& request, const DescribeIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIpRestrictionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIpRestriction(request), context);
 }
 
-void QuickSightClient::DescribeIpRestrictionAsyncHelper(const DescribeIpRestrictionRequest& request, const DescribeIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeIpRestrictionAsync(const DescribeIpRestrictionRequest& request, const DescribeIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIpRestriction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeIpRestrictionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNamespaceOutcome QuickSightClient::DescribeNamespace(const DescribeNamespaceRequest& request) const
@@ -2404,14 +2404,14 @@ DescribeNamespaceOutcomeCallable QuickSightClient::DescribeNamespaceCallable(con
   return task->get_future();
 }
 
-void QuickSightClient::DescribeNamespaceAsync(const DescribeNamespaceRequest& request, const DescribeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeNamespaceAsyncHelper(QuickSightClient const * const clientThis, const DescribeNamespaceRequest& request, const DescribeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNamespace(request), context);
 }
 
-void QuickSightClient::DescribeNamespaceAsyncHelper(const DescribeNamespaceRequest& request, const DescribeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeNamespaceAsync(const DescribeNamespaceRequest& request, const DescribeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTemplateOutcome QuickSightClient::DescribeTemplate(const DescribeTemplateRequest& request) const
@@ -2442,14 +2442,14 @@ DescribeTemplateOutcomeCallable QuickSightClient::DescribeTemplateCallable(const
   return task->get_future();
 }
 
-void QuickSightClient::DescribeTemplateAsync(const DescribeTemplateRequest& request, const DescribeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeTemplateAsyncHelper(QuickSightClient const * const clientThis, const DescribeTemplateRequest& request, const DescribeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTemplate(request), context);
 }
 
-void QuickSightClient::DescribeTemplateAsyncHelper(const DescribeTemplateRequest& request, const DescribeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeTemplateAsync(const DescribeTemplateRequest& request, const DescribeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTemplateAliasOutcome QuickSightClient::DescribeTemplateAlias(const DescribeTemplateAliasRequest& request) const
@@ -2487,14 +2487,14 @@ DescribeTemplateAliasOutcomeCallable QuickSightClient::DescribeTemplateAliasCall
   return task->get_future();
 }
 
-void QuickSightClient::DescribeTemplateAliasAsync(const DescribeTemplateAliasRequest& request, const DescribeTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeTemplateAliasAsyncHelper(QuickSightClient const * const clientThis, const DescribeTemplateAliasRequest& request, const DescribeTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTemplateAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTemplateAlias(request), context);
 }
 
-void QuickSightClient::DescribeTemplateAliasAsyncHelper(const DescribeTemplateAliasRequest& request, const DescribeTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeTemplateAliasAsync(const DescribeTemplateAliasRequest& request, const DescribeTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTemplateAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeTemplateAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTemplatePermissionsOutcome QuickSightClient::DescribeTemplatePermissions(const DescribeTemplatePermissionsRequest& request) const
@@ -2526,14 +2526,14 @@ DescribeTemplatePermissionsOutcomeCallable QuickSightClient::DescribeTemplatePer
   return task->get_future();
 }
 
-void QuickSightClient::DescribeTemplatePermissionsAsync(const DescribeTemplatePermissionsRequest& request, const DescribeTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeTemplatePermissionsAsyncHelper(QuickSightClient const * const clientThis, const DescribeTemplatePermissionsRequest& request, const DescribeTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTemplatePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTemplatePermissions(request), context);
 }
 
-void QuickSightClient::DescribeTemplatePermissionsAsyncHelper(const DescribeTemplatePermissionsRequest& request, const DescribeTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeTemplatePermissionsAsync(const DescribeTemplatePermissionsRequest& request, const DescribeTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTemplatePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeTemplatePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeThemeOutcome QuickSightClient::DescribeTheme(const DescribeThemeRequest& request) const
@@ -2564,14 +2564,14 @@ DescribeThemeOutcomeCallable QuickSightClient::DescribeThemeCallable(const Descr
   return task->get_future();
 }
 
-void QuickSightClient::DescribeThemeAsync(const DescribeThemeRequest& request, const DescribeThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeThemeAsyncHelper(QuickSightClient const * const clientThis, const DescribeThemeRequest& request, const DescribeThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeThemeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTheme(request), context);
 }
 
-void QuickSightClient::DescribeThemeAsyncHelper(const DescribeThemeRequest& request, const DescribeThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeThemeAsync(const DescribeThemeRequest& request, const DescribeThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTheme(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeThemeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeThemeAliasOutcome QuickSightClient::DescribeThemeAlias(const DescribeThemeAliasRequest& request) const
@@ -2609,14 +2609,14 @@ DescribeThemeAliasOutcomeCallable QuickSightClient::DescribeThemeAliasCallable(c
   return task->get_future();
 }
 
-void QuickSightClient::DescribeThemeAliasAsync(const DescribeThemeAliasRequest& request, const DescribeThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeThemeAliasAsyncHelper(QuickSightClient const * const clientThis, const DescribeThemeAliasRequest& request, const DescribeThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeThemeAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeThemeAlias(request), context);
 }
 
-void QuickSightClient::DescribeThemeAliasAsyncHelper(const DescribeThemeAliasRequest& request, const DescribeThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeThemeAliasAsync(const DescribeThemeAliasRequest& request, const DescribeThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeThemeAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeThemeAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeThemePermissionsOutcome QuickSightClient::DescribeThemePermissions(const DescribeThemePermissionsRequest& request) const
@@ -2648,14 +2648,14 @@ DescribeThemePermissionsOutcomeCallable QuickSightClient::DescribeThemePermissio
   return task->get_future();
 }
 
-void QuickSightClient::DescribeThemePermissionsAsync(const DescribeThemePermissionsRequest& request, const DescribeThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeThemePermissionsAsyncHelper(QuickSightClient const * const clientThis, const DescribeThemePermissionsRequest& request, const DescribeThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeThemePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeThemePermissions(request), context);
 }
 
-void QuickSightClient::DescribeThemePermissionsAsyncHelper(const DescribeThemePermissionsRequest& request, const DescribeThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeThemePermissionsAsync(const DescribeThemePermissionsRequest& request, const DescribeThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeThemePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeThemePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUserOutcome QuickSightClient::DescribeUser(const DescribeUserRequest& request) const
@@ -2693,14 +2693,14 @@ DescribeUserOutcomeCallable QuickSightClient::DescribeUserCallable(const Describ
   return task->get_future();
 }
 
-void QuickSightClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientDescribeUserAsyncHelper(QuickSightClient const * const clientThis, const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUser(request), context);
 }
 
-void QuickSightClient::DescribeUserAsyncHelper(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientDescribeUserAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateEmbedUrlForAnonymousUserOutcome QuickSightClient::GenerateEmbedUrlForAnonymousUser(const GenerateEmbedUrlForAnonymousUserRequest& request) const
@@ -2725,14 +2725,14 @@ GenerateEmbedUrlForAnonymousUserOutcomeCallable QuickSightClient::GenerateEmbedU
   return task->get_future();
 }
 
-void QuickSightClient::GenerateEmbedUrlForAnonymousUserAsync(const GenerateEmbedUrlForAnonymousUserRequest& request, const GenerateEmbedUrlForAnonymousUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientGenerateEmbedUrlForAnonymousUserAsyncHelper(QuickSightClient const * const clientThis, const GenerateEmbedUrlForAnonymousUserRequest& request, const GenerateEmbedUrlForAnonymousUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateEmbedUrlForAnonymousUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateEmbedUrlForAnonymousUser(request), context);
 }
 
-void QuickSightClient::GenerateEmbedUrlForAnonymousUserAsyncHelper(const GenerateEmbedUrlForAnonymousUserRequest& request, const GenerateEmbedUrlForAnonymousUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::GenerateEmbedUrlForAnonymousUserAsync(const GenerateEmbedUrlForAnonymousUserRequest& request, const GenerateEmbedUrlForAnonymousUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateEmbedUrlForAnonymousUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientGenerateEmbedUrlForAnonymousUserAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateEmbedUrlForRegisteredUserOutcome QuickSightClient::GenerateEmbedUrlForRegisteredUser(const GenerateEmbedUrlForRegisteredUserRequest& request) const
@@ -2757,14 +2757,14 @@ GenerateEmbedUrlForRegisteredUserOutcomeCallable QuickSightClient::GenerateEmbed
   return task->get_future();
 }
 
-void QuickSightClient::GenerateEmbedUrlForRegisteredUserAsync(const GenerateEmbedUrlForRegisteredUserRequest& request, const GenerateEmbedUrlForRegisteredUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientGenerateEmbedUrlForRegisteredUserAsyncHelper(QuickSightClient const * const clientThis, const GenerateEmbedUrlForRegisteredUserRequest& request, const GenerateEmbedUrlForRegisteredUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateEmbedUrlForRegisteredUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateEmbedUrlForRegisteredUser(request), context);
 }
 
-void QuickSightClient::GenerateEmbedUrlForRegisteredUserAsyncHelper(const GenerateEmbedUrlForRegisteredUserRequest& request, const GenerateEmbedUrlForRegisteredUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::GenerateEmbedUrlForRegisteredUserAsync(const GenerateEmbedUrlForRegisteredUserRequest& request, const GenerateEmbedUrlForRegisteredUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateEmbedUrlForRegisteredUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientGenerateEmbedUrlForRegisteredUserAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDashboardEmbedUrlOutcome QuickSightClient::GetDashboardEmbedUrl(const GetDashboardEmbedUrlRequest& request) const
@@ -2801,14 +2801,14 @@ GetDashboardEmbedUrlOutcomeCallable QuickSightClient::GetDashboardEmbedUrlCallab
   return task->get_future();
 }
 
-void QuickSightClient::GetDashboardEmbedUrlAsync(const GetDashboardEmbedUrlRequest& request, const GetDashboardEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientGetDashboardEmbedUrlAsyncHelper(QuickSightClient const * const clientThis, const GetDashboardEmbedUrlRequest& request, const GetDashboardEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDashboardEmbedUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDashboardEmbedUrl(request), context);
 }
 
-void QuickSightClient::GetDashboardEmbedUrlAsyncHelper(const GetDashboardEmbedUrlRequest& request, const GetDashboardEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::GetDashboardEmbedUrlAsync(const GetDashboardEmbedUrlRequest& request, const GetDashboardEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDashboardEmbedUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientGetDashboardEmbedUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSessionEmbedUrlOutcome QuickSightClient::GetSessionEmbedUrl(const GetSessionEmbedUrlRequest& request) const
@@ -2833,14 +2833,14 @@ GetSessionEmbedUrlOutcomeCallable QuickSightClient::GetSessionEmbedUrlCallable(c
   return task->get_future();
 }
 
-void QuickSightClient::GetSessionEmbedUrlAsync(const GetSessionEmbedUrlRequest& request, const GetSessionEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientGetSessionEmbedUrlAsyncHelper(QuickSightClient const * const clientThis, const GetSessionEmbedUrlRequest& request, const GetSessionEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSessionEmbedUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSessionEmbedUrl(request), context);
 }
 
-void QuickSightClient::GetSessionEmbedUrlAsyncHelper(const GetSessionEmbedUrlRequest& request, const GetSessionEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::GetSessionEmbedUrlAsync(const GetSessionEmbedUrlRequest& request, const GetSessionEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSessionEmbedUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientGetSessionEmbedUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAnalysesOutcome QuickSightClient::ListAnalyses(const ListAnalysesRequest& request) const
@@ -2865,14 +2865,14 @@ ListAnalysesOutcomeCallable QuickSightClient::ListAnalysesCallable(const ListAna
   return task->get_future();
 }
 
-void QuickSightClient::ListAnalysesAsync(const ListAnalysesRequest& request, const ListAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListAnalysesAsyncHelper(QuickSightClient const * const clientThis, const ListAnalysesRequest& request, const ListAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAnalysesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAnalyses(request), context);
 }
 
-void QuickSightClient::ListAnalysesAsyncHelper(const ListAnalysesRequest& request, const ListAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListAnalysesAsync(const ListAnalysesRequest& request, const ListAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAnalyses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListAnalysesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDashboardVersionsOutcome QuickSightClient::ListDashboardVersions(const ListDashboardVersionsRequest& request) const
@@ -2904,14 +2904,14 @@ ListDashboardVersionsOutcomeCallable QuickSightClient::ListDashboardVersionsCall
   return task->get_future();
 }
 
-void QuickSightClient::ListDashboardVersionsAsync(const ListDashboardVersionsRequest& request, const ListDashboardVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListDashboardVersionsAsyncHelper(QuickSightClient const * const clientThis, const ListDashboardVersionsRequest& request, const ListDashboardVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDashboardVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDashboardVersions(request), context);
 }
 
-void QuickSightClient::ListDashboardVersionsAsyncHelper(const ListDashboardVersionsRequest& request, const ListDashboardVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListDashboardVersionsAsync(const ListDashboardVersionsRequest& request, const ListDashboardVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDashboardVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListDashboardVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDashboardsOutcome QuickSightClient::ListDashboards(const ListDashboardsRequest& request) const
@@ -2936,14 +2936,14 @@ ListDashboardsOutcomeCallable QuickSightClient::ListDashboardsCallable(const Lis
   return task->get_future();
 }
 
-void QuickSightClient::ListDashboardsAsync(const ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListDashboardsAsyncHelper(QuickSightClient const * const clientThis, const ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDashboardsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDashboards(request), context);
 }
 
-void QuickSightClient::ListDashboardsAsyncHelper(const ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListDashboardsAsync(const ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDashboards(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListDashboardsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDataSetsOutcome QuickSightClient::ListDataSets(const ListDataSetsRequest& request) const
@@ -2968,14 +2968,14 @@ ListDataSetsOutcomeCallable QuickSightClient::ListDataSetsCallable(const ListDat
   return task->get_future();
 }
 
-void QuickSightClient::ListDataSetsAsync(const ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListDataSetsAsyncHelper(QuickSightClient const * const clientThis, const ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDataSets(request), context);
 }
 
-void QuickSightClient::ListDataSetsAsyncHelper(const ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListDataSetsAsync(const ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDataSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListDataSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDataSourcesOutcome QuickSightClient::ListDataSources(const ListDataSourcesRequest& request) const
@@ -3000,14 +3000,14 @@ ListDataSourcesOutcomeCallable QuickSightClient::ListDataSourcesCallable(const L
   return task->get_future();
 }
 
-void QuickSightClient::ListDataSourcesAsync(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListDataSourcesAsyncHelper(QuickSightClient const * const clientThis, const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataSourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDataSources(request), context);
 }
 
-void QuickSightClient::ListDataSourcesAsyncHelper(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListDataSourcesAsync(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDataSources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListDataSourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFolderMembersOutcome QuickSightClient::ListFolderMembers(const ListFolderMembersRequest& request) const
@@ -3039,14 +3039,14 @@ ListFolderMembersOutcomeCallable QuickSightClient::ListFolderMembersCallable(con
   return task->get_future();
 }
 
-void QuickSightClient::ListFolderMembersAsync(const ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListFolderMembersAsyncHelper(QuickSightClient const * const clientThis, const ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFolderMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFolderMembers(request), context);
 }
 
-void QuickSightClient::ListFolderMembersAsyncHelper(const ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListFolderMembersAsync(const ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFolderMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListFolderMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFoldersOutcome QuickSightClient::ListFolders(const ListFoldersRequest& request) const
@@ -3071,14 +3071,14 @@ ListFoldersOutcomeCallable QuickSightClient::ListFoldersCallable(const ListFolde
   return task->get_future();
 }
 
-void QuickSightClient::ListFoldersAsync(const ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListFoldersAsyncHelper(QuickSightClient const * const clientThis, const ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFoldersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFolders(request), context);
 }
 
-void QuickSightClient::ListFoldersAsyncHelper(const ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListFoldersAsync(const ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFolders(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListFoldersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupMembershipsOutcome QuickSightClient::ListGroupMemberships(const ListGroupMembershipsRequest& request) const
@@ -3117,14 +3117,14 @@ ListGroupMembershipsOutcomeCallable QuickSightClient::ListGroupMembershipsCallab
   return task->get_future();
 }
 
-void QuickSightClient::ListGroupMembershipsAsync(const ListGroupMembershipsRequest& request, const ListGroupMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListGroupMembershipsAsyncHelper(QuickSightClient const * const clientThis, const ListGroupMembershipsRequest& request, const ListGroupMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupMembershipsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroupMemberships(request), context);
 }
 
-void QuickSightClient::ListGroupMembershipsAsyncHelper(const ListGroupMembershipsRequest& request, const ListGroupMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListGroupMembershipsAsync(const ListGroupMembershipsRequest& request, const ListGroupMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroupMemberships(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListGroupMembershipsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupsOutcome QuickSightClient::ListGroups(const ListGroupsRequest& request) const
@@ -3156,14 +3156,14 @@ ListGroupsOutcomeCallable QuickSightClient::ListGroupsCallable(const ListGroupsR
   return task->get_future();
 }
 
-void QuickSightClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListGroupsAsyncHelper(QuickSightClient const * const clientThis, const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroups(request), context);
 }
 
-void QuickSightClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIAMPolicyAssignmentsOutcome QuickSightClient::ListIAMPolicyAssignments(const ListIAMPolicyAssignmentsRequest& request) const
@@ -3195,14 +3195,14 @@ ListIAMPolicyAssignmentsOutcomeCallable QuickSightClient::ListIAMPolicyAssignmen
   return task->get_future();
 }
 
-void QuickSightClient::ListIAMPolicyAssignmentsAsync(const ListIAMPolicyAssignmentsRequest& request, const ListIAMPolicyAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListIAMPolicyAssignmentsAsyncHelper(QuickSightClient const * const clientThis, const ListIAMPolicyAssignmentsRequest& request, const ListIAMPolicyAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIAMPolicyAssignmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIAMPolicyAssignments(request), context);
 }
 
-void QuickSightClient::ListIAMPolicyAssignmentsAsyncHelper(const ListIAMPolicyAssignmentsRequest& request, const ListIAMPolicyAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListIAMPolicyAssignmentsAsync(const ListIAMPolicyAssignmentsRequest& request, const ListIAMPolicyAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIAMPolicyAssignments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListIAMPolicyAssignmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIAMPolicyAssignmentsForUserOutcome QuickSightClient::ListIAMPolicyAssignmentsForUser(const ListIAMPolicyAssignmentsForUserRequest& request) const
@@ -3241,14 +3241,14 @@ ListIAMPolicyAssignmentsForUserOutcomeCallable QuickSightClient::ListIAMPolicyAs
   return task->get_future();
 }
 
-void QuickSightClient::ListIAMPolicyAssignmentsForUserAsync(const ListIAMPolicyAssignmentsForUserRequest& request, const ListIAMPolicyAssignmentsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListIAMPolicyAssignmentsForUserAsyncHelper(QuickSightClient const * const clientThis, const ListIAMPolicyAssignmentsForUserRequest& request, const ListIAMPolicyAssignmentsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIAMPolicyAssignmentsForUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIAMPolicyAssignmentsForUser(request), context);
 }
 
-void QuickSightClient::ListIAMPolicyAssignmentsForUserAsyncHelper(const ListIAMPolicyAssignmentsForUserRequest& request, const ListIAMPolicyAssignmentsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListIAMPolicyAssignmentsForUserAsync(const ListIAMPolicyAssignmentsForUserRequest& request, const ListIAMPolicyAssignmentsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIAMPolicyAssignmentsForUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListIAMPolicyAssignmentsForUserAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIngestionsOutcome QuickSightClient::ListIngestions(const ListIngestionsRequest& request) const
@@ -3280,14 +3280,14 @@ ListIngestionsOutcomeCallable QuickSightClient::ListIngestionsCallable(const Lis
   return task->get_future();
 }
 
-void QuickSightClient::ListIngestionsAsync(const ListIngestionsRequest& request, const ListIngestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListIngestionsAsyncHelper(QuickSightClient const * const clientThis, const ListIngestionsRequest& request, const ListIngestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIngestionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIngestions(request), context);
 }
 
-void QuickSightClient::ListIngestionsAsyncHelper(const ListIngestionsRequest& request, const ListIngestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListIngestionsAsync(const ListIngestionsRequest& request, const ListIngestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIngestions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListIngestionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNamespacesOutcome QuickSightClient::ListNamespaces(const ListNamespacesRequest& request) const
@@ -3312,14 +3312,14 @@ ListNamespacesOutcomeCallable QuickSightClient::ListNamespacesCallable(const Lis
   return task->get_future();
 }
 
-void QuickSightClient::ListNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListNamespacesAsyncHelper(QuickSightClient const * const clientThis, const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNamespacesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNamespaces(request), context);
 }
 
-void QuickSightClient::ListNamespacesAsyncHelper(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNamespaces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListNamespacesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome QuickSightClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -3344,14 +3344,14 @@ ListTagsForResourceOutcomeCallable QuickSightClient::ListTagsForResourceCallable
   return task->get_future();
 }
 
-void QuickSightClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListTagsForResourceAsyncHelper(QuickSightClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void QuickSightClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTemplateAliasesOutcome QuickSightClient::ListTemplateAliases(const ListTemplateAliasesRequest& request) const
@@ -3383,14 +3383,14 @@ ListTemplateAliasesOutcomeCallable QuickSightClient::ListTemplateAliasesCallable
   return task->get_future();
 }
 
-void QuickSightClient::ListTemplateAliasesAsync(const ListTemplateAliasesRequest& request, const ListTemplateAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListTemplateAliasesAsyncHelper(QuickSightClient const * const clientThis, const ListTemplateAliasesRequest& request, const ListTemplateAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTemplateAliasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTemplateAliases(request), context);
 }
 
-void QuickSightClient::ListTemplateAliasesAsyncHelper(const ListTemplateAliasesRequest& request, const ListTemplateAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListTemplateAliasesAsync(const ListTemplateAliasesRequest& request, const ListTemplateAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTemplateAliases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListTemplateAliasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTemplateVersionsOutcome QuickSightClient::ListTemplateVersions(const ListTemplateVersionsRequest& request) const
@@ -3422,14 +3422,14 @@ ListTemplateVersionsOutcomeCallable QuickSightClient::ListTemplateVersionsCallab
   return task->get_future();
 }
 
-void QuickSightClient::ListTemplateVersionsAsync(const ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListTemplateVersionsAsyncHelper(QuickSightClient const * const clientThis, const ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTemplateVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTemplateVersions(request), context);
 }
 
-void QuickSightClient::ListTemplateVersionsAsyncHelper(const ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListTemplateVersionsAsync(const ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTemplateVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListTemplateVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTemplatesOutcome QuickSightClient::ListTemplates(const ListTemplatesRequest& request) const
@@ -3454,14 +3454,14 @@ ListTemplatesOutcomeCallable QuickSightClient::ListTemplatesCallable(const ListT
   return task->get_future();
 }
 
-void QuickSightClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListTemplatesAsyncHelper(QuickSightClient const * const clientThis, const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTemplates(request), context);
 }
 
-void QuickSightClient::ListTemplatesAsyncHelper(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThemeAliasesOutcome QuickSightClient::ListThemeAliases(const ListThemeAliasesRequest& request) const
@@ -3493,14 +3493,14 @@ ListThemeAliasesOutcomeCallable QuickSightClient::ListThemeAliasesCallable(const
   return task->get_future();
 }
 
-void QuickSightClient::ListThemeAliasesAsync(const ListThemeAliasesRequest& request, const ListThemeAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListThemeAliasesAsyncHelper(QuickSightClient const * const clientThis, const ListThemeAliasesRequest& request, const ListThemeAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThemeAliasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThemeAliases(request), context);
 }
 
-void QuickSightClient::ListThemeAliasesAsyncHelper(const ListThemeAliasesRequest& request, const ListThemeAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListThemeAliasesAsync(const ListThemeAliasesRequest& request, const ListThemeAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThemeAliases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListThemeAliasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThemeVersionsOutcome QuickSightClient::ListThemeVersions(const ListThemeVersionsRequest& request) const
@@ -3532,14 +3532,14 @@ ListThemeVersionsOutcomeCallable QuickSightClient::ListThemeVersionsCallable(con
   return task->get_future();
 }
 
-void QuickSightClient::ListThemeVersionsAsync(const ListThemeVersionsRequest& request, const ListThemeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListThemeVersionsAsyncHelper(QuickSightClient const * const clientThis, const ListThemeVersionsRequest& request, const ListThemeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThemeVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThemeVersions(request), context);
 }
 
-void QuickSightClient::ListThemeVersionsAsyncHelper(const ListThemeVersionsRequest& request, const ListThemeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListThemeVersionsAsync(const ListThemeVersionsRequest& request, const ListThemeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThemeVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListThemeVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListThemesOutcome QuickSightClient::ListThemes(const ListThemesRequest& request) const
@@ -3564,14 +3564,14 @@ ListThemesOutcomeCallable QuickSightClient::ListThemesCallable(const ListThemesR
   return task->get_future();
 }
 
-void QuickSightClient::ListThemesAsync(const ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListThemesAsyncHelper(QuickSightClient const * const clientThis, const ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThemesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListThemes(request), context);
 }
 
-void QuickSightClient::ListThemesAsyncHelper(const ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListThemesAsync(const ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListThemes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListThemesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUserGroupsOutcome QuickSightClient::ListUserGroups(const ListUserGroupsRequest& request) const
@@ -3610,14 +3610,14 @@ ListUserGroupsOutcomeCallable QuickSightClient::ListUserGroupsCallable(const Lis
   return task->get_future();
 }
 
-void QuickSightClient::ListUserGroupsAsync(const ListUserGroupsRequest& request, const ListUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListUserGroupsAsyncHelper(QuickSightClient const * const clientThis, const ListUserGroupsRequest& request, const ListUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUserGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUserGroups(request), context);
 }
 
-void QuickSightClient::ListUserGroupsAsyncHelper(const ListUserGroupsRequest& request, const ListUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListUserGroupsAsync(const ListUserGroupsRequest& request, const ListUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUserGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListUserGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUsersOutcome QuickSightClient::ListUsers(const ListUsersRequest& request) const
@@ -3649,14 +3649,14 @@ ListUsersOutcomeCallable QuickSightClient::ListUsersCallable(const ListUsersRequ
   return task->get_future();
 }
 
-void QuickSightClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientListUsersAsyncHelper(QuickSightClient const * const clientThis, const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUsers(request), context);
 }
 
-void QuickSightClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientListUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterUserOutcome QuickSightClient::RegisterUser(const RegisterUserRequest& request) const
@@ -3688,14 +3688,14 @@ RegisterUserOutcomeCallable QuickSightClient::RegisterUserCallable(const Registe
   return task->get_future();
 }
 
-void QuickSightClient::RegisterUserAsync(const RegisterUserRequest& request, const RegisterUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientRegisterUserAsyncHelper(QuickSightClient const * const clientThis, const RegisterUserRequest& request, const RegisterUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterUser(request), context);
 }
 
-void QuickSightClient::RegisterUserAsyncHelper(const RegisterUserRequest& request, const RegisterUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::RegisterUserAsync(const RegisterUserRequest& request, const RegisterUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientRegisterUserAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreAnalysisOutcome QuickSightClient::RestoreAnalysis(const RestoreAnalysisRequest& request) const
@@ -3726,14 +3726,14 @@ RestoreAnalysisOutcomeCallable QuickSightClient::RestoreAnalysisCallable(const R
   return task->get_future();
 }
 
-void QuickSightClient::RestoreAnalysisAsync(const RestoreAnalysisRequest& request, const RestoreAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientRestoreAnalysisAsyncHelper(QuickSightClient const * const clientThis, const RestoreAnalysisRequest& request, const RestoreAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreAnalysis(request), context);
 }
 
-void QuickSightClient::RestoreAnalysisAsyncHelper(const RestoreAnalysisRequest& request, const RestoreAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::RestoreAnalysisAsync(const RestoreAnalysisRequest& request, const RestoreAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientRestoreAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchAnalysesOutcome QuickSightClient::SearchAnalyses(const SearchAnalysesRequest& request) const
@@ -3758,14 +3758,14 @@ SearchAnalysesOutcomeCallable QuickSightClient::SearchAnalysesCallable(const Sea
   return task->get_future();
 }
 
-void QuickSightClient::SearchAnalysesAsync(const SearchAnalysesRequest& request, const SearchAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientSearchAnalysesAsyncHelper(QuickSightClient const * const clientThis, const SearchAnalysesRequest& request, const SearchAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchAnalysesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchAnalyses(request), context);
 }
 
-void QuickSightClient::SearchAnalysesAsyncHelper(const SearchAnalysesRequest& request, const SearchAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::SearchAnalysesAsync(const SearchAnalysesRequest& request, const SearchAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchAnalyses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientSearchAnalysesAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchDashboardsOutcome QuickSightClient::SearchDashboards(const SearchDashboardsRequest& request) const
@@ -3790,14 +3790,14 @@ SearchDashboardsOutcomeCallable QuickSightClient::SearchDashboardsCallable(const
   return task->get_future();
 }
 
-void QuickSightClient::SearchDashboardsAsync(const SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientSearchDashboardsAsyncHelper(QuickSightClient const * const clientThis, const SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchDashboardsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchDashboards(request), context);
 }
 
-void QuickSightClient::SearchDashboardsAsyncHelper(const SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::SearchDashboardsAsync(const SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchDashboards(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientSearchDashboardsAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchFoldersOutcome QuickSightClient::SearchFolders(const SearchFoldersRequest& request) const
@@ -3822,14 +3822,14 @@ SearchFoldersOutcomeCallable QuickSightClient::SearchFoldersCallable(const Searc
   return task->get_future();
 }
 
-void QuickSightClient::SearchFoldersAsync(const SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientSearchFoldersAsyncHelper(QuickSightClient const * const clientThis, const SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchFoldersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchFolders(request), context);
 }
 
-void QuickSightClient::SearchFoldersAsyncHelper(const SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::SearchFoldersAsync(const SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchFolders(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientSearchFoldersAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchGroupsOutcome QuickSightClient::SearchGroups(const SearchGroupsRequest& request) const
@@ -3861,14 +3861,14 @@ SearchGroupsOutcomeCallable QuickSightClient::SearchGroupsCallable(const SearchG
   return task->get_future();
 }
 
-void QuickSightClient::SearchGroupsAsync(const SearchGroupsRequest& request, const SearchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientSearchGroupsAsyncHelper(QuickSightClient const * const clientThis, const SearchGroupsRequest& request, const SearchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchGroups(request), context);
 }
 
-void QuickSightClient::SearchGroupsAsyncHelper(const SearchGroupsRequest& request, const SearchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::SearchGroupsAsync(const SearchGroupsRequest& request, const SearchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientSearchGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome QuickSightClient::TagResource(const TagResourceRequest& request) const
@@ -3893,14 +3893,14 @@ TagResourceOutcomeCallable QuickSightClient::TagResourceCallable(const TagResour
   return task->get_future();
 }
 
-void QuickSightClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientTagResourceAsyncHelper(QuickSightClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void QuickSightClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome QuickSightClient::UntagResource(const UntagResourceRequest& request) const
@@ -3930,14 +3930,14 @@ UntagResourceOutcomeCallable QuickSightClient::UntagResourceCallable(const Untag
   return task->get_future();
 }
 
-void QuickSightClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUntagResourceAsyncHelper(QuickSightClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void QuickSightClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAccountCustomizationOutcome QuickSightClient::UpdateAccountCustomization(const UpdateAccountCustomizationRequest& request) const
@@ -3962,14 +3962,14 @@ UpdateAccountCustomizationOutcomeCallable QuickSightClient::UpdateAccountCustomi
   return task->get_future();
 }
 
-void QuickSightClient::UpdateAccountCustomizationAsync(const UpdateAccountCustomizationRequest& request, const UpdateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateAccountCustomizationAsyncHelper(QuickSightClient const * const clientThis, const UpdateAccountCustomizationRequest& request, const UpdateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccountCustomizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAccountCustomization(request), context);
 }
 
-void QuickSightClient::UpdateAccountCustomizationAsyncHelper(const UpdateAccountCustomizationRequest& request, const UpdateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateAccountCustomizationAsync(const UpdateAccountCustomizationRequest& request, const UpdateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAccountCustomization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateAccountCustomizationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAccountSettingsOutcome QuickSightClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const
@@ -3994,14 +3994,14 @@ UpdateAccountSettingsOutcomeCallable QuickSightClient::UpdateAccountSettingsCall
   return task->get_future();
 }
 
-void QuickSightClient::UpdateAccountSettingsAsync(const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateAccountSettingsAsyncHelper(QuickSightClient const * const clientThis, const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccountSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAccountSettings(request), context);
 }
 
-void QuickSightClient::UpdateAccountSettingsAsyncHelper(const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateAccountSettingsAsync(const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAccountSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateAccountSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAnalysisOutcome QuickSightClient::UpdateAnalysis(const UpdateAnalysisRequest& request) const
@@ -4032,14 +4032,14 @@ UpdateAnalysisOutcomeCallable QuickSightClient::UpdateAnalysisCallable(const Upd
   return task->get_future();
 }
 
-void QuickSightClient::UpdateAnalysisAsync(const UpdateAnalysisRequest& request, const UpdateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateAnalysisAsyncHelper(QuickSightClient const * const clientThis, const UpdateAnalysisRequest& request, const UpdateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAnalysis(request), context);
 }
 
-void QuickSightClient::UpdateAnalysisAsyncHelper(const UpdateAnalysisRequest& request, const UpdateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateAnalysisAsync(const UpdateAnalysisRequest& request, const UpdateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAnalysisPermissionsOutcome QuickSightClient::UpdateAnalysisPermissions(const UpdateAnalysisPermissionsRequest& request) const
@@ -4071,14 +4071,14 @@ UpdateAnalysisPermissionsOutcomeCallable QuickSightClient::UpdateAnalysisPermiss
   return task->get_future();
 }
 
-void QuickSightClient::UpdateAnalysisPermissionsAsync(const UpdateAnalysisPermissionsRequest& request, const UpdateAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateAnalysisPermissionsAsyncHelper(QuickSightClient const * const clientThis, const UpdateAnalysisPermissionsRequest& request, const UpdateAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAnalysisPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAnalysisPermissions(request), context);
 }
 
-void QuickSightClient::UpdateAnalysisPermissionsAsyncHelper(const UpdateAnalysisPermissionsRequest& request, const UpdateAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateAnalysisPermissionsAsync(const UpdateAnalysisPermissionsRequest& request, const UpdateAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAnalysisPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateAnalysisPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDashboardOutcome QuickSightClient::UpdateDashboard(const UpdateDashboardRequest& request) const
@@ -4109,14 +4109,14 @@ UpdateDashboardOutcomeCallable QuickSightClient::UpdateDashboardCallable(const U
   return task->get_future();
 }
 
-void QuickSightClient::UpdateDashboardAsync(const UpdateDashboardRequest& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateDashboardAsyncHelper(QuickSightClient const * const clientThis, const UpdateDashboardRequest& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDashboardAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDashboard(request), context);
 }
 
-void QuickSightClient::UpdateDashboardAsyncHelper(const UpdateDashboardRequest& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateDashboardAsync(const UpdateDashboardRequest& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDashboard(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateDashboardAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDashboardPermissionsOutcome QuickSightClient::UpdateDashboardPermissions(const UpdateDashboardPermissionsRequest& request) const
@@ -4148,14 +4148,14 @@ UpdateDashboardPermissionsOutcomeCallable QuickSightClient::UpdateDashboardPermi
   return task->get_future();
 }
 
-void QuickSightClient::UpdateDashboardPermissionsAsync(const UpdateDashboardPermissionsRequest& request, const UpdateDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateDashboardPermissionsAsyncHelper(QuickSightClient const * const clientThis, const UpdateDashboardPermissionsRequest& request, const UpdateDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDashboardPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDashboardPermissions(request), context);
 }
 
-void QuickSightClient::UpdateDashboardPermissionsAsyncHelper(const UpdateDashboardPermissionsRequest& request, const UpdateDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateDashboardPermissionsAsync(const UpdateDashboardPermissionsRequest& request, const UpdateDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDashboardPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateDashboardPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDashboardPublishedVersionOutcome QuickSightClient::UpdateDashboardPublishedVersion(const UpdateDashboardPublishedVersionRequest& request) const
@@ -4193,14 +4193,14 @@ UpdateDashboardPublishedVersionOutcomeCallable QuickSightClient::UpdateDashboard
   return task->get_future();
 }
 
-void QuickSightClient::UpdateDashboardPublishedVersionAsync(const UpdateDashboardPublishedVersionRequest& request, const UpdateDashboardPublishedVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateDashboardPublishedVersionAsyncHelper(QuickSightClient const * const clientThis, const UpdateDashboardPublishedVersionRequest& request, const UpdateDashboardPublishedVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDashboardPublishedVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDashboardPublishedVersion(request), context);
 }
 
-void QuickSightClient::UpdateDashboardPublishedVersionAsyncHelper(const UpdateDashboardPublishedVersionRequest& request, const UpdateDashboardPublishedVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateDashboardPublishedVersionAsync(const UpdateDashboardPublishedVersionRequest& request, const UpdateDashboardPublishedVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDashboardPublishedVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateDashboardPublishedVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDataSetOutcome QuickSightClient::UpdateDataSet(const UpdateDataSetRequest& request) const
@@ -4231,14 +4231,14 @@ UpdateDataSetOutcomeCallable QuickSightClient::UpdateDataSetCallable(const Updat
   return task->get_future();
 }
 
-void QuickSightClient::UpdateDataSetAsync(const UpdateDataSetRequest& request, const UpdateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateDataSetAsyncHelper(QuickSightClient const * const clientThis, const UpdateDataSetRequest& request, const UpdateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataSet(request), context);
 }
 
-void QuickSightClient::UpdateDataSetAsyncHelper(const UpdateDataSetRequest& request, const UpdateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateDataSetAsync(const UpdateDataSetRequest& request, const UpdateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateDataSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDataSetPermissionsOutcome QuickSightClient::UpdateDataSetPermissions(const UpdateDataSetPermissionsRequest& request) const
@@ -4270,14 +4270,14 @@ UpdateDataSetPermissionsOutcomeCallable QuickSightClient::UpdateDataSetPermissio
   return task->get_future();
 }
 
-void QuickSightClient::UpdateDataSetPermissionsAsync(const UpdateDataSetPermissionsRequest& request, const UpdateDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateDataSetPermissionsAsyncHelper(QuickSightClient const * const clientThis, const UpdateDataSetPermissionsRequest& request, const UpdateDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataSetPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataSetPermissions(request), context);
 }
 
-void QuickSightClient::UpdateDataSetPermissionsAsyncHelper(const UpdateDataSetPermissionsRequest& request, const UpdateDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateDataSetPermissionsAsync(const UpdateDataSetPermissionsRequest& request, const UpdateDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataSetPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateDataSetPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDataSourceOutcome QuickSightClient::UpdateDataSource(const UpdateDataSourceRequest& request) const
@@ -4308,14 +4308,14 @@ UpdateDataSourceOutcomeCallable QuickSightClient::UpdateDataSourceCallable(const
   return task->get_future();
 }
 
-void QuickSightClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateDataSourceAsyncHelper(QuickSightClient const * const clientThis, const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataSourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataSource(request), context);
 }
 
-void QuickSightClient::UpdateDataSourceAsyncHelper(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataSource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateDataSourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDataSourcePermissionsOutcome QuickSightClient::UpdateDataSourcePermissions(const UpdateDataSourcePermissionsRequest& request) const
@@ -4347,14 +4347,14 @@ UpdateDataSourcePermissionsOutcomeCallable QuickSightClient::UpdateDataSourcePer
   return task->get_future();
 }
 
-void QuickSightClient::UpdateDataSourcePermissionsAsync(const UpdateDataSourcePermissionsRequest& request, const UpdateDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateDataSourcePermissionsAsyncHelper(QuickSightClient const * const clientThis, const UpdateDataSourcePermissionsRequest& request, const UpdateDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataSourcePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataSourcePermissions(request), context);
 }
 
-void QuickSightClient::UpdateDataSourcePermissionsAsyncHelper(const UpdateDataSourcePermissionsRequest& request, const UpdateDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateDataSourcePermissionsAsync(const UpdateDataSourcePermissionsRequest& request, const UpdateDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataSourcePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateDataSourcePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFolderOutcome QuickSightClient::UpdateFolder(const UpdateFolderRequest& request) const
@@ -4385,14 +4385,14 @@ UpdateFolderOutcomeCallable QuickSightClient::UpdateFolderCallable(const UpdateF
   return task->get_future();
 }
 
-void QuickSightClient::UpdateFolderAsync(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateFolderAsyncHelper(QuickSightClient const * const clientThis, const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFolderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFolder(request), context);
 }
 
-void QuickSightClient::UpdateFolderAsyncHelper(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateFolderAsync(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFolder(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateFolderAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFolderPermissionsOutcome QuickSightClient::UpdateFolderPermissions(const UpdateFolderPermissionsRequest& request) const
@@ -4424,14 +4424,14 @@ UpdateFolderPermissionsOutcomeCallable QuickSightClient::UpdateFolderPermissions
   return task->get_future();
 }
 
-void QuickSightClient::UpdateFolderPermissionsAsync(const UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateFolderPermissionsAsyncHelper(QuickSightClient const * const clientThis, const UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFolderPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFolderPermissions(request), context);
 }
 
-void QuickSightClient::UpdateFolderPermissionsAsyncHelper(const UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateFolderPermissionsAsync(const UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFolderPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateFolderPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& request) const
@@ -4469,14 +4469,14 @@ UpdateGroupOutcomeCallable QuickSightClient::UpdateGroupCallable(const UpdateGro
   return task->get_future();
 }
 
-void QuickSightClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateGroupAsyncHelper(QuickSightClient const * const clientThis, const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGroup(request), context);
 }
 
-void QuickSightClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateIAMPolicyAssignmentOutcome QuickSightClient::UpdateIAMPolicyAssignment(const UpdateIAMPolicyAssignmentRequest& request) const
@@ -4514,14 +4514,14 @@ UpdateIAMPolicyAssignmentOutcomeCallable QuickSightClient::UpdateIAMPolicyAssign
   return task->get_future();
 }
 
-void QuickSightClient::UpdateIAMPolicyAssignmentAsync(const UpdateIAMPolicyAssignmentRequest& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateIAMPolicyAssignmentAsyncHelper(QuickSightClient const * const clientThis, const UpdateIAMPolicyAssignmentRequest& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIAMPolicyAssignmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateIAMPolicyAssignment(request), context);
 }
 
-void QuickSightClient::UpdateIAMPolicyAssignmentAsyncHelper(const UpdateIAMPolicyAssignmentRequest& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateIAMPolicyAssignmentAsync(const UpdateIAMPolicyAssignmentRequest& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateIAMPolicyAssignment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateIAMPolicyAssignmentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateIpRestrictionOutcome QuickSightClient::UpdateIpRestriction(const UpdateIpRestrictionRequest& request) const
@@ -4546,14 +4546,14 @@ UpdateIpRestrictionOutcomeCallable QuickSightClient::UpdateIpRestrictionCallable
   return task->get_future();
 }
 
-void QuickSightClient::UpdateIpRestrictionAsync(const UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateIpRestrictionAsyncHelper(QuickSightClient const * const clientThis, const UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIpRestrictionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateIpRestriction(request), context);
 }
 
-void QuickSightClient::UpdateIpRestrictionAsyncHelper(const UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateIpRestrictionAsync(const UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateIpRestriction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateIpRestrictionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePublicSharingSettingsOutcome QuickSightClient::UpdatePublicSharingSettings(const UpdatePublicSharingSettingsRequest& request) const
@@ -4578,14 +4578,14 @@ UpdatePublicSharingSettingsOutcomeCallable QuickSightClient::UpdatePublicSharing
   return task->get_future();
 }
 
-void QuickSightClient::UpdatePublicSharingSettingsAsync(const UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdatePublicSharingSettingsAsyncHelper(QuickSightClient const * const clientThis, const UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePublicSharingSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePublicSharingSettings(request), context);
 }
 
-void QuickSightClient::UpdatePublicSharingSettingsAsyncHelper(const UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdatePublicSharingSettingsAsync(const UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePublicSharingSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdatePublicSharingSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTemplateOutcome QuickSightClient::UpdateTemplate(const UpdateTemplateRequest& request) const
@@ -4616,14 +4616,14 @@ UpdateTemplateOutcomeCallable QuickSightClient::UpdateTemplateCallable(const Upd
   return task->get_future();
 }
 
-void QuickSightClient::UpdateTemplateAsync(const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateTemplateAsyncHelper(QuickSightClient const * const clientThis, const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTemplate(request), context);
 }
 
-void QuickSightClient::UpdateTemplateAsyncHelper(const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateTemplateAsync(const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTemplateAliasOutcome QuickSightClient::UpdateTemplateAlias(const UpdateTemplateAliasRequest& request) const
@@ -4661,14 +4661,14 @@ UpdateTemplateAliasOutcomeCallable QuickSightClient::UpdateTemplateAliasCallable
   return task->get_future();
 }
 
-void QuickSightClient::UpdateTemplateAliasAsync(const UpdateTemplateAliasRequest& request, const UpdateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateTemplateAliasAsyncHelper(QuickSightClient const * const clientThis, const UpdateTemplateAliasRequest& request, const UpdateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTemplateAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTemplateAlias(request), context);
 }
 
-void QuickSightClient::UpdateTemplateAliasAsyncHelper(const UpdateTemplateAliasRequest& request, const UpdateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateTemplateAliasAsync(const UpdateTemplateAliasRequest& request, const UpdateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTemplateAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateTemplateAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTemplatePermissionsOutcome QuickSightClient::UpdateTemplatePermissions(const UpdateTemplatePermissionsRequest& request) const
@@ -4700,14 +4700,14 @@ UpdateTemplatePermissionsOutcomeCallable QuickSightClient::UpdateTemplatePermiss
   return task->get_future();
 }
 
-void QuickSightClient::UpdateTemplatePermissionsAsync(const UpdateTemplatePermissionsRequest& request, const UpdateTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateTemplatePermissionsAsyncHelper(QuickSightClient const * const clientThis, const UpdateTemplatePermissionsRequest& request, const UpdateTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTemplatePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTemplatePermissions(request), context);
 }
 
-void QuickSightClient::UpdateTemplatePermissionsAsyncHelper(const UpdateTemplatePermissionsRequest& request, const UpdateTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateTemplatePermissionsAsync(const UpdateTemplatePermissionsRequest& request, const UpdateTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTemplatePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateTemplatePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateThemeOutcome QuickSightClient::UpdateTheme(const UpdateThemeRequest& request) const
@@ -4738,14 +4738,14 @@ UpdateThemeOutcomeCallable QuickSightClient::UpdateThemeCallable(const UpdateThe
   return task->get_future();
 }
 
-void QuickSightClient::UpdateThemeAsync(const UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateThemeAsyncHelper(QuickSightClient const * const clientThis, const UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThemeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTheme(request), context);
 }
 
-void QuickSightClient::UpdateThemeAsyncHelper(const UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateThemeAsync(const UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTheme(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateThemeAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateThemeAliasOutcome QuickSightClient::UpdateThemeAlias(const UpdateThemeAliasRequest& request) const
@@ -4783,14 +4783,14 @@ UpdateThemeAliasOutcomeCallable QuickSightClient::UpdateThemeAliasCallable(const
   return task->get_future();
 }
 
-void QuickSightClient::UpdateThemeAliasAsync(const UpdateThemeAliasRequest& request, const UpdateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateThemeAliasAsyncHelper(QuickSightClient const * const clientThis, const UpdateThemeAliasRequest& request, const UpdateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThemeAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateThemeAlias(request), context);
 }
 
-void QuickSightClient::UpdateThemeAliasAsyncHelper(const UpdateThemeAliasRequest& request, const UpdateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateThemeAliasAsync(const UpdateThemeAliasRequest& request, const UpdateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateThemeAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateThemeAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateThemePermissionsOutcome QuickSightClient::UpdateThemePermissions(const UpdateThemePermissionsRequest& request) const
@@ -4822,14 +4822,14 @@ UpdateThemePermissionsOutcomeCallable QuickSightClient::UpdateThemePermissionsCa
   return task->get_future();
 }
 
-void QuickSightClient::UpdateThemePermissionsAsync(const UpdateThemePermissionsRequest& request, const UpdateThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateThemePermissionsAsyncHelper(QuickSightClient const * const clientThis, const UpdateThemePermissionsRequest& request, const UpdateThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThemePermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateThemePermissions(request), context);
 }
 
-void QuickSightClient::UpdateThemePermissionsAsyncHelper(const UpdateThemePermissionsRequest& request, const UpdateThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateThemePermissionsAsync(const UpdateThemePermissionsRequest& request, const UpdateThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateThemePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateThemePermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request) const
@@ -4867,13 +4867,13 @@ UpdateUserOutcomeCallable QuickSightClient::UpdateUserCallable(const UpdateUserR
   return task->get_future();
 }
 
-void QuickSightClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClientUpdateUserAsyncHelper(QuickSightClient const * const clientThis, const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUser(request), context);
 }
 
-void QuickSightClient::UpdateUserAsyncHelper(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void QuickSightClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ QuickSightClientUpdateUserAsyncHelper( this, request, handler, context ); } );
 }
 

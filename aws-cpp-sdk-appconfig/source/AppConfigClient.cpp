@@ -157,14 +157,14 @@ CreateApplicationOutcomeCallable AppConfigClient::CreateApplicationCallable(cons
   return task->get_future();
 }
 
-void AppConfigClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientCreateApplicationAsyncHelper(AppConfigClient const * const clientThis, const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateApplication(request), context);
 }
 
-void AppConfigClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientCreateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(const CreateConfigurationProfileRequest& request) const
@@ -189,14 +189,14 @@ CreateConfigurationProfileOutcomeCallable AppConfigClient::CreateConfigurationPr
   return task->get_future();
 }
 
-void AppConfigClient::CreateConfigurationProfileAsync(const CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientCreateConfigurationProfileAsyncHelper(AppConfigClient const * const clientThis, const CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConfigurationProfile(request), context);
 }
 
-void AppConfigClient::CreateConfigurationProfileAsyncHelper(const CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::CreateConfigurationProfileAsync(const CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConfigurationProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientCreateConfigurationProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const CreateDeploymentStrategyRequest& request) const
@@ -214,14 +214,14 @@ CreateDeploymentStrategyOutcomeCallable AppConfigClient::CreateDeploymentStrateg
   return task->get_future();
 }
 
-void AppConfigClient::CreateDeploymentStrategyAsync(const CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientCreateDeploymentStrategyAsyncHelper(AppConfigClient const * const clientThis, const CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentStrategyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDeploymentStrategy(request), context);
 }
 
-void AppConfigClient::CreateDeploymentStrategyAsyncHelper(const CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::CreateDeploymentStrategyAsync(const CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDeploymentStrategy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientCreateDeploymentStrategyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
@@ -246,14 +246,14 @@ CreateEnvironmentOutcomeCallable AppConfigClient::CreateEnvironmentCallable(cons
   return task->get_future();
 }
 
-void AppConfigClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientCreateEnvironmentAsyncHelper(AppConfigClient const * const clientThis, const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEnvironment(request), context);
 }
 
-void AppConfigClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientCreateEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionRequest& request) const
@@ -271,14 +271,14 @@ CreateExtensionOutcomeCallable AppConfigClient::CreateExtensionCallable(const Cr
   return task->get_future();
 }
 
-void AppConfigClient::CreateExtensionAsync(const CreateExtensionRequest& request, const CreateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientCreateExtensionAsyncHelper(AppConfigClient const * const clientThis, const CreateExtensionRequest& request, const CreateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExtensionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExtension(request), context);
 }
 
-void AppConfigClient::CreateExtensionAsyncHelper(const CreateExtensionRequest& request, const CreateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::CreateExtensionAsync(const CreateExtensionRequest& request, const CreateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExtension(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientCreateExtensionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(const CreateExtensionAssociationRequest& request) const
@@ -296,14 +296,14 @@ CreateExtensionAssociationOutcomeCallable AppConfigClient::CreateExtensionAssoci
   return task->get_future();
 }
 
-void AppConfigClient::CreateExtensionAssociationAsync(const CreateExtensionAssociationRequest& request, const CreateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientCreateExtensionAssociationAsyncHelper(AppConfigClient const * const clientThis, const CreateExtensionAssociationRequest& request, const CreateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExtensionAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExtensionAssociation(request), context);
 }
 
-void AppConfigClient::CreateExtensionAssociationAsyncHelper(const CreateExtensionAssociationRequest& request, const CreateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::CreateExtensionAssociationAsync(const CreateExtensionAssociationRequest& request, const CreateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExtensionAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientCreateExtensionAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurationVersion(const CreateHostedConfigurationVersionRequest& request) const
@@ -335,14 +335,14 @@ CreateHostedConfigurationVersionOutcomeCallable AppConfigClient::CreateHostedCon
   return task->get_future();
 }
 
-void AppConfigClient::CreateHostedConfigurationVersionAsync(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientCreateHostedConfigurationVersionAsyncHelper(AppConfigClient const * const clientThis, const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateHostedConfigurationVersion(request), context);
 }
 
-void AppConfigClient::CreateHostedConfigurationVersionAsyncHelper(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::CreateHostedConfigurationVersionAsync(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateHostedConfigurationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientCreateHostedConfigurationVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -366,14 +366,14 @@ DeleteApplicationOutcomeCallable AppConfigClient::DeleteApplicationCallable(cons
   return task->get_future();
 }
 
-void AppConfigClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientDeleteApplicationAsyncHelper(AppConfigClient const * const clientThis, const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteApplication(request), context);
 }
 
-void AppConfigClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientDeleteApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(const DeleteConfigurationProfileRequest& request) const
@@ -404,14 +404,14 @@ DeleteConfigurationProfileOutcomeCallable AppConfigClient::DeleteConfigurationPr
   return task->get_future();
 }
 
-void AppConfigClient::DeleteConfigurationProfileAsync(const DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientDeleteConfigurationProfileAsyncHelper(AppConfigClient const * const clientThis, const DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConfigurationProfile(request), context);
 }
 
-void AppConfigClient::DeleteConfigurationProfileAsyncHelper(const DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::DeleteConfigurationProfileAsync(const DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConfigurationProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientDeleteConfigurationProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const DeleteDeploymentStrategyRequest& request) const
@@ -435,14 +435,14 @@ DeleteDeploymentStrategyOutcomeCallable AppConfigClient::DeleteDeploymentStrateg
   return task->get_future();
 }
 
-void AppConfigClient::DeleteDeploymentStrategyAsync(const DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientDeleteDeploymentStrategyAsyncHelper(AppConfigClient const * const clientThis, const DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeploymentStrategyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDeploymentStrategy(request), context);
 }
 
-void AppConfigClient::DeleteDeploymentStrategyAsyncHelper(const DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::DeleteDeploymentStrategyAsync(const DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDeploymentStrategy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientDeleteDeploymentStrategyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
@@ -473,14 +473,14 @@ DeleteEnvironmentOutcomeCallable AppConfigClient::DeleteEnvironmentCallable(cons
   return task->get_future();
 }
 
-void AppConfigClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientDeleteEnvironmentAsyncHelper(AppConfigClient const * const clientThis, const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEnvironment(request), context);
 }
 
-void AppConfigClient::DeleteEnvironmentAsyncHelper(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientDeleteEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionRequest& request) const
@@ -504,14 +504,14 @@ DeleteExtensionOutcomeCallable AppConfigClient::DeleteExtensionCallable(const De
   return task->get_future();
 }
 
-void AppConfigClient::DeleteExtensionAsync(const DeleteExtensionRequest& request, const DeleteExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientDeleteExtensionAsyncHelper(AppConfigClient const * const clientThis, const DeleteExtensionRequest& request, const DeleteExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExtensionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteExtension(request), context);
 }
 
-void AppConfigClient::DeleteExtensionAsyncHelper(const DeleteExtensionRequest& request, const DeleteExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::DeleteExtensionAsync(const DeleteExtensionRequest& request, const DeleteExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteExtension(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientDeleteExtensionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(const DeleteExtensionAssociationRequest& request) const
@@ -535,14 +535,14 @@ DeleteExtensionAssociationOutcomeCallable AppConfigClient::DeleteExtensionAssoci
   return task->get_future();
 }
 
-void AppConfigClient::DeleteExtensionAssociationAsync(const DeleteExtensionAssociationRequest& request, const DeleteExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientDeleteExtensionAssociationAsyncHelper(AppConfigClient const * const clientThis, const DeleteExtensionAssociationRequest& request, const DeleteExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExtensionAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteExtensionAssociation(request), context);
 }
 
-void AppConfigClient::DeleteExtensionAssociationAsyncHelper(const DeleteExtensionAssociationRequest& request, const DeleteExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::DeleteExtensionAssociationAsync(const DeleteExtensionAssociationRequest& request, const DeleteExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteExtensionAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientDeleteExtensionAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurationVersion(const DeleteHostedConfigurationVersionRequest& request) const
@@ -580,14 +580,14 @@ DeleteHostedConfigurationVersionOutcomeCallable AppConfigClient::DeleteHostedCon
   return task->get_future();
 }
 
-void AppConfigClient::DeleteHostedConfigurationVersionAsync(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientDeleteHostedConfigurationVersionAsyncHelper(AppConfigClient const * const clientThis, const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteHostedConfigurationVersion(request), context);
 }
 
-void AppConfigClient::DeleteHostedConfigurationVersionAsyncHelper(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::DeleteHostedConfigurationVersionAsync(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteHostedConfigurationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientDeleteHostedConfigurationVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationRequest& request) const
@@ -611,14 +611,14 @@ GetApplicationOutcomeCallable AppConfigClient::GetApplicationCallable(const GetA
   return task->get_future();
 }
 
-void AppConfigClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientGetApplicationAsyncHelper(AppConfigClient const * const clientThis, const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetApplication(request), context);
 }
 
-void AppConfigClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientGetApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const GetConfigurationProfileRequest& request) const
@@ -649,14 +649,14 @@ GetConfigurationProfileOutcomeCallable AppConfigClient::GetConfigurationProfileC
   return task->get_future();
 }
 
-void AppConfigClient::GetConfigurationProfileAsync(const GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientGetConfigurationProfileAsyncHelper(AppConfigClient const * const clientThis, const GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConfigurationProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConfigurationProfile(request), context);
 }
 
-void AppConfigClient::GetConfigurationProfileAsyncHelper(const GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::GetConfigurationProfileAsync(const GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConfigurationProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientGetConfigurationProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& request) const
@@ -694,14 +694,14 @@ GetDeploymentOutcomeCallable AppConfigClient::GetDeploymentCallable(const GetDep
   return task->get_future();
 }
 
-void AppConfigClient::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientGetDeploymentAsyncHelper(AppConfigClient const * const clientThis, const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeployment(request), context);
 }
 
-void AppConfigClient::GetDeploymentAsyncHelper(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientGetDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDeploymentStrategyRequest& request) const
@@ -725,14 +725,14 @@ GetDeploymentStrategyOutcomeCallable AppConfigClient::GetDeploymentStrategyCalla
   return task->get_future();
 }
 
-void AppConfigClient::GetDeploymentStrategyAsync(const GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientGetDeploymentStrategyAsyncHelper(AppConfigClient const * const clientThis, const GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentStrategyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeploymentStrategy(request), context);
 }
 
-void AppConfigClient::GetDeploymentStrategyAsyncHelper(const GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::GetDeploymentStrategyAsync(const GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeploymentStrategy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientGetDeploymentStrategyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentRequest& request) const
@@ -763,14 +763,14 @@ GetEnvironmentOutcomeCallable AppConfigClient::GetEnvironmentCallable(const GetE
   return task->get_future();
 }
 
-void AppConfigClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientGetEnvironmentAsyncHelper(AppConfigClient const * const clientThis, const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEnvironment(request), context);
 }
 
-void AppConfigClient::GetEnvironmentAsyncHelper(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientGetEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& request) const
@@ -794,14 +794,14 @@ GetExtensionOutcomeCallable AppConfigClient::GetExtensionCallable(const GetExten
   return task->get_future();
 }
 
-void AppConfigClient::GetExtensionAsync(const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientGetExtensionAsyncHelper(AppConfigClient const * const clientThis, const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExtensionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExtension(request), context);
 }
 
-void AppConfigClient::GetExtensionAsyncHelper(const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::GetExtensionAsync(const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExtension(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientGetExtensionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const GetExtensionAssociationRequest& request) const
@@ -825,14 +825,14 @@ GetExtensionAssociationOutcomeCallable AppConfigClient::GetExtensionAssociationC
   return task->get_future();
 }
 
-void AppConfigClient::GetExtensionAssociationAsync(const GetExtensionAssociationRequest& request, const GetExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientGetExtensionAssociationAsyncHelper(AppConfigClient const * const clientThis, const GetExtensionAssociationRequest& request, const GetExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExtensionAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExtensionAssociation(request), context);
 }
 
-void AppConfigClient::GetExtensionAssociationAsyncHelper(const GetExtensionAssociationRequest& request, const GetExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::GetExtensionAssociationAsync(const GetExtensionAssociationRequest& request, const GetExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExtensionAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientGetExtensionAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVersion(const GetHostedConfigurationVersionRequest& request) const
@@ -870,14 +870,14 @@ GetHostedConfigurationVersionOutcomeCallable AppConfigClient::GetHostedConfigura
   return task->get_future();
 }
 
-void AppConfigClient::GetHostedConfigurationVersionAsync(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientGetHostedConfigurationVersionAsyncHelper(AppConfigClient const * const clientThis, const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetHostedConfigurationVersion(request), context);
 }
 
-void AppConfigClient::GetHostedConfigurationVersionAsyncHelper(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::GetHostedConfigurationVersionAsync(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetHostedConfigurationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientGetHostedConfigurationVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplicationsRequest& request) const
@@ -895,14 +895,14 @@ ListApplicationsOutcomeCallable AppConfigClient::ListApplicationsCallable(const 
   return task->get_future();
 }
 
-void AppConfigClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientListApplicationsAsyncHelper(AppConfigClient const * const clientThis, const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListApplications(request), context);
 }
 
-void AppConfigClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientListApplicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(const ListConfigurationProfilesRequest& request) const
@@ -927,14 +927,14 @@ ListConfigurationProfilesOutcomeCallable AppConfigClient::ListConfigurationProfi
   return task->get_future();
 }
 
-void AppConfigClient::ListConfigurationProfilesAsync(const ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientListConfigurationProfilesAsyncHelper(AppConfigClient const * const clientThis, const ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConfigurationProfiles(request), context);
 }
 
-void AppConfigClient::ListConfigurationProfilesAsyncHelper(const ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::ListConfigurationProfilesAsync(const ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConfigurationProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientListConfigurationProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const ListDeploymentStrategiesRequest& request) const
@@ -952,14 +952,14 @@ ListDeploymentStrategiesOutcomeCallable AppConfigClient::ListDeploymentStrategie
   return task->get_future();
 }
 
-void AppConfigClient::ListDeploymentStrategiesAsync(const ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientListDeploymentStrategiesAsyncHelper(AppConfigClient const * const clientThis, const ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentStrategiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeploymentStrategies(request), context);
 }
 
-void AppConfigClient::ListDeploymentStrategiesAsyncHelper(const ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::ListDeploymentStrategiesAsync(const ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeploymentStrategies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientListDeploymentStrategiesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsRequest& request) const
@@ -991,14 +991,14 @@ ListDeploymentsOutcomeCallable AppConfigClient::ListDeploymentsCallable(const Li
   return task->get_future();
 }
 
-void AppConfigClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientListDeploymentsAsyncHelper(AppConfigClient const * const clientThis, const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeployments(request), context);
 }
 
-void AppConfigClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientListDeploymentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironmentsRequest& request) const
@@ -1023,14 +1023,14 @@ ListEnvironmentsOutcomeCallable AppConfigClient::ListEnvironmentsCallable(const 
   return task->get_future();
 }
 
-void AppConfigClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientListEnvironmentsAsyncHelper(AppConfigClient const * const clientThis, const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEnvironments(request), context);
 }
 
-void AppConfigClient::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEnvironments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientListEnvironmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(const ListExtensionAssociationsRequest& request) const
@@ -1048,14 +1048,14 @@ ListExtensionAssociationsOutcomeCallable AppConfigClient::ListExtensionAssociati
   return task->get_future();
 }
 
-void AppConfigClient::ListExtensionAssociationsAsync(const ListExtensionAssociationsRequest& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientListExtensionAssociationsAsyncHelper(AppConfigClient const * const clientThis, const ListExtensionAssociationsRequest& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExtensionAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExtensionAssociations(request), context);
 }
 
-void AppConfigClient::ListExtensionAssociationsAsyncHelper(const ListExtensionAssociationsRequest& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::ListExtensionAssociationsAsync(const ListExtensionAssociationsRequest& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExtensionAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientListExtensionAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsRequest& request) const
@@ -1073,14 +1073,14 @@ ListExtensionsOutcomeCallable AppConfigClient::ListExtensionsCallable(const List
   return task->get_future();
 }
 
-void AppConfigClient::ListExtensionsAsync(const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientListExtensionsAsyncHelper(AppConfigClient const * const clientThis, const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExtensionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExtensions(request), context);
 }
 
-void AppConfigClient::ListExtensionsAsyncHelper(const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::ListExtensionsAsync(const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExtensions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientListExtensionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationVersions(const ListHostedConfigurationVersionsRequest& request) const
@@ -1112,14 +1112,14 @@ ListHostedConfigurationVersionsOutcomeCallable AppConfigClient::ListHostedConfig
   return task->get_future();
 }
 
-void AppConfigClient::ListHostedConfigurationVersionsAsync(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientListHostedConfigurationVersionsAsyncHelper(AppConfigClient const * const clientThis, const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHostedConfigurationVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListHostedConfigurationVersions(request), context);
 }
 
-void AppConfigClient::ListHostedConfigurationVersionsAsyncHelper(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::ListHostedConfigurationVersionsAsync(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListHostedConfigurationVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientListHostedConfigurationVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1143,14 +1143,14 @@ ListTagsForResourceOutcomeCallable AppConfigClient::ListTagsForResourceCallable(
   return task->get_future();
 }
 
-void AppConfigClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientListTagsForResourceAsyncHelper(AppConfigClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void AppConfigClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentRequest& request) const
@@ -1182,14 +1182,14 @@ StartDeploymentOutcomeCallable AppConfigClient::StartDeploymentCallable(const St
   return task->get_future();
 }
 
-void AppConfigClient::StartDeploymentAsync(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientStartDeploymentAsyncHelper(AppConfigClient const * const clientThis, const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDeployment(request), context);
 }
 
-void AppConfigClient::StartDeploymentAsyncHelper(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::StartDeploymentAsync(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientStartDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentRequest& request) const
@@ -1227,14 +1227,14 @@ StopDeploymentOutcomeCallable AppConfigClient::StopDeploymentCallable(const Stop
   return task->get_future();
 }
 
-void AppConfigClient::StopDeploymentAsync(const StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientStopDeploymentAsyncHelper(AppConfigClient const * const clientThis, const StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopDeployment(request), context);
 }
 
-void AppConfigClient::StopDeploymentAsyncHelper(const StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::StopDeploymentAsync(const StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientStopDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& request) const
@@ -1258,14 +1258,14 @@ TagResourceOutcomeCallable AppConfigClient::TagResourceCallable(const TagResourc
   return task->get_future();
 }
 
-void AppConfigClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientTagResourceAsyncHelper(AppConfigClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void AppConfigClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& request) const
@@ -1294,14 +1294,14 @@ UntagResourceOutcomeCallable AppConfigClient::UntagResourceCallable(const UntagR
   return task->get_future();
 }
 
-void AppConfigClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientUntagResourceAsyncHelper(AppConfigClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void AppConfigClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -1325,14 +1325,14 @@ UpdateApplicationOutcomeCallable AppConfigClient::UpdateApplicationCallable(cons
   return task->get_future();
 }
 
-void AppConfigClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientUpdateApplicationAsyncHelper(AppConfigClient const * const clientThis, const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateApplication(request), context);
 }
 
-void AppConfigClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientUpdateApplicationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(const UpdateConfigurationProfileRequest& request) const
@@ -1363,14 +1363,14 @@ UpdateConfigurationProfileOutcomeCallable AppConfigClient::UpdateConfigurationPr
   return task->get_future();
 }
 
-void AppConfigClient::UpdateConfigurationProfileAsync(const UpdateConfigurationProfileRequest& request, const UpdateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientUpdateConfigurationProfileAsyncHelper(AppConfigClient const * const clientThis, const UpdateConfigurationProfileRequest& request, const UpdateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConfigurationProfile(request), context);
 }
 
-void AppConfigClient::UpdateConfigurationProfileAsyncHelper(const UpdateConfigurationProfileRequest& request, const UpdateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::UpdateConfigurationProfileAsync(const UpdateConfigurationProfileRequest& request, const UpdateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConfigurationProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientUpdateConfigurationProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const UpdateDeploymentStrategyRequest& request) const
@@ -1394,14 +1394,14 @@ UpdateDeploymentStrategyOutcomeCallable AppConfigClient::UpdateDeploymentStrateg
   return task->get_future();
 }
 
-void AppConfigClient::UpdateDeploymentStrategyAsync(const UpdateDeploymentStrategyRequest& request, const UpdateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientUpdateDeploymentStrategyAsyncHelper(AppConfigClient const * const clientThis, const UpdateDeploymentStrategyRequest& request, const UpdateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeploymentStrategyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDeploymentStrategy(request), context);
 }
 
-void AppConfigClient::UpdateDeploymentStrategyAsyncHelper(const UpdateDeploymentStrategyRequest& request, const UpdateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::UpdateDeploymentStrategyAsync(const UpdateDeploymentStrategyRequest& request, const UpdateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDeploymentStrategy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientUpdateDeploymentStrategyAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
@@ -1432,14 +1432,14 @@ UpdateEnvironmentOutcomeCallable AppConfigClient::UpdateEnvironmentCallable(cons
   return task->get_future();
 }
 
-void AppConfigClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientUpdateEnvironmentAsyncHelper(AppConfigClient const * const clientThis, const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEnvironment(request), context);
 }
 
-void AppConfigClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientUpdateEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionRequest& request) const
@@ -1463,14 +1463,14 @@ UpdateExtensionOutcomeCallable AppConfigClient::UpdateExtensionCallable(const Up
   return task->get_future();
 }
 
-void AppConfigClient::UpdateExtensionAsync(const UpdateExtensionRequest& request, const UpdateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientUpdateExtensionAsyncHelper(AppConfigClient const * const clientThis, const UpdateExtensionRequest& request, const UpdateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateExtensionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateExtension(request), context);
 }
 
-void AppConfigClient::UpdateExtensionAsyncHelper(const UpdateExtensionRequest& request, const UpdateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::UpdateExtensionAsync(const UpdateExtensionRequest& request, const UpdateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateExtension(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientUpdateExtensionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(const UpdateExtensionAssociationRequest& request) const
@@ -1494,14 +1494,14 @@ UpdateExtensionAssociationOutcomeCallable AppConfigClient::UpdateExtensionAssoci
   return task->get_future();
 }
 
-void AppConfigClient::UpdateExtensionAssociationAsync(const UpdateExtensionAssociationRequest& request, const UpdateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientUpdateExtensionAssociationAsyncHelper(AppConfigClient const * const clientThis, const UpdateExtensionAssociationRequest& request, const UpdateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateExtensionAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateExtensionAssociation(request), context);
 }
 
-void AppConfigClient::UpdateExtensionAssociationAsyncHelper(const UpdateExtensionAssociationRequest& request, const UpdateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::UpdateExtensionAssociationAsync(const UpdateExtensionAssociationRequest& request, const UpdateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateExtensionAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientUpdateExtensionAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const ValidateConfigurationRequest& request) const
@@ -1538,13 +1538,13 @@ ValidateConfigurationOutcomeCallable AppConfigClient::ValidateConfigurationCalla
   return task->get_future();
 }
 
-void AppConfigClient::ValidateConfigurationAsync(const ValidateConfigurationRequest& request, const ValidateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClientValidateConfigurationAsyncHelper(AppConfigClient const * const clientThis, const ValidateConfigurationRequest& request, const ValidateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ValidateConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ValidateConfiguration(request), context);
 }
 
-void AppConfigClient::ValidateConfigurationAsyncHelper(const ValidateConfigurationRequest& request, const ValidateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigClient::ValidateConfigurationAsync(const ValidateConfigurationRequest& request, const ValidateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ValidateConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigClientValidateConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 

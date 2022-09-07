@@ -142,14 +142,14 @@ BatchGetTracesOutcomeCallable XRayClient::BatchGetTracesCallable(const BatchGetT
   return task->get_future();
 }
 
-void XRayClient::BatchGetTracesAsync(const BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientBatchGetTracesAsyncHelper(XRayClient const * const clientThis, const BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetTracesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetTraces(request), context);
 }
 
-void XRayClient::BatchGetTracesAsyncHelper(const BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::BatchGetTracesAsync(const BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetTraces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientBatchGetTracesAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGroupOutcome XRayClient::CreateGroup(const CreateGroupRequest& request) const
@@ -167,14 +167,14 @@ CreateGroupOutcomeCallable XRayClient::CreateGroupCallable(const CreateGroupRequ
   return task->get_future();
 }
 
-void XRayClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientCreateGroupAsyncHelper(XRayClient const * const clientThis, const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGroup(request), context);
 }
 
-void XRayClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientCreateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSamplingRuleOutcome XRayClient::CreateSamplingRule(const CreateSamplingRuleRequest& request) const
@@ -192,14 +192,14 @@ CreateSamplingRuleOutcomeCallable XRayClient::CreateSamplingRuleCallable(const C
   return task->get_future();
 }
 
-void XRayClient::CreateSamplingRuleAsync(const CreateSamplingRuleRequest& request, const CreateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientCreateSamplingRuleAsyncHelper(XRayClient const * const clientThis, const CreateSamplingRuleRequest& request, const CreateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSamplingRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSamplingRule(request), context);
 }
 
-void XRayClient::CreateSamplingRuleAsyncHelper(const CreateSamplingRuleRequest& request, const CreateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::CreateSamplingRuleAsync(const CreateSamplingRuleRequest& request, const CreateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSamplingRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientCreateSamplingRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGroupOutcome XRayClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -217,14 +217,14 @@ DeleteGroupOutcomeCallable XRayClient::DeleteGroupCallable(const DeleteGroupRequ
   return task->get_future();
 }
 
-void XRayClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientDeleteGroupAsyncHelper(XRayClient const * const clientThis, const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGroup(request), context);
 }
 
-void XRayClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientDeleteGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSamplingRuleOutcome XRayClient::DeleteSamplingRule(const DeleteSamplingRuleRequest& request) const
@@ -242,14 +242,14 @@ DeleteSamplingRuleOutcomeCallable XRayClient::DeleteSamplingRuleCallable(const D
   return task->get_future();
 }
 
-void XRayClient::DeleteSamplingRuleAsync(const DeleteSamplingRuleRequest& request, const DeleteSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientDeleteSamplingRuleAsyncHelper(XRayClient const * const clientThis, const DeleteSamplingRuleRequest& request, const DeleteSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSamplingRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSamplingRule(request), context);
 }
 
-void XRayClient::DeleteSamplingRuleAsyncHelper(const DeleteSamplingRuleRequest& request, const DeleteSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::DeleteSamplingRuleAsync(const DeleteSamplingRuleRequest& request, const DeleteSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSamplingRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientDeleteSamplingRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEncryptionConfigOutcome XRayClient::GetEncryptionConfig(const GetEncryptionConfigRequest& request) const
@@ -267,14 +267,14 @@ GetEncryptionConfigOutcomeCallable XRayClient::GetEncryptionConfigCallable(const
   return task->get_future();
 }
 
-void XRayClient::GetEncryptionConfigAsync(const GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetEncryptionConfigAsyncHelper(XRayClient const * const clientThis, const GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEncryptionConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEncryptionConfig(request), context);
 }
 
-void XRayClient::GetEncryptionConfigAsyncHelper(const GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetEncryptionConfigAsync(const GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEncryptionConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetEncryptionConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupOutcome XRayClient::GetGroup(const GetGroupRequest& request) const
@@ -292,14 +292,14 @@ GetGroupOutcomeCallable XRayClient::GetGroupCallable(const GetGroupRequest& requ
   return task->get_future();
 }
 
-void XRayClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetGroupAsyncHelper(XRayClient const * const clientThis, const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroup(request), context);
 }
 
-void XRayClient::GetGroupAsyncHelper(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupsOutcome XRayClient::GetGroups(const GetGroupsRequest& request) const
@@ -317,14 +317,14 @@ GetGroupsOutcomeCallable XRayClient::GetGroupsCallable(const GetGroupsRequest& r
   return task->get_future();
 }
 
-void XRayClient::GetGroupsAsync(const GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetGroupsAsyncHelper(XRayClient const * const clientThis, const GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroups(request), context);
 }
 
-void XRayClient::GetGroupsAsyncHelper(const GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetGroupsAsync(const GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInsightOutcome XRayClient::GetInsight(const GetInsightRequest& request) const
@@ -342,14 +342,14 @@ GetInsightOutcomeCallable XRayClient::GetInsightCallable(const GetInsightRequest
   return task->get_future();
 }
 
-void XRayClient::GetInsightAsync(const GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetInsightAsyncHelper(XRayClient const * const clientThis, const GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInsightAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInsight(request), context);
 }
 
-void XRayClient::GetInsightAsyncHelper(const GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetInsightAsync(const GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInsight(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetInsightAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInsightEventsOutcome XRayClient::GetInsightEvents(const GetInsightEventsRequest& request) const
@@ -367,14 +367,14 @@ GetInsightEventsOutcomeCallable XRayClient::GetInsightEventsCallable(const GetIn
   return task->get_future();
 }
 
-void XRayClient::GetInsightEventsAsync(const GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetInsightEventsAsyncHelper(XRayClient const * const clientThis, const GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInsightEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInsightEvents(request), context);
 }
 
-void XRayClient::GetInsightEventsAsyncHelper(const GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetInsightEventsAsync(const GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInsightEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetInsightEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInsightImpactGraphOutcome XRayClient::GetInsightImpactGraph(const GetInsightImpactGraphRequest& request) const
@@ -392,14 +392,14 @@ GetInsightImpactGraphOutcomeCallable XRayClient::GetInsightImpactGraphCallable(c
   return task->get_future();
 }
 
-void XRayClient::GetInsightImpactGraphAsync(const GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetInsightImpactGraphAsyncHelper(XRayClient const * const clientThis, const GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInsightImpactGraphAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInsightImpactGraph(request), context);
 }
 
-void XRayClient::GetInsightImpactGraphAsyncHelper(const GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetInsightImpactGraphAsync(const GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInsightImpactGraph(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetInsightImpactGraphAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInsightSummariesOutcome XRayClient::GetInsightSummaries(const GetInsightSummariesRequest& request) const
@@ -417,14 +417,14 @@ GetInsightSummariesOutcomeCallable XRayClient::GetInsightSummariesCallable(const
   return task->get_future();
 }
 
-void XRayClient::GetInsightSummariesAsync(const GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetInsightSummariesAsyncHelper(XRayClient const * const clientThis, const GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInsightSummariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInsightSummaries(request), context);
 }
 
-void XRayClient::GetInsightSummariesAsyncHelper(const GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetInsightSummariesAsync(const GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInsightSummaries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetInsightSummariesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSamplingRulesOutcome XRayClient::GetSamplingRules(const GetSamplingRulesRequest& request) const
@@ -442,14 +442,14 @@ GetSamplingRulesOutcomeCallable XRayClient::GetSamplingRulesCallable(const GetSa
   return task->get_future();
 }
 
-void XRayClient::GetSamplingRulesAsync(const GetSamplingRulesRequest& request, const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetSamplingRulesAsyncHelper(XRayClient const * const clientThis, const GetSamplingRulesRequest& request, const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSamplingRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSamplingRules(request), context);
 }
 
-void XRayClient::GetSamplingRulesAsyncHelper(const GetSamplingRulesRequest& request, const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetSamplingRulesAsync(const GetSamplingRulesRequest& request, const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSamplingRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetSamplingRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSamplingStatisticSummariesOutcome XRayClient::GetSamplingStatisticSummaries(const GetSamplingStatisticSummariesRequest& request) const
@@ -467,14 +467,14 @@ GetSamplingStatisticSummariesOutcomeCallable XRayClient::GetSamplingStatisticSum
   return task->get_future();
 }
 
-void XRayClient::GetSamplingStatisticSummariesAsync(const GetSamplingStatisticSummariesRequest& request, const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetSamplingStatisticSummariesAsyncHelper(XRayClient const * const clientThis, const GetSamplingStatisticSummariesRequest& request, const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSamplingStatisticSummariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSamplingStatisticSummaries(request), context);
 }
 
-void XRayClient::GetSamplingStatisticSummariesAsyncHelper(const GetSamplingStatisticSummariesRequest& request, const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetSamplingStatisticSummariesAsync(const GetSamplingStatisticSummariesRequest& request, const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSamplingStatisticSummaries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetSamplingStatisticSummariesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSamplingTargetsOutcome XRayClient::GetSamplingTargets(const GetSamplingTargetsRequest& request) const
@@ -492,14 +492,14 @@ GetSamplingTargetsOutcomeCallable XRayClient::GetSamplingTargetsCallable(const G
   return task->get_future();
 }
 
-void XRayClient::GetSamplingTargetsAsync(const GetSamplingTargetsRequest& request, const GetSamplingTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetSamplingTargetsAsyncHelper(XRayClient const * const clientThis, const GetSamplingTargetsRequest& request, const GetSamplingTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSamplingTargetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSamplingTargets(request), context);
 }
 
-void XRayClient::GetSamplingTargetsAsyncHelper(const GetSamplingTargetsRequest& request, const GetSamplingTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetSamplingTargetsAsync(const GetSamplingTargetsRequest& request, const GetSamplingTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSamplingTargets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetSamplingTargetsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceGraphOutcome XRayClient::GetServiceGraph(const GetServiceGraphRequest& request) const
@@ -517,14 +517,14 @@ GetServiceGraphOutcomeCallable XRayClient::GetServiceGraphCallable(const GetServ
   return task->get_future();
 }
 
-void XRayClient::GetServiceGraphAsync(const GetServiceGraphRequest& request, const GetServiceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetServiceGraphAsyncHelper(XRayClient const * const clientThis, const GetServiceGraphRequest& request, const GetServiceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceGraphAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServiceGraph(request), context);
 }
 
-void XRayClient::GetServiceGraphAsyncHelper(const GetServiceGraphRequest& request, const GetServiceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetServiceGraphAsync(const GetServiceGraphRequest& request, const GetServiceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServiceGraph(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetServiceGraphAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTimeSeriesServiceStatisticsOutcome XRayClient::GetTimeSeriesServiceStatistics(const GetTimeSeriesServiceStatisticsRequest& request) const
@@ -542,14 +542,14 @@ GetTimeSeriesServiceStatisticsOutcomeCallable XRayClient::GetTimeSeriesServiceSt
   return task->get_future();
 }
 
-void XRayClient::GetTimeSeriesServiceStatisticsAsync(const GetTimeSeriesServiceStatisticsRequest& request, const GetTimeSeriesServiceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetTimeSeriesServiceStatisticsAsyncHelper(XRayClient const * const clientThis, const GetTimeSeriesServiceStatisticsRequest& request, const GetTimeSeriesServiceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTimeSeriesServiceStatisticsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTimeSeriesServiceStatistics(request), context);
 }
 
-void XRayClient::GetTimeSeriesServiceStatisticsAsyncHelper(const GetTimeSeriesServiceStatisticsRequest& request, const GetTimeSeriesServiceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetTimeSeriesServiceStatisticsAsync(const GetTimeSeriesServiceStatisticsRequest& request, const GetTimeSeriesServiceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTimeSeriesServiceStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetTimeSeriesServiceStatisticsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTraceGraphOutcome XRayClient::GetTraceGraph(const GetTraceGraphRequest& request) const
@@ -567,14 +567,14 @@ GetTraceGraphOutcomeCallable XRayClient::GetTraceGraphCallable(const GetTraceGra
   return task->get_future();
 }
 
-void XRayClient::GetTraceGraphAsync(const GetTraceGraphRequest& request, const GetTraceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetTraceGraphAsyncHelper(XRayClient const * const clientThis, const GetTraceGraphRequest& request, const GetTraceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTraceGraphAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTraceGraph(request), context);
 }
 
-void XRayClient::GetTraceGraphAsyncHelper(const GetTraceGraphRequest& request, const GetTraceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetTraceGraphAsync(const GetTraceGraphRequest& request, const GetTraceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTraceGraph(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetTraceGraphAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTraceSummariesOutcome XRayClient::GetTraceSummaries(const GetTraceSummariesRequest& request) const
@@ -592,14 +592,14 @@ GetTraceSummariesOutcomeCallable XRayClient::GetTraceSummariesCallable(const Get
   return task->get_future();
 }
 
-void XRayClient::GetTraceSummariesAsync(const GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientGetTraceSummariesAsyncHelper(XRayClient const * const clientThis, const GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTraceSummariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTraceSummaries(request), context);
 }
 
-void XRayClient::GetTraceSummariesAsyncHelper(const GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::GetTraceSummariesAsync(const GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTraceSummaries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientGetTraceSummariesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome XRayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -617,14 +617,14 @@ ListTagsForResourceOutcomeCallable XRayClient::ListTagsForResourceCallable(const
   return task->get_future();
 }
 
-void XRayClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientListTagsForResourceAsyncHelper(XRayClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void XRayClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEncryptionConfigOutcome XRayClient::PutEncryptionConfig(const PutEncryptionConfigRequest& request) const
@@ -642,14 +642,14 @@ PutEncryptionConfigOutcomeCallable XRayClient::PutEncryptionConfigCallable(const
   return task->get_future();
 }
 
-void XRayClient::PutEncryptionConfigAsync(const PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientPutEncryptionConfigAsyncHelper(XRayClient const * const clientThis, const PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEncryptionConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEncryptionConfig(request), context);
 }
 
-void XRayClient::PutEncryptionConfigAsyncHelper(const PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::PutEncryptionConfigAsync(const PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEncryptionConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientPutEncryptionConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 PutTelemetryRecordsOutcome XRayClient::PutTelemetryRecords(const PutTelemetryRecordsRequest& request) const
@@ -667,14 +667,14 @@ PutTelemetryRecordsOutcomeCallable XRayClient::PutTelemetryRecordsCallable(const
   return task->get_future();
 }
 
-void XRayClient::PutTelemetryRecordsAsync(const PutTelemetryRecordsRequest& request, const PutTelemetryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientPutTelemetryRecordsAsyncHelper(XRayClient const * const clientThis, const PutTelemetryRecordsRequest& request, const PutTelemetryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutTelemetryRecordsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutTelemetryRecords(request), context);
 }
 
-void XRayClient::PutTelemetryRecordsAsyncHelper(const PutTelemetryRecordsRequest& request, const PutTelemetryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::PutTelemetryRecordsAsync(const PutTelemetryRecordsRequest& request, const PutTelemetryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutTelemetryRecords(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientPutTelemetryRecordsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutTraceSegmentsOutcome XRayClient::PutTraceSegments(const PutTraceSegmentsRequest& request) const
@@ -692,14 +692,14 @@ PutTraceSegmentsOutcomeCallable XRayClient::PutTraceSegmentsCallable(const PutTr
   return task->get_future();
 }
 
-void XRayClient::PutTraceSegmentsAsync(const PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientPutTraceSegmentsAsyncHelper(XRayClient const * const clientThis, const PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutTraceSegmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutTraceSegments(request), context);
 }
 
-void XRayClient::PutTraceSegmentsAsyncHelper(const PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::PutTraceSegmentsAsync(const PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutTraceSegments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientPutTraceSegmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome XRayClient::TagResource(const TagResourceRequest& request) const
@@ -717,14 +717,14 @@ TagResourceOutcomeCallable XRayClient::TagResourceCallable(const TagResourceRequ
   return task->get_future();
 }
 
-void XRayClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientTagResourceAsyncHelper(XRayClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void XRayClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome XRayClient::UntagResource(const UntagResourceRequest& request) const
@@ -742,14 +742,14 @@ UntagResourceOutcomeCallable XRayClient::UntagResourceCallable(const UntagResour
   return task->get_future();
 }
 
-void XRayClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientUntagResourceAsyncHelper(XRayClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void XRayClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGroupOutcome XRayClient::UpdateGroup(const UpdateGroupRequest& request) const
@@ -767,14 +767,14 @@ UpdateGroupOutcomeCallable XRayClient::UpdateGroupCallable(const UpdateGroupRequ
   return task->get_future();
 }
 
-void XRayClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientUpdateGroupAsyncHelper(XRayClient const * const clientThis, const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGroup(request), context);
 }
 
-void XRayClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientUpdateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSamplingRuleOutcome XRayClient::UpdateSamplingRule(const UpdateSamplingRuleRequest& request) const
@@ -792,13 +792,13 @@ UpdateSamplingRuleOutcomeCallable XRayClient::UpdateSamplingRuleCallable(const U
   return task->get_future();
 }
 
-void XRayClient::UpdateSamplingRuleAsync(const UpdateSamplingRuleRequest& request, const UpdateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClientUpdateSamplingRuleAsyncHelper(XRayClient const * const clientThis, const UpdateSamplingRuleRequest& request, const UpdateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSamplingRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSamplingRule(request), context);
 }
 
-void XRayClient::UpdateSamplingRuleAsyncHelper(const UpdateSamplingRuleRequest& request, const UpdateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void XRayClient::UpdateSamplingRuleAsync(const UpdateSamplingRuleRequest& request, const UpdateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSamplingRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ XRayClientUpdateSamplingRuleAsyncHelper( this, request, handler, context ); } );
 }
 

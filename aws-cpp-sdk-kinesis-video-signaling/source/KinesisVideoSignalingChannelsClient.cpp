@@ -117,14 +117,14 @@ GetIceServerConfigOutcomeCallable KinesisVideoSignalingChannelsClient::GetIceSer
   return task->get_future();
 }
 
-void KinesisVideoSignalingChannelsClient::GetIceServerConfigAsync(const GetIceServerConfigRequest& request, const GetIceServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoSignalingChannelsClientGetIceServerConfigAsyncHelper(KinesisVideoSignalingChannelsClient const * const clientThis, const GetIceServerConfigRequest& request, const GetIceServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIceServerConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIceServerConfig(request), context);
 }
 
-void KinesisVideoSignalingChannelsClient::GetIceServerConfigAsyncHelper(const GetIceServerConfigRequest& request, const GetIceServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoSignalingChannelsClient::GetIceServerConfigAsync(const GetIceServerConfigRequest& request, const GetIceServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIceServerConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoSignalingChannelsClientGetIceServerConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 SendAlexaOfferToMasterOutcome KinesisVideoSignalingChannelsClient::SendAlexaOfferToMaster(const SendAlexaOfferToMasterRequest& request) const
@@ -142,13 +142,13 @@ SendAlexaOfferToMasterOutcomeCallable KinesisVideoSignalingChannelsClient::SendA
   return task->get_future();
 }
 
-void KinesisVideoSignalingChannelsClient::SendAlexaOfferToMasterAsync(const SendAlexaOfferToMasterRequest& request, const SendAlexaOfferToMasterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoSignalingChannelsClientSendAlexaOfferToMasterAsyncHelper(KinesisVideoSignalingChannelsClient const * const clientThis, const SendAlexaOfferToMasterRequest& request, const SendAlexaOfferToMasterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendAlexaOfferToMasterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendAlexaOfferToMaster(request), context);
 }
 
-void KinesisVideoSignalingChannelsClient::SendAlexaOfferToMasterAsyncHelper(const SendAlexaOfferToMasterRequest& request, const SendAlexaOfferToMasterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoSignalingChannelsClient::SendAlexaOfferToMasterAsync(const SendAlexaOfferToMasterRequest& request, const SendAlexaOfferToMasterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendAlexaOfferToMaster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoSignalingChannelsClientSendAlexaOfferToMasterAsyncHelper( this, request, handler, context ); } );
 }
 

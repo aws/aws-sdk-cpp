@@ -144,14 +144,14 @@ CreateReplicationSetOutcomeCallable SSMIncidentsClient::CreateReplicationSetCall
   return task->get_future();
 }
 
-void SSMIncidentsClient::CreateReplicationSetAsync(const CreateReplicationSetRequest& request, const CreateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientCreateReplicationSetAsyncHelper(SSMIncidentsClient const * const clientThis, const CreateReplicationSetRequest& request, const CreateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReplicationSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateReplicationSet(request), context);
 }
 
-void SSMIncidentsClient::CreateReplicationSetAsyncHelper(const CreateReplicationSetRequest& request, const CreateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::CreateReplicationSetAsync(const CreateReplicationSetRequest& request, const CreateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateReplicationSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientCreateReplicationSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResponsePlanOutcome SSMIncidentsClient::CreateResponsePlan(const CreateResponsePlanRequest& request) const
@@ -169,14 +169,14 @@ CreateResponsePlanOutcomeCallable SSMIncidentsClient::CreateResponsePlanCallable
   return task->get_future();
 }
 
-void SSMIncidentsClient::CreateResponsePlanAsync(const CreateResponsePlanRequest& request, const CreateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientCreateResponsePlanAsyncHelper(SSMIncidentsClient const * const clientThis, const CreateResponsePlanRequest& request, const CreateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResponsePlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResponsePlan(request), context);
 }
 
-void SSMIncidentsClient::CreateResponsePlanAsyncHelper(const CreateResponsePlanRequest& request, const CreateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::CreateResponsePlanAsync(const CreateResponsePlanRequest& request, const CreateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResponsePlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientCreateResponsePlanAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTimelineEventOutcome SSMIncidentsClient::CreateTimelineEvent(const CreateTimelineEventRequest& request) const
@@ -194,14 +194,14 @@ CreateTimelineEventOutcomeCallable SSMIncidentsClient::CreateTimelineEventCallab
   return task->get_future();
 }
 
-void SSMIncidentsClient::CreateTimelineEventAsync(const CreateTimelineEventRequest& request, const CreateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientCreateTimelineEventAsyncHelper(SSMIncidentsClient const * const clientThis, const CreateTimelineEventRequest& request, const CreateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTimelineEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTimelineEvent(request), context);
 }
 
-void SSMIncidentsClient::CreateTimelineEventAsyncHelper(const CreateTimelineEventRequest& request, const CreateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::CreateTimelineEventAsync(const CreateTimelineEventRequest& request, const CreateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTimelineEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientCreateTimelineEventAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIncidentRecordOutcome SSMIncidentsClient::DeleteIncidentRecord(const DeleteIncidentRecordRequest& request) const
@@ -219,14 +219,14 @@ DeleteIncidentRecordOutcomeCallable SSMIncidentsClient::DeleteIncidentRecordCall
   return task->get_future();
 }
 
-void SSMIncidentsClient::DeleteIncidentRecordAsync(const DeleteIncidentRecordRequest& request, const DeleteIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientDeleteIncidentRecordAsyncHelper(SSMIncidentsClient const * const clientThis, const DeleteIncidentRecordRequest& request, const DeleteIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIncidentRecordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIncidentRecord(request), context);
 }
 
-void SSMIncidentsClient::DeleteIncidentRecordAsyncHelper(const DeleteIncidentRecordRequest& request, const DeleteIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::DeleteIncidentRecordAsync(const DeleteIncidentRecordRequest& request, const DeleteIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIncidentRecord(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientDeleteIncidentRecordAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteReplicationSetOutcome SSMIncidentsClient::DeleteReplicationSet(const DeleteReplicationSetRequest& request) const
@@ -249,14 +249,14 @@ DeleteReplicationSetOutcomeCallable SSMIncidentsClient::DeleteReplicationSetCall
   return task->get_future();
 }
 
-void SSMIncidentsClient::DeleteReplicationSetAsync(const DeleteReplicationSetRequest& request, const DeleteReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientDeleteReplicationSetAsyncHelper(SSMIncidentsClient const * const clientThis, const DeleteReplicationSetRequest& request, const DeleteReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReplicationSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReplicationSet(request), context);
 }
 
-void SSMIncidentsClient::DeleteReplicationSetAsyncHelper(const DeleteReplicationSetRequest& request, const DeleteReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::DeleteReplicationSetAsync(const DeleteReplicationSetRequest& request, const DeleteReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReplicationSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientDeleteReplicationSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome SSMIncidentsClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -274,14 +274,14 @@ DeleteResourcePolicyOutcomeCallable SSMIncidentsClient::DeleteResourcePolicyCall
   return task->get_future();
 }
 
-void SSMIncidentsClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientDeleteResourcePolicyAsyncHelper(SSMIncidentsClient const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void SSMIncidentsClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResponsePlanOutcome SSMIncidentsClient::DeleteResponsePlan(const DeleteResponsePlanRequest& request) const
@@ -299,14 +299,14 @@ DeleteResponsePlanOutcomeCallable SSMIncidentsClient::DeleteResponsePlanCallable
   return task->get_future();
 }
 
-void SSMIncidentsClient::DeleteResponsePlanAsync(const DeleteResponsePlanRequest& request, const DeleteResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientDeleteResponsePlanAsyncHelper(SSMIncidentsClient const * const clientThis, const DeleteResponsePlanRequest& request, const DeleteResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResponsePlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResponsePlan(request), context);
 }
 
-void SSMIncidentsClient::DeleteResponsePlanAsyncHelper(const DeleteResponsePlanRequest& request, const DeleteResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::DeleteResponsePlanAsync(const DeleteResponsePlanRequest& request, const DeleteResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResponsePlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientDeleteResponsePlanAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTimelineEventOutcome SSMIncidentsClient::DeleteTimelineEvent(const DeleteTimelineEventRequest& request) const
@@ -324,14 +324,14 @@ DeleteTimelineEventOutcomeCallable SSMIncidentsClient::DeleteTimelineEventCallab
   return task->get_future();
 }
 
-void SSMIncidentsClient::DeleteTimelineEventAsync(const DeleteTimelineEventRequest& request, const DeleteTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientDeleteTimelineEventAsyncHelper(SSMIncidentsClient const * const clientThis, const DeleteTimelineEventRequest& request, const DeleteTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTimelineEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTimelineEvent(request), context);
 }
 
-void SSMIncidentsClient::DeleteTimelineEventAsyncHelper(const DeleteTimelineEventRequest& request, const DeleteTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::DeleteTimelineEventAsync(const DeleteTimelineEventRequest& request, const DeleteTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTimelineEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientDeleteTimelineEventAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIncidentRecordOutcome SSMIncidentsClient::GetIncidentRecord(const GetIncidentRecordRequest& request) const
@@ -354,14 +354,14 @@ GetIncidentRecordOutcomeCallable SSMIncidentsClient::GetIncidentRecordCallable(c
   return task->get_future();
 }
 
-void SSMIncidentsClient::GetIncidentRecordAsync(const GetIncidentRecordRequest& request, const GetIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientGetIncidentRecordAsyncHelper(SSMIncidentsClient const * const clientThis, const GetIncidentRecordRequest& request, const GetIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIncidentRecordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIncidentRecord(request), context);
 }
 
-void SSMIncidentsClient::GetIncidentRecordAsyncHelper(const GetIncidentRecordRequest& request, const GetIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::GetIncidentRecordAsync(const GetIncidentRecordRequest& request, const GetIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIncidentRecord(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientGetIncidentRecordAsyncHelper( this, request, handler, context ); } );
 }
 
 GetReplicationSetOutcome SSMIncidentsClient::GetReplicationSet(const GetReplicationSetRequest& request) const
@@ -384,14 +384,14 @@ GetReplicationSetOutcomeCallable SSMIncidentsClient::GetReplicationSetCallable(c
   return task->get_future();
 }
 
-void SSMIncidentsClient::GetReplicationSetAsync(const GetReplicationSetRequest& request, const GetReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientGetReplicationSetAsyncHelper(SSMIncidentsClient const * const clientThis, const GetReplicationSetRequest& request, const GetReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReplicationSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetReplicationSet(request), context);
 }
 
-void SSMIncidentsClient::GetReplicationSetAsyncHelper(const GetReplicationSetRequest& request, const GetReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::GetReplicationSetAsync(const GetReplicationSetRequest& request, const GetReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetReplicationSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientGetReplicationSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcePoliciesOutcome SSMIncidentsClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
@@ -414,14 +414,14 @@ GetResourcePoliciesOutcomeCallable SSMIncidentsClient::GetResourcePoliciesCallab
   return task->get_future();
 }
 
-void SSMIncidentsClient::GetResourcePoliciesAsync(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientGetResourcePoliciesAsyncHelper(SSMIncidentsClient const * const clientThis, const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourcePolicies(request), context);
 }
 
-void SSMIncidentsClient::GetResourcePoliciesAsyncHelper(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::GetResourcePoliciesAsync(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourcePolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientGetResourcePoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResponsePlanOutcome SSMIncidentsClient::GetResponsePlan(const GetResponsePlanRequest& request) const
@@ -444,14 +444,14 @@ GetResponsePlanOutcomeCallable SSMIncidentsClient::GetResponsePlanCallable(const
   return task->get_future();
 }
 
-void SSMIncidentsClient::GetResponsePlanAsync(const GetResponsePlanRequest& request, const GetResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientGetResponsePlanAsyncHelper(SSMIncidentsClient const * const clientThis, const GetResponsePlanRequest& request, const GetResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResponsePlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResponsePlan(request), context);
 }
 
-void SSMIncidentsClient::GetResponsePlanAsyncHelper(const GetResponsePlanRequest& request, const GetResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::GetResponsePlanAsync(const GetResponsePlanRequest& request, const GetResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResponsePlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientGetResponsePlanAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTimelineEventOutcome SSMIncidentsClient::GetTimelineEvent(const GetTimelineEventRequest& request) const
@@ -479,14 +479,14 @@ GetTimelineEventOutcomeCallable SSMIncidentsClient::GetTimelineEventCallable(con
   return task->get_future();
 }
 
-void SSMIncidentsClient::GetTimelineEventAsync(const GetTimelineEventRequest& request, const GetTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientGetTimelineEventAsyncHelper(SSMIncidentsClient const * const clientThis, const GetTimelineEventRequest& request, const GetTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTimelineEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTimelineEvent(request), context);
 }
 
-void SSMIncidentsClient::GetTimelineEventAsyncHelper(const GetTimelineEventRequest& request, const GetTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::GetTimelineEventAsync(const GetTimelineEventRequest& request, const GetTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTimelineEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientGetTimelineEventAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIncidentRecordsOutcome SSMIncidentsClient::ListIncidentRecords(const ListIncidentRecordsRequest& request) const
@@ -504,14 +504,14 @@ ListIncidentRecordsOutcomeCallable SSMIncidentsClient::ListIncidentRecordsCallab
   return task->get_future();
 }
 
-void SSMIncidentsClient::ListIncidentRecordsAsync(const ListIncidentRecordsRequest& request, const ListIncidentRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientListIncidentRecordsAsyncHelper(SSMIncidentsClient const * const clientThis, const ListIncidentRecordsRequest& request, const ListIncidentRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIncidentRecordsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIncidentRecords(request), context);
 }
 
-void SSMIncidentsClient::ListIncidentRecordsAsyncHelper(const ListIncidentRecordsRequest& request, const ListIncidentRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::ListIncidentRecordsAsync(const ListIncidentRecordsRequest& request, const ListIncidentRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIncidentRecords(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientListIncidentRecordsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRelatedItemsOutcome SSMIncidentsClient::ListRelatedItems(const ListRelatedItemsRequest& request) const
@@ -529,14 +529,14 @@ ListRelatedItemsOutcomeCallable SSMIncidentsClient::ListRelatedItemsCallable(con
   return task->get_future();
 }
 
-void SSMIncidentsClient::ListRelatedItemsAsync(const ListRelatedItemsRequest& request, const ListRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientListRelatedItemsAsyncHelper(SSMIncidentsClient const * const clientThis, const ListRelatedItemsRequest& request, const ListRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRelatedItemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRelatedItems(request), context);
 }
 
-void SSMIncidentsClient::ListRelatedItemsAsyncHelper(const ListRelatedItemsRequest& request, const ListRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::ListRelatedItemsAsync(const ListRelatedItemsRequest& request, const ListRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRelatedItems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientListRelatedItemsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReplicationSetsOutcome SSMIncidentsClient::ListReplicationSets(const ListReplicationSetsRequest& request) const
@@ -554,14 +554,14 @@ ListReplicationSetsOutcomeCallable SSMIncidentsClient::ListReplicationSetsCallab
   return task->get_future();
 }
 
-void SSMIncidentsClient::ListReplicationSetsAsync(const ListReplicationSetsRequest& request, const ListReplicationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientListReplicationSetsAsyncHelper(SSMIncidentsClient const * const clientThis, const ListReplicationSetsRequest& request, const ListReplicationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReplicationSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReplicationSets(request), context);
 }
 
-void SSMIncidentsClient::ListReplicationSetsAsyncHelper(const ListReplicationSetsRequest& request, const ListReplicationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::ListReplicationSetsAsync(const ListReplicationSetsRequest& request, const ListReplicationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReplicationSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientListReplicationSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResponsePlansOutcome SSMIncidentsClient::ListResponsePlans(const ListResponsePlansRequest& request) const
@@ -579,14 +579,14 @@ ListResponsePlansOutcomeCallable SSMIncidentsClient::ListResponsePlansCallable(c
   return task->get_future();
 }
 
-void SSMIncidentsClient::ListResponsePlansAsync(const ListResponsePlansRequest& request, const ListResponsePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientListResponsePlansAsyncHelper(SSMIncidentsClient const * const clientThis, const ListResponsePlansRequest& request, const ListResponsePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResponsePlansAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResponsePlans(request), context);
 }
 
-void SSMIncidentsClient::ListResponsePlansAsyncHelper(const ListResponsePlansRequest& request, const ListResponsePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::ListResponsePlansAsync(const ListResponsePlansRequest& request, const ListResponsePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResponsePlans(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientListResponsePlansAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome SSMIncidentsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -610,14 +610,14 @@ ListTagsForResourceOutcomeCallable SSMIncidentsClient::ListTagsForResourceCallab
   return task->get_future();
 }
 
-void SSMIncidentsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientListTagsForResourceAsyncHelper(SSMIncidentsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void SSMIncidentsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTimelineEventsOutcome SSMIncidentsClient::ListTimelineEvents(const ListTimelineEventsRequest& request) const
@@ -635,14 +635,14 @@ ListTimelineEventsOutcomeCallable SSMIncidentsClient::ListTimelineEventsCallable
   return task->get_future();
 }
 
-void SSMIncidentsClient::ListTimelineEventsAsync(const ListTimelineEventsRequest& request, const ListTimelineEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientListTimelineEventsAsyncHelper(SSMIncidentsClient const * const clientThis, const ListTimelineEventsRequest& request, const ListTimelineEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTimelineEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTimelineEvents(request), context);
 }
 
-void SSMIncidentsClient::ListTimelineEventsAsyncHelper(const ListTimelineEventsRequest& request, const ListTimelineEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::ListTimelineEventsAsync(const ListTimelineEventsRequest& request, const ListTimelineEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTimelineEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientListTimelineEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourcePolicyOutcome SSMIncidentsClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -660,14 +660,14 @@ PutResourcePolicyOutcomeCallable SSMIncidentsClient::PutResourcePolicyCallable(c
   return task->get_future();
 }
 
-void SSMIncidentsClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientPutResourcePolicyAsyncHelper(SSMIncidentsClient const * const clientThis, const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourcePolicy(request), context);
 }
 
-void SSMIncidentsClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientPutResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 StartIncidentOutcome SSMIncidentsClient::StartIncident(const StartIncidentRequest& request) const
@@ -685,14 +685,14 @@ StartIncidentOutcomeCallable SSMIncidentsClient::StartIncidentCallable(const Sta
   return task->get_future();
 }
 
-void SSMIncidentsClient::StartIncidentAsync(const StartIncidentRequest& request, const StartIncidentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientStartIncidentAsyncHelper(SSMIncidentsClient const * const clientThis, const StartIncidentRequest& request, const StartIncidentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartIncidentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartIncident(request), context);
 }
 
-void SSMIncidentsClient::StartIncidentAsyncHelper(const StartIncidentRequest& request, const StartIncidentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::StartIncidentAsync(const StartIncidentRequest& request, const StartIncidentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartIncident(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientStartIncidentAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome SSMIncidentsClient::TagResource(const TagResourceRequest& request) const
@@ -716,14 +716,14 @@ TagResourceOutcomeCallable SSMIncidentsClient::TagResourceCallable(const TagReso
   return task->get_future();
 }
 
-void SSMIncidentsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientTagResourceAsyncHelper(SSMIncidentsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void SSMIncidentsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome SSMIncidentsClient::UntagResource(const UntagResourceRequest& request) const
@@ -752,14 +752,14 @@ UntagResourceOutcomeCallable SSMIncidentsClient::UntagResourceCallable(const Unt
   return task->get_future();
 }
 
-void SSMIncidentsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientUntagResourceAsyncHelper(SSMIncidentsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void SSMIncidentsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDeletionProtectionOutcome SSMIncidentsClient::UpdateDeletionProtection(const UpdateDeletionProtectionRequest& request) const
@@ -777,14 +777,14 @@ UpdateDeletionProtectionOutcomeCallable SSMIncidentsClient::UpdateDeletionProtec
   return task->get_future();
 }
 
-void SSMIncidentsClient::UpdateDeletionProtectionAsync(const UpdateDeletionProtectionRequest& request, const UpdateDeletionProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientUpdateDeletionProtectionAsyncHelper(SSMIncidentsClient const * const clientThis, const UpdateDeletionProtectionRequest& request, const UpdateDeletionProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeletionProtectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDeletionProtection(request), context);
 }
 
-void SSMIncidentsClient::UpdateDeletionProtectionAsyncHelper(const UpdateDeletionProtectionRequest& request, const UpdateDeletionProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::UpdateDeletionProtectionAsync(const UpdateDeletionProtectionRequest& request, const UpdateDeletionProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDeletionProtection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientUpdateDeletionProtectionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateIncidentRecordOutcome SSMIncidentsClient::UpdateIncidentRecord(const UpdateIncidentRecordRequest& request) const
@@ -802,14 +802,14 @@ UpdateIncidentRecordOutcomeCallable SSMIncidentsClient::UpdateIncidentRecordCall
   return task->get_future();
 }
 
-void SSMIncidentsClient::UpdateIncidentRecordAsync(const UpdateIncidentRecordRequest& request, const UpdateIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientUpdateIncidentRecordAsyncHelper(SSMIncidentsClient const * const clientThis, const UpdateIncidentRecordRequest& request, const UpdateIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIncidentRecordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateIncidentRecord(request), context);
 }
 
-void SSMIncidentsClient::UpdateIncidentRecordAsyncHelper(const UpdateIncidentRecordRequest& request, const UpdateIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::UpdateIncidentRecordAsync(const UpdateIncidentRecordRequest& request, const UpdateIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateIncidentRecord(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientUpdateIncidentRecordAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRelatedItemsOutcome SSMIncidentsClient::UpdateRelatedItems(const UpdateRelatedItemsRequest& request) const
@@ -827,14 +827,14 @@ UpdateRelatedItemsOutcomeCallable SSMIncidentsClient::UpdateRelatedItemsCallable
   return task->get_future();
 }
 
-void SSMIncidentsClient::UpdateRelatedItemsAsync(const UpdateRelatedItemsRequest& request, const UpdateRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientUpdateRelatedItemsAsyncHelper(SSMIncidentsClient const * const clientThis, const UpdateRelatedItemsRequest& request, const UpdateRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRelatedItemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRelatedItems(request), context);
 }
 
-void SSMIncidentsClient::UpdateRelatedItemsAsyncHelper(const UpdateRelatedItemsRequest& request, const UpdateRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::UpdateRelatedItemsAsync(const UpdateRelatedItemsRequest& request, const UpdateRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRelatedItems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientUpdateRelatedItemsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateReplicationSetOutcome SSMIncidentsClient::UpdateReplicationSet(const UpdateReplicationSetRequest& request) const
@@ -852,14 +852,14 @@ UpdateReplicationSetOutcomeCallable SSMIncidentsClient::UpdateReplicationSetCall
   return task->get_future();
 }
 
-void SSMIncidentsClient::UpdateReplicationSetAsync(const UpdateReplicationSetRequest& request, const UpdateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientUpdateReplicationSetAsyncHelper(SSMIncidentsClient const * const clientThis, const UpdateReplicationSetRequest& request, const UpdateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReplicationSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateReplicationSet(request), context);
 }
 
-void SSMIncidentsClient::UpdateReplicationSetAsyncHelper(const UpdateReplicationSetRequest& request, const UpdateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::UpdateReplicationSetAsync(const UpdateReplicationSetRequest& request, const UpdateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateReplicationSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientUpdateReplicationSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateResponsePlanOutcome SSMIncidentsClient::UpdateResponsePlan(const UpdateResponsePlanRequest& request) const
@@ -877,14 +877,14 @@ UpdateResponsePlanOutcomeCallable SSMIncidentsClient::UpdateResponsePlanCallable
   return task->get_future();
 }
 
-void SSMIncidentsClient::UpdateResponsePlanAsync(const UpdateResponsePlanRequest& request, const UpdateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientUpdateResponsePlanAsyncHelper(SSMIncidentsClient const * const clientThis, const UpdateResponsePlanRequest& request, const UpdateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResponsePlanAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateResponsePlan(request), context);
 }
 
-void SSMIncidentsClient::UpdateResponsePlanAsyncHelper(const UpdateResponsePlanRequest& request, const UpdateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::UpdateResponsePlanAsync(const UpdateResponsePlanRequest& request, const UpdateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateResponsePlan(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientUpdateResponsePlanAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTimelineEventOutcome SSMIncidentsClient::UpdateTimelineEvent(const UpdateTimelineEventRequest& request) const
@@ -902,13 +902,13 @@ UpdateTimelineEventOutcomeCallable SSMIncidentsClient::UpdateTimelineEventCallab
   return task->get_future();
 }
 
-void SSMIncidentsClient::UpdateTimelineEventAsync(const UpdateTimelineEventRequest& request, const UpdateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClientUpdateTimelineEventAsyncHelper(SSMIncidentsClient const * const clientThis, const UpdateTimelineEventRequest& request, const UpdateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTimelineEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTimelineEvent(request), context);
 }
 
-void SSMIncidentsClient::UpdateTimelineEventAsyncHelper(const UpdateTimelineEventRequest& request, const UpdateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSMIncidentsClient::UpdateTimelineEventAsync(const UpdateTimelineEventRequest& request, const UpdateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTimelineEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSMIncidentsClientUpdateTimelineEventAsyncHelper( this, request, handler, context ); } );
 }
 

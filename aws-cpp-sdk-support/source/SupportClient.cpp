@@ -128,14 +128,14 @@ AddAttachmentsToSetOutcomeCallable SupportClient::AddAttachmentsToSetCallable(co
   return task->get_future();
 }
 
-void SupportClient::AddAttachmentsToSetAsync(const AddAttachmentsToSetRequest& request, const AddAttachmentsToSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientAddAttachmentsToSetAsyncHelper(SupportClient const * const clientThis, const AddAttachmentsToSetRequest& request, const AddAttachmentsToSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddAttachmentsToSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddAttachmentsToSet(request), context);
 }
 
-void SupportClient::AddAttachmentsToSetAsyncHelper(const AddAttachmentsToSetRequest& request, const AddAttachmentsToSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::AddAttachmentsToSetAsync(const AddAttachmentsToSetRequest& request, const AddAttachmentsToSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddAttachmentsToSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientAddAttachmentsToSetAsyncHelper( this, request, handler, context ); } );
 }
 
 AddCommunicationToCaseOutcome SupportClient::AddCommunicationToCase(const AddCommunicationToCaseRequest& request) const
@@ -152,14 +152,14 @@ AddCommunicationToCaseOutcomeCallable SupportClient::AddCommunicationToCaseCalla
   return task->get_future();
 }
 
-void SupportClient::AddCommunicationToCaseAsync(const AddCommunicationToCaseRequest& request, const AddCommunicationToCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientAddCommunicationToCaseAsyncHelper(SupportClient const * const clientThis, const AddCommunicationToCaseRequest& request, const AddCommunicationToCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddCommunicationToCaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddCommunicationToCase(request), context);
 }
 
-void SupportClient::AddCommunicationToCaseAsyncHelper(const AddCommunicationToCaseRequest& request, const AddCommunicationToCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::AddCommunicationToCaseAsync(const AddCommunicationToCaseRequest& request, const AddCommunicationToCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddCommunicationToCase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientAddCommunicationToCaseAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCaseOutcome SupportClient::CreateCase(const CreateCaseRequest& request) const
@@ -176,14 +176,14 @@ CreateCaseOutcomeCallable SupportClient::CreateCaseCallable(const CreateCaseRequ
   return task->get_future();
 }
 
-void SupportClient::CreateCaseAsync(const CreateCaseRequest& request, const CreateCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientCreateCaseAsyncHelper(SupportClient const * const clientThis, const CreateCaseRequest& request, const CreateCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCase(request), context);
 }
 
-void SupportClient::CreateCaseAsyncHelper(const CreateCaseRequest& request, const CreateCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::CreateCaseAsync(const CreateCaseRequest& request, const CreateCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientCreateCaseAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAttachmentOutcome SupportClient::DescribeAttachment(const DescribeAttachmentRequest& request) const
@@ -200,14 +200,14 @@ DescribeAttachmentOutcomeCallable SupportClient::DescribeAttachmentCallable(cons
   return task->get_future();
 }
 
-void SupportClient::DescribeAttachmentAsync(const DescribeAttachmentRequest& request, const DescribeAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientDescribeAttachmentAsyncHelper(SupportClient const * const clientThis, const DescribeAttachmentRequest& request, const DescribeAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAttachmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAttachment(request), context);
 }
 
-void SupportClient::DescribeAttachmentAsyncHelper(const DescribeAttachmentRequest& request, const DescribeAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::DescribeAttachmentAsync(const DescribeAttachmentRequest& request, const DescribeAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAttachment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientDescribeAttachmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCasesOutcome SupportClient::DescribeCases(const DescribeCasesRequest& request) const
@@ -224,14 +224,14 @@ DescribeCasesOutcomeCallable SupportClient::DescribeCasesCallable(const Describe
   return task->get_future();
 }
 
-void SupportClient::DescribeCasesAsync(const DescribeCasesRequest& request, const DescribeCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientDescribeCasesAsyncHelper(SupportClient const * const clientThis, const DescribeCasesRequest& request, const DescribeCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCases(request), context);
 }
 
-void SupportClient::DescribeCasesAsyncHelper(const DescribeCasesRequest& request, const DescribeCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::DescribeCasesAsync(const DescribeCasesRequest& request, const DescribeCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientDescribeCasesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCommunicationsOutcome SupportClient::DescribeCommunications(const DescribeCommunicationsRequest& request) const
@@ -248,14 +248,14 @@ DescribeCommunicationsOutcomeCallable SupportClient::DescribeCommunicationsCalla
   return task->get_future();
 }
 
-void SupportClient::DescribeCommunicationsAsync(const DescribeCommunicationsRequest& request, const DescribeCommunicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientDescribeCommunicationsAsyncHelper(SupportClient const * const clientThis, const DescribeCommunicationsRequest& request, const DescribeCommunicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCommunicationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCommunications(request), context);
 }
 
-void SupportClient::DescribeCommunicationsAsyncHelper(const DescribeCommunicationsRequest& request, const DescribeCommunicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::DescribeCommunicationsAsync(const DescribeCommunicationsRequest& request, const DescribeCommunicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCommunications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientDescribeCommunicationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeServicesOutcome SupportClient::DescribeServices(const DescribeServicesRequest& request) const
@@ -272,14 +272,14 @@ DescribeServicesOutcomeCallable SupportClient::DescribeServicesCallable(const De
   return task->get_future();
 }
 
-void SupportClient::DescribeServicesAsync(const DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientDescribeServicesAsyncHelper(SupportClient const * const clientThis, const DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeServices(request), context);
 }
 
-void SupportClient::DescribeServicesAsyncHelper(const DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::DescribeServicesAsync(const DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeServices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientDescribeServicesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSeverityLevelsOutcome SupportClient::DescribeSeverityLevels(const DescribeSeverityLevelsRequest& request) const
@@ -296,14 +296,14 @@ DescribeSeverityLevelsOutcomeCallable SupportClient::DescribeSeverityLevelsCalla
   return task->get_future();
 }
 
-void SupportClient::DescribeSeverityLevelsAsync(const DescribeSeverityLevelsRequest& request, const DescribeSeverityLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientDescribeSeverityLevelsAsyncHelper(SupportClient const * const clientThis, const DescribeSeverityLevelsRequest& request, const DescribeSeverityLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSeverityLevelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSeverityLevels(request), context);
 }
 
-void SupportClient::DescribeSeverityLevelsAsyncHelper(const DescribeSeverityLevelsRequest& request, const DescribeSeverityLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::DescribeSeverityLevelsAsync(const DescribeSeverityLevelsRequest& request, const DescribeSeverityLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSeverityLevels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientDescribeSeverityLevelsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrustedAdvisorCheckRefreshStatusesOutcome SupportClient::DescribeTrustedAdvisorCheckRefreshStatuses(const DescribeTrustedAdvisorCheckRefreshStatusesRequest& request) const
@@ -320,14 +320,14 @@ DescribeTrustedAdvisorCheckRefreshStatusesOutcomeCallable SupportClient::Describ
   return task->get_future();
 }
 
-void SupportClient::DescribeTrustedAdvisorCheckRefreshStatusesAsync(const DescribeTrustedAdvisorCheckRefreshStatusesRequest& request, const DescribeTrustedAdvisorCheckRefreshStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientDescribeTrustedAdvisorCheckRefreshStatusesAsyncHelper(SupportClient const * const clientThis, const DescribeTrustedAdvisorCheckRefreshStatusesRequest& request, const DescribeTrustedAdvisorCheckRefreshStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrustedAdvisorCheckRefreshStatusesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrustedAdvisorCheckRefreshStatuses(request), context);
 }
 
-void SupportClient::DescribeTrustedAdvisorCheckRefreshStatusesAsyncHelper(const DescribeTrustedAdvisorCheckRefreshStatusesRequest& request, const DescribeTrustedAdvisorCheckRefreshStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::DescribeTrustedAdvisorCheckRefreshStatusesAsync(const DescribeTrustedAdvisorCheckRefreshStatusesRequest& request, const DescribeTrustedAdvisorCheckRefreshStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrustedAdvisorCheckRefreshStatuses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientDescribeTrustedAdvisorCheckRefreshStatusesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrustedAdvisorCheckResultOutcome SupportClient::DescribeTrustedAdvisorCheckResult(const DescribeTrustedAdvisorCheckResultRequest& request) const
@@ -344,14 +344,14 @@ DescribeTrustedAdvisorCheckResultOutcomeCallable SupportClient::DescribeTrustedA
   return task->get_future();
 }
 
-void SupportClient::DescribeTrustedAdvisorCheckResultAsync(const DescribeTrustedAdvisorCheckResultRequest& request, const DescribeTrustedAdvisorCheckResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientDescribeTrustedAdvisorCheckResultAsyncHelper(SupportClient const * const clientThis, const DescribeTrustedAdvisorCheckResultRequest& request, const DescribeTrustedAdvisorCheckResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrustedAdvisorCheckResultAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrustedAdvisorCheckResult(request), context);
 }
 
-void SupportClient::DescribeTrustedAdvisorCheckResultAsyncHelper(const DescribeTrustedAdvisorCheckResultRequest& request, const DescribeTrustedAdvisorCheckResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::DescribeTrustedAdvisorCheckResultAsync(const DescribeTrustedAdvisorCheckResultRequest& request, const DescribeTrustedAdvisorCheckResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrustedAdvisorCheckResult(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientDescribeTrustedAdvisorCheckResultAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrustedAdvisorCheckSummariesOutcome SupportClient::DescribeTrustedAdvisorCheckSummaries(const DescribeTrustedAdvisorCheckSummariesRequest& request) const
@@ -368,14 +368,14 @@ DescribeTrustedAdvisorCheckSummariesOutcomeCallable SupportClient::DescribeTrust
   return task->get_future();
 }
 
-void SupportClient::DescribeTrustedAdvisorCheckSummariesAsync(const DescribeTrustedAdvisorCheckSummariesRequest& request, const DescribeTrustedAdvisorCheckSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientDescribeTrustedAdvisorCheckSummariesAsyncHelper(SupportClient const * const clientThis, const DescribeTrustedAdvisorCheckSummariesRequest& request, const DescribeTrustedAdvisorCheckSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrustedAdvisorCheckSummariesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrustedAdvisorCheckSummaries(request), context);
 }
 
-void SupportClient::DescribeTrustedAdvisorCheckSummariesAsyncHelper(const DescribeTrustedAdvisorCheckSummariesRequest& request, const DescribeTrustedAdvisorCheckSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::DescribeTrustedAdvisorCheckSummariesAsync(const DescribeTrustedAdvisorCheckSummariesRequest& request, const DescribeTrustedAdvisorCheckSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrustedAdvisorCheckSummaries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientDescribeTrustedAdvisorCheckSummariesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTrustedAdvisorChecksOutcome SupportClient::DescribeTrustedAdvisorChecks(const DescribeTrustedAdvisorChecksRequest& request) const
@@ -392,14 +392,14 @@ DescribeTrustedAdvisorChecksOutcomeCallable SupportClient::DescribeTrustedAdviso
   return task->get_future();
 }
 
-void SupportClient::DescribeTrustedAdvisorChecksAsync(const DescribeTrustedAdvisorChecksRequest& request, const DescribeTrustedAdvisorChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientDescribeTrustedAdvisorChecksAsyncHelper(SupportClient const * const clientThis, const DescribeTrustedAdvisorChecksRequest& request, const DescribeTrustedAdvisorChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrustedAdvisorChecksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTrustedAdvisorChecks(request), context);
 }
 
-void SupportClient::DescribeTrustedAdvisorChecksAsyncHelper(const DescribeTrustedAdvisorChecksRequest& request, const DescribeTrustedAdvisorChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::DescribeTrustedAdvisorChecksAsync(const DescribeTrustedAdvisorChecksRequest& request, const DescribeTrustedAdvisorChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTrustedAdvisorChecks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientDescribeTrustedAdvisorChecksAsyncHelper( this, request, handler, context ); } );
 }
 
 RefreshTrustedAdvisorCheckOutcome SupportClient::RefreshTrustedAdvisorCheck(const RefreshTrustedAdvisorCheckRequest& request) const
@@ -416,14 +416,14 @@ RefreshTrustedAdvisorCheckOutcomeCallable SupportClient::RefreshTrustedAdvisorCh
   return task->get_future();
 }
 
-void SupportClient::RefreshTrustedAdvisorCheckAsync(const RefreshTrustedAdvisorCheckRequest& request, const RefreshTrustedAdvisorCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientRefreshTrustedAdvisorCheckAsyncHelper(SupportClient const * const clientThis, const RefreshTrustedAdvisorCheckRequest& request, const RefreshTrustedAdvisorCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RefreshTrustedAdvisorCheckAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RefreshTrustedAdvisorCheck(request), context);
 }
 
-void SupportClient::RefreshTrustedAdvisorCheckAsyncHelper(const RefreshTrustedAdvisorCheckRequest& request, const RefreshTrustedAdvisorCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::RefreshTrustedAdvisorCheckAsync(const RefreshTrustedAdvisorCheckRequest& request, const RefreshTrustedAdvisorCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RefreshTrustedAdvisorCheck(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientRefreshTrustedAdvisorCheckAsyncHelper( this, request, handler, context ); } );
 }
 
 ResolveCaseOutcome SupportClient::ResolveCase(const ResolveCaseRequest& request) const
@@ -440,13 +440,13 @@ ResolveCaseOutcomeCallable SupportClient::ResolveCaseCallable(const ResolveCaseR
   return task->get_future();
 }
 
-void SupportClient::ResolveCaseAsync(const ResolveCaseRequest& request, const ResolveCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClientResolveCaseAsyncHelper(SupportClient const * const clientThis, const ResolveCaseRequest& request, const ResolveCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResolveCaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResolveCase(request), context);
 }
 
-void SupportClient::ResolveCaseAsyncHelper(const ResolveCaseRequest& request, const ResolveCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportClient::ResolveCaseAsync(const ResolveCaseRequest& request, const ResolveCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResolveCase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportClientResolveCaseAsyncHelper( this, request, handler, context ); } );
 }
 

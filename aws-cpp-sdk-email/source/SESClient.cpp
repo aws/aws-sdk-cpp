@@ -196,14 +196,14 @@ CloneReceiptRuleSetOutcomeCallable SESClient::CloneReceiptRuleSetCallable(const 
   return task->get_future();
 }
 
-void SESClient::CloneReceiptRuleSetAsync(const CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientCloneReceiptRuleSetAsyncHelper(SESClient const * const clientThis, const CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CloneReceiptRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CloneReceiptRuleSet(request), context);
 }
 
-void SESClient::CloneReceiptRuleSetAsyncHelper(const CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::CloneReceiptRuleSetAsync(const CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CloneReceiptRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientCloneReceiptRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConfigurationSetOutcome SESClient::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
@@ -220,14 +220,14 @@ CreateConfigurationSetOutcomeCallable SESClient::CreateConfigurationSetCallable(
   return task->get_future();
 }
 
-void SESClient::CreateConfigurationSetAsync(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientCreateConfigurationSetAsyncHelper(SESClient const * const clientThis, const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConfigurationSet(request), context);
 }
 
-void SESClient::CreateConfigurationSetAsyncHelper(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::CreateConfigurationSetAsync(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientCreateConfigurationSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConfigurationSetEventDestinationOutcome SESClient::CreateConfigurationSetEventDestination(const CreateConfigurationSetEventDestinationRequest& request) const
@@ -244,14 +244,14 @@ CreateConfigurationSetEventDestinationOutcomeCallable SESClient::CreateConfigura
   return task->get_future();
 }
 
-void SESClient::CreateConfigurationSetEventDestinationAsync(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientCreateConfigurationSetEventDestinationAsyncHelper(SESClient const * const clientThis, const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConfigurationSetEventDestination(request), context);
 }
 
-void SESClient::CreateConfigurationSetEventDestinationAsyncHelper(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::CreateConfigurationSetEventDestinationAsync(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConfigurationSetEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientCreateConfigurationSetEventDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConfigurationSetTrackingOptionsOutcome SESClient::CreateConfigurationSetTrackingOptions(const CreateConfigurationSetTrackingOptionsRequest& request) const
@@ -268,14 +268,14 @@ CreateConfigurationSetTrackingOptionsOutcomeCallable SESClient::CreateConfigurat
   return task->get_future();
 }
 
-void SESClient::CreateConfigurationSetTrackingOptionsAsync(const CreateConfigurationSetTrackingOptionsRequest& request, const CreateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientCreateConfigurationSetTrackingOptionsAsyncHelper(SESClient const * const clientThis, const CreateConfigurationSetTrackingOptionsRequest& request, const CreateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetTrackingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConfigurationSetTrackingOptions(request), context);
 }
 
-void SESClient::CreateConfigurationSetTrackingOptionsAsyncHelper(const CreateConfigurationSetTrackingOptionsRequest& request, const CreateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::CreateConfigurationSetTrackingOptionsAsync(const CreateConfigurationSetTrackingOptionsRequest& request, const CreateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConfigurationSetTrackingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientCreateConfigurationSetTrackingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCustomVerificationEmailTemplateOutcome SESClient::CreateCustomVerificationEmailTemplate(const CreateCustomVerificationEmailTemplateRequest& request) const
@@ -292,14 +292,14 @@ CreateCustomVerificationEmailTemplateOutcomeCallable SESClient::CreateCustomVeri
   return task->get_future();
 }
 
-void SESClient::CreateCustomVerificationEmailTemplateAsync(const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientCreateCustomVerificationEmailTemplateAsyncHelper(SESClient const * const clientThis, const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCustomVerificationEmailTemplate(request), context);
 }
 
-void SESClient::CreateCustomVerificationEmailTemplateAsyncHelper(const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::CreateCustomVerificationEmailTemplateAsync(const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCustomVerificationEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientCreateCustomVerificationEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateReceiptFilterOutcome SESClient::CreateReceiptFilter(const CreateReceiptFilterRequest& request) const
@@ -316,14 +316,14 @@ CreateReceiptFilterOutcomeCallable SESClient::CreateReceiptFilterCallable(const 
   return task->get_future();
 }
 
-void SESClient::CreateReceiptFilterAsync(const CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientCreateReceiptFilterAsyncHelper(SESClient const * const clientThis, const CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReceiptFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateReceiptFilter(request), context);
 }
 
-void SESClient::CreateReceiptFilterAsyncHelper(const CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::CreateReceiptFilterAsync(const CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateReceiptFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientCreateReceiptFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateReceiptRuleOutcome SESClient::CreateReceiptRule(const CreateReceiptRuleRequest& request) const
@@ -340,14 +340,14 @@ CreateReceiptRuleOutcomeCallable SESClient::CreateReceiptRuleCallable(const Crea
   return task->get_future();
 }
 
-void SESClient::CreateReceiptRuleAsync(const CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientCreateReceiptRuleAsyncHelper(SESClient const * const clientThis, const CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReceiptRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateReceiptRule(request), context);
 }
 
-void SESClient::CreateReceiptRuleAsyncHelper(const CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::CreateReceiptRuleAsync(const CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateReceiptRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientCreateReceiptRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateReceiptRuleSetOutcome SESClient::CreateReceiptRuleSet(const CreateReceiptRuleSetRequest& request) const
@@ -364,14 +364,14 @@ CreateReceiptRuleSetOutcomeCallable SESClient::CreateReceiptRuleSetCallable(cons
   return task->get_future();
 }
 
-void SESClient::CreateReceiptRuleSetAsync(const CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientCreateReceiptRuleSetAsyncHelper(SESClient const * const clientThis, const CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReceiptRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateReceiptRuleSet(request), context);
 }
 
-void SESClient::CreateReceiptRuleSetAsyncHelper(const CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::CreateReceiptRuleSetAsync(const CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateReceiptRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientCreateReceiptRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTemplateOutcome SESClient::CreateTemplate(const CreateTemplateRequest& request) const
@@ -388,14 +388,14 @@ CreateTemplateOutcomeCallable SESClient::CreateTemplateCallable(const CreateTemp
   return task->get_future();
 }
 
-void SESClient::CreateTemplateAsync(const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientCreateTemplateAsyncHelper(SESClient const * const clientThis, const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTemplate(request), context);
 }
 
-void SESClient::CreateTemplateAsyncHelper(const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::CreateTemplateAsync(const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientCreateTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConfigurationSetOutcome SESClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
@@ -412,14 +412,14 @@ DeleteConfigurationSetOutcomeCallable SESClient::DeleteConfigurationSetCallable(
   return task->get_future();
 }
 
-void SESClient::DeleteConfigurationSetAsync(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteConfigurationSetAsyncHelper(SESClient const * const clientThis, const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConfigurationSet(request), context);
 }
 
-void SESClient::DeleteConfigurationSetAsyncHelper(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteConfigurationSetAsync(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteConfigurationSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConfigurationSetEventDestinationOutcome SESClient::DeleteConfigurationSetEventDestination(const DeleteConfigurationSetEventDestinationRequest& request) const
@@ -436,14 +436,14 @@ DeleteConfigurationSetEventDestinationOutcomeCallable SESClient::DeleteConfigura
   return task->get_future();
 }
 
-void SESClient::DeleteConfigurationSetEventDestinationAsync(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteConfigurationSetEventDestinationAsyncHelper(SESClient const * const clientThis, const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConfigurationSetEventDestination(request), context);
 }
 
-void SESClient::DeleteConfigurationSetEventDestinationAsyncHelper(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteConfigurationSetEventDestinationAsync(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConfigurationSetEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteConfigurationSetEventDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConfigurationSetTrackingOptionsOutcome SESClient::DeleteConfigurationSetTrackingOptions(const DeleteConfigurationSetTrackingOptionsRequest& request) const
@@ -460,14 +460,14 @@ DeleteConfigurationSetTrackingOptionsOutcomeCallable SESClient::DeleteConfigurat
   return task->get_future();
 }
 
-void SESClient::DeleteConfigurationSetTrackingOptionsAsync(const DeleteConfigurationSetTrackingOptionsRequest& request, const DeleteConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteConfigurationSetTrackingOptionsAsyncHelper(SESClient const * const clientThis, const DeleteConfigurationSetTrackingOptionsRequest& request, const DeleteConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetTrackingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConfigurationSetTrackingOptions(request), context);
 }
 
-void SESClient::DeleteConfigurationSetTrackingOptionsAsyncHelper(const DeleteConfigurationSetTrackingOptionsRequest& request, const DeleteConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteConfigurationSetTrackingOptionsAsync(const DeleteConfigurationSetTrackingOptionsRequest& request, const DeleteConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConfigurationSetTrackingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteConfigurationSetTrackingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCustomVerificationEmailTemplateOutcome SESClient::DeleteCustomVerificationEmailTemplate(const DeleteCustomVerificationEmailTemplateRequest& request) const
@@ -484,14 +484,14 @@ DeleteCustomVerificationEmailTemplateOutcomeCallable SESClient::DeleteCustomVeri
   return task->get_future();
 }
 
-void SESClient::DeleteCustomVerificationEmailTemplateAsync(const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteCustomVerificationEmailTemplateAsyncHelper(SESClient const * const clientThis, const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCustomVerificationEmailTemplate(request), context);
 }
 
-void SESClient::DeleteCustomVerificationEmailTemplateAsyncHelper(const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteCustomVerificationEmailTemplateAsync(const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCustomVerificationEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteCustomVerificationEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIdentityOutcome SESClient::DeleteIdentity(const DeleteIdentityRequest& request) const
@@ -508,14 +508,14 @@ DeleteIdentityOutcomeCallable SESClient::DeleteIdentityCallable(const DeleteIden
   return task->get_future();
 }
 
-void SESClient::DeleteIdentityAsync(const DeleteIdentityRequest& request, const DeleteIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteIdentityAsyncHelper(SESClient const * const clientThis, const DeleteIdentityRequest& request, const DeleteIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIdentityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIdentity(request), context);
 }
 
-void SESClient::DeleteIdentityAsyncHelper(const DeleteIdentityRequest& request, const DeleteIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteIdentityAsync(const DeleteIdentityRequest& request, const DeleteIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteIdentityAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIdentityPolicyOutcome SESClient::DeleteIdentityPolicy(const DeleteIdentityPolicyRequest& request) const
@@ -532,14 +532,14 @@ DeleteIdentityPolicyOutcomeCallable SESClient::DeleteIdentityPolicyCallable(cons
   return task->get_future();
 }
 
-void SESClient::DeleteIdentityPolicyAsync(const DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteIdentityPolicyAsyncHelper(SESClient const * const clientThis, const DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIdentityPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIdentityPolicy(request), context);
 }
 
-void SESClient::DeleteIdentityPolicyAsyncHelper(const DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteIdentityPolicyAsync(const DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIdentityPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteIdentityPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteReceiptFilterOutcome SESClient::DeleteReceiptFilter(const DeleteReceiptFilterRequest& request) const
@@ -556,14 +556,14 @@ DeleteReceiptFilterOutcomeCallable SESClient::DeleteReceiptFilterCallable(const 
   return task->get_future();
 }
 
-void SESClient::DeleteReceiptFilterAsync(const DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteReceiptFilterAsyncHelper(SESClient const * const clientThis, const DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReceiptFilterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReceiptFilter(request), context);
 }
 
-void SESClient::DeleteReceiptFilterAsyncHelper(const DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteReceiptFilterAsync(const DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReceiptFilter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteReceiptFilterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteReceiptRuleOutcome SESClient::DeleteReceiptRule(const DeleteReceiptRuleRequest& request) const
@@ -580,14 +580,14 @@ DeleteReceiptRuleOutcomeCallable SESClient::DeleteReceiptRuleCallable(const Dele
   return task->get_future();
 }
 
-void SESClient::DeleteReceiptRuleAsync(const DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteReceiptRuleAsyncHelper(SESClient const * const clientThis, const DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReceiptRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReceiptRule(request), context);
 }
 
-void SESClient::DeleteReceiptRuleAsyncHelper(const DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteReceiptRuleAsync(const DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReceiptRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteReceiptRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteReceiptRuleSetOutcome SESClient::DeleteReceiptRuleSet(const DeleteReceiptRuleSetRequest& request) const
@@ -604,14 +604,14 @@ DeleteReceiptRuleSetOutcomeCallable SESClient::DeleteReceiptRuleSetCallable(cons
   return task->get_future();
 }
 
-void SESClient::DeleteReceiptRuleSetAsync(const DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteReceiptRuleSetAsyncHelper(SESClient const * const clientThis, const DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReceiptRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReceiptRuleSet(request), context);
 }
 
-void SESClient::DeleteReceiptRuleSetAsyncHelper(const DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteReceiptRuleSetAsync(const DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReceiptRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteReceiptRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTemplateOutcome SESClient::DeleteTemplate(const DeleteTemplateRequest& request) const
@@ -628,14 +628,14 @@ DeleteTemplateOutcomeCallable SESClient::DeleteTemplateCallable(const DeleteTemp
   return task->get_future();
 }
 
-void SESClient::DeleteTemplateAsync(const DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteTemplateAsyncHelper(SESClient const * const clientThis, const DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTemplate(request), context);
 }
 
-void SESClient::DeleteTemplateAsyncHelper(const DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteTemplateAsync(const DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVerifiedEmailAddressOutcome SESClient::DeleteVerifiedEmailAddress(const DeleteVerifiedEmailAddressRequest& request) const
@@ -652,14 +652,14 @@ DeleteVerifiedEmailAddressOutcomeCallable SESClient::DeleteVerifiedEmailAddressC
   return task->get_future();
 }
 
-void SESClient::DeleteVerifiedEmailAddressAsync(const DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDeleteVerifiedEmailAddressAsyncHelper(SESClient const * const clientThis, const DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVerifiedEmailAddressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVerifiedEmailAddress(request), context);
 }
 
-void SESClient::DeleteVerifiedEmailAddressAsyncHelper(const DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DeleteVerifiedEmailAddressAsync(const DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVerifiedEmailAddress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDeleteVerifiedEmailAddressAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeActiveReceiptRuleSetOutcome SESClient::DescribeActiveReceiptRuleSet(const DescribeActiveReceiptRuleSetRequest& request) const
@@ -676,14 +676,14 @@ DescribeActiveReceiptRuleSetOutcomeCallable SESClient::DescribeActiveReceiptRule
   return task->get_future();
 }
 
-void SESClient::DescribeActiveReceiptRuleSetAsync(const DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDescribeActiveReceiptRuleSetAsyncHelper(SESClient const * const clientThis, const DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeActiveReceiptRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeActiveReceiptRuleSet(request), context);
 }
 
-void SESClient::DescribeActiveReceiptRuleSetAsyncHelper(const DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DescribeActiveReceiptRuleSetAsync(const DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeActiveReceiptRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDescribeActiveReceiptRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeConfigurationSetOutcome SESClient::DescribeConfigurationSet(const DescribeConfigurationSetRequest& request) const
@@ -700,14 +700,14 @@ DescribeConfigurationSetOutcomeCallable SESClient::DescribeConfigurationSetCalla
   return task->get_future();
 }
 
-void SESClient::DescribeConfigurationSetAsync(const DescribeConfigurationSetRequest& request, const DescribeConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDescribeConfigurationSetAsyncHelper(SESClient const * const clientThis, const DescribeConfigurationSetRequest& request, const DescribeConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeConfigurationSet(request), context);
 }
 
-void SESClient::DescribeConfigurationSetAsyncHelper(const DescribeConfigurationSetRequest& request, const DescribeConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DescribeConfigurationSetAsync(const DescribeConfigurationSetRequest& request, const DescribeConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDescribeConfigurationSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReceiptRuleOutcome SESClient::DescribeReceiptRule(const DescribeReceiptRuleRequest& request) const
@@ -724,14 +724,14 @@ DescribeReceiptRuleOutcomeCallable SESClient::DescribeReceiptRuleCallable(const 
   return task->get_future();
 }
 
-void SESClient::DescribeReceiptRuleAsync(const DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDescribeReceiptRuleAsyncHelper(SESClient const * const clientThis, const DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReceiptRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReceiptRule(request), context);
 }
 
-void SESClient::DescribeReceiptRuleAsyncHelper(const DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DescribeReceiptRuleAsync(const DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReceiptRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDescribeReceiptRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeReceiptRuleSetOutcome SESClient::DescribeReceiptRuleSet(const DescribeReceiptRuleSetRequest& request) const
@@ -748,14 +748,14 @@ DescribeReceiptRuleSetOutcomeCallable SESClient::DescribeReceiptRuleSetCallable(
   return task->get_future();
 }
 
-void SESClient::DescribeReceiptRuleSetAsync(const DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientDescribeReceiptRuleSetAsyncHelper(SESClient const * const clientThis, const DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReceiptRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeReceiptRuleSet(request), context);
 }
 
-void SESClient::DescribeReceiptRuleSetAsyncHelper(const DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::DescribeReceiptRuleSetAsync(const DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeReceiptRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientDescribeReceiptRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccountSendingEnabledOutcome SESClient::GetAccountSendingEnabled(const GetAccountSendingEnabledRequest& request) const
@@ -772,14 +772,14 @@ GetAccountSendingEnabledOutcomeCallable SESClient::GetAccountSendingEnabledCalla
   return task->get_future();
 }
 
-void SESClient::GetAccountSendingEnabledAsync(const GetAccountSendingEnabledRequest& request, const GetAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientGetAccountSendingEnabledAsyncHelper(SESClient const * const clientThis, const GetAccountSendingEnabledRequest& request, const GetAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccountSendingEnabledAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccountSendingEnabled(request), context);
 }
 
-void SESClient::GetAccountSendingEnabledAsyncHelper(const GetAccountSendingEnabledRequest& request, const GetAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::GetAccountSendingEnabledAsync(const GetAccountSendingEnabledRequest& request, const GetAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccountSendingEnabled(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientGetAccountSendingEnabledAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCustomVerificationEmailTemplateOutcome SESClient::GetCustomVerificationEmailTemplate(const GetCustomVerificationEmailTemplateRequest& request) const
@@ -796,14 +796,14 @@ GetCustomVerificationEmailTemplateOutcomeCallable SESClient::GetCustomVerificati
   return task->get_future();
 }
 
-void SESClient::GetCustomVerificationEmailTemplateAsync(const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientGetCustomVerificationEmailTemplateAsyncHelper(SESClient const * const clientThis, const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCustomVerificationEmailTemplate(request), context);
 }
 
-void SESClient::GetCustomVerificationEmailTemplateAsyncHelper(const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::GetCustomVerificationEmailTemplateAsync(const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCustomVerificationEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientGetCustomVerificationEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIdentityDkimAttributesOutcome SESClient::GetIdentityDkimAttributes(const GetIdentityDkimAttributesRequest& request) const
@@ -820,14 +820,14 @@ GetIdentityDkimAttributesOutcomeCallable SESClient::GetIdentityDkimAttributesCal
   return task->get_future();
 }
 
-void SESClient::GetIdentityDkimAttributesAsync(const GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientGetIdentityDkimAttributesAsyncHelper(SESClient const * const clientThis, const GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIdentityDkimAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIdentityDkimAttributes(request), context);
 }
 
-void SESClient::GetIdentityDkimAttributesAsyncHelper(const GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::GetIdentityDkimAttributesAsync(const GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIdentityDkimAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientGetIdentityDkimAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIdentityMailFromDomainAttributesOutcome SESClient::GetIdentityMailFromDomainAttributes(const GetIdentityMailFromDomainAttributesRequest& request) const
@@ -844,14 +844,14 @@ GetIdentityMailFromDomainAttributesOutcomeCallable SESClient::GetIdentityMailFro
   return task->get_future();
 }
 
-void SESClient::GetIdentityMailFromDomainAttributesAsync(const GetIdentityMailFromDomainAttributesRequest& request, const GetIdentityMailFromDomainAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientGetIdentityMailFromDomainAttributesAsyncHelper(SESClient const * const clientThis, const GetIdentityMailFromDomainAttributesRequest& request, const GetIdentityMailFromDomainAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIdentityMailFromDomainAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIdentityMailFromDomainAttributes(request), context);
 }
 
-void SESClient::GetIdentityMailFromDomainAttributesAsyncHelper(const GetIdentityMailFromDomainAttributesRequest& request, const GetIdentityMailFromDomainAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::GetIdentityMailFromDomainAttributesAsync(const GetIdentityMailFromDomainAttributesRequest& request, const GetIdentityMailFromDomainAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIdentityMailFromDomainAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientGetIdentityMailFromDomainAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIdentityNotificationAttributesOutcome SESClient::GetIdentityNotificationAttributes(const GetIdentityNotificationAttributesRequest& request) const
@@ -868,14 +868,14 @@ GetIdentityNotificationAttributesOutcomeCallable SESClient::GetIdentityNotificat
   return task->get_future();
 }
 
-void SESClient::GetIdentityNotificationAttributesAsync(const GetIdentityNotificationAttributesRequest& request, const GetIdentityNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientGetIdentityNotificationAttributesAsyncHelper(SESClient const * const clientThis, const GetIdentityNotificationAttributesRequest& request, const GetIdentityNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIdentityNotificationAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIdentityNotificationAttributes(request), context);
 }
 
-void SESClient::GetIdentityNotificationAttributesAsyncHelper(const GetIdentityNotificationAttributesRequest& request, const GetIdentityNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::GetIdentityNotificationAttributesAsync(const GetIdentityNotificationAttributesRequest& request, const GetIdentityNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIdentityNotificationAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientGetIdentityNotificationAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIdentityPoliciesOutcome SESClient::GetIdentityPolicies(const GetIdentityPoliciesRequest& request) const
@@ -892,14 +892,14 @@ GetIdentityPoliciesOutcomeCallable SESClient::GetIdentityPoliciesCallable(const 
   return task->get_future();
 }
 
-void SESClient::GetIdentityPoliciesAsync(const GetIdentityPoliciesRequest& request, const GetIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientGetIdentityPoliciesAsyncHelper(SESClient const * const clientThis, const GetIdentityPoliciesRequest& request, const GetIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIdentityPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIdentityPolicies(request), context);
 }
 
-void SESClient::GetIdentityPoliciesAsyncHelper(const GetIdentityPoliciesRequest& request, const GetIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::GetIdentityPoliciesAsync(const GetIdentityPoliciesRequest& request, const GetIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIdentityPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientGetIdentityPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIdentityVerificationAttributesOutcome SESClient::GetIdentityVerificationAttributes(const GetIdentityVerificationAttributesRequest& request) const
@@ -916,14 +916,14 @@ GetIdentityVerificationAttributesOutcomeCallable SESClient::GetIdentityVerificat
   return task->get_future();
 }
 
-void SESClient::GetIdentityVerificationAttributesAsync(const GetIdentityVerificationAttributesRequest& request, const GetIdentityVerificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientGetIdentityVerificationAttributesAsyncHelper(SESClient const * const clientThis, const GetIdentityVerificationAttributesRequest& request, const GetIdentityVerificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIdentityVerificationAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIdentityVerificationAttributes(request), context);
 }
 
-void SESClient::GetIdentityVerificationAttributesAsyncHelper(const GetIdentityVerificationAttributesRequest& request, const GetIdentityVerificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::GetIdentityVerificationAttributesAsync(const GetIdentityVerificationAttributesRequest& request, const GetIdentityVerificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIdentityVerificationAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientGetIdentityVerificationAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSendQuotaOutcome SESClient::GetSendQuota(const GetSendQuotaRequest& request) const
@@ -940,14 +940,14 @@ GetSendQuotaOutcomeCallable SESClient::GetSendQuotaCallable(const GetSendQuotaRe
   return task->get_future();
 }
 
-void SESClient::GetSendQuotaAsync(const GetSendQuotaRequest& request, const GetSendQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientGetSendQuotaAsyncHelper(SESClient const * const clientThis, const GetSendQuotaRequest& request, const GetSendQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSendQuotaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSendQuota(request), context);
 }
 
-void SESClient::GetSendQuotaAsyncHelper(const GetSendQuotaRequest& request, const GetSendQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::GetSendQuotaAsync(const GetSendQuotaRequest& request, const GetSendQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSendQuota(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientGetSendQuotaAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSendStatisticsOutcome SESClient::GetSendStatistics(const GetSendStatisticsRequest& request) const
@@ -964,14 +964,14 @@ GetSendStatisticsOutcomeCallable SESClient::GetSendStatisticsCallable(const GetS
   return task->get_future();
 }
 
-void SESClient::GetSendStatisticsAsync(const GetSendStatisticsRequest& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientGetSendStatisticsAsyncHelper(SESClient const * const clientThis, const GetSendStatisticsRequest& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSendStatisticsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSendStatistics(request), context);
 }
 
-void SESClient::GetSendStatisticsAsyncHelper(const GetSendStatisticsRequest& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::GetSendStatisticsAsync(const GetSendStatisticsRequest& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSendStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientGetSendStatisticsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTemplateOutcome SESClient::GetTemplate(const GetTemplateRequest& request) const
@@ -988,14 +988,14 @@ GetTemplateOutcomeCallable SESClient::GetTemplateCallable(const GetTemplateReque
   return task->get_future();
 }
 
-void SESClient::GetTemplateAsync(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientGetTemplateAsyncHelper(SESClient const * const clientThis, const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTemplate(request), context);
 }
 
-void SESClient::GetTemplateAsyncHelper(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::GetTemplateAsync(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientGetTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConfigurationSetsOutcome SESClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
@@ -1012,14 +1012,14 @@ ListConfigurationSetsOutcomeCallable SESClient::ListConfigurationSetsCallable(co
   return task->get_future();
 }
 
-void SESClient::ListConfigurationSetsAsync(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientListConfigurationSetsAsyncHelper(SESClient const * const clientThis, const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConfigurationSets(request), context);
 }
 
-void SESClient::ListConfigurationSetsAsyncHelper(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::ListConfigurationSetsAsync(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConfigurationSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientListConfigurationSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomVerificationEmailTemplatesOutcome SESClient::ListCustomVerificationEmailTemplates(const ListCustomVerificationEmailTemplatesRequest& request) const
@@ -1036,14 +1036,14 @@ ListCustomVerificationEmailTemplatesOutcomeCallable SESClient::ListCustomVerific
   return task->get_future();
 }
 
-void SESClient::ListCustomVerificationEmailTemplatesAsync(const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientListCustomVerificationEmailTemplatesAsyncHelper(SESClient const * const clientThis, const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomVerificationEmailTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomVerificationEmailTemplates(request), context);
 }
 
-void SESClient::ListCustomVerificationEmailTemplatesAsyncHelper(const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::ListCustomVerificationEmailTemplatesAsync(const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomVerificationEmailTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientListCustomVerificationEmailTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIdentitiesOutcome SESClient::ListIdentities(const ListIdentitiesRequest& request) const
@@ -1060,14 +1060,14 @@ ListIdentitiesOutcomeCallable SESClient::ListIdentitiesCallable(const ListIdenti
   return task->get_future();
 }
 
-void SESClient::ListIdentitiesAsync(const ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientListIdentitiesAsyncHelper(SESClient const * const clientThis, const ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIdentitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIdentities(request), context);
 }
 
-void SESClient::ListIdentitiesAsyncHelper(const ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::ListIdentitiesAsync(const ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIdentities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientListIdentitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIdentityPoliciesOutcome SESClient::ListIdentityPolicies(const ListIdentityPoliciesRequest& request) const
@@ -1084,14 +1084,14 @@ ListIdentityPoliciesOutcomeCallable SESClient::ListIdentityPoliciesCallable(cons
   return task->get_future();
 }
 
-void SESClient::ListIdentityPoliciesAsync(const ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientListIdentityPoliciesAsyncHelper(SESClient const * const clientThis, const ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIdentityPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIdentityPolicies(request), context);
 }
 
-void SESClient::ListIdentityPoliciesAsyncHelper(const ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::ListIdentityPoliciesAsync(const ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIdentityPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientListIdentityPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReceiptFiltersOutcome SESClient::ListReceiptFilters(const ListReceiptFiltersRequest& request) const
@@ -1108,14 +1108,14 @@ ListReceiptFiltersOutcomeCallable SESClient::ListReceiptFiltersCallable(const Li
   return task->get_future();
 }
 
-void SESClient::ListReceiptFiltersAsync(const ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientListReceiptFiltersAsyncHelper(SESClient const * const clientThis, const ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReceiptFiltersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReceiptFilters(request), context);
 }
 
-void SESClient::ListReceiptFiltersAsyncHelper(const ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::ListReceiptFiltersAsync(const ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReceiptFilters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientListReceiptFiltersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReceiptRuleSetsOutcome SESClient::ListReceiptRuleSets(const ListReceiptRuleSetsRequest& request) const
@@ -1132,14 +1132,14 @@ ListReceiptRuleSetsOutcomeCallable SESClient::ListReceiptRuleSetsCallable(const 
   return task->get_future();
 }
 
-void SESClient::ListReceiptRuleSetsAsync(const ListReceiptRuleSetsRequest& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientListReceiptRuleSetsAsyncHelper(SESClient const * const clientThis, const ListReceiptRuleSetsRequest& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReceiptRuleSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReceiptRuleSets(request), context);
 }
 
-void SESClient::ListReceiptRuleSetsAsyncHelper(const ListReceiptRuleSetsRequest& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::ListReceiptRuleSetsAsync(const ListReceiptRuleSetsRequest& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReceiptRuleSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientListReceiptRuleSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTemplatesOutcome SESClient::ListTemplates(const ListTemplatesRequest& request) const
@@ -1156,14 +1156,14 @@ ListTemplatesOutcomeCallable SESClient::ListTemplatesCallable(const ListTemplate
   return task->get_future();
 }
 
-void SESClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientListTemplatesAsyncHelper(SESClient const * const clientThis, const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTemplates(request), context);
 }
 
-void SESClient::ListTemplatesAsyncHelper(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientListTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVerifiedEmailAddressesOutcome SESClient::ListVerifiedEmailAddresses(const ListVerifiedEmailAddressesRequest& request) const
@@ -1180,14 +1180,14 @@ ListVerifiedEmailAddressesOutcomeCallable SESClient::ListVerifiedEmailAddressesC
   return task->get_future();
 }
 
-void SESClient::ListVerifiedEmailAddressesAsync(const ListVerifiedEmailAddressesRequest& request, const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientListVerifiedEmailAddressesAsyncHelper(SESClient const * const clientThis, const ListVerifiedEmailAddressesRequest& request, const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVerifiedEmailAddressesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVerifiedEmailAddresses(request), context);
 }
 
-void SESClient::ListVerifiedEmailAddressesAsyncHelper(const ListVerifiedEmailAddressesRequest& request, const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::ListVerifiedEmailAddressesAsync(const ListVerifiedEmailAddressesRequest& request, const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVerifiedEmailAddresses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientListVerifiedEmailAddressesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutConfigurationSetDeliveryOptionsOutcome SESClient::PutConfigurationSetDeliveryOptions(const PutConfigurationSetDeliveryOptionsRequest& request) const
@@ -1204,14 +1204,14 @@ PutConfigurationSetDeliveryOptionsOutcomeCallable SESClient::PutConfigurationSet
   return task->get_future();
 }
 
-void SESClient::PutConfigurationSetDeliveryOptionsAsync(const PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientPutConfigurationSetDeliveryOptionsAsyncHelper(SESClient const * const clientThis, const PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetDeliveryOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutConfigurationSetDeliveryOptions(request), context);
 }
 
-void SESClient::PutConfigurationSetDeliveryOptionsAsyncHelper(const PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::PutConfigurationSetDeliveryOptionsAsync(const PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutConfigurationSetDeliveryOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientPutConfigurationSetDeliveryOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutIdentityPolicyOutcome SESClient::PutIdentityPolicy(const PutIdentityPolicyRequest& request) const
@@ -1228,14 +1228,14 @@ PutIdentityPolicyOutcomeCallable SESClient::PutIdentityPolicyCallable(const PutI
   return task->get_future();
 }
 
-void SESClient::PutIdentityPolicyAsync(const PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientPutIdentityPolicyAsyncHelper(SESClient const * const clientThis, const PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutIdentityPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutIdentityPolicy(request), context);
 }
 
-void SESClient::PutIdentityPolicyAsyncHelper(const PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::PutIdentityPolicyAsync(const PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutIdentityPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientPutIdentityPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 ReorderReceiptRuleSetOutcome SESClient::ReorderReceiptRuleSet(const ReorderReceiptRuleSetRequest& request) const
@@ -1252,14 +1252,14 @@ ReorderReceiptRuleSetOutcomeCallable SESClient::ReorderReceiptRuleSetCallable(co
   return task->get_future();
 }
 
-void SESClient::ReorderReceiptRuleSetAsync(const ReorderReceiptRuleSetRequest& request, const ReorderReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientReorderReceiptRuleSetAsyncHelper(SESClient const * const clientThis, const ReorderReceiptRuleSetRequest& request, const ReorderReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReorderReceiptRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReorderReceiptRuleSet(request), context);
 }
 
-void SESClient::ReorderReceiptRuleSetAsyncHelper(const ReorderReceiptRuleSetRequest& request, const ReorderReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::ReorderReceiptRuleSetAsync(const ReorderReceiptRuleSetRequest& request, const ReorderReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReorderReceiptRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientReorderReceiptRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 
 SendBounceOutcome SESClient::SendBounce(const SendBounceRequest& request) const
@@ -1276,14 +1276,14 @@ SendBounceOutcomeCallable SESClient::SendBounceCallable(const SendBounceRequest&
   return task->get_future();
 }
 
-void SESClient::SendBounceAsync(const SendBounceRequest& request, const SendBounceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSendBounceAsyncHelper(SESClient const * const clientThis, const SendBounceRequest& request, const SendBounceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendBounceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendBounce(request), context);
 }
 
-void SESClient::SendBounceAsyncHelper(const SendBounceRequest& request, const SendBounceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SendBounceAsync(const SendBounceRequest& request, const SendBounceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendBounce(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSendBounceAsyncHelper( this, request, handler, context ); } );
 }
 
 SendBulkTemplatedEmailOutcome SESClient::SendBulkTemplatedEmail(const SendBulkTemplatedEmailRequest& request) const
@@ -1300,14 +1300,14 @@ SendBulkTemplatedEmailOutcomeCallable SESClient::SendBulkTemplatedEmailCallable(
   return task->get_future();
 }
 
-void SESClient::SendBulkTemplatedEmailAsync(const SendBulkTemplatedEmailRequest& request, const SendBulkTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSendBulkTemplatedEmailAsyncHelper(SESClient const * const clientThis, const SendBulkTemplatedEmailRequest& request, const SendBulkTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendBulkTemplatedEmailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendBulkTemplatedEmail(request), context);
 }
 
-void SESClient::SendBulkTemplatedEmailAsyncHelper(const SendBulkTemplatedEmailRequest& request, const SendBulkTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SendBulkTemplatedEmailAsync(const SendBulkTemplatedEmailRequest& request, const SendBulkTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendBulkTemplatedEmail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSendBulkTemplatedEmailAsyncHelper( this, request, handler, context ); } );
 }
 
 SendCustomVerificationEmailOutcome SESClient::SendCustomVerificationEmail(const SendCustomVerificationEmailRequest& request) const
@@ -1324,14 +1324,14 @@ SendCustomVerificationEmailOutcomeCallable SESClient::SendCustomVerificationEmai
   return task->get_future();
 }
 
-void SESClient::SendCustomVerificationEmailAsync(const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSendCustomVerificationEmailAsyncHelper(SESClient const * const clientThis, const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendCustomVerificationEmailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendCustomVerificationEmail(request), context);
 }
 
-void SESClient::SendCustomVerificationEmailAsyncHelper(const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SendCustomVerificationEmailAsync(const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendCustomVerificationEmail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSendCustomVerificationEmailAsyncHelper( this, request, handler, context ); } );
 }
 
 SendEmailOutcome SESClient::SendEmail(const SendEmailRequest& request) const
@@ -1348,14 +1348,14 @@ SendEmailOutcomeCallable SESClient::SendEmailCallable(const SendEmailRequest& re
   return task->get_future();
 }
 
-void SESClient::SendEmailAsync(const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSendEmailAsyncHelper(SESClient const * const clientThis, const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendEmailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendEmail(request), context);
 }
 
-void SESClient::SendEmailAsyncHelper(const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SendEmailAsync(const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendEmail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSendEmailAsyncHelper( this, request, handler, context ); } );
 }
 
 SendRawEmailOutcome SESClient::SendRawEmail(const SendRawEmailRequest& request) const
@@ -1372,14 +1372,14 @@ SendRawEmailOutcomeCallable SESClient::SendRawEmailCallable(const SendRawEmailRe
   return task->get_future();
 }
 
-void SESClient::SendRawEmailAsync(const SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSendRawEmailAsyncHelper(SESClient const * const clientThis, const SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendRawEmailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendRawEmail(request), context);
 }
 
-void SESClient::SendRawEmailAsyncHelper(const SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SendRawEmailAsync(const SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendRawEmail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSendRawEmailAsyncHelper( this, request, handler, context ); } );
 }
 
 SendTemplatedEmailOutcome SESClient::SendTemplatedEmail(const SendTemplatedEmailRequest& request) const
@@ -1396,14 +1396,14 @@ SendTemplatedEmailOutcomeCallable SESClient::SendTemplatedEmailCallable(const Se
   return task->get_future();
 }
 
-void SESClient::SendTemplatedEmailAsync(const SendTemplatedEmailRequest& request, const SendTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSendTemplatedEmailAsyncHelper(SESClient const * const clientThis, const SendTemplatedEmailRequest& request, const SendTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendTemplatedEmailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendTemplatedEmail(request), context);
 }
 
-void SESClient::SendTemplatedEmailAsyncHelper(const SendTemplatedEmailRequest& request, const SendTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SendTemplatedEmailAsync(const SendTemplatedEmailRequest& request, const SendTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendTemplatedEmail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSendTemplatedEmailAsyncHelper( this, request, handler, context ); } );
 }
 
 SetActiveReceiptRuleSetOutcome SESClient::SetActiveReceiptRuleSet(const SetActiveReceiptRuleSetRequest& request) const
@@ -1420,14 +1420,14 @@ SetActiveReceiptRuleSetOutcomeCallable SESClient::SetActiveReceiptRuleSetCallabl
   return task->get_future();
 }
 
-void SESClient::SetActiveReceiptRuleSetAsync(const SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSetActiveReceiptRuleSetAsyncHelper(SESClient const * const clientThis, const SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetActiveReceiptRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetActiveReceiptRuleSet(request), context);
 }
 
-void SESClient::SetActiveReceiptRuleSetAsyncHelper(const SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SetActiveReceiptRuleSetAsync(const SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetActiveReceiptRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSetActiveReceiptRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 
 SetIdentityDkimEnabledOutcome SESClient::SetIdentityDkimEnabled(const SetIdentityDkimEnabledRequest& request) const
@@ -1444,14 +1444,14 @@ SetIdentityDkimEnabledOutcomeCallable SESClient::SetIdentityDkimEnabledCallable(
   return task->get_future();
 }
 
-void SESClient::SetIdentityDkimEnabledAsync(const SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSetIdentityDkimEnabledAsyncHelper(SESClient const * const clientThis, const SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetIdentityDkimEnabledAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetIdentityDkimEnabled(request), context);
 }
 
-void SESClient::SetIdentityDkimEnabledAsyncHelper(const SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SetIdentityDkimEnabledAsync(const SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetIdentityDkimEnabled(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSetIdentityDkimEnabledAsyncHelper( this, request, handler, context ); } );
 }
 
 SetIdentityFeedbackForwardingEnabledOutcome SESClient::SetIdentityFeedbackForwardingEnabled(const SetIdentityFeedbackForwardingEnabledRequest& request) const
@@ -1468,14 +1468,14 @@ SetIdentityFeedbackForwardingEnabledOutcomeCallable SESClient::SetIdentityFeedba
   return task->get_future();
 }
 
-void SESClient::SetIdentityFeedbackForwardingEnabledAsync(const SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSetIdentityFeedbackForwardingEnabledAsyncHelper(SESClient const * const clientThis, const SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetIdentityFeedbackForwardingEnabledAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetIdentityFeedbackForwardingEnabled(request), context);
 }
 
-void SESClient::SetIdentityFeedbackForwardingEnabledAsyncHelper(const SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SetIdentityFeedbackForwardingEnabledAsync(const SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetIdentityFeedbackForwardingEnabled(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSetIdentityFeedbackForwardingEnabledAsyncHelper( this, request, handler, context ); } );
 }
 
 SetIdentityHeadersInNotificationsEnabledOutcome SESClient::SetIdentityHeadersInNotificationsEnabled(const SetIdentityHeadersInNotificationsEnabledRequest& request) const
@@ -1492,14 +1492,14 @@ SetIdentityHeadersInNotificationsEnabledOutcomeCallable SESClient::SetIdentityHe
   return task->get_future();
 }
 
-void SESClient::SetIdentityHeadersInNotificationsEnabledAsync(const SetIdentityHeadersInNotificationsEnabledRequest& request, const SetIdentityHeadersInNotificationsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSetIdentityHeadersInNotificationsEnabledAsyncHelper(SESClient const * const clientThis, const SetIdentityHeadersInNotificationsEnabledRequest& request, const SetIdentityHeadersInNotificationsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetIdentityHeadersInNotificationsEnabledAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetIdentityHeadersInNotificationsEnabled(request), context);
 }
 
-void SESClient::SetIdentityHeadersInNotificationsEnabledAsyncHelper(const SetIdentityHeadersInNotificationsEnabledRequest& request, const SetIdentityHeadersInNotificationsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SetIdentityHeadersInNotificationsEnabledAsync(const SetIdentityHeadersInNotificationsEnabledRequest& request, const SetIdentityHeadersInNotificationsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetIdentityHeadersInNotificationsEnabled(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSetIdentityHeadersInNotificationsEnabledAsyncHelper( this, request, handler, context ); } );
 }
 
 SetIdentityMailFromDomainOutcome SESClient::SetIdentityMailFromDomain(const SetIdentityMailFromDomainRequest& request) const
@@ -1516,14 +1516,14 @@ SetIdentityMailFromDomainOutcomeCallable SESClient::SetIdentityMailFromDomainCal
   return task->get_future();
 }
 
-void SESClient::SetIdentityMailFromDomainAsync(const SetIdentityMailFromDomainRequest& request, const SetIdentityMailFromDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSetIdentityMailFromDomainAsyncHelper(SESClient const * const clientThis, const SetIdentityMailFromDomainRequest& request, const SetIdentityMailFromDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetIdentityMailFromDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetIdentityMailFromDomain(request), context);
 }
 
-void SESClient::SetIdentityMailFromDomainAsyncHelper(const SetIdentityMailFromDomainRequest& request, const SetIdentityMailFromDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SetIdentityMailFromDomainAsync(const SetIdentityMailFromDomainRequest& request, const SetIdentityMailFromDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetIdentityMailFromDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSetIdentityMailFromDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 SetIdentityNotificationTopicOutcome SESClient::SetIdentityNotificationTopic(const SetIdentityNotificationTopicRequest& request) const
@@ -1540,14 +1540,14 @@ SetIdentityNotificationTopicOutcomeCallable SESClient::SetIdentityNotificationTo
   return task->get_future();
 }
 
-void SESClient::SetIdentityNotificationTopicAsync(const SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSetIdentityNotificationTopicAsyncHelper(SESClient const * const clientThis, const SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetIdentityNotificationTopicAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetIdentityNotificationTopic(request), context);
 }
 
-void SESClient::SetIdentityNotificationTopicAsyncHelper(const SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SetIdentityNotificationTopicAsync(const SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetIdentityNotificationTopic(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSetIdentityNotificationTopicAsyncHelper( this, request, handler, context ); } );
 }
 
 SetReceiptRulePositionOutcome SESClient::SetReceiptRulePosition(const SetReceiptRulePositionRequest& request) const
@@ -1564,14 +1564,14 @@ SetReceiptRulePositionOutcomeCallable SESClient::SetReceiptRulePositionCallable(
   return task->get_future();
 }
 
-void SESClient::SetReceiptRulePositionAsync(const SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientSetReceiptRulePositionAsyncHelper(SESClient const * const clientThis, const SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetReceiptRulePositionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetReceiptRulePosition(request), context);
 }
 
-void SESClient::SetReceiptRulePositionAsyncHelper(const SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::SetReceiptRulePositionAsync(const SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetReceiptRulePosition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientSetReceiptRulePositionAsyncHelper( this, request, handler, context ); } );
 }
 
 TestRenderTemplateOutcome SESClient::TestRenderTemplate(const TestRenderTemplateRequest& request) const
@@ -1588,14 +1588,14 @@ TestRenderTemplateOutcomeCallable SESClient::TestRenderTemplateCallable(const Te
   return task->get_future();
 }
 
-void SESClient::TestRenderTemplateAsync(const TestRenderTemplateRequest& request, const TestRenderTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientTestRenderTemplateAsyncHelper(SESClient const * const clientThis, const TestRenderTemplateRequest& request, const TestRenderTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestRenderTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestRenderTemplate(request), context);
 }
 
-void SESClient::TestRenderTemplateAsyncHelper(const TestRenderTemplateRequest& request, const TestRenderTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::TestRenderTemplateAsync(const TestRenderTemplateRequest& request, const TestRenderTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestRenderTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientTestRenderTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAccountSendingEnabledOutcome SESClient::UpdateAccountSendingEnabled(const UpdateAccountSendingEnabledRequest& request) const
@@ -1612,14 +1612,14 @@ UpdateAccountSendingEnabledOutcomeCallable SESClient::UpdateAccountSendingEnable
   return task->get_future();
 }
 
-void SESClient::UpdateAccountSendingEnabledAsync(const UpdateAccountSendingEnabledRequest& request, const UpdateAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientUpdateAccountSendingEnabledAsyncHelper(SESClient const * const clientThis, const UpdateAccountSendingEnabledRequest& request, const UpdateAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccountSendingEnabledAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAccountSendingEnabled(request), context);
 }
 
-void SESClient::UpdateAccountSendingEnabledAsyncHelper(const UpdateAccountSendingEnabledRequest& request, const UpdateAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::UpdateAccountSendingEnabledAsync(const UpdateAccountSendingEnabledRequest& request, const UpdateAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAccountSendingEnabled(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientUpdateAccountSendingEnabledAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConfigurationSetEventDestinationOutcome SESClient::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
@@ -1636,14 +1636,14 @@ UpdateConfigurationSetEventDestinationOutcomeCallable SESClient::UpdateConfigura
   return task->get_future();
 }
 
-void SESClient::UpdateConfigurationSetEventDestinationAsync(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientUpdateConfigurationSetEventDestinationAsyncHelper(SESClient const * const clientThis, const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConfigurationSetEventDestination(request), context);
 }
 
-void SESClient::UpdateConfigurationSetEventDestinationAsyncHelper(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::UpdateConfigurationSetEventDestinationAsync(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConfigurationSetEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientUpdateConfigurationSetEventDestinationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConfigurationSetReputationMetricsEnabledOutcome SESClient::UpdateConfigurationSetReputationMetricsEnabled(const UpdateConfigurationSetReputationMetricsEnabledRequest& request) const
@@ -1660,14 +1660,14 @@ UpdateConfigurationSetReputationMetricsEnabledOutcomeCallable SESClient::UpdateC
   return task->get_future();
 }
 
-void SESClient::UpdateConfigurationSetReputationMetricsEnabledAsync(const UpdateConfigurationSetReputationMetricsEnabledRequest& request, const UpdateConfigurationSetReputationMetricsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientUpdateConfigurationSetReputationMetricsEnabledAsyncHelper(SESClient const * const clientThis, const UpdateConfigurationSetReputationMetricsEnabledRequest& request, const UpdateConfigurationSetReputationMetricsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationSetReputationMetricsEnabledAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConfigurationSetReputationMetricsEnabled(request), context);
 }
 
-void SESClient::UpdateConfigurationSetReputationMetricsEnabledAsyncHelper(const UpdateConfigurationSetReputationMetricsEnabledRequest& request, const UpdateConfigurationSetReputationMetricsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::UpdateConfigurationSetReputationMetricsEnabledAsync(const UpdateConfigurationSetReputationMetricsEnabledRequest& request, const UpdateConfigurationSetReputationMetricsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConfigurationSetReputationMetricsEnabled(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientUpdateConfigurationSetReputationMetricsEnabledAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConfigurationSetSendingEnabledOutcome SESClient::UpdateConfigurationSetSendingEnabled(const UpdateConfigurationSetSendingEnabledRequest& request) const
@@ -1684,14 +1684,14 @@ UpdateConfigurationSetSendingEnabledOutcomeCallable SESClient::UpdateConfigurati
   return task->get_future();
 }
 
-void SESClient::UpdateConfigurationSetSendingEnabledAsync(const UpdateConfigurationSetSendingEnabledRequest& request, const UpdateConfigurationSetSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientUpdateConfigurationSetSendingEnabledAsyncHelper(SESClient const * const clientThis, const UpdateConfigurationSetSendingEnabledRequest& request, const UpdateConfigurationSetSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationSetSendingEnabledAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConfigurationSetSendingEnabled(request), context);
 }
 
-void SESClient::UpdateConfigurationSetSendingEnabledAsyncHelper(const UpdateConfigurationSetSendingEnabledRequest& request, const UpdateConfigurationSetSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::UpdateConfigurationSetSendingEnabledAsync(const UpdateConfigurationSetSendingEnabledRequest& request, const UpdateConfigurationSetSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConfigurationSetSendingEnabled(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientUpdateConfigurationSetSendingEnabledAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConfigurationSetTrackingOptionsOutcome SESClient::UpdateConfigurationSetTrackingOptions(const UpdateConfigurationSetTrackingOptionsRequest& request) const
@@ -1708,14 +1708,14 @@ UpdateConfigurationSetTrackingOptionsOutcomeCallable SESClient::UpdateConfigurat
   return task->get_future();
 }
 
-void SESClient::UpdateConfigurationSetTrackingOptionsAsync(const UpdateConfigurationSetTrackingOptionsRequest& request, const UpdateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientUpdateConfigurationSetTrackingOptionsAsyncHelper(SESClient const * const clientThis, const UpdateConfigurationSetTrackingOptionsRequest& request, const UpdateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationSetTrackingOptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConfigurationSetTrackingOptions(request), context);
 }
 
-void SESClient::UpdateConfigurationSetTrackingOptionsAsyncHelper(const UpdateConfigurationSetTrackingOptionsRequest& request, const UpdateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::UpdateConfigurationSetTrackingOptionsAsync(const UpdateConfigurationSetTrackingOptionsRequest& request, const UpdateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConfigurationSetTrackingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientUpdateConfigurationSetTrackingOptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCustomVerificationEmailTemplateOutcome SESClient::UpdateCustomVerificationEmailTemplate(const UpdateCustomVerificationEmailTemplateRequest& request) const
@@ -1732,14 +1732,14 @@ UpdateCustomVerificationEmailTemplateOutcomeCallable SESClient::UpdateCustomVeri
   return task->get_future();
 }
 
-void SESClient::UpdateCustomVerificationEmailTemplateAsync(const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientUpdateCustomVerificationEmailTemplateAsyncHelper(SESClient const * const clientThis, const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCustomVerificationEmailTemplate(request), context);
 }
 
-void SESClient::UpdateCustomVerificationEmailTemplateAsyncHelper(const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::UpdateCustomVerificationEmailTemplateAsync(const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCustomVerificationEmailTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientUpdateCustomVerificationEmailTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateReceiptRuleOutcome SESClient::UpdateReceiptRule(const UpdateReceiptRuleRequest& request) const
@@ -1756,14 +1756,14 @@ UpdateReceiptRuleOutcomeCallable SESClient::UpdateReceiptRuleCallable(const Upda
   return task->get_future();
 }
 
-void SESClient::UpdateReceiptRuleAsync(const UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientUpdateReceiptRuleAsyncHelper(SESClient const * const clientThis, const UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReceiptRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateReceiptRule(request), context);
 }
 
-void SESClient::UpdateReceiptRuleAsyncHelper(const UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::UpdateReceiptRuleAsync(const UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateReceiptRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientUpdateReceiptRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTemplateOutcome SESClient::UpdateTemplate(const UpdateTemplateRequest& request) const
@@ -1780,14 +1780,14 @@ UpdateTemplateOutcomeCallable SESClient::UpdateTemplateCallable(const UpdateTemp
   return task->get_future();
 }
 
-void SESClient::UpdateTemplateAsync(const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientUpdateTemplateAsyncHelper(SESClient const * const clientThis, const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTemplate(request), context);
 }
 
-void SESClient::UpdateTemplateAsyncHelper(const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::UpdateTemplateAsync(const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientUpdateTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 VerifyDomainDkimOutcome SESClient::VerifyDomainDkim(const VerifyDomainDkimRequest& request) const
@@ -1804,14 +1804,14 @@ VerifyDomainDkimOutcomeCallable SESClient::VerifyDomainDkimCallable(const Verify
   return task->get_future();
 }
 
-void SESClient::VerifyDomainDkimAsync(const VerifyDomainDkimRequest& request, const VerifyDomainDkimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientVerifyDomainDkimAsyncHelper(SESClient const * const clientThis, const VerifyDomainDkimRequest& request, const VerifyDomainDkimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VerifyDomainDkimAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->VerifyDomainDkim(request), context);
 }
 
-void SESClient::VerifyDomainDkimAsyncHelper(const VerifyDomainDkimRequest& request, const VerifyDomainDkimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::VerifyDomainDkimAsync(const VerifyDomainDkimRequest& request, const VerifyDomainDkimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, VerifyDomainDkim(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientVerifyDomainDkimAsyncHelper( this, request, handler, context ); } );
 }
 
 VerifyDomainIdentityOutcome SESClient::VerifyDomainIdentity(const VerifyDomainIdentityRequest& request) const
@@ -1828,14 +1828,14 @@ VerifyDomainIdentityOutcomeCallable SESClient::VerifyDomainIdentityCallable(cons
   return task->get_future();
 }
 
-void SESClient::VerifyDomainIdentityAsync(const VerifyDomainIdentityRequest& request, const VerifyDomainIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientVerifyDomainIdentityAsyncHelper(SESClient const * const clientThis, const VerifyDomainIdentityRequest& request, const VerifyDomainIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VerifyDomainIdentityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->VerifyDomainIdentity(request), context);
 }
 
-void SESClient::VerifyDomainIdentityAsyncHelper(const VerifyDomainIdentityRequest& request, const VerifyDomainIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::VerifyDomainIdentityAsync(const VerifyDomainIdentityRequest& request, const VerifyDomainIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, VerifyDomainIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientVerifyDomainIdentityAsyncHelper( this, request, handler, context ); } );
 }
 
 VerifyEmailAddressOutcome SESClient::VerifyEmailAddress(const VerifyEmailAddressRequest& request) const
@@ -1852,14 +1852,14 @@ VerifyEmailAddressOutcomeCallable SESClient::VerifyEmailAddressCallable(const Ve
   return task->get_future();
 }
 
-void SESClient::VerifyEmailAddressAsync(const VerifyEmailAddressRequest& request, const VerifyEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientVerifyEmailAddressAsyncHelper(SESClient const * const clientThis, const VerifyEmailAddressRequest& request, const VerifyEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VerifyEmailAddressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->VerifyEmailAddress(request), context);
 }
 
-void SESClient::VerifyEmailAddressAsyncHelper(const VerifyEmailAddressRequest& request, const VerifyEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::VerifyEmailAddressAsync(const VerifyEmailAddressRequest& request, const VerifyEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, VerifyEmailAddress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientVerifyEmailAddressAsyncHelper( this, request, handler, context ); } );
 }
 
 VerifyEmailIdentityOutcome SESClient::VerifyEmailIdentity(const VerifyEmailIdentityRequest& request) const
@@ -1876,13 +1876,13 @@ VerifyEmailIdentityOutcomeCallable SESClient::VerifyEmailIdentityCallable(const 
   return task->get_future();
 }
 
-void SESClient::VerifyEmailIdentityAsync(const VerifyEmailIdentityRequest& request, const VerifyEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClientVerifyEmailIdentityAsyncHelper(SESClient const * const clientThis, const VerifyEmailIdentityRequest& request, const VerifyEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VerifyEmailIdentityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->VerifyEmailIdentity(request), context);
 }
 
-void SESClient::VerifyEmailIdentityAsyncHelper(const VerifyEmailIdentityRequest& request, const VerifyEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SESClient::VerifyEmailIdentityAsync(const VerifyEmailIdentityRequest& request, const VerifyEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, VerifyEmailIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SESClientVerifyEmailIdentityAsyncHelper( this, request, handler, context ); } );
 }
 

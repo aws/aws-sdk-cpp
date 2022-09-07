@@ -162,14 +162,14 @@ AssociateWebACLOutcomeCallable WAFV2Client::AssociateWebACLCallable(const Associ
   return task->get_future();
 }
 
-void WAFV2Client::AssociateWebACLAsync(const AssociateWebACLRequest& request, const AssociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientAssociateWebACLAsyncHelper(WAFV2Client const * const clientThis, const AssociateWebACLRequest& request, const AssociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateWebACL(request), context);
 }
 
-void WAFV2Client::AssociateWebACLAsyncHelper(const AssociateWebACLRequest& request, const AssociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::AssociateWebACLAsync(const AssociateWebACLRequest& request, const AssociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientAssociateWebACLAsyncHelper( this, request, handler, context ); } );
 }
 
 CheckCapacityOutcome WAFV2Client::CheckCapacity(const CheckCapacityRequest& request) const
@@ -186,14 +186,14 @@ CheckCapacityOutcomeCallable WAFV2Client::CheckCapacityCallable(const CheckCapac
   return task->get_future();
 }
 
-void WAFV2Client::CheckCapacityAsync(const CheckCapacityRequest& request, const CheckCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientCheckCapacityAsyncHelper(WAFV2Client const * const clientThis, const CheckCapacityRequest& request, const CheckCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CheckCapacityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CheckCapacity(request), context);
 }
 
-void WAFV2Client::CheckCapacityAsyncHelper(const CheckCapacityRequest& request, const CheckCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::CheckCapacityAsync(const CheckCapacityRequest& request, const CheckCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CheckCapacity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientCheckCapacityAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIPSetOutcome WAFV2Client::CreateIPSet(const CreateIPSetRequest& request) const
@@ -210,14 +210,14 @@ CreateIPSetOutcomeCallable WAFV2Client::CreateIPSetCallable(const CreateIPSetReq
   return task->get_future();
 }
 
-void WAFV2Client::CreateIPSetAsync(const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientCreateIPSetAsyncHelper(WAFV2Client const * const clientThis, const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIPSet(request), context);
 }
 
-void WAFV2Client::CreateIPSetAsyncHelper(const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::CreateIPSetAsync(const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientCreateIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRegexPatternSetOutcome WAFV2Client::CreateRegexPatternSet(const CreateRegexPatternSetRequest& request) const
@@ -234,14 +234,14 @@ CreateRegexPatternSetOutcomeCallable WAFV2Client::CreateRegexPatternSetCallable(
   return task->get_future();
 }
 
-void WAFV2Client::CreateRegexPatternSetAsync(const CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientCreateRegexPatternSetAsyncHelper(WAFV2Client const * const clientThis, const CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRegexPatternSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRegexPatternSet(request), context);
 }
 
-void WAFV2Client::CreateRegexPatternSetAsyncHelper(const CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::CreateRegexPatternSetAsync(const CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRegexPatternSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientCreateRegexPatternSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRuleGroupOutcome WAFV2Client::CreateRuleGroup(const CreateRuleGroupRequest& request) const
@@ -258,14 +258,14 @@ CreateRuleGroupOutcomeCallable WAFV2Client::CreateRuleGroupCallable(const Create
   return task->get_future();
 }
 
-void WAFV2Client::CreateRuleGroupAsync(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientCreateRuleGroupAsyncHelper(WAFV2Client const * const clientThis, const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRuleGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRuleGroup(request), context);
 }
 
-void WAFV2Client::CreateRuleGroupAsyncHelper(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::CreateRuleGroupAsync(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientCreateRuleGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWebACLOutcome WAFV2Client::CreateWebACL(const CreateWebACLRequest& request) const
@@ -282,14 +282,14 @@ CreateWebACLOutcomeCallable WAFV2Client::CreateWebACLCallable(const CreateWebACL
   return task->get_future();
 }
 
-void WAFV2Client::CreateWebACLAsync(const CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientCreateWebACLAsyncHelper(WAFV2Client const * const clientThis, const CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWebACL(request), context);
 }
 
-void WAFV2Client::CreateWebACLAsyncHelper(const CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::CreateWebACLAsync(const CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientCreateWebACLAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFirewallManagerRuleGroupsOutcome WAFV2Client::DeleteFirewallManagerRuleGroups(const DeleteFirewallManagerRuleGroupsRequest& request) const
@@ -306,14 +306,14 @@ DeleteFirewallManagerRuleGroupsOutcomeCallable WAFV2Client::DeleteFirewallManage
   return task->get_future();
 }
 
-void WAFV2Client::DeleteFirewallManagerRuleGroupsAsync(const DeleteFirewallManagerRuleGroupsRequest& request, const DeleteFirewallManagerRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientDeleteFirewallManagerRuleGroupsAsyncHelper(WAFV2Client const * const clientThis, const DeleteFirewallManagerRuleGroupsRequest& request, const DeleteFirewallManagerRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFirewallManagerRuleGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFirewallManagerRuleGroups(request), context);
 }
 
-void WAFV2Client::DeleteFirewallManagerRuleGroupsAsyncHelper(const DeleteFirewallManagerRuleGroupsRequest& request, const DeleteFirewallManagerRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::DeleteFirewallManagerRuleGroupsAsync(const DeleteFirewallManagerRuleGroupsRequest& request, const DeleteFirewallManagerRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFirewallManagerRuleGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientDeleteFirewallManagerRuleGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIPSetOutcome WAFV2Client::DeleteIPSet(const DeleteIPSetRequest& request) const
@@ -330,14 +330,14 @@ DeleteIPSetOutcomeCallable WAFV2Client::DeleteIPSetCallable(const DeleteIPSetReq
   return task->get_future();
 }
 
-void WAFV2Client::DeleteIPSetAsync(const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientDeleteIPSetAsyncHelper(WAFV2Client const * const clientThis, const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIPSet(request), context);
 }
 
-void WAFV2Client::DeleteIPSetAsyncHelper(const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::DeleteIPSetAsync(const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientDeleteIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLoggingConfigurationOutcome WAFV2Client::DeleteLoggingConfiguration(const DeleteLoggingConfigurationRequest& request) const
@@ -354,14 +354,14 @@ DeleteLoggingConfigurationOutcomeCallable WAFV2Client::DeleteLoggingConfiguratio
   return task->get_future();
 }
 
-void WAFV2Client::DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientDeleteLoggingConfigurationAsyncHelper(WAFV2Client const * const clientThis, const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLoggingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLoggingConfiguration(request), context);
 }
 
-void WAFV2Client::DeleteLoggingConfigurationAsyncHelper(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientDeleteLoggingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePermissionPolicyOutcome WAFV2Client::DeletePermissionPolicy(const DeletePermissionPolicyRequest& request) const
@@ -378,14 +378,14 @@ DeletePermissionPolicyOutcomeCallable WAFV2Client::DeletePermissionPolicyCallabl
   return task->get_future();
 }
 
-void WAFV2Client::DeletePermissionPolicyAsync(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientDeletePermissionPolicyAsyncHelper(WAFV2Client const * const clientThis, const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePermissionPolicy(request), context);
 }
 
-void WAFV2Client::DeletePermissionPolicyAsyncHelper(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::DeletePermissionPolicyAsync(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePermissionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientDeletePermissionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRegexPatternSetOutcome WAFV2Client::DeleteRegexPatternSet(const DeleteRegexPatternSetRequest& request) const
@@ -402,14 +402,14 @@ DeleteRegexPatternSetOutcomeCallable WAFV2Client::DeleteRegexPatternSetCallable(
   return task->get_future();
 }
 
-void WAFV2Client::DeleteRegexPatternSetAsync(const DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientDeleteRegexPatternSetAsyncHelper(WAFV2Client const * const clientThis, const DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRegexPatternSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRegexPatternSet(request), context);
 }
 
-void WAFV2Client::DeleteRegexPatternSetAsyncHelper(const DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::DeleteRegexPatternSetAsync(const DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRegexPatternSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientDeleteRegexPatternSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRuleGroupOutcome WAFV2Client::DeleteRuleGroup(const DeleteRuleGroupRequest& request) const
@@ -426,14 +426,14 @@ DeleteRuleGroupOutcomeCallable WAFV2Client::DeleteRuleGroupCallable(const Delete
   return task->get_future();
 }
 
-void WAFV2Client::DeleteRuleGroupAsync(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientDeleteRuleGroupAsyncHelper(WAFV2Client const * const clientThis, const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRuleGroup(request), context);
 }
 
-void WAFV2Client::DeleteRuleGroupAsyncHelper(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::DeleteRuleGroupAsync(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientDeleteRuleGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWebACLOutcome WAFV2Client::DeleteWebACL(const DeleteWebACLRequest& request) const
@@ -450,14 +450,14 @@ DeleteWebACLOutcomeCallable WAFV2Client::DeleteWebACLCallable(const DeleteWebACL
   return task->get_future();
 }
 
-void WAFV2Client::DeleteWebACLAsync(const DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientDeleteWebACLAsyncHelper(WAFV2Client const * const clientThis, const DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWebACL(request), context);
 }
 
-void WAFV2Client::DeleteWebACLAsyncHelper(const DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::DeleteWebACLAsync(const DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientDeleteWebACLAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeManagedRuleGroupOutcome WAFV2Client::DescribeManagedRuleGroup(const DescribeManagedRuleGroupRequest& request) const
@@ -474,14 +474,14 @@ DescribeManagedRuleGroupOutcomeCallable WAFV2Client::DescribeManagedRuleGroupCal
   return task->get_future();
 }
 
-void WAFV2Client::DescribeManagedRuleGroupAsync(const DescribeManagedRuleGroupRequest& request, const DescribeManagedRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientDescribeManagedRuleGroupAsyncHelper(WAFV2Client const * const clientThis, const DescribeManagedRuleGroupRequest& request, const DescribeManagedRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeManagedRuleGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeManagedRuleGroup(request), context);
 }
 
-void WAFV2Client::DescribeManagedRuleGroupAsyncHelper(const DescribeManagedRuleGroupRequest& request, const DescribeManagedRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::DescribeManagedRuleGroupAsync(const DescribeManagedRuleGroupRequest& request, const DescribeManagedRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeManagedRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientDescribeManagedRuleGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateWebACLOutcome WAFV2Client::DisassociateWebACL(const DisassociateWebACLRequest& request) const
@@ -498,14 +498,14 @@ DisassociateWebACLOutcomeCallable WAFV2Client::DisassociateWebACLCallable(const 
   return task->get_future();
 }
 
-void WAFV2Client::DisassociateWebACLAsync(const DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientDisassociateWebACLAsyncHelper(WAFV2Client const * const clientThis, const DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateWebACL(request), context);
 }
 
-void WAFV2Client::DisassociateWebACLAsyncHelper(const DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::DisassociateWebACLAsync(const DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientDisassociateWebACLAsyncHelper( this, request, handler, context ); } );
 }
 
 GenerateMobileSdkReleaseUrlOutcome WAFV2Client::GenerateMobileSdkReleaseUrl(const GenerateMobileSdkReleaseUrlRequest& request) const
@@ -522,14 +522,14 @@ GenerateMobileSdkReleaseUrlOutcomeCallable WAFV2Client::GenerateMobileSdkRelease
   return task->get_future();
 }
 
-void WAFV2Client::GenerateMobileSdkReleaseUrlAsync(const GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGenerateMobileSdkReleaseUrlAsyncHelper(WAFV2Client const * const clientThis, const GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateMobileSdkReleaseUrlAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GenerateMobileSdkReleaseUrl(request), context);
 }
 
-void WAFV2Client::GenerateMobileSdkReleaseUrlAsyncHelper(const GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GenerateMobileSdkReleaseUrlAsync(const GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GenerateMobileSdkReleaseUrl(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGenerateMobileSdkReleaseUrlAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIPSetOutcome WAFV2Client::GetIPSet(const GetIPSetRequest& request) const
@@ -546,14 +546,14 @@ GetIPSetOutcomeCallable WAFV2Client::GetIPSetCallable(const GetIPSetRequest& req
   return task->get_future();
 }
 
-void WAFV2Client::GetIPSetAsync(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetIPSetAsyncHelper(WAFV2Client const * const clientThis, const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIPSet(request), context);
 }
 
-void WAFV2Client::GetIPSetAsyncHelper(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetIPSetAsync(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLoggingConfigurationOutcome WAFV2Client::GetLoggingConfiguration(const GetLoggingConfigurationRequest& request) const
@@ -570,14 +570,14 @@ GetLoggingConfigurationOutcomeCallable WAFV2Client::GetLoggingConfigurationCalla
   return task->get_future();
 }
 
-void WAFV2Client::GetLoggingConfigurationAsync(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetLoggingConfigurationAsyncHelper(WAFV2Client const * const clientThis, const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLoggingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLoggingConfiguration(request), context);
 }
 
-void WAFV2Client::GetLoggingConfigurationAsyncHelper(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetLoggingConfigurationAsync(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetLoggingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetManagedRuleSetOutcome WAFV2Client::GetManagedRuleSet(const GetManagedRuleSetRequest& request) const
@@ -594,14 +594,14 @@ GetManagedRuleSetOutcomeCallable WAFV2Client::GetManagedRuleSetCallable(const Ge
   return task->get_future();
 }
 
-void WAFV2Client::GetManagedRuleSetAsync(const GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetManagedRuleSetAsyncHelper(WAFV2Client const * const clientThis, const GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetManagedRuleSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetManagedRuleSet(request), context);
 }
 
-void WAFV2Client::GetManagedRuleSetAsyncHelper(const GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetManagedRuleSetAsync(const GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetManagedRuleSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetManagedRuleSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMobileSdkReleaseOutcome WAFV2Client::GetMobileSdkRelease(const GetMobileSdkReleaseRequest& request) const
@@ -618,14 +618,14 @@ GetMobileSdkReleaseOutcomeCallable WAFV2Client::GetMobileSdkReleaseCallable(cons
   return task->get_future();
 }
 
-void WAFV2Client::GetMobileSdkReleaseAsync(const GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetMobileSdkReleaseAsyncHelper(WAFV2Client const * const clientThis, const GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMobileSdkReleaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMobileSdkRelease(request), context);
 }
 
-void WAFV2Client::GetMobileSdkReleaseAsyncHelper(const GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetMobileSdkReleaseAsync(const GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMobileSdkRelease(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetMobileSdkReleaseAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPermissionPolicyOutcome WAFV2Client::GetPermissionPolicy(const GetPermissionPolicyRequest& request) const
@@ -642,14 +642,14 @@ GetPermissionPolicyOutcomeCallable WAFV2Client::GetPermissionPolicyCallable(cons
   return task->get_future();
 }
 
-void WAFV2Client::GetPermissionPolicyAsync(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetPermissionPolicyAsyncHelper(WAFV2Client const * const clientThis, const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPermissionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPermissionPolicy(request), context);
 }
 
-void WAFV2Client::GetPermissionPolicyAsyncHelper(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetPermissionPolicyAsync(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPermissionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetPermissionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRateBasedStatementManagedKeysOutcome WAFV2Client::GetRateBasedStatementManagedKeys(const GetRateBasedStatementManagedKeysRequest& request) const
@@ -666,14 +666,14 @@ GetRateBasedStatementManagedKeysOutcomeCallable WAFV2Client::GetRateBasedStateme
   return task->get_future();
 }
 
-void WAFV2Client::GetRateBasedStatementManagedKeysAsync(const GetRateBasedStatementManagedKeysRequest& request, const GetRateBasedStatementManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetRateBasedStatementManagedKeysAsyncHelper(WAFV2Client const * const clientThis, const GetRateBasedStatementManagedKeysRequest& request, const GetRateBasedStatementManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRateBasedStatementManagedKeysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRateBasedStatementManagedKeys(request), context);
 }
 
-void WAFV2Client::GetRateBasedStatementManagedKeysAsyncHelper(const GetRateBasedStatementManagedKeysRequest& request, const GetRateBasedStatementManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetRateBasedStatementManagedKeysAsync(const GetRateBasedStatementManagedKeysRequest& request, const GetRateBasedStatementManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRateBasedStatementManagedKeys(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetRateBasedStatementManagedKeysAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRegexPatternSetOutcome WAFV2Client::GetRegexPatternSet(const GetRegexPatternSetRequest& request) const
@@ -690,14 +690,14 @@ GetRegexPatternSetOutcomeCallable WAFV2Client::GetRegexPatternSetCallable(const 
   return task->get_future();
 }
 
-void WAFV2Client::GetRegexPatternSetAsync(const GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetRegexPatternSetAsyncHelper(WAFV2Client const * const clientThis, const GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRegexPatternSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRegexPatternSet(request), context);
 }
 
-void WAFV2Client::GetRegexPatternSetAsyncHelper(const GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetRegexPatternSetAsync(const GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRegexPatternSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetRegexPatternSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRuleGroupOutcome WAFV2Client::GetRuleGroup(const GetRuleGroupRequest& request) const
@@ -714,14 +714,14 @@ GetRuleGroupOutcomeCallable WAFV2Client::GetRuleGroupCallable(const GetRuleGroup
   return task->get_future();
 }
 
-void WAFV2Client::GetRuleGroupAsync(const GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetRuleGroupAsyncHelper(WAFV2Client const * const clientThis, const GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRuleGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRuleGroup(request), context);
 }
 
-void WAFV2Client::GetRuleGroupAsyncHelper(const GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetRuleGroupAsync(const GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetRuleGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSampledRequestsOutcome WAFV2Client::GetSampledRequests(const GetSampledRequestsRequest& request) const
@@ -738,14 +738,14 @@ GetSampledRequestsOutcomeCallable WAFV2Client::GetSampledRequestsCallable(const 
   return task->get_future();
 }
 
-void WAFV2Client::GetSampledRequestsAsync(const GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetSampledRequestsAsyncHelper(WAFV2Client const * const clientThis, const GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSampledRequestsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSampledRequests(request), context);
 }
 
-void WAFV2Client::GetSampledRequestsAsyncHelper(const GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetSampledRequestsAsync(const GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSampledRequests(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetSampledRequestsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWebACLOutcome WAFV2Client::GetWebACL(const GetWebACLRequest& request) const
@@ -762,14 +762,14 @@ GetWebACLOutcomeCallable WAFV2Client::GetWebACLCallable(const GetWebACLRequest& 
   return task->get_future();
 }
 
-void WAFV2Client::GetWebACLAsync(const GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetWebACLAsyncHelper(WAFV2Client const * const clientThis, const GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWebACL(request), context);
 }
 
-void WAFV2Client::GetWebACLAsyncHelper(const GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetWebACLAsync(const GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetWebACLAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWebACLForResourceOutcome WAFV2Client::GetWebACLForResource(const GetWebACLForResourceRequest& request) const
@@ -786,14 +786,14 @@ GetWebACLForResourceOutcomeCallable WAFV2Client::GetWebACLForResourceCallable(co
   return task->get_future();
 }
 
-void WAFV2Client::GetWebACLForResourceAsync(const GetWebACLForResourceRequest& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientGetWebACLForResourceAsyncHelper(WAFV2Client const * const clientThis, const GetWebACLForResourceRequest& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWebACLForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWebACLForResource(request), context);
 }
 
-void WAFV2Client::GetWebACLForResourceAsyncHelper(const GetWebACLForResourceRequest& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::GetWebACLForResourceAsync(const GetWebACLForResourceRequest& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWebACLForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientGetWebACLForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAvailableManagedRuleGroupVersionsOutcome WAFV2Client::ListAvailableManagedRuleGroupVersions(const ListAvailableManagedRuleGroupVersionsRequest& request) const
@@ -810,14 +810,14 @@ ListAvailableManagedRuleGroupVersionsOutcomeCallable WAFV2Client::ListAvailableM
   return task->get_future();
 }
 
-void WAFV2Client::ListAvailableManagedRuleGroupVersionsAsync(const ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListAvailableManagedRuleGroupVersionsAsyncHelper(WAFV2Client const * const clientThis, const ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAvailableManagedRuleGroupVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAvailableManagedRuleGroupVersions(request), context);
 }
 
-void WAFV2Client::ListAvailableManagedRuleGroupVersionsAsyncHelper(const ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListAvailableManagedRuleGroupVersionsAsync(const ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAvailableManagedRuleGroupVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListAvailableManagedRuleGroupVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAvailableManagedRuleGroupsOutcome WAFV2Client::ListAvailableManagedRuleGroups(const ListAvailableManagedRuleGroupsRequest& request) const
@@ -834,14 +834,14 @@ ListAvailableManagedRuleGroupsOutcomeCallable WAFV2Client::ListAvailableManagedR
   return task->get_future();
 }
 
-void WAFV2Client::ListAvailableManagedRuleGroupsAsync(const ListAvailableManagedRuleGroupsRequest& request, const ListAvailableManagedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListAvailableManagedRuleGroupsAsyncHelper(WAFV2Client const * const clientThis, const ListAvailableManagedRuleGroupsRequest& request, const ListAvailableManagedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAvailableManagedRuleGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAvailableManagedRuleGroups(request), context);
 }
 
-void WAFV2Client::ListAvailableManagedRuleGroupsAsyncHelper(const ListAvailableManagedRuleGroupsRequest& request, const ListAvailableManagedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListAvailableManagedRuleGroupsAsync(const ListAvailableManagedRuleGroupsRequest& request, const ListAvailableManagedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAvailableManagedRuleGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListAvailableManagedRuleGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIPSetsOutcome WAFV2Client::ListIPSets(const ListIPSetsRequest& request) const
@@ -858,14 +858,14 @@ ListIPSetsOutcomeCallable WAFV2Client::ListIPSetsCallable(const ListIPSetsReques
   return task->get_future();
 }
 
-void WAFV2Client::ListIPSetsAsync(const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListIPSetsAsyncHelper(WAFV2Client const * const clientThis, const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIPSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIPSets(request), context);
 }
 
-void WAFV2Client::ListIPSetsAsyncHelper(const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListIPSetsAsync(const ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIPSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListIPSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLoggingConfigurationsOutcome WAFV2Client::ListLoggingConfigurations(const ListLoggingConfigurationsRequest& request) const
@@ -882,14 +882,14 @@ ListLoggingConfigurationsOutcomeCallable WAFV2Client::ListLoggingConfigurationsC
   return task->get_future();
 }
 
-void WAFV2Client::ListLoggingConfigurationsAsync(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListLoggingConfigurationsAsyncHelper(WAFV2Client const * const clientThis, const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLoggingConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLoggingConfigurations(request), context);
 }
 
-void WAFV2Client::ListLoggingConfigurationsAsyncHelper(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListLoggingConfigurationsAsync(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLoggingConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListLoggingConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListManagedRuleSetsOutcome WAFV2Client::ListManagedRuleSets(const ListManagedRuleSetsRequest& request) const
@@ -906,14 +906,14 @@ ListManagedRuleSetsOutcomeCallable WAFV2Client::ListManagedRuleSetsCallable(cons
   return task->get_future();
 }
 
-void WAFV2Client::ListManagedRuleSetsAsync(const ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListManagedRuleSetsAsyncHelper(WAFV2Client const * const clientThis, const ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListManagedRuleSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListManagedRuleSets(request), context);
 }
 
-void WAFV2Client::ListManagedRuleSetsAsyncHelper(const ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListManagedRuleSetsAsync(const ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListManagedRuleSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListManagedRuleSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMobileSdkReleasesOutcome WAFV2Client::ListMobileSdkReleases(const ListMobileSdkReleasesRequest& request) const
@@ -930,14 +930,14 @@ ListMobileSdkReleasesOutcomeCallable WAFV2Client::ListMobileSdkReleasesCallable(
   return task->get_future();
 }
 
-void WAFV2Client::ListMobileSdkReleasesAsync(const ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListMobileSdkReleasesAsyncHelper(WAFV2Client const * const clientThis, const ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMobileSdkReleasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMobileSdkReleases(request), context);
 }
 
-void WAFV2Client::ListMobileSdkReleasesAsyncHelper(const ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListMobileSdkReleasesAsync(const ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMobileSdkReleases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListMobileSdkReleasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRegexPatternSetsOutcome WAFV2Client::ListRegexPatternSets(const ListRegexPatternSetsRequest& request) const
@@ -954,14 +954,14 @@ ListRegexPatternSetsOutcomeCallable WAFV2Client::ListRegexPatternSetsCallable(co
   return task->get_future();
 }
 
-void WAFV2Client::ListRegexPatternSetsAsync(const ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListRegexPatternSetsAsyncHelper(WAFV2Client const * const clientThis, const ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRegexPatternSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRegexPatternSets(request), context);
 }
 
-void WAFV2Client::ListRegexPatternSetsAsyncHelper(const ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListRegexPatternSetsAsync(const ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRegexPatternSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListRegexPatternSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourcesForWebACLOutcome WAFV2Client::ListResourcesForWebACL(const ListResourcesForWebACLRequest& request) const
@@ -978,14 +978,14 @@ ListResourcesForWebACLOutcomeCallable WAFV2Client::ListResourcesForWebACLCallabl
   return task->get_future();
 }
 
-void WAFV2Client::ListResourcesForWebACLAsync(const ListResourcesForWebACLRequest& request, const ListResourcesForWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListResourcesForWebACLAsyncHelper(WAFV2Client const * const clientThis, const ListResourcesForWebACLRequest& request, const ListResourcesForWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesForWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourcesForWebACL(request), context);
 }
 
-void WAFV2Client::ListResourcesForWebACLAsyncHelper(const ListResourcesForWebACLRequest& request, const ListResourcesForWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListResourcesForWebACLAsync(const ListResourcesForWebACLRequest& request, const ListResourcesForWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourcesForWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListResourcesForWebACLAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRuleGroupsOutcome WAFV2Client::ListRuleGroups(const ListRuleGroupsRequest& request) const
@@ -1002,14 +1002,14 @@ ListRuleGroupsOutcomeCallable WAFV2Client::ListRuleGroupsCallable(const ListRule
   return task->get_future();
 }
 
-void WAFV2Client::ListRuleGroupsAsync(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListRuleGroupsAsyncHelper(WAFV2Client const * const clientThis, const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRuleGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRuleGroups(request), context);
 }
 
-void WAFV2Client::ListRuleGroupsAsyncHelper(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListRuleGroupsAsync(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRuleGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListRuleGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome WAFV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1026,14 +1026,14 @@ ListTagsForResourceOutcomeCallable WAFV2Client::ListTagsForResourceCallable(cons
   return task->get_future();
 }
 
-void WAFV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListTagsForResourceAsyncHelper(WAFV2Client const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void WAFV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWebACLsOutcome WAFV2Client::ListWebACLs(const ListWebACLsRequest& request) const
@@ -1050,14 +1050,14 @@ ListWebACLsOutcomeCallable WAFV2Client::ListWebACLsCallable(const ListWebACLsReq
   return task->get_future();
 }
 
-void WAFV2Client::ListWebACLsAsync(const ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientListWebACLsAsyncHelper(WAFV2Client const * const clientThis, const ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWebACLsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWebACLs(request), context);
 }
 
-void WAFV2Client::ListWebACLsAsyncHelper(const ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::ListWebACLsAsync(const ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWebACLs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientListWebACLsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutLoggingConfigurationOutcome WAFV2Client::PutLoggingConfiguration(const PutLoggingConfigurationRequest& request) const
@@ -1074,14 +1074,14 @@ PutLoggingConfigurationOutcomeCallable WAFV2Client::PutLoggingConfigurationCalla
   return task->get_future();
 }
 
-void WAFV2Client::PutLoggingConfigurationAsync(const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientPutLoggingConfigurationAsyncHelper(WAFV2Client const * const clientThis, const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLoggingConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutLoggingConfiguration(request), context);
 }
 
-void WAFV2Client::PutLoggingConfigurationAsyncHelper(const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::PutLoggingConfigurationAsync(const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientPutLoggingConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 PutManagedRuleSetVersionsOutcome WAFV2Client::PutManagedRuleSetVersions(const PutManagedRuleSetVersionsRequest& request) const
@@ -1098,14 +1098,14 @@ PutManagedRuleSetVersionsOutcomeCallable WAFV2Client::PutManagedRuleSetVersionsC
   return task->get_future();
 }
 
-void WAFV2Client::PutManagedRuleSetVersionsAsync(const PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientPutManagedRuleSetVersionsAsyncHelper(WAFV2Client const * const clientThis, const PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutManagedRuleSetVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutManagedRuleSetVersions(request), context);
 }
 
-void WAFV2Client::PutManagedRuleSetVersionsAsyncHelper(const PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::PutManagedRuleSetVersionsAsync(const PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutManagedRuleSetVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientPutManagedRuleSetVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPermissionPolicyOutcome WAFV2Client::PutPermissionPolicy(const PutPermissionPolicyRequest& request) const
@@ -1122,14 +1122,14 @@ PutPermissionPolicyOutcomeCallable WAFV2Client::PutPermissionPolicyCallable(cons
   return task->get_future();
 }
 
-void WAFV2Client::PutPermissionPolicyAsync(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientPutPermissionPolicyAsyncHelper(WAFV2Client const * const clientThis, const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPermissionPolicy(request), context);
 }
 
-void WAFV2Client::PutPermissionPolicyAsyncHelper(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::PutPermissionPolicyAsync(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPermissionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientPutPermissionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome WAFV2Client::TagResource(const TagResourceRequest& request) const
@@ -1146,14 +1146,14 @@ TagResourceOutcomeCallable WAFV2Client::TagResourceCallable(const TagResourceReq
   return task->get_future();
 }
 
-void WAFV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientTagResourceAsyncHelper(WAFV2Client const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void WAFV2Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome WAFV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -1170,14 +1170,14 @@ UntagResourceOutcomeCallable WAFV2Client::UntagResourceCallable(const UntagResou
   return task->get_future();
 }
 
-void WAFV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientUntagResourceAsyncHelper(WAFV2Client const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void WAFV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateIPSetOutcome WAFV2Client::UpdateIPSet(const UpdateIPSetRequest& request) const
@@ -1194,14 +1194,14 @@ UpdateIPSetOutcomeCallable WAFV2Client::UpdateIPSetCallable(const UpdateIPSetReq
   return task->get_future();
 }
 
-void WAFV2Client::UpdateIPSetAsync(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientUpdateIPSetAsyncHelper(WAFV2Client const * const clientThis, const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIPSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateIPSet(request), context);
 }
 
-void WAFV2Client::UpdateIPSetAsyncHelper(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::UpdateIPSetAsync(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateIPSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientUpdateIPSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateManagedRuleSetVersionExpiryDateOutcome WAFV2Client::UpdateManagedRuleSetVersionExpiryDate(const UpdateManagedRuleSetVersionExpiryDateRequest& request) const
@@ -1218,14 +1218,14 @@ UpdateManagedRuleSetVersionExpiryDateOutcomeCallable WAFV2Client::UpdateManagedR
   return task->get_future();
 }
 
-void WAFV2Client::UpdateManagedRuleSetVersionExpiryDateAsync(const UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientUpdateManagedRuleSetVersionExpiryDateAsyncHelper(WAFV2Client const * const clientThis, const UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateManagedRuleSetVersionExpiryDateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateManagedRuleSetVersionExpiryDate(request), context);
 }
 
-void WAFV2Client::UpdateManagedRuleSetVersionExpiryDateAsyncHelper(const UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::UpdateManagedRuleSetVersionExpiryDateAsync(const UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateManagedRuleSetVersionExpiryDate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientUpdateManagedRuleSetVersionExpiryDateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRegexPatternSetOutcome WAFV2Client::UpdateRegexPatternSet(const UpdateRegexPatternSetRequest& request) const
@@ -1242,14 +1242,14 @@ UpdateRegexPatternSetOutcomeCallable WAFV2Client::UpdateRegexPatternSetCallable(
   return task->get_future();
 }
 
-void WAFV2Client::UpdateRegexPatternSetAsync(const UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientUpdateRegexPatternSetAsyncHelper(WAFV2Client const * const clientThis, const UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRegexPatternSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRegexPatternSet(request), context);
 }
 
-void WAFV2Client::UpdateRegexPatternSetAsyncHelper(const UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::UpdateRegexPatternSetAsync(const UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRegexPatternSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientUpdateRegexPatternSetAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRuleGroupOutcome WAFV2Client::UpdateRuleGroup(const UpdateRuleGroupRequest& request) const
@@ -1266,14 +1266,14 @@ UpdateRuleGroupOutcomeCallable WAFV2Client::UpdateRuleGroupCallable(const Update
   return task->get_future();
 }
 
-void WAFV2Client::UpdateRuleGroupAsync(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientUpdateRuleGroupAsyncHelper(WAFV2Client const * const clientThis, const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRuleGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRuleGroup(request), context);
 }
 
-void WAFV2Client::UpdateRuleGroupAsyncHelper(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::UpdateRuleGroupAsync(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientUpdateRuleGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWebACLOutcome WAFV2Client::UpdateWebACL(const UpdateWebACLRequest& request) const
@@ -1290,13 +1290,13 @@ UpdateWebACLOutcomeCallable WAFV2Client::UpdateWebACLCallable(const UpdateWebACL
   return task->get_future();
 }
 
-void WAFV2Client::UpdateWebACLAsync(const UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2ClientUpdateWebACLAsyncHelper(WAFV2Client const * const clientThis, const UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWebACLAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWebACL(request), context);
 }
 
-void WAFV2Client::UpdateWebACLAsyncHelper(const UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WAFV2Client::UpdateWebACLAsync(const UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWebACL(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WAFV2ClientUpdateWebACLAsyncHelper( this, request, handler, context ); } );
 }
 

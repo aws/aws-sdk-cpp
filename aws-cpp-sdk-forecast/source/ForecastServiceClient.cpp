@@ -177,14 +177,14 @@ CreateAutoPredictorOutcomeCallable ForecastServiceClient::CreateAutoPredictorCal
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateAutoPredictorAsync(const CreateAutoPredictorRequest& request, const CreateAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateAutoPredictorAsyncHelper(ForecastServiceClient const * const clientThis, const CreateAutoPredictorRequest& request, const CreateAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAutoPredictorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAutoPredictor(request), context);
 }
 
-void ForecastServiceClient::CreateAutoPredictorAsyncHelper(const CreateAutoPredictorRequest& request, const CreateAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateAutoPredictorAsync(const CreateAutoPredictorRequest& request, const CreateAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAutoPredictor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateAutoPredictorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatasetOutcome ForecastServiceClient::CreateDataset(const CreateDatasetRequest& request) const
@@ -201,14 +201,14 @@ CreateDatasetOutcomeCallable ForecastServiceClient::CreateDatasetCallable(const 
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateDatasetAsyncHelper(ForecastServiceClient const * const clientThis, const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataset(request), context);
 }
 
-void ForecastServiceClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatasetGroupOutcome ForecastServiceClient::CreateDatasetGroup(const CreateDatasetGroupRequest& request) const
@@ -225,14 +225,14 @@ CreateDatasetGroupOutcomeCallable ForecastServiceClient::CreateDatasetGroupCalla
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateDatasetGroupAsync(const CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateDatasetGroupAsyncHelper(ForecastServiceClient const * const clientThis, const CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDatasetGroup(request), context);
 }
 
-void ForecastServiceClient::CreateDatasetGroupAsyncHelper(const CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateDatasetGroupAsync(const CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDatasetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateDatasetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDatasetImportJobOutcome ForecastServiceClient::CreateDatasetImportJob(const CreateDatasetImportJobRequest& request) const
@@ -249,14 +249,14 @@ CreateDatasetImportJobOutcomeCallable ForecastServiceClient::CreateDatasetImport
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateDatasetImportJobAsync(const CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateDatasetImportJobAsyncHelper(ForecastServiceClient const * const clientThis, const CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDatasetImportJob(request), context);
 }
 
-void ForecastServiceClient::CreateDatasetImportJobAsyncHelper(const CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateDatasetImportJobAsync(const CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDatasetImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateDatasetImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExplainabilityOutcome ForecastServiceClient::CreateExplainability(const CreateExplainabilityRequest& request) const
@@ -273,14 +273,14 @@ CreateExplainabilityOutcomeCallable ForecastServiceClient::CreateExplainabilityC
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateExplainabilityAsync(const CreateExplainabilityRequest& request, const CreateExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateExplainabilityAsyncHelper(ForecastServiceClient const * const clientThis, const CreateExplainabilityRequest& request, const CreateExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExplainabilityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExplainability(request), context);
 }
 
-void ForecastServiceClient::CreateExplainabilityAsyncHelper(const CreateExplainabilityRequest& request, const CreateExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateExplainabilityAsync(const CreateExplainabilityRequest& request, const CreateExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExplainability(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateExplainabilityAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateExplainabilityExportOutcome ForecastServiceClient::CreateExplainabilityExport(const CreateExplainabilityExportRequest& request) const
@@ -297,14 +297,14 @@ CreateExplainabilityExportOutcomeCallable ForecastServiceClient::CreateExplainab
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateExplainabilityExportAsync(const CreateExplainabilityExportRequest& request, const CreateExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateExplainabilityExportAsyncHelper(ForecastServiceClient const * const clientThis, const CreateExplainabilityExportRequest& request, const CreateExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExplainabilityExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateExplainabilityExport(request), context);
 }
 
-void ForecastServiceClient::CreateExplainabilityExportAsyncHelper(const CreateExplainabilityExportRequest& request, const CreateExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateExplainabilityExportAsync(const CreateExplainabilityExportRequest& request, const CreateExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateExplainabilityExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateExplainabilityExportAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateForecastOutcome ForecastServiceClient::CreateForecast(const CreateForecastRequest& request) const
@@ -321,14 +321,14 @@ CreateForecastOutcomeCallable ForecastServiceClient::CreateForecastCallable(cons
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateForecastAsync(const CreateForecastRequest& request, const CreateForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateForecastAsyncHelper(ForecastServiceClient const * const clientThis, const CreateForecastRequest& request, const CreateForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateForecastAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateForecast(request), context);
 }
 
-void ForecastServiceClient::CreateForecastAsyncHelper(const CreateForecastRequest& request, const CreateForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateForecastAsync(const CreateForecastRequest& request, const CreateForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateForecast(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateForecastAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateForecastExportJobOutcome ForecastServiceClient::CreateForecastExportJob(const CreateForecastExportJobRequest& request) const
@@ -345,14 +345,14 @@ CreateForecastExportJobOutcomeCallable ForecastServiceClient::CreateForecastExpo
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateForecastExportJobAsync(const CreateForecastExportJobRequest& request, const CreateForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateForecastExportJobAsyncHelper(ForecastServiceClient const * const clientThis, const CreateForecastExportJobRequest& request, const CreateForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateForecastExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateForecastExportJob(request), context);
 }
 
-void ForecastServiceClient::CreateForecastExportJobAsyncHelper(const CreateForecastExportJobRequest& request, const CreateForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateForecastExportJobAsync(const CreateForecastExportJobRequest& request, const CreateForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateForecastExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateForecastExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMonitorOutcome ForecastServiceClient::CreateMonitor(const CreateMonitorRequest& request) const
@@ -369,14 +369,14 @@ CreateMonitorOutcomeCallable ForecastServiceClient::CreateMonitorCallable(const 
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateMonitorAsync(const CreateMonitorRequest& request, const CreateMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateMonitorAsyncHelper(ForecastServiceClient const * const clientThis, const CreateMonitorRequest& request, const CreateMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMonitorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMonitor(request), context);
 }
 
-void ForecastServiceClient::CreateMonitorAsyncHelper(const CreateMonitorRequest& request, const CreateMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateMonitorAsync(const CreateMonitorRequest& request, const CreateMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMonitor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateMonitorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePredictorOutcome ForecastServiceClient::CreatePredictor(const CreatePredictorRequest& request) const
@@ -393,14 +393,14 @@ CreatePredictorOutcomeCallable ForecastServiceClient::CreatePredictorCallable(co
   return task->get_future();
 }
 
-void ForecastServiceClient::CreatePredictorAsync(const CreatePredictorRequest& request, const CreatePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreatePredictorAsyncHelper(ForecastServiceClient const * const clientThis, const CreatePredictorRequest& request, const CreatePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePredictorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePredictor(request), context);
 }
 
-void ForecastServiceClient::CreatePredictorAsyncHelper(const CreatePredictorRequest& request, const CreatePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreatePredictorAsync(const CreatePredictorRequest& request, const CreatePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePredictor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreatePredictorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePredictorBacktestExportJobOutcome ForecastServiceClient::CreatePredictorBacktestExportJob(const CreatePredictorBacktestExportJobRequest& request) const
@@ -417,14 +417,14 @@ CreatePredictorBacktestExportJobOutcomeCallable ForecastServiceClient::CreatePre
   return task->get_future();
 }
 
-void ForecastServiceClient::CreatePredictorBacktestExportJobAsync(const CreatePredictorBacktestExportJobRequest& request, const CreatePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreatePredictorBacktestExportJobAsyncHelper(ForecastServiceClient const * const clientThis, const CreatePredictorBacktestExportJobRequest& request, const CreatePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePredictorBacktestExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePredictorBacktestExportJob(request), context);
 }
 
-void ForecastServiceClient::CreatePredictorBacktestExportJobAsyncHelper(const CreatePredictorBacktestExportJobRequest& request, const CreatePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreatePredictorBacktestExportJobAsync(const CreatePredictorBacktestExportJobRequest& request, const CreatePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePredictorBacktestExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreatePredictorBacktestExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWhatIfAnalysisOutcome ForecastServiceClient::CreateWhatIfAnalysis(const CreateWhatIfAnalysisRequest& request) const
@@ -441,14 +441,14 @@ CreateWhatIfAnalysisOutcomeCallable ForecastServiceClient::CreateWhatIfAnalysisC
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateWhatIfAnalysisAsync(const CreateWhatIfAnalysisRequest& request, const CreateWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateWhatIfAnalysisAsyncHelper(ForecastServiceClient const * const clientThis, const CreateWhatIfAnalysisRequest& request, const CreateWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWhatIfAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWhatIfAnalysis(request), context);
 }
 
-void ForecastServiceClient::CreateWhatIfAnalysisAsyncHelper(const CreateWhatIfAnalysisRequest& request, const CreateWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateWhatIfAnalysisAsync(const CreateWhatIfAnalysisRequest& request, const CreateWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWhatIfAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateWhatIfAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWhatIfForecastOutcome ForecastServiceClient::CreateWhatIfForecast(const CreateWhatIfForecastRequest& request) const
@@ -465,14 +465,14 @@ CreateWhatIfForecastOutcomeCallable ForecastServiceClient::CreateWhatIfForecastC
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateWhatIfForecastAsync(const CreateWhatIfForecastRequest& request, const CreateWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateWhatIfForecastAsyncHelper(ForecastServiceClient const * const clientThis, const CreateWhatIfForecastRequest& request, const CreateWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWhatIfForecastAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWhatIfForecast(request), context);
 }
 
-void ForecastServiceClient::CreateWhatIfForecastAsyncHelper(const CreateWhatIfForecastRequest& request, const CreateWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateWhatIfForecastAsync(const CreateWhatIfForecastRequest& request, const CreateWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWhatIfForecast(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateWhatIfForecastAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWhatIfForecastExportOutcome ForecastServiceClient::CreateWhatIfForecastExport(const CreateWhatIfForecastExportRequest& request) const
@@ -489,14 +489,14 @@ CreateWhatIfForecastExportOutcomeCallable ForecastServiceClient::CreateWhatIfFor
   return task->get_future();
 }
 
-void ForecastServiceClient::CreateWhatIfForecastExportAsync(const CreateWhatIfForecastExportRequest& request, const CreateWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientCreateWhatIfForecastExportAsyncHelper(ForecastServiceClient const * const clientThis, const CreateWhatIfForecastExportRequest& request, const CreateWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWhatIfForecastExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWhatIfForecastExport(request), context);
 }
 
-void ForecastServiceClient::CreateWhatIfForecastExportAsyncHelper(const CreateWhatIfForecastExportRequest& request, const CreateWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::CreateWhatIfForecastExportAsync(const CreateWhatIfForecastExportRequest& request, const CreateWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWhatIfForecastExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientCreateWhatIfForecastExportAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatasetOutcome ForecastServiceClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -513,14 +513,14 @@ DeleteDatasetOutcomeCallable ForecastServiceClient::DeleteDatasetCallable(const 
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteDatasetAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataset(request), context);
 }
 
-void ForecastServiceClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatasetGroupOutcome ForecastServiceClient::DeleteDatasetGroup(const DeleteDatasetGroupRequest& request) const
@@ -537,14 +537,14 @@ DeleteDatasetGroupOutcomeCallable ForecastServiceClient::DeleteDatasetGroupCalla
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteDatasetGroupAsync(const DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteDatasetGroupAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDatasetGroup(request), context);
 }
 
-void ForecastServiceClient::DeleteDatasetGroupAsyncHelper(const DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteDatasetGroupAsync(const DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDatasetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteDatasetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDatasetImportJobOutcome ForecastServiceClient::DeleteDatasetImportJob(const DeleteDatasetImportJobRequest& request) const
@@ -561,14 +561,14 @@ DeleteDatasetImportJobOutcomeCallable ForecastServiceClient::DeleteDatasetImport
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteDatasetImportJobAsync(const DeleteDatasetImportJobRequest& request, const DeleteDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteDatasetImportJobAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteDatasetImportJobRequest& request, const DeleteDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDatasetImportJob(request), context);
 }
 
-void ForecastServiceClient::DeleteDatasetImportJobAsyncHelper(const DeleteDatasetImportJobRequest& request, const DeleteDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteDatasetImportJobAsync(const DeleteDatasetImportJobRequest& request, const DeleteDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDatasetImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteDatasetImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteExplainabilityOutcome ForecastServiceClient::DeleteExplainability(const DeleteExplainabilityRequest& request) const
@@ -585,14 +585,14 @@ DeleteExplainabilityOutcomeCallable ForecastServiceClient::DeleteExplainabilityC
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteExplainabilityAsync(const DeleteExplainabilityRequest& request, const DeleteExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteExplainabilityAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteExplainabilityRequest& request, const DeleteExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExplainabilityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteExplainability(request), context);
 }
 
-void ForecastServiceClient::DeleteExplainabilityAsyncHelper(const DeleteExplainabilityRequest& request, const DeleteExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteExplainabilityAsync(const DeleteExplainabilityRequest& request, const DeleteExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteExplainability(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteExplainabilityAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteExplainabilityExportOutcome ForecastServiceClient::DeleteExplainabilityExport(const DeleteExplainabilityExportRequest& request) const
@@ -609,14 +609,14 @@ DeleteExplainabilityExportOutcomeCallable ForecastServiceClient::DeleteExplainab
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteExplainabilityExportAsync(const DeleteExplainabilityExportRequest& request, const DeleteExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteExplainabilityExportAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteExplainabilityExportRequest& request, const DeleteExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExplainabilityExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteExplainabilityExport(request), context);
 }
 
-void ForecastServiceClient::DeleteExplainabilityExportAsyncHelper(const DeleteExplainabilityExportRequest& request, const DeleteExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteExplainabilityExportAsync(const DeleteExplainabilityExportRequest& request, const DeleteExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteExplainabilityExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteExplainabilityExportAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteForecastOutcome ForecastServiceClient::DeleteForecast(const DeleteForecastRequest& request) const
@@ -633,14 +633,14 @@ DeleteForecastOutcomeCallable ForecastServiceClient::DeleteForecastCallable(cons
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteForecastAsync(const DeleteForecastRequest& request, const DeleteForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteForecastAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteForecastRequest& request, const DeleteForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteForecastAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteForecast(request), context);
 }
 
-void ForecastServiceClient::DeleteForecastAsyncHelper(const DeleteForecastRequest& request, const DeleteForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteForecastAsync(const DeleteForecastRequest& request, const DeleteForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteForecast(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteForecastAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteForecastExportJobOutcome ForecastServiceClient::DeleteForecastExportJob(const DeleteForecastExportJobRequest& request) const
@@ -657,14 +657,14 @@ DeleteForecastExportJobOutcomeCallable ForecastServiceClient::DeleteForecastExpo
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteForecastExportJobAsync(const DeleteForecastExportJobRequest& request, const DeleteForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteForecastExportJobAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteForecastExportJobRequest& request, const DeleteForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteForecastExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteForecastExportJob(request), context);
 }
 
-void ForecastServiceClient::DeleteForecastExportJobAsyncHelper(const DeleteForecastExportJobRequest& request, const DeleteForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteForecastExportJobAsync(const DeleteForecastExportJobRequest& request, const DeleteForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteForecastExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteForecastExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMonitorOutcome ForecastServiceClient::DeleteMonitor(const DeleteMonitorRequest& request) const
@@ -681,14 +681,14 @@ DeleteMonitorOutcomeCallable ForecastServiceClient::DeleteMonitorCallable(const 
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteMonitorAsync(const DeleteMonitorRequest& request, const DeleteMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteMonitorAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteMonitorRequest& request, const DeleteMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMonitorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMonitor(request), context);
 }
 
-void ForecastServiceClient::DeleteMonitorAsyncHelper(const DeleteMonitorRequest& request, const DeleteMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteMonitorAsync(const DeleteMonitorRequest& request, const DeleteMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMonitor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteMonitorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePredictorOutcome ForecastServiceClient::DeletePredictor(const DeletePredictorRequest& request) const
@@ -705,14 +705,14 @@ DeletePredictorOutcomeCallable ForecastServiceClient::DeletePredictorCallable(co
   return task->get_future();
 }
 
-void ForecastServiceClient::DeletePredictorAsync(const DeletePredictorRequest& request, const DeletePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeletePredictorAsyncHelper(ForecastServiceClient const * const clientThis, const DeletePredictorRequest& request, const DeletePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePredictorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePredictor(request), context);
 }
 
-void ForecastServiceClient::DeletePredictorAsyncHelper(const DeletePredictorRequest& request, const DeletePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeletePredictorAsync(const DeletePredictorRequest& request, const DeletePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePredictor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeletePredictorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePredictorBacktestExportJobOutcome ForecastServiceClient::DeletePredictorBacktestExportJob(const DeletePredictorBacktestExportJobRequest& request) const
@@ -729,14 +729,14 @@ DeletePredictorBacktestExportJobOutcomeCallable ForecastServiceClient::DeletePre
   return task->get_future();
 }
 
-void ForecastServiceClient::DeletePredictorBacktestExportJobAsync(const DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeletePredictorBacktestExportJobAsyncHelper(ForecastServiceClient const * const clientThis, const DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePredictorBacktestExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePredictorBacktestExportJob(request), context);
 }
 
-void ForecastServiceClient::DeletePredictorBacktestExportJobAsyncHelper(const DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeletePredictorBacktestExportJobAsync(const DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePredictorBacktestExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeletePredictorBacktestExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourceTreeOutcome ForecastServiceClient::DeleteResourceTree(const DeleteResourceTreeRequest& request) const
@@ -753,14 +753,14 @@ DeleteResourceTreeOutcomeCallable ForecastServiceClient::DeleteResourceTreeCalla
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteResourceTreeAsync(const DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteResourceTreeAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceTreeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourceTree(request), context);
 }
 
-void ForecastServiceClient::DeleteResourceTreeAsyncHelper(const DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteResourceTreeAsync(const DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourceTree(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteResourceTreeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWhatIfAnalysisOutcome ForecastServiceClient::DeleteWhatIfAnalysis(const DeleteWhatIfAnalysisRequest& request) const
@@ -777,14 +777,14 @@ DeleteWhatIfAnalysisOutcomeCallable ForecastServiceClient::DeleteWhatIfAnalysisC
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteWhatIfAnalysisAsync(const DeleteWhatIfAnalysisRequest& request, const DeleteWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteWhatIfAnalysisAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteWhatIfAnalysisRequest& request, const DeleteWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWhatIfAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWhatIfAnalysis(request), context);
 }
 
-void ForecastServiceClient::DeleteWhatIfAnalysisAsyncHelper(const DeleteWhatIfAnalysisRequest& request, const DeleteWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteWhatIfAnalysisAsync(const DeleteWhatIfAnalysisRequest& request, const DeleteWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWhatIfAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteWhatIfAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWhatIfForecastOutcome ForecastServiceClient::DeleteWhatIfForecast(const DeleteWhatIfForecastRequest& request) const
@@ -801,14 +801,14 @@ DeleteWhatIfForecastOutcomeCallable ForecastServiceClient::DeleteWhatIfForecastC
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteWhatIfForecastAsync(const DeleteWhatIfForecastRequest& request, const DeleteWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteWhatIfForecastAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteWhatIfForecastRequest& request, const DeleteWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWhatIfForecastAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWhatIfForecast(request), context);
 }
 
-void ForecastServiceClient::DeleteWhatIfForecastAsyncHelper(const DeleteWhatIfForecastRequest& request, const DeleteWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteWhatIfForecastAsync(const DeleteWhatIfForecastRequest& request, const DeleteWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWhatIfForecast(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteWhatIfForecastAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWhatIfForecastExportOutcome ForecastServiceClient::DeleteWhatIfForecastExport(const DeleteWhatIfForecastExportRequest& request) const
@@ -825,14 +825,14 @@ DeleteWhatIfForecastExportOutcomeCallable ForecastServiceClient::DeleteWhatIfFor
   return task->get_future();
 }
 
-void ForecastServiceClient::DeleteWhatIfForecastExportAsync(const DeleteWhatIfForecastExportRequest& request, const DeleteWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDeleteWhatIfForecastExportAsyncHelper(ForecastServiceClient const * const clientThis, const DeleteWhatIfForecastExportRequest& request, const DeleteWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWhatIfForecastExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWhatIfForecastExport(request), context);
 }
 
-void ForecastServiceClient::DeleteWhatIfForecastExportAsyncHelper(const DeleteWhatIfForecastExportRequest& request, const DeleteWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DeleteWhatIfForecastExportAsync(const DeleteWhatIfForecastExportRequest& request, const DeleteWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWhatIfForecastExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDeleteWhatIfForecastExportAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAutoPredictorOutcome ForecastServiceClient::DescribeAutoPredictor(const DescribeAutoPredictorRequest& request) const
@@ -849,14 +849,14 @@ DescribeAutoPredictorOutcomeCallable ForecastServiceClient::DescribeAutoPredicto
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeAutoPredictorAsync(const DescribeAutoPredictorRequest& request, const DescribeAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeAutoPredictorAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeAutoPredictorRequest& request, const DescribeAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAutoPredictorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAutoPredictor(request), context);
 }
 
-void ForecastServiceClient::DescribeAutoPredictorAsyncHelper(const DescribeAutoPredictorRequest& request, const DescribeAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeAutoPredictorAsync(const DescribeAutoPredictorRequest& request, const DescribeAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAutoPredictor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeAutoPredictorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatasetOutcome ForecastServiceClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -873,14 +873,14 @@ DescribeDatasetOutcomeCallable ForecastServiceClient::DescribeDatasetCallable(co
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeDatasetAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataset(request), context);
 }
 
-void ForecastServiceClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeDatasetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatasetGroupOutcome ForecastServiceClient::DescribeDatasetGroup(const DescribeDatasetGroupRequest& request) const
@@ -897,14 +897,14 @@ DescribeDatasetGroupOutcomeCallable ForecastServiceClient::DescribeDatasetGroupC
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeDatasetGroupAsync(const DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeDatasetGroupAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDatasetGroup(request), context);
 }
 
-void ForecastServiceClient::DescribeDatasetGroupAsyncHelper(const DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeDatasetGroupAsync(const DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDatasetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeDatasetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDatasetImportJobOutcome ForecastServiceClient::DescribeDatasetImportJob(const DescribeDatasetImportJobRequest& request) const
@@ -921,14 +921,14 @@ DescribeDatasetImportJobOutcomeCallable ForecastServiceClient::DescribeDatasetIm
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeDatasetImportJobAsync(const DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeDatasetImportJobAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDatasetImportJob(request), context);
 }
 
-void ForecastServiceClient::DescribeDatasetImportJobAsyncHelper(const DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeDatasetImportJobAsync(const DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDatasetImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeDatasetImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExplainabilityOutcome ForecastServiceClient::DescribeExplainability(const DescribeExplainabilityRequest& request) const
@@ -945,14 +945,14 @@ DescribeExplainabilityOutcomeCallable ForecastServiceClient::DescribeExplainabil
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeExplainabilityAsync(const DescribeExplainabilityRequest& request, const DescribeExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeExplainabilityAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeExplainabilityRequest& request, const DescribeExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExplainabilityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExplainability(request), context);
 }
 
-void ForecastServiceClient::DescribeExplainabilityAsyncHelper(const DescribeExplainabilityRequest& request, const DescribeExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeExplainabilityAsync(const DescribeExplainabilityRequest& request, const DescribeExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExplainability(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeExplainabilityAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExplainabilityExportOutcome ForecastServiceClient::DescribeExplainabilityExport(const DescribeExplainabilityExportRequest& request) const
@@ -969,14 +969,14 @@ DescribeExplainabilityExportOutcomeCallable ForecastServiceClient::DescribeExpla
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeExplainabilityExportAsync(const DescribeExplainabilityExportRequest& request, const DescribeExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeExplainabilityExportAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeExplainabilityExportRequest& request, const DescribeExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExplainabilityExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExplainabilityExport(request), context);
 }
 
-void ForecastServiceClient::DescribeExplainabilityExportAsyncHelper(const DescribeExplainabilityExportRequest& request, const DescribeExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeExplainabilityExportAsync(const DescribeExplainabilityExportRequest& request, const DescribeExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExplainabilityExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeExplainabilityExportAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeForecastOutcome ForecastServiceClient::DescribeForecast(const DescribeForecastRequest& request) const
@@ -993,14 +993,14 @@ DescribeForecastOutcomeCallable ForecastServiceClient::DescribeForecastCallable(
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeForecastAsync(const DescribeForecastRequest& request, const DescribeForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeForecastAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeForecastRequest& request, const DescribeForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeForecastAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeForecast(request), context);
 }
 
-void ForecastServiceClient::DescribeForecastAsyncHelper(const DescribeForecastRequest& request, const DescribeForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeForecastAsync(const DescribeForecastRequest& request, const DescribeForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeForecast(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeForecastAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeForecastExportJobOutcome ForecastServiceClient::DescribeForecastExportJob(const DescribeForecastExportJobRequest& request) const
@@ -1017,14 +1017,14 @@ DescribeForecastExportJobOutcomeCallable ForecastServiceClient::DescribeForecast
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeForecastExportJobAsync(const DescribeForecastExportJobRequest& request, const DescribeForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeForecastExportJobAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeForecastExportJobRequest& request, const DescribeForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeForecastExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeForecastExportJob(request), context);
 }
 
-void ForecastServiceClient::DescribeForecastExportJobAsyncHelper(const DescribeForecastExportJobRequest& request, const DescribeForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeForecastExportJobAsync(const DescribeForecastExportJobRequest& request, const DescribeForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeForecastExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeForecastExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMonitorOutcome ForecastServiceClient::DescribeMonitor(const DescribeMonitorRequest& request) const
@@ -1041,14 +1041,14 @@ DescribeMonitorOutcomeCallable ForecastServiceClient::DescribeMonitorCallable(co
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeMonitorAsync(const DescribeMonitorRequest& request, const DescribeMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeMonitorAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeMonitorRequest& request, const DescribeMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMonitorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMonitor(request), context);
 }
 
-void ForecastServiceClient::DescribeMonitorAsyncHelper(const DescribeMonitorRequest& request, const DescribeMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeMonitorAsync(const DescribeMonitorRequest& request, const DescribeMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMonitor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeMonitorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePredictorOutcome ForecastServiceClient::DescribePredictor(const DescribePredictorRequest& request) const
@@ -1065,14 +1065,14 @@ DescribePredictorOutcomeCallable ForecastServiceClient::DescribePredictorCallabl
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribePredictorAsync(const DescribePredictorRequest& request, const DescribePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribePredictorAsyncHelper(ForecastServiceClient const * const clientThis, const DescribePredictorRequest& request, const DescribePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePredictorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePredictor(request), context);
 }
 
-void ForecastServiceClient::DescribePredictorAsyncHelper(const DescribePredictorRequest& request, const DescribePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribePredictorAsync(const DescribePredictorRequest& request, const DescribePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePredictor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribePredictorAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePredictorBacktestExportJobOutcome ForecastServiceClient::DescribePredictorBacktestExportJob(const DescribePredictorBacktestExportJobRequest& request) const
@@ -1089,14 +1089,14 @@ DescribePredictorBacktestExportJobOutcomeCallable ForecastServiceClient::Describ
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribePredictorBacktestExportJobAsync(const DescribePredictorBacktestExportJobRequest& request, const DescribePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribePredictorBacktestExportJobAsyncHelper(ForecastServiceClient const * const clientThis, const DescribePredictorBacktestExportJobRequest& request, const DescribePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePredictorBacktestExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePredictorBacktestExportJob(request), context);
 }
 
-void ForecastServiceClient::DescribePredictorBacktestExportJobAsyncHelper(const DescribePredictorBacktestExportJobRequest& request, const DescribePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribePredictorBacktestExportJobAsync(const DescribePredictorBacktestExportJobRequest& request, const DescribePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePredictorBacktestExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribePredictorBacktestExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWhatIfAnalysisOutcome ForecastServiceClient::DescribeWhatIfAnalysis(const DescribeWhatIfAnalysisRequest& request) const
@@ -1113,14 +1113,14 @@ DescribeWhatIfAnalysisOutcomeCallable ForecastServiceClient::DescribeWhatIfAnaly
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeWhatIfAnalysisAsync(const DescribeWhatIfAnalysisRequest& request, const DescribeWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeWhatIfAnalysisAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeWhatIfAnalysisRequest& request, const DescribeWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWhatIfAnalysisAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWhatIfAnalysis(request), context);
 }
 
-void ForecastServiceClient::DescribeWhatIfAnalysisAsyncHelper(const DescribeWhatIfAnalysisRequest& request, const DescribeWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeWhatIfAnalysisAsync(const DescribeWhatIfAnalysisRequest& request, const DescribeWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWhatIfAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeWhatIfAnalysisAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWhatIfForecastOutcome ForecastServiceClient::DescribeWhatIfForecast(const DescribeWhatIfForecastRequest& request) const
@@ -1137,14 +1137,14 @@ DescribeWhatIfForecastOutcomeCallable ForecastServiceClient::DescribeWhatIfForec
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeWhatIfForecastAsync(const DescribeWhatIfForecastRequest& request, const DescribeWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeWhatIfForecastAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeWhatIfForecastRequest& request, const DescribeWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWhatIfForecastAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWhatIfForecast(request), context);
 }
 
-void ForecastServiceClient::DescribeWhatIfForecastAsyncHelper(const DescribeWhatIfForecastRequest& request, const DescribeWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeWhatIfForecastAsync(const DescribeWhatIfForecastRequest& request, const DescribeWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWhatIfForecast(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeWhatIfForecastAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWhatIfForecastExportOutcome ForecastServiceClient::DescribeWhatIfForecastExport(const DescribeWhatIfForecastExportRequest& request) const
@@ -1161,14 +1161,14 @@ DescribeWhatIfForecastExportOutcomeCallable ForecastServiceClient::DescribeWhatI
   return task->get_future();
 }
 
-void ForecastServiceClient::DescribeWhatIfForecastExportAsync(const DescribeWhatIfForecastExportRequest& request, const DescribeWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientDescribeWhatIfForecastExportAsyncHelper(ForecastServiceClient const * const clientThis, const DescribeWhatIfForecastExportRequest& request, const DescribeWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWhatIfForecastExportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWhatIfForecastExport(request), context);
 }
 
-void ForecastServiceClient::DescribeWhatIfForecastExportAsyncHelper(const DescribeWhatIfForecastExportRequest& request, const DescribeWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::DescribeWhatIfForecastExportAsync(const DescribeWhatIfForecastExportRequest& request, const DescribeWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWhatIfForecastExport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientDescribeWhatIfForecastExportAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccuracyMetricsOutcome ForecastServiceClient::GetAccuracyMetrics(const GetAccuracyMetricsRequest& request) const
@@ -1185,14 +1185,14 @@ GetAccuracyMetricsOutcomeCallable ForecastServiceClient::GetAccuracyMetricsCalla
   return task->get_future();
 }
 
-void ForecastServiceClient::GetAccuracyMetricsAsync(const GetAccuracyMetricsRequest& request, const GetAccuracyMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientGetAccuracyMetricsAsyncHelper(ForecastServiceClient const * const clientThis, const GetAccuracyMetricsRequest& request, const GetAccuracyMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccuracyMetricsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccuracyMetrics(request), context);
 }
 
-void ForecastServiceClient::GetAccuracyMetricsAsyncHelper(const GetAccuracyMetricsRequest& request, const GetAccuracyMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::GetAccuracyMetricsAsync(const GetAccuracyMetricsRequest& request, const GetAccuracyMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccuracyMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientGetAccuracyMetricsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetGroupsOutcome ForecastServiceClient::ListDatasetGroups(const ListDatasetGroupsRequest& request) const
@@ -1209,14 +1209,14 @@ ListDatasetGroupsOutcomeCallable ForecastServiceClient::ListDatasetGroupsCallabl
   return task->get_future();
 }
 
-void ForecastServiceClient::ListDatasetGroupsAsync(const ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListDatasetGroupsAsyncHelper(ForecastServiceClient const * const clientThis, const ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasetGroups(request), context);
 }
 
-void ForecastServiceClient::ListDatasetGroupsAsyncHelper(const ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListDatasetGroupsAsync(const ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasetGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListDatasetGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetImportJobsOutcome ForecastServiceClient::ListDatasetImportJobs(const ListDatasetImportJobsRequest& request) const
@@ -1233,14 +1233,14 @@ ListDatasetImportJobsOutcomeCallable ForecastServiceClient::ListDatasetImportJob
   return task->get_future();
 }
 
-void ForecastServiceClient::ListDatasetImportJobsAsync(const ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListDatasetImportJobsAsyncHelper(ForecastServiceClient const * const clientThis, const ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetImportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasetImportJobs(request), context);
 }
 
-void ForecastServiceClient::ListDatasetImportJobsAsyncHelper(const ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListDatasetImportJobsAsync(const ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasetImportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListDatasetImportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasetsOutcome ForecastServiceClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -1257,14 +1257,14 @@ ListDatasetsOutcomeCallable ForecastServiceClient::ListDatasetsCallable(const Li
   return task->get_future();
 }
 
-void ForecastServiceClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListDatasetsAsyncHelper(ForecastServiceClient const * const clientThis, const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasets(request), context);
 }
 
-void ForecastServiceClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListDatasetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExplainabilitiesOutcome ForecastServiceClient::ListExplainabilities(const ListExplainabilitiesRequest& request) const
@@ -1281,14 +1281,14 @@ ListExplainabilitiesOutcomeCallable ForecastServiceClient::ListExplainabilitiesC
   return task->get_future();
 }
 
-void ForecastServiceClient::ListExplainabilitiesAsync(const ListExplainabilitiesRequest& request, const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListExplainabilitiesAsyncHelper(ForecastServiceClient const * const clientThis, const ListExplainabilitiesRequest& request, const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExplainabilitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExplainabilities(request), context);
 }
 
-void ForecastServiceClient::ListExplainabilitiesAsyncHelper(const ListExplainabilitiesRequest& request, const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListExplainabilitiesAsync(const ListExplainabilitiesRequest& request, const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExplainabilities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListExplainabilitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExplainabilityExportsOutcome ForecastServiceClient::ListExplainabilityExports(const ListExplainabilityExportsRequest& request) const
@@ -1305,14 +1305,14 @@ ListExplainabilityExportsOutcomeCallable ForecastServiceClient::ListExplainabili
   return task->get_future();
 }
 
-void ForecastServiceClient::ListExplainabilityExportsAsync(const ListExplainabilityExportsRequest& request, const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListExplainabilityExportsAsyncHelper(ForecastServiceClient const * const clientThis, const ListExplainabilityExportsRequest& request, const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExplainabilityExportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExplainabilityExports(request), context);
 }
 
-void ForecastServiceClient::ListExplainabilityExportsAsyncHelper(const ListExplainabilityExportsRequest& request, const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListExplainabilityExportsAsync(const ListExplainabilityExportsRequest& request, const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExplainabilityExports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListExplainabilityExportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListForecastExportJobsOutcome ForecastServiceClient::ListForecastExportJobs(const ListForecastExportJobsRequest& request) const
@@ -1329,14 +1329,14 @@ ListForecastExportJobsOutcomeCallable ForecastServiceClient::ListForecastExportJ
   return task->get_future();
 }
 
-void ForecastServiceClient::ListForecastExportJobsAsync(const ListForecastExportJobsRequest& request, const ListForecastExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListForecastExportJobsAsyncHelper(ForecastServiceClient const * const clientThis, const ListForecastExportJobsRequest& request, const ListForecastExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListForecastExportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListForecastExportJobs(request), context);
 }
 
-void ForecastServiceClient::ListForecastExportJobsAsyncHelper(const ListForecastExportJobsRequest& request, const ListForecastExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListForecastExportJobsAsync(const ListForecastExportJobsRequest& request, const ListForecastExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListForecastExportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListForecastExportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListForecastsOutcome ForecastServiceClient::ListForecasts(const ListForecastsRequest& request) const
@@ -1353,14 +1353,14 @@ ListForecastsOutcomeCallable ForecastServiceClient::ListForecastsCallable(const 
   return task->get_future();
 }
 
-void ForecastServiceClient::ListForecastsAsync(const ListForecastsRequest& request, const ListForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListForecastsAsyncHelper(ForecastServiceClient const * const clientThis, const ListForecastsRequest& request, const ListForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListForecastsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListForecasts(request), context);
 }
 
-void ForecastServiceClient::ListForecastsAsyncHelper(const ListForecastsRequest& request, const ListForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListForecastsAsync(const ListForecastsRequest& request, const ListForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListForecasts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListForecastsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMonitorEvaluationsOutcome ForecastServiceClient::ListMonitorEvaluations(const ListMonitorEvaluationsRequest& request) const
@@ -1377,14 +1377,14 @@ ListMonitorEvaluationsOutcomeCallable ForecastServiceClient::ListMonitorEvaluati
   return task->get_future();
 }
 
-void ForecastServiceClient::ListMonitorEvaluationsAsync(const ListMonitorEvaluationsRequest& request, const ListMonitorEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListMonitorEvaluationsAsyncHelper(ForecastServiceClient const * const clientThis, const ListMonitorEvaluationsRequest& request, const ListMonitorEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMonitorEvaluationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMonitorEvaluations(request), context);
 }
 
-void ForecastServiceClient::ListMonitorEvaluationsAsyncHelper(const ListMonitorEvaluationsRequest& request, const ListMonitorEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListMonitorEvaluationsAsync(const ListMonitorEvaluationsRequest& request, const ListMonitorEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMonitorEvaluations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListMonitorEvaluationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMonitorsOutcome ForecastServiceClient::ListMonitors(const ListMonitorsRequest& request) const
@@ -1401,14 +1401,14 @@ ListMonitorsOutcomeCallable ForecastServiceClient::ListMonitorsCallable(const Li
   return task->get_future();
 }
 
-void ForecastServiceClient::ListMonitorsAsync(const ListMonitorsRequest& request, const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListMonitorsAsyncHelper(ForecastServiceClient const * const clientThis, const ListMonitorsRequest& request, const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMonitorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMonitors(request), context);
 }
 
-void ForecastServiceClient::ListMonitorsAsyncHelper(const ListMonitorsRequest& request, const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListMonitorsAsync(const ListMonitorsRequest& request, const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMonitors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListMonitorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPredictorBacktestExportJobsOutcome ForecastServiceClient::ListPredictorBacktestExportJobs(const ListPredictorBacktestExportJobsRequest& request) const
@@ -1425,14 +1425,14 @@ ListPredictorBacktestExportJobsOutcomeCallable ForecastServiceClient::ListPredic
   return task->get_future();
 }
 
-void ForecastServiceClient::ListPredictorBacktestExportJobsAsync(const ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListPredictorBacktestExportJobsAsyncHelper(ForecastServiceClient const * const clientThis, const ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPredictorBacktestExportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPredictorBacktestExportJobs(request), context);
 }
 
-void ForecastServiceClient::ListPredictorBacktestExportJobsAsyncHelper(const ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListPredictorBacktestExportJobsAsync(const ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPredictorBacktestExportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListPredictorBacktestExportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPredictorsOutcome ForecastServiceClient::ListPredictors(const ListPredictorsRequest& request) const
@@ -1449,14 +1449,14 @@ ListPredictorsOutcomeCallable ForecastServiceClient::ListPredictorsCallable(cons
   return task->get_future();
 }
 
-void ForecastServiceClient::ListPredictorsAsync(const ListPredictorsRequest& request, const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListPredictorsAsyncHelper(ForecastServiceClient const * const clientThis, const ListPredictorsRequest& request, const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPredictorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPredictors(request), context);
 }
 
-void ForecastServiceClient::ListPredictorsAsyncHelper(const ListPredictorsRequest& request, const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListPredictorsAsync(const ListPredictorsRequest& request, const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPredictors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListPredictorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ForecastServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1473,14 +1473,14 @@ ListTagsForResourceOutcomeCallable ForecastServiceClient::ListTagsForResourceCal
   return task->get_future();
 }
 
-void ForecastServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListTagsForResourceAsyncHelper(ForecastServiceClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ForecastServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWhatIfAnalysesOutcome ForecastServiceClient::ListWhatIfAnalyses(const ListWhatIfAnalysesRequest& request) const
@@ -1497,14 +1497,14 @@ ListWhatIfAnalysesOutcomeCallable ForecastServiceClient::ListWhatIfAnalysesCalla
   return task->get_future();
 }
 
-void ForecastServiceClient::ListWhatIfAnalysesAsync(const ListWhatIfAnalysesRequest& request, const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListWhatIfAnalysesAsyncHelper(ForecastServiceClient const * const clientThis, const ListWhatIfAnalysesRequest& request, const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWhatIfAnalysesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWhatIfAnalyses(request), context);
 }
 
-void ForecastServiceClient::ListWhatIfAnalysesAsyncHelper(const ListWhatIfAnalysesRequest& request, const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListWhatIfAnalysesAsync(const ListWhatIfAnalysesRequest& request, const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWhatIfAnalyses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListWhatIfAnalysesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWhatIfForecastExportsOutcome ForecastServiceClient::ListWhatIfForecastExports(const ListWhatIfForecastExportsRequest& request) const
@@ -1521,14 +1521,14 @@ ListWhatIfForecastExportsOutcomeCallable ForecastServiceClient::ListWhatIfForeca
   return task->get_future();
 }
 
-void ForecastServiceClient::ListWhatIfForecastExportsAsync(const ListWhatIfForecastExportsRequest& request, const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListWhatIfForecastExportsAsyncHelper(ForecastServiceClient const * const clientThis, const ListWhatIfForecastExportsRequest& request, const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWhatIfForecastExportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWhatIfForecastExports(request), context);
 }
 
-void ForecastServiceClient::ListWhatIfForecastExportsAsyncHelper(const ListWhatIfForecastExportsRequest& request, const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListWhatIfForecastExportsAsync(const ListWhatIfForecastExportsRequest& request, const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWhatIfForecastExports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListWhatIfForecastExportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWhatIfForecastsOutcome ForecastServiceClient::ListWhatIfForecasts(const ListWhatIfForecastsRequest& request) const
@@ -1545,14 +1545,14 @@ ListWhatIfForecastsOutcomeCallable ForecastServiceClient::ListWhatIfForecastsCal
   return task->get_future();
 }
 
-void ForecastServiceClient::ListWhatIfForecastsAsync(const ListWhatIfForecastsRequest& request, const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientListWhatIfForecastsAsyncHelper(ForecastServiceClient const * const clientThis, const ListWhatIfForecastsRequest& request, const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWhatIfForecastsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWhatIfForecasts(request), context);
 }
 
-void ForecastServiceClient::ListWhatIfForecastsAsyncHelper(const ListWhatIfForecastsRequest& request, const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ListWhatIfForecastsAsync(const ListWhatIfForecastsRequest& request, const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWhatIfForecasts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientListWhatIfForecastsAsyncHelper( this, request, handler, context ); } );
 }
 
 ResumeResourceOutcome ForecastServiceClient::ResumeResource(const ResumeResourceRequest& request) const
@@ -1569,14 +1569,14 @@ ResumeResourceOutcomeCallable ForecastServiceClient::ResumeResourceCallable(cons
   return task->get_future();
 }
 
-void ForecastServiceClient::ResumeResourceAsync(const ResumeResourceRequest& request, const ResumeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientResumeResourceAsyncHelper(ForecastServiceClient const * const clientThis, const ResumeResourceRequest& request, const ResumeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResumeResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResumeResource(request), context);
 }
 
-void ForecastServiceClient::ResumeResourceAsyncHelper(const ResumeResourceRequest& request, const ResumeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::ResumeResourceAsync(const ResumeResourceRequest& request, const ResumeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResumeResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientResumeResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 StopResourceOutcome ForecastServiceClient::StopResource(const StopResourceRequest& request) const
@@ -1593,14 +1593,14 @@ StopResourceOutcomeCallable ForecastServiceClient::StopResourceCallable(const St
   return task->get_future();
 }
 
-void ForecastServiceClient::StopResourceAsync(const StopResourceRequest& request, const StopResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientStopResourceAsyncHelper(ForecastServiceClient const * const clientThis, const StopResourceRequest& request, const StopResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopResource(request), context);
 }
 
-void ForecastServiceClient::StopResourceAsyncHelper(const StopResourceRequest& request, const StopResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::StopResourceAsync(const StopResourceRequest& request, const StopResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientStopResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ForecastServiceClient::TagResource(const TagResourceRequest& request) const
@@ -1617,14 +1617,14 @@ TagResourceOutcomeCallable ForecastServiceClient::TagResourceCallable(const TagR
   return task->get_future();
 }
 
-void ForecastServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientTagResourceAsyncHelper(ForecastServiceClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ForecastServiceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ForecastServiceClient::UntagResource(const UntagResourceRequest& request) const
@@ -1641,14 +1641,14 @@ UntagResourceOutcomeCallable ForecastServiceClient::UntagResourceCallable(const 
   return task->get_future();
 }
 
-void ForecastServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientUntagResourceAsyncHelper(ForecastServiceClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ForecastServiceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDatasetGroupOutcome ForecastServiceClient::UpdateDatasetGroup(const UpdateDatasetGroupRequest& request) const
@@ -1665,13 +1665,13 @@ UpdateDatasetGroupOutcomeCallable ForecastServiceClient::UpdateDatasetGroupCalla
   return task->get_future();
 }
 
-void ForecastServiceClient::UpdateDatasetGroupAsync(const UpdateDatasetGroupRequest& request, const UpdateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClientUpdateDatasetGroupAsyncHelper(ForecastServiceClient const * const clientThis, const UpdateDatasetGroupRequest& request, const UpdateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatasetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDatasetGroup(request), context);
 }
 
-void ForecastServiceClient::UpdateDatasetGroupAsyncHelper(const UpdateDatasetGroupRequest& request, const UpdateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ForecastServiceClient::UpdateDatasetGroupAsync(const UpdateDatasetGroupRequest& request, const UpdateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDatasetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ForecastServiceClientUpdateDatasetGroupAsyncHelper( this, request, handler, context ); } );
 }
 

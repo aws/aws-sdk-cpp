@@ -121,13 +121,13 @@ PutEventsOutcomeCallable MobileAnalyticsClient::PutEventsCallable(const PutEvent
   return task->get_future();
 }
 
-void MobileAnalyticsClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MobileAnalyticsClientPutEventsAsyncHelper(MobileAnalyticsClient const * const clientThis, const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEvents(request), context);
 }
 
-void MobileAnalyticsClient::PutEventsAsyncHelper(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MobileAnalyticsClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MobileAnalyticsClientPutEventsAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -149,14 +149,14 @@ CreateHttpNamespaceOutcomeCallable ServiceDiscoveryClient::CreateHttpNamespaceCa
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::CreateHttpNamespaceAsync(const CreateHttpNamespaceRequest& request, const CreateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientCreateHttpNamespaceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const CreateHttpNamespaceRequest& request, const CreateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHttpNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateHttpNamespace(request), context);
 }
 
-void ServiceDiscoveryClient::CreateHttpNamespaceAsyncHelper(const CreateHttpNamespaceRequest& request, const CreateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::CreateHttpNamespaceAsync(const CreateHttpNamespaceRequest& request, const CreateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateHttpNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientCreateHttpNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::CreatePrivateDnsNamespace(const CreatePrivateDnsNamespaceRequest& request) const
@@ -173,14 +173,14 @@ CreatePrivateDnsNamespaceOutcomeCallable ServiceDiscoveryClient::CreatePrivateDn
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::CreatePrivateDnsNamespaceAsync(const CreatePrivateDnsNamespaceRequest& request, const CreatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientCreatePrivateDnsNamespaceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const CreatePrivateDnsNamespaceRequest& request, const CreatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePrivateDnsNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePrivateDnsNamespace(request), context);
 }
 
-void ServiceDiscoveryClient::CreatePrivateDnsNamespaceAsyncHelper(const CreatePrivateDnsNamespaceRequest& request, const CreatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::CreatePrivateDnsNamespaceAsync(const CreatePrivateDnsNamespaceRequest& request, const CreatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePrivateDnsNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientCreatePrivateDnsNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePublicDnsNamespaceOutcome ServiceDiscoveryClient::CreatePublicDnsNamespace(const CreatePublicDnsNamespaceRequest& request) const
@@ -197,14 +197,14 @@ CreatePublicDnsNamespaceOutcomeCallable ServiceDiscoveryClient::CreatePublicDnsN
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::CreatePublicDnsNamespaceAsync(const CreatePublicDnsNamespaceRequest& request, const CreatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientCreatePublicDnsNamespaceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const CreatePublicDnsNamespaceRequest& request, const CreatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePublicDnsNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePublicDnsNamespace(request), context);
 }
 
-void ServiceDiscoveryClient::CreatePublicDnsNamespaceAsyncHelper(const CreatePublicDnsNamespaceRequest& request, const CreatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::CreatePublicDnsNamespaceAsync(const CreatePublicDnsNamespaceRequest& request, const CreatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePublicDnsNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientCreatePublicDnsNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateServiceOutcome ServiceDiscoveryClient::CreateService(const CreateServiceRequest& request) const
@@ -221,14 +221,14 @@ CreateServiceOutcomeCallable ServiceDiscoveryClient::CreateServiceCallable(const
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientCreateServiceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateService(request), context);
 }
 
-void ServiceDiscoveryClient::CreateServiceAsyncHelper(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientCreateServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNamespaceOutcome ServiceDiscoveryClient::DeleteNamespace(const DeleteNamespaceRequest& request) const
@@ -245,14 +245,14 @@ DeleteNamespaceOutcomeCallable ServiceDiscoveryClient::DeleteNamespaceCallable(c
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientDeleteNamespaceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNamespace(request), context);
 }
 
-void ServiceDiscoveryClient::DeleteNamespaceAsyncHelper(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientDeleteNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteServiceOutcome ServiceDiscoveryClient::DeleteService(const DeleteServiceRequest& request) const
@@ -269,14 +269,14 @@ DeleteServiceOutcomeCallable ServiceDiscoveryClient::DeleteServiceCallable(const
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientDeleteServiceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteService(request), context);
 }
 
-void ServiceDiscoveryClient::DeleteServiceAsyncHelper(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientDeleteServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterInstanceOutcome ServiceDiscoveryClient::DeregisterInstance(const DeregisterInstanceRequest& request) const
@@ -293,14 +293,14 @@ DeregisterInstanceOutcomeCallable ServiceDiscoveryClient::DeregisterInstanceCall
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::DeregisterInstanceAsync(const DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientDeregisterInstanceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterInstance(request), context);
 }
 
-void ServiceDiscoveryClient::DeregisterInstanceAsyncHelper(const DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::DeregisterInstanceAsync(const DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientDeregisterInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 DiscoverInstancesOutcome ServiceDiscoveryClient::DiscoverInstances(const DiscoverInstancesRequest& request) const
@@ -326,14 +326,14 @@ DiscoverInstancesOutcomeCallable ServiceDiscoveryClient::DiscoverInstancesCallab
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::DiscoverInstancesAsync(const DiscoverInstancesRequest& request, const DiscoverInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientDiscoverInstancesAsyncHelper(ServiceDiscoveryClient const * const clientThis, const DiscoverInstancesRequest& request, const DiscoverInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DiscoverInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DiscoverInstances(request), context);
 }
 
-void ServiceDiscoveryClient::DiscoverInstancesAsyncHelper(const DiscoverInstancesRequest& request, const DiscoverInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::DiscoverInstancesAsync(const DiscoverInstancesRequest& request, const DiscoverInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DiscoverInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientDiscoverInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceOutcome ServiceDiscoveryClient::GetInstance(const GetInstanceRequest& request) const
@@ -350,14 +350,14 @@ GetInstanceOutcomeCallable ServiceDiscoveryClient::GetInstanceCallable(const Get
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::GetInstanceAsync(const GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientGetInstanceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstance(request), context);
 }
 
-void ServiceDiscoveryClient::GetInstanceAsyncHelper(const GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::GetInstanceAsync(const GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientGetInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstancesHealthStatusOutcome ServiceDiscoveryClient::GetInstancesHealthStatus(const GetInstancesHealthStatusRequest& request) const
@@ -374,14 +374,14 @@ GetInstancesHealthStatusOutcomeCallable ServiceDiscoveryClient::GetInstancesHeal
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::GetInstancesHealthStatusAsync(const GetInstancesHealthStatusRequest& request, const GetInstancesHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientGetInstancesHealthStatusAsyncHelper(ServiceDiscoveryClient const * const clientThis, const GetInstancesHealthStatusRequest& request, const GetInstancesHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstancesHealthStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstancesHealthStatus(request), context);
 }
 
-void ServiceDiscoveryClient::GetInstancesHealthStatusAsyncHelper(const GetInstancesHealthStatusRequest& request, const GetInstancesHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::GetInstancesHealthStatusAsync(const GetInstancesHealthStatusRequest& request, const GetInstancesHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstancesHealthStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientGetInstancesHealthStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNamespaceOutcome ServiceDiscoveryClient::GetNamespace(const GetNamespaceRequest& request) const
@@ -398,14 +398,14 @@ GetNamespaceOutcomeCallable ServiceDiscoveryClient::GetNamespaceCallable(const G
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::GetNamespaceAsync(const GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientGetNamespaceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNamespace(request), context);
 }
 
-void ServiceDiscoveryClient::GetNamespaceAsyncHelper(const GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::GetNamespaceAsync(const GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientGetNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetOperationOutcome ServiceDiscoveryClient::GetOperation(const GetOperationRequest& request) const
@@ -422,14 +422,14 @@ GetOperationOutcomeCallable ServiceDiscoveryClient::GetOperationCallable(const G
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::GetOperationAsync(const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientGetOperationAsyncHelper(ServiceDiscoveryClient const * const clientThis, const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOperationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOperation(request), context);
 }
 
-void ServiceDiscoveryClient::GetOperationAsyncHelper(const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::GetOperationAsync(const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOperation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientGetOperationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceOutcome ServiceDiscoveryClient::GetService(const GetServiceRequest& request) const
@@ -446,14 +446,14 @@ GetServiceOutcomeCallable ServiceDiscoveryClient::GetServiceCallable(const GetSe
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::GetServiceAsync(const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientGetServiceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetService(request), context);
 }
 
-void ServiceDiscoveryClient::GetServiceAsyncHelper(const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::GetServiceAsync(const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientGetServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInstancesOutcome ServiceDiscoveryClient::ListInstances(const ListInstancesRequest& request) const
@@ -470,14 +470,14 @@ ListInstancesOutcomeCallable ServiceDiscoveryClient::ListInstancesCallable(const
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientListInstancesAsyncHelper(ServiceDiscoveryClient const * const clientThis, const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInstances(request), context);
 }
 
-void ServiceDiscoveryClient::ListInstancesAsyncHelper(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientListInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNamespacesOutcome ServiceDiscoveryClient::ListNamespaces(const ListNamespacesRequest& request) const
@@ -494,14 +494,14 @@ ListNamespacesOutcomeCallable ServiceDiscoveryClient::ListNamespacesCallable(con
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::ListNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientListNamespacesAsyncHelper(ServiceDiscoveryClient const * const clientThis, const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNamespacesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNamespaces(request), context);
 }
 
-void ServiceDiscoveryClient::ListNamespacesAsyncHelper(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::ListNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNamespaces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientListNamespacesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOperationsOutcome ServiceDiscoveryClient::ListOperations(const ListOperationsRequest& request) const
@@ -518,14 +518,14 @@ ListOperationsOutcomeCallable ServiceDiscoveryClient::ListOperationsCallable(con
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::ListOperationsAsync(const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientListOperationsAsyncHelper(ServiceDiscoveryClient const * const clientThis, const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOperationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOperations(request), context);
 }
 
-void ServiceDiscoveryClient::ListOperationsAsyncHelper(const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::ListOperationsAsync(const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOperations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientListOperationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServicesOutcome ServiceDiscoveryClient::ListServices(const ListServicesRequest& request) const
@@ -542,14 +542,14 @@ ListServicesOutcomeCallable ServiceDiscoveryClient::ListServicesCallable(const L
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientListServicesAsyncHelper(ServiceDiscoveryClient const * const clientThis, const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServices(request), context);
 }
 
-void ServiceDiscoveryClient::ListServicesAsyncHelper(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientListServicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ServiceDiscoveryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -566,14 +566,14 @@ ListTagsForResourceOutcomeCallable ServiceDiscoveryClient::ListTagsForResourceCa
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientListTagsForResourceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ServiceDiscoveryClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterInstanceOutcome ServiceDiscoveryClient::RegisterInstance(const RegisterInstanceRequest& request) const
@@ -590,14 +590,14 @@ RegisterInstanceOutcomeCallable ServiceDiscoveryClient::RegisterInstanceCallable
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::RegisterInstanceAsync(const RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientRegisterInstanceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterInstance(request), context);
 }
 
-void ServiceDiscoveryClient::RegisterInstanceAsyncHelper(const RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::RegisterInstanceAsync(const RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientRegisterInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ServiceDiscoveryClient::TagResource(const TagResourceRequest& request) const
@@ -614,14 +614,14 @@ TagResourceOutcomeCallable ServiceDiscoveryClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientTagResourceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ServiceDiscoveryClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ServiceDiscoveryClient::UntagResource(const UntagResourceRequest& request) const
@@ -638,14 +638,14 @@ UntagResourceOutcomeCallable ServiceDiscoveryClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientUntagResourceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ServiceDiscoveryClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateHttpNamespaceOutcome ServiceDiscoveryClient::UpdateHttpNamespace(const UpdateHttpNamespaceRequest& request) const
@@ -662,14 +662,14 @@ UpdateHttpNamespaceOutcomeCallable ServiceDiscoveryClient::UpdateHttpNamespaceCa
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::UpdateHttpNamespaceAsync(const UpdateHttpNamespaceRequest& request, const UpdateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientUpdateHttpNamespaceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const UpdateHttpNamespaceRequest& request, const UpdateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateHttpNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateHttpNamespace(request), context);
 }
 
-void ServiceDiscoveryClient::UpdateHttpNamespaceAsyncHelper(const UpdateHttpNamespaceRequest& request, const UpdateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::UpdateHttpNamespaceAsync(const UpdateHttpNamespaceRequest& request, const UpdateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateHttpNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientUpdateHttpNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateInstanceCustomHealthStatusOutcome ServiceDiscoveryClient::UpdateInstanceCustomHealthStatus(const UpdateInstanceCustomHealthStatusRequest& request) const
@@ -686,14 +686,14 @@ UpdateInstanceCustomHealthStatusOutcomeCallable ServiceDiscoveryClient::UpdateIn
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusAsync(const UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientUpdateInstanceCustomHealthStatusAsyncHelper(ServiceDiscoveryClient const * const clientThis, const UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInstanceCustomHealthStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateInstanceCustomHealthStatus(request), context);
 }
 
-void ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusAsyncHelper(const UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusAsync(const UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateInstanceCustomHealthStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientUpdateInstanceCustomHealthStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePrivateDnsNamespace(const UpdatePrivateDnsNamespaceRequest& request) const
@@ -710,14 +710,14 @@ UpdatePrivateDnsNamespaceOutcomeCallable ServiceDiscoveryClient::UpdatePrivateDn
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::UpdatePrivateDnsNamespaceAsync(const UpdatePrivateDnsNamespaceRequest& request, const UpdatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientUpdatePrivateDnsNamespaceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const UpdatePrivateDnsNamespaceRequest& request, const UpdatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePrivateDnsNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePrivateDnsNamespace(request), context);
 }
 
-void ServiceDiscoveryClient::UpdatePrivateDnsNamespaceAsyncHelper(const UpdatePrivateDnsNamespaceRequest& request, const UpdatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::UpdatePrivateDnsNamespaceAsync(const UpdatePrivateDnsNamespaceRequest& request, const UpdatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePrivateDnsNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientUpdatePrivateDnsNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePublicDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePublicDnsNamespace(const UpdatePublicDnsNamespaceRequest& request) const
@@ -734,14 +734,14 @@ UpdatePublicDnsNamespaceOutcomeCallable ServiceDiscoveryClient::UpdatePublicDnsN
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::UpdatePublicDnsNamespaceAsync(const UpdatePublicDnsNamespaceRequest& request, const UpdatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientUpdatePublicDnsNamespaceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const UpdatePublicDnsNamespaceRequest& request, const UpdatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePublicDnsNamespaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePublicDnsNamespace(request), context);
 }
 
-void ServiceDiscoveryClient::UpdatePublicDnsNamespaceAsyncHelper(const UpdatePublicDnsNamespaceRequest& request, const UpdatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::UpdatePublicDnsNamespaceAsync(const UpdatePublicDnsNamespaceRequest& request, const UpdatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePublicDnsNamespace(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientUpdatePublicDnsNamespaceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServiceOutcome ServiceDiscoveryClient::UpdateService(const UpdateServiceRequest& request) const
@@ -758,13 +758,13 @@ UpdateServiceOutcomeCallable ServiceDiscoveryClient::UpdateServiceCallable(const
   return task->get_future();
 }
 
-void ServiceDiscoveryClient::UpdateServiceAsync(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClientUpdateServiceAsyncHelper(ServiceDiscoveryClient const * const clientThis, const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateService(request), context);
 }
 
-void ServiceDiscoveryClient::UpdateServiceAsyncHelper(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ServiceDiscoveryClient::UpdateServiceAsync(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ServiceDiscoveryClientUpdateServiceAsyncHelper( this, request, handler, context ); } );
 }
 

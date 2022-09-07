@@ -187,14 +187,14 @@ AssociateDelegateToResourceOutcomeCallable WorkMailClient::AssociateDelegateToRe
   return task->get_future();
 }
 
-void WorkMailClient::AssociateDelegateToResourceAsync(const AssociateDelegateToResourceRequest& request, const AssociateDelegateToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientAssociateDelegateToResourceAsyncHelper(WorkMailClient const * const clientThis, const AssociateDelegateToResourceRequest& request, const AssociateDelegateToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateDelegateToResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateDelegateToResource(request), context);
 }
 
-void WorkMailClient::AssociateDelegateToResourceAsyncHelper(const AssociateDelegateToResourceRequest& request, const AssociateDelegateToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::AssociateDelegateToResourceAsync(const AssociateDelegateToResourceRequest& request, const AssociateDelegateToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateDelegateToResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientAssociateDelegateToResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateMemberToGroupOutcome WorkMailClient::AssociateMemberToGroup(const AssociateMemberToGroupRequest& request) const
@@ -211,14 +211,14 @@ AssociateMemberToGroupOutcomeCallable WorkMailClient::AssociateMemberToGroupCall
   return task->get_future();
 }
 
-void WorkMailClient::AssociateMemberToGroupAsync(const AssociateMemberToGroupRequest& request, const AssociateMemberToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientAssociateMemberToGroupAsyncHelper(WorkMailClient const * const clientThis, const AssociateMemberToGroupRequest& request, const AssociateMemberToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateMemberToGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateMemberToGroup(request), context);
 }
 
-void WorkMailClient::AssociateMemberToGroupAsyncHelper(const AssociateMemberToGroupRequest& request, const AssociateMemberToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::AssociateMemberToGroupAsync(const AssociateMemberToGroupRequest& request, const AssociateMemberToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateMemberToGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientAssociateMemberToGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelMailboxExportJobOutcome WorkMailClient::CancelMailboxExportJob(const CancelMailboxExportJobRequest& request) const
@@ -235,14 +235,14 @@ CancelMailboxExportJobOutcomeCallable WorkMailClient::CancelMailboxExportJobCall
   return task->get_future();
 }
 
-void WorkMailClient::CancelMailboxExportJobAsync(const CancelMailboxExportJobRequest& request, const CancelMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientCancelMailboxExportJobAsyncHelper(WorkMailClient const * const clientThis, const CancelMailboxExportJobRequest& request, const CancelMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelMailboxExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelMailboxExportJob(request), context);
 }
 
-void WorkMailClient::CancelMailboxExportJobAsyncHelper(const CancelMailboxExportJobRequest& request, const CancelMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::CancelMailboxExportJobAsync(const CancelMailboxExportJobRequest& request, const CancelMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelMailboxExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientCancelMailboxExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAliasOutcome WorkMailClient::CreateAlias(const CreateAliasRequest& request) const
@@ -259,14 +259,14 @@ CreateAliasOutcomeCallable WorkMailClient::CreateAliasCallable(const CreateAlias
   return task->get_future();
 }
 
-void WorkMailClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientCreateAliasAsyncHelper(WorkMailClient const * const clientThis, const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAlias(request), context);
 }
 
-void WorkMailClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientCreateAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAvailabilityConfigurationOutcome WorkMailClient::CreateAvailabilityConfiguration(const CreateAvailabilityConfigurationRequest& request) const
@@ -283,14 +283,14 @@ CreateAvailabilityConfigurationOutcomeCallable WorkMailClient::CreateAvailabilit
   return task->get_future();
 }
 
-void WorkMailClient::CreateAvailabilityConfigurationAsync(const CreateAvailabilityConfigurationRequest& request, const CreateAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientCreateAvailabilityConfigurationAsyncHelper(WorkMailClient const * const clientThis, const CreateAvailabilityConfigurationRequest& request, const CreateAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAvailabilityConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAvailabilityConfiguration(request), context);
 }
 
-void WorkMailClient::CreateAvailabilityConfigurationAsyncHelper(const CreateAvailabilityConfigurationRequest& request, const CreateAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::CreateAvailabilityConfigurationAsync(const CreateAvailabilityConfigurationRequest& request, const CreateAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAvailabilityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientCreateAvailabilityConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGroupOutcome WorkMailClient::CreateGroup(const CreateGroupRequest& request) const
@@ -307,14 +307,14 @@ CreateGroupOutcomeCallable WorkMailClient::CreateGroupCallable(const CreateGroup
   return task->get_future();
 }
 
-void WorkMailClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientCreateGroupAsyncHelper(WorkMailClient const * const clientThis, const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGroup(request), context);
 }
 
-void WorkMailClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientCreateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMobileDeviceAccessRuleOutcome WorkMailClient::CreateMobileDeviceAccessRule(const CreateMobileDeviceAccessRuleRequest& request) const
@@ -331,14 +331,14 @@ CreateMobileDeviceAccessRuleOutcomeCallable WorkMailClient::CreateMobileDeviceAc
   return task->get_future();
 }
 
-void WorkMailClient::CreateMobileDeviceAccessRuleAsync(const CreateMobileDeviceAccessRuleRequest& request, const CreateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientCreateMobileDeviceAccessRuleAsyncHelper(WorkMailClient const * const clientThis, const CreateMobileDeviceAccessRuleRequest& request, const CreateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMobileDeviceAccessRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMobileDeviceAccessRule(request), context);
 }
 
-void WorkMailClient::CreateMobileDeviceAccessRuleAsyncHelper(const CreateMobileDeviceAccessRuleRequest& request, const CreateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::CreateMobileDeviceAccessRuleAsync(const CreateMobileDeviceAccessRuleRequest& request, const CreateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMobileDeviceAccessRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientCreateMobileDeviceAccessRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateOrganizationOutcome WorkMailClient::CreateOrganization(const CreateOrganizationRequest& request) const
@@ -355,14 +355,14 @@ CreateOrganizationOutcomeCallable WorkMailClient::CreateOrganizationCallable(con
   return task->get_future();
 }
 
-void WorkMailClient::CreateOrganizationAsync(const CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientCreateOrganizationAsyncHelper(WorkMailClient const * const clientThis, const CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateOrganization(request), context);
 }
 
-void WorkMailClient::CreateOrganizationAsyncHelper(const CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::CreateOrganizationAsync(const CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientCreateOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResourceOutcome WorkMailClient::CreateResource(const CreateResourceRequest& request) const
@@ -379,14 +379,14 @@ CreateResourceOutcomeCallable WorkMailClient::CreateResourceCallable(const Creat
   return task->get_future();
 }
 
-void WorkMailClient::CreateResourceAsync(const CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientCreateResourceAsyncHelper(WorkMailClient const * const clientThis, const CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResource(request), context);
 }
 
-void WorkMailClient::CreateResourceAsyncHelper(const CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::CreateResourceAsync(const CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientCreateResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserOutcome WorkMailClient::CreateUser(const CreateUserRequest& request) const
@@ -403,14 +403,14 @@ CreateUserOutcomeCallable WorkMailClient::CreateUserCallable(const CreateUserReq
   return task->get_future();
 }
 
-void WorkMailClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientCreateUserAsyncHelper(WorkMailClient const * const clientThis, const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUser(request), context);
 }
 
-void WorkMailClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientCreateUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAccessControlRuleOutcome WorkMailClient::DeleteAccessControlRule(const DeleteAccessControlRuleRequest& request) const
@@ -427,14 +427,14 @@ DeleteAccessControlRuleOutcomeCallable WorkMailClient::DeleteAccessControlRuleCa
   return task->get_future();
 }
 
-void WorkMailClient::DeleteAccessControlRuleAsync(const DeleteAccessControlRuleRequest& request, const DeleteAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteAccessControlRuleAsyncHelper(WorkMailClient const * const clientThis, const DeleteAccessControlRuleRequest& request, const DeleteAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessControlRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAccessControlRule(request), context);
 }
 
-void WorkMailClient::DeleteAccessControlRuleAsyncHelper(const DeleteAccessControlRuleRequest& request, const DeleteAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteAccessControlRuleAsync(const DeleteAccessControlRuleRequest& request, const DeleteAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAccessControlRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteAccessControlRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAliasOutcome WorkMailClient::DeleteAlias(const DeleteAliasRequest& request) const
@@ -451,14 +451,14 @@ DeleteAliasOutcomeCallable WorkMailClient::DeleteAliasCallable(const DeleteAlias
   return task->get_future();
 }
 
-void WorkMailClient::DeleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteAliasAsyncHelper(WorkMailClient const * const clientThis, const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAlias(request), context);
 }
 
-void WorkMailClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAvailabilityConfigurationOutcome WorkMailClient::DeleteAvailabilityConfiguration(const DeleteAvailabilityConfigurationRequest& request) const
@@ -475,14 +475,14 @@ DeleteAvailabilityConfigurationOutcomeCallable WorkMailClient::DeleteAvailabilit
   return task->get_future();
 }
 
-void WorkMailClient::DeleteAvailabilityConfigurationAsync(const DeleteAvailabilityConfigurationRequest& request, const DeleteAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteAvailabilityConfigurationAsyncHelper(WorkMailClient const * const clientThis, const DeleteAvailabilityConfigurationRequest& request, const DeleteAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAvailabilityConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAvailabilityConfiguration(request), context);
 }
 
-void WorkMailClient::DeleteAvailabilityConfigurationAsyncHelper(const DeleteAvailabilityConfigurationRequest& request, const DeleteAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteAvailabilityConfigurationAsync(const DeleteAvailabilityConfigurationRequest& request, const DeleteAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAvailabilityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteAvailabilityConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEmailMonitoringConfigurationOutcome WorkMailClient::DeleteEmailMonitoringConfiguration(const DeleteEmailMonitoringConfigurationRequest& request) const
@@ -499,14 +499,14 @@ DeleteEmailMonitoringConfigurationOutcomeCallable WorkMailClient::DeleteEmailMon
   return task->get_future();
 }
 
-void WorkMailClient::DeleteEmailMonitoringConfigurationAsync(const DeleteEmailMonitoringConfigurationRequest& request, const DeleteEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteEmailMonitoringConfigurationAsyncHelper(WorkMailClient const * const clientThis, const DeleteEmailMonitoringConfigurationRequest& request, const DeleteEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailMonitoringConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEmailMonitoringConfiguration(request), context);
 }
 
-void WorkMailClient::DeleteEmailMonitoringConfigurationAsyncHelper(const DeleteEmailMonitoringConfigurationRequest& request, const DeleteEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteEmailMonitoringConfigurationAsync(const DeleteEmailMonitoringConfigurationRequest& request, const DeleteEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEmailMonitoringConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteEmailMonitoringConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGroupOutcome WorkMailClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -523,14 +523,14 @@ DeleteGroupOutcomeCallable WorkMailClient::DeleteGroupCallable(const DeleteGroup
   return task->get_future();
 }
 
-void WorkMailClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteGroupAsyncHelper(WorkMailClient const * const clientThis, const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGroup(request), context);
 }
 
-void WorkMailClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMailboxPermissionsOutcome WorkMailClient::DeleteMailboxPermissions(const DeleteMailboxPermissionsRequest& request) const
@@ -547,14 +547,14 @@ DeleteMailboxPermissionsOutcomeCallable WorkMailClient::DeleteMailboxPermissions
   return task->get_future();
 }
 
-void WorkMailClient::DeleteMailboxPermissionsAsync(const DeleteMailboxPermissionsRequest& request, const DeleteMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteMailboxPermissionsAsyncHelper(WorkMailClient const * const clientThis, const DeleteMailboxPermissionsRequest& request, const DeleteMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMailboxPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMailboxPermissions(request), context);
 }
 
-void WorkMailClient::DeleteMailboxPermissionsAsyncHelper(const DeleteMailboxPermissionsRequest& request, const DeleteMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteMailboxPermissionsAsync(const DeleteMailboxPermissionsRequest& request, const DeleteMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMailboxPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteMailboxPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMobileDeviceAccessOverrideOutcome WorkMailClient::DeleteMobileDeviceAccessOverride(const DeleteMobileDeviceAccessOverrideRequest& request) const
@@ -571,14 +571,14 @@ DeleteMobileDeviceAccessOverrideOutcomeCallable WorkMailClient::DeleteMobileDevi
   return task->get_future();
 }
 
-void WorkMailClient::DeleteMobileDeviceAccessOverrideAsync(const DeleteMobileDeviceAccessOverrideRequest& request, const DeleteMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteMobileDeviceAccessOverrideAsyncHelper(WorkMailClient const * const clientThis, const DeleteMobileDeviceAccessOverrideRequest& request, const DeleteMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMobileDeviceAccessOverrideAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMobileDeviceAccessOverride(request), context);
 }
 
-void WorkMailClient::DeleteMobileDeviceAccessOverrideAsyncHelper(const DeleteMobileDeviceAccessOverrideRequest& request, const DeleteMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteMobileDeviceAccessOverrideAsync(const DeleteMobileDeviceAccessOverrideRequest& request, const DeleteMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMobileDeviceAccessOverride(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteMobileDeviceAccessOverrideAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMobileDeviceAccessRuleOutcome WorkMailClient::DeleteMobileDeviceAccessRule(const DeleteMobileDeviceAccessRuleRequest& request) const
@@ -595,14 +595,14 @@ DeleteMobileDeviceAccessRuleOutcomeCallable WorkMailClient::DeleteMobileDeviceAc
   return task->get_future();
 }
 
-void WorkMailClient::DeleteMobileDeviceAccessRuleAsync(const DeleteMobileDeviceAccessRuleRequest& request, const DeleteMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteMobileDeviceAccessRuleAsyncHelper(WorkMailClient const * const clientThis, const DeleteMobileDeviceAccessRuleRequest& request, const DeleteMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMobileDeviceAccessRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMobileDeviceAccessRule(request), context);
 }
 
-void WorkMailClient::DeleteMobileDeviceAccessRuleAsyncHelper(const DeleteMobileDeviceAccessRuleRequest& request, const DeleteMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteMobileDeviceAccessRuleAsync(const DeleteMobileDeviceAccessRuleRequest& request, const DeleteMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMobileDeviceAccessRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteMobileDeviceAccessRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteOrganizationOutcome WorkMailClient::DeleteOrganization(const DeleteOrganizationRequest& request) const
@@ -619,14 +619,14 @@ DeleteOrganizationOutcomeCallable WorkMailClient::DeleteOrganizationCallable(con
   return task->get_future();
 }
 
-void WorkMailClient::DeleteOrganizationAsync(const DeleteOrganizationRequest& request, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteOrganizationAsyncHelper(WorkMailClient const * const clientThis, const DeleteOrganizationRequest& request, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteOrganization(request), context);
 }
 
-void WorkMailClient::DeleteOrganizationAsyncHelper(const DeleteOrganizationRequest& request, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteOrganizationAsync(const DeleteOrganizationRequest& request, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourceOutcome WorkMailClient::DeleteResource(const DeleteResourceRequest& request) const
@@ -643,14 +643,14 @@ DeleteResourceOutcomeCallable WorkMailClient::DeleteResourceCallable(const Delet
   return task->get_future();
 }
 
-void WorkMailClient::DeleteResourceAsync(const DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteResourceAsyncHelper(WorkMailClient const * const clientThis, const DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResource(request), context);
 }
 
-void WorkMailClient::DeleteResourceAsyncHelper(const DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteResourceAsync(const DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRetentionPolicyOutcome WorkMailClient::DeleteRetentionPolicy(const DeleteRetentionPolicyRequest& request) const
@@ -667,14 +667,14 @@ DeleteRetentionPolicyOutcomeCallable WorkMailClient::DeleteRetentionPolicyCallab
   return task->get_future();
 }
 
-void WorkMailClient::DeleteRetentionPolicyAsync(const DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteRetentionPolicyAsyncHelper(WorkMailClient const * const clientThis, const DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRetentionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRetentionPolicy(request), context);
 }
 
-void WorkMailClient::DeleteRetentionPolicyAsyncHelper(const DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteRetentionPolicyAsync(const DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRetentionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteRetentionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserOutcome WorkMailClient::DeleteUser(const DeleteUserRequest& request) const
@@ -691,14 +691,14 @@ DeleteUserOutcomeCallable WorkMailClient::DeleteUserCallable(const DeleteUserReq
   return task->get_future();
 }
 
-void WorkMailClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeleteUserAsyncHelper(WorkMailClient const * const clientThis, const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUser(request), context);
 }
 
-void WorkMailClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeleteUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterFromWorkMailOutcome WorkMailClient::DeregisterFromWorkMail(const DeregisterFromWorkMailRequest& request) const
@@ -715,14 +715,14 @@ DeregisterFromWorkMailOutcomeCallable WorkMailClient::DeregisterFromWorkMailCall
   return task->get_future();
 }
 
-void WorkMailClient::DeregisterFromWorkMailAsync(const DeregisterFromWorkMailRequest& request, const DeregisterFromWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeregisterFromWorkMailAsyncHelper(WorkMailClient const * const clientThis, const DeregisterFromWorkMailRequest& request, const DeregisterFromWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterFromWorkMailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterFromWorkMail(request), context);
 }
 
-void WorkMailClient::DeregisterFromWorkMailAsyncHelper(const DeregisterFromWorkMailRequest& request, const DeregisterFromWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeregisterFromWorkMailAsync(const DeregisterFromWorkMailRequest& request, const DeregisterFromWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterFromWorkMail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeregisterFromWorkMailAsyncHelper( this, request, handler, context ); } );
 }
 
 DeregisterMailDomainOutcome WorkMailClient::DeregisterMailDomain(const DeregisterMailDomainRequest& request) const
@@ -739,14 +739,14 @@ DeregisterMailDomainOutcomeCallable WorkMailClient::DeregisterMailDomainCallable
   return task->get_future();
 }
 
-void WorkMailClient::DeregisterMailDomainAsync(const DeregisterMailDomainRequest& request, const DeregisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDeregisterMailDomainAsyncHelper(WorkMailClient const * const clientThis, const DeregisterMailDomainRequest& request, const DeregisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterMailDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeregisterMailDomain(request), context);
 }
 
-void WorkMailClient::DeregisterMailDomainAsyncHelper(const DeregisterMailDomainRequest& request, const DeregisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DeregisterMailDomainAsync(const DeregisterMailDomainRequest& request, const DeregisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeregisterMailDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDeregisterMailDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEmailMonitoringConfigurationOutcome WorkMailClient::DescribeEmailMonitoringConfiguration(const DescribeEmailMonitoringConfigurationRequest& request) const
@@ -763,14 +763,14 @@ DescribeEmailMonitoringConfigurationOutcomeCallable WorkMailClient::DescribeEmai
   return task->get_future();
 }
 
-void WorkMailClient::DescribeEmailMonitoringConfigurationAsync(const DescribeEmailMonitoringConfigurationRequest& request, const DescribeEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDescribeEmailMonitoringConfigurationAsyncHelper(WorkMailClient const * const clientThis, const DescribeEmailMonitoringConfigurationRequest& request, const DescribeEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEmailMonitoringConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEmailMonitoringConfiguration(request), context);
 }
 
-void WorkMailClient::DescribeEmailMonitoringConfigurationAsyncHelper(const DescribeEmailMonitoringConfigurationRequest& request, const DescribeEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DescribeEmailMonitoringConfigurationAsync(const DescribeEmailMonitoringConfigurationRequest& request, const DescribeEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEmailMonitoringConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDescribeEmailMonitoringConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGroupOutcome WorkMailClient::DescribeGroup(const DescribeGroupRequest& request) const
@@ -787,14 +787,14 @@ DescribeGroupOutcomeCallable WorkMailClient::DescribeGroupCallable(const Describ
   return task->get_future();
 }
 
-void WorkMailClient::DescribeGroupAsync(const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDescribeGroupAsyncHelper(WorkMailClient const * const clientThis, const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGroup(request), context);
 }
 
-void WorkMailClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DescribeGroupAsync(const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDescribeGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInboundDmarcSettingsOutcome WorkMailClient::DescribeInboundDmarcSettings(const DescribeInboundDmarcSettingsRequest& request) const
@@ -811,14 +811,14 @@ DescribeInboundDmarcSettingsOutcomeCallable WorkMailClient::DescribeInboundDmarc
   return task->get_future();
 }
 
-void WorkMailClient::DescribeInboundDmarcSettingsAsync(const DescribeInboundDmarcSettingsRequest& request, const DescribeInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDescribeInboundDmarcSettingsAsyncHelper(WorkMailClient const * const clientThis, const DescribeInboundDmarcSettingsRequest& request, const DescribeInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInboundDmarcSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInboundDmarcSettings(request), context);
 }
 
-void WorkMailClient::DescribeInboundDmarcSettingsAsyncHelper(const DescribeInboundDmarcSettingsRequest& request, const DescribeInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DescribeInboundDmarcSettingsAsync(const DescribeInboundDmarcSettingsRequest& request, const DescribeInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInboundDmarcSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDescribeInboundDmarcSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMailboxExportJobOutcome WorkMailClient::DescribeMailboxExportJob(const DescribeMailboxExportJobRequest& request) const
@@ -835,14 +835,14 @@ DescribeMailboxExportJobOutcomeCallable WorkMailClient::DescribeMailboxExportJob
   return task->get_future();
 }
 
-void WorkMailClient::DescribeMailboxExportJobAsync(const DescribeMailboxExportJobRequest& request, const DescribeMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDescribeMailboxExportJobAsyncHelper(WorkMailClient const * const clientThis, const DescribeMailboxExportJobRequest& request, const DescribeMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMailboxExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMailboxExportJob(request), context);
 }
 
-void WorkMailClient::DescribeMailboxExportJobAsyncHelper(const DescribeMailboxExportJobRequest& request, const DescribeMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DescribeMailboxExportJobAsync(const DescribeMailboxExportJobRequest& request, const DescribeMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMailboxExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDescribeMailboxExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeOrganizationOutcome WorkMailClient::DescribeOrganization(const DescribeOrganizationRequest& request) const
@@ -859,14 +859,14 @@ DescribeOrganizationOutcomeCallable WorkMailClient::DescribeOrganizationCallable
   return task->get_future();
 }
 
-void WorkMailClient::DescribeOrganizationAsync(const DescribeOrganizationRequest& request, const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDescribeOrganizationAsyncHelper(WorkMailClient const * const clientThis, const DescribeOrganizationRequest& request, const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeOrganization(request), context);
 }
 
-void WorkMailClient::DescribeOrganizationAsyncHelper(const DescribeOrganizationRequest& request, const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DescribeOrganizationAsync(const DescribeOrganizationRequest& request, const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeOrganization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDescribeOrganizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeResourceOutcome WorkMailClient::DescribeResource(const DescribeResourceRequest& request) const
@@ -883,14 +883,14 @@ DescribeResourceOutcomeCallable WorkMailClient::DescribeResourceCallable(const D
   return task->get_future();
 }
 
-void WorkMailClient::DescribeResourceAsync(const DescribeResourceRequest& request, const DescribeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDescribeResourceAsyncHelper(WorkMailClient const * const clientThis, const DescribeResourceRequest& request, const DescribeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeResource(request), context);
 }
 
-void WorkMailClient::DescribeResourceAsyncHelper(const DescribeResourceRequest& request, const DescribeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DescribeResourceAsync(const DescribeResourceRequest& request, const DescribeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDescribeResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUserOutcome WorkMailClient::DescribeUser(const DescribeUserRequest& request) const
@@ -907,14 +907,14 @@ DescribeUserOutcomeCallable WorkMailClient::DescribeUserCallable(const DescribeU
   return task->get_future();
 }
 
-void WorkMailClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDescribeUserAsyncHelper(WorkMailClient const * const clientThis, const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUser(request), context);
 }
 
-void WorkMailClient::DescribeUserAsyncHelper(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDescribeUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateDelegateFromResourceOutcome WorkMailClient::DisassociateDelegateFromResource(const DisassociateDelegateFromResourceRequest& request) const
@@ -931,14 +931,14 @@ DisassociateDelegateFromResourceOutcomeCallable WorkMailClient::DisassociateDele
   return task->get_future();
 }
 
-void WorkMailClient::DisassociateDelegateFromResourceAsync(const DisassociateDelegateFromResourceRequest& request, const DisassociateDelegateFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDisassociateDelegateFromResourceAsyncHelper(WorkMailClient const * const clientThis, const DisassociateDelegateFromResourceRequest& request, const DisassociateDelegateFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateDelegateFromResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateDelegateFromResource(request), context);
 }
 
-void WorkMailClient::DisassociateDelegateFromResourceAsyncHelper(const DisassociateDelegateFromResourceRequest& request, const DisassociateDelegateFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DisassociateDelegateFromResourceAsync(const DisassociateDelegateFromResourceRequest& request, const DisassociateDelegateFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateDelegateFromResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDisassociateDelegateFromResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateMemberFromGroupOutcome WorkMailClient::DisassociateMemberFromGroup(const DisassociateMemberFromGroupRequest& request) const
@@ -955,14 +955,14 @@ DisassociateMemberFromGroupOutcomeCallable WorkMailClient::DisassociateMemberFro
   return task->get_future();
 }
 
-void WorkMailClient::DisassociateMemberFromGroupAsync(const DisassociateMemberFromGroupRequest& request, const DisassociateMemberFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientDisassociateMemberFromGroupAsyncHelper(WorkMailClient const * const clientThis, const DisassociateMemberFromGroupRequest& request, const DisassociateMemberFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateMemberFromGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateMemberFromGroup(request), context);
 }
 
-void WorkMailClient::DisassociateMemberFromGroupAsyncHelper(const DisassociateMemberFromGroupRequest& request, const DisassociateMemberFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::DisassociateMemberFromGroupAsync(const DisassociateMemberFromGroupRequest& request, const DisassociateMemberFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateMemberFromGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientDisassociateMemberFromGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccessControlEffectOutcome WorkMailClient::GetAccessControlEffect(const GetAccessControlEffectRequest& request) const
@@ -979,14 +979,14 @@ GetAccessControlEffectOutcomeCallable WorkMailClient::GetAccessControlEffectCall
   return task->get_future();
 }
 
-void WorkMailClient::GetAccessControlEffectAsync(const GetAccessControlEffectRequest& request, const GetAccessControlEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientGetAccessControlEffectAsyncHelper(WorkMailClient const * const clientThis, const GetAccessControlEffectRequest& request, const GetAccessControlEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessControlEffectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccessControlEffect(request), context);
 }
 
-void WorkMailClient::GetAccessControlEffectAsyncHelper(const GetAccessControlEffectRequest& request, const GetAccessControlEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::GetAccessControlEffectAsync(const GetAccessControlEffectRequest& request, const GetAccessControlEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccessControlEffect(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientGetAccessControlEffectAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDefaultRetentionPolicyOutcome WorkMailClient::GetDefaultRetentionPolicy(const GetDefaultRetentionPolicyRequest& request) const
@@ -1003,14 +1003,14 @@ GetDefaultRetentionPolicyOutcomeCallable WorkMailClient::GetDefaultRetentionPoli
   return task->get_future();
 }
 
-void WorkMailClient::GetDefaultRetentionPolicyAsync(const GetDefaultRetentionPolicyRequest& request, const GetDefaultRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientGetDefaultRetentionPolicyAsyncHelper(WorkMailClient const * const clientThis, const GetDefaultRetentionPolicyRequest& request, const GetDefaultRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDefaultRetentionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDefaultRetentionPolicy(request), context);
 }
 
-void WorkMailClient::GetDefaultRetentionPolicyAsyncHelper(const GetDefaultRetentionPolicyRequest& request, const GetDefaultRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::GetDefaultRetentionPolicyAsync(const GetDefaultRetentionPolicyRequest& request, const GetDefaultRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDefaultRetentionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientGetDefaultRetentionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMailDomainOutcome WorkMailClient::GetMailDomain(const GetMailDomainRequest& request) const
@@ -1027,14 +1027,14 @@ GetMailDomainOutcomeCallable WorkMailClient::GetMailDomainCallable(const GetMail
   return task->get_future();
 }
 
-void WorkMailClient::GetMailDomainAsync(const GetMailDomainRequest& request, const GetMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientGetMailDomainAsyncHelper(WorkMailClient const * const clientThis, const GetMailDomainRequest& request, const GetMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMailDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMailDomain(request), context);
 }
 
-void WorkMailClient::GetMailDomainAsyncHelper(const GetMailDomainRequest& request, const GetMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::GetMailDomainAsync(const GetMailDomainRequest& request, const GetMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMailDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientGetMailDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMailboxDetailsOutcome WorkMailClient::GetMailboxDetails(const GetMailboxDetailsRequest& request) const
@@ -1051,14 +1051,14 @@ GetMailboxDetailsOutcomeCallable WorkMailClient::GetMailboxDetailsCallable(const
   return task->get_future();
 }
 
-void WorkMailClient::GetMailboxDetailsAsync(const GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientGetMailboxDetailsAsyncHelper(WorkMailClient const * const clientThis, const GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMailboxDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMailboxDetails(request), context);
 }
 
-void WorkMailClient::GetMailboxDetailsAsyncHelper(const GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::GetMailboxDetailsAsync(const GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMailboxDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientGetMailboxDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMobileDeviceAccessEffectOutcome WorkMailClient::GetMobileDeviceAccessEffect(const GetMobileDeviceAccessEffectRequest& request) const
@@ -1075,14 +1075,14 @@ GetMobileDeviceAccessEffectOutcomeCallable WorkMailClient::GetMobileDeviceAccess
   return task->get_future();
 }
 
-void WorkMailClient::GetMobileDeviceAccessEffectAsync(const GetMobileDeviceAccessEffectRequest& request, const GetMobileDeviceAccessEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientGetMobileDeviceAccessEffectAsyncHelper(WorkMailClient const * const clientThis, const GetMobileDeviceAccessEffectRequest& request, const GetMobileDeviceAccessEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMobileDeviceAccessEffectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMobileDeviceAccessEffect(request), context);
 }
 
-void WorkMailClient::GetMobileDeviceAccessEffectAsyncHelper(const GetMobileDeviceAccessEffectRequest& request, const GetMobileDeviceAccessEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::GetMobileDeviceAccessEffectAsync(const GetMobileDeviceAccessEffectRequest& request, const GetMobileDeviceAccessEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMobileDeviceAccessEffect(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientGetMobileDeviceAccessEffectAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMobileDeviceAccessOverrideOutcome WorkMailClient::GetMobileDeviceAccessOverride(const GetMobileDeviceAccessOverrideRequest& request) const
@@ -1099,14 +1099,14 @@ GetMobileDeviceAccessOverrideOutcomeCallable WorkMailClient::GetMobileDeviceAcce
   return task->get_future();
 }
 
-void WorkMailClient::GetMobileDeviceAccessOverrideAsync(const GetMobileDeviceAccessOverrideRequest& request, const GetMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientGetMobileDeviceAccessOverrideAsyncHelper(WorkMailClient const * const clientThis, const GetMobileDeviceAccessOverrideRequest& request, const GetMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMobileDeviceAccessOverrideAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMobileDeviceAccessOverride(request), context);
 }
 
-void WorkMailClient::GetMobileDeviceAccessOverrideAsyncHelper(const GetMobileDeviceAccessOverrideRequest& request, const GetMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::GetMobileDeviceAccessOverrideAsync(const GetMobileDeviceAccessOverrideRequest& request, const GetMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMobileDeviceAccessOverride(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientGetMobileDeviceAccessOverrideAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccessControlRulesOutcome WorkMailClient::ListAccessControlRules(const ListAccessControlRulesRequest& request) const
@@ -1123,14 +1123,14 @@ ListAccessControlRulesOutcomeCallable WorkMailClient::ListAccessControlRulesCall
   return task->get_future();
 }
 
-void WorkMailClient::ListAccessControlRulesAsync(const ListAccessControlRulesRequest& request, const ListAccessControlRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListAccessControlRulesAsyncHelper(WorkMailClient const * const clientThis, const ListAccessControlRulesRequest& request, const ListAccessControlRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccessControlRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccessControlRules(request), context);
 }
 
-void WorkMailClient::ListAccessControlRulesAsyncHelper(const ListAccessControlRulesRequest& request, const ListAccessControlRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListAccessControlRulesAsync(const ListAccessControlRulesRequest& request, const ListAccessControlRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccessControlRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListAccessControlRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAliasesOutcome WorkMailClient::ListAliases(const ListAliasesRequest& request) const
@@ -1147,14 +1147,14 @@ ListAliasesOutcomeCallable WorkMailClient::ListAliasesCallable(const ListAliases
   return task->get_future();
 }
 
-void WorkMailClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListAliasesAsyncHelper(WorkMailClient const * const clientThis, const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAliasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAliases(request), context);
 }
 
-void WorkMailClient::ListAliasesAsyncHelper(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAliases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListAliasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAvailabilityConfigurationsOutcome WorkMailClient::ListAvailabilityConfigurations(const ListAvailabilityConfigurationsRequest& request) const
@@ -1171,14 +1171,14 @@ ListAvailabilityConfigurationsOutcomeCallable WorkMailClient::ListAvailabilityCo
   return task->get_future();
 }
 
-void WorkMailClient::ListAvailabilityConfigurationsAsync(const ListAvailabilityConfigurationsRequest& request, const ListAvailabilityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListAvailabilityConfigurationsAsyncHelper(WorkMailClient const * const clientThis, const ListAvailabilityConfigurationsRequest& request, const ListAvailabilityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAvailabilityConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAvailabilityConfigurations(request), context);
 }
 
-void WorkMailClient::ListAvailabilityConfigurationsAsyncHelper(const ListAvailabilityConfigurationsRequest& request, const ListAvailabilityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListAvailabilityConfigurationsAsync(const ListAvailabilityConfigurationsRequest& request, const ListAvailabilityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAvailabilityConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListAvailabilityConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupMembersOutcome WorkMailClient::ListGroupMembers(const ListGroupMembersRequest& request) const
@@ -1195,14 +1195,14 @@ ListGroupMembersOutcomeCallable WorkMailClient::ListGroupMembersCallable(const L
   return task->get_future();
 }
 
-void WorkMailClient::ListGroupMembersAsync(const ListGroupMembersRequest& request, const ListGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListGroupMembersAsyncHelper(WorkMailClient const * const clientThis, const ListGroupMembersRequest& request, const ListGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroupMembers(request), context);
 }
 
-void WorkMailClient::ListGroupMembersAsyncHelper(const ListGroupMembersRequest& request, const ListGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListGroupMembersAsync(const ListGroupMembersRequest& request, const ListGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroupMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListGroupMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupsOutcome WorkMailClient::ListGroups(const ListGroupsRequest& request) const
@@ -1219,14 +1219,14 @@ ListGroupsOutcomeCallable WorkMailClient::ListGroupsCallable(const ListGroupsReq
   return task->get_future();
 }
 
-void WorkMailClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListGroupsAsyncHelper(WorkMailClient const * const clientThis, const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroups(request), context);
 }
 
-void WorkMailClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMailDomainsOutcome WorkMailClient::ListMailDomains(const ListMailDomainsRequest& request) const
@@ -1243,14 +1243,14 @@ ListMailDomainsOutcomeCallable WorkMailClient::ListMailDomainsCallable(const Lis
   return task->get_future();
 }
 
-void WorkMailClient::ListMailDomainsAsync(const ListMailDomainsRequest& request, const ListMailDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListMailDomainsAsyncHelper(WorkMailClient const * const clientThis, const ListMailDomainsRequest& request, const ListMailDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMailDomainsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMailDomains(request), context);
 }
 
-void WorkMailClient::ListMailDomainsAsyncHelper(const ListMailDomainsRequest& request, const ListMailDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListMailDomainsAsync(const ListMailDomainsRequest& request, const ListMailDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMailDomains(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListMailDomainsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMailboxExportJobsOutcome WorkMailClient::ListMailboxExportJobs(const ListMailboxExportJobsRequest& request) const
@@ -1267,14 +1267,14 @@ ListMailboxExportJobsOutcomeCallable WorkMailClient::ListMailboxExportJobsCallab
   return task->get_future();
 }
 
-void WorkMailClient::ListMailboxExportJobsAsync(const ListMailboxExportJobsRequest& request, const ListMailboxExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListMailboxExportJobsAsyncHelper(WorkMailClient const * const clientThis, const ListMailboxExportJobsRequest& request, const ListMailboxExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMailboxExportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMailboxExportJobs(request), context);
 }
 
-void WorkMailClient::ListMailboxExportJobsAsyncHelper(const ListMailboxExportJobsRequest& request, const ListMailboxExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListMailboxExportJobsAsync(const ListMailboxExportJobsRequest& request, const ListMailboxExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMailboxExportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListMailboxExportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMailboxPermissionsOutcome WorkMailClient::ListMailboxPermissions(const ListMailboxPermissionsRequest& request) const
@@ -1291,14 +1291,14 @@ ListMailboxPermissionsOutcomeCallable WorkMailClient::ListMailboxPermissionsCall
   return task->get_future();
 }
 
-void WorkMailClient::ListMailboxPermissionsAsync(const ListMailboxPermissionsRequest& request, const ListMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListMailboxPermissionsAsyncHelper(WorkMailClient const * const clientThis, const ListMailboxPermissionsRequest& request, const ListMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMailboxPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMailboxPermissions(request), context);
 }
 
-void WorkMailClient::ListMailboxPermissionsAsyncHelper(const ListMailboxPermissionsRequest& request, const ListMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListMailboxPermissionsAsync(const ListMailboxPermissionsRequest& request, const ListMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMailboxPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListMailboxPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMobileDeviceAccessOverridesOutcome WorkMailClient::ListMobileDeviceAccessOverrides(const ListMobileDeviceAccessOverridesRequest& request) const
@@ -1315,14 +1315,14 @@ ListMobileDeviceAccessOverridesOutcomeCallable WorkMailClient::ListMobileDeviceA
   return task->get_future();
 }
 
-void WorkMailClient::ListMobileDeviceAccessOverridesAsync(const ListMobileDeviceAccessOverridesRequest& request, const ListMobileDeviceAccessOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListMobileDeviceAccessOverridesAsyncHelper(WorkMailClient const * const clientThis, const ListMobileDeviceAccessOverridesRequest& request, const ListMobileDeviceAccessOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMobileDeviceAccessOverridesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMobileDeviceAccessOverrides(request), context);
 }
 
-void WorkMailClient::ListMobileDeviceAccessOverridesAsyncHelper(const ListMobileDeviceAccessOverridesRequest& request, const ListMobileDeviceAccessOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListMobileDeviceAccessOverridesAsync(const ListMobileDeviceAccessOverridesRequest& request, const ListMobileDeviceAccessOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMobileDeviceAccessOverrides(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListMobileDeviceAccessOverridesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMobileDeviceAccessRulesOutcome WorkMailClient::ListMobileDeviceAccessRules(const ListMobileDeviceAccessRulesRequest& request) const
@@ -1339,14 +1339,14 @@ ListMobileDeviceAccessRulesOutcomeCallable WorkMailClient::ListMobileDeviceAcces
   return task->get_future();
 }
 
-void WorkMailClient::ListMobileDeviceAccessRulesAsync(const ListMobileDeviceAccessRulesRequest& request, const ListMobileDeviceAccessRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListMobileDeviceAccessRulesAsyncHelper(WorkMailClient const * const clientThis, const ListMobileDeviceAccessRulesRequest& request, const ListMobileDeviceAccessRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMobileDeviceAccessRulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMobileDeviceAccessRules(request), context);
 }
 
-void WorkMailClient::ListMobileDeviceAccessRulesAsyncHelper(const ListMobileDeviceAccessRulesRequest& request, const ListMobileDeviceAccessRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListMobileDeviceAccessRulesAsync(const ListMobileDeviceAccessRulesRequest& request, const ListMobileDeviceAccessRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMobileDeviceAccessRules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListMobileDeviceAccessRulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOrganizationsOutcome WorkMailClient::ListOrganizations(const ListOrganizationsRequest& request) const
@@ -1363,14 +1363,14 @@ ListOrganizationsOutcomeCallable WorkMailClient::ListOrganizationsCallable(const
   return task->get_future();
 }
 
-void WorkMailClient::ListOrganizationsAsync(const ListOrganizationsRequest& request, const ListOrganizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListOrganizationsAsyncHelper(WorkMailClient const * const clientThis, const ListOrganizationsRequest& request, const ListOrganizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOrganizations(request), context);
 }
 
-void WorkMailClient::ListOrganizationsAsyncHelper(const ListOrganizationsRequest& request, const ListOrganizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListOrganizationsAsync(const ListOrganizationsRequest& request, const ListOrganizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOrganizations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListOrganizationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourceDelegatesOutcome WorkMailClient::ListResourceDelegates(const ListResourceDelegatesRequest& request) const
@@ -1387,14 +1387,14 @@ ListResourceDelegatesOutcomeCallable WorkMailClient::ListResourceDelegatesCallab
   return task->get_future();
 }
 
-void WorkMailClient::ListResourceDelegatesAsync(const ListResourceDelegatesRequest& request, const ListResourceDelegatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListResourceDelegatesAsyncHelper(WorkMailClient const * const clientThis, const ListResourceDelegatesRequest& request, const ListResourceDelegatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceDelegatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourceDelegates(request), context);
 }
 
-void WorkMailClient::ListResourceDelegatesAsyncHelper(const ListResourceDelegatesRequest& request, const ListResourceDelegatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListResourceDelegatesAsync(const ListResourceDelegatesRequest& request, const ListResourceDelegatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourceDelegates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListResourceDelegatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourcesOutcome WorkMailClient::ListResources(const ListResourcesRequest& request) const
@@ -1411,14 +1411,14 @@ ListResourcesOutcomeCallable WorkMailClient::ListResourcesCallable(const ListRes
   return task->get_future();
 }
 
-void WorkMailClient::ListResourcesAsync(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListResourcesAsyncHelper(WorkMailClient const * const clientThis, const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResources(request), context);
 }
 
-void WorkMailClient::ListResourcesAsyncHelper(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListResourcesAsync(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome WorkMailClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1435,14 +1435,14 @@ ListTagsForResourceOutcomeCallable WorkMailClient::ListTagsForResourceCallable(c
   return task->get_future();
 }
 
-void WorkMailClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListTagsForResourceAsyncHelper(WorkMailClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void WorkMailClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUsersOutcome WorkMailClient::ListUsers(const ListUsersRequest& request) const
@@ -1459,14 +1459,14 @@ ListUsersOutcomeCallable WorkMailClient::ListUsersCallable(const ListUsersReques
   return task->get_future();
 }
 
-void WorkMailClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientListUsersAsyncHelper(WorkMailClient const * const clientThis, const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUsers(request), context);
 }
 
-void WorkMailClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientListUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAccessControlRuleOutcome WorkMailClient::PutAccessControlRule(const PutAccessControlRuleRequest& request) const
@@ -1483,14 +1483,14 @@ PutAccessControlRuleOutcomeCallable WorkMailClient::PutAccessControlRuleCallable
   return task->get_future();
 }
 
-void WorkMailClient::PutAccessControlRuleAsync(const PutAccessControlRuleRequest& request, const PutAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientPutAccessControlRuleAsyncHelper(WorkMailClient const * const clientThis, const PutAccessControlRuleRequest& request, const PutAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccessControlRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAccessControlRule(request), context);
 }
 
-void WorkMailClient::PutAccessControlRuleAsyncHelper(const PutAccessControlRuleRequest& request, const PutAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::PutAccessControlRuleAsync(const PutAccessControlRuleRequest& request, const PutAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAccessControlRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientPutAccessControlRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 PutEmailMonitoringConfigurationOutcome WorkMailClient::PutEmailMonitoringConfiguration(const PutEmailMonitoringConfigurationRequest& request) const
@@ -1507,14 +1507,14 @@ PutEmailMonitoringConfigurationOutcomeCallable WorkMailClient::PutEmailMonitorin
   return task->get_future();
 }
 
-void WorkMailClient::PutEmailMonitoringConfigurationAsync(const PutEmailMonitoringConfigurationRequest& request, const PutEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientPutEmailMonitoringConfigurationAsyncHelper(WorkMailClient const * const clientThis, const PutEmailMonitoringConfigurationRequest& request, const PutEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEmailMonitoringConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutEmailMonitoringConfiguration(request), context);
 }
 
-void WorkMailClient::PutEmailMonitoringConfigurationAsyncHelper(const PutEmailMonitoringConfigurationRequest& request, const PutEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::PutEmailMonitoringConfigurationAsync(const PutEmailMonitoringConfigurationRequest& request, const PutEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutEmailMonitoringConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientPutEmailMonitoringConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 PutInboundDmarcSettingsOutcome WorkMailClient::PutInboundDmarcSettings(const PutInboundDmarcSettingsRequest& request) const
@@ -1531,14 +1531,14 @@ PutInboundDmarcSettingsOutcomeCallable WorkMailClient::PutInboundDmarcSettingsCa
   return task->get_future();
 }
 
-void WorkMailClient::PutInboundDmarcSettingsAsync(const PutInboundDmarcSettingsRequest& request, const PutInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientPutInboundDmarcSettingsAsyncHelper(WorkMailClient const * const clientThis, const PutInboundDmarcSettingsRequest& request, const PutInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutInboundDmarcSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutInboundDmarcSettings(request), context);
 }
 
-void WorkMailClient::PutInboundDmarcSettingsAsyncHelper(const PutInboundDmarcSettingsRequest& request, const PutInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::PutInboundDmarcSettingsAsync(const PutInboundDmarcSettingsRequest& request, const PutInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutInboundDmarcSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientPutInboundDmarcSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutMailboxPermissionsOutcome WorkMailClient::PutMailboxPermissions(const PutMailboxPermissionsRequest& request) const
@@ -1555,14 +1555,14 @@ PutMailboxPermissionsOutcomeCallable WorkMailClient::PutMailboxPermissionsCallab
   return task->get_future();
 }
 
-void WorkMailClient::PutMailboxPermissionsAsync(const PutMailboxPermissionsRequest& request, const PutMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientPutMailboxPermissionsAsyncHelper(WorkMailClient const * const clientThis, const PutMailboxPermissionsRequest& request, const PutMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutMailboxPermissionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutMailboxPermissions(request), context);
 }
 
-void WorkMailClient::PutMailboxPermissionsAsyncHelper(const PutMailboxPermissionsRequest& request, const PutMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::PutMailboxPermissionsAsync(const PutMailboxPermissionsRequest& request, const PutMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutMailboxPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientPutMailboxPermissionsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutMobileDeviceAccessOverrideOutcome WorkMailClient::PutMobileDeviceAccessOverride(const PutMobileDeviceAccessOverrideRequest& request) const
@@ -1579,14 +1579,14 @@ PutMobileDeviceAccessOverrideOutcomeCallable WorkMailClient::PutMobileDeviceAcce
   return task->get_future();
 }
 
-void WorkMailClient::PutMobileDeviceAccessOverrideAsync(const PutMobileDeviceAccessOverrideRequest& request, const PutMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientPutMobileDeviceAccessOverrideAsyncHelper(WorkMailClient const * const clientThis, const PutMobileDeviceAccessOverrideRequest& request, const PutMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutMobileDeviceAccessOverrideAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutMobileDeviceAccessOverride(request), context);
 }
 
-void WorkMailClient::PutMobileDeviceAccessOverrideAsyncHelper(const PutMobileDeviceAccessOverrideRequest& request, const PutMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::PutMobileDeviceAccessOverrideAsync(const PutMobileDeviceAccessOverrideRequest& request, const PutMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutMobileDeviceAccessOverride(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientPutMobileDeviceAccessOverrideAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRetentionPolicyOutcome WorkMailClient::PutRetentionPolicy(const PutRetentionPolicyRequest& request) const
@@ -1603,14 +1603,14 @@ PutRetentionPolicyOutcomeCallable WorkMailClient::PutRetentionPolicyCallable(con
   return task->get_future();
 }
 
-void WorkMailClient::PutRetentionPolicyAsync(const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientPutRetentionPolicyAsyncHelper(WorkMailClient const * const clientThis, const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRetentionPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRetentionPolicy(request), context);
 }
 
-void WorkMailClient::PutRetentionPolicyAsyncHelper(const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::PutRetentionPolicyAsync(const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRetentionPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientPutRetentionPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterMailDomainOutcome WorkMailClient::RegisterMailDomain(const RegisterMailDomainRequest& request) const
@@ -1627,14 +1627,14 @@ RegisterMailDomainOutcomeCallable WorkMailClient::RegisterMailDomainCallable(con
   return task->get_future();
 }
 
-void WorkMailClient::RegisterMailDomainAsync(const RegisterMailDomainRequest& request, const RegisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientRegisterMailDomainAsyncHelper(WorkMailClient const * const clientThis, const RegisterMailDomainRequest& request, const RegisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterMailDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterMailDomain(request), context);
 }
 
-void WorkMailClient::RegisterMailDomainAsyncHelper(const RegisterMailDomainRequest& request, const RegisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::RegisterMailDomainAsync(const RegisterMailDomainRequest& request, const RegisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterMailDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientRegisterMailDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterToWorkMailOutcome WorkMailClient::RegisterToWorkMail(const RegisterToWorkMailRequest& request) const
@@ -1651,14 +1651,14 @@ RegisterToWorkMailOutcomeCallable WorkMailClient::RegisterToWorkMailCallable(con
   return task->get_future();
 }
 
-void WorkMailClient::RegisterToWorkMailAsync(const RegisterToWorkMailRequest& request, const RegisterToWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientRegisterToWorkMailAsyncHelper(WorkMailClient const * const clientThis, const RegisterToWorkMailRequest& request, const RegisterToWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterToWorkMailAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterToWorkMail(request), context);
 }
 
-void WorkMailClient::RegisterToWorkMailAsyncHelper(const RegisterToWorkMailRequest& request, const RegisterToWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::RegisterToWorkMailAsync(const RegisterToWorkMailRequest& request, const RegisterToWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterToWorkMail(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientRegisterToWorkMailAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetPasswordOutcome WorkMailClient::ResetPassword(const ResetPasswordRequest& request) const
@@ -1675,14 +1675,14 @@ ResetPasswordOutcomeCallable WorkMailClient::ResetPasswordCallable(const ResetPa
   return task->get_future();
 }
 
-void WorkMailClient::ResetPasswordAsync(const ResetPasswordRequest& request, const ResetPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientResetPasswordAsyncHelper(WorkMailClient const * const clientThis, const ResetPasswordRequest& request, const ResetPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetPasswordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetPassword(request), context);
 }
 
-void WorkMailClient::ResetPasswordAsyncHelper(const ResetPasswordRequest& request, const ResetPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::ResetPasswordAsync(const ResetPasswordRequest& request, const ResetPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetPassword(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientResetPasswordAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMailboxExportJobOutcome WorkMailClient::StartMailboxExportJob(const StartMailboxExportJobRequest& request) const
@@ -1699,14 +1699,14 @@ StartMailboxExportJobOutcomeCallable WorkMailClient::StartMailboxExportJobCallab
   return task->get_future();
 }
 
-void WorkMailClient::StartMailboxExportJobAsync(const StartMailboxExportJobRequest& request, const StartMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientStartMailboxExportJobAsyncHelper(WorkMailClient const * const clientThis, const StartMailboxExportJobRequest& request, const StartMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMailboxExportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMailboxExportJob(request), context);
 }
 
-void WorkMailClient::StartMailboxExportJobAsyncHelper(const StartMailboxExportJobRequest& request, const StartMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::StartMailboxExportJobAsync(const StartMailboxExportJobRequest& request, const StartMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMailboxExportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientStartMailboxExportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome WorkMailClient::TagResource(const TagResourceRequest& request) const
@@ -1723,14 +1723,14 @@ TagResourceOutcomeCallable WorkMailClient::TagResourceCallable(const TagResource
   return task->get_future();
 }
 
-void WorkMailClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientTagResourceAsyncHelper(WorkMailClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void WorkMailClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TestAvailabilityConfigurationOutcome WorkMailClient::TestAvailabilityConfiguration(const TestAvailabilityConfigurationRequest& request) const
@@ -1747,14 +1747,14 @@ TestAvailabilityConfigurationOutcomeCallable WorkMailClient::TestAvailabilityCon
   return task->get_future();
 }
 
-void WorkMailClient::TestAvailabilityConfigurationAsync(const TestAvailabilityConfigurationRequest& request, const TestAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientTestAvailabilityConfigurationAsyncHelper(WorkMailClient const * const clientThis, const TestAvailabilityConfigurationRequest& request, const TestAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestAvailabilityConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestAvailabilityConfiguration(request), context);
 }
 
-void WorkMailClient::TestAvailabilityConfigurationAsyncHelper(const TestAvailabilityConfigurationRequest& request, const TestAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::TestAvailabilityConfigurationAsync(const TestAvailabilityConfigurationRequest& request, const TestAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestAvailabilityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientTestAvailabilityConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome WorkMailClient::UntagResource(const UntagResourceRequest& request) const
@@ -1771,14 +1771,14 @@ UntagResourceOutcomeCallable WorkMailClient::UntagResourceCallable(const UntagRe
   return task->get_future();
 }
 
-void WorkMailClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientUntagResourceAsyncHelper(WorkMailClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void WorkMailClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAvailabilityConfigurationOutcome WorkMailClient::UpdateAvailabilityConfiguration(const UpdateAvailabilityConfigurationRequest& request) const
@@ -1795,14 +1795,14 @@ UpdateAvailabilityConfigurationOutcomeCallable WorkMailClient::UpdateAvailabilit
   return task->get_future();
 }
 
-void WorkMailClient::UpdateAvailabilityConfigurationAsync(const UpdateAvailabilityConfigurationRequest& request, const UpdateAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientUpdateAvailabilityConfigurationAsyncHelper(WorkMailClient const * const clientThis, const UpdateAvailabilityConfigurationRequest& request, const UpdateAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAvailabilityConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAvailabilityConfiguration(request), context);
 }
 
-void WorkMailClient::UpdateAvailabilityConfigurationAsyncHelper(const UpdateAvailabilityConfigurationRequest& request, const UpdateAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::UpdateAvailabilityConfigurationAsync(const UpdateAvailabilityConfigurationRequest& request, const UpdateAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAvailabilityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientUpdateAvailabilityConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDefaultMailDomainOutcome WorkMailClient::UpdateDefaultMailDomain(const UpdateDefaultMailDomainRequest& request) const
@@ -1819,14 +1819,14 @@ UpdateDefaultMailDomainOutcomeCallable WorkMailClient::UpdateDefaultMailDomainCa
   return task->get_future();
 }
 
-void WorkMailClient::UpdateDefaultMailDomainAsync(const UpdateDefaultMailDomainRequest& request, const UpdateDefaultMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientUpdateDefaultMailDomainAsyncHelper(WorkMailClient const * const clientThis, const UpdateDefaultMailDomainRequest& request, const UpdateDefaultMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDefaultMailDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDefaultMailDomain(request), context);
 }
 
-void WorkMailClient::UpdateDefaultMailDomainAsyncHelper(const UpdateDefaultMailDomainRequest& request, const UpdateDefaultMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::UpdateDefaultMailDomainAsync(const UpdateDefaultMailDomainRequest& request, const UpdateDefaultMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDefaultMailDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientUpdateDefaultMailDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMailboxQuotaOutcome WorkMailClient::UpdateMailboxQuota(const UpdateMailboxQuotaRequest& request) const
@@ -1843,14 +1843,14 @@ UpdateMailboxQuotaOutcomeCallable WorkMailClient::UpdateMailboxQuotaCallable(con
   return task->get_future();
 }
 
-void WorkMailClient::UpdateMailboxQuotaAsync(const UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientUpdateMailboxQuotaAsyncHelper(WorkMailClient const * const clientThis, const UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMailboxQuotaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMailboxQuota(request), context);
 }
 
-void WorkMailClient::UpdateMailboxQuotaAsyncHelper(const UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::UpdateMailboxQuotaAsync(const UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMailboxQuota(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientUpdateMailboxQuotaAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMobileDeviceAccessRuleOutcome WorkMailClient::UpdateMobileDeviceAccessRule(const UpdateMobileDeviceAccessRuleRequest& request) const
@@ -1867,14 +1867,14 @@ UpdateMobileDeviceAccessRuleOutcomeCallable WorkMailClient::UpdateMobileDeviceAc
   return task->get_future();
 }
 
-void WorkMailClient::UpdateMobileDeviceAccessRuleAsync(const UpdateMobileDeviceAccessRuleRequest& request, const UpdateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientUpdateMobileDeviceAccessRuleAsyncHelper(WorkMailClient const * const clientThis, const UpdateMobileDeviceAccessRuleRequest& request, const UpdateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMobileDeviceAccessRuleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMobileDeviceAccessRule(request), context);
 }
 
-void WorkMailClient::UpdateMobileDeviceAccessRuleAsyncHelper(const UpdateMobileDeviceAccessRuleRequest& request, const UpdateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::UpdateMobileDeviceAccessRuleAsync(const UpdateMobileDeviceAccessRuleRequest& request, const UpdateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMobileDeviceAccessRule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientUpdateMobileDeviceAccessRuleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePrimaryEmailAddressOutcome WorkMailClient::UpdatePrimaryEmailAddress(const UpdatePrimaryEmailAddressRequest& request) const
@@ -1891,14 +1891,14 @@ UpdatePrimaryEmailAddressOutcomeCallable WorkMailClient::UpdatePrimaryEmailAddre
   return task->get_future();
 }
 
-void WorkMailClient::UpdatePrimaryEmailAddressAsync(const UpdatePrimaryEmailAddressRequest& request, const UpdatePrimaryEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientUpdatePrimaryEmailAddressAsyncHelper(WorkMailClient const * const clientThis, const UpdatePrimaryEmailAddressRequest& request, const UpdatePrimaryEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePrimaryEmailAddressAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePrimaryEmailAddress(request), context);
 }
 
-void WorkMailClient::UpdatePrimaryEmailAddressAsyncHelper(const UpdatePrimaryEmailAddressRequest& request, const UpdatePrimaryEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::UpdatePrimaryEmailAddressAsync(const UpdatePrimaryEmailAddressRequest& request, const UpdatePrimaryEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePrimaryEmailAddress(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientUpdatePrimaryEmailAddressAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateResourceOutcome WorkMailClient::UpdateResource(const UpdateResourceRequest& request) const
@@ -1915,13 +1915,13 @@ UpdateResourceOutcomeCallable WorkMailClient::UpdateResourceCallable(const Updat
   return task->get_future();
 }
 
-void WorkMailClient::UpdateResourceAsync(const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClientUpdateResourceAsyncHelper(WorkMailClient const * const clientThis, const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateResource(request), context);
 }
 
-void WorkMailClient::UpdateResourceAsyncHelper(const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WorkMailClient::UpdateResourceAsync(const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WorkMailClientUpdateResourceAsyncHelper( this, request, handler, context ); } );
 }
 

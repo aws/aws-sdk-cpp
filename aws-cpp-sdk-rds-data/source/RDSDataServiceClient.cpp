@@ -120,14 +120,14 @@ BatchExecuteStatementOutcomeCallable RDSDataServiceClient::BatchExecuteStatement
   return task->get_future();
 }
 
-void RDSDataServiceClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClientBatchExecuteStatementAsyncHelper(RDSDataServiceClient const * const clientThis, const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchExecuteStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchExecuteStatement(request), context);
 }
 
-void RDSDataServiceClient::BatchExecuteStatementAsyncHelper(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchExecuteStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RDSDataServiceClientBatchExecuteStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 BeginTransactionOutcome RDSDataServiceClient::BeginTransaction(const BeginTransactionRequest& request) const
@@ -145,14 +145,14 @@ BeginTransactionOutcomeCallable RDSDataServiceClient::BeginTransactionCallable(c
   return task->get_future();
 }
 
-void RDSDataServiceClient::BeginTransactionAsync(const BeginTransactionRequest& request, const BeginTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClientBeginTransactionAsyncHelper(RDSDataServiceClient const * const clientThis, const BeginTransactionRequest& request, const BeginTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BeginTransactionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BeginTransaction(request), context);
 }
 
-void RDSDataServiceClient::BeginTransactionAsyncHelper(const BeginTransactionRequest& request, const BeginTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClient::BeginTransactionAsync(const BeginTransactionRequest& request, const BeginTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BeginTransaction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RDSDataServiceClientBeginTransactionAsyncHelper( this, request, handler, context ); } );
 }
 
 CommitTransactionOutcome RDSDataServiceClient::CommitTransaction(const CommitTransactionRequest& request) const
@@ -170,14 +170,14 @@ CommitTransactionOutcomeCallable RDSDataServiceClient::CommitTransactionCallable
   return task->get_future();
 }
 
-void RDSDataServiceClient::CommitTransactionAsync(const CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClientCommitTransactionAsyncHelper(RDSDataServiceClient const * const clientThis, const CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CommitTransactionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CommitTransaction(request), context);
 }
 
-void RDSDataServiceClient::CommitTransactionAsyncHelper(const CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClient::CommitTransactionAsync(const CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CommitTransaction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RDSDataServiceClientCommitTransactionAsyncHelper( this, request, handler, context ); } );
 }
 
 ExecuteStatementOutcome RDSDataServiceClient::ExecuteStatement(const ExecuteStatementRequest& request) const
@@ -195,14 +195,14 @@ ExecuteStatementOutcomeCallable RDSDataServiceClient::ExecuteStatementCallable(c
   return task->get_future();
 }
 
-void RDSDataServiceClient::ExecuteStatementAsync(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClientExecuteStatementAsyncHelper(RDSDataServiceClient const * const clientThis, const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExecuteStatement(request), context);
 }
 
-void RDSDataServiceClient::ExecuteStatementAsyncHelper(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClient::ExecuteStatementAsync(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExecuteStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RDSDataServiceClientExecuteStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 RollbackTransactionOutcome RDSDataServiceClient::RollbackTransaction(const RollbackTransactionRequest& request) const
@@ -220,13 +220,13 @@ RollbackTransactionOutcomeCallable RDSDataServiceClient::RollbackTransactionCall
   return task->get_future();
 }
 
-void RDSDataServiceClient::RollbackTransactionAsync(const RollbackTransactionRequest& request, const RollbackTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClientRollbackTransactionAsyncHelper(RDSDataServiceClient const * const clientThis, const RollbackTransactionRequest& request, const RollbackTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RollbackTransactionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RollbackTransaction(request), context);
 }
 
-void RDSDataServiceClient::RollbackTransactionAsyncHelper(const RollbackTransactionRequest& request, const RollbackTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClient::RollbackTransactionAsync(const RollbackTransactionRequest& request, const RollbackTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RollbackTransaction(request), context);
+  m_executor->Submit( [this, request, handler, context](){ RDSDataServiceClientRollbackTransactionAsyncHelper( this, request, handler, context ); } );
 }
 

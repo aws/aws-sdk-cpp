@@ -132,14 +132,14 @@ AssociateGatewayToServerOutcomeCallable BackupGatewayClient::AssociateGatewayToS
   return task->get_future();
 }
 
-void BackupGatewayClient::AssociateGatewayToServerAsync(const AssociateGatewayToServerRequest& request, const AssociateGatewayToServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientAssociateGatewayToServerAsyncHelper(BackupGatewayClient const * const clientThis, const AssociateGatewayToServerRequest& request, const AssociateGatewayToServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateGatewayToServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateGatewayToServer(request), context);
 }
 
-void BackupGatewayClient::AssociateGatewayToServerAsyncHelper(const AssociateGatewayToServerRequest& request, const AssociateGatewayToServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::AssociateGatewayToServerAsync(const AssociateGatewayToServerRequest& request, const AssociateGatewayToServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateGatewayToServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientAssociateGatewayToServerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGatewayOutcome BackupGatewayClient::CreateGateway(const CreateGatewayRequest& request) const
@@ -156,14 +156,14 @@ CreateGatewayOutcomeCallable BackupGatewayClient::CreateGatewayCallable(const Cr
   return task->get_future();
 }
 
-void BackupGatewayClient::CreateGatewayAsync(const CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientCreateGatewayAsyncHelper(BackupGatewayClient const * const clientThis, const CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGateway(request), context);
 }
 
-void BackupGatewayClient::CreateGatewayAsyncHelper(const CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::CreateGatewayAsync(const CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientCreateGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGatewayOutcome BackupGatewayClient::DeleteGateway(const DeleteGatewayRequest& request) const
@@ -180,14 +180,14 @@ DeleteGatewayOutcomeCallable BackupGatewayClient::DeleteGatewayCallable(const De
   return task->get_future();
 }
 
-void BackupGatewayClient::DeleteGatewayAsync(const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientDeleteGatewayAsyncHelper(BackupGatewayClient const * const clientThis, const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGateway(request), context);
 }
 
-void BackupGatewayClient::DeleteGatewayAsyncHelper(const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::DeleteGatewayAsync(const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientDeleteGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteHypervisorOutcome BackupGatewayClient::DeleteHypervisor(const DeleteHypervisorRequest& request) const
@@ -204,14 +204,14 @@ DeleteHypervisorOutcomeCallable BackupGatewayClient::DeleteHypervisorCallable(co
   return task->get_future();
 }
 
-void BackupGatewayClient::DeleteHypervisorAsync(const DeleteHypervisorRequest& request, const DeleteHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientDeleteHypervisorAsyncHelper(BackupGatewayClient const * const clientThis, const DeleteHypervisorRequest& request, const DeleteHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHypervisorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteHypervisor(request), context);
 }
 
-void BackupGatewayClient::DeleteHypervisorAsyncHelper(const DeleteHypervisorRequest& request, const DeleteHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::DeleteHypervisorAsync(const DeleteHypervisorRequest& request, const DeleteHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteHypervisor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientDeleteHypervisorAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateGatewayFromServerOutcome BackupGatewayClient::DisassociateGatewayFromServer(const DisassociateGatewayFromServerRequest& request) const
@@ -228,14 +228,14 @@ DisassociateGatewayFromServerOutcomeCallable BackupGatewayClient::DisassociateGa
   return task->get_future();
 }
 
-void BackupGatewayClient::DisassociateGatewayFromServerAsync(const DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientDisassociateGatewayFromServerAsyncHelper(BackupGatewayClient const * const clientThis, const DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateGatewayFromServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateGatewayFromServer(request), context);
 }
 
-void BackupGatewayClient::DisassociateGatewayFromServerAsyncHelper(const DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::DisassociateGatewayFromServerAsync(const DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateGatewayFromServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientDisassociateGatewayFromServerAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGatewayOutcome BackupGatewayClient::GetGateway(const GetGatewayRequest& request) const
@@ -252,14 +252,14 @@ GetGatewayOutcomeCallable BackupGatewayClient::GetGatewayCallable(const GetGatew
   return task->get_future();
 }
 
-void BackupGatewayClient::GetGatewayAsync(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientGetGatewayAsyncHelper(BackupGatewayClient const * const clientThis, const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGateway(request), context);
 }
 
-void BackupGatewayClient::GetGatewayAsyncHelper(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::GetGatewayAsync(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientGetGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportHypervisorConfigurationOutcome BackupGatewayClient::ImportHypervisorConfiguration(const ImportHypervisorConfigurationRequest& request) const
@@ -276,14 +276,14 @@ ImportHypervisorConfigurationOutcomeCallable BackupGatewayClient::ImportHypervis
   return task->get_future();
 }
 
-void BackupGatewayClient::ImportHypervisorConfigurationAsync(const ImportHypervisorConfigurationRequest& request, const ImportHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientImportHypervisorConfigurationAsyncHelper(BackupGatewayClient const * const clientThis, const ImportHypervisorConfigurationRequest& request, const ImportHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportHypervisorConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportHypervisorConfiguration(request), context);
 }
 
-void BackupGatewayClient::ImportHypervisorConfigurationAsyncHelper(const ImportHypervisorConfigurationRequest& request, const ImportHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::ImportHypervisorConfigurationAsync(const ImportHypervisorConfigurationRequest& request, const ImportHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportHypervisorConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientImportHypervisorConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGatewaysOutcome BackupGatewayClient::ListGateways(const ListGatewaysRequest& request) const
@@ -300,14 +300,14 @@ ListGatewaysOutcomeCallable BackupGatewayClient::ListGatewaysCallable(const List
   return task->get_future();
 }
 
-void BackupGatewayClient::ListGatewaysAsync(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientListGatewaysAsyncHelper(BackupGatewayClient const * const clientThis, const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGateways(request), context);
 }
 
-void BackupGatewayClient::ListGatewaysAsyncHelper(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::ListGatewaysAsync(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientListGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 ListHypervisorsOutcome BackupGatewayClient::ListHypervisors(const ListHypervisorsRequest& request) const
@@ -324,14 +324,14 @@ ListHypervisorsOutcomeCallable BackupGatewayClient::ListHypervisorsCallable(cons
   return task->get_future();
 }
 
-void BackupGatewayClient::ListHypervisorsAsync(const ListHypervisorsRequest& request, const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientListHypervisorsAsyncHelper(BackupGatewayClient const * const clientThis, const ListHypervisorsRequest& request, const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHypervisorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListHypervisors(request), context);
 }
 
-void BackupGatewayClient::ListHypervisorsAsyncHelper(const ListHypervisorsRequest& request, const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::ListHypervisorsAsync(const ListHypervisorsRequest& request, const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListHypervisors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientListHypervisorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome BackupGatewayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -348,14 +348,14 @@ ListTagsForResourceOutcomeCallable BackupGatewayClient::ListTagsForResourceCalla
   return task->get_future();
 }
 
-void BackupGatewayClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientListTagsForResourceAsyncHelper(BackupGatewayClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void BackupGatewayClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVirtualMachinesOutcome BackupGatewayClient::ListVirtualMachines(const ListVirtualMachinesRequest& request) const
@@ -372,14 +372,14 @@ ListVirtualMachinesOutcomeCallable BackupGatewayClient::ListVirtualMachinesCalla
   return task->get_future();
 }
 
-void BackupGatewayClient::ListVirtualMachinesAsync(const ListVirtualMachinesRequest& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientListVirtualMachinesAsyncHelper(BackupGatewayClient const * const clientThis, const ListVirtualMachinesRequest& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualMachinesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVirtualMachines(request), context);
 }
 
-void BackupGatewayClient::ListVirtualMachinesAsyncHelper(const ListVirtualMachinesRequest& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::ListVirtualMachinesAsync(const ListVirtualMachinesRequest& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVirtualMachines(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientListVirtualMachinesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutMaintenanceStartTimeOutcome BackupGatewayClient::PutMaintenanceStartTime(const PutMaintenanceStartTimeRequest& request) const
@@ -396,14 +396,14 @@ PutMaintenanceStartTimeOutcomeCallable BackupGatewayClient::PutMaintenanceStartT
   return task->get_future();
 }
 
-void BackupGatewayClient::PutMaintenanceStartTimeAsync(const PutMaintenanceStartTimeRequest& request, const PutMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientPutMaintenanceStartTimeAsyncHelper(BackupGatewayClient const * const clientThis, const PutMaintenanceStartTimeRequest& request, const PutMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutMaintenanceStartTimeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutMaintenanceStartTime(request), context);
 }
 
-void BackupGatewayClient::PutMaintenanceStartTimeAsyncHelper(const PutMaintenanceStartTimeRequest& request, const PutMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::PutMaintenanceStartTimeAsync(const PutMaintenanceStartTimeRequest& request, const PutMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutMaintenanceStartTime(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientPutMaintenanceStartTimeAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome BackupGatewayClient::TagResource(const TagResourceRequest& request) const
@@ -420,14 +420,14 @@ TagResourceOutcomeCallable BackupGatewayClient::TagResourceCallable(const TagRes
   return task->get_future();
 }
 
-void BackupGatewayClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientTagResourceAsyncHelper(BackupGatewayClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void BackupGatewayClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TestHypervisorConfigurationOutcome BackupGatewayClient::TestHypervisorConfiguration(const TestHypervisorConfigurationRequest& request) const
@@ -444,14 +444,14 @@ TestHypervisorConfigurationOutcomeCallable BackupGatewayClient::TestHypervisorCo
   return task->get_future();
 }
 
-void BackupGatewayClient::TestHypervisorConfigurationAsync(const TestHypervisorConfigurationRequest& request, const TestHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientTestHypervisorConfigurationAsyncHelper(BackupGatewayClient const * const clientThis, const TestHypervisorConfigurationRequest& request, const TestHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestHypervisorConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestHypervisorConfiguration(request), context);
 }
 
-void BackupGatewayClient::TestHypervisorConfigurationAsyncHelper(const TestHypervisorConfigurationRequest& request, const TestHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::TestHypervisorConfigurationAsync(const TestHypervisorConfigurationRequest& request, const TestHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestHypervisorConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientTestHypervisorConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome BackupGatewayClient::UntagResource(const UntagResourceRequest& request) const
@@ -468,14 +468,14 @@ UntagResourceOutcomeCallable BackupGatewayClient::UntagResourceCallable(const Un
   return task->get_future();
 }
 
-void BackupGatewayClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientUntagResourceAsyncHelper(BackupGatewayClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void BackupGatewayClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGatewayInformationOutcome BackupGatewayClient::UpdateGatewayInformation(const UpdateGatewayInformationRequest& request) const
@@ -492,14 +492,14 @@ UpdateGatewayInformationOutcomeCallable BackupGatewayClient::UpdateGatewayInform
   return task->get_future();
 }
 
-void BackupGatewayClient::UpdateGatewayInformationAsync(const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientUpdateGatewayInformationAsyncHelper(BackupGatewayClient const * const clientThis, const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayInformationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGatewayInformation(request), context);
 }
 
-void BackupGatewayClient::UpdateGatewayInformationAsyncHelper(const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::UpdateGatewayInformationAsync(const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGatewayInformation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientUpdateGatewayInformationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGatewaySoftwareNowOutcome BackupGatewayClient::UpdateGatewaySoftwareNow(const UpdateGatewaySoftwareNowRequest& request) const
@@ -516,14 +516,14 @@ UpdateGatewaySoftwareNowOutcomeCallable BackupGatewayClient::UpdateGatewaySoftwa
   return task->get_future();
 }
 
-void BackupGatewayClient::UpdateGatewaySoftwareNowAsync(const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientUpdateGatewaySoftwareNowAsyncHelper(BackupGatewayClient const * const clientThis, const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewaySoftwareNowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGatewaySoftwareNow(request), context);
 }
 
-void BackupGatewayClient::UpdateGatewaySoftwareNowAsyncHelper(const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::UpdateGatewaySoftwareNowAsync(const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGatewaySoftwareNow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientUpdateGatewaySoftwareNowAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateHypervisorOutcome BackupGatewayClient::UpdateHypervisor(const UpdateHypervisorRequest& request) const
@@ -540,13 +540,13 @@ UpdateHypervisorOutcomeCallable BackupGatewayClient::UpdateHypervisorCallable(co
   return task->get_future();
 }
 
-void BackupGatewayClient::UpdateHypervisorAsync(const UpdateHypervisorRequest& request, const UpdateHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClientUpdateHypervisorAsyncHelper(BackupGatewayClient const * const clientThis, const UpdateHypervisorRequest& request, const UpdateHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateHypervisorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateHypervisor(request), context);
 }
 
-void BackupGatewayClient::UpdateHypervisorAsyncHelper(const UpdateHypervisorRequest& request, const UpdateHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void BackupGatewayClient::UpdateHypervisorAsync(const UpdateHypervisorRequest& request, const UpdateHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateHypervisor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ BackupGatewayClientUpdateHypervisorAsyncHelper( this, request, handler, context ); } );
 }
 

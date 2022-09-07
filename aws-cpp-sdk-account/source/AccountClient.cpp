@@ -120,14 +120,14 @@ DeleteAlternateContactOutcomeCallable AccountClient::DeleteAlternateContactCalla
   return task->get_future();
 }
 
-void AccountClient::DeleteAlternateContactAsync(const DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccountClientDeleteAlternateContactAsyncHelper(AccountClient const * const clientThis, const DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAlternateContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAlternateContact(request), context);
 }
 
-void AccountClient::DeleteAlternateContactAsyncHelper(const DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccountClient::DeleteAlternateContactAsync(const DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAlternateContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccountClientDeleteAlternateContactAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAlternateContactOutcome AccountClient::GetAlternateContact(const GetAlternateContactRequest& request) const
@@ -145,14 +145,14 @@ GetAlternateContactOutcomeCallable AccountClient::GetAlternateContactCallable(co
   return task->get_future();
 }
 
-void AccountClient::GetAlternateContactAsync(const GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccountClientGetAlternateContactAsyncHelper(AccountClient const * const clientThis, const GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAlternateContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAlternateContact(request), context);
 }
 
-void AccountClient::GetAlternateContactAsyncHelper(const GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccountClient::GetAlternateContactAsync(const GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAlternateContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccountClientGetAlternateContactAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContactInformationOutcome AccountClient::GetContactInformation(const GetContactInformationRequest& request) const
@@ -170,14 +170,14 @@ GetContactInformationOutcomeCallable AccountClient::GetContactInformationCallabl
   return task->get_future();
 }
 
-void AccountClient::GetContactInformationAsync(const GetContactInformationRequest& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccountClientGetContactInformationAsyncHelper(AccountClient const * const clientThis, const GetContactInformationRequest& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactInformationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContactInformation(request), context);
 }
 
-void AccountClient::GetContactInformationAsyncHelper(const GetContactInformationRequest& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccountClient::GetContactInformationAsync(const GetContactInformationRequest& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContactInformation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccountClientGetContactInformationAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternateContactRequest& request) const
@@ -195,14 +195,14 @@ PutAlternateContactOutcomeCallable AccountClient::PutAlternateContactCallable(co
   return task->get_future();
 }
 
-void AccountClient::PutAlternateContactAsync(const PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccountClientPutAlternateContactAsyncHelper(AccountClient const * const clientThis, const PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAlternateContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAlternateContact(request), context);
 }
 
-void AccountClient::PutAlternateContactAsyncHelper(const PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccountClient::PutAlternateContactAsync(const PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAlternateContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccountClientPutAlternateContactAsyncHelper( this, request, handler, context ); } );
 }
 
 PutContactInformationOutcome AccountClient::PutContactInformation(const PutContactInformationRequest& request) const
@@ -220,13 +220,13 @@ PutContactInformationOutcomeCallable AccountClient::PutContactInformationCallabl
   return task->get_future();
 }
 
-void AccountClient::PutContactInformationAsync(const PutContactInformationRequest& request, const PutContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccountClientPutContactInformationAsyncHelper(AccountClient const * const clientThis, const PutContactInformationRequest& request, const PutContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutContactInformationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutContactInformation(request), context);
 }
 
-void AccountClient::PutContactInformationAsyncHelper(const PutContactInformationRequest& request, const PutContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AccountClient::PutContactInformationAsync(const PutContactInformationRequest& request, const PutContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutContactInformation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AccountClientPutContactInformationAsyncHelper( this, request, handler, context ); } );
 }
 

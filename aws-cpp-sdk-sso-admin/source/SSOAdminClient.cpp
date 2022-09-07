@@ -151,14 +151,14 @@ AttachCustomerManagedPolicyReferenceToPermissionSetOutcomeCallable SSOAdminClien
   return task->get_future();
 }
 
-void SSOAdminClient::AttachCustomerManagedPolicyReferenceToPermissionSetAsync(const AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request, const AttachCustomerManagedPolicyReferenceToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientAttachCustomerManagedPolicyReferenceToPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request, const AttachCustomerManagedPolicyReferenceToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachCustomerManagedPolicyReferenceToPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachCustomerManagedPolicyReferenceToPermissionSet(request), context);
 }
 
-void SSOAdminClient::AttachCustomerManagedPolicyReferenceToPermissionSetAsyncHelper(const AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request, const AttachCustomerManagedPolicyReferenceToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::AttachCustomerManagedPolicyReferenceToPermissionSetAsync(const AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request, const AttachCustomerManagedPolicyReferenceToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachCustomerManagedPolicyReferenceToPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientAttachCustomerManagedPolicyReferenceToPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachManagedPolicyToPermissionSetOutcome SSOAdminClient::AttachManagedPolicyToPermissionSet(const AttachManagedPolicyToPermissionSetRequest& request) const
@@ -175,14 +175,14 @@ AttachManagedPolicyToPermissionSetOutcomeCallable SSOAdminClient::AttachManagedP
   return task->get_future();
 }
 
-void SSOAdminClient::AttachManagedPolicyToPermissionSetAsync(const AttachManagedPolicyToPermissionSetRequest& request, const AttachManagedPolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientAttachManagedPolicyToPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const AttachManagedPolicyToPermissionSetRequest& request, const AttachManagedPolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachManagedPolicyToPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachManagedPolicyToPermissionSet(request), context);
 }
 
-void SSOAdminClient::AttachManagedPolicyToPermissionSetAsyncHelper(const AttachManagedPolicyToPermissionSetRequest& request, const AttachManagedPolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::AttachManagedPolicyToPermissionSetAsync(const AttachManagedPolicyToPermissionSetRequest& request, const AttachManagedPolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachManagedPolicyToPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientAttachManagedPolicyToPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAccountAssignmentOutcome SSOAdminClient::CreateAccountAssignment(const CreateAccountAssignmentRequest& request) const
@@ -199,14 +199,14 @@ CreateAccountAssignmentOutcomeCallable SSOAdminClient::CreateAccountAssignmentCa
   return task->get_future();
 }
 
-void SSOAdminClient::CreateAccountAssignmentAsync(const CreateAccountAssignmentRequest& request, const CreateAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientCreateAccountAssignmentAsyncHelper(SSOAdminClient const * const clientThis, const CreateAccountAssignmentRequest& request, const CreateAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccountAssignmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAccountAssignment(request), context);
 }
 
-void SSOAdminClient::CreateAccountAssignmentAsyncHelper(const CreateAccountAssignmentRequest& request, const CreateAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::CreateAccountAssignmentAsync(const CreateAccountAssignmentRequest& request, const CreateAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAccountAssignment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientCreateAccountAssignmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::CreateInstanceAccessControlAttributeConfiguration(const CreateInstanceAccessControlAttributeConfigurationRequest& request) const
@@ -223,14 +223,14 @@ CreateInstanceAccessControlAttributeConfigurationOutcomeCallable SSOAdminClient:
   return task->get_future();
 }
 
-void SSOAdminClient::CreateInstanceAccessControlAttributeConfigurationAsync(const CreateInstanceAccessControlAttributeConfigurationRequest& request, const CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientCreateInstanceAccessControlAttributeConfigurationAsyncHelper(SSOAdminClient const * const clientThis, const CreateInstanceAccessControlAttributeConfigurationRequest& request, const CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInstanceAccessControlAttributeConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInstanceAccessControlAttributeConfiguration(request), context);
 }
 
-void SSOAdminClient::CreateInstanceAccessControlAttributeConfigurationAsyncHelper(const CreateInstanceAccessControlAttributeConfigurationRequest& request, const CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::CreateInstanceAccessControlAttributeConfigurationAsync(const CreateInstanceAccessControlAttributeConfigurationRequest& request, const CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInstanceAccessControlAttributeConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientCreateInstanceAccessControlAttributeConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePermissionSetOutcome SSOAdminClient::CreatePermissionSet(const CreatePermissionSetRequest& request) const
@@ -247,14 +247,14 @@ CreatePermissionSetOutcomeCallable SSOAdminClient::CreatePermissionSetCallable(c
   return task->get_future();
 }
 
-void SSOAdminClient::CreatePermissionSetAsync(const CreatePermissionSetRequest& request, const CreatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientCreatePermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const CreatePermissionSetRequest& request, const CreatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePermissionSet(request), context);
 }
 
-void SSOAdminClient::CreatePermissionSetAsyncHelper(const CreatePermissionSetRequest& request, const CreatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::CreatePermissionSetAsync(const CreatePermissionSetRequest& request, const CreatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientCreatePermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAccountAssignmentOutcome SSOAdminClient::DeleteAccountAssignment(const DeleteAccountAssignmentRequest& request) const
@@ -271,14 +271,14 @@ DeleteAccountAssignmentOutcomeCallable SSOAdminClient::DeleteAccountAssignmentCa
   return task->get_future();
 }
 
-void SSOAdminClient::DeleteAccountAssignmentAsync(const DeleteAccountAssignmentRequest& request, const DeleteAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDeleteAccountAssignmentAsyncHelper(SSOAdminClient const * const clientThis, const DeleteAccountAssignmentRequest& request, const DeleteAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccountAssignmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAccountAssignment(request), context);
 }
 
-void SSOAdminClient::DeleteAccountAssignmentAsyncHelper(const DeleteAccountAssignmentRequest& request, const DeleteAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DeleteAccountAssignmentAsync(const DeleteAccountAssignmentRequest& request, const DeleteAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAccountAssignment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDeleteAccountAssignmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInlinePolicyFromPermissionSetOutcome SSOAdminClient::DeleteInlinePolicyFromPermissionSet(const DeleteInlinePolicyFromPermissionSetRequest& request) const
@@ -295,14 +295,14 @@ DeleteInlinePolicyFromPermissionSetOutcomeCallable SSOAdminClient::DeleteInlineP
   return task->get_future();
 }
 
-void SSOAdminClient::DeleteInlinePolicyFromPermissionSetAsync(const DeleteInlinePolicyFromPermissionSetRequest& request, const DeleteInlinePolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDeleteInlinePolicyFromPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const DeleteInlinePolicyFromPermissionSetRequest& request, const DeleteInlinePolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInlinePolicyFromPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInlinePolicyFromPermissionSet(request), context);
 }
 
-void SSOAdminClient::DeleteInlinePolicyFromPermissionSetAsyncHelper(const DeleteInlinePolicyFromPermissionSetRequest& request, const DeleteInlinePolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DeleteInlinePolicyFromPermissionSetAsync(const DeleteInlinePolicyFromPermissionSetRequest& request, const DeleteInlinePolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInlinePolicyFromPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDeleteInlinePolicyFromPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::DeleteInstanceAccessControlAttributeConfiguration(const DeleteInstanceAccessControlAttributeConfigurationRequest& request) const
@@ -319,14 +319,14 @@ DeleteInstanceAccessControlAttributeConfigurationOutcomeCallable SSOAdminClient:
   return task->get_future();
 }
 
-void SSOAdminClient::DeleteInstanceAccessControlAttributeConfigurationAsync(const DeleteInstanceAccessControlAttributeConfigurationRequest& request, const DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDeleteInstanceAccessControlAttributeConfigurationAsyncHelper(SSOAdminClient const * const clientThis, const DeleteInstanceAccessControlAttributeConfigurationRequest& request, const DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceAccessControlAttributeConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInstanceAccessControlAttributeConfiguration(request), context);
 }
 
-void SSOAdminClient::DeleteInstanceAccessControlAttributeConfigurationAsyncHelper(const DeleteInstanceAccessControlAttributeConfigurationRequest& request, const DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DeleteInstanceAccessControlAttributeConfigurationAsync(const DeleteInstanceAccessControlAttributeConfigurationRequest& request, const DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInstanceAccessControlAttributeConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDeleteInstanceAccessControlAttributeConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePermissionSetOutcome SSOAdminClient::DeletePermissionSet(const DeletePermissionSetRequest& request) const
@@ -343,14 +343,14 @@ DeletePermissionSetOutcomeCallable SSOAdminClient::DeletePermissionSetCallable(c
   return task->get_future();
 }
 
-void SSOAdminClient::DeletePermissionSetAsync(const DeletePermissionSetRequest& request, const DeletePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDeletePermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const DeletePermissionSetRequest& request, const DeletePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePermissionSet(request), context);
 }
 
-void SSOAdminClient::DeletePermissionSetAsyncHelper(const DeletePermissionSetRequest& request, const DeletePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DeletePermissionSetAsync(const DeletePermissionSetRequest& request, const DeletePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDeletePermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePermissionsBoundaryFromPermissionSetOutcome SSOAdminClient::DeletePermissionsBoundaryFromPermissionSet(const DeletePermissionsBoundaryFromPermissionSetRequest& request) const
@@ -367,14 +367,14 @@ DeletePermissionsBoundaryFromPermissionSetOutcomeCallable SSOAdminClient::Delete
   return task->get_future();
 }
 
-void SSOAdminClient::DeletePermissionsBoundaryFromPermissionSetAsync(const DeletePermissionsBoundaryFromPermissionSetRequest& request, const DeletePermissionsBoundaryFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDeletePermissionsBoundaryFromPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const DeletePermissionsBoundaryFromPermissionSetRequest& request, const DeletePermissionsBoundaryFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionsBoundaryFromPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePermissionsBoundaryFromPermissionSet(request), context);
 }
 
-void SSOAdminClient::DeletePermissionsBoundaryFromPermissionSetAsyncHelper(const DeletePermissionsBoundaryFromPermissionSetRequest& request, const DeletePermissionsBoundaryFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DeletePermissionsBoundaryFromPermissionSetAsync(const DeletePermissionsBoundaryFromPermissionSetRequest& request, const DeletePermissionsBoundaryFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePermissionsBoundaryFromPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDeletePermissionsBoundaryFromPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountAssignmentCreationStatusOutcome SSOAdminClient::DescribeAccountAssignmentCreationStatus(const DescribeAccountAssignmentCreationStatusRequest& request) const
@@ -391,14 +391,14 @@ DescribeAccountAssignmentCreationStatusOutcomeCallable SSOAdminClient::DescribeA
   return task->get_future();
 }
 
-void SSOAdminClient::DescribeAccountAssignmentCreationStatusAsync(const DescribeAccountAssignmentCreationStatusRequest& request, const DescribeAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDescribeAccountAssignmentCreationStatusAsyncHelper(SSOAdminClient const * const clientThis, const DescribeAccountAssignmentCreationStatusRequest& request, const DescribeAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAssignmentCreationStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccountAssignmentCreationStatus(request), context);
 }
 
-void SSOAdminClient::DescribeAccountAssignmentCreationStatusAsyncHelper(const DescribeAccountAssignmentCreationStatusRequest& request, const DescribeAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DescribeAccountAssignmentCreationStatusAsync(const DescribeAccountAssignmentCreationStatusRequest& request, const DescribeAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccountAssignmentCreationStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDescribeAccountAssignmentCreationStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountAssignmentDeletionStatusOutcome SSOAdminClient::DescribeAccountAssignmentDeletionStatus(const DescribeAccountAssignmentDeletionStatusRequest& request) const
@@ -415,14 +415,14 @@ DescribeAccountAssignmentDeletionStatusOutcomeCallable SSOAdminClient::DescribeA
   return task->get_future();
 }
 
-void SSOAdminClient::DescribeAccountAssignmentDeletionStatusAsync(const DescribeAccountAssignmentDeletionStatusRequest& request, const DescribeAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDescribeAccountAssignmentDeletionStatusAsyncHelper(SSOAdminClient const * const clientThis, const DescribeAccountAssignmentDeletionStatusRequest& request, const DescribeAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAssignmentDeletionStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccountAssignmentDeletionStatus(request), context);
 }
 
-void SSOAdminClient::DescribeAccountAssignmentDeletionStatusAsyncHelper(const DescribeAccountAssignmentDeletionStatusRequest& request, const DescribeAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DescribeAccountAssignmentDeletionStatusAsync(const DescribeAccountAssignmentDeletionStatusRequest& request, const DescribeAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccountAssignmentDeletionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDescribeAccountAssignmentDeletionStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::DescribeInstanceAccessControlAttributeConfiguration(const DescribeInstanceAccessControlAttributeConfigurationRequest& request) const
@@ -439,14 +439,14 @@ DescribeInstanceAccessControlAttributeConfigurationOutcomeCallable SSOAdminClien
   return task->get_future();
 }
 
-void SSOAdminClient::DescribeInstanceAccessControlAttributeConfigurationAsync(const DescribeInstanceAccessControlAttributeConfigurationRequest& request, const DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDescribeInstanceAccessControlAttributeConfigurationAsyncHelper(SSOAdminClient const * const clientThis, const DescribeInstanceAccessControlAttributeConfigurationRequest& request, const DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceAccessControlAttributeConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInstanceAccessControlAttributeConfiguration(request), context);
 }
 
-void SSOAdminClient::DescribeInstanceAccessControlAttributeConfigurationAsyncHelper(const DescribeInstanceAccessControlAttributeConfigurationRequest& request, const DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DescribeInstanceAccessControlAttributeConfigurationAsync(const DescribeInstanceAccessControlAttributeConfigurationRequest& request, const DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInstanceAccessControlAttributeConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDescribeInstanceAccessControlAttributeConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePermissionSetOutcome SSOAdminClient::DescribePermissionSet(const DescribePermissionSetRequest& request) const
@@ -463,14 +463,14 @@ DescribePermissionSetOutcomeCallable SSOAdminClient::DescribePermissionSetCallab
   return task->get_future();
 }
 
-void SSOAdminClient::DescribePermissionSetAsync(const DescribePermissionSetRequest& request, const DescribePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDescribePermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const DescribePermissionSetRequest& request, const DescribePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePermissionSet(request), context);
 }
 
-void SSOAdminClient::DescribePermissionSetAsyncHelper(const DescribePermissionSetRequest& request, const DescribePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DescribePermissionSetAsync(const DescribePermissionSetRequest& request, const DescribePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDescribePermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePermissionSetProvisioningStatusOutcome SSOAdminClient::DescribePermissionSetProvisioningStatus(const DescribePermissionSetProvisioningStatusRequest& request) const
@@ -487,14 +487,14 @@ DescribePermissionSetProvisioningStatusOutcomeCallable SSOAdminClient::DescribeP
   return task->get_future();
 }
 
-void SSOAdminClient::DescribePermissionSetProvisioningStatusAsync(const DescribePermissionSetProvisioningStatusRequest& request, const DescribePermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDescribePermissionSetProvisioningStatusAsyncHelper(SSOAdminClient const * const clientThis, const DescribePermissionSetProvisioningStatusRequest& request, const DescribePermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePermissionSetProvisioningStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePermissionSetProvisioningStatus(request), context);
 }
 
-void SSOAdminClient::DescribePermissionSetProvisioningStatusAsyncHelper(const DescribePermissionSetProvisioningStatusRequest& request, const DescribePermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DescribePermissionSetProvisioningStatusAsync(const DescribePermissionSetProvisioningStatusRequest& request, const DescribePermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePermissionSetProvisioningStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDescribePermissionSetProvisioningStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome SSOAdminClient::DetachCustomerManagedPolicyReferenceFromPermissionSet(const DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request) const
@@ -511,14 +511,14 @@ DetachCustomerManagedPolicyReferenceFromPermissionSetOutcomeCallable SSOAdminCli
   return task->get_future();
 }
 
-void SSOAdminClient::DetachCustomerManagedPolicyReferenceFromPermissionSetAsync(const DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request, const DetachCustomerManagedPolicyReferenceFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDetachCustomerManagedPolicyReferenceFromPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request, const DetachCustomerManagedPolicyReferenceFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachCustomerManagedPolicyReferenceFromPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachCustomerManagedPolicyReferenceFromPermissionSet(request), context);
 }
 
-void SSOAdminClient::DetachCustomerManagedPolicyReferenceFromPermissionSetAsyncHelper(const DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request, const DetachCustomerManagedPolicyReferenceFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DetachCustomerManagedPolicyReferenceFromPermissionSetAsync(const DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request, const DetachCustomerManagedPolicyReferenceFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachCustomerManagedPolicyReferenceFromPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDetachCustomerManagedPolicyReferenceFromPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachManagedPolicyFromPermissionSetOutcome SSOAdminClient::DetachManagedPolicyFromPermissionSet(const DetachManagedPolicyFromPermissionSetRequest& request) const
@@ -535,14 +535,14 @@ DetachManagedPolicyFromPermissionSetOutcomeCallable SSOAdminClient::DetachManage
   return task->get_future();
 }
 
-void SSOAdminClient::DetachManagedPolicyFromPermissionSetAsync(const DetachManagedPolicyFromPermissionSetRequest& request, const DetachManagedPolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientDetachManagedPolicyFromPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const DetachManagedPolicyFromPermissionSetRequest& request, const DetachManagedPolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachManagedPolicyFromPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachManagedPolicyFromPermissionSet(request), context);
 }
 
-void SSOAdminClient::DetachManagedPolicyFromPermissionSetAsyncHelper(const DetachManagedPolicyFromPermissionSetRequest& request, const DetachManagedPolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::DetachManagedPolicyFromPermissionSetAsync(const DetachManagedPolicyFromPermissionSetRequest& request, const DetachManagedPolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachManagedPolicyFromPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientDetachManagedPolicyFromPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInlinePolicyForPermissionSetOutcome SSOAdminClient::GetInlinePolicyForPermissionSet(const GetInlinePolicyForPermissionSetRequest& request) const
@@ -559,14 +559,14 @@ GetInlinePolicyForPermissionSetOutcomeCallable SSOAdminClient::GetInlinePolicyFo
   return task->get_future();
 }
 
-void SSOAdminClient::GetInlinePolicyForPermissionSetAsync(const GetInlinePolicyForPermissionSetRequest& request, const GetInlinePolicyForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientGetInlinePolicyForPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const GetInlinePolicyForPermissionSetRequest& request, const GetInlinePolicyForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInlinePolicyForPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInlinePolicyForPermissionSet(request), context);
 }
 
-void SSOAdminClient::GetInlinePolicyForPermissionSetAsyncHelper(const GetInlinePolicyForPermissionSetRequest& request, const GetInlinePolicyForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::GetInlinePolicyForPermissionSetAsync(const GetInlinePolicyForPermissionSetRequest& request, const GetInlinePolicyForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInlinePolicyForPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientGetInlinePolicyForPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPermissionsBoundaryForPermissionSetOutcome SSOAdminClient::GetPermissionsBoundaryForPermissionSet(const GetPermissionsBoundaryForPermissionSetRequest& request) const
@@ -583,14 +583,14 @@ GetPermissionsBoundaryForPermissionSetOutcomeCallable SSOAdminClient::GetPermiss
   return task->get_future();
 }
 
-void SSOAdminClient::GetPermissionsBoundaryForPermissionSetAsync(const GetPermissionsBoundaryForPermissionSetRequest& request, const GetPermissionsBoundaryForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientGetPermissionsBoundaryForPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const GetPermissionsBoundaryForPermissionSetRequest& request, const GetPermissionsBoundaryForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPermissionsBoundaryForPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPermissionsBoundaryForPermissionSet(request), context);
 }
 
-void SSOAdminClient::GetPermissionsBoundaryForPermissionSetAsyncHelper(const GetPermissionsBoundaryForPermissionSetRequest& request, const GetPermissionsBoundaryForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::GetPermissionsBoundaryForPermissionSetAsync(const GetPermissionsBoundaryForPermissionSetRequest& request, const GetPermissionsBoundaryForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPermissionsBoundaryForPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientGetPermissionsBoundaryForPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccountAssignmentCreationStatusOutcome SSOAdminClient::ListAccountAssignmentCreationStatus(const ListAccountAssignmentCreationStatusRequest& request) const
@@ -607,14 +607,14 @@ ListAccountAssignmentCreationStatusOutcomeCallable SSOAdminClient::ListAccountAs
   return task->get_future();
 }
 
-void SSOAdminClient::ListAccountAssignmentCreationStatusAsync(const ListAccountAssignmentCreationStatusRequest& request, const ListAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListAccountAssignmentCreationStatusAsyncHelper(SSOAdminClient const * const clientThis, const ListAccountAssignmentCreationStatusRequest& request, const ListAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountAssignmentCreationStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccountAssignmentCreationStatus(request), context);
 }
 
-void SSOAdminClient::ListAccountAssignmentCreationStatusAsyncHelper(const ListAccountAssignmentCreationStatusRequest& request, const ListAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListAccountAssignmentCreationStatusAsync(const ListAccountAssignmentCreationStatusRequest& request, const ListAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccountAssignmentCreationStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListAccountAssignmentCreationStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccountAssignmentDeletionStatusOutcome SSOAdminClient::ListAccountAssignmentDeletionStatus(const ListAccountAssignmentDeletionStatusRequest& request) const
@@ -631,14 +631,14 @@ ListAccountAssignmentDeletionStatusOutcomeCallable SSOAdminClient::ListAccountAs
   return task->get_future();
 }
 
-void SSOAdminClient::ListAccountAssignmentDeletionStatusAsync(const ListAccountAssignmentDeletionStatusRequest& request, const ListAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListAccountAssignmentDeletionStatusAsyncHelper(SSOAdminClient const * const clientThis, const ListAccountAssignmentDeletionStatusRequest& request, const ListAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountAssignmentDeletionStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccountAssignmentDeletionStatus(request), context);
 }
 
-void SSOAdminClient::ListAccountAssignmentDeletionStatusAsyncHelper(const ListAccountAssignmentDeletionStatusRequest& request, const ListAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListAccountAssignmentDeletionStatusAsync(const ListAccountAssignmentDeletionStatusRequest& request, const ListAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccountAssignmentDeletionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListAccountAssignmentDeletionStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccountAssignmentsOutcome SSOAdminClient::ListAccountAssignments(const ListAccountAssignmentsRequest& request) const
@@ -655,14 +655,14 @@ ListAccountAssignmentsOutcomeCallable SSOAdminClient::ListAccountAssignmentsCall
   return task->get_future();
 }
 
-void SSOAdminClient::ListAccountAssignmentsAsync(const ListAccountAssignmentsRequest& request, const ListAccountAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListAccountAssignmentsAsyncHelper(SSOAdminClient const * const clientThis, const ListAccountAssignmentsRequest& request, const ListAccountAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountAssignmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccountAssignments(request), context);
 }
 
-void SSOAdminClient::ListAccountAssignmentsAsyncHelper(const ListAccountAssignmentsRequest& request, const ListAccountAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListAccountAssignmentsAsync(const ListAccountAssignmentsRequest& request, const ListAccountAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccountAssignments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListAccountAssignmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccountsForProvisionedPermissionSetOutcome SSOAdminClient::ListAccountsForProvisionedPermissionSet(const ListAccountsForProvisionedPermissionSetRequest& request) const
@@ -679,14 +679,14 @@ ListAccountsForProvisionedPermissionSetOutcomeCallable SSOAdminClient::ListAccou
   return task->get_future();
 }
 
-void SSOAdminClient::ListAccountsForProvisionedPermissionSetAsync(const ListAccountsForProvisionedPermissionSetRequest& request, const ListAccountsForProvisionedPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListAccountsForProvisionedPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const ListAccountsForProvisionedPermissionSetRequest& request, const ListAccountsForProvisionedPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountsForProvisionedPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccountsForProvisionedPermissionSet(request), context);
 }
 
-void SSOAdminClient::ListAccountsForProvisionedPermissionSetAsyncHelper(const ListAccountsForProvisionedPermissionSetRequest& request, const ListAccountsForProvisionedPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListAccountsForProvisionedPermissionSetAsync(const ListAccountsForProvisionedPermissionSetRequest& request, const ListAccountsForProvisionedPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccountsForProvisionedPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListAccountsForProvisionedPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCustomerManagedPolicyReferencesInPermissionSetOutcome SSOAdminClient::ListCustomerManagedPolicyReferencesInPermissionSet(const ListCustomerManagedPolicyReferencesInPermissionSetRequest& request) const
@@ -703,14 +703,14 @@ ListCustomerManagedPolicyReferencesInPermissionSetOutcomeCallable SSOAdminClient
   return task->get_future();
 }
 
-void SSOAdminClient::ListCustomerManagedPolicyReferencesInPermissionSetAsync(const ListCustomerManagedPolicyReferencesInPermissionSetRequest& request, const ListCustomerManagedPolicyReferencesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListCustomerManagedPolicyReferencesInPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const ListCustomerManagedPolicyReferencesInPermissionSetRequest& request, const ListCustomerManagedPolicyReferencesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomerManagedPolicyReferencesInPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCustomerManagedPolicyReferencesInPermissionSet(request), context);
 }
 
-void SSOAdminClient::ListCustomerManagedPolicyReferencesInPermissionSetAsyncHelper(const ListCustomerManagedPolicyReferencesInPermissionSetRequest& request, const ListCustomerManagedPolicyReferencesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListCustomerManagedPolicyReferencesInPermissionSetAsync(const ListCustomerManagedPolicyReferencesInPermissionSetRequest& request, const ListCustomerManagedPolicyReferencesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCustomerManagedPolicyReferencesInPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListCustomerManagedPolicyReferencesInPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInstancesOutcome SSOAdminClient::ListInstances(const ListInstancesRequest& request) const
@@ -727,14 +727,14 @@ ListInstancesOutcomeCallable SSOAdminClient::ListInstancesCallable(const ListIns
   return task->get_future();
 }
 
-void SSOAdminClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListInstancesAsyncHelper(SSOAdminClient const * const clientThis, const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInstances(request), context);
 }
 
-void SSOAdminClient::ListInstancesAsyncHelper(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListManagedPoliciesInPermissionSetOutcome SSOAdminClient::ListManagedPoliciesInPermissionSet(const ListManagedPoliciesInPermissionSetRequest& request) const
@@ -751,14 +751,14 @@ ListManagedPoliciesInPermissionSetOutcomeCallable SSOAdminClient::ListManagedPol
   return task->get_future();
 }
 
-void SSOAdminClient::ListManagedPoliciesInPermissionSetAsync(const ListManagedPoliciesInPermissionSetRequest& request, const ListManagedPoliciesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListManagedPoliciesInPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const ListManagedPoliciesInPermissionSetRequest& request, const ListManagedPoliciesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListManagedPoliciesInPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListManagedPoliciesInPermissionSet(request), context);
 }
 
-void SSOAdminClient::ListManagedPoliciesInPermissionSetAsyncHelper(const ListManagedPoliciesInPermissionSetRequest& request, const ListManagedPoliciesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListManagedPoliciesInPermissionSetAsync(const ListManagedPoliciesInPermissionSetRequest& request, const ListManagedPoliciesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListManagedPoliciesInPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListManagedPoliciesInPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPermissionSetProvisioningStatusOutcome SSOAdminClient::ListPermissionSetProvisioningStatus(const ListPermissionSetProvisioningStatusRequest& request) const
@@ -775,14 +775,14 @@ ListPermissionSetProvisioningStatusOutcomeCallable SSOAdminClient::ListPermissio
   return task->get_future();
 }
 
-void SSOAdminClient::ListPermissionSetProvisioningStatusAsync(const ListPermissionSetProvisioningStatusRequest& request, const ListPermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListPermissionSetProvisioningStatusAsyncHelper(SSOAdminClient const * const clientThis, const ListPermissionSetProvisioningStatusRequest& request, const ListPermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionSetProvisioningStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPermissionSetProvisioningStatus(request), context);
 }
 
-void SSOAdminClient::ListPermissionSetProvisioningStatusAsyncHelper(const ListPermissionSetProvisioningStatusRequest& request, const ListPermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListPermissionSetProvisioningStatusAsync(const ListPermissionSetProvisioningStatusRequest& request, const ListPermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPermissionSetProvisioningStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListPermissionSetProvisioningStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPermissionSetsOutcome SSOAdminClient::ListPermissionSets(const ListPermissionSetsRequest& request) const
@@ -799,14 +799,14 @@ ListPermissionSetsOutcomeCallable SSOAdminClient::ListPermissionSetsCallable(con
   return task->get_future();
 }
 
-void SSOAdminClient::ListPermissionSetsAsync(const ListPermissionSetsRequest& request, const ListPermissionSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListPermissionSetsAsyncHelper(SSOAdminClient const * const clientThis, const ListPermissionSetsRequest& request, const ListPermissionSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionSetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPermissionSets(request), context);
 }
 
-void SSOAdminClient::ListPermissionSetsAsyncHelper(const ListPermissionSetsRequest& request, const ListPermissionSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListPermissionSetsAsync(const ListPermissionSetsRequest& request, const ListPermissionSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPermissionSets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListPermissionSetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPermissionSetsProvisionedToAccountOutcome SSOAdminClient::ListPermissionSetsProvisionedToAccount(const ListPermissionSetsProvisionedToAccountRequest& request) const
@@ -823,14 +823,14 @@ ListPermissionSetsProvisionedToAccountOutcomeCallable SSOAdminClient::ListPermis
   return task->get_future();
 }
 
-void SSOAdminClient::ListPermissionSetsProvisionedToAccountAsync(const ListPermissionSetsProvisionedToAccountRequest& request, const ListPermissionSetsProvisionedToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListPermissionSetsProvisionedToAccountAsyncHelper(SSOAdminClient const * const clientThis, const ListPermissionSetsProvisionedToAccountRequest& request, const ListPermissionSetsProvisionedToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionSetsProvisionedToAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPermissionSetsProvisionedToAccount(request), context);
 }
 
-void SSOAdminClient::ListPermissionSetsProvisionedToAccountAsyncHelper(const ListPermissionSetsProvisionedToAccountRequest& request, const ListPermissionSetsProvisionedToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListPermissionSetsProvisionedToAccountAsync(const ListPermissionSetsProvisionedToAccountRequest& request, const ListPermissionSetsProvisionedToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPermissionSetsProvisionedToAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListPermissionSetsProvisionedToAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome SSOAdminClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -847,14 +847,14 @@ ListTagsForResourceOutcomeCallable SSOAdminClient::ListTagsForResourceCallable(c
   return task->get_future();
 }
 
-void SSOAdminClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientListTagsForResourceAsyncHelper(SSOAdminClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void SSOAdminClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ProvisionPermissionSetOutcome SSOAdminClient::ProvisionPermissionSet(const ProvisionPermissionSetRequest& request) const
@@ -871,14 +871,14 @@ ProvisionPermissionSetOutcomeCallable SSOAdminClient::ProvisionPermissionSetCall
   return task->get_future();
 }
 
-void SSOAdminClient::ProvisionPermissionSetAsync(const ProvisionPermissionSetRequest& request, const ProvisionPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientProvisionPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const ProvisionPermissionSetRequest& request, const ProvisionPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ProvisionPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ProvisionPermissionSet(request), context);
 }
 
-void SSOAdminClient::ProvisionPermissionSetAsyncHelper(const ProvisionPermissionSetRequest& request, const ProvisionPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::ProvisionPermissionSetAsync(const ProvisionPermissionSetRequest& request, const ProvisionPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ProvisionPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientProvisionPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 PutInlinePolicyToPermissionSetOutcome SSOAdminClient::PutInlinePolicyToPermissionSet(const PutInlinePolicyToPermissionSetRequest& request) const
@@ -895,14 +895,14 @@ PutInlinePolicyToPermissionSetOutcomeCallable SSOAdminClient::PutInlinePolicyToP
   return task->get_future();
 }
 
-void SSOAdminClient::PutInlinePolicyToPermissionSetAsync(const PutInlinePolicyToPermissionSetRequest& request, const PutInlinePolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientPutInlinePolicyToPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const PutInlinePolicyToPermissionSetRequest& request, const PutInlinePolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutInlinePolicyToPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutInlinePolicyToPermissionSet(request), context);
 }
 
-void SSOAdminClient::PutInlinePolicyToPermissionSetAsyncHelper(const PutInlinePolicyToPermissionSetRequest& request, const PutInlinePolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::PutInlinePolicyToPermissionSetAsync(const PutInlinePolicyToPermissionSetRequest& request, const PutInlinePolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutInlinePolicyToPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientPutInlinePolicyToPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPermissionsBoundaryToPermissionSetOutcome SSOAdminClient::PutPermissionsBoundaryToPermissionSet(const PutPermissionsBoundaryToPermissionSetRequest& request) const
@@ -919,14 +919,14 @@ PutPermissionsBoundaryToPermissionSetOutcomeCallable SSOAdminClient::PutPermissi
   return task->get_future();
 }
 
-void SSOAdminClient::PutPermissionsBoundaryToPermissionSetAsync(const PutPermissionsBoundaryToPermissionSetRequest& request, const PutPermissionsBoundaryToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientPutPermissionsBoundaryToPermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const PutPermissionsBoundaryToPermissionSetRequest& request, const PutPermissionsBoundaryToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionsBoundaryToPermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPermissionsBoundaryToPermissionSet(request), context);
 }
 
-void SSOAdminClient::PutPermissionsBoundaryToPermissionSetAsyncHelper(const PutPermissionsBoundaryToPermissionSetRequest& request, const PutPermissionsBoundaryToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::PutPermissionsBoundaryToPermissionSetAsync(const PutPermissionsBoundaryToPermissionSetRequest& request, const PutPermissionsBoundaryToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPermissionsBoundaryToPermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientPutPermissionsBoundaryToPermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome SSOAdminClient::TagResource(const TagResourceRequest& request) const
@@ -943,14 +943,14 @@ TagResourceOutcomeCallable SSOAdminClient::TagResourceCallable(const TagResource
   return task->get_future();
 }
 
-void SSOAdminClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientTagResourceAsyncHelper(SSOAdminClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void SSOAdminClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome SSOAdminClient::UntagResource(const UntagResourceRequest& request) const
@@ -967,14 +967,14 @@ UntagResourceOutcomeCallable SSOAdminClient::UntagResourceCallable(const UntagRe
   return task->get_future();
 }
 
-void SSOAdminClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientUntagResourceAsyncHelper(SSOAdminClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void SSOAdminClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::UpdateInstanceAccessControlAttributeConfiguration(const UpdateInstanceAccessControlAttributeConfigurationRequest& request) const
@@ -991,14 +991,14 @@ UpdateInstanceAccessControlAttributeConfigurationOutcomeCallable SSOAdminClient:
   return task->get_future();
 }
 
-void SSOAdminClient::UpdateInstanceAccessControlAttributeConfigurationAsync(const UpdateInstanceAccessControlAttributeConfigurationRequest& request, const UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientUpdateInstanceAccessControlAttributeConfigurationAsyncHelper(SSOAdminClient const * const clientThis, const UpdateInstanceAccessControlAttributeConfigurationRequest& request, const UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInstanceAccessControlAttributeConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateInstanceAccessControlAttributeConfiguration(request), context);
 }
 
-void SSOAdminClient::UpdateInstanceAccessControlAttributeConfigurationAsyncHelper(const UpdateInstanceAccessControlAttributeConfigurationRequest& request, const UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::UpdateInstanceAccessControlAttributeConfigurationAsync(const UpdateInstanceAccessControlAttributeConfigurationRequest& request, const UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateInstanceAccessControlAttributeConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientUpdateInstanceAccessControlAttributeConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePermissionSetOutcome SSOAdminClient::UpdatePermissionSet(const UpdatePermissionSetRequest& request) const
@@ -1015,13 +1015,13 @@ UpdatePermissionSetOutcomeCallable SSOAdminClient::UpdatePermissionSetCallable(c
   return task->get_future();
 }
 
-void SSOAdminClient::UpdatePermissionSetAsync(const UpdatePermissionSetRequest& request, const UpdatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClientUpdatePermissionSetAsyncHelper(SSOAdminClient const * const clientThis, const UpdatePermissionSetRequest& request, const UpdatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePermissionSetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePermissionSet(request), context);
 }
 
-void SSOAdminClient::UpdatePermissionSetAsyncHelper(const UpdatePermissionSetRequest& request, const UpdatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOAdminClient::UpdatePermissionSetAsync(const UpdatePermissionSetRequest& request, const UpdatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePermissionSet(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOAdminClientUpdatePermissionSetAsyncHelper( this, request, handler, context ); } );
 }
 

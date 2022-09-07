@@ -158,14 +158,14 @@ CancelTaskExecutionOutcomeCallable DataSyncClient::CancelTaskExecutionCallable(c
   return task->get_future();
 }
 
-void DataSyncClient::CancelTaskExecutionAsync(const CancelTaskExecutionRequest& request, const CancelTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCancelTaskExecutionAsyncHelper(DataSyncClient const * const clientThis, const CancelTaskExecutionRequest& request, const CancelTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelTaskExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelTaskExecution(request), context);
 }
 
-void DataSyncClient::CancelTaskExecutionAsyncHelper(const CancelTaskExecutionRequest& request, const CancelTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CancelTaskExecutionAsync(const CancelTaskExecutionRequest& request, const CancelTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelTaskExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCancelTaskExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAgentOutcome DataSyncClient::CreateAgent(const CreateAgentRequest& request) const
@@ -182,14 +182,14 @@ CreateAgentOutcomeCallable DataSyncClient::CreateAgentCallable(const CreateAgent
   return task->get_future();
 }
 
-void DataSyncClient::CreateAgentAsync(const CreateAgentRequest& request, const CreateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateAgentAsyncHelper(DataSyncClient const * const clientThis, const CreateAgentRequest& request, const CreateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAgentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAgent(request), context);
 }
 
-void DataSyncClient::CreateAgentAsyncHelper(const CreateAgentRequest& request, const CreateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateAgentAsync(const CreateAgentRequest& request, const CreateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAgent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateAgentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocationEfsOutcome DataSyncClient::CreateLocationEfs(const CreateLocationEfsRequest& request) const
@@ -206,14 +206,14 @@ CreateLocationEfsOutcomeCallable DataSyncClient::CreateLocationEfsCallable(const
   return task->get_future();
 }
 
-void DataSyncClient::CreateLocationEfsAsync(const CreateLocationEfsRequest& request, const CreateLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateLocationEfsAsyncHelper(DataSyncClient const * const clientThis, const CreateLocationEfsRequest& request, const CreateLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationEfsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocationEfs(request), context);
 }
 
-void DataSyncClient::CreateLocationEfsAsyncHelper(const CreateLocationEfsRequest& request, const CreateLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateLocationEfsAsync(const CreateLocationEfsRequest& request, const CreateLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocationEfs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateLocationEfsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocationFsxLustreOutcome DataSyncClient::CreateLocationFsxLustre(const CreateLocationFsxLustreRequest& request) const
@@ -230,14 +230,14 @@ CreateLocationFsxLustreOutcomeCallable DataSyncClient::CreateLocationFsxLustreCa
   return task->get_future();
 }
 
-void DataSyncClient::CreateLocationFsxLustreAsync(const CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateLocationFsxLustreAsyncHelper(DataSyncClient const * const clientThis, const CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationFsxLustreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocationFsxLustre(request), context);
 }
 
-void DataSyncClient::CreateLocationFsxLustreAsyncHelper(const CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateLocationFsxLustreAsync(const CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocationFsxLustre(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateLocationFsxLustreAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocationFsxOntapOutcome DataSyncClient::CreateLocationFsxOntap(const CreateLocationFsxOntapRequest& request) const
@@ -254,14 +254,14 @@ CreateLocationFsxOntapOutcomeCallable DataSyncClient::CreateLocationFsxOntapCall
   return task->get_future();
 }
 
-void DataSyncClient::CreateLocationFsxOntapAsync(const CreateLocationFsxOntapRequest& request, const CreateLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateLocationFsxOntapAsyncHelper(DataSyncClient const * const clientThis, const CreateLocationFsxOntapRequest& request, const CreateLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationFsxOntapAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocationFsxOntap(request), context);
 }
 
-void DataSyncClient::CreateLocationFsxOntapAsyncHelper(const CreateLocationFsxOntapRequest& request, const CreateLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateLocationFsxOntapAsync(const CreateLocationFsxOntapRequest& request, const CreateLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocationFsxOntap(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateLocationFsxOntapAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocationFsxOpenZfsOutcome DataSyncClient::CreateLocationFsxOpenZfs(const CreateLocationFsxOpenZfsRequest& request) const
@@ -278,14 +278,14 @@ CreateLocationFsxOpenZfsOutcomeCallable DataSyncClient::CreateLocationFsxOpenZfs
   return task->get_future();
 }
 
-void DataSyncClient::CreateLocationFsxOpenZfsAsync(const CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateLocationFsxOpenZfsAsyncHelper(DataSyncClient const * const clientThis, const CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationFsxOpenZfsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocationFsxOpenZfs(request), context);
 }
 
-void DataSyncClient::CreateLocationFsxOpenZfsAsyncHelper(const CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateLocationFsxOpenZfsAsync(const CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocationFsxOpenZfs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateLocationFsxOpenZfsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocationFsxWindowsOutcome DataSyncClient::CreateLocationFsxWindows(const CreateLocationFsxWindowsRequest& request) const
@@ -302,14 +302,14 @@ CreateLocationFsxWindowsOutcomeCallable DataSyncClient::CreateLocationFsxWindows
   return task->get_future();
 }
 
-void DataSyncClient::CreateLocationFsxWindowsAsync(const CreateLocationFsxWindowsRequest& request, const CreateLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateLocationFsxWindowsAsyncHelper(DataSyncClient const * const clientThis, const CreateLocationFsxWindowsRequest& request, const CreateLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationFsxWindowsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocationFsxWindows(request), context);
 }
 
-void DataSyncClient::CreateLocationFsxWindowsAsyncHelper(const CreateLocationFsxWindowsRequest& request, const CreateLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateLocationFsxWindowsAsync(const CreateLocationFsxWindowsRequest& request, const CreateLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocationFsxWindows(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateLocationFsxWindowsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocationHdfsOutcome DataSyncClient::CreateLocationHdfs(const CreateLocationHdfsRequest& request) const
@@ -326,14 +326,14 @@ CreateLocationHdfsOutcomeCallable DataSyncClient::CreateLocationHdfsCallable(con
   return task->get_future();
 }
 
-void DataSyncClient::CreateLocationHdfsAsync(const CreateLocationHdfsRequest& request, const CreateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateLocationHdfsAsyncHelper(DataSyncClient const * const clientThis, const CreateLocationHdfsRequest& request, const CreateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationHdfsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocationHdfs(request), context);
 }
 
-void DataSyncClient::CreateLocationHdfsAsyncHelper(const CreateLocationHdfsRequest& request, const CreateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateLocationHdfsAsync(const CreateLocationHdfsRequest& request, const CreateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocationHdfs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateLocationHdfsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocationNfsOutcome DataSyncClient::CreateLocationNfs(const CreateLocationNfsRequest& request) const
@@ -350,14 +350,14 @@ CreateLocationNfsOutcomeCallable DataSyncClient::CreateLocationNfsCallable(const
   return task->get_future();
 }
 
-void DataSyncClient::CreateLocationNfsAsync(const CreateLocationNfsRequest& request, const CreateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateLocationNfsAsyncHelper(DataSyncClient const * const clientThis, const CreateLocationNfsRequest& request, const CreateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationNfsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocationNfs(request), context);
 }
 
-void DataSyncClient::CreateLocationNfsAsyncHelper(const CreateLocationNfsRequest& request, const CreateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateLocationNfsAsync(const CreateLocationNfsRequest& request, const CreateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocationNfs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateLocationNfsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocationObjectStorageOutcome DataSyncClient::CreateLocationObjectStorage(const CreateLocationObjectStorageRequest& request) const
@@ -374,14 +374,14 @@ CreateLocationObjectStorageOutcomeCallable DataSyncClient::CreateLocationObjectS
   return task->get_future();
 }
 
-void DataSyncClient::CreateLocationObjectStorageAsync(const CreateLocationObjectStorageRequest& request, const CreateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateLocationObjectStorageAsyncHelper(DataSyncClient const * const clientThis, const CreateLocationObjectStorageRequest& request, const CreateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationObjectStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocationObjectStorage(request), context);
 }
 
-void DataSyncClient::CreateLocationObjectStorageAsyncHelper(const CreateLocationObjectStorageRequest& request, const CreateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateLocationObjectStorageAsync(const CreateLocationObjectStorageRequest& request, const CreateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocationObjectStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateLocationObjectStorageAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocationS3Outcome DataSyncClient::CreateLocationS3(const CreateLocationS3Request& request) const
@@ -398,14 +398,14 @@ CreateLocationS3OutcomeCallable DataSyncClient::CreateLocationS3Callable(const C
   return task->get_future();
 }
 
-void DataSyncClient::CreateLocationS3Async(const CreateLocationS3Request& request, const CreateLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateLocationS3AsyncHelper(DataSyncClient const * const clientThis, const CreateLocationS3Request& request, const CreateLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationS3AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocationS3(request), context);
 }
 
-void DataSyncClient::CreateLocationS3AsyncHelper(const CreateLocationS3Request& request, const CreateLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateLocationS3Async(const CreateLocationS3Request& request, const CreateLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocationS3(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateLocationS3AsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLocationSmbOutcome DataSyncClient::CreateLocationSmb(const CreateLocationSmbRequest& request) const
@@ -422,14 +422,14 @@ CreateLocationSmbOutcomeCallable DataSyncClient::CreateLocationSmbCallable(const
   return task->get_future();
 }
 
-void DataSyncClient::CreateLocationSmbAsync(const CreateLocationSmbRequest& request, const CreateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateLocationSmbAsyncHelper(DataSyncClient const * const clientThis, const CreateLocationSmbRequest& request, const CreateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationSmbAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLocationSmb(request), context);
 }
 
-void DataSyncClient::CreateLocationSmbAsyncHelper(const CreateLocationSmbRequest& request, const CreateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateLocationSmbAsync(const CreateLocationSmbRequest& request, const CreateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLocationSmb(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateLocationSmbAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTaskOutcome DataSyncClient::CreateTask(const CreateTaskRequest& request) const
@@ -446,14 +446,14 @@ CreateTaskOutcomeCallable DataSyncClient::CreateTaskCallable(const CreateTaskReq
   return task->get_future();
 }
 
-void DataSyncClient::CreateTaskAsync(const CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientCreateTaskAsyncHelper(DataSyncClient const * const clientThis, const CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTask(request), context);
 }
 
-void DataSyncClient::CreateTaskAsyncHelper(const CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::CreateTaskAsync(const CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientCreateTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAgentOutcome DataSyncClient::DeleteAgent(const DeleteAgentRequest& request) const
@@ -470,14 +470,14 @@ DeleteAgentOutcomeCallable DataSyncClient::DeleteAgentCallable(const DeleteAgent
   return task->get_future();
 }
 
-void DataSyncClient::DeleteAgentAsync(const DeleteAgentRequest& request, const DeleteAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDeleteAgentAsyncHelper(DataSyncClient const * const clientThis, const DeleteAgentRequest& request, const DeleteAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAgentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAgent(request), context);
 }
 
-void DataSyncClient::DeleteAgentAsyncHelper(const DeleteAgentRequest& request, const DeleteAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DeleteAgentAsync(const DeleteAgentRequest& request, const DeleteAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAgent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDeleteAgentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLocationOutcome DataSyncClient::DeleteLocation(const DeleteLocationRequest& request) const
@@ -494,14 +494,14 @@ DeleteLocationOutcomeCallable DataSyncClient::DeleteLocationCallable(const Delet
   return task->get_future();
 }
 
-void DataSyncClient::DeleteLocationAsync(const DeleteLocationRequest& request, const DeleteLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDeleteLocationAsyncHelper(DataSyncClient const * const clientThis, const DeleteLocationRequest& request, const DeleteLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLocationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLocation(request), context);
 }
 
-void DataSyncClient::DeleteLocationAsyncHelper(const DeleteLocationRequest& request, const DeleteLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DeleteLocationAsync(const DeleteLocationRequest& request, const DeleteLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLocation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDeleteLocationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTaskOutcome DataSyncClient::DeleteTask(const DeleteTaskRequest& request) const
@@ -518,14 +518,14 @@ DeleteTaskOutcomeCallable DataSyncClient::DeleteTaskCallable(const DeleteTaskReq
   return task->get_future();
 }
 
-void DataSyncClient::DeleteTaskAsync(const DeleteTaskRequest& request, const DeleteTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDeleteTaskAsyncHelper(DataSyncClient const * const clientThis, const DeleteTaskRequest& request, const DeleteTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTask(request), context);
 }
 
-void DataSyncClient::DeleteTaskAsyncHelper(const DeleteTaskRequest& request, const DeleteTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DeleteTaskAsync(const DeleteTaskRequest& request, const DeleteTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDeleteTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAgentOutcome DataSyncClient::DescribeAgent(const DescribeAgentRequest& request) const
@@ -542,14 +542,14 @@ DescribeAgentOutcomeCallable DataSyncClient::DescribeAgentCallable(const Describ
   return task->get_future();
 }
 
-void DataSyncClient::DescribeAgentAsync(const DescribeAgentRequest& request, const DescribeAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeAgentAsyncHelper(DataSyncClient const * const clientThis, const DescribeAgentRequest& request, const DescribeAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAgentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAgent(request), context);
 }
 
-void DataSyncClient::DescribeAgentAsyncHelper(const DescribeAgentRequest& request, const DescribeAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeAgentAsync(const DescribeAgentRequest& request, const DescribeAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAgent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeAgentAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationEfsOutcome DataSyncClient::DescribeLocationEfs(const DescribeLocationEfsRequest& request) const
@@ -566,14 +566,14 @@ DescribeLocationEfsOutcomeCallable DataSyncClient::DescribeLocationEfsCallable(c
   return task->get_future();
 }
 
-void DataSyncClient::DescribeLocationEfsAsync(const DescribeLocationEfsRequest& request, const DescribeLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeLocationEfsAsyncHelper(DataSyncClient const * const clientThis, const DescribeLocationEfsRequest& request, const DescribeLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationEfsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocationEfs(request), context);
 }
 
-void DataSyncClient::DescribeLocationEfsAsyncHelper(const DescribeLocationEfsRequest& request, const DescribeLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeLocationEfsAsync(const DescribeLocationEfsRequest& request, const DescribeLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocationEfs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeLocationEfsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationFsxLustreOutcome DataSyncClient::DescribeLocationFsxLustre(const DescribeLocationFsxLustreRequest& request) const
@@ -590,14 +590,14 @@ DescribeLocationFsxLustreOutcomeCallable DataSyncClient::DescribeLocationFsxLust
   return task->get_future();
 }
 
-void DataSyncClient::DescribeLocationFsxLustreAsync(const DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeLocationFsxLustreAsyncHelper(DataSyncClient const * const clientThis, const DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationFsxLustreAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocationFsxLustre(request), context);
 }
 
-void DataSyncClient::DescribeLocationFsxLustreAsyncHelper(const DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeLocationFsxLustreAsync(const DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocationFsxLustre(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeLocationFsxLustreAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationFsxOntapOutcome DataSyncClient::DescribeLocationFsxOntap(const DescribeLocationFsxOntapRequest& request) const
@@ -614,14 +614,14 @@ DescribeLocationFsxOntapOutcomeCallable DataSyncClient::DescribeLocationFsxOntap
   return task->get_future();
 }
 
-void DataSyncClient::DescribeLocationFsxOntapAsync(const DescribeLocationFsxOntapRequest& request, const DescribeLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeLocationFsxOntapAsyncHelper(DataSyncClient const * const clientThis, const DescribeLocationFsxOntapRequest& request, const DescribeLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationFsxOntapAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocationFsxOntap(request), context);
 }
 
-void DataSyncClient::DescribeLocationFsxOntapAsyncHelper(const DescribeLocationFsxOntapRequest& request, const DescribeLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeLocationFsxOntapAsync(const DescribeLocationFsxOntapRequest& request, const DescribeLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocationFsxOntap(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeLocationFsxOntapAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationFsxOpenZfsOutcome DataSyncClient::DescribeLocationFsxOpenZfs(const DescribeLocationFsxOpenZfsRequest& request) const
@@ -638,14 +638,14 @@ DescribeLocationFsxOpenZfsOutcomeCallable DataSyncClient::DescribeLocationFsxOpe
   return task->get_future();
 }
 
-void DataSyncClient::DescribeLocationFsxOpenZfsAsync(const DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeLocationFsxOpenZfsAsyncHelper(DataSyncClient const * const clientThis, const DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationFsxOpenZfsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocationFsxOpenZfs(request), context);
 }
 
-void DataSyncClient::DescribeLocationFsxOpenZfsAsyncHelper(const DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeLocationFsxOpenZfsAsync(const DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocationFsxOpenZfs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeLocationFsxOpenZfsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationFsxWindowsOutcome DataSyncClient::DescribeLocationFsxWindows(const DescribeLocationFsxWindowsRequest& request) const
@@ -662,14 +662,14 @@ DescribeLocationFsxWindowsOutcomeCallable DataSyncClient::DescribeLocationFsxWin
   return task->get_future();
 }
 
-void DataSyncClient::DescribeLocationFsxWindowsAsync(const DescribeLocationFsxWindowsRequest& request, const DescribeLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeLocationFsxWindowsAsyncHelper(DataSyncClient const * const clientThis, const DescribeLocationFsxWindowsRequest& request, const DescribeLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationFsxWindowsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocationFsxWindows(request), context);
 }
 
-void DataSyncClient::DescribeLocationFsxWindowsAsyncHelper(const DescribeLocationFsxWindowsRequest& request, const DescribeLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeLocationFsxWindowsAsync(const DescribeLocationFsxWindowsRequest& request, const DescribeLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocationFsxWindows(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeLocationFsxWindowsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationHdfsOutcome DataSyncClient::DescribeLocationHdfs(const DescribeLocationHdfsRequest& request) const
@@ -686,14 +686,14 @@ DescribeLocationHdfsOutcomeCallable DataSyncClient::DescribeLocationHdfsCallable
   return task->get_future();
 }
 
-void DataSyncClient::DescribeLocationHdfsAsync(const DescribeLocationHdfsRequest& request, const DescribeLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeLocationHdfsAsyncHelper(DataSyncClient const * const clientThis, const DescribeLocationHdfsRequest& request, const DescribeLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationHdfsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocationHdfs(request), context);
 }
 
-void DataSyncClient::DescribeLocationHdfsAsyncHelper(const DescribeLocationHdfsRequest& request, const DescribeLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeLocationHdfsAsync(const DescribeLocationHdfsRequest& request, const DescribeLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocationHdfs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeLocationHdfsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationNfsOutcome DataSyncClient::DescribeLocationNfs(const DescribeLocationNfsRequest& request) const
@@ -710,14 +710,14 @@ DescribeLocationNfsOutcomeCallable DataSyncClient::DescribeLocationNfsCallable(c
   return task->get_future();
 }
 
-void DataSyncClient::DescribeLocationNfsAsync(const DescribeLocationNfsRequest& request, const DescribeLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeLocationNfsAsyncHelper(DataSyncClient const * const clientThis, const DescribeLocationNfsRequest& request, const DescribeLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationNfsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocationNfs(request), context);
 }
 
-void DataSyncClient::DescribeLocationNfsAsyncHelper(const DescribeLocationNfsRequest& request, const DescribeLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeLocationNfsAsync(const DescribeLocationNfsRequest& request, const DescribeLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocationNfs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeLocationNfsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationObjectStorageOutcome DataSyncClient::DescribeLocationObjectStorage(const DescribeLocationObjectStorageRequest& request) const
@@ -734,14 +734,14 @@ DescribeLocationObjectStorageOutcomeCallable DataSyncClient::DescribeLocationObj
   return task->get_future();
 }
 
-void DataSyncClient::DescribeLocationObjectStorageAsync(const DescribeLocationObjectStorageRequest& request, const DescribeLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeLocationObjectStorageAsyncHelper(DataSyncClient const * const clientThis, const DescribeLocationObjectStorageRequest& request, const DescribeLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationObjectStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocationObjectStorage(request), context);
 }
 
-void DataSyncClient::DescribeLocationObjectStorageAsyncHelper(const DescribeLocationObjectStorageRequest& request, const DescribeLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeLocationObjectStorageAsync(const DescribeLocationObjectStorageRequest& request, const DescribeLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocationObjectStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeLocationObjectStorageAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationS3Outcome DataSyncClient::DescribeLocationS3(const DescribeLocationS3Request& request) const
@@ -758,14 +758,14 @@ DescribeLocationS3OutcomeCallable DataSyncClient::DescribeLocationS3Callable(con
   return task->get_future();
 }
 
-void DataSyncClient::DescribeLocationS3Async(const DescribeLocationS3Request& request, const DescribeLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeLocationS3AsyncHelper(DataSyncClient const * const clientThis, const DescribeLocationS3Request& request, const DescribeLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationS3AsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocationS3(request), context);
 }
 
-void DataSyncClient::DescribeLocationS3AsyncHelper(const DescribeLocationS3Request& request, const DescribeLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeLocationS3Async(const DescribeLocationS3Request& request, const DescribeLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocationS3(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeLocationS3AsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationSmbOutcome DataSyncClient::DescribeLocationSmb(const DescribeLocationSmbRequest& request) const
@@ -782,14 +782,14 @@ DescribeLocationSmbOutcomeCallable DataSyncClient::DescribeLocationSmbCallable(c
   return task->get_future();
 }
 
-void DataSyncClient::DescribeLocationSmbAsync(const DescribeLocationSmbRequest& request, const DescribeLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeLocationSmbAsyncHelper(DataSyncClient const * const clientThis, const DescribeLocationSmbRequest& request, const DescribeLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationSmbAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLocationSmb(request), context);
 }
 
-void DataSyncClient::DescribeLocationSmbAsyncHelper(const DescribeLocationSmbRequest& request, const DescribeLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeLocationSmbAsync(const DescribeLocationSmbRequest& request, const DescribeLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLocationSmb(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeLocationSmbAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTaskOutcome DataSyncClient::DescribeTask(const DescribeTaskRequest& request) const
@@ -806,14 +806,14 @@ DescribeTaskOutcomeCallable DataSyncClient::DescribeTaskCallable(const DescribeT
   return task->get_future();
 }
 
-void DataSyncClient::DescribeTaskAsync(const DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeTaskAsyncHelper(DataSyncClient const * const clientThis, const DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTask(request), context);
 }
 
-void DataSyncClient::DescribeTaskAsyncHelper(const DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeTaskAsync(const DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTaskExecutionOutcome DataSyncClient::DescribeTaskExecution(const DescribeTaskExecutionRequest& request) const
@@ -830,14 +830,14 @@ DescribeTaskExecutionOutcomeCallable DataSyncClient::DescribeTaskExecutionCallab
   return task->get_future();
 }
 
-void DataSyncClient::DescribeTaskExecutionAsync(const DescribeTaskExecutionRequest& request, const DescribeTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientDescribeTaskExecutionAsyncHelper(DataSyncClient const * const clientThis, const DescribeTaskExecutionRequest& request, const DescribeTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTaskExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTaskExecution(request), context);
 }
 
-void DataSyncClient::DescribeTaskExecutionAsyncHelper(const DescribeTaskExecutionRequest& request, const DescribeTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::DescribeTaskExecutionAsync(const DescribeTaskExecutionRequest& request, const DescribeTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTaskExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientDescribeTaskExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAgentsOutcome DataSyncClient::ListAgents(const ListAgentsRequest& request) const
@@ -854,14 +854,14 @@ ListAgentsOutcomeCallable DataSyncClient::ListAgentsCallable(const ListAgentsReq
   return task->get_future();
 }
 
-void DataSyncClient::ListAgentsAsync(const ListAgentsRequest& request, const ListAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientListAgentsAsyncHelper(DataSyncClient const * const clientThis, const ListAgentsRequest& request, const ListAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAgentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAgents(request), context);
 }
 
-void DataSyncClient::ListAgentsAsyncHelper(const ListAgentsRequest& request, const ListAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::ListAgentsAsync(const ListAgentsRequest& request, const ListAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAgents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientListAgentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLocationsOutcome DataSyncClient::ListLocations(const ListLocationsRequest& request) const
@@ -878,14 +878,14 @@ ListLocationsOutcomeCallable DataSyncClient::ListLocationsCallable(const ListLoc
   return task->get_future();
 }
 
-void DataSyncClient::ListLocationsAsync(const ListLocationsRequest& request, const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientListLocationsAsyncHelper(DataSyncClient const * const clientThis, const ListLocationsRequest& request, const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLocationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLocations(request), context);
 }
 
-void DataSyncClient::ListLocationsAsyncHelper(const ListLocationsRequest& request, const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::ListLocationsAsync(const ListLocationsRequest& request, const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLocations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientListLocationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome DataSyncClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -902,14 +902,14 @@ ListTagsForResourceOutcomeCallable DataSyncClient::ListTagsForResourceCallable(c
   return task->get_future();
 }
 
-void DataSyncClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientListTagsForResourceAsyncHelper(DataSyncClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void DataSyncClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTaskExecutionsOutcome DataSyncClient::ListTaskExecutions(const ListTaskExecutionsRequest& request) const
@@ -926,14 +926,14 @@ ListTaskExecutionsOutcomeCallable DataSyncClient::ListTaskExecutionsCallable(con
   return task->get_future();
 }
 
-void DataSyncClient::ListTaskExecutionsAsync(const ListTaskExecutionsRequest& request, const ListTaskExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientListTaskExecutionsAsyncHelper(DataSyncClient const * const clientThis, const ListTaskExecutionsRequest& request, const ListTaskExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTaskExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTaskExecutions(request), context);
 }
 
-void DataSyncClient::ListTaskExecutionsAsyncHelper(const ListTaskExecutionsRequest& request, const ListTaskExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::ListTaskExecutionsAsync(const ListTaskExecutionsRequest& request, const ListTaskExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTaskExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientListTaskExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTasksOutcome DataSyncClient::ListTasks(const ListTasksRequest& request) const
@@ -950,14 +950,14 @@ ListTasksOutcomeCallable DataSyncClient::ListTasksCallable(const ListTasksReques
   return task->get_future();
 }
 
-void DataSyncClient::ListTasksAsync(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientListTasksAsyncHelper(DataSyncClient const * const clientThis, const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTasks(request), context);
 }
 
-void DataSyncClient::ListTasksAsyncHelper(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::ListTasksAsync(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientListTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 StartTaskExecutionOutcome DataSyncClient::StartTaskExecution(const StartTaskExecutionRequest& request) const
@@ -974,14 +974,14 @@ StartTaskExecutionOutcomeCallable DataSyncClient::StartTaskExecutionCallable(con
   return task->get_future();
 }
 
-void DataSyncClient::StartTaskExecutionAsync(const StartTaskExecutionRequest& request, const StartTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientStartTaskExecutionAsyncHelper(DataSyncClient const * const clientThis, const StartTaskExecutionRequest& request, const StartTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTaskExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartTaskExecution(request), context);
 }
 
-void DataSyncClient::StartTaskExecutionAsyncHelper(const StartTaskExecutionRequest& request, const StartTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::StartTaskExecutionAsync(const StartTaskExecutionRequest& request, const StartTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartTaskExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientStartTaskExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome DataSyncClient::TagResource(const TagResourceRequest& request) const
@@ -998,14 +998,14 @@ TagResourceOutcomeCallable DataSyncClient::TagResourceCallable(const TagResource
   return task->get_future();
 }
 
-void DataSyncClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientTagResourceAsyncHelper(DataSyncClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void DataSyncClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome DataSyncClient::UntagResource(const UntagResourceRequest& request) const
@@ -1022,14 +1022,14 @@ UntagResourceOutcomeCallable DataSyncClient::UntagResourceCallable(const UntagRe
   return task->get_future();
 }
 
-void DataSyncClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientUntagResourceAsyncHelper(DataSyncClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void DataSyncClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAgentOutcome DataSyncClient::UpdateAgent(const UpdateAgentRequest& request) const
@@ -1046,14 +1046,14 @@ UpdateAgentOutcomeCallable DataSyncClient::UpdateAgentCallable(const UpdateAgent
   return task->get_future();
 }
 
-void DataSyncClient::UpdateAgentAsync(const UpdateAgentRequest& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientUpdateAgentAsyncHelper(DataSyncClient const * const clientThis, const UpdateAgentRequest& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAgentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAgent(request), context);
 }
 
-void DataSyncClient::UpdateAgentAsyncHelper(const UpdateAgentRequest& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::UpdateAgentAsync(const UpdateAgentRequest& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAgent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientUpdateAgentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLocationHdfsOutcome DataSyncClient::UpdateLocationHdfs(const UpdateLocationHdfsRequest& request) const
@@ -1070,14 +1070,14 @@ UpdateLocationHdfsOutcomeCallable DataSyncClient::UpdateLocationHdfsCallable(con
   return task->get_future();
 }
 
-void DataSyncClient::UpdateLocationHdfsAsync(const UpdateLocationHdfsRequest& request, const UpdateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientUpdateLocationHdfsAsyncHelper(DataSyncClient const * const clientThis, const UpdateLocationHdfsRequest& request, const UpdateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLocationHdfsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLocationHdfs(request), context);
 }
 
-void DataSyncClient::UpdateLocationHdfsAsyncHelper(const UpdateLocationHdfsRequest& request, const UpdateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::UpdateLocationHdfsAsync(const UpdateLocationHdfsRequest& request, const UpdateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLocationHdfs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientUpdateLocationHdfsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLocationNfsOutcome DataSyncClient::UpdateLocationNfs(const UpdateLocationNfsRequest& request) const
@@ -1094,14 +1094,14 @@ UpdateLocationNfsOutcomeCallable DataSyncClient::UpdateLocationNfsCallable(const
   return task->get_future();
 }
 
-void DataSyncClient::UpdateLocationNfsAsync(const UpdateLocationNfsRequest& request, const UpdateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientUpdateLocationNfsAsyncHelper(DataSyncClient const * const clientThis, const UpdateLocationNfsRequest& request, const UpdateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLocationNfsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLocationNfs(request), context);
 }
 
-void DataSyncClient::UpdateLocationNfsAsyncHelper(const UpdateLocationNfsRequest& request, const UpdateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::UpdateLocationNfsAsync(const UpdateLocationNfsRequest& request, const UpdateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLocationNfs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientUpdateLocationNfsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLocationObjectStorageOutcome DataSyncClient::UpdateLocationObjectStorage(const UpdateLocationObjectStorageRequest& request) const
@@ -1118,14 +1118,14 @@ UpdateLocationObjectStorageOutcomeCallable DataSyncClient::UpdateLocationObjectS
   return task->get_future();
 }
 
-void DataSyncClient::UpdateLocationObjectStorageAsync(const UpdateLocationObjectStorageRequest& request, const UpdateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientUpdateLocationObjectStorageAsyncHelper(DataSyncClient const * const clientThis, const UpdateLocationObjectStorageRequest& request, const UpdateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLocationObjectStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLocationObjectStorage(request), context);
 }
 
-void DataSyncClient::UpdateLocationObjectStorageAsyncHelper(const UpdateLocationObjectStorageRequest& request, const UpdateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::UpdateLocationObjectStorageAsync(const UpdateLocationObjectStorageRequest& request, const UpdateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLocationObjectStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientUpdateLocationObjectStorageAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLocationSmbOutcome DataSyncClient::UpdateLocationSmb(const UpdateLocationSmbRequest& request) const
@@ -1142,14 +1142,14 @@ UpdateLocationSmbOutcomeCallable DataSyncClient::UpdateLocationSmbCallable(const
   return task->get_future();
 }
 
-void DataSyncClient::UpdateLocationSmbAsync(const UpdateLocationSmbRequest& request, const UpdateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientUpdateLocationSmbAsyncHelper(DataSyncClient const * const clientThis, const UpdateLocationSmbRequest& request, const UpdateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLocationSmbAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLocationSmb(request), context);
 }
 
-void DataSyncClient::UpdateLocationSmbAsyncHelper(const UpdateLocationSmbRequest& request, const UpdateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::UpdateLocationSmbAsync(const UpdateLocationSmbRequest& request, const UpdateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLocationSmb(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientUpdateLocationSmbAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTaskOutcome DataSyncClient::UpdateTask(const UpdateTaskRequest& request) const
@@ -1166,14 +1166,14 @@ UpdateTaskOutcomeCallable DataSyncClient::UpdateTaskCallable(const UpdateTaskReq
   return task->get_future();
 }
 
-void DataSyncClient::UpdateTaskAsync(const UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientUpdateTaskAsyncHelper(DataSyncClient const * const clientThis, const UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTask(request), context);
 }
 
-void DataSyncClient::UpdateTaskAsyncHelper(const UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::UpdateTaskAsync(const UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientUpdateTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTaskExecutionOutcome DataSyncClient::UpdateTaskExecution(const UpdateTaskExecutionRequest& request) const
@@ -1190,13 +1190,13 @@ UpdateTaskExecutionOutcomeCallable DataSyncClient::UpdateTaskExecutionCallable(c
   return task->get_future();
 }
 
-void DataSyncClient::UpdateTaskExecutionAsync(const UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClientUpdateTaskExecutionAsyncHelper(DataSyncClient const * const clientThis, const UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTaskExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTaskExecution(request), context);
 }
 
-void DataSyncClient::UpdateTaskExecutionAsyncHelper(const UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DataSyncClient::UpdateTaskExecutionAsync(const UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTaskExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DataSyncClientUpdateTaskExecutionAsyncHelper( this, request, handler, context ); } );
 }
 

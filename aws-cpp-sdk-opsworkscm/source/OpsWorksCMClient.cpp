@@ -133,14 +133,14 @@ AssociateNodeOutcomeCallable OpsWorksCMClient::AssociateNodeCallable(const Assoc
   return task->get_future();
 }
 
-void OpsWorksCMClient::AssociateNodeAsync(const AssociateNodeRequest& request, const AssociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientAssociateNodeAsyncHelper(OpsWorksCMClient const * const clientThis, const AssociateNodeRequest& request, const AssociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateNodeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateNode(request), context);
 }
 
-void OpsWorksCMClient::AssociateNodeAsyncHelper(const AssociateNodeRequest& request, const AssociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::AssociateNodeAsync(const AssociateNodeRequest& request, const AssociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateNode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientAssociateNodeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackupOutcome OpsWorksCMClient::CreateBackup(const CreateBackupRequest& request) const
@@ -157,14 +157,14 @@ CreateBackupOutcomeCallable OpsWorksCMClient::CreateBackupCallable(const CreateB
   return task->get_future();
 }
 
-void OpsWorksCMClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientCreateBackupAsyncHelper(OpsWorksCMClient const * const clientThis, const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackup(request), context);
 }
 
-void OpsWorksCMClient::CreateBackupAsyncHelper(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientCreateBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateServerOutcome OpsWorksCMClient::CreateServer(const CreateServerRequest& request) const
@@ -181,14 +181,14 @@ CreateServerOutcomeCallable OpsWorksCMClient::CreateServerCallable(const CreateS
   return task->get_future();
 }
 
-void OpsWorksCMClient::CreateServerAsync(const CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientCreateServerAsyncHelper(OpsWorksCMClient const * const clientThis, const CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateServer(request), context);
 }
 
-void OpsWorksCMClient::CreateServerAsyncHelper(const CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::CreateServerAsync(const CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientCreateServerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackupOutcome OpsWorksCMClient::DeleteBackup(const DeleteBackupRequest& request) const
@@ -205,14 +205,14 @@ DeleteBackupOutcomeCallable OpsWorksCMClient::DeleteBackupCallable(const DeleteB
   return task->get_future();
 }
 
-void OpsWorksCMClient::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientDeleteBackupAsyncHelper(OpsWorksCMClient const * const clientThis, const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackup(request), context);
 }
 
-void OpsWorksCMClient::DeleteBackupAsyncHelper(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientDeleteBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteServerOutcome OpsWorksCMClient::DeleteServer(const DeleteServerRequest& request) const
@@ -229,14 +229,14 @@ DeleteServerOutcomeCallable OpsWorksCMClient::DeleteServerCallable(const DeleteS
   return task->get_future();
 }
 
-void OpsWorksCMClient::DeleteServerAsync(const DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientDeleteServerAsyncHelper(OpsWorksCMClient const * const clientThis, const DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteServer(request), context);
 }
 
-void OpsWorksCMClient::DeleteServerAsyncHelper(const DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::DeleteServerAsync(const DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientDeleteServerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAccountAttributesOutcome OpsWorksCMClient::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
@@ -253,14 +253,14 @@ DescribeAccountAttributesOutcomeCallable OpsWorksCMClient::DescribeAccountAttrib
   return task->get_future();
 }
 
-void OpsWorksCMClient::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientDescribeAccountAttributesAsyncHelper(OpsWorksCMClient const * const clientThis, const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAccountAttributes(request), context);
 }
 
-void OpsWorksCMClient::DescribeAccountAttributesAsyncHelper(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAccountAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientDescribeAccountAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBackupsOutcome OpsWorksCMClient::DescribeBackups(const DescribeBackupsRequest& request) const
@@ -277,14 +277,14 @@ DescribeBackupsOutcomeCallable OpsWorksCMClient::DescribeBackupsCallable(const D
   return task->get_future();
 }
 
-void OpsWorksCMClient::DescribeBackupsAsync(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientDescribeBackupsAsyncHelper(OpsWorksCMClient const * const clientThis, const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBackupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBackups(request), context);
 }
 
-void OpsWorksCMClient::DescribeBackupsAsyncHelper(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::DescribeBackupsAsync(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBackups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientDescribeBackupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeEventsOutcome OpsWorksCMClient::DescribeEvents(const DescribeEventsRequest& request) const
@@ -301,14 +301,14 @@ DescribeEventsOutcomeCallable OpsWorksCMClient::DescribeEventsCallable(const Des
   return task->get_future();
 }
 
-void OpsWorksCMClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientDescribeEventsAsyncHelper(OpsWorksCMClient const * const clientThis, const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeEvents(request), context);
 }
 
-void OpsWorksCMClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientDescribeEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNodeAssociationStatusOutcome OpsWorksCMClient::DescribeNodeAssociationStatus(const DescribeNodeAssociationStatusRequest& request) const
@@ -325,14 +325,14 @@ DescribeNodeAssociationStatusOutcomeCallable OpsWorksCMClient::DescribeNodeAssoc
   return task->get_future();
 }
 
-void OpsWorksCMClient::DescribeNodeAssociationStatusAsync(const DescribeNodeAssociationStatusRequest& request, const DescribeNodeAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientDescribeNodeAssociationStatusAsyncHelper(OpsWorksCMClient const * const clientThis, const DescribeNodeAssociationStatusRequest& request, const DescribeNodeAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNodeAssociationStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNodeAssociationStatus(request), context);
 }
 
-void OpsWorksCMClient::DescribeNodeAssociationStatusAsyncHelper(const DescribeNodeAssociationStatusRequest& request, const DescribeNodeAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::DescribeNodeAssociationStatusAsync(const DescribeNodeAssociationStatusRequest& request, const DescribeNodeAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNodeAssociationStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientDescribeNodeAssociationStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeServersOutcome OpsWorksCMClient::DescribeServers(const DescribeServersRequest& request) const
@@ -349,14 +349,14 @@ DescribeServersOutcomeCallable OpsWorksCMClient::DescribeServersCallable(const D
   return task->get_future();
 }
 
-void OpsWorksCMClient::DescribeServersAsync(const DescribeServersRequest& request, const DescribeServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientDescribeServersAsyncHelper(OpsWorksCMClient const * const clientThis, const DescribeServersRequest& request, const DescribeServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeServers(request), context);
 }
 
-void OpsWorksCMClient::DescribeServersAsyncHelper(const DescribeServersRequest& request, const DescribeServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::DescribeServersAsync(const DescribeServersRequest& request, const DescribeServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeServers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientDescribeServersAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateNodeOutcome OpsWorksCMClient::DisassociateNode(const DisassociateNodeRequest& request) const
@@ -373,14 +373,14 @@ DisassociateNodeOutcomeCallable OpsWorksCMClient::DisassociateNodeCallable(const
   return task->get_future();
 }
 
-void OpsWorksCMClient::DisassociateNodeAsync(const DisassociateNodeRequest& request, const DisassociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientDisassociateNodeAsyncHelper(OpsWorksCMClient const * const clientThis, const DisassociateNodeRequest& request, const DisassociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateNodeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateNode(request), context);
 }
 
-void OpsWorksCMClient::DisassociateNodeAsyncHelper(const DisassociateNodeRequest& request, const DisassociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::DisassociateNodeAsync(const DisassociateNodeRequest& request, const DisassociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateNode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientDisassociateNodeAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportServerEngineAttributeOutcome OpsWorksCMClient::ExportServerEngineAttribute(const ExportServerEngineAttributeRequest& request) const
@@ -397,14 +397,14 @@ ExportServerEngineAttributeOutcomeCallable OpsWorksCMClient::ExportServerEngineA
   return task->get_future();
 }
 
-void OpsWorksCMClient::ExportServerEngineAttributeAsync(const ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientExportServerEngineAttributeAsyncHelper(OpsWorksCMClient const * const clientThis, const ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportServerEngineAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportServerEngineAttribute(request), context);
 }
 
-void OpsWorksCMClient::ExportServerEngineAttributeAsyncHelper(const ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::ExportServerEngineAttributeAsync(const ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportServerEngineAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientExportServerEngineAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome OpsWorksCMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -421,14 +421,14 @@ ListTagsForResourceOutcomeCallable OpsWorksCMClient::ListTagsForResourceCallable
   return task->get_future();
 }
 
-void OpsWorksCMClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientListTagsForResourceAsyncHelper(OpsWorksCMClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void OpsWorksCMClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreServerOutcome OpsWorksCMClient::RestoreServer(const RestoreServerRequest& request) const
@@ -445,14 +445,14 @@ RestoreServerOutcomeCallable OpsWorksCMClient::RestoreServerCallable(const Resto
   return task->get_future();
 }
 
-void OpsWorksCMClient::RestoreServerAsync(const RestoreServerRequest& request, const RestoreServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientRestoreServerAsyncHelper(OpsWorksCMClient const * const clientThis, const RestoreServerRequest& request, const RestoreServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreServer(request), context);
 }
 
-void OpsWorksCMClient::RestoreServerAsyncHelper(const RestoreServerRequest& request, const RestoreServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::RestoreServerAsync(const RestoreServerRequest& request, const RestoreServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientRestoreServerAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMaintenanceOutcome OpsWorksCMClient::StartMaintenance(const StartMaintenanceRequest& request) const
@@ -469,14 +469,14 @@ StartMaintenanceOutcomeCallable OpsWorksCMClient::StartMaintenanceCallable(const
   return task->get_future();
 }
 
-void OpsWorksCMClient::StartMaintenanceAsync(const StartMaintenanceRequest& request, const StartMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientStartMaintenanceAsyncHelper(OpsWorksCMClient const * const clientThis, const StartMaintenanceRequest& request, const StartMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMaintenanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMaintenance(request), context);
 }
 
-void OpsWorksCMClient::StartMaintenanceAsyncHelper(const StartMaintenanceRequest& request, const StartMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::StartMaintenanceAsync(const StartMaintenanceRequest& request, const StartMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMaintenance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientStartMaintenanceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome OpsWorksCMClient::TagResource(const TagResourceRequest& request) const
@@ -493,14 +493,14 @@ TagResourceOutcomeCallable OpsWorksCMClient::TagResourceCallable(const TagResour
   return task->get_future();
 }
 
-void OpsWorksCMClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientTagResourceAsyncHelper(OpsWorksCMClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void OpsWorksCMClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome OpsWorksCMClient::UntagResource(const UntagResourceRequest& request) const
@@ -517,14 +517,14 @@ UntagResourceOutcomeCallable OpsWorksCMClient::UntagResourceCallable(const Untag
   return task->get_future();
 }
 
-void OpsWorksCMClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientUntagResourceAsyncHelper(OpsWorksCMClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void OpsWorksCMClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServerOutcome OpsWorksCMClient::UpdateServer(const UpdateServerRequest& request) const
@@ -541,14 +541,14 @@ UpdateServerOutcomeCallable OpsWorksCMClient::UpdateServerCallable(const UpdateS
   return task->get_future();
 }
 
-void OpsWorksCMClient::UpdateServerAsync(const UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientUpdateServerAsyncHelper(OpsWorksCMClient const * const clientThis, const UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServer(request), context);
 }
 
-void OpsWorksCMClient::UpdateServerAsyncHelper(const UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::UpdateServerAsync(const UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientUpdateServerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServerEngineAttributesOutcome OpsWorksCMClient::UpdateServerEngineAttributes(const UpdateServerEngineAttributesRequest& request) const
@@ -565,13 +565,13 @@ UpdateServerEngineAttributesOutcomeCallable OpsWorksCMClient::UpdateServerEngine
   return task->get_future();
 }
 
-void OpsWorksCMClient::UpdateServerEngineAttributesAsync(const UpdateServerEngineAttributesRequest& request, const UpdateServerEngineAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClientUpdateServerEngineAttributesAsyncHelper(OpsWorksCMClient const * const clientThis, const UpdateServerEngineAttributesRequest& request, const UpdateServerEngineAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServerEngineAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServerEngineAttributes(request), context);
 }
 
-void OpsWorksCMClient::UpdateServerEngineAttributesAsyncHelper(const UpdateServerEngineAttributesRequest& request, const UpdateServerEngineAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void OpsWorksCMClient::UpdateServerEngineAttributesAsync(const UpdateServerEngineAttributesRequest& request, const UpdateServerEngineAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServerEngineAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ OpsWorksCMClientUpdateServerEngineAttributesAsyncHelper( this, request, handler, context ); } );
 }
 

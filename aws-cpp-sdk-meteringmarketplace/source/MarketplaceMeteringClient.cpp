@@ -118,14 +118,14 @@ BatchMeterUsageOutcomeCallable MarketplaceMeteringClient::BatchMeterUsageCallabl
   return task->get_future();
 }
 
-void MarketplaceMeteringClient::BatchMeterUsageAsync(const BatchMeterUsageRequest& request, const BatchMeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceMeteringClientBatchMeterUsageAsyncHelper(MarketplaceMeteringClient const * const clientThis, const BatchMeterUsageRequest& request, const BatchMeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchMeterUsageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchMeterUsage(request), context);
 }
 
-void MarketplaceMeteringClient::BatchMeterUsageAsyncHelper(const BatchMeterUsageRequest& request, const BatchMeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceMeteringClient::BatchMeterUsageAsync(const BatchMeterUsageRequest& request, const BatchMeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchMeterUsage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceMeteringClientBatchMeterUsageAsyncHelper( this, request, handler, context ); } );
 }
 
 MeterUsageOutcome MarketplaceMeteringClient::MeterUsage(const MeterUsageRequest& request) const
@@ -142,14 +142,14 @@ MeterUsageOutcomeCallable MarketplaceMeteringClient::MeterUsageCallable(const Me
   return task->get_future();
 }
 
-void MarketplaceMeteringClient::MeterUsageAsync(const MeterUsageRequest& request, const MeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceMeteringClientMeterUsageAsyncHelper(MarketplaceMeteringClient const * const clientThis, const MeterUsageRequest& request, const MeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MeterUsageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->MeterUsage(request), context);
 }
 
-void MarketplaceMeteringClient::MeterUsageAsyncHelper(const MeterUsageRequest& request, const MeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceMeteringClient::MeterUsageAsync(const MeterUsageRequest& request, const MeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, MeterUsage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceMeteringClientMeterUsageAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterUsageOutcome MarketplaceMeteringClient::RegisterUsage(const RegisterUsageRequest& request) const
@@ -166,14 +166,14 @@ RegisterUsageOutcomeCallable MarketplaceMeteringClient::RegisterUsageCallable(co
   return task->get_future();
 }
 
-void MarketplaceMeteringClient::RegisterUsageAsync(const RegisterUsageRequest& request, const RegisterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceMeteringClientRegisterUsageAsyncHelper(MarketplaceMeteringClient const * const clientThis, const RegisterUsageRequest& request, const RegisterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterUsageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterUsage(request), context);
 }
 
-void MarketplaceMeteringClient::RegisterUsageAsyncHelper(const RegisterUsageRequest& request, const RegisterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceMeteringClient::RegisterUsageAsync(const RegisterUsageRequest& request, const RegisterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterUsage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceMeteringClientRegisterUsageAsyncHelper( this, request, handler, context ); } );
 }
 
 ResolveCustomerOutcome MarketplaceMeteringClient::ResolveCustomer(const ResolveCustomerRequest& request) const
@@ -190,13 +190,13 @@ ResolveCustomerOutcomeCallable MarketplaceMeteringClient::ResolveCustomerCallabl
   return task->get_future();
 }
 
-void MarketplaceMeteringClient::ResolveCustomerAsync(const ResolveCustomerRequest& request, const ResolveCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceMeteringClientResolveCustomerAsyncHelper(MarketplaceMeteringClient const * const clientThis, const ResolveCustomerRequest& request, const ResolveCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResolveCustomerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResolveCustomer(request), context);
 }
 
-void MarketplaceMeteringClient::ResolveCustomerAsyncHelper(const ResolveCustomerRequest& request, const ResolveCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MarketplaceMeteringClient::ResolveCustomerAsync(const ResolveCustomerRequest& request, const ResolveCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResolveCustomer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MarketplaceMeteringClientResolveCustomerAsyncHelper( this, request, handler, context ); } );
 }
 

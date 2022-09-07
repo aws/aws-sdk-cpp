@@ -268,14 +268,14 @@ AllocateStaticIpOutcomeCallable LightsailClient::AllocateStaticIpCallable(const 
   return task->get_future();
 }
 
-void LightsailClient::AllocateStaticIpAsync(const AllocateStaticIpRequest& request, const AllocateStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientAllocateStaticIpAsyncHelper(LightsailClient const * const clientThis, const AllocateStaticIpRequest& request, const AllocateStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AllocateStaticIpAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AllocateStaticIp(request), context);
 }
 
-void LightsailClient::AllocateStaticIpAsyncHelper(const AllocateStaticIpRequest& request, const AllocateStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::AllocateStaticIpAsync(const AllocateStaticIpRequest& request, const AllocateStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AllocateStaticIp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientAllocateStaticIpAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachCertificateToDistributionOutcome LightsailClient::AttachCertificateToDistribution(const AttachCertificateToDistributionRequest& request) const
@@ -292,14 +292,14 @@ AttachCertificateToDistributionOutcomeCallable LightsailClient::AttachCertificat
   return task->get_future();
 }
 
-void LightsailClient::AttachCertificateToDistributionAsync(const AttachCertificateToDistributionRequest& request, const AttachCertificateToDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientAttachCertificateToDistributionAsyncHelper(LightsailClient const * const clientThis, const AttachCertificateToDistributionRequest& request, const AttachCertificateToDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachCertificateToDistributionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachCertificateToDistribution(request), context);
 }
 
-void LightsailClient::AttachCertificateToDistributionAsyncHelper(const AttachCertificateToDistributionRequest& request, const AttachCertificateToDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::AttachCertificateToDistributionAsync(const AttachCertificateToDistributionRequest& request, const AttachCertificateToDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachCertificateToDistribution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientAttachCertificateToDistributionAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachDiskOutcome LightsailClient::AttachDisk(const AttachDiskRequest& request) const
@@ -316,14 +316,14 @@ AttachDiskOutcomeCallable LightsailClient::AttachDiskCallable(const AttachDiskRe
   return task->get_future();
 }
 
-void LightsailClient::AttachDiskAsync(const AttachDiskRequest& request, const AttachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientAttachDiskAsyncHelper(LightsailClient const * const clientThis, const AttachDiskRequest& request, const AttachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachDiskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachDisk(request), context);
 }
 
-void LightsailClient::AttachDiskAsyncHelper(const AttachDiskRequest& request, const AttachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::AttachDiskAsync(const AttachDiskRequest& request, const AttachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachDisk(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientAttachDiskAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachInstancesToLoadBalancerOutcome LightsailClient::AttachInstancesToLoadBalancer(const AttachInstancesToLoadBalancerRequest& request) const
@@ -340,14 +340,14 @@ AttachInstancesToLoadBalancerOutcomeCallable LightsailClient::AttachInstancesToL
   return task->get_future();
 }
 
-void LightsailClient::AttachInstancesToLoadBalancerAsync(const AttachInstancesToLoadBalancerRequest& request, const AttachInstancesToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientAttachInstancesToLoadBalancerAsyncHelper(LightsailClient const * const clientThis, const AttachInstancesToLoadBalancerRequest& request, const AttachInstancesToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachInstancesToLoadBalancerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachInstancesToLoadBalancer(request), context);
 }
 
-void LightsailClient::AttachInstancesToLoadBalancerAsyncHelper(const AttachInstancesToLoadBalancerRequest& request, const AttachInstancesToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::AttachInstancesToLoadBalancerAsync(const AttachInstancesToLoadBalancerRequest& request, const AttachInstancesToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachInstancesToLoadBalancer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientAttachInstancesToLoadBalancerAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachLoadBalancerTlsCertificateOutcome LightsailClient::AttachLoadBalancerTlsCertificate(const AttachLoadBalancerTlsCertificateRequest& request) const
@@ -364,14 +364,14 @@ AttachLoadBalancerTlsCertificateOutcomeCallable LightsailClient::AttachLoadBalan
   return task->get_future();
 }
 
-void LightsailClient::AttachLoadBalancerTlsCertificateAsync(const AttachLoadBalancerTlsCertificateRequest& request, const AttachLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientAttachLoadBalancerTlsCertificateAsyncHelper(LightsailClient const * const clientThis, const AttachLoadBalancerTlsCertificateRequest& request, const AttachLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachLoadBalancerTlsCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachLoadBalancerTlsCertificate(request), context);
 }
 
-void LightsailClient::AttachLoadBalancerTlsCertificateAsyncHelper(const AttachLoadBalancerTlsCertificateRequest& request, const AttachLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::AttachLoadBalancerTlsCertificateAsync(const AttachLoadBalancerTlsCertificateRequest& request, const AttachLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachLoadBalancerTlsCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientAttachLoadBalancerTlsCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachStaticIpOutcome LightsailClient::AttachStaticIp(const AttachStaticIpRequest& request) const
@@ -388,14 +388,14 @@ AttachStaticIpOutcomeCallable LightsailClient::AttachStaticIpCallable(const Atta
   return task->get_future();
 }
 
-void LightsailClient::AttachStaticIpAsync(const AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientAttachStaticIpAsyncHelper(LightsailClient const * const clientThis, const AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachStaticIpAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachStaticIp(request), context);
 }
 
-void LightsailClient::AttachStaticIpAsyncHelper(const AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::AttachStaticIpAsync(const AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachStaticIp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientAttachStaticIpAsyncHelper( this, request, handler, context ); } );
 }
 
 CloseInstancePublicPortsOutcome LightsailClient::CloseInstancePublicPorts(const CloseInstancePublicPortsRequest& request) const
@@ -412,14 +412,14 @@ CloseInstancePublicPortsOutcomeCallable LightsailClient::CloseInstancePublicPort
   return task->get_future();
 }
 
-void LightsailClient::CloseInstancePublicPortsAsync(const CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCloseInstancePublicPortsAsyncHelper(LightsailClient const * const clientThis, const CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CloseInstancePublicPortsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CloseInstancePublicPorts(request), context);
 }
 
-void LightsailClient::CloseInstancePublicPortsAsyncHelper(const CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CloseInstancePublicPortsAsync(const CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CloseInstancePublicPorts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCloseInstancePublicPortsAsyncHelper( this, request, handler, context ); } );
 }
 
 CopySnapshotOutcome LightsailClient::CopySnapshot(const CopySnapshotRequest& request) const
@@ -436,14 +436,14 @@ CopySnapshotOutcomeCallable LightsailClient::CopySnapshotCallable(const CopySnap
   return task->get_future();
 }
 
-void LightsailClient::CopySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCopySnapshotAsyncHelper(LightsailClient const * const clientThis, const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopySnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CopySnapshot(request), context);
 }
 
-void LightsailClient::CopySnapshotAsyncHelper(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CopySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CopySnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCopySnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBucketOutcome LightsailClient::CreateBucket(const CreateBucketRequest& request) const
@@ -460,14 +460,14 @@ CreateBucketOutcomeCallable LightsailClient::CreateBucketCallable(const CreateBu
   return task->get_future();
 }
 
-void LightsailClient::CreateBucketAsync(const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateBucketAsyncHelper(LightsailClient const * const clientThis, const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBucketAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBucket(request), context);
 }
 
-void LightsailClient::CreateBucketAsyncHelper(const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateBucketAsync(const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBucket(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateBucketAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBucketAccessKeyOutcome LightsailClient::CreateBucketAccessKey(const CreateBucketAccessKeyRequest& request) const
@@ -484,14 +484,14 @@ CreateBucketAccessKeyOutcomeCallable LightsailClient::CreateBucketAccessKeyCalla
   return task->get_future();
 }
 
-void LightsailClient::CreateBucketAccessKeyAsync(const CreateBucketAccessKeyRequest& request, const CreateBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateBucketAccessKeyAsyncHelper(LightsailClient const * const clientThis, const CreateBucketAccessKeyRequest& request, const CreateBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBucketAccessKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBucketAccessKey(request), context);
 }
 
-void LightsailClient::CreateBucketAccessKeyAsyncHelper(const CreateBucketAccessKeyRequest& request, const CreateBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateBucketAccessKeyAsync(const CreateBucketAccessKeyRequest& request, const CreateBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBucketAccessKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateBucketAccessKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCertificateOutcome LightsailClient::CreateCertificate(const CreateCertificateRequest& request) const
@@ -508,14 +508,14 @@ CreateCertificateOutcomeCallable LightsailClient::CreateCertificateCallable(cons
   return task->get_future();
 }
 
-void LightsailClient::CreateCertificateAsync(const CreateCertificateRequest& request, const CreateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateCertificateAsyncHelper(LightsailClient const * const clientThis, const CreateCertificateRequest& request, const CreateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCertificate(request), context);
 }
 
-void LightsailClient::CreateCertificateAsyncHelper(const CreateCertificateRequest& request, const CreateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateCertificateAsync(const CreateCertificateRequest& request, const CreateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCloudFormationStackOutcome LightsailClient::CreateCloudFormationStack(const CreateCloudFormationStackRequest& request) const
@@ -532,14 +532,14 @@ CreateCloudFormationStackOutcomeCallable LightsailClient::CreateCloudFormationSt
   return task->get_future();
 }
 
-void LightsailClient::CreateCloudFormationStackAsync(const CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateCloudFormationStackAsyncHelper(LightsailClient const * const clientThis, const CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCloudFormationStackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCloudFormationStack(request), context);
 }
 
-void LightsailClient::CreateCloudFormationStackAsyncHelper(const CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateCloudFormationStackAsync(const CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCloudFormationStack(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateCloudFormationStackAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateContactMethodOutcome LightsailClient::CreateContactMethod(const CreateContactMethodRequest& request) const
@@ -556,14 +556,14 @@ CreateContactMethodOutcomeCallable LightsailClient::CreateContactMethodCallable(
   return task->get_future();
 }
 
-void LightsailClient::CreateContactMethodAsync(const CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateContactMethodAsyncHelper(LightsailClient const * const clientThis, const CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContactMethodAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateContactMethod(request), context);
 }
 
-void LightsailClient::CreateContactMethodAsyncHelper(const CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateContactMethodAsync(const CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateContactMethod(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateContactMethodAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateContainerServiceOutcome LightsailClient::CreateContainerService(const CreateContainerServiceRequest& request) const
@@ -580,14 +580,14 @@ CreateContainerServiceOutcomeCallable LightsailClient::CreateContainerServiceCal
   return task->get_future();
 }
 
-void LightsailClient::CreateContainerServiceAsync(const CreateContainerServiceRequest& request, const CreateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateContainerServiceAsyncHelper(LightsailClient const * const clientThis, const CreateContainerServiceRequest& request, const CreateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContainerServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateContainerService(request), context);
 }
 
-void LightsailClient::CreateContainerServiceAsyncHelper(const CreateContainerServiceRequest& request, const CreateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateContainerServiceAsync(const CreateContainerServiceRequest& request, const CreateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateContainerService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateContainerServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateContainerServiceDeploymentOutcome LightsailClient::CreateContainerServiceDeployment(const CreateContainerServiceDeploymentRequest& request) const
@@ -604,14 +604,14 @@ CreateContainerServiceDeploymentOutcomeCallable LightsailClient::CreateContainer
   return task->get_future();
 }
 
-void LightsailClient::CreateContainerServiceDeploymentAsync(const CreateContainerServiceDeploymentRequest& request, const CreateContainerServiceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateContainerServiceDeploymentAsyncHelper(LightsailClient const * const clientThis, const CreateContainerServiceDeploymentRequest& request, const CreateContainerServiceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContainerServiceDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateContainerServiceDeployment(request), context);
 }
 
-void LightsailClient::CreateContainerServiceDeploymentAsyncHelper(const CreateContainerServiceDeploymentRequest& request, const CreateContainerServiceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateContainerServiceDeploymentAsync(const CreateContainerServiceDeploymentRequest& request, const CreateContainerServiceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateContainerServiceDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateContainerServiceDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateContainerServiceRegistryLoginOutcome LightsailClient::CreateContainerServiceRegistryLogin(const CreateContainerServiceRegistryLoginRequest& request) const
@@ -628,14 +628,14 @@ CreateContainerServiceRegistryLoginOutcomeCallable LightsailClient::CreateContai
   return task->get_future();
 }
 
-void LightsailClient::CreateContainerServiceRegistryLoginAsync(const CreateContainerServiceRegistryLoginRequest& request, const CreateContainerServiceRegistryLoginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateContainerServiceRegistryLoginAsyncHelper(LightsailClient const * const clientThis, const CreateContainerServiceRegistryLoginRequest& request, const CreateContainerServiceRegistryLoginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContainerServiceRegistryLoginAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateContainerServiceRegistryLogin(request), context);
 }
 
-void LightsailClient::CreateContainerServiceRegistryLoginAsyncHelper(const CreateContainerServiceRegistryLoginRequest& request, const CreateContainerServiceRegistryLoginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateContainerServiceRegistryLoginAsync(const CreateContainerServiceRegistryLoginRequest& request, const CreateContainerServiceRegistryLoginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateContainerServiceRegistryLogin(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateContainerServiceRegistryLoginAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDiskOutcome LightsailClient::CreateDisk(const CreateDiskRequest& request) const
@@ -652,14 +652,14 @@ CreateDiskOutcomeCallable LightsailClient::CreateDiskCallable(const CreateDiskRe
   return task->get_future();
 }
 
-void LightsailClient::CreateDiskAsync(const CreateDiskRequest& request, const CreateDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateDiskAsyncHelper(LightsailClient const * const clientThis, const CreateDiskRequest& request, const CreateDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDiskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDisk(request), context);
 }
 
-void LightsailClient::CreateDiskAsyncHelper(const CreateDiskRequest& request, const CreateDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateDiskAsync(const CreateDiskRequest& request, const CreateDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDisk(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateDiskAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDiskFromSnapshotOutcome LightsailClient::CreateDiskFromSnapshot(const CreateDiskFromSnapshotRequest& request) const
@@ -676,14 +676,14 @@ CreateDiskFromSnapshotOutcomeCallable LightsailClient::CreateDiskFromSnapshotCal
   return task->get_future();
 }
 
-void LightsailClient::CreateDiskFromSnapshotAsync(const CreateDiskFromSnapshotRequest& request, const CreateDiskFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateDiskFromSnapshotAsyncHelper(LightsailClient const * const clientThis, const CreateDiskFromSnapshotRequest& request, const CreateDiskFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDiskFromSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDiskFromSnapshot(request), context);
 }
 
-void LightsailClient::CreateDiskFromSnapshotAsyncHelper(const CreateDiskFromSnapshotRequest& request, const CreateDiskFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateDiskFromSnapshotAsync(const CreateDiskFromSnapshotRequest& request, const CreateDiskFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDiskFromSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateDiskFromSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDiskSnapshotOutcome LightsailClient::CreateDiskSnapshot(const CreateDiskSnapshotRequest& request) const
@@ -700,14 +700,14 @@ CreateDiskSnapshotOutcomeCallable LightsailClient::CreateDiskSnapshotCallable(co
   return task->get_future();
 }
 
-void LightsailClient::CreateDiskSnapshotAsync(const CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateDiskSnapshotAsyncHelper(LightsailClient const * const clientThis, const CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDiskSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDiskSnapshot(request), context);
 }
 
-void LightsailClient::CreateDiskSnapshotAsyncHelper(const CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateDiskSnapshotAsync(const CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDiskSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateDiskSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDistributionOutcome LightsailClient::CreateDistribution(const CreateDistributionRequest& request) const
@@ -724,14 +724,14 @@ CreateDistributionOutcomeCallable LightsailClient::CreateDistributionCallable(co
   return task->get_future();
 }
 
-void LightsailClient::CreateDistributionAsync(const CreateDistributionRequest& request, const CreateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateDistributionAsyncHelper(LightsailClient const * const clientThis, const CreateDistributionRequest& request, const CreateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDistributionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDistribution(request), context);
 }
 
-void LightsailClient::CreateDistributionAsyncHelper(const CreateDistributionRequest& request, const CreateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateDistributionAsync(const CreateDistributionRequest& request, const CreateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDistribution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateDistributionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDomainOutcome LightsailClient::CreateDomain(const CreateDomainRequest& request) const
@@ -748,14 +748,14 @@ CreateDomainOutcomeCallable LightsailClient::CreateDomainCallable(const CreateDo
   return task->get_future();
 }
 
-void LightsailClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateDomainAsyncHelper(LightsailClient const * const clientThis, const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDomain(request), context);
 }
 
-void LightsailClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDomainEntryOutcome LightsailClient::CreateDomainEntry(const CreateDomainEntryRequest& request) const
@@ -772,14 +772,14 @@ CreateDomainEntryOutcomeCallable LightsailClient::CreateDomainEntryCallable(cons
   return task->get_future();
 }
 
-void LightsailClient::CreateDomainEntryAsync(const CreateDomainEntryRequest& request, const CreateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateDomainEntryAsyncHelper(LightsailClient const * const clientThis, const CreateDomainEntryRequest& request, const CreateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainEntryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDomainEntry(request), context);
 }
 
-void LightsailClient::CreateDomainEntryAsyncHelper(const CreateDomainEntryRequest& request, const CreateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateDomainEntryAsync(const CreateDomainEntryRequest& request, const CreateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDomainEntry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateDomainEntryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInstanceSnapshotOutcome LightsailClient::CreateInstanceSnapshot(const CreateInstanceSnapshotRequest& request) const
@@ -796,14 +796,14 @@ CreateInstanceSnapshotOutcomeCallable LightsailClient::CreateInstanceSnapshotCal
   return task->get_future();
 }
 
-void LightsailClient::CreateInstanceSnapshotAsync(const CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateInstanceSnapshotAsyncHelper(LightsailClient const * const clientThis, const CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInstanceSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInstanceSnapshot(request), context);
 }
 
-void LightsailClient::CreateInstanceSnapshotAsyncHelper(const CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateInstanceSnapshotAsync(const CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInstanceSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateInstanceSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInstancesOutcome LightsailClient::CreateInstances(const CreateInstancesRequest& request) const
@@ -820,14 +820,14 @@ CreateInstancesOutcomeCallable LightsailClient::CreateInstancesCallable(const Cr
   return task->get_future();
 }
 
-void LightsailClient::CreateInstancesAsync(const CreateInstancesRequest& request, const CreateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateInstancesAsyncHelper(LightsailClient const * const clientThis, const CreateInstancesRequest& request, const CreateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInstances(request), context);
 }
 
-void LightsailClient::CreateInstancesAsyncHelper(const CreateInstancesRequest& request, const CreateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateInstancesAsync(const CreateInstancesRequest& request, const CreateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInstancesFromSnapshotOutcome LightsailClient::CreateInstancesFromSnapshot(const CreateInstancesFromSnapshotRequest& request) const
@@ -844,14 +844,14 @@ CreateInstancesFromSnapshotOutcomeCallable LightsailClient::CreateInstancesFromS
   return task->get_future();
 }
 
-void LightsailClient::CreateInstancesFromSnapshotAsync(const CreateInstancesFromSnapshotRequest& request, const CreateInstancesFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateInstancesFromSnapshotAsyncHelper(LightsailClient const * const clientThis, const CreateInstancesFromSnapshotRequest& request, const CreateInstancesFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInstancesFromSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInstancesFromSnapshot(request), context);
 }
 
-void LightsailClient::CreateInstancesFromSnapshotAsyncHelper(const CreateInstancesFromSnapshotRequest& request, const CreateInstancesFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateInstancesFromSnapshotAsync(const CreateInstancesFromSnapshotRequest& request, const CreateInstancesFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInstancesFromSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateInstancesFromSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateKeyPairOutcome LightsailClient::CreateKeyPair(const CreateKeyPairRequest& request) const
@@ -868,14 +868,14 @@ CreateKeyPairOutcomeCallable LightsailClient::CreateKeyPairCallable(const Create
   return task->get_future();
 }
 
-void LightsailClient::CreateKeyPairAsync(const CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateKeyPairAsyncHelper(LightsailClient const * const clientThis, const CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateKeyPair(request), context);
 }
 
-void LightsailClient::CreateKeyPairAsyncHelper(const CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateKeyPairAsync(const CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLoadBalancerOutcome LightsailClient::CreateLoadBalancer(const CreateLoadBalancerRequest& request) const
@@ -892,14 +892,14 @@ CreateLoadBalancerOutcomeCallable LightsailClient::CreateLoadBalancerCallable(co
   return task->get_future();
 }
 
-void LightsailClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateLoadBalancerAsyncHelper(LightsailClient const * const clientThis, const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLoadBalancerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLoadBalancer(request), context);
 }
 
-void LightsailClient::CreateLoadBalancerAsyncHelper(const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLoadBalancer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateLoadBalancerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLoadBalancerTlsCertificateOutcome LightsailClient::CreateLoadBalancerTlsCertificate(const CreateLoadBalancerTlsCertificateRequest& request) const
@@ -916,14 +916,14 @@ CreateLoadBalancerTlsCertificateOutcomeCallable LightsailClient::CreateLoadBalan
   return task->get_future();
 }
 
-void LightsailClient::CreateLoadBalancerTlsCertificateAsync(const CreateLoadBalancerTlsCertificateRequest& request, const CreateLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateLoadBalancerTlsCertificateAsyncHelper(LightsailClient const * const clientThis, const CreateLoadBalancerTlsCertificateRequest& request, const CreateLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLoadBalancerTlsCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLoadBalancerTlsCertificate(request), context);
 }
 
-void LightsailClient::CreateLoadBalancerTlsCertificateAsyncHelper(const CreateLoadBalancerTlsCertificateRequest& request, const CreateLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateLoadBalancerTlsCertificateAsync(const CreateLoadBalancerTlsCertificateRequest& request, const CreateLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLoadBalancerTlsCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateLoadBalancerTlsCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRelationalDatabaseOutcome LightsailClient::CreateRelationalDatabase(const CreateRelationalDatabaseRequest& request) const
@@ -940,14 +940,14 @@ CreateRelationalDatabaseOutcomeCallable LightsailClient::CreateRelationalDatabas
   return task->get_future();
 }
 
-void LightsailClient::CreateRelationalDatabaseAsync(const CreateRelationalDatabaseRequest& request, const CreateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateRelationalDatabaseAsyncHelper(LightsailClient const * const clientThis, const CreateRelationalDatabaseRequest& request, const CreateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRelationalDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRelationalDatabase(request), context);
 }
 
-void LightsailClient::CreateRelationalDatabaseAsyncHelper(const CreateRelationalDatabaseRequest& request, const CreateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateRelationalDatabaseAsync(const CreateRelationalDatabaseRequest& request, const CreateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRelationalDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateRelationalDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRelationalDatabaseFromSnapshotOutcome LightsailClient::CreateRelationalDatabaseFromSnapshot(const CreateRelationalDatabaseFromSnapshotRequest& request) const
@@ -964,14 +964,14 @@ CreateRelationalDatabaseFromSnapshotOutcomeCallable LightsailClient::CreateRelat
   return task->get_future();
 }
 
-void LightsailClient::CreateRelationalDatabaseFromSnapshotAsync(const CreateRelationalDatabaseFromSnapshotRequest& request, const CreateRelationalDatabaseFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateRelationalDatabaseFromSnapshotAsyncHelper(LightsailClient const * const clientThis, const CreateRelationalDatabaseFromSnapshotRequest& request, const CreateRelationalDatabaseFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRelationalDatabaseFromSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRelationalDatabaseFromSnapshot(request), context);
 }
 
-void LightsailClient::CreateRelationalDatabaseFromSnapshotAsyncHelper(const CreateRelationalDatabaseFromSnapshotRequest& request, const CreateRelationalDatabaseFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateRelationalDatabaseFromSnapshotAsync(const CreateRelationalDatabaseFromSnapshotRequest& request, const CreateRelationalDatabaseFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRelationalDatabaseFromSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateRelationalDatabaseFromSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRelationalDatabaseSnapshotOutcome LightsailClient::CreateRelationalDatabaseSnapshot(const CreateRelationalDatabaseSnapshotRequest& request) const
@@ -988,14 +988,14 @@ CreateRelationalDatabaseSnapshotOutcomeCallable LightsailClient::CreateRelationa
   return task->get_future();
 }
 
-void LightsailClient::CreateRelationalDatabaseSnapshotAsync(const CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientCreateRelationalDatabaseSnapshotAsyncHelper(LightsailClient const * const clientThis, const CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRelationalDatabaseSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRelationalDatabaseSnapshot(request), context);
 }
 
-void LightsailClient::CreateRelationalDatabaseSnapshotAsyncHelper(const CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::CreateRelationalDatabaseSnapshotAsync(const CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRelationalDatabaseSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientCreateRelationalDatabaseSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAlarmOutcome LightsailClient::DeleteAlarm(const DeleteAlarmRequest& request) const
@@ -1012,14 +1012,14 @@ DeleteAlarmOutcomeCallable LightsailClient::DeleteAlarmCallable(const DeleteAlar
   return task->get_future();
 }
 
-void LightsailClient::DeleteAlarmAsync(const DeleteAlarmRequest& request, const DeleteAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteAlarmAsyncHelper(LightsailClient const * const clientThis, const DeleteAlarmRequest& request, const DeleteAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAlarmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAlarm(request), context);
 }
 
-void LightsailClient::DeleteAlarmAsyncHelper(const DeleteAlarmRequest& request, const DeleteAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteAlarmAsync(const DeleteAlarmRequest& request, const DeleteAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteAlarmAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAutoSnapshotOutcome LightsailClient::DeleteAutoSnapshot(const DeleteAutoSnapshotRequest& request) const
@@ -1036,14 +1036,14 @@ DeleteAutoSnapshotOutcomeCallable LightsailClient::DeleteAutoSnapshotCallable(co
   return task->get_future();
 }
 
-void LightsailClient::DeleteAutoSnapshotAsync(const DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteAutoSnapshotAsyncHelper(LightsailClient const * const clientThis, const DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAutoSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAutoSnapshot(request), context);
 }
 
-void LightsailClient::DeleteAutoSnapshotAsyncHelper(const DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteAutoSnapshotAsync(const DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAutoSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteAutoSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBucketOutcome LightsailClient::DeleteBucket(const DeleteBucketRequest& request) const
@@ -1060,14 +1060,14 @@ DeleteBucketOutcomeCallable LightsailClient::DeleteBucketCallable(const DeleteBu
   return task->get_future();
 }
 
-void LightsailClient::DeleteBucketAsync(const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteBucketAsyncHelper(LightsailClient const * const clientThis, const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBucket(request), context);
 }
 
-void LightsailClient::DeleteBucketAsyncHelper(const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteBucketAsync(const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBucket(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteBucketAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBucketAccessKeyOutcome LightsailClient::DeleteBucketAccessKey(const DeleteBucketAccessKeyRequest& request) const
@@ -1084,14 +1084,14 @@ DeleteBucketAccessKeyOutcomeCallable LightsailClient::DeleteBucketAccessKeyCalla
   return task->get_future();
 }
 
-void LightsailClient::DeleteBucketAccessKeyAsync(const DeleteBucketAccessKeyRequest& request, const DeleteBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteBucketAccessKeyAsyncHelper(LightsailClient const * const clientThis, const DeleteBucketAccessKeyRequest& request, const DeleteBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketAccessKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBucketAccessKey(request), context);
 }
 
-void LightsailClient::DeleteBucketAccessKeyAsyncHelper(const DeleteBucketAccessKeyRequest& request, const DeleteBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteBucketAccessKeyAsync(const DeleteBucketAccessKeyRequest& request, const DeleteBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBucketAccessKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteBucketAccessKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCertificateOutcome LightsailClient::DeleteCertificate(const DeleteCertificateRequest& request) const
@@ -1108,14 +1108,14 @@ DeleteCertificateOutcomeCallable LightsailClient::DeleteCertificateCallable(cons
   return task->get_future();
 }
 
-void LightsailClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteCertificateAsyncHelper(LightsailClient const * const clientThis, const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCertificate(request), context);
 }
 
-void LightsailClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteContactMethodOutcome LightsailClient::DeleteContactMethod(const DeleteContactMethodRequest& request) const
@@ -1132,14 +1132,14 @@ DeleteContactMethodOutcomeCallable LightsailClient::DeleteContactMethodCallable(
   return task->get_future();
 }
 
-void LightsailClient::DeleteContactMethodAsync(const DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteContactMethodAsyncHelper(LightsailClient const * const clientThis, const DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactMethodAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteContactMethod(request), context);
 }
 
-void LightsailClient::DeleteContactMethodAsyncHelper(const DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteContactMethodAsync(const DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteContactMethod(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteContactMethodAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteContainerImageOutcome LightsailClient::DeleteContainerImage(const DeleteContainerImageRequest& request) const
@@ -1156,14 +1156,14 @@ DeleteContainerImageOutcomeCallable LightsailClient::DeleteContainerImageCallabl
   return task->get_future();
 }
 
-void LightsailClient::DeleteContainerImageAsync(const DeleteContainerImageRequest& request, const DeleteContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteContainerImageAsyncHelper(LightsailClient const * const clientThis, const DeleteContainerImageRequest& request, const DeleteContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContainerImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteContainerImage(request), context);
 }
 
-void LightsailClient::DeleteContainerImageAsyncHelper(const DeleteContainerImageRequest& request, const DeleteContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteContainerImageAsync(const DeleteContainerImageRequest& request, const DeleteContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteContainerImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteContainerImageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteContainerServiceOutcome LightsailClient::DeleteContainerService(const DeleteContainerServiceRequest& request) const
@@ -1180,14 +1180,14 @@ DeleteContainerServiceOutcomeCallable LightsailClient::DeleteContainerServiceCal
   return task->get_future();
 }
 
-void LightsailClient::DeleteContainerServiceAsync(const DeleteContainerServiceRequest& request, const DeleteContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteContainerServiceAsyncHelper(LightsailClient const * const clientThis, const DeleteContainerServiceRequest& request, const DeleteContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContainerServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteContainerService(request), context);
 }
 
-void LightsailClient::DeleteContainerServiceAsyncHelper(const DeleteContainerServiceRequest& request, const DeleteContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteContainerServiceAsync(const DeleteContainerServiceRequest& request, const DeleteContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteContainerService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteContainerServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDiskOutcome LightsailClient::DeleteDisk(const DeleteDiskRequest& request) const
@@ -1204,14 +1204,14 @@ DeleteDiskOutcomeCallable LightsailClient::DeleteDiskCallable(const DeleteDiskRe
   return task->get_future();
 }
 
-void LightsailClient::DeleteDiskAsync(const DeleteDiskRequest& request, const DeleteDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteDiskAsyncHelper(LightsailClient const * const clientThis, const DeleteDiskRequest& request, const DeleteDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDiskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDisk(request), context);
 }
 
-void LightsailClient::DeleteDiskAsyncHelper(const DeleteDiskRequest& request, const DeleteDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteDiskAsync(const DeleteDiskRequest& request, const DeleteDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDisk(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteDiskAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDiskSnapshotOutcome LightsailClient::DeleteDiskSnapshot(const DeleteDiskSnapshotRequest& request) const
@@ -1228,14 +1228,14 @@ DeleteDiskSnapshotOutcomeCallable LightsailClient::DeleteDiskSnapshotCallable(co
   return task->get_future();
 }
 
-void LightsailClient::DeleteDiskSnapshotAsync(const DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteDiskSnapshotAsyncHelper(LightsailClient const * const clientThis, const DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDiskSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDiskSnapshot(request), context);
 }
 
-void LightsailClient::DeleteDiskSnapshotAsyncHelper(const DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteDiskSnapshotAsync(const DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDiskSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteDiskSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDistributionOutcome LightsailClient::DeleteDistribution(const DeleteDistributionRequest& request) const
@@ -1252,14 +1252,14 @@ DeleteDistributionOutcomeCallable LightsailClient::DeleteDistributionCallable(co
   return task->get_future();
 }
 
-void LightsailClient::DeleteDistributionAsync(const DeleteDistributionRequest& request, const DeleteDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteDistributionAsyncHelper(LightsailClient const * const clientThis, const DeleteDistributionRequest& request, const DeleteDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDistributionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDistribution(request), context);
 }
 
-void LightsailClient::DeleteDistributionAsyncHelper(const DeleteDistributionRequest& request, const DeleteDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteDistributionAsync(const DeleteDistributionRequest& request, const DeleteDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDistribution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteDistributionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainOutcome LightsailClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -1276,14 +1276,14 @@ DeleteDomainOutcomeCallable LightsailClient::DeleteDomainCallable(const DeleteDo
   return task->get_future();
 }
 
-void LightsailClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteDomainAsyncHelper(LightsailClient const * const clientThis, const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomain(request), context);
 }
 
-void LightsailClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainEntryOutcome LightsailClient::DeleteDomainEntry(const DeleteDomainEntryRequest& request) const
@@ -1300,14 +1300,14 @@ DeleteDomainEntryOutcomeCallable LightsailClient::DeleteDomainEntryCallable(cons
   return task->get_future();
 }
 
-void LightsailClient::DeleteDomainEntryAsync(const DeleteDomainEntryRequest& request, const DeleteDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteDomainEntryAsyncHelper(LightsailClient const * const clientThis, const DeleteDomainEntryRequest& request, const DeleteDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainEntryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomainEntry(request), context);
 }
 
-void LightsailClient::DeleteDomainEntryAsyncHelper(const DeleteDomainEntryRequest& request, const DeleteDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteDomainEntryAsync(const DeleteDomainEntryRequest& request, const DeleteDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomainEntry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteDomainEntryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInstanceOutcome LightsailClient::DeleteInstance(const DeleteInstanceRequest& request) const
@@ -1324,14 +1324,14 @@ DeleteInstanceOutcomeCallable LightsailClient::DeleteInstanceCallable(const Dele
   return task->get_future();
 }
 
-void LightsailClient::DeleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteInstanceAsyncHelper(LightsailClient const * const clientThis, const DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInstance(request), context);
 }
 
-void LightsailClient::DeleteInstanceAsyncHelper(const DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInstanceSnapshotOutcome LightsailClient::DeleteInstanceSnapshot(const DeleteInstanceSnapshotRequest& request) const
@@ -1348,14 +1348,14 @@ DeleteInstanceSnapshotOutcomeCallable LightsailClient::DeleteInstanceSnapshotCal
   return task->get_future();
 }
 
-void LightsailClient::DeleteInstanceSnapshotAsync(const DeleteInstanceSnapshotRequest& request, const DeleteInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteInstanceSnapshotAsyncHelper(LightsailClient const * const clientThis, const DeleteInstanceSnapshotRequest& request, const DeleteInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInstanceSnapshot(request), context);
 }
 
-void LightsailClient::DeleteInstanceSnapshotAsyncHelper(const DeleteInstanceSnapshotRequest& request, const DeleteInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteInstanceSnapshotAsync(const DeleteInstanceSnapshotRequest& request, const DeleteInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInstanceSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteInstanceSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteKeyPairOutcome LightsailClient::DeleteKeyPair(const DeleteKeyPairRequest& request) const
@@ -1372,14 +1372,14 @@ DeleteKeyPairOutcomeCallable LightsailClient::DeleteKeyPairCallable(const Delete
   return task->get_future();
 }
 
-void LightsailClient::DeleteKeyPairAsync(const DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteKeyPairAsyncHelper(LightsailClient const * const clientThis, const DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteKeyPair(request), context);
 }
 
-void LightsailClient::DeleteKeyPairAsyncHelper(const DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteKeyPairAsync(const DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteKnownHostKeysOutcome LightsailClient::DeleteKnownHostKeys(const DeleteKnownHostKeysRequest& request) const
@@ -1396,14 +1396,14 @@ DeleteKnownHostKeysOutcomeCallable LightsailClient::DeleteKnownHostKeysCallable(
   return task->get_future();
 }
 
-void LightsailClient::DeleteKnownHostKeysAsync(const DeleteKnownHostKeysRequest& request, const DeleteKnownHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteKnownHostKeysAsyncHelper(LightsailClient const * const clientThis, const DeleteKnownHostKeysRequest& request, const DeleteKnownHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteKnownHostKeysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteKnownHostKeys(request), context);
 }
 
-void LightsailClient::DeleteKnownHostKeysAsyncHelper(const DeleteKnownHostKeysRequest& request, const DeleteKnownHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteKnownHostKeysAsync(const DeleteKnownHostKeysRequest& request, const DeleteKnownHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteKnownHostKeys(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteKnownHostKeysAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLoadBalancerOutcome LightsailClient::DeleteLoadBalancer(const DeleteLoadBalancerRequest& request) const
@@ -1420,14 +1420,14 @@ DeleteLoadBalancerOutcomeCallable LightsailClient::DeleteLoadBalancerCallable(co
   return task->get_future();
 }
 
-void LightsailClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteLoadBalancerAsyncHelper(LightsailClient const * const clientThis, const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLoadBalancerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLoadBalancer(request), context);
 }
 
-void LightsailClient::DeleteLoadBalancerAsyncHelper(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLoadBalancer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteLoadBalancerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLoadBalancerTlsCertificateOutcome LightsailClient::DeleteLoadBalancerTlsCertificate(const DeleteLoadBalancerTlsCertificateRequest& request) const
@@ -1444,14 +1444,14 @@ DeleteLoadBalancerTlsCertificateOutcomeCallable LightsailClient::DeleteLoadBalan
   return task->get_future();
 }
 
-void LightsailClient::DeleteLoadBalancerTlsCertificateAsync(const DeleteLoadBalancerTlsCertificateRequest& request, const DeleteLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteLoadBalancerTlsCertificateAsyncHelper(LightsailClient const * const clientThis, const DeleteLoadBalancerTlsCertificateRequest& request, const DeleteLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLoadBalancerTlsCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLoadBalancerTlsCertificate(request), context);
 }
 
-void LightsailClient::DeleteLoadBalancerTlsCertificateAsyncHelper(const DeleteLoadBalancerTlsCertificateRequest& request, const DeleteLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteLoadBalancerTlsCertificateAsync(const DeleteLoadBalancerTlsCertificateRequest& request, const DeleteLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLoadBalancerTlsCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteLoadBalancerTlsCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRelationalDatabaseOutcome LightsailClient::DeleteRelationalDatabase(const DeleteRelationalDatabaseRequest& request) const
@@ -1468,14 +1468,14 @@ DeleteRelationalDatabaseOutcomeCallable LightsailClient::DeleteRelationalDatabas
   return task->get_future();
 }
 
-void LightsailClient::DeleteRelationalDatabaseAsync(const DeleteRelationalDatabaseRequest& request, const DeleteRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteRelationalDatabaseAsyncHelper(LightsailClient const * const clientThis, const DeleteRelationalDatabaseRequest& request, const DeleteRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRelationalDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRelationalDatabase(request), context);
 }
 
-void LightsailClient::DeleteRelationalDatabaseAsyncHelper(const DeleteRelationalDatabaseRequest& request, const DeleteRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteRelationalDatabaseAsync(const DeleteRelationalDatabaseRequest& request, const DeleteRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRelationalDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteRelationalDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRelationalDatabaseSnapshotOutcome LightsailClient::DeleteRelationalDatabaseSnapshot(const DeleteRelationalDatabaseSnapshotRequest& request) const
@@ -1492,14 +1492,14 @@ DeleteRelationalDatabaseSnapshotOutcomeCallable LightsailClient::DeleteRelationa
   return task->get_future();
 }
 
-void LightsailClient::DeleteRelationalDatabaseSnapshotAsync(const DeleteRelationalDatabaseSnapshotRequest& request, const DeleteRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDeleteRelationalDatabaseSnapshotAsyncHelper(LightsailClient const * const clientThis, const DeleteRelationalDatabaseSnapshotRequest& request, const DeleteRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRelationalDatabaseSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRelationalDatabaseSnapshot(request), context);
 }
 
-void LightsailClient::DeleteRelationalDatabaseSnapshotAsyncHelper(const DeleteRelationalDatabaseSnapshotRequest& request, const DeleteRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DeleteRelationalDatabaseSnapshotAsync(const DeleteRelationalDatabaseSnapshotRequest& request, const DeleteRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRelationalDatabaseSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDeleteRelationalDatabaseSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachCertificateFromDistributionOutcome LightsailClient::DetachCertificateFromDistribution(const DetachCertificateFromDistributionRequest& request) const
@@ -1516,14 +1516,14 @@ DetachCertificateFromDistributionOutcomeCallable LightsailClient::DetachCertific
   return task->get_future();
 }
 
-void LightsailClient::DetachCertificateFromDistributionAsync(const DetachCertificateFromDistributionRequest& request, const DetachCertificateFromDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDetachCertificateFromDistributionAsyncHelper(LightsailClient const * const clientThis, const DetachCertificateFromDistributionRequest& request, const DetachCertificateFromDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachCertificateFromDistributionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachCertificateFromDistribution(request), context);
 }
 
-void LightsailClient::DetachCertificateFromDistributionAsyncHelper(const DetachCertificateFromDistributionRequest& request, const DetachCertificateFromDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DetachCertificateFromDistributionAsync(const DetachCertificateFromDistributionRequest& request, const DetachCertificateFromDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachCertificateFromDistribution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDetachCertificateFromDistributionAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachDiskOutcome LightsailClient::DetachDisk(const DetachDiskRequest& request) const
@@ -1540,14 +1540,14 @@ DetachDiskOutcomeCallable LightsailClient::DetachDiskCallable(const DetachDiskRe
   return task->get_future();
 }
 
-void LightsailClient::DetachDiskAsync(const DetachDiskRequest& request, const DetachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDetachDiskAsyncHelper(LightsailClient const * const clientThis, const DetachDiskRequest& request, const DetachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachDiskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachDisk(request), context);
 }
 
-void LightsailClient::DetachDiskAsyncHelper(const DetachDiskRequest& request, const DetachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DetachDiskAsync(const DetachDiskRequest& request, const DetachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachDisk(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDetachDiskAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachInstancesFromLoadBalancerOutcome LightsailClient::DetachInstancesFromLoadBalancer(const DetachInstancesFromLoadBalancerRequest& request) const
@@ -1564,14 +1564,14 @@ DetachInstancesFromLoadBalancerOutcomeCallable LightsailClient::DetachInstancesF
   return task->get_future();
 }
 
-void LightsailClient::DetachInstancesFromLoadBalancerAsync(const DetachInstancesFromLoadBalancerRequest& request, const DetachInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDetachInstancesFromLoadBalancerAsyncHelper(LightsailClient const * const clientThis, const DetachInstancesFromLoadBalancerRequest& request, const DetachInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachInstancesFromLoadBalancerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachInstancesFromLoadBalancer(request), context);
 }
 
-void LightsailClient::DetachInstancesFromLoadBalancerAsyncHelper(const DetachInstancesFromLoadBalancerRequest& request, const DetachInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DetachInstancesFromLoadBalancerAsync(const DetachInstancesFromLoadBalancerRequest& request, const DetachInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachInstancesFromLoadBalancer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDetachInstancesFromLoadBalancerAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachStaticIpOutcome LightsailClient::DetachStaticIp(const DetachStaticIpRequest& request) const
@@ -1588,14 +1588,14 @@ DetachStaticIpOutcomeCallable LightsailClient::DetachStaticIpCallable(const Deta
   return task->get_future();
 }
 
-void LightsailClient::DetachStaticIpAsync(const DetachStaticIpRequest& request, const DetachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDetachStaticIpAsyncHelper(LightsailClient const * const clientThis, const DetachStaticIpRequest& request, const DetachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachStaticIpAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachStaticIp(request), context);
 }
 
-void LightsailClient::DetachStaticIpAsyncHelper(const DetachStaticIpRequest& request, const DetachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DetachStaticIpAsync(const DetachStaticIpRequest& request, const DetachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachStaticIp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDetachStaticIpAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableAddOnOutcome LightsailClient::DisableAddOn(const DisableAddOnRequest& request) const
@@ -1612,14 +1612,14 @@ DisableAddOnOutcomeCallable LightsailClient::DisableAddOnCallable(const DisableA
   return task->get_future();
 }
 
-void LightsailClient::DisableAddOnAsync(const DisableAddOnRequest& request, const DisableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDisableAddOnAsyncHelper(LightsailClient const * const clientThis, const DisableAddOnRequest& request, const DisableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableAddOnAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableAddOn(request), context);
 }
 
-void LightsailClient::DisableAddOnAsyncHelper(const DisableAddOnRequest& request, const DisableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DisableAddOnAsync(const DisableAddOnRequest& request, const DisableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableAddOn(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDisableAddOnAsyncHelper( this, request, handler, context ); } );
 }
 
 DownloadDefaultKeyPairOutcome LightsailClient::DownloadDefaultKeyPair(const DownloadDefaultKeyPairRequest& request) const
@@ -1636,14 +1636,14 @@ DownloadDefaultKeyPairOutcomeCallable LightsailClient::DownloadDefaultKeyPairCal
   return task->get_future();
 }
 
-void LightsailClient::DownloadDefaultKeyPairAsync(const DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientDownloadDefaultKeyPairAsyncHelper(LightsailClient const * const clientThis, const DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DownloadDefaultKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DownloadDefaultKeyPair(request), context);
 }
 
-void LightsailClient::DownloadDefaultKeyPairAsyncHelper(const DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::DownloadDefaultKeyPairAsync(const DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DownloadDefaultKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientDownloadDefaultKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableAddOnOutcome LightsailClient::EnableAddOn(const EnableAddOnRequest& request) const
@@ -1660,14 +1660,14 @@ EnableAddOnOutcomeCallable LightsailClient::EnableAddOnCallable(const EnableAddO
   return task->get_future();
 }
 
-void LightsailClient::EnableAddOnAsync(const EnableAddOnRequest& request, const EnableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientEnableAddOnAsyncHelper(LightsailClient const * const clientThis, const EnableAddOnRequest& request, const EnableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableAddOnAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableAddOn(request), context);
 }
 
-void LightsailClient::EnableAddOnAsyncHelper(const EnableAddOnRequest& request, const EnableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::EnableAddOnAsync(const EnableAddOnRequest& request, const EnableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableAddOn(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientEnableAddOnAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportSnapshotOutcome LightsailClient::ExportSnapshot(const ExportSnapshotRequest& request) const
@@ -1684,14 +1684,14 @@ ExportSnapshotOutcomeCallable LightsailClient::ExportSnapshotCallable(const Expo
   return task->get_future();
 }
 
-void LightsailClient::ExportSnapshotAsync(const ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientExportSnapshotAsyncHelper(LightsailClient const * const clientThis, const ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportSnapshot(request), context);
 }
 
-void LightsailClient::ExportSnapshotAsyncHelper(const ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::ExportSnapshotAsync(const ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientExportSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 GetActiveNamesOutcome LightsailClient::GetActiveNames(const GetActiveNamesRequest& request) const
@@ -1708,14 +1708,14 @@ GetActiveNamesOutcomeCallable LightsailClient::GetActiveNamesCallable(const GetA
   return task->get_future();
 }
 
-void LightsailClient::GetActiveNamesAsync(const GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetActiveNamesAsyncHelper(LightsailClient const * const clientThis, const GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetActiveNamesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetActiveNames(request), context);
 }
 
-void LightsailClient::GetActiveNamesAsyncHelper(const GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetActiveNamesAsync(const GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetActiveNames(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetActiveNamesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAlarmsOutcome LightsailClient::GetAlarms(const GetAlarmsRequest& request) const
@@ -1732,14 +1732,14 @@ GetAlarmsOutcomeCallable LightsailClient::GetAlarmsCallable(const GetAlarmsReque
   return task->get_future();
 }
 
-void LightsailClient::GetAlarmsAsync(const GetAlarmsRequest& request, const GetAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetAlarmsAsyncHelper(LightsailClient const * const clientThis, const GetAlarmsRequest& request, const GetAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAlarmsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAlarms(request), context);
 }
 
-void LightsailClient::GetAlarmsAsyncHelper(const GetAlarmsRequest& request, const GetAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetAlarmsAsync(const GetAlarmsRequest& request, const GetAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAlarms(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetAlarmsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAutoSnapshotsOutcome LightsailClient::GetAutoSnapshots(const GetAutoSnapshotsRequest& request) const
@@ -1756,14 +1756,14 @@ GetAutoSnapshotsOutcomeCallable LightsailClient::GetAutoSnapshotsCallable(const 
   return task->get_future();
 }
 
-void LightsailClient::GetAutoSnapshotsAsync(const GetAutoSnapshotsRequest& request, const GetAutoSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetAutoSnapshotsAsyncHelper(LightsailClient const * const clientThis, const GetAutoSnapshotsRequest& request, const GetAutoSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAutoSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAutoSnapshots(request), context);
 }
 
-void LightsailClient::GetAutoSnapshotsAsyncHelper(const GetAutoSnapshotsRequest& request, const GetAutoSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetAutoSnapshotsAsync(const GetAutoSnapshotsRequest& request, const GetAutoSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAutoSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetAutoSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBlueprintsOutcome LightsailClient::GetBlueprints(const GetBlueprintsRequest& request) const
@@ -1780,14 +1780,14 @@ GetBlueprintsOutcomeCallable LightsailClient::GetBlueprintsCallable(const GetBlu
   return task->get_future();
 }
 
-void LightsailClient::GetBlueprintsAsync(const GetBlueprintsRequest& request, const GetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetBlueprintsAsyncHelper(LightsailClient const * const clientThis, const GetBlueprintsRequest& request, const GetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBlueprintsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBlueprints(request), context);
 }
 
-void LightsailClient::GetBlueprintsAsyncHelper(const GetBlueprintsRequest& request, const GetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetBlueprintsAsync(const GetBlueprintsRequest& request, const GetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBlueprints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetBlueprintsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBucketAccessKeysOutcome LightsailClient::GetBucketAccessKeys(const GetBucketAccessKeysRequest& request) const
@@ -1804,14 +1804,14 @@ GetBucketAccessKeysOutcomeCallable LightsailClient::GetBucketAccessKeysCallable(
   return task->get_future();
 }
 
-void LightsailClient::GetBucketAccessKeysAsync(const GetBucketAccessKeysRequest& request, const GetBucketAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetBucketAccessKeysAsyncHelper(LightsailClient const * const clientThis, const GetBucketAccessKeysRequest& request, const GetBucketAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBucketAccessKeysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBucketAccessKeys(request), context);
 }
 
-void LightsailClient::GetBucketAccessKeysAsyncHelper(const GetBucketAccessKeysRequest& request, const GetBucketAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetBucketAccessKeysAsync(const GetBucketAccessKeysRequest& request, const GetBucketAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBucketAccessKeys(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetBucketAccessKeysAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBucketBundlesOutcome LightsailClient::GetBucketBundles(const GetBucketBundlesRequest& request) const
@@ -1828,14 +1828,14 @@ GetBucketBundlesOutcomeCallable LightsailClient::GetBucketBundlesCallable(const 
   return task->get_future();
 }
 
-void LightsailClient::GetBucketBundlesAsync(const GetBucketBundlesRequest& request, const GetBucketBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetBucketBundlesAsyncHelper(LightsailClient const * const clientThis, const GetBucketBundlesRequest& request, const GetBucketBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBucketBundlesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBucketBundles(request), context);
 }
 
-void LightsailClient::GetBucketBundlesAsyncHelper(const GetBucketBundlesRequest& request, const GetBucketBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetBucketBundlesAsync(const GetBucketBundlesRequest& request, const GetBucketBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBucketBundles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetBucketBundlesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBucketMetricDataOutcome LightsailClient::GetBucketMetricData(const GetBucketMetricDataRequest& request) const
@@ -1852,14 +1852,14 @@ GetBucketMetricDataOutcomeCallable LightsailClient::GetBucketMetricDataCallable(
   return task->get_future();
 }
 
-void LightsailClient::GetBucketMetricDataAsync(const GetBucketMetricDataRequest& request, const GetBucketMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetBucketMetricDataAsyncHelper(LightsailClient const * const clientThis, const GetBucketMetricDataRequest& request, const GetBucketMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBucketMetricDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBucketMetricData(request), context);
 }
 
-void LightsailClient::GetBucketMetricDataAsyncHelper(const GetBucketMetricDataRequest& request, const GetBucketMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetBucketMetricDataAsync(const GetBucketMetricDataRequest& request, const GetBucketMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBucketMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetBucketMetricDataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBucketsOutcome LightsailClient::GetBuckets(const GetBucketsRequest& request) const
@@ -1876,14 +1876,14 @@ GetBucketsOutcomeCallable LightsailClient::GetBucketsCallable(const GetBucketsRe
   return task->get_future();
 }
 
-void LightsailClient::GetBucketsAsync(const GetBucketsRequest& request, const GetBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetBucketsAsyncHelper(LightsailClient const * const clientThis, const GetBucketsRequest& request, const GetBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBucketsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBuckets(request), context);
 }
 
-void LightsailClient::GetBucketsAsyncHelper(const GetBucketsRequest& request, const GetBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetBucketsAsync(const GetBucketsRequest& request, const GetBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBuckets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetBucketsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetBundlesOutcome LightsailClient::GetBundles(const GetBundlesRequest& request) const
@@ -1900,14 +1900,14 @@ GetBundlesOutcomeCallable LightsailClient::GetBundlesCallable(const GetBundlesRe
   return task->get_future();
 }
 
-void LightsailClient::GetBundlesAsync(const GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetBundlesAsyncHelper(LightsailClient const * const clientThis, const GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBundlesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetBundles(request), context);
 }
 
-void LightsailClient::GetBundlesAsyncHelper(const GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetBundlesAsync(const GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBundles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetBundlesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCertificatesOutcome LightsailClient::GetCertificates(const GetCertificatesRequest& request) const
@@ -1924,14 +1924,14 @@ GetCertificatesOutcomeCallable LightsailClient::GetCertificatesCallable(const Ge
   return task->get_future();
 }
 
-void LightsailClient::GetCertificatesAsync(const GetCertificatesRequest& request, const GetCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetCertificatesAsyncHelper(LightsailClient const * const clientThis, const GetCertificatesRequest& request, const GetCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCertificatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCertificates(request), context);
 }
 
-void LightsailClient::GetCertificatesAsyncHelper(const GetCertificatesRequest& request, const GetCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetCertificatesAsync(const GetCertificatesRequest& request, const GetCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetCertificatesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCloudFormationStackRecordsOutcome LightsailClient::GetCloudFormationStackRecords(const GetCloudFormationStackRecordsRequest& request) const
@@ -1948,14 +1948,14 @@ GetCloudFormationStackRecordsOutcomeCallable LightsailClient::GetCloudFormationS
   return task->get_future();
 }
 
-void LightsailClient::GetCloudFormationStackRecordsAsync(const GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetCloudFormationStackRecordsAsyncHelper(LightsailClient const * const clientThis, const GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCloudFormationStackRecordsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCloudFormationStackRecords(request), context);
 }
 
-void LightsailClient::GetCloudFormationStackRecordsAsyncHelper(const GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetCloudFormationStackRecordsAsync(const GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCloudFormationStackRecords(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetCloudFormationStackRecordsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContactMethodsOutcome LightsailClient::GetContactMethods(const GetContactMethodsRequest& request) const
@@ -1972,14 +1972,14 @@ GetContactMethodsOutcomeCallable LightsailClient::GetContactMethodsCallable(cons
   return task->get_future();
 }
 
-void LightsailClient::GetContactMethodsAsync(const GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetContactMethodsAsyncHelper(LightsailClient const * const clientThis, const GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactMethodsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContactMethods(request), context);
 }
 
-void LightsailClient::GetContactMethodsAsyncHelper(const GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetContactMethodsAsync(const GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContactMethods(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetContactMethodsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContainerAPIMetadataOutcome LightsailClient::GetContainerAPIMetadata(const GetContainerAPIMetadataRequest& request) const
@@ -1996,14 +1996,14 @@ GetContainerAPIMetadataOutcomeCallable LightsailClient::GetContainerAPIMetadataC
   return task->get_future();
 }
 
-void LightsailClient::GetContainerAPIMetadataAsync(const GetContainerAPIMetadataRequest& request, const GetContainerAPIMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetContainerAPIMetadataAsyncHelper(LightsailClient const * const clientThis, const GetContainerAPIMetadataRequest& request, const GetContainerAPIMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContainerAPIMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContainerAPIMetadata(request), context);
 }
 
-void LightsailClient::GetContainerAPIMetadataAsyncHelper(const GetContainerAPIMetadataRequest& request, const GetContainerAPIMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetContainerAPIMetadataAsync(const GetContainerAPIMetadataRequest& request, const GetContainerAPIMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContainerAPIMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetContainerAPIMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContainerImagesOutcome LightsailClient::GetContainerImages(const GetContainerImagesRequest& request) const
@@ -2020,14 +2020,14 @@ GetContainerImagesOutcomeCallable LightsailClient::GetContainerImagesCallable(co
   return task->get_future();
 }
 
-void LightsailClient::GetContainerImagesAsync(const GetContainerImagesRequest& request, const GetContainerImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetContainerImagesAsyncHelper(LightsailClient const * const clientThis, const GetContainerImagesRequest& request, const GetContainerImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContainerImagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContainerImages(request), context);
 }
 
-void LightsailClient::GetContainerImagesAsyncHelper(const GetContainerImagesRequest& request, const GetContainerImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetContainerImagesAsync(const GetContainerImagesRequest& request, const GetContainerImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContainerImages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetContainerImagesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContainerLogOutcome LightsailClient::GetContainerLog(const GetContainerLogRequest& request) const
@@ -2044,14 +2044,14 @@ GetContainerLogOutcomeCallable LightsailClient::GetContainerLogCallable(const Ge
   return task->get_future();
 }
 
-void LightsailClient::GetContainerLogAsync(const GetContainerLogRequest& request, const GetContainerLogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetContainerLogAsyncHelper(LightsailClient const * const clientThis, const GetContainerLogRequest& request, const GetContainerLogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContainerLogAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContainerLog(request), context);
 }
 
-void LightsailClient::GetContainerLogAsyncHelper(const GetContainerLogRequest& request, const GetContainerLogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetContainerLogAsync(const GetContainerLogRequest& request, const GetContainerLogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContainerLog(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetContainerLogAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContainerServiceDeploymentsOutcome LightsailClient::GetContainerServiceDeployments(const GetContainerServiceDeploymentsRequest& request) const
@@ -2068,14 +2068,14 @@ GetContainerServiceDeploymentsOutcomeCallable LightsailClient::GetContainerServi
   return task->get_future();
 }
 
-void LightsailClient::GetContainerServiceDeploymentsAsync(const GetContainerServiceDeploymentsRequest& request, const GetContainerServiceDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetContainerServiceDeploymentsAsyncHelper(LightsailClient const * const clientThis, const GetContainerServiceDeploymentsRequest& request, const GetContainerServiceDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContainerServiceDeploymentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContainerServiceDeployments(request), context);
 }
 
-void LightsailClient::GetContainerServiceDeploymentsAsyncHelper(const GetContainerServiceDeploymentsRequest& request, const GetContainerServiceDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetContainerServiceDeploymentsAsync(const GetContainerServiceDeploymentsRequest& request, const GetContainerServiceDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContainerServiceDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetContainerServiceDeploymentsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContainerServiceMetricDataOutcome LightsailClient::GetContainerServiceMetricData(const GetContainerServiceMetricDataRequest& request) const
@@ -2092,14 +2092,14 @@ GetContainerServiceMetricDataOutcomeCallable LightsailClient::GetContainerServic
   return task->get_future();
 }
 
-void LightsailClient::GetContainerServiceMetricDataAsync(const GetContainerServiceMetricDataRequest& request, const GetContainerServiceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetContainerServiceMetricDataAsyncHelper(LightsailClient const * const clientThis, const GetContainerServiceMetricDataRequest& request, const GetContainerServiceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContainerServiceMetricDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContainerServiceMetricData(request), context);
 }
 
-void LightsailClient::GetContainerServiceMetricDataAsyncHelper(const GetContainerServiceMetricDataRequest& request, const GetContainerServiceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetContainerServiceMetricDataAsync(const GetContainerServiceMetricDataRequest& request, const GetContainerServiceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContainerServiceMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetContainerServiceMetricDataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContainerServicePowersOutcome LightsailClient::GetContainerServicePowers(const GetContainerServicePowersRequest& request) const
@@ -2116,14 +2116,14 @@ GetContainerServicePowersOutcomeCallable LightsailClient::GetContainerServicePow
   return task->get_future();
 }
 
-void LightsailClient::GetContainerServicePowersAsync(const GetContainerServicePowersRequest& request, const GetContainerServicePowersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetContainerServicePowersAsyncHelper(LightsailClient const * const clientThis, const GetContainerServicePowersRequest& request, const GetContainerServicePowersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContainerServicePowersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContainerServicePowers(request), context);
 }
 
-void LightsailClient::GetContainerServicePowersAsyncHelper(const GetContainerServicePowersRequest& request, const GetContainerServicePowersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetContainerServicePowersAsync(const GetContainerServicePowersRequest& request, const GetContainerServicePowersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContainerServicePowers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetContainerServicePowersAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContainerServicesOutcome LightsailClient::GetContainerServices(const GetContainerServicesRequest& request) const
@@ -2140,14 +2140,14 @@ GetContainerServicesOutcomeCallable LightsailClient::GetContainerServicesCallabl
   return task->get_future();
 }
 
-void LightsailClient::GetContainerServicesAsync(const GetContainerServicesRequest& request, const GetContainerServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetContainerServicesAsyncHelper(LightsailClient const * const clientThis, const GetContainerServicesRequest& request, const GetContainerServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContainerServicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContainerServices(request), context);
 }
 
-void LightsailClient::GetContainerServicesAsyncHelper(const GetContainerServicesRequest& request, const GetContainerServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetContainerServicesAsync(const GetContainerServicesRequest& request, const GetContainerServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContainerServices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetContainerServicesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDiskOutcome LightsailClient::GetDisk(const GetDiskRequest& request) const
@@ -2164,14 +2164,14 @@ GetDiskOutcomeCallable LightsailClient::GetDiskCallable(const GetDiskRequest& re
   return task->get_future();
 }
 
-void LightsailClient::GetDiskAsync(const GetDiskRequest& request, const GetDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetDiskAsyncHelper(LightsailClient const * const clientThis, const GetDiskRequest& request, const GetDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDiskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDisk(request), context);
 }
 
-void LightsailClient::GetDiskAsyncHelper(const GetDiskRequest& request, const GetDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetDiskAsync(const GetDiskRequest& request, const GetDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDisk(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetDiskAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDiskSnapshotOutcome LightsailClient::GetDiskSnapshot(const GetDiskSnapshotRequest& request) const
@@ -2188,14 +2188,14 @@ GetDiskSnapshotOutcomeCallable LightsailClient::GetDiskSnapshotCallable(const Ge
   return task->get_future();
 }
 
-void LightsailClient::GetDiskSnapshotAsync(const GetDiskSnapshotRequest& request, const GetDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetDiskSnapshotAsyncHelper(LightsailClient const * const clientThis, const GetDiskSnapshotRequest& request, const GetDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDiskSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDiskSnapshot(request), context);
 }
 
-void LightsailClient::GetDiskSnapshotAsyncHelper(const GetDiskSnapshotRequest& request, const GetDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetDiskSnapshotAsync(const GetDiskSnapshotRequest& request, const GetDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDiskSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetDiskSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDiskSnapshotsOutcome LightsailClient::GetDiskSnapshots(const GetDiskSnapshotsRequest& request) const
@@ -2212,14 +2212,14 @@ GetDiskSnapshotsOutcomeCallable LightsailClient::GetDiskSnapshotsCallable(const 
   return task->get_future();
 }
 
-void LightsailClient::GetDiskSnapshotsAsync(const GetDiskSnapshotsRequest& request, const GetDiskSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetDiskSnapshotsAsyncHelper(LightsailClient const * const clientThis, const GetDiskSnapshotsRequest& request, const GetDiskSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDiskSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDiskSnapshots(request), context);
 }
 
-void LightsailClient::GetDiskSnapshotsAsyncHelper(const GetDiskSnapshotsRequest& request, const GetDiskSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetDiskSnapshotsAsync(const GetDiskSnapshotsRequest& request, const GetDiskSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDiskSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetDiskSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDisksOutcome LightsailClient::GetDisks(const GetDisksRequest& request) const
@@ -2236,14 +2236,14 @@ GetDisksOutcomeCallable LightsailClient::GetDisksCallable(const GetDisksRequest&
   return task->get_future();
 }
 
-void LightsailClient::GetDisksAsync(const GetDisksRequest& request, const GetDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetDisksAsyncHelper(LightsailClient const * const clientThis, const GetDisksRequest& request, const GetDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDisksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDisks(request), context);
 }
 
-void LightsailClient::GetDisksAsyncHelper(const GetDisksRequest& request, const GetDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetDisksAsync(const GetDisksRequest& request, const GetDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDisks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetDisksAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDistributionBundlesOutcome LightsailClient::GetDistributionBundles(const GetDistributionBundlesRequest& request) const
@@ -2260,14 +2260,14 @@ GetDistributionBundlesOutcomeCallable LightsailClient::GetDistributionBundlesCal
   return task->get_future();
 }
 
-void LightsailClient::GetDistributionBundlesAsync(const GetDistributionBundlesRequest& request, const GetDistributionBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetDistributionBundlesAsyncHelper(LightsailClient const * const clientThis, const GetDistributionBundlesRequest& request, const GetDistributionBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDistributionBundlesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDistributionBundles(request), context);
 }
 
-void LightsailClient::GetDistributionBundlesAsyncHelper(const GetDistributionBundlesRequest& request, const GetDistributionBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetDistributionBundlesAsync(const GetDistributionBundlesRequest& request, const GetDistributionBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDistributionBundles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetDistributionBundlesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDistributionLatestCacheResetOutcome LightsailClient::GetDistributionLatestCacheReset(const GetDistributionLatestCacheResetRequest& request) const
@@ -2284,14 +2284,14 @@ GetDistributionLatestCacheResetOutcomeCallable LightsailClient::GetDistributionL
   return task->get_future();
 }
 
-void LightsailClient::GetDistributionLatestCacheResetAsync(const GetDistributionLatestCacheResetRequest& request, const GetDistributionLatestCacheResetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetDistributionLatestCacheResetAsyncHelper(LightsailClient const * const clientThis, const GetDistributionLatestCacheResetRequest& request, const GetDistributionLatestCacheResetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDistributionLatestCacheResetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDistributionLatestCacheReset(request), context);
 }
 
-void LightsailClient::GetDistributionLatestCacheResetAsyncHelper(const GetDistributionLatestCacheResetRequest& request, const GetDistributionLatestCacheResetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetDistributionLatestCacheResetAsync(const GetDistributionLatestCacheResetRequest& request, const GetDistributionLatestCacheResetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDistributionLatestCacheReset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetDistributionLatestCacheResetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDistributionMetricDataOutcome LightsailClient::GetDistributionMetricData(const GetDistributionMetricDataRequest& request) const
@@ -2308,14 +2308,14 @@ GetDistributionMetricDataOutcomeCallable LightsailClient::GetDistributionMetricD
   return task->get_future();
 }
 
-void LightsailClient::GetDistributionMetricDataAsync(const GetDistributionMetricDataRequest& request, const GetDistributionMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetDistributionMetricDataAsyncHelper(LightsailClient const * const clientThis, const GetDistributionMetricDataRequest& request, const GetDistributionMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDistributionMetricDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDistributionMetricData(request), context);
 }
 
-void LightsailClient::GetDistributionMetricDataAsyncHelper(const GetDistributionMetricDataRequest& request, const GetDistributionMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetDistributionMetricDataAsync(const GetDistributionMetricDataRequest& request, const GetDistributionMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDistributionMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetDistributionMetricDataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDistributionsOutcome LightsailClient::GetDistributions(const GetDistributionsRequest& request) const
@@ -2332,14 +2332,14 @@ GetDistributionsOutcomeCallable LightsailClient::GetDistributionsCallable(const 
   return task->get_future();
 }
 
-void LightsailClient::GetDistributionsAsync(const GetDistributionsRequest& request, const GetDistributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetDistributionsAsyncHelper(LightsailClient const * const clientThis, const GetDistributionsRequest& request, const GetDistributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDistributionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDistributions(request), context);
 }
 
-void LightsailClient::GetDistributionsAsyncHelper(const GetDistributionsRequest& request, const GetDistributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetDistributionsAsync(const GetDistributionsRequest& request, const GetDistributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDistributions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetDistributionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDomainOutcome LightsailClient::GetDomain(const GetDomainRequest& request) const
@@ -2356,14 +2356,14 @@ GetDomainOutcomeCallable LightsailClient::GetDomainCallable(const GetDomainReque
   return task->get_future();
 }
 
-void LightsailClient::GetDomainAsync(const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetDomainAsyncHelper(LightsailClient const * const clientThis, const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDomain(request), context);
 }
 
-void LightsailClient::GetDomainAsyncHelper(const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetDomainAsync(const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDomainsOutcome LightsailClient::GetDomains(const GetDomainsRequest& request) const
@@ -2380,14 +2380,14 @@ GetDomainsOutcomeCallable LightsailClient::GetDomainsCallable(const GetDomainsRe
   return task->get_future();
 }
 
-void LightsailClient::GetDomainsAsync(const GetDomainsRequest& request, const GetDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetDomainsAsyncHelper(LightsailClient const * const clientThis, const GetDomainsRequest& request, const GetDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDomains(request), context);
 }
 
-void LightsailClient::GetDomainsAsyncHelper(const GetDomainsRequest& request, const GetDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetDomainsAsync(const GetDomainsRequest& request, const GetDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDomains(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetDomainsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExportSnapshotRecordsOutcome LightsailClient::GetExportSnapshotRecords(const GetExportSnapshotRecordsRequest& request) const
@@ -2404,14 +2404,14 @@ GetExportSnapshotRecordsOutcomeCallable LightsailClient::GetExportSnapshotRecord
   return task->get_future();
 }
 
-void LightsailClient::GetExportSnapshotRecordsAsync(const GetExportSnapshotRecordsRequest& request, const GetExportSnapshotRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetExportSnapshotRecordsAsyncHelper(LightsailClient const * const clientThis, const GetExportSnapshotRecordsRequest& request, const GetExportSnapshotRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExportSnapshotRecordsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExportSnapshotRecords(request), context);
 }
 
-void LightsailClient::GetExportSnapshotRecordsAsyncHelper(const GetExportSnapshotRecordsRequest& request, const GetExportSnapshotRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetExportSnapshotRecordsAsync(const GetExportSnapshotRecordsRequest& request, const GetExportSnapshotRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExportSnapshotRecords(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetExportSnapshotRecordsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceOutcome LightsailClient::GetInstance(const GetInstanceRequest& request) const
@@ -2428,14 +2428,14 @@ GetInstanceOutcomeCallable LightsailClient::GetInstanceCallable(const GetInstanc
   return task->get_future();
 }
 
-void LightsailClient::GetInstanceAsync(const GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetInstanceAsyncHelper(LightsailClient const * const clientThis, const GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstance(request), context);
 }
 
-void LightsailClient::GetInstanceAsyncHelper(const GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetInstanceAsync(const GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceAccessDetailsOutcome LightsailClient::GetInstanceAccessDetails(const GetInstanceAccessDetailsRequest& request) const
@@ -2452,14 +2452,14 @@ GetInstanceAccessDetailsOutcomeCallable LightsailClient::GetInstanceAccessDetail
   return task->get_future();
 }
 
-void LightsailClient::GetInstanceAccessDetailsAsync(const GetInstanceAccessDetailsRequest& request, const GetInstanceAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetInstanceAccessDetailsAsyncHelper(LightsailClient const * const clientThis, const GetInstanceAccessDetailsRequest& request, const GetInstanceAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceAccessDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstanceAccessDetails(request), context);
 }
 
-void LightsailClient::GetInstanceAccessDetailsAsyncHelper(const GetInstanceAccessDetailsRequest& request, const GetInstanceAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetInstanceAccessDetailsAsync(const GetInstanceAccessDetailsRequest& request, const GetInstanceAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstanceAccessDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetInstanceAccessDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceMetricDataOutcome LightsailClient::GetInstanceMetricData(const GetInstanceMetricDataRequest& request) const
@@ -2476,14 +2476,14 @@ GetInstanceMetricDataOutcomeCallable LightsailClient::GetInstanceMetricDataCalla
   return task->get_future();
 }
 
-void LightsailClient::GetInstanceMetricDataAsync(const GetInstanceMetricDataRequest& request, const GetInstanceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetInstanceMetricDataAsyncHelper(LightsailClient const * const clientThis, const GetInstanceMetricDataRequest& request, const GetInstanceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceMetricDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstanceMetricData(request), context);
 }
 
-void LightsailClient::GetInstanceMetricDataAsyncHelper(const GetInstanceMetricDataRequest& request, const GetInstanceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetInstanceMetricDataAsync(const GetInstanceMetricDataRequest& request, const GetInstanceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstanceMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetInstanceMetricDataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstancePortStatesOutcome LightsailClient::GetInstancePortStates(const GetInstancePortStatesRequest& request) const
@@ -2500,14 +2500,14 @@ GetInstancePortStatesOutcomeCallable LightsailClient::GetInstancePortStatesCalla
   return task->get_future();
 }
 
-void LightsailClient::GetInstancePortStatesAsync(const GetInstancePortStatesRequest& request, const GetInstancePortStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetInstancePortStatesAsyncHelper(LightsailClient const * const clientThis, const GetInstancePortStatesRequest& request, const GetInstancePortStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstancePortStatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstancePortStates(request), context);
 }
 
-void LightsailClient::GetInstancePortStatesAsyncHelper(const GetInstancePortStatesRequest& request, const GetInstancePortStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetInstancePortStatesAsync(const GetInstancePortStatesRequest& request, const GetInstancePortStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstancePortStates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetInstancePortStatesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceSnapshotOutcome LightsailClient::GetInstanceSnapshot(const GetInstanceSnapshotRequest& request) const
@@ -2524,14 +2524,14 @@ GetInstanceSnapshotOutcomeCallable LightsailClient::GetInstanceSnapshotCallable(
   return task->get_future();
 }
 
-void LightsailClient::GetInstanceSnapshotAsync(const GetInstanceSnapshotRequest& request, const GetInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetInstanceSnapshotAsyncHelper(LightsailClient const * const clientThis, const GetInstanceSnapshotRequest& request, const GetInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstanceSnapshot(request), context);
 }
 
-void LightsailClient::GetInstanceSnapshotAsyncHelper(const GetInstanceSnapshotRequest& request, const GetInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetInstanceSnapshotAsync(const GetInstanceSnapshotRequest& request, const GetInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstanceSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetInstanceSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceSnapshotsOutcome LightsailClient::GetInstanceSnapshots(const GetInstanceSnapshotsRequest& request) const
@@ -2548,14 +2548,14 @@ GetInstanceSnapshotsOutcomeCallable LightsailClient::GetInstanceSnapshotsCallabl
   return task->get_future();
 }
 
-void LightsailClient::GetInstanceSnapshotsAsync(const GetInstanceSnapshotsRequest& request, const GetInstanceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetInstanceSnapshotsAsyncHelper(LightsailClient const * const clientThis, const GetInstanceSnapshotsRequest& request, const GetInstanceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstanceSnapshots(request), context);
 }
 
-void LightsailClient::GetInstanceSnapshotsAsyncHelper(const GetInstanceSnapshotsRequest& request, const GetInstanceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetInstanceSnapshotsAsync(const GetInstanceSnapshotsRequest& request, const GetInstanceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstanceSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetInstanceSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstanceStateOutcome LightsailClient::GetInstanceState(const GetInstanceStateRequest& request) const
@@ -2572,14 +2572,14 @@ GetInstanceStateOutcomeCallable LightsailClient::GetInstanceStateCallable(const 
   return task->get_future();
 }
 
-void LightsailClient::GetInstanceStateAsync(const GetInstanceStateRequest& request, const GetInstanceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetInstanceStateAsyncHelper(LightsailClient const * const clientThis, const GetInstanceStateRequest& request, const GetInstanceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceStateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstanceState(request), context);
 }
 
-void LightsailClient::GetInstanceStateAsyncHelper(const GetInstanceStateRequest& request, const GetInstanceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetInstanceStateAsync(const GetInstanceStateRequest& request, const GetInstanceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstanceState(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetInstanceStateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInstancesOutcome LightsailClient::GetInstances(const GetInstancesRequest& request) const
@@ -2596,14 +2596,14 @@ GetInstancesOutcomeCallable LightsailClient::GetInstancesCallable(const GetInsta
   return task->get_future();
 }
 
-void LightsailClient::GetInstancesAsync(const GetInstancesRequest& request, const GetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetInstancesAsyncHelper(LightsailClient const * const clientThis, const GetInstancesRequest& request, const GetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInstances(request), context);
 }
 
-void LightsailClient::GetInstancesAsyncHelper(const GetInstancesRequest& request, const GetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetInstancesAsync(const GetInstancesRequest& request, const GetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetKeyPairOutcome LightsailClient::GetKeyPair(const GetKeyPairRequest& request) const
@@ -2620,14 +2620,14 @@ GetKeyPairOutcomeCallable LightsailClient::GetKeyPairCallable(const GetKeyPairRe
   return task->get_future();
 }
 
-void LightsailClient::GetKeyPairAsync(const GetKeyPairRequest& request, const GetKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetKeyPairAsyncHelper(LightsailClient const * const clientThis, const GetKeyPairRequest& request, const GetKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetKeyPair(request), context);
 }
 
-void LightsailClient::GetKeyPairAsyncHelper(const GetKeyPairRequest& request, const GetKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetKeyPairAsync(const GetKeyPairRequest& request, const GetKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 GetKeyPairsOutcome LightsailClient::GetKeyPairs(const GetKeyPairsRequest& request) const
@@ -2644,14 +2644,14 @@ GetKeyPairsOutcomeCallable LightsailClient::GetKeyPairsCallable(const GetKeyPair
   return task->get_future();
 }
 
-void LightsailClient::GetKeyPairsAsync(const GetKeyPairsRequest& request, const GetKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetKeyPairsAsyncHelper(LightsailClient const * const clientThis, const GetKeyPairsRequest& request, const GetKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetKeyPairsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetKeyPairs(request), context);
 }
 
-void LightsailClient::GetKeyPairsAsyncHelper(const GetKeyPairsRequest& request, const GetKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetKeyPairsAsync(const GetKeyPairsRequest& request, const GetKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetKeyPairs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetKeyPairsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLoadBalancerOutcome LightsailClient::GetLoadBalancer(const GetLoadBalancerRequest& request) const
@@ -2668,14 +2668,14 @@ GetLoadBalancerOutcomeCallable LightsailClient::GetLoadBalancerCallable(const Ge
   return task->get_future();
 }
 
-void LightsailClient::GetLoadBalancerAsync(const GetLoadBalancerRequest& request, const GetLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetLoadBalancerAsyncHelper(LightsailClient const * const clientThis, const GetLoadBalancerRequest& request, const GetLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLoadBalancerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLoadBalancer(request), context);
 }
 
-void LightsailClient::GetLoadBalancerAsyncHelper(const GetLoadBalancerRequest& request, const GetLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetLoadBalancerAsync(const GetLoadBalancerRequest& request, const GetLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLoadBalancer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetLoadBalancerAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLoadBalancerMetricDataOutcome LightsailClient::GetLoadBalancerMetricData(const GetLoadBalancerMetricDataRequest& request) const
@@ -2692,14 +2692,14 @@ GetLoadBalancerMetricDataOutcomeCallable LightsailClient::GetLoadBalancerMetricD
   return task->get_future();
 }
 
-void LightsailClient::GetLoadBalancerMetricDataAsync(const GetLoadBalancerMetricDataRequest& request, const GetLoadBalancerMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetLoadBalancerMetricDataAsyncHelper(LightsailClient const * const clientThis, const GetLoadBalancerMetricDataRequest& request, const GetLoadBalancerMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLoadBalancerMetricDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLoadBalancerMetricData(request), context);
 }
 
-void LightsailClient::GetLoadBalancerMetricDataAsyncHelper(const GetLoadBalancerMetricDataRequest& request, const GetLoadBalancerMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetLoadBalancerMetricDataAsync(const GetLoadBalancerMetricDataRequest& request, const GetLoadBalancerMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLoadBalancerMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetLoadBalancerMetricDataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLoadBalancerTlsCertificatesOutcome LightsailClient::GetLoadBalancerTlsCertificates(const GetLoadBalancerTlsCertificatesRequest& request) const
@@ -2716,14 +2716,14 @@ GetLoadBalancerTlsCertificatesOutcomeCallable LightsailClient::GetLoadBalancerTl
   return task->get_future();
 }
 
-void LightsailClient::GetLoadBalancerTlsCertificatesAsync(const GetLoadBalancerTlsCertificatesRequest& request, const GetLoadBalancerTlsCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetLoadBalancerTlsCertificatesAsyncHelper(LightsailClient const * const clientThis, const GetLoadBalancerTlsCertificatesRequest& request, const GetLoadBalancerTlsCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLoadBalancerTlsCertificatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLoadBalancerTlsCertificates(request), context);
 }
 
-void LightsailClient::GetLoadBalancerTlsCertificatesAsyncHelper(const GetLoadBalancerTlsCertificatesRequest& request, const GetLoadBalancerTlsCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetLoadBalancerTlsCertificatesAsync(const GetLoadBalancerTlsCertificatesRequest& request, const GetLoadBalancerTlsCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLoadBalancerTlsCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetLoadBalancerTlsCertificatesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLoadBalancerTlsPoliciesOutcome LightsailClient::GetLoadBalancerTlsPolicies(const GetLoadBalancerTlsPoliciesRequest& request) const
@@ -2740,14 +2740,14 @@ GetLoadBalancerTlsPoliciesOutcomeCallable LightsailClient::GetLoadBalancerTlsPol
   return task->get_future();
 }
 
-void LightsailClient::GetLoadBalancerTlsPoliciesAsync(const GetLoadBalancerTlsPoliciesRequest& request, const GetLoadBalancerTlsPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetLoadBalancerTlsPoliciesAsyncHelper(LightsailClient const * const clientThis, const GetLoadBalancerTlsPoliciesRequest& request, const GetLoadBalancerTlsPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLoadBalancerTlsPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLoadBalancerTlsPolicies(request), context);
 }
 
-void LightsailClient::GetLoadBalancerTlsPoliciesAsyncHelper(const GetLoadBalancerTlsPoliciesRequest& request, const GetLoadBalancerTlsPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetLoadBalancerTlsPoliciesAsync(const GetLoadBalancerTlsPoliciesRequest& request, const GetLoadBalancerTlsPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLoadBalancerTlsPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetLoadBalancerTlsPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLoadBalancersOutcome LightsailClient::GetLoadBalancers(const GetLoadBalancersRequest& request) const
@@ -2764,14 +2764,14 @@ GetLoadBalancersOutcomeCallable LightsailClient::GetLoadBalancersCallable(const 
   return task->get_future();
 }
 
-void LightsailClient::GetLoadBalancersAsync(const GetLoadBalancersRequest& request, const GetLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetLoadBalancersAsyncHelper(LightsailClient const * const clientThis, const GetLoadBalancersRequest& request, const GetLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLoadBalancersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLoadBalancers(request), context);
 }
 
-void LightsailClient::GetLoadBalancersAsyncHelper(const GetLoadBalancersRequest& request, const GetLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetLoadBalancersAsync(const GetLoadBalancersRequest& request, const GetLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLoadBalancers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetLoadBalancersAsyncHelper( this, request, handler, context ); } );
 }
 
 GetOperationOutcome LightsailClient::GetOperation(const GetOperationRequest& request) const
@@ -2788,14 +2788,14 @@ GetOperationOutcomeCallable LightsailClient::GetOperationCallable(const GetOpera
   return task->get_future();
 }
 
-void LightsailClient::GetOperationAsync(const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetOperationAsyncHelper(LightsailClient const * const clientThis, const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOperationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOperation(request), context);
 }
 
-void LightsailClient::GetOperationAsyncHelper(const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetOperationAsync(const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOperation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetOperationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetOperationsOutcome LightsailClient::GetOperations(const GetOperationsRequest& request) const
@@ -2812,14 +2812,14 @@ GetOperationsOutcomeCallable LightsailClient::GetOperationsCallable(const GetOpe
   return task->get_future();
 }
 
-void LightsailClient::GetOperationsAsync(const GetOperationsRequest& request, const GetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetOperationsAsyncHelper(LightsailClient const * const clientThis, const GetOperationsRequest& request, const GetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOperationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOperations(request), context);
 }
 
-void LightsailClient::GetOperationsAsyncHelper(const GetOperationsRequest& request, const GetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetOperationsAsync(const GetOperationsRequest& request, const GetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOperations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetOperationsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetOperationsForResourceOutcome LightsailClient::GetOperationsForResource(const GetOperationsForResourceRequest& request) const
@@ -2836,14 +2836,14 @@ GetOperationsForResourceOutcomeCallable LightsailClient::GetOperationsForResourc
   return task->get_future();
 }
 
-void LightsailClient::GetOperationsForResourceAsync(const GetOperationsForResourceRequest& request, const GetOperationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetOperationsForResourceAsyncHelper(LightsailClient const * const clientThis, const GetOperationsForResourceRequest& request, const GetOperationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOperationsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetOperationsForResource(request), context);
 }
 
-void LightsailClient::GetOperationsForResourceAsyncHelper(const GetOperationsForResourceRequest& request, const GetOperationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetOperationsForResourceAsync(const GetOperationsForResourceRequest& request, const GetOperationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetOperationsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetOperationsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRegionsOutcome LightsailClient::GetRegions(const GetRegionsRequest& request) const
@@ -2860,14 +2860,14 @@ GetRegionsOutcomeCallable LightsailClient::GetRegionsCallable(const GetRegionsRe
   return task->get_future();
 }
 
-void LightsailClient::GetRegionsAsync(const GetRegionsRequest& request, const GetRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRegionsAsyncHelper(LightsailClient const * const clientThis, const GetRegionsRequest& request, const GetRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRegionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRegions(request), context);
 }
 
-void LightsailClient::GetRegionsAsyncHelper(const GetRegionsRequest& request, const GetRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRegionsAsync(const GetRegionsRequest& request, const GetRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRegions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRegionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseOutcome LightsailClient::GetRelationalDatabase(const GetRelationalDatabaseRequest& request) const
@@ -2884,14 +2884,14 @@ GetRelationalDatabaseOutcomeCallable LightsailClient::GetRelationalDatabaseCalla
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseAsync(const GetRelationalDatabaseRequest& request, const GetRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseRequest& request, const GetRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabase(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseAsyncHelper(const GetRelationalDatabaseRequest& request, const GetRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseAsync(const GetRelationalDatabaseRequest& request, const GetRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseBlueprintsOutcome LightsailClient::GetRelationalDatabaseBlueprints(const GetRelationalDatabaseBlueprintsRequest& request) const
@@ -2908,14 +2908,14 @@ GetRelationalDatabaseBlueprintsOutcomeCallable LightsailClient::GetRelationalDat
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseBlueprintsAsync(const GetRelationalDatabaseBlueprintsRequest& request, const GetRelationalDatabaseBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseBlueprintsAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseBlueprintsRequest& request, const GetRelationalDatabaseBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseBlueprintsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabaseBlueprints(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseBlueprintsAsyncHelper(const GetRelationalDatabaseBlueprintsRequest& request, const GetRelationalDatabaseBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseBlueprintsAsync(const GetRelationalDatabaseBlueprintsRequest& request, const GetRelationalDatabaseBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabaseBlueprints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseBlueprintsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseBundlesOutcome LightsailClient::GetRelationalDatabaseBundles(const GetRelationalDatabaseBundlesRequest& request) const
@@ -2932,14 +2932,14 @@ GetRelationalDatabaseBundlesOutcomeCallable LightsailClient::GetRelationalDataba
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseBundlesAsync(const GetRelationalDatabaseBundlesRequest& request, const GetRelationalDatabaseBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseBundlesAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseBundlesRequest& request, const GetRelationalDatabaseBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseBundlesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabaseBundles(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseBundlesAsyncHelper(const GetRelationalDatabaseBundlesRequest& request, const GetRelationalDatabaseBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseBundlesAsync(const GetRelationalDatabaseBundlesRequest& request, const GetRelationalDatabaseBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabaseBundles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseBundlesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseEventsOutcome LightsailClient::GetRelationalDatabaseEvents(const GetRelationalDatabaseEventsRequest& request) const
@@ -2956,14 +2956,14 @@ GetRelationalDatabaseEventsOutcomeCallable LightsailClient::GetRelationalDatabas
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseEventsAsync(const GetRelationalDatabaseEventsRequest& request, const GetRelationalDatabaseEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseEventsAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseEventsRequest& request, const GetRelationalDatabaseEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabaseEvents(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseEventsAsyncHelper(const GetRelationalDatabaseEventsRequest& request, const GetRelationalDatabaseEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseEventsAsync(const GetRelationalDatabaseEventsRequest& request, const GetRelationalDatabaseEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabaseEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseLogEventsOutcome LightsailClient::GetRelationalDatabaseLogEvents(const GetRelationalDatabaseLogEventsRequest& request) const
@@ -2980,14 +2980,14 @@ GetRelationalDatabaseLogEventsOutcomeCallable LightsailClient::GetRelationalData
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseLogEventsAsync(const GetRelationalDatabaseLogEventsRequest& request, const GetRelationalDatabaseLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseLogEventsAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseLogEventsRequest& request, const GetRelationalDatabaseLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseLogEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabaseLogEvents(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseLogEventsAsyncHelper(const GetRelationalDatabaseLogEventsRequest& request, const GetRelationalDatabaseLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseLogEventsAsync(const GetRelationalDatabaseLogEventsRequest& request, const GetRelationalDatabaseLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabaseLogEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseLogEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseLogStreamsOutcome LightsailClient::GetRelationalDatabaseLogStreams(const GetRelationalDatabaseLogStreamsRequest& request) const
@@ -3004,14 +3004,14 @@ GetRelationalDatabaseLogStreamsOutcomeCallable LightsailClient::GetRelationalDat
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseLogStreamsAsync(const GetRelationalDatabaseLogStreamsRequest& request, const GetRelationalDatabaseLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseLogStreamsAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseLogStreamsRequest& request, const GetRelationalDatabaseLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseLogStreamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabaseLogStreams(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseLogStreamsAsyncHelper(const GetRelationalDatabaseLogStreamsRequest& request, const GetRelationalDatabaseLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseLogStreamsAsync(const GetRelationalDatabaseLogStreamsRequest& request, const GetRelationalDatabaseLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabaseLogStreams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseLogStreamsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseMasterUserPasswordOutcome LightsailClient::GetRelationalDatabaseMasterUserPassword(const GetRelationalDatabaseMasterUserPasswordRequest& request) const
@@ -3028,14 +3028,14 @@ GetRelationalDatabaseMasterUserPasswordOutcomeCallable LightsailClient::GetRelat
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseMasterUserPasswordAsync(const GetRelationalDatabaseMasterUserPasswordRequest& request, const GetRelationalDatabaseMasterUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseMasterUserPasswordAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseMasterUserPasswordRequest& request, const GetRelationalDatabaseMasterUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseMasterUserPasswordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabaseMasterUserPassword(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseMasterUserPasswordAsyncHelper(const GetRelationalDatabaseMasterUserPasswordRequest& request, const GetRelationalDatabaseMasterUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseMasterUserPasswordAsync(const GetRelationalDatabaseMasterUserPasswordRequest& request, const GetRelationalDatabaseMasterUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabaseMasterUserPassword(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseMasterUserPasswordAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseMetricDataOutcome LightsailClient::GetRelationalDatabaseMetricData(const GetRelationalDatabaseMetricDataRequest& request) const
@@ -3052,14 +3052,14 @@ GetRelationalDatabaseMetricDataOutcomeCallable LightsailClient::GetRelationalDat
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseMetricDataAsync(const GetRelationalDatabaseMetricDataRequest& request, const GetRelationalDatabaseMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseMetricDataAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseMetricDataRequest& request, const GetRelationalDatabaseMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseMetricDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabaseMetricData(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseMetricDataAsyncHelper(const GetRelationalDatabaseMetricDataRequest& request, const GetRelationalDatabaseMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseMetricDataAsync(const GetRelationalDatabaseMetricDataRequest& request, const GetRelationalDatabaseMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabaseMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseMetricDataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseParametersOutcome LightsailClient::GetRelationalDatabaseParameters(const GetRelationalDatabaseParametersRequest& request) const
@@ -3076,14 +3076,14 @@ GetRelationalDatabaseParametersOutcomeCallable LightsailClient::GetRelationalDat
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseParametersAsync(const GetRelationalDatabaseParametersRequest& request, const GetRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseParametersAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseParametersRequest& request, const GetRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseParametersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabaseParameters(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseParametersAsyncHelper(const GetRelationalDatabaseParametersRequest& request, const GetRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseParametersAsync(const GetRelationalDatabaseParametersRequest& request, const GetRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabaseParameters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseParametersAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseSnapshotOutcome LightsailClient::GetRelationalDatabaseSnapshot(const GetRelationalDatabaseSnapshotRequest& request) const
@@ -3100,14 +3100,14 @@ GetRelationalDatabaseSnapshotOutcomeCallable LightsailClient::GetRelationalDatab
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseSnapshotAsync(const GetRelationalDatabaseSnapshotRequest& request, const GetRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseSnapshotAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseSnapshotRequest& request, const GetRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabaseSnapshot(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseSnapshotAsyncHelper(const GetRelationalDatabaseSnapshotRequest& request, const GetRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseSnapshotAsync(const GetRelationalDatabaseSnapshotRequest& request, const GetRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabaseSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabaseSnapshotsOutcome LightsailClient::GetRelationalDatabaseSnapshots(const GetRelationalDatabaseSnapshotsRequest& request) const
@@ -3124,14 +3124,14 @@ GetRelationalDatabaseSnapshotsOutcomeCallable LightsailClient::GetRelationalData
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabaseSnapshotsAsync(const GetRelationalDatabaseSnapshotsRequest& request, const GetRelationalDatabaseSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabaseSnapshotsAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabaseSnapshotsRequest& request, const GetRelationalDatabaseSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabaseSnapshots(request), context);
 }
 
-void LightsailClient::GetRelationalDatabaseSnapshotsAsyncHelper(const GetRelationalDatabaseSnapshotsRequest& request, const GetRelationalDatabaseSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabaseSnapshotsAsync(const GetRelationalDatabaseSnapshotsRequest& request, const GetRelationalDatabaseSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabaseSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabaseSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRelationalDatabasesOutcome LightsailClient::GetRelationalDatabases(const GetRelationalDatabasesRequest& request) const
@@ -3148,14 +3148,14 @@ GetRelationalDatabasesOutcomeCallable LightsailClient::GetRelationalDatabasesCal
   return task->get_future();
 }
 
-void LightsailClient::GetRelationalDatabasesAsync(const GetRelationalDatabasesRequest& request, const GetRelationalDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetRelationalDatabasesAsyncHelper(LightsailClient const * const clientThis, const GetRelationalDatabasesRequest& request, const GetRelationalDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRelationalDatabases(request), context);
 }
 
-void LightsailClient::GetRelationalDatabasesAsyncHelper(const GetRelationalDatabasesRequest& request, const GetRelationalDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetRelationalDatabasesAsync(const GetRelationalDatabasesRequest& request, const GetRelationalDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRelationalDatabases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetRelationalDatabasesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetStaticIpOutcome LightsailClient::GetStaticIp(const GetStaticIpRequest& request) const
@@ -3172,14 +3172,14 @@ GetStaticIpOutcomeCallable LightsailClient::GetStaticIpCallable(const GetStaticI
   return task->get_future();
 }
 
-void LightsailClient::GetStaticIpAsync(const GetStaticIpRequest& request, const GetStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetStaticIpAsyncHelper(LightsailClient const * const clientThis, const GetStaticIpRequest& request, const GetStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStaticIpAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStaticIp(request), context);
 }
 
-void LightsailClient::GetStaticIpAsyncHelper(const GetStaticIpRequest& request, const GetStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetStaticIpAsync(const GetStaticIpRequest& request, const GetStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStaticIp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetStaticIpAsyncHelper( this, request, handler, context ); } );
 }
 
 GetStaticIpsOutcome LightsailClient::GetStaticIps(const GetStaticIpsRequest& request) const
@@ -3196,14 +3196,14 @@ GetStaticIpsOutcomeCallable LightsailClient::GetStaticIpsCallable(const GetStati
   return task->get_future();
 }
 
-void LightsailClient::GetStaticIpsAsync(const GetStaticIpsRequest& request, const GetStaticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientGetStaticIpsAsyncHelper(LightsailClient const * const clientThis, const GetStaticIpsRequest& request, const GetStaticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStaticIpsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStaticIps(request), context);
 }
 
-void LightsailClient::GetStaticIpsAsyncHelper(const GetStaticIpsRequest& request, const GetStaticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::GetStaticIpsAsync(const GetStaticIpsRequest& request, const GetStaticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStaticIps(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientGetStaticIpsAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportKeyPairOutcome LightsailClient::ImportKeyPair(const ImportKeyPairRequest& request) const
@@ -3220,14 +3220,14 @@ ImportKeyPairOutcomeCallable LightsailClient::ImportKeyPairCallable(const Import
   return task->get_future();
 }
 
-void LightsailClient::ImportKeyPairAsync(const ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientImportKeyPairAsyncHelper(LightsailClient const * const clientThis, const ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportKeyPairAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportKeyPair(request), context);
 }
 
-void LightsailClient::ImportKeyPairAsyncHelper(const ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::ImportKeyPairAsync(const ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportKeyPair(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientImportKeyPairAsyncHelper( this, request, handler, context ); } );
 }
 
 IsVpcPeeredOutcome LightsailClient::IsVpcPeered(const IsVpcPeeredRequest& request) const
@@ -3244,14 +3244,14 @@ IsVpcPeeredOutcomeCallable LightsailClient::IsVpcPeeredCallable(const IsVpcPeere
   return task->get_future();
 }
 
-void LightsailClient::IsVpcPeeredAsync(const IsVpcPeeredRequest& request, const IsVpcPeeredResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientIsVpcPeeredAsyncHelper(LightsailClient const * const clientThis, const IsVpcPeeredRequest& request, const IsVpcPeeredResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->IsVpcPeeredAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->IsVpcPeered(request), context);
 }
 
-void LightsailClient::IsVpcPeeredAsyncHelper(const IsVpcPeeredRequest& request, const IsVpcPeeredResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::IsVpcPeeredAsync(const IsVpcPeeredRequest& request, const IsVpcPeeredResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, IsVpcPeered(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientIsVpcPeeredAsyncHelper( this, request, handler, context ); } );
 }
 
 OpenInstancePublicPortsOutcome LightsailClient::OpenInstancePublicPorts(const OpenInstancePublicPortsRequest& request) const
@@ -3268,14 +3268,14 @@ OpenInstancePublicPortsOutcomeCallable LightsailClient::OpenInstancePublicPortsC
   return task->get_future();
 }
 
-void LightsailClient::OpenInstancePublicPortsAsync(const OpenInstancePublicPortsRequest& request, const OpenInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientOpenInstancePublicPortsAsyncHelper(LightsailClient const * const clientThis, const OpenInstancePublicPortsRequest& request, const OpenInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->OpenInstancePublicPortsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->OpenInstancePublicPorts(request), context);
 }
 
-void LightsailClient::OpenInstancePublicPortsAsyncHelper(const OpenInstancePublicPortsRequest& request, const OpenInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::OpenInstancePublicPortsAsync(const OpenInstancePublicPortsRequest& request, const OpenInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, OpenInstancePublicPorts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientOpenInstancePublicPortsAsyncHelper( this, request, handler, context ); } );
 }
 
 PeerVpcOutcome LightsailClient::PeerVpc(const PeerVpcRequest& request) const
@@ -3292,14 +3292,14 @@ PeerVpcOutcomeCallable LightsailClient::PeerVpcCallable(const PeerVpcRequest& re
   return task->get_future();
 }
 
-void LightsailClient::PeerVpcAsync(const PeerVpcRequest& request, const PeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientPeerVpcAsyncHelper(LightsailClient const * const clientThis, const PeerVpcRequest& request, const PeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PeerVpcAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PeerVpc(request), context);
 }
 
-void LightsailClient::PeerVpcAsyncHelper(const PeerVpcRequest& request, const PeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::PeerVpcAsync(const PeerVpcRequest& request, const PeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PeerVpc(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientPeerVpcAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAlarmOutcome LightsailClient::PutAlarm(const PutAlarmRequest& request) const
@@ -3316,14 +3316,14 @@ PutAlarmOutcomeCallable LightsailClient::PutAlarmCallable(const PutAlarmRequest&
   return task->get_future();
 }
 
-void LightsailClient::PutAlarmAsync(const PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientPutAlarmAsyncHelper(LightsailClient const * const clientThis, const PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAlarmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAlarm(request), context);
 }
 
-void LightsailClient::PutAlarmAsyncHelper(const PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::PutAlarmAsync(const PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientPutAlarmAsyncHelper( this, request, handler, context ); } );
 }
 
 PutInstancePublicPortsOutcome LightsailClient::PutInstancePublicPorts(const PutInstancePublicPortsRequest& request) const
@@ -3340,14 +3340,14 @@ PutInstancePublicPortsOutcomeCallable LightsailClient::PutInstancePublicPortsCal
   return task->get_future();
 }
 
-void LightsailClient::PutInstancePublicPortsAsync(const PutInstancePublicPortsRequest& request, const PutInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientPutInstancePublicPortsAsyncHelper(LightsailClient const * const clientThis, const PutInstancePublicPortsRequest& request, const PutInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutInstancePublicPortsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutInstancePublicPorts(request), context);
 }
 
-void LightsailClient::PutInstancePublicPortsAsyncHelper(const PutInstancePublicPortsRequest& request, const PutInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::PutInstancePublicPortsAsync(const PutInstancePublicPortsRequest& request, const PutInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutInstancePublicPorts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientPutInstancePublicPortsAsyncHelper( this, request, handler, context ); } );
 }
 
 RebootInstanceOutcome LightsailClient::RebootInstance(const RebootInstanceRequest& request) const
@@ -3364,14 +3364,14 @@ RebootInstanceOutcomeCallable LightsailClient::RebootInstanceCallable(const Rebo
   return task->get_future();
 }
 
-void LightsailClient::RebootInstanceAsync(const RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientRebootInstanceAsyncHelper(LightsailClient const * const clientThis, const RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RebootInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RebootInstance(request), context);
 }
 
-void LightsailClient::RebootInstanceAsyncHelper(const RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::RebootInstanceAsync(const RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RebootInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientRebootInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 RebootRelationalDatabaseOutcome LightsailClient::RebootRelationalDatabase(const RebootRelationalDatabaseRequest& request) const
@@ -3388,14 +3388,14 @@ RebootRelationalDatabaseOutcomeCallable LightsailClient::RebootRelationalDatabas
   return task->get_future();
 }
 
-void LightsailClient::RebootRelationalDatabaseAsync(const RebootRelationalDatabaseRequest& request, const RebootRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientRebootRelationalDatabaseAsyncHelper(LightsailClient const * const clientThis, const RebootRelationalDatabaseRequest& request, const RebootRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RebootRelationalDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RebootRelationalDatabase(request), context);
 }
 
-void LightsailClient::RebootRelationalDatabaseAsyncHelper(const RebootRelationalDatabaseRequest& request, const RebootRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::RebootRelationalDatabaseAsync(const RebootRelationalDatabaseRequest& request, const RebootRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RebootRelationalDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientRebootRelationalDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterContainerImageOutcome LightsailClient::RegisterContainerImage(const RegisterContainerImageRequest& request) const
@@ -3412,14 +3412,14 @@ RegisterContainerImageOutcomeCallable LightsailClient::RegisterContainerImageCal
   return task->get_future();
 }
 
-void LightsailClient::RegisterContainerImageAsync(const RegisterContainerImageRequest& request, const RegisterContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientRegisterContainerImageAsyncHelper(LightsailClient const * const clientThis, const RegisterContainerImageRequest& request, const RegisterContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterContainerImageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterContainerImage(request), context);
 }
 
-void LightsailClient::RegisterContainerImageAsyncHelper(const RegisterContainerImageRequest& request, const RegisterContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::RegisterContainerImageAsync(const RegisterContainerImageRequest& request, const RegisterContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterContainerImage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientRegisterContainerImageAsyncHelper( this, request, handler, context ); } );
 }
 
 ReleaseStaticIpOutcome LightsailClient::ReleaseStaticIp(const ReleaseStaticIpRequest& request) const
@@ -3436,14 +3436,14 @@ ReleaseStaticIpOutcomeCallable LightsailClient::ReleaseStaticIpCallable(const Re
   return task->get_future();
 }
 
-void LightsailClient::ReleaseStaticIpAsync(const ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientReleaseStaticIpAsyncHelper(LightsailClient const * const clientThis, const ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReleaseStaticIpAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReleaseStaticIp(request), context);
 }
 
-void LightsailClient::ReleaseStaticIpAsyncHelper(const ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::ReleaseStaticIpAsync(const ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReleaseStaticIp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientReleaseStaticIpAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetDistributionCacheOutcome LightsailClient::ResetDistributionCache(const ResetDistributionCacheRequest& request) const
@@ -3460,14 +3460,14 @@ ResetDistributionCacheOutcomeCallable LightsailClient::ResetDistributionCacheCal
   return task->get_future();
 }
 
-void LightsailClient::ResetDistributionCacheAsync(const ResetDistributionCacheRequest& request, const ResetDistributionCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientResetDistributionCacheAsyncHelper(LightsailClient const * const clientThis, const ResetDistributionCacheRequest& request, const ResetDistributionCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetDistributionCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetDistributionCache(request), context);
 }
 
-void LightsailClient::ResetDistributionCacheAsyncHelper(const ResetDistributionCacheRequest& request, const ResetDistributionCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::ResetDistributionCacheAsync(const ResetDistributionCacheRequest& request, const ResetDistributionCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetDistributionCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientResetDistributionCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 SendContactMethodVerificationOutcome LightsailClient::SendContactMethodVerification(const SendContactMethodVerificationRequest& request) const
@@ -3484,14 +3484,14 @@ SendContactMethodVerificationOutcomeCallable LightsailClient::SendContactMethodV
   return task->get_future();
 }
 
-void LightsailClient::SendContactMethodVerificationAsync(const SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientSendContactMethodVerificationAsyncHelper(LightsailClient const * const clientThis, const SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendContactMethodVerificationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendContactMethodVerification(request), context);
 }
 
-void LightsailClient::SendContactMethodVerificationAsyncHelper(const SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::SendContactMethodVerificationAsync(const SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendContactMethodVerification(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientSendContactMethodVerificationAsyncHelper( this, request, handler, context ); } );
 }
 
 SetIpAddressTypeOutcome LightsailClient::SetIpAddressType(const SetIpAddressTypeRequest& request) const
@@ -3508,14 +3508,14 @@ SetIpAddressTypeOutcomeCallable LightsailClient::SetIpAddressTypeCallable(const 
   return task->get_future();
 }
 
-void LightsailClient::SetIpAddressTypeAsync(const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientSetIpAddressTypeAsyncHelper(LightsailClient const * const clientThis, const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetIpAddressTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetIpAddressType(request), context);
 }
 
-void LightsailClient::SetIpAddressTypeAsyncHelper(const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::SetIpAddressTypeAsync(const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetIpAddressType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientSetIpAddressTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 SetResourceAccessForBucketOutcome LightsailClient::SetResourceAccessForBucket(const SetResourceAccessForBucketRequest& request) const
@@ -3532,14 +3532,14 @@ SetResourceAccessForBucketOutcomeCallable LightsailClient::SetResourceAccessForB
   return task->get_future();
 }
 
-void LightsailClient::SetResourceAccessForBucketAsync(const SetResourceAccessForBucketRequest& request, const SetResourceAccessForBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientSetResourceAccessForBucketAsyncHelper(LightsailClient const * const clientThis, const SetResourceAccessForBucketRequest& request, const SetResourceAccessForBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetResourceAccessForBucketAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetResourceAccessForBucket(request), context);
 }
 
-void LightsailClient::SetResourceAccessForBucketAsyncHelper(const SetResourceAccessForBucketRequest& request, const SetResourceAccessForBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::SetResourceAccessForBucketAsync(const SetResourceAccessForBucketRequest& request, const SetResourceAccessForBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetResourceAccessForBucket(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientSetResourceAccessForBucketAsyncHelper( this, request, handler, context ); } );
 }
 
 StartInstanceOutcome LightsailClient::StartInstance(const StartInstanceRequest& request) const
@@ -3556,14 +3556,14 @@ StartInstanceOutcomeCallable LightsailClient::StartInstanceCallable(const StartI
   return task->get_future();
 }
 
-void LightsailClient::StartInstanceAsync(const StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientStartInstanceAsyncHelper(LightsailClient const * const clientThis, const StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartInstance(request), context);
 }
 
-void LightsailClient::StartInstanceAsyncHelper(const StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::StartInstanceAsync(const StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientStartInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 StartRelationalDatabaseOutcome LightsailClient::StartRelationalDatabase(const StartRelationalDatabaseRequest& request) const
@@ -3580,14 +3580,14 @@ StartRelationalDatabaseOutcomeCallable LightsailClient::StartRelationalDatabaseC
   return task->get_future();
 }
 
-void LightsailClient::StartRelationalDatabaseAsync(const StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientStartRelationalDatabaseAsyncHelper(LightsailClient const * const clientThis, const StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartRelationalDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartRelationalDatabase(request), context);
 }
 
-void LightsailClient::StartRelationalDatabaseAsyncHelper(const StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::StartRelationalDatabaseAsync(const StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartRelationalDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientStartRelationalDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 StopInstanceOutcome LightsailClient::StopInstance(const StopInstanceRequest& request) const
@@ -3604,14 +3604,14 @@ StopInstanceOutcomeCallable LightsailClient::StopInstanceCallable(const StopInst
   return task->get_future();
 }
 
-void LightsailClient::StopInstanceAsync(const StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientStopInstanceAsyncHelper(LightsailClient const * const clientThis, const StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopInstance(request), context);
 }
 
-void LightsailClient::StopInstanceAsyncHelper(const StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::StopInstanceAsync(const StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientStopInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 StopRelationalDatabaseOutcome LightsailClient::StopRelationalDatabase(const StopRelationalDatabaseRequest& request) const
@@ -3628,14 +3628,14 @@ StopRelationalDatabaseOutcomeCallable LightsailClient::StopRelationalDatabaseCal
   return task->get_future();
 }
 
-void LightsailClient::StopRelationalDatabaseAsync(const StopRelationalDatabaseRequest& request, const StopRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientStopRelationalDatabaseAsyncHelper(LightsailClient const * const clientThis, const StopRelationalDatabaseRequest& request, const StopRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopRelationalDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopRelationalDatabase(request), context);
 }
 
-void LightsailClient::StopRelationalDatabaseAsyncHelper(const StopRelationalDatabaseRequest& request, const StopRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::StopRelationalDatabaseAsync(const StopRelationalDatabaseRequest& request, const StopRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopRelationalDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientStopRelationalDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome LightsailClient::TagResource(const TagResourceRequest& request) const
@@ -3652,14 +3652,14 @@ TagResourceOutcomeCallable LightsailClient::TagResourceCallable(const TagResourc
   return task->get_future();
 }
 
-void LightsailClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientTagResourceAsyncHelper(LightsailClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void LightsailClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TestAlarmOutcome LightsailClient::TestAlarm(const TestAlarmRequest& request) const
@@ -3676,14 +3676,14 @@ TestAlarmOutcomeCallable LightsailClient::TestAlarmCallable(const TestAlarmReque
   return task->get_future();
 }
 
-void LightsailClient::TestAlarmAsync(const TestAlarmRequest& request, const TestAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientTestAlarmAsyncHelper(LightsailClient const * const clientThis, const TestAlarmRequest& request, const TestAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestAlarmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TestAlarm(request), context);
 }
 
-void LightsailClient::TestAlarmAsyncHelper(const TestAlarmRequest& request, const TestAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::TestAlarmAsync(const TestAlarmRequest& request, const TestAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TestAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientTestAlarmAsyncHelper( this, request, handler, context ); } );
 }
 
 UnpeerVpcOutcome LightsailClient::UnpeerVpc(const UnpeerVpcRequest& request) const
@@ -3700,14 +3700,14 @@ UnpeerVpcOutcomeCallable LightsailClient::UnpeerVpcCallable(const UnpeerVpcReque
   return task->get_future();
 }
 
-void LightsailClient::UnpeerVpcAsync(const UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUnpeerVpcAsyncHelper(LightsailClient const * const clientThis, const UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnpeerVpcAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UnpeerVpc(request), context);
 }
 
-void LightsailClient::UnpeerVpcAsyncHelper(const UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UnpeerVpcAsync(const UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UnpeerVpc(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUnpeerVpcAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome LightsailClient::UntagResource(const UntagResourceRequest& request) const
@@ -3724,14 +3724,14 @@ UntagResourceOutcomeCallable LightsailClient::UntagResourceCallable(const UntagR
   return task->get_future();
 }
 
-void LightsailClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUntagResourceAsyncHelper(LightsailClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void LightsailClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBucketOutcome LightsailClient::UpdateBucket(const UpdateBucketRequest& request) const
@@ -3748,14 +3748,14 @@ UpdateBucketOutcomeCallable LightsailClient::UpdateBucketCallable(const UpdateBu
   return task->get_future();
 }
 
-void LightsailClient::UpdateBucketAsync(const UpdateBucketRequest& request, const UpdateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUpdateBucketAsyncHelper(LightsailClient const * const clientThis, const UpdateBucketRequest& request, const UpdateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBucketAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBucket(request), context);
 }
 
-void LightsailClient::UpdateBucketAsyncHelper(const UpdateBucketRequest& request, const UpdateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UpdateBucketAsync(const UpdateBucketRequest& request, const UpdateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBucket(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUpdateBucketAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBucketBundleOutcome LightsailClient::UpdateBucketBundle(const UpdateBucketBundleRequest& request) const
@@ -3772,14 +3772,14 @@ UpdateBucketBundleOutcomeCallable LightsailClient::UpdateBucketBundleCallable(co
   return task->get_future();
 }
 
-void LightsailClient::UpdateBucketBundleAsync(const UpdateBucketBundleRequest& request, const UpdateBucketBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUpdateBucketBundleAsyncHelper(LightsailClient const * const clientThis, const UpdateBucketBundleRequest& request, const UpdateBucketBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBucketBundleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBucketBundle(request), context);
 }
 
-void LightsailClient::UpdateBucketBundleAsyncHelper(const UpdateBucketBundleRequest& request, const UpdateBucketBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UpdateBucketBundleAsync(const UpdateBucketBundleRequest& request, const UpdateBucketBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBucketBundle(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUpdateBucketBundleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateContainerServiceOutcome LightsailClient::UpdateContainerService(const UpdateContainerServiceRequest& request) const
@@ -3796,14 +3796,14 @@ UpdateContainerServiceOutcomeCallable LightsailClient::UpdateContainerServiceCal
   return task->get_future();
 }
 
-void LightsailClient::UpdateContainerServiceAsync(const UpdateContainerServiceRequest& request, const UpdateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUpdateContainerServiceAsyncHelper(LightsailClient const * const clientThis, const UpdateContainerServiceRequest& request, const UpdateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContainerServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateContainerService(request), context);
 }
 
-void LightsailClient::UpdateContainerServiceAsyncHelper(const UpdateContainerServiceRequest& request, const UpdateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UpdateContainerServiceAsync(const UpdateContainerServiceRequest& request, const UpdateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateContainerService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUpdateContainerServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDistributionOutcome LightsailClient::UpdateDistribution(const UpdateDistributionRequest& request) const
@@ -3820,14 +3820,14 @@ UpdateDistributionOutcomeCallable LightsailClient::UpdateDistributionCallable(co
   return task->get_future();
 }
 
-void LightsailClient::UpdateDistributionAsync(const UpdateDistributionRequest& request, const UpdateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUpdateDistributionAsyncHelper(LightsailClient const * const clientThis, const UpdateDistributionRequest& request, const UpdateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDistributionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDistribution(request), context);
 }
 
-void LightsailClient::UpdateDistributionAsyncHelper(const UpdateDistributionRequest& request, const UpdateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UpdateDistributionAsync(const UpdateDistributionRequest& request, const UpdateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDistribution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUpdateDistributionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDistributionBundleOutcome LightsailClient::UpdateDistributionBundle(const UpdateDistributionBundleRequest& request) const
@@ -3844,14 +3844,14 @@ UpdateDistributionBundleOutcomeCallable LightsailClient::UpdateDistributionBundl
   return task->get_future();
 }
 
-void LightsailClient::UpdateDistributionBundleAsync(const UpdateDistributionBundleRequest& request, const UpdateDistributionBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUpdateDistributionBundleAsyncHelper(LightsailClient const * const clientThis, const UpdateDistributionBundleRequest& request, const UpdateDistributionBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDistributionBundleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDistributionBundle(request), context);
 }
 
-void LightsailClient::UpdateDistributionBundleAsyncHelper(const UpdateDistributionBundleRequest& request, const UpdateDistributionBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UpdateDistributionBundleAsync(const UpdateDistributionBundleRequest& request, const UpdateDistributionBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDistributionBundle(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUpdateDistributionBundleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainEntryOutcome LightsailClient::UpdateDomainEntry(const UpdateDomainEntryRequest& request) const
@@ -3868,14 +3868,14 @@ UpdateDomainEntryOutcomeCallable LightsailClient::UpdateDomainEntryCallable(cons
   return task->get_future();
 }
 
-void LightsailClient::UpdateDomainEntryAsync(const UpdateDomainEntryRequest& request, const UpdateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUpdateDomainEntryAsyncHelper(LightsailClient const * const clientThis, const UpdateDomainEntryRequest& request, const UpdateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainEntryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomainEntry(request), context);
 }
 
-void LightsailClient::UpdateDomainEntryAsyncHelper(const UpdateDomainEntryRequest& request, const UpdateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UpdateDomainEntryAsync(const UpdateDomainEntryRequest& request, const UpdateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomainEntry(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUpdateDomainEntryAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLoadBalancerAttributeOutcome LightsailClient::UpdateLoadBalancerAttribute(const UpdateLoadBalancerAttributeRequest& request) const
@@ -3892,14 +3892,14 @@ UpdateLoadBalancerAttributeOutcomeCallable LightsailClient::UpdateLoadBalancerAt
   return task->get_future();
 }
 
-void LightsailClient::UpdateLoadBalancerAttributeAsync(const UpdateLoadBalancerAttributeRequest& request, const UpdateLoadBalancerAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUpdateLoadBalancerAttributeAsyncHelper(LightsailClient const * const clientThis, const UpdateLoadBalancerAttributeRequest& request, const UpdateLoadBalancerAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLoadBalancerAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLoadBalancerAttribute(request), context);
 }
 
-void LightsailClient::UpdateLoadBalancerAttributeAsyncHelper(const UpdateLoadBalancerAttributeRequest& request, const UpdateLoadBalancerAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UpdateLoadBalancerAttributeAsync(const UpdateLoadBalancerAttributeRequest& request, const UpdateLoadBalancerAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLoadBalancerAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUpdateLoadBalancerAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRelationalDatabaseOutcome LightsailClient::UpdateRelationalDatabase(const UpdateRelationalDatabaseRequest& request) const
@@ -3916,14 +3916,14 @@ UpdateRelationalDatabaseOutcomeCallable LightsailClient::UpdateRelationalDatabas
   return task->get_future();
 }
 
-void LightsailClient::UpdateRelationalDatabaseAsync(const UpdateRelationalDatabaseRequest& request, const UpdateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUpdateRelationalDatabaseAsyncHelper(LightsailClient const * const clientThis, const UpdateRelationalDatabaseRequest& request, const UpdateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRelationalDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRelationalDatabase(request), context);
 }
 
-void LightsailClient::UpdateRelationalDatabaseAsyncHelper(const UpdateRelationalDatabaseRequest& request, const UpdateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UpdateRelationalDatabaseAsync(const UpdateRelationalDatabaseRequest& request, const UpdateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRelationalDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUpdateRelationalDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRelationalDatabaseParametersOutcome LightsailClient::UpdateRelationalDatabaseParameters(const UpdateRelationalDatabaseParametersRequest& request) const
@@ -3940,13 +3940,13 @@ UpdateRelationalDatabaseParametersOutcomeCallable LightsailClient::UpdateRelatio
   return task->get_future();
 }
 
-void LightsailClient::UpdateRelationalDatabaseParametersAsync(const UpdateRelationalDatabaseParametersRequest& request, const UpdateRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClientUpdateRelationalDatabaseParametersAsyncHelper(LightsailClient const * const clientThis, const UpdateRelationalDatabaseParametersRequest& request, const UpdateRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRelationalDatabaseParametersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRelationalDatabaseParameters(request), context);
 }
 
-void LightsailClient::UpdateRelationalDatabaseParametersAsyncHelper(const UpdateRelationalDatabaseParametersRequest& request, const UpdateRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LightsailClient::UpdateRelationalDatabaseParametersAsync(const UpdateRelationalDatabaseParametersRequest& request, const UpdateRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRelationalDatabaseParameters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LightsailClientUpdateRelationalDatabaseParametersAsyncHelper( this, request, handler, context ); } );
 }
 

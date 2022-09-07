@@ -134,14 +134,14 @@ GetRoleCredentialsOutcomeCallable SSOClient::GetRoleCredentialsCallable(const Ge
   return task->get_future();
 }
 
-void SSOClient::GetRoleCredentialsAsync(const GetRoleCredentialsRequest& request, const GetRoleCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOClientGetRoleCredentialsAsyncHelper(SSOClient const * const clientThis, const GetRoleCredentialsRequest& request, const GetRoleCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRoleCredentialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRoleCredentials(request), context);
 }
 
-void SSOClient::GetRoleCredentialsAsyncHelper(const GetRoleCredentialsRequest& request, const GetRoleCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOClient::GetRoleCredentialsAsync(const GetRoleCredentialsRequest& request, const GetRoleCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRoleCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOClientGetRoleCredentialsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccountRolesOutcome SSOClient::ListAccountRoles(const ListAccountRolesRequest& request) const
@@ -169,14 +169,14 @@ ListAccountRolesOutcomeCallable SSOClient::ListAccountRolesCallable(const ListAc
   return task->get_future();
 }
 
-void SSOClient::ListAccountRolesAsync(const ListAccountRolesRequest& request, const ListAccountRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOClientListAccountRolesAsyncHelper(SSOClient const * const clientThis, const ListAccountRolesRequest& request, const ListAccountRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountRolesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccountRoles(request), context);
 }
 
-void SSOClient::ListAccountRolesAsyncHelper(const ListAccountRolesRequest& request, const ListAccountRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOClient::ListAccountRolesAsync(const ListAccountRolesRequest& request, const ListAccountRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccountRoles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOClientListAccountRolesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccountsOutcome SSOClient::ListAccounts(const ListAccountsRequest& request) const
@@ -199,14 +199,14 @@ ListAccountsOutcomeCallable SSOClient::ListAccountsCallable(const ListAccountsRe
   return task->get_future();
 }
 
-void SSOClient::ListAccountsAsync(const ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOClientListAccountsAsyncHelper(SSOClient const * const clientThis, const ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccounts(request), context);
 }
 
-void SSOClient::ListAccountsAsyncHelper(const ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOClient::ListAccountsAsync(const ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOClientListAccountsAsyncHelper( this, request, handler, context ); } );
 }
 
 LogoutOutcome SSOClient::Logout(const LogoutRequest& request) const
@@ -229,13 +229,13 @@ LogoutOutcomeCallable SSOClient::LogoutCallable(const LogoutRequest& request) co
   return task->get_future();
 }
 
-void SSOClient::LogoutAsync(const LogoutRequest& request, const LogoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOClientLogoutAsyncHelper(SSOClient const * const clientThis, const LogoutRequest& request, const LogoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->LogoutAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Logout(request), context);
 }
 
-void SSOClient::LogoutAsyncHelper(const LogoutRequest& request, const LogoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SSOClient::LogoutAsync(const LogoutRequest& request, const LogoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Logout(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SSOClientLogoutAsyncHelper( this, request, handler, context ); } );
 }
 

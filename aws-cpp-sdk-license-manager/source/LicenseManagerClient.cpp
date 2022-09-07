@@ -162,14 +162,14 @@ AcceptGrantOutcomeCallable LicenseManagerClient::AcceptGrantCallable(const Accep
   return task->get_future();
 }
 
-void LicenseManagerClient::AcceptGrantAsync(const AcceptGrantRequest& request, const AcceptGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientAcceptGrantAsyncHelper(LicenseManagerClient const * const clientThis, const AcceptGrantRequest& request, const AcceptGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptGrantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptGrant(request), context);
 }
 
-void LicenseManagerClient::AcceptGrantAsyncHelper(const AcceptGrantRequest& request, const AcceptGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::AcceptGrantAsync(const AcceptGrantRequest& request, const AcceptGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptGrant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientAcceptGrantAsyncHelper( this, request, handler, context ); } );
 }
 
 CheckInLicenseOutcome LicenseManagerClient::CheckInLicense(const CheckInLicenseRequest& request) const
@@ -186,14 +186,14 @@ CheckInLicenseOutcomeCallable LicenseManagerClient::CheckInLicenseCallable(const
   return task->get_future();
 }
 
-void LicenseManagerClient::CheckInLicenseAsync(const CheckInLicenseRequest& request, const CheckInLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCheckInLicenseAsyncHelper(LicenseManagerClient const * const clientThis, const CheckInLicenseRequest& request, const CheckInLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CheckInLicenseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CheckInLicense(request), context);
 }
 
-void LicenseManagerClient::CheckInLicenseAsyncHelper(const CheckInLicenseRequest& request, const CheckInLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CheckInLicenseAsync(const CheckInLicenseRequest& request, const CheckInLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CheckInLicense(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCheckInLicenseAsyncHelper( this, request, handler, context ); } );
 }
 
 CheckoutBorrowLicenseOutcome LicenseManagerClient::CheckoutBorrowLicense(const CheckoutBorrowLicenseRequest& request) const
@@ -210,14 +210,14 @@ CheckoutBorrowLicenseOutcomeCallable LicenseManagerClient::CheckoutBorrowLicense
   return task->get_future();
 }
 
-void LicenseManagerClient::CheckoutBorrowLicenseAsync(const CheckoutBorrowLicenseRequest& request, const CheckoutBorrowLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCheckoutBorrowLicenseAsyncHelper(LicenseManagerClient const * const clientThis, const CheckoutBorrowLicenseRequest& request, const CheckoutBorrowLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CheckoutBorrowLicenseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CheckoutBorrowLicense(request), context);
 }
 
-void LicenseManagerClient::CheckoutBorrowLicenseAsyncHelper(const CheckoutBorrowLicenseRequest& request, const CheckoutBorrowLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CheckoutBorrowLicenseAsync(const CheckoutBorrowLicenseRequest& request, const CheckoutBorrowLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CheckoutBorrowLicense(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCheckoutBorrowLicenseAsyncHelper( this, request, handler, context ); } );
 }
 
 CheckoutLicenseOutcome LicenseManagerClient::CheckoutLicense(const CheckoutLicenseRequest& request) const
@@ -234,14 +234,14 @@ CheckoutLicenseOutcomeCallable LicenseManagerClient::CheckoutLicenseCallable(con
   return task->get_future();
 }
 
-void LicenseManagerClient::CheckoutLicenseAsync(const CheckoutLicenseRequest& request, const CheckoutLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCheckoutLicenseAsyncHelper(LicenseManagerClient const * const clientThis, const CheckoutLicenseRequest& request, const CheckoutLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CheckoutLicenseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CheckoutLicense(request), context);
 }
 
-void LicenseManagerClient::CheckoutLicenseAsyncHelper(const CheckoutLicenseRequest& request, const CheckoutLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CheckoutLicenseAsync(const CheckoutLicenseRequest& request, const CheckoutLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CheckoutLicense(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCheckoutLicenseAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGrantOutcome LicenseManagerClient::CreateGrant(const CreateGrantRequest& request) const
@@ -258,14 +258,14 @@ CreateGrantOutcomeCallable LicenseManagerClient::CreateGrantCallable(const Creat
   return task->get_future();
 }
 
-void LicenseManagerClient::CreateGrantAsync(const CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCreateGrantAsyncHelper(LicenseManagerClient const * const clientThis, const CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGrantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGrant(request), context);
 }
 
-void LicenseManagerClient::CreateGrantAsyncHelper(const CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CreateGrantAsync(const CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGrant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCreateGrantAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGrantVersionOutcome LicenseManagerClient::CreateGrantVersion(const CreateGrantVersionRequest& request) const
@@ -282,14 +282,14 @@ CreateGrantVersionOutcomeCallable LicenseManagerClient::CreateGrantVersionCallab
   return task->get_future();
 }
 
-void LicenseManagerClient::CreateGrantVersionAsync(const CreateGrantVersionRequest& request, const CreateGrantVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCreateGrantVersionAsyncHelper(LicenseManagerClient const * const clientThis, const CreateGrantVersionRequest& request, const CreateGrantVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGrantVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGrantVersion(request), context);
 }
 
-void LicenseManagerClient::CreateGrantVersionAsyncHelper(const CreateGrantVersionRequest& request, const CreateGrantVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CreateGrantVersionAsync(const CreateGrantVersionRequest& request, const CreateGrantVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGrantVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCreateGrantVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLicenseOutcome LicenseManagerClient::CreateLicense(const CreateLicenseRequest& request) const
@@ -306,14 +306,14 @@ CreateLicenseOutcomeCallable LicenseManagerClient::CreateLicenseCallable(const C
   return task->get_future();
 }
 
-void LicenseManagerClient::CreateLicenseAsync(const CreateLicenseRequest& request, const CreateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCreateLicenseAsyncHelper(LicenseManagerClient const * const clientThis, const CreateLicenseRequest& request, const CreateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLicenseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLicense(request), context);
 }
 
-void LicenseManagerClient::CreateLicenseAsyncHelper(const CreateLicenseRequest& request, const CreateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CreateLicenseAsync(const CreateLicenseRequest& request, const CreateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLicense(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCreateLicenseAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLicenseConfigurationOutcome LicenseManagerClient::CreateLicenseConfiguration(const CreateLicenseConfigurationRequest& request) const
@@ -330,14 +330,14 @@ CreateLicenseConfigurationOutcomeCallable LicenseManagerClient::CreateLicenseCon
   return task->get_future();
 }
 
-void LicenseManagerClient::CreateLicenseConfigurationAsync(const CreateLicenseConfigurationRequest& request, const CreateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCreateLicenseConfigurationAsyncHelper(LicenseManagerClient const * const clientThis, const CreateLicenseConfigurationRequest& request, const CreateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLicenseConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLicenseConfiguration(request), context);
 }
 
-void LicenseManagerClient::CreateLicenseConfigurationAsyncHelper(const CreateLicenseConfigurationRequest& request, const CreateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CreateLicenseConfigurationAsync(const CreateLicenseConfigurationRequest& request, const CreateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLicenseConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCreateLicenseConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLicenseConversionTaskForResourceOutcome LicenseManagerClient::CreateLicenseConversionTaskForResource(const CreateLicenseConversionTaskForResourceRequest& request) const
@@ -354,14 +354,14 @@ CreateLicenseConversionTaskForResourceOutcomeCallable LicenseManagerClient::Crea
   return task->get_future();
 }
 
-void LicenseManagerClient::CreateLicenseConversionTaskForResourceAsync(const CreateLicenseConversionTaskForResourceRequest& request, const CreateLicenseConversionTaskForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCreateLicenseConversionTaskForResourceAsyncHelper(LicenseManagerClient const * const clientThis, const CreateLicenseConversionTaskForResourceRequest& request, const CreateLicenseConversionTaskForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLicenseConversionTaskForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLicenseConversionTaskForResource(request), context);
 }
 
-void LicenseManagerClient::CreateLicenseConversionTaskForResourceAsyncHelper(const CreateLicenseConversionTaskForResourceRequest& request, const CreateLicenseConversionTaskForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CreateLicenseConversionTaskForResourceAsync(const CreateLicenseConversionTaskForResourceRequest& request, const CreateLicenseConversionTaskForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLicenseConversionTaskForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCreateLicenseConversionTaskForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLicenseManagerReportGeneratorOutcome LicenseManagerClient::CreateLicenseManagerReportGenerator(const CreateLicenseManagerReportGeneratorRequest& request) const
@@ -378,14 +378,14 @@ CreateLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::CreateL
   return task->get_future();
 }
 
-void LicenseManagerClient::CreateLicenseManagerReportGeneratorAsync(const CreateLicenseManagerReportGeneratorRequest& request, const CreateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCreateLicenseManagerReportGeneratorAsyncHelper(LicenseManagerClient const * const clientThis, const CreateLicenseManagerReportGeneratorRequest& request, const CreateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLicenseManagerReportGeneratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLicenseManagerReportGenerator(request), context);
 }
 
-void LicenseManagerClient::CreateLicenseManagerReportGeneratorAsyncHelper(const CreateLicenseManagerReportGeneratorRequest& request, const CreateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CreateLicenseManagerReportGeneratorAsync(const CreateLicenseManagerReportGeneratorRequest& request, const CreateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLicenseManagerReportGenerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCreateLicenseManagerReportGeneratorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLicenseVersionOutcome LicenseManagerClient::CreateLicenseVersion(const CreateLicenseVersionRequest& request) const
@@ -402,14 +402,14 @@ CreateLicenseVersionOutcomeCallable LicenseManagerClient::CreateLicenseVersionCa
   return task->get_future();
 }
 
-void LicenseManagerClient::CreateLicenseVersionAsync(const CreateLicenseVersionRequest& request, const CreateLicenseVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCreateLicenseVersionAsyncHelper(LicenseManagerClient const * const clientThis, const CreateLicenseVersionRequest& request, const CreateLicenseVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLicenseVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLicenseVersion(request), context);
 }
 
-void LicenseManagerClient::CreateLicenseVersionAsyncHelper(const CreateLicenseVersionRequest& request, const CreateLicenseVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CreateLicenseVersionAsync(const CreateLicenseVersionRequest& request, const CreateLicenseVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLicenseVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCreateLicenseVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTokenOutcome LicenseManagerClient::CreateToken(const CreateTokenRequest& request) const
@@ -426,14 +426,14 @@ CreateTokenOutcomeCallable LicenseManagerClient::CreateTokenCallable(const Creat
   return task->get_future();
 }
 
-void LicenseManagerClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientCreateTokenAsyncHelper(LicenseManagerClient const * const clientThis, const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateToken(request), context);
 }
 
-void LicenseManagerClient::CreateTokenAsyncHelper(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientCreateTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGrantOutcome LicenseManagerClient::DeleteGrant(const DeleteGrantRequest& request) const
@@ -450,14 +450,14 @@ DeleteGrantOutcomeCallable LicenseManagerClient::DeleteGrantCallable(const Delet
   return task->get_future();
 }
 
-void LicenseManagerClient::DeleteGrantAsync(const DeleteGrantRequest& request, const DeleteGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientDeleteGrantAsyncHelper(LicenseManagerClient const * const clientThis, const DeleteGrantRequest& request, const DeleteGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGrantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGrant(request), context);
 }
 
-void LicenseManagerClient::DeleteGrantAsyncHelper(const DeleteGrantRequest& request, const DeleteGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::DeleteGrantAsync(const DeleteGrantRequest& request, const DeleteGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGrant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientDeleteGrantAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLicenseOutcome LicenseManagerClient::DeleteLicense(const DeleteLicenseRequest& request) const
@@ -474,14 +474,14 @@ DeleteLicenseOutcomeCallable LicenseManagerClient::DeleteLicenseCallable(const D
   return task->get_future();
 }
 
-void LicenseManagerClient::DeleteLicenseAsync(const DeleteLicenseRequest& request, const DeleteLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientDeleteLicenseAsyncHelper(LicenseManagerClient const * const clientThis, const DeleteLicenseRequest& request, const DeleteLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLicenseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLicense(request), context);
 }
 
-void LicenseManagerClient::DeleteLicenseAsyncHelper(const DeleteLicenseRequest& request, const DeleteLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::DeleteLicenseAsync(const DeleteLicenseRequest& request, const DeleteLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLicense(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientDeleteLicenseAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLicenseConfigurationOutcome LicenseManagerClient::DeleteLicenseConfiguration(const DeleteLicenseConfigurationRequest& request) const
@@ -498,14 +498,14 @@ DeleteLicenseConfigurationOutcomeCallable LicenseManagerClient::DeleteLicenseCon
   return task->get_future();
 }
 
-void LicenseManagerClient::DeleteLicenseConfigurationAsync(const DeleteLicenseConfigurationRequest& request, const DeleteLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientDeleteLicenseConfigurationAsyncHelper(LicenseManagerClient const * const clientThis, const DeleteLicenseConfigurationRequest& request, const DeleteLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLicenseConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLicenseConfiguration(request), context);
 }
 
-void LicenseManagerClient::DeleteLicenseConfigurationAsyncHelper(const DeleteLicenseConfigurationRequest& request, const DeleteLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::DeleteLicenseConfigurationAsync(const DeleteLicenseConfigurationRequest& request, const DeleteLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLicenseConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientDeleteLicenseConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLicenseManagerReportGeneratorOutcome LicenseManagerClient::DeleteLicenseManagerReportGenerator(const DeleteLicenseManagerReportGeneratorRequest& request) const
@@ -522,14 +522,14 @@ DeleteLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::DeleteL
   return task->get_future();
 }
 
-void LicenseManagerClient::DeleteLicenseManagerReportGeneratorAsync(const DeleteLicenseManagerReportGeneratorRequest& request, const DeleteLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientDeleteLicenseManagerReportGeneratorAsyncHelper(LicenseManagerClient const * const clientThis, const DeleteLicenseManagerReportGeneratorRequest& request, const DeleteLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLicenseManagerReportGeneratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLicenseManagerReportGenerator(request), context);
 }
 
-void LicenseManagerClient::DeleteLicenseManagerReportGeneratorAsyncHelper(const DeleteLicenseManagerReportGeneratorRequest& request, const DeleteLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::DeleteLicenseManagerReportGeneratorAsync(const DeleteLicenseManagerReportGeneratorRequest& request, const DeleteLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLicenseManagerReportGenerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientDeleteLicenseManagerReportGeneratorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTokenOutcome LicenseManagerClient::DeleteToken(const DeleteTokenRequest& request) const
@@ -546,14 +546,14 @@ DeleteTokenOutcomeCallable LicenseManagerClient::DeleteTokenCallable(const Delet
   return task->get_future();
 }
 
-void LicenseManagerClient::DeleteTokenAsync(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientDeleteTokenAsyncHelper(LicenseManagerClient const * const clientThis, const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteToken(request), context);
 }
 
-void LicenseManagerClient::DeleteTokenAsyncHelper(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::DeleteTokenAsync(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientDeleteTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 ExtendLicenseConsumptionOutcome LicenseManagerClient::ExtendLicenseConsumption(const ExtendLicenseConsumptionRequest& request) const
@@ -570,14 +570,14 @@ ExtendLicenseConsumptionOutcomeCallable LicenseManagerClient::ExtendLicenseConsu
   return task->get_future();
 }
 
-void LicenseManagerClient::ExtendLicenseConsumptionAsync(const ExtendLicenseConsumptionRequest& request, const ExtendLicenseConsumptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientExtendLicenseConsumptionAsyncHelper(LicenseManagerClient const * const clientThis, const ExtendLicenseConsumptionRequest& request, const ExtendLicenseConsumptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExtendLicenseConsumptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExtendLicenseConsumption(request), context);
 }
 
-void LicenseManagerClient::ExtendLicenseConsumptionAsyncHelper(const ExtendLicenseConsumptionRequest& request, const ExtendLicenseConsumptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ExtendLicenseConsumptionAsync(const ExtendLicenseConsumptionRequest& request, const ExtendLicenseConsumptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExtendLicenseConsumption(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientExtendLicenseConsumptionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccessTokenOutcome LicenseManagerClient::GetAccessToken(const GetAccessTokenRequest& request) const
@@ -594,14 +594,14 @@ GetAccessTokenOutcomeCallable LicenseManagerClient::GetAccessTokenCallable(const
   return task->get_future();
 }
 
-void LicenseManagerClient::GetAccessTokenAsync(const GetAccessTokenRequest& request, const GetAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientGetAccessTokenAsyncHelper(LicenseManagerClient const * const clientThis, const GetAccessTokenRequest& request, const GetAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccessToken(request), context);
 }
 
-void LicenseManagerClient::GetAccessTokenAsyncHelper(const GetAccessTokenRequest& request, const GetAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::GetAccessTokenAsync(const GetAccessTokenRequest& request, const GetAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccessToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientGetAccessTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGrantOutcome LicenseManagerClient::GetGrant(const GetGrantRequest& request) const
@@ -618,14 +618,14 @@ GetGrantOutcomeCallable LicenseManagerClient::GetGrantCallable(const GetGrantReq
   return task->get_future();
 }
 
-void LicenseManagerClient::GetGrantAsync(const GetGrantRequest& request, const GetGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientGetGrantAsyncHelper(LicenseManagerClient const * const clientThis, const GetGrantRequest& request, const GetGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGrantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGrant(request), context);
 }
 
-void LicenseManagerClient::GetGrantAsyncHelper(const GetGrantRequest& request, const GetGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::GetGrantAsync(const GetGrantRequest& request, const GetGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGrant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientGetGrantAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLicenseOutcome LicenseManagerClient::GetLicense(const GetLicenseRequest& request) const
@@ -642,14 +642,14 @@ GetLicenseOutcomeCallable LicenseManagerClient::GetLicenseCallable(const GetLice
   return task->get_future();
 }
 
-void LicenseManagerClient::GetLicenseAsync(const GetLicenseRequest& request, const GetLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientGetLicenseAsyncHelper(LicenseManagerClient const * const clientThis, const GetLicenseRequest& request, const GetLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLicenseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLicense(request), context);
 }
 
-void LicenseManagerClient::GetLicenseAsyncHelper(const GetLicenseRequest& request, const GetLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::GetLicenseAsync(const GetLicenseRequest& request, const GetLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLicense(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientGetLicenseAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLicenseConfigurationOutcome LicenseManagerClient::GetLicenseConfiguration(const GetLicenseConfigurationRequest& request) const
@@ -666,14 +666,14 @@ GetLicenseConfigurationOutcomeCallable LicenseManagerClient::GetLicenseConfigura
   return task->get_future();
 }
 
-void LicenseManagerClient::GetLicenseConfigurationAsync(const GetLicenseConfigurationRequest& request, const GetLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientGetLicenseConfigurationAsyncHelper(LicenseManagerClient const * const clientThis, const GetLicenseConfigurationRequest& request, const GetLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLicenseConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLicenseConfiguration(request), context);
 }
 
-void LicenseManagerClient::GetLicenseConfigurationAsyncHelper(const GetLicenseConfigurationRequest& request, const GetLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::GetLicenseConfigurationAsync(const GetLicenseConfigurationRequest& request, const GetLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLicenseConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientGetLicenseConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLicenseConversionTaskOutcome LicenseManagerClient::GetLicenseConversionTask(const GetLicenseConversionTaskRequest& request) const
@@ -690,14 +690,14 @@ GetLicenseConversionTaskOutcomeCallable LicenseManagerClient::GetLicenseConversi
   return task->get_future();
 }
 
-void LicenseManagerClient::GetLicenseConversionTaskAsync(const GetLicenseConversionTaskRequest& request, const GetLicenseConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientGetLicenseConversionTaskAsyncHelper(LicenseManagerClient const * const clientThis, const GetLicenseConversionTaskRequest& request, const GetLicenseConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLicenseConversionTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLicenseConversionTask(request), context);
 }
 
-void LicenseManagerClient::GetLicenseConversionTaskAsyncHelper(const GetLicenseConversionTaskRequest& request, const GetLicenseConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::GetLicenseConversionTaskAsync(const GetLicenseConversionTaskRequest& request, const GetLicenseConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLicenseConversionTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientGetLicenseConversionTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLicenseManagerReportGeneratorOutcome LicenseManagerClient::GetLicenseManagerReportGenerator(const GetLicenseManagerReportGeneratorRequest& request) const
@@ -714,14 +714,14 @@ GetLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::GetLicense
   return task->get_future();
 }
 
-void LicenseManagerClient::GetLicenseManagerReportGeneratorAsync(const GetLicenseManagerReportGeneratorRequest& request, const GetLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientGetLicenseManagerReportGeneratorAsyncHelper(LicenseManagerClient const * const clientThis, const GetLicenseManagerReportGeneratorRequest& request, const GetLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLicenseManagerReportGeneratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLicenseManagerReportGenerator(request), context);
 }
 
-void LicenseManagerClient::GetLicenseManagerReportGeneratorAsyncHelper(const GetLicenseManagerReportGeneratorRequest& request, const GetLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::GetLicenseManagerReportGeneratorAsync(const GetLicenseManagerReportGeneratorRequest& request, const GetLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLicenseManagerReportGenerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientGetLicenseManagerReportGeneratorAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLicenseUsageOutcome LicenseManagerClient::GetLicenseUsage(const GetLicenseUsageRequest& request) const
@@ -738,14 +738,14 @@ GetLicenseUsageOutcomeCallable LicenseManagerClient::GetLicenseUsageCallable(con
   return task->get_future();
 }
 
-void LicenseManagerClient::GetLicenseUsageAsync(const GetLicenseUsageRequest& request, const GetLicenseUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientGetLicenseUsageAsyncHelper(LicenseManagerClient const * const clientThis, const GetLicenseUsageRequest& request, const GetLicenseUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLicenseUsageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLicenseUsage(request), context);
 }
 
-void LicenseManagerClient::GetLicenseUsageAsyncHelper(const GetLicenseUsageRequest& request, const GetLicenseUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::GetLicenseUsageAsync(const GetLicenseUsageRequest& request, const GetLicenseUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLicenseUsage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientGetLicenseUsageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceSettingsOutcome LicenseManagerClient::GetServiceSettings(const GetServiceSettingsRequest& request) const
@@ -762,14 +762,14 @@ GetServiceSettingsOutcomeCallable LicenseManagerClient::GetServiceSettingsCallab
   return task->get_future();
 }
 
-void LicenseManagerClient::GetServiceSettingsAsync(const GetServiceSettingsRequest& request, const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientGetServiceSettingsAsyncHelper(LicenseManagerClient const * const clientThis, const GetServiceSettingsRequest& request, const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServiceSettings(request), context);
 }
 
-void LicenseManagerClient::GetServiceSettingsAsyncHelper(const GetServiceSettingsRequest& request, const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::GetServiceSettingsAsync(const GetServiceSettingsRequest& request, const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServiceSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientGetServiceSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAssociationsForLicenseConfigurationOutcome LicenseManagerClient::ListAssociationsForLicenseConfiguration(const ListAssociationsForLicenseConfigurationRequest& request) const
@@ -786,14 +786,14 @@ ListAssociationsForLicenseConfigurationOutcomeCallable LicenseManagerClient::Lis
   return task->get_future();
 }
 
-void LicenseManagerClient::ListAssociationsForLicenseConfigurationAsync(const ListAssociationsForLicenseConfigurationRequest& request, const ListAssociationsForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListAssociationsForLicenseConfigurationAsyncHelper(LicenseManagerClient const * const clientThis, const ListAssociationsForLicenseConfigurationRequest& request, const ListAssociationsForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssociationsForLicenseConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAssociationsForLicenseConfiguration(request), context);
 }
 
-void LicenseManagerClient::ListAssociationsForLicenseConfigurationAsyncHelper(const ListAssociationsForLicenseConfigurationRequest& request, const ListAssociationsForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListAssociationsForLicenseConfigurationAsync(const ListAssociationsForLicenseConfigurationRequest& request, const ListAssociationsForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssociationsForLicenseConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListAssociationsForLicenseConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDistributedGrantsOutcome LicenseManagerClient::ListDistributedGrants(const ListDistributedGrantsRequest& request) const
@@ -810,14 +810,14 @@ ListDistributedGrantsOutcomeCallable LicenseManagerClient::ListDistributedGrants
   return task->get_future();
 }
 
-void LicenseManagerClient::ListDistributedGrantsAsync(const ListDistributedGrantsRequest& request, const ListDistributedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListDistributedGrantsAsyncHelper(LicenseManagerClient const * const clientThis, const ListDistributedGrantsRequest& request, const ListDistributedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDistributedGrantsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDistributedGrants(request), context);
 }
 
-void LicenseManagerClient::ListDistributedGrantsAsyncHelper(const ListDistributedGrantsRequest& request, const ListDistributedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListDistributedGrantsAsync(const ListDistributedGrantsRequest& request, const ListDistributedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDistributedGrants(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListDistributedGrantsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFailuresForLicenseConfigurationOperationsOutcome LicenseManagerClient::ListFailuresForLicenseConfigurationOperations(const ListFailuresForLicenseConfigurationOperationsRequest& request) const
@@ -834,14 +834,14 @@ ListFailuresForLicenseConfigurationOperationsOutcomeCallable LicenseManagerClien
   return task->get_future();
 }
 
-void LicenseManagerClient::ListFailuresForLicenseConfigurationOperationsAsync(const ListFailuresForLicenseConfigurationOperationsRequest& request, const ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListFailuresForLicenseConfigurationOperationsAsyncHelper(LicenseManagerClient const * const clientThis, const ListFailuresForLicenseConfigurationOperationsRequest& request, const ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFailuresForLicenseConfigurationOperationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFailuresForLicenseConfigurationOperations(request), context);
 }
 
-void LicenseManagerClient::ListFailuresForLicenseConfigurationOperationsAsyncHelper(const ListFailuresForLicenseConfigurationOperationsRequest& request, const ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListFailuresForLicenseConfigurationOperationsAsync(const ListFailuresForLicenseConfigurationOperationsRequest& request, const ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFailuresForLicenseConfigurationOperations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListFailuresForLicenseConfigurationOperationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLicenseConfigurationsOutcome LicenseManagerClient::ListLicenseConfigurations(const ListLicenseConfigurationsRequest& request) const
@@ -858,14 +858,14 @@ ListLicenseConfigurationsOutcomeCallable LicenseManagerClient::ListLicenseConfig
   return task->get_future();
 }
 
-void LicenseManagerClient::ListLicenseConfigurationsAsync(const ListLicenseConfigurationsRequest& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListLicenseConfigurationsAsyncHelper(LicenseManagerClient const * const clientThis, const ListLicenseConfigurationsRequest& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLicenseConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLicenseConfigurations(request), context);
 }
 
-void LicenseManagerClient::ListLicenseConfigurationsAsyncHelper(const ListLicenseConfigurationsRequest& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListLicenseConfigurationsAsync(const ListLicenseConfigurationsRequest& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLicenseConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListLicenseConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLicenseConversionTasksOutcome LicenseManagerClient::ListLicenseConversionTasks(const ListLicenseConversionTasksRequest& request) const
@@ -882,14 +882,14 @@ ListLicenseConversionTasksOutcomeCallable LicenseManagerClient::ListLicenseConve
   return task->get_future();
 }
 
-void LicenseManagerClient::ListLicenseConversionTasksAsync(const ListLicenseConversionTasksRequest& request, const ListLicenseConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListLicenseConversionTasksAsyncHelper(LicenseManagerClient const * const clientThis, const ListLicenseConversionTasksRequest& request, const ListLicenseConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLicenseConversionTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLicenseConversionTasks(request), context);
 }
 
-void LicenseManagerClient::ListLicenseConversionTasksAsyncHelper(const ListLicenseConversionTasksRequest& request, const ListLicenseConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListLicenseConversionTasksAsync(const ListLicenseConversionTasksRequest& request, const ListLicenseConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLicenseConversionTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListLicenseConversionTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLicenseManagerReportGeneratorsOutcome LicenseManagerClient::ListLicenseManagerReportGenerators(const ListLicenseManagerReportGeneratorsRequest& request) const
@@ -906,14 +906,14 @@ ListLicenseManagerReportGeneratorsOutcomeCallable LicenseManagerClient::ListLice
   return task->get_future();
 }
 
-void LicenseManagerClient::ListLicenseManagerReportGeneratorsAsync(const ListLicenseManagerReportGeneratorsRequest& request, const ListLicenseManagerReportGeneratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListLicenseManagerReportGeneratorsAsyncHelper(LicenseManagerClient const * const clientThis, const ListLicenseManagerReportGeneratorsRequest& request, const ListLicenseManagerReportGeneratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLicenseManagerReportGeneratorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLicenseManagerReportGenerators(request), context);
 }
 
-void LicenseManagerClient::ListLicenseManagerReportGeneratorsAsyncHelper(const ListLicenseManagerReportGeneratorsRequest& request, const ListLicenseManagerReportGeneratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListLicenseManagerReportGeneratorsAsync(const ListLicenseManagerReportGeneratorsRequest& request, const ListLicenseManagerReportGeneratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLicenseManagerReportGenerators(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListLicenseManagerReportGeneratorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLicenseSpecificationsForResourceOutcome LicenseManagerClient::ListLicenseSpecificationsForResource(const ListLicenseSpecificationsForResourceRequest& request) const
@@ -930,14 +930,14 @@ ListLicenseSpecificationsForResourceOutcomeCallable LicenseManagerClient::ListLi
   return task->get_future();
 }
 
-void LicenseManagerClient::ListLicenseSpecificationsForResourceAsync(const ListLicenseSpecificationsForResourceRequest& request, const ListLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListLicenseSpecificationsForResourceAsyncHelper(LicenseManagerClient const * const clientThis, const ListLicenseSpecificationsForResourceRequest& request, const ListLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLicenseSpecificationsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLicenseSpecificationsForResource(request), context);
 }
 
-void LicenseManagerClient::ListLicenseSpecificationsForResourceAsyncHelper(const ListLicenseSpecificationsForResourceRequest& request, const ListLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListLicenseSpecificationsForResourceAsync(const ListLicenseSpecificationsForResourceRequest& request, const ListLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLicenseSpecificationsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListLicenseSpecificationsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLicenseVersionsOutcome LicenseManagerClient::ListLicenseVersions(const ListLicenseVersionsRequest& request) const
@@ -954,14 +954,14 @@ ListLicenseVersionsOutcomeCallable LicenseManagerClient::ListLicenseVersionsCall
   return task->get_future();
 }
 
-void LicenseManagerClient::ListLicenseVersionsAsync(const ListLicenseVersionsRequest& request, const ListLicenseVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListLicenseVersionsAsyncHelper(LicenseManagerClient const * const clientThis, const ListLicenseVersionsRequest& request, const ListLicenseVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLicenseVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLicenseVersions(request), context);
 }
 
-void LicenseManagerClient::ListLicenseVersionsAsyncHelper(const ListLicenseVersionsRequest& request, const ListLicenseVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListLicenseVersionsAsync(const ListLicenseVersionsRequest& request, const ListLicenseVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLicenseVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListLicenseVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLicensesOutcome LicenseManagerClient::ListLicenses(const ListLicensesRequest& request) const
@@ -978,14 +978,14 @@ ListLicensesOutcomeCallable LicenseManagerClient::ListLicensesCallable(const Lis
   return task->get_future();
 }
 
-void LicenseManagerClient::ListLicensesAsync(const ListLicensesRequest& request, const ListLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListLicensesAsyncHelper(LicenseManagerClient const * const clientThis, const ListLicensesRequest& request, const ListLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLicensesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLicenses(request), context);
 }
 
-void LicenseManagerClient::ListLicensesAsyncHelper(const ListLicensesRequest& request, const ListLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListLicensesAsync(const ListLicensesRequest& request, const ListLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLicenses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListLicensesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReceivedGrantsOutcome LicenseManagerClient::ListReceivedGrants(const ListReceivedGrantsRequest& request) const
@@ -1002,14 +1002,14 @@ ListReceivedGrantsOutcomeCallable LicenseManagerClient::ListReceivedGrantsCallab
   return task->get_future();
 }
 
-void LicenseManagerClient::ListReceivedGrantsAsync(const ListReceivedGrantsRequest& request, const ListReceivedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListReceivedGrantsAsyncHelper(LicenseManagerClient const * const clientThis, const ListReceivedGrantsRequest& request, const ListReceivedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReceivedGrantsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReceivedGrants(request), context);
 }
 
-void LicenseManagerClient::ListReceivedGrantsAsyncHelper(const ListReceivedGrantsRequest& request, const ListReceivedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListReceivedGrantsAsync(const ListReceivedGrantsRequest& request, const ListReceivedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReceivedGrants(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListReceivedGrantsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReceivedLicensesOutcome LicenseManagerClient::ListReceivedLicenses(const ListReceivedLicensesRequest& request) const
@@ -1026,14 +1026,14 @@ ListReceivedLicensesOutcomeCallable LicenseManagerClient::ListReceivedLicensesCa
   return task->get_future();
 }
 
-void LicenseManagerClient::ListReceivedLicensesAsync(const ListReceivedLicensesRequest& request, const ListReceivedLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListReceivedLicensesAsyncHelper(LicenseManagerClient const * const clientThis, const ListReceivedLicensesRequest& request, const ListReceivedLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReceivedLicensesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReceivedLicenses(request), context);
 }
 
-void LicenseManagerClient::ListReceivedLicensesAsyncHelper(const ListReceivedLicensesRequest& request, const ListReceivedLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListReceivedLicensesAsync(const ListReceivedLicensesRequest& request, const ListReceivedLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReceivedLicenses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListReceivedLicensesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourceInventoryOutcome LicenseManagerClient::ListResourceInventory(const ListResourceInventoryRequest& request) const
@@ -1050,14 +1050,14 @@ ListResourceInventoryOutcomeCallable LicenseManagerClient::ListResourceInventory
   return task->get_future();
 }
 
-void LicenseManagerClient::ListResourceInventoryAsync(const ListResourceInventoryRequest& request, const ListResourceInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListResourceInventoryAsyncHelper(LicenseManagerClient const * const clientThis, const ListResourceInventoryRequest& request, const ListResourceInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceInventoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourceInventory(request), context);
 }
 
-void LicenseManagerClient::ListResourceInventoryAsyncHelper(const ListResourceInventoryRequest& request, const ListResourceInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListResourceInventoryAsync(const ListResourceInventoryRequest& request, const ListResourceInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourceInventory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListResourceInventoryAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome LicenseManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1074,14 +1074,14 @@ ListTagsForResourceOutcomeCallable LicenseManagerClient::ListTagsForResourceCall
   return task->get_future();
 }
 
-void LicenseManagerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListTagsForResourceAsyncHelper(LicenseManagerClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void LicenseManagerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTokensOutcome LicenseManagerClient::ListTokens(const ListTokensRequest& request) const
@@ -1098,14 +1098,14 @@ ListTokensOutcomeCallable LicenseManagerClient::ListTokensCallable(const ListTok
   return task->get_future();
 }
 
-void LicenseManagerClient::ListTokensAsync(const ListTokensRequest& request, const ListTokensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListTokensAsyncHelper(LicenseManagerClient const * const clientThis, const ListTokensRequest& request, const ListTokensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTokensAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTokens(request), context);
 }
 
-void LicenseManagerClient::ListTokensAsyncHelper(const ListTokensRequest& request, const ListTokensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListTokensAsync(const ListTokensRequest& request, const ListTokensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTokens(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListTokensAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUsageForLicenseConfigurationOutcome LicenseManagerClient::ListUsageForLicenseConfiguration(const ListUsageForLicenseConfigurationRequest& request) const
@@ -1122,14 +1122,14 @@ ListUsageForLicenseConfigurationOutcomeCallable LicenseManagerClient::ListUsageF
   return task->get_future();
 }
 
-void LicenseManagerClient::ListUsageForLicenseConfigurationAsync(const ListUsageForLicenseConfigurationRequest& request, const ListUsageForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientListUsageForLicenseConfigurationAsyncHelper(LicenseManagerClient const * const clientThis, const ListUsageForLicenseConfigurationRequest& request, const ListUsageForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsageForLicenseConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUsageForLicenseConfiguration(request), context);
 }
 
-void LicenseManagerClient::ListUsageForLicenseConfigurationAsyncHelper(const ListUsageForLicenseConfigurationRequest& request, const ListUsageForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::ListUsageForLicenseConfigurationAsync(const ListUsageForLicenseConfigurationRequest& request, const ListUsageForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUsageForLicenseConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientListUsageForLicenseConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectGrantOutcome LicenseManagerClient::RejectGrant(const RejectGrantRequest& request) const
@@ -1146,14 +1146,14 @@ RejectGrantOutcomeCallable LicenseManagerClient::RejectGrantCallable(const Rejec
   return task->get_future();
 }
 
-void LicenseManagerClient::RejectGrantAsync(const RejectGrantRequest& request, const RejectGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientRejectGrantAsyncHelper(LicenseManagerClient const * const clientThis, const RejectGrantRequest& request, const RejectGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectGrantAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectGrant(request), context);
 }
 
-void LicenseManagerClient::RejectGrantAsyncHelper(const RejectGrantRequest& request, const RejectGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::RejectGrantAsync(const RejectGrantRequest& request, const RejectGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectGrant(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientRejectGrantAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome LicenseManagerClient::TagResource(const TagResourceRequest& request) const
@@ -1170,14 +1170,14 @@ TagResourceOutcomeCallable LicenseManagerClient::TagResourceCallable(const TagRe
   return task->get_future();
 }
 
-void LicenseManagerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientTagResourceAsyncHelper(LicenseManagerClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void LicenseManagerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome LicenseManagerClient::UntagResource(const UntagResourceRequest& request) const
@@ -1194,14 +1194,14 @@ UntagResourceOutcomeCallable LicenseManagerClient::UntagResourceCallable(const U
   return task->get_future();
 }
 
-void LicenseManagerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientUntagResourceAsyncHelper(LicenseManagerClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void LicenseManagerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLicenseConfigurationOutcome LicenseManagerClient::UpdateLicenseConfiguration(const UpdateLicenseConfigurationRequest& request) const
@@ -1218,14 +1218,14 @@ UpdateLicenseConfigurationOutcomeCallable LicenseManagerClient::UpdateLicenseCon
   return task->get_future();
 }
 
-void LicenseManagerClient::UpdateLicenseConfigurationAsync(const UpdateLicenseConfigurationRequest& request, const UpdateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientUpdateLicenseConfigurationAsyncHelper(LicenseManagerClient const * const clientThis, const UpdateLicenseConfigurationRequest& request, const UpdateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLicenseConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLicenseConfiguration(request), context);
 }
 
-void LicenseManagerClient::UpdateLicenseConfigurationAsyncHelper(const UpdateLicenseConfigurationRequest& request, const UpdateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::UpdateLicenseConfigurationAsync(const UpdateLicenseConfigurationRequest& request, const UpdateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLicenseConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientUpdateLicenseConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLicenseManagerReportGeneratorOutcome LicenseManagerClient::UpdateLicenseManagerReportGenerator(const UpdateLicenseManagerReportGeneratorRequest& request) const
@@ -1242,14 +1242,14 @@ UpdateLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::UpdateL
   return task->get_future();
 }
 
-void LicenseManagerClient::UpdateLicenseManagerReportGeneratorAsync(const UpdateLicenseManagerReportGeneratorRequest& request, const UpdateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientUpdateLicenseManagerReportGeneratorAsyncHelper(LicenseManagerClient const * const clientThis, const UpdateLicenseManagerReportGeneratorRequest& request, const UpdateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLicenseManagerReportGeneratorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLicenseManagerReportGenerator(request), context);
 }
 
-void LicenseManagerClient::UpdateLicenseManagerReportGeneratorAsyncHelper(const UpdateLicenseManagerReportGeneratorRequest& request, const UpdateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::UpdateLicenseManagerReportGeneratorAsync(const UpdateLicenseManagerReportGeneratorRequest& request, const UpdateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLicenseManagerReportGenerator(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientUpdateLicenseManagerReportGeneratorAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLicenseSpecificationsForResourceOutcome LicenseManagerClient::UpdateLicenseSpecificationsForResource(const UpdateLicenseSpecificationsForResourceRequest& request) const
@@ -1266,14 +1266,14 @@ UpdateLicenseSpecificationsForResourceOutcomeCallable LicenseManagerClient::Upda
   return task->get_future();
 }
 
-void LicenseManagerClient::UpdateLicenseSpecificationsForResourceAsync(const UpdateLicenseSpecificationsForResourceRequest& request, const UpdateLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientUpdateLicenseSpecificationsForResourceAsyncHelper(LicenseManagerClient const * const clientThis, const UpdateLicenseSpecificationsForResourceRequest& request, const UpdateLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLicenseSpecificationsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLicenseSpecificationsForResource(request), context);
 }
 
-void LicenseManagerClient::UpdateLicenseSpecificationsForResourceAsyncHelper(const UpdateLicenseSpecificationsForResourceRequest& request, const UpdateLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::UpdateLicenseSpecificationsForResourceAsync(const UpdateLicenseSpecificationsForResourceRequest& request, const UpdateLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLicenseSpecificationsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientUpdateLicenseSpecificationsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServiceSettingsOutcome LicenseManagerClient::UpdateServiceSettings(const UpdateServiceSettingsRequest& request) const
@@ -1290,13 +1290,13 @@ UpdateServiceSettingsOutcomeCallable LicenseManagerClient::UpdateServiceSettings
   return task->get_future();
 }
 
-void LicenseManagerClient::UpdateServiceSettingsAsync(const UpdateServiceSettingsRequest& request, const UpdateServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClientUpdateServiceSettingsAsyncHelper(LicenseManagerClient const * const clientThis, const UpdateServiceSettingsRequest& request, const UpdateServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServiceSettings(request), context);
 }
 
-void LicenseManagerClient::UpdateServiceSettingsAsyncHelper(const UpdateServiceSettingsRequest& request, const UpdateServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void LicenseManagerClient::UpdateServiceSettingsAsync(const UpdateServiceSettingsRequest& request, const UpdateServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServiceSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ LicenseManagerClientUpdateServiceSettingsAsyncHelper( this, request, handler, context ); } );
 }
 

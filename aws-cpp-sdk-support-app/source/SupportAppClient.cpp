@@ -124,14 +124,14 @@ CreateSlackChannelConfigurationOutcomeCallable SupportAppClient::CreateSlackChan
   return task->get_future();
 }
 
-void SupportAppClient::CreateSlackChannelConfigurationAsync(const CreateSlackChannelConfigurationRequest& request, const CreateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClientCreateSlackChannelConfigurationAsyncHelper(SupportAppClient const * const clientThis, const CreateSlackChannelConfigurationRequest& request, const CreateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSlackChannelConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSlackChannelConfiguration(request), context);
 }
 
-void SupportAppClient::CreateSlackChannelConfigurationAsyncHelper(const CreateSlackChannelConfigurationRequest& request, const CreateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClient::CreateSlackChannelConfigurationAsync(const CreateSlackChannelConfigurationRequest& request, const CreateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSlackChannelConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportAppClientCreateSlackChannelConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAccountAliasOutcome SupportAppClient::DeleteAccountAlias(const DeleteAccountAliasRequest& request) const
@@ -149,14 +149,14 @@ DeleteAccountAliasOutcomeCallable SupportAppClient::DeleteAccountAliasCallable(c
   return task->get_future();
 }
 
-void SupportAppClient::DeleteAccountAliasAsync(const DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClientDeleteAccountAliasAsyncHelper(SupportAppClient const * const clientThis, const DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccountAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAccountAlias(request), context);
 }
 
-void SupportAppClient::DeleteAccountAliasAsyncHelper(const DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClient::DeleteAccountAliasAsync(const DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAccountAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportAppClientDeleteAccountAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSlackChannelConfigurationOutcome SupportAppClient::DeleteSlackChannelConfiguration(const DeleteSlackChannelConfigurationRequest& request) const
@@ -174,14 +174,14 @@ DeleteSlackChannelConfigurationOutcomeCallable SupportAppClient::DeleteSlackChan
   return task->get_future();
 }
 
-void SupportAppClient::DeleteSlackChannelConfigurationAsync(const DeleteSlackChannelConfigurationRequest& request, const DeleteSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClientDeleteSlackChannelConfigurationAsyncHelper(SupportAppClient const * const clientThis, const DeleteSlackChannelConfigurationRequest& request, const DeleteSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSlackChannelConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSlackChannelConfiguration(request), context);
 }
 
-void SupportAppClient::DeleteSlackChannelConfigurationAsyncHelper(const DeleteSlackChannelConfigurationRequest& request, const DeleteSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClient::DeleteSlackChannelConfigurationAsync(const DeleteSlackChannelConfigurationRequest& request, const DeleteSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSlackChannelConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportAppClientDeleteSlackChannelConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSlackWorkspaceConfigurationOutcome SupportAppClient::DeleteSlackWorkspaceConfiguration(const DeleteSlackWorkspaceConfigurationRequest& request) const
@@ -199,14 +199,14 @@ DeleteSlackWorkspaceConfigurationOutcomeCallable SupportAppClient::DeleteSlackWo
   return task->get_future();
 }
 
-void SupportAppClient::DeleteSlackWorkspaceConfigurationAsync(const DeleteSlackWorkspaceConfigurationRequest& request, const DeleteSlackWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClientDeleteSlackWorkspaceConfigurationAsyncHelper(SupportAppClient const * const clientThis, const DeleteSlackWorkspaceConfigurationRequest& request, const DeleteSlackWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSlackWorkspaceConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSlackWorkspaceConfiguration(request), context);
 }
 
-void SupportAppClient::DeleteSlackWorkspaceConfigurationAsyncHelper(const DeleteSlackWorkspaceConfigurationRequest& request, const DeleteSlackWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClient::DeleteSlackWorkspaceConfigurationAsync(const DeleteSlackWorkspaceConfigurationRequest& request, const DeleteSlackWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSlackWorkspaceConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportAppClientDeleteSlackWorkspaceConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccountAliasOutcome SupportAppClient::GetAccountAlias(const GetAccountAliasRequest& request) const
@@ -224,14 +224,14 @@ GetAccountAliasOutcomeCallable SupportAppClient::GetAccountAliasCallable(const G
   return task->get_future();
 }
 
-void SupportAppClient::GetAccountAliasAsync(const GetAccountAliasRequest& request, const GetAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClientGetAccountAliasAsyncHelper(SupportAppClient const * const clientThis, const GetAccountAliasRequest& request, const GetAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccountAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccountAlias(request), context);
 }
 
-void SupportAppClient::GetAccountAliasAsyncHelper(const GetAccountAliasRequest& request, const GetAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClient::GetAccountAliasAsync(const GetAccountAliasRequest& request, const GetAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccountAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportAppClientGetAccountAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSlackChannelConfigurationsOutcome SupportAppClient::ListSlackChannelConfigurations(const ListSlackChannelConfigurationsRequest& request) const
@@ -249,14 +249,14 @@ ListSlackChannelConfigurationsOutcomeCallable SupportAppClient::ListSlackChannel
   return task->get_future();
 }
 
-void SupportAppClient::ListSlackChannelConfigurationsAsync(const ListSlackChannelConfigurationsRequest& request, const ListSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClientListSlackChannelConfigurationsAsyncHelper(SupportAppClient const * const clientThis, const ListSlackChannelConfigurationsRequest& request, const ListSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSlackChannelConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSlackChannelConfigurations(request), context);
 }
 
-void SupportAppClient::ListSlackChannelConfigurationsAsyncHelper(const ListSlackChannelConfigurationsRequest& request, const ListSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClient::ListSlackChannelConfigurationsAsync(const ListSlackChannelConfigurationsRequest& request, const ListSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSlackChannelConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportAppClientListSlackChannelConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSlackWorkspaceConfigurationsOutcome SupportAppClient::ListSlackWorkspaceConfigurations(const ListSlackWorkspaceConfigurationsRequest& request) const
@@ -274,14 +274,14 @@ ListSlackWorkspaceConfigurationsOutcomeCallable SupportAppClient::ListSlackWorks
   return task->get_future();
 }
 
-void SupportAppClient::ListSlackWorkspaceConfigurationsAsync(const ListSlackWorkspaceConfigurationsRequest& request, const ListSlackWorkspaceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClientListSlackWorkspaceConfigurationsAsyncHelper(SupportAppClient const * const clientThis, const ListSlackWorkspaceConfigurationsRequest& request, const ListSlackWorkspaceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSlackWorkspaceConfigurationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSlackWorkspaceConfigurations(request), context);
 }
 
-void SupportAppClient::ListSlackWorkspaceConfigurationsAsyncHelper(const ListSlackWorkspaceConfigurationsRequest& request, const ListSlackWorkspaceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClient::ListSlackWorkspaceConfigurationsAsync(const ListSlackWorkspaceConfigurationsRequest& request, const ListSlackWorkspaceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSlackWorkspaceConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportAppClientListSlackWorkspaceConfigurationsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutAccountAliasOutcome SupportAppClient::PutAccountAlias(const PutAccountAliasRequest& request) const
@@ -299,14 +299,14 @@ PutAccountAliasOutcomeCallable SupportAppClient::PutAccountAliasCallable(const P
   return task->get_future();
 }
 
-void SupportAppClient::PutAccountAliasAsync(const PutAccountAliasRequest& request, const PutAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClientPutAccountAliasAsyncHelper(SupportAppClient const * const clientThis, const PutAccountAliasRequest& request, const PutAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccountAliasAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutAccountAlias(request), context);
 }
 
-void SupportAppClient::PutAccountAliasAsyncHelper(const PutAccountAliasRequest& request, const PutAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClient::PutAccountAliasAsync(const PutAccountAliasRequest& request, const PutAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutAccountAlias(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportAppClientPutAccountAliasAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSlackChannelConfigurationOutcome SupportAppClient::UpdateSlackChannelConfiguration(const UpdateSlackChannelConfigurationRequest& request) const
@@ -324,13 +324,13 @@ UpdateSlackChannelConfigurationOutcomeCallable SupportAppClient::UpdateSlackChan
   return task->get_future();
 }
 
-void SupportAppClient::UpdateSlackChannelConfigurationAsync(const UpdateSlackChannelConfigurationRequest& request, const UpdateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClientUpdateSlackChannelConfigurationAsyncHelper(SupportAppClient const * const clientThis, const UpdateSlackChannelConfigurationRequest& request, const UpdateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSlackChannelConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSlackChannelConfiguration(request), context);
 }
 
-void SupportAppClient::UpdateSlackChannelConfigurationAsyncHelper(const UpdateSlackChannelConfigurationRequest& request, const UpdateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SupportAppClient::UpdateSlackChannelConfigurationAsync(const UpdateSlackChannelConfigurationRequest& request, const UpdateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSlackChannelConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SupportAppClientUpdateSlackChannelConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 

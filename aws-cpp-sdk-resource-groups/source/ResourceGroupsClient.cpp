@@ -131,14 +131,14 @@ CreateGroupOutcomeCallable ResourceGroupsClient::CreateGroupCallable(const Creat
   return task->get_future();
 }
 
-void ResourceGroupsClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientCreateGroupAsyncHelper(ResourceGroupsClient const * const clientThis, const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGroup(request), context);
 }
 
-void ResourceGroupsClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientCreateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -156,14 +156,14 @@ DeleteGroupOutcomeCallable ResourceGroupsClient::DeleteGroupCallable(const Delet
   return task->get_future();
 }
 
-void ResourceGroupsClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientDeleteGroupAsyncHelper(ResourceGroupsClient const * const clientThis, const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGroup(request), context);
 }
 
-void ResourceGroupsClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientDeleteGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) const
@@ -181,14 +181,14 @@ GetGroupOutcomeCallable ResourceGroupsClient::GetGroupCallable(const GetGroupReq
   return task->get_future();
 }
 
-void ResourceGroupsClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientGetGroupAsyncHelper(ResourceGroupsClient const * const clientThis, const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroup(request), context);
 }
 
-void ResourceGroupsClient::GetGroupAsyncHelper(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientGetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupConfigurationOutcome ResourceGroupsClient::GetGroupConfiguration(const GetGroupConfigurationRequest& request) const
@@ -206,14 +206,14 @@ GetGroupConfigurationOutcomeCallable ResourceGroupsClient::GetGroupConfiguration
   return task->get_future();
 }
 
-void ResourceGroupsClient::GetGroupConfigurationAsync(const GetGroupConfigurationRequest& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientGetGroupConfigurationAsyncHelper(ResourceGroupsClient const * const clientThis, const GetGroupConfigurationRequest& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroupConfiguration(request), context);
 }
 
-void ResourceGroupsClient::GetGroupConfigurationAsyncHelper(const GetGroupConfigurationRequest& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::GetGroupConfigurationAsync(const GetGroupConfigurationRequest& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroupConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientGetGroupConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequest& request) const
@@ -231,14 +231,14 @@ GetGroupQueryOutcomeCallable ResourceGroupsClient::GetGroupQueryCallable(const G
   return task->get_future();
 }
 
-void ResourceGroupsClient::GetGroupQueryAsync(const GetGroupQueryRequest& request, const GetGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientGetGroupQueryAsyncHelper(ResourceGroupsClient const * const clientThis, const GetGroupQueryRequest& request, const GetGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroupQuery(request), context);
 }
 
-void ResourceGroupsClient::GetGroupQueryAsyncHelper(const GetGroupQueryRequest& request, const GetGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::GetGroupQueryAsync(const GetGroupQueryRequest& request, const GetGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroupQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientGetGroupQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTagsOutcome ResourceGroupsClient::GetTags(const GetTagsRequest& request) const
@@ -263,14 +263,14 @@ GetTagsOutcomeCallable ResourceGroupsClient::GetTagsCallable(const GetTagsReques
   return task->get_future();
 }
 
-void ResourceGroupsClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientGetTagsAsyncHelper(ResourceGroupsClient const * const clientThis, const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTags(request), context);
 }
 
-void ResourceGroupsClient::GetTagsAsyncHelper(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientGetTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 GroupResourcesOutcome ResourceGroupsClient::GroupResources(const GroupResourcesRequest& request) const
@@ -288,14 +288,14 @@ GroupResourcesOutcomeCallable ResourceGroupsClient::GroupResourcesCallable(const
   return task->get_future();
 }
 
-void ResourceGroupsClient::GroupResourcesAsync(const GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientGroupResourcesAsyncHelper(ResourceGroupsClient const * const clientThis, const GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GroupResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GroupResources(request), context);
 }
 
-void ResourceGroupsClient::GroupResourcesAsyncHelper(const GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::GroupResourcesAsync(const GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GroupResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientGroupResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
@@ -313,14 +313,14 @@ ListGroupResourcesOutcomeCallable ResourceGroupsClient::ListGroupResourcesCallab
   return task->get_future();
 }
 
-void ResourceGroupsClient::ListGroupResourcesAsync(const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientListGroupResourcesAsyncHelper(ResourceGroupsClient const * const clientThis, const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroupResources(request), context);
 }
 
-void ResourceGroupsClient::ListGroupResourcesAsyncHelper(const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::ListGroupResourcesAsync(const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroupResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientListGroupResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& request) const
@@ -338,14 +338,14 @@ ListGroupsOutcomeCallable ResourceGroupsClient::ListGroupsCallable(const ListGro
   return task->get_future();
 }
 
-void ResourceGroupsClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientListGroupsAsyncHelper(ResourceGroupsClient const * const clientThis, const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroups(request), context);
 }
 
-void ResourceGroupsClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientListGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutGroupConfigurationOutcome ResourceGroupsClient::PutGroupConfiguration(const PutGroupConfigurationRequest& request) const
@@ -363,14 +363,14 @@ PutGroupConfigurationOutcomeCallable ResourceGroupsClient::PutGroupConfiguration
   return task->get_future();
 }
 
-void ResourceGroupsClient::PutGroupConfigurationAsync(const PutGroupConfigurationRequest& request, const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientPutGroupConfigurationAsyncHelper(ResourceGroupsClient const * const clientThis, const PutGroupConfigurationRequest& request, const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutGroupConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutGroupConfiguration(request), context);
 }
 
-void ResourceGroupsClient::PutGroupConfigurationAsyncHelper(const PutGroupConfigurationRequest& request, const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::PutGroupConfigurationAsync(const PutGroupConfigurationRequest& request, const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutGroupConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientPutGroupConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourcesRequest& request) const
@@ -388,14 +388,14 @@ SearchResourcesOutcomeCallable ResourceGroupsClient::SearchResourcesCallable(con
   return task->get_future();
 }
 
-void ResourceGroupsClient::SearchResourcesAsync(const SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientSearchResourcesAsyncHelper(ResourceGroupsClient const * const clientThis, const SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchResources(request), context);
 }
 
-void ResourceGroupsClient::SearchResourcesAsyncHelper(const SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::SearchResourcesAsync(const SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientSearchResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 TagOutcome ResourceGroupsClient::Tag(const TagRequest& request) const
@@ -420,14 +420,14 @@ TagOutcomeCallable ResourceGroupsClient::TagCallable(const TagRequest& request) 
   return task->get_future();
 }
 
-void ResourceGroupsClient::TagAsync(const TagRequest& request, const TagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientTagAsyncHelper(ResourceGroupsClient const * const clientThis, const TagRequest& request, const TagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Tag(request), context);
 }
 
-void ResourceGroupsClient::TagAsyncHelper(const TagRequest& request, const TagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::TagAsync(const TagRequest& request, const TagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Tag(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientTagAsyncHelper( this, request, handler, context ); } );
 }
 
 UngroupResourcesOutcome ResourceGroupsClient::UngroupResources(const UngroupResourcesRequest& request) const
@@ -445,14 +445,14 @@ UngroupResourcesOutcomeCallable ResourceGroupsClient::UngroupResourcesCallable(c
   return task->get_future();
 }
 
-void ResourceGroupsClient::UngroupResourcesAsync(const UngroupResourcesRequest& request, const UngroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientUngroupResourcesAsyncHelper(ResourceGroupsClient const * const clientThis, const UngroupResourcesRequest& request, const UngroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UngroupResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UngroupResources(request), context);
 }
 
-void ResourceGroupsClient::UngroupResourcesAsyncHelper(const UngroupResourcesRequest& request, const UngroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::UngroupResourcesAsync(const UngroupResourcesRequest& request, const UngroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UngroupResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientUngroupResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const
@@ -477,14 +477,14 @@ UntagOutcomeCallable ResourceGroupsClient::UntagCallable(const UntagRequest& req
   return task->get_future();
 }
 
-void ResourceGroupsClient::UntagAsync(const UntagRequest& request, const UntagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientUntagAsyncHelper(ResourceGroupsClient const * const clientThis, const UntagRequest& request, const UntagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->Untag(request), context);
 }
 
-void ResourceGroupsClient::UntagAsyncHelper(const UntagRequest& request, const UntagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::UntagAsync(const UntagRequest& request, const UntagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, Untag(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientUntagAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& request) const
@@ -502,14 +502,14 @@ UpdateGroupOutcomeCallable ResourceGroupsClient::UpdateGroupCallable(const Updat
   return task->get_future();
 }
 
-void ResourceGroupsClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientUpdateGroupAsyncHelper(ResourceGroupsClient const * const clientThis, const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGroup(request), context);
 }
 
-void ResourceGroupsClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientUpdateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGroupQueryOutcome ResourceGroupsClient::UpdateGroupQuery(const UpdateGroupQueryRequest& request) const
@@ -527,13 +527,13 @@ UpdateGroupQueryOutcomeCallable ResourceGroupsClient::UpdateGroupQueryCallable(c
   return task->get_future();
 }
 
-void ResourceGroupsClient::UpdateGroupQueryAsync(const UpdateGroupQueryRequest& request, const UpdateGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClientUpdateGroupQueryAsyncHelper(ResourceGroupsClient const * const clientThis, const UpdateGroupQueryRequest& request, const UpdateGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGroupQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGroupQuery(request), context);
 }
 
-void ResourceGroupsClient::UpdateGroupQueryAsyncHelper(const UpdateGroupQueryRequest& request, const UpdateGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ResourceGroupsClient::UpdateGroupQueryAsync(const UpdateGroupQueryRequest& request, const UpdateGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGroupQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ResourceGroupsClientUpdateGroupQueryAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -160,14 +160,14 @@ AddProfileKeyOutcomeCallable CustomerProfilesClient::AddProfileKeyCallable(const
   return task->get_future();
 }
 
-void CustomerProfilesClient::AddProfileKeyAsync(const AddProfileKeyRequest& request, const AddProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientAddProfileKeyAsyncHelper(CustomerProfilesClient const * const clientThis, const AddProfileKeyRequest& request, const AddProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddProfileKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddProfileKey(request), context);
 }
 
-void CustomerProfilesClient::AddProfileKeyAsyncHelper(const AddProfileKeyRequest& request, const AddProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::AddProfileKeyAsync(const AddProfileKeyRequest& request, const AddProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddProfileKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientAddProfileKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDomainOutcome CustomerProfilesClient::CreateDomain(const CreateDomainRequest& request) const
@@ -191,14 +191,14 @@ CreateDomainOutcomeCallable CustomerProfilesClient::CreateDomainCallable(const C
   return task->get_future();
 }
 
-void CustomerProfilesClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientCreateDomainAsyncHelper(CustomerProfilesClient const * const clientThis, const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDomain(request), context);
 }
 
-void CustomerProfilesClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientCreateDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIntegrationWorkflowOutcome CustomerProfilesClient::CreateIntegrationWorkflow(const CreateIntegrationWorkflowRequest& request) const
@@ -223,14 +223,14 @@ CreateIntegrationWorkflowOutcomeCallable CustomerProfilesClient::CreateIntegrati
   return task->get_future();
 }
 
-void CustomerProfilesClient::CreateIntegrationWorkflowAsync(const CreateIntegrationWorkflowRequest& request, const CreateIntegrationWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientCreateIntegrationWorkflowAsyncHelper(CustomerProfilesClient const * const clientThis, const CreateIntegrationWorkflowRequest& request, const CreateIntegrationWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIntegrationWorkflowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIntegrationWorkflow(request), context);
 }
 
-void CustomerProfilesClient::CreateIntegrationWorkflowAsyncHelper(const CreateIntegrationWorkflowRequest& request, const CreateIntegrationWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::CreateIntegrationWorkflowAsync(const CreateIntegrationWorkflowRequest& request, const CreateIntegrationWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIntegrationWorkflow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientCreateIntegrationWorkflowAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProfileOutcome CustomerProfilesClient::CreateProfile(const CreateProfileRequest& request) const
@@ -255,14 +255,14 @@ CreateProfileOutcomeCallable CustomerProfilesClient::CreateProfileCallable(const
   return task->get_future();
 }
 
-void CustomerProfilesClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientCreateProfileAsyncHelper(CustomerProfilesClient const * const clientThis, const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProfile(request), context);
 }
 
-void CustomerProfilesClient::CreateProfileAsyncHelper(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientCreateProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainOutcome CustomerProfilesClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -286,14 +286,14 @@ DeleteDomainOutcomeCallable CustomerProfilesClient::DeleteDomainCallable(const D
   return task->get_future();
 }
 
-void CustomerProfilesClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientDeleteDomainAsyncHelper(CustomerProfilesClient const * const clientThis, const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomain(request), context);
 }
 
-void CustomerProfilesClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientDeleteDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIntegrationOutcome CustomerProfilesClient::DeleteIntegration(const DeleteIntegrationRequest& request) const
@@ -318,14 +318,14 @@ DeleteIntegrationOutcomeCallable CustomerProfilesClient::DeleteIntegrationCallab
   return task->get_future();
 }
 
-void CustomerProfilesClient::DeleteIntegrationAsync(const DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientDeleteIntegrationAsyncHelper(CustomerProfilesClient const * const clientThis, const DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIntegration(request), context);
 }
 
-void CustomerProfilesClient::DeleteIntegrationAsyncHelper(const DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::DeleteIntegrationAsync(const DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientDeleteIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProfileOutcome CustomerProfilesClient::DeleteProfile(const DeleteProfileRequest& request) const
@@ -350,14 +350,14 @@ DeleteProfileOutcomeCallable CustomerProfilesClient::DeleteProfileCallable(const
   return task->get_future();
 }
 
-void CustomerProfilesClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientDeleteProfileAsyncHelper(CustomerProfilesClient const * const clientThis, const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProfile(request), context);
 }
 
-void CustomerProfilesClient::DeleteProfileAsyncHelper(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientDeleteProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProfileKeyOutcome CustomerProfilesClient::DeleteProfileKey(const DeleteProfileKeyRequest& request) const
@@ -382,14 +382,14 @@ DeleteProfileKeyOutcomeCallable CustomerProfilesClient::DeleteProfileKeyCallable
   return task->get_future();
 }
 
-void CustomerProfilesClient::DeleteProfileKeyAsync(const DeleteProfileKeyRequest& request, const DeleteProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientDeleteProfileKeyAsyncHelper(CustomerProfilesClient const * const clientThis, const DeleteProfileKeyRequest& request, const DeleteProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProfileKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProfileKey(request), context);
 }
 
-void CustomerProfilesClient::DeleteProfileKeyAsyncHelper(const DeleteProfileKeyRequest& request, const DeleteProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::DeleteProfileKeyAsync(const DeleteProfileKeyRequest& request, const DeleteProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProfileKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientDeleteProfileKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProfileObjectOutcome CustomerProfilesClient::DeleteProfileObject(const DeleteProfileObjectRequest& request) const
@@ -414,14 +414,14 @@ DeleteProfileObjectOutcomeCallable CustomerProfilesClient::DeleteProfileObjectCa
   return task->get_future();
 }
 
-void CustomerProfilesClient::DeleteProfileObjectAsync(const DeleteProfileObjectRequest& request, const DeleteProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientDeleteProfileObjectAsyncHelper(CustomerProfilesClient const * const clientThis, const DeleteProfileObjectRequest& request, const DeleteProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProfileObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProfileObject(request), context);
 }
 
-void CustomerProfilesClient::DeleteProfileObjectAsyncHelper(const DeleteProfileObjectRequest& request, const DeleteProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::DeleteProfileObjectAsync(const DeleteProfileObjectRequest& request, const DeleteProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProfileObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientDeleteProfileObjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProfileObjectTypeOutcome CustomerProfilesClient::DeleteProfileObjectType(const DeleteProfileObjectTypeRequest& request) const
@@ -452,14 +452,14 @@ DeleteProfileObjectTypeOutcomeCallable CustomerProfilesClient::DeleteProfileObje
   return task->get_future();
 }
 
-void CustomerProfilesClient::DeleteProfileObjectTypeAsync(const DeleteProfileObjectTypeRequest& request, const DeleteProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientDeleteProfileObjectTypeAsyncHelper(CustomerProfilesClient const * const clientThis, const DeleteProfileObjectTypeRequest& request, const DeleteProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProfileObjectTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProfileObjectType(request), context);
 }
 
-void CustomerProfilesClient::DeleteProfileObjectTypeAsyncHelper(const DeleteProfileObjectTypeRequest& request, const DeleteProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::DeleteProfileObjectTypeAsync(const DeleteProfileObjectTypeRequest& request, const DeleteProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProfileObjectType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientDeleteProfileObjectTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorkflowOutcome CustomerProfilesClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const
@@ -490,14 +490,14 @@ DeleteWorkflowOutcomeCallable CustomerProfilesClient::DeleteWorkflowCallable(con
   return task->get_future();
 }
 
-void CustomerProfilesClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientDeleteWorkflowAsyncHelper(CustomerProfilesClient const * const clientThis, const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkflowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorkflow(request), context);
 }
 
-void CustomerProfilesClient::DeleteWorkflowAsyncHelper(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorkflow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientDeleteWorkflowAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAutoMergingPreviewOutcome CustomerProfilesClient::GetAutoMergingPreview(const GetAutoMergingPreviewRequest& request) const
@@ -522,14 +522,14 @@ GetAutoMergingPreviewOutcomeCallable CustomerProfilesClient::GetAutoMergingPrevi
   return task->get_future();
 }
 
-void CustomerProfilesClient::GetAutoMergingPreviewAsync(const GetAutoMergingPreviewRequest& request, const GetAutoMergingPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientGetAutoMergingPreviewAsyncHelper(CustomerProfilesClient const * const clientThis, const GetAutoMergingPreviewRequest& request, const GetAutoMergingPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAutoMergingPreviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAutoMergingPreview(request), context);
 }
 
-void CustomerProfilesClient::GetAutoMergingPreviewAsyncHelper(const GetAutoMergingPreviewRequest& request, const GetAutoMergingPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::GetAutoMergingPreviewAsync(const GetAutoMergingPreviewRequest& request, const GetAutoMergingPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAutoMergingPreview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientGetAutoMergingPreviewAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDomainOutcome CustomerProfilesClient::GetDomain(const GetDomainRequest& request) const
@@ -553,14 +553,14 @@ GetDomainOutcomeCallable CustomerProfilesClient::GetDomainCallable(const GetDoma
   return task->get_future();
 }
 
-void CustomerProfilesClient::GetDomainAsync(const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientGetDomainAsyncHelper(CustomerProfilesClient const * const clientThis, const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDomain(request), context);
 }
 
-void CustomerProfilesClient::GetDomainAsyncHelper(const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::GetDomainAsync(const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientGetDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIdentityResolutionJobOutcome CustomerProfilesClient::GetIdentityResolutionJob(const GetIdentityResolutionJobRequest& request) const
@@ -591,14 +591,14 @@ GetIdentityResolutionJobOutcomeCallable CustomerProfilesClient::GetIdentityResol
   return task->get_future();
 }
 
-void CustomerProfilesClient::GetIdentityResolutionJobAsync(const GetIdentityResolutionJobRequest& request, const GetIdentityResolutionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientGetIdentityResolutionJobAsyncHelper(CustomerProfilesClient const * const clientThis, const GetIdentityResolutionJobRequest& request, const GetIdentityResolutionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIdentityResolutionJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIdentityResolutionJob(request), context);
 }
 
-void CustomerProfilesClient::GetIdentityResolutionJobAsyncHelper(const GetIdentityResolutionJobRequest& request, const GetIdentityResolutionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::GetIdentityResolutionJobAsync(const GetIdentityResolutionJobRequest& request, const GetIdentityResolutionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIdentityResolutionJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientGetIdentityResolutionJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIntegrationOutcome CustomerProfilesClient::GetIntegration(const GetIntegrationRequest& request) const
@@ -623,14 +623,14 @@ GetIntegrationOutcomeCallable CustomerProfilesClient::GetIntegrationCallable(con
   return task->get_future();
 }
 
-void CustomerProfilesClient::GetIntegrationAsync(const GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientGetIntegrationAsyncHelper(CustomerProfilesClient const * const clientThis, const GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIntegration(request), context);
 }
 
-void CustomerProfilesClient::GetIntegrationAsyncHelper(const GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::GetIntegrationAsync(const GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientGetIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMatchesOutcome CustomerProfilesClient::GetMatches(const GetMatchesRequest& request) const
@@ -655,14 +655,14 @@ GetMatchesOutcomeCallable CustomerProfilesClient::GetMatchesCallable(const GetMa
   return task->get_future();
 }
 
-void CustomerProfilesClient::GetMatchesAsync(const GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientGetMatchesAsyncHelper(CustomerProfilesClient const * const clientThis, const GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMatchesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMatches(request), context);
 }
 
-void CustomerProfilesClient::GetMatchesAsyncHelper(const GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::GetMatchesAsync(const GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMatches(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientGetMatchesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetProfileObjectTypeOutcome CustomerProfilesClient::GetProfileObjectType(const GetProfileObjectTypeRequest& request) const
@@ -693,14 +693,14 @@ GetProfileObjectTypeOutcomeCallable CustomerProfilesClient::GetProfileObjectType
   return task->get_future();
 }
 
-void CustomerProfilesClient::GetProfileObjectTypeAsync(const GetProfileObjectTypeRequest& request, const GetProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientGetProfileObjectTypeAsyncHelper(CustomerProfilesClient const * const clientThis, const GetProfileObjectTypeRequest& request, const GetProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProfileObjectTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetProfileObjectType(request), context);
 }
 
-void CustomerProfilesClient::GetProfileObjectTypeAsyncHelper(const GetProfileObjectTypeRequest& request, const GetProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::GetProfileObjectTypeAsync(const GetProfileObjectTypeRequest& request, const GetProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetProfileObjectType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientGetProfileObjectTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetProfileObjectTypeTemplateOutcome CustomerProfilesClient::GetProfileObjectTypeTemplate(const GetProfileObjectTypeTemplateRequest& request) const
@@ -724,14 +724,14 @@ GetProfileObjectTypeTemplateOutcomeCallable CustomerProfilesClient::GetProfileOb
   return task->get_future();
 }
 
-void CustomerProfilesClient::GetProfileObjectTypeTemplateAsync(const GetProfileObjectTypeTemplateRequest& request, const GetProfileObjectTypeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientGetProfileObjectTypeTemplateAsyncHelper(CustomerProfilesClient const * const clientThis, const GetProfileObjectTypeTemplateRequest& request, const GetProfileObjectTypeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProfileObjectTypeTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetProfileObjectTypeTemplate(request), context);
 }
 
-void CustomerProfilesClient::GetProfileObjectTypeTemplateAsyncHelper(const GetProfileObjectTypeTemplateRequest& request, const GetProfileObjectTypeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::GetProfileObjectTypeTemplateAsync(const GetProfileObjectTypeTemplateRequest& request, const GetProfileObjectTypeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetProfileObjectTypeTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientGetProfileObjectTypeTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWorkflowOutcome CustomerProfilesClient::GetWorkflow(const GetWorkflowRequest& request) const
@@ -762,14 +762,14 @@ GetWorkflowOutcomeCallable CustomerProfilesClient::GetWorkflowCallable(const Get
   return task->get_future();
 }
 
-void CustomerProfilesClient::GetWorkflowAsync(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientGetWorkflowAsyncHelper(CustomerProfilesClient const * const clientThis, const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWorkflow(request), context);
 }
 
-void CustomerProfilesClient::GetWorkflowAsyncHelper(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::GetWorkflowAsync(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWorkflow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientGetWorkflowAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWorkflowStepsOutcome CustomerProfilesClient::GetWorkflowSteps(const GetWorkflowStepsRequest& request) const
@@ -801,14 +801,14 @@ GetWorkflowStepsOutcomeCallable CustomerProfilesClient::GetWorkflowStepsCallable
   return task->get_future();
 }
 
-void CustomerProfilesClient::GetWorkflowStepsAsync(const GetWorkflowStepsRequest& request, const GetWorkflowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientGetWorkflowStepsAsyncHelper(CustomerProfilesClient const * const clientThis, const GetWorkflowStepsRequest& request, const GetWorkflowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowStepsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWorkflowSteps(request), context);
 }
 
-void CustomerProfilesClient::GetWorkflowStepsAsyncHelper(const GetWorkflowStepsRequest& request, const GetWorkflowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::GetWorkflowStepsAsync(const GetWorkflowStepsRequest& request, const GetWorkflowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWorkflowSteps(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientGetWorkflowStepsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAccountIntegrationsOutcome CustomerProfilesClient::ListAccountIntegrations(const ListAccountIntegrationsRequest& request) const
@@ -826,14 +826,14 @@ ListAccountIntegrationsOutcomeCallable CustomerProfilesClient::ListAccountIntegr
   return task->get_future();
 }
 
-void CustomerProfilesClient::ListAccountIntegrationsAsync(const ListAccountIntegrationsRequest& request, const ListAccountIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientListAccountIntegrationsAsyncHelper(CustomerProfilesClient const * const clientThis, const ListAccountIntegrationsRequest& request, const ListAccountIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountIntegrationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAccountIntegrations(request), context);
 }
 
-void CustomerProfilesClient::ListAccountIntegrationsAsyncHelper(const ListAccountIntegrationsRequest& request, const ListAccountIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::ListAccountIntegrationsAsync(const ListAccountIntegrationsRequest& request, const ListAccountIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAccountIntegrations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientListAccountIntegrationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainsOutcome CustomerProfilesClient::ListDomains(const ListDomainsRequest& request) const
@@ -851,14 +851,14 @@ ListDomainsOutcomeCallable CustomerProfilesClient::ListDomainsCallable(const Lis
   return task->get_future();
 }
 
-void CustomerProfilesClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientListDomainsAsyncHelper(CustomerProfilesClient const * const clientThis, const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomains(request), context);
 }
 
-void CustomerProfilesClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomains(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientListDomainsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIdentityResolutionJobsOutcome CustomerProfilesClient::ListIdentityResolutionJobs(const ListIdentityResolutionJobsRequest& request) const
@@ -883,14 +883,14 @@ ListIdentityResolutionJobsOutcomeCallable CustomerProfilesClient::ListIdentityRe
   return task->get_future();
 }
 
-void CustomerProfilesClient::ListIdentityResolutionJobsAsync(const ListIdentityResolutionJobsRequest& request, const ListIdentityResolutionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientListIdentityResolutionJobsAsyncHelper(CustomerProfilesClient const * const clientThis, const ListIdentityResolutionJobsRequest& request, const ListIdentityResolutionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIdentityResolutionJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIdentityResolutionJobs(request), context);
 }
 
-void CustomerProfilesClient::ListIdentityResolutionJobsAsyncHelper(const ListIdentityResolutionJobsRequest& request, const ListIdentityResolutionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::ListIdentityResolutionJobsAsync(const ListIdentityResolutionJobsRequest& request, const ListIdentityResolutionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIdentityResolutionJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientListIdentityResolutionJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIntegrationsOutcome CustomerProfilesClient::ListIntegrations(const ListIntegrationsRequest& request) const
@@ -915,14 +915,14 @@ ListIntegrationsOutcomeCallable CustomerProfilesClient::ListIntegrationsCallable
   return task->get_future();
 }
 
-void CustomerProfilesClient::ListIntegrationsAsync(const ListIntegrationsRequest& request, const ListIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientListIntegrationsAsyncHelper(CustomerProfilesClient const * const clientThis, const ListIntegrationsRequest& request, const ListIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIntegrationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIntegrations(request), context);
 }
 
-void CustomerProfilesClient::ListIntegrationsAsyncHelper(const ListIntegrationsRequest& request, const ListIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::ListIntegrationsAsync(const ListIntegrationsRequest& request, const ListIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIntegrations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientListIntegrationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProfileObjectTypeTemplatesOutcome CustomerProfilesClient::ListProfileObjectTypeTemplates(const ListProfileObjectTypeTemplatesRequest& request) const
@@ -940,14 +940,14 @@ ListProfileObjectTypeTemplatesOutcomeCallable CustomerProfilesClient::ListProfil
   return task->get_future();
 }
 
-void CustomerProfilesClient::ListProfileObjectTypeTemplatesAsync(const ListProfileObjectTypeTemplatesRequest& request, const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientListProfileObjectTypeTemplatesAsyncHelper(CustomerProfilesClient const * const clientThis, const ListProfileObjectTypeTemplatesRequest& request, const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProfileObjectTypeTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProfileObjectTypeTemplates(request), context);
 }
 
-void CustomerProfilesClient::ListProfileObjectTypeTemplatesAsyncHelper(const ListProfileObjectTypeTemplatesRequest& request, const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::ListProfileObjectTypeTemplatesAsync(const ListProfileObjectTypeTemplatesRequest& request, const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProfileObjectTypeTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientListProfileObjectTypeTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProfileObjectTypesOutcome CustomerProfilesClient::ListProfileObjectTypes(const ListProfileObjectTypesRequest& request) const
@@ -972,14 +972,14 @@ ListProfileObjectTypesOutcomeCallable CustomerProfilesClient::ListProfileObjectT
   return task->get_future();
 }
 
-void CustomerProfilesClient::ListProfileObjectTypesAsync(const ListProfileObjectTypesRequest& request, const ListProfileObjectTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientListProfileObjectTypesAsyncHelper(CustomerProfilesClient const * const clientThis, const ListProfileObjectTypesRequest& request, const ListProfileObjectTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProfileObjectTypesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProfileObjectTypes(request), context);
 }
 
-void CustomerProfilesClient::ListProfileObjectTypesAsyncHelper(const ListProfileObjectTypesRequest& request, const ListProfileObjectTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::ListProfileObjectTypesAsync(const ListProfileObjectTypesRequest& request, const ListProfileObjectTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProfileObjectTypes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientListProfileObjectTypesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProfileObjectsOutcome CustomerProfilesClient::ListProfileObjects(const ListProfileObjectsRequest& request) const
@@ -1004,14 +1004,14 @@ ListProfileObjectsOutcomeCallable CustomerProfilesClient::ListProfileObjectsCall
   return task->get_future();
 }
 
-void CustomerProfilesClient::ListProfileObjectsAsync(const ListProfileObjectsRequest& request, const ListProfileObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientListProfileObjectsAsyncHelper(CustomerProfilesClient const * const clientThis, const ListProfileObjectsRequest& request, const ListProfileObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProfileObjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProfileObjects(request), context);
 }
 
-void CustomerProfilesClient::ListProfileObjectsAsyncHelper(const ListProfileObjectsRequest& request, const ListProfileObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::ListProfileObjectsAsync(const ListProfileObjectsRequest& request, const ListProfileObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProfileObjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientListProfileObjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome CustomerProfilesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1035,14 +1035,14 @@ ListTagsForResourceOutcomeCallable CustomerProfilesClient::ListTagsForResourceCa
   return task->get_future();
 }
 
-void CustomerProfilesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientListTagsForResourceAsyncHelper(CustomerProfilesClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void CustomerProfilesClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorkflowsOutcome CustomerProfilesClient::ListWorkflows(const ListWorkflowsRequest& request) const
@@ -1067,14 +1067,14 @@ ListWorkflowsOutcomeCallable CustomerProfilesClient::ListWorkflowsCallable(const
   return task->get_future();
 }
 
-void CustomerProfilesClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientListWorkflowsAsyncHelper(CustomerProfilesClient const * const clientThis, const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkflowsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorkflows(request), context);
 }
 
-void CustomerProfilesClient::ListWorkflowsAsyncHelper(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorkflows(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientListWorkflowsAsyncHelper( this, request, handler, context ); } );
 }
 
 MergeProfilesOutcome CustomerProfilesClient::MergeProfiles(const MergeProfilesRequest& request) const
@@ -1099,14 +1099,14 @@ MergeProfilesOutcomeCallable CustomerProfilesClient::MergeProfilesCallable(const
   return task->get_future();
 }
 
-void CustomerProfilesClient::MergeProfilesAsync(const MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientMergeProfilesAsyncHelper(CustomerProfilesClient const * const clientThis, const MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MergeProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->MergeProfiles(request), context);
 }
 
-void CustomerProfilesClient::MergeProfilesAsyncHelper(const MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::MergeProfilesAsync(const MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, MergeProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientMergeProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 PutIntegrationOutcome CustomerProfilesClient::PutIntegration(const PutIntegrationRequest& request) const
@@ -1131,14 +1131,14 @@ PutIntegrationOutcomeCallable CustomerProfilesClient::PutIntegrationCallable(con
   return task->get_future();
 }
 
-void CustomerProfilesClient::PutIntegrationAsync(const PutIntegrationRequest& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientPutIntegrationAsyncHelper(CustomerProfilesClient const * const clientThis, const PutIntegrationRequest& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutIntegration(request), context);
 }
 
-void CustomerProfilesClient::PutIntegrationAsyncHelper(const PutIntegrationRequest& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::PutIntegrationAsync(const PutIntegrationRequest& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientPutIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 
 PutProfileObjectOutcome CustomerProfilesClient::PutProfileObject(const PutProfileObjectRequest& request) const
@@ -1163,14 +1163,14 @@ PutProfileObjectOutcomeCallable CustomerProfilesClient::PutProfileObjectCallable
   return task->get_future();
 }
 
-void CustomerProfilesClient::PutProfileObjectAsync(const PutProfileObjectRequest& request, const PutProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientPutProfileObjectAsyncHelper(CustomerProfilesClient const * const clientThis, const PutProfileObjectRequest& request, const PutProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutProfileObjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutProfileObject(request), context);
 }
 
-void CustomerProfilesClient::PutProfileObjectAsyncHelper(const PutProfileObjectRequest& request, const PutProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::PutProfileObjectAsync(const PutProfileObjectRequest& request, const PutProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutProfileObject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientPutProfileObjectAsyncHelper( this, request, handler, context ); } );
 }
 
 PutProfileObjectTypeOutcome CustomerProfilesClient::PutProfileObjectType(const PutProfileObjectTypeRequest& request) const
@@ -1201,14 +1201,14 @@ PutProfileObjectTypeOutcomeCallable CustomerProfilesClient::PutProfileObjectType
   return task->get_future();
 }
 
-void CustomerProfilesClient::PutProfileObjectTypeAsync(const PutProfileObjectTypeRequest& request, const PutProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientPutProfileObjectTypeAsyncHelper(CustomerProfilesClient const * const clientThis, const PutProfileObjectTypeRequest& request, const PutProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutProfileObjectTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutProfileObjectType(request), context);
 }
 
-void CustomerProfilesClient::PutProfileObjectTypeAsyncHelper(const PutProfileObjectTypeRequest& request, const PutProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::PutProfileObjectTypeAsync(const PutProfileObjectTypeRequest& request, const PutProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutProfileObjectType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientPutProfileObjectTypeAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchProfilesOutcome CustomerProfilesClient::SearchProfiles(const SearchProfilesRequest& request) const
@@ -1233,14 +1233,14 @@ SearchProfilesOutcomeCallable CustomerProfilesClient::SearchProfilesCallable(con
   return task->get_future();
 }
 
-void CustomerProfilesClient::SearchProfilesAsync(const SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientSearchProfilesAsyncHelper(CustomerProfilesClient const * const clientThis, const SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchProfiles(request), context);
 }
 
-void CustomerProfilesClient::SearchProfilesAsyncHelper(const SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::SearchProfilesAsync(const SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientSearchProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CustomerProfilesClient::TagResource(const TagResourceRequest& request) const
@@ -1264,14 +1264,14 @@ TagResourceOutcomeCallable CustomerProfilesClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void CustomerProfilesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientTagResourceAsyncHelper(CustomerProfilesClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CustomerProfilesClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CustomerProfilesClient::UntagResource(const UntagResourceRequest& request) const
@@ -1300,14 +1300,14 @@ UntagResourceOutcomeCallable CustomerProfilesClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void CustomerProfilesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientUntagResourceAsyncHelper(CustomerProfilesClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CustomerProfilesClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDomainOutcome CustomerProfilesClient::UpdateDomain(const UpdateDomainRequest& request) const
@@ -1331,14 +1331,14 @@ UpdateDomainOutcomeCallable CustomerProfilesClient::UpdateDomainCallable(const U
   return task->get_future();
 }
 
-void CustomerProfilesClient::UpdateDomainAsync(const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientUpdateDomainAsyncHelper(CustomerProfilesClient const * const clientThis, const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDomain(request), context);
 }
 
-void CustomerProfilesClient::UpdateDomainAsyncHelper(const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::UpdateDomainAsync(const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientUpdateDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProfileOutcome CustomerProfilesClient::UpdateProfile(const UpdateProfileRequest& request) const
@@ -1363,13 +1363,13 @@ UpdateProfileOutcomeCallable CustomerProfilesClient::UpdateProfileCallable(const
   return task->get_future();
 }
 
-void CustomerProfilesClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClientUpdateProfileAsyncHelper(CustomerProfilesClient const * const clientThis, const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProfile(request), context);
 }
 
-void CustomerProfilesClient::UpdateProfileAsyncHelper(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CustomerProfilesClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CustomerProfilesClientUpdateProfileAsyncHelper( this, request, handler, context ); } );
 }
 

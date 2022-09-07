@@ -151,14 +151,14 @@ AssociateFileSystemAliasesOutcomeCallable FSxClient::AssociateFileSystemAliasesC
   return task->get_future();
 }
 
-void FSxClient::AssociateFileSystemAliasesAsync(const AssociateFileSystemAliasesRequest& request, const AssociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientAssociateFileSystemAliasesAsyncHelper(FSxClient const * const clientThis, const AssociateFileSystemAliasesRequest& request, const AssociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateFileSystemAliasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateFileSystemAliases(request), context);
 }
 
-void FSxClient::AssociateFileSystemAliasesAsyncHelper(const AssociateFileSystemAliasesRequest& request, const AssociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::AssociateFileSystemAliasesAsync(const AssociateFileSystemAliasesRequest& request, const AssociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateFileSystemAliases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientAssociateFileSystemAliasesAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelDataRepositoryTaskOutcome FSxClient::CancelDataRepositoryTask(const CancelDataRepositoryTaskRequest& request) const
@@ -175,14 +175,14 @@ CancelDataRepositoryTaskOutcomeCallable FSxClient::CancelDataRepositoryTaskCalla
   return task->get_future();
 }
 
-void FSxClient::CancelDataRepositoryTaskAsync(const CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCancelDataRepositoryTaskAsyncHelper(FSxClient const * const clientThis, const CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelDataRepositoryTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelDataRepositoryTask(request), context);
 }
 
-void FSxClient::CancelDataRepositoryTaskAsyncHelper(const CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CancelDataRepositoryTaskAsync(const CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelDataRepositoryTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCancelDataRepositoryTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CopyBackupOutcome FSxClient::CopyBackup(const CopyBackupRequest& request) const
@@ -199,14 +199,14 @@ CopyBackupOutcomeCallable FSxClient::CopyBackupCallable(const CopyBackupRequest&
   return task->get_future();
 }
 
-void FSxClient::CopyBackupAsync(const CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCopyBackupAsyncHelper(FSxClient const * const clientThis, const CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopyBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CopyBackup(request), context);
 }
 
-void FSxClient::CopyBackupAsyncHelper(const CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CopyBackupAsync(const CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CopyBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCopyBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBackupOutcome FSxClient::CreateBackup(const CreateBackupRequest& request) const
@@ -223,14 +223,14 @@ CreateBackupOutcomeCallable FSxClient::CreateBackupCallable(const CreateBackupRe
   return task->get_future();
 }
 
-void FSxClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCreateBackupAsyncHelper(FSxClient const * const clientThis, const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBackup(request), context);
 }
 
-void FSxClient::CreateBackupAsyncHelper(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCreateBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDataRepositoryAssociationOutcome FSxClient::CreateDataRepositoryAssociation(const CreateDataRepositoryAssociationRequest& request) const
@@ -247,14 +247,14 @@ CreateDataRepositoryAssociationOutcomeCallable FSxClient::CreateDataRepositoryAs
   return task->get_future();
 }
 
-void FSxClient::CreateDataRepositoryAssociationAsync(const CreateDataRepositoryAssociationRequest& request, const CreateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCreateDataRepositoryAssociationAsyncHelper(FSxClient const * const clientThis, const CreateDataRepositoryAssociationRequest& request, const CreateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataRepositoryAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataRepositoryAssociation(request), context);
 }
 
-void FSxClient::CreateDataRepositoryAssociationAsyncHelper(const CreateDataRepositoryAssociationRequest& request, const CreateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CreateDataRepositoryAssociationAsync(const CreateDataRepositoryAssociationRequest& request, const CreateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataRepositoryAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCreateDataRepositoryAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDataRepositoryTaskOutcome FSxClient::CreateDataRepositoryTask(const CreateDataRepositoryTaskRequest& request) const
@@ -271,14 +271,14 @@ CreateDataRepositoryTaskOutcomeCallable FSxClient::CreateDataRepositoryTaskCalla
   return task->get_future();
 }
 
-void FSxClient::CreateDataRepositoryTaskAsync(const CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCreateDataRepositoryTaskAsyncHelper(FSxClient const * const clientThis, const CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataRepositoryTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataRepositoryTask(request), context);
 }
 
-void FSxClient::CreateDataRepositoryTaskAsyncHelper(const CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CreateDataRepositoryTaskAsync(const CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataRepositoryTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCreateDataRepositoryTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFileSystemOutcome FSxClient::CreateFileSystem(const CreateFileSystemRequest& request) const
@@ -295,14 +295,14 @@ CreateFileSystemOutcomeCallable FSxClient::CreateFileSystemCallable(const Create
   return task->get_future();
 }
 
-void FSxClient::CreateFileSystemAsync(const CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCreateFileSystemAsyncHelper(FSxClient const * const clientThis, const CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFileSystemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFileSystem(request), context);
 }
 
-void FSxClient::CreateFileSystemAsyncHelper(const CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CreateFileSystemAsync(const CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFileSystem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCreateFileSystemAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateFileSystemFromBackupOutcome FSxClient::CreateFileSystemFromBackup(const CreateFileSystemFromBackupRequest& request) const
@@ -319,14 +319,14 @@ CreateFileSystemFromBackupOutcomeCallable FSxClient::CreateFileSystemFromBackupC
   return task->get_future();
 }
 
-void FSxClient::CreateFileSystemFromBackupAsync(const CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCreateFileSystemFromBackupAsyncHelper(FSxClient const * const clientThis, const CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFileSystemFromBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateFileSystemFromBackup(request), context);
 }
 
-void FSxClient::CreateFileSystemFromBackupAsyncHelper(const CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CreateFileSystemFromBackupAsync(const CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateFileSystemFromBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCreateFileSystemFromBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSnapshotOutcome FSxClient::CreateSnapshot(const CreateSnapshotRequest& request) const
@@ -343,14 +343,14 @@ CreateSnapshotOutcomeCallable FSxClient::CreateSnapshotCallable(const CreateSnap
   return task->get_future();
 }
 
-void FSxClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCreateSnapshotAsyncHelper(FSxClient const * const clientThis, const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSnapshot(request), context);
 }
 
-void FSxClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCreateSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStorageVirtualMachineOutcome FSxClient::CreateStorageVirtualMachine(const CreateStorageVirtualMachineRequest& request) const
@@ -367,14 +367,14 @@ CreateStorageVirtualMachineOutcomeCallable FSxClient::CreateStorageVirtualMachin
   return task->get_future();
 }
 
-void FSxClient::CreateStorageVirtualMachineAsync(const CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCreateStorageVirtualMachineAsyncHelper(FSxClient const * const clientThis, const CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStorageVirtualMachineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStorageVirtualMachine(request), context);
 }
 
-void FSxClient::CreateStorageVirtualMachineAsyncHelper(const CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CreateStorageVirtualMachineAsync(const CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStorageVirtualMachine(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCreateStorageVirtualMachineAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVolumeOutcome FSxClient::CreateVolume(const CreateVolumeRequest& request) const
@@ -391,14 +391,14 @@ CreateVolumeOutcomeCallable FSxClient::CreateVolumeCallable(const CreateVolumeRe
   return task->get_future();
 }
 
-void FSxClient::CreateVolumeAsync(const CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCreateVolumeAsyncHelper(FSxClient const * const clientThis, const CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVolume(request), context);
 }
 
-void FSxClient::CreateVolumeAsyncHelper(const CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CreateVolumeAsync(const CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCreateVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateVolumeFromBackupOutcome FSxClient::CreateVolumeFromBackup(const CreateVolumeFromBackupRequest& request) const
@@ -415,14 +415,14 @@ CreateVolumeFromBackupOutcomeCallable FSxClient::CreateVolumeFromBackupCallable(
   return task->get_future();
 }
 
-void FSxClient::CreateVolumeFromBackupAsync(const CreateVolumeFromBackupRequest& request, const CreateVolumeFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientCreateVolumeFromBackupAsyncHelper(FSxClient const * const clientThis, const CreateVolumeFromBackupRequest& request, const CreateVolumeFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVolumeFromBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateVolumeFromBackup(request), context);
 }
 
-void FSxClient::CreateVolumeFromBackupAsyncHelper(const CreateVolumeFromBackupRequest& request, const CreateVolumeFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::CreateVolumeFromBackupAsync(const CreateVolumeFromBackupRequest& request, const CreateVolumeFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateVolumeFromBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientCreateVolumeFromBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackupOutcome FSxClient::DeleteBackup(const DeleteBackupRequest& request) const
@@ -439,14 +439,14 @@ DeleteBackupOutcomeCallable FSxClient::DeleteBackupCallable(const DeleteBackupRe
   return task->get_future();
 }
 
-void FSxClient::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDeleteBackupAsyncHelper(FSxClient const * const clientThis, const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackup(request), context);
 }
 
-void FSxClient::DeleteBackupAsyncHelper(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDeleteBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDataRepositoryAssociationOutcome FSxClient::DeleteDataRepositoryAssociation(const DeleteDataRepositoryAssociationRequest& request) const
@@ -463,14 +463,14 @@ DeleteDataRepositoryAssociationOutcomeCallable FSxClient::DeleteDataRepositoryAs
   return task->get_future();
 }
 
-void FSxClient::DeleteDataRepositoryAssociationAsync(const DeleteDataRepositoryAssociationRequest& request, const DeleteDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDeleteDataRepositoryAssociationAsyncHelper(FSxClient const * const clientThis, const DeleteDataRepositoryAssociationRequest& request, const DeleteDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataRepositoryAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataRepositoryAssociation(request), context);
 }
 
-void FSxClient::DeleteDataRepositoryAssociationAsyncHelper(const DeleteDataRepositoryAssociationRequest& request, const DeleteDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DeleteDataRepositoryAssociationAsync(const DeleteDataRepositoryAssociationRequest& request, const DeleteDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataRepositoryAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDeleteDataRepositoryAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFileSystemOutcome FSxClient::DeleteFileSystem(const DeleteFileSystemRequest& request) const
@@ -487,14 +487,14 @@ DeleteFileSystemOutcomeCallable FSxClient::DeleteFileSystemCallable(const Delete
   return task->get_future();
 }
 
-void FSxClient::DeleteFileSystemAsync(const DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDeleteFileSystemAsyncHelper(FSxClient const * const clientThis, const DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFileSystemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFileSystem(request), context);
 }
 
-void FSxClient::DeleteFileSystemAsyncHelper(const DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DeleteFileSystemAsync(const DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFileSystem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDeleteFileSystemAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSnapshotOutcome FSxClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const
@@ -511,14 +511,14 @@ DeleteSnapshotOutcomeCallable FSxClient::DeleteSnapshotCallable(const DeleteSnap
   return task->get_future();
 }
 
-void FSxClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDeleteSnapshotAsyncHelper(FSxClient const * const clientThis, const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSnapshot(request), context);
 }
 
-void FSxClient::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDeleteSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteStorageVirtualMachineOutcome FSxClient::DeleteStorageVirtualMachine(const DeleteStorageVirtualMachineRequest& request) const
@@ -535,14 +535,14 @@ DeleteStorageVirtualMachineOutcomeCallable FSxClient::DeleteStorageVirtualMachin
   return task->get_future();
 }
 
-void FSxClient::DeleteStorageVirtualMachineAsync(const DeleteStorageVirtualMachineRequest& request, const DeleteStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDeleteStorageVirtualMachineAsyncHelper(FSxClient const * const clientThis, const DeleteStorageVirtualMachineRequest& request, const DeleteStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStorageVirtualMachineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteStorageVirtualMachine(request), context);
 }
 
-void FSxClient::DeleteStorageVirtualMachineAsyncHelper(const DeleteStorageVirtualMachineRequest& request, const DeleteStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DeleteStorageVirtualMachineAsync(const DeleteStorageVirtualMachineRequest& request, const DeleteStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteStorageVirtualMachine(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDeleteStorageVirtualMachineAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVolumeOutcome FSxClient::DeleteVolume(const DeleteVolumeRequest& request) const
@@ -559,14 +559,14 @@ DeleteVolumeOutcomeCallable FSxClient::DeleteVolumeCallable(const DeleteVolumeRe
   return task->get_future();
 }
 
-void FSxClient::DeleteVolumeAsync(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDeleteVolumeAsyncHelper(FSxClient const * const clientThis, const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVolume(request), context);
 }
 
-void FSxClient::DeleteVolumeAsyncHelper(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DeleteVolumeAsync(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDeleteVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBackupsOutcome FSxClient::DescribeBackups(const DescribeBackupsRequest& request) const
@@ -583,14 +583,14 @@ DescribeBackupsOutcomeCallable FSxClient::DescribeBackupsCallable(const Describe
   return task->get_future();
 }
 
-void FSxClient::DescribeBackupsAsync(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDescribeBackupsAsyncHelper(FSxClient const * const clientThis, const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBackupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBackups(request), context);
 }
 
-void FSxClient::DescribeBackupsAsyncHelper(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DescribeBackupsAsync(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBackups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDescribeBackupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDataRepositoryAssociationsOutcome FSxClient::DescribeDataRepositoryAssociations(const DescribeDataRepositoryAssociationsRequest& request) const
@@ -607,14 +607,14 @@ DescribeDataRepositoryAssociationsOutcomeCallable FSxClient::DescribeDataReposit
   return task->get_future();
 }
 
-void FSxClient::DescribeDataRepositoryAssociationsAsync(const DescribeDataRepositoryAssociationsRequest& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDescribeDataRepositoryAssociationsAsyncHelper(FSxClient const * const clientThis, const DescribeDataRepositoryAssociationsRequest& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataRepositoryAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataRepositoryAssociations(request), context);
 }
 
-void FSxClient::DescribeDataRepositoryAssociationsAsyncHelper(const DescribeDataRepositoryAssociationsRequest& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DescribeDataRepositoryAssociationsAsync(const DescribeDataRepositoryAssociationsRequest& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataRepositoryAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDescribeDataRepositoryAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDataRepositoryTasksOutcome FSxClient::DescribeDataRepositoryTasks(const DescribeDataRepositoryTasksRequest& request) const
@@ -631,14 +631,14 @@ DescribeDataRepositoryTasksOutcomeCallable FSxClient::DescribeDataRepositoryTask
   return task->get_future();
 }
 
-void FSxClient::DescribeDataRepositoryTasksAsync(const DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDescribeDataRepositoryTasksAsyncHelper(FSxClient const * const clientThis, const DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataRepositoryTasksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDataRepositoryTasks(request), context);
 }
 
-void FSxClient::DescribeDataRepositoryTasksAsyncHelper(const DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DescribeDataRepositoryTasksAsync(const DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDataRepositoryTasks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDescribeDataRepositoryTasksAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFileSystemAliasesOutcome FSxClient::DescribeFileSystemAliases(const DescribeFileSystemAliasesRequest& request) const
@@ -655,14 +655,14 @@ DescribeFileSystemAliasesOutcomeCallable FSxClient::DescribeFileSystemAliasesCal
   return task->get_future();
 }
 
-void FSxClient::DescribeFileSystemAliasesAsync(const DescribeFileSystemAliasesRequest& request, const DescribeFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDescribeFileSystemAliasesAsyncHelper(FSxClient const * const clientThis, const DescribeFileSystemAliasesRequest& request, const DescribeFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFileSystemAliasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFileSystemAliases(request), context);
 }
 
-void FSxClient::DescribeFileSystemAliasesAsyncHelper(const DescribeFileSystemAliasesRequest& request, const DescribeFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DescribeFileSystemAliasesAsync(const DescribeFileSystemAliasesRequest& request, const DescribeFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFileSystemAliases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDescribeFileSystemAliasesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFileSystemsOutcome FSxClient::DescribeFileSystems(const DescribeFileSystemsRequest& request) const
@@ -679,14 +679,14 @@ DescribeFileSystemsOutcomeCallable FSxClient::DescribeFileSystemsCallable(const 
   return task->get_future();
 }
 
-void FSxClient::DescribeFileSystemsAsync(const DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDescribeFileSystemsAsyncHelper(FSxClient const * const clientThis, const DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFileSystemsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFileSystems(request), context);
 }
 
-void FSxClient::DescribeFileSystemsAsyncHelper(const DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DescribeFileSystemsAsync(const DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFileSystems(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDescribeFileSystemsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSnapshotsOutcome FSxClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const
@@ -703,14 +703,14 @@ DescribeSnapshotsOutcomeCallable FSxClient::DescribeSnapshotsCallable(const Desc
   return task->get_future();
 }
 
-void FSxClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDescribeSnapshotsAsyncHelper(FSxClient const * const clientThis, const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSnapshotsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSnapshots(request), context);
 }
 
-void FSxClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDescribeSnapshotsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStorageVirtualMachinesOutcome FSxClient::DescribeStorageVirtualMachines(const DescribeStorageVirtualMachinesRequest& request) const
@@ -727,14 +727,14 @@ DescribeStorageVirtualMachinesOutcomeCallable FSxClient::DescribeStorageVirtualM
   return task->get_future();
 }
 
-void FSxClient::DescribeStorageVirtualMachinesAsync(const DescribeStorageVirtualMachinesRequest& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDescribeStorageVirtualMachinesAsyncHelper(FSxClient const * const clientThis, const DescribeStorageVirtualMachinesRequest& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStorageVirtualMachinesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStorageVirtualMachines(request), context);
 }
 
-void FSxClient::DescribeStorageVirtualMachinesAsyncHelper(const DescribeStorageVirtualMachinesRequest& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DescribeStorageVirtualMachinesAsync(const DescribeStorageVirtualMachinesRequest& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStorageVirtualMachines(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDescribeStorageVirtualMachinesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVolumesOutcome FSxClient::DescribeVolumes(const DescribeVolumesRequest& request) const
@@ -751,14 +751,14 @@ DescribeVolumesOutcomeCallable FSxClient::DescribeVolumesCallable(const Describe
   return task->get_future();
 }
 
-void FSxClient::DescribeVolumesAsync(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDescribeVolumesAsyncHelper(FSxClient const * const clientThis, const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVolumesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVolumes(request), context);
 }
 
-void FSxClient::DescribeVolumesAsyncHelper(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DescribeVolumesAsync(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVolumes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDescribeVolumesAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateFileSystemAliasesOutcome FSxClient::DisassociateFileSystemAliases(const DisassociateFileSystemAliasesRequest& request) const
@@ -775,14 +775,14 @@ DisassociateFileSystemAliasesOutcomeCallable FSxClient::DisassociateFileSystemAl
   return task->get_future();
 }
 
-void FSxClient::DisassociateFileSystemAliasesAsync(const DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientDisassociateFileSystemAliasesAsyncHelper(FSxClient const * const clientThis, const DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFileSystemAliasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateFileSystemAliases(request), context);
 }
 
-void FSxClient::DisassociateFileSystemAliasesAsyncHelper(const DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::DisassociateFileSystemAliasesAsync(const DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateFileSystemAliases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientDisassociateFileSystemAliasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome FSxClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -799,14 +799,14 @@ ListTagsForResourceOutcomeCallable FSxClient::ListTagsForResourceCallable(const 
   return task->get_future();
 }
 
-void FSxClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientListTagsForResourceAsyncHelper(FSxClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void FSxClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ReleaseFileSystemNfsV3LocksOutcome FSxClient::ReleaseFileSystemNfsV3Locks(const ReleaseFileSystemNfsV3LocksRequest& request) const
@@ -823,14 +823,14 @@ ReleaseFileSystemNfsV3LocksOutcomeCallable FSxClient::ReleaseFileSystemNfsV3Lock
   return task->get_future();
 }
 
-void FSxClient::ReleaseFileSystemNfsV3LocksAsync(const ReleaseFileSystemNfsV3LocksRequest& request, const ReleaseFileSystemNfsV3LocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientReleaseFileSystemNfsV3LocksAsyncHelper(FSxClient const * const clientThis, const ReleaseFileSystemNfsV3LocksRequest& request, const ReleaseFileSystemNfsV3LocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReleaseFileSystemNfsV3LocksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ReleaseFileSystemNfsV3Locks(request), context);
 }
 
-void FSxClient::ReleaseFileSystemNfsV3LocksAsyncHelper(const ReleaseFileSystemNfsV3LocksRequest& request, const ReleaseFileSystemNfsV3LocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::ReleaseFileSystemNfsV3LocksAsync(const ReleaseFileSystemNfsV3LocksRequest& request, const ReleaseFileSystemNfsV3LocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ReleaseFileSystemNfsV3Locks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientReleaseFileSystemNfsV3LocksAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreVolumeFromSnapshotOutcome FSxClient::RestoreVolumeFromSnapshot(const RestoreVolumeFromSnapshotRequest& request) const
@@ -847,14 +847,14 @@ RestoreVolumeFromSnapshotOutcomeCallable FSxClient::RestoreVolumeFromSnapshotCal
   return task->get_future();
 }
 
-void FSxClient::RestoreVolumeFromSnapshotAsync(const RestoreVolumeFromSnapshotRequest& request, const RestoreVolumeFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientRestoreVolumeFromSnapshotAsyncHelper(FSxClient const * const clientThis, const RestoreVolumeFromSnapshotRequest& request, const RestoreVolumeFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreVolumeFromSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreVolumeFromSnapshot(request), context);
 }
 
-void FSxClient::RestoreVolumeFromSnapshotAsyncHelper(const RestoreVolumeFromSnapshotRequest& request, const RestoreVolumeFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::RestoreVolumeFromSnapshotAsync(const RestoreVolumeFromSnapshotRequest& request, const RestoreVolumeFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreVolumeFromSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientRestoreVolumeFromSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome FSxClient::TagResource(const TagResourceRequest& request) const
@@ -871,14 +871,14 @@ TagResourceOutcomeCallable FSxClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void FSxClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientTagResourceAsyncHelper(FSxClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void FSxClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome FSxClient::UntagResource(const UntagResourceRequest& request) const
@@ -895,14 +895,14 @@ UntagResourceOutcomeCallable FSxClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void FSxClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientUntagResourceAsyncHelper(FSxClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void FSxClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDataRepositoryAssociationOutcome FSxClient::UpdateDataRepositoryAssociation(const UpdateDataRepositoryAssociationRequest& request) const
@@ -919,14 +919,14 @@ UpdateDataRepositoryAssociationOutcomeCallable FSxClient::UpdateDataRepositoryAs
   return task->get_future();
 }
 
-void FSxClient::UpdateDataRepositoryAssociationAsync(const UpdateDataRepositoryAssociationRequest& request, const UpdateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientUpdateDataRepositoryAssociationAsyncHelper(FSxClient const * const clientThis, const UpdateDataRepositoryAssociationRequest& request, const UpdateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataRepositoryAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataRepositoryAssociation(request), context);
 }
 
-void FSxClient::UpdateDataRepositoryAssociationAsyncHelper(const UpdateDataRepositoryAssociationRequest& request, const UpdateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::UpdateDataRepositoryAssociationAsync(const UpdateDataRepositoryAssociationRequest& request, const UpdateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataRepositoryAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientUpdateDataRepositoryAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFileSystemOutcome FSxClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const
@@ -943,14 +943,14 @@ UpdateFileSystemOutcomeCallable FSxClient::UpdateFileSystemCallable(const Update
   return task->get_future();
 }
 
-void FSxClient::UpdateFileSystemAsync(const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientUpdateFileSystemAsyncHelper(FSxClient const * const clientThis, const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFileSystemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFileSystem(request), context);
 }
 
-void FSxClient::UpdateFileSystemAsyncHelper(const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::UpdateFileSystemAsync(const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFileSystem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientUpdateFileSystemAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSnapshotOutcome FSxClient::UpdateSnapshot(const UpdateSnapshotRequest& request) const
@@ -967,14 +967,14 @@ UpdateSnapshotOutcomeCallable FSxClient::UpdateSnapshotCallable(const UpdateSnap
   return task->get_future();
 }
 
-void FSxClient::UpdateSnapshotAsync(const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientUpdateSnapshotAsyncHelper(FSxClient const * const clientThis, const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSnapshot(request), context);
 }
 
-void FSxClient::UpdateSnapshotAsyncHelper(const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::UpdateSnapshotAsync(const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientUpdateSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateStorageVirtualMachineOutcome FSxClient::UpdateStorageVirtualMachine(const UpdateStorageVirtualMachineRequest& request) const
@@ -991,14 +991,14 @@ UpdateStorageVirtualMachineOutcomeCallable FSxClient::UpdateStorageVirtualMachin
   return task->get_future();
 }
 
-void FSxClient::UpdateStorageVirtualMachineAsync(const UpdateStorageVirtualMachineRequest& request, const UpdateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientUpdateStorageVirtualMachineAsyncHelper(FSxClient const * const clientThis, const UpdateStorageVirtualMachineRequest& request, const UpdateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStorageVirtualMachineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateStorageVirtualMachine(request), context);
 }
 
-void FSxClient::UpdateStorageVirtualMachineAsyncHelper(const UpdateStorageVirtualMachineRequest& request, const UpdateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::UpdateStorageVirtualMachineAsync(const UpdateStorageVirtualMachineRequest& request, const UpdateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateStorageVirtualMachine(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientUpdateStorageVirtualMachineAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateVolumeOutcome FSxClient::UpdateVolume(const UpdateVolumeRequest& request) const
@@ -1015,13 +1015,13 @@ UpdateVolumeOutcomeCallable FSxClient::UpdateVolumeCallable(const UpdateVolumeRe
   return task->get_future();
 }
 
-void FSxClient::UpdateVolumeAsync(const UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClientUpdateVolumeAsyncHelper(FSxClient const * const clientThis, const UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateVolume(request), context);
 }
 
-void FSxClient::UpdateVolumeAsyncHelper(const UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void FSxClient::UpdateVolumeAsync(const UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ FSxClientUpdateVolumeAsyncHelper( this, request, handler, context ); } );
 }
 

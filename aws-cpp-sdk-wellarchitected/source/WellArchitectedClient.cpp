@@ -162,14 +162,14 @@ AssociateLensesOutcomeCallable WellArchitectedClient::AssociateLensesCallable(co
   return task->get_future();
 }
 
-void WellArchitectedClient::AssociateLensesAsync(const AssociateLensesRequest& request, const AssociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientAssociateLensesAsyncHelper(WellArchitectedClient const * const clientThis, const AssociateLensesRequest& request, const AssociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateLensesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateLenses(request), context);
 }
 
-void WellArchitectedClient::AssociateLensesAsyncHelper(const AssociateLensesRequest& request, const AssociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::AssociateLensesAsync(const AssociateLensesRequest& request, const AssociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateLenses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientAssociateLensesAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLensShareOutcome WellArchitectedClient::CreateLensShare(const CreateLensShareRequest& request) const
@@ -194,14 +194,14 @@ CreateLensShareOutcomeCallable WellArchitectedClient::CreateLensShareCallable(co
   return task->get_future();
 }
 
-void WellArchitectedClient::CreateLensShareAsync(const CreateLensShareRequest& request, const CreateLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientCreateLensShareAsyncHelper(WellArchitectedClient const * const clientThis, const CreateLensShareRequest& request, const CreateLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLensShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLensShare(request), context);
 }
 
-void WellArchitectedClient::CreateLensShareAsyncHelper(const CreateLensShareRequest& request, const CreateLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::CreateLensShareAsync(const CreateLensShareRequest& request, const CreateLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLensShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientCreateLensShareAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLensVersionOutcome WellArchitectedClient::CreateLensVersion(const CreateLensVersionRequest& request) const
@@ -226,14 +226,14 @@ CreateLensVersionOutcomeCallable WellArchitectedClient::CreateLensVersionCallabl
   return task->get_future();
 }
 
-void WellArchitectedClient::CreateLensVersionAsync(const CreateLensVersionRequest& request, const CreateLensVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientCreateLensVersionAsyncHelper(WellArchitectedClient const * const clientThis, const CreateLensVersionRequest& request, const CreateLensVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLensVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLensVersion(request), context);
 }
 
-void WellArchitectedClient::CreateLensVersionAsyncHelper(const CreateLensVersionRequest& request, const CreateLensVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::CreateLensVersionAsync(const CreateLensVersionRequest& request, const CreateLensVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLensVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientCreateLensVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMilestoneOutcome WellArchitectedClient::CreateMilestone(const CreateMilestoneRequest& request) const
@@ -258,14 +258,14 @@ CreateMilestoneOutcomeCallable WellArchitectedClient::CreateMilestoneCallable(co
   return task->get_future();
 }
 
-void WellArchitectedClient::CreateMilestoneAsync(const CreateMilestoneRequest& request, const CreateMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientCreateMilestoneAsyncHelper(WellArchitectedClient const * const clientThis, const CreateMilestoneRequest& request, const CreateMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMilestoneAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMilestone(request), context);
 }
 
-void WellArchitectedClient::CreateMilestoneAsyncHelper(const CreateMilestoneRequest& request, const CreateMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::CreateMilestoneAsync(const CreateMilestoneRequest& request, const CreateMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMilestone(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientCreateMilestoneAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorkloadOutcome WellArchitectedClient::CreateWorkload(const CreateWorkloadRequest& request) const
@@ -283,14 +283,14 @@ CreateWorkloadOutcomeCallable WellArchitectedClient::CreateWorkloadCallable(cons
   return task->get_future();
 }
 
-void WellArchitectedClient::CreateWorkloadAsync(const CreateWorkloadRequest& request, const CreateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientCreateWorkloadAsyncHelper(WellArchitectedClient const * const clientThis, const CreateWorkloadRequest& request, const CreateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkloadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorkload(request), context);
 }
 
-void WellArchitectedClient::CreateWorkloadAsyncHelper(const CreateWorkloadRequest& request, const CreateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::CreateWorkloadAsync(const CreateWorkloadRequest& request, const CreateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorkload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientCreateWorkloadAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorkloadShareOutcome WellArchitectedClient::CreateWorkloadShare(const CreateWorkloadShareRequest& request) const
@@ -315,14 +315,14 @@ CreateWorkloadShareOutcomeCallable WellArchitectedClient::CreateWorkloadShareCal
   return task->get_future();
 }
 
-void WellArchitectedClient::CreateWorkloadShareAsync(const CreateWorkloadShareRequest& request, const CreateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientCreateWorkloadShareAsyncHelper(WellArchitectedClient const * const clientThis, const CreateWorkloadShareRequest& request, const CreateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkloadShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorkloadShare(request), context);
 }
 
-void WellArchitectedClient::CreateWorkloadShareAsyncHelper(const CreateWorkloadShareRequest& request, const CreateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::CreateWorkloadShareAsync(const CreateWorkloadShareRequest& request, const CreateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorkloadShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientCreateWorkloadShareAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLensOutcome WellArchitectedClient::DeleteLens(const DeleteLensRequest& request) const
@@ -356,14 +356,14 @@ DeleteLensOutcomeCallable WellArchitectedClient::DeleteLensCallable(const Delete
   return task->get_future();
 }
 
-void WellArchitectedClient::DeleteLensAsync(const DeleteLensRequest& request, const DeleteLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientDeleteLensAsyncHelper(WellArchitectedClient const * const clientThis, const DeleteLensRequest& request, const DeleteLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLensAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLens(request), context);
 }
 
-void WellArchitectedClient::DeleteLensAsyncHelper(const DeleteLensRequest& request, const DeleteLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::DeleteLensAsync(const DeleteLensRequest& request, const DeleteLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLens(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientDeleteLensAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLensShareOutcome WellArchitectedClient::DeleteLensShare(const DeleteLensShareRequest& request) const
@@ -399,14 +399,14 @@ DeleteLensShareOutcomeCallable WellArchitectedClient::DeleteLensShareCallable(co
   return task->get_future();
 }
 
-void WellArchitectedClient::DeleteLensShareAsync(const DeleteLensShareRequest& request, const DeleteLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientDeleteLensShareAsyncHelper(WellArchitectedClient const * const clientThis, const DeleteLensShareRequest& request, const DeleteLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLensShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLensShare(request), context);
 }
 
-void WellArchitectedClient::DeleteLensShareAsyncHelper(const DeleteLensShareRequest& request, const DeleteLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::DeleteLensShareAsync(const DeleteLensShareRequest& request, const DeleteLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLensShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientDeleteLensShareAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorkloadOutcome WellArchitectedClient::DeleteWorkload(const DeleteWorkloadRequest& request) const
@@ -435,14 +435,14 @@ DeleteWorkloadOutcomeCallable WellArchitectedClient::DeleteWorkloadCallable(cons
   return task->get_future();
 }
 
-void WellArchitectedClient::DeleteWorkloadAsync(const DeleteWorkloadRequest& request, const DeleteWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientDeleteWorkloadAsyncHelper(WellArchitectedClient const * const clientThis, const DeleteWorkloadRequest& request, const DeleteWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkloadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorkload(request), context);
 }
 
-void WellArchitectedClient::DeleteWorkloadAsyncHelper(const DeleteWorkloadRequest& request, const DeleteWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::DeleteWorkloadAsync(const DeleteWorkloadRequest& request, const DeleteWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorkload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientDeleteWorkloadAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorkloadShareOutcome WellArchitectedClient::DeleteWorkloadShare(const DeleteWorkloadShareRequest& request) const
@@ -478,14 +478,14 @@ DeleteWorkloadShareOutcomeCallable WellArchitectedClient::DeleteWorkloadShareCal
   return task->get_future();
 }
 
-void WellArchitectedClient::DeleteWorkloadShareAsync(const DeleteWorkloadShareRequest& request, const DeleteWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientDeleteWorkloadShareAsyncHelper(WellArchitectedClient const * const clientThis, const DeleteWorkloadShareRequest& request, const DeleteWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkloadShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorkloadShare(request), context);
 }
 
-void WellArchitectedClient::DeleteWorkloadShareAsyncHelper(const DeleteWorkloadShareRequest& request, const DeleteWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::DeleteWorkloadShareAsync(const DeleteWorkloadShareRequest& request, const DeleteWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorkloadShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientDeleteWorkloadShareAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateLensesOutcome WellArchitectedClient::DisassociateLenses(const DisassociateLensesRequest& request) const
@@ -510,14 +510,14 @@ DisassociateLensesOutcomeCallable WellArchitectedClient::DisassociateLensesCalla
   return task->get_future();
 }
 
-void WellArchitectedClient::DisassociateLensesAsync(const DisassociateLensesRequest& request, const DisassociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientDisassociateLensesAsyncHelper(WellArchitectedClient const * const clientThis, const DisassociateLensesRequest& request, const DisassociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateLensesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateLenses(request), context);
 }
 
-void WellArchitectedClient::DisassociateLensesAsyncHelper(const DisassociateLensesRequest& request, const DisassociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::DisassociateLensesAsync(const DisassociateLensesRequest& request, const DisassociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateLenses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientDisassociateLensesAsyncHelper( this, request, handler, context ); } );
 }
 
 ExportLensOutcome WellArchitectedClient::ExportLens(const ExportLensRequest& request) const
@@ -542,14 +542,14 @@ ExportLensOutcomeCallable WellArchitectedClient::ExportLensCallable(const Export
   return task->get_future();
 }
 
-void WellArchitectedClient::ExportLensAsync(const ExportLensRequest& request, const ExportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientExportLensAsyncHelper(WellArchitectedClient const * const clientThis, const ExportLensRequest& request, const ExportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportLensAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ExportLens(request), context);
 }
 
-void WellArchitectedClient::ExportLensAsyncHelper(const ExportLensRequest& request, const ExportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ExportLensAsync(const ExportLensRequest& request, const ExportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExportLens(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientExportLensAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAnswerOutcome WellArchitectedClient::GetAnswer(const GetAnswerRequest& request) const
@@ -587,14 +587,14 @@ GetAnswerOutcomeCallable WellArchitectedClient::GetAnswerCallable(const GetAnswe
   return task->get_future();
 }
 
-void WellArchitectedClient::GetAnswerAsync(const GetAnswerRequest& request, const GetAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientGetAnswerAsyncHelper(WellArchitectedClient const * const clientThis, const GetAnswerRequest& request, const GetAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAnswerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAnswer(request), context);
 }
 
-void WellArchitectedClient::GetAnswerAsyncHelper(const GetAnswerRequest& request, const GetAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::GetAnswerAsync(const GetAnswerRequest& request, const GetAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAnswer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientGetAnswerAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLensOutcome WellArchitectedClient::GetLens(const GetLensRequest& request) const
@@ -618,14 +618,14 @@ GetLensOutcomeCallable WellArchitectedClient::GetLensCallable(const GetLensReque
   return task->get_future();
 }
 
-void WellArchitectedClient::GetLensAsync(const GetLensRequest& request, const GetLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientGetLensAsyncHelper(WellArchitectedClient const * const clientThis, const GetLensRequest& request, const GetLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLensAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLens(request), context);
 }
 
-void WellArchitectedClient::GetLensAsyncHelper(const GetLensRequest& request, const GetLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::GetLensAsync(const GetLensRequest& request, const GetLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLens(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientGetLensAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLensReviewOutcome WellArchitectedClient::GetLensReview(const GetLensReviewRequest& request) const
@@ -656,14 +656,14 @@ GetLensReviewOutcomeCallable WellArchitectedClient::GetLensReviewCallable(const 
   return task->get_future();
 }
 
-void WellArchitectedClient::GetLensReviewAsync(const GetLensReviewRequest& request, const GetLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientGetLensReviewAsyncHelper(WellArchitectedClient const * const clientThis, const GetLensReviewRequest& request, const GetLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLensReviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLensReview(request), context);
 }
 
-void WellArchitectedClient::GetLensReviewAsyncHelper(const GetLensReviewRequest& request, const GetLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::GetLensReviewAsync(const GetLensReviewRequest& request, const GetLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLensReview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientGetLensReviewAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLensReviewReportOutcome WellArchitectedClient::GetLensReviewReport(const GetLensReviewReportRequest& request) const
@@ -695,14 +695,14 @@ GetLensReviewReportOutcomeCallable WellArchitectedClient::GetLensReviewReportCal
   return task->get_future();
 }
 
-void WellArchitectedClient::GetLensReviewReportAsync(const GetLensReviewReportRequest& request, const GetLensReviewReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientGetLensReviewReportAsyncHelper(WellArchitectedClient const * const clientThis, const GetLensReviewReportRequest& request, const GetLensReviewReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLensReviewReportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLensReviewReport(request), context);
 }
 
-void WellArchitectedClient::GetLensReviewReportAsyncHelper(const GetLensReviewReportRequest& request, const GetLensReviewReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::GetLensReviewReportAsync(const GetLensReviewReportRequest& request, const GetLensReviewReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLensReviewReport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientGetLensReviewReportAsyncHelper( this, request, handler, context ); } );
 }
 
 GetLensVersionDifferenceOutcome WellArchitectedClient::GetLensVersionDifference(const GetLensVersionDifferenceRequest& request) const
@@ -727,14 +727,14 @@ GetLensVersionDifferenceOutcomeCallable WellArchitectedClient::GetLensVersionDif
   return task->get_future();
 }
 
-void WellArchitectedClient::GetLensVersionDifferenceAsync(const GetLensVersionDifferenceRequest& request, const GetLensVersionDifferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientGetLensVersionDifferenceAsyncHelper(WellArchitectedClient const * const clientThis, const GetLensVersionDifferenceRequest& request, const GetLensVersionDifferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLensVersionDifferenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLensVersionDifference(request), context);
 }
 
-void WellArchitectedClient::GetLensVersionDifferenceAsyncHelper(const GetLensVersionDifferenceRequest& request, const GetLensVersionDifferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::GetLensVersionDifferenceAsync(const GetLensVersionDifferenceRequest& request, const GetLensVersionDifferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLensVersionDifference(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientGetLensVersionDifferenceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMilestoneOutcome WellArchitectedClient::GetMilestone(const GetMilestoneRequest& request) const
@@ -765,14 +765,14 @@ GetMilestoneOutcomeCallable WellArchitectedClient::GetMilestoneCallable(const Ge
   return task->get_future();
 }
 
-void WellArchitectedClient::GetMilestoneAsync(const GetMilestoneRequest& request, const GetMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientGetMilestoneAsyncHelper(WellArchitectedClient const * const clientThis, const GetMilestoneRequest& request, const GetMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMilestoneAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMilestone(request), context);
 }
 
-void WellArchitectedClient::GetMilestoneAsyncHelper(const GetMilestoneRequest& request, const GetMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::GetMilestoneAsync(const GetMilestoneRequest& request, const GetMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMilestone(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientGetMilestoneAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWorkloadOutcome WellArchitectedClient::GetWorkload(const GetWorkloadRequest& request) const
@@ -796,14 +796,14 @@ GetWorkloadOutcomeCallable WellArchitectedClient::GetWorkloadCallable(const GetW
   return task->get_future();
 }
 
-void WellArchitectedClient::GetWorkloadAsync(const GetWorkloadRequest& request, const GetWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientGetWorkloadAsyncHelper(WellArchitectedClient const * const clientThis, const GetWorkloadRequest& request, const GetWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkloadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWorkload(request), context);
 }
 
-void WellArchitectedClient::GetWorkloadAsyncHelper(const GetWorkloadRequest& request, const GetWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::GetWorkloadAsync(const GetWorkloadRequest& request, const GetWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWorkload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientGetWorkloadAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportLensOutcome WellArchitectedClient::ImportLens(const ImportLensRequest& request) const
@@ -821,14 +821,14 @@ ImportLensOutcomeCallable WellArchitectedClient::ImportLensCallable(const Import
   return task->get_future();
 }
 
-void WellArchitectedClient::ImportLensAsync(const ImportLensRequest& request, const ImportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientImportLensAsyncHelper(WellArchitectedClient const * const clientThis, const ImportLensRequest& request, const ImportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportLensAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportLens(request), context);
 }
 
-void WellArchitectedClient::ImportLensAsyncHelper(const ImportLensRequest& request, const ImportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ImportLensAsync(const ImportLensRequest& request, const ImportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportLens(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientImportLensAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAnswersOutcome WellArchitectedClient::ListAnswers(const ListAnswersRequest& request) const
@@ -860,14 +860,14 @@ ListAnswersOutcomeCallable WellArchitectedClient::ListAnswersCallable(const List
   return task->get_future();
 }
 
-void WellArchitectedClient::ListAnswersAsync(const ListAnswersRequest& request, const ListAnswersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListAnswersAsyncHelper(WellArchitectedClient const * const clientThis, const ListAnswersRequest& request, const ListAnswersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAnswersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAnswers(request), context);
 }
 
-void WellArchitectedClient::ListAnswersAsyncHelper(const ListAnswersRequest& request, const ListAnswersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListAnswersAsync(const ListAnswersRequest& request, const ListAnswersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAnswers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListAnswersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLensReviewImprovementsOutcome WellArchitectedClient::ListLensReviewImprovements(const ListLensReviewImprovementsRequest& request) const
@@ -899,14 +899,14 @@ ListLensReviewImprovementsOutcomeCallable WellArchitectedClient::ListLensReviewI
   return task->get_future();
 }
 
-void WellArchitectedClient::ListLensReviewImprovementsAsync(const ListLensReviewImprovementsRequest& request, const ListLensReviewImprovementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListLensReviewImprovementsAsyncHelper(WellArchitectedClient const * const clientThis, const ListLensReviewImprovementsRequest& request, const ListLensReviewImprovementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLensReviewImprovementsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLensReviewImprovements(request), context);
 }
 
-void WellArchitectedClient::ListLensReviewImprovementsAsyncHelper(const ListLensReviewImprovementsRequest& request, const ListLensReviewImprovementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListLensReviewImprovementsAsync(const ListLensReviewImprovementsRequest& request, const ListLensReviewImprovementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLensReviewImprovements(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListLensReviewImprovementsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLensReviewsOutcome WellArchitectedClient::ListLensReviews(const ListLensReviewsRequest& request) const
@@ -931,14 +931,14 @@ ListLensReviewsOutcomeCallable WellArchitectedClient::ListLensReviewsCallable(co
   return task->get_future();
 }
 
-void WellArchitectedClient::ListLensReviewsAsync(const ListLensReviewsRequest& request, const ListLensReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListLensReviewsAsyncHelper(WellArchitectedClient const * const clientThis, const ListLensReviewsRequest& request, const ListLensReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLensReviewsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLensReviews(request), context);
 }
 
-void WellArchitectedClient::ListLensReviewsAsyncHelper(const ListLensReviewsRequest& request, const ListLensReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListLensReviewsAsync(const ListLensReviewsRequest& request, const ListLensReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLensReviews(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListLensReviewsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLensSharesOutcome WellArchitectedClient::ListLensShares(const ListLensSharesRequest& request) const
@@ -963,14 +963,14 @@ ListLensSharesOutcomeCallable WellArchitectedClient::ListLensSharesCallable(cons
   return task->get_future();
 }
 
-void WellArchitectedClient::ListLensSharesAsync(const ListLensSharesRequest& request, const ListLensSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListLensSharesAsyncHelper(WellArchitectedClient const * const clientThis, const ListLensSharesRequest& request, const ListLensSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLensSharesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLensShares(request), context);
 }
 
-void WellArchitectedClient::ListLensSharesAsyncHelper(const ListLensSharesRequest& request, const ListLensSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListLensSharesAsync(const ListLensSharesRequest& request, const ListLensSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLensShares(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListLensSharesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLensesOutcome WellArchitectedClient::ListLenses(const ListLensesRequest& request) const
@@ -988,14 +988,14 @@ ListLensesOutcomeCallable WellArchitectedClient::ListLensesCallable(const ListLe
   return task->get_future();
 }
 
-void WellArchitectedClient::ListLensesAsync(const ListLensesRequest& request, const ListLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListLensesAsyncHelper(WellArchitectedClient const * const clientThis, const ListLensesRequest& request, const ListLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLensesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLenses(request), context);
 }
 
-void WellArchitectedClient::ListLensesAsyncHelper(const ListLensesRequest& request, const ListLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListLensesAsync(const ListLensesRequest& request, const ListLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLenses(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListLensesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMilestonesOutcome WellArchitectedClient::ListMilestones(const ListMilestonesRequest& request) const
@@ -1020,14 +1020,14 @@ ListMilestonesOutcomeCallable WellArchitectedClient::ListMilestonesCallable(cons
   return task->get_future();
 }
 
-void WellArchitectedClient::ListMilestonesAsync(const ListMilestonesRequest& request, const ListMilestonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListMilestonesAsyncHelper(WellArchitectedClient const * const clientThis, const ListMilestonesRequest& request, const ListMilestonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMilestonesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMilestones(request), context);
 }
 
-void WellArchitectedClient::ListMilestonesAsyncHelper(const ListMilestonesRequest& request, const ListMilestonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListMilestonesAsync(const ListMilestonesRequest& request, const ListMilestonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMilestones(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListMilestonesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNotificationsOutcome WellArchitectedClient::ListNotifications(const ListNotificationsRequest& request) const
@@ -1045,14 +1045,14 @@ ListNotificationsOutcomeCallable WellArchitectedClient::ListNotificationsCallabl
   return task->get_future();
 }
 
-void WellArchitectedClient::ListNotificationsAsync(const ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListNotificationsAsyncHelper(WellArchitectedClient const * const clientThis, const ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNotificationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNotifications(request), context);
 }
 
-void WellArchitectedClient::ListNotificationsAsyncHelper(const ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListNotificationsAsync(const ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNotifications(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListNotificationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListShareInvitationsOutcome WellArchitectedClient::ListShareInvitations(const ListShareInvitationsRequest& request) const
@@ -1070,14 +1070,14 @@ ListShareInvitationsOutcomeCallable WellArchitectedClient::ListShareInvitationsC
   return task->get_future();
 }
 
-void WellArchitectedClient::ListShareInvitationsAsync(const ListShareInvitationsRequest& request, const ListShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListShareInvitationsAsyncHelper(WellArchitectedClient const * const clientThis, const ListShareInvitationsRequest& request, const ListShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListShareInvitationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListShareInvitations(request), context);
 }
 
-void WellArchitectedClient::ListShareInvitationsAsyncHelper(const ListShareInvitationsRequest& request, const ListShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListShareInvitationsAsync(const ListShareInvitationsRequest& request, const ListShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListShareInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListShareInvitationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome WellArchitectedClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1101,14 +1101,14 @@ ListTagsForResourceOutcomeCallable WellArchitectedClient::ListTagsForResourceCal
   return task->get_future();
 }
 
-void WellArchitectedClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListTagsForResourceAsyncHelper(WellArchitectedClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void WellArchitectedClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorkloadSharesOutcome WellArchitectedClient::ListWorkloadShares(const ListWorkloadSharesRequest& request) const
@@ -1133,14 +1133,14 @@ ListWorkloadSharesOutcomeCallable WellArchitectedClient::ListWorkloadSharesCalla
   return task->get_future();
 }
 
-void WellArchitectedClient::ListWorkloadSharesAsync(const ListWorkloadSharesRequest& request, const ListWorkloadSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListWorkloadSharesAsyncHelper(WellArchitectedClient const * const clientThis, const ListWorkloadSharesRequest& request, const ListWorkloadSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkloadSharesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorkloadShares(request), context);
 }
 
-void WellArchitectedClient::ListWorkloadSharesAsyncHelper(const ListWorkloadSharesRequest& request, const ListWorkloadSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListWorkloadSharesAsync(const ListWorkloadSharesRequest& request, const ListWorkloadSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorkloadShares(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListWorkloadSharesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorkloadsOutcome WellArchitectedClient::ListWorkloads(const ListWorkloadsRequest& request) const
@@ -1158,14 +1158,14 @@ ListWorkloadsOutcomeCallable WellArchitectedClient::ListWorkloadsCallable(const 
   return task->get_future();
 }
 
-void WellArchitectedClient::ListWorkloadsAsync(const ListWorkloadsRequest& request, const ListWorkloadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientListWorkloadsAsyncHelper(WellArchitectedClient const * const clientThis, const ListWorkloadsRequest& request, const ListWorkloadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkloadsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorkloads(request), context);
 }
 
-void WellArchitectedClient::ListWorkloadsAsyncHelper(const ListWorkloadsRequest& request, const ListWorkloadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::ListWorkloadsAsync(const ListWorkloadsRequest& request, const ListWorkloadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorkloads(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientListWorkloadsAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome WellArchitectedClient::TagResource(const TagResourceRequest& request) const
@@ -1189,14 +1189,14 @@ TagResourceOutcomeCallable WellArchitectedClient::TagResourceCallable(const TagR
   return task->get_future();
 }
 
-void WellArchitectedClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientTagResourceAsyncHelper(WellArchitectedClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void WellArchitectedClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome WellArchitectedClient::UntagResource(const UntagResourceRequest& request) const
@@ -1225,14 +1225,14 @@ UntagResourceOutcomeCallable WellArchitectedClient::UntagResourceCallable(const 
   return task->get_future();
 }
 
-void WellArchitectedClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientUntagResourceAsyncHelper(WellArchitectedClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void WellArchitectedClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAnswerOutcome WellArchitectedClient::UpdateAnswer(const UpdateAnswerRequest& request) const
@@ -1270,14 +1270,14 @@ UpdateAnswerOutcomeCallable WellArchitectedClient::UpdateAnswerCallable(const Up
   return task->get_future();
 }
 
-void WellArchitectedClient::UpdateAnswerAsync(const UpdateAnswerRequest& request, const UpdateAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientUpdateAnswerAsyncHelper(WellArchitectedClient const * const clientThis, const UpdateAnswerRequest& request, const UpdateAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAnswerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAnswer(request), context);
 }
 
-void WellArchitectedClient::UpdateAnswerAsyncHelper(const UpdateAnswerRequest& request, const UpdateAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::UpdateAnswerAsync(const UpdateAnswerRequest& request, const UpdateAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAnswer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientUpdateAnswerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGlobalSettingsOutcome WellArchitectedClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
@@ -1295,14 +1295,14 @@ UpdateGlobalSettingsOutcomeCallable WellArchitectedClient::UpdateGlobalSettingsC
   return task->get_future();
 }
 
-void WellArchitectedClient::UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientUpdateGlobalSettingsAsyncHelper(WellArchitectedClient const * const clientThis, const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGlobalSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGlobalSettings(request), context);
 }
 
-void WellArchitectedClient::UpdateGlobalSettingsAsyncHelper(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGlobalSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientUpdateGlobalSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLensReviewOutcome WellArchitectedClient::UpdateLensReview(const UpdateLensReviewRequest& request) const
@@ -1333,14 +1333,14 @@ UpdateLensReviewOutcomeCallable WellArchitectedClient::UpdateLensReviewCallable(
   return task->get_future();
 }
 
-void WellArchitectedClient::UpdateLensReviewAsync(const UpdateLensReviewRequest& request, const UpdateLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientUpdateLensReviewAsyncHelper(WellArchitectedClient const * const clientThis, const UpdateLensReviewRequest& request, const UpdateLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLensReviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLensReview(request), context);
 }
 
-void WellArchitectedClient::UpdateLensReviewAsyncHelper(const UpdateLensReviewRequest& request, const UpdateLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::UpdateLensReviewAsync(const UpdateLensReviewRequest& request, const UpdateLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLensReview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientUpdateLensReviewAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateShareInvitationOutcome WellArchitectedClient::UpdateShareInvitation(const UpdateShareInvitationRequest& request) const
@@ -1364,14 +1364,14 @@ UpdateShareInvitationOutcomeCallable WellArchitectedClient::UpdateShareInvitatio
   return task->get_future();
 }
 
-void WellArchitectedClient::UpdateShareInvitationAsync(const UpdateShareInvitationRequest& request, const UpdateShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientUpdateShareInvitationAsyncHelper(WellArchitectedClient const * const clientThis, const UpdateShareInvitationRequest& request, const UpdateShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateShareInvitationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateShareInvitation(request), context);
 }
 
-void WellArchitectedClient::UpdateShareInvitationAsyncHelper(const UpdateShareInvitationRequest& request, const UpdateShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::UpdateShareInvitationAsync(const UpdateShareInvitationRequest& request, const UpdateShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateShareInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientUpdateShareInvitationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWorkloadOutcome WellArchitectedClient::UpdateWorkload(const UpdateWorkloadRequest& request) const
@@ -1395,14 +1395,14 @@ UpdateWorkloadOutcomeCallable WellArchitectedClient::UpdateWorkloadCallable(cons
   return task->get_future();
 }
 
-void WellArchitectedClient::UpdateWorkloadAsync(const UpdateWorkloadRequest& request, const UpdateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientUpdateWorkloadAsyncHelper(WellArchitectedClient const * const clientThis, const UpdateWorkloadRequest& request, const UpdateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkloadAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWorkload(request), context);
 }
 
-void WellArchitectedClient::UpdateWorkloadAsyncHelper(const UpdateWorkloadRequest& request, const UpdateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::UpdateWorkloadAsync(const UpdateWorkloadRequest& request, const UpdateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWorkload(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientUpdateWorkloadAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWorkloadShareOutcome WellArchitectedClient::UpdateWorkloadShare(const UpdateWorkloadShareRequest& request) const
@@ -1433,14 +1433,14 @@ UpdateWorkloadShareOutcomeCallable WellArchitectedClient::UpdateWorkloadShareCal
   return task->get_future();
 }
 
-void WellArchitectedClient::UpdateWorkloadShareAsync(const UpdateWorkloadShareRequest& request, const UpdateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientUpdateWorkloadShareAsyncHelper(WellArchitectedClient const * const clientThis, const UpdateWorkloadShareRequest& request, const UpdateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkloadShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWorkloadShare(request), context);
 }
 
-void WellArchitectedClient::UpdateWorkloadShareAsyncHelper(const UpdateWorkloadShareRequest& request, const UpdateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::UpdateWorkloadShareAsync(const UpdateWorkloadShareRequest& request, const UpdateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWorkloadShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientUpdateWorkloadShareAsyncHelper( this, request, handler, context ); } );
 }
 
 UpgradeLensReviewOutcome WellArchitectedClient::UpgradeLensReview(const UpgradeLensReviewRequest& request) const
@@ -1472,13 +1472,13 @@ UpgradeLensReviewOutcomeCallable WellArchitectedClient::UpgradeLensReviewCallabl
   return task->get_future();
 }
 
-void WellArchitectedClient::UpgradeLensReviewAsync(const UpgradeLensReviewRequest& request, const UpgradeLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClientUpgradeLensReviewAsyncHelper(WellArchitectedClient const * const clientThis, const UpgradeLensReviewRequest& request, const UpgradeLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpgradeLensReviewAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpgradeLensReview(request), context);
 }
 
-void WellArchitectedClient::UpgradeLensReviewAsyncHelper(const UpgradeLensReviewRequest& request, const UpgradeLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void WellArchitectedClient::UpgradeLensReviewAsync(const UpgradeLensReviewRequest& request, const UpgradeLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpgradeLensReview(request), context);
+  m_executor->Submit( [this, request, handler, context](){ WellArchitectedClientUpgradeLensReviewAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -204,14 +204,14 @@ ActivateGatewayOutcomeCallable StorageGatewayClient::ActivateGatewayCallable(con
   return task->get_future();
 }
 
-void StorageGatewayClient::ActivateGatewayAsync(const ActivateGatewayRequest& request, const ActivateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientActivateGatewayAsyncHelper(StorageGatewayClient const * const clientThis, const ActivateGatewayRequest& request, const ActivateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ActivateGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ActivateGateway(request), context);
 }
 
-void StorageGatewayClient::ActivateGatewayAsyncHelper(const ActivateGatewayRequest& request, const ActivateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ActivateGatewayAsync(const ActivateGatewayRequest& request, const ActivateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ActivateGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientActivateGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 AddCacheOutcome StorageGatewayClient::AddCache(const AddCacheRequest& request) const
@@ -228,14 +228,14 @@ AddCacheOutcomeCallable StorageGatewayClient::AddCacheCallable(const AddCacheReq
   return task->get_future();
 }
 
-void StorageGatewayClient::AddCacheAsync(const AddCacheRequest& request, const AddCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientAddCacheAsyncHelper(StorageGatewayClient const * const clientThis, const AddCacheRequest& request, const AddCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddCache(request), context);
 }
 
-void StorageGatewayClient::AddCacheAsyncHelper(const AddCacheRequest& request, const AddCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::AddCacheAsync(const AddCacheRequest& request, const AddCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientAddCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 AddTagsToResourceOutcome StorageGatewayClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
@@ -252,14 +252,14 @@ AddTagsToResourceOutcomeCallable StorageGatewayClient::AddTagsToResourceCallable
   return task->get_future();
 }
 
-void StorageGatewayClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientAddTagsToResourceAsyncHelper(StorageGatewayClient const * const clientThis, const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsToResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddTagsToResource(request), context);
 }
 
-void StorageGatewayClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddTagsToResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientAddTagsToResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 AddUploadBufferOutcome StorageGatewayClient::AddUploadBuffer(const AddUploadBufferRequest& request) const
@@ -276,14 +276,14 @@ AddUploadBufferOutcomeCallable StorageGatewayClient::AddUploadBufferCallable(con
   return task->get_future();
 }
 
-void StorageGatewayClient::AddUploadBufferAsync(const AddUploadBufferRequest& request, const AddUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientAddUploadBufferAsyncHelper(StorageGatewayClient const * const clientThis, const AddUploadBufferRequest& request, const AddUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddUploadBufferAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddUploadBuffer(request), context);
 }
 
-void StorageGatewayClient::AddUploadBufferAsyncHelper(const AddUploadBufferRequest& request, const AddUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::AddUploadBufferAsync(const AddUploadBufferRequest& request, const AddUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddUploadBuffer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientAddUploadBufferAsyncHelper( this, request, handler, context ); } );
 }
 
 AddWorkingStorageOutcome StorageGatewayClient::AddWorkingStorage(const AddWorkingStorageRequest& request) const
@@ -300,14 +300,14 @@ AddWorkingStorageOutcomeCallable StorageGatewayClient::AddWorkingStorageCallable
   return task->get_future();
 }
 
-void StorageGatewayClient::AddWorkingStorageAsync(const AddWorkingStorageRequest& request, const AddWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientAddWorkingStorageAsyncHelper(StorageGatewayClient const * const clientThis, const AddWorkingStorageRequest& request, const AddWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddWorkingStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddWorkingStorage(request), context);
 }
 
-void StorageGatewayClient::AddWorkingStorageAsyncHelper(const AddWorkingStorageRequest& request, const AddWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::AddWorkingStorageAsync(const AddWorkingStorageRequest& request, const AddWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddWorkingStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientAddWorkingStorageAsyncHelper( this, request, handler, context ); } );
 }
 
 AssignTapePoolOutcome StorageGatewayClient::AssignTapePool(const AssignTapePoolRequest& request) const
@@ -324,14 +324,14 @@ AssignTapePoolOutcomeCallable StorageGatewayClient::AssignTapePoolCallable(const
   return task->get_future();
 }
 
-void StorageGatewayClient::AssignTapePoolAsync(const AssignTapePoolRequest& request, const AssignTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientAssignTapePoolAsyncHelper(StorageGatewayClient const * const clientThis, const AssignTapePoolRequest& request, const AssignTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssignTapePoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssignTapePool(request), context);
 }
 
-void StorageGatewayClient::AssignTapePoolAsyncHelper(const AssignTapePoolRequest& request, const AssignTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::AssignTapePoolAsync(const AssignTapePoolRequest& request, const AssignTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssignTapePool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientAssignTapePoolAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateFileSystemOutcome StorageGatewayClient::AssociateFileSystem(const AssociateFileSystemRequest& request) const
@@ -348,14 +348,14 @@ AssociateFileSystemOutcomeCallable StorageGatewayClient::AssociateFileSystemCall
   return task->get_future();
 }
 
-void StorageGatewayClient::AssociateFileSystemAsync(const AssociateFileSystemRequest& request, const AssociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientAssociateFileSystemAsyncHelper(StorageGatewayClient const * const clientThis, const AssociateFileSystemRequest& request, const AssociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateFileSystemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateFileSystem(request), context);
 }
 
-void StorageGatewayClient::AssociateFileSystemAsyncHelper(const AssociateFileSystemRequest& request, const AssociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::AssociateFileSystemAsync(const AssociateFileSystemRequest& request, const AssociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateFileSystem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientAssociateFileSystemAsyncHelper( this, request, handler, context ); } );
 }
 
 AttachVolumeOutcome StorageGatewayClient::AttachVolume(const AttachVolumeRequest& request) const
@@ -372,14 +372,14 @@ AttachVolumeOutcomeCallable StorageGatewayClient::AttachVolumeCallable(const Att
   return task->get_future();
 }
 
-void StorageGatewayClient::AttachVolumeAsync(const AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientAttachVolumeAsyncHelper(StorageGatewayClient const * const clientThis, const AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AttachVolume(request), context);
 }
 
-void StorageGatewayClient::AttachVolumeAsyncHelper(const AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::AttachVolumeAsync(const AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientAttachVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelArchivalOutcome StorageGatewayClient::CancelArchival(const CancelArchivalRequest& request) const
@@ -396,14 +396,14 @@ CancelArchivalOutcomeCallable StorageGatewayClient::CancelArchivalCallable(const
   return task->get_future();
 }
 
-void StorageGatewayClient::CancelArchivalAsync(const CancelArchivalRequest& request, const CancelArchivalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCancelArchivalAsyncHelper(StorageGatewayClient const * const clientThis, const CancelArchivalRequest& request, const CancelArchivalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelArchivalAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelArchival(request), context);
 }
 
-void StorageGatewayClient::CancelArchivalAsyncHelper(const CancelArchivalRequest& request, const CancelArchivalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CancelArchivalAsync(const CancelArchivalRequest& request, const CancelArchivalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelArchival(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCancelArchivalAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelRetrievalOutcome StorageGatewayClient::CancelRetrieval(const CancelRetrievalRequest& request) const
@@ -420,14 +420,14 @@ CancelRetrievalOutcomeCallable StorageGatewayClient::CancelRetrievalCallable(con
   return task->get_future();
 }
 
-void StorageGatewayClient::CancelRetrievalAsync(const CancelRetrievalRequest& request, const CancelRetrievalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCancelRetrievalAsyncHelper(StorageGatewayClient const * const clientThis, const CancelRetrievalRequest& request, const CancelRetrievalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelRetrievalAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelRetrieval(request), context);
 }
 
-void StorageGatewayClient::CancelRetrievalAsyncHelper(const CancelRetrievalRequest& request, const CancelRetrievalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CancelRetrievalAsync(const CancelRetrievalRequest& request, const CancelRetrievalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelRetrieval(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCancelRetrievalAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCachediSCSIVolumeOutcome StorageGatewayClient::CreateCachediSCSIVolume(const CreateCachediSCSIVolumeRequest& request) const
@@ -444,14 +444,14 @@ CreateCachediSCSIVolumeOutcomeCallable StorageGatewayClient::CreateCachediSCSIVo
   return task->get_future();
 }
 
-void StorageGatewayClient::CreateCachediSCSIVolumeAsync(const CreateCachediSCSIVolumeRequest& request, const CreateCachediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCreateCachediSCSIVolumeAsyncHelper(StorageGatewayClient const * const clientThis, const CreateCachediSCSIVolumeRequest& request, const CreateCachediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCachediSCSIVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCachediSCSIVolume(request), context);
 }
 
-void StorageGatewayClient::CreateCachediSCSIVolumeAsyncHelper(const CreateCachediSCSIVolumeRequest& request, const CreateCachediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CreateCachediSCSIVolumeAsync(const CreateCachediSCSIVolumeRequest& request, const CreateCachediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCachediSCSIVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCreateCachediSCSIVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNFSFileShareOutcome StorageGatewayClient::CreateNFSFileShare(const CreateNFSFileShareRequest& request) const
@@ -468,14 +468,14 @@ CreateNFSFileShareOutcomeCallable StorageGatewayClient::CreateNFSFileShareCallab
   return task->get_future();
 }
 
-void StorageGatewayClient::CreateNFSFileShareAsync(const CreateNFSFileShareRequest& request, const CreateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCreateNFSFileShareAsyncHelper(StorageGatewayClient const * const clientThis, const CreateNFSFileShareRequest& request, const CreateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNFSFileShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNFSFileShare(request), context);
 }
 
-void StorageGatewayClient::CreateNFSFileShareAsyncHelper(const CreateNFSFileShareRequest& request, const CreateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CreateNFSFileShareAsync(const CreateNFSFileShareRequest& request, const CreateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNFSFileShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCreateNFSFileShareAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSMBFileShareOutcome StorageGatewayClient::CreateSMBFileShare(const CreateSMBFileShareRequest& request) const
@@ -492,14 +492,14 @@ CreateSMBFileShareOutcomeCallable StorageGatewayClient::CreateSMBFileShareCallab
   return task->get_future();
 }
 
-void StorageGatewayClient::CreateSMBFileShareAsync(const CreateSMBFileShareRequest& request, const CreateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCreateSMBFileShareAsyncHelper(StorageGatewayClient const * const clientThis, const CreateSMBFileShareRequest& request, const CreateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSMBFileShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSMBFileShare(request), context);
 }
 
-void StorageGatewayClient::CreateSMBFileShareAsyncHelper(const CreateSMBFileShareRequest& request, const CreateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CreateSMBFileShareAsync(const CreateSMBFileShareRequest& request, const CreateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSMBFileShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCreateSMBFileShareAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSnapshotOutcome StorageGatewayClient::CreateSnapshot(const CreateSnapshotRequest& request) const
@@ -516,14 +516,14 @@ CreateSnapshotOutcomeCallable StorageGatewayClient::CreateSnapshotCallable(const
   return task->get_future();
 }
 
-void StorageGatewayClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCreateSnapshotAsyncHelper(StorageGatewayClient const * const clientThis, const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSnapshot(request), context);
 }
 
-void StorageGatewayClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCreateSnapshotAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSnapshotFromVolumeRecoveryPointOutcome StorageGatewayClient::CreateSnapshotFromVolumeRecoveryPoint(const CreateSnapshotFromVolumeRecoveryPointRequest& request) const
@@ -540,14 +540,14 @@ CreateSnapshotFromVolumeRecoveryPointOutcomeCallable StorageGatewayClient::Creat
   return task->get_future();
 }
 
-void StorageGatewayClient::CreateSnapshotFromVolumeRecoveryPointAsync(const CreateSnapshotFromVolumeRecoveryPointRequest& request, const CreateSnapshotFromVolumeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCreateSnapshotFromVolumeRecoveryPointAsyncHelper(StorageGatewayClient const * const clientThis, const CreateSnapshotFromVolumeRecoveryPointRequest& request, const CreateSnapshotFromVolumeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotFromVolumeRecoveryPointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSnapshotFromVolumeRecoveryPoint(request), context);
 }
 
-void StorageGatewayClient::CreateSnapshotFromVolumeRecoveryPointAsyncHelper(const CreateSnapshotFromVolumeRecoveryPointRequest& request, const CreateSnapshotFromVolumeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CreateSnapshotFromVolumeRecoveryPointAsync(const CreateSnapshotFromVolumeRecoveryPointRequest& request, const CreateSnapshotFromVolumeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSnapshotFromVolumeRecoveryPoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCreateSnapshotFromVolumeRecoveryPointAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStorediSCSIVolumeOutcome StorageGatewayClient::CreateStorediSCSIVolume(const CreateStorediSCSIVolumeRequest& request) const
@@ -564,14 +564,14 @@ CreateStorediSCSIVolumeOutcomeCallable StorageGatewayClient::CreateStorediSCSIVo
   return task->get_future();
 }
 
-void StorageGatewayClient::CreateStorediSCSIVolumeAsync(const CreateStorediSCSIVolumeRequest& request, const CreateStorediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCreateStorediSCSIVolumeAsyncHelper(StorageGatewayClient const * const clientThis, const CreateStorediSCSIVolumeRequest& request, const CreateStorediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStorediSCSIVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStorediSCSIVolume(request), context);
 }
 
-void StorageGatewayClient::CreateStorediSCSIVolumeAsyncHelper(const CreateStorediSCSIVolumeRequest& request, const CreateStorediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CreateStorediSCSIVolumeAsync(const CreateStorediSCSIVolumeRequest& request, const CreateStorediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStorediSCSIVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCreateStorediSCSIVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTapePoolOutcome StorageGatewayClient::CreateTapePool(const CreateTapePoolRequest& request) const
@@ -588,14 +588,14 @@ CreateTapePoolOutcomeCallable StorageGatewayClient::CreateTapePoolCallable(const
   return task->get_future();
 }
 
-void StorageGatewayClient::CreateTapePoolAsync(const CreateTapePoolRequest& request, const CreateTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCreateTapePoolAsyncHelper(StorageGatewayClient const * const clientThis, const CreateTapePoolRequest& request, const CreateTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTapePoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTapePool(request), context);
 }
 
-void StorageGatewayClient::CreateTapePoolAsyncHelper(const CreateTapePoolRequest& request, const CreateTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CreateTapePoolAsync(const CreateTapePoolRequest& request, const CreateTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTapePool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCreateTapePoolAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTapeWithBarcodeOutcome StorageGatewayClient::CreateTapeWithBarcode(const CreateTapeWithBarcodeRequest& request) const
@@ -612,14 +612,14 @@ CreateTapeWithBarcodeOutcomeCallable StorageGatewayClient::CreateTapeWithBarcode
   return task->get_future();
 }
 
-void StorageGatewayClient::CreateTapeWithBarcodeAsync(const CreateTapeWithBarcodeRequest& request, const CreateTapeWithBarcodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCreateTapeWithBarcodeAsyncHelper(StorageGatewayClient const * const clientThis, const CreateTapeWithBarcodeRequest& request, const CreateTapeWithBarcodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTapeWithBarcodeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTapeWithBarcode(request), context);
 }
 
-void StorageGatewayClient::CreateTapeWithBarcodeAsyncHelper(const CreateTapeWithBarcodeRequest& request, const CreateTapeWithBarcodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CreateTapeWithBarcodeAsync(const CreateTapeWithBarcodeRequest& request, const CreateTapeWithBarcodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTapeWithBarcode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCreateTapeWithBarcodeAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTapesOutcome StorageGatewayClient::CreateTapes(const CreateTapesRequest& request) const
@@ -636,14 +636,14 @@ CreateTapesOutcomeCallable StorageGatewayClient::CreateTapesCallable(const Creat
   return task->get_future();
 }
 
-void StorageGatewayClient::CreateTapesAsync(const CreateTapesRequest& request, const CreateTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientCreateTapesAsyncHelper(StorageGatewayClient const * const clientThis, const CreateTapesRequest& request, const CreateTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTapesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTapes(request), context);
 }
 
-void StorageGatewayClient::CreateTapesAsyncHelper(const CreateTapesRequest& request, const CreateTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::CreateTapesAsync(const CreateTapesRequest& request, const CreateTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTapes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientCreateTapesAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAutomaticTapeCreationPolicyOutcome StorageGatewayClient::DeleteAutomaticTapeCreationPolicy(const DeleteAutomaticTapeCreationPolicyRequest& request) const
@@ -660,14 +660,14 @@ DeleteAutomaticTapeCreationPolicyOutcomeCallable StorageGatewayClient::DeleteAut
   return task->get_future();
 }
 
-void StorageGatewayClient::DeleteAutomaticTapeCreationPolicyAsync(const DeleteAutomaticTapeCreationPolicyRequest& request, const DeleteAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDeleteAutomaticTapeCreationPolicyAsyncHelper(StorageGatewayClient const * const clientThis, const DeleteAutomaticTapeCreationPolicyRequest& request, const DeleteAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAutomaticTapeCreationPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAutomaticTapeCreationPolicy(request), context);
 }
 
-void StorageGatewayClient::DeleteAutomaticTapeCreationPolicyAsyncHelper(const DeleteAutomaticTapeCreationPolicyRequest& request, const DeleteAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DeleteAutomaticTapeCreationPolicyAsync(const DeleteAutomaticTapeCreationPolicyRequest& request, const DeleteAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAutomaticTapeCreationPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDeleteAutomaticTapeCreationPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBandwidthRateLimitOutcome StorageGatewayClient::DeleteBandwidthRateLimit(const DeleteBandwidthRateLimitRequest& request) const
@@ -684,14 +684,14 @@ DeleteBandwidthRateLimitOutcomeCallable StorageGatewayClient::DeleteBandwidthRat
   return task->get_future();
 }
 
-void StorageGatewayClient::DeleteBandwidthRateLimitAsync(const DeleteBandwidthRateLimitRequest& request, const DeleteBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDeleteBandwidthRateLimitAsyncHelper(StorageGatewayClient const * const clientThis, const DeleteBandwidthRateLimitRequest& request, const DeleteBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBandwidthRateLimitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBandwidthRateLimit(request), context);
 }
 
-void StorageGatewayClient::DeleteBandwidthRateLimitAsyncHelper(const DeleteBandwidthRateLimitRequest& request, const DeleteBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DeleteBandwidthRateLimitAsync(const DeleteBandwidthRateLimitRequest& request, const DeleteBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBandwidthRateLimit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDeleteBandwidthRateLimitAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteChapCredentialsOutcome StorageGatewayClient::DeleteChapCredentials(const DeleteChapCredentialsRequest& request) const
@@ -708,14 +708,14 @@ DeleteChapCredentialsOutcomeCallable StorageGatewayClient::DeleteChapCredentials
   return task->get_future();
 }
 
-void StorageGatewayClient::DeleteChapCredentialsAsync(const DeleteChapCredentialsRequest& request, const DeleteChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDeleteChapCredentialsAsyncHelper(StorageGatewayClient const * const clientThis, const DeleteChapCredentialsRequest& request, const DeleteChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChapCredentialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteChapCredentials(request), context);
 }
 
-void StorageGatewayClient::DeleteChapCredentialsAsyncHelper(const DeleteChapCredentialsRequest& request, const DeleteChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DeleteChapCredentialsAsync(const DeleteChapCredentialsRequest& request, const DeleteChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteChapCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDeleteChapCredentialsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteFileShareOutcome StorageGatewayClient::DeleteFileShare(const DeleteFileShareRequest& request) const
@@ -732,14 +732,14 @@ DeleteFileShareOutcomeCallable StorageGatewayClient::DeleteFileShareCallable(con
   return task->get_future();
 }
 
-void StorageGatewayClient::DeleteFileShareAsync(const DeleteFileShareRequest& request, const DeleteFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDeleteFileShareAsyncHelper(StorageGatewayClient const * const clientThis, const DeleteFileShareRequest& request, const DeleteFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFileShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteFileShare(request), context);
 }
 
-void StorageGatewayClient::DeleteFileShareAsyncHelper(const DeleteFileShareRequest& request, const DeleteFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DeleteFileShareAsync(const DeleteFileShareRequest& request, const DeleteFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteFileShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDeleteFileShareAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGatewayOutcome StorageGatewayClient::DeleteGateway(const DeleteGatewayRequest& request) const
@@ -756,14 +756,14 @@ DeleteGatewayOutcomeCallable StorageGatewayClient::DeleteGatewayCallable(const D
   return task->get_future();
 }
 
-void StorageGatewayClient::DeleteGatewayAsync(const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDeleteGatewayAsyncHelper(StorageGatewayClient const * const clientThis, const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGateway(request), context);
 }
 
-void StorageGatewayClient::DeleteGatewayAsyncHelper(const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DeleteGatewayAsync(const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDeleteGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSnapshotScheduleOutcome StorageGatewayClient::DeleteSnapshotSchedule(const DeleteSnapshotScheduleRequest& request) const
@@ -780,14 +780,14 @@ DeleteSnapshotScheduleOutcomeCallable StorageGatewayClient::DeleteSnapshotSchedu
   return task->get_future();
 }
 
-void StorageGatewayClient::DeleteSnapshotScheduleAsync(const DeleteSnapshotScheduleRequest& request, const DeleteSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDeleteSnapshotScheduleAsyncHelper(StorageGatewayClient const * const clientThis, const DeleteSnapshotScheduleRequest& request, const DeleteSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSnapshotScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSnapshotSchedule(request), context);
 }
 
-void StorageGatewayClient::DeleteSnapshotScheduleAsyncHelper(const DeleteSnapshotScheduleRequest& request, const DeleteSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DeleteSnapshotScheduleAsync(const DeleteSnapshotScheduleRequest& request, const DeleteSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSnapshotSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDeleteSnapshotScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTapeOutcome StorageGatewayClient::DeleteTape(const DeleteTapeRequest& request) const
@@ -804,14 +804,14 @@ DeleteTapeOutcomeCallable StorageGatewayClient::DeleteTapeCallable(const DeleteT
   return task->get_future();
 }
 
-void StorageGatewayClient::DeleteTapeAsync(const DeleteTapeRequest& request, const DeleteTapeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDeleteTapeAsyncHelper(StorageGatewayClient const * const clientThis, const DeleteTapeRequest& request, const DeleteTapeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTapeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTape(request), context);
 }
 
-void StorageGatewayClient::DeleteTapeAsyncHelper(const DeleteTapeRequest& request, const DeleteTapeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DeleteTapeAsync(const DeleteTapeRequest& request, const DeleteTapeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTape(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDeleteTapeAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTapeArchiveOutcome StorageGatewayClient::DeleteTapeArchive(const DeleteTapeArchiveRequest& request) const
@@ -828,14 +828,14 @@ DeleteTapeArchiveOutcomeCallable StorageGatewayClient::DeleteTapeArchiveCallable
   return task->get_future();
 }
 
-void StorageGatewayClient::DeleteTapeArchiveAsync(const DeleteTapeArchiveRequest& request, const DeleteTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDeleteTapeArchiveAsyncHelper(StorageGatewayClient const * const clientThis, const DeleteTapeArchiveRequest& request, const DeleteTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTapeArchiveAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTapeArchive(request), context);
 }
 
-void StorageGatewayClient::DeleteTapeArchiveAsyncHelper(const DeleteTapeArchiveRequest& request, const DeleteTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DeleteTapeArchiveAsync(const DeleteTapeArchiveRequest& request, const DeleteTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTapeArchive(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDeleteTapeArchiveAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTapePoolOutcome StorageGatewayClient::DeleteTapePool(const DeleteTapePoolRequest& request) const
@@ -852,14 +852,14 @@ DeleteTapePoolOutcomeCallable StorageGatewayClient::DeleteTapePoolCallable(const
   return task->get_future();
 }
 
-void StorageGatewayClient::DeleteTapePoolAsync(const DeleteTapePoolRequest& request, const DeleteTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDeleteTapePoolAsyncHelper(StorageGatewayClient const * const clientThis, const DeleteTapePoolRequest& request, const DeleteTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTapePoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTapePool(request), context);
 }
 
-void StorageGatewayClient::DeleteTapePoolAsyncHelper(const DeleteTapePoolRequest& request, const DeleteTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DeleteTapePoolAsync(const DeleteTapePoolRequest& request, const DeleteTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTapePool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDeleteTapePoolAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVolumeOutcome StorageGatewayClient::DeleteVolume(const DeleteVolumeRequest& request) const
@@ -876,14 +876,14 @@ DeleteVolumeOutcomeCallable StorageGatewayClient::DeleteVolumeCallable(const Del
   return task->get_future();
 }
 
-void StorageGatewayClient::DeleteVolumeAsync(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDeleteVolumeAsyncHelper(StorageGatewayClient const * const clientThis, const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVolume(request), context);
 }
 
-void StorageGatewayClient::DeleteVolumeAsyncHelper(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DeleteVolumeAsync(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDeleteVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeAvailabilityMonitorTestOutcome StorageGatewayClient::DescribeAvailabilityMonitorTest(const DescribeAvailabilityMonitorTestRequest& request) const
@@ -900,14 +900,14 @@ DescribeAvailabilityMonitorTestOutcomeCallable StorageGatewayClient::DescribeAva
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeAvailabilityMonitorTestAsync(const DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeAvailabilityMonitorTestAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAvailabilityMonitorTestAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeAvailabilityMonitorTest(request), context);
 }
 
-void StorageGatewayClient::DescribeAvailabilityMonitorTestAsyncHelper(const DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeAvailabilityMonitorTestAsync(const DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAvailabilityMonitorTest(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeAvailabilityMonitorTestAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBandwidthRateLimitOutcome StorageGatewayClient::DescribeBandwidthRateLimit(const DescribeBandwidthRateLimitRequest& request) const
@@ -924,14 +924,14 @@ DescribeBandwidthRateLimitOutcomeCallable StorageGatewayClient::DescribeBandwidt
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeBandwidthRateLimitAsync(const DescribeBandwidthRateLimitRequest& request, const DescribeBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeBandwidthRateLimitAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeBandwidthRateLimitRequest& request, const DescribeBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBandwidthRateLimitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBandwidthRateLimit(request), context);
 }
 
-void StorageGatewayClient::DescribeBandwidthRateLimitAsyncHelper(const DescribeBandwidthRateLimitRequest& request, const DescribeBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeBandwidthRateLimitAsync(const DescribeBandwidthRateLimitRequest& request, const DescribeBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBandwidthRateLimit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeBandwidthRateLimitAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBandwidthRateLimitScheduleOutcome StorageGatewayClient::DescribeBandwidthRateLimitSchedule(const DescribeBandwidthRateLimitScheduleRequest& request) const
@@ -948,14 +948,14 @@ DescribeBandwidthRateLimitScheduleOutcomeCallable StorageGatewayClient::Describe
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeBandwidthRateLimitScheduleAsync(const DescribeBandwidthRateLimitScheduleRequest& request, const DescribeBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeBandwidthRateLimitScheduleAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeBandwidthRateLimitScheduleRequest& request, const DescribeBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBandwidthRateLimitScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBandwidthRateLimitSchedule(request), context);
 }
 
-void StorageGatewayClient::DescribeBandwidthRateLimitScheduleAsyncHelper(const DescribeBandwidthRateLimitScheduleRequest& request, const DescribeBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeBandwidthRateLimitScheduleAsync(const DescribeBandwidthRateLimitScheduleRequest& request, const DescribeBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBandwidthRateLimitSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeBandwidthRateLimitScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCacheOutcome StorageGatewayClient::DescribeCache(const DescribeCacheRequest& request) const
@@ -972,14 +972,14 @@ DescribeCacheOutcomeCallable StorageGatewayClient::DescribeCacheCallable(const D
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeCacheAsync(const DescribeCacheRequest& request, const DescribeCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeCacheAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeCacheRequest& request, const DescribeCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCache(request), context);
 }
 
-void StorageGatewayClient::DescribeCacheAsyncHelper(const DescribeCacheRequest& request, const DescribeCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeCacheAsync(const DescribeCacheRequest& request, const DescribeCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCachediSCSIVolumesOutcome StorageGatewayClient::DescribeCachediSCSIVolumes(const DescribeCachediSCSIVolumesRequest& request) const
@@ -996,14 +996,14 @@ DescribeCachediSCSIVolumesOutcomeCallable StorageGatewayClient::DescribeCachediS
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeCachediSCSIVolumesAsync(const DescribeCachediSCSIVolumesRequest& request, const DescribeCachediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeCachediSCSIVolumesAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeCachediSCSIVolumesRequest& request, const DescribeCachediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCachediSCSIVolumesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCachediSCSIVolumes(request), context);
 }
 
-void StorageGatewayClient::DescribeCachediSCSIVolumesAsyncHelper(const DescribeCachediSCSIVolumesRequest& request, const DescribeCachediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeCachediSCSIVolumesAsync(const DescribeCachediSCSIVolumesRequest& request, const DescribeCachediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCachediSCSIVolumes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeCachediSCSIVolumesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeChapCredentialsOutcome StorageGatewayClient::DescribeChapCredentials(const DescribeChapCredentialsRequest& request) const
@@ -1020,14 +1020,14 @@ DescribeChapCredentialsOutcomeCallable StorageGatewayClient::DescribeChapCredent
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeChapCredentialsAsync(const DescribeChapCredentialsRequest& request, const DescribeChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeChapCredentialsAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeChapCredentialsRequest& request, const DescribeChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChapCredentialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeChapCredentials(request), context);
 }
 
-void StorageGatewayClient::DescribeChapCredentialsAsyncHelper(const DescribeChapCredentialsRequest& request, const DescribeChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeChapCredentialsAsync(const DescribeChapCredentialsRequest& request, const DescribeChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeChapCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeChapCredentialsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeFileSystemAssociationsOutcome StorageGatewayClient::DescribeFileSystemAssociations(const DescribeFileSystemAssociationsRequest& request) const
@@ -1044,14 +1044,14 @@ DescribeFileSystemAssociationsOutcomeCallable StorageGatewayClient::DescribeFile
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeFileSystemAssociationsAsync(const DescribeFileSystemAssociationsRequest& request, const DescribeFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeFileSystemAssociationsAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeFileSystemAssociationsRequest& request, const DescribeFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFileSystemAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeFileSystemAssociations(request), context);
 }
 
-void StorageGatewayClient::DescribeFileSystemAssociationsAsyncHelper(const DescribeFileSystemAssociationsRequest& request, const DescribeFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeFileSystemAssociationsAsync(const DescribeFileSystemAssociationsRequest& request, const DescribeFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFileSystemAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeFileSystemAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeGatewayInformationOutcome StorageGatewayClient::DescribeGatewayInformation(const DescribeGatewayInformationRequest& request) const
@@ -1068,14 +1068,14 @@ DescribeGatewayInformationOutcomeCallable StorageGatewayClient::DescribeGatewayI
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeGatewayInformationAsync(const DescribeGatewayInformationRequest& request, const DescribeGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeGatewayInformationAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeGatewayInformationRequest& request, const DescribeGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGatewayInformationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeGatewayInformation(request), context);
 }
 
-void StorageGatewayClient::DescribeGatewayInformationAsyncHelper(const DescribeGatewayInformationRequest& request, const DescribeGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeGatewayInformationAsync(const DescribeGatewayInformationRequest& request, const DescribeGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeGatewayInformation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeGatewayInformationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeMaintenanceStartTimeOutcome StorageGatewayClient::DescribeMaintenanceStartTime(const DescribeMaintenanceStartTimeRequest& request) const
@@ -1092,14 +1092,14 @@ DescribeMaintenanceStartTimeOutcomeCallable StorageGatewayClient::DescribeMainte
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeMaintenanceStartTimeAsync(const DescribeMaintenanceStartTimeRequest& request, const DescribeMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeMaintenanceStartTimeAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeMaintenanceStartTimeRequest& request, const DescribeMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMaintenanceStartTimeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeMaintenanceStartTime(request), context);
 }
 
-void StorageGatewayClient::DescribeMaintenanceStartTimeAsyncHelper(const DescribeMaintenanceStartTimeRequest& request, const DescribeMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeMaintenanceStartTimeAsync(const DescribeMaintenanceStartTimeRequest& request, const DescribeMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeMaintenanceStartTime(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeMaintenanceStartTimeAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNFSFileSharesOutcome StorageGatewayClient::DescribeNFSFileShares(const DescribeNFSFileSharesRequest& request) const
@@ -1116,14 +1116,14 @@ DescribeNFSFileSharesOutcomeCallable StorageGatewayClient::DescribeNFSFileShares
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeNFSFileSharesAsync(const DescribeNFSFileSharesRequest& request, const DescribeNFSFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeNFSFileSharesAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeNFSFileSharesRequest& request, const DescribeNFSFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNFSFileSharesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNFSFileShares(request), context);
 }
 
-void StorageGatewayClient::DescribeNFSFileSharesAsyncHelper(const DescribeNFSFileSharesRequest& request, const DescribeNFSFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeNFSFileSharesAsync(const DescribeNFSFileSharesRequest& request, const DescribeNFSFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNFSFileShares(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeNFSFileSharesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSMBFileSharesOutcome StorageGatewayClient::DescribeSMBFileShares(const DescribeSMBFileSharesRequest& request) const
@@ -1140,14 +1140,14 @@ DescribeSMBFileSharesOutcomeCallable StorageGatewayClient::DescribeSMBFileShares
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeSMBFileSharesAsync(const DescribeSMBFileSharesRequest& request, const DescribeSMBFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeSMBFileSharesAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeSMBFileSharesRequest& request, const DescribeSMBFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSMBFileSharesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSMBFileShares(request), context);
 }
 
-void StorageGatewayClient::DescribeSMBFileSharesAsyncHelper(const DescribeSMBFileSharesRequest& request, const DescribeSMBFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeSMBFileSharesAsync(const DescribeSMBFileSharesRequest& request, const DescribeSMBFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSMBFileShares(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeSMBFileSharesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSMBSettingsOutcome StorageGatewayClient::DescribeSMBSettings(const DescribeSMBSettingsRequest& request) const
@@ -1164,14 +1164,14 @@ DescribeSMBSettingsOutcomeCallable StorageGatewayClient::DescribeSMBSettingsCall
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeSMBSettingsAsync(const DescribeSMBSettingsRequest& request, const DescribeSMBSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeSMBSettingsAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeSMBSettingsRequest& request, const DescribeSMBSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSMBSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSMBSettings(request), context);
 }
 
-void StorageGatewayClient::DescribeSMBSettingsAsyncHelper(const DescribeSMBSettingsRequest& request, const DescribeSMBSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeSMBSettingsAsync(const DescribeSMBSettingsRequest& request, const DescribeSMBSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSMBSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeSMBSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSnapshotScheduleOutcome StorageGatewayClient::DescribeSnapshotSchedule(const DescribeSnapshotScheduleRequest& request) const
@@ -1188,14 +1188,14 @@ DescribeSnapshotScheduleOutcomeCallable StorageGatewayClient::DescribeSnapshotSc
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeSnapshotScheduleAsync(const DescribeSnapshotScheduleRequest& request, const DescribeSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeSnapshotScheduleAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeSnapshotScheduleRequest& request, const DescribeSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSnapshotScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSnapshotSchedule(request), context);
 }
 
-void StorageGatewayClient::DescribeSnapshotScheduleAsyncHelper(const DescribeSnapshotScheduleRequest& request, const DescribeSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeSnapshotScheduleAsync(const DescribeSnapshotScheduleRequest& request, const DescribeSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSnapshotSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeSnapshotScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStorediSCSIVolumesOutcome StorageGatewayClient::DescribeStorediSCSIVolumes(const DescribeStorediSCSIVolumesRequest& request) const
@@ -1212,14 +1212,14 @@ DescribeStorediSCSIVolumesOutcomeCallable StorageGatewayClient::DescribeStorediS
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeStorediSCSIVolumesAsync(const DescribeStorediSCSIVolumesRequest& request, const DescribeStorediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeStorediSCSIVolumesAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeStorediSCSIVolumesRequest& request, const DescribeStorediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStorediSCSIVolumesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStorediSCSIVolumes(request), context);
 }
 
-void StorageGatewayClient::DescribeStorediSCSIVolumesAsyncHelper(const DescribeStorediSCSIVolumesRequest& request, const DescribeStorediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeStorediSCSIVolumesAsync(const DescribeStorediSCSIVolumesRequest& request, const DescribeStorediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStorediSCSIVolumes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeStorediSCSIVolumesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTapeArchivesOutcome StorageGatewayClient::DescribeTapeArchives(const DescribeTapeArchivesRequest& request) const
@@ -1236,14 +1236,14 @@ DescribeTapeArchivesOutcomeCallable StorageGatewayClient::DescribeTapeArchivesCa
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeTapeArchivesAsync(const DescribeTapeArchivesRequest& request, const DescribeTapeArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeTapeArchivesAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeTapeArchivesRequest& request, const DescribeTapeArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTapeArchivesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTapeArchives(request), context);
 }
 
-void StorageGatewayClient::DescribeTapeArchivesAsyncHelper(const DescribeTapeArchivesRequest& request, const DescribeTapeArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeTapeArchivesAsync(const DescribeTapeArchivesRequest& request, const DescribeTapeArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTapeArchives(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeTapeArchivesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTapeRecoveryPointsOutcome StorageGatewayClient::DescribeTapeRecoveryPoints(const DescribeTapeRecoveryPointsRequest& request) const
@@ -1260,14 +1260,14 @@ DescribeTapeRecoveryPointsOutcomeCallable StorageGatewayClient::DescribeTapeReco
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeTapeRecoveryPointsAsync(const DescribeTapeRecoveryPointsRequest& request, const DescribeTapeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeTapeRecoveryPointsAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeTapeRecoveryPointsRequest& request, const DescribeTapeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTapeRecoveryPointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTapeRecoveryPoints(request), context);
 }
 
-void StorageGatewayClient::DescribeTapeRecoveryPointsAsyncHelper(const DescribeTapeRecoveryPointsRequest& request, const DescribeTapeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeTapeRecoveryPointsAsync(const DescribeTapeRecoveryPointsRequest& request, const DescribeTapeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTapeRecoveryPoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeTapeRecoveryPointsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTapesOutcome StorageGatewayClient::DescribeTapes(const DescribeTapesRequest& request) const
@@ -1284,14 +1284,14 @@ DescribeTapesOutcomeCallable StorageGatewayClient::DescribeTapesCallable(const D
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeTapesAsync(const DescribeTapesRequest& request, const DescribeTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeTapesAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeTapesRequest& request, const DescribeTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTapesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTapes(request), context);
 }
 
-void StorageGatewayClient::DescribeTapesAsyncHelper(const DescribeTapesRequest& request, const DescribeTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeTapesAsync(const DescribeTapesRequest& request, const DescribeTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTapes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeTapesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUploadBufferOutcome StorageGatewayClient::DescribeUploadBuffer(const DescribeUploadBufferRequest& request) const
@@ -1308,14 +1308,14 @@ DescribeUploadBufferOutcomeCallable StorageGatewayClient::DescribeUploadBufferCa
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeUploadBufferAsync(const DescribeUploadBufferRequest& request, const DescribeUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeUploadBufferAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeUploadBufferRequest& request, const DescribeUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUploadBufferAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUploadBuffer(request), context);
 }
 
-void StorageGatewayClient::DescribeUploadBufferAsyncHelper(const DescribeUploadBufferRequest& request, const DescribeUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeUploadBufferAsync(const DescribeUploadBufferRequest& request, const DescribeUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUploadBuffer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeUploadBufferAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVTLDevicesOutcome StorageGatewayClient::DescribeVTLDevices(const DescribeVTLDevicesRequest& request) const
@@ -1332,14 +1332,14 @@ DescribeVTLDevicesOutcomeCallable StorageGatewayClient::DescribeVTLDevicesCallab
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeVTLDevicesAsync(const DescribeVTLDevicesRequest& request, const DescribeVTLDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeVTLDevicesAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeVTLDevicesRequest& request, const DescribeVTLDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVTLDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVTLDevices(request), context);
 }
 
-void StorageGatewayClient::DescribeVTLDevicesAsyncHelper(const DescribeVTLDevicesRequest& request, const DescribeVTLDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeVTLDevicesAsync(const DescribeVTLDevicesRequest& request, const DescribeVTLDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVTLDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeVTLDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeWorkingStorageOutcome StorageGatewayClient::DescribeWorkingStorage(const DescribeWorkingStorageRequest& request) const
@@ -1356,14 +1356,14 @@ DescribeWorkingStorageOutcomeCallable StorageGatewayClient::DescribeWorkingStora
   return task->get_future();
 }
 
-void StorageGatewayClient::DescribeWorkingStorageAsync(const DescribeWorkingStorageRequest& request, const DescribeWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDescribeWorkingStorageAsyncHelper(StorageGatewayClient const * const clientThis, const DescribeWorkingStorageRequest& request, const DescribeWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkingStorageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeWorkingStorage(request), context);
 }
 
-void StorageGatewayClient::DescribeWorkingStorageAsyncHelper(const DescribeWorkingStorageRequest& request, const DescribeWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DescribeWorkingStorageAsync(const DescribeWorkingStorageRequest& request, const DescribeWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeWorkingStorage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDescribeWorkingStorageAsyncHelper( this, request, handler, context ); } );
 }
 
 DetachVolumeOutcome StorageGatewayClient::DetachVolume(const DetachVolumeRequest& request) const
@@ -1380,14 +1380,14 @@ DetachVolumeOutcomeCallable StorageGatewayClient::DetachVolumeCallable(const Det
   return task->get_future();
 }
 
-void StorageGatewayClient::DetachVolumeAsync(const DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDetachVolumeAsyncHelper(StorageGatewayClient const * const clientThis, const DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachVolumeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DetachVolume(request), context);
 }
 
-void StorageGatewayClient::DetachVolumeAsyncHelper(const DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DetachVolumeAsync(const DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachVolume(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDetachVolumeAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableGatewayOutcome StorageGatewayClient::DisableGateway(const DisableGatewayRequest& request) const
@@ -1404,14 +1404,14 @@ DisableGatewayOutcomeCallable StorageGatewayClient::DisableGatewayCallable(const
   return task->get_future();
 }
 
-void StorageGatewayClient::DisableGatewayAsync(const DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDisableGatewayAsyncHelper(StorageGatewayClient const * const clientThis, const DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisableGateway(request), context);
 }
 
-void StorageGatewayClient::DisableGatewayAsyncHelper(const DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DisableGatewayAsync(const DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisableGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDisableGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateFileSystemOutcome StorageGatewayClient::DisassociateFileSystem(const DisassociateFileSystemRequest& request) const
@@ -1428,14 +1428,14 @@ DisassociateFileSystemOutcomeCallable StorageGatewayClient::DisassociateFileSyst
   return task->get_future();
 }
 
-void StorageGatewayClient::DisassociateFileSystemAsync(const DisassociateFileSystemRequest& request, const DisassociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientDisassociateFileSystemAsyncHelper(StorageGatewayClient const * const clientThis, const DisassociateFileSystemRequest& request, const DisassociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFileSystemAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateFileSystem(request), context);
 }
 
-void StorageGatewayClient::DisassociateFileSystemAsyncHelper(const DisassociateFileSystemRequest& request, const DisassociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::DisassociateFileSystemAsync(const DisassociateFileSystemRequest& request, const DisassociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateFileSystem(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientDisassociateFileSystemAsyncHelper( this, request, handler, context ); } );
 }
 
 JoinDomainOutcome StorageGatewayClient::JoinDomain(const JoinDomainRequest& request) const
@@ -1452,14 +1452,14 @@ JoinDomainOutcomeCallable StorageGatewayClient::JoinDomainCallable(const JoinDom
   return task->get_future();
 }
 
-void StorageGatewayClient::JoinDomainAsync(const JoinDomainRequest& request, const JoinDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientJoinDomainAsyncHelper(StorageGatewayClient const * const clientThis, const JoinDomainRequest& request, const JoinDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->JoinDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->JoinDomain(request), context);
 }
 
-void StorageGatewayClient::JoinDomainAsyncHelper(const JoinDomainRequest& request, const JoinDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::JoinDomainAsync(const JoinDomainRequest& request, const JoinDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, JoinDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientJoinDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 ListAutomaticTapeCreationPoliciesOutcome StorageGatewayClient::ListAutomaticTapeCreationPolicies(const ListAutomaticTapeCreationPoliciesRequest& request) const
@@ -1476,14 +1476,14 @@ ListAutomaticTapeCreationPoliciesOutcomeCallable StorageGatewayClient::ListAutom
   return task->get_future();
 }
 
-void StorageGatewayClient::ListAutomaticTapeCreationPoliciesAsync(const ListAutomaticTapeCreationPoliciesRequest& request, const ListAutomaticTapeCreationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListAutomaticTapeCreationPoliciesAsyncHelper(StorageGatewayClient const * const clientThis, const ListAutomaticTapeCreationPoliciesRequest& request, const ListAutomaticTapeCreationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAutomaticTapeCreationPoliciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListAutomaticTapeCreationPolicies(request), context);
 }
 
-void StorageGatewayClient::ListAutomaticTapeCreationPoliciesAsyncHelper(const ListAutomaticTapeCreationPoliciesRequest& request, const ListAutomaticTapeCreationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListAutomaticTapeCreationPoliciesAsync(const ListAutomaticTapeCreationPoliciesRequest& request, const ListAutomaticTapeCreationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAutomaticTapeCreationPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListAutomaticTapeCreationPoliciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFileSharesOutcome StorageGatewayClient::ListFileShares(const ListFileSharesRequest& request) const
@@ -1500,14 +1500,14 @@ ListFileSharesOutcomeCallable StorageGatewayClient::ListFileSharesCallable(const
   return task->get_future();
 }
 
-void StorageGatewayClient::ListFileSharesAsync(const ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListFileSharesAsyncHelper(StorageGatewayClient const * const clientThis, const ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFileSharesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFileShares(request), context);
 }
 
-void StorageGatewayClient::ListFileSharesAsyncHelper(const ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListFileSharesAsync(const ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFileShares(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListFileSharesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListFileSystemAssociationsOutcome StorageGatewayClient::ListFileSystemAssociations(const ListFileSystemAssociationsRequest& request) const
@@ -1524,14 +1524,14 @@ ListFileSystemAssociationsOutcomeCallable StorageGatewayClient::ListFileSystemAs
   return task->get_future();
 }
 
-void StorageGatewayClient::ListFileSystemAssociationsAsync(const ListFileSystemAssociationsRequest& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListFileSystemAssociationsAsyncHelper(StorageGatewayClient const * const clientThis, const ListFileSystemAssociationsRequest& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFileSystemAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListFileSystemAssociations(request), context);
 }
 
-void StorageGatewayClient::ListFileSystemAssociationsAsyncHelper(const ListFileSystemAssociationsRequest& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListFileSystemAssociationsAsync(const ListFileSystemAssociationsRequest& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListFileSystemAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListFileSystemAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGatewaysOutcome StorageGatewayClient::ListGateways(const ListGatewaysRequest& request) const
@@ -1548,14 +1548,14 @@ ListGatewaysOutcomeCallable StorageGatewayClient::ListGatewaysCallable(const Lis
   return task->get_future();
 }
 
-void StorageGatewayClient::ListGatewaysAsync(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListGatewaysAsyncHelper(StorageGatewayClient const * const clientThis, const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGateways(request), context);
 }
 
-void StorageGatewayClient::ListGatewaysAsyncHelper(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListGatewaysAsync(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 ListLocalDisksOutcome StorageGatewayClient::ListLocalDisks(const ListLocalDisksRequest& request) const
@@ -1572,14 +1572,14 @@ ListLocalDisksOutcomeCallable StorageGatewayClient::ListLocalDisksCallable(const
   return task->get_future();
 }
 
-void StorageGatewayClient::ListLocalDisksAsync(const ListLocalDisksRequest& request, const ListLocalDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListLocalDisksAsyncHelper(StorageGatewayClient const * const clientThis, const ListLocalDisksRequest& request, const ListLocalDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLocalDisksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListLocalDisks(request), context);
 }
 
-void StorageGatewayClient::ListLocalDisksAsyncHelper(const ListLocalDisksRequest& request, const ListLocalDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListLocalDisksAsync(const ListLocalDisksRequest& request, const ListLocalDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListLocalDisks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListLocalDisksAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome StorageGatewayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1596,14 +1596,14 @@ ListTagsForResourceOutcomeCallable StorageGatewayClient::ListTagsForResourceCall
   return task->get_future();
 }
 
-void StorageGatewayClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListTagsForResourceAsyncHelper(StorageGatewayClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void StorageGatewayClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTapePoolsOutcome StorageGatewayClient::ListTapePools(const ListTapePoolsRequest& request) const
@@ -1620,14 +1620,14 @@ ListTapePoolsOutcomeCallable StorageGatewayClient::ListTapePoolsCallable(const L
   return task->get_future();
 }
 
-void StorageGatewayClient::ListTapePoolsAsync(const ListTapePoolsRequest& request, const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListTapePoolsAsyncHelper(StorageGatewayClient const * const clientThis, const ListTapePoolsRequest& request, const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTapePoolsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTapePools(request), context);
 }
 
-void StorageGatewayClient::ListTapePoolsAsyncHelper(const ListTapePoolsRequest& request, const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListTapePoolsAsync(const ListTapePoolsRequest& request, const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTapePools(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListTapePoolsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTapesOutcome StorageGatewayClient::ListTapes(const ListTapesRequest& request) const
@@ -1644,14 +1644,14 @@ ListTapesOutcomeCallable StorageGatewayClient::ListTapesCallable(const ListTapes
   return task->get_future();
 }
 
-void StorageGatewayClient::ListTapesAsync(const ListTapesRequest& request, const ListTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListTapesAsyncHelper(StorageGatewayClient const * const clientThis, const ListTapesRequest& request, const ListTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTapesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTapes(request), context);
 }
 
-void StorageGatewayClient::ListTapesAsyncHelper(const ListTapesRequest& request, const ListTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListTapesAsync(const ListTapesRequest& request, const ListTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTapes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListTapesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVolumeInitiatorsOutcome StorageGatewayClient::ListVolumeInitiators(const ListVolumeInitiatorsRequest& request) const
@@ -1668,14 +1668,14 @@ ListVolumeInitiatorsOutcomeCallable StorageGatewayClient::ListVolumeInitiatorsCa
   return task->get_future();
 }
 
-void StorageGatewayClient::ListVolumeInitiatorsAsync(const ListVolumeInitiatorsRequest& request, const ListVolumeInitiatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListVolumeInitiatorsAsyncHelper(StorageGatewayClient const * const clientThis, const ListVolumeInitiatorsRequest& request, const ListVolumeInitiatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVolumeInitiatorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVolumeInitiators(request), context);
 }
 
-void StorageGatewayClient::ListVolumeInitiatorsAsyncHelper(const ListVolumeInitiatorsRequest& request, const ListVolumeInitiatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListVolumeInitiatorsAsync(const ListVolumeInitiatorsRequest& request, const ListVolumeInitiatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVolumeInitiators(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListVolumeInitiatorsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVolumeRecoveryPointsOutcome StorageGatewayClient::ListVolumeRecoveryPoints(const ListVolumeRecoveryPointsRequest& request) const
@@ -1692,14 +1692,14 @@ ListVolumeRecoveryPointsOutcomeCallable StorageGatewayClient::ListVolumeRecovery
   return task->get_future();
 }
 
-void StorageGatewayClient::ListVolumeRecoveryPointsAsync(const ListVolumeRecoveryPointsRequest& request, const ListVolumeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListVolumeRecoveryPointsAsyncHelper(StorageGatewayClient const * const clientThis, const ListVolumeRecoveryPointsRequest& request, const ListVolumeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVolumeRecoveryPointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVolumeRecoveryPoints(request), context);
 }
 
-void StorageGatewayClient::ListVolumeRecoveryPointsAsyncHelper(const ListVolumeRecoveryPointsRequest& request, const ListVolumeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListVolumeRecoveryPointsAsync(const ListVolumeRecoveryPointsRequest& request, const ListVolumeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVolumeRecoveryPoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListVolumeRecoveryPointsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVolumesOutcome StorageGatewayClient::ListVolumes(const ListVolumesRequest& request) const
@@ -1716,14 +1716,14 @@ ListVolumesOutcomeCallable StorageGatewayClient::ListVolumesCallable(const ListV
   return task->get_future();
 }
 
-void StorageGatewayClient::ListVolumesAsync(const ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientListVolumesAsyncHelper(StorageGatewayClient const * const clientThis, const ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVolumesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVolumes(request), context);
 }
 
-void StorageGatewayClient::ListVolumesAsyncHelper(const ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ListVolumesAsync(const ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVolumes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientListVolumesAsyncHelper( this, request, handler, context ); } );
 }
 
 NotifyWhenUploadedOutcome StorageGatewayClient::NotifyWhenUploaded(const NotifyWhenUploadedRequest& request) const
@@ -1740,14 +1740,14 @@ NotifyWhenUploadedOutcomeCallable StorageGatewayClient::NotifyWhenUploadedCallab
   return task->get_future();
 }
 
-void StorageGatewayClient::NotifyWhenUploadedAsync(const NotifyWhenUploadedRequest& request, const NotifyWhenUploadedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientNotifyWhenUploadedAsyncHelper(StorageGatewayClient const * const clientThis, const NotifyWhenUploadedRequest& request, const NotifyWhenUploadedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->NotifyWhenUploadedAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->NotifyWhenUploaded(request), context);
 }
 
-void StorageGatewayClient::NotifyWhenUploadedAsyncHelper(const NotifyWhenUploadedRequest& request, const NotifyWhenUploadedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::NotifyWhenUploadedAsync(const NotifyWhenUploadedRequest& request, const NotifyWhenUploadedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, NotifyWhenUploaded(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientNotifyWhenUploadedAsyncHelper( this, request, handler, context ); } );
 }
 
 RefreshCacheOutcome StorageGatewayClient::RefreshCache(const RefreshCacheRequest& request) const
@@ -1764,14 +1764,14 @@ RefreshCacheOutcomeCallable StorageGatewayClient::RefreshCacheCallable(const Ref
   return task->get_future();
 }
 
-void StorageGatewayClient::RefreshCacheAsync(const RefreshCacheRequest& request, const RefreshCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientRefreshCacheAsyncHelper(StorageGatewayClient const * const clientThis, const RefreshCacheRequest& request, const RefreshCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RefreshCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RefreshCache(request), context);
 }
 
-void StorageGatewayClient::RefreshCacheAsyncHelper(const RefreshCacheRequest& request, const RefreshCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::RefreshCacheAsync(const RefreshCacheRequest& request, const RefreshCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RefreshCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientRefreshCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 RemoveTagsFromResourceOutcome StorageGatewayClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
@@ -1788,14 +1788,14 @@ RemoveTagsFromResourceOutcomeCallable StorageGatewayClient::RemoveTagsFromResour
   return task->get_future();
 }
 
-void StorageGatewayClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientRemoveTagsFromResourceAsyncHelper(StorageGatewayClient const * const clientThis, const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsFromResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RemoveTagsFromResource(request), context);
 }
 
-void StorageGatewayClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RemoveTagsFromResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientRemoveTagsFromResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ResetCacheOutcome StorageGatewayClient::ResetCache(const ResetCacheRequest& request) const
@@ -1812,14 +1812,14 @@ ResetCacheOutcomeCallable StorageGatewayClient::ResetCacheCallable(const ResetCa
   return task->get_future();
 }
 
-void StorageGatewayClient::ResetCacheAsync(const ResetCacheRequest& request, const ResetCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientResetCacheAsyncHelper(StorageGatewayClient const * const clientThis, const ResetCacheRequest& request, const ResetCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResetCache(request), context);
 }
 
-void StorageGatewayClient::ResetCacheAsyncHelper(const ResetCacheRequest& request, const ResetCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ResetCacheAsync(const ResetCacheRequest& request, const ResetCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResetCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientResetCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 RetrieveTapeArchiveOutcome StorageGatewayClient::RetrieveTapeArchive(const RetrieveTapeArchiveRequest& request) const
@@ -1836,14 +1836,14 @@ RetrieveTapeArchiveOutcomeCallable StorageGatewayClient::RetrieveTapeArchiveCall
   return task->get_future();
 }
 
-void StorageGatewayClient::RetrieveTapeArchiveAsync(const RetrieveTapeArchiveRequest& request, const RetrieveTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientRetrieveTapeArchiveAsyncHelper(StorageGatewayClient const * const clientThis, const RetrieveTapeArchiveRequest& request, const RetrieveTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RetrieveTapeArchiveAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RetrieveTapeArchive(request), context);
 }
 
-void StorageGatewayClient::RetrieveTapeArchiveAsyncHelper(const RetrieveTapeArchiveRequest& request, const RetrieveTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::RetrieveTapeArchiveAsync(const RetrieveTapeArchiveRequest& request, const RetrieveTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RetrieveTapeArchive(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientRetrieveTapeArchiveAsyncHelper( this, request, handler, context ); } );
 }
 
 RetrieveTapeRecoveryPointOutcome StorageGatewayClient::RetrieveTapeRecoveryPoint(const RetrieveTapeRecoveryPointRequest& request) const
@@ -1860,14 +1860,14 @@ RetrieveTapeRecoveryPointOutcomeCallable StorageGatewayClient::RetrieveTapeRecov
   return task->get_future();
 }
 
-void StorageGatewayClient::RetrieveTapeRecoveryPointAsync(const RetrieveTapeRecoveryPointRequest& request, const RetrieveTapeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientRetrieveTapeRecoveryPointAsyncHelper(StorageGatewayClient const * const clientThis, const RetrieveTapeRecoveryPointRequest& request, const RetrieveTapeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RetrieveTapeRecoveryPointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RetrieveTapeRecoveryPoint(request), context);
 }
 
-void StorageGatewayClient::RetrieveTapeRecoveryPointAsyncHelper(const RetrieveTapeRecoveryPointRequest& request, const RetrieveTapeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::RetrieveTapeRecoveryPointAsync(const RetrieveTapeRecoveryPointRequest& request, const RetrieveTapeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RetrieveTapeRecoveryPoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientRetrieveTapeRecoveryPointAsyncHelper( this, request, handler, context ); } );
 }
 
 SetLocalConsolePasswordOutcome StorageGatewayClient::SetLocalConsolePassword(const SetLocalConsolePasswordRequest& request) const
@@ -1884,14 +1884,14 @@ SetLocalConsolePasswordOutcomeCallable StorageGatewayClient::SetLocalConsolePass
   return task->get_future();
 }
 
-void StorageGatewayClient::SetLocalConsolePasswordAsync(const SetLocalConsolePasswordRequest& request, const SetLocalConsolePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientSetLocalConsolePasswordAsyncHelper(StorageGatewayClient const * const clientThis, const SetLocalConsolePasswordRequest& request, const SetLocalConsolePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetLocalConsolePasswordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetLocalConsolePassword(request), context);
 }
 
-void StorageGatewayClient::SetLocalConsolePasswordAsyncHelper(const SetLocalConsolePasswordRequest& request, const SetLocalConsolePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::SetLocalConsolePasswordAsync(const SetLocalConsolePasswordRequest& request, const SetLocalConsolePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetLocalConsolePassword(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientSetLocalConsolePasswordAsyncHelper( this, request, handler, context ); } );
 }
 
 SetSMBGuestPasswordOutcome StorageGatewayClient::SetSMBGuestPassword(const SetSMBGuestPasswordRequest& request) const
@@ -1908,14 +1908,14 @@ SetSMBGuestPasswordOutcomeCallable StorageGatewayClient::SetSMBGuestPasswordCall
   return task->get_future();
 }
 
-void StorageGatewayClient::SetSMBGuestPasswordAsync(const SetSMBGuestPasswordRequest& request, const SetSMBGuestPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientSetSMBGuestPasswordAsyncHelper(StorageGatewayClient const * const clientThis, const SetSMBGuestPasswordRequest& request, const SetSMBGuestPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetSMBGuestPasswordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetSMBGuestPassword(request), context);
 }
 
-void StorageGatewayClient::SetSMBGuestPasswordAsyncHelper(const SetSMBGuestPasswordRequest& request, const SetSMBGuestPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::SetSMBGuestPasswordAsync(const SetSMBGuestPasswordRequest& request, const SetSMBGuestPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetSMBGuestPassword(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientSetSMBGuestPasswordAsyncHelper( this, request, handler, context ); } );
 }
 
 ShutdownGatewayOutcome StorageGatewayClient::ShutdownGateway(const ShutdownGatewayRequest& request) const
@@ -1932,14 +1932,14 @@ ShutdownGatewayOutcomeCallable StorageGatewayClient::ShutdownGatewayCallable(con
   return task->get_future();
 }
 
-void StorageGatewayClient::ShutdownGatewayAsync(const ShutdownGatewayRequest& request, const ShutdownGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientShutdownGatewayAsyncHelper(StorageGatewayClient const * const clientThis, const ShutdownGatewayRequest& request, const ShutdownGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ShutdownGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ShutdownGateway(request), context);
 }
 
-void StorageGatewayClient::ShutdownGatewayAsyncHelper(const ShutdownGatewayRequest& request, const ShutdownGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::ShutdownGatewayAsync(const ShutdownGatewayRequest& request, const ShutdownGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ShutdownGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientShutdownGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 StartAvailabilityMonitorTestOutcome StorageGatewayClient::StartAvailabilityMonitorTest(const StartAvailabilityMonitorTestRequest& request) const
@@ -1956,14 +1956,14 @@ StartAvailabilityMonitorTestOutcomeCallable StorageGatewayClient::StartAvailabil
   return task->get_future();
 }
 
-void StorageGatewayClient::StartAvailabilityMonitorTestAsync(const StartAvailabilityMonitorTestRequest& request, const StartAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientStartAvailabilityMonitorTestAsyncHelper(StorageGatewayClient const * const clientThis, const StartAvailabilityMonitorTestRequest& request, const StartAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartAvailabilityMonitorTestAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartAvailabilityMonitorTest(request), context);
 }
 
-void StorageGatewayClient::StartAvailabilityMonitorTestAsyncHelper(const StartAvailabilityMonitorTestRequest& request, const StartAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::StartAvailabilityMonitorTestAsync(const StartAvailabilityMonitorTestRequest& request, const StartAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartAvailabilityMonitorTest(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientStartAvailabilityMonitorTestAsyncHelper( this, request, handler, context ); } );
 }
 
 StartGatewayOutcome StorageGatewayClient::StartGateway(const StartGatewayRequest& request) const
@@ -1980,14 +1980,14 @@ StartGatewayOutcomeCallable StorageGatewayClient::StartGatewayCallable(const Sta
   return task->get_future();
 }
 
-void StorageGatewayClient::StartGatewayAsync(const StartGatewayRequest& request, const StartGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientStartGatewayAsyncHelper(StorageGatewayClient const * const clientThis, const StartGatewayRequest& request, const StartGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartGateway(request), context);
 }
 
-void StorageGatewayClient::StartGatewayAsyncHelper(const StartGatewayRequest& request, const StartGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::StartGatewayAsync(const StartGatewayRequest& request, const StartGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientStartGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAutomaticTapeCreationPolicyOutcome StorageGatewayClient::UpdateAutomaticTapeCreationPolicy(const UpdateAutomaticTapeCreationPolicyRequest& request) const
@@ -2004,14 +2004,14 @@ UpdateAutomaticTapeCreationPolicyOutcomeCallable StorageGatewayClient::UpdateAut
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateAutomaticTapeCreationPolicyAsync(const UpdateAutomaticTapeCreationPolicyRequest& request, const UpdateAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateAutomaticTapeCreationPolicyAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateAutomaticTapeCreationPolicyRequest& request, const UpdateAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAutomaticTapeCreationPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAutomaticTapeCreationPolicy(request), context);
 }
 
-void StorageGatewayClient::UpdateAutomaticTapeCreationPolicyAsyncHelper(const UpdateAutomaticTapeCreationPolicyRequest& request, const UpdateAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateAutomaticTapeCreationPolicyAsync(const UpdateAutomaticTapeCreationPolicyRequest& request, const UpdateAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAutomaticTapeCreationPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateAutomaticTapeCreationPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBandwidthRateLimitOutcome StorageGatewayClient::UpdateBandwidthRateLimit(const UpdateBandwidthRateLimitRequest& request) const
@@ -2028,14 +2028,14 @@ UpdateBandwidthRateLimitOutcomeCallable StorageGatewayClient::UpdateBandwidthRat
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateBandwidthRateLimitAsync(const UpdateBandwidthRateLimitRequest& request, const UpdateBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateBandwidthRateLimitAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateBandwidthRateLimitRequest& request, const UpdateBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBandwidthRateLimitAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBandwidthRateLimit(request), context);
 }
 
-void StorageGatewayClient::UpdateBandwidthRateLimitAsyncHelper(const UpdateBandwidthRateLimitRequest& request, const UpdateBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateBandwidthRateLimitAsync(const UpdateBandwidthRateLimitRequest& request, const UpdateBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBandwidthRateLimit(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateBandwidthRateLimitAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBandwidthRateLimitScheduleOutcome StorageGatewayClient::UpdateBandwidthRateLimitSchedule(const UpdateBandwidthRateLimitScheduleRequest& request) const
@@ -2052,14 +2052,14 @@ UpdateBandwidthRateLimitScheduleOutcomeCallable StorageGatewayClient::UpdateBand
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateBandwidthRateLimitScheduleAsync(const UpdateBandwidthRateLimitScheduleRequest& request, const UpdateBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateBandwidthRateLimitScheduleAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateBandwidthRateLimitScheduleRequest& request, const UpdateBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBandwidthRateLimitScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBandwidthRateLimitSchedule(request), context);
 }
 
-void StorageGatewayClient::UpdateBandwidthRateLimitScheduleAsyncHelper(const UpdateBandwidthRateLimitScheduleRequest& request, const UpdateBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateBandwidthRateLimitScheduleAsync(const UpdateBandwidthRateLimitScheduleRequest& request, const UpdateBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBandwidthRateLimitSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateBandwidthRateLimitScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateChapCredentialsOutcome StorageGatewayClient::UpdateChapCredentials(const UpdateChapCredentialsRequest& request) const
@@ -2076,14 +2076,14 @@ UpdateChapCredentialsOutcomeCallable StorageGatewayClient::UpdateChapCredentials
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateChapCredentialsAsync(const UpdateChapCredentialsRequest& request, const UpdateChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateChapCredentialsAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateChapCredentialsRequest& request, const UpdateChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChapCredentialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateChapCredentials(request), context);
 }
 
-void StorageGatewayClient::UpdateChapCredentialsAsyncHelper(const UpdateChapCredentialsRequest& request, const UpdateChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateChapCredentialsAsync(const UpdateChapCredentialsRequest& request, const UpdateChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateChapCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateChapCredentialsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateFileSystemAssociationOutcome StorageGatewayClient::UpdateFileSystemAssociation(const UpdateFileSystemAssociationRequest& request) const
@@ -2100,14 +2100,14 @@ UpdateFileSystemAssociationOutcomeCallable StorageGatewayClient::UpdateFileSyste
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateFileSystemAssociationAsync(const UpdateFileSystemAssociationRequest& request, const UpdateFileSystemAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateFileSystemAssociationAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateFileSystemAssociationRequest& request, const UpdateFileSystemAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFileSystemAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateFileSystemAssociation(request), context);
 }
 
-void StorageGatewayClient::UpdateFileSystemAssociationAsyncHelper(const UpdateFileSystemAssociationRequest& request, const UpdateFileSystemAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateFileSystemAssociationAsync(const UpdateFileSystemAssociationRequest& request, const UpdateFileSystemAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateFileSystemAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateFileSystemAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGatewayInformationOutcome StorageGatewayClient::UpdateGatewayInformation(const UpdateGatewayInformationRequest& request) const
@@ -2124,14 +2124,14 @@ UpdateGatewayInformationOutcomeCallable StorageGatewayClient::UpdateGatewayInfor
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateGatewayInformationAsync(const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateGatewayInformationAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayInformationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGatewayInformation(request), context);
 }
 
-void StorageGatewayClient::UpdateGatewayInformationAsyncHelper(const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateGatewayInformationAsync(const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGatewayInformation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateGatewayInformationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGatewaySoftwareNowOutcome StorageGatewayClient::UpdateGatewaySoftwareNow(const UpdateGatewaySoftwareNowRequest& request) const
@@ -2148,14 +2148,14 @@ UpdateGatewaySoftwareNowOutcomeCallable StorageGatewayClient::UpdateGatewaySoftw
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateGatewaySoftwareNowAsync(const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateGatewaySoftwareNowAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewaySoftwareNowAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGatewaySoftwareNow(request), context);
 }
 
-void StorageGatewayClient::UpdateGatewaySoftwareNowAsyncHelper(const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateGatewaySoftwareNowAsync(const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGatewaySoftwareNow(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateGatewaySoftwareNowAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateMaintenanceStartTimeOutcome StorageGatewayClient::UpdateMaintenanceStartTime(const UpdateMaintenanceStartTimeRequest& request) const
@@ -2172,14 +2172,14 @@ UpdateMaintenanceStartTimeOutcomeCallable StorageGatewayClient::UpdateMaintenanc
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateMaintenanceStartTimeAsync(const UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateMaintenanceStartTimeAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMaintenanceStartTimeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateMaintenanceStartTime(request), context);
 }
 
-void StorageGatewayClient::UpdateMaintenanceStartTimeAsyncHelper(const UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateMaintenanceStartTimeAsync(const UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateMaintenanceStartTime(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateMaintenanceStartTimeAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateNFSFileShareOutcome StorageGatewayClient::UpdateNFSFileShare(const UpdateNFSFileShareRequest& request) const
@@ -2196,14 +2196,14 @@ UpdateNFSFileShareOutcomeCallable StorageGatewayClient::UpdateNFSFileShareCallab
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateNFSFileShareAsync(const UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateNFSFileShareAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNFSFileShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateNFSFileShare(request), context);
 }
 
-void StorageGatewayClient::UpdateNFSFileShareAsyncHelper(const UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateNFSFileShareAsync(const UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateNFSFileShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateNFSFileShareAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSMBFileShareOutcome StorageGatewayClient::UpdateSMBFileShare(const UpdateSMBFileShareRequest& request) const
@@ -2220,14 +2220,14 @@ UpdateSMBFileShareOutcomeCallable StorageGatewayClient::UpdateSMBFileShareCallab
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateSMBFileShareAsync(const UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateSMBFileShareAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSMBFileShareAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSMBFileShare(request), context);
 }
 
-void StorageGatewayClient::UpdateSMBFileShareAsyncHelper(const UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateSMBFileShareAsync(const UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSMBFileShare(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateSMBFileShareAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSMBFileShareVisibilityOutcome StorageGatewayClient::UpdateSMBFileShareVisibility(const UpdateSMBFileShareVisibilityRequest& request) const
@@ -2244,14 +2244,14 @@ UpdateSMBFileShareVisibilityOutcomeCallable StorageGatewayClient::UpdateSMBFileS
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateSMBFileShareVisibilityAsync(const UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateSMBFileShareVisibilityAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSMBFileShareVisibilityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSMBFileShareVisibility(request), context);
 }
 
-void StorageGatewayClient::UpdateSMBFileShareVisibilityAsyncHelper(const UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateSMBFileShareVisibilityAsync(const UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSMBFileShareVisibility(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateSMBFileShareVisibilityAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSMBLocalGroupsOutcome StorageGatewayClient::UpdateSMBLocalGroups(const UpdateSMBLocalGroupsRequest& request) const
@@ -2268,14 +2268,14 @@ UpdateSMBLocalGroupsOutcomeCallable StorageGatewayClient::UpdateSMBLocalGroupsCa
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateSMBLocalGroupsAsync(const UpdateSMBLocalGroupsRequest& request, const UpdateSMBLocalGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateSMBLocalGroupsAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateSMBLocalGroupsRequest& request, const UpdateSMBLocalGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSMBLocalGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSMBLocalGroups(request), context);
 }
 
-void StorageGatewayClient::UpdateSMBLocalGroupsAsyncHelper(const UpdateSMBLocalGroupsRequest& request, const UpdateSMBLocalGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateSMBLocalGroupsAsync(const UpdateSMBLocalGroupsRequest& request, const UpdateSMBLocalGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSMBLocalGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateSMBLocalGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSMBSecurityStrategyOutcome StorageGatewayClient::UpdateSMBSecurityStrategy(const UpdateSMBSecurityStrategyRequest& request) const
@@ -2292,14 +2292,14 @@ UpdateSMBSecurityStrategyOutcomeCallable StorageGatewayClient::UpdateSMBSecurity
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateSMBSecurityStrategyAsync(const UpdateSMBSecurityStrategyRequest& request, const UpdateSMBSecurityStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateSMBSecurityStrategyAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateSMBSecurityStrategyRequest& request, const UpdateSMBSecurityStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSMBSecurityStrategyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSMBSecurityStrategy(request), context);
 }
 
-void StorageGatewayClient::UpdateSMBSecurityStrategyAsyncHelper(const UpdateSMBSecurityStrategyRequest& request, const UpdateSMBSecurityStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateSMBSecurityStrategyAsync(const UpdateSMBSecurityStrategyRequest& request, const UpdateSMBSecurityStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSMBSecurityStrategy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateSMBSecurityStrategyAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSnapshotScheduleOutcome StorageGatewayClient::UpdateSnapshotSchedule(const UpdateSnapshotScheduleRequest& request) const
@@ -2316,14 +2316,14 @@ UpdateSnapshotScheduleOutcomeCallable StorageGatewayClient::UpdateSnapshotSchedu
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateSnapshotScheduleAsync(const UpdateSnapshotScheduleRequest& request, const UpdateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateSnapshotScheduleAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateSnapshotScheduleRequest& request, const UpdateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSnapshotScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSnapshotSchedule(request), context);
 }
 
-void StorageGatewayClient::UpdateSnapshotScheduleAsyncHelper(const UpdateSnapshotScheduleRequest& request, const UpdateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateSnapshotScheduleAsync(const UpdateSnapshotScheduleRequest& request, const UpdateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSnapshotSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateSnapshotScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateVTLDeviceTypeOutcome StorageGatewayClient::UpdateVTLDeviceType(const UpdateVTLDeviceTypeRequest& request) const
@@ -2340,13 +2340,13 @@ UpdateVTLDeviceTypeOutcomeCallable StorageGatewayClient::UpdateVTLDeviceTypeCall
   return task->get_future();
 }
 
-void StorageGatewayClient::UpdateVTLDeviceTypeAsync(const UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClientUpdateVTLDeviceTypeAsyncHelper(StorageGatewayClient const * const clientThis, const UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVTLDeviceTypeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateVTLDeviceType(request), context);
 }
 
-void StorageGatewayClient::UpdateVTLDeviceTypeAsyncHelper(const UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void StorageGatewayClient::UpdateVTLDeviceTypeAsync(const UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateVTLDeviceType(request), context);
+  m_executor->Submit( [this, request, handler, context](){ StorageGatewayClientUpdateVTLDeviceTypeAsyncHelper( this, request, handler, context ); } );
 }
 

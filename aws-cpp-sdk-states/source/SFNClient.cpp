@@ -146,14 +146,14 @@ CreateActivityOutcomeCallable SFNClient::CreateActivityCallable(const CreateActi
   return task->get_future();
 }
 
-void SFNClient::CreateActivityAsync(const CreateActivityRequest& request, const CreateActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientCreateActivityAsyncHelper(SFNClient const * const clientThis, const CreateActivityRequest& request, const CreateActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateActivityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateActivity(request), context);
 }
 
-void SFNClient::CreateActivityAsyncHelper(const CreateActivityRequest& request, const CreateActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::CreateActivityAsync(const CreateActivityRequest& request, const CreateActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateActivity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientCreateActivityAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStateMachineOutcome SFNClient::CreateStateMachine(const CreateStateMachineRequest& request) const
@@ -170,14 +170,14 @@ CreateStateMachineOutcomeCallable SFNClient::CreateStateMachineCallable(const Cr
   return task->get_future();
 }
 
-void SFNClient::CreateStateMachineAsync(const CreateStateMachineRequest& request, const CreateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientCreateStateMachineAsyncHelper(SFNClient const * const clientThis, const CreateStateMachineRequest& request, const CreateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStateMachineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStateMachine(request), context);
 }
 
-void SFNClient::CreateStateMachineAsyncHelper(const CreateStateMachineRequest& request, const CreateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::CreateStateMachineAsync(const CreateStateMachineRequest& request, const CreateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStateMachine(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientCreateStateMachineAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteActivityOutcome SFNClient::DeleteActivity(const DeleteActivityRequest& request) const
@@ -194,14 +194,14 @@ DeleteActivityOutcomeCallable SFNClient::DeleteActivityCallable(const DeleteActi
   return task->get_future();
 }
 
-void SFNClient::DeleteActivityAsync(const DeleteActivityRequest& request, const DeleteActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientDeleteActivityAsyncHelper(SFNClient const * const clientThis, const DeleteActivityRequest& request, const DeleteActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteActivityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteActivity(request), context);
 }
 
-void SFNClient::DeleteActivityAsyncHelper(const DeleteActivityRequest& request, const DeleteActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::DeleteActivityAsync(const DeleteActivityRequest& request, const DeleteActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteActivity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientDeleteActivityAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteStateMachineOutcome SFNClient::DeleteStateMachine(const DeleteStateMachineRequest& request) const
@@ -218,14 +218,14 @@ DeleteStateMachineOutcomeCallable SFNClient::DeleteStateMachineCallable(const De
   return task->get_future();
 }
 
-void SFNClient::DeleteStateMachineAsync(const DeleteStateMachineRequest& request, const DeleteStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientDeleteStateMachineAsyncHelper(SFNClient const * const clientThis, const DeleteStateMachineRequest& request, const DeleteStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStateMachineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteStateMachine(request), context);
 }
 
-void SFNClient::DeleteStateMachineAsyncHelper(const DeleteStateMachineRequest& request, const DeleteStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::DeleteStateMachineAsync(const DeleteStateMachineRequest& request, const DeleteStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteStateMachine(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientDeleteStateMachineAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeActivityOutcome SFNClient::DescribeActivity(const DescribeActivityRequest& request) const
@@ -242,14 +242,14 @@ DescribeActivityOutcomeCallable SFNClient::DescribeActivityCallable(const Descri
   return task->get_future();
 }
 
-void SFNClient::DescribeActivityAsync(const DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientDescribeActivityAsyncHelper(SFNClient const * const clientThis, const DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeActivityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeActivity(request), context);
 }
 
-void SFNClient::DescribeActivityAsyncHelper(const DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::DescribeActivityAsync(const DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeActivity(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientDescribeActivityAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeExecutionOutcome SFNClient::DescribeExecution(const DescribeExecutionRequest& request) const
@@ -266,14 +266,14 @@ DescribeExecutionOutcomeCallable SFNClient::DescribeExecutionCallable(const Desc
   return task->get_future();
 }
 
-void SFNClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientDescribeExecutionAsyncHelper(SFNClient const * const clientThis, const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeExecution(request), context);
 }
 
-void SFNClient::DescribeExecutionAsyncHelper(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientDescribeExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStateMachineOutcome SFNClient::DescribeStateMachine(const DescribeStateMachineRequest& request) const
@@ -290,14 +290,14 @@ DescribeStateMachineOutcomeCallable SFNClient::DescribeStateMachineCallable(cons
   return task->get_future();
 }
 
-void SFNClient::DescribeStateMachineAsync(const DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientDescribeStateMachineAsyncHelper(SFNClient const * const clientThis, const DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStateMachineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStateMachine(request), context);
 }
 
-void SFNClient::DescribeStateMachineAsyncHelper(const DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::DescribeStateMachineAsync(const DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStateMachine(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientDescribeStateMachineAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStateMachineForExecutionOutcome SFNClient::DescribeStateMachineForExecution(const DescribeStateMachineForExecutionRequest& request) const
@@ -314,14 +314,14 @@ DescribeStateMachineForExecutionOutcomeCallable SFNClient::DescribeStateMachineF
   return task->get_future();
 }
 
-void SFNClient::DescribeStateMachineForExecutionAsync(const DescribeStateMachineForExecutionRequest& request, const DescribeStateMachineForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientDescribeStateMachineForExecutionAsyncHelper(SFNClient const * const clientThis, const DescribeStateMachineForExecutionRequest& request, const DescribeStateMachineForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStateMachineForExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStateMachineForExecution(request), context);
 }
 
-void SFNClient::DescribeStateMachineForExecutionAsyncHelper(const DescribeStateMachineForExecutionRequest& request, const DescribeStateMachineForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::DescribeStateMachineForExecutionAsync(const DescribeStateMachineForExecutionRequest& request, const DescribeStateMachineForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStateMachineForExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientDescribeStateMachineForExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetActivityTaskOutcome SFNClient::GetActivityTask(const GetActivityTaskRequest& request) const
@@ -338,14 +338,14 @@ GetActivityTaskOutcomeCallable SFNClient::GetActivityTaskCallable(const GetActiv
   return task->get_future();
 }
 
-void SFNClient::GetActivityTaskAsync(const GetActivityTaskRequest& request, const GetActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientGetActivityTaskAsyncHelper(SFNClient const * const clientThis, const GetActivityTaskRequest& request, const GetActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetActivityTaskAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetActivityTask(request), context);
 }
 
-void SFNClient::GetActivityTaskAsyncHelper(const GetActivityTaskRequest& request, const GetActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::GetActivityTaskAsync(const GetActivityTaskRequest& request, const GetActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetActivityTask(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientGetActivityTaskAsyncHelper( this, request, handler, context ); } );
 }
 
 GetExecutionHistoryOutcome SFNClient::GetExecutionHistory(const GetExecutionHistoryRequest& request) const
@@ -362,14 +362,14 @@ GetExecutionHistoryOutcomeCallable SFNClient::GetExecutionHistoryCallable(const 
   return task->get_future();
 }
 
-void SFNClient::GetExecutionHistoryAsync(const GetExecutionHistoryRequest& request, const GetExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientGetExecutionHistoryAsyncHelper(SFNClient const * const clientThis, const GetExecutionHistoryRequest& request, const GetExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExecutionHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetExecutionHistory(request), context);
 }
 
-void SFNClient::GetExecutionHistoryAsyncHelper(const GetExecutionHistoryRequest& request, const GetExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::GetExecutionHistoryAsync(const GetExecutionHistoryRequest& request, const GetExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetExecutionHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientGetExecutionHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 ListActivitiesOutcome SFNClient::ListActivities(const ListActivitiesRequest& request) const
@@ -386,14 +386,14 @@ ListActivitiesOutcomeCallable SFNClient::ListActivitiesCallable(const ListActivi
   return task->get_future();
 }
 
-void SFNClient::ListActivitiesAsync(const ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientListActivitiesAsyncHelper(SFNClient const * const clientThis, const ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListActivitiesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListActivities(request), context);
 }
 
-void SFNClient::ListActivitiesAsyncHelper(const ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::ListActivitiesAsync(const ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListActivities(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientListActivitiesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListExecutionsOutcome SFNClient::ListExecutions(const ListExecutionsRequest& request) const
@@ -410,14 +410,14 @@ ListExecutionsOutcomeCallable SFNClient::ListExecutionsCallable(const ListExecut
   return task->get_future();
 }
 
-void SFNClient::ListExecutionsAsync(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientListExecutionsAsyncHelper(SFNClient const * const clientThis, const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListExecutions(request), context);
 }
 
-void SFNClient::ListExecutionsAsyncHelper(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::ListExecutionsAsync(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientListExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStateMachinesOutcome SFNClient::ListStateMachines(const ListStateMachinesRequest& request) const
@@ -434,14 +434,14 @@ ListStateMachinesOutcomeCallable SFNClient::ListStateMachinesCallable(const List
   return task->get_future();
 }
 
-void SFNClient::ListStateMachinesAsync(const ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientListStateMachinesAsyncHelper(SFNClient const * const clientThis, const ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStateMachinesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStateMachines(request), context);
 }
 
-void SFNClient::ListStateMachinesAsyncHelper(const ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::ListStateMachinesAsync(const ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStateMachines(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientListStateMachinesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome SFNClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -458,14 +458,14 @@ ListTagsForResourceOutcomeCallable SFNClient::ListTagsForResourceCallable(const 
   return task->get_future();
 }
 
-void SFNClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientListTagsForResourceAsyncHelper(SFNClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void SFNClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 SendTaskFailureOutcome SFNClient::SendTaskFailure(const SendTaskFailureRequest& request) const
@@ -482,14 +482,14 @@ SendTaskFailureOutcomeCallable SFNClient::SendTaskFailureCallable(const SendTask
   return task->get_future();
 }
 
-void SFNClient::SendTaskFailureAsync(const SendTaskFailureRequest& request, const SendTaskFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientSendTaskFailureAsyncHelper(SFNClient const * const clientThis, const SendTaskFailureRequest& request, const SendTaskFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendTaskFailureAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendTaskFailure(request), context);
 }
 
-void SFNClient::SendTaskFailureAsyncHelper(const SendTaskFailureRequest& request, const SendTaskFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::SendTaskFailureAsync(const SendTaskFailureRequest& request, const SendTaskFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendTaskFailure(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientSendTaskFailureAsyncHelper( this, request, handler, context ); } );
 }
 
 SendTaskHeartbeatOutcome SFNClient::SendTaskHeartbeat(const SendTaskHeartbeatRequest& request) const
@@ -506,14 +506,14 @@ SendTaskHeartbeatOutcomeCallable SFNClient::SendTaskHeartbeatCallable(const Send
   return task->get_future();
 }
 
-void SFNClient::SendTaskHeartbeatAsync(const SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientSendTaskHeartbeatAsyncHelper(SFNClient const * const clientThis, const SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendTaskHeartbeatAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendTaskHeartbeat(request), context);
 }
 
-void SFNClient::SendTaskHeartbeatAsyncHelper(const SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::SendTaskHeartbeatAsync(const SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendTaskHeartbeat(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientSendTaskHeartbeatAsyncHelper( this, request, handler, context ); } );
 }
 
 SendTaskSuccessOutcome SFNClient::SendTaskSuccess(const SendTaskSuccessRequest& request) const
@@ -530,14 +530,14 @@ SendTaskSuccessOutcomeCallable SFNClient::SendTaskSuccessCallable(const SendTask
   return task->get_future();
 }
 
-void SFNClient::SendTaskSuccessAsync(const SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientSendTaskSuccessAsyncHelper(SFNClient const * const clientThis, const SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendTaskSuccessAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendTaskSuccess(request), context);
 }
 
-void SFNClient::SendTaskSuccessAsyncHelper(const SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::SendTaskSuccessAsync(const SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendTaskSuccess(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientSendTaskSuccessAsyncHelper( this, request, handler, context ); } );
 }
 
 StartExecutionOutcome SFNClient::StartExecution(const StartExecutionRequest& request) const
@@ -554,14 +554,14 @@ StartExecutionOutcomeCallable SFNClient::StartExecutionCallable(const StartExecu
   return task->get_future();
 }
 
-void SFNClient::StartExecutionAsync(const StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientStartExecutionAsyncHelper(SFNClient const * const clientThis, const StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartExecution(request), context);
 }
 
-void SFNClient::StartExecutionAsyncHelper(const StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::StartExecutionAsync(const StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientStartExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 StartSyncExecutionOutcome SFNClient::StartSyncExecution(const StartSyncExecutionRequest& request) const
@@ -587,14 +587,14 @@ StartSyncExecutionOutcomeCallable SFNClient::StartSyncExecutionCallable(const St
   return task->get_future();
 }
 
-void SFNClient::StartSyncExecutionAsync(const StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientStartSyncExecutionAsyncHelper(SFNClient const * const clientThis, const StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSyncExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartSyncExecution(request), context);
 }
 
-void SFNClient::StartSyncExecutionAsyncHelper(const StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::StartSyncExecutionAsync(const StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartSyncExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientStartSyncExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 StopExecutionOutcome SFNClient::StopExecution(const StopExecutionRequest& request) const
@@ -611,14 +611,14 @@ StopExecutionOutcomeCallable SFNClient::StopExecutionCallable(const StopExecutio
   return task->get_future();
 }
 
-void SFNClient::StopExecutionAsync(const StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientStopExecutionAsyncHelper(SFNClient const * const clientThis, const StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopExecution(request), context);
 }
 
-void SFNClient::StopExecutionAsyncHelper(const StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::StopExecutionAsync(const StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientStopExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome SFNClient::TagResource(const TagResourceRequest& request) const
@@ -635,14 +635,14 @@ TagResourceOutcomeCallable SFNClient::TagResourceCallable(const TagResourceReque
   return task->get_future();
 }
 
-void SFNClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientTagResourceAsyncHelper(SFNClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void SFNClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome SFNClient::UntagResource(const UntagResourceRequest& request) const
@@ -659,14 +659,14 @@ UntagResourceOutcomeCallable SFNClient::UntagResourceCallable(const UntagResourc
   return task->get_future();
 }
 
-void SFNClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientUntagResourceAsyncHelper(SFNClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void SFNClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateStateMachineOutcome SFNClient::UpdateStateMachine(const UpdateStateMachineRequest& request) const
@@ -683,13 +683,13 @@ UpdateStateMachineOutcomeCallable SFNClient::UpdateStateMachineCallable(const Up
   return task->get_future();
 }
 
-void SFNClient::UpdateStateMachineAsync(const UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClientUpdateStateMachineAsyncHelper(SFNClient const * const clientThis, const UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStateMachineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateStateMachine(request), context);
 }
 
-void SFNClient::UpdateStateMachineAsyncHelper(const UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SFNClient::UpdateStateMachineAsync(const UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateStateMachine(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SFNClientUpdateStateMachineAsyncHelper( this, request, handler, context ); } );
 }
 

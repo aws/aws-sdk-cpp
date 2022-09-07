@@ -138,14 +138,14 @@ CreateSignalingChannelOutcomeCallable KinesisVideoClient::CreateSignalingChannel
   return task->get_future();
 }
 
-void KinesisVideoClient::CreateSignalingChannelAsync(const CreateSignalingChannelRequest& request, const CreateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientCreateSignalingChannelAsyncHelper(KinesisVideoClient const * const clientThis, const CreateSignalingChannelRequest& request, const CreateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSignalingChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSignalingChannel(request), context);
 }
 
-void KinesisVideoClient::CreateSignalingChannelAsyncHelper(const CreateSignalingChannelRequest& request, const CreateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::CreateSignalingChannelAsync(const CreateSignalingChannelRequest& request, const CreateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSignalingChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientCreateSignalingChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& request) const
@@ -163,14 +163,14 @@ CreateStreamOutcomeCallable KinesisVideoClient::CreateStreamCallable(const Creat
   return task->get_future();
 }
 
-void KinesisVideoClient::CreateStreamAsync(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientCreateStreamAsyncHelper(KinesisVideoClient const * const clientThis, const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateStream(request), context);
 }
 
-void KinesisVideoClient::CreateStreamAsyncHelper(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::CreateStreamAsync(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientCreateStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSignalingChannelOutcome KinesisVideoClient::DeleteSignalingChannel(const DeleteSignalingChannelRequest& request) const
@@ -188,14 +188,14 @@ DeleteSignalingChannelOutcomeCallable KinesisVideoClient::DeleteSignalingChannel
   return task->get_future();
 }
 
-void KinesisVideoClient::DeleteSignalingChannelAsync(const DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientDeleteSignalingChannelAsyncHelper(KinesisVideoClient const * const clientThis, const DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSignalingChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSignalingChannel(request), context);
 }
 
-void KinesisVideoClient::DeleteSignalingChannelAsyncHelper(const DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::DeleteSignalingChannelAsync(const DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSignalingChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientDeleteSignalingChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteStreamOutcome KinesisVideoClient::DeleteStream(const DeleteStreamRequest& request) const
@@ -213,14 +213,14 @@ DeleteStreamOutcomeCallable KinesisVideoClient::DeleteStreamCallable(const Delet
   return task->get_future();
 }
 
-void KinesisVideoClient::DeleteStreamAsync(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientDeleteStreamAsyncHelper(KinesisVideoClient const * const clientThis, const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteStream(request), context);
 }
 
-void KinesisVideoClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::DeleteStreamAsync(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientDeleteStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeImageGenerationConfigurationOutcome KinesisVideoClient::DescribeImageGenerationConfiguration(const DescribeImageGenerationConfigurationRequest& request) const
@@ -238,14 +238,14 @@ DescribeImageGenerationConfigurationOutcomeCallable KinesisVideoClient::Describe
   return task->get_future();
 }
 
-void KinesisVideoClient::DescribeImageGenerationConfigurationAsync(const DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientDescribeImageGenerationConfigurationAsyncHelper(KinesisVideoClient const * const clientThis, const DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImageGenerationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeImageGenerationConfiguration(request), context);
 }
 
-void KinesisVideoClient::DescribeImageGenerationConfigurationAsyncHelper(const DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::DescribeImageGenerationConfigurationAsync(const DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeImageGenerationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientDescribeImageGenerationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeNotificationConfigurationOutcome KinesisVideoClient::DescribeNotificationConfiguration(const DescribeNotificationConfigurationRequest& request) const
@@ -263,14 +263,14 @@ DescribeNotificationConfigurationOutcomeCallable KinesisVideoClient::DescribeNot
   return task->get_future();
 }
 
-void KinesisVideoClient::DescribeNotificationConfigurationAsync(const DescribeNotificationConfigurationRequest& request, const DescribeNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientDescribeNotificationConfigurationAsyncHelper(KinesisVideoClient const * const clientThis, const DescribeNotificationConfigurationRequest& request, const DescribeNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNotificationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeNotificationConfiguration(request), context);
 }
 
-void KinesisVideoClient::DescribeNotificationConfigurationAsyncHelper(const DescribeNotificationConfigurationRequest& request, const DescribeNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::DescribeNotificationConfigurationAsync(const DescribeNotificationConfigurationRequest& request, const DescribeNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeNotificationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientDescribeNotificationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeSignalingChannelOutcome KinesisVideoClient::DescribeSignalingChannel(const DescribeSignalingChannelRequest& request) const
@@ -288,14 +288,14 @@ DescribeSignalingChannelOutcomeCallable KinesisVideoClient::DescribeSignalingCha
   return task->get_future();
 }
 
-void KinesisVideoClient::DescribeSignalingChannelAsync(const DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientDescribeSignalingChannelAsyncHelper(KinesisVideoClient const * const clientThis, const DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSignalingChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeSignalingChannel(request), context);
 }
 
-void KinesisVideoClient::DescribeSignalingChannelAsyncHelper(const DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::DescribeSignalingChannelAsync(const DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeSignalingChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientDescribeSignalingChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeStreamOutcome KinesisVideoClient::DescribeStream(const DescribeStreamRequest& request) const
@@ -313,14 +313,14 @@ DescribeStreamOutcomeCallable KinesisVideoClient::DescribeStreamCallable(const D
   return task->get_future();
 }
 
-void KinesisVideoClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientDescribeStreamAsyncHelper(KinesisVideoClient const * const clientThis, const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeStream(request), context);
 }
 
-void KinesisVideoClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientDescribeStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDataEndpointOutcome KinesisVideoClient::GetDataEndpoint(const GetDataEndpointRequest& request) const
@@ -338,14 +338,14 @@ GetDataEndpointOutcomeCallable KinesisVideoClient::GetDataEndpointCallable(const
   return task->get_future();
 }
 
-void KinesisVideoClient::GetDataEndpointAsync(const GetDataEndpointRequest& request, const GetDataEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientGetDataEndpointAsyncHelper(KinesisVideoClient const * const clientThis, const GetDataEndpointRequest& request, const GetDataEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDataEndpoint(request), context);
 }
 
-void KinesisVideoClient::GetDataEndpointAsyncHelper(const GetDataEndpointRequest& request, const GetDataEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::GetDataEndpointAsync(const GetDataEndpointRequest& request, const GetDataEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDataEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientGetDataEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSignalingChannelEndpointOutcome KinesisVideoClient::GetSignalingChannelEndpoint(const GetSignalingChannelEndpointRequest& request) const
@@ -363,14 +363,14 @@ GetSignalingChannelEndpointOutcomeCallable KinesisVideoClient::GetSignalingChann
   return task->get_future();
 }
 
-void KinesisVideoClient::GetSignalingChannelEndpointAsync(const GetSignalingChannelEndpointRequest& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientGetSignalingChannelEndpointAsyncHelper(KinesisVideoClient const * const clientThis, const GetSignalingChannelEndpointRequest& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSignalingChannelEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSignalingChannelEndpoint(request), context);
 }
 
-void KinesisVideoClient::GetSignalingChannelEndpointAsyncHelper(const GetSignalingChannelEndpointRequest& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::GetSignalingChannelEndpointAsync(const GetSignalingChannelEndpointRequest& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSignalingChannelEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientGetSignalingChannelEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSignalingChannelsOutcome KinesisVideoClient::ListSignalingChannels(const ListSignalingChannelsRequest& request) const
@@ -388,14 +388,14 @@ ListSignalingChannelsOutcomeCallable KinesisVideoClient::ListSignalingChannelsCa
   return task->get_future();
 }
 
-void KinesisVideoClient::ListSignalingChannelsAsync(const ListSignalingChannelsRequest& request, const ListSignalingChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientListSignalingChannelsAsyncHelper(KinesisVideoClient const * const clientThis, const ListSignalingChannelsRequest& request, const ListSignalingChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSignalingChannelsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSignalingChannels(request), context);
 }
 
-void KinesisVideoClient::ListSignalingChannelsAsyncHelper(const ListSignalingChannelsRequest& request, const ListSignalingChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::ListSignalingChannelsAsync(const ListSignalingChannelsRequest& request, const ListSignalingChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSignalingChannels(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientListSignalingChannelsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListStreamsOutcome KinesisVideoClient::ListStreams(const ListStreamsRequest& request) const
@@ -413,14 +413,14 @@ ListStreamsOutcomeCallable KinesisVideoClient::ListStreamsCallable(const ListStr
   return task->get_future();
 }
 
-void KinesisVideoClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientListStreamsAsyncHelper(KinesisVideoClient const * const clientThis, const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListStreams(request), context);
 }
 
-void KinesisVideoClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListStreams(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientListStreamsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome KinesisVideoClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -438,14 +438,14 @@ ListTagsForResourceOutcomeCallable KinesisVideoClient::ListTagsForResourceCallab
   return task->get_future();
 }
 
-void KinesisVideoClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientListTagsForResourceAsyncHelper(KinesisVideoClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void KinesisVideoClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForStreamOutcome KinesisVideoClient::ListTagsForStream(const ListTagsForStreamRequest& request) const
@@ -463,14 +463,14 @@ ListTagsForStreamOutcomeCallable KinesisVideoClient::ListTagsForStreamCallable(c
   return task->get_future();
 }
 
-void KinesisVideoClient::ListTagsForStreamAsync(const ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientListTagsForStreamAsyncHelper(KinesisVideoClient const * const clientThis, const ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForStream(request), context);
 }
 
-void KinesisVideoClient::ListTagsForStreamAsyncHelper(const ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::ListTagsForStreamAsync(const ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientListTagsForStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome KinesisVideoClient::TagResource(const TagResourceRequest& request) const
@@ -488,14 +488,14 @@ TagResourceOutcomeCallable KinesisVideoClient::TagResourceCallable(const TagReso
   return task->get_future();
 }
 
-void KinesisVideoClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientTagResourceAsyncHelper(KinesisVideoClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void KinesisVideoClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagStreamOutcome KinesisVideoClient::TagStream(const TagStreamRequest& request) const
@@ -513,14 +513,14 @@ TagStreamOutcomeCallable KinesisVideoClient::TagStreamCallable(const TagStreamRe
   return task->get_future();
 }
 
-void KinesisVideoClient::TagStreamAsync(const TagStreamRequest& request, const TagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientTagStreamAsyncHelper(KinesisVideoClient const * const clientThis, const TagStreamRequest& request, const TagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagStream(request), context);
 }
 
-void KinesisVideoClient::TagStreamAsyncHelper(const TagStreamRequest& request, const TagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::TagStreamAsync(const TagStreamRequest& request, const TagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientTagStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome KinesisVideoClient::UntagResource(const UntagResourceRequest& request) const
@@ -538,14 +538,14 @@ UntagResourceOutcomeCallable KinesisVideoClient::UntagResourceCallable(const Unt
   return task->get_future();
 }
 
-void KinesisVideoClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientUntagResourceAsyncHelper(KinesisVideoClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void KinesisVideoClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagStreamOutcome KinesisVideoClient::UntagStream(const UntagStreamRequest& request) const
@@ -563,14 +563,14 @@ UntagStreamOutcomeCallable KinesisVideoClient::UntagStreamCallable(const UntagSt
   return task->get_future();
 }
 
-void KinesisVideoClient::UntagStreamAsync(const UntagStreamRequest& request, const UntagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientUntagStreamAsyncHelper(KinesisVideoClient const * const clientThis, const UntagStreamRequest& request, const UntagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagStream(request), context);
 }
 
-void KinesisVideoClient::UntagStreamAsyncHelper(const UntagStreamRequest& request, const UntagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::UntagStreamAsync(const UntagStreamRequest& request, const UntagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientUntagStreamAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDataRetentionOutcome KinesisVideoClient::UpdateDataRetention(const UpdateDataRetentionRequest& request) const
@@ -588,14 +588,14 @@ UpdateDataRetentionOutcomeCallable KinesisVideoClient::UpdateDataRetentionCallab
   return task->get_future();
 }
 
-void KinesisVideoClient::UpdateDataRetentionAsync(const UpdateDataRetentionRequest& request, const UpdateDataRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientUpdateDataRetentionAsyncHelper(KinesisVideoClient const * const clientThis, const UpdateDataRetentionRequest& request, const UpdateDataRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataRetentionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataRetention(request), context);
 }
 
-void KinesisVideoClient::UpdateDataRetentionAsyncHelper(const UpdateDataRetentionRequest& request, const UpdateDataRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::UpdateDataRetentionAsync(const UpdateDataRetentionRequest& request, const UpdateDataRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataRetention(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientUpdateDataRetentionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateImageGenerationConfigurationOutcome KinesisVideoClient::UpdateImageGenerationConfiguration(const UpdateImageGenerationConfigurationRequest& request) const
@@ -613,14 +613,14 @@ UpdateImageGenerationConfigurationOutcomeCallable KinesisVideoClient::UpdateImag
   return task->get_future();
 }
 
-void KinesisVideoClient::UpdateImageGenerationConfigurationAsync(const UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientUpdateImageGenerationConfigurationAsyncHelper(KinesisVideoClient const * const clientThis, const UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateImageGenerationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateImageGenerationConfiguration(request), context);
 }
 
-void KinesisVideoClient::UpdateImageGenerationConfigurationAsyncHelper(const UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::UpdateImageGenerationConfigurationAsync(const UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateImageGenerationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientUpdateImageGenerationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateNotificationConfigurationOutcome KinesisVideoClient::UpdateNotificationConfiguration(const UpdateNotificationConfigurationRequest& request) const
@@ -638,14 +638,14 @@ UpdateNotificationConfigurationOutcomeCallable KinesisVideoClient::UpdateNotific
   return task->get_future();
 }
 
-void KinesisVideoClient::UpdateNotificationConfigurationAsync(const UpdateNotificationConfigurationRequest& request, const UpdateNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientUpdateNotificationConfigurationAsyncHelper(KinesisVideoClient const * const clientThis, const UpdateNotificationConfigurationRequest& request, const UpdateNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNotificationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateNotificationConfiguration(request), context);
 }
 
-void KinesisVideoClient::UpdateNotificationConfigurationAsyncHelper(const UpdateNotificationConfigurationRequest& request, const UpdateNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::UpdateNotificationConfigurationAsync(const UpdateNotificationConfigurationRequest& request, const UpdateNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateNotificationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientUpdateNotificationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSignalingChannelOutcome KinesisVideoClient::UpdateSignalingChannel(const UpdateSignalingChannelRequest& request) const
@@ -663,14 +663,14 @@ UpdateSignalingChannelOutcomeCallable KinesisVideoClient::UpdateSignalingChannel
   return task->get_future();
 }
 
-void KinesisVideoClient::UpdateSignalingChannelAsync(const UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientUpdateSignalingChannelAsyncHelper(KinesisVideoClient const * const clientThis, const UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSignalingChannelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSignalingChannel(request), context);
 }
 
-void KinesisVideoClient::UpdateSignalingChannelAsyncHelper(const UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::UpdateSignalingChannelAsync(const UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSignalingChannel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientUpdateSignalingChannelAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateStreamOutcome KinesisVideoClient::UpdateStream(const UpdateStreamRequest& request) const
@@ -688,13 +688,13 @@ UpdateStreamOutcomeCallable KinesisVideoClient::UpdateStreamCallable(const Updat
   return task->get_future();
 }
 
-void KinesisVideoClient::UpdateStreamAsync(const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClientUpdateStreamAsyncHelper(KinesisVideoClient const * const clientThis, const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStreamAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateStream(request), context);
 }
 
-void KinesisVideoClient::UpdateStreamAsyncHelper(const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void KinesisVideoClient::UpdateStreamAsync(const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateStream(request), context);
+  m_executor->Submit( [this, request, handler, context](){ KinesisVideoClientUpdateStreamAsyncHelper( this, request, handler, context ); } );
 }
 

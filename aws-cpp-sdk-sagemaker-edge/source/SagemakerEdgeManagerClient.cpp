@@ -118,14 +118,14 @@ GetDeploymentsOutcomeCallable SagemakerEdgeManagerClient::GetDeploymentsCallable
   return task->get_future();
 }
 
-void SagemakerEdgeManagerClient::GetDeploymentsAsync(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SagemakerEdgeManagerClientGetDeploymentsAsyncHelper(SagemakerEdgeManagerClient const * const clientThis, const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeployments(request), context);
 }
 
-void SagemakerEdgeManagerClient::GetDeploymentsAsyncHelper(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SagemakerEdgeManagerClient::GetDeploymentsAsync(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SagemakerEdgeManagerClientGetDeploymentsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(const GetDeviceRegistrationRequest& request) const
@@ -143,14 +143,14 @@ GetDeviceRegistrationOutcomeCallable SagemakerEdgeManagerClient::GetDeviceRegist
   return task->get_future();
 }
 
-void SagemakerEdgeManagerClient::GetDeviceRegistrationAsync(const GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SagemakerEdgeManagerClientGetDeviceRegistrationAsyncHelper(SagemakerEdgeManagerClient const * const clientThis, const GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceRegistrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDeviceRegistration(request), context);
 }
 
-void SagemakerEdgeManagerClient::GetDeviceRegistrationAsyncHelper(const GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SagemakerEdgeManagerClient::GetDeviceRegistrationAsync(const GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeviceRegistration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SagemakerEdgeManagerClientGetDeviceRegistrationAsyncHelper( this, request, handler, context ); } );
 }
 
 SendHeartbeatOutcome SagemakerEdgeManagerClient::SendHeartbeat(const SendHeartbeatRequest& request) const
@@ -168,13 +168,13 @@ SendHeartbeatOutcomeCallable SagemakerEdgeManagerClient::SendHeartbeatCallable(c
   return task->get_future();
 }
 
-void SagemakerEdgeManagerClient::SendHeartbeatAsync(const SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SagemakerEdgeManagerClientSendHeartbeatAsyncHelper(SagemakerEdgeManagerClient const * const clientThis, const SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendHeartbeatAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendHeartbeat(request), context);
 }
 
-void SagemakerEdgeManagerClient::SendHeartbeatAsyncHelper(const SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SagemakerEdgeManagerClient::SendHeartbeatAsync(const SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendHeartbeat(request), context);
+  m_executor->Submit( [this, request, handler, context](){ SagemakerEdgeManagerClientSendHeartbeatAsyncHelper( this, request, handler, context ); } );
 }
 

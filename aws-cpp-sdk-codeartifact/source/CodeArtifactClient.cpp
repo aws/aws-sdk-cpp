@@ -166,14 +166,14 @@ AssociateExternalConnectionOutcomeCallable CodeArtifactClient::AssociateExternal
   return task->get_future();
 }
 
-void CodeArtifactClient::AssociateExternalConnectionAsync(const AssociateExternalConnectionRequest& request, const AssociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientAssociateExternalConnectionAsyncHelper(CodeArtifactClient const * const clientThis, const AssociateExternalConnectionRequest& request, const AssociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateExternalConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateExternalConnection(request), context);
 }
 
-void CodeArtifactClient::AssociateExternalConnectionAsyncHelper(const AssociateExternalConnectionRequest& request, const AssociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::AssociateExternalConnectionAsync(const AssociateExternalConnectionRequest& request, const AssociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateExternalConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientAssociateExternalConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CopyPackageVersionsOutcome CodeArtifactClient::CopyPackageVersions(const CopyPackageVersionsRequest& request) const
@@ -216,14 +216,14 @@ CopyPackageVersionsOutcomeCallable CodeArtifactClient::CopyPackageVersionsCallab
   return task->get_future();
 }
 
-void CodeArtifactClient::CopyPackageVersionsAsync(const CopyPackageVersionsRequest& request, const CopyPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientCopyPackageVersionsAsyncHelper(CodeArtifactClient const * const clientThis, const CopyPackageVersionsRequest& request, const CopyPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopyPackageVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CopyPackageVersions(request), context);
 }
 
-void CodeArtifactClient::CopyPackageVersionsAsyncHelper(const CopyPackageVersionsRequest& request, const CopyPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::CopyPackageVersionsAsync(const CopyPackageVersionsRequest& request, const CopyPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CopyPackageVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientCopyPackageVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDomainOutcome CodeArtifactClient::CreateDomain(const CreateDomainRequest& request) const
@@ -246,14 +246,14 @@ CreateDomainOutcomeCallable CodeArtifactClient::CreateDomainCallable(const Creat
   return task->get_future();
 }
 
-void CodeArtifactClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientCreateDomainAsyncHelper(CodeArtifactClient const * const clientThis, const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDomain(request), context);
 }
 
-void CodeArtifactClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientCreateDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRepositoryOutcome CodeArtifactClient::CreateRepository(const CreateRepositoryRequest& request) const
@@ -281,14 +281,14 @@ CreateRepositoryOutcomeCallable CodeArtifactClient::CreateRepositoryCallable(con
   return task->get_future();
 }
 
-void CodeArtifactClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientCreateRepositoryAsyncHelper(CodeArtifactClient const * const clientThis, const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRepository(request), context);
 }
 
-void CodeArtifactClient::CreateRepositoryAsyncHelper(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientCreateRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainOutcome CodeArtifactClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -311,14 +311,14 @@ DeleteDomainOutcomeCallable CodeArtifactClient::DeleteDomainCallable(const Delet
   return task->get_future();
 }
 
-void CodeArtifactClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDeleteDomainAsyncHelper(CodeArtifactClient const * const clientThis, const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomain(request), context);
 }
 
-void CodeArtifactClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDeleteDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDomainPermissionsPolicyOutcome CodeArtifactClient::DeleteDomainPermissionsPolicy(const DeleteDomainPermissionsPolicyRequest& request) const
@@ -341,14 +341,14 @@ DeleteDomainPermissionsPolicyOutcomeCallable CodeArtifactClient::DeleteDomainPer
   return task->get_future();
 }
 
-void CodeArtifactClient::DeleteDomainPermissionsPolicyAsync(const DeleteDomainPermissionsPolicyRequest& request, const DeleteDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDeleteDomainPermissionsPolicyAsyncHelper(CodeArtifactClient const * const clientThis, const DeleteDomainPermissionsPolicyRequest& request, const DeleteDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainPermissionsPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDomainPermissionsPolicy(request), context);
 }
 
-void CodeArtifactClient::DeleteDomainPermissionsPolicyAsyncHelper(const DeleteDomainPermissionsPolicyRequest& request, const DeleteDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DeleteDomainPermissionsPolicyAsync(const DeleteDomainPermissionsPolicyRequest& request, const DeleteDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDomainPermissionsPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDeleteDomainPermissionsPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePackageVersionsOutcome CodeArtifactClient::DeletePackageVersions(const DeletePackageVersionsRequest& request) const
@@ -386,14 +386,14 @@ DeletePackageVersionsOutcomeCallable CodeArtifactClient::DeletePackageVersionsCa
   return task->get_future();
 }
 
-void CodeArtifactClient::DeletePackageVersionsAsync(const DeletePackageVersionsRequest& request, const DeletePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDeletePackageVersionsAsyncHelper(CodeArtifactClient const * const clientThis, const DeletePackageVersionsRequest& request, const DeletePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePackageVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePackageVersions(request), context);
 }
 
-void CodeArtifactClient::DeletePackageVersionsAsyncHelper(const DeletePackageVersionsRequest& request, const DeletePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DeletePackageVersionsAsync(const DeletePackageVersionsRequest& request, const DeletePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePackageVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDeletePackageVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRepositoryOutcome CodeArtifactClient::DeleteRepository(const DeleteRepositoryRequest& request) const
@@ -421,14 +421,14 @@ DeleteRepositoryOutcomeCallable CodeArtifactClient::DeleteRepositoryCallable(con
   return task->get_future();
 }
 
-void CodeArtifactClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDeleteRepositoryAsyncHelper(CodeArtifactClient const * const clientThis, const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRepository(request), context);
 }
 
-void CodeArtifactClient::DeleteRepositoryAsyncHelper(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDeleteRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRepositoryPermissionsPolicyOutcome CodeArtifactClient::DeleteRepositoryPermissionsPolicy(const DeleteRepositoryPermissionsPolicyRequest& request) const
@@ -456,14 +456,14 @@ DeleteRepositoryPermissionsPolicyOutcomeCallable CodeArtifactClient::DeleteRepos
   return task->get_future();
 }
 
-void CodeArtifactClient::DeleteRepositoryPermissionsPolicyAsync(const DeleteRepositoryPermissionsPolicyRequest& request, const DeleteRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDeleteRepositoryPermissionsPolicyAsyncHelper(CodeArtifactClient const * const clientThis, const DeleteRepositoryPermissionsPolicyRequest& request, const DeleteRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRepositoryPermissionsPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRepositoryPermissionsPolicy(request), context);
 }
 
-void CodeArtifactClient::DeleteRepositoryPermissionsPolicyAsyncHelper(const DeleteRepositoryPermissionsPolicyRequest& request, const DeleteRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DeleteRepositoryPermissionsPolicyAsync(const DeleteRepositoryPermissionsPolicyRequest& request, const DeleteRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRepositoryPermissionsPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDeleteRepositoryPermissionsPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDomainOutcome CodeArtifactClient::DescribeDomain(const DescribeDomainRequest& request) const
@@ -486,14 +486,14 @@ DescribeDomainOutcomeCallable CodeArtifactClient::DescribeDomainCallable(const D
   return task->get_future();
 }
 
-void CodeArtifactClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDescribeDomainAsyncHelper(CodeArtifactClient const * const clientThis, const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDomain(request), context);
 }
 
-void CodeArtifactClient::DescribeDomainAsyncHelper(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDescribeDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePackageOutcome CodeArtifactClient::DescribePackage(const DescribePackageRequest& request) const
@@ -531,14 +531,14 @@ DescribePackageOutcomeCallable CodeArtifactClient::DescribePackageCallable(const
   return task->get_future();
 }
 
-void CodeArtifactClient::DescribePackageAsync(const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDescribePackageAsyncHelper(CodeArtifactClient const * const clientThis, const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePackageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePackage(request), context);
 }
 
-void CodeArtifactClient::DescribePackageAsyncHelper(const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DescribePackageAsync(const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePackage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDescribePackageAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePackageVersionOutcome CodeArtifactClient::DescribePackageVersion(const DescribePackageVersionRequest& request) const
@@ -581,14 +581,14 @@ DescribePackageVersionOutcomeCallable CodeArtifactClient::DescribePackageVersion
   return task->get_future();
 }
 
-void CodeArtifactClient::DescribePackageVersionAsync(const DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDescribePackageVersionAsyncHelper(CodeArtifactClient const * const clientThis, const DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePackageVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePackageVersion(request), context);
 }
 
-void CodeArtifactClient::DescribePackageVersionAsyncHelper(const DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DescribePackageVersionAsync(const DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePackageVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDescribePackageVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRepositoryOutcome CodeArtifactClient::DescribeRepository(const DescribeRepositoryRequest& request) const
@@ -616,14 +616,14 @@ DescribeRepositoryOutcomeCallable CodeArtifactClient::DescribeRepositoryCallable
   return task->get_future();
 }
 
-void CodeArtifactClient::DescribeRepositoryAsync(const DescribeRepositoryRequest& request, const DescribeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDescribeRepositoryAsyncHelper(CodeArtifactClient const * const clientThis, const DescribeRepositoryRequest& request, const DescribeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRepository(request), context);
 }
 
-void CodeArtifactClient::DescribeRepositoryAsyncHelper(const DescribeRepositoryRequest& request, const DescribeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DescribeRepositoryAsync(const DescribeRepositoryRequest& request, const DescribeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDescribeRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateExternalConnectionOutcome CodeArtifactClient::DisassociateExternalConnection(const DisassociateExternalConnectionRequest& request) const
@@ -656,14 +656,14 @@ DisassociateExternalConnectionOutcomeCallable CodeArtifactClient::DisassociateEx
   return task->get_future();
 }
 
-void CodeArtifactClient::DisassociateExternalConnectionAsync(const DisassociateExternalConnectionRequest& request, const DisassociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDisassociateExternalConnectionAsyncHelper(CodeArtifactClient const * const clientThis, const DisassociateExternalConnectionRequest& request, const DisassociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateExternalConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateExternalConnection(request), context);
 }
 
-void CodeArtifactClient::DisassociateExternalConnectionAsyncHelper(const DisassociateExternalConnectionRequest& request, const DisassociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DisassociateExternalConnectionAsync(const DisassociateExternalConnectionRequest& request, const DisassociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateExternalConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDisassociateExternalConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DisposePackageVersionsOutcome CodeArtifactClient::DisposePackageVersions(const DisposePackageVersionsRequest& request) const
@@ -701,14 +701,14 @@ DisposePackageVersionsOutcomeCallable CodeArtifactClient::DisposePackageVersions
   return task->get_future();
 }
 
-void CodeArtifactClient::DisposePackageVersionsAsync(const DisposePackageVersionsRequest& request, const DisposePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientDisposePackageVersionsAsyncHelper(CodeArtifactClient const * const clientThis, const DisposePackageVersionsRequest& request, const DisposePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisposePackageVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisposePackageVersions(request), context);
 }
 
-void CodeArtifactClient::DisposePackageVersionsAsyncHelper(const DisposePackageVersionsRequest& request, const DisposePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::DisposePackageVersionsAsync(const DisposePackageVersionsRequest& request, const DisposePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisposePackageVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientDisposePackageVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAuthorizationTokenOutcome CodeArtifactClient::GetAuthorizationToken(const GetAuthorizationTokenRequest& request) const
@@ -731,14 +731,14 @@ GetAuthorizationTokenOutcomeCallable CodeArtifactClient::GetAuthorizationTokenCa
   return task->get_future();
 }
 
-void CodeArtifactClient::GetAuthorizationTokenAsync(const GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientGetAuthorizationTokenAsyncHelper(CodeArtifactClient const * const clientThis, const GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAuthorizationTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAuthorizationToken(request), context);
 }
 
-void CodeArtifactClient::GetAuthorizationTokenAsyncHelper(const GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::GetAuthorizationTokenAsync(const GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAuthorizationToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientGetAuthorizationTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDomainPermissionsPolicyOutcome CodeArtifactClient::GetDomainPermissionsPolicy(const GetDomainPermissionsPolicyRequest& request) const
@@ -761,14 +761,14 @@ GetDomainPermissionsPolicyOutcomeCallable CodeArtifactClient::GetDomainPermissio
   return task->get_future();
 }
 
-void CodeArtifactClient::GetDomainPermissionsPolicyAsync(const GetDomainPermissionsPolicyRequest& request, const GetDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientGetDomainPermissionsPolicyAsyncHelper(CodeArtifactClient const * const clientThis, const GetDomainPermissionsPolicyRequest& request, const GetDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainPermissionsPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDomainPermissionsPolicy(request), context);
 }
 
-void CodeArtifactClient::GetDomainPermissionsPolicyAsyncHelper(const GetDomainPermissionsPolicyRequest& request, const GetDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::GetDomainPermissionsPolicyAsync(const GetDomainPermissionsPolicyRequest& request, const GetDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDomainPermissionsPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientGetDomainPermissionsPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPackageVersionAssetOutcome CodeArtifactClient::GetPackageVersionAsset(const GetPackageVersionAssetRequest& request) const
@@ -816,14 +816,14 @@ GetPackageVersionAssetOutcomeCallable CodeArtifactClient::GetPackageVersionAsset
   return task->get_future();
 }
 
-void CodeArtifactClient::GetPackageVersionAssetAsync(const GetPackageVersionAssetRequest& request, const GetPackageVersionAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientGetPackageVersionAssetAsyncHelper(CodeArtifactClient const * const clientThis, const GetPackageVersionAssetRequest& request, const GetPackageVersionAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPackageVersionAssetAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPackageVersionAsset(request), context);
 }
 
-void CodeArtifactClient::GetPackageVersionAssetAsyncHelper(const GetPackageVersionAssetRequest& request, const GetPackageVersionAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::GetPackageVersionAssetAsync(const GetPackageVersionAssetRequest& request, const GetPackageVersionAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPackageVersionAsset(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientGetPackageVersionAssetAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPackageVersionReadmeOutcome CodeArtifactClient::GetPackageVersionReadme(const GetPackageVersionReadmeRequest& request) const
@@ -866,14 +866,14 @@ GetPackageVersionReadmeOutcomeCallable CodeArtifactClient::GetPackageVersionRead
   return task->get_future();
 }
 
-void CodeArtifactClient::GetPackageVersionReadmeAsync(const GetPackageVersionReadmeRequest& request, const GetPackageVersionReadmeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientGetPackageVersionReadmeAsyncHelper(CodeArtifactClient const * const clientThis, const GetPackageVersionReadmeRequest& request, const GetPackageVersionReadmeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPackageVersionReadmeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPackageVersionReadme(request), context);
 }
 
-void CodeArtifactClient::GetPackageVersionReadmeAsyncHelper(const GetPackageVersionReadmeRequest& request, const GetPackageVersionReadmeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::GetPackageVersionReadmeAsync(const GetPackageVersionReadmeRequest& request, const GetPackageVersionReadmeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPackageVersionReadme(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientGetPackageVersionReadmeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRepositoryEndpointOutcome CodeArtifactClient::GetRepositoryEndpoint(const GetRepositoryEndpointRequest& request) const
@@ -906,14 +906,14 @@ GetRepositoryEndpointOutcomeCallable CodeArtifactClient::GetRepositoryEndpointCa
   return task->get_future();
 }
 
-void CodeArtifactClient::GetRepositoryEndpointAsync(const GetRepositoryEndpointRequest& request, const GetRepositoryEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientGetRepositoryEndpointAsyncHelper(CodeArtifactClient const * const clientThis, const GetRepositoryEndpointRequest& request, const GetRepositoryEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRepositoryEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRepositoryEndpoint(request), context);
 }
 
-void CodeArtifactClient::GetRepositoryEndpointAsyncHelper(const GetRepositoryEndpointRequest& request, const GetRepositoryEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::GetRepositoryEndpointAsync(const GetRepositoryEndpointRequest& request, const GetRepositoryEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRepositoryEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientGetRepositoryEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRepositoryPermissionsPolicyOutcome CodeArtifactClient::GetRepositoryPermissionsPolicy(const GetRepositoryPermissionsPolicyRequest& request) const
@@ -941,14 +941,14 @@ GetRepositoryPermissionsPolicyOutcomeCallable CodeArtifactClient::GetRepositoryP
   return task->get_future();
 }
 
-void CodeArtifactClient::GetRepositoryPermissionsPolicyAsync(const GetRepositoryPermissionsPolicyRequest& request, const GetRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientGetRepositoryPermissionsPolicyAsyncHelper(CodeArtifactClient const * const clientThis, const GetRepositoryPermissionsPolicyRequest& request, const GetRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRepositoryPermissionsPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRepositoryPermissionsPolicy(request), context);
 }
 
-void CodeArtifactClient::GetRepositoryPermissionsPolicyAsyncHelper(const GetRepositoryPermissionsPolicyRequest& request, const GetRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::GetRepositoryPermissionsPolicyAsync(const GetRepositoryPermissionsPolicyRequest& request, const GetRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRepositoryPermissionsPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientGetRepositoryPermissionsPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDomainsOutcome CodeArtifactClient::ListDomains(const ListDomainsRequest& request) const
@@ -966,14 +966,14 @@ ListDomainsOutcomeCallable CodeArtifactClient::ListDomainsCallable(const ListDom
   return task->get_future();
 }
 
-void CodeArtifactClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientListDomainsAsyncHelper(CodeArtifactClient const * const clientThis, const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDomains(request), context);
 }
 
-void CodeArtifactClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDomains(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientListDomainsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPackageVersionAssetsOutcome CodeArtifactClient::ListPackageVersionAssets(const ListPackageVersionAssetsRequest& request) const
@@ -1016,14 +1016,14 @@ ListPackageVersionAssetsOutcomeCallable CodeArtifactClient::ListPackageVersionAs
   return task->get_future();
 }
 
-void CodeArtifactClient::ListPackageVersionAssetsAsync(const ListPackageVersionAssetsRequest& request, const ListPackageVersionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientListPackageVersionAssetsAsyncHelper(CodeArtifactClient const * const clientThis, const ListPackageVersionAssetsRequest& request, const ListPackageVersionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPackageVersionAssetsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPackageVersionAssets(request), context);
 }
 
-void CodeArtifactClient::ListPackageVersionAssetsAsyncHelper(const ListPackageVersionAssetsRequest& request, const ListPackageVersionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::ListPackageVersionAssetsAsync(const ListPackageVersionAssetsRequest& request, const ListPackageVersionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPackageVersionAssets(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientListPackageVersionAssetsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPackageVersionDependenciesOutcome CodeArtifactClient::ListPackageVersionDependencies(const ListPackageVersionDependenciesRequest& request) const
@@ -1066,14 +1066,14 @@ ListPackageVersionDependenciesOutcomeCallable CodeArtifactClient::ListPackageVer
   return task->get_future();
 }
 
-void CodeArtifactClient::ListPackageVersionDependenciesAsync(const ListPackageVersionDependenciesRequest& request, const ListPackageVersionDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientListPackageVersionDependenciesAsyncHelper(CodeArtifactClient const * const clientThis, const ListPackageVersionDependenciesRequest& request, const ListPackageVersionDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPackageVersionDependenciesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPackageVersionDependencies(request), context);
 }
 
-void CodeArtifactClient::ListPackageVersionDependenciesAsyncHelper(const ListPackageVersionDependenciesRequest& request, const ListPackageVersionDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::ListPackageVersionDependenciesAsync(const ListPackageVersionDependenciesRequest& request, const ListPackageVersionDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPackageVersionDependencies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientListPackageVersionDependenciesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPackageVersionsOutcome CodeArtifactClient::ListPackageVersions(const ListPackageVersionsRequest& request) const
@@ -1111,14 +1111,14 @@ ListPackageVersionsOutcomeCallable CodeArtifactClient::ListPackageVersionsCallab
   return task->get_future();
 }
 
-void CodeArtifactClient::ListPackageVersionsAsync(const ListPackageVersionsRequest& request, const ListPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientListPackageVersionsAsyncHelper(CodeArtifactClient const * const clientThis, const ListPackageVersionsRequest& request, const ListPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPackageVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPackageVersions(request), context);
 }
 
-void CodeArtifactClient::ListPackageVersionsAsyncHelper(const ListPackageVersionsRequest& request, const ListPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::ListPackageVersionsAsync(const ListPackageVersionsRequest& request, const ListPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPackageVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientListPackageVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPackagesOutcome CodeArtifactClient::ListPackages(const ListPackagesRequest& request) const
@@ -1146,14 +1146,14 @@ ListPackagesOutcomeCallable CodeArtifactClient::ListPackagesCallable(const ListP
   return task->get_future();
 }
 
-void CodeArtifactClient::ListPackagesAsync(const ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientListPackagesAsyncHelper(CodeArtifactClient const * const clientThis, const ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPackagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPackages(request), context);
 }
 
-void CodeArtifactClient::ListPackagesAsyncHelper(const ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::ListPackagesAsync(const ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPackages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientListPackagesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRepositoriesOutcome CodeArtifactClient::ListRepositories(const ListRepositoriesRequest& request) const
@@ -1171,14 +1171,14 @@ ListRepositoriesOutcomeCallable CodeArtifactClient::ListRepositoriesCallable(con
   return task->get_future();
 }
 
-void CodeArtifactClient::ListRepositoriesAsync(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientListRepositoriesAsyncHelper(CodeArtifactClient const * const clientThis, const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRepositoriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRepositories(request), context);
 }
 
-void CodeArtifactClient::ListRepositoriesAsyncHelper(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::ListRepositoriesAsync(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRepositories(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientListRepositoriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRepositoriesInDomainOutcome CodeArtifactClient::ListRepositoriesInDomain(const ListRepositoriesInDomainRequest& request) const
@@ -1201,14 +1201,14 @@ ListRepositoriesInDomainOutcomeCallable CodeArtifactClient::ListRepositoriesInDo
   return task->get_future();
 }
 
-void CodeArtifactClient::ListRepositoriesInDomainAsync(const ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientListRepositoriesInDomainAsyncHelper(CodeArtifactClient const * const clientThis, const ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRepositoriesInDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRepositoriesInDomain(request), context);
 }
 
-void CodeArtifactClient::ListRepositoriesInDomainAsyncHelper(const ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::ListRepositoriesInDomainAsync(const ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRepositoriesInDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientListRepositoriesInDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome CodeArtifactClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1231,14 +1231,14 @@ ListTagsForResourceOutcomeCallable CodeArtifactClient::ListTagsForResourceCallab
   return task->get_future();
 }
 
-void CodeArtifactClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientListTagsForResourceAsyncHelper(CodeArtifactClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void CodeArtifactClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutDomainPermissionsPolicyOutcome CodeArtifactClient::PutDomainPermissionsPolicy(const PutDomainPermissionsPolicyRequest& request) const
@@ -1256,14 +1256,14 @@ PutDomainPermissionsPolicyOutcomeCallable CodeArtifactClient::PutDomainPermissio
   return task->get_future();
 }
 
-void CodeArtifactClient::PutDomainPermissionsPolicyAsync(const PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientPutDomainPermissionsPolicyAsyncHelper(CodeArtifactClient const * const clientThis, const PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDomainPermissionsPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutDomainPermissionsPolicy(request), context);
 }
 
-void CodeArtifactClient::PutDomainPermissionsPolicyAsyncHelper(const PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::PutDomainPermissionsPolicyAsync(const PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutDomainPermissionsPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientPutDomainPermissionsPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 PutPackageOriginConfigurationOutcome CodeArtifactClient::PutPackageOriginConfiguration(const PutPackageOriginConfigurationRequest& request) const
@@ -1301,14 +1301,14 @@ PutPackageOriginConfigurationOutcomeCallable CodeArtifactClient::PutPackageOrigi
   return task->get_future();
 }
 
-void CodeArtifactClient::PutPackageOriginConfigurationAsync(const PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientPutPackageOriginConfigurationAsyncHelper(CodeArtifactClient const * const clientThis, const PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPackageOriginConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutPackageOriginConfiguration(request), context);
 }
 
-void CodeArtifactClient::PutPackageOriginConfigurationAsyncHelper(const PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::PutPackageOriginConfigurationAsync(const PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutPackageOriginConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientPutPackageOriginConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRepositoryPermissionsPolicyOutcome CodeArtifactClient::PutRepositoryPermissionsPolicy(const PutRepositoryPermissionsPolicyRequest& request) const
@@ -1336,14 +1336,14 @@ PutRepositoryPermissionsPolicyOutcomeCallable CodeArtifactClient::PutRepositoryP
   return task->get_future();
 }
 
-void CodeArtifactClient::PutRepositoryPermissionsPolicyAsync(const PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientPutRepositoryPermissionsPolicyAsyncHelper(CodeArtifactClient const * const clientThis, const PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRepositoryPermissionsPolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRepositoryPermissionsPolicy(request), context);
 }
 
-void CodeArtifactClient::PutRepositoryPermissionsPolicyAsyncHelper(const PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::PutRepositoryPermissionsPolicyAsync(const PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRepositoryPermissionsPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientPutRepositoryPermissionsPolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CodeArtifactClient::TagResource(const TagResourceRequest& request) const
@@ -1366,14 +1366,14 @@ TagResourceOutcomeCallable CodeArtifactClient::TagResourceCallable(const TagReso
   return task->get_future();
 }
 
-void CodeArtifactClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientTagResourceAsyncHelper(CodeArtifactClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CodeArtifactClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CodeArtifactClient::UntagResource(const UntagResourceRequest& request) const
@@ -1396,14 +1396,14 @@ UntagResourceOutcomeCallable CodeArtifactClient::UntagResourceCallable(const Unt
   return task->get_future();
 }
 
-void CodeArtifactClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientUntagResourceAsyncHelper(CodeArtifactClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CodeArtifactClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePackageVersionsStatusOutcome CodeArtifactClient::UpdatePackageVersionsStatus(const UpdatePackageVersionsStatusRequest& request) const
@@ -1441,14 +1441,14 @@ UpdatePackageVersionsStatusOutcomeCallable CodeArtifactClient::UpdatePackageVers
   return task->get_future();
 }
 
-void CodeArtifactClient::UpdatePackageVersionsStatusAsync(const UpdatePackageVersionsStatusRequest& request, const UpdatePackageVersionsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientUpdatePackageVersionsStatusAsyncHelper(CodeArtifactClient const * const clientThis, const UpdatePackageVersionsStatusRequest& request, const UpdatePackageVersionsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePackageVersionsStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePackageVersionsStatus(request), context);
 }
 
-void CodeArtifactClient::UpdatePackageVersionsStatusAsyncHelper(const UpdatePackageVersionsStatusRequest& request, const UpdatePackageVersionsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::UpdatePackageVersionsStatusAsync(const UpdatePackageVersionsStatusRequest& request, const UpdatePackageVersionsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePackageVersionsStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientUpdatePackageVersionsStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRepositoryOutcome CodeArtifactClient::UpdateRepository(const UpdateRepositoryRequest& request) const
@@ -1476,13 +1476,13 @@ UpdateRepositoryOutcomeCallable CodeArtifactClient::UpdateRepositoryCallable(con
   return task->get_future();
 }
 
-void CodeArtifactClient::UpdateRepositoryAsync(const UpdateRepositoryRequest& request, const UpdateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClientUpdateRepositoryAsyncHelper(CodeArtifactClient const * const clientThis, const UpdateRepositoryRequest& request, const UpdateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRepository(request), context);
 }
 
-void CodeArtifactClient::UpdateRepositoryAsyncHelper(const UpdateRepositoryRequest& request, const UpdateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeArtifactClient::UpdateRepositoryAsync(const UpdateRepositoryRequest& request, const UpdateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeArtifactClientUpdateRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 

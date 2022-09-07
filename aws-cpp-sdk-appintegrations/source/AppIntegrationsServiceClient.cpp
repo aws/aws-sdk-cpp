@@ -130,14 +130,14 @@ CreateDataIntegrationOutcomeCallable AppIntegrationsServiceClient::CreateDataInt
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::CreateDataIntegrationAsync(const CreateDataIntegrationRequest& request, const CreateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientCreateDataIntegrationAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const CreateDataIntegrationRequest& request, const CreateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataIntegration(request), context);
 }
 
-void AppIntegrationsServiceClient::CreateDataIntegrationAsyncHelper(const CreateDataIntegrationRequest& request, const CreateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::CreateDataIntegrationAsync(const CreateDataIntegrationRequest& request, const CreateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientCreateDataIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEventIntegrationOutcome AppIntegrationsServiceClient::CreateEventIntegration(const CreateEventIntegrationRequest& request) const
@@ -155,14 +155,14 @@ CreateEventIntegrationOutcomeCallable AppIntegrationsServiceClient::CreateEventI
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::CreateEventIntegrationAsync(const CreateEventIntegrationRequest& request, const CreateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientCreateEventIntegrationAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const CreateEventIntegrationRequest& request, const CreateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEventIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEventIntegration(request), context);
 }
 
-void AppIntegrationsServiceClient::CreateEventIntegrationAsyncHelper(const CreateEventIntegrationRequest& request, const CreateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::CreateEventIntegrationAsync(const CreateEventIntegrationRequest& request, const CreateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEventIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientCreateEventIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDataIntegrationOutcome AppIntegrationsServiceClient::DeleteDataIntegration(const DeleteDataIntegrationRequest& request) const
@@ -186,14 +186,14 @@ DeleteDataIntegrationOutcomeCallable AppIntegrationsServiceClient::DeleteDataInt
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::DeleteDataIntegrationAsync(const DeleteDataIntegrationRequest& request, const DeleteDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientDeleteDataIntegrationAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const DeleteDataIntegrationRequest& request, const DeleteDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataIntegration(request), context);
 }
 
-void AppIntegrationsServiceClient::DeleteDataIntegrationAsyncHelper(const DeleteDataIntegrationRequest& request, const DeleteDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::DeleteDataIntegrationAsync(const DeleteDataIntegrationRequest& request, const DeleteDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientDeleteDataIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEventIntegrationOutcome AppIntegrationsServiceClient::DeleteEventIntegration(const DeleteEventIntegrationRequest& request) const
@@ -217,14 +217,14 @@ DeleteEventIntegrationOutcomeCallable AppIntegrationsServiceClient::DeleteEventI
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::DeleteEventIntegrationAsync(const DeleteEventIntegrationRequest& request, const DeleteEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientDeleteEventIntegrationAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const DeleteEventIntegrationRequest& request, const DeleteEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEventIntegration(request), context);
 }
 
-void AppIntegrationsServiceClient::DeleteEventIntegrationAsyncHelper(const DeleteEventIntegrationRequest& request, const DeleteEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::DeleteEventIntegrationAsync(const DeleteEventIntegrationRequest& request, const DeleteEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEventIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientDeleteEventIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDataIntegrationOutcome AppIntegrationsServiceClient::GetDataIntegration(const GetDataIntegrationRequest& request) const
@@ -248,14 +248,14 @@ GetDataIntegrationOutcomeCallable AppIntegrationsServiceClient::GetDataIntegrati
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::GetDataIntegrationAsync(const GetDataIntegrationRequest& request, const GetDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientGetDataIntegrationAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const GetDataIntegrationRequest& request, const GetDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDataIntegration(request), context);
 }
 
-void AppIntegrationsServiceClient::GetDataIntegrationAsyncHelper(const GetDataIntegrationRequest& request, const GetDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::GetDataIntegrationAsync(const GetDataIntegrationRequest& request, const GetDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDataIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientGetDataIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEventIntegrationOutcome AppIntegrationsServiceClient::GetEventIntegration(const GetEventIntegrationRequest& request) const
@@ -279,14 +279,14 @@ GetEventIntegrationOutcomeCallable AppIntegrationsServiceClient::GetEventIntegra
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::GetEventIntegrationAsync(const GetEventIntegrationRequest& request, const GetEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientGetEventIntegrationAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const GetEventIntegrationRequest& request, const GetEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEventIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEventIntegration(request), context);
 }
 
-void AppIntegrationsServiceClient::GetEventIntegrationAsyncHelper(const GetEventIntegrationRequest& request, const GetEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::GetEventIntegrationAsync(const GetEventIntegrationRequest& request, const GetEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEventIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientGetEventIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDataIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListDataIntegrationAssociations(const ListDataIntegrationAssociationsRequest& request) const
@@ -311,14 +311,14 @@ ListDataIntegrationAssociationsOutcomeCallable AppIntegrationsServiceClient::Lis
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::ListDataIntegrationAssociationsAsync(const ListDataIntegrationAssociationsRequest& request, const ListDataIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientListDataIntegrationAssociationsAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const ListDataIntegrationAssociationsRequest& request, const ListDataIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataIntegrationAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDataIntegrationAssociations(request), context);
 }
 
-void AppIntegrationsServiceClient::ListDataIntegrationAssociationsAsyncHelper(const ListDataIntegrationAssociationsRequest& request, const ListDataIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::ListDataIntegrationAssociationsAsync(const ListDataIntegrationAssociationsRequest& request, const ListDataIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDataIntegrationAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientListDataIntegrationAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDataIntegrationsOutcome AppIntegrationsServiceClient::ListDataIntegrations(const ListDataIntegrationsRequest& request) const
@@ -336,14 +336,14 @@ ListDataIntegrationsOutcomeCallable AppIntegrationsServiceClient::ListDataIntegr
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::ListDataIntegrationsAsync(const ListDataIntegrationsRequest& request, const ListDataIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientListDataIntegrationsAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const ListDataIntegrationsRequest& request, const ListDataIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataIntegrationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDataIntegrations(request), context);
 }
 
-void AppIntegrationsServiceClient::ListDataIntegrationsAsyncHelper(const ListDataIntegrationsRequest& request, const ListDataIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::ListDataIntegrationsAsync(const ListDataIntegrationsRequest& request, const ListDataIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDataIntegrations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientListDataIntegrationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEventIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListEventIntegrationAssociations(const ListEventIntegrationAssociationsRequest& request) const
@@ -368,14 +368,14 @@ ListEventIntegrationAssociationsOutcomeCallable AppIntegrationsServiceClient::Li
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::ListEventIntegrationAssociationsAsync(const ListEventIntegrationAssociationsRequest& request, const ListEventIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientListEventIntegrationAssociationsAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const ListEventIntegrationAssociationsRequest& request, const ListEventIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventIntegrationAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEventIntegrationAssociations(request), context);
 }
 
-void AppIntegrationsServiceClient::ListEventIntegrationAssociationsAsyncHelper(const ListEventIntegrationAssociationsRequest& request, const ListEventIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::ListEventIntegrationAssociationsAsync(const ListEventIntegrationAssociationsRequest& request, const ListEventIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEventIntegrationAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientListEventIntegrationAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEventIntegrationsOutcome AppIntegrationsServiceClient::ListEventIntegrations(const ListEventIntegrationsRequest& request) const
@@ -393,14 +393,14 @@ ListEventIntegrationsOutcomeCallable AppIntegrationsServiceClient::ListEventInte
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::ListEventIntegrationsAsync(const ListEventIntegrationsRequest& request, const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientListEventIntegrationsAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const ListEventIntegrationsRequest& request, const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventIntegrationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEventIntegrations(request), context);
 }
 
-void AppIntegrationsServiceClient::ListEventIntegrationsAsyncHelper(const ListEventIntegrationsRequest& request, const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::ListEventIntegrationsAsync(const ListEventIntegrationsRequest& request, const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEventIntegrations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientListEventIntegrationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome AppIntegrationsServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -424,14 +424,14 @@ ListTagsForResourceOutcomeCallable AppIntegrationsServiceClient::ListTagsForReso
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientListTagsForResourceAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void AppIntegrationsServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome AppIntegrationsServiceClient::TagResource(const TagResourceRequest& request) const
@@ -455,14 +455,14 @@ TagResourceOutcomeCallable AppIntegrationsServiceClient::TagResourceCallable(con
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientTagResourceAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void AppIntegrationsServiceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome AppIntegrationsServiceClient::UntagResource(const UntagResourceRequest& request) const
@@ -491,14 +491,14 @@ UntagResourceOutcomeCallable AppIntegrationsServiceClient::UntagResourceCallable
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientUntagResourceAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void AppIntegrationsServiceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDataIntegrationOutcome AppIntegrationsServiceClient::UpdateDataIntegration(const UpdateDataIntegrationRequest& request) const
@@ -522,14 +522,14 @@ UpdateDataIntegrationOutcomeCallable AppIntegrationsServiceClient::UpdateDataInt
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::UpdateDataIntegrationAsync(const UpdateDataIntegrationRequest& request, const UpdateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientUpdateDataIntegrationAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const UpdateDataIntegrationRequest& request, const UpdateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataIntegration(request), context);
 }
 
-void AppIntegrationsServiceClient::UpdateDataIntegrationAsyncHelper(const UpdateDataIntegrationRequest& request, const UpdateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::UpdateDataIntegrationAsync(const UpdateDataIntegrationRequest& request, const UpdateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientUpdateDataIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEventIntegrationOutcome AppIntegrationsServiceClient::UpdateEventIntegration(const UpdateEventIntegrationRequest& request) const
@@ -553,13 +553,13 @@ UpdateEventIntegrationOutcomeCallable AppIntegrationsServiceClient::UpdateEventI
   return task->get_future();
 }
 
-void AppIntegrationsServiceClient::UpdateEventIntegrationAsync(const UpdateEventIntegrationRequest& request, const UpdateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClientUpdateEventIntegrationAsyncHelper(AppIntegrationsServiceClient const * const clientThis, const UpdateEventIntegrationRequest& request, const UpdateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventIntegrationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEventIntegration(request), context);
 }
 
-void AppIntegrationsServiceClient::UpdateEventIntegrationAsyncHelper(const UpdateEventIntegrationRequest& request, const UpdateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppIntegrationsServiceClient::UpdateEventIntegrationAsync(const UpdateEventIntegrationRequest& request, const UpdateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEventIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppIntegrationsServiceClientUpdateEventIntegrationAsyncHelper( this, request, handler, context ); } );
 }
 

@@ -149,14 +149,14 @@ CreateAnomalyMonitorOutcomeCallable CostExplorerClient::CreateAnomalyMonitorCall
   return task->get_future();
 }
 
-void CostExplorerClient::CreateAnomalyMonitorAsync(const CreateAnomalyMonitorRequest& request, const CreateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientCreateAnomalyMonitorAsyncHelper(CostExplorerClient const * const clientThis, const CreateAnomalyMonitorRequest& request, const CreateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAnomalyMonitorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAnomalyMonitor(request), context);
 }
 
-void CostExplorerClient::CreateAnomalyMonitorAsyncHelper(const CreateAnomalyMonitorRequest& request, const CreateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::CreateAnomalyMonitorAsync(const CreateAnomalyMonitorRequest& request, const CreateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAnomalyMonitor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientCreateAnomalyMonitorAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAnomalySubscriptionOutcome CostExplorerClient::CreateAnomalySubscription(const CreateAnomalySubscriptionRequest& request) const
@@ -173,14 +173,14 @@ CreateAnomalySubscriptionOutcomeCallable CostExplorerClient::CreateAnomalySubscr
   return task->get_future();
 }
 
-void CostExplorerClient::CreateAnomalySubscriptionAsync(const CreateAnomalySubscriptionRequest& request, const CreateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientCreateAnomalySubscriptionAsyncHelper(CostExplorerClient const * const clientThis, const CreateAnomalySubscriptionRequest& request, const CreateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAnomalySubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAnomalySubscription(request), context);
 }
 
-void CostExplorerClient::CreateAnomalySubscriptionAsyncHelper(const CreateAnomalySubscriptionRequest& request, const CreateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::CreateAnomalySubscriptionAsync(const CreateAnomalySubscriptionRequest& request, const CreateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAnomalySubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientCreateAnomalySubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateCostCategoryDefinitionOutcome CostExplorerClient::CreateCostCategoryDefinition(const CreateCostCategoryDefinitionRequest& request) const
@@ -197,14 +197,14 @@ CreateCostCategoryDefinitionOutcomeCallable CostExplorerClient::CreateCostCatego
   return task->get_future();
 }
 
-void CostExplorerClient::CreateCostCategoryDefinitionAsync(const CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientCreateCostCategoryDefinitionAsyncHelper(CostExplorerClient const * const clientThis, const CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCostCategoryDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCostCategoryDefinition(request), context);
 }
 
-void CostExplorerClient::CreateCostCategoryDefinitionAsyncHelper(const CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::CreateCostCategoryDefinitionAsync(const CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCostCategoryDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientCreateCostCategoryDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAnomalyMonitorOutcome CostExplorerClient::DeleteAnomalyMonitor(const DeleteAnomalyMonitorRequest& request) const
@@ -221,14 +221,14 @@ DeleteAnomalyMonitorOutcomeCallable CostExplorerClient::DeleteAnomalyMonitorCall
   return task->get_future();
 }
 
-void CostExplorerClient::DeleteAnomalyMonitorAsync(const DeleteAnomalyMonitorRequest& request, const DeleteAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientDeleteAnomalyMonitorAsyncHelper(CostExplorerClient const * const clientThis, const DeleteAnomalyMonitorRequest& request, const DeleteAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnomalyMonitorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAnomalyMonitor(request), context);
 }
 
-void CostExplorerClient::DeleteAnomalyMonitorAsyncHelper(const DeleteAnomalyMonitorRequest& request, const DeleteAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::DeleteAnomalyMonitorAsync(const DeleteAnomalyMonitorRequest& request, const DeleteAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAnomalyMonitor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientDeleteAnomalyMonitorAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAnomalySubscriptionOutcome CostExplorerClient::DeleteAnomalySubscription(const DeleteAnomalySubscriptionRequest& request) const
@@ -245,14 +245,14 @@ DeleteAnomalySubscriptionOutcomeCallable CostExplorerClient::DeleteAnomalySubscr
   return task->get_future();
 }
 
-void CostExplorerClient::DeleteAnomalySubscriptionAsync(const DeleteAnomalySubscriptionRequest& request, const DeleteAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientDeleteAnomalySubscriptionAsyncHelper(CostExplorerClient const * const clientThis, const DeleteAnomalySubscriptionRequest& request, const DeleteAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnomalySubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAnomalySubscription(request), context);
 }
 
-void CostExplorerClient::DeleteAnomalySubscriptionAsyncHelper(const DeleteAnomalySubscriptionRequest& request, const DeleteAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::DeleteAnomalySubscriptionAsync(const DeleteAnomalySubscriptionRequest& request, const DeleteAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAnomalySubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientDeleteAnomalySubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteCostCategoryDefinitionOutcome CostExplorerClient::DeleteCostCategoryDefinition(const DeleteCostCategoryDefinitionRequest& request) const
@@ -269,14 +269,14 @@ DeleteCostCategoryDefinitionOutcomeCallable CostExplorerClient::DeleteCostCatego
   return task->get_future();
 }
 
-void CostExplorerClient::DeleteCostCategoryDefinitionAsync(const DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientDeleteCostCategoryDefinitionAsyncHelper(CostExplorerClient const * const clientThis, const DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCostCategoryDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCostCategoryDefinition(request), context);
 }
 
-void CostExplorerClient::DeleteCostCategoryDefinitionAsyncHelper(const DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::DeleteCostCategoryDefinitionAsync(const DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCostCategoryDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientDeleteCostCategoryDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCostCategoryDefinitionOutcome CostExplorerClient::DescribeCostCategoryDefinition(const DescribeCostCategoryDefinitionRequest& request) const
@@ -293,14 +293,14 @@ DescribeCostCategoryDefinitionOutcomeCallable CostExplorerClient::DescribeCostCa
   return task->get_future();
 }
 
-void CostExplorerClient::DescribeCostCategoryDefinitionAsync(const DescribeCostCategoryDefinitionRequest& request, const DescribeCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientDescribeCostCategoryDefinitionAsyncHelper(CostExplorerClient const * const clientThis, const DescribeCostCategoryDefinitionRequest& request, const DescribeCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCostCategoryDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCostCategoryDefinition(request), context);
 }
 
-void CostExplorerClient::DescribeCostCategoryDefinitionAsyncHelper(const DescribeCostCategoryDefinitionRequest& request, const DescribeCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::DescribeCostCategoryDefinitionAsync(const DescribeCostCategoryDefinitionRequest& request, const DescribeCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCostCategoryDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientDescribeCostCategoryDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAnomaliesOutcome CostExplorerClient::GetAnomalies(const GetAnomaliesRequest& request) const
@@ -317,14 +317,14 @@ GetAnomaliesOutcomeCallable CostExplorerClient::GetAnomaliesCallable(const GetAn
   return task->get_future();
 }
 
-void CostExplorerClient::GetAnomaliesAsync(const GetAnomaliesRequest& request, const GetAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetAnomaliesAsyncHelper(CostExplorerClient const * const clientThis, const GetAnomaliesRequest& request, const GetAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAnomaliesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAnomalies(request), context);
 }
 
-void CostExplorerClient::GetAnomaliesAsyncHelper(const GetAnomaliesRequest& request, const GetAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetAnomaliesAsync(const GetAnomaliesRequest& request, const GetAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAnomalies(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetAnomaliesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAnomalyMonitorsOutcome CostExplorerClient::GetAnomalyMonitors(const GetAnomalyMonitorsRequest& request) const
@@ -341,14 +341,14 @@ GetAnomalyMonitorsOutcomeCallable CostExplorerClient::GetAnomalyMonitorsCallable
   return task->get_future();
 }
 
-void CostExplorerClient::GetAnomalyMonitorsAsync(const GetAnomalyMonitorsRequest& request, const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetAnomalyMonitorsAsyncHelper(CostExplorerClient const * const clientThis, const GetAnomalyMonitorsRequest& request, const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAnomalyMonitorsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAnomalyMonitors(request), context);
 }
 
-void CostExplorerClient::GetAnomalyMonitorsAsyncHelper(const GetAnomalyMonitorsRequest& request, const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetAnomalyMonitorsAsync(const GetAnomalyMonitorsRequest& request, const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAnomalyMonitors(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetAnomalyMonitorsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAnomalySubscriptionsOutcome CostExplorerClient::GetAnomalySubscriptions(const GetAnomalySubscriptionsRequest& request) const
@@ -365,14 +365,14 @@ GetAnomalySubscriptionsOutcomeCallable CostExplorerClient::GetAnomalySubscriptio
   return task->get_future();
 }
 
-void CostExplorerClient::GetAnomalySubscriptionsAsync(const GetAnomalySubscriptionsRequest& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetAnomalySubscriptionsAsyncHelper(CostExplorerClient const * const clientThis, const GetAnomalySubscriptionsRequest& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAnomalySubscriptionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAnomalySubscriptions(request), context);
 }
 
-void CostExplorerClient::GetAnomalySubscriptionsAsyncHelper(const GetAnomalySubscriptionsRequest& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetAnomalySubscriptionsAsync(const GetAnomalySubscriptionsRequest& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAnomalySubscriptions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetAnomalySubscriptionsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCostAndUsageOutcome CostExplorerClient::GetCostAndUsage(const GetCostAndUsageRequest& request) const
@@ -389,14 +389,14 @@ GetCostAndUsageOutcomeCallable CostExplorerClient::GetCostAndUsageCallable(const
   return task->get_future();
 }
 
-void CostExplorerClient::GetCostAndUsageAsync(const GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetCostAndUsageAsyncHelper(CostExplorerClient const * const clientThis, const GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCostAndUsageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCostAndUsage(request), context);
 }
 
-void CostExplorerClient::GetCostAndUsageAsyncHelper(const GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetCostAndUsageAsync(const GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCostAndUsage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetCostAndUsageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCostAndUsageWithResourcesOutcome CostExplorerClient::GetCostAndUsageWithResources(const GetCostAndUsageWithResourcesRequest& request) const
@@ -413,14 +413,14 @@ GetCostAndUsageWithResourcesOutcomeCallable CostExplorerClient::GetCostAndUsageW
   return task->get_future();
 }
 
-void CostExplorerClient::GetCostAndUsageWithResourcesAsync(const GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetCostAndUsageWithResourcesAsyncHelper(CostExplorerClient const * const clientThis, const GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCostAndUsageWithResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCostAndUsageWithResources(request), context);
 }
 
-void CostExplorerClient::GetCostAndUsageWithResourcesAsyncHelper(const GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetCostAndUsageWithResourcesAsync(const GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCostAndUsageWithResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetCostAndUsageWithResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCostCategoriesOutcome CostExplorerClient::GetCostCategories(const GetCostCategoriesRequest& request) const
@@ -437,14 +437,14 @@ GetCostCategoriesOutcomeCallable CostExplorerClient::GetCostCategoriesCallable(c
   return task->get_future();
 }
 
-void CostExplorerClient::GetCostCategoriesAsync(const GetCostCategoriesRequest& request, const GetCostCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetCostCategoriesAsyncHelper(CostExplorerClient const * const clientThis, const GetCostCategoriesRequest& request, const GetCostCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCostCategoriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCostCategories(request), context);
 }
 
-void CostExplorerClient::GetCostCategoriesAsyncHelper(const GetCostCategoriesRequest& request, const GetCostCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetCostCategoriesAsync(const GetCostCategoriesRequest& request, const GetCostCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCostCategories(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetCostCategoriesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCostForecastOutcome CostExplorerClient::GetCostForecast(const GetCostForecastRequest& request) const
@@ -461,14 +461,14 @@ GetCostForecastOutcomeCallable CostExplorerClient::GetCostForecastCallable(const
   return task->get_future();
 }
 
-void CostExplorerClient::GetCostForecastAsync(const GetCostForecastRequest& request, const GetCostForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetCostForecastAsyncHelper(CostExplorerClient const * const clientThis, const GetCostForecastRequest& request, const GetCostForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCostForecastAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCostForecast(request), context);
 }
 
-void CostExplorerClient::GetCostForecastAsyncHelper(const GetCostForecastRequest& request, const GetCostForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetCostForecastAsync(const GetCostForecastRequest& request, const GetCostForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCostForecast(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetCostForecastAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDimensionValuesOutcome CostExplorerClient::GetDimensionValues(const GetDimensionValuesRequest& request) const
@@ -485,14 +485,14 @@ GetDimensionValuesOutcomeCallable CostExplorerClient::GetDimensionValuesCallable
   return task->get_future();
 }
 
-void CostExplorerClient::GetDimensionValuesAsync(const GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetDimensionValuesAsyncHelper(CostExplorerClient const * const clientThis, const GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDimensionValuesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDimensionValues(request), context);
 }
 
-void CostExplorerClient::GetDimensionValuesAsyncHelper(const GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetDimensionValuesAsync(const GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDimensionValues(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetDimensionValuesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetReservationCoverageOutcome CostExplorerClient::GetReservationCoverage(const GetReservationCoverageRequest& request) const
@@ -509,14 +509,14 @@ GetReservationCoverageOutcomeCallable CostExplorerClient::GetReservationCoverage
   return task->get_future();
 }
 
-void CostExplorerClient::GetReservationCoverageAsync(const GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetReservationCoverageAsyncHelper(CostExplorerClient const * const clientThis, const GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReservationCoverageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetReservationCoverage(request), context);
 }
 
-void CostExplorerClient::GetReservationCoverageAsyncHelper(const GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetReservationCoverageAsync(const GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetReservationCoverage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetReservationCoverageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetReservationPurchaseRecommendationOutcome CostExplorerClient::GetReservationPurchaseRecommendation(const GetReservationPurchaseRecommendationRequest& request) const
@@ -533,14 +533,14 @@ GetReservationPurchaseRecommendationOutcomeCallable CostExplorerClient::GetReser
   return task->get_future();
 }
 
-void CostExplorerClient::GetReservationPurchaseRecommendationAsync(const GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetReservationPurchaseRecommendationAsyncHelper(CostExplorerClient const * const clientThis, const GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReservationPurchaseRecommendationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetReservationPurchaseRecommendation(request), context);
 }
 
-void CostExplorerClient::GetReservationPurchaseRecommendationAsyncHelper(const GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetReservationPurchaseRecommendationAsync(const GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetReservationPurchaseRecommendation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetReservationPurchaseRecommendationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetReservationUtilizationOutcome CostExplorerClient::GetReservationUtilization(const GetReservationUtilizationRequest& request) const
@@ -557,14 +557,14 @@ GetReservationUtilizationOutcomeCallable CostExplorerClient::GetReservationUtili
   return task->get_future();
 }
 
-void CostExplorerClient::GetReservationUtilizationAsync(const GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetReservationUtilizationAsyncHelper(CostExplorerClient const * const clientThis, const GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReservationUtilizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetReservationUtilization(request), context);
 }
 
-void CostExplorerClient::GetReservationUtilizationAsyncHelper(const GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetReservationUtilizationAsync(const GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetReservationUtilization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetReservationUtilizationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRightsizingRecommendationOutcome CostExplorerClient::GetRightsizingRecommendation(const GetRightsizingRecommendationRequest& request) const
@@ -581,14 +581,14 @@ GetRightsizingRecommendationOutcomeCallable CostExplorerClient::GetRightsizingRe
   return task->get_future();
 }
 
-void CostExplorerClient::GetRightsizingRecommendationAsync(const GetRightsizingRecommendationRequest& request, const GetRightsizingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetRightsizingRecommendationAsyncHelper(CostExplorerClient const * const clientThis, const GetRightsizingRecommendationRequest& request, const GetRightsizingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRightsizingRecommendationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRightsizingRecommendation(request), context);
 }
 
-void CostExplorerClient::GetRightsizingRecommendationAsyncHelper(const GetRightsizingRecommendationRequest& request, const GetRightsizingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetRightsizingRecommendationAsync(const GetRightsizingRecommendationRequest& request, const GetRightsizingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRightsizingRecommendation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetRightsizingRecommendationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSavingsPlansCoverageOutcome CostExplorerClient::GetSavingsPlansCoverage(const GetSavingsPlansCoverageRequest& request) const
@@ -605,14 +605,14 @@ GetSavingsPlansCoverageOutcomeCallable CostExplorerClient::GetSavingsPlansCovera
   return task->get_future();
 }
 
-void CostExplorerClient::GetSavingsPlansCoverageAsync(const GetSavingsPlansCoverageRequest& request, const GetSavingsPlansCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetSavingsPlansCoverageAsyncHelper(CostExplorerClient const * const clientThis, const GetSavingsPlansCoverageRequest& request, const GetSavingsPlansCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSavingsPlansCoverageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSavingsPlansCoverage(request), context);
 }
 
-void CostExplorerClient::GetSavingsPlansCoverageAsyncHelper(const GetSavingsPlansCoverageRequest& request, const GetSavingsPlansCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetSavingsPlansCoverageAsync(const GetSavingsPlansCoverageRequest& request, const GetSavingsPlansCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSavingsPlansCoverage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetSavingsPlansCoverageAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSavingsPlansPurchaseRecommendationOutcome CostExplorerClient::GetSavingsPlansPurchaseRecommendation(const GetSavingsPlansPurchaseRecommendationRequest& request) const
@@ -629,14 +629,14 @@ GetSavingsPlansPurchaseRecommendationOutcomeCallable CostExplorerClient::GetSavi
   return task->get_future();
 }
 
-void CostExplorerClient::GetSavingsPlansPurchaseRecommendationAsync(const GetSavingsPlansPurchaseRecommendationRequest& request, const GetSavingsPlansPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetSavingsPlansPurchaseRecommendationAsyncHelper(CostExplorerClient const * const clientThis, const GetSavingsPlansPurchaseRecommendationRequest& request, const GetSavingsPlansPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSavingsPlansPurchaseRecommendationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSavingsPlansPurchaseRecommendation(request), context);
 }
 
-void CostExplorerClient::GetSavingsPlansPurchaseRecommendationAsyncHelper(const GetSavingsPlansPurchaseRecommendationRequest& request, const GetSavingsPlansPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetSavingsPlansPurchaseRecommendationAsync(const GetSavingsPlansPurchaseRecommendationRequest& request, const GetSavingsPlansPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSavingsPlansPurchaseRecommendation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetSavingsPlansPurchaseRecommendationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSavingsPlansUtilizationOutcome CostExplorerClient::GetSavingsPlansUtilization(const GetSavingsPlansUtilizationRequest& request) const
@@ -653,14 +653,14 @@ GetSavingsPlansUtilizationOutcomeCallable CostExplorerClient::GetSavingsPlansUti
   return task->get_future();
 }
 
-void CostExplorerClient::GetSavingsPlansUtilizationAsync(const GetSavingsPlansUtilizationRequest& request, const GetSavingsPlansUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetSavingsPlansUtilizationAsyncHelper(CostExplorerClient const * const clientThis, const GetSavingsPlansUtilizationRequest& request, const GetSavingsPlansUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSavingsPlansUtilizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSavingsPlansUtilization(request), context);
 }
 
-void CostExplorerClient::GetSavingsPlansUtilizationAsyncHelper(const GetSavingsPlansUtilizationRequest& request, const GetSavingsPlansUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetSavingsPlansUtilizationAsync(const GetSavingsPlansUtilizationRequest& request, const GetSavingsPlansUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSavingsPlansUtilization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetSavingsPlansUtilizationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSavingsPlansUtilizationDetailsOutcome CostExplorerClient::GetSavingsPlansUtilizationDetails(const GetSavingsPlansUtilizationDetailsRequest& request) const
@@ -677,14 +677,14 @@ GetSavingsPlansUtilizationDetailsOutcomeCallable CostExplorerClient::GetSavingsP
   return task->get_future();
 }
 
-void CostExplorerClient::GetSavingsPlansUtilizationDetailsAsync(const GetSavingsPlansUtilizationDetailsRequest& request, const GetSavingsPlansUtilizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetSavingsPlansUtilizationDetailsAsyncHelper(CostExplorerClient const * const clientThis, const GetSavingsPlansUtilizationDetailsRequest& request, const GetSavingsPlansUtilizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSavingsPlansUtilizationDetailsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSavingsPlansUtilizationDetails(request), context);
 }
 
-void CostExplorerClient::GetSavingsPlansUtilizationDetailsAsyncHelper(const GetSavingsPlansUtilizationDetailsRequest& request, const GetSavingsPlansUtilizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetSavingsPlansUtilizationDetailsAsync(const GetSavingsPlansUtilizationDetailsRequest& request, const GetSavingsPlansUtilizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSavingsPlansUtilizationDetails(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetSavingsPlansUtilizationDetailsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTagsOutcome CostExplorerClient::GetTags(const GetTagsRequest& request) const
@@ -701,14 +701,14 @@ GetTagsOutcomeCallable CostExplorerClient::GetTagsCallable(const GetTagsRequest&
   return task->get_future();
 }
 
-void CostExplorerClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetTagsAsyncHelper(CostExplorerClient const * const clientThis, const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTags(request), context);
 }
 
-void CostExplorerClient::GetTagsAsyncHelper(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUsageForecastOutcome CostExplorerClient::GetUsageForecast(const GetUsageForecastRequest& request) const
@@ -725,14 +725,14 @@ GetUsageForecastOutcomeCallable CostExplorerClient::GetUsageForecastCallable(con
   return task->get_future();
 }
 
-void CostExplorerClient::GetUsageForecastAsync(const GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientGetUsageForecastAsyncHelper(CostExplorerClient const * const clientThis, const GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUsageForecastAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUsageForecast(request), context);
 }
 
-void CostExplorerClient::GetUsageForecastAsyncHelper(const GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::GetUsageForecastAsync(const GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUsageForecast(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientGetUsageForecastAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCostAllocationTagsOutcome CostExplorerClient::ListCostAllocationTags(const ListCostAllocationTagsRequest& request) const
@@ -749,14 +749,14 @@ ListCostAllocationTagsOutcomeCallable CostExplorerClient::ListCostAllocationTags
   return task->get_future();
 }
 
-void CostExplorerClient::ListCostAllocationTagsAsync(const ListCostAllocationTagsRequest& request, const ListCostAllocationTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientListCostAllocationTagsAsyncHelper(CostExplorerClient const * const clientThis, const ListCostAllocationTagsRequest& request, const ListCostAllocationTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCostAllocationTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCostAllocationTags(request), context);
 }
 
-void CostExplorerClient::ListCostAllocationTagsAsyncHelper(const ListCostAllocationTagsRequest& request, const ListCostAllocationTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::ListCostAllocationTagsAsync(const ListCostAllocationTagsRequest& request, const ListCostAllocationTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCostAllocationTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientListCostAllocationTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCostCategoryDefinitionsOutcome CostExplorerClient::ListCostCategoryDefinitions(const ListCostCategoryDefinitionsRequest& request) const
@@ -773,14 +773,14 @@ ListCostCategoryDefinitionsOutcomeCallable CostExplorerClient::ListCostCategoryD
   return task->get_future();
 }
 
-void CostExplorerClient::ListCostCategoryDefinitionsAsync(const ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientListCostCategoryDefinitionsAsyncHelper(CostExplorerClient const * const clientThis, const ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCostCategoryDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCostCategoryDefinitions(request), context);
 }
 
-void CostExplorerClient::ListCostCategoryDefinitionsAsyncHelper(const ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::ListCostCategoryDefinitionsAsync(const ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCostCategoryDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientListCostCategoryDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome CostExplorerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -797,14 +797,14 @@ ListTagsForResourceOutcomeCallable CostExplorerClient::ListTagsForResourceCallab
   return task->get_future();
 }
 
-void CostExplorerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientListTagsForResourceAsyncHelper(CostExplorerClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void CostExplorerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ProvideAnomalyFeedbackOutcome CostExplorerClient::ProvideAnomalyFeedback(const ProvideAnomalyFeedbackRequest& request) const
@@ -821,14 +821,14 @@ ProvideAnomalyFeedbackOutcomeCallable CostExplorerClient::ProvideAnomalyFeedback
   return task->get_future();
 }
 
-void CostExplorerClient::ProvideAnomalyFeedbackAsync(const ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientProvideAnomalyFeedbackAsyncHelper(CostExplorerClient const * const clientThis, const ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ProvideAnomalyFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ProvideAnomalyFeedback(request), context);
 }
 
-void CostExplorerClient::ProvideAnomalyFeedbackAsyncHelper(const ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::ProvideAnomalyFeedbackAsync(const ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ProvideAnomalyFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientProvideAnomalyFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CostExplorerClient::TagResource(const TagResourceRequest& request) const
@@ -845,14 +845,14 @@ TagResourceOutcomeCallable CostExplorerClient::TagResourceCallable(const TagReso
   return task->get_future();
 }
 
-void CostExplorerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientTagResourceAsyncHelper(CostExplorerClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CostExplorerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CostExplorerClient::UntagResource(const UntagResourceRequest& request) const
@@ -869,14 +869,14 @@ UntagResourceOutcomeCallable CostExplorerClient::UntagResourceCallable(const Unt
   return task->get_future();
 }
 
-void CostExplorerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientUntagResourceAsyncHelper(CostExplorerClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CostExplorerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAnomalyMonitorOutcome CostExplorerClient::UpdateAnomalyMonitor(const UpdateAnomalyMonitorRequest& request) const
@@ -893,14 +893,14 @@ UpdateAnomalyMonitorOutcomeCallable CostExplorerClient::UpdateAnomalyMonitorCall
   return task->get_future();
 }
 
-void CostExplorerClient::UpdateAnomalyMonitorAsync(const UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientUpdateAnomalyMonitorAsyncHelper(CostExplorerClient const * const clientThis, const UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAnomalyMonitorAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAnomalyMonitor(request), context);
 }
 
-void CostExplorerClient::UpdateAnomalyMonitorAsyncHelper(const UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::UpdateAnomalyMonitorAsync(const UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAnomalyMonitor(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientUpdateAnomalyMonitorAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAnomalySubscriptionOutcome CostExplorerClient::UpdateAnomalySubscription(const UpdateAnomalySubscriptionRequest& request) const
@@ -917,14 +917,14 @@ UpdateAnomalySubscriptionOutcomeCallable CostExplorerClient::UpdateAnomalySubscr
   return task->get_future();
 }
 
-void CostExplorerClient::UpdateAnomalySubscriptionAsync(const UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientUpdateAnomalySubscriptionAsyncHelper(CostExplorerClient const * const clientThis, const UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAnomalySubscriptionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAnomalySubscription(request), context);
 }
 
-void CostExplorerClient::UpdateAnomalySubscriptionAsyncHelper(const UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::UpdateAnomalySubscriptionAsync(const UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAnomalySubscription(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientUpdateAnomalySubscriptionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCostAllocationTagsStatusOutcome CostExplorerClient::UpdateCostAllocationTagsStatus(const UpdateCostAllocationTagsStatusRequest& request) const
@@ -941,14 +941,14 @@ UpdateCostAllocationTagsStatusOutcomeCallable CostExplorerClient::UpdateCostAllo
   return task->get_future();
 }
 
-void CostExplorerClient::UpdateCostAllocationTagsStatusAsync(const UpdateCostAllocationTagsStatusRequest& request, const UpdateCostAllocationTagsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientUpdateCostAllocationTagsStatusAsyncHelper(CostExplorerClient const * const clientThis, const UpdateCostAllocationTagsStatusRequest& request, const UpdateCostAllocationTagsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCostAllocationTagsStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCostAllocationTagsStatus(request), context);
 }
 
-void CostExplorerClient::UpdateCostAllocationTagsStatusAsyncHelper(const UpdateCostAllocationTagsStatusRequest& request, const UpdateCostAllocationTagsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::UpdateCostAllocationTagsStatusAsync(const UpdateCostAllocationTagsStatusRequest& request, const UpdateCostAllocationTagsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCostAllocationTagsStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientUpdateCostAllocationTagsStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateCostCategoryDefinitionOutcome CostExplorerClient::UpdateCostCategoryDefinition(const UpdateCostCategoryDefinitionRequest& request) const
@@ -965,13 +965,13 @@ UpdateCostCategoryDefinitionOutcomeCallable CostExplorerClient::UpdateCostCatego
   return task->get_future();
 }
 
-void CostExplorerClient::UpdateCostCategoryDefinitionAsync(const UpdateCostCategoryDefinitionRequest& request, const UpdateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClientUpdateCostCategoryDefinitionAsyncHelper(CostExplorerClient const * const clientThis, const UpdateCostCategoryDefinitionRequest& request, const UpdateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCostCategoryDefinitionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateCostCategoryDefinition(request), context);
 }
 
-void CostExplorerClient::UpdateCostCategoryDefinitionAsyncHelper(const UpdateCostCategoryDefinitionRequest& request, const UpdateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CostExplorerClient::UpdateCostCategoryDefinitionAsync(const UpdateCostCategoryDefinitionRequest& request, const UpdateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateCostCategoryDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CostExplorerClientUpdateCostCategoryDefinitionAsyncHelper( this, request, handler, context ); } );
 }
 

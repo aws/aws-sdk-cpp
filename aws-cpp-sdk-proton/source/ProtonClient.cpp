@@ -189,14 +189,14 @@ AcceptEnvironmentAccountConnectionOutcomeCallable ProtonClient::AcceptEnvironmen
   return task->get_future();
 }
 
-void ProtonClient::AcceptEnvironmentAccountConnectionAsync(const AcceptEnvironmentAccountConnectionRequest& request, const AcceptEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientAcceptEnvironmentAccountConnectionAsyncHelper(ProtonClient const * const clientThis, const AcceptEnvironmentAccountConnectionRequest& request, const AcceptEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptEnvironmentAccountConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptEnvironmentAccountConnection(request), context);
 }
 
-void ProtonClient::AcceptEnvironmentAccountConnectionAsyncHelper(const AcceptEnvironmentAccountConnectionRequest& request, const AcceptEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::AcceptEnvironmentAccountConnectionAsync(const AcceptEnvironmentAccountConnectionRequest& request, const AcceptEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptEnvironmentAccountConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientAcceptEnvironmentAccountConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelComponentDeploymentOutcome ProtonClient::CancelComponentDeployment(const CancelComponentDeploymentRequest& request) const
@@ -213,14 +213,14 @@ CancelComponentDeploymentOutcomeCallable ProtonClient::CancelComponentDeployment
   return task->get_future();
 }
 
-void ProtonClient::CancelComponentDeploymentAsync(const CancelComponentDeploymentRequest& request, const CancelComponentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCancelComponentDeploymentAsyncHelper(ProtonClient const * const clientThis, const CancelComponentDeploymentRequest& request, const CancelComponentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelComponentDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelComponentDeployment(request), context);
 }
 
-void ProtonClient::CancelComponentDeploymentAsyncHelper(const CancelComponentDeploymentRequest& request, const CancelComponentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CancelComponentDeploymentAsync(const CancelComponentDeploymentRequest& request, const CancelComponentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelComponentDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCancelComponentDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelEnvironmentDeploymentOutcome ProtonClient::CancelEnvironmentDeployment(const CancelEnvironmentDeploymentRequest& request) const
@@ -237,14 +237,14 @@ CancelEnvironmentDeploymentOutcomeCallable ProtonClient::CancelEnvironmentDeploy
   return task->get_future();
 }
 
-void ProtonClient::CancelEnvironmentDeploymentAsync(const CancelEnvironmentDeploymentRequest& request, const CancelEnvironmentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCancelEnvironmentDeploymentAsyncHelper(ProtonClient const * const clientThis, const CancelEnvironmentDeploymentRequest& request, const CancelEnvironmentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelEnvironmentDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelEnvironmentDeployment(request), context);
 }
 
-void ProtonClient::CancelEnvironmentDeploymentAsyncHelper(const CancelEnvironmentDeploymentRequest& request, const CancelEnvironmentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CancelEnvironmentDeploymentAsync(const CancelEnvironmentDeploymentRequest& request, const CancelEnvironmentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelEnvironmentDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCancelEnvironmentDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelServiceInstanceDeploymentOutcome ProtonClient::CancelServiceInstanceDeployment(const CancelServiceInstanceDeploymentRequest& request) const
@@ -261,14 +261,14 @@ CancelServiceInstanceDeploymentOutcomeCallable ProtonClient::CancelServiceInstan
   return task->get_future();
 }
 
-void ProtonClient::CancelServiceInstanceDeploymentAsync(const CancelServiceInstanceDeploymentRequest& request, const CancelServiceInstanceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCancelServiceInstanceDeploymentAsyncHelper(ProtonClient const * const clientThis, const CancelServiceInstanceDeploymentRequest& request, const CancelServiceInstanceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelServiceInstanceDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelServiceInstanceDeployment(request), context);
 }
 
-void ProtonClient::CancelServiceInstanceDeploymentAsyncHelper(const CancelServiceInstanceDeploymentRequest& request, const CancelServiceInstanceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CancelServiceInstanceDeploymentAsync(const CancelServiceInstanceDeploymentRequest& request, const CancelServiceInstanceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelServiceInstanceDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCancelServiceInstanceDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 CancelServicePipelineDeploymentOutcome ProtonClient::CancelServicePipelineDeployment(const CancelServicePipelineDeploymentRequest& request) const
@@ -285,14 +285,14 @@ CancelServicePipelineDeploymentOutcomeCallable ProtonClient::CancelServicePipeli
   return task->get_future();
 }
 
-void ProtonClient::CancelServicePipelineDeploymentAsync(const CancelServicePipelineDeploymentRequest& request, const CancelServicePipelineDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCancelServicePipelineDeploymentAsyncHelper(ProtonClient const * const clientThis, const CancelServicePipelineDeploymentRequest& request, const CancelServicePipelineDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelServicePipelineDeploymentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelServicePipelineDeployment(request), context);
 }
 
-void ProtonClient::CancelServicePipelineDeploymentAsyncHelper(const CancelServicePipelineDeploymentRequest& request, const CancelServicePipelineDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CancelServicePipelineDeploymentAsync(const CancelServicePipelineDeploymentRequest& request, const CancelServicePipelineDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelServicePipelineDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCancelServicePipelineDeploymentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateComponentOutcome ProtonClient::CreateComponent(const CreateComponentRequest& request) const
@@ -309,14 +309,14 @@ CreateComponentOutcomeCallable ProtonClient::CreateComponentCallable(const Creat
   return task->get_future();
 }
 
-void ProtonClient::CreateComponentAsync(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCreateComponentAsyncHelper(ProtonClient const * const clientThis, const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateComponent(request), context);
 }
 
-void ProtonClient::CreateComponentAsyncHelper(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CreateComponentAsync(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCreateComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEnvironmentOutcome ProtonClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
@@ -333,14 +333,14 @@ CreateEnvironmentOutcomeCallable ProtonClient::CreateEnvironmentCallable(const C
   return task->get_future();
 }
 
-void ProtonClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCreateEnvironmentAsyncHelper(ProtonClient const * const clientThis, const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEnvironment(request), context);
 }
 
-void ProtonClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCreateEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEnvironmentAccountConnectionOutcome ProtonClient::CreateEnvironmentAccountConnection(const CreateEnvironmentAccountConnectionRequest& request) const
@@ -357,14 +357,14 @@ CreateEnvironmentAccountConnectionOutcomeCallable ProtonClient::CreateEnvironmen
   return task->get_future();
 }
 
-void ProtonClient::CreateEnvironmentAccountConnectionAsync(const CreateEnvironmentAccountConnectionRequest& request, const CreateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCreateEnvironmentAccountConnectionAsyncHelper(ProtonClient const * const clientThis, const CreateEnvironmentAccountConnectionRequest& request, const CreateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentAccountConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEnvironmentAccountConnection(request), context);
 }
 
-void ProtonClient::CreateEnvironmentAccountConnectionAsyncHelper(const CreateEnvironmentAccountConnectionRequest& request, const CreateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CreateEnvironmentAccountConnectionAsync(const CreateEnvironmentAccountConnectionRequest& request, const CreateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEnvironmentAccountConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCreateEnvironmentAccountConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEnvironmentTemplateOutcome ProtonClient::CreateEnvironmentTemplate(const CreateEnvironmentTemplateRequest& request) const
@@ -381,14 +381,14 @@ CreateEnvironmentTemplateOutcomeCallable ProtonClient::CreateEnvironmentTemplate
   return task->get_future();
 }
 
-void ProtonClient::CreateEnvironmentTemplateAsync(const CreateEnvironmentTemplateRequest& request, const CreateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCreateEnvironmentTemplateAsyncHelper(ProtonClient const * const clientThis, const CreateEnvironmentTemplateRequest& request, const CreateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEnvironmentTemplate(request), context);
 }
 
-void ProtonClient::CreateEnvironmentTemplateAsyncHelper(const CreateEnvironmentTemplateRequest& request, const CreateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CreateEnvironmentTemplateAsync(const CreateEnvironmentTemplateRequest& request, const CreateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEnvironmentTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCreateEnvironmentTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateEnvironmentTemplateVersionOutcome ProtonClient::CreateEnvironmentTemplateVersion(const CreateEnvironmentTemplateVersionRequest& request) const
@@ -405,14 +405,14 @@ CreateEnvironmentTemplateVersionOutcomeCallable ProtonClient::CreateEnvironmentT
   return task->get_future();
 }
 
-void ProtonClient::CreateEnvironmentTemplateVersionAsync(const CreateEnvironmentTemplateVersionRequest& request, const CreateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCreateEnvironmentTemplateVersionAsyncHelper(ProtonClient const * const clientThis, const CreateEnvironmentTemplateVersionRequest& request, const CreateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEnvironmentTemplateVersion(request), context);
 }
 
-void ProtonClient::CreateEnvironmentTemplateVersionAsyncHelper(const CreateEnvironmentTemplateVersionRequest& request, const CreateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CreateEnvironmentTemplateVersionAsync(const CreateEnvironmentTemplateVersionRequest& request, const CreateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEnvironmentTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCreateEnvironmentTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRepositoryOutcome ProtonClient::CreateRepository(const CreateRepositoryRequest& request) const
@@ -429,14 +429,14 @@ CreateRepositoryOutcomeCallable ProtonClient::CreateRepositoryCallable(const Cre
   return task->get_future();
 }
 
-void ProtonClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCreateRepositoryAsyncHelper(ProtonClient const * const clientThis, const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRepository(request), context);
 }
 
-void ProtonClient::CreateRepositoryAsyncHelper(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCreateRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateServiceOutcome ProtonClient::CreateService(const CreateServiceRequest& request) const
@@ -453,14 +453,14 @@ CreateServiceOutcomeCallable ProtonClient::CreateServiceCallable(const CreateSer
   return task->get_future();
 }
 
-void ProtonClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCreateServiceAsyncHelper(ProtonClient const * const clientThis, const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateService(request), context);
 }
 
-void ProtonClient::CreateServiceAsyncHelper(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCreateServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateServiceTemplateOutcome ProtonClient::CreateServiceTemplate(const CreateServiceTemplateRequest& request) const
@@ -477,14 +477,14 @@ CreateServiceTemplateOutcomeCallable ProtonClient::CreateServiceTemplateCallable
   return task->get_future();
 }
 
-void ProtonClient::CreateServiceTemplateAsync(const CreateServiceTemplateRequest& request, const CreateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCreateServiceTemplateAsyncHelper(ProtonClient const * const clientThis, const CreateServiceTemplateRequest& request, const CreateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateServiceTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateServiceTemplate(request), context);
 }
 
-void ProtonClient::CreateServiceTemplateAsyncHelper(const CreateServiceTemplateRequest& request, const CreateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CreateServiceTemplateAsync(const CreateServiceTemplateRequest& request, const CreateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateServiceTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCreateServiceTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateServiceTemplateVersionOutcome ProtonClient::CreateServiceTemplateVersion(const CreateServiceTemplateVersionRequest& request) const
@@ -501,14 +501,14 @@ CreateServiceTemplateVersionOutcomeCallable ProtonClient::CreateServiceTemplateV
   return task->get_future();
 }
 
-void ProtonClient::CreateServiceTemplateVersionAsync(const CreateServiceTemplateVersionRequest& request, const CreateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCreateServiceTemplateVersionAsyncHelper(ProtonClient const * const clientThis, const CreateServiceTemplateVersionRequest& request, const CreateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateServiceTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateServiceTemplateVersion(request), context);
 }
 
-void ProtonClient::CreateServiceTemplateVersionAsyncHelper(const CreateServiceTemplateVersionRequest& request, const CreateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CreateServiceTemplateVersionAsync(const CreateServiceTemplateVersionRequest& request, const CreateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateServiceTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCreateServiceTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTemplateSyncConfigOutcome ProtonClient::CreateTemplateSyncConfig(const CreateTemplateSyncConfigRequest& request) const
@@ -525,14 +525,14 @@ CreateTemplateSyncConfigOutcomeCallable ProtonClient::CreateTemplateSyncConfigCa
   return task->get_future();
 }
 
-void ProtonClient::CreateTemplateSyncConfigAsync(const CreateTemplateSyncConfigRequest& request, const CreateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientCreateTemplateSyncConfigAsyncHelper(ProtonClient const * const clientThis, const CreateTemplateSyncConfigRequest& request, const CreateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTemplateSyncConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTemplateSyncConfig(request), context);
 }
 
-void ProtonClient::CreateTemplateSyncConfigAsyncHelper(const CreateTemplateSyncConfigRequest& request, const CreateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::CreateTemplateSyncConfigAsync(const CreateTemplateSyncConfigRequest& request, const CreateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTemplateSyncConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientCreateTemplateSyncConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteComponentOutcome ProtonClient::DeleteComponent(const DeleteComponentRequest& request) const
@@ -549,14 +549,14 @@ DeleteComponentOutcomeCallable ProtonClient::DeleteComponentCallable(const Delet
   return task->get_future();
 }
 
-void ProtonClient::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientDeleteComponentAsyncHelper(ProtonClient const * const clientThis, const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteComponent(request), context);
 }
 
-void ProtonClient::DeleteComponentAsyncHelper(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientDeleteComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEnvironmentOutcome ProtonClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
@@ -573,14 +573,14 @@ DeleteEnvironmentOutcomeCallable ProtonClient::DeleteEnvironmentCallable(const D
   return task->get_future();
 }
 
-void ProtonClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientDeleteEnvironmentAsyncHelper(ProtonClient const * const clientThis, const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEnvironment(request), context);
 }
 
-void ProtonClient::DeleteEnvironmentAsyncHelper(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientDeleteEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEnvironmentAccountConnectionOutcome ProtonClient::DeleteEnvironmentAccountConnection(const DeleteEnvironmentAccountConnectionRequest& request) const
@@ -597,14 +597,14 @@ DeleteEnvironmentAccountConnectionOutcomeCallable ProtonClient::DeleteEnvironmen
   return task->get_future();
 }
 
-void ProtonClient::DeleteEnvironmentAccountConnectionAsync(const DeleteEnvironmentAccountConnectionRequest& request, const DeleteEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientDeleteEnvironmentAccountConnectionAsyncHelper(ProtonClient const * const clientThis, const DeleteEnvironmentAccountConnectionRequest& request, const DeleteEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentAccountConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEnvironmentAccountConnection(request), context);
 }
 
-void ProtonClient::DeleteEnvironmentAccountConnectionAsyncHelper(const DeleteEnvironmentAccountConnectionRequest& request, const DeleteEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::DeleteEnvironmentAccountConnectionAsync(const DeleteEnvironmentAccountConnectionRequest& request, const DeleteEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEnvironmentAccountConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientDeleteEnvironmentAccountConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEnvironmentTemplateOutcome ProtonClient::DeleteEnvironmentTemplate(const DeleteEnvironmentTemplateRequest& request) const
@@ -621,14 +621,14 @@ DeleteEnvironmentTemplateOutcomeCallable ProtonClient::DeleteEnvironmentTemplate
   return task->get_future();
 }
 
-void ProtonClient::DeleteEnvironmentTemplateAsync(const DeleteEnvironmentTemplateRequest& request, const DeleteEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientDeleteEnvironmentTemplateAsyncHelper(ProtonClient const * const clientThis, const DeleteEnvironmentTemplateRequest& request, const DeleteEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEnvironmentTemplate(request), context);
 }
 
-void ProtonClient::DeleteEnvironmentTemplateAsyncHelper(const DeleteEnvironmentTemplateRequest& request, const DeleteEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::DeleteEnvironmentTemplateAsync(const DeleteEnvironmentTemplateRequest& request, const DeleteEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEnvironmentTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientDeleteEnvironmentTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEnvironmentTemplateVersionOutcome ProtonClient::DeleteEnvironmentTemplateVersion(const DeleteEnvironmentTemplateVersionRequest& request) const
@@ -645,14 +645,14 @@ DeleteEnvironmentTemplateVersionOutcomeCallable ProtonClient::DeleteEnvironmentT
   return task->get_future();
 }
 
-void ProtonClient::DeleteEnvironmentTemplateVersionAsync(const DeleteEnvironmentTemplateVersionRequest& request, const DeleteEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientDeleteEnvironmentTemplateVersionAsyncHelper(ProtonClient const * const clientThis, const DeleteEnvironmentTemplateVersionRequest& request, const DeleteEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEnvironmentTemplateVersion(request), context);
 }
 
-void ProtonClient::DeleteEnvironmentTemplateVersionAsyncHelper(const DeleteEnvironmentTemplateVersionRequest& request, const DeleteEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::DeleteEnvironmentTemplateVersionAsync(const DeleteEnvironmentTemplateVersionRequest& request, const DeleteEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEnvironmentTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientDeleteEnvironmentTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRepositoryOutcome ProtonClient::DeleteRepository(const DeleteRepositoryRequest& request) const
@@ -669,14 +669,14 @@ DeleteRepositoryOutcomeCallable ProtonClient::DeleteRepositoryCallable(const Del
   return task->get_future();
 }
 
-void ProtonClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientDeleteRepositoryAsyncHelper(ProtonClient const * const clientThis, const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRepository(request), context);
 }
 
-void ProtonClient::DeleteRepositoryAsyncHelper(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientDeleteRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteServiceOutcome ProtonClient::DeleteService(const DeleteServiceRequest& request) const
@@ -693,14 +693,14 @@ DeleteServiceOutcomeCallable ProtonClient::DeleteServiceCallable(const DeleteSer
   return task->get_future();
 }
 
-void ProtonClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientDeleteServiceAsyncHelper(ProtonClient const * const clientThis, const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteService(request), context);
 }
 
-void ProtonClient::DeleteServiceAsyncHelper(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientDeleteServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteServiceTemplateOutcome ProtonClient::DeleteServiceTemplate(const DeleteServiceTemplateRequest& request) const
@@ -717,14 +717,14 @@ DeleteServiceTemplateOutcomeCallable ProtonClient::DeleteServiceTemplateCallable
   return task->get_future();
 }
 
-void ProtonClient::DeleteServiceTemplateAsync(const DeleteServiceTemplateRequest& request, const DeleteServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientDeleteServiceTemplateAsyncHelper(ProtonClient const * const clientThis, const DeleteServiceTemplateRequest& request, const DeleteServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteServiceTemplate(request), context);
 }
 
-void ProtonClient::DeleteServiceTemplateAsyncHelper(const DeleteServiceTemplateRequest& request, const DeleteServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::DeleteServiceTemplateAsync(const DeleteServiceTemplateRequest& request, const DeleteServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteServiceTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientDeleteServiceTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteServiceTemplateVersionOutcome ProtonClient::DeleteServiceTemplateVersion(const DeleteServiceTemplateVersionRequest& request) const
@@ -741,14 +741,14 @@ DeleteServiceTemplateVersionOutcomeCallable ProtonClient::DeleteServiceTemplateV
   return task->get_future();
 }
 
-void ProtonClient::DeleteServiceTemplateVersionAsync(const DeleteServiceTemplateVersionRequest& request, const DeleteServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientDeleteServiceTemplateVersionAsyncHelper(ProtonClient const * const clientThis, const DeleteServiceTemplateVersionRequest& request, const DeleteServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteServiceTemplateVersion(request), context);
 }
 
-void ProtonClient::DeleteServiceTemplateVersionAsyncHelper(const DeleteServiceTemplateVersionRequest& request, const DeleteServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::DeleteServiceTemplateVersionAsync(const DeleteServiceTemplateVersionRequest& request, const DeleteServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteServiceTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientDeleteServiceTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteTemplateSyncConfigOutcome ProtonClient::DeleteTemplateSyncConfig(const DeleteTemplateSyncConfigRequest& request) const
@@ -765,14 +765,14 @@ DeleteTemplateSyncConfigOutcomeCallable ProtonClient::DeleteTemplateSyncConfigCa
   return task->get_future();
 }
 
-void ProtonClient::DeleteTemplateSyncConfigAsync(const DeleteTemplateSyncConfigRequest& request, const DeleteTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientDeleteTemplateSyncConfigAsyncHelper(ProtonClient const * const clientThis, const DeleteTemplateSyncConfigRequest& request, const DeleteTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTemplateSyncConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteTemplateSyncConfig(request), context);
 }
 
-void ProtonClient::DeleteTemplateSyncConfigAsyncHelper(const DeleteTemplateSyncConfigRequest& request, const DeleteTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::DeleteTemplateSyncConfigAsync(const DeleteTemplateSyncConfigRequest& request, const DeleteTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteTemplateSyncConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientDeleteTemplateSyncConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAccountSettingsOutcome ProtonClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
@@ -789,14 +789,14 @@ GetAccountSettingsOutcomeCallable ProtonClient::GetAccountSettingsCallable(const
   return task->get_future();
 }
 
-void ProtonClient::GetAccountSettingsAsync(const GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetAccountSettingsAsyncHelper(ProtonClient const * const clientThis, const GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccountSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAccountSettings(request), context);
 }
 
-void ProtonClient::GetAccountSettingsAsyncHelper(const GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetAccountSettingsAsync(const GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAccountSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetAccountSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetComponentOutcome ProtonClient::GetComponent(const GetComponentRequest& request) const
@@ -813,14 +813,14 @@ GetComponentOutcomeCallable ProtonClient::GetComponentCallable(const GetComponen
   return task->get_future();
 }
 
-void ProtonClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetComponentAsyncHelper(ProtonClient const * const clientThis, const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetComponent(request), context);
 }
 
-void ProtonClient::GetComponentAsyncHelper(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEnvironmentOutcome ProtonClient::GetEnvironment(const GetEnvironmentRequest& request) const
@@ -837,14 +837,14 @@ GetEnvironmentOutcomeCallable ProtonClient::GetEnvironmentCallable(const GetEnvi
   return task->get_future();
 }
 
-void ProtonClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetEnvironmentAsyncHelper(ProtonClient const * const clientThis, const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEnvironment(request), context);
 }
 
-void ProtonClient::GetEnvironmentAsyncHelper(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEnvironmentAccountConnectionOutcome ProtonClient::GetEnvironmentAccountConnection(const GetEnvironmentAccountConnectionRequest& request) const
@@ -861,14 +861,14 @@ GetEnvironmentAccountConnectionOutcomeCallable ProtonClient::GetEnvironmentAccou
   return task->get_future();
 }
 
-void ProtonClient::GetEnvironmentAccountConnectionAsync(const GetEnvironmentAccountConnectionRequest& request, const GetEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetEnvironmentAccountConnectionAsyncHelper(ProtonClient const * const clientThis, const GetEnvironmentAccountConnectionRequest& request, const GetEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnvironmentAccountConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEnvironmentAccountConnection(request), context);
 }
 
-void ProtonClient::GetEnvironmentAccountConnectionAsyncHelper(const GetEnvironmentAccountConnectionRequest& request, const GetEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetEnvironmentAccountConnectionAsync(const GetEnvironmentAccountConnectionRequest& request, const GetEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEnvironmentAccountConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetEnvironmentAccountConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEnvironmentTemplateOutcome ProtonClient::GetEnvironmentTemplate(const GetEnvironmentTemplateRequest& request) const
@@ -885,14 +885,14 @@ GetEnvironmentTemplateOutcomeCallable ProtonClient::GetEnvironmentTemplateCallab
   return task->get_future();
 }
 
-void ProtonClient::GetEnvironmentTemplateAsync(const GetEnvironmentTemplateRequest& request, const GetEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetEnvironmentTemplateAsyncHelper(ProtonClient const * const clientThis, const GetEnvironmentTemplateRequest& request, const GetEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnvironmentTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEnvironmentTemplate(request), context);
 }
 
-void ProtonClient::GetEnvironmentTemplateAsyncHelper(const GetEnvironmentTemplateRequest& request, const GetEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetEnvironmentTemplateAsync(const GetEnvironmentTemplateRequest& request, const GetEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEnvironmentTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetEnvironmentTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetEnvironmentTemplateVersionOutcome ProtonClient::GetEnvironmentTemplateVersion(const GetEnvironmentTemplateVersionRequest& request) const
@@ -909,14 +909,14 @@ GetEnvironmentTemplateVersionOutcomeCallable ProtonClient::GetEnvironmentTemplat
   return task->get_future();
 }
 
-void ProtonClient::GetEnvironmentTemplateVersionAsync(const GetEnvironmentTemplateVersionRequest& request, const GetEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetEnvironmentTemplateVersionAsyncHelper(ProtonClient const * const clientThis, const GetEnvironmentTemplateVersionRequest& request, const GetEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnvironmentTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetEnvironmentTemplateVersion(request), context);
 }
 
-void ProtonClient::GetEnvironmentTemplateVersionAsyncHelper(const GetEnvironmentTemplateVersionRequest& request, const GetEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetEnvironmentTemplateVersionAsync(const GetEnvironmentTemplateVersionRequest& request, const GetEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetEnvironmentTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetEnvironmentTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRepositoryOutcome ProtonClient::GetRepository(const GetRepositoryRequest& request) const
@@ -933,14 +933,14 @@ GetRepositoryOutcomeCallable ProtonClient::GetRepositoryCallable(const GetReposi
   return task->get_future();
 }
 
-void ProtonClient::GetRepositoryAsync(const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetRepositoryAsyncHelper(ProtonClient const * const clientThis, const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRepositoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRepository(request), context);
 }
 
-void ProtonClient::GetRepositoryAsyncHelper(const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetRepositoryAsync(const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRepository(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetRepositoryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRepositorySyncStatusOutcome ProtonClient::GetRepositorySyncStatus(const GetRepositorySyncStatusRequest& request) const
@@ -957,14 +957,14 @@ GetRepositorySyncStatusOutcomeCallable ProtonClient::GetRepositorySyncStatusCall
   return task->get_future();
 }
 
-void ProtonClient::GetRepositorySyncStatusAsync(const GetRepositorySyncStatusRequest& request, const GetRepositorySyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetRepositorySyncStatusAsyncHelper(ProtonClient const * const clientThis, const GetRepositorySyncStatusRequest& request, const GetRepositorySyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRepositorySyncStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRepositorySyncStatus(request), context);
 }
 
-void ProtonClient::GetRepositorySyncStatusAsyncHelper(const GetRepositorySyncStatusRequest& request, const GetRepositorySyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetRepositorySyncStatusAsync(const GetRepositorySyncStatusRequest& request, const GetRepositorySyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRepositorySyncStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetRepositorySyncStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceOutcome ProtonClient::GetService(const GetServiceRequest& request) const
@@ -981,14 +981,14 @@ GetServiceOutcomeCallable ProtonClient::GetServiceCallable(const GetServiceReque
   return task->get_future();
 }
 
-void ProtonClient::GetServiceAsync(const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetServiceAsyncHelper(ProtonClient const * const clientThis, const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetService(request), context);
 }
 
-void ProtonClient::GetServiceAsyncHelper(const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetServiceAsync(const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceInstanceOutcome ProtonClient::GetServiceInstance(const GetServiceInstanceRequest& request) const
@@ -1005,14 +1005,14 @@ GetServiceInstanceOutcomeCallable ProtonClient::GetServiceInstanceCallable(const
   return task->get_future();
 }
 
-void ProtonClient::GetServiceInstanceAsync(const GetServiceInstanceRequest& request, const GetServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetServiceInstanceAsyncHelper(ProtonClient const * const clientThis, const GetServiceInstanceRequest& request, const GetServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServiceInstance(request), context);
 }
 
-void ProtonClient::GetServiceInstanceAsyncHelper(const GetServiceInstanceRequest& request, const GetServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetServiceInstanceAsync(const GetServiceInstanceRequest& request, const GetServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServiceInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetServiceInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceTemplateOutcome ProtonClient::GetServiceTemplate(const GetServiceTemplateRequest& request) const
@@ -1029,14 +1029,14 @@ GetServiceTemplateOutcomeCallable ProtonClient::GetServiceTemplateCallable(const
   return task->get_future();
 }
 
-void ProtonClient::GetServiceTemplateAsync(const GetServiceTemplateRequest& request, const GetServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetServiceTemplateAsyncHelper(ProtonClient const * const clientThis, const GetServiceTemplateRequest& request, const GetServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServiceTemplate(request), context);
 }
 
-void ProtonClient::GetServiceTemplateAsyncHelper(const GetServiceTemplateRequest& request, const GetServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetServiceTemplateAsync(const GetServiceTemplateRequest& request, const GetServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServiceTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetServiceTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetServiceTemplateVersionOutcome ProtonClient::GetServiceTemplateVersion(const GetServiceTemplateVersionRequest& request) const
@@ -1053,14 +1053,14 @@ GetServiceTemplateVersionOutcomeCallable ProtonClient::GetServiceTemplateVersion
   return task->get_future();
 }
 
-void ProtonClient::GetServiceTemplateVersionAsync(const GetServiceTemplateVersionRequest& request, const GetServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetServiceTemplateVersionAsyncHelper(ProtonClient const * const clientThis, const GetServiceTemplateVersionRequest& request, const GetServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetServiceTemplateVersion(request), context);
 }
 
-void ProtonClient::GetServiceTemplateVersionAsyncHelper(const GetServiceTemplateVersionRequest& request, const GetServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetServiceTemplateVersionAsync(const GetServiceTemplateVersionRequest& request, const GetServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetServiceTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetServiceTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTemplateSyncConfigOutcome ProtonClient::GetTemplateSyncConfig(const GetTemplateSyncConfigRequest& request) const
@@ -1077,14 +1077,14 @@ GetTemplateSyncConfigOutcomeCallable ProtonClient::GetTemplateSyncConfigCallable
   return task->get_future();
 }
 
-void ProtonClient::GetTemplateSyncConfigAsync(const GetTemplateSyncConfigRequest& request, const GetTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetTemplateSyncConfigAsyncHelper(ProtonClient const * const clientThis, const GetTemplateSyncConfigRequest& request, const GetTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTemplateSyncConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTemplateSyncConfig(request), context);
 }
 
-void ProtonClient::GetTemplateSyncConfigAsyncHelper(const GetTemplateSyncConfigRequest& request, const GetTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetTemplateSyncConfigAsync(const GetTemplateSyncConfigRequest& request, const GetTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTemplateSyncConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetTemplateSyncConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTemplateSyncStatusOutcome ProtonClient::GetTemplateSyncStatus(const GetTemplateSyncStatusRequest& request) const
@@ -1101,14 +1101,14 @@ GetTemplateSyncStatusOutcomeCallable ProtonClient::GetTemplateSyncStatusCallable
   return task->get_future();
 }
 
-void ProtonClient::GetTemplateSyncStatusAsync(const GetTemplateSyncStatusRequest& request, const GetTemplateSyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientGetTemplateSyncStatusAsyncHelper(ProtonClient const * const clientThis, const GetTemplateSyncStatusRequest& request, const GetTemplateSyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTemplateSyncStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTemplateSyncStatus(request), context);
 }
 
-void ProtonClient::GetTemplateSyncStatusAsyncHelper(const GetTemplateSyncStatusRequest& request, const GetTemplateSyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::GetTemplateSyncStatusAsync(const GetTemplateSyncStatusRequest& request, const GetTemplateSyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTemplateSyncStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientGetTemplateSyncStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListComponentOutputsOutcome ProtonClient::ListComponentOutputs(const ListComponentOutputsRequest& request) const
@@ -1125,14 +1125,14 @@ ListComponentOutputsOutcomeCallable ProtonClient::ListComponentOutputsCallable(c
   return task->get_future();
 }
 
-void ProtonClient::ListComponentOutputsAsync(const ListComponentOutputsRequest& request, const ListComponentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListComponentOutputsAsyncHelper(ProtonClient const * const clientThis, const ListComponentOutputsRequest& request, const ListComponentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentOutputsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListComponentOutputs(request), context);
 }
 
-void ProtonClient::ListComponentOutputsAsyncHelper(const ListComponentOutputsRequest& request, const ListComponentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListComponentOutputsAsync(const ListComponentOutputsRequest& request, const ListComponentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListComponentOutputs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListComponentOutputsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListComponentProvisionedResourcesOutcome ProtonClient::ListComponentProvisionedResources(const ListComponentProvisionedResourcesRequest& request) const
@@ -1149,14 +1149,14 @@ ListComponentProvisionedResourcesOutcomeCallable ProtonClient::ListComponentProv
   return task->get_future();
 }
 
-void ProtonClient::ListComponentProvisionedResourcesAsync(const ListComponentProvisionedResourcesRequest& request, const ListComponentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListComponentProvisionedResourcesAsyncHelper(ProtonClient const * const clientThis, const ListComponentProvisionedResourcesRequest& request, const ListComponentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentProvisionedResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListComponentProvisionedResources(request), context);
 }
 
-void ProtonClient::ListComponentProvisionedResourcesAsyncHelper(const ListComponentProvisionedResourcesRequest& request, const ListComponentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListComponentProvisionedResourcesAsync(const ListComponentProvisionedResourcesRequest& request, const ListComponentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListComponentProvisionedResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListComponentProvisionedResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListComponentsOutcome ProtonClient::ListComponents(const ListComponentsRequest& request) const
@@ -1173,14 +1173,14 @@ ListComponentsOutcomeCallable ProtonClient::ListComponentsCallable(const ListCom
   return task->get_future();
 }
 
-void ProtonClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListComponentsAsyncHelper(ProtonClient const * const clientThis, const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListComponents(request), context);
 }
 
-void ProtonClient::ListComponentsAsyncHelper(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListComponents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListComponentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEnvironmentAccountConnectionsOutcome ProtonClient::ListEnvironmentAccountConnections(const ListEnvironmentAccountConnectionsRequest& request) const
@@ -1197,14 +1197,14 @@ ListEnvironmentAccountConnectionsOutcomeCallable ProtonClient::ListEnvironmentAc
   return task->get_future();
 }
 
-void ProtonClient::ListEnvironmentAccountConnectionsAsync(const ListEnvironmentAccountConnectionsRequest& request, const ListEnvironmentAccountConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListEnvironmentAccountConnectionsAsyncHelper(ProtonClient const * const clientThis, const ListEnvironmentAccountConnectionsRequest& request, const ListEnvironmentAccountConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentAccountConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEnvironmentAccountConnections(request), context);
 }
 
-void ProtonClient::ListEnvironmentAccountConnectionsAsyncHelper(const ListEnvironmentAccountConnectionsRequest& request, const ListEnvironmentAccountConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListEnvironmentAccountConnectionsAsync(const ListEnvironmentAccountConnectionsRequest& request, const ListEnvironmentAccountConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEnvironmentAccountConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListEnvironmentAccountConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEnvironmentOutputsOutcome ProtonClient::ListEnvironmentOutputs(const ListEnvironmentOutputsRequest& request) const
@@ -1221,14 +1221,14 @@ ListEnvironmentOutputsOutcomeCallable ProtonClient::ListEnvironmentOutputsCallab
   return task->get_future();
 }
 
-void ProtonClient::ListEnvironmentOutputsAsync(const ListEnvironmentOutputsRequest& request, const ListEnvironmentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListEnvironmentOutputsAsyncHelper(ProtonClient const * const clientThis, const ListEnvironmentOutputsRequest& request, const ListEnvironmentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentOutputsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEnvironmentOutputs(request), context);
 }
 
-void ProtonClient::ListEnvironmentOutputsAsyncHelper(const ListEnvironmentOutputsRequest& request, const ListEnvironmentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListEnvironmentOutputsAsync(const ListEnvironmentOutputsRequest& request, const ListEnvironmentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEnvironmentOutputs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListEnvironmentOutputsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEnvironmentProvisionedResourcesOutcome ProtonClient::ListEnvironmentProvisionedResources(const ListEnvironmentProvisionedResourcesRequest& request) const
@@ -1245,14 +1245,14 @@ ListEnvironmentProvisionedResourcesOutcomeCallable ProtonClient::ListEnvironment
   return task->get_future();
 }
 
-void ProtonClient::ListEnvironmentProvisionedResourcesAsync(const ListEnvironmentProvisionedResourcesRequest& request, const ListEnvironmentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListEnvironmentProvisionedResourcesAsyncHelper(ProtonClient const * const clientThis, const ListEnvironmentProvisionedResourcesRequest& request, const ListEnvironmentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentProvisionedResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEnvironmentProvisionedResources(request), context);
 }
 
-void ProtonClient::ListEnvironmentProvisionedResourcesAsyncHelper(const ListEnvironmentProvisionedResourcesRequest& request, const ListEnvironmentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListEnvironmentProvisionedResourcesAsync(const ListEnvironmentProvisionedResourcesRequest& request, const ListEnvironmentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEnvironmentProvisionedResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListEnvironmentProvisionedResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEnvironmentTemplateVersionsOutcome ProtonClient::ListEnvironmentTemplateVersions(const ListEnvironmentTemplateVersionsRequest& request) const
@@ -1269,14 +1269,14 @@ ListEnvironmentTemplateVersionsOutcomeCallable ProtonClient::ListEnvironmentTemp
   return task->get_future();
 }
 
-void ProtonClient::ListEnvironmentTemplateVersionsAsync(const ListEnvironmentTemplateVersionsRequest& request, const ListEnvironmentTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListEnvironmentTemplateVersionsAsyncHelper(ProtonClient const * const clientThis, const ListEnvironmentTemplateVersionsRequest& request, const ListEnvironmentTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentTemplateVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEnvironmentTemplateVersions(request), context);
 }
 
-void ProtonClient::ListEnvironmentTemplateVersionsAsyncHelper(const ListEnvironmentTemplateVersionsRequest& request, const ListEnvironmentTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListEnvironmentTemplateVersionsAsync(const ListEnvironmentTemplateVersionsRequest& request, const ListEnvironmentTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEnvironmentTemplateVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListEnvironmentTemplateVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEnvironmentTemplatesOutcome ProtonClient::ListEnvironmentTemplates(const ListEnvironmentTemplatesRequest& request) const
@@ -1293,14 +1293,14 @@ ListEnvironmentTemplatesOutcomeCallable ProtonClient::ListEnvironmentTemplatesCa
   return task->get_future();
 }
 
-void ProtonClient::ListEnvironmentTemplatesAsync(const ListEnvironmentTemplatesRequest& request, const ListEnvironmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListEnvironmentTemplatesAsyncHelper(ProtonClient const * const clientThis, const ListEnvironmentTemplatesRequest& request, const ListEnvironmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEnvironmentTemplates(request), context);
 }
 
-void ProtonClient::ListEnvironmentTemplatesAsyncHelper(const ListEnvironmentTemplatesRequest& request, const ListEnvironmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListEnvironmentTemplatesAsync(const ListEnvironmentTemplatesRequest& request, const ListEnvironmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEnvironmentTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListEnvironmentTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEnvironmentsOutcome ProtonClient::ListEnvironments(const ListEnvironmentsRequest& request) const
@@ -1317,14 +1317,14 @@ ListEnvironmentsOutcomeCallable ProtonClient::ListEnvironmentsCallable(const Lis
   return task->get_future();
 }
 
-void ProtonClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListEnvironmentsAsyncHelper(ProtonClient const * const clientThis, const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEnvironments(request), context);
 }
 
-void ProtonClient::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEnvironments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListEnvironmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRepositoriesOutcome ProtonClient::ListRepositories(const ListRepositoriesRequest& request) const
@@ -1341,14 +1341,14 @@ ListRepositoriesOutcomeCallable ProtonClient::ListRepositoriesCallable(const Lis
   return task->get_future();
 }
 
-void ProtonClient::ListRepositoriesAsync(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListRepositoriesAsyncHelper(ProtonClient const * const clientThis, const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRepositoriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRepositories(request), context);
 }
 
-void ProtonClient::ListRepositoriesAsyncHelper(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListRepositoriesAsync(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRepositories(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListRepositoriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRepositorySyncDefinitionsOutcome ProtonClient::ListRepositorySyncDefinitions(const ListRepositorySyncDefinitionsRequest& request) const
@@ -1365,14 +1365,14 @@ ListRepositorySyncDefinitionsOutcomeCallable ProtonClient::ListRepositorySyncDef
   return task->get_future();
 }
 
-void ProtonClient::ListRepositorySyncDefinitionsAsync(const ListRepositorySyncDefinitionsRequest& request, const ListRepositorySyncDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListRepositorySyncDefinitionsAsyncHelper(ProtonClient const * const clientThis, const ListRepositorySyncDefinitionsRequest& request, const ListRepositorySyncDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRepositorySyncDefinitionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRepositorySyncDefinitions(request), context);
 }
 
-void ProtonClient::ListRepositorySyncDefinitionsAsyncHelper(const ListRepositorySyncDefinitionsRequest& request, const ListRepositorySyncDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListRepositorySyncDefinitionsAsync(const ListRepositorySyncDefinitionsRequest& request, const ListRepositorySyncDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRepositorySyncDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListRepositorySyncDefinitionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServiceInstanceOutputsOutcome ProtonClient::ListServiceInstanceOutputs(const ListServiceInstanceOutputsRequest& request) const
@@ -1389,14 +1389,14 @@ ListServiceInstanceOutputsOutcomeCallable ProtonClient::ListServiceInstanceOutpu
   return task->get_future();
 }
 
-void ProtonClient::ListServiceInstanceOutputsAsync(const ListServiceInstanceOutputsRequest& request, const ListServiceInstanceOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListServiceInstanceOutputsAsyncHelper(ProtonClient const * const clientThis, const ListServiceInstanceOutputsRequest& request, const ListServiceInstanceOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServiceInstanceOutputsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServiceInstanceOutputs(request), context);
 }
 
-void ProtonClient::ListServiceInstanceOutputsAsyncHelper(const ListServiceInstanceOutputsRequest& request, const ListServiceInstanceOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListServiceInstanceOutputsAsync(const ListServiceInstanceOutputsRequest& request, const ListServiceInstanceOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServiceInstanceOutputs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListServiceInstanceOutputsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServiceInstanceProvisionedResourcesOutcome ProtonClient::ListServiceInstanceProvisionedResources(const ListServiceInstanceProvisionedResourcesRequest& request) const
@@ -1413,14 +1413,14 @@ ListServiceInstanceProvisionedResourcesOutcomeCallable ProtonClient::ListService
   return task->get_future();
 }
 
-void ProtonClient::ListServiceInstanceProvisionedResourcesAsync(const ListServiceInstanceProvisionedResourcesRequest& request, const ListServiceInstanceProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListServiceInstanceProvisionedResourcesAsyncHelper(ProtonClient const * const clientThis, const ListServiceInstanceProvisionedResourcesRequest& request, const ListServiceInstanceProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServiceInstanceProvisionedResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServiceInstanceProvisionedResources(request), context);
 }
 
-void ProtonClient::ListServiceInstanceProvisionedResourcesAsyncHelper(const ListServiceInstanceProvisionedResourcesRequest& request, const ListServiceInstanceProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListServiceInstanceProvisionedResourcesAsync(const ListServiceInstanceProvisionedResourcesRequest& request, const ListServiceInstanceProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServiceInstanceProvisionedResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListServiceInstanceProvisionedResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServiceInstancesOutcome ProtonClient::ListServiceInstances(const ListServiceInstancesRequest& request) const
@@ -1437,14 +1437,14 @@ ListServiceInstancesOutcomeCallable ProtonClient::ListServiceInstancesCallable(c
   return task->get_future();
 }
 
-void ProtonClient::ListServiceInstancesAsync(const ListServiceInstancesRequest& request, const ListServiceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListServiceInstancesAsyncHelper(ProtonClient const * const clientThis, const ListServiceInstancesRequest& request, const ListServiceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServiceInstancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServiceInstances(request), context);
 }
 
-void ProtonClient::ListServiceInstancesAsyncHelper(const ListServiceInstancesRequest& request, const ListServiceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListServiceInstancesAsync(const ListServiceInstancesRequest& request, const ListServiceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServiceInstances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListServiceInstancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServicePipelineOutputsOutcome ProtonClient::ListServicePipelineOutputs(const ListServicePipelineOutputsRequest& request) const
@@ -1461,14 +1461,14 @@ ListServicePipelineOutputsOutcomeCallable ProtonClient::ListServicePipelineOutpu
   return task->get_future();
 }
 
-void ProtonClient::ListServicePipelineOutputsAsync(const ListServicePipelineOutputsRequest& request, const ListServicePipelineOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListServicePipelineOutputsAsyncHelper(ProtonClient const * const clientThis, const ListServicePipelineOutputsRequest& request, const ListServicePipelineOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServicePipelineOutputsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServicePipelineOutputs(request), context);
 }
 
-void ProtonClient::ListServicePipelineOutputsAsyncHelper(const ListServicePipelineOutputsRequest& request, const ListServicePipelineOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListServicePipelineOutputsAsync(const ListServicePipelineOutputsRequest& request, const ListServicePipelineOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServicePipelineOutputs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListServicePipelineOutputsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServicePipelineProvisionedResourcesOutcome ProtonClient::ListServicePipelineProvisionedResources(const ListServicePipelineProvisionedResourcesRequest& request) const
@@ -1485,14 +1485,14 @@ ListServicePipelineProvisionedResourcesOutcomeCallable ProtonClient::ListService
   return task->get_future();
 }
 
-void ProtonClient::ListServicePipelineProvisionedResourcesAsync(const ListServicePipelineProvisionedResourcesRequest& request, const ListServicePipelineProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListServicePipelineProvisionedResourcesAsyncHelper(ProtonClient const * const clientThis, const ListServicePipelineProvisionedResourcesRequest& request, const ListServicePipelineProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServicePipelineProvisionedResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServicePipelineProvisionedResources(request), context);
 }
 
-void ProtonClient::ListServicePipelineProvisionedResourcesAsyncHelper(const ListServicePipelineProvisionedResourcesRequest& request, const ListServicePipelineProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListServicePipelineProvisionedResourcesAsync(const ListServicePipelineProvisionedResourcesRequest& request, const ListServicePipelineProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServicePipelineProvisionedResources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListServicePipelineProvisionedResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServiceTemplateVersionsOutcome ProtonClient::ListServiceTemplateVersions(const ListServiceTemplateVersionsRequest& request) const
@@ -1509,14 +1509,14 @@ ListServiceTemplateVersionsOutcomeCallable ProtonClient::ListServiceTemplateVers
   return task->get_future();
 }
 
-void ProtonClient::ListServiceTemplateVersionsAsync(const ListServiceTemplateVersionsRequest& request, const ListServiceTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListServiceTemplateVersionsAsyncHelper(ProtonClient const * const clientThis, const ListServiceTemplateVersionsRequest& request, const ListServiceTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServiceTemplateVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServiceTemplateVersions(request), context);
 }
 
-void ProtonClient::ListServiceTemplateVersionsAsyncHelper(const ListServiceTemplateVersionsRequest& request, const ListServiceTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListServiceTemplateVersionsAsync(const ListServiceTemplateVersionsRequest& request, const ListServiceTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServiceTemplateVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListServiceTemplateVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServiceTemplatesOutcome ProtonClient::ListServiceTemplates(const ListServiceTemplatesRequest& request) const
@@ -1533,14 +1533,14 @@ ListServiceTemplatesOutcomeCallable ProtonClient::ListServiceTemplatesCallable(c
   return task->get_future();
 }
 
-void ProtonClient::ListServiceTemplatesAsync(const ListServiceTemplatesRequest& request, const ListServiceTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListServiceTemplatesAsyncHelper(ProtonClient const * const clientThis, const ListServiceTemplatesRequest& request, const ListServiceTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServiceTemplatesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServiceTemplates(request), context);
 }
 
-void ProtonClient::ListServiceTemplatesAsyncHelper(const ListServiceTemplatesRequest& request, const ListServiceTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListServiceTemplatesAsync(const ListServiceTemplatesRequest& request, const ListServiceTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServiceTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListServiceTemplatesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListServicesOutcome ProtonClient::ListServices(const ListServicesRequest& request) const
@@ -1557,14 +1557,14 @@ ListServicesOutcomeCallable ProtonClient::ListServicesCallable(const ListService
   return task->get_future();
 }
 
-void ProtonClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListServicesAsyncHelper(ProtonClient const * const clientThis, const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListServices(request), context);
 }
 
-void ProtonClient::ListServicesAsyncHelper(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListServices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListServicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome ProtonClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1581,14 +1581,14 @@ ListTagsForResourceOutcomeCallable ProtonClient::ListTagsForResourceCallable(con
   return task->get_future();
 }
 
-void ProtonClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientListTagsForResourceAsyncHelper(ProtonClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void ProtonClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 NotifyResourceDeploymentStatusChangeOutcome ProtonClient::NotifyResourceDeploymentStatusChange(const NotifyResourceDeploymentStatusChangeRequest& request) const
@@ -1605,14 +1605,14 @@ NotifyResourceDeploymentStatusChangeOutcomeCallable ProtonClient::NotifyResource
   return task->get_future();
 }
 
-void ProtonClient::NotifyResourceDeploymentStatusChangeAsync(const NotifyResourceDeploymentStatusChangeRequest& request, const NotifyResourceDeploymentStatusChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientNotifyResourceDeploymentStatusChangeAsyncHelper(ProtonClient const * const clientThis, const NotifyResourceDeploymentStatusChangeRequest& request, const NotifyResourceDeploymentStatusChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->NotifyResourceDeploymentStatusChangeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->NotifyResourceDeploymentStatusChange(request), context);
 }
 
-void ProtonClient::NotifyResourceDeploymentStatusChangeAsyncHelper(const NotifyResourceDeploymentStatusChangeRequest& request, const NotifyResourceDeploymentStatusChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::NotifyResourceDeploymentStatusChangeAsync(const NotifyResourceDeploymentStatusChangeRequest& request, const NotifyResourceDeploymentStatusChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, NotifyResourceDeploymentStatusChange(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientNotifyResourceDeploymentStatusChangeAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectEnvironmentAccountConnectionOutcome ProtonClient::RejectEnvironmentAccountConnection(const RejectEnvironmentAccountConnectionRequest& request) const
@@ -1629,14 +1629,14 @@ RejectEnvironmentAccountConnectionOutcomeCallable ProtonClient::RejectEnvironmen
   return task->get_future();
 }
 
-void ProtonClient::RejectEnvironmentAccountConnectionAsync(const RejectEnvironmentAccountConnectionRequest& request, const RejectEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientRejectEnvironmentAccountConnectionAsyncHelper(ProtonClient const * const clientThis, const RejectEnvironmentAccountConnectionRequest& request, const RejectEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectEnvironmentAccountConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectEnvironmentAccountConnection(request), context);
 }
 
-void ProtonClient::RejectEnvironmentAccountConnectionAsyncHelper(const RejectEnvironmentAccountConnectionRequest& request, const RejectEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::RejectEnvironmentAccountConnectionAsync(const RejectEnvironmentAccountConnectionRequest& request, const RejectEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectEnvironmentAccountConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientRejectEnvironmentAccountConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome ProtonClient::TagResource(const TagResourceRequest& request) const
@@ -1653,14 +1653,14 @@ TagResourceOutcomeCallable ProtonClient::TagResourceCallable(const TagResourceRe
   return task->get_future();
 }
 
-void ProtonClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientTagResourceAsyncHelper(ProtonClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void ProtonClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome ProtonClient::UntagResource(const UntagResourceRequest& request) const
@@ -1677,14 +1677,14 @@ UntagResourceOutcomeCallable ProtonClient::UntagResourceCallable(const UntagReso
   return task->get_future();
 }
 
-void ProtonClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUntagResourceAsyncHelper(ProtonClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void ProtonClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAccountSettingsOutcome ProtonClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const
@@ -1701,14 +1701,14 @@ UpdateAccountSettingsOutcomeCallable ProtonClient::UpdateAccountSettingsCallable
   return task->get_future();
 }
 
-void ProtonClient::UpdateAccountSettingsAsync(const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateAccountSettingsAsyncHelper(ProtonClient const * const clientThis, const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccountSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAccountSettings(request), context);
 }
 
-void ProtonClient::UpdateAccountSettingsAsyncHelper(const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateAccountSettingsAsync(const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAccountSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateAccountSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateComponentOutcome ProtonClient::UpdateComponent(const UpdateComponentRequest& request) const
@@ -1725,14 +1725,14 @@ UpdateComponentOutcomeCallable ProtonClient::UpdateComponentCallable(const Updat
   return task->get_future();
 }
 
-void ProtonClient::UpdateComponentAsync(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateComponentAsyncHelper(ProtonClient const * const clientThis, const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateComponentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateComponent(request), context);
 }
 
-void ProtonClient::UpdateComponentAsyncHelper(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateComponentAsync(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateComponent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateComponentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEnvironmentOutcome ProtonClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
@@ -1749,14 +1749,14 @@ UpdateEnvironmentOutcomeCallable ProtonClient::UpdateEnvironmentCallable(const U
   return task->get_future();
 }
 
-void ProtonClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateEnvironmentAsyncHelper(ProtonClient const * const clientThis, const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnvironmentAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEnvironment(request), context);
 }
 
-void ProtonClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateEnvironmentAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEnvironmentAccountConnectionOutcome ProtonClient::UpdateEnvironmentAccountConnection(const UpdateEnvironmentAccountConnectionRequest& request) const
@@ -1773,14 +1773,14 @@ UpdateEnvironmentAccountConnectionOutcomeCallable ProtonClient::UpdateEnvironmen
   return task->get_future();
 }
 
-void ProtonClient::UpdateEnvironmentAccountConnectionAsync(const UpdateEnvironmentAccountConnectionRequest& request, const UpdateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateEnvironmentAccountConnectionAsyncHelper(ProtonClient const * const clientThis, const UpdateEnvironmentAccountConnectionRequest& request, const UpdateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnvironmentAccountConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEnvironmentAccountConnection(request), context);
 }
 
-void ProtonClient::UpdateEnvironmentAccountConnectionAsyncHelper(const UpdateEnvironmentAccountConnectionRequest& request, const UpdateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateEnvironmentAccountConnectionAsync(const UpdateEnvironmentAccountConnectionRequest& request, const UpdateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEnvironmentAccountConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateEnvironmentAccountConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEnvironmentTemplateOutcome ProtonClient::UpdateEnvironmentTemplate(const UpdateEnvironmentTemplateRequest& request) const
@@ -1797,14 +1797,14 @@ UpdateEnvironmentTemplateOutcomeCallable ProtonClient::UpdateEnvironmentTemplate
   return task->get_future();
 }
 
-void ProtonClient::UpdateEnvironmentTemplateAsync(const UpdateEnvironmentTemplateRequest& request, const UpdateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateEnvironmentTemplateAsyncHelper(ProtonClient const * const clientThis, const UpdateEnvironmentTemplateRequest& request, const UpdateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnvironmentTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEnvironmentTemplate(request), context);
 }
 
-void ProtonClient::UpdateEnvironmentTemplateAsyncHelper(const UpdateEnvironmentTemplateRequest& request, const UpdateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateEnvironmentTemplateAsync(const UpdateEnvironmentTemplateRequest& request, const UpdateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEnvironmentTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateEnvironmentTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateEnvironmentTemplateVersionOutcome ProtonClient::UpdateEnvironmentTemplateVersion(const UpdateEnvironmentTemplateVersionRequest& request) const
@@ -1821,14 +1821,14 @@ UpdateEnvironmentTemplateVersionOutcomeCallable ProtonClient::UpdateEnvironmentT
   return task->get_future();
 }
 
-void ProtonClient::UpdateEnvironmentTemplateVersionAsync(const UpdateEnvironmentTemplateVersionRequest& request, const UpdateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateEnvironmentTemplateVersionAsyncHelper(ProtonClient const * const clientThis, const UpdateEnvironmentTemplateVersionRequest& request, const UpdateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnvironmentTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateEnvironmentTemplateVersion(request), context);
 }
 
-void ProtonClient::UpdateEnvironmentTemplateVersionAsyncHelper(const UpdateEnvironmentTemplateVersionRequest& request, const UpdateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateEnvironmentTemplateVersionAsync(const UpdateEnvironmentTemplateVersionRequest& request, const UpdateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateEnvironmentTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateEnvironmentTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServiceOutcome ProtonClient::UpdateService(const UpdateServiceRequest& request) const
@@ -1845,14 +1845,14 @@ UpdateServiceOutcomeCallable ProtonClient::UpdateServiceCallable(const UpdateSer
   return task->get_future();
 }
 
-void ProtonClient::UpdateServiceAsync(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateServiceAsyncHelper(ProtonClient const * const clientThis, const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateService(request), context);
 }
 
-void ProtonClient::UpdateServiceAsyncHelper(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateServiceAsync(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateService(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateServiceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServiceInstanceOutcome ProtonClient::UpdateServiceInstance(const UpdateServiceInstanceRequest& request) const
@@ -1869,14 +1869,14 @@ UpdateServiceInstanceOutcomeCallable ProtonClient::UpdateServiceInstanceCallable
   return task->get_future();
 }
 
-void ProtonClient::UpdateServiceInstanceAsync(const UpdateServiceInstanceRequest& request, const UpdateServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateServiceInstanceAsyncHelper(ProtonClient const * const clientThis, const UpdateServiceInstanceRequest& request, const UpdateServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceInstanceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServiceInstance(request), context);
 }
 
-void ProtonClient::UpdateServiceInstanceAsyncHelper(const UpdateServiceInstanceRequest& request, const UpdateServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateServiceInstanceAsync(const UpdateServiceInstanceRequest& request, const UpdateServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServiceInstance(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateServiceInstanceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServicePipelineOutcome ProtonClient::UpdateServicePipeline(const UpdateServicePipelineRequest& request) const
@@ -1893,14 +1893,14 @@ UpdateServicePipelineOutcomeCallable ProtonClient::UpdateServicePipelineCallable
   return task->get_future();
 }
 
-void ProtonClient::UpdateServicePipelineAsync(const UpdateServicePipelineRequest& request, const UpdateServicePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateServicePipelineAsyncHelper(ProtonClient const * const clientThis, const UpdateServicePipelineRequest& request, const UpdateServicePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServicePipelineAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServicePipeline(request), context);
 }
 
-void ProtonClient::UpdateServicePipelineAsyncHelper(const UpdateServicePipelineRequest& request, const UpdateServicePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateServicePipelineAsync(const UpdateServicePipelineRequest& request, const UpdateServicePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServicePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateServicePipelineAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServiceTemplateOutcome ProtonClient::UpdateServiceTemplate(const UpdateServiceTemplateRequest& request) const
@@ -1917,14 +1917,14 @@ UpdateServiceTemplateOutcomeCallable ProtonClient::UpdateServiceTemplateCallable
   return task->get_future();
 }
 
-void ProtonClient::UpdateServiceTemplateAsync(const UpdateServiceTemplateRequest& request, const UpdateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateServiceTemplateAsyncHelper(ProtonClient const * const clientThis, const UpdateServiceTemplateRequest& request, const UpdateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceTemplateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServiceTemplate(request), context);
 }
 
-void ProtonClient::UpdateServiceTemplateAsyncHelper(const UpdateServiceTemplateRequest& request, const UpdateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateServiceTemplateAsync(const UpdateServiceTemplateRequest& request, const UpdateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServiceTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateServiceTemplateAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateServiceTemplateVersionOutcome ProtonClient::UpdateServiceTemplateVersion(const UpdateServiceTemplateVersionRequest& request) const
@@ -1941,14 +1941,14 @@ UpdateServiceTemplateVersionOutcomeCallable ProtonClient::UpdateServiceTemplateV
   return task->get_future();
 }
 
-void ProtonClient::UpdateServiceTemplateVersionAsync(const UpdateServiceTemplateVersionRequest& request, const UpdateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateServiceTemplateVersionAsyncHelper(ProtonClient const * const clientThis, const UpdateServiceTemplateVersionRequest& request, const UpdateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceTemplateVersionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateServiceTemplateVersion(request), context);
 }
 
-void ProtonClient::UpdateServiceTemplateVersionAsyncHelper(const UpdateServiceTemplateVersionRequest& request, const UpdateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateServiceTemplateVersionAsync(const UpdateServiceTemplateVersionRequest& request, const UpdateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateServiceTemplateVersion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateServiceTemplateVersionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateTemplateSyncConfigOutcome ProtonClient::UpdateTemplateSyncConfig(const UpdateTemplateSyncConfigRequest& request) const
@@ -1965,13 +1965,13 @@ UpdateTemplateSyncConfigOutcomeCallable ProtonClient::UpdateTemplateSyncConfigCa
   return task->get_future();
 }
 
-void ProtonClient::UpdateTemplateSyncConfigAsync(const UpdateTemplateSyncConfigRequest& request, const UpdateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClientUpdateTemplateSyncConfigAsyncHelper(ProtonClient const * const clientThis, const UpdateTemplateSyncConfigRequest& request, const UpdateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTemplateSyncConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateTemplateSyncConfig(request), context);
 }
 
-void ProtonClient::UpdateTemplateSyncConfigAsyncHelper(const UpdateTemplateSyncConfigRequest& request, const UpdateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ProtonClient::UpdateTemplateSyncConfigAsync(const UpdateTemplateSyncConfigRequest& request, const UpdateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateTemplateSyncConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ProtonClientUpdateTemplateSyncConfigAsyncHelper( this, request, handler, context ); } );
 }
 

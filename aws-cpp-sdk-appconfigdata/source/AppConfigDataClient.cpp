@@ -122,14 +122,14 @@ GetLatestConfigurationOutcomeCallable AppConfigDataClient::GetLatestConfiguratio
   return task->get_future();
 }
 
-void AppConfigDataClient::GetLatestConfigurationAsync(const GetLatestConfigurationRequest& request, const GetLatestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigDataClientGetLatestConfigurationAsyncHelper(AppConfigDataClient const * const clientThis, const GetLatestConfigurationRequest& request, const GetLatestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLatestConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetLatestConfiguration(request), context);
 }
 
-void AppConfigDataClient::GetLatestConfigurationAsyncHelper(const GetLatestConfigurationRequest& request, const GetLatestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigDataClient::GetLatestConfigurationAsync(const GetLatestConfigurationRequest& request, const GetLatestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetLatestConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigDataClientGetLatestConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 StartConfigurationSessionOutcome AppConfigDataClient::StartConfigurationSession(const StartConfigurationSessionRequest& request) const
@@ -147,13 +147,13 @@ StartConfigurationSessionOutcomeCallable AppConfigDataClient::StartConfiguration
   return task->get_future();
 }
 
-void AppConfigDataClient::StartConfigurationSessionAsync(const StartConfigurationSessionRequest& request, const StartConfigurationSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigDataClientStartConfigurationSessionAsyncHelper(AppConfigDataClient const * const clientThis, const StartConfigurationSessionRequest& request, const StartConfigurationSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartConfigurationSessionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartConfigurationSession(request), context);
 }
 
-void AppConfigDataClient::StartConfigurationSessionAsyncHelper(const StartConfigurationSessionRequest& request, const StartConfigurationSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AppConfigDataClient::StartConfigurationSessionAsync(const StartConfigurationSessionRequest& request, const StartConfigurationSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartConfigurationSession(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AppConfigDataClientStartConfigurationSessionAsyncHelper( this, request, handler, context ); } );
 }
 

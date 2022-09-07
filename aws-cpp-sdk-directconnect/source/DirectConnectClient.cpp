@@ -170,14 +170,14 @@ AcceptDirectConnectGatewayAssociationProposalOutcomeCallable DirectConnectClient
   return task->get_future();
 }
 
-void DirectConnectClient::AcceptDirectConnectGatewayAssociationProposalAsync(const AcceptDirectConnectGatewayAssociationProposalRequest& request, const AcceptDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientAcceptDirectConnectGatewayAssociationProposalAsyncHelper(DirectConnectClient const * const clientThis, const AcceptDirectConnectGatewayAssociationProposalRequest& request, const AcceptDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptDirectConnectGatewayAssociationProposalAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptDirectConnectGatewayAssociationProposal(request), context);
 }
 
-void DirectConnectClient::AcceptDirectConnectGatewayAssociationProposalAsyncHelper(const AcceptDirectConnectGatewayAssociationProposalRequest& request, const AcceptDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::AcceptDirectConnectGatewayAssociationProposalAsync(const AcceptDirectConnectGatewayAssociationProposalRequest& request, const AcceptDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptDirectConnectGatewayAssociationProposal(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientAcceptDirectConnectGatewayAssociationProposalAsyncHelper( this, request, handler, context ); } );
 }
 
 AllocateHostedConnectionOutcome DirectConnectClient::AllocateHostedConnection(const AllocateHostedConnectionRequest& request) const
@@ -194,14 +194,14 @@ AllocateHostedConnectionOutcomeCallable DirectConnectClient::AllocateHostedConne
   return task->get_future();
 }
 
-void DirectConnectClient::AllocateHostedConnectionAsync(const AllocateHostedConnectionRequest& request, const AllocateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientAllocateHostedConnectionAsyncHelper(DirectConnectClient const * const clientThis, const AllocateHostedConnectionRequest& request, const AllocateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AllocateHostedConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AllocateHostedConnection(request), context);
 }
 
-void DirectConnectClient::AllocateHostedConnectionAsyncHelper(const AllocateHostedConnectionRequest& request, const AllocateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::AllocateHostedConnectionAsync(const AllocateHostedConnectionRequest& request, const AllocateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AllocateHostedConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientAllocateHostedConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 AllocatePrivateVirtualInterfaceOutcome DirectConnectClient::AllocatePrivateVirtualInterface(const AllocatePrivateVirtualInterfaceRequest& request) const
@@ -218,14 +218,14 @@ AllocatePrivateVirtualInterfaceOutcomeCallable DirectConnectClient::AllocatePriv
   return task->get_future();
 }
 
-void DirectConnectClient::AllocatePrivateVirtualInterfaceAsync(const AllocatePrivateVirtualInterfaceRequest& request, const AllocatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientAllocatePrivateVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const AllocatePrivateVirtualInterfaceRequest& request, const AllocatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AllocatePrivateVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AllocatePrivateVirtualInterface(request), context);
 }
 
-void DirectConnectClient::AllocatePrivateVirtualInterfaceAsyncHelper(const AllocatePrivateVirtualInterfaceRequest& request, const AllocatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::AllocatePrivateVirtualInterfaceAsync(const AllocatePrivateVirtualInterfaceRequest& request, const AllocatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AllocatePrivateVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientAllocatePrivateVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 AllocatePublicVirtualInterfaceOutcome DirectConnectClient::AllocatePublicVirtualInterface(const AllocatePublicVirtualInterfaceRequest& request) const
@@ -242,14 +242,14 @@ AllocatePublicVirtualInterfaceOutcomeCallable DirectConnectClient::AllocatePubli
   return task->get_future();
 }
 
-void DirectConnectClient::AllocatePublicVirtualInterfaceAsync(const AllocatePublicVirtualInterfaceRequest& request, const AllocatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientAllocatePublicVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const AllocatePublicVirtualInterfaceRequest& request, const AllocatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AllocatePublicVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AllocatePublicVirtualInterface(request), context);
 }
 
-void DirectConnectClient::AllocatePublicVirtualInterfaceAsyncHelper(const AllocatePublicVirtualInterfaceRequest& request, const AllocatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::AllocatePublicVirtualInterfaceAsync(const AllocatePublicVirtualInterfaceRequest& request, const AllocatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AllocatePublicVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientAllocatePublicVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 AllocateTransitVirtualInterfaceOutcome DirectConnectClient::AllocateTransitVirtualInterface(const AllocateTransitVirtualInterfaceRequest& request) const
@@ -266,14 +266,14 @@ AllocateTransitVirtualInterfaceOutcomeCallable DirectConnectClient::AllocateTran
   return task->get_future();
 }
 
-void DirectConnectClient::AllocateTransitVirtualInterfaceAsync(const AllocateTransitVirtualInterfaceRequest& request, const AllocateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientAllocateTransitVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const AllocateTransitVirtualInterfaceRequest& request, const AllocateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AllocateTransitVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AllocateTransitVirtualInterface(request), context);
 }
 
-void DirectConnectClient::AllocateTransitVirtualInterfaceAsyncHelper(const AllocateTransitVirtualInterfaceRequest& request, const AllocateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::AllocateTransitVirtualInterfaceAsync(const AllocateTransitVirtualInterfaceRequest& request, const AllocateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AllocateTransitVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientAllocateTransitVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateConnectionWithLagOutcome DirectConnectClient::AssociateConnectionWithLag(const AssociateConnectionWithLagRequest& request) const
@@ -290,14 +290,14 @@ AssociateConnectionWithLagOutcomeCallable DirectConnectClient::AssociateConnecti
   return task->get_future();
 }
 
-void DirectConnectClient::AssociateConnectionWithLagAsync(const AssociateConnectionWithLagRequest& request, const AssociateConnectionWithLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientAssociateConnectionWithLagAsyncHelper(DirectConnectClient const * const clientThis, const AssociateConnectionWithLagRequest& request, const AssociateConnectionWithLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateConnectionWithLagAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateConnectionWithLag(request), context);
 }
 
-void DirectConnectClient::AssociateConnectionWithLagAsyncHelper(const AssociateConnectionWithLagRequest& request, const AssociateConnectionWithLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::AssociateConnectionWithLagAsync(const AssociateConnectionWithLagRequest& request, const AssociateConnectionWithLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateConnectionWithLag(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientAssociateConnectionWithLagAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateHostedConnectionOutcome DirectConnectClient::AssociateHostedConnection(const AssociateHostedConnectionRequest& request) const
@@ -314,14 +314,14 @@ AssociateHostedConnectionOutcomeCallable DirectConnectClient::AssociateHostedCon
   return task->get_future();
 }
 
-void DirectConnectClient::AssociateHostedConnectionAsync(const AssociateHostedConnectionRequest& request, const AssociateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientAssociateHostedConnectionAsyncHelper(DirectConnectClient const * const clientThis, const AssociateHostedConnectionRequest& request, const AssociateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateHostedConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateHostedConnection(request), context);
 }
 
-void DirectConnectClient::AssociateHostedConnectionAsyncHelper(const AssociateHostedConnectionRequest& request, const AssociateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::AssociateHostedConnectionAsync(const AssociateHostedConnectionRequest& request, const AssociateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateHostedConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientAssociateHostedConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateMacSecKeyOutcome DirectConnectClient::AssociateMacSecKey(const AssociateMacSecKeyRequest& request) const
@@ -338,14 +338,14 @@ AssociateMacSecKeyOutcomeCallable DirectConnectClient::AssociateMacSecKeyCallabl
   return task->get_future();
 }
 
-void DirectConnectClient::AssociateMacSecKeyAsync(const AssociateMacSecKeyRequest& request, const AssociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientAssociateMacSecKeyAsyncHelper(DirectConnectClient const * const clientThis, const AssociateMacSecKeyRequest& request, const AssociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateMacSecKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateMacSecKey(request), context);
 }
 
-void DirectConnectClient::AssociateMacSecKeyAsyncHelper(const AssociateMacSecKeyRequest& request, const AssociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::AssociateMacSecKeyAsync(const AssociateMacSecKeyRequest& request, const AssociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateMacSecKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientAssociateMacSecKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateVirtualInterfaceOutcome DirectConnectClient::AssociateVirtualInterface(const AssociateVirtualInterfaceRequest& request) const
@@ -362,14 +362,14 @@ AssociateVirtualInterfaceOutcomeCallable DirectConnectClient::AssociateVirtualIn
   return task->get_future();
 }
 
-void DirectConnectClient::AssociateVirtualInterfaceAsync(const AssociateVirtualInterfaceRequest& request, const AssociateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientAssociateVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const AssociateVirtualInterfaceRequest& request, const AssociateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateVirtualInterface(request), context);
 }
 
-void DirectConnectClient::AssociateVirtualInterfaceAsyncHelper(const AssociateVirtualInterfaceRequest& request, const AssociateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::AssociateVirtualInterfaceAsync(const AssociateVirtualInterfaceRequest& request, const AssociateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientAssociateVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfirmConnectionOutcome DirectConnectClient::ConfirmConnection(const ConfirmConnectionRequest& request) const
@@ -386,14 +386,14 @@ ConfirmConnectionOutcomeCallable DirectConnectClient::ConfirmConnectionCallable(
   return task->get_future();
 }
 
-void DirectConnectClient::ConfirmConnectionAsync(const ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientConfirmConnectionAsyncHelper(DirectConnectClient const * const clientThis, const ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfirmConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfirmConnection(request), context);
 }
 
-void DirectConnectClient::ConfirmConnectionAsyncHelper(const ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::ConfirmConnectionAsync(const ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfirmConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientConfirmConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfirmCustomerAgreementOutcome DirectConnectClient::ConfirmCustomerAgreement(const ConfirmCustomerAgreementRequest& request) const
@@ -410,14 +410,14 @@ ConfirmCustomerAgreementOutcomeCallable DirectConnectClient::ConfirmCustomerAgre
   return task->get_future();
 }
 
-void DirectConnectClient::ConfirmCustomerAgreementAsync(const ConfirmCustomerAgreementRequest& request, const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientConfirmCustomerAgreementAsyncHelper(DirectConnectClient const * const clientThis, const ConfirmCustomerAgreementRequest& request, const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfirmCustomerAgreementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfirmCustomerAgreement(request), context);
 }
 
-void DirectConnectClient::ConfirmCustomerAgreementAsyncHelper(const ConfirmCustomerAgreementRequest& request, const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::ConfirmCustomerAgreementAsync(const ConfirmCustomerAgreementRequest& request, const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfirmCustomerAgreement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientConfirmCustomerAgreementAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfirmPrivateVirtualInterfaceOutcome DirectConnectClient::ConfirmPrivateVirtualInterface(const ConfirmPrivateVirtualInterfaceRequest& request) const
@@ -434,14 +434,14 @@ ConfirmPrivateVirtualInterfaceOutcomeCallable DirectConnectClient::ConfirmPrivat
   return task->get_future();
 }
 
-void DirectConnectClient::ConfirmPrivateVirtualInterfaceAsync(const ConfirmPrivateVirtualInterfaceRequest& request, const ConfirmPrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientConfirmPrivateVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const ConfirmPrivateVirtualInterfaceRequest& request, const ConfirmPrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfirmPrivateVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfirmPrivateVirtualInterface(request), context);
 }
 
-void DirectConnectClient::ConfirmPrivateVirtualInterfaceAsyncHelper(const ConfirmPrivateVirtualInterfaceRequest& request, const ConfirmPrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::ConfirmPrivateVirtualInterfaceAsync(const ConfirmPrivateVirtualInterfaceRequest& request, const ConfirmPrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfirmPrivateVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientConfirmPrivateVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfirmPublicVirtualInterfaceOutcome DirectConnectClient::ConfirmPublicVirtualInterface(const ConfirmPublicVirtualInterfaceRequest& request) const
@@ -458,14 +458,14 @@ ConfirmPublicVirtualInterfaceOutcomeCallable DirectConnectClient::ConfirmPublicV
   return task->get_future();
 }
 
-void DirectConnectClient::ConfirmPublicVirtualInterfaceAsync(const ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientConfirmPublicVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfirmPublicVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfirmPublicVirtualInterface(request), context);
 }
 
-void DirectConnectClient::ConfirmPublicVirtualInterfaceAsyncHelper(const ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::ConfirmPublicVirtualInterfaceAsync(const ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfirmPublicVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientConfirmPublicVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfirmTransitVirtualInterfaceOutcome DirectConnectClient::ConfirmTransitVirtualInterface(const ConfirmTransitVirtualInterfaceRequest& request) const
@@ -482,14 +482,14 @@ ConfirmTransitVirtualInterfaceOutcomeCallable DirectConnectClient::ConfirmTransi
   return task->get_future();
 }
 
-void DirectConnectClient::ConfirmTransitVirtualInterfaceAsync(const ConfirmTransitVirtualInterfaceRequest& request, const ConfirmTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientConfirmTransitVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const ConfirmTransitVirtualInterfaceRequest& request, const ConfirmTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfirmTransitVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfirmTransitVirtualInterface(request), context);
 }
 
-void DirectConnectClient::ConfirmTransitVirtualInterfaceAsyncHelper(const ConfirmTransitVirtualInterfaceRequest& request, const ConfirmTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::ConfirmTransitVirtualInterfaceAsync(const ConfirmTransitVirtualInterfaceRequest& request, const ConfirmTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfirmTransitVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientConfirmTransitVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBGPPeerOutcome DirectConnectClient::CreateBGPPeer(const CreateBGPPeerRequest& request) const
@@ -506,14 +506,14 @@ CreateBGPPeerOutcomeCallable DirectConnectClient::CreateBGPPeerCallable(const Cr
   return task->get_future();
 }
 
-void DirectConnectClient::CreateBGPPeerAsync(const CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientCreateBGPPeerAsyncHelper(DirectConnectClient const * const clientThis, const CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBGPPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBGPPeer(request), context);
 }
 
-void DirectConnectClient::CreateBGPPeerAsyncHelper(const CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::CreateBGPPeerAsync(const CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBGPPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientCreateBGPPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConnectionOutcome DirectConnectClient::CreateConnection(const CreateConnectionRequest& request) const
@@ -530,14 +530,14 @@ CreateConnectionOutcomeCallable DirectConnectClient::CreateConnectionCallable(co
   return task->get_future();
 }
 
-void DirectConnectClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientCreateConnectionAsyncHelper(DirectConnectClient const * const clientThis, const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConnection(request), context);
 }
 
-void DirectConnectClient::CreateConnectionAsyncHelper(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientCreateConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDirectConnectGatewayOutcome DirectConnectClient::CreateDirectConnectGateway(const CreateDirectConnectGatewayRequest& request) const
@@ -554,14 +554,14 @@ CreateDirectConnectGatewayOutcomeCallable DirectConnectClient::CreateDirectConne
   return task->get_future();
 }
 
-void DirectConnectClient::CreateDirectConnectGatewayAsync(const CreateDirectConnectGatewayRequest& request, const CreateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientCreateDirectConnectGatewayAsyncHelper(DirectConnectClient const * const clientThis, const CreateDirectConnectGatewayRequest& request, const CreateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDirectConnectGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDirectConnectGateway(request), context);
 }
 
-void DirectConnectClient::CreateDirectConnectGatewayAsyncHelper(const CreateDirectConnectGatewayRequest& request, const CreateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::CreateDirectConnectGatewayAsync(const CreateDirectConnectGatewayRequest& request, const CreateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDirectConnectGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientCreateDirectConnectGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDirectConnectGatewayAssociationOutcome DirectConnectClient::CreateDirectConnectGatewayAssociation(const CreateDirectConnectGatewayAssociationRequest& request) const
@@ -578,14 +578,14 @@ CreateDirectConnectGatewayAssociationOutcomeCallable DirectConnectClient::Create
   return task->get_future();
 }
 
-void DirectConnectClient::CreateDirectConnectGatewayAssociationAsync(const CreateDirectConnectGatewayAssociationRequest& request, const CreateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientCreateDirectConnectGatewayAssociationAsyncHelper(DirectConnectClient const * const clientThis, const CreateDirectConnectGatewayAssociationRequest& request, const CreateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDirectConnectGatewayAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDirectConnectGatewayAssociation(request), context);
 }
 
-void DirectConnectClient::CreateDirectConnectGatewayAssociationAsyncHelper(const CreateDirectConnectGatewayAssociationRequest& request, const CreateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::CreateDirectConnectGatewayAssociationAsync(const CreateDirectConnectGatewayAssociationRequest& request, const CreateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDirectConnectGatewayAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientCreateDirectConnectGatewayAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDirectConnectGatewayAssociationProposalOutcome DirectConnectClient::CreateDirectConnectGatewayAssociationProposal(const CreateDirectConnectGatewayAssociationProposalRequest& request) const
@@ -602,14 +602,14 @@ CreateDirectConnectGatewayAssociationProposalOutcomeCallable DirectConnectClient
   return task->get_future();
 }
 
-void DirectConnectClient::CreateDirectConnectGatewayAssociationProposalAsync(const CreateDirectConnectGatewayAssociationProposalRequest& request, const CreateDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientCreateDirectConnectGatewayAssociationProposalAsyncHelper(DirectConnectClient const * const clientThis, const CreateDirectConnectGatewayAssociationProposalRequest& request, const CreateDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDirectConnectGatewayAssociationProposalAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDirectConnectGatewayAssociationProposal(request), context);
 }
 
-void DirectConnectClient::CreateDirectConnectGatewayAssociationProposalAsyncHelper(const CreateDirectConnectGatewayAssociationProposalRequest& request, const CreateDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::CreateDirectConnectGatewayAssociationProposalAsync(const CreateDirectConnectGatewayAssociationProposalRequest& request, const CreateDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDirectConnectGatewayAssociationProposal(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientCreateDirectConnectGatewayAssociationProposalAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateInterconnectOutcome DirectConnectClient::CreateInterconnect(const CreateInterconnectRequest& request) const
@@ -626,14 +626,14 @@ CreateInterconnectOutcomeCallable DirectConnectClient::CreateInterconnectCallabl
   return task->get_future();
 }
 
-void DirectConnectClient::CreateInterconnectAsync(const CreateInterconnectRequest& request, const CreateInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientCreateInterconnectAsyncHelper(DirectConnectClient const * const clientThis, const CreateInterconnectRequest& request, const CreateInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInterconnectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateInterconnect(request), context);
 }
 
-void DirectConnectClient::CreateInterconnectAsyncHelper(const CreateInterconnectRequest& request, const CreateInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::CreateInterconnectAsync(const CreateInterconnectRequest& request, const CreateInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateInterconnect(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientCreateInterconnectAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateLagOutcome DirectConnectClient::CreateLag(const CreateLagRequest& request) const
@@ -650,14 +650,14 @@ CreateLagOutcomeCallable DirectConnectClient::CreateLagCallable(const CreateLagR
   return task->get_future();
 }
 
-void DirectConnectClient::CreateLagAsync(const CreateLagRequest& request, const CreateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientCreateLagAsyncHelper(DirectConnectClient const * const clientThis, const CreateLagRequest& request, const CreateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLagAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateLag(request), context);
 }
 
-void DirectConnectClient::CreateLagAsyncHelper(const CreateLagRequest& request, const CreateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::CreateLagAsync(const CreateLagRequest& request, const CreateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateLag(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientCreateLagAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePrivateVirtualInterfaceOutcome DirectConnectClient::CreatePrivateVirtualInterface(const CreatePrivateVirtualInterfaceRequest& request) const
@@ -674,14 +674,14 @@ CreatePrivateVirtualInterfaceOutcomeCallable DirectConnectClient::CreatePrivateV
   return task->get_future();
 }
 
-void DirectConnectClient::CreatePrivateVirtualInterfaceAsync(const CreatePrivateVirtualInterfaceRequest& request, const CreatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientCreatePrivateVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const CreatePrivateVirtualInterfaceRequest& request, const CreatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePrivateVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePrivateVirtualInterface(request), context);
 }
 
-void DirectConnectClient::CreatePrivateVirtualInterfaceAsyncHelper(const CreatePrivateVirtualInterfaceRequest& request, const CreatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::CreatePrivateVirtualInterfaceAsync(const CreatePrivateVirtualInterfaceRequest& request, const CreatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePrivateVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientCreatePrivateVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePublicVirtualInterfaceOutcome DirectConnectClient::CreatePublicVirtualInterface(const CreatePublicVirtualInterfaceRequest& request) const
@@ -698,14 +698,14 @@ CreatePublicVirtualInterfaceOutcomeCallable DirectConnectClient::CreatePublicVir
   return task->get_future();
 }
 
-void DirectConnectClient::CreatePublicVirtualInterfaceAsync(const CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientCreatePublicVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePublicVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePublicVirtualInterface(request), context);
 }
 
-void DirectConnectClient::CreatePublicVirtualInterfaceAsyncHelper(const CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::CreatePublicVirtualInterfaceAsync(const CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePublicVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientCreatePublicVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateTransitVirtualInterfaceOutcome DirectConnectClient::CreateTransitVirtualInterface(const CreateTransitVirtualInterfaceRequest& request) const
@@ -722,14 +722,14 @@ CreateTransitVirtualInterfaceOutcomeCallable DirectConnectClient::CreateTransitV
   return task->get_future();
 }
 
-void DirectConnectClient::CreateTransitVirtualInterfaceAsync(const CreateTransitVirtualInterfaceRequest& request, const CreateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientCreateTransitVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const CreateTransitVirtualInterfaceRequest& request, const CreateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateTransitVirtualInterface(request), context);
 }
 
-void DirectConnectClient::CreateTransitVirtualInterfaceAsyncHelper(const CreateTransitVirtualInterfaceRequest& request, const CreateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::CreateTransitVirtualInterfaceAsync(const CreateTransitVirtualInterfaceRequest& request, const CreateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateTransitVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientCreateTransitVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBGPPeerOutcome DirectConnectClient::DeleteBGPPeer(const DeleteBGPPeerRequest& request) const
@@ -746,14 +746,14 @@ DeleteBGPPeerOutcomeCallable DirectConnectClient::DeleteBGPPeerCallable(const De
   return task->get_future();
 }
 
-void DirectConnectClient::DeleteBGPPeerAsync(const DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDeleteBGPPeerAsyncHelper(DirectConnectClient const * const clientThis, const DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBGPPeerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBGPPeer(request), context);
 }
 
-void DirectConnectClient::DeleteBGPPeerAsyncHelper(const DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DeleteBGPPeerAsync(const DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBGPPeer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDeleteBGPPeerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConnectionOutcome DirectConnectClient::DeleteConnection(const DeleteConnectionRequest& request) const
@@ -770,14 +770,14 @@ DeleteConnectionOutcomeCallable DirectConnectClient::DeleteConnectionCallable(co
   return task->get_future();
 }
 
-void DirectConnectClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDeleteConnectionAsyncHelper(DirectConnectClient const * const clientThis, const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConnection(request), context);
 }
 
-void DirectConnectClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDeleteConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDirectConnectGatewayOutcome DirectConnectClient::DeleteDirectConnectGateway(const DeleteDirectConnectGatewayRequest& request) const
@@ -794,14 +794,14 @@ DeleteDirectConnectGatewayOutcomeCallable DirectConnectClient::DeleteDirectConne
   return task->get_future();
 }
 
-void DirectConnectClient::DeleteDirectConnectGatewayAsync(const DeleteDirectConnectGatewayRequest& request, const DeleteDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDeleteDirectConnectGatewayAsyncHelper(DirectConnectClient const * const clientThis, const DeleteDirectConnectGatewayRequest& request, const DeleteDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDirectConnectGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDirectConnectGateway(request), context);
 }
 
-void DirectConnectClient::DeleteDirectConnectGatewayAsyncHelper(const DeleteDirectConnectGatewayRequest& request, const DeleteDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DeleteDirectConnectGatewayAsync(const DeleteDirectConnectGatewayRequest& request, const DeleteDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDirectConnectGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDeleteDirectConnectGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDirectConnectGatewayAssociationOutcome DirectConnectClient::DeleteDirectConnectGatewayAssociation(const DeleteDirectConnectGatewayAssociationRequest& request) const
@@ -818,14 +818,14 @@ DeleteDirectConnectGatewayAssociationOutcomeCallable DirectConnectClient::Delete
   return task->get_future();
 }
 
-void DirectConnectClient::DeleteDirectConnectGatewayAssociationAsync(const DeleteDirectConnectGatewayAssociationRequest& request, const DeleteDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDeleteDirectConnectGatewayAssociationAsyncHelper(DirectConnectClient const * const clientThis, const DeleteDirectConnectGatewayAssociationRequest& request, const DeleteDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDirectConnectGatewayAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDirectConnectGatewayAssociation(request), context);
 }
 
-void DirectConnectClient::DeleteDirectConnectGatewayAssociationAsyncHelper(const DeleteDirectConnectGatewayAssociationRequest& request, const DeleteDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DeleteDirectConnectGatewayAssociationAsync(const DeleteDirectConnectGatewayAssociationRequest& request, const DeleteDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDirectConnectGatewayAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDeleteDirectConnectGatewayAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDirectConnectGatewayAssociationProposalOutcome DirectConnectClient::DeleteDirectConnectGatewayAssociationProposal(const DeleteDirectConnectGatewayAssociationProposalRequest& request) const
@@ -842,14 +842,14 @@ DeleteDirectConnectGatewayAssociationProposalOutcomeCallable DirectConnectClient
   return task->get_future();
 }
 
-void DirectConnectClient::DeleteDirectConnectGatewayAssociationProposalAsync(const DeleteDirectConnectGatewayAssociationProposalRequest& request, const DeleteDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDeleteDirectConnectGatewayAssociationProposalAsyncHelper(DirectConnectClient const * const clientThis, const DeleteDirectConnectGatewayAssociationProposalRequest& request, const DeleteDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDirectConnectGatewayAssociationProposalAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDirectConnectGatewayAssociationProposal(request), context);
 }
 
-void DirectConnectClient::DeleteDirectConnectGatewayAssociationProposalAsyncHelper(const DeleteDirectConnectGatewayAssociationProposalRequest& request, const DeleteDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DeleteDirectConnectGatewayAssociationProposalAsync(const DeleteDirectConnectGatewayAssociationProposalRequest& request, const DeleteDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDirectConnectGatewayAssociationProposal(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDeleteDirectConnectGatewayAssociationProposalAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteInterconnectOutcome DirectConnectClient::DeleteInterconnect(const DeleteInterconnectRequest& request) const
@@ -866,14 +866,14 @@ DeleteInterconnectOutcomeCallable DirectConnectClient::DeleteInterconnectCallabl
   return task->get_future();
 }
 
-void DirectConnectClient::DeleteInterconnectAsync(const DeleteInterconnectRequest& request, const DeleteInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDeleteInterconnectAsyncHelper(DirectConnectClient const * const clientThis, const DeleteInterconnectRequest& request, const DeleteInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInterconnectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteInterconnect(request), context);
 }
 
-void DirectConnectClient::DeleteInterconnectAsyncHelper(const DeleteInterconnectRequest& request, const DeleteInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DeleteInterconnectAsync(const DeleteInterconnectRequest& request, const DeleteInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteInterconnect(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDeleteInterconnectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteLagOutcome DirectConnectClient::DeleteLag(const DeleteLagRequest& request) const
@@ -890,14 +890,14 @@ DeleteLagOutcomeCallable DirectConnectClient::DeleteLagCallable(const DeleteLagR
   return task->get_future();
 }
 
-void DirectConnectClient::DeleteLagAsync(const DeleteLagRequest& request, const DeleteLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDeleteLagAsyncHelper(DirectConnectClient const * const clientThis, const DeleteLagRequest& request, const DeleteLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLagAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteLag(request), context);
 }
 
-void DirectConnectClient::DeleteLagAsyncHelper(const DeleteLagRequest& request, const DeleteLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DeleteLagAsync(const DeleteLagRequest& request, const DeleteLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteLag(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDeleteLagAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteVirtualInterfaceOutcome DirectConnectClient::DeleteVirtualInterface(const DeleteVirtualInterfaceRequest& request) const
@@ -914,14 +914,14 @@ DeleteVirtualInterfaceOutcomeCallable DirectConnectClient::DeleteVirtualInterfac
   return task->get_future();
 }
 
-void DirectConnectClient::DeleteVirtualInterfaceAsync(const DeleteVirtualInterfaceRequest& request, const DeleteVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDeleteVirtualInterfaceAsyncHelper(DirectConnectClient const * const clientThis, const DeleteVirtualInterfaceRequest& request, const DeleteVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVirtualInterfaceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteVirtualInterface(request), context);
 }
 
-void DirectConnectClient::DeleteVirtualInterfaceAsyncHelper(const DeleteVirtualInterfaceRequest& request, const DeleteVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DeleteVirtualInterfaceAsync(const DeleteVirtualInterfaceRequest& request, const DeleteVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteVirtualInterface(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDeleteVirtualInterfaceAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeConnectionsOutcome DirectConnectClient::DescribeConnections(const DescribeConnectionsRequest& request) const
@@ -938,14 +938,14 @@ DescribeConnectionsOutcomeCallable DirectConnectClient::DescribeConnectionsCalla
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeConnectionsAsync(const DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeConnectionsAsyncHelper(DirectConnectClient const * const clientThis, const DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeConnections(request), context);
 }
 
-void DirectConnectClient::DescribeConnectionsAsyncHelper(const DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeConnectionsAsync(const DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCustomerMetadataOutcome DirectConnectClient::DescribeCustomerMetadata() const
@@ -963,14 +963,14 @@ DescribeCustomerMetadataOutcomeCallable DirectConnectClient::DescribeCustomerMet
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeCustomerMetadataAsync(const DescribeCustomerMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeCustomerMetadataAsyncHelper(DirectConnectClient const * const clientThis, const DescribeCustomerMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->DescribeCustomerMetadataAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->DescribeCustomerMetadata(), context);
 }
 
-void DirectConnectClient::DescribeCustomerMetadataAsyncHelper(const DescribeCustomerMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeCustomerMetadataAsync(const DescribeCustomerMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, DescribeCustomerMetadata(), context);
+  m_executor->Submit( [this, handler, context](){ DirectConnectClientDescribeCustomerMetadataAsyncHelper( this, handler, context ); } );
 }
 
 DescribeDirectConnectGatewayAssociationProposalsOutcome DirectConnectClient::DescribeDirectConnectGatewayAssociationProposals(const DescribeDirectConnectGatewayAssociationProposalsRequest& request) const
@@ -987,14 +987,14 @@ DescribeDirectConnectGatewayAssociationProposalsOutcomeCallable DirectConnectCli
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeDirectConnectGatewayAssociationProposalsAsync(const DescribeDirectConnectGatewayAssociationProposalsRequest& request, const DescribeDirectConnectGatewayAssociationProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeDirectConnectGatewayAssociationProposalsAsyncHelper(DirectConnectClient const * const clientThis, const DescribeDirectConnectGatewayAssociationProposalsRequest& request, const DescribeDirectConnectGatewayAssociationProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDirectConnectGatewayAssociationProposalsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDirectConnectGatewayAssociationProposals(request), context);
 }
 
-void DirectConnectClient::DescribeDirectConnectGatewayAssociationProposalsAsyncHelper(const DescribeDirectConnectGatewayAssociationProposalsRequest& request, const DescribeDirectConnectGatewayAssociationProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeDirectConnectGatewayAssociationProposalsAsync(const DescribeDirectConnectGatewayAssociationProposalsRequest& request, const DescribeDirectConnectGatewayAssociationProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDirectConnectGatewayAssociationProposals(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeDirectConnectGatewayAssociationProposalsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDirectConnectGatewayAssociationsOutcome DirectConnectClient::DescribeDirectConnectGatewayAssociations(const DescribeDirectConnectGatewayAssociationsRequest& request) const
@@ -1011,14 +1011,14 @@ DescribeDirectConnectGatewayAssociationsOutcomeCallable DirectConnectClient::Des
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeDirectConnectGatewayAssociationsAsync(const DescribeDirectConnectGatewayAssociationsRequest& request, const DescribeDirectConnectGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeDirectConnectGatewayAssociationsAsyncHelper(DirectConnectClient const * const clientThis, const DescribeDirectConnectGatewayAssociationsRequest& request, const DescribeDirectConnectGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDirectConnectGatewayAssociationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDirectConnectGatewayAssociations(request), context);
 }
 
-void DirectConnectClient::DescribeDirectConnectGatewayAssociationsAsyncHelper(const DescribeDirectConnectGatewayAssociationsRequest& request, const DescribeDirectConnectGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeDirectConnectGatewayAssociationsAsync(const DescribeDirectConnectGatewayAssociationsRequest& request, const DescribeDirectConnectGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDirectConnectGatewayAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeDirectConnectGatewayAssociationsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDirectConnectGatewayAttachmentsOutcome DirectConnectClient::DescribeDirectConnectGatewayAttachments(const DescribeDirectConnectGatewayAttachmentsRequest& request) const
@@ -1035,14 +1035,14 @@ DescribeDirectConnectGatewayAttachmentsOutcomeCallable DirectConnectClient::Desc
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeDirectConnectGatewayAttachmentsAsync(const DescribeDirectConnectGatewayAttachmentsRequest& request, const DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeDirectConnectGatewayAttachmentsAsyncHelper(DirectConnectClient const * const clientThis, const DescribeDirectConnectGatewayAttachmentsRequest& request, const DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDirectConnectGatewayAttachmentsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDirectConnectGatewayAttachments(request), context);
 }
 
-void DirectConnectClient::DescribeDirectConnectGatewayAttachmentsAsyncHelper(const DescribeDirectConnectGatewayAttachmentsRequest& request, const DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeDirectConnectGatewayAttachmentsAsync(const DescribeDirectConnectGatewayAttachmentsRequest& request, const DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDirectConnectGatewayAttachments(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeDirectConnectGatewayAttachmentsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeDirectConnectGatewaysOutcome DirectConnectClient::DescribeDirectConnectGateways(const DescribeDirectConnectGatewaysRequest& request) const
@@ -1059,14 +1059,14 @@ DescribeDirectConnectGatewaysOutcomeCallable DirectConnectClient::DescribeDirect
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeDirectConnectGatewaysAsync(const DescribeDirectConnectGatewaysRequest& request, const DescribeDirectConnectGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeDirectConnectGatewaysAsyncHelper(DirectConnectClient const * const clientThis, const DescribeDirectConnectGatewaysRequest& request, const DescribeDirectConnectGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDirectConnectGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeDirectConnectGateways(request), context);
 }
 
-void DirectConnectClient::DescribeDirectConnectGatewaysAsyncHelper(const DescribeDirectConnectGatewaysRequest& request, const DescribeDirectConnectGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeDirectConnectGatewaysAsync(const DescribeDirectConnectGatewaysRequest& request, const DescribeDirectConnectGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeDirectConnectGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeDirectConnectGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeHostedConnectionsOutcome DirectConnectClient::DescribeHostedConnections(const DescribeHostedConnectionsRequest& request) const
@@ -1083,14 +1083,14 @@ DescribeHostedConnectionsOutcomeCallable DirectConnectClient::DescribeHostedConn
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeHostedConnectionsAsync(const DescribeHostedConnectionsRequest& request, const DescribeHostedConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeHostedConnectionsAsyncHelper(DirectConnectClient const * const clientThis, const DescribeHostedConnectionsRequest& request, const DescribeHostedConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHostedConnectionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeHostedConnections(request), context);
 }
 
-void DirectConnectClient::DescribeHostedConnectionsAsyncHelper(const DescribeHostedConnectionsRequest& request, const DescribeHostedConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeHostedConnectionsAsync(const DescribeHostedConnectionsRequest& request, const DescribeHostedConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeHostedConnections(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeHostedConnectionsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeInterconnectsOutcome DirectConnectClient::DescribeInterconnects(const DescribeInterconnectsRequest& request) const
@@ -1107,14 +1107,14 @@ DescribeInterconnectsOutcomeCallable DirectConnectClient::DescribeInterconnectsC
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeInterconnectsAsync(const DescribeInterconnectsRequest& request, const DescribeInterconnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeInterconnectsAsyncHelper(DirectConnectClient const * const clientThis, const DescribeInterconnectsRequest& request, const DescribeInterconnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInterconnectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeInterconnects(request), context);
 }
 
-void DirectConnectClient::DescribeInterconnectsAsyncHelper(const DescribeInterconnectsRequest& request, const DescribeInterconnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeInterconnectsAsync(const DescribeInterconnectsRequest& request, const DescribeInterconnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeInterconnects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeInterconnectsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLagsOutcome DirectConnectClient::DescribeLags(const DescribeLagsRequest& request) const
@@ -1131,14 +1131,14 @@ DescribeLagsOutcomeCallable DirectConnectClient::DescribeLagsCallable(const Desc
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeLagsAsync(const DescribeLagsRequest& request, const DescribeLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeLagsAsyncHelper(DirectConnectClient const * const clientThis, const DescribeLagsRequest& request, const DescribeLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLags(request), context);
 }
 
-void DirectConnectClient::DescribeLagsAsyncHelper(const DescribeLagsRequest& request, const DescribeLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeLagsAsync(const DescribeLagsRequest& request, const DescribeLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeLagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLoaOutcome DirectConnectClient::DescribeLoa(const DescribeLoaRequest& request) const
@@ -1155,14 +1155,14 @@ DescribeLoaOutcomeCallable DirectConnectClient::DescribeLoaCallable(const Descri
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeLoaAsync(const DescribeLoaRequest& request, const DescribeLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeLoaAsyncHelper(DirectConnectClient const * const clientThis, const DescribeLoaRequest& request, const DescribeLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoaAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeLoa(request), context);
 }
 
-void DirectConnectClient::DescribeLoaAsyncHelper(const DescribeLoaRequest& request, const DescribeLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeLoaAsync(const DescribeLoaRequest& request, const DescribeLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeLoa(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeLoaAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeLocationsOutcome DirectConnectClient::DescribeLocations() const
@@ -1180,14 +1180,14 @@ DescribeLocationsOutcomeCallable DirectConnectClient::DescribeLocationsCallable(
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeLocationsAsync(const DescribeLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeLocationsAsyncHelper(DirectConnectClient const * const clientThis, const DescribeLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->DescribeLocationsAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->DescribeLocations(), context);
 }
 
-void DirectConnectClient::DescribeLocationsAsyncHelper(const DescribeLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeLocationsAsync(const DescribeLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, DescribeLocations(), context);
+  m_executor->Submit( [this, handler, context](){ DirectConnectClientDescribeLocationsAsyncHelper( this, handler, context ); } );
 }
 
 DescribeRouterConfigurationOutcome DirectConnectClient::DescribeRouterConfiguration(const DescribeRouterConfigurationRequest& request) const
@@ -1204,14 +1204,14 @@ DescribeRouterConfigurationOutcomeCallable DirectConnectClient::DescribeRouterCo
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeRouterConfigurationAsync(const DescribeRouterConfigurationRequest& request, const DescribeRouterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeRouterConfigurationAsyncHelper(DirectConnectClient const * const clientThis, const DescribeRouterConfigurationRequest& request, const DescribeRouterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRouterConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRouterConfiguration(request), context);
 }
 
-void DirectConnectClient::DescribeRouterConfigurationAsyncHelper(const DescribeRouterConfigurationRequest& request, const DescribeRouterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeRouterConfigurationAsync(const DescribeRouterConfigurationRequest& request, const DescribeRouterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRouterConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeRouterConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTagsOutcome DirectConnectClient::DescribeTags(const DescribeTagsRequest& request) const
@@ -1228,14 +1228,14 @@ DescribeTagsOutcomeCallable DirectConnectClient::DescribeTagsCallable(const Desc
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeTagsAsyncHelper(DirectConnectClient const * const clientThis, const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTags(request), context);
 }
 
-void DirectConnectClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeVirtualGatewaysOutcome DirectConnectClient::DescribeVirtualGateways() const
@@ -1253,14 +1253,14 @@ DescribeVirtualGatewaysOutcomeCallable DirectConnectClient::DescribeVirtualGatew
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeVirtualGatewaysAsync(const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeVirtualGatewaysAsyncHelper(DirectConnectClient const * const clientThis, const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->DescribeVirtualGatewaysAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->DescribeVirtualGateways(), context);
 }
 
-void DirectConnectClient::DescribeVirtualGatewaysAsyncHelper(const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeVirtualGatewaysAsync(const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, DescribeVirtualGateways(), context);
+  m_executor->Submit( [this, handler, context](){ DirectConnectClientDescribeVirtualGatewaysAsyncHelper( this, handler, context ); } );
 }
 
 DescribeVirtualInterfacesOutcome DirectConnectClient::DescribeVirtualInterfaces(const DescribeVirtualInterfacesRequest& request) const
@@ -1277,14 +1277,14 @@ DescribeVirtualInterfacesOutcomeCallable DirectConnectClient::DescribeVirtualInt
   return task->get_future();
 }
 
-void DirectConnectClient::DescribeVirtualInterfacesAsync(const DescribeVirtualInterfacesRequest& request, const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDescribeVirtualInterfacesAsyncHelper(DirectConnectClient const * const clientThis, const DescribeVirtualInterfacesRequest& request, const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVirtualInterfacesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeVirtualInterfaces(request), context);
 }
 
-void DirectConnectClient::DescribeVirtualInterfacesAsyncHelper(const DescribeVirtualInterfacesRequest& request, const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DescribeVirtualInterfacesAsync(const DescribeVirtualInterfacesRequest& request, const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeVirtualInterfaces(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDescribeVirtualInterfacesAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateConnectionFromLagOutcome DirectConnectClient::DisassociateConnectionFromLag(const DisassociateConnectionFromLagRequest& request) const
@@ -1301,14 +1301,14 @@ DisassociateConnectionFromLagOutcomeCallable DirectConnectClient::DisassociateCo
   return task->get_future();
 }
 
-void DirectConnectClient::DisassociateConnectionFromLagAsync(const DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDisassociateConnectionFromLagAsyncHelper(DirectConnectClient const * const clientThis, const DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateConnectionFromLagAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateConnectionFromLag(request), context);
 }
 
-void DirectConnectClient::DisassociateConnectionFromLagAsyncHelper(const DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DisassociateConnectionFromLagAsync(const DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateConnectionFromLag(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDisassociateConnectionFromLagAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateMacSecKeyOutcome DirectConnectClient::DisassociateMacSecKey(const DisassociateMacSecKeyRequest& request) const
@@ -1325,14 +1325,14 @@ DisassociateMacSecKeyOutcomeCallable DirectConnectClient::DisassociateMacSecKeyC
   return task->get_future();
 }
 
-void DirectConnectClient::DisassociateMacSecKeyAsync(const DisassociateMacSecKeyRequest& request, const DisassociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientDisassociateMacSecKeyAsyncHelper(DirectConnectClient const * const clientThis, const DisassociateMacSecKeyRequest& request, const DisassociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateMacSecKeyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateMacSecKey(request), context);
 }
 
-void DirectConnectClient::DisassociateMacSecKeyAsyncHelper(const DisassociateMacSecKeyRequest& request, const DisassociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::DisassociateMacSecKeyAsync(const DisassociateMacSecKeyRequest& request, const DisassociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateMacSecKey(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientDisassociateMacSecKeyAsyncHelper( this, request, handler, context ); } );
 }
 
 ListVirtualInterfaceTestHistoryOutcome DirectConnectClient::ListVirtualInterfaceTestHistory(const ListVirtualInterfaceTestHistoryRequest& request) const
@@ -1349,14 +1349,14 @@ ListVirtualInterfaceTestHistoryOutcomeCallable DirectConnectClient::ListVirtualI
   return task->get_future();
 }
 
-void DirectConnectClient::ListVirtualInterfaceTestHistoryAsync(const ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientListVirtualInterfaceTestHistoryAsyncHelper(DirectConnectClient const * const clientThis, const ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualInterfaceTestHistoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListVirtualInterfaceTestHistory(request), context);
 }
 
-void DirectConnectClient::ListVirtualInterfaceTestHistoryAsyncHelper(const ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::ListVirtualInterfaceTestHistoryAsync(const ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListVirtualInterfaceTestHistory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientListVirtualInterfaceTestHistoryAsyncHelper( this, request, handler, context ); } );
 }
 
 StartBgpFailoverTestOutcome DirectConnectClient::StartBgpFailoverTest(const StartBgpFailoverTestRequest& request) const
@@ -1373,14 +1373,14 @@ StartBgpFailoverTestOutcomeCallable DirectConnectClient::StartBgpFailoverTestCal
   return task->get_future();
 }
 
-void DirectConnectClient::StartBgpFailoverTestAsync(const StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientStartBgpFailoverTestAsyncHelper(DirectConnectClient const * const clientThis, const StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartBgpFailoverTestAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartBgpFailoverTest(request), context);
 }
 
-void DirectConnectClient::StartBgpFailoverTestAsyncHelper(const StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::StartBgpFailoverTestAsync(const StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartBgpFailoverTest(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientStartBgpFailoverTestAsyncHelper( this, request, handler, context ); } );
 }
 
 StopBgpFailoverTestOutcome DirectConnectClient::StopBgpFailoverTest(const StopBgpFailoverTestRequest& request) const
@@ -1397,14 +1397,14 @@ StopBgpFailoverTestOutcomeCallable DirectConnectClient::StopBgpFailoverTestCalla
   return task->get_future();
 }
 
-void DirectConnectClient::StopBgpFailoverTestAsync(const StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientStopBgpFailoverTestAsyncHelper(DirectConnectClient const * const clientThis, const StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopBgpFailoverTestAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopBgpFailoverTest(request), context);
 }
 
-void DirectConnectClient::StopBgpFailoverTestAsyncHelper(const StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::StopBgpFailoverTestAsync(const StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopBgpFailoverTest(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientStopBgpFailoverTestAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome DirectConnectClient::TagResource(const TagResourceRequest& request) const
@@ -1421,14 +1421,14 @@ TagResourceOutcomeCallable DirectConnectClient::TagResourceCallable(const TagRes
   return task->get_future();
 }
 
-void DirectConnectClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientTagResourceAsyncHelper(DirectConnectClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void DirectConnectClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome DirectConnectClient::UntagResource(const UntagResourceRequest& request) const
@@ -1445,14 +1445,14 @@ UntagResourceOutcomeCallable DirectConnectClient::UntagResourceCallable(const Un
   return task->get_future();
 }
 
-void DirectConnectClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientUntagResourceAsyncHelper(DirectConnectClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void DirectConnectClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConnectionOutcome DirectConnectClient::UpdateConnection(const UpdateConnectionRequest& request) const
@@ -1469,14 +1469,14 @@ UpdateConnectionOutcomeCallable DirectConnectClient::UpdateConnectionCallable(co
   return task->get_future();
 }
 
-void DirectConnectClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientUpdateConnectionAsyncHelper(DirectConnectClient const * const clientThis, const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConnection(request), context);
 }
 
-void DirectConnectClient::UpdateConnectionAsyncHelper(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConnection(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientUpdateConnectionAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDirectConnectGatewayOutcome DirectConnectClient::UpdateDirectConnectGateway(const UpdateDirectConnectGatewayRequest& request) const
@@ -1493,14 +1493,14 @@ UpdateDirectConnectGatewayOutcomeCallable DirectConnectClient::UpdateDirectConne
   return task->get_future();
 }
 
-void DirectConnectClient::UpdateDirectConnectGatewayAsync(const UpdateDirectConnectGatewayRequest& request, const UpdateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientUpdateDirectConnectGatewayAsyncHelper(DirectConnectClient const * const clientThis, const UpdateDirectConnectGatewayRequest& request, const UpdateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDirectConnectGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDirectConnectGateway(request), context);
 }
 
-void DirectConnectClient::UpdateDirectConnectGatewayAsyncHelper(const UpdateDirectConnectGatewayRequest& request, const UpdateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::UpdateDirectConnectGatewayAsync(const UpdateDirectConnectGatewayRequest& request, const UpdateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDirectConnectGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientUpdateDirectConnectGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDirectConnectGatewayAssociationOutcome DirectConnectClient::UpdateDirectConnectGatewayAssociation(const UpdateDirectConnectGatewayAssociationRequest& request) const
@@ -1517,14 +1517,14 @@ UpdateDirectConnectGatewayAssociationOutcomeCallable DirectConnectClient::Update
   return task->get_future();
 }
 
-void DirectConnectClient::UpdateDirectConnectGatewayAssociationAsync(const UpdateDirectConnectGatewayAssociationRequest& request, const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientUpdateDirectConnectGatewayAssociationAsyncHelper(DirectConnectClient const * const clientThis, const UpdateDirectConnectGatewayAssociationRequest& request, const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDirectConnectGatewayAssociationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDirectConnectGatewayAssociation(request), context);
 }
 
-void DirectConnectClient::UpdateDirectConnectGatewayAssociationAsyncHelper(const UpdateDirectConnectGatewayAssociationRequest& request, const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::UpdateDirectConnectGatewayAssociationAsync(const UpdateDirectConnectGatewayAssociationRequest& request, const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDirectConnectGatewayAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientUpdateDirectConnectGatewayAssociationAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateLagOutcome DirectConnectClient::UpdateLag(const UpdateLagRequest& request) const
@@ -1541,14 +1541,14 @@ UpdateLagOutcomeCallable DirectConnectClient::UpdateLagCallable(const UpdateLagR
   return task->get_future();
 }
 
-void DirectConnectClient::UpdateLagAsync(const UpdateLagRequest& request, const UpdateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientUpdateLagAsyncHelper(DirectConnectClient const * const clientThis, const UpdateLagRequest& request, const UpdateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLagAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateLag(request), context);
 }
 
-void DirectConnectClient::UpdateLagAsyncHelper(const UpdateLagRequest& request, const UpdateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::UpdateLagAsync(const UpdateLagRequest& request, const UpdateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateLag(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientUpdateLagAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateVirtualInterfaceAttributesOutcome DirectConnectClient::UpdateVirtualInterfaceAttributes(const UpdateVirtualInterfaceAttributesRequest& request) const
@@ -1565,13 +1565,13 @@ UpdateVirtualInterfaceAttributesOutcomeCallable DirectConnectClient::UpdateVirtu
   return task->get_future();
 }
 
-void DirectConnectClient::UpdateVirtualInterfaceAttributesAsync(const UpdateVirtualInterfaceAttributesRequest& request, const UpdateVirtualInterfaceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClientUpdateVirtualInterfaceAttributesAsyncHelper(DirectConnectClient const * const clientThis, const UpdateVirtualInterfaceAttributesRequest& request, const UpdateVirtualInterfaceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVirtualInterfaceAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateVirtualInterfaceAttributes(request), context);
 }
 
-void DirectConnectClient::UpdateVirtualInterfaceAttributesAsyncHelper(const UpdateVirtualInterfaceAttributesRequest& request, const UpdateVirtualInterfaceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DirectConnectClient::UpdateVirtualInterfaceAttributesAsync(const UpdateVirtualInterfaceAttributesRequest& request, const UpdateVirtualInterfaceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateVirtualInterfaceAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DirectConnectClientUpdateVirtualInterfaceAttributesAsyncHelper( this, request, handler, context ); } );
 }
 

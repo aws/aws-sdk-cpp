@@ -207,14 +207,14 @@ ApproveSkillOutcomeCallable AlexaForBusinessClient::ApproveSkillCallable(const A
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ApproveSkillAsync(const ApproveSkillRequest& request, const ApproveSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientApproveSkillAsyncHelper(AlexaForBusinessClient const * const clientThis, const ApproveSkillRequest& request, const ApproveSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ApproveSkillAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ApproveSkill(request), context);
 }
 
-void AlexaForBusinessClient::ApproveSkillAsyncHelper(const ApproveSkillRequest& request, const ApproveSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ApproveSkillAsync(const ApproveSkillRequest& request, const ApproveSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ApproveSkill(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientApproveSkillAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateContactWithAddressBookOutcome AlexaForBusinessClient::AssociateContactWithAddressBook(const AssociateContactWithAddressBookRequest& request) const
@@ -231,14 +231,14 @@ AssociateContactWithAddressBookOutcomeCallable AlexaForBusinessClient::Associate
   return task->get_future();
 }
 
-void AlexaForBusinessClient::AssociateContactWithAddressBookAsync(const AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientAssociateContactWithAddressBookAsyncHelper(AlexaForBusinessClient const * const clientThis, const AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateContactWithAddressBookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateContactWithAddressBook(request), context);
 }
 
-void AlexaForBusinessClient::AssociateContactWithAddressBookAsyncHelper(const AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::AssociateContactWithAddressBookAsync(const AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateContactWithAddressBook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientAssociateContactWithAddressBookAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateDeviceWithNetworkProfileOutcome AlexaForBusinessClient::AssociateDeviceWithNetworkProfile(const AssociateDeviceWithNetworkProfileRequest& request) const
@@ -255,14 +255,14 @@ AssociateDeviceWithNetworkProfileOutcomeCallable AlexaForBusinessClient::Associa
   return task->get_future();
 }
 
-void AlexaForBusinessClient::AssociateDeviceWithNetworkProfileAsync(const AssociateDeviceWithNetworkProfileRequest& request, const AssociateDeviceWithNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientAssociateDeviceWithNetworkProfileAsyncHelper(AlexaForBusinessClient const * const clientThis, const AssociateDeviceWithNetworkProfileRequest& request, const AssociateDeviceWithNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateDeviceWithNetworkProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateDeviceWithNetworkProfile(request), context);
 }
 
-void AlexaForBusinessClient::AssociateDeviceWithNetworkProfileAsyncHelper(const AssociateDeviceWithNetworkProfileRequest& request, const AssociateDeviceWithNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::AssociateDeviceWithNetworkProfileAsync(const AssociateDeviceWithNetworkProfileRequest& request, const AssociateDeviceWithNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateDeviceWithNetworkProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientAssociateDeviceWithNetworkProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateDeviceWithRoomOutcome AlexaForBusinessClient::AssociateDeviceWithRoom(const AssociateDeviceWithRoomRequest& request) const
@@ -279,14 +279,14 @@ AssociateDeviceWithRoomOutcomeCallable AlexaForBusinessClient::AssociateDeviceWi
   return task->get_future();
 }
 
-void AlexaForBusinessClient::AssociateDeviceWithRoomAsync(const AssociateDeviceWithRoomRequest& request, const AssociateDeviceWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientAssociateDeviceWithRoomAsyncHelper(AlexaForBusinessClient const * const clientThis, const AssociateDeviceWithRoomRequest& request, const AssociateDeviceWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateDeviceWithRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateDeviceWithRoom(request), context);
 }
 
-void AlexaForBusinessClient::AssociateDeviceWithRoomAsyncHelper(const AssociateDeviceWithRoomRequest& request, const AssociateDeviceWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::AssociateDeviceWithRoomAsync(const AssociateDeviceWithRoomRequest& request, const AssociateDeviceWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateDeviceWithRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientAssociateDeviceWithRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateSkillGroupWithRoomOutcome AlexaForBusinessClient::AssociateSkillGroupWithRoom(const AssociateSkillGroupWithRoomRequest& request) const
@@ -303,14 +303,14 @@ AssociateSkillGroupWithRoomOutcomeCallable AlexaForBusinessClient::AssociateSkil
   return task->get_future();
 }
 
-void AlexaForBusinessClient::AssociateSkillGroupWithRoomAsync(const AssociateSkillGroupWithRoomRequest& request, const AssociateSkillGroupWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientAssociateSkillGroupWithRoomAsyncHelper(AlexaForBusinessClient const * const clientThis, const AssociateSkillGroupWithRoomRequest& request, const AssociateSkillGroupWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateSkillGroupWithRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateSkillGroupWithRoom(request), context);
 }
 
-void AlexaForBusinessClient::AssociateSkillGroupWithRoomAsyncHelper(const AssociateSkillGroupWithRoomRequest& request, const AssociateSkillGroupWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::AssociateSkillGroupWithRoomAsync(const AssociateSkillGroupWithRoomRequest& request, const AssociateSkillGroupWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateSkillGroupWithRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientAssociateSkillGroupWithRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateSkillWithSkillGroupOutcome AlexaForBusinessClient::AssociateSkillWithSkillGroup(const AssociateSkillWithSkillGroupRequest& request) const
@@ -327,14 +327,14 @@ AssociateSkillWithSkillGroupOutcomeCallable AlexaForBusinessClient::AssociateSki
   return task->get_future();
 }
 
-void AlexaForBusinessClient::AssociateSkillWithSkillGroupAsync(const AssociateSkillWithSkillGroupRequest& request, const AssociateSkillWithSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientAssociateSkillWithSkillGroupAsyncHelper(AlexaForBusinessClient const * const clientThis, const AssociateSkillWithSkillGroupRequest& request, const AssociateSkillWithSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateSkillWithSkillGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateSkillWithSkillGroup(request), context);
 }
 
-void AlexaForBusinessClient::AssociateSkillWithSkillGroupAsyncHelper(const AssociateSkillWithSkillGroupRequest& request, const AssociateSkillWithSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::AssociateSkillWithSkillGroupAsync(const AssociateSkillWithSkillGroupRequest& request, const AssociateSkillWithSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateSkillWithSkillGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientAssociateSkillWithSkillGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateSkillWithUsersOutcome AlexaForBusinessClient::AssociateSkillWithUsers(const AssociateSkillWithUsersRequest& request) const
@@ -351,14 +351,14 @@ AssociateSkillWithUsersOutcomeCallable AlexaForBusinessClient::AssociateSkillWit
   return task->get_future();
 }
 
-void AlexaForBusinessClient::AssociateSkillWithUsersAsync(const AssociateSkillWithUsersRequest& request, const AssociateSkillWithUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientAssociateSkillWithUsersAsyncHelper(AlexaForBusinessClient const * const clientThis, const AssociateSkillWithUsersRequest& request, const AssociateSkillWithUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateSkillWithUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateSkillWithUsers(request), context);
 }
 
-void AlexaForBusinessClient::AssociateSkillWithUsersAsyncHelper(const AssociateSkillWithUsersRequest& request, const AssociateSkillWithUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::AssociateSkillWithUsersAsync(const AssociateSkillWithUsersRequest& request, const AssociateSkillWithUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateSkillWithUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientAssociateSkillWithUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateAddressBookOutcome AlexaForBusinessClient::CreateAddressBook(const CreateAddressBookRequest& request) const
@@ -375,14 +375,14 @@ CreateAddressBookOutcomeCallable AlexaForBusinessClient::CreateAddressBookCallab
   return task->get_future();
 }
 
-void AlexaForBusinessClient::CreateAddressBookAsync(const CreateAddressBookRequest& request, const CreateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientCreateAddressBookAsyncHelper(AlexaForBusinessClient const * const clientThis, const CreateAddressBookRequest& request, const CreateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAddressBookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateAddressBook(request), context);
 }
 
-void AlexaForBusinessClient::CreateAddressBookAsyncHelper(const CreateAddressBookRequest& request, const CreateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::CreateAddressBookAsync(const CreateAddressBookRequest& request, const CreateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateAddressBook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientCreateAddressBookAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateBusinessReportScheduleOutcome AlexaForBusinessClient::CreateBusinessReportSchedule(const CreateBusinessReportScheduleRequest& request) const
@@ -399,14 +399,14 @@ CreateBusinessReportScheduleOutcomeCallable AlexaForBusinessClient::CreateBusine
   return task->get_future();
 }
 
-void AlexaForBusinessClient::CreateBusinessReportScheduleAsync(const CreateBusinessReportScheduleRequest& request, const CreateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientCreateBusinessReportScheduleAsyncHelper(AlexaForBusinessClient const * const clientThis, const CreateBusinessReportScheduleRequest& request, const CreateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBusinessReportScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateBusinessReportSchedule(request), context);
 }
 
-void AlexaForBusinessClient::CreateBusinessReportScheduleAsyncHelper(const CreateBusinessReportScheduleRequest& request, const CreateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::CreateBusinessReportScheduleAsync(const CreateBusinessReportScheduleRequest& request, const CreateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateBusinessReportSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientCreateBusinessReportScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateConferenceProviderOutcome AlexaForBusinessClient::CreateConferenceProvider(const CreateConferenceProviderRequest& request) const
@@ -423,14 +423,14 @@ CreateConferenceProviderOutcomeCallable AlexaForBusinessClient::CreateConference
   return task->get_future();
 }
 
-void AlexaForBusinessClient::CreateConferenceProviderAsync(const CreateConferenceProviderRequest& request, const CreateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientCreateConferenceProviderAsyncHelper(AlexaForBusinessClient const * const clientThis, const CreateConferenceProviderRequest& request, const CreateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConferenceProviderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateConferenceProvider(request), context);
 }
 
-void AlexaForBusinessClient::CreateConferenceProviderAsyncHelper(const CreateConferenceProviderRequest& request, const CreateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::CreateConferenceProviderAsync(const CreateConferenceProviderRequest& request, const CreateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateConferenceProvider(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientCreateConferenceProviderAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateContactOutcome AlexaForBusinessClient::CreateContact(const CreateContactRequest& request) const
@@ -447,14 +447,14 @@ CreateContactOutcomeCallable AlexaForBusinessClient::CreateContactCallable(const
   return task->get_future();
 }
 
-void AlexaForBusinessClient::CreateContactAsync(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientCreateContactAsyncHelper(AlexaForBusinessClient const * const clientThis, const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateContact(request), context);
 }
 
-void AlexaForBusinessClient::CreateContactAsyncHelper(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::CreateContactAsync(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientCreateContactAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGatewayGroupOutcome AlexaForBusinessClient::CreateGatewayGroup(const CreateGatewayGroupRequest& request) const
@@ -471,14 +471,14 @@ CreateGatewayGroupOutcomeCallable AlexaForBusinessClient::CreateGatewayGroupCall
   return task->get_future();
 }
 
-void AlexaForBusinessClient::CreateGatewayGroupAsync(const CreateGatewayGroupRequest& request, const CreateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientCreateGatewayGroupAsyncHelper(AlexaForBusinessClient const * const clientThis, const CreateGatewayGroupRequest& request, const CreateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGatewayGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGatewayGroup(request), context);
 }
 
-void AlexaForBusinessClient::CreateGatewayGroupAsyncHelper(const CreateGatewayGroupRequest& request, const CreateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::CreateGatewayGroupAsync(const CreateGatewayGroupRequest& request, const CreateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGatewayGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientCreateGatewayGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNetworkProfileOutcome AlexaForBusinessClient::CreateNetworkProfile(const CreateNetworkProfileRequest& request) const
@@ -495,14 +495,14 @@ CreateNetworkProfileOutcomeCallable AlexaForBusinessClient::CreateNetworkProfile
   return task->get_future();
 }
 
-void AlexaForBusinessClient::CreateNetworkProfileAsync(const CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientCreateNetworkProfileAsyncHelper(AlexaForBusinessClient const * const clientThis, const CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNetworkProfile(request), context);
 }
 
-void AlexaForBusinessClient::CreateNetworkProfileAsyncHelper(const CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::CreateNetworkProfileAsync(const CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNetworkProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientCreateNetworkProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProfileOutcome AlexaForBusinessClient::CreateProfile(const CreateProfileRequest& request) const
@@ -519,14 +519,14 @@ CreateProfileOutcomeCallable AlexaForBusinessClient::CreateProfileCallable(const
   return task->get_future();
 }
 
-void AlexaForBusinessClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientCreateProfileAsyncHelper(AlexaForBusinessClient const * const clientThis, const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProfile(request), context);
 }
 
-void AlexaForBusinessClient::CreateProfileAsyncHelper(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientCreateProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRoomOutcome AlexaForBusinessClient::CreateRoom(const CreateRoomRequest& request) const
@@ -543,14 +543,14 @@ CreateRoomOutcomeCallable AlexaForBusinessClient::CreateRoomCallable(const Creat
   return task->get_future();
 }
 
-void AlexaForBusinessClient::CreateRoomAsync(const CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientCreateRoomAsyncHelper(AlexaForBusinessClient const * const clientThis, const CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRoom(request), context);
 }
 
-void AlexaForBusinessClient::CreateRoomAsyncHelper(const CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::CreateRoomAsync(const CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientCreateRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateSkillGroupOutcome AlexaForBusinessClient::CreateSkillGroup(const CreateSkillGroupRequest& request) const
@@ -567,14 +567,14 @@ CreateSkillGroupOutcomeCallable AlexaForBusinessClient::CreateSkillGroupCallable
   return task->get_future();
 }
 
-void AlexaForBusinessClient::CreateSkillGroupAsync(const CreateSkillGroupRequest& request, const CreateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientCreateSkillGroupAsyncHelper(AlexaForBusinessClient const * const clientThis, const CreateSkillGroupRequest& request, const CreateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSkillGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateSkillGroup(request), context);
 }
 
-void AlexaForBusinessClient::CreateSkillGroupAsyncHelper(const CreateSkillGroupRequest& request, const CreateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::CreateSkillGroupAsync(const CreateSkillGroupRequest& request, const CreateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateSkillGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientCreateSkillGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserOutcome AlexaForBusinessClient::CreateUser(const CreateUserRequest& request) const
@@ -591,14 +591,14 @@ CreateUserOutcomeCallable AlexaForBusinessClient::CreateUserCallable(const Creat
   return task->get_future();
 }
 
-void AlexaForBusinessClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientCreateUserAsyncHelper(AlexaForBusinessClient const * const clientThis, const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUser(request), context);
 }
 
-void AlexaForBusinessClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientCreateUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteAddressBookOutcome AlexaForBusinessClient::DeleteAddressBook(const DeleteAddressBookRequest& request) const
@@ -615,14 +615,14 @@ DeleteAddressBookOutcomeCallable AlexaForBusinessClient::DeleteAddressBookCallab
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteAddressBookAsync(const DeleteAddressBookRequest& request, const DeleteAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteAddressBookAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteAddressBookRequest& request, const DeleteAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAddressBookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteAddressBook(request), context);
 }
 
-void AlexaForBusinessClient::DeleteAddressBookAsyncHelper(const DeleteAddressBookRequest& request, const DeleteAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteAddressBookAsync(const DeleteAddressBookRequest& request, const DeleteAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAddressBook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteAddressBookAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBusinessReportScheduleOutcome AlexaForBusinessClient::DeleteBusinessReportSchedule(const DeleteBusinessReportScheduleRequest& request) const
@@ -639,14 +639,14 @@ DeleteBusinessReportScheduleOutcomeCallable AlexaForBusinessClient::DeleteBusine
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteBusinessReportScheduleAsync(const DeleteBusinessReportScheduleRequest& request, const DeleteBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteBusinessReportScheduleAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteBusinessReportScheduleRequest& request, const DeleteBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBusinessReportScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBusinessReportSchedule(request), context);
 }
 
-void AlexaForBusinessClient::DeleteBusinessReportScheduleAsyncHelper(const DeleteBusinessReportScheduleRequest& request, const DeleteBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteBusinessReportScheduleAsync(const DeleteBusinessReportScheduleRequest& request, const DeleteBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBusinessReportSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteBusinessReportScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteConferenceProviderOutcome AlexaForBusinessClient::DeleteConferenceProvider(const DeleteConferenceProviderRequest& request) const
@@ -663,14 +663,14 @@ DeleteConferenceProviderOutcomeCallable AlexaForBusinessClient::DeleteConference
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteConferenceProviderAsync(const DeleteConferenceProviderRequest& request, const DeleteConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteConferenceProviderAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteConferenceProviderRequest& request, const DeleteConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConferenceProviderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteConferenceProvider(request), context);
 }
 
-void AlexaForBusinessClient::DeleteConferenceProviderAsyncHelper(const DeleteConferenceProviderRequest& request, const DeleteConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteConferenceProviderAsync(const DeleteConferenceProviderRequest& request, const DeleteConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteConferenceProvider(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteConferenceProviderAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteContactOutcome AlexaForBusinessClient::DeleteContact(const DeleteContactRequest& request) const
@@ -687,14 +687,14 @@ DeleteContactOutcomeCallable AlexaForBusinessClient::DeleteContactCallable(const
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteContactAsync(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteContactAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteContact(request), context);
 }
 
-void AlexaForBusinessClient::DeleteContactAsyncHelper(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteContactAsync(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteContactAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDeviceOutcome AlexaForBusinessClient::DeleteDevice(const DeleteDeviceRequest& request) const
@@ -711,14 +711,14 @@ DeleteDeviceOutcomeCallable AlexaForBusinessClient::DeleteDeviceCallable(const D
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteDeviceAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDevice(request), context);
 }
 
-void AlexaForBusinessClient::DeleteDeviceAsyncHelper(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDeviceUsageDataOutcome AlexaForBusinessClient::DeleteDeviceUsageData(const DeleteDeviceUsageDataRequest& request) const
@@ -735,14 +735,14 @@ DeleteDeviceUsageDataOutcomeCallable AlexaForBusinessClient::DeleteDeviceUsageDa
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteDeviceUsageDataAsync(const DeleteDeviceUsageDataRequest& request, const DeleteDeviceUsageDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteDeviceUsageDataAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteDeviceUsageDataRequest& request, const DeleteDeviceUsageDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeviceUsageDataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDeviceUsageData(request), context);
 }
 
-void AlexaForBusinessClient::DeleteDeviceUsageDataAsyncHelper(const DeleteDeviceUsageDataRequest& request, const DeleteDeviceUsageDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteDeviceUsageDataAsync(const DeleteDeviceUsageDataRequest& request, const DeleteDeviceUsageDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDeviceUsageData(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteDeviceUsageDataAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGatewayGroupOutcome AlexaForBusinessClient::DeleteGatewayGroup(const DeleteGatewayGroupRequest& request) const
@@ -759,14 +759,14 @@ DeleteGatewayGroupOutcomeCallable AlexaForBusinessClient::DeleteGatewayGroupCall
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteGatewayGroupAsync(const DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteGatewayGroupAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGatewayGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGatewayGroup(request), context);
 }
 
-void AlexaForBusinessClient::DeleteGatewayGroupAsyncHelper(const DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteGatewayGroupAsync(const DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGatewayGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteGatewayGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNetworkProfileOutcome AlexaForBusinessClient::DeleteNetworkProfile(const DeleteNetworkProfileRequest& request) const
@@ -783,14 +783,14 @@ DeleteNetworkProfileOutcomeCallable AlexaForBusinessClient::DeleteNetworkProfile
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteNetworkProfileAsync(const DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteNetworkProfileAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNetworkProfile(request), context);
 }
 
-void AlexaForBusinessClient::DeleteNetworkProfileAsyncHelper(const DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteNetworkProfileAsync(const DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNetworkProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteNetworkProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProfileOutcome AlexaForBusinessClient::DeleteProfile(const DeleteProfileRequest& request) const
@@ -807,14 +807,14 @@ DeleteProfileOutcomeCallable AlexaForBusinessClient::DeleteProfileCallable(const
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteProfileAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProfile(request), context);
 }
 
-void AlexaForBusinessClient::DeleteProfileAsyncHelper(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRoomOutcome AlexaForBusinessClient::DeleteRoom(const DeleteRoomRequest& request) const
@@ -831,14 +831,14 @@ DeleteRoomOutcomeCallable AlexaForBusinessClient::DeleteRoomCallable(const Delet
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteRoomAsync(const DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteRoomAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRoom(request), context);
 }
 
-void AlexaForBusinessClient::DeleteRoomAsyncHelper(const DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteRoomAsync(const DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRoomSkillParameterOutcome AlexaForBusinessClient::DeleteRoomSkillParameter(const DeleteRoomSkillParameterRequest& request) const
@@ -855,14 +855,14 @@ DeleteRoomSkillParameterOutcomeCallable AlexaForBusinessClient::DeleteRoomSkillP
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteRoomSkillParameterAsync(const DeleteRoomSkillParameterRequest& request, const DeleteRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteRoomSkillParameterAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteRoomSkillParameterRequest& request, const DeleteRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRoomSkillParameterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRoomSkillParameter(request), context);
 }
 
-void AlexaForBusinessClient::DeleteRoomSkillParameterAsyncHelper(const DeleteRoomSkillParameterRequest& request, const DeleteRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteRoomSkillParameterAsync(const DeleteRoomSkillParameterRequest& request, const DeleteRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRoomSkillParameter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteRoomSkillParameterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSkillAuthorizationOutcome AlexaForBusinessClient::DeleteSkillAuthorization(const DeleteSkillAuthorizationRequest& request) const
@@ -879,14 +879,14 @@ DeleteSkillAuthorizationOutcomeCallable AlexaForBusinessClient::DeleteSkillAutho
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteSkillAuthorizationAsync(const DeleteSkillAuthorizationRequest& request, const DeleteSkillAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteSkillAuthorizationAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteSkillAuthorizationRequest& request, const DeleteSkillAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSkillAuthorizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSkillAuthorization(request), context);
 }
 
-void AlexaForBusinessClient::DeleteSkillAuthorizationAsyncHelper(const DeleteSkillAuthorizationRequest& request, const DeleteSkillAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteSkillAuthorizationAsync(const DeleteSkillAuthorizationRequest& request, const DeleteSkillAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSkillAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteSkillAuthorizationAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSkillGroupOutcome AlexaForBusinessClient::DeleteSkillGroup(const DeleteSkillGroupRequest& request) const
@@ -903,14 +903,14 @@ DeleteSkillGroupOutcomeCallable AlexaForBusinessClient::DeleteSkillGroupCallable
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteSkillGroupAsync(const DeleteSkillGroupRequest& request, const DeleteSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteSkillGroupAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteSkillGroupRequest& request, const DeleteSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSkillGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSkillGroup(request), context);
 }
 
-void AlexaForBusinessClient::DeleteSkillGroupAsyncHelper(const DeleteSkillGroupRequest& request, const DeleteSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteSkillGroupAsync(const DeleteSkillGroupRequest& request, const DeleteSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSkillGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteSkillGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserOutcome AlexaForBusinessClient::DeleteUser(const DeleteUserRequest& request) const
@@ -927,14 +927,14 @@ DeleteUserOutcomeCallable AlexaForBusinessClient::DeleteUserCallable(const Delet
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDeleteUserAsyncHelper(AlexaForBusinessClient const * const clientThis, const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUser(request), context);
 }
 
-void AlexaForBusinessClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDeleteUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateContactFromAddressBookOutcome AlexaForBusinessClient::DisassociateContactFromAddressBook(const DisassociateContactFromAddressBookRequest& request) const
@@ -951,14 +951,14 @@ DisassociateContactFromAddressBookOutcomeCallable AlexaForBusinessClient::Disass
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DisassociateContactFromAddressBookAsync(const DisassociateContactFromAddressBookRequest& request, const DisassociateContactFromAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDisassociateContactFromAddressBookAsyncHelper(AlexaForBusinessClient const * const clientThis, const DisassociateContactFromAddressBookRequest& request, const DisassociateContactFromAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateContactFromAddressBookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateContactFromAddressBook(request), context);
 }
 
-void AlexaForBusinessClient::DisassociateContactFromAddressBookAsyncHelper(const DisassociateContactFromAddressBookRequest& request, const DisassociateContactFromAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DisassociateContactFromAddressBookAsync(const DisassociateContactFromAddressBookRequest& request, const DisassociateContactFromAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateContactFromAddressBook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDisassociateContactFromAddressBookAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateDeviceFromRoomOutcome AlexaForBusinessClient::DisassociateDeviceFromRoom(const DisassociateDeviceFromRoomRequest& request) const
@@ -975,14 +975,14 @@ DisassociateDeviceFromRoomOutcomeCallable AlexaForBusinessClient::DisassociateDe
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DisassociateDeviceFromRoomAsync(const DisassociateDeviceFromRoomRequest& request, const DisassociateDeviceFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDisassociateDeviceFromRoomAsyncHelper(AlexaForBusinessClient const * const clientThis, const DisassociateDeviceFromRoomRequest& request, const DisassociateDeviceFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateDeviceFromRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateDeviceFromRoom(request), context);
 }
 
-void AlexaForBusinessClient::DisassociateDeviceFromRoomAsyncHelper(const DisassociateDeviceFromRoomRequest& request, const DisassociateDeviceFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DisassociateDeviceFromRoomAsync(const DisassociateDeviceFromRoomRequest& request, const DisassociateDeviceFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateDeviceFromRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDisassociateDeviceFromRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateSkillFromSkillGroupOutcome AlexaForBusinessClient::DisassociateSkillFromSkillGroup(const DisassociateSkillFromSkillGroupRequest& request) const
@@ -999,14 +999,14 @@ DisassociateSkillFromSkillGroupOutcomeCallable AlexaForBusinessClient::Disassoci
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DisassociateSkillFromSkillGroupAsync(const DisassociateSkillFromSkillGroupRequest& request, const DisassociateSkillFromSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDisassociateSkillFromSkillGroupAsyncHelper(AlexaForBusinessClient const * const clientThis, const DisassociateSkillFromSkillGroupRequest& request, const DisassociateSkillFromSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateSkillFromSkillGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateSkillFromSkillGroup(request), context);
 }
 
-void AlexaForBusinessClient::DisassociateSkillFromSkillGroupAsyncHelper(const DisassociateSkillFromSkillGroupRequest& request, const DisassociateSkillFromSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DisassociateSkillFromSkillGroupAsync(const DisassociateSkillFromSkillGroupRequest& request, const DisassociateSkillFromSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateSkillFromSkillGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDisassociateSkillFromSkillGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateSkillFromUsersOutcome AlexaForBusinessClient::DisassociateSkillFromUsers(const DisassociateSkillFromUsersRequest& request) const
@@ -1023,14 +1023,14 @@ DisassociateSkillFromUsersOutcomeCallable AlexaForBusinessClient::DisassociateSk
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DisassociateSkillFromUsersAsync(const DisassociateSkillFromUsersRequest& request, const DisassociateSkillFromUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDisassociateSkillFromUsersAsyncHelper(AlexaForBusinessClient const * const clientThis, const DisassociateSkillFromUsersRequest& request, const DisassociateSkillFromUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateSkillFromUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateSkillFromUsers(request), context);
 }
 
-void AlexaForBusinessClient::DisassociateSkillFromUsersAsyncHelper(const DisassociateSkillFromUsersRequest& request, const DisassociateSkillFromUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DisassociateSkillFromUsersAsync(const DisassociateSkillFromUsersRequest& request, const DisassociateSkillFromUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateSkillFromUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDisassociateSkillFromUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateSkillGroupFromRoomOutcome AlexaForBusinessClient::DisassociateSkillGroupFromRoom(const DisassociateSkillGroupFromRoomRequest& request) const
@@ -1047,14 +1047,14 @@ DisassociateSkillGroupFromRoomOutcomeCallable AlexaForBusinessClient::Disassocia
   return task->get_future();
 }
 
-void AlexaForBusinessClient::DisassociateSkillGroupFromRoomAsync(const DisassociateSkillGroupFromRoomRequest& request, const DisassociateSkillGroupFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientDisassociateSkillGroupFromRoomAsyncHelper(AlexaForBusinessClient const * const clientThis, const DisassociateSkillGroupFromRoomRequest& request, const DisassociateSkillGroupFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateSkillGroupFromRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateSkillGroupFromRoom(request), context);
 }
 
-void AlexaForBusinessClient::DisassociateSkillGroupFromRoomAsyncHelper(const DisassociateSkillGroupFromRoomRequest& request, const DisassociateSkillGroupFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::DisassociateSkillGroupFromRoomAsync(const DisassociateSkillGroupFromRoomRequest& request, const DisassociateSkillGroupFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateSkillGroupFromRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientDisassociateSkillGroupFromRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 ForgetSmartHomeAppliancesOutcome AlexaForBusinessClient::ForgetSmartHomeAppliances(const ForgetSmartHomeAppliancesRequest& request) const
@@ -1071,14 +1071,14 @@ ForgetSmartHomeAppliancesOutcomeCallable AlexaForBusinessClient::ForgetSmartHome
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ForgetSmartHomeAppliancesAsync(const ForgetSmartHomeAppliancesRequest& request, const ForgetSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientForgetSmartHomeAppliancesAsyncHelper(AlexaForBusinessClient const * const clientThis, const ForgetSmartHomeAppliancesRequest& request, const ForgetSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ForgetSmartHomeAppliancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ForgetSmartHomeAppliances(request), context);
 }
 
-void AlexaForBusinessClient::ForgetSmartHomeAppliancesAsyncHelper(const ForgetSmartHomeAppliancesRequest& request, const ForgetSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ForgetSmartHomeAppliancesAsync(const ForgetSmartHomeAppliancesRequest& request, const ForgetSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ForgetSmartHomeAppliances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientForgetSmartHomeAppliancesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetAddressBookOutcome AlexaForBusinessClient::GetAddressBook(const GetAddressBookRequest& request) const
@@ -1095,14 +1095,14 @@ GetAddressBookOutcomeCallable AlexaForBusinessClient::GetAddressBookCallable(con
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetAddressBookAsync(const GetAddressBookRequest& request, const GetAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetAddressBookAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetAddressBookRequest& request, const GetAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAddressBookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetAddressBook(request), context);
 }
 
-void AlexaForBusinessClient::GetAddressBookAsyncHelper(const GetAddressBookRequest& request, const GetAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetAddressBookAsync(const GetAddressBookRequest& request, const GetAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAddressBook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetAddressBookAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConferencePreferenceOutcome AlexaForBusinessClient::GetConferencePreference(const GetConferencePreferenceRequest& request) const
@@ -1119,14 +1119,14 @@ GetConferencePreferenceOutcomeCallable AlexaForBusinessClient::GetConferencePref
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetConferencePreferenceAsync(const GetConferencePreferenceRequest& request, const GetConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetConferencePreferenceAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetConferencePreferenceRequest& request, const GetConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConferencePreferenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConferencePreference(request), context);
 }
 
-void AlexaForBusinessClient::GetConferencePreferenceAsyncHelper(const GetConferencePreferenceRequest& request, const GetConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetConferencePreferenceAsync(const GetConferencePreferenceRequest& request, const GetConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConferencePreference(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetConferencePreferenceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetConferenceProviderOutcome AlexaForBusinessClient::GetConferenceProvider(const GetConferenceProviderRequest& request) const
@@ -1143,14 +1143,14 @@ GetConferenceProviderOutcomeCallable AlexaForBusinessClient::GetConferenceProvid
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetConferenceProviderAsync(const GetConferenceProviderRequest& request, const GetConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetConferenceProviderAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetConferenceProviderRequest& request, const GetConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConferenceProviderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetConferenceProvider(request), context);
 }
 
-void AlexaForBusinessClient::GetConferenceProviderAsyncHelper(const GetConferenceProviderRequest& request, const GetConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetConferenceProviderAsync(const GetConferenceProviderRequest& request, const GetConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetConferenceProvider(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetConferenceProviderAsyncHelper( this, request, handler, context ); } );
 }
 
 GetContactOutcome AlexaForBusinessClient::GetContact(const GetContactRequest& request) const
@@ -1167,14 +1167,14 @@ GetContactOutcomeCallable AlexaForBusinessClient::GetContactCallable(const GetCo
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetContactAsync(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetContactAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetContact(request), context);
 }
 
-void AlexaForBusinessClient::GetContactAsyncHelper(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetContactAsync(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetContactAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeviceOutcome AlexaForBusinessClient::GetDevice(const GetDeviceRequest& request) const
@@ -1191,14 +1191,14 @@ GetDeviceOutcomeCallable AlexaForBusinessClient::GetDeviceCallable(const GetDevi
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetDeviceAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDevice(request), context);
 }
 
-void AlexaForBusinessClient::GetDeviceAsyncHelper(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGatewayOutcome AlexaForBusinessClient::GetGateway(const GetGatewayRequest& request) const
@@ -1215,14 +1215,14 @@ GetGatewayOutcomeCallable AlexaForBusinessClient::GetGatewayCallable(const GetGa
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetGatewayAsync(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetGatewayAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGateway(request), context);
 }
 
-void AlexaForBusinessClient::GetGatewayAsyncHelper(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetGatewayAsync(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGatewayGroupOutcome AlexaForBusinessClient::GetGatewayGroup(const GetGatewayGroupRequest& request) const
@@ -1239,14 +1239,14 @@ GetGatewayGroupOutcomeCallable AlexaForBusinessClient::GetGatewayGroupCallable(c
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetGatewayGroupAsync(const GetGatewayGroupRequest& request, const GetGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetGatewayGroupAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetGatewayGroupRequest& request, const GetGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGatewayGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGatewayGroup(request), context);
 }
 
-void AlexaForBusinessClient::GetGatewayGroupAsyncHelper(const GetGatewayGroupRequest& request, const GetGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetGatewayGroupAsync(const GetGatewayGroupRequest& request, const GetGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGatewayGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetGatewayGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetInvitationConfigurationOutcome AlexaForBusinessClient::GetInvitationConfiguration(const GetInvitationConfigurationRequest& request) const
@@ -1263,14 +1263,14 @@ GetInvitationConfigurationOutcomeCallable AlexaForBusinessClient::GetInvitationC
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetInvitationConfigurationAsync(const GetInvitationConfigurationRequest& request, const GetInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetInvitationConfigurationAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetInvitationConfigurationRequest& request, const GetInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInvitationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetInvitationConfiguration(request), context);
 }
 
-void AlexaForBusinessClient::GetInvitationConfigurationAsyncHelper(const GetInvitationConfigurationRequest& request, const GetInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetInvitationConfigurationAsync(const GetInvitationConfigurationRequest& request, const GetInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetInvitationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetInvitationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNetworkProfileOutcome AlexaForBusinessClient::GetNetworkProfile(const GetNetworkProfileRequest& request) const
@@ -1287,14 +1287,14 @@ GetNetworkProfileOutcomeCallable AlexaForBusinessClient::GetNetworkProfileCallab
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetNetworkProfileAsync(const GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetNetworkProfileAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNetworkProfile(request), context);
 }
 
-void AlexaForBusinessClient::GetNetworkProfileAsyncHelper(const GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetNetworkProfileAsync(const GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNetworkProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetNetworkProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 GetProfileOutcome AlexaForBusinessClient::GetProfile(const GetProfileRequest& request) const
@@ -1311,14 +1311,14 @@ GetProfileOutcomeCallable AlexaForBusinessClient::GetProfileCallable(const GetPr
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetProfileAsync(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetProfileAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetProfile(request), context);
 }
 
-void AlexaForBusinessClient::GetProfileAsyncHelper(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetProfileAsync(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRoomOutcome AlexaForBusinessClient::GetRoom(const GetRoomRequest& request) const
@@ -1335,14 +1335,14 @@ GetRoomOutcomeCallable AlexaForBusinessClient::GetRoomCallable(const GetRoomRequ
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetRoomAsync(const GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetRoomAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRoom(request), context);
 }
 
-void AlexaForBusinessClient::GetRoomAsyncHelper(const GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetRoomAsync(const GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRoomSkillParameterOutcome AlexaForBusinessClient::GetRoomSkillParameter(const GetRoomSkillParameterRequest& request) const
@@ -1359,14 +1359,14 @@ GetRoomSkillParameterOutcomeCallable AlexaForBusinessClient::GetRoomSkillParamet
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetRoomSkillParameterAsync(const GetRoomSkillParameterRequest& request, const GetRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetRoomSkillParameterAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetRoomSkillParameterRequest& request, const GetRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRoomSkillParameterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRoomSkillParameter(request), context);
 }
 
-void AlexaForBusinessClient::GetRoomSkillParameterAsyncHelper(const GetRoomSkillParameterRequest& request, const GetRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetRoomSkillParameterAsync(const GetRoomSkillParameterRequest& request, const GetRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRoomSkillParameter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetRoomSkillParameterAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSkillGroupOutcome AlexaForBusinessClient::GetSkillGroup(const GetSkillGroupRequest& request) const
@@ -1383,14 +1383,14 @@ GetSkillGroupOutcomeCallable AlexaForBusinessClient::GetSkillGroupCallable(const
   return task->get_future();
 }
 
-void AlexaForBusinessClient::GetSkillGroupAsync(const GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientGetSkillGroupAsyncHelper(AlexaForBusinessClient const * const clientThis, const GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSkillGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSkillGroup(request), context);
 }
 
-void AlexaForBusinessClient::GetSkillGroupAsyncHelper(const GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::GetSkillGroupAsync(const GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSkillGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientGetSkillGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBusinessReportSchedulesOutcome AlexaForBusinessClient::ListBusinessReportSchedules(const ListBusinessReportSchedulesRequest& request) const
@@ -1407,14 +1407,14 @@ ListBusinessReportSchedulesOutcomeCallable AlexaForBusinessClient::ListBusinessR
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ListBusinessReportSchedulesAsync(const ListBusinessReportSchedulesRequest& request, const ListBusinessReportSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientListBusinessReportSchedulesAsyncHelper(AlexaForBusinessClient const * const clientThis, const ListBusinessReportSchedulesRequest& request, const ListBusinessReportSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBusinessReportSchedulesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBusinessReportSchedules(request), context);
 }
 
-void AlexaForBusinessClient::ListBusinessReportSchedulesAsyncHelper(const ListBusinessReportSchedulesRequest& request, const ListBusinessReportSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ListBusinessReportSchedulesAsync(const ListBusinessReportSchedulesRequest& request, const ListBusinessReportSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBusinessReportSchedules(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientListBusinessReportSchedulesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListConferenceProvidersOutcome AlexaForBusinessClient::ListConferenceProviders(const ListConferenceProvidersRequest& request) const
@@ -1431,14 +1431,14 @@ ListConferenceProvidersOutcomeCallable AlexaForBusinessClient::ListConferencePro
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ListConferenceProvidersAsync(const ListConferenceProvidersRequest& request, const ListConferenceProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientListConferenceProvidersAsyncHelper(AlexaForBusinessClient const * const clientThis, const ListConferenceProvidersRequest& request, const ListConferenceProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConferenceProvidersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListConferenceProviders(request), context);
 }
 
-void AlexaForBusinessClient::ListConferenceProvidersAsyncHelper(const ListConferenceProvidersRequest& request, const ListConferenceProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ListConferenceProvidersAsync(const ListConferenceProvidersRequest& request, const ListConferenceProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListConferenceProviders(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientListConferenceProvidersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDeviceEventsOutcome AlexaForBusinessClient::ListDeviceEvents(const ListDeviceEventsRequest& request) const
@@ -1455,14 +1455,14 @@ ListDeviceEventsOutcomeCallable AlexaForBusinessClient::ListDeviceEventsCallable
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ListDeviceEventsAsync(const ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientListDeviceEventsAsyncHelper(AlexaForBusinessClient const * const clientThis, const ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeviceEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDeviceEvents(request), context);
 }
 
-void AlexaForBusinessClient::ListDeviceEventsAsyncHelper(const ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ListDeviceEventsAsync(const ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeviceEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientListDeviceEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGatewayGroupsOutcome AlexaForBusinessClient::ListGatewayGroups(const ListGatewayGroupsRequest& request) const
@@ -1479,14 +1479,14 @@ ListGatewayGroupsOutcomeCallable AlexaForBusinessClient::ListGatewayGroupsCallab
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ListGatewayGroupsAsync(const ListGatewayGroupsRequest& request, const ListGatewayGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientListGatewayGroupsAsyncHelper(AlexaForBusinessClient const * const clientThis, const ListGatewayGroupsRequest& request, const ListGatewayGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGatewayGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGatewayGroups(request), context);
 }
 
-void AlexaForBusinessClient::ListGatewayGroupsAsyncHelper(const ListGatewayGroupsRequest& request, const ListGatewayGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ListGatewayGroupsAsync(const ListGatewayGroupsRequest& request, const ListGatewayGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGatewayGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientListGatewayGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGatewaysOutcome AlexaForBusinessClient::ListGateways(const ListGatewaysRequest& request) const
@@ -1503,14 +1503,14 @@ ListGatewaysOutcomeCallable AlexaForBusinessClient::ListGatewaysCallable(const L
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ListGatewaysAsync(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientListGatewaysAsyncHelper(AlexaForBusinessClient const * const clientThis, const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGatewaysAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGateways(request), context);
 }
 
-void AlexaForBusinessClient::ListGatewaysAsyncHelper(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ListGatewaysAsync(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGateways(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientListGatewaysAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSkillsOutcome AlexaForBusinessClient::ListSkills(const ListSkillsRequest& request) const
@@ -1527,14 +1527,14 @@ ListSkillsOutcomeCallable AlexaForBusinessClient::ListSkillsCallable(const ListS
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ListSkillsAsync(const ListSkillsRequest& request, const ListSkillsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientListSkillsAsyncHelper(AlexaForBusinessClient const * const clientThis, const ListSkillsRequest& request, const ListSkillsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSkillsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSkills(request), context);
 }
 
-void AlexaForBusinessClient::ListSkillsAsyncHelper(const ListSkillsRequest& request, const ListSkillsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ListSkillsAsync(const ListSkillsRequest& request, const ListSkillsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSkills(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientListSkillsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSkillsStoreCategoriesOutcome AlexaForBusinessClient::ListSkillsStoreCategories(const ListSkillsStoreCategoriesRequest& request) const
@@ -1551,14 +1551,14 @@ ListSkillsStoreCategoriesOutcomeCallable AlexaForBusinessClient::ListSkillsStore
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ListSkillsStoreCategoriesAsync(const ListSkillsStoreCategoriesRequest& request, const ListSkillsStoreCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientListSkillsStoreCategoriesAsyncHelper(AlexaForBusinessClient const * const clientThis, const ListSkillsStoreCategoriesRequest& request, const ListSkillsStoreCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSkillsStoreCategoriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSkillsStoreCategories(request), context);
 }
 
-void AlexaForBusinessClient::ListSkillsStoreCategoriesAsyncHelper(const ListSkillsStoreCategoriesRequest& request, const ListSkillsStoreCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ListSkillsStoreCategoriesAsync(const ListSkillsStoreCategoriesRequest& request, const ListSkillsStoreCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSkillsStoreCategories(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientListSkillsStoreCategoriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSkillsStoreSkillsByCategoryOutcome AlexaForBusinessClient::ListSkillsStoreSkillsByCategory(const ListSkillsStoreSkillsByCategoryRequest& request) const
@@ -1575,14 +1575,14 @@ ListSkillsStoreSkillsByCategoryOutcomeCallable AlexaForBusinessClient::ListSkill
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ListSkillsStoreSkillsByCategoryAsync(const ListSkillsStoreSkillsByCategoryRequest& request, const ListSkillsStoreSkillsByCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientListSkillsStoreSkillsByCategoryAsyncHelper(AlexaForBusinessClient const * const clientThis, const ListSkillsStoreSkillsByCategoryRequest& request, const ListSkillsStoreSkillsByCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSkillsStoreSkillsByCategoryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSkillsStoreSkillsByCategory(request), context);
 }
 
-void AlexaForBusinessClient::ListSkillsStoreSkillsByCategoryAsyncHelper(const ListSkillsStoreSkillsByCategoryRequest& request, const ListSkillsStoreSkillsByCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ListSkillsStoreSkillsByCategoryAsync(const ListSkillsStoreSkillsByCategoryRequest& request, const ListSkillsStoreSkillsByCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSkillsStoreSkillsByCategory(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientListSkillsStoreSkillsByCategoryAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSmartHomeAppliancesOutcome AlexaForBusinessClient::ListSmartHomeAppliances(const ListSmartHomeAppliancesRequest& request) const
@@ -1599,14 +1599,14 @@ ListSmartHomeAppliancesOutcomeCallable AlexaForBusinessClient::ListSmartHomeAppl
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ListSmartHomeAppliancesAsync(const ListSmartHomeAppliancesRequest& request, const ListSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientListSmartHomeAppliancesAsyncHelper(AlexaForBusinessClient const * const clientThis, const ListSmartHomeAppliancesRequest& request, const ListSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSmartHomeAppliancesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSmartHomeAppliances(request), context);
 }
 
-void AlexaForBusinessClient::ListSmartHomeAppliancesAsyncHelper(const ListSmartHomeAppliancesRequest& request, const ListSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ListSmartHomeAppliancesAsync(const ListSmartHomeAppliancesRequest& request, const ListSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSmartHomeAppliances(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientListSmartHomeAppliancesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsOutcome AlexaForBusinessClient::ListTags(const ListTagsRequest& request) const
@@ -1623,14 +1623,14 @@ ListTagsOutcomeCallable AlexaForBusinessClient::ListTagsCallable(const ListTagsR
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientListTagsAsyncHelper(AlexaForBusinessClient const * const clientThis, const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTags(request), context);
 }
 
-void AlexaForBusinessClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientListTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutConferencePreferenceOutcome AlexaForBusinessClient::PutConferencePreference(const PutConferencePreferenceRequest& request) const
@@ -1647,14 +1647,14 @@ PutConferencePreferenceOutcomeCallable AlexaForBusinessClient::PutConferencePref
   return task->get_future();
 }
 
-void AlexaForBusinessClient::PutConferencePreferenceAsync(const PutConferencePreferenceRequest& request, const PutConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientPutConferencePreferenceAsyncHelper(AlexaForBusinessClient const * const clientThis, const PutConferencePreferenceRequest& request, const PutConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConferencePreferenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutConferencePreference(request), context);
 }
 
-void AlexaForBusinessClient::PutConferencePreferenceAsyncHelper(const PutConferencePreferenceRequest& request, const PutConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::PutConferencePreferenceAsync(const PutConferencePreferenceRequest& request, const PutConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutConferencePreference(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientPutConferencePreferenceAsyncHelper( this, request, handler, context ); } );
 }
 
 PutInvitationConfigurationOutcome AlexaForBusinessClient::PutInvitationConfiguration(const PutInvitationConfigurationRequest& request) const
@@ -1671,14 +1671,14 @@ PutInvitationConfigurationOutcomeCallable AlexaForBusinessClient::PutInvitationC
   return task->get_future();
 }
 
-void AlexaForBusinessClient::PutInvitationConfigurationAsync(const PutInvitationConfigurationRequest& request, const PutInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientPutInvitationConfigurationAsyncHelper(AlexaForBusinessClient const * const clientThis, const PutInvitationConfigurationRequest& request, const PutInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutInvitationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutInvitationConfiguration(request), context);
 }
 
-void AlexaForBusinessClient::PutInvitationConfigurationAsyncHelper(const PutInvitationConfigurationRequest& request, const PutInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::PutInvitationConfigurationAsync(const PutInvitationConfigurationRequest& request, const PutInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutInvitationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientPutInvitationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 PutRoomSkillParameterOutcome AlexaForBusinessClient::PutRoomSkillParameter(const PutRoomSkillParameterRequest& request) const
@@ -1695,14 +1695,14 @@ PutRoomSkillParameterOutcomeCallable AlexaForBusinessClient::PutRoomSkillParamet
   return task->get_future();
 }
 
-void AlexaForBusinessClient::PutRoomSkillParameterAsync(const PutRoomSkillParameterRequest& request, const PutRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientPutRoomSkillParameterAsyncHelper(AlexaForBusinessClient const * const clientThis, const PutRoomSkillParameterRequest& request, const PutRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRoomSkillParameterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutRoomSkillParameter(request), context);
 }
 
-void AlexaForBusinessClient::PutRoomSkillParameterAsyncHelper(const PutRoomSkillParameterRequest& request, const PutRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::PutRoomSkillParameterAsync(const PutRoomSkillParameterRequest& request, const PutRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutRoomSkillParameter(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientPutRoomSkillParameterAsyncHelper( this, request, handler, context ); } );
 }
 
 PutSkillAuthorizationOutcome AlexaForBusinessClient::PutSkillAuthorization(const PutSkillAuthorizationRequest& request) const
@@ -1719,14 +1719,14 @@ PutSkillAuthorizationOutcomeCallable AlexaForBusinessClient::PutSkillAuthorizati
   return task->get_future();
 }
 
-void AlexaForBusinessClient::PutSkillAuthorizationAsync(const PutSkillAuthorizationRequest& request, const PutSkillAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientPutSkillAuthorizationAsyncHelper(AlexaForBusinessClient const * const clientThis, const PutSkillAuthorizationRequest& request, const PutSkillAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSkillAuthorizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutSkillAuthorization(request), context);
 }
 
-void AlexaForBusinessClient::PutSkillAuthorizationAsyncHelper(const PutSkillAuthorizationRequest& request, const PutSkillAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::PutSkillAuthorizationAsync(const PutSkillAuthorizationRequest& request, const PutSkillAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutSkillAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientPutSkillAuthorizationAsyncHelper( this, request, handler, context ); } );
 }
 
 RegisterAVSDeviceOutcome AlexaForBusinessClient::RegisterAVSDevice(const RegisterAVSDeviceRequest& request) const
@@ -1743,14 +1743,14 @@ RegisterAVSDeviceOutcomeCallable AlexaForBusinessClient::RegisterAVSDeviceCallab
   return task->get_future();
 }
 
-void AlexaForBusinessClient::RegisterAVSDeviceAsync(const RegisterAVSDeviceRequest& request, const RegisterAVSDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientRegisterAVSDeviceAsyncHelper(AlexaForBusinessClient const * const clientThis, const RegisterAVSDeviceRequest& request, const RegisterAVSDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterAVSDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RegisterAVSDevice(request), context);
 }
 
-void AlexaForBusinessClient::RegisterAVSDeviceAsyncHelper(const RegisterAVSDeviceRequest& request, const RegisterAVSDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::RegisterAVSDeviceAsync(const RegisterAVSDeviceRequest& request, const RegisterAVSDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RegisterAVSDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientRegisterAVSDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectSkillOutcome AlexaForBusinessClient::RejectSkill(const RejectSkillRequest& request) const
@@ -1767,14 +1767,14 @@ RejectSkillOutcomeCallable AlexaForBusinessClient::RejectSkillCallable(const Rej
   return task->get_future();
 }
 
-void AlexaForBusinessClient::RejectSkillAsync(const RejectSkillRequest& request, const RejectSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientRejectSkillAsyncHelper(AlexaForBusinessClient const * const clientThis, const RejectSkillRequest& request, const RejectSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectSkillAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectSkill(request), context);
 }
 
-void AlexaForBusinessClient::RejectSkillAsyncHelper(const RejectSkillRequest& request, const RejectSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::RejectSkillAsync(const RejectSkillRequest& request, const RejectSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectSkill(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientRejectSkillAsyncHelper( this, request, handler, context ); } );
 }
 
 ResolveRoomOutcome AlexaForBusinessClient::ResolveRoom(const ResolveRoomRequest& request) const
@@ -1791,14 +1791,14 @@ ResolveRoomOutcomeCallable AlexaForBusinessClient::ResolveRoomCallable(const Res
   return task->get_future();
 }
 
-void AlexaForBusinessClient::ResolveRoomAsync(const ResolveRoomRequest& request, const ResolveRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientResolveRoomAsyncHelper(AlexaForBusinessClient const * const clientThis, const ResolveRoomRequest& request, const ResolveRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResolveRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResolveRoom(request), context);
 }
 
-void AlexaForBusinessClient::ResolveRoomAsyncHelper(const ResolveRoomRequest& request, const ResolveRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::ResolveRoomAsync(const ResolveRoomRequest& request, const ResolveRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResolveRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientResolveRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 RevokeInvitationOutcome AlexaForBusinessClient::RevokeInvitation(const RevokeInvitationRequest& request) const
@@ -1815,14 +1815,14 @@ RevokeInvitationOutcomeCallable AlexaForBusinessClient::RevokeInvitationCallable
   return task->get_future();
 }
 
-void AlexaForBusinessClient::RevokeInvitationAsync(const RevokeInvitationRequest& request, const RevokeInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientRevokeInvitationAsyncHelper(AlexaForBusinessClient const * const clientThis, const RevokeInvitationRequest& request, const RevokeInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeInvitationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RevokeInvitation(request), context);
 }
 
-void AlexaForBusinessClient::RevokeInvitationAsyncHelper(const RevokeInvitationRequest& request, const RevokeInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::RevokeInvitationAsync(const RevokeInvitationRequest& request, const RevokeInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RevokeInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientRevokeInvitationAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchAddressBooksOutcome AlexaForBusinessClient::SearchAddressBooks(const SearchAddressBooksRequest& request) const
@@ -1839,14 +1839,14 @@ SearchAddressBooksOutcomeCallable AlexaForBusinessClient::SearchAddressBooksCall
   return task->get_future();
 }
 
-void AlexaForBusinessClient::SearchAddressBooksAsync(const SearchAddressBooksRequest& request, const SearchAddressBooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientSearchAddressBooksAsyncHelper(AlexaForBusinessClient const * const clientThis, const SearchAddressBooksRequest& request, const SearchAddressBooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchAddressBooksAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchAddressBooks(request), context);
 }
 
-void AlexaForBusinessClient::SearchAddressBooksAsyncHelper(const SearchAddressBooksRequest& request, const SearchAddressBooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::SearchAddressBooksAsync(const SearchAddressBooksRequest& request, const SearchAddressBooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchAddressBooks(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientSearchAddressBooksAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchContactsOutcome AlexaForBusinessClient::SearchContacts(const SearchContactsRequest& request) const
@@ -1863,14 +1863,14 @@ SearchContactsOutcomeCallable AlexaForBusinessClient::SearchContactsCallable(con
   return task->get_future();
 }
 
-void AlexaForBusinessClient::SearchContactsAsync(const SearchContactsRequest& request, const SearchContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientSearchContactsAsyncHelper(AlexaForBusinessClient const * const clientThis, const SearchContactsRequest& request, const SearchContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchContactsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchContacts(request), context);
 }
 
-void AlexaForBusinessClient::SearchContactsAsyncHelper(const SearchContactsRequest& request, const SearchContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::SearchContactsAsync(const SearchContactsRequest& request, const SearchContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchContacts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientSearchContactsAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchDevicesOutcome AlexaForBusinessClient::SearchDevices(const SearchDevicesRequest& request) const
@@ -1887,14 +1887,14 @@ SearchDevicesOutcomeCallable AlexaForBusinessClient::SearchDevicesCallable(const
   return task->get_future();
 }
 
-void AlexaForBusinessClient::SearchDevicesAsync(const SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientSearchDevicesAsyncHelper(AlexaForBusinessClient const * const clientThis, const SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchDevices(request), context);
 }
 
-void AlexaForBusinessClient::SearchDevicesAsyncHelper(const SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::SearchDevicesAsync(const SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientSearchDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchNetworkProfilesOutcome AlexaForBusinessClient::SearchNetworkProfiles(const SearchNetworkProfilesRequest& request) const
@@ -1911,14 +1911,14 @@ SearchNetworkProfilesOutcomeCallable AlexaForBusinessClient::SearchNetworkProfil
   return task->get_future();
 }
 
-void AlexaForBusinessClient::SearchNetworkProfilesAsync(const SearchNetworkProfilesRequest& request, const SearchNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientSearchNetworkProfilesAsyncHelper(AlexaForBusinessClient const * const clientThis, const SearchNetworkProfilesRequest& request, const SearchNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchNetworkProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchNetworkProfiles(request), context);
 }
 
-void AlexaForBusinessClient::SearchNetworkProfilesAsyncHelper(const SearchNetworkProfilesRequest& request, const SearchNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::SearchNetworkProfilesAsync(const SearchNetworkProfilesRequest& request, const SearchNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchNetworkProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientSearchNetworkProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchProfilesOutcome AlexaForBusinessClient::SearchProfiles(const SearchProfilesRequest& request) const
@@ -1935,14 +1935,14 @@ SearchProfilesOutcomeCallable AlexaForBusinessClient::SearchProfilesCallable(con
   return task->get_future();
 }
 
-void AlexaForBusinessClient::SearchProfilesAsync(const SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientSearchProfilesAsyncHelper(AlexaForBusinessClient const * const clientThis, const SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchProfilesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchProfiles(request), context);
 }
 
-void AlexaForBusinessClient::SearchProfilesAsyncHelper(const SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::SearchProfilesAsync(const SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientSearchProfilesAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchRoomsOutcome AlexaForBusinessClient::SearchRooms(const SearchRoomsRequest& request) const
@@ -1959,14 +1959,14 @@ SearchRoomsOutcomeCallable AlexaForBusinessClient::SearchRoomsCallable(const Sea
   return task->get_future();
 }
 
-void AlexaForBusinessClient::SearchRoomsAsync(const SearchRoomsRequest& request, const SearchRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientSearchRoomsAsyncHelper(AlexaForBusinessClient const * const clientThis, const SearchRoomsRequest& request, const SearchRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchRoomsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchRooms(request), context);
 }
 
-void AlexaForBusinessClient::SearchRoomsAsyncHelper(const SearchRoomsRequest& request, const SearchRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::SearchRoomsAsync(const SearchRoomsRequest& request, const SearchRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchRooms(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientSearchRoomsAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchSkillGroupsOutcome AlexaForBusinessClient::SearchSkillGroups(const SearchSkillGroupsRequest& request) const
@@ -1983,14 +1983,14 @@ SearchSkillGroupsOutcomeCallable AlexaForBusinessClient::SearchSkillGroupsCallab
   return task->get_future();
 }
 
-void AlexaForBusinessClient::SearchSkillGroupsAsync(const SearchSkillGroupsRequest& request, const SearchSkillGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientSearchSkillGroupsAsyncHelper(AlexaForBusinessClient const * const clientThis, const SearchSkillGroupsRequest& request, const SearchSkillGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchSkillGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchSkillGroups(request), context);
 }
 
-void AlexaForBusinessClient::SearchSkillGroupsAsyncHelper(const SearchSkillGroupsRequest& request, const SearchSkillGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::SearchSkillGroupsAsync(const SearchSkillGroupsRequest& request, const SearchSkillGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchSkillGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientSearchSkillGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 SearchUsersOutcome AlexaForBusinessClient::SearchUsers(const SearchUsersRequest& request) const
@@ -2007,14 +2007,14 @@ SearchUsersOutcomeCallable AlexaForBusinessClient::SearchUsersCallable(const Sea
   return task->get_future();
 }
 
-void AlexaForBusinessClient::SearchUsersAsync(const SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientSearchUsersAsyncHelper(AlexaForBusinessClient const * const clientThis, const SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SearchUsers(request), context);
 }
 
-void AlexaForBusinessClient::SearchUsersAsyncHelper(const SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::SearchUsersAsync(const SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SearchUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientSearchUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 SendAnnouncementOutcome AlexaForBusinessClient::SendAnnouncement(const SendAnnouncementRequest& request) const
@@ -2031,14 +2031,14 @@ SendAnnouncementOutcomeCallable AlexaForBusinessClient::SendAnnouncementCallable
   return task->get_future();
 }
 
-void AlexaForBusinessClient::SendAnnouncementAsync(const SendAnnouncementRequest& request, const SendAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientSendAnnouncementAsyncHelper(AlexaForBusinessClient const * const clientThis, const SendAnnouncementRequest& request, const SendAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendAnnouncementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendAnnouncement(request), context);
 }
 
-void AlexaForBusinessClient::SendAnnouncementAsyncHelper(const SendAnnouncementRequest& request, const SendAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::SendAnnouncementAsync(const SendAnnouncementRequest& request, const SendAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendAnnouncement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientSendAnnouncementAsyncHelper( this, request, handler, context ); } );
 }
 
 SendInvitationOutcome AlexaForBusinessClient::SendInvitation(const SendInvitationRequest& request) const
@@ -2055,14 +2055,14 @@ SendInvitationOutcomeCallable AlexaForBusinessClient::SendInvitationCallable(con
   return task->get_future();
 }
 
-void AlexaForBusinessClient::SendInvitationAsync(const SendInvitationRequest& request, const SendInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientSendInvitationAsyncHelper(AlexaForBusinessClient const * const clientThis, const SendInvitationRequest& request, const SendInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendInvitationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendInvitation(request), context);
 }
 
-void AlexaForBusinessClient::SendInvitationAsyncHelper(const SendInvitationRequest& request, const SendInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::SendInvitationAsync(const SendInvitationRequest& request, const SendInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientSendInvitationAsyncHelper( this, request, handler, context ); } );
 }
 
 StartDeviceSyncOutcome AlexaForBusinessClient::StartDeviceSync(const StartDeviceSyncRequest& request) const
@@ -2079,14 +2079,14 @@ StartDeviceSyncOutcomeCallable AlexaForBusinessClient::StartDeviceSyncCallable(c
   return task->get_future();
 }
 
-void AlexaForBusinessClient::StartDeviceSyncAsync(const StartDeviceSyncRequest& request, const StartDeviceSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientStartDeviceSyncAsyncHelper(AlexaForBusinessClient const * const clientThis, const StartDeviceSyncRequest& request, const StartDeviceSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDeviceSyncAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartDeviceSync(request), context);
 }
 
-void AlexaForBusinessClient::StartDeviceSyncAsyncHelper(const StartDeviceSyncRequest& request, const StartDeviceSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::StartDeviceSyncAsync(const StartDeviceSyncRequest& request, const StartDeviceSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDeviceSync(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientStartDeviceSyncAsyncHelper( this, request, handler, context ); } );
 }
 
 StartSmartHomeApplianceDiscoveryOutcome AlexaForBusinessClient::StartSmartHomeApplianceDiscovery(const StartSmartHomeApplianceDiscoveryRequest& request) const
@@ -2103,14 +2103,14 @@ StartSmartHomeApplianceDiscoveryOutcomeCallable AlexaForBusinessClient::StartSma
   return task->get_future();
 }
 
-void AlexaForBusinessClient::StartSmartHomeApplianceDiscoveryAsync(const StartSmartHomeApplianceDiscoveryRequest& request, const StartSmartHomeApplianceDiscoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientStartSmartHomeApplianceDiscoveryAsyncHelper(AlexaForBusinessClient const * const clientThis, const StartSmartHomeApplianceDiscoveryRequest& request, const StartSmartHomeApplianceDiscoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSmartHomeApplianceDiscoveryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartSmartHomeApplianceDiscovery(request), context);
 }
 
-void AlexaForBusinessClient::StartSmartHomeApplianceDiscoveryAsyncHelper(const StartSmartHomeApplianceDiscoveryRequest& request, const StartSmartHomeApplianceDiscoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::StartSmartHomeApplianceDiscoveryAsync(const StartSmartHomeApplianceDiscoveryRequest& request, const StartSmartHomeApplianceDiscoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartSmartHomeApplianceDiscovery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientStartSmartHomeApplianceDiscoveryAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome AlexaForBusinessClient::TagResource(const TagResourceRequest& request) const
@@ -2127,14 +2127,14 @@ TagResourceOutcomeCallable AlexaForBusinessClient::TagResourceCallable(const Tag
   return task->get_future();
 }
 
-void AlexaForBusinessClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientTagResourceAsyncHelper(AlexaForBusinessClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void AlexaForBusinessClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome AlexaForBusinessClient::UntagResource(const UntagResourceRequest& request) const
@@ -2151,14 +2151,14 @@ UntagResourceOutcomeCallable AlexaForBusinessClient::UntagResourceCallable(const
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUntagResourceAsyncHelper(AlexaForBusinessClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void AlexaForBusinessClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAddressBookOutcome AlexaForBusinessClient::UpdateAddressBook(const UpdateAddressBookRequest& request) const
@@ -2175,14 +2175,14 @@ UpdateAddressBookOutcomeCallable AlexaForBusinessClient::UpdateAddressBookCallab
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateAddressBookAsync(const UpdateAddressBookRequest& request, const UpdateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateAddressBookAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateAddressBookRequest& request, const UpdateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAddressBookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAddressBook(request), context);
 }
 
-void AlexaForBusinessClient::UpdateAddressBookAsyncHelper(const UpdateAddressBookRequest& request, const UpdateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateAddressBookAsync(const UpdateAddressBookRequest& request, const UpdateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAddressBook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateAddressBookAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateBusinessReportScheduleOutcome AlexaForBusinessClient::UpdateBusinessReportSchedule(const UpdateBusinessReportScheduleRequest& request) const
@@ -2199,14 +2199,14 @@ UpdateBusinessReportScheduleOutcomeCallable AlexaForBusinessClient::UpdateBusine
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateBusinessReportScheduleAsync(const UpdateBusinessReportScheduleRequest& request, const UpdateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateBusinessReportScheduleAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateBusinessReportScheduleRequest& request, const UpdateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBusinessReportScheduleAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateBusinessReportSchedule(request), context);
 }
 
-void AlexaForBusinessClient::UpdateBusinessReportScheduleAsyncHelper(const UpdateBusinessReportScheduleRequest& request, const UpdateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateBusinessReportScheduleAsync(const UpdateBusinessReportScheduleRequest& request, const UpdateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateBusinessReportSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateBusinessReportScheduleAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateConferenceProviderOutcome AlexaForBusinessClient::UpdateConferenceProvider(const UpdateConferenceProviderRequest& request) const
@@ -2223,14 +2223,14 @@ UpdateConferenceProviderOutcomeCallable AlexaForBusinessClient::UpdateConference
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateConferenceProviderAsync(const UpdateConferenceProviderRequest& request, const UpdateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateConferenceProviderAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateConferenceProviderRequest& request, const UpdateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConferenceProviderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateConferenceProvider(request), context);
 }
 
-void AlexaForBusinessClient::UpdateConferenceProviderAsyncHelper(const UpdateConferenceProviderRequest& request, const UpdateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateConferenceProviderAsync(const UpdateConferenceProviderRequest& request, const UpdateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateConferenceProvider(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateConferenceProviderAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateContactOutcome AlexaForBusinessClient::UpdateContact(const UpdateContactRequest& request) const
@@ -2247,14 +2247,14 @@ UpdateContactOutcomeCallable AlexaForBusinessClient::UpdateContactCallable(const
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateContactAsync(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateContactAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateContact(request), context);
 }
 
-void AlexaForBusinessClient::UpdateContactAsyncHelper(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateContactAsync(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateContact(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateContactAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDeviceOutcome AlexaForBusinessClient::UpdateDevice(const UpdateDeviceRequest& request) const
@@ -2271,14 +2271,14 @@ UpdateDeviceOutcomeCallable AlexaForBusinessClient::UpdateDeviceCallable(const U
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateDeviceAsync(const UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateDeviceAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDevice(request), context);
 }
 
-void AlexaForBusinessClient::UpdateDeviceAsyncHelper(const UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateDeviceAsync(const UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGatewayOutcome AlexaForBusinessClient::UpdateGateway(const UpdateGatewayRequest& request) const
@@ -2295,14 +2295,14 @@ UpdateGatewayOutcomeCallable AlexaForBusinessClient::UpdateGatewayCallable(const
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateGatewayAsync(const UpdateGatewayRequest& request, const UpdateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateGatewayAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateGatewayRequest& request, const UpdateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGateway(request), context);
 }
 
-void AlexaForBusinessClient::UpdateGatewayAsyncHelper(const UpdateGatewayRequest& request, const UpdateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateGatewayAsync(const UpdateGatewayRequest& request, const UpdateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGateway(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateGatewayAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGatewayGroupOutcome AlexaForBusinessClient::UpdateGatewayGroup(const UpdateGatewayGroupRequest& request) const
@@ -2319,14 +2319,14 @@ UpdateGatewayGroupOutcomeCallable AlexaForBusinessClient::UpdateGatewayGroupCall
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateGatewayGroupAsync(const UpdateGatewayGroupRequest& request, const UpdateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateGatewayGroupAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateGatewayGroupRequest& request, const UpdateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGatewayGroup(request), context);
 }
 
-void AlexaForBusinessClient::UpdateGatewayGroupAsyncHelper(const UpdateGatewayGroupRequest& request, const UpdateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateGatewayGroupAsync(const UpdateGatewayGroupRequest& request, const UpdateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGatewayGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateGatewayGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateNetworkProfileOutcome AlexaForBusinessClient::UpdateNetworkProfile(const UpdateNetworkProfileRequest& request) const
@@ -2343,14 +2343,14 @@ UpdateNetworkProfileOutcomeCallable AlexaForBusinessClient::UpdateNetworkProfile
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateNetworkProfileAsync(const UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateNetworkProfileAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNetworkProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateNetworkProfile(request), context);
 }
 
-void AlexaForBusinessClient::UpdateNetworkProfileAsyncHelper(const UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateNetworkProfileAsync(const UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateNetworkProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateNetworkProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProfileOutcome AlexaForBusinessClient::UpdateProfile(const UpdateProfileRequest& request) const
@@ -2367,14 +2367,14 @@ UpdateProfileOutcomeCallable AlexaForBusinessClient::UpdateProfileCallable(const
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateProfileAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProfileAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProfile(request), context);
 }
 
-void AlexaForBusinessClient::UpdateProfileAsyncHelper(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateProfileAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRoomOutcome AlexaForBusinessClient::UpdateRoom(const UpdateRoomRequest& request) const
@@ -2391,14 +2391,14 @@ UpdateRoomOutcomeCallable AlexaForBusinessClient::UpdateRoomCallable(const Updat
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateRoomAsync(const UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateRoomAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRoom(request), context);
 }
 
-void AlexaForBusinessClient::UpdateRoomAsyncHelper(const UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateRoomAsync(const UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateSkillGroupOutcome AlexaForBusinessClient::UpdateSkillGroup(const UpdateSkillGroupRequest& request) const
@@ -2415,13 +2415,13 @@ UpdateSkillGroupOutcomeCallable AlexaForBusinessClient::UpdateSkillGroupCallable
   return task->get_future();
 }
 
-void AlexaForBusinessClient::UpdateSkillGroupAsync(const UpdateSkillGroupRequest& request, const UpdateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClientUpdateSkillGroupAsyncHelper(AlexaForBusinessClient const * const clientThis, const UpdateSkillGroupRequest& request, const UpdateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSkillGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateSkillGroup(request), context);
 }
 
-void AlexaForBusinessClient::UpdateSkillGroupAsyncHelper(const UpdateSkillGroupRequest& request, const UpdateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AlexaForBusinessClient::UpdateSkillGroupAsync(const UpdateSkillGroupRequest& request, const UpdateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateSkillGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AlexaForBusinessClientUpdateSkillGroupAsyncHelper( this, request, handler, context ); } );
 }
 

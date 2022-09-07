@@ -159,14 +159,14 @@ BatchDeleteBuildsOutcomeCallable CodeBuildClient::BatchDeleteBuildsCallable(cons
   return task->get_future();
 }
 
-void CodeBuildClient::BatchDeleteBuildsAsync(const BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientBatchDeleteBuildsAsyncHelper(CodeBuildClient const * const clientThis, const BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteBuildsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchDeleteBuilds(request), context);
 }
 
-void CodeBuildClient::BatchDeleteBuildsAsyncHelper(const BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::BatchDeleteBuildsAsync(const BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchDeleteBuilds(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientBatchDeleteBuildsAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetBuildBatchesOutcome CodeBuildClient::BatchGetBuildBatches(const BatchGetBuildBatchesRequest& request) const
@@ -183,14 +183,14 @@ BatchGetBuildBatchesOutcomeCallable CodeBuildClient::BatchGetBuildBatchesCallabl
   return task->get_future();
 }
 
-void CodeBuildClient::BatchGetBuildBatchesAsync(const BatchGetBuildBatchesRequest& request, const BatchGetBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientBatchGetBuildBatchesAsyncHelper(CodeBuildClient const * const clientThis, const BatchGetBuildBatchesRequest& request, const BatchGetBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetBuildBatchesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetBuildBatches(request), context);
 }
 
-void CodeBuildClient::BatchGetBuildBatchesAsyncHelper(const BatchGetBuildBatchesRequest& request, const BatchGetBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::BatchGetBuildBatchesAsync(const BatchGetBuildBatchesRequest& request, const BatchGetBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetBuildBatches(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientBatchGetBuildBatchesAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetBuildsOutcome CodeBuildClient::BatchGetBuilds(const BatchGetBuildsRequest& request) const
@@ -207,14 +207,14 @@ BatchGetBuildsOutcomeCallable CodeBuildClient::BatchGetBuildsCallable(const Batc
   return task->get_future();
 }
 
-void CodeBuildClient::BatchGetBuildsAsync(const BatchGetBuildsRequest& request, const BatchGetBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientBatchGetBuildsAsyncHelper(CodeBuildClient const * const clientThis, const BatchGetBuildsRequest& request, const BatchGetBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetBuildsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetBuilds(request), context);
 }
 
-void CodeBuildClient::BatchGetBuildsAsyncHelper(const BatchGetBuildsRequest& request, const BatchGetBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::BatchGetBuildsAsync(const BatchGetBuildsRequest& request, const BatchGetBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetBuilds(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientBatchGetBuildsAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetProjectsOutcome CodeBuildClient::BatchGetProjects(const BatchGetProjectsRequest& request) const
@@ -231,14 +231,14 @@ BatchGetProjectsOutcomeCallable CodeBuildClient::BatchGetProjectsCallable(const 
   return task->get_future();
 }
 
-void CodeBuildClient::BatchGetProjectsAsync(const BatchGetProjectsRequest& request, const BatchGetProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientBatchGetProjectsAsyncHelper(CodeBuildClient const * const clientThis, const BatchGetProjectsRequest& request, const BatchGetProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetProjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetProjects(request), context);
 }
 
-void CodeBuildClient::BatchGetProjectsAsyncHelper(const BatchGetProjectsRequest& request, const BatchGetProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::BatchGetProjectsAsync(const BatchGetProjectsRequest& request, const BatchGetProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetProjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientBatchGetProjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetReportGroupsOutcome CodeBuildClient::BatchGetReportGroups(const BatchGetReportGroupsRequest& request) const
@@ -255,14 +255,14 @@ BatchGetReportGroupsOutcomeCallable CodeBuildClient::BatchGetReportGroupsCallabl
   return task->get_future();
 }
 
-void CodeBuildClient::BatchGetReportGroupsAsync(const BatchGetReportGroupsRequest& request, const BatchGetReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientBatchGetReportGroupsAsyncHelper(CodeBuildClient const * const clientThis, const BatchGetReportGroupsRequest& request, const BatchGetReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetReportGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetReportGroups(request), context);
 }
 
-void CodeBuildClient::BatchGetReportGroupsAsyncHelper(const BatchGetReportGroupsRequest& request, const BatchGetReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::BatchGetReportGroupsAsync(const BatchGetReportGroupsRequest& request, const BatchGetReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetReportGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientBatchGetReportGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetReportsOutcome CodeBuildClient::BatchGetReports(const BatchGetReportsRequest& request) const
@@ -279,14 +279,14 @@ BatchGetReportsOutcomeCallable CodeBuildClient::BatchGetReportsCallable(const Ba
   return task->get_future();
 }
 
-void CodeBuildClient::BatchGetReportsAsync(const BatchGetReportsRequest& request, const BatchGetReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientBatchGetReportsAsyncHelper(CodeBuildClient const * const clientThis, const BatchGetReportsRequest& request, const BatchGetReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetReportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetReports(request), context);
 }
 
-void CodeBuildClient::BatchGetReportsAsyncHelper(const BatchGetReportsRequest& request, const BatchGetReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::BatchGetReportsAsync(const BatchGetReportsRequest& request, const BatchGetReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetReports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientBatchGetReportsAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProjectOutcome CodeBuildClient::CreateProject(const CreateProjectRequest& request) const
@@ -303,14 +303,14 @@ CreateProjectOutcomeCallable CodeBuildClient::CreateProjectCallable(const Create
   return task->get_future();
 }
 
-void CodeBuildClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientCreateProjectAsyncHelper(CodeBuildClient const * const clientThis, const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProject(request), context);
 }
 
-void CodeBuildClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientCreateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateReportGroupOutcome CodeBuildClient::CreateReportGroup(const CreateReportGroupRequest& request) const
@@ -327,14 +327,14 @@ CreateReportGroupOutcomeCallable CodeBuildClient::CreateReportGroupCallable(cons
   return task->get_future();
 }
 
-void CodeBuildClient::CreateReportGroupAsync(const CreateReportGroupRequest& request, const CreateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientCreateReportGroupAsyncHelper(CodeBuildClient const * const clientThis, const CreateReportGroupRequest& request, const CreateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReportGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateReportGroup(request), context);
 }
 
-void CodeBuildClient::CreateReportGroupAsyncHelper(const CreateReportGroupRequest& request, const CreateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::CreateReportGroupAsync(const CreateReportGroupRequest& request, const CreateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateReportGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientCreateReportGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWebhookOutcome CodeBuildClient::CreateWebhook(const CreateWebhookRequest& request) const
@@ -351,14 +351,14 @@ CreateWebhookOutcomeCallable CodeBuildClient::CreateWebhookCallable(const Create
   return task->get_future();
 }
 
-void CodeBuildClient::CreateWebhookAsync(const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientCreateWebhookAsyncHelper(CodeBuildClient const * const clientThis, const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWebhookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWebhook(request), context);
 }
 
-void CodeBuildClient::CreateWebhookAsyncHelper(const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::CreateWebhookAsync(const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWebhook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientCreateWebhookAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBuildBatchOutcome CodeBuildClient::DeleteBuildBatch(const DeleteBuildBatchRequest& request) const
@@ -375,14 +375,14 @@ DeleteBuildBatchOutcomeCallable CodeBuildClient::DeleteBuildBatchCallable(const 
   return task->get_future();
 }
 
-void CodeBuildClient::DeleteBuildBatchAsync(const DeleteBuildBatchRequest& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientDeleteBuildBatchAsyncHelper(CodeBuildClient const * const clientThis, const DeleteBuildBatchRequest& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBuildBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBuildBatch(request), context);
 }
 
-void CodeBuildClient::DeleteBuildBatchAsyncHelper(const DeleteBuildBatchRequest& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::DeleteBuildBatchAsync(const DeleteBuildBatchRequest& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBuildBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientDeleteBuildBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProjectOutcome CodeBuildClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -399,14 +399,14 @@ DeleteProjectOutcomeCallable CodeBuildClient::DeleteProjectCallable(const Delete
   return task->get_future();
 }
 
-void CodeBuildClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientDeleteProjectAsyncHelper(CodeBuildClient const * const clientThis, const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProject(request), context);
 }
 
-void CodeBuildClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientDeleteProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteReportOutcome CodeBuildClient::DeleteReport(const DeleteReportRequest& request) const
@@ -423,14 +423,14 @@ DeleteReportOutcomeCallable CodeBuildClient::DeleteReportCallable(const DeleteRe
   return task->get_future();
 }
 
-void CodeBuildClient::DeleteReportAsync(const DeleteReportRequest& request, const DeleteReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientDeleteReportAsyncHelper(CodeBuildClient const * const clientThis, const DeleteReportRequest& request, const DeleteReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReportAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReport(request), context);
 }
 
-void CodeBuildClient::DeleteReportAsyncHelper(const DeleteReportRequest& request, const DeleteReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::DeleteReportAsync(const DeleteReportRequest& request, const DeleteReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReport(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientDeleteReportAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteReportGroupOutcome CodeBuildClient::DeleteReportGroup(const DeleteReportGroupRequest& request) const
@@ -447,14 +447,14 @@ DeleteReportGroupOutcomeCallable CodeBuildClient::DeleteReportGroupCallable(cons
   return task->get_future();
 }
 
-void CodeBuildClient::DeleteReportGroupAsync(const DeleteReportGroupRequest& request, const DeleteReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientDeleteReportGroupAsyncHelper(CodeBuildClient const * const clientThis, const DeleteReportGroupRequest& request, const DeleteReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReportGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteReportGroup(request), context);
 }
 
-void CodeBuildClient::DeleteReportGroupAsyncHelper(const DeleteReportGroupRequest& request, const DeleteReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::DeleteReportGroupAsync(const DeleteReportGroupRequest& request, const DeleteReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteReportGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientDeleteReportGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourcePolicyOutcome CodeBuildClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -471,14 +471,14 @@ DeleteResourcePolicyOutcomeCallable CodeBuildClient::DeleteResourcePolicyCallabl
   return task->get_future();
 }
 
-void CodeBuildClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientDeleteResourcePolicyAsyncHelper(CodeBuildClient const * const clientThis, const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourcePolicy(request), context);
 }
 
-void CodeBuildClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientDeleteResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteSourceCredentialsOutcome CodeBuildClient::DeleteSourceCredentials(const DeleteSourceCredentialsRequest& request) const
@@ -495,14 +495,14 @@ DeleteSourceCredentialsOutcomeCallable CodeBuildClient::DeleteSourceCredentialsC
   return task->get_future();
 }
 
-void CodeBuildClient::DeleteSourceCredentialsAsync(const DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientDeleteSourceCredentialsAsyncHelper(CodeBuildClient const * const clientThis, const DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSourceCredentialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteSourceCredentials(request), context);
 }
 
-void CodeBuildClient::DeleteSourceCredentialsAsyncHelper(const DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::DeleteSourceCredentialsAsync(const DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteSourceCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientDeleteSourceCredentialsAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWebhookOutcome CodeBuildClient::DeleteWebhook(const DeleteWebhookRequest& request) const
@@ -519,14 +519,14 @@ DeleteWebhookOutcomeCallable CodeBuildClient::DeleteWebhookCallable(const Delete
   return task->get_future();
 }
 
-void CodeBuildClient::DeleteWebhookAsync(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientDeleteWebhookAsyncHelper(CodeBuildClient const * const clientThis, const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWebhookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWebhook(request), context);
 }
 
-void CodeBuildClient::DeleteWebhookAsyncHelper(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::DeleteWebhookAsync(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWebhook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientDeleteWebhookAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeCodeCoveragesOutcome CodeBuildClient::DescribeCodeCoverages(const DescribeCodeCoveragesRequest& request) const
@@ -543,14 +543,14 @@ DescribeCodeCoveragesOutcomeCallable CodeBuildClient::DescribeCodeCoveragesCalla
   return task->get_future();
 }
 
-void CodeBuildClient::DescribeCodeCoveragesAsync(const DescribeCodeCoveragesRequest& request, const DescribeCodeCoveragesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientDescribeCodeCoveragesAsyncHelper(CodeBuildClient const * const clientThis, const DescribeCodeCoveragesRequest& request, const DescribeCodeCoveragesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCodeCoveragesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeCodeCoverages(request), context);
 }
 
-void CodeBuildClient::DescribeCodeCoveragesAsyncHelper(const DescribeCodeCoveragesRequest& request, const DescribeCodeCoveragesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::DescribeCodeCoveragesAsync(const DescribeCodeCoveragesRequest& request, const DescribeCodeCoveragesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeCodeCoverages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientDescribeCodeCoveragesAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeTestCasesOutcome CodeBuildClient::DescribeTestCases(const DescribeTestCasesRequest& request) const
@@ -567,14 +567,14 @@ DescribeTestCasesOutcomeCallable CodeBuildClient::DescribeTestCasesCallable(cons
   return task->get_future();
 }
 
-void CodeBuildClient::DescribeTestCasesAsync(const DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientDescribeTestCasesAsyncHelper(CodeBuildClient const * const clientThis, const DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTestCasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeTestCases(request), context);
 }
 
-void CodeBuildClient::DescribeTestCasesAsyncHelper(const DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::DescribeTestCasesAsync(const DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeTestCases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientDescribeTestCasesAsyncHelper( this, request, handler, context ); } );
 }
 
 GetReportGroupTrendOutcome CodeBuildClient::GetReportGroupTrend(const GetReportGroupTrendRequest& request) const
@@ -591,14 +591,14 @@ GetReportGroupTrendOutcomeCallable CodeBuildClient::GetReportGroupTrendCallable(
   return task->get_future();
 }
 
-void CodeBuildClient::GetReportGroupTrendAsync(const GetReportGroupTrendRequest& request, const GetReportGroupTrendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientGetReportGroupTrendAsyncHelper(CodeBuildClient const * const clientThis, const GetReportGroupTrendRequest& request, const GetReportGroupTrendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReportGroupTrendAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetReportGroupTrend(request), context);
 }
 
-void CodeBuildClient::GetReportGroupTrendAsyncHelper(const GetReportGroupTrendRequest& request, const GetReportGroupTrendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::GetReportGroupTrendAsync(const GetReportGroupTrendRequest& request, const GetReportGroupTrendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetReportGroupTrend(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientGetReportGroupTrendAsyncHelper( this, request, handler, context ); } );
 }
 
 GetResourcePolicyOutcome CodeBuildClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
@@ -615,14 +615,14 @@ GetResourcePolicyOutcomeCallable CodeBuildClient::GetResourcePolicyCallable(cons
   return task->get_future();
 }
 
-void CodeBuildClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientGetResourcePolicyAsyncHelper(CodeBuildClient const * const clientThis, const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetResourcePolicy(request), context);
 }
 
-void CodeBuildClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientGetResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 ImportSourceCredentialsOutcome CodeBuildClient::ImportSourceCredentials(const ImportSourceCredentialsRequest& request) const
@@ -639,14 +639,14 @@ ImportSourceCredentialsOutcomeCallable CodeBuildClient::ImportSourceCredentialsC
   return task->get_future();
 }
 
-void CodeBuildClient::ImportSourceCredentialsAsync(const ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientImportSourceCredentialsAsyncHelper(CodeBuildClient const * const clientThis, const ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportSourceCredentialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ImportSourceCredentials(request), context);
 }
 
-void CodeBuildClient::ImportSourceCredentialsAsyncHelper(const ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ImportSourceCredentialsAsync(const ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ImportSourceCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientImportSourceCredentialsAsyncHelper( this, request, handler, context ); } );
 }
 
 InvalidateProjectCacheOutcome CodeBuildClient::InvalidateProjectCache(const InvalidateProjectCacheRequest& request) const
@@ -663,14 +663,14 @@ InvalidateProjectCacheOutcomeCallable CodeBuildClient::InvalidateProjectCacheCal
   return task->get_future();
 }
 
-void CodeBuildClient::InvalidateProjectCacheAsync(const InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientInvalidateProjectCacheAsyncHelper(CodeBuildClient const * const clientThis, const InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InvalidateProjectCacheAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InvalidateProjectCache(request), context);
 }
 
-void CodeBuildClient::InvalidateProjectCacheAsyncHelper(const InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::InvalidateProjectCacheAsync(const InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InvalidateProjectCache(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientInvalidateProjectCacheAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBuildBatchesOutcome CodeBuildClient::ListBuildBatches(const ListBuildBatchesRequest& request) const
@@ -687,14 +687,14 @@ ListBuildBatchesOutcomeCallable CodeBuildClient::ListBuildBatchesCallable(const 
   return task->get_future();
 }
 
-void CodeBuildClient::ListBuildBatchesAsync(const ListBuildBatchesRequest& request, const ListBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListBuildBatchesAsyncHelper(CodeBuildClient const * const clientThis, const ListBuildBatchesRequest& request, const ListBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBuildBatchesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBuildBatches(request), context);
 }
 
-void CodeBuildClient::ListBuildBatchesAsyncHelper(const ListBuildBatchesRequest& request, const ListBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListBuildBatchesAsync(const ListBuildBatchesRequest& request, const ListBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBuildBatches(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListBuildBatchesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBuildBatchesForProjectOutcome CodeBuildClient::ListBuildBatchesForProject(const ListBuildBatchesForProjectRequest& request) const
@@ -711,14 +711,14 @@ ListBuildBatchesForProjectOutcomeCallable CodeBuildClient::ListBuildBatchesForPr
   return task->get_future();
 }
 
-void CodeBuildClient::ListBuildBatchesForProjectAsync(const ListBuildBatchesForProjectRequest& request, const ListBuildBatchesForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListBuildBatchesForProjectAsyncHelper(CodeBuildClient const * const clientThis, const ListBuildBatchesForProjectRequest& request, const ListBuildBatchesForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBuildBatchesForProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBuildBatchesForProject(request), context);
 }
 
-void CodeBuildClient::ListBuildBatchesForProjectAsyncHelper(const ListBuildBatchesForProjectRequest& request, const ListBuildBatchesForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListBuildBatchesForProjectAsync(const ListBuildBatchesForProjectRequest& request, const ListBuildBatchesForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBuildBatchesForProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListBuildBatchesForProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBuildsOutcome CodeBuildClient::ListBuilds(const ListBuildsRequest& request) const
@@ -735,14 +735,14 @@ ListBuildsOutcomeCallable CodeBuildClient::ListBuildsCallable(const ListBuildsRe
   return task->get_future();
 }
 
-void CodeBuildClient::ListBuildsAsync(const ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListBuildsAsyncHelper(CodeBuildClient const * const clientThis, const ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBuildsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBuilds(request), context);
 }
 
-void CodeBuildClient::ListBuildsAsyncHelper(const ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListBuildsAsync(const ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBuilds(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListBuildsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListBuildsForProjectOutcome CodeBuildClient::ListBuildsForProject(const ListBuildsForProjectRequest& request) const
@@ -759,14 +759,14 @@ ListBuildsForProjectOutcomeCallable CodeBuildClient::ListBuildsForProjectCallabl
   return task->get_future();
 }
 
-void CodeBuildClient::ListBuildsForProjectAsync(const ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListBuildsForProjectAsyncHelper(CodeBuildClient const * const clientThis, const ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBuildsForProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListBuildsForProject(request), context);
 }
 
-void CodeBuildClient::ListBuildsForProjectAsyncHelper(const ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListBuildsForProjectAsync(const ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListBuildsForProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListBuildsForProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 ListCuratedEnvironmentImagesOutcome CodeBuildClient::ListCuratedEnvironmentImages(const ListCuratedEnvironmentImagesRequest& request) const
@@ -783,14 +783,14 @@ ListCuratedEnvironmentImagesOutcomeCallable CodeBuildClient::ListCuratedEnvironm
   return task->get_future();
 }
 
-void CodeBuildClient::ListCuratedEnvironmentImagesAsync(const ListCuratedEnvironmentImagesRequest& request, const ListCuratedEnvironmentImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListCuratedEnvironmentImagesAsyncHelper(CodeBuildClient const * const clientThis, const ListCuratedEnvironmentImagesRequest& request, const ListCuratedEnvironmentImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCuratedEnvironmentImagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListCuratedEnvironmentImages(request), context);
 }
 
-void CodeBuildClient::ListCuratedEnvironmentImagesAsyncHelper(const ListCuratedEnvironmentImagesRequest& request, const ListCuratedEnvironmentImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListCuratedEnvironmentImagesAsync(const ListCuratedEnvironmentImagesRequest& request, const ListCuratedEnvironmentImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListCuratedEnvironmentImages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListCuratedEnvironmentImagesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProjectsOutcome CodeBuildClient::ListProjects(const ListProjectsRequest& request) const
@@ -807,14 +807,14 @@ ListProjectsOutcomeCallable CodeBuildClient::ListProjectsCallable(const ListProj
   return task->get_future();
 }
 
-void CodeBuildClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListProjectsAsyncHelper(CodeBuildClient const * const clientThis, const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProjects(request), context);
 }
 
-void CodeBuildClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListProjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReportGroupsOutcome CodeBuildClient::ListReportGroups(const ListReportGroupsRequest& request) const
@@ -831,14 +831,14 @@ ListReportGroupsOutcomeCallable CodeBuildClient::ListReportGroupsCallable(const 
   return task->get_future();
 }
 
-void CodeBuildClient::ListReportGroupsAsync(const ListReportGroupsRequest& request, const ListReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListReportGroupsAsyncHelper(CodeBuildClient const * const clientThis, const ListReportGroupsRequest& request, const ListReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReportGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReportGroups(request), context);
 }
 
-void CodeBuildClient::ListReportGroupsAsyncHelper(const ListReportGroupsRequest& request, const ListReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListReportGroupsAsync(const ListReportGroupsRequest& request, const ListReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReportGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListReportGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReportsOutcome CodeBuildClient::ListReports(const ListReportsRequest& request) const
@@ -855,14 +855,14 @@ ListReportsOutcomeCallable CodeBuildClient::ListReportsCallable(const ListReport
   return task->get_future();
 }
 
-void CodeBuildClient::ListReportsAsync(const ListReportsRequest& request, const ListReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListReportsAsyncHelper(CodeBuildClient const * const clientThis, const ListReportsRequest& request, const ListReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReportsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReports(request), context);
 }
 
-void CodeBuildClient::ListReportsAsyncHelper(const ListReportsRequest& request, const ListReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListReportsAsync(const ListReportsRequest& request, const ListReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReports(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListReportsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListReportsForReportGroupOutcome CodeBuildClient::ListReportsForReportGroup(const ListReportsForReportGroupRequest& request) const
@@ -879,14 +879,14 @@ ListReportsForReportGroupOutcomeCallable CodeBuildClient::ListReportsForReportGr
   return task->get_future();
 }
 
-void CodeBuildClient::ListReportsForReportGroupAsync(const ListReportsForReportGroupRequest& request, const ListReportsForReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListReportsForReportGroupAsyncHelper(CodeBuildClient const * const clientThis, const ListReportsForReportGroupRequest& request, const ListReportsForReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReportsForReportGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListReportsForReportGroup(request), context);
 }
 
-void CodeBuildClient::ListReportsForReportGroupAsyncHelper(const ListReportsForReportGroupRequest& request, const ListReportsForReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListReportsForReportGroupAsync(const ListReportsForReportGroupRequest& request, const ListReportsForReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListReportsForReportGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListReportsForReportGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSharedProjectsOutcome CodeBuildClient::ListSharedProjects(const ListSharedProjectsRequest& request) const
@@ -903,14 +903,14 @@ ListSharedProjectsOutcomeCallable CodeBuildClient::ListSharedProjectsCallable(co
   return task->get_future();
 }
 
-void CodeBuildClient::ListSharedProjectsAsync(const ListSharedProjectsRequest& request, const ListSharedProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListSharedProjectsAsyncHelper(CodeBuildClient const * const clientThis, const ListSharedProjectsRequest& request, const ListSharedProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSharedProjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSharedProjects(request), context);
 }
 
-void CodeBuildClient::ListSharedProjectsAsyncHelper(const ListSharedProjectsRequest& request, const ListSharedProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListSharedProjectsAsync(const ListSharedProjectsRequest& request, const ListSharedProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSharedProjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListSharedProjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSharedReportGroupsOutcome CodeBuildClient::ListSharedReportGroups(const ListSharedReportGroupsRequest& request) const
@@ -927,14 +927,14 @@ ListSharedReportGroupsOutcomeCallable CodeBuildClient::ListSharedReportGroupsCal
   return task->get_future();
 }
 
-void CodeBuildClient::ListSharedReportGroupsAsync(const ListSharedReportGroupsRequest& request, const ListSharedReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListSharedReportGroupsAsyncHelper(CodeBuildClient const * const clientThis, const ListSharedReportGroupsRequest& request, const ListSharedReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSharedReportGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSharedReportGroups(request), context);
 }
 
-void CodeBuildClient::ListSharedReportGroupsAsyncHelper(const ListSharedReportGroupsRequest& request, const ListSharedReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListSharedReportGroupsAsync(const ListSharedReportGroupsRequest& request, const ListSharedReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSharedReportGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListSharedReportGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSourceCredentialsOutcome CodeBuildClient::ListSourceCredentials(const ListSourceCredentialsRequest& request) const
@@ -951,14 +951,14 @@ ListSourceCredentialsOutcomeCallable CodeBuildClient::ListSourceCredentialsCalla
   return task->get_future();
 }
 
-void CodeBuildClient::ListSourceCredentialsAsync(const ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientListSourceCredentialsAsyncHelper(CodeBuildClient const * const clientThis, const ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSourceCredentialsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSourceCredentials(request), context);
 }
 
-void CodeBuildClient::ListSourceCredentialsAsyncHelper(const ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::ListSourceCredentialsAsync(const ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSourceCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientListSourceCredentialsAsyncHelper( this, request, handler, context ); } );
 }
 
 PutResourcePolicyOutcome CodeBuildClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -975,14 +975,14 @@ PutResourcePolicyOutcomeCallable CodeBuildClient::PutResourcePolicyCallable(cons
   return task->get_future();
 }
 
-void CodeBuildClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientPutResourcePolicyAsyncHelper(CodeBuildClient const * const clientThis, const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->PutResourcePolicy(request), context);
 }
 
-void CodeBuildClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientPutResourcePolicyAsyncHelper( this, request, handler, context ); } );
 }
 
 RetryBuildOutcome CodeBuildClient::RetryBuild(const RetryBuildRequest& request) const
@@ -999,14 +999,14 @@ RetryBuildOutcomeCallable CodeBuildClient::RetryBuildCallable(const RetryBuildRe
   return task->get_future();
 }
 
-void CodeBuildClient::RetryBuildAsync(const RetryBuildRequest& request, const RetryBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientRetryBuildAsyncHelper(CodeBuildClient const * const clientThis, const RetryBuildRequest& request, const RetryBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RetryBuildAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RetryBuild(request), context);
 }
 
-void CodeBuildClient::RetryBuildAsyncHelper(const RetryBuildRequest& request, const RetryBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::RetryBuildAsync(const RetryBuildRequest& request, const RetryBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RetryBuild(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientRetryBuildAsyncHelper( this, request, handler, context ); } );
 }
 
 RetryBuildBatchOutcome CodeBuildClient::RetryBuildBatch(const RetryBuildBatchRequest& request) const
@@ -1023,14 +1023,14 @@ RetryBuildBatchOutcomeCallable CodeBuildClient::RetryBuildBatchCallable(const Re
   return task->get_future();
 }
 
-void CodeBuildClient::RetryBuildBatchAsync(const RetryBuildBatchRequest& request, const RetryBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientRetryBuildBatchAsyncHelper(CodeBuildClient const * const clientThis, const RetryBuildBatchRequest& request, const RetryBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RetryBuildBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RetryBuildBatch(request), context);
 }
 
-void CodeBuildClient::RetryBuildBatchAsyncHelper(const RetryBuildBatchRequest& request, const RetryBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::RetryBuildBatchAsync(const RetryBuildBatchRequest& request, const RetryBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RetryBuildBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientRetryBuildBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 StartBuildOutcome CodeBuildClient::StartBuild(const StartBuildRequest& request) const
@@ -1047,14 +1047,14 @@ StartBuildOutcomeCallable CodeBuildClient::StartBuildCallable(const StartBuildRe
   return task->get_future();
 }
 
-void CodeBuildClient::StartBuildAsync(const StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientStartBuildAsyncHelper(CodeBuildClient const * const clientThis, const StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartBuildAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartBuild(request), context);
 }
 
-void CodeBuildClient::StartBuildAsyncHelper(const StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::StartBuildAsync(const StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartBuild(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientStartBuildAsyncHelper( this, request, handler, context ); } );
 }
 
 StartBuildBatchOutcome CodeBuildClient::StartBuildBatch(const StartBuildBatchRequest& request) const
@@ -1071,14 +1071,14 @@ StartBuildBatchOutcomeCallable CodeBuildClient::StartBuildBatchCallable(const St
   return task->get_future();
 }
 
-void CodeBuildClient::StartBuildBatchAsync(const StartBuildBatchRequest& request, const StartBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientStartBuildBatchAsyncHelper(CodeBuildClient const * const clientThis, const StartBuildBatchRequest& request, const StartBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartBuildBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartBuildBatch(request), context);
 }
 
-void CodeBuildClient::StartBuildBatchAsyncHelper(const StartBuildBatchRequest& request, const StartBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::StartBuildBatchAsync(const StartBuildBatchRequest& request, const StartBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartBuildBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientStartBuildBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 StopBuildOutcome CodeBuildClient::StopBuild(const StopBuildRequest& request) const
@@ -1095,14 +1095,14 @@ StopBuildOutcomeCallable CodeBuildClient::StopBuildCallable(const StopBuildReque
   return task->get_future();
 }
 
-void CodeBuildClient::StopBuildAsync(const StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientStopBuildAsyncHelper(CodeBuildClient const * const clientThis, const StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopBuildAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopBuild(request), context);
 }
 
-void CodeBuildClient::StopBuildAsyncHelper(const StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::StopBuildAsync(const StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopBuild(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientStopBuildAsyncHelper( this, request, handler, context ); } );
 }
 
 StopBuildBatchOutcome CodeBuildClient::StopBuildBatch(const StopBuildBatchRequest& request) const
@@ -1119,14 +1119,14 @@ StopBuildBatchOutcomeCallable CodeBuildClient::StopBuildBatchCallable(const Stop
   return task->get_future();
 }
 
-void CodeBuildClient::StopBuildBatchAsync(const StopBuildBatchRequest& request, const StopBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientStopBuildBatchAsyncHelper(CodeBuildClient const * const clientThis, const StopBuildBatchRequest& request, const StopBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopBuildBatchAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopBuildBatch(request), context);
 }
 
-void CodeBuildClient::StopBuildBatchAsyncHelper(const StopBuildBatchRequest& request, const StopBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::StopBuildBatchAsync(const StopBuildBatchRequest& request, const StopBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopBuildBatch(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientStopBuildBatchAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProjectOutcome CodeBuildClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -1143,14 +1143,14 @@ UpdateProjectOutcomeCallable CodeBuildClient::UpdateProjectCallable(const Update
   return task->get_future();
 }
 
-void CodeBuildClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientUpdateProjectAsyncHelper(CodeBuildClient const * const clientThis, const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProject(request), context);
 }
 
-void CodeBuildClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientUpdateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProjectVisibilityOutcome CodeBuildClient::UpdateProjectVisibility(const UpdateProjectVisibilityRequest& request) const
@@ -1167,14 +1167,14 @@ UpdateProjectVisibilityOutcomeCallable CodeBuildClient::UpdateProjectVisibilityC
   return task->get_future();
 }
 
-void CodeBuildClient::UpdateProjectVisibilityAsync(const UpdateProjectVisibilityRequest& request, const UpdateProjectVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientUpdateProjectVisibilityAsyncHelper(CodeBuildClient const * const clientThis, const UpdateProjectVisibilityRequest& request, const UpdateProjectVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectVisibilityAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProjectVisibility(request), context);
 }
 
-void CodeBuildClient::UpdateProjectVisibilityAsyncHelper(const UpdateProjectVisibilityRequest& request, const UpdateProjectVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::UpdateProjectVisibilityAsync(const UpdateProjectVisibilityRequest& request, const UpdateProjectVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProjectVisibility(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientUpdateProjectVisibilityAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateReportGroupOutcome CodeBuildClient::UpdateReportGroup(const UpdateReportGroupRequest& request) const
@@ -1191,14 +1191,14 @@ UpdateReportGroupOutcomeCallable CodeBuildClient::UpdateReportGroupCallable(cons
   return task->get_future();
 }
 
-void CodeBuildClient::UpdateReportGroupAsync(const UpdateReportGroupRequest& request, const UpdateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientUpdateReportGroupAsyncHelper(CodeBuildClient const * const clientThis, const UpdateReportGroupRequest& request, const UpdateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReportGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateReportGroup(request), context);
 }
 
-void CodeBuildClient::UpdateReportGroupAsyncHelper(const UpdateReportGroupRequest& request, const UpdateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::UpdateReportGroupAsync(const UpdateReportGroupRequest& request, const UpdateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateReportGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientUpdateReportGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWebhookOutcome CodeBuildClient::UpdateWebhook(const UpdateWebhookRequest& request) const
@@ -1215,13 +1215,13 @@ UpdateWebhookOutcomeCallable CodeBuildClient::UpdateWebhookCallable(const Update
   return task->get_future();
 }
 
-void CodeBuildClient::UpdateWebhookAsync(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClientUpdateWebhookAsyncHelper(CodeBuildClient const * const clientThis, const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWebhookAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWebhook(request), context);
 }
 
-void CodeBuildClient::UpdateWebhookAsyncHelper(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeBuildClient::UpdateWebhookAsync(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWebhook(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CodeBuildClientUpdateWebhookAsyncHelper( this, request, handler, context ); } );
 }
 

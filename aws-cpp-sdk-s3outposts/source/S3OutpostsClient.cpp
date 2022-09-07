@@ -119,14 +119,14 @@ CreateEndpointOutcomeCallable S3OutpostsClient::CreateEndpointCallable(const Cre
   return task->get_future();
 }
 
-void S3OutpostsClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3OutpostsClientCreateEndpointAsyncHelper(S3OutpostsClient const * const clientThis, const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateEndpoint(request), context);
 }
 
-void S3OutpostsClient::CreateEndpointAsyncHelper(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3OutpostsClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ S3OutpostsClientCreateEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteEndpointOutcome S3OutpostsClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
@@ -154,14 +154,14 @@ DeleteEndpointOutcomeCallable S3OutpostsClient::DeleteEndpointCallable(const Del
   return task->get_future();
 }
 
-void S3OutpostsClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3OutpostsClientDeleteEndpointAsyncHelper(S3OutpostsClient const * const clientThis, const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteEndpoint(request), context);
 }
 
-void S3OutpostsClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3OutpostsClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context](){ S3OutpostsClientDeleteEndpointAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEndpointsOutcome S3OutpostsClient::ListEndpoints(const ListEndpointsRequest& request) const
@@ -179,14 +179,14 @@ ListEndpointsOutcomeCallable S3OutpostsClient::ListEndpointsCallable(const ListE
   return task->get_future();
 }
 
-void S3OutpostsClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3OutpostsClientListEndpointsAsyncHelper(S3OutpostsClient const * const clientThis, const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEndpoints(request), context);
 }
 
-void S3OutpostsClient::ListEndpointsAsyncHelper(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3OutpostsClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ S3OutpostsClientListEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListSharedEndpointsOutcome S3OutpostsClient::ListSharedEndpoints(const ListSharedEndpointsRequest& request) const
@@ -209,13 +209,13 @@ ListSharedEndpointsOutcomeCallable S3OutpostsClient::ListSharedEndpointsCallable
   return task->get_future();
 }
 
-void S3OutpostsClient::ListSharedEndpointsAsync(const ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3OutpostsClientListSharedEndpointsAsyncHelper(S3OutpostsClient const * const clientThis, const ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSharedEndpointsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListSharedEndpoints(request), context);
 }
 
-void S3OutpostsClient::ListSharedEndpointsAsyncHelper(const ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3OutpostsClient::ListSharedEndpointsAsync(const ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListSharedEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context](){ S3OutpostsClientListSharedEndpointsAsyncHelper( this, request, handler, context ); } );
 }
 

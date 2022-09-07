@@ -127,14 +127,14 @@ CreateChatTokenOutcomeCallable IvschatClient::CreateChatTokenCallable(const Crea
   return task->get_future();
 }
 
-void IvschatClient::CreateChatTokenAsync(const CreateChatTokenRequest& request, const CreateChatTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientCreateChatTokenAsyncHelper(IvschatClient const * const clientThis, const CreateChatTokenRequest& request, const CreateChatTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChatTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateChatToken(request), context);
 }
 
-void IvschatClient::CreateChatTokenAsyncHelper(const CreateChatTokenRequest& request, const CreateChatTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::CreateChatTokenAsync(const CreateChatTokenRequest& request, const CreateChatTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateChatToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientCreateChatTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateRoomOutcome IvschatClient::CreateRoom(const CreateRoomRequest& request) const
@@ -152,14 +152,14 @@ CreateRoomOutcomeCallable IvschatClient::CreateRoomCallable(const CreateRoomRequ
   return task->get_future();
 }
 
-void IvschatClient::CreateRoomAsync(const CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientCreateRoomAsyncHelper(IvschatClient const * const clientThis, const CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateRoom(request), context);
 }
 
-void IvschatClient::CreateRoomAsyncHelper(const CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::CreateRoomAsync(const CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientCreateRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMessageOutcome IvschatClient::DeleteMessage(const DeleteMessageRequest& request) const
@@ -177,14 +177,14 @@ DeleteMessageOutcomeCallable IvschatClient::DeleteMessageCallable(const DeleteMe
   return task->get_future();
 }
 
-void IvschatClient::DeleteMessageAsync(const DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientDeleteMessageAsyncHelper(IvschatClient const * const clientThis, const DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMessageAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMessage(request), context);
 }
 
-void IvschatClient::DeleteMessageAsyncHelper(const DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::DeleteMessageAsync(const DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMessage(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientDeleteMessageAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteRoomOutcome IvschatClient::DeleteRoom(const DeleteRoomRequest& request) const
@@ -202,14 +202,14 @@ DeleteRoomOutcomeCallable IvschatClient::DeleteRoomCallable(const DeleteRoomRequ
   return task->get_future();
 }
 
-void IvschatClient::DeleteRoomAsync(const DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientDeleteRoomAsyncHelper(IvschatClient const * const clientThis, const DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteRoom(request), context);
 }
 
-void IvschatClient::DeleteRoomAsyncHelper(const DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::DeleteRoomAsync(const DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientDeleteRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 DisconnectUserOutcome IvschatClient::DisconnectUser(const DisconnectUserRequest& request) const
@@ -227,14 +227,14 @@ DisconnectUserOutcomeCallable IvschatClient::DisconnectUserCallable(const Discon
   return task->get_future();
 }
 
-void IvschatClient::DisconnectUserAsync(const DisconnectUserRequest& request, const DisconnectUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientDisconnectUserAsyncHelper(IvschatClient const * const clientThis, const DisconnectUserRequest& request, const DisconnectUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisconnectUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisconnectUser(request), context);
 }
 
-void IvschatClient::DisconnectUserAsyncHelper(const DisconnectUserRequest& request, const DisconnectUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::DisconnectUserAsync(const DisconnectUserRequest& request, const DisconnectUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisconnectUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientDisconnectUserAsyncHelper( this, request, handler, context ); } );
 }
 
 GetRoomOutcome IvschatClient::GetRoom(const GetRoomRequest& request) const
@@ -252,14 +252,14 @@ GetRoomOutcomeCallable IvschatClient::GetRoomCallable(const GetRoomRequest& requ
   return task->get_future();
 }
 
-void IvschatClient::GetRoomAsync(const GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientGetRoomAsyncHelper(IvschatClient const * const clientThis, const GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetRoom(request), context);
 }
 
-void IvschatClient::GetRoomAsyncHelper(const GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::GetRoomAsync(const GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientGetRoomAsyncHelper( this, request, handler, context ); } );
 }
 
 ListRoomsOutcome IvschatClient::ListRooms(const ListRoomsRequest& request) const
@@ -277,14 +277,14 @@ ListRoomsOutcomeCallable IvschatClient::ListRoomsCallable(const ListRoomsRequest
   return task->get_future();
 }
 
-void IvschatClient::ListRoomsAsync(const ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientListRoomsAsyncHelper(IvschatClient const * const clientThis, const ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRoomsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListRooms(request), context);
 }
 
-void IvschatClient::ListRoomsAsyncHelper(const ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::ListRoomsAsync(const ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListRooms(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientListRoomsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome IvschatClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -308,14 +308,14 @@ ListTagsForResourceOutcomeCallable IvschatClient::ListTagsForResourceCallable(co
   return task->get_future();
 }
 
-void IvschatClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientListTagsForResourceAsyncHelper(IvschatClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void IvschatClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 SendEventOutcome IvschatClient::SendEvent(const SendEventRequest& request) const
@@ -333,14 +333,14 @@ SendEventOutcomeCallable IvschatClient::SendEventCallable(const SendEventRequest
   return task->get_future();
 }
 
-void IvschatClient::SendEventAsync(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientSendEventAsyncHelper(IvschatClient const * const clientThis, const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendEventAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SendEvent(request), context);
 }
 
-void IvschatClient::SendEventAsyncHelper(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::SendEventAsync(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SendEvent(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientSendEventAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome IvschatClient::TagResource(const TagResourceRequest& request) const
@@ -364,14 +364,14 @@ TagResourceOutcomeCallable IvschatClient::TagResourceCallable(const TagResourceR
   return task->get_future();
 }
 
-void IvschatClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientTagResourceAsyncHelper(IvschatClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void IvschatClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome IvschatClient::UntagResource(const UntagResourceRequest& request) const
@@ -400,14 +400,14 @@ UntagResourceOutcomeCallable IvschatClient::UntagResourceCallable(const UntagRes
   return task->get_future();
 }
 
-void IvschatClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientUntagResourceAsyncHelper(IvschatClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void IvschatClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateRoomOutcome IvschatClient::UpdateRoom(const UpdateRoomRequest& request) const
@@ -425,13 +425,13 @@ UpdateRoomOutcomeCallable IvschatClient::UpdateRoomCallable(const UpdateRoomRequ
   return task->get_future();
 }
 
-void IvschatClient::UpdateRoomAsync(const UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClientUpdateRoomAsyncHelper(IvschatClient const * const clientThis, const UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoomAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateRoom(request), context);
 }
 
-void IvschatClient::UpdateRoomAsyncHelper(const UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IvschatClient::UpdateRoomAsync(const UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateRoom(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IvschatClientUpdateRoomAsyncHelper( this, request, handler, context ); } );
 }
 

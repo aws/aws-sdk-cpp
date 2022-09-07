@@ -121,14 +121,14 @@ AssociateMemberAccountOutcomeCallable MacieClient::AssociateMemberAccountCallabl
   return task->get_future();
 }
 
-void MacieClient::AssociateMemberAccountAsync(const AssociateMemberAccountRequest& request, const AssociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClientAssociateMemberAccountAsyncHelper(MacieClient const * const clientThis, const AssociateMemberAccountRequest& request, const AssociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateMemberAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateMemberAccount(request), context);
 }
 
-void MacieClient::AssociateMemberAccountAsyncHelper(const AssociateMemberAccountRequest& request, const AssociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClient::AssociateMemberAccountAsync(const AssociateMemberAccountRequest& request, const AssociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateMemberAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MacieClientAssociateMemberAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateS3ResourcesOutcome MacieClient::AssociateS3Resources(const AssociateS3ResourcesRequest& request) const
@@ -145,14 +145,14 @@ AssociateS3ResourcesOutcomeCallable MacieClient::AssociateS3ResourcesCallable(co
   return task->get_future();
 }
 
-void MacieClient::AssociateS3ResourcesAsync(const AssociateS3ResourcesRequest& request, const AssociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClientAssociateS3ResourcesAsyncHelper(MacieClient const * const clientThis, const AssociateS3ResourcesRequest& request, const AssociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateS3ResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateS3Resources(request), context);
 }
 
-void MacieClient::AssociateS3ResourcesAsyncHelper(const AssociateS3ResourcesRequest& request, const AssociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClient::AssociateS3ResourcesAsync(const AssociateS3ResourcesRequest& request, const AssociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateS3Resources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MacieClientAssociateS3ResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateMemberAccountOutcome MacieClient::DisassociateMemberAccount(const DisassociateMemberAccountRequest& request) const
@@ -169,14 +169,14 @@ DisassociateMemberAccountOutcomeCallable MacieClient::DisassociateMemberAccountC
   return task->get_future();
 }
 
-void MacieClient::DisassociateMemberAccountAsync(const DisassociateMemberAccountRequest& request, const DisassociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClientDisassociateMemberAccountAsyncHelper(MacieClient const * const clientThis, const DisassociateMemberAccountRequest& request, const DisassociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateMemberAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateMemberAccount(request), context);
 }
 
-void MacieClient::DisassociateMemberAccountAsyncHelper(const DisassociateMemberAccountRequest& request, const DisassociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClient::DisassociateMemberAccountAsync(const DisassociateMemberAccountRequest& request, const DisassociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateMemberAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MacieClientDisassociateMemberAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateS3ResourcesOutcome MacieClient::DisassociateS3Resources(const DisassociateS3ResourcesRequest& request) const
@@ -193,14 +193,14 @@ DisassociateS3ResourcesOutcomeCallable MacieClient::DisassociateS3ResourcesCalla
   return task->get_future();
 }
 
-void MacieClient::DisassociateS3ResourcesAsync(const DisassociateS3ResourcesRequest& request, const DisassociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClientDisassociateS3ResourcesAsyncHelper(MacieClient const * const clientThis, const DisassociateS3ResourcesRequest& request, const DisassociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateS3ResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateS3Resources(request), context);
 }
 
-void MacieClient::DisassociateS3ResourcesAsyncHelper(const DisassociateS3ResourcesRequest& request, const DisassociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClient::DisassociateS3ResourcesAsync(const DisassociateS3ResourcesRequest& request, const DisassociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateS3Resources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MacieClientDisassociateS3ResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMemberAccountsOutcome MacieClient::ListMemberAccounts(const ListMemberAccountsRequest& request) const
@@ -217,14 +217,14 @@ ListMemberAccountsOutcomeCallable MacieClient::ListMemberAccountsCallable(const 
   return task->get_future();
 }
 
-void MacieClient::ListMemberAccountsAsync(const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClientListMemberAccountsAsyncHelper(MacieClient const * const clientThis, const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMemberAccountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMemberAccounts(request), context);
 }
 
-void MacieClient::ListMemberAccountsAsyncHelper(const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClient::ListMemberAccountsAsync(const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMemberAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MacieClientListMemberAccountsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListS3ResourcesOutcome MacieClient::ListS3Resources(const ListS3ResourcesRequest& request) const
@@ -241,14 +241,14 @@ ListS3ResourcesOutcomeCallable MacieClient::ListS3ResourcesCallable(const ListS3
   return task->get_future();
 }
 
-void MacieClient::ListS3ResourcesAsync(const ListS3ResourcesRequest& request, const ListS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClientListS3ResourcesAsyncHelper(MacieClient const * const clientThis, const ListS3ResourcesRequest& request, const ListS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListS3ResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListS3Resources(request), context);
 }
 
-void MacieClient::ListS3ResourcesAsyncHelper(const ListS3ResourcesRequest& request, const ListS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClient::ListS3ResourcesAsync(const ListS3ResourcesRequest& request, const ListS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListS3Resources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MacieClientListS3ResourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateS3ResourcesOutcome MacieClient::UpdateS3Resources(const UpdateS3ResourcesRequest& request) const
@@ -265,13 +265,13 @@ UpdateS3ResourcesOutcomeCallable MacieClient::UpdateS3ResourcesCallable(const Up
   return task->get_future();
 }
 
-void MacieClient::UpdateS3ResourcesAsync(const UpdateS3ResourcesRequest& request, const UpdateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClientUpdateS3ResourcesAsyncHelper(MacieClient const * const clientThis, const UpdateS3ResourcesRequest& request, const UpdateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateS3ResourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateS3Resources(request), context);
 }
 
-void MacieClient::UpdateS3ResourcesAsyncHelper(const UpdateS3ResourcesRequest& request, const UpdateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MacieClient::UpdateS3ResourcesAsync(const UpdateS3ResourcesRequest& request, const UpdateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateS3Resources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ MacieClientUpdateS3ResourcesAsyncHelper( this, request, handler, context ); } );
 }
 

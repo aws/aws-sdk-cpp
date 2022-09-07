@@ -135,14 +135,14 @@ CancelJobOutcomeCallable ImportExportClient::CancelJobCallable(const CancelJobRe
   return task->get_future();
 }
 
-void ImportExportClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClientCancelJobAsyncHelper(ImportExportClient const * const clientThis, const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CancelJob(request), context);
 }
 
-void ImportExportClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CancelJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImportExportClientCancelJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateJobOutcome ImportExportClient::CreateJob(const CreateJobRequest& request) const
@@ -163,14 +163,14 @@ CreateJobOutcomeCallable ImportExportClient::CreateJobCallable(const CreateJobRe
   return task->get_future();
 }
 
-void ImportExportClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClientCreateJobAsyncHelper(ImportExportClient const * const clientThis, const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateJob(request), context);
 }
 
-void ImportExportClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImportExportClientCreateJobAsyncHelper( this, request, handler, context ); } );
 }
 
 GetShippingLabelOutcome ImportExportClient::GetShippingLabel(const GetShippingLabelRequest& request) const
@@ -191,14 +191,14 @@ GetShippingLabelOutcomeCallable ImportExportClient::GetShippingLabelCallable(con
   return task->get_future();
 }
 
-void ImportExportClient::GetShippingLabelAsync(const GetShippingLabelRequest& request, const GetShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClientGetShippingLabelAsyncHelper(ImportExportClient const * const clientThis, const GetShippingLabelRequest& request, const GetShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetShippingLabelAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetShippingLabel(request), context);
 }
 
-void ImportExportClient::GetShippingLabelAsyncHelper(const GetShippingLabelRequest& request, const GetShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClient::GetShippingLabelAsync(const GetShippingLabelRequest& request, const GetShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetShippingLabel(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImportExportClientGetShippingLabelAsyncHelper( this, request, handler, context ); } );
 }
 
 GetStatusOutcome ImportExportClient::GetStatus(const GetStatusRequest& request) const
@@ -219,14 +219,14 @@ GetStatusOutcomeCallable ImportExportClient::GetStatusCallable(const GetStatusRe
   return task->get_future();
 }
 
-void ImportExportClient::GetStatusAsync(const GetStatusRequest& request, const GetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClientGetStatusAsyncHelper(ImportExportClient const * const clientThis, const GetStatusRequest& request, const GetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetStatus(request), context);
 }
 
-void ImportExportClient::GetStatusAsyncHelper(const GetStatusRequest& request, const GetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClient::GetStatusAsync(const GetStatusRequest& request, const GetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImportExportClientGetStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 ListJobsOutcome ImportExportClient::ListJobs(const ListJobsRequest& request) const
@@ -247,14 +247,14 @@ ListJobsOutcomeCallable ImportExportClient::ListJobsCallable(const ListJobsReque
   return task->get_future();
 }
 
-void ImportExportClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClientListJobsAsyncHelper(ImportExportClient const * const clientThis, const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListJobs(request), context);
 }
 
-void ImportExportClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImportExportClientListJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateJobOutcome ImportExportClient::UpdateJob(const UpdateJobRequest& request) const
@@ -275,13 +275,13 @@ UpdateJobOutcomeCallable ImportExportClient::UpdateJobCallable(const UpdateJobRe
   return task->get_future();
 }
 
-void ImportExportClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClientUpdateJobAsyncHelper(ImportExportClient const * const clientThis, const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateJob(request), context);
 }
 
-void ImportExportClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ImportExportClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ImportExportClientUpdateJobAsyncHelper( this, request, handler, context ); } );
 }
 

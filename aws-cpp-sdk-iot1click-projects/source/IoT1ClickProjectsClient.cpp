@@ -151,14 +151,14 @@ AssociateDeviceWithPlacementOutcomeCallable IoT1ClickProjectsClient::AssociateDe
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::AssociateDeviceWithPlacementAsync(const AssociateDeviceWithPlacementRequest& request, const AssociateDeviceWithPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientAssociateDeviceWithPlacementAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const AssociateDeviceWithPlacementRequest& request, const AssociateDeviceWithPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateDeviceWithPlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateDeviceWithPlacement(request), context);
 }
 
-void IoT1ClickProjectsClient::AssociateDeviceWithPlacementAsyncHelper(const AssociateDeviceWithPlacementRequest& request, const AssociateDeviceWithPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::AssociateDeviceWithPlacementAsync(const AssociateDeviceWithPlacementRequest& request, const AssociateDeviceWithPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateDeviceWithPlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientAssociateDeviceWithPlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePlacementOutcome IoT1ClickProjectsClient::CreatePlacement(const CreatePlacementRequest& request) const
@@ -183,14 +183,14 @@ CreatePlacementOutcomeCallable IoT1ClickProjectsClient::CreatePlacementCallable(
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::CreatePlacementAsync(const CreatePlacementRequest& request, const CreatePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientCreatePlacementAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const CreatePlacementRequest& request, const CreatePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePlacement(request), context);
 }
 
-void IoT1ClickProjectsClient::CreatePlacementAsyncHelper(const CreatePlacementRequest& request, const CreatePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::CreatePlacementAsync(const CreatePlacementRequest& request, const CreatePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientCreatePlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateProjectOutcome IoT1ClickProjectsClient::CreateProject(const CreateProjectRequest& request) const
@@ -208,14 +208,14 @@ CreateProjectOutcomeCallable IoT1ClickProjectsClient::CreateProjectCallable(cons
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientCreateProjectAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateProject(request), context);
 }
 
-void IoT1ClickProjectsClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientCreateProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePlacementOutcome IoT1ClickProjectsClient::DeletePlacement(const DeletePlacementRequest& request) const
@@ -246,14 +246,14 @@ DeletePlacementOutcomeCallable IoT1ClickProjectsClient::DeletePlacementCallable(
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::DeletePlacementAsync(const DeletePlacementRequest& request, const DeletePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientDeletePlacementAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const DeletePlacementRequest& request, const DeletePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePlacement(request), context);
 }
 
-void IoT1ClickProjectsClient::DeletePlacementAsyncHelper(const DeletePlacementRequest& request, const DeletePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::DeletePlacementAsync(const DeletePlacementRequest& request, const DeletePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientDeletePlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteProjectOutcome IoT1ClickProjectsClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -277,14 +277,14 @@ DeleteProjectOutcomeCallable IoT1ClickProjectsClient::DeleteProjectCallable(cons
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientDeleteProjectAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteProject(request), context);
 }
 
-void IoT1ClickProjectsClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientDeleteProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribePlacementOutcome IoT1ClickProjectsClient::DescribePlacement(const DescribePlacementRequest& request) const
@@ -315,14 +315,14 @@ DescribePlacementOutcomeCallable IoT1ClickProjectsClient::DescribePlacementCalla
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::DescribePlacementAsync(const DescribePlacementRequest& request, const DescribePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientDescribePlacementAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const DescribePlacementRequest& request, const DescribePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribePlacement(request), context);
 }
 
-void IoT1ClickProjectsClient::DescribePlacementAsyncHelper(const DescribePlacementRequest& request, const DescribePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::DescribePlacementAsync(const DescribePlacementRequest& request, const DescribePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribePlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientDescribePlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeProjectOutcome IoT1ClickProjectsClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -346,14 +346,14 @@ DescribeProjectOutcomeCallable IoT1ClickProjectsClient::DescribeProjectCallable(
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientDescribeProjectAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeProject(request), context);
 }
 
-void IoT1ClickProjectsClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientDescribeProjectAsyncHelper( this, request, handler, context ); } );
 }
 
 DisassociateDeviceFromPlacementOutcome IoT1ClickProjectsClient::DisassociateDeviceFromPlacement(const DisassociateDeviceFromPlacementRequest& request) const
@@ -391,14 +391,14 @@ DisassociateDeviceFromPlacementOutcomeCallable IoT1ClickProjectsClient::Disassoc
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::DisassociateDeviceFromPlacementAsync(const DisassociateDeviceFromPlacementRequest& request, const DisassociateDeviceFromPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientDisassociateDeviceFromPlacementAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const DisassociateDeviceFromPlacementRequest& request, const DisassociateDeviceFromPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateDeviceFromPlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateDeviceFromPlacement(request), context);
 }
 
-void IoT1ClickProjectsClient::DisassociateDeviceFromPlacementAsyncHelper(const DisassociateDeviceFromPlacementRequest& request, const DisassociateDeviceFromPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::DisassociateDeviceFromPlacementAsync(const DisassociateDeviceFromPlacementRequest& request, const DisassociateDeviceFromPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateDeviceFromPlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientDisassociateDeviceFromPlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDevicesInPlacementOutcome IoT1ClickProjectsClient::GetDevicesInPlacement(const GetDevicesInPlacementRequest& request) const
@@ -430,14 +430,14 @@ GetDevicesInPlacementOutcomeCallable IoT1ClickProjectsClient::GetDevicesInPlacem
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::GetDevicesInPlacementAsync(const GetDevicesInPlacementRequest& request, const GetDevicesInPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientGetDevicesInPlacementAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const GetDevicesInPlacementRequest& request, const GetDevicesInPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDevicesInPlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDevicesInPlacement(request), context);
 }
 
-void IoT1ClickProjectsClient::GetDevicesInPlacementAsyncHelper(const GetDevicesInPlacementRequest& request, const GetDevicesInPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::GetDevicesInPlacementAsync(const GetDevicesInPlacementRequest& request, const GetDevicesInPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDevicesInPlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientGetDevicesInPlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPlacementsOutcome IoT1ClickProjectsClient::ListPlacements(const ListPlacementsRequest& request) const
@@ -462,14 +462,14 @@ ListPlacementsOutcomeCallable IoT1ClickProjectsClient::ListPlacementsCallable(co
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::ListPlacementsAsync(const ListPlacementsRequest& request, const ListPlacementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientListPlacementsAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const ListPlacementsRequest& request, const ListPlacementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPlacementsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPlacements(request), context);
 }
 
-void IoT1ClickProjectsClient::ListPlacementsAsyncHelper(const ListPlacementsRequest& request, const ListPlacementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::ListPlacementsAsync(const ListPlacementsRequest& request, const ListPlacementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPlacements(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientListPlacementsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListProjectsOutcome IoT1ClickProjectsClient::ListProjects(const ListProjectsRequest& request) const
@@ -487,14 +487,14 @@ ListProjectsOutcomeCallable IoT1ClickProjectsClient::ListProjectsCallable(const 
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientListProjectsAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListProjects(request), context);
 }
 
-void IoT1ClickProjectsClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProjects(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientListProjectsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome IoT1ClickProjectsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -518,14 +518,14 @@ ListTagsForResourceOutcomeCallable IoT1ClickProjectsClient::ListTagsForResourceC
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientListTagsForResourceAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void IoT1ClickProjectsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome IoT1ClickProjectsClient::TagResource(const TagResourceRequest& request) const
@@ -549,14 +549,14 @@ TagResourceOutcomeCallable IoT1ClickProjectsClient::TagResourceCallable(const Ta
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientTagResourceAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void IoT1ClickProjectsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome IoT1ClickProjectsClient::UntagResource(const UntagResourceRequest& request) const
@@ -585,14 +585,14 @@ UntagResourceOutcomeCallable IoT1ClickProjectsClient::UntagResourceCallable(cons
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientUntagResourceAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void IoT1ClickProjectsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePlacementOutcome IoT1ClickProjectsClient::UpdatePlacement(const UpdatePlacementRequest& request) const
@@ -623,14 +623,14 @@ UpdatePlacementOutcomeCallable IoT1ClickProjectsClient::UpdatePlacementCallable(
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::UpdatePlacementAsync(const UpdatePlacementRequest& request, const UpdatePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientUpdatePlacementAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const UpdatePlacementRequest& request, const UpdatePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePlacementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePlacement(request), context);
 }
 
-void IoT1ClickProjectsClient::UpdatePlacementAsyncHelper(const UpdatePlacementRequest& request, const UpdatePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::UpdatePlacementAsync(const UpdatePlacementRequest& request, const UpdatePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePlacement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientUpdatePlacementAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateProjectOutcome IoT1ClickProjectsClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -654,13 +654,13 @@ UpdateProjectOutcomeCallable IoT1ClickProjectsClient::UpdateProjectCallable(cons
   return task->get_future();
 }
 
-void IoT1ClickProjectsClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClientUpdateProjectAsyncHelper(IoT1ClickProjectsClient const * const clientThis, const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateProject(request), context);
 }
 
-void IoT1ClickProjectsClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoT1ClickProjectsClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateProject(request), context);
+  m_executor->Submit( [this, request, handler, context](){ IoT1ClickProjectsClientUpdateProjectAsyncHelper( this, request, handler, context ); } );
 }
 

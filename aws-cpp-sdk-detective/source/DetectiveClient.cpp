@@ -138,14 +138,14 @@ AcceptInvitationOutcomeCallable DetectiveClient::AcceptInvitationCallable(const 
   return task->get_future();
 }
 
-void DetectiveClient::AcceptInvitationAsync(const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientAcceptInvitationAsyncHelper(DetectiveClient const * const clientThis, const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptInvitationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AcceptInvitation(request), context);
 }
 
-void DetectiveClient::AcceptInvitationAsyncHelper(const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::AcceptInvitationAsync(const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientAcceptInvitationAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetGraphMemberDatasourcesOutcome DetectiveClient::BatchGetGraphMemberDatasources(const BatchGetGraphMemberDatasourcesRequest& request) const
@@ -163,14 +163,14 @@ BatchGetGraphMemberDatasourcesOutcomeCallable DetectiveClient::BatchGetGraphMemb
   return task->get_future();
 }
 
-void DetectiveClient::BatchGetGraphMemberDatasourcesAsync(const BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientBatchGetGraphMemberDatasourcesAsyncHelper(DetectiveClient const * const clientThis, const BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetGraphMemberDatasourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetGraphMemberDatasources(request), context);
 }
 
-void DetectiveClient::BatchGetGraphMemberDatasourcesAsyncHelper(const BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::BatchGetGraphMemberDatasourcesAsync(const BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetGraphMemberDatasources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientBatchGetGraphMemberDatasourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetMembershipDatasourcesOutcome DetectiveClient::BatchGetMembershipDatasources(const BatchGetMembershipDatasourcesRequest& request) const
@@ -188,14 +188,14 @@ BatchGetMembershipDatasourcesOutcomeCallable DetectiveClient::BatchGetMembership
   return task->get_future();
 }
 
-void DetectiveClient::BatchGetMembershipDatasourcesAsync(const BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientBatchGetMembershipDatasourcesAsyncHelper(DetectiveClient const * const clientThis, const BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetMembershipDatasourcesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetMembershipDatasources(request), context);
 }
 
-void DetectiveClient::BatchGetMembershipDatasourcesAsyncHelper(const BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::BatchGetMembershipDatasourcesAsync(const BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetMembershipDatasources(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientBatchGetMembershipDatasourcesAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGraphOutcome DetectiveClient::CreateGraph(const CreateGraphRequest& request) const
@@ -213,14 +213,14 @@ CreateGraphOutcomeCallable DetectiveClient::CreateGraphCallable(const CreateGrap
   return task->get_future();
 }
 
-void DetectiveClient::CreateGraphAsync(const CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientCreateGraphAsyncHelper(DetectiveClient const * const clientThis, const CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGraphAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGraph(request), context);
 }
 
-void DetectiveClient::CreateGraphAsyncHelper(const CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::CreateGraphAsync(const CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGraph(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientCreateGraphAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateMembersOutcome DetectiveClient::CreateMembers(const CreateMembersRequest& request) const
@@ -238,14 +238,14 @@ CreateMembersOutcomeCallable DetectiveClient::CreateMembersCallable(const Create
   return task->get_future();
 }
 
-void DetectiveClient::CreateMembersAsync(const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientCreateMembersAsyncHelper(DetectiveClient const * const clientThis, const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateMembers(request), context);
 }
 
-void DetectiveClient::CreateMembersAsyncHelper(const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::CreateMembersAsync(const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientCreateMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGraphOutcome DetectiveClient::DeleteGraph(const DeleteGraphRequest& request) const
@@ -263,14 +263,14 @@ DeleteGraphOutcomeCallable DetectiveClient::DeleteGraphCallable(const DeleteGrap
   return task->get_future();
 }
 
-void DetectiveClient::DeleteGraphAsync(const DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientDeleteGraphAsyncHelper(DetectiveClient const * const clientThis, const DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGraphAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGraph(request), context);
 }
 
-void DetectiveClient::DeleteGraphAsyncHelper(const DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::DeleteGraphAsync(const DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGraph(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientDeleteGraphAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteMembersOutcome DetectiveClient::DeleteMembers(const DeleteMembersRequest& request) const
@@ -288,14 +288,14 @@ DeleteMembersOutcomeCallable DetectiveClient::DeleteMembersCallable(const Delete
   return task->get_future();
 }
 
-void DetectiveClient::DeleteMembersAsync(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientDeleteMembersAsyncHelper(DetectiveClient const * const clientThis, const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteMembers(request), context);
 }
 
-void DetectiveClient::DeleteMembersAsyncHelper(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::DeleteMembersAsync(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientDeleteMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeOrganizationConfigurationOutcome DetectiveClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
@@ -313,14 +313,14 @@ DescribeOrganizationConfigurationOutcomeCallable DetectiveClient::DescribeOrgani
   return task->get_future();
 }
 
-void DetectiveClient::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientDescribeOrganizationConfigurationAsyncHelper(DetectiveClient const * const clientThis, const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeOrganizationConfiguration(request), context);
 }
 
-void DetectiveClient::DescribeOrganizationConfigurationAsyncHelper(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeOrganizationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientDescribeOrganizationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DisableOrganizationAdminAccountOutcome DetectiveClient::DisableOrganizationAdminAccount() const
@@ -338,14 +338,14 @@ DisableOrganizationAdminAccountOutcomeCallable DetectiveClient::DisableOrganizat
   return task->get_future();
 }
 
-void DetectiveClient::DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientDisableOrganizationAdminAccountAsyncHelper(DetectiveClient const * const clientThis, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, handler, context](){ this->DisableOrganizationAdminAccountAsyncHelper( handler, context ); } );
+  handler(clientThis, clientThis->DisableOrganizationAdminAccount(), context);
 }
 
-void DetectiveClient::DisableOrganizationAdminAccountAsyncHelper(const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, DisableOrganizationAdminAccount(), context);
+  m_executor->Submit( [this, handler, context](){ DetectiveClientDisableOrganizationAdminAccountAsyncHelper( this, handler, context ); } );
 }
 
 DisassociateMembershipOutcome DetectiveClient::DisassociateMembership(const DisassociateMembershipRequest& request) const
@@ -363,14 +363,14 @@ DisassociateMembershipOutcomeCallable DetectiveClient::DisassociateMembershipCal
   return task->get_future();
 }
 
-void DetectiveClient::DisassociateMembershipAsync(const DisassociateMembershipRequest& request, const DisassociateMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientDisassociateMembershipAsyncHelper(DetectiveClient const * const clientThis, const DisassociateMembershipRequest& request, const DisassociateMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateMembershipAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DisassociateMembership(request), context);
 }
 
-void DetectiveClient::DisassociateMembershipAsyncHelper(const DisassociateMembershipRequest& request, const DisassociateMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::DisassociateMembershipAsync(const DisassociateMembershipRequest& request, const DisassociateMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateMembership(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientDisassociateMembershipAsyncHelper( this, request, handler, context ); } );
 }
 
 EnableOrganizationAdminAccountOutcome DetectiveClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
@@ -388,14 +388,14 @@ EnableOrganizationAdminAccountOutcomeCallable DetectiveClient::EnableOrganizatio
   return task->get_future();
 }
 
-void DetectiveClient::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientEnableOrganizationAdminAccountAsyncHelper(DetectiveClient const * const clientThis, const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->EnableOrganizationAdminAccount(request), context);
 }
 
-void DetectiveClient::EnableOrganizationAdminAccountAsyncHelper(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, EnableOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientEnableOrganizationAdminAccountAsyncHelper( this, request, handler, context ); } );
 }
 
 GetMembersOutcome DetectiveClient::GetMembers(const GetMembersRequest& request) const
@@ -413,14 +413,14 @@ GetMembersOutcomeCallable DetectiveClient::GetMembersCallable(const GetMembersRe
   return task->get_future();
 }
 
-void DetectiveClient::GetMembersAsync(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientGetMembersAsyncHelper(DetectiveClient const * const clientThis, const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetMembers(request), context);
 }
 
-void DetectiveClient::GetMembersAsyncHelper(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::GetMembersAsync(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientGetMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatasourcePackagesOutcome DetectiveClient::ListDatasourcePackages(const ListDatasourcePackagesRequest& request) const
@@ -438,14 +438,14 @@ ListDatasourcePackagesOutcomeCallable DetectiveClient::ListDatasourcePackagesCal
   return task->get_future();
 }
 
-void DetectiveClient::ListDatasourcePackagesAsync(const ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientListDatasourcePackagesAsyncHelper(DetectiveClient const * const clientThis, const ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasourcePackagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatasourcePackages(request), context);
 }
 
-void DetectiveClient::ListDatasourcePackagesAsyncHelper(const ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::ListDatasourcePackagesAsync(const ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatasourcePackages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientListDatasourcePackagesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGraphsOutcome DetectiveClient::ListGraphs(const ListGraphsRequest& request) const
@@ -463,14 +463,14 @@ ListGraphsOutcomeCallable DetectiveClient::ListGraphsCallable(const ListGraphsRe
   return task->get_future();
 }
 
-void DetectiveClient::ListGraphsAsync(const ListGraphsRequest& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientListGraphsAsyncHelper(DetectiveClient const * const clientThis, const ListGraphsRequest& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGraphsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGraphs(request), context);
 }
 
-void DetectiveClient::ListGraphsAsyncHelper(const ListGraphsRequest& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::ListGraphsAsync(const ListGraphsRequest& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGraphs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientListGraphsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListInvitationsOutcome DetectiveClient::ListInvitations(const ListInvitationsRequest& request) const
@@ -488,14 +488,14 @@ ListInvitationsOutcomeCallable DetectiveClient::ListInvitationsCallable(const Li
   return task->get_future();
 }
 
-void DetectiveClient::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientListInvitationsAsyncHelper(DetectiveClient const * const clientThis, const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInvitationsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListInvitations(request), context);
 }
 
-void DetectiveClient::ListInvitationsAsyncHelper(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientListInvitationsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListMembersOutcome DetectiveClient::ListMembers(const ListMembersRequest& request) const
@@ -513,14 +513,14 @@ ListMembersOutcomeCallable DetectiveClient::ListMembersCallable(const ListMember
   return task->get_future();
 }
 
-void DetectiveClient::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientListMembersAsyncHelper(DetectiveClient const * const clientThis, const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMembersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListMembers(request), context);
 }
 
-void DetectiveClient::ListMembersAsyncHelper(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListMembers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientListMembersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListOrganizationAdminAccountsOutcome DetectiveClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
@@ -538,14 +538,14 @@ ListOrganizationAdminAccountsOutcomeCallable DetectiveClient::ListOrganizationAd
   return task->get_future();
 }
 
-void DetectiveClient::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientListOrganizationAdminAccountsAsyncHelper(DetectiveClient const * const clientThis, const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationAdminAccountsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListOrganizationAdminAccounts(request), context);
 }
 
-void DetectiveClient::ListOrganizationAdminAccountsAsyncHelper(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListOrganizationAdminAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientListOrganizationAdminAccountsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome DetectiveClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -569,14 +569,14 @@ ListTagsForResourceOutcomeCallable DetectiveClient::ListTagsForResourceCallable(
   return task->get_future();
 }
 
-void DetectiveClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientListTagsForResourceAsyncHelper(DetectiveClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void DetectiveClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 RejectInvitationOutcome DetectiveClient::RejectInvitation(const RejectInvitationRequest& request) const
@@ -594,14 +594,14 @@ RejectInvitationOutcomeCallable DetectiveClient::RejectInvitationCallable(const 
   return task->get_future();
 }
 
-void DetectiveClient::RejectInvitationAsync(const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientRejectInvitationAsyncHelper(DetectiveClient const * const clientThis, const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectInvitationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RejectInvitation(request), context);
 }
 
-void DetectiveClient::RejectInvitationAsyncHelper(const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::RejectInvitationAsync(const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RejectInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientRejectInvitationAsyncHelper( this, request, handler, context ); } );
 }
 
 StartMonitoringMemberOutcome DetectiveClient::StartMonitoringMember(const StartMonitoringMemberRequest& request) const
@@ -619,14 +619,14 @@ StartMonitoringMemberOutcomeCallable DetectiveClient::StartMonitoringMemberCalla
   return task->get_future();
 }
 
-void DetectiveClient::StartMonitoringMemberAsync(const StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientStartMonitoringMemberAsyncHelper(DetectiveClient const * const clientThis, const StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMonitoringMemberAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartMonitoringMember(request), context);
 }
 
-void DetectiveClient::StartMonitoringMemberAsyncHelper(const StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::StartMonitoringMemberAsync(const StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartMonitoringMember(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientStartMonitoringMemberAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome DetectiveClient::TagResource(const TagResourceRequest& request) const
@@ -650,14 +650,14 @@ TagResourceOutcomeCallable DetectiveClient::TagResourceCallable(const TagResourc
   return task->get_future();
 }
 
-void DetectiveClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientTagResourceAsyncHelper(DetectiveClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void DetectiveClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome DetectiveClient::UntagResource(const UntagResourceRequest& request) const
@@ -686,14 +686,14 @@ UntagResourceOutcomeCallable DetectiveClient::UntagResourceCallable(const UntagR
   return task->get_future();
 }
 
-void DetectiveClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientUntagResourceAsyncHelper(DetectiveClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void DetectiveClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDatasourcePackagesOutcome DetectiveClient::UpdateDatasourcePackages(const UpdateDatasourcePackagesRequest& request) const
@@ -711,14 +711,14 @@ UpdateDatasourcePackagesOutcomeCallable DetectiveClient::UpdateDatasourcePackage
   return task->get_future();
 }
 
-void DetectiveClient::UpdateDatasourcePackagesAsync(const UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientUpdateDatasourcePackagesAsyncHelper(DetectiveClient const * const clientThis, const UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatasourcePackagesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDatasourcePackages(request), context);
 }
 
-void DetectiveClient::UpdateDatasourcePackagesAsyncHelper(const UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::UpdateDatasourcePackagesAsync(const UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDatasourcePackages(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientUpdateDatasourcePackagesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateOrganizationConfigurationOutcome DetectiveClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
@@ -736,13 +736,13 @@ UpdateOrganizationConfigurationOutcomeCallable DetectiveClient::UpdateOrganizati
   return task->get_future();
 }
 
-void DetectiveClient::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClientUpdateOrganizationConfigurationAsyncHelper(DetectiveClient const * const clientThis, const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateOrganizationConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateOrganizationConfiguration(request), context);
 }
 
-void DetectiveClient::UpdateOrganizationConfigurationAsyncHelper(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateOrganizationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ DetectiveClientUpdateOrganizationConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 

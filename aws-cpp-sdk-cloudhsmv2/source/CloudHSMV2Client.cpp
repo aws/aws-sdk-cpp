@@ -129,14 +129,14 @@ CopyBackupToRegionOutcomeCallable CloudHSMV2Client::CopyBackupToRegionCallable(c
   return task->get_future();
 }
 
-void CloudHSMV2Client::CopyBackupToRegionAsync(const CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientCopyBackupToRegionAsyncHelper(CloudHSMV2Client const * const clientThis, const CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopyBackupToRegionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CopyBackupToRegion(request), context);
 }
 
-void CloudHSMV2Client::CopyBackupToRegionAsyncHelper(const CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::CopyBackupToRegionAsync(const CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CopyBackupToRegion(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientCopyBackupToRegionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateClusterOutcome CloudHSMV2Client::CreateCluster(const CreateClusterRequest& request) const
@@ -153,14 +153,14 @@ CreateClusterOutcomeCallable CloudHSMV2Client::CreateClusterCallable(const Creat
   return task->get_future();
 }
 
-void CloudHSMV2Client::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientCreateClusterAsyncHelper(CloudHSMV2Client const * const clientThis, const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateCluster(request), context);
 }
 
-void CloudHSMV2Client::CreateClusterAsyncHelper(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientCreateClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateHsmOutcome CloudHSMV2Client::CreateHsm(const CreateHsmRequest& request) const
@@ -177,14 +177,14 @@ CreateHsmOutcomeCallable CloudHSMV2Client::CreateHsmCallable(const CreateHsmRequ
   return task->get_future();
 }
 
-void CloudHSMV2Client::CreateHsmAsync(const CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientCreateHsmAsyncHelper(CloudHSMV2Client const * const clientThis, const CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHsmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateHsm(request), context);
 }
 
-void CloudHSMV2Client::CreateHsmAsyncHelper(const CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::CreateHsmAsync(const CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateHsm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientCreateHsmAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteBackupOutcome CloudHSMV2Client::DeleteBackup(const DeleteBackupRequest& request) const
@@ -201,14 +201,14 @@ DeleteBackupOutcomeCallable CloudHSMV2Client::DeleteBackupCallable(const DeleteB
   return task->get_future();
 }
 
-void CloudHSMV2Client::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientDeleteBackupAsyncHelper(CloudHSMV2Client const * const clientThis, const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteBackup(request), context);
 }
 
-void CloudHSMV2Client::DeleteBackupAsyncHelper(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientDeleteBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteClusterOutcome CloudHSMV2Client::DeleteCluster(const DeleteClusterRequest& request) const
@@ -225,14 +225,14 @@ DeleteClusterOutcomeCallable CloudHSMV2Client::DeleteClusterCallable(const Delet
   return task->get_future();
 }
 
-void CloudHSMV2Client::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientDeleteClusterAsyncHelper(CloudHSMV2Client const * const clientThis, const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteCluster(request), context);
 }
 
-void CloudHSMV2Client::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientDeleteClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteHsmOutcome CloudHSMV2Client::DeleteHsm(const DeleteHsmRequest& request) const
@@ -249,14 +249,14 @@ DeleteHsmOutcomeCallable CloudHSMV2Client::DeleteHsmCallable(const DeleteHsmRequ
   return task->get_future();
 }
 
-void CloudHSMV2Client::DeleteHsmAsync(const DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientDeleteHsmAsyncHelper(CloudHSMV2Client const * const clientThis, const DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHsmAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteHsm(request), context);
 }
 
-void CloudHSMV2Client::DeleteHsmAsyncHelper(const DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::DeleteHsmAsync(const DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteHsm(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientDeleteHsmAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeBackupsOutcome CloudHSMV2Client::DescribeBackups(const DescribeBackupsRequest& request) const
@@ -273,14 +273,14 @@ DescribeBackupsOutcomeCallable CloudHSMV2Client::DescribeBackupsCallable(const D
   return task->get_future();
 }
 
-void CloudHSMV2Client::DescribeBackupsAsync(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientDescribeBackupsAsyncHelper(CloudHSMV2Client const * const clientThis, const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBackupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeBackups(request), context);
 }
 
-void CloudHSMV2Client::DescribeBackupsAsyncHelper(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::DescribeBackupsAsync(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeBackups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientDescribeBackupsAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeClustersOutcome CloudHSMV2Client::DescribeClusters(const DescribeClustersRequest& request) const
@@ -297,14 +297,14 @@ DescribeClustersOutcomeCallable CloudHSMV2Client::DescribeClustersCallable(const
   return task->get_future();
 }
 
-void CloudHSMV2Client::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientDescribeClustersAsyncHelper(CloudHSMV2Client const * const clientThis, const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClustersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeClusters(request), context);
 }
 
-void CloudHSMV2Client::DescribeClustersAsyncHelper(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeClusters(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientDescribeClustersAsyncHelper( this, request, handler, context ); } );
 }
 
 InitializeClusterOutcome CloudHSMV2Client::InitializeCluster(const InitializeClusterRequest& request) const
@@ -321,14 +321,14 @@ InitializeClusterOutcomeCallable CloudHSMV2Client::InitializeClusterCallable(con
   return task->get_future();
 }
 
-void CloudHSMV2Client::InitializeClusterAsync(const InitializeClusterRequest& request, const InitializeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientInitializeClusterAsyncHelper(CloudHSMV2Client const * const clientThis, const InitializeClusterRequest& request, const InitializeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InitializeClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InitializeCluster(request), context);
 }
 
-void CloudHSMV2Client::InitializeClusterAsyncHelper(const InitializeClusterRequest& request, const InitializeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::InitializeClusterAsync(const InitializeClusterRequest& request, const InitializeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InitializeCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientInitializeClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsOutcome CloudHSMV2Client::ListTags(const ListTagsRequest& request) const
@@ -345,14 +345,14 @@ ListTagsOutcomeCallable CloudHSMV2Client::ListTagsCallable(const ListTagsRequest
   return task->get_future();
 }
 
-void CloudHSMV2Client::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientListTagsAsyncHelper(CloudHSMV2Client const * const clientThis, const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTags(request), context);
 }
 
-void CloudHSMV2Client::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientListTagsAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyBackupAttributesOutcome CloudHSMV2Client::ModifyBackupAttributes(const ModifyBackupAttributesRequest& request) const
@@ -369,14 +369,14 @@ ModifyBackupAttributesOutcomeCallable CloudHSMV2Client::ModifyBackupAttributesCa
   return task->get_future();
 }
 
-void CloudHSMV2Client::ModifyBackupAttributesAsync(const ModifyBackupAttributesRequest& request, const ModifyBackupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientModifyBackupAttributesAsyncHelper(CloudHSMV2Client const * const clientThis, const ModifyBackupAttributesRequest& request, const ModifyBackupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyBackupAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyBackupAttributes(request), context);
 }
 
-void CloudHSMV2Client::ModifyBackupAttributesAsyncHelper(const ModifyBackupAttributesRequest& request, const ModifyBackupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::ModifyBackupAttributesAsync(const ModifyBackupAttributesRequest& request, const ModifyBackupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyBackupAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientModifyBackupAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 ModifyClusterOutcome CloudHSMV2Client::ModifyCluster(const ModifyClusterRequest& request) const
@@ -393,14 +393,14 @@ ModifyClusterOutcomeCallable CloudHSMV2Client::ModifyClusterCallable(const Modif
   return task->get_future();
 }
 
-void CloudHSMV2Client::ModifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientModifyClusterAsyncHelper(CloudHSMV2Client const * const clientThis, const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyClusterAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ModifyCluster(request), context);
 }
 
-void CloudHSMV2Client::ModifyClusterAsyncHelper(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::ModifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ModifyCluster(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientModifyClusterAsyncHelper( this, request, handler, context ); } );
 }
 
 RestoreBackupOutcome CloudHSMV2Client::RestoreBackup(const RestoreBackupRequest& request) const
@@ -417,14 +417,14 @@ RestoreBackupOutcomeCallable CloudHSMV2Client::RestoreBackupCallable(const Resto
   return task->get_future();
 }
 
-void CloudHSMV2Client::RestoreBackupAsync(const RestoreBackupRequest& request, const RestoreBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientRestoreBackupAsyncHelper(CloudHSMV2Client const * const clientThis, const RestoreBackupRequest& request, const RestoreBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreBackupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RestoreBackup(request), context);
 }
 
-void CloudHSMV2Client::RestoreBackupAsyncHelper(const RestoreBackupRequest& request, const RestoreBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::RestoreBackupAsync(const RestoreBackupRequest& request, const RestoreBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RestoreBackup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientRestoreBackupAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CloudHSMV2Client::TagResource(const TagResourceRequest& request) const
@@ -441,14 +441,14 @@ TagResourceOutcomeCallable CloudHSMV2Client::TagResourceCallable(const TagResour
   return task->get_future();
 }
 
-void CloudHSMV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientTagResourceAsyncHelper(CloudHSMV2Client const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CloudHSMV2Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CloudHSMV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -465,13 +465,13 @@ UntagResourceOutcomeCallable CloudHSMV2Client::UntagResourceCallable(const Untag
   return task->get_future();
 }
 
-void CloudHSMV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2ClientUntagResourceAsyncHelper(CloudHSMV2Client const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CloudHSMV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CloudHSMV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CloudHSMV2ClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
